@@ -220,7 +220,7 @@
         <div id="drop-pin-form" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-amber);">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
                 <div>
-                    <span class="user-badge badge-mastermind">CLOUDFLARE D1 CROWDSOURCED PIN ENGINE &bull; AUTO-VERIFIES AT 3 VOTES (+500 REP)</span>
+                    <span class="user-badge badge-mastermind">COMMUNITY CROWDSOURCED RADAR ENGINE &bull; AUTO-VERIFIES AT 3 VOTES (+500 REP)</span>
                     <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Submit Live Day-1 Discovery Pin to GlobalLeonida Map</h3>
                 </div>
                 <span style="color:var(--neon-cyan); font-size:0.82rem;">Click anywhere on the radar map to set X/Y coordinates!</span>
@@ -251,7 +251,7 @@
                 <div class="form-group" style="margin:0;"><label>Grid Y</label><input type="number" class="form-input" id="d1PinY" min="40" max="540" value="310" required></div>
                 <div class="form-group" style="margin:0;"><label>Your Callsign</label><input type="text" class="form-input" id="d1PinAlias" placeholder="ViceOperative" required></div>
                 <div class="form-group" style="margin:0; grid-column: 1 / -1;"><label>Tactical Discovery Notes</label><input type="text" class="form-input" id="d1PinDesc" placeholder="Describe exact entry point, loot, or heat reduction perk..." required></div>
-                <button type="submit" class="btn btn-amber" style="padding:0.7rem 1rem; font-size:0.82rem; grid-column: 1 / -1;">📡 Submit Pin to Cloudflare D1 (Auto-Promotes to Verified at 3 Confirmations)</button>
+                <button type="submit" class="btn btn-amber" style="padding:0.7rem 1rem; font-size:0.82rem; grid-column: 1 / -1;">📡 Submit Discovery Pin to Live Radar (Auto-Promotes to Verified at 3 Confirmations)</button>
             </form>
             <div id="d1PinStatusMsg" style="margin-top:0.65rem; font-size:0.84rem;"></div>
         </div>
@@ -496,7 +496,7 @@
         <div class="footer-col">
             <h4>GTA 6 HEIST GUIDE</h4>
             <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
-            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Cloudflare D1 Synced &bull; 100% Free Access</p>
+            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Real-Time Syndicate Database &bull; 100% Free Access</p>
         </div>
         <div class="footer-col">
             <h4>Heist Vaults</h4>
@@ -539,7 +539,7 @@
     </div>
     <div class="disclaimer-box">
         <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
-        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Cloudflare Pages &amp; D1 Architecture.</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Real-Time Strategy Network.</p>
     </div>
 </footer>
 <script src="assets/main.js"></script>
@@ -726,7 +726,7 @@
         async function submitD1DiscoveryPin(e) {
             e.preventDefault();
             const st = document.getElementById('d1PinStatusMsg');
-            if (st) st.innerHTML = `<span style="color:var(--neon-cyan);">Transmitting discovery pin to Cloudflare D1...</span>`;
+            if (st) st.innerHTML = `<span style="color:var(--neon-cyan);">Transmitting discovery pin to live radar database...</span>`;
             const payload = {
                 action: 'submit',
                 title: document.getElementById('d1PinTitle').value.trim(),

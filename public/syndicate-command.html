@@ -11,7 +11,7 @@
             const key = document.getElementById('adminKeyInput').value.trim();
             const status = document.getElementById('cmdStatus');
             const tbody = document.getElementById('subscribersTbody');
-            status.innerText = 'Querying Cloudflare D1 database...';
+            status.innerText = 'Querying Real-Time Database database...';
             try {
                 const res = await fetch('/api/subscribe?list=1&key=' + encodeURIComponent(key));
                 const data = await res.json();
@@ -21,7 +21,7 @@
                 }
                 document.getElementById('rawSubCount').innerText = data.rawCount;
                 document.getElementById('displaySubCount').innerText = data.totalSubscribers.toLocaleString();
-                status.innerHTML = '<span style="color:var(--neon-green);">✅ Synced ' + data.subscribers.length + ' real database records from Cloudflare D1.</span>';
+                status.innerHTML = '<span style="color:var(--neon-green);">✅ Synced ' + data.subscribers.length + ' real database records from Real-Time Database.</span>';
                 tbody.innerHTML = data.subscribers.map(s => `
                     <tr>
                         <td>${s.id}</td>
@@ -73,7 +73,7 @@
             const st = document.getElementById('guideGenStatus');
             if (!topic) return;
 
-            st.innerHTML = '<span style="color:var(--neon-cyan);">Synthesizing &amp; publishing guide to Cloudflare D1...</span>';
+            st.innerHTML = '<span style="color:var(--neon-cyan);">Synthesizing &amp; publishing guide to Real-Time Database...</span>';
             try {
                 const res = await fetch('/api/intel', {
                     method: 'POST',
@@ -126,7 +126,7 @@
         <span class="user-badge badge-mastermind" style="margin-bottom:0.75rem;">OWNER EMAIL &amp; AFFILIATE COMMAND CENTER</span>
         <h1 style="color:#fff; font-size:2rem; margin-bottom:0.5rem;">Captured VIP Email List &amp; High-Converting Blast Templates</h1>
         <p style="color:var(--text-muted); margin-bottom:1.5rem;">
-            Every player who unlocks the free VIP Blueprint Pack or Mastermind badge saves straight to your Cloudflare D1 database. Export CSV anytime for Brevo, Mailchimp, Beehiiv, or Resend email blasts!
+            Every player who unlocks the free VIP Blueprint Pack or Mastermind badge saves straight to your Real-Time Database database. Export CSV anytime for Brevo, Mailchimp, Beehiiv, or Resend email blasts!
         </p>
 
         <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-end; margin-bottom:1.5rem;">
@@ -166,7 +166,7 @@
                     </tr>
                 </thead>
                 <tbody id="subscribersTbody">
-                    <tr><td colspan="8" style="text-align:center; color:var(--text-muted);">Click "Load Captured D1 Emails" to query Cloudflare D1.</td></tr>
+                    <tr><td colspan="8" style="text-align:center; color:var(--text-muted);">Click "Load Captured D1 Emails" to query Real-Time Database.</td></tr>
                 </tbody>
             </table>
         </div>
