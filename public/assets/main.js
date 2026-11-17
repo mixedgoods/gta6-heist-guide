@@ -329,7 +329,18 @@ const GTA6 = {
 
   renderIntelCards(category = 'all') {
     const container = document.getElementById('intelFeedContainer');
-    if (!container || !this.intelData) return;
+    if (!container) return;
+
+    const domCards = container.querySelectorAll('.card[data-category]');
+    if (domCards.length > 0) {
+      domCards.forEach((c) => {
+        const cat = c.getAttribute('data-category');
+        c.style.display = (category === 'all' || cat === category) ? 'flex' : 'none';
+      });
+      return;
+    }
+
+    if (!this.intelData) return;
 
     const items = (this.intelData.intelFeed || []).filter(
       (item) => category === 'all' || item.category === category
@@ -1287,8 +1298,6 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       return pMatch && rMatch;
     });
 
-    const templates = this.getRecommendedSquadTemplates();
-
     const realHtml = filteredReal.length > 0
       ? filteredReal
           .map(
@@ -1300,7 +1309,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                 <span class="platform-pill">${s.platform}</span>
               </div>
               <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.65rem;">
-                <span class="user-badge badge-mastermind" style="background:rgba(0,255,136,0.14); border-color:var(--neon-green); color:var(--neon-green);">✅ Verified Player Submission</span>
+                <span class="user-badge badge-mastermind" style="background:rgba(0,255,136,0.14); border-color:var(--neon-green); color:var(--neon-green);">✅ Verified Player</span>
                 <span class="user-badge badge-hacker">${s.role}</span>
                 <span class="user-badge badge-wheelman">${s.cutOffered || '25% Split'}</span>
               </div>
@@ -1316,38 +1325,11 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         `
           )
           .join('')
-      : `<div style="grid-column: 1 / -1; background:rgba(0,240,255,0.05); border:1px dashed var(--neon-cyan); border-radius:10px; padding:1rem; text-align:center; color:var(--text-muted); font-size:0.86rem;">
-          🛡️ <strong>100% Authentic Player Board (Zero Fake AI Gamertags):</strong> Real player submissions from Cloudflare D1 appear here with a <span style="color:var(--neon-green); font-weight:700;">✅ Verified Player Submission</span> badge. Pick a Day-1 Crew Archetype Template below or post your real PSN / Xbox / Discord tag above!
+      : `<div style="grid-column: 1 / -1; background:rgba(0,240,255,0.05); border:1px dashed var(--neon-cyan); border-radius:10px; padding:1.75rem; text-align:center; color:var(--text-muted); font-size:0.9rem;">
+          🛡️ <strong>Verified Co-Op Squad Board:</strong> Connect with real players for Day-1 GTA 6 Heist crews. Post your PSN, Xbox, or Discord tag above to squad up!
         </div>`;
 
-    const templateHtml = templates
-      .map(
-        (tpl) => `
-      <div class="lfg-card" style="border-color:rgba(0,240,255,0.4);">
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.45rem; flex-wrap:wrap;">
-            <span class="user-badge badge-hacker">DAY-1 CREW ARCHETYPE TEMPLATE</span>
-            <span class="platform-pill">${tpl.platform}</span>
-          </div>
-          <h4 style="color:#fff; font-size:1.05rem; margin-bottom:0.4rem;">${tpl.templateTitle}</h4>
-          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.55rem;">
-            <span class="user-badge badge-wheelman">${tpl.cutOffered}</span>
-            <span class="user-badge badge-rookie">${tpl.micRequired}</span>
-          </div>
-          <div style="color:var(--neon-green); font-size:0.84rem; font-weight:700; margin-bottom:0.35rem;">Target: ${tpl.targetHeist}</div>
-          <div style="color:var(--neon-cyan); font-size:0.8rem; margin-bottom:0.35rem;"><strong>Open Roles:</strong> ${tpl.roleNeeded}</div>
-          <p style="color:var(--text-muted); font-size:0.84rem;">${tpl.notes}</p>
-        </div>
-        <div style="display:grid; gap:0.45rem; margin-top:0.5rem;">
-          <button type="button" class="btn btn-primary" style="padding:0.5rem 0.8rem; font-size:0.76rem; width:100%;" onclick="GTA6.prefillLfgFromTemplate('${tpl.id}')">+ Post Your Real PSN / Xbox / Discord for Day-1 Launch</button>
-          <button type="button" class="btn btn-secondary" style="padding:0.42rem 0.8rem; font-size:0.74rem; width:100%;" onclick="GTA6.copyDiscordCard('${tpl.id}')">📋 Copy Discord LFG Recruitment Card</button>
-        </div>
-      </div>
-    `
-      )
-      .join('');
-
-    lfgEl.innerHTML = realHtml + templateHtml;
+    lfgEl.innerHTML = realHtml;
   },
 
   async upvote(threadId) {
@@ -2247,7 +2229,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
           form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const statusEl = document.getElementById('prStatusMsg');
-            if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-cyan);">Syncing report with Cloudflare D1...</span>`;
+            if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-cyan);">Submitting verified tactical report to database...</span>`;
             const payload = {
               vault_slug: document.getElementById('prVaultSlug').value,
               reported_payout: Number(document.getElementById('prPayoutInput').value),
