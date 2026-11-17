@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Syndicate Owner Email & Marketing Command Center | GTA 6 Heist Guide</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script>
+        async function loadSubscribers() {
+            const key = document.getElementById('adminKeyInput').value.trim();
+            const status = document.getElementById('cmdStatus');
+            const tbody = document.getElementById('subscribersTbody');
+            status.innerText = 'Querying Cloudflare D1 database...';
+            try {
+                const res = await fetch('/api/subscribe?list=1&key=' + encodeURIComponent(key));
+                const data = await res.json();
+                if (!res.ok || !data.ok) {
+                    status.innerHTML = '<span style="color:var(--neon-pink);">Failed or unauthorized: ' + (data.error || res.status) + '</span>';
+                    return;
+                }
+                document.getElementById('rawSubCount').innerText = data.rawCount;
+                document.getElementById('displaySubCount').innerText = data.totalSubscribers.toLocaleString();
+                status.innerHTML = '<span style="color:var(--neon-green);">✅ Synced ' + data.subscribers.length + ' real database records from Cloudflare D1.</span>';
+                tbody.innerHTML = data.subscribers.map(s => `
+                    <tr>
+                        <td>${s.id}</td>
+                        <td style="color:var(--neon-cyan); font-weight:700;">${s.email}</td>
+                        <td>${s.callsign}</td>
+                        <td>${s.platform || '-'}</td>
+                        <td>${s.role || '-'}</td>
+                        <td>${s.discord_tag || '-'}</td>
+                        <td>${s.marketing_opt_in ? 'Yes' : 'No'}</td>
+                        <td>${s.created_at}</td>
+                    </tr>
+                `).join('') || '<tr><td colspan="8" style="text-align:center; color:var(--text-muted);">No email opt-ins yet. Visitors who unlock the VIP Blueprint Pack appear here immediately!</td></tr>';
+            } catch (e) {
+                status.innerHTML = '<span style="color:var(--neon-pink);">Error loading D1 endpoint: ' + e.message + '</span>';
+            }
+        }
+
+        function downloadCsv() {
+            const key = document.getElementById('adminKeyInput').value.trim();
+            window.location.href = '/api/subscribe?export=csv&key=' + encodeURIComponent(key);
+        }
+
+        async function forceSyncLiveIntel() {
+            const st = document.getElementById('guideGenStatus');
+            st.innerHTML = '<span style="color:var(--neon-cyan);">🔄 Pulling live Google News GTA 6 RSS &amp; generating daily playbook...</span>';
+            try {
+                const res = await fetch('/api/intel', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'force_sync' })
+                });
+                const data = await res.json();
+                if (!res.ok || !data.ok) {
+                    st.innerHTML = '<span style="color:var(--neon-pink);">Sync error: ' + (data.error || res.status) + '</span>';
+                    return;
+                }
+                st.innerHTML = '<span style="color:var(--neon-green);">✅ Live News &amp; Daily Playbooks Synced! Active D1 Guides: <strong>' + data.totalDynamicGuides + '</strong>. <a href="live-intel.html" style="color:var(--neon-cyan);">View Live on Site &rarr;</a></span>';
+                if (typeof GTA6 !== 'undefined') GTA6.playSuccess();
+            } catch (e) {
+                st.innerHTML = '<span style="color:var(--neon-pink);">Error: ' + e.message + '</span>';
+            }
+        }
+
+        async function publishCustomGuide(e) {
+            e.preventDefault();
+            const topic = document.getElementById('customTopicInput').value.trim();
+            const category = document.getElementById('customCatInput').value;
+            const targetVault = document.getElementById('customVaultInput').value;
+            const st = document.getElementById('guideGenStatus');
+            if (!topic) return;
+
+            st.innerHTML = '<span style="color:var(--neon-cyan);">Synthesizing &amp; publishing guide to Cloudflare D1...</span>';
+            try {
+                const res = await fetch('/api/intel', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ topic, category, targetVault })
+                });
+                const data = await res.json();
+                if (!res.ok || !data.ok) {
+                    st.innerHTML = '<span style="color:var(--neon-pink);">Error: ' + (data.error || res.status) + '</span>';
+                    return;
+                }
+                document.getElementById('customGuideForm').reset();
+                st.innerHTML = '<span style="color:var(--neon-green);">🚀 Published Live! <a href="live-intel.html?guide=' + encodeURIComponent(data.guide.id) + '" style="color:var(--neon-cyan); font-weight:800;">Open New Guide Now &rarr;</a></span>';
+                if (typeof GTA6 !== 'undefined') GTA6.playSuccess();
+            } catch (err) {
+                st.innerHTML = '<span style="color:var(--neon-pink);">Error: ' + err.message + '</span>';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="countdown-strip">
+    <span class="strip-pill"><span class="strip-pulse"></span> <span class="launch-mode-label">Launch Window:</span> <span class="highlight" id="countdownTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+</div>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Owner Command</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Vaults</a></li>
+            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>
+            <li><a href="live-intel.html">Live Meta &amp; Rules</a></li>
+            <li><a href="forum.html">Crew Lounge &amp; LFG</a></li>
+            <li><a href="heist-planner.html">Planner</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()">🔊 Audio FX: ON</button>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <header class="tool-box pink-glow">
+        <span class="user-badge badge-mastermind" style="margin-bottom:0.75rem;">OWNER EMAIL &amp; AFFILIATE COMMAND CENTER</span>
+        <h1 style="color:#fff; font-size:2rem; margin-bottom:0.5rem;">Captured VIP Email List &amp; High-Converting Blast Templates</h1>
+        <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+            Every player who unlocks the free VIP Blueprint Pack or Mastermind badge saves straight to your Cloudflare D1 database. Export CSV anytime for Brevo, Mailchimp, Beehiiv, or Resend email blasts!
+        </p>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-end; margin-bottom:1.5rem;">
+            <div class="form-group" style="margin-bottom:0; flex:1 1 240px;">
+                <label>Admin Access Key (Default: syndicateadmin)</label>
+                <input type="text" id="adminKeyInput" class="form-input" value="syndicateadmin">
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="loadSubscribers()">🔄 Load Captured D1 Emails</button>
+            <button type="button" class="btn btn-primary" onclick="downloadCsv()">📥 Export Subscribers (.CSV)</button>
+        </div>
+
+        <div id="cmdStatus" style="margin-bottom:1rem; font-size:0.9rem; color:var(--neon-cyan);"></div>
+
+        <div class="profile-stats-row" style="margin-bottom:1.5rem;">
+            <div class="stat-pill">
+                <div class="num" id="rawSubCount">-</div>
+                <div class="label">New D1 Email Signups</div>
+            </div>
+            <div class="stat-pill">
+                <div class="num" id="displaySubCount" style="color:var(--neon-green);">-</div>
+                <div class="label">Total Public Counter</div>
+            </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+            <table class="payout-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email Address</th>
+                        <th>Callsign</th>
+                        <th>Platform</th>
+                        <th>Role</th>
+                        <th>Discord / Tag</th>
+                        <th>Opt-In</th>
+                        <th>Joined (UTC)</th>
+                    </tr>
+                </thead>
+                <tbody id="subscribersTbody">
+                    <tr><td colspan="8" style="text-align:center; color:var(--text-muted);">Click "Load Captured D1 Emails" to query Cloudflare D1.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </header>
+
+    <!-- AUTONOMOUS CONTENT & GUIDE GENERATOR -->
+    <section class="tool-box" style="border-color: var(--neon-cyan);">
+        <span class="user-badge badge-hacker" style="margin-bottom:0.65rem;">100% TURNKEY AUTONOMOUS ENGINE</span>
+        <h2 style="color:#fff; margin-bottom:0.4rem;">⚡ Autonomous Content, Live News &amp; Custom Guide Generator</h2>
+        <p style="color:var(--text-muted); font-size:0.94rem; margin-bottom:1.25rem;">
+            Your Cloudflare Worker automatically harvests clean GTA 6 news via Google News RSS (stripping copyright/leaks keywords) and writes a fresh Daily Tactical Operation guide every single day into D1. You can also trigger an instant sync or publish custom guides below!
+        </p>
+
+        <div style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-primary" onclick="forceSyncLiveIntel()">🔄 Pull Live GTA 6 News &amp; Auto-Generate Today's Guide</button>
+            <a href="live-intel.html" class="btn btn-secondary">👁️ Preview Live Intel Page</a>
+        </div>
+
+        <form id="customGuideForm" onsubmit="publishCustomGuide(event)" style="background:rgba(7,5,13,0.65); padding:1.25rem; border-radius:10px; border:1px solid var(--border-card);">
+            <h3 style="color:var(--neon-cyan); margin-bottom:0.85rem; font-size:1.1rem;">Publish an Instant Custom Strategy Guide to D1</h3>
+            <div class="grid" style="grid-template-columns:2fr 1fr 1fr; gap:1rem;">
+                <div class="form-group">
+                    <label>Guide Title / Topic *</label>
+                    <input type="text" id="customTopicInput" class="form-input" placeholder="e.g. Fastest Solo Stealth Setup for Sinfrontera Vault" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="customCatInput" class="form-select">
+                        <option value="meta">Heist Meta</option>
+                        <option value="official">Official Intel</option>
+                        <option value="map">Map &amp; Radar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Target Vault</label>
+                    <select id="customVaultInput" class="form-select">
+                        <option value="Sinfrontera National Bank">Sinfrontera Bank</option>
+                        <option value="Leonida State Gold Reserve">Leonida Gold Reserve</option>
+                        <option value="Port Gellhorn Terminal">Port Gellhorn Terminal</option>
+                        <option value="Starlet Superyacht">Starlet Superyacht</option>
+                        <option value="Ocean Drive Convoy">Ocean Drive Convoy</option>
+                        <option value="Grassrivers Airstrip">Grassrivers Airstrip</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary" style="width:100%;">🚀 Generate &amp; Publish Full Guide to Site</button>
+        </form>
+
+        <div id="guideGenStatus" style="margin-top:1rem; font-size:0.9rem;"></div>
+    </section>
+
+    <!-- PRE-WRITTEN EMAIL BLAST TEMPLATES -->
+    <section class="tool-box">
+        <h2 style="color:var(--neon-cyan); margin-bottom:0.5rem;">Ready-to-Send Monetized Email Newsletter Templates</h2>
+        <p style="color:var(--text-muted); margin-bottom:1.5rem;">Copy these high-converting sequences to monetize your list with <strong>CutFlow Pro (50% commission)</strong>, <strong>G2A/Eneba Keys</strong>, <strong>NordVPN</strong>, and <strong>Amazon Gear</strong>.</p>
+
+        <div class="grid" style="grid-template-columns:1fr; gap:1.5rem;">
+            <div class="card">
+                <h3 class="card-title">Template 1: Creator Tools Blast (CutFlow Pro + ClipBounty — $24.50-$89.50/sale)</h3>
+                <textarea id="emailTpl1" class="form-textarea" rows="7" readonly>Subject: Edit your GTA 6 Heist clips 5x faster (zero monthly fees)
+
+Hey Operative,
+
+Planning to record GTA 6 vaults, fails, or YouTube Shorts / TikToks?
+
+Stop paying $30/mo for cloud editors that charge extra to remove dead air. Check out CutFlow Pro & ClipBounty Studio — offline Windows tools that strip silence in seconds and format viral 9:16 clips automatically:
+👉 Grab yours or join the 50% Affiliate Partner Program: https://getapexlocal.com/partners
+
+See you on the Heist Crew Lounge,
+gta6heistguide.com Syndicate</textarea>
+                <button type="button" class="btn btn-secondary" style="margin-top:0.75rem;" onclick="GTA6.copyText(document.getElementById('emailTpl1').value, 'Email Template 1')">📋 Copy Creator Email Blast</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Template 2: Launch Week Security & Discount Keys (G2A, Eneba, NordVPN & Amazon)</h3>
+                <textarea id="emailTpl2" class="form-textarea" rows="9" readonly>Subject: [WEEKLY META] Protect your Online lobbies + Save on GTA 6 Keys & SSDs
+
+What's up Syndicate,
+
+Before Friday heist squads drop into Leonida, run through this 60-second prep checklist:
+
+1) Lock Your Heist Squad Cut Split: https://www.gta6heistguide.com/heist-planner.html
+2) Compare Pre-Order Keys Before Prices Jump:
+   - G2A Verified Reflink: https://www.g2a.com/n/reflink-4094b9aab5
+   - Eneba Global Store: https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide
+3) Upgrade Storage (Gen4 7,450 MB/s NVMe + Pro Controllers):
+   - Samsung 990 PRO SSD & DualSense Edge: https://www.gta6heistguide.com/affiliates-gear.html
+4) Prevent Peer-to-Peer Lobby DDoS Drops: Check our recommended Low-Ping Gaming VPN setup on our Gear portal!
+
+Bookmark the LFG Crew Lounge & find your Day-1 squad: https://www.gta6heistguide.com/forum.html</textarea>
+                <button type="button" class="btn btn-secondary" style="margin-top:0.75rem;" onclick="GTA6.copyText(document.getElementById('emailTpl2').value, 'Email Template 2')">📋 Copy Affiliate Weekly Blast</button>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+name = "gta6heistguide"
+compatibility_date = "2026-11-16"
+pages_build_output_dir = "./public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gta6heistguide-db"
+database_id = "31866186-7d51-4c36-a749-3822ac05bad7"

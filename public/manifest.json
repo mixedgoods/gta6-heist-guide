@@ -1,0 +1,16 @@
+{
+  "name": "GTA 6 Heist Guide & Leonida Syndicate",
+  "short_name": "GTA6 Heists",
+  "description": "Interactive GTA 6 heist payout calculators, live Thursday meta resets, LFG crew finder, and copyright-safe tactical guides.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#07050d",
+  "theme_color": "#ff2a8d",
+  "icons": [
+    {
+      "src": "/assets/vip-blueprint-pack.png",
+      "sizes": "1024x768",
+      "type": "image/png"
+    }
+  ]
+}

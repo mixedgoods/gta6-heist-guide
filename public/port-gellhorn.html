@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Gellhorn Container Terminal Heist | GTA 6 Heist Strategy & Calculator</title>
+    <meta name="description" content="Step-by-step master walkthrough for Port Gellhorn Container Terminal Heist in GTA 6. Infiltration blueprints, crew cut calculator, payout estimates, and safehouse routes.">
+        <meta name="keywords" content="GTA 6 strategy walkthrough, Leonida vaults, heist checklist, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
+<link rel="canonical" href="https://www.gta6heistguide.com/port-gellhorn.html">
+    <link rel="manifest" href="/manifest.json">
+        <meta property="og:title" content="Port Gellhorn Container Terminal Heist | GTA 6 Heist Strategy & Calculator">
+    <meta property="og:description" content="Step-by-step master walkthrough for Port Gellhorn Container Terminal Heist in GTA 6. Infiltration blueprints, crew cut calculator, payout estimates, and safehouse routes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gta6heistguide.com/port-gellhorn.html">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/heist-port-gellhorn.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/style.css">
+    
+    <script>
+        function updateCalc() {
+            const base = 8200000;
+            const gunner = parseInt(document.getElementById('gCut').value);
+            const hacker = parseInt(document.getElementById('hCut').value);
+            const driver = parseInt(document.getElementById('dCut').value);
+            
+            document.getElementById('gVal').innerText = gunner + '%';
+            document.getElementById('hVal').innerText = hacker + '%';
+            document.getElementById('dVal').innerText = driver + '%';
+            
+            const totalCrew = gunner + hacker + driver;
+            const playerPct = Math.max(0, 100 - totalCrew);
+            document.getElementById('playerPct').innerText = playerPct + '%';
+            
+            const netTake = base * (playerPct / 100);
+            document.getElementById('netTake').innerText = '$' + Math.round(netTake).toLocaleString();
+            document.getElementById('crewCost').innerText = '$' + Math.round(base * (totalCrew / 100)).toLocaleString();
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Port Gellhorn Container Heist Payout Calculator",
+      "description": "Optimize crew cuts and stealth exits for the $8,200,000 Port Gellhorn raid.",
+      "url": "https://www.gta6heistguide.com/port-gellhorn.html",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "gta6heistguide.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best GTA 6 heist payout calculator and crew cut calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The interactive Heist Planner on gta6heistguide.com simulates 1 to 4 player co-op cuts, specialist fees (Gunner, Ghost Hacker, Wheelman), and +5% stealth integrity bonuses across all 6 major vaults including Raul Bautista bank scores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do Lucia Caminos and Jason Duval skills work with GTA 6 trunk weapon storage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lucia Caminos excels at keypad decryption and crowd intimidation, while Jason Duval leads sniper overwatch and getaway handling. Heavy thermal drills and LMGs must be stored physically inside your getaway car trunk weapon storage slots."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I use a GTA 6 LFG crew finder to match PS5, Xbox, or PC heist friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Visit the Crew Lounge LFG matchmaker at gta6heistguide.com/forum.html to filter squads by PS5 Pro, Xbox Series X|S, or PC and exchange Discord, PSN, or Gamertag friend handles."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gta6heistguide.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Port Gellhorn Container Heist Payout Calculator",
+          "item": "https://www.gta6heistguide.com/port-gellhorn.html"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body onload="updateCalc()">
+    
+<div class="countdown-strip">
+    <span class="strip-pill"><span class="strip-pulse"></span> <span class="launch-mode-label">Launch Window:</span> <span class="highlight" id="countdownTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill">Weekly Meta Reset (Thu 10:00 UTC): <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill"><span class="highlight">6 Leonida Regions Mapped</span> &bull; 100% Free Tactical Tools</span>
+</div>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Syndicate v3.0</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Vaults</a></li>
+            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>
+            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta &amp; Rules</a></li>
+            <li><a href="heist-planner.html">Planner</a></li>
+            <li><a href="interactive-map.html">Radar Map</a></li>
+            <li><a href="crew-database.html">Crew</a></li>
+            <li><a href="affiliates-gear.html">Gear &amp; VPN</a></li>
+            <li><a href="forum.html" style="color: var(--neon-cyan);">Crew Lounge &amp; LFG</a></li>
+            <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()">🔊 Audio FX: ON</button>
+        </div>
+    </div>
+</nav>
+
+
+    <header class="hero">
+        <div class="hero-tagline">&bull; Target Infiltration File: Port Gellhorn Industrial Zone &bull;</div>
+        <h1>PORT GELLHORN CONTAINER TERMINAL HEIST</h1>
+        <p>A sprawling maritime shipping hub holding sealed shipping containers of international contraband, gold bullion, and high-end automotive exotics.</p>
+        <div class="hero-cta-group">
+            <span class="btn btn-secondary" style="cursor: default;">Target Payout: $8,200,000</span>
+            <span class="btn btn-secondary" style="cursor: default;">Risk: Intermediate</span>
+            <a href="heist-planner.html" class="btn btn-primary">Compare in Planner</a>
+            <button type="button" class="btn btn-secondary" onclick="GTA6.bookmarkCurrentPage()">⭐ Bookmark Guide</button>
+        </div>
+    
+    <div class="heist-hero-banner"><img src="assets/heist-port-gellhorn.png" alt="Port Gellhorn Container Terminal Night Raid Visual"></div>
+</header>
+
+    <main class="container">
+        <!-- TACTICAL INFILTRATION INTEL -->
+        <section class="tool-box" style="margin-bottom: 2.5rem;">
+            <h2 style="color: #fff; margin-bottom: 1.25rem;">Tactical Approach Comparison</h2>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div style="background: rgba(0, 240, 255, 0.04); border: 1px solid var(--neon-cyan); border-radius: 8px; padding: 1.5rem;">
+                    <h3 style="color: var(--neon-cyan); margin-bottom: 0.75rem;">Approach A: Silent Infiltration (Recommended)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Disguise squad members as harbor terminal technicians. Hack the automated gantry crane software from the harbormaster tower to silently reposition target containers directly onto your flatbed trailer.</p>
+                </div>
+                <div style="background: rgba(255, 42, 141, 0.04); border: 1px solid var(--neon-pink); border-radius: 8px; padding: 1.5rem;">
+                    <h3 style="color: var(--neon-pink); margin-bottom: 0.75rem;">Approach B: Heavy Aggressive Breach</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Assault the main gate using heavy suppressive fire, utilize RPGs on security patrol vehicles, and detonate C4 on container locks while fighting off private harbor security forces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE CREW CUT & NET PAYOUT CALCULATOR -->
+        <section class="tool-box pink-glow">
+            <h2 style="color: var(--neon-pink); margin-bottom: 0.5rem;">Interactive Crew Cut & Net Take-Home Calculator</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.8rem; font-size: 0.95rem;">Fine-tune your specialist cuts to determine your exact net revenue after support personnel deductions.</p>
+            
+            <div class="slider-row">
+                <div class="slider-label-row">
+                    <span>Gunner / Heavy Assault Specialist:</span>
+                    <strong id="gVal" style="color: var(--neon-cyan);">15%</strong>
+                </div>
+                <input type="range" class="slider-input" id="gCut" min="5" max="30" value="15" oninput="updateCalc(); GTA6.playBeep(400, 'sine', 0.03);">
+            </div>
+
+            <div class="slider-row">
+                <div class="slider-label-row">
+                    <span>Master Hacker / Security Decryptor:</span>
+                    <strong id="hVal" style="color: var(--neon-cyan);">10%</strong>
+                </div>
+                <input type="range" class="slider-input" id="hCut" min="5" max="25" value="10" oninput="updateCalc(); GTA6.playBeep(450, 'sine', 0.03);">
+            </div>
+
+            <div class="slider-row">
+                <div class="slider-label-row">
+                    <span>Getaway Driver / Wheelman:</span>
+                    <strong id="dVal" style="color: var(--neon-cyan);">8%</strong>
+                </div>
+                <input type="range" class="slider-input" id="dCut" min="5" max="20" value="8" oninput="updateCalc(); GTA6.playBeep(500, 'sine', 0.03);">
+            </div>
+
+            <div class="payout-display">
+                <div>
+                    <div class="payout-item-title">Max Vault Payout</div>
+                    <div class="payout-item-val" style="color: #fff;">$8,200,000</div>
+                </div>
+                <div>
+                    <div class="payout-item-title">Total Hired Cut Cost</div>
+                    <div class="payout-item-val" id="crewCost" style="color: var(--neon-pink);">$0</div>
+                </div>
+                <div>
+                    <div class="payout-item-title">Your Net Take (<span id="playerPct">67%</span>)</div>
+                    <div class="payout-item-val" id="netTake">$0</div>
+                </div>
+            </div>
+            <div class="multi-option-cta" style="margin-top:0.85rem; padding:0.75rem 1rem; background:rgba(0,240,255,0.05); border-left:3px solid var(--neon-cyan); border-radius:8px; font-size:0.82rem; color:var(--text-muted); display:grid; gap:0.4rem;">
+                <div>🛡️ <strong style="color:#fff;">Lobby Security &amp; Fast Streaming:</strong> <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">NordVPN DDoS Shield</a> &bull; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" style="color:var(--neon-amber); font-weight:800;">Samsung 990 PRO Gen4 SSD</a> &bull; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--neon-green); font-weight:800;">G2A Keys</a> / <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" style="color:var(--neon-green); font-weight:800;">Eneba</a></div>
+                <div>🎬 <strong style="color:#fff;">Recording GTA 6 Clips?</strong> Auto-cut dead air &amp; export 9:16 vertical shorts offline with <a href="https://getapexlocal.com" target="_blank" rel="noopener" style="color:var(--neon-pink); font-weight:800;">CutFlow Pro &amp; ClipBounty Studio</a> (<a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="noopener" style="color:var(--neon-cyan); font-weight:700;">Whop Checkout</a>)</div>
+            </div>
+        </section>
+
+        <!-- STEP-BY-STEP INTERACTIVE CHECKLIST -->
+        <section class="tool-box">
+            <h2 style="color: #fff; margin-bottom: 0.5rem;">Live Infiltration Checklist</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Mark checkpoints while playing on console or PC. Progress is saved in real-time.</p>
+            <div class="checklist-group">
+                
+        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
+            <input type="checkbox">
+            <div>
+                <strong>Phase 1: Manifest Decryption</strong> &mdash; 
+                <span style="color: var(--text-muted);">Infiltrate customs office server to uncover target container barcodes holding high-value loot.</span>
+            </div>
+        </label>
+        
+        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
+            <input type="checkbox">
+            <div>
+                <strong>Phase 2: Crane Hijacking</strong> &mdash; 
+                <span style="color: var(--text-muted);">Climb overhead gantry crane 04 and upload malicious firmware to override manual safety limiters.</span>
+            </div>
+        </label>
+        
+        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
+            <input type="checkbox">
+            <div>
+                <strong>Phase 3: Loot Transfer</strong> &mdash; 
+                <span style="color: var(--text-muted);">Lower target container onto getaway trailer while maintaining cover against dock patrols.</span>
+            </div>
+        </label>
+        
+        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
+            <input type="checkbox">
+            <div>
+                <strong>Phase 4: Waterway Evacuation</strong> &mdash; 
+                <span style="color: var(--text-muted);">Escort container barge or speedboats along Port Gellhorn channel under coastguard evasion.</span>
+            </div>
+        </label>
+        
+            </div>
+        </section>
+
+        <!-- GEAR & AFFILIATE CALLOUT -->
+        <section class="affiliate-banner" style="margin-top: 3rem;">
+            <div>
+                <span class="affiliate-badge">Tactical Readiness</span>
+                <div class="affiliate-title">Ensure Maximum Framerates for Port Gellhorn Container Terminal Heist</div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Intense heist sequences with smoke grenades, flashing cop lights, and physics debris require top-tier hardware and zero-lag connection.</p>
+                <div style="margin-top: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary">Pre-Order Game Key</a>
+                    <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-amber">Get Pro Controller</a>
+                    <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" class="btn btn-secondary">Get Gaming VPN</a>
+                </div>
+            </div>
+        </section>
+        
+        <p style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">&larr; Return to Master Vault Database</a>
+        </p>
+    </main>
+
+    
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>GTA 6 HEIST GUIDE</h4>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
+            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Cloudflare D1 Synced &bull; 100% Free Access</p>
+        </div>
+        <div class="footer-col">
+            <h4>Heist Vaults</h4>
+            <ul>
+                <li><a href="sinfrontera-bank.html">Sinfrontera Bank Raid</a></li>
+                <li><a href="port-gellhorn.html">Port Gellhorn Container Heist</a></li>
+                <li><a href="leonida-reserve.html">Leonida Gold Reserve</a></li>
+                <li><a href="vice-city-yacht-heist.html">Starlet Superyacht Heist</a></li>
+                <li><a href="everglades-smuggler-run.html">Grassrivers Smuggler Run</a></li>
+                <li><a href="ocean-drive-armored-convoy.html">Ocean Drive Armored Convoy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Tactical Tools</h4>
+            <ul>
+                <li><a href="live-intel.html">Live Meta &amp; Legal Rules</a></li>
+                <li><a href="heist-payout-calculator.html">True $/Hour Calculator</a></li>
+                <li><a href="vault-hack-trainer.html">Vault Hack Trainer (15s)</a></li>
+                <li><a href="interactive-map.html">Leonida Radar Map</a></li>
+                <li><a href="crew-database.html">Specialist Roster</a></li>
+                <li><a href="forum.html">Heist Crew Lounge &amp; LFG</a></li>
+                <li><a href="profile.html">Operative Dossier</a></li>
+                <li><a href="lucia-jason-skills.html">Lucia &amp; Jason Skills</a></li>
+                <li><a href="vehicles-getaway-cars.html">Getaway Vehicles &amp; Trunks</a></li>
+                <li><a href="safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
+                <li><a href="leonida-wanted-system.html">Wanted System &amp; Evasion</a></li>
+                <li><a href="syndicate-command.html" style="color:var(--text-muted); font-size:0.8rem;">Owner Email Command</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Verified Partners</h4>
+            <ul>
+                <li><a href="https://getapexlocal.com/partners" target="_blank" rel="noopener">Creator Video Tools</a></li>
+                <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener">G2A Game Keys</a></li>
+                <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener">Eneba Pre-Orders</a></li>
+                <li><a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener">Amazon Gaming Gear</a></li>
+                <li><a href="affiliates-gear.html">NordVPN Low-Ping Routing</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="disclaimer-box">
+        <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Cloudflare Pages &amp; D1 Architecture.</p>
+    </div>
+</footer>
+<script src="assets/main.js"></script>
+
+</body>
+</html>

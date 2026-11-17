@@ -1,0 +1,73 @@
+# GTA6HeistGuide.com Unified Crawler & AI Search Engine Directives
+
+User-agent: Googlebot
+Allow: /
+Allow: /*.js*
+Allow: /*.css*
+Allow: /*.png*
+Allow: /*.jpg*
+
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /*.png*
+Allow: /*.jpg*
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: bingbot
+Allow: /
+Allow: /*.js*
+Allow: /*.css*
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: *
+Allow: /
+Allow: /*.js*
+Allow: /*.css*
+Allow: /*.png*
+Allow: /*.jpg*
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+Disallow: /syndicate-command.html
+Disallow: /syndicate-command
+Disallow: /api/subscribe
+
+Sitemap: https://www.gta6heistguide.com/sitemap.xml

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Heist Planner, Crew Optimizer & Build Bookmarker | GTA 6 Heist Guide</title>
+    <meta name="description" content="Simulate any GTA 6 heist payout, crew specialist cuts, police response heat, bookmark your custom builds, and share squad links in Discord.">
+        <meta name="keywords" content="GTA 6 heist cut calculator, crew split optimizer, keypad bypass trainer, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
+<link rel="canonical" href="https://www.gta6heistguide.com/calculator.html">
+    <link rel="manifest" href="/manifest.json">
+        <meta property="og:title" content="Interactive Heist Planner, Crew Optimizer & Build Bookmarker | GTA 6 Heist Guide">
+    <meta property="og:description" content="Simulate any GTA 6 heist payout, crew specialist cuts, police response heat, bookmark your custom builds, and share squad links in Discord.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gta6heistguide.com/calculator.html">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/style.css">
+    
+        <script>
+        const HEIST_DATABASE = {
+            'sinfrontera': { name: 'Sinfrontera National Bank', payout: 14500000, runMins: 24, setupMins: 30, cooldownMins: 45 },
+            'port-gellhorn': { name: 'Port Gellhorn Container Terminal', payout: 8200000, runMins: 20, setupMins: 25, cooldownMins: 35 },
+            'leonida-reserve': { name: 'Leonida State Gold Reserve', payout: 25000000, runMins: 32, setupMins: 45, cooldownMins: 60 },
+            'yacht': { name: 'Starlet Superyacht Offshore Heist', payout: 11800000, runMins: 26, setupMins: 30, cooldownMins: 45 },
+            'smuggler': { name: 'Grassrivers Cartel Airstrip (1.5X Weekly Bonus Ready)', payout: 6500000, runMins: 18, setupMins: 20, cooldownMins: 30 },
+            'convoy': { name: 'Ocean Drive Armored Convoy', payout: 9400000, runMins: 15, setupMins: 20, cooldownMins: 30 }
+        };
+
+        const LOOT_TYPES = {
+            'crypto': { name: 'Crypto Hardware Drives & Uncut Diamonds', valuePerBag: 4200000, grabSecs: 14, speedPenalty: '0% (Full Sprint Speed)', priority: '1st Priority (Best $/kg)' },
+            'bonds': { name: 'Bearer Bonds & Fine Art Canvases', valuePerBag: 3400000, grabSecs: 22, speedPenalty: '-6% Sprint Speed', priority: '2nd Priority (Fast Solo/Duo Grab)' },
+            'gold': { name: 'Federal Gold Bullion Bars', valuePerBag: 5100000, grabSecs: 38, speedPenalty: '-25% Sprint Speed (2x Stamina Drain)', priority: '3rd Priority (Requires 3-4P Enforcer Escort)' },
+            'cash': { name: 'Marked Fiat Currency Pallets', valuePerBag: 2100000, grabSecs: 28, speedPenalty: '-10% Sprint Speed', priority: '4th Priority (Filler Bag Space Only)' }
+        };
+
+        function onTargetChange() {
+            const targetKey = document.getElementById('targetSelect').value;
+            const target = HEIST_DATABASE[targetKey];
+            if (target) {
+                document.getElementById('setupGrindMins').value = target.setupMins + target.runMins;
+                document.getElementById('cooldownMins').value = target.cooldownMins;
+            }
+            calculatePlanner();
+        }
+
+        function calculatePlanner() {
+            const targetKey = document.getElementById('targetSelect').value;
+            const target = HEIST_DATABASE[targetKey] || HEIST_DATABASE['leonida-reserve'];
+            const approach = document.getElementById('approachSelect').value;
+            const players = parseInt(document.getElementById('playerCount').value) || 4;
+
+            const gunnerPct = parseInt(document.getElementById('planGunner').value) || 15;
+            const hackerPct = parseInt(document.getElementById('planHacker').value) || 10;
+            const driverPct = parseInt(document.getElementById('planDriver').value) || 8;
+
+            const setupMins = Math.max(5, parseInt(document.getElementById('setupGrindMins')?.value) || 50);
+            const cooldownMins = Math.max(0, parseInt(document.getElementById('cooldownMins')?.value) || 30);
+            const launderFeePct = parseInt(document.getElementById('launderFeeSlider')?.value || 8);
+            const failPenaltyPct = parseInt(document.getElementById('failPenaltySlider')?.value || 0);
+            const weeklyBonusActive = document.getElementById('weeklyBonusToggle')?.checked;
+            const lootKey = document.getElementById('lootTypeSelect')?.value || 'bonds';
+            const loot = LOOT_TYPES[lootKey] || LOOT_TYPES['bonds'];
+
+            document.getElementById('planGVal').innerText = gunnerPct + '%';
+            document.getElementById('planHVal').innerText = hackerPct + '%';
+            document.getElementById('planDVal').innerText = driverPct + '%';
+            if (document.getElementById('launderFeeVal')) document.getElementById('launderFeeVal').innerText = launderFeePct + '%';
+            if (document.getElementById('failPenaltyVal')) document.getElementById('failPenaltyVal').innerText = failPenaltyPct + '%';
+
+            let totalSpecialistPct = gunnerPct + hackerPct + driverPct;
+            let availableForCrew = Math.max(0, 100 - totalSpecialistPct);
+            let perPlayerPct = (availableForCrew / players);
+
+            let basePayout = target.payout * (weeklyBonusActive ? 1.5 : 1.0);
+            if (approach === 'stealth') basePayout *= 1.05;
+
+            let specialistCost = basePayout * (totalSpecialistPct / 100);
+            let grossSquadPot = basePayout - specialistCost;
+            let afterLaunderAndFail = grossSquadPot * (1 - launderFeePct / 100) * (1 - failPenaltyPct / 100);
+            let netPerPlayer = afterLaunderAndFail / players;
+
+            let totalCycleMins = Math.max(1, setupMins + cooldownMins);
+            let netPerHour = netPerPlayer / (totalCycleMins / 60);
+            let netPerMinute = netPerPlayer / totalCycleMins;
+
+            document.getElementById('targetPayoutDisplay').innerText = '$' + Math.round(basePayout).toLocaleString();
+            document.getElementById('specialistCostDisplay').innerText = '$' + Math.round(specialistCost).toLocaleString() + ' (' + totalSpecialistPct + '%)';
+            document.getElementById('squadPotDisplay').innerText = '$' + Math.round(afterLaunderAndFail).toLocaleString();
+            document.getElementById('perPlayerDisplay').innerText = '$' + Math.round(netPerPlayer).toLocaleString() + ' (' + perPlayerPct.toFixed(1) + '%)';
+            if (document.getElementById('netPerHourDisplay')) document.getElementById('netPerHourDisplay').innerText = '$' + Math.round(netPerHour).toLocaleString() + '/hr';
+            if (document.getElementById('netPerMinDisplay')) document.getElementById('netPerMinDisplay').innerText = '$' + Math.round(netPerMinute).toLocaleString() + '/min';
+
+            let heatStars = '★★★☆☆ (3 Stars)';
+            if (approach === 'loud') heatStars = '★★★★★ (5 Stars - NOOSE Mobilized)';
+            if (approach === 'stealth') heatStars = '★☆☆☆☆ (1 Star - Clean Evasion)';
+            document.getElementById('heatDisplay').innerText = heatStars;
+
+            // Update Loot Bag Weight & Grab Priority table for 2P, 3P, 4P
+            if (document.getElementById('lootGrab2P')) {
+                document.getElementById('lootGrab2P').innerText = (loot.grabSecs * 2) + 's total (' + loot.speedPenalty + ')';
+                document.getElementById('lootGrab3P').innerText = Math.round(loot.grabSecs * 2.6) + 's total (' + loot.speedPenalty + ')';
+                document.getElementById('lootGrab4P').innerText = Math.round(loot.grabSecs * 3.1) + 's total (' + loot.speedPenalty + ')';
+                document.getElementById('lootPriorityBadge').innerText = loot.priority;
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "GTA 6 Heist Payout Calculator & Crew Cut Optimizer",
+      "description": "Calculate 1-4 player squad heist cuts, specialist deductions, stealth bonus multipliers, and practice vault keypad hacks.",
+      "url": "https://www.gta6heistguide.com/calculator.html",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "gta6heistguide.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best GTA 6 heist payout calculator and crew cut calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The interactive Heist Planner on gta6heistguide.com simulates 1 to 4 player co-op cuts, specialist fees (Gunner, Ghost Hacker, Wheelman), and +5% stealth integrity bonuses across all 6 major vaults including Raul Bautista bank scores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do Lucia Caminos and Jason Duval skills work with GTA 6 trunk weapon storage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lucia Caminos excels at keypad decryption and crowd intimidation, while Jason Duval leads sniper overwatch and getaway handling. Heavy thermal drills and LMGs must be stored physically inside your getaway car trunk weapon storage slots."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I use a GTA 6 LFG crew finder to match PS5, Xbox, or PC heist friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Visit the Crew Lounge LFG matchmaker at gta6heistguide.com/forum.html to filter squads by PS5 Pro, Xbox Series X|S, or PC and exchange Discord, PSN, or Gamertag friend handles."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gta6heistguide.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GTA 6 Heist Payout Calculator & Crew Cut Optimizer",
+          "item": "https://www.gta6heistguide.com/calculator.html"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body onload="calculatePlanner()">
+    
+<div class="countdown-strip">
+    <span class="strip-pill"><span class="strip-pulse"></span> <span class="launch-mode-label">Launch Window:</span> <span class="highlight" id="countdownTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill">Weekly Meta Reset (Thu 10:00 UTC): <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill"><span class="highlight">6 Leonida Regions Mapped</span> &bull; 100% Free Tactical Tools</span>
+</div>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Syndicate v3.0</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Vaults</a></li>
+            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>
+            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta &amp; Rules</a></li>
+            <li><a href="heist-planner.html" class="active">Planner</a></li>
+            <li><a href="interactive-map.html">Radar Map</a></li>
+            <li><a href="crew-database.html">Crew</a></li>
+            <li><a href="affiliates-gear.html">Gear &amp; VPN</a></li>
+            <li><a href="forum.html" style="color: var(--neon-cyan);">Crew Lounge &amp; LFG</a></li>
+            <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()">🔊 Audio FX: ON</button>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-tagline">&bull; Tactical Command Engine &amp; Bookmarkable Simulator &bull;</div>
+    <h1>MASTER <span class="highlight-pink">HEIST PLANNER</span> &amp; OPTIMIZER</h1>
+    <p>Model crew cuts, approach bonuses, and police heat — then bookmark your exact build or copy a live URL for your co-op squad.</p>
+</header>
+
+<main class="container">
+    <div class="tool-box pink-glow">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+            <h2 style="color: #fff;">Configure Mission Parameters</h2>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                <button type="button" class="btn btn-secondary" style="padding:0.55rem 1rem; font-size:0.85rem;" onclick="GTA6.saveCurrentBuild()">⭐ Bookmark This Build to Dossier</button>
+                <button type="button" class="btn btn-primary" style="padding:0.55rem 1rem; font-size:0.85rem;" onclick="GTA6.copyPlannerShareLink()">🔗 Copy Shareable Squad Link</button>
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+            <div class="form-group">
+                <label>Select Target Heist</label>
+                <select class="form-select" id="targetSelect" onchange="onTargetChange(); GTA6.playBeep(440, 'triangle', 0.05);">
+                    <option value="sinfrontera">Sinfrontera National Bank ($14.5M)</option>
+                    <option value="port-gellhorn">Port Gellhorn Container Terminal ($8.2M)</option>
+                    <option value="leonida-reserve" selected>Leonida State Gold Reserve ($25.0M)</option>
+                    <option value="yacht">Starlet Superyacht Offshore Heist ($11.8M)</option>
+                    <option value="smuggler">Grassrivers Cartel Airstrip ($6.5M)</option>
+                    <option value="convoy">Ocean Drive Armored Convoy ($9.4M)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Infiltration Approach</label>
+                <select class="form-select" id="approachSelect" onchange="calculatePlanner(); GTA6.playBeep(480, 'triangle', 0.05);">
+                    <option value="stealth" selected>Silent &amp; Covert (+5% Stealth Integrity Bonus)</option>
+                    <option value="loud">Aggressive Assault (Maximum Firepower)</option>
+                    <option value="subterfuge">Subterfuge Disguise (Standard Cut)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Player Squad Size (Co-op)</label>
+                <select class="form-select" id="playerCount" onchange="calculatePlanner(); GTA6.playBeep(520, 'triangle', 0.05);">
+                    <option value="1">1 Player (Solo Operative + AI Specialists)</option>
+                    <option value="2">2 Players (Lucia &amp; Jason Duo)</option>
+                    <option value="3">3 Players (Trio Syndicate)</option>
+                    <option value="4" selected>4 Players (Full Syndicate Squad)</option>
+                </select>
+            </div>
+        </div>
+
+        <h3 style="color: var(--neon-cyan); margin-bottom: 1rem;">Hired Specialist Cut Allocation</h3>
+        
+        <div class="slider-row">
+            <div class="slider-label-row">
+                <span>Gunner / Heavy Assault:</span>
+                <strong id="planGVal" style="color: var(--neon-cyan);">15%</strong>
+            </div>
+            <input type="range" class="slider-input" id="planGunner" min="5" max="30" value="15" oninput="calculatePlanner(); GTA6.playBeep(380, 'sine', 0.02);">
+        </div>
+
+        <div class="slider-row">
+            <div class="slider-label-row">
+                <span>Decryption Hacker:</span>
+                <strong id="planHVal" style="color: var(--neon-cyan);">10%</strong>
+            </div>
+            <input type="range" class="slider-input" id="planHacker" min="5" max="25" value="10" oninput="calculatePlanner(); GTA6.playBeep(420, 'sine', 0.02);">
+        </div>
+
+        <div class="slider-row">
+            <div class="slider-label-row">
+                <span>Getaway Driver / Wheelman:</span>
+                <strong id="planDVal" style="color: var(--neon-cyan);">8%</strong>
+            </div>
+            <input type="range" class="slider-input" id="planDriver" min="5" max="20" value="8" oninput="calculatePlanner(); GTA6.playBeep(460, 'sine', 0.02);">
+        </div>
+
+                <h3 style="color: var(--neon-green); margin: 1.75rem 0 1rem;">True Net $/Hour Optimizer &amp; Grind Parameters</h3>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group">
+                <label for="setupGrindMins">Setup + Finale Grind Time (Minutes)</label>
+                <input type="number" class="form-input" id="setupGrindMins" min="10" max="240" value="77" oninput="calculatePlanner()">
+            </div>
+            <div class="form-group">
+                <label for="cooldownMins">Vault Cooldown Timer (Minutes)</label>
+                <input type="number" class="form-input" id="cooldownMins" min="0" max="180" value="60" oninput="calculatePlanner()">
+            </div>
+            <div class="form-group">
+                <label for="lootTypeSelect">Primary Vault Loot Target (Weight Physics)</label>
+                <select class="form-select" id="lootTypeSelect" onchange="calculatePlanner()">
+                    <option value="crypto">1. Crypto Drives &amp; Diamonds (0% Speed Penalty)</option>
+                    <option value="bonds" selected>2. Bearer Bonds &amp; Fine Art (-6% Speed)</option>
+                    <option value="gold">3. Gold Bullion Bars (-25% Speed &bull; Heavy)</option>
+                    <option value="cash">4. Marked Cash Pallets (-10% Speed)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="slider-row" style="margin-bottom:0;">
+                <div class="slider-label-row">
+                    <span>Safehouse / Fence Laundering Fee:</span>
+                    <strong id="launderFeeVal" style="color: var(--neon-pink);">8%</strong>
+                </div>
+                <input type="range" class="slider-input" id="launderFeeSlider" min="0" max="25" value="8" oninput="calculatePlanner()">
+            </div>
+            <div class="slider-row" style="margin-bottom:0;">
+                <div class="slider-label-row">
+                    <span>Public Lobby Restart / Fail Penalty:</span>
+                    <strong id="failPenaltyVal" style="color: var(--neon-amber);">5%</strong>
+                </div>
+                <input type="range" class="slider-input" id="failPenaltySlider" min="0" max="35" value="5" oninput="calculatePlanner()">
+            </div>
+            <label class="check-item" style="margin:0; align-self:end;">
+                <input type="checkbox" id="weeklyBonusToggle" onchange="calculatePlanner()">
+                <div><strong>Apply 1.5X Weekly Featured Vault Bonus</strong></div>
+            </label>
+        </div>
+
+        <!-- LOOT BAG WEIGHT & GRAB PRIORITY MATRIX -->
+        <div style="background:rgba(0,240,255,0.04); border:1px solid var(--border-card); border-radius:10px; padding:1.25rem; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+                <strong style="color:var(--neon-cyan);">🎒 Loot Bag Weight &amp; Grab Priority Calculator (2P / 3P / 4P Impact)</strong>
+                <span class="user-badge badge-mastermind" id="lootPriorityBadge">2nd Priority (Fast Solo/Duo Grab)</span>
+            </div>
+            <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:0.75rem; font-size:0.86rem;">
+                <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:6px;">
+                    <div style="color:var(--text-muted);">2-Player Duo Grab &amp; Mobility</div>
+                    <strong id="lootGrab2P" style="color:#fff;">44s total (-6% Sprint Speed)</strong>
+                </div>
+                <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:6px;">
+                    <div style="color:var(--text-muted);">3-Player Trio Grab &amp; Mobility</div>
+                    <strong id="lootGrab3P" style="color:#fff;">57s total (-6% Sprint Speed)</strong>
+                </div>
+                <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:6px;">
+                    <div style="color:var(--text-muted);">4-Player Full Squad Grab &amp; Mobility</div>
+                    <strong id="lootGrab4P" style="color:#fff;">68s total (-6% Sprint Speed)</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTS MATRIX -->
+        <div class="payout-display" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <div>
+                <div class="payout-item-title">Estimated Gross Loot</div>
+                <div class="payout-item-val" id="targetPayoutDisplay" style="color: #fff;">$0</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Hired Specialist Cut</div>
+                <div class="payout-item-val" id="specialistCostDisplay" style="color: var(--neon-pink);">$0</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Total Squad Take</div>
+                <div class="payout-item-val" id="squadPotDisplay" style="color: var(--neon-cyan);">$0</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Per Player Net Take</div>
+                <div class="payout-item-val" id="perPlayerDisplay">$0</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Realistic Net $/Hour</div>
+                <div class="payout-item-val" id="netPerHourDisplay" style="color: var(--neon-green);">$0/hr</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Realistic $/Minute</div>
+                <div class="payout-item-val" id="netPerMinDisplay" style="color: var(--neon-amber);">$0/min</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 1rem; padding: 0.65rem 1rem; background: rgba(0,240,255,0.05); border-left: 3px solid var(--neon-cyan); border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+            ⚠️ Hosting a $10M+ Finale? Protect your lobby IP from DDoS disconnects &rarr; <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">Activate NordVPN Low-Ping Tunnel</a>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.95rem;">
+            Estimated Police Heat Response: <strong id="heatDisplay" style="color: var(--neon-amber);">Loading...</strong>
+        </div>
+
+        <div style="margin-top: 2rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="forum.html#lfg-hub" class="btn btn-primary">🤝 Post This Split on LFG Crew Finder</a>
+            <button type="button" class="btn btn-secondary" onclick="GTA6.Bookmarks.toggleDrawer()">📌 View Saved Builds</button>
+        </div>
+    </div>
+
+    <section class="affiliate-banner">
+        <div>
+            <span class="affiliate-badge">Squad Readiness &amp; Security</span>
+            <div class="affiliate-title">Zero Lobby DDoS Drops &amp; Verified Discount Keys</div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Shield your squad connection before launching high-payout co-op finales and compare lowest pre-order game prices.</p>
+            <div style="margin-top: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" class="btn btn-secondary">🛡️ Get NordVPN Gaming Shield</a>
+                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary">G2A Verified Keys</a>
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" class="btn btn-amber">Eneba Game Deals</a>
+                <a href="https://getapexlocal.com/partners" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color:#10b981; color:#10b981;">CutFlow Pro (50% Partner)</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="keypadTrainerBox"></div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>GTA 6 HEIST GUIDE</h4>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
+            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Cloudflare D1 Synced &bull; 100% Free Access</p>
+        </div>
+        <div class="footer-col">
+            <h4>Heist Vaults</h4>
+            <ul>
+                <li><a href="sinfrontera-bank.html">Sinfrontera Bank Raid</a></li>
+                <li><a href="port-gellhorn.html">Port Gellhorn Container Heist</a></li>
+                <li><a href="leonida-reserve.html">Leonida Gold Reserve</a></li>
+                <li><a href="vice-city-yacht-heist.html">Starlet Superyacht Heist</a></li>
+                <li><a href="everglades-smuggler-run.html">Grassrivers Smuggler Run</a></li>
+                <li><a href="ocean-drive-armored-convoy.html">Ocean Drive Armored Convoy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Tactical Tools</h4>
+            <ul>
+                <li><a href="live-intel.html">Live Meta &amp; Legal Rules</a></li>
+                <li><a href="heist-payout-calculator.html">True $/Hour Calculator</a></li>
+                <li><a href="vault-hack-trainer.html">Vault Hack Trainer (15s)</a></li>
+                <li><a href="interactive-map.html">Leonida Radar Map</a></li>
+                <li><a href="crew-database.html">Specialist Roster</a></li>
+                <li><a href="forum.html">Heist Crew Lounge &amp; LFG</a></li>
+                <li><a href="profile.html">Operative Dossier</a></li>
+                <li><a href="lucia-jason-skills.html">Lucia &amp; Jason Skills</a></li>
+                <li><a href="vehicles-getaway-cars.html">Getaway Vehicles &amp; Trunks</a></li>
+                <li><a href="safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
+                <li><a href="leonida-wanted-system.html">Wanted System &amp; Evasion</a></li>
+                <li><a href="syndicate-command.html" style="color:var(--text-muted); font-size:0.8rem;">Owner Email Command</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Verified Partners</h4>
+            <ul>
+                <li><a href="https://getapexlocal.com/partners" target="_blank" rel="noopener">Creator Video Tools</a></li>
+                <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener">G2A Game Keys</a></li>
+                <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener">Eneba Pre-Orders</a></li>
+                <li><a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener">Amazon Gaming Gear</a></li>
+                <li><a href="affiliates-gear.html">NordVPN Low-Ping Routing</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="disclaimer-box">
+        <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Cloudflare Pages &amp; D1 Architecture.</p>
+    </div>
+</footer>
+<script src="assets/main.js"></script>
+
+</body>
+</html>

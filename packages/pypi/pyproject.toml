@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gta6-heist-calculator"
+version = "3.0.0"
+description = "GTA 6 Heist True Net $/Hour Calculator, Crew Cut Splitter & Leonida Vault Database (https://www.gta6heistguide.com)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "GTA 6 Heist Guide Syndicate", email = "ops@gta6heistguide.com"}]
+keywords = ["gta6", "heist-calculator", "leonida-map", "vice-city", "payout-calculator"]
+urls = {Homepage = "https://www.gta6heistguide.com", "Free Browser Tool" = "https://www.gta6heistguide.com/free/", "Interactive Map" = "https://www.gta6heistguide.com/leonida-interactive-map"}

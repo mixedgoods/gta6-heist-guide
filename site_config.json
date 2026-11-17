@@ -1,0 +1,32 @@
+{
+    "domain": "gta6heistguide.com",
+    "target_launch": "November 19, 2026",
+    "hosting": "Cloudflare Pages (100% Free, Unlimited Bandwidth, Global CDN)",
+    "affiliates": {
+        "g2a_keys": "https://www.g2a.com/n/reflink-4094b9aab5",
+        "eneba_keys": "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide",
+        "amazon_gear": "https://www.amazon.com/s?k=gaming+controller+pc+ps5&tag=gta6heistguid-20",
+        "amazon_tag": "gta6heistguid-20",
+        "eneba_tag": "gta6heistguide"
+    },
+    "heists": [
+        {
+            "slug": "sinfrontera-bank",
+            "title": "Sinfrontera National Bank Vault Raid",
+            "payout": 14500000,
+            "difficulty": "Expert"
+        },
+        {
+            "slug": "port-gellhorn",
+            "title": "Port Gellhorn Container Terminal Heist",
+            "payout": 8200000,
+            "difficulty": "Intermediate"
+        },
+        {
+            "slug": "leonida-reserve",
+            "title": "Leonida State Gold Reserve Infiltration",
+            "payout": 25000000,
+            "difficulty": "Mastermind"
+        }
+    ]
+}

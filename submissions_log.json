@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-11-17T16:16:34.278722+00:00",
+  "target_domain": "https://www.gta6heistguide.com",
+  "cloudflare_pages_deployment": "https://17dc4316.gta6heistguide.pages.dev",
+  "indexnow_batch_submissions": [
+    {
+      "endpoint": "https://api.indexnow.org/indexnow",
+      "urls_submitted": 97,
+      "http_status": 200
+    },
+    {
+      "endpoint": "https://www.bing.com/indexnow",
+      "urls_submitted": 97,
+      "http_status": 200
+    },
+    {
+      "endpoint": "https://yandex.com/indexnow",
+      "urls_submitted": 97,
+      "http_status": 202
+    }
+  ],
+  "google_search_console_sitemap": {
+    "sitemap_url": "https://www.gta6heistguide.com/sitemap.xml",
+    "total_urls_in_sitemap": 110,
+    "status": "Verified & Live"
+  },
+  "live_published_articles": [
+    "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour.html",
+    "https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates.html",
+    "https://www.gta6heistguide.com/articles/how-to-beat-15-second-biometric-vault-keypad-hack-gta-6.html",
+    "https://www.gta6heistguide.com/articles/solo-vs-4-player-co-op-heist-splits-gta-6-loot-weight.html",
+    "https://www.gta6heistguide.com/articles/protecting-gta-6-online-heist-lobby-ip-sniffing-texture-pop-in.html",
+    "https://www.gta6heistguide.com/articles/how-to-clip-auto-edit-916-vertical-gta-6-heist-highlights-offline.html"
+  ],
+  "cloud_mirrors_deployed": [
+    "https://www.gta6heistguide.com/cloud-mirrors/",
+    "https://www.gta6heistguide.com/cloud-mirrors/heist-payout-calculator.html",
+    "https://www.gta6heistguide.com/cloud-mirrors/vault-keypad-hack-trainer.html",
+    "https://17dc4316.gta6heistguide.pages.dev/cloud-mirrors/"
+  ],
+  "packages_prepared": {
+    "npm": "C:/Users/Shawn/Desktop/gta6heistguide/packages/npm/gta6-heist-calculator",
+    "pypi": "C:/Users/Shawn/Desktop/gta6heistguide/packages/pypi/gta6_heist_calculator"
+  },
+  "verified_live_endpoints": [
+    {
+      "url": "https://www.gta6heistguide.com/",
+      "status": 200,
+      "bytes": 58794
+    },
+    {
+      "url": "https://www.gta6heistguide.com/free/",
+      "status": 200,
+      "bytes": 38140
+    },
+    {
+      "url": "https://www.gta6heistguide.com/compare/",
+      "status": 200,
+      "bytes": 47200
+    },
+    {
+      "url": "https://www.gta6heistguide.com/compare/best-gtabase-interactive-map-alternative.html",
+      "status": 200,
+      "bytes": 19426
+    },
+    {
+      "url": "https://www.gta6heistguide.com/compare/sinfrontera-bank-vs-leonida-gold-reserve.html",
+      "status": 200,
+      "bytes": 18784
+    },
+    {
+      "url": "https://www.gta6heistguide.com/guides/",
+      "status": 200,
+      "bytes": 32198
+    },
+    {
+      "url": "https://www.gta6heistguide.com/guides/vice-city-vaults-storm-drains-guide.html",
+      "status": 200,
+      "bytes": 18937
+    },
+    {
+      "url": "https://www.gta6heistguide.com/guides/megamundo-jammers-collectible-checklist.html",
+      "status": 200,
+      "bytes": 18967
+    },
+    {
+      "url": "https://www.gta6heistguide.com/articles/",
+      "status": 200,
+      "bytes": 5533
+    },
+    {
+      "url": "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour.html",
+      "status": 200,
+      "bytes": 11531
+    },
+    {
+      "url": "https://www.gta6heistguide.com/cloud-mirrors/",
+      "status": 200,
+      "bytes": 39220
+    },
+    {
+      "url": "https://www.gta6heistguide.com/sitemap.xml",
+      "status": 200,
+      "bytes": 22968
+    }
+  ]
+}

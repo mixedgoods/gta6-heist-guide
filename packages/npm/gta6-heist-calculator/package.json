@@ -1,0 +1,26 @@
+{
+  "name": "gta6-heist-calculator",
+  "version": "3.0.0",
+  "description": "Calculate GTA 6 Heist True Net $/Hour, crew cut splits, fence laundering fees, and loot bag weights across all 6 Leonida vaults.",
+  "main": "index.js",
+  "bin": {
+    "gta6-heist-calculator": "./cli.js"
+  },
+  "homepage": "https://www.gta6heistguide.com/free/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mixedgoods/gta6-heist-guide.git"
+  },
+  "keywords": [
+    "gta6",
+    "gta-6",
+    "heist-calculator",
+    "leonida-map",
+    "vice-city",
+    "payout-calculator",
+    "vault-hack-trainer",
+    "gta6heistguide"
+  ],
+  "author": "GTA 6 Heist Guide Syndicate (https://www.gta6heistguide.com)",
+  "license": "MIT"
+}

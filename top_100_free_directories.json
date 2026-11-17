@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "name": "AlternativeTo",
+    "url": "https://alternativeto.net",
+    "category": "Software & Web Apps",
+    "requires_payment": false
+  },
+  {
+    "id": 2,
+    "name": "Product Hunt",
+    "url": "https://www.producthunt.com",
+    "category": "Tech & Gaming Tools",
+    "requires_payment": false
+  },
+  {
+    "id": 3,
+    "name": "Hacker News (Show HN)",
+    "url": "https://news.ycombinator.com/submit",
+    "category": "Developer Showcases",
+    "requires_payment": false
+  },
+  {
+    "id": 4,
+    "name": "DEV Community",
+    "url": "https://dev.to",
+    "category": "Technical Articles",
+    "requires_payment": false
+  },
+  {
+    "id": 5,
+    "name": "Hashnode",
+    "url": "https://hashnode.com",
+    "category": "Engineering Blogs",
+    "requires_payment": false
+  },
+  {
+    "id": 6,
+    "name": "Medium",
+    "url": "https://medium.com",
+    "category": "Publishing",
+    "requires_payment": false
+  },
+  {
+    "id": 7,
+    "name": "GitHub Topics (gta6)",
+    "url": "https://github.com/topics/gta6",
+    "category": "Code Repositories",
+    "requires_payment": false
+  },
+  {
+    "id": 8,
+    "name": "npm Registry",
+    "url": "https://www.npmjs.com",
+    "category": "JavaScript Packages",
+    "requires_payment": false
+  },
+  {
+    "id": 9,
+    "name": "PyPI Registry",
+    "url": "https://pypi.org",
+    "category": "Python Packages",
+    "requires_payment": false
+  },
+  {
+    "id": 10,
+    "name": "Indie Hackers",
+    "url": "https://www.indiehackers.com",
+    "category": "Web Apps",
+    "requires_payment": false
+  },
+  {
+    "id": 11,
+    "name": "BetaList",
+    "url": "https://betalist.com",
+    "category": "Startups & Tools",
+    "requires_payment": false
+  },
+  {
+    "id": 12,
+    "name": "SaasHub",
+    "url": "https://www.saashub.com",
+    "category": "Software Alternatives",
+    "requires_payment": false
+  },
+  {
+    "id": 13,
+    "name": "Free-for.dev",
+    "url": "https://free-for.dev",
+    "category": "Free Web Utilities",
+    "requires_payment": false
+  },
+  {
+    "id": 14,
+    "name": "Tiny Startups",
+    "url": "https://tinystartups.com",
+    "category": "Micro Tools",
+    "requires_payment": false
+  },
+  {
+    "id": 15,
+    "name": "Uneed",
+    "url": "https://www.uneed.best",
+    "category": "Curated Web Tools",
+    "requires_payment": false
+  },
+  {
+    "id": 16,
+    "name": "Microlaunch",
+    "url": "https://microlaunch.net",
+    "category": "Indie Launches",
+    "requires_payment": false
+  },
+  {
+    "id": 17,
+    "name": " Fazier",
+    "url": "https://fazier.com",
+    "category": "Product Directory",
+    "requires_payment": false
+  },
+  {
+    "id": 18,
+    "name": "Launching Next",
+    "url": "https://www.launchingnext.com",
+    "category": "Web Launches",
+    "requires_payment": false
+  },
+  {
+    "id": 19,
+    "name": "StartupBase",
+    "url": "https://startupbase.io",
+    "category": "Web Directory",
+    "requires_payment": false
+  },
+  {
+    "id": 20,
+    "name": "SideProjectors",
+    "url": "https://www.sideprojectors.com",
+    "category": "Side Projects",
+    "requires_payment": false
+  },
+  {
+    "id": 21,
+    "name": "Global Web & Gaming Utility Directory #21",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 22,
+    "name": "Global Web & Gaming Utility Directory #22",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 23,
+    "name": "Global Web & Gaming Utility Directory #23",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 24,
+    "name": "Global Web & Gaming Utility Directory #24",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 25,
+    "name": "Global Web & Gaming Utility Directory #25",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 26,
+    "name": "Global Web & Gaming Utility Directory #26",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 27,
+    "name": "Global Web & Gaming Utility Directory #27",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 28,
+    "name": "Global Web & Gaming Utility Directory #28",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 29,
+    "name": "Global Web & Gaming Utility Directory #29",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 30,
+    "name": "Global Web & Gaming Utility Directory #30",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 31,
+    "name": "Global Web & Gaming Utility Directory #31",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 32,
+    "name": "Global Web & Gaming Utility Directory #32",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 33,
+    "name": "Global Web & Gaming Utility Directory #33",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 34,
+    "name": "Global Web & Gaming Utility Directory #34",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 35,
+    "name": "Global Web & Gaming Utility Directory #35",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 36,
+    "name": "Global Web & Gaming Utility Directory #36",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 37,
+    "name": "Global Web & Gaming Utility Directory #37",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 38,
+    "name": "Global Web & Gaming Utility Directory #38",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 39,
+    "name": "Global Web & Gaming Utility Directory #39",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 40,
+    "name": "Global Web & Gaming Utility Directory #40",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 41,
+    "name": "Global Web & Gaming Utility Directory #41",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 42,
+    "name": "Global Web & Gaming Utility Directory #42",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 43,
+    "name": "Global Web & Gaming Utility Directory #43",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 44,
+    "name": "Global Web & Gaming Utility Directory #44",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 45,
+    "name": "Global Web & Gaming Utility Directory #45",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 46,
+    "name": "Global Web & Gaming Utility Directory #46",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 47,
+    "name": "Global Web & Gaming Utility Directory #47",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 48,
+    "name": "Global Web & Gaming Utility Directory #48",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 49,
+    "name": "Global Web & Gaming Utility Directory #49",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 50,
+    "name": "Global Web & Gaming Utility Directory #50",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 51,
+    "name": "Global Web & Gaming Utility Directory #51",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 52,
+    "name": "Global Web & Gaming Utility Directory #52",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 53,
+    "name": "Global Web & Gaming Utility Directory #53",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 54,
+    "name": "Global Web & Gaming Utility Directory #54",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 55,
+    "name": "Global Web & Gaming Utility Directory #55",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 56,
+    "name": "Global Web & Gaming Utility Directory #56",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 57,
+    "name": "Global Web & Gaming Utility Directory #57",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 58,
+    "name": "Global Web & Gaming Utility Directory #58",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 59,
+    "name": "Global Web & Gaming Utility Directory #59",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 60,
+    "name": "Global Web & Gaming Utility Directory #60",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 61,
+    "name": "Global Web & Gaming Utility Directory #61",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 62,
+    "name": "Global Web & Gaming Utility Directory #62",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 63,
+    "name": "Global Web & Gaming Utility Directory #63",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 64,
+    "name": "Global Web & Gaming Utility Directory #64",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 65,
+    "name": "Global Web & Gaming Utility Directory #65",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 66,
+    "name": "Global Web & Gaming Utility Directory #66",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 67,
+    "name": "Global Web & Gaming Utility Directory #67",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 68,
+    "name": "Global Web & Gaming Utility Directory #68",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 69,
+    "name": "Global Web & Gaming Utility Directory #69",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 70,
+    "name": "Global Web & Gaming Utility Directory #70",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 71,
+    "name": "Global Web & Gaming Utility Directory #71",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 72,
+    "name": "Global Web & Gaming Utility Directory #72",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 73,
+    "name": "Global Web & Gaming Utility Directory #73",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 74,
+    "name": "Global Web & Gaming Utility Directory #74",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 75,
+    "name": "Global Web & Gaming Utility Directory #75",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 76,
+    "name": "Global Web & Gaming Utility Directory #76",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 77,
+    "name": "Global Web & Gaming Utility Directory #77",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 78,
+    "name": "Global Web & Gaming Utility Directory #78",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 79,
+    "name": "Global Web & Gaming Utility Directory #79",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 80,
+    "name": "Global Web & Gaming Utility Directory #80",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 81,
+    "name": "Global Web & Gaming Utility Directory #81",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 82,
+    "name": "Global Web & Gaming Utility Directory #82",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 83,
+    "name": "Global Web & Gaming Utility Directory #83",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 84,
+    "name": "Global Web & Gaming Utility Directory #84",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 85,
+    "name": "Global Web & Gaming Utility Directory #85",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 86,
+    "name": "Global Web & Gaming Utility Directory #86",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 87,
+    "name": "Global Web & Gaming Utility Directory #87",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 88,
+    "name": "Global Web & Gaming Utility Directory #88",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 89,
+    "name": "Global Web & Gaming Utility Directory #89",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 90,
+    "name": "Global Web & Gaming Utility Directory #90",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 91,
+    "name": "Global Web & Gaming Utility Directory #91",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 92,
+    "name": "Global Web & Gaming Utility Directory #92",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 93,
+    "name": "Global Web & Gaming Utility Directory #93",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 94,
+    "name": "Global Web & Gaming Utility Directory #94",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 95,
+    "name": "Global Web & Gaming Utility Directory #95",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 96,
+    "name": "Global Web & Gaming Utility Directory #96",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 97,
+    "name": "Global Web & Gaming Utility Directory #97",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 98,
+    "name": "Global Web & Gaming Utility Directory #98",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 99,
+    "name": "Global Web & Gaming Utility Directory #99",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  },
+  {
+    "id": 100,
+    "name": "Global Web & Gaming Utility Directory #100",
+    "url": "https://www.gta6heistguide.com/compare/",
+    "category": "Gaming Calculators & Maps",
+    "requires_payment": false
+  }
+]

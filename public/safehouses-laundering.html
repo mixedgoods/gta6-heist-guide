@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonida Safehouses & Cash Laundering Profit Calculator | GTA 6 Heist Guide</title>
+    <meta name="description" content="Maximize spendable GTA 6 heist cash through Vice City front businesses, fence networks, offshore crypto mixers, and calculate net laundered payouts.">
+        <meta name="keywords" content="GTA 6 safehouses, cash laundering Vice City, front businesses GTA 6, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
+<link rel="canonical" href="https://www.gta6heistguide.com/safehouses-laundering.html">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="Leonida Safehouses & Cash Laundering Calculator | GTA 6 Heist Guide">
+    <meta property="og:description" content="Calculate fence fees, cleaning duration, and net spendable heist profits across Vice City businesses and offshore safehouses.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gta6heistguide.com/safehouses-laundering.html">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "GTA 6 Cash Laundering & Safehouse Profit Calculator",
+      "description": "Simulate fence fees, nightclub laundering speed, and net spendable heist cash in Vice City.",
+      "url": "https://www.gta6heistguide.com/safehouses-laundering.html",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "gta6heistguide.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best GTA 6 heist payout calculator and crew cut calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The interactive Heist Planner on gta6heistguide.com simulates 1 to 4 player co-op cuts, specialist fees (Gunner, Ghost Hacker, Wheelman), and +5% stealth integrity bonuses across all 6 major vaults including Raul Bautista bank scores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do Lucia Caminos and Jason Duval skills work with GTA 6 trunk weapon storage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lucia Caminos excels at keypad decryption and crowd intimidation, while Jason Duval leads sniper overwatch and getaway handling. Heavy thermal drills and LMGs must be stored physically inside your getaway car trunk weapon storage slots."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I use a GTA 6 LFG crew finder to match PS5, Xbox, or PC heist friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Visit the Crew Lounge LFG matchmaker at gta6heistguide.com/forum.html to filter squads by PS5 Pro, Xbox Series X|S, or PC and exchange Discord, PSN, or Gamertag friend handles."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gta6heistguide.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GTA 6 Cash Laundering & Safehouse Profit Calculator",
+          "item": "https://www.gta6heistguide.com/safehouses-laundering.html"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+    <script>
+        function calcLaunder() {
+            const grossM = parseFloat(document.getElementById('grossLootRange').value);
+            const method = document.getElementById('launderMethod').value;
+            document.getElementById('grossLootVal').innerText = '$' + grossM.toFixed(1) + 'M';
+
+            let feePct = 14, hours = 12, risk = 'Low Heat';
+            if (method === 'fence') { feePct = 22; hours = 1; risk = 'Zero Delay / High Cut'; }
+            else if (method === 'nightclub') { feePct = 8; hours = 48; risk = 'Passive 1.05x Investment Yield'; }
+            else if (method === 'marina') { feePct = 12; hours = 18; risk = 'Offshore Exempt from City Freeze'; }
+
+            const gross = grossM * 1000000;
+            const bonusMultiplier = method === 'nightclub' ? 1.05 : 1.0;
+            const feeAmt = gross * (feePct / 100);
+            const netClean = (gross - feeAmt) * bonusMultiplier;
+
+            document.getElementById('lndFee').innerText = '$' + Math.round(feeAmt).toLocaleString() + ' (' + feePct + '%)';
+            document.getElementById('lndTime').innerText = hours + ' In-Game Hrs';
+            document.getElementById('lndNet').innerText = '$' + Math.round(netClean).toLocaleString();
+            document.getElementById('lndNote').innerText = 'Audit Risk Profile: ' + risk;
+        }
+    </script>
+</head>
+<body onload="calcLaunder()">
+
+<div class="countdown-strip">
+    <span class="strip-pill"><span class="strip-pulse"></span> <span class="launch-mode-label">Launch Window:</span> <span class="highlight" id="countdownTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill">Weekly Meta Reset (Thu 10:00 UTC): <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+    <span class="strip-divider">|</span>
+    <span class="strip-pill"><span class="highlight">6 Leonida Regions Mapped</span> &bull; 100% Free Tactical Tools</span>
+</div>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Syndicate v3.0</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Vaults</a></li>
+            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>
+            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta &amp; Rules</a></li>
+            <li><a href="heist-planner.html">Planner</a></li>
+            <li><a href="interactive-map.html">Radar Map</a></li>
+            <li><a href="crew-database.html">Crew</a></li>
+            <li><a href="affiliates-gear.html">Gear &amp; VPN</a></li>
+            <li><a href="forum.html" style="color: var(--neon-cyan);">Crew Lounge &amp; LFG</a></li>
+            <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()">🔊 Audio FX: ON</button>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-tagline">&bull; Criminal Enterprise Economics &bull;</div>
+    <h1>SAFEHOUSES &amp; <span class="highlight-pink">CASH LAUNDERING</span> META</h1>
+    <p>Marked treasury serial numbers trigger asset freezes if deposited raw. Clean your heist loot cleanly across Leonida front businesses and offshore marinas.</p>
+    <div class="hero-cta-group">
+        <button type="button" class="btn btn-secondary" onclick="GTA6.bookmarkCurrentPage()">⭐ Bookmark Guide</button>
+        <a href="heist-planner.html" class="btn btn-primary">Simulate Vault Cut</a>
+    </div>
+</header>
+
+<main class="container">
+    <section class="tool-box pink-glow">
+        <h2 style="color:var(--neon-cyan); margin-bottom:0.4rem;">Money Laundering &amp; Clean Cash Profit Simulator</h2>
+        <p style="color:var(--text-muted); font-size:0.94rem; margin-bottom:1.5rem;">Compare quick black-market fencing vs. owning high-margin Vice Beach front properties.</p>
+
+        <div class="slider-row">
+            <div class="slider-label-row">
+                <span>Squad Gross Marked Cash / Bullion Take:</span>
+                <strong id="grossLootVal" style="color:var(--neon-green);">$14.5M</strong>
+            </div>
+            <input type="range" class="slider-input" id="grossLootRange" min="2" max="25" step="0.5" value="14.5" oninput="calcLaunder();">
+        </div>
+
+        <div class="form-group" style="margin-bottom:1.5rem;">
+            <label>Select Laundering Pipeline / Safehouse Channel</label>
+            <select class="form-select" id="launderMethod" onchange="calcLaunder(); GTA6.playBeep(460, 'triangle', 0.04);">
+                <option value="nightclub" selected>Vice Beach Nightclub &amp; Shell LLC (8% Fee &bull; +5% Reinvested Bonus)</option>
+                <option value="marina">Port Gellhorn Offshore Marina Broker (12% Fee &bull; Medium Speed)</option>
+                <option value="fence">Instant Black-Market Bullion Fence (22% Fee &bull; Instant Cash)</option>
+            </select>
+        </div>
+
+        <div class="payout-display">
+            <div>
+                <div class="payout-item-title">Broker / Fence Cut</div>
+                <div class="payout-item-val" id="lndFee" style="color:var(--neon-pink);">$0</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Cycle Clearance Time</div>
+                <div class="payout-item-val" id="lndTime" style="color:var(--neon-cyan);">48 Hrs</div>
+            </div>
+            <div>
+                <div class="payout-item-title">Net Clean Spendable Cash</div>
+                <div class="payout-item-val" id="lndNet">$0</div>
+            </div>
+        </div>
+        <div id="lndNote" style="margin-top:1rem; text-align:center; color:var(--neon-amber); font-weight:700;"></div>
+    </section>
+
+    <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card">
+            <div>
+                <span class="card-tag tag-mastermind">TIER 1 SAFEHOUSE</span>
+                <h3 class="card-title">Ocean View Penthouse &amp; Underground Garage</h3>
+                <p class="card-desc">Closest safehouse to Sinfrontera National Bank. Features dual basement exit ramps to clear heat cleanly while transferring duffel bags into clean getaway cars.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <span class="card-tag tag-intermediate">OFFSHORE STASH</span>
+                <h3 class="card-title">Keys Boathouse &amp; Helipad Dock</h3>
+                <p class="card-desc">Mandatory drop point for Starlet Superyacht and Grassrivers runs. Keeps unmarked gold bars safe away from Vice City metropolitan police sweeps.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>GTA 6 HEIST GUIDE</h4>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
+            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Cloudflare D1 Synced &bull; 100% Free Access</p>
+        </div>
+        <div class="footer-col">
+            <h4>Heist Vaults</h4>
+            <ul>
+                <li><a href="sinfrontera-bank.html">Sinfrontera Bank Raid</a></li>
+                <li><a href="port-gellhorn.html">Port Gellhorn Container Heist</a></li>
+                <li><a href="leonida-reserve.html">Leonida Gold Reserve</a></li>
+                <li><a href="vice-city-yacht-heist.html">Starlet Superyacht Heist</a></li>
+                <li><a href="everglades-smuggler-run.html">Grassrivers Smuggler Run</a></li>
+                <li><a href="ocean-drive-armored-convoy.html">Ocean Drive Armored Convoy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Tactical Pillars</h4>
+            <ul>
+                <li><a href="live-intel.html">Live Meta &amp; Legal Rules</a></li>
+                <li><a href="lucia-jason-skills.html">Lucia &amp; Jason Skills</a></li>
+                <li><a href="vehicles-getaway-cars.html">Getaway Vehicles &amp; Trunks</a></li>
+                <li><a href="safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
+                <li><a href="leonida-wanted-system.html">Wanted System &amp; Evasion</a></li>
+                <li><a href="forum.html">Heist Crew Lounge &amp; LFG</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Verified Partners</h4>
+            <ul>
+                <li><a href="https://getapexlocal.com/partners" target="_blank" rel="noopener">Creator Video Tools</a></li>
+                <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener">G2A Game Keys</a></li>
+                <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener">Eneba Pre-Orders</a></li>
+                <li><a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener">Amazon Gaming Gear</a></li>
+                <li><a href="affiliates-gear.html">NordVPN Low-Ping Routing</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="disclaimer-box">
+        <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Cloudflare Pages &amp; D1 Architecture.</p>
+    </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
