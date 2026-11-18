@@ -75,12 +75,12 @@ const GTA6 = {
   },
 
   applyWeeklyBadges(v) {
-    const slug = String((v && v.slug) || '').replace(/\.html$/, '').replace(/^\//, '');
+    const targetSlug = 'everglades-smuggler-run';
     document.querySelectorAll('.bonus-badge[data-vault-slug]').forEach((b) => {
-      const on = b.dataset.vaultSlug === slug;
+      const on = b.dataset.vaultSlug === targetSlug;
       b.style.display = on ? 'block' : 'none';
       const amt = b.querySelector('.bonus-amt');
-      if (on && amt && v.bonusPayout) amt.textContent = v.bonusPayout;
+      if (on && amt) amt.textContent = '$9,750,000';
     });
   },
 
@@ -149,6 +149,44 @@ const GTA6 = {
     } else {
       window.location.href = '/forum#lfg-hub';
     }
+  },
+
+  copyExitLagCode(btn) {
+    const code = '10386953';
+    this.copyText(code, 'Coupon Code 10386953');
+    if (btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✓ Copied: 10386953!';
+      btn.style.color = 'var(--neon-green)';
+      btn.style.borderColor = 'var(--neon-green)';
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }, 2200);
+    }
+  },
+
+  initAffiliateTracking() {
+    document.addEventListener('click', (e) => {
+      const el = e.target.closest('[data-aff-partner]');
+      if (!el) return;
+      const partner = el.getAttribute('data-aff-partner');
+      const placement = el.getAttribute('data-aff-placement') || 'general';
+      const targetUrl = el.href || '';
+      try {
+        const stored = localStorage.getItem('gta6_aff_clicks') || '[]';
+        const arr = JSON.parse(stored);
+        arr.push({
+          partner,
+          placement,
+          url: targetUrl,
+          ts: new Date().toISOString()
+        });
+        if (arr.length > 80) arr.shift();
+        localStorage.setItem('gta6_aff_clicks', JSON.stringify(arr));
+      } catch (err) {}
+    });
   },
 
   copyText(text, label = 'Copied') {
@@ -755,7 +793,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 
 2. ONLINE HEIST SECURITY & HARDWARE CHECKLIST
 ----------------------------------------------------------------------
-- Shield Host IP in Public Lobbies (NordVPN Low-Ping Gaming Routing):
+- Shield Host IP in Public Lobbies (ExitLag Low-Ping Gaming Routing):
   https://www.gta6heistguide.com/affiliates-gear.html
 - Verify Pre-Order Keys (G2A & Eneba Global Compare):
   https://www.g2a.com/n/reflink-4094b9aab5
@@ -976,7 +1014,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         badgeName: 'SYNDICATE TACTICAL BRIEFING • PRE-LAUNCH META',
         avatar: '/assets/avatar-mastermind.png',
         time: 'Pre-Launch Briefing',
-        title: '[SYNDICATE TACTICAL BRIEFING • PRE-LAUNCH META] Leonida Reserve: Subterranean Sewer Intake & 4-Player Stealth Blueprint',
+        title: '[SYNDICATE TACTICAL BRIEFING] Leonida Reserve: Subterranean Sewer Intake & 4-Player Stealth Blueprint',
         content: 'Pre-launch tactical analysis of the Pelican Valley northern canal intake conduit. Disabling Grid 4 within the 15-second biometric window lets a 4-player squad bypass exterior courtyard cameras and preserve the +5% Stealth Integrity bonus.',
         votes: 142,
         tag: 'StealthMeta',
@@ -985,10 +1023,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         id: 'thread-2',
         author: 'Syndicate Editorial Desk',
         badge: 'badge-hacker',
-        badgeName: 'EDITORIAL STRATEGY NOTE',
+        badgeName: 'SYNDICATE TACTICAL BRIEFING • KEYPAD DRILL',
         avatar: '/assets/avatar-mastermind.png',
         time: 'Pre-Launch Briefing',
-        title: '[EDITORIAL STRATEGY NOTE] Sinfrontera National Bank: Dual-Key Biometric Keypad & Laser Drill Pacing',
+        title: '[SYNDICATE TACTICAL BRIEFING] Sinfrontera National Bank: Dual-Key Biometric Keypad & Laser Drill Pacing',
         content: 'Editorial breakdown of high-roller vault security mechanics: keep thermal drill core temperatures below 800C while the Ghost Hacker completes the 15-second frequency node sequence to avoid triggering nerve-gas lockdown.',
         votes: 89,
         tag: 'VaultIntel',
@@ -997,10 +1035,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         id: 'thread-3',
         author: 'Syndicate Editorial Desk',
         badge: 'badge-wheelman',
-        badgeName: 'SYNDICATE TACTICAL BRIEFING • PRE-LAUNCH META',
+        badgeName: 'SYNDICATE TACTICAL BRIEFING • ROLE SPLIT',
         avatar: '/assets/avatar-mastermind.png',
         time: 'Pre-Launch Briefing',
-        title: '[SYNDICATE TACTICAL BRIEFING • PRE-LAUNCH META] Port Gellhorn Container Terminal: 4-Player Role Split & Swamp Canal Exfil',
+        title: '[SYNDICATE TACTICAL BRIEFING] Port Gellhorn Container Terminal: 4-Player Role Split & Swamp Canal Exfil',
         content: 'Recommended Day-1 crew composition for Pier 4 freight operations: pair an overhead crane spotter with a high-clearance off-road Wheelman and split 25% evenly across all 4 human operatives to maximize Net $/Hour.',
         votes: 64,
         tag: 'CrewRecruit',
@@ -1009,23 +1047,23 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         id: 'thread-4',
         author: 'Syndicate Editorial Desk',
         badge: 'badge-enforcer',
-        badgeName: 'EDITORIAL STRATEGY NOTE',
+        badgeName: 'SYNDICATE TACTICAL BRIEFING • ESCAPE LOGISTICS',
         avatar: '/assets/avatar-mastermind.png',
         time: 'Pre-Launch Briefing',
-        title: '[EDITORIAL STRATEGY NOTE] Starlet Superyacht Offshore: Sub-Aquatic Scuba Exfiltration vs. Helipad Heat',
+        title: '[SYNDICATE TACTICAL BRIEFING] Starlet Superyacht Offshore: Sub-Aquatic Scuba Exfiltration vs. Helipad Heat',
         content: 'Tactical comparison of offshore exfiltration routes: rooftop helicopter extraction triggers immediate 4-star Coast Guard radar locks, whereas diving via the coral dropoff with scuba rebreathers clears coastal heat undetected.',
         votes: 118,
         tag: 'EscapeRoute',
       },
       {
         id: 'thread-5',
-        author: 'Syndicate Security Advisory',
+        author: 'Syndicate Connection Advisory',
         badge: 'badge-mastermind',
-        badgeName: 'SYNDICATE SECURITY ADVISORY • PARTNER TIP',
+        badgeName: 'SYNDICATE CONNECTION & LAG ADVISORY',
         avatar: '/assets/avatar-mastermind.png',
-        time: 'Partner Security Note',
-        title: '[SYNDICATE SECURITY ADVISORY • PARTNER TIP] Protecting Peer-to-Peer Co-Op Heist Finales from Lobby DDoS Drops',
-        content: 'Transparency & Security Note: Peer-to-peer session drops during multi-million-dollar finales wipe out your Elite Challenge bonus. Our editorial desk recommends routing host traffic through an encrypted low-ping tunnel (see our verified NordVPN partner link) before hosting public LFG lobbies.',
+        time: 'Verified Connection Note',
+        title: '[SYNDICATE CONNECTION & LAG ADVISORY] Stop Mid-Heist Disconnects & Cut Packet Loss with ExitLag Low-Ping Routing',
+        content: '⚡ Syndicate Connection & Lag Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial: https://www.exitlag.com/refer/10386953) to lock in rock-solid connections. Use coupon code: 10386953.',
         votes: 95,
         tag: 'StealthMeta',
       },
@@ -1704,7 +1742,11 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
               <button type="button" class="btn btn-secondary" onclick="GTA6.KeypadTrainer.copyDiscordScore()">📋 Copy Score for Discord / LFG</button>
             </div>
             <div style="margin-top:0.9rem; font-size:0.82rem; color:var(--text-muted);">
-              🎬 Clipping your squad's heist run for TikTok/Shorts? Auto-cut dead air offline &rarr; <a href="https://getapexlocal.com/partners" target="_blank" rel="noopener" style="color:var(--neon-green); font-weight:800;">Get CutFlow Pro &amp; ClipBounty Studio</a>
+              <div id="keypadContextStrip" class="contextual-tool-strip" style="margin-top:0.95rem; font-size:0.83rem;">
+              <span>⚡ Shave 2s off hacks &amp; gunfights with <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="keypad-trainer" style="color:var(--neon-green); font-weight:800;">$16.99 Heist Thumbsticks</a> or <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="keypad-trainer" style="color:var(--neon-cyan); font-weight:800;">DualSense Edge &rarr; [Amazon]</a></span>
+              <span style="color:rgba(255,255,255,0.3);">&bull;</span>
+              <span>🎬 Clip your run for TikTok/Shorts &rarr; <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="keypad-trainer" style="color:var(--neon-yellow); font-weight:800;">[CutFlow Pro $49]</a></span>
+            </div>
             </div>
           </div>
         </div>
@@ -1797,6 +1839,11 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
           if (rkEl) rkEl.innerText = `Rank: ${rank}`;
           const st = document.getElementById('keypadStatus');
           if (st) st.innerHTML = `<span style="color:var(--neon-green);">✅ BYPASSED IN ${elapsedMs.toLocaleString()} ms (${secsStr}) &bull; RANK: ${rank.toUpperCase()}!</span>`;
+          const kStrip = document.getElementById('keypadContextStrip');
+          if (kStrip) {
+            kStrip.style.borderColor = 'var(--neon-green)';
+            kStrip.style.boxShadow = '0 0 15px rgba(0,255,157,0.3)';
+          }
           const p = GTA6.getProfile();
           p.syndicateRep = (Number(p.syndicateRep) || 1240) + (this.difficulty === 'hardcore' ? 300 : 150);
           GTA6.saveProfile(p);
@@ -2686,6 +2733,54 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     // --------------------------------------------------------------------------
     // DYNAMIC REFRESH-SHUFFLED & TIMED AFFILIATE DEAL ROTATOR
     // --------------------------------------------------------------------------
+    DealTicker: {
+      timer: null,
+      currentIndex: 0,
+      messages: [
+        `🔥 <strong style="color:var(--neon-pink);">BLACK FRIDAY LAUNCH GEAR:</strong> <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 Day-1 Pre-Order &rarr; [Amazon]</a>`,
+        `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; ZERO PACKET LOSS:</strong> <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Pro Gaming Tunnel — Prevent Heist Disconnects</a> &bull; Coupon Code: <strong style="color:var(--neon-yellow);">10386953</strong> <button type="button" onclick="GTA6.copyExitLagCode(this)" style="background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); color:var(--neon-cyan); border-radius:3px; padding:1px 6px; font-size:0.75rem; cursor:pointer; margin-left:4px;">📋 Copy</button>`,
+        `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; SHARK CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
+        `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
+      ],
+      init() {
+        if (sessionStorage.getItem('gta6_ticker_dismissed')) return;
+        const bar = document.createElement('div');
+        bar.id = 'dealTickerBar';
+        bar.className = 'deal-ticker-bar';
+        bar.innerHTML = `
+          <div class="deal-ticker-content">
+            <span class="deal-ticker-item" id="dealTickerItem">${this.messages[0]}</span>
+          </div>
+          <button type="button" class="deal-ticker-close" onclick="GTA6.DealTicker.dismiss()" title="Dismiss Ticker">✕</button>
+        `;
+        document.body.appendChild(bar);
+        document.body.classList.add('has-ticker');
+
+        this.timer = setInterval(() => {
+          this.next();
+        }, 6000);
+      },
+      next() {
+        const item = document.getElementById('dealTickerItem');
+        if (!item) return;
+        item.classList.add('fade-out');
+        setTimeout(() => {
+          this.currentIndex = (this.currentIndex + 1) % this.messages.length;
+          item.innerHTML = this.messages[this.currentIndex];
+          item.classList.remove('fade-out');
+          item.classList.add('fade-in');
+          setTimeout(() => item.classList.remove('fade-in'), 350);
+        }, 350);
+      },
+      dismiss() {
+        if (this.timer) clearInterval(this.timer);
+        const bar = document.getElementById('dealTickerBar');
+        if (bar) bar.remove();
+        document.body.classList.remove('has-ticker');
+        sessionStorage.setItem('gta6_ticker_dismissed', '1');
+      }
+    },
+
     DealRotator: {
       deals: [
         {
@@ -3004,6 +3099,8 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     GTA6.MasteryAndStreak.init();
     GTA6.LiveIntelSync.init();
     GTA6.DealRotator.init();
+    GTA6.DealTicker.init();
+    GTA6.initAffiliateTracking();
     if (document.getElementById('squadRollResults')) {
       GTA6.SquadRoll.spin();
     }

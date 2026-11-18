@@ -2274,3 +2274,148 @@ html, body {
   transform: translateY(-2px);
 }
 
+/* CONTEXTUAL TOOL BUY STRIPS */
+.contextual-tool-strip {
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.84rem;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.contextual-tool-strip:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+.contextual-tool-strip a {
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+.contextual-tool-strip a:hover {
+  opacity: 0.85;
+}
+
+/* STICKY BOTTOM LAUNCH DEAL TICKER */
+.deal-ticker-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9990;
+  background: rgba(8, 14, 24, 0.96);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--neon-cyan);
+  box-shadow: 0 -4px 25px rgba(0, 240, 255, 0.2);
+  padding: 0.45rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-sizing: border-box;
+  font-family: var(--font-main, sans-serif);
+  font-size: 0.82rem;
+  animation: slideUpTicker 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes slideUpTicker {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.deal-ticker-content {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #e2e8f0;
+}
+.deal-ticker-item {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.deal-ticker-item.fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.deal-ticker-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.deal-ticker-close {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+.deal-ticker-close:hover {
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+  background: rgba(255, 42, 141, 0.1);
+}
+body.has-ticker {
+  padding-bottom: 42px !important;
+}
+
+/* EXIT-INTENT MODAL */
+.exit-intent-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(4, 8, 16, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.exit-intent-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.exit-intent-modal {
+  background: linear-gradient(135deg, rgba(14, 22, 36, 0.98), rgba(8, 12, 20, 0.98));
+  border: 2px solid var(--neon-cyan);
+  border-radius: 14px;
+  padding: 1.75rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.35);
+  text-align: center;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+}
+.exit-intent-overlay.active .exit-intent-modal {
+  transform: scale(1);
+}
+.exit-intent-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+.exit-intent-close:hover {
+  color: var(--neon-pink);
+}
+
+

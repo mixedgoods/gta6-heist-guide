@@ -134,7 +134,7 @@
 <div class="countdown-strip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
+            <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
                 <span class="strip-pulse"></span>
                 <span class="launch-mode-label">Launch Window:</span>
                 <span class="highlight" id="countdownTimer">Loading...</span>
@@ -663,7 +663,7 @@
     </div>
 
     <!-- HIGH-CONVERTING MONETIZATION ENGINE: OFFICIAL RETAIL STORE & PRE-ORDER CENTER -->
-    <div class="deal-matcher-box" style="margin: 1.5rem auto 1.75rem; max-width: 1140px; box-sizing: border-box; background: rgba(10, 16, 26, 0.95); border: 2px solid var(--neon-cyan); border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);">
+    <div class="deal-matcher-box" id="officialDealsBox" style="margin: 1.5rem auto 1.75rem; max-width: 1140px; box-sizing: border-box; background: rgba(10, 16, 26, 0.95); border: 2px solid var(--neon-cyan); border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.15rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.65rem;">
             <div>
                 <span class="user-badge badge-mastermind" style="background:rgba(255,0,128,0.2); border-color:var(--neon-pink); color:var(--neon-pink);">🔥 OFFICIAL STORE DEALS</span>
@@ -699,47 +699,17 @@
                     </div>
                 </div>
                 <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
-                    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="btn-deal-amazon">📦 Pre-Order on Amazon &rarr;</a>
-                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="btn-deal-g2a">⚡ Check G2A Key Deals (-20%) &rarr;</a>
+                    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-deals-gta6" class="btn-deal-amazon">📦 Amazon Day-1 Delivery &rarr;</a>
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="store-deals-gta6" class="btn-deal-g2a">⚡ G2A Digital Key (Up to 20% Off) &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 2: DualSense Edge Controller -->
-            <div class="deal-card-premium">
-                <div>
-                    <div class="deal-img-stage">
-                        <img src="assets/dualsense-edge-controller.jpg?v=20261118_clean_v1" alt="PlayStation DualSense Edge Pro Wireless Controller" loading="lazy">
-                        <span class="deal-badge-verified">✓ SONY OFFICIAL</span>
-                        <span class="deal-badge-merchant">PRIME DELIVERY</span>
-                    </div>
-                    <div class="deal-body-premium">
-                        <h4 class="deal-title-premium">DualSense Edge Pro</h4>
-                        <div class="deal-rating-row">
-                            <span class="deal-stars">★★★★★</span>
-                            <span style="color:#fff; font-weight:800;">4.8</span>
-                            <span>(6,200+ ratings)</span>
-                        </div>
-                        <p class="deal-desc-premium">Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast heist shootouts.</p>
-                        <div class="deal-price-bar">
-                            <div>
-                                <span style="font-size:0.72rem; color:#94a3b8; display:block;">Amazon Prime</span>
-                                <span class="deal-price-current" style="color:var(--neon-cyan);">$199.99</span>
-                            </div>
-                            <span class="deal-pill-discount">FREE 1-DAY</span>
-                        </div>
-                    </div>
-                </div>
-                <div style="padding:0 1.15rem 1.15rem;">
-                    <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="btn-deal-amazon">🎮 Check Deal on Amazon &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Card 3: Samsung 990 PRO NVMe SSD -->
+            <!-- Card 2: Samsung 990 PRO NVMe SSD -->
             <div class="deal-card-premium">
                 <div>
                     <div class="deal-img-stage">
                         <img src="assets/samsung-990-pro.jpg?v=20261118_clean_v1" alt="Samsung 990 PRO 2TB NVMe SSD Heatsink Edition" loading="lazy">
-                        <span class="deal-badge-verified">✓ PS5 READY</span>
+                        <span class="deal-badge-verified">212GB INSTALL READY</span>
                         <span class="deal-badge-merchant">7,450 MB/s</span>
                     </div>
                     <div class="deal-body-premium">
@@ -760,17 +730,137 @@
                     </div>
                 </div>
                 <div style="padding:0 1.15rem 1.15rem;">
-                    <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="btn-deal-amazon">⚡ Upgrade Storage on Amazon &rarr;</a>
+                    <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-deals-ssd" class="btn-deal-amazon">⚡ Upgrade Storage on Amazon &rarr;</a>
                 </div>
             </div>
 
-            <!-- Card 4: Eneba Gift Cards -->
+            <!-- Card 3: PlayStation PULSE Elite Headset -->
+            <div class="deal-card-premium">
+                <div>
+                    <div class="deal-img-stage">
+                        <img src="assets/pulse-elite-headset.svg" alt="PlayStation PULSE Elite Wireless Headset" loading="lazy">
+                        <span class="deal-badge-verified">CO-OP VOICE COMMS • BLACK FRIDAY</span>
+                        <span class="deal-badge-merchant">PLANAR AUDIO</span>
+                    </div>
+                    <div class="deal-body-premium">
+                        <h4 class="deal-title-premium">PULSE Elite Headset</h4>
+                        <div class="deal-rating-row">
+                            <span class="deal-stars">★★★★★</span>
+                            <span style="color:#fff; font-weight:800;">4.8</span>
+                            <span>(4,800+ ratings)</span>
+                        </div>
+                        <p class="deal-desc-premium">Planar magnetic drivers &amp; retractable boom mic with AI noise rejection for flawless co-op squad coordination.</p>
+                        <div class="deal-price-bar">
+                            <div>
+                                <span style="font-size:0.72rem; color:#94a3b8; display:block;">Retail Deal</span>
+                                <span class="deal-price-current" style="color:var(--neon-cyan);">$149.99</span>
+                            </div>
+                            <span class="deal-pill-discount">BLACK FRIDAY</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0 1.15rem 1.15rem;">
+                    <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-deals-pulse-elite" class="btn-deal-amazon">🎙️ Check Deal on Amazon &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 4: KontrolFreek Thumbsticks (Under $20) -->
+            <div class="deal-card-premium">
+                <div>
+                    <div class="deal-img-stage">
+                        <img src="assets/kontrolfreek-thumbsticks.svg" alt="KontrolFreek Heist Edition Performance Thumbsticks" loading="lazy">
+                        <span class="deal-badge-verified">UNDER $20 UPGRADE</span>
+                        <span class="deal-badge-merchant">+120% ARC</span>
+                    </div>
+                    <div class="deal-body-premium">
+                        <h4 class="deal-title-premium">KontrolFreek Thumbsticks</h4>
+                        <div class="deal-rating-row">
+                            <span class="deal-stars">★★★★★</span>
+                            <span style="color:#fff; font-weight:800;">4.8</span>
+                            <span>(14,200+ ratings)</span>
+                        </div>
+                        <p class="deal-desc-premium">High-rise crosshair traction grips engineered for sub-15s vault keypad inputs and precision revolver aim.</p>
+                        <div class="deal-price-bar">
+                            <div>
+                                <span style="font-size:0.72rem; color:#94a3b8; display:block;">Impulse Deal</span>
+                                <span class="deal-price-current" style="color:var(--neon-green);">$16.99</span>
+                            </div>
+                            <span class="deal-pill-discount">LOCK COOKIE</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0 1.15rem 1.15rem;">
+                    <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-deals-thumbsticks" class="btn-deal-amazon">🎯 Upgrade Aim on Amazon ($16.99) &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 5: DualSense Twin Charging Station (Under $30) -->
+            <div class="deal-card-premium">
+                <div>
+                    <div class="deal-img-stage">
+                        <img src="assets/dualsense-charging-station.svg" alt="Official DualSense Twin Charging Station" loading="lazy">
+                        <span class="deal-badge-verified">MARATHON LAUNCH NIGHT</span>
+                        <span class="deal-badge-merchant">CLICK-IN DOCK</span>
+                    </div>
+                    <div class="deal-body-premium">
+                        <h4 class="deal-title-premium">DualSense Charging Dock</h4>
+                        <div class="deal-rating-row">
+                            <span class="deal-stars">★★★★★</span>
+                            <span style="color:#fff; font-weight:800;">4.9</span>
+                            <span>(32,000+ ratings)</span>
+                        </div>
+                        <p class="deal-desc-premium">Dock up to two wireless controllers at once without keeping your PS5 console USB ports occupied overnight.</p>
+                        <div class="deal-price-bar">
+                            <div>
+                                <span style="font-size:0.72rem; color:#94a3b8; display:block;">Holiday Price</span>
+                                <span class="deal-price-current" style="color:var(--neon-cyan);">$29.99</span>
+                            </div>
+                            <span class="deal-pill-discount">IMPULSE PICK</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0 1.15rem 1.15rem;">
+                    <a href="https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-deals-charging-dock" class="btn-deal-amazon">🔋 Grab Dock on Amazon ($29.99) &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 6: DualSense Edge Controller -->
+            <div class="deal-card-premium">
+                <div>
+                    <div class="deal-img-stage">
+                        <img src="assets/dualsense-edge-controller.jpg?v=20261118_clean_v1" alt="PlayStation DualSense Edge Pro Wireless Controller" loading="lazy">
+                        <span class="deal-badge-verified">✓ SONY OFFICIAL</span>
+                        <span class="deal-badge-merchant">PRIME DELIVERY</span>
+                    </div>
+                    <div class="deal-body-premium">
+                        <h4 class="deal-title-premium">DualSense Edge Pro</h4>
+                        <div class="deal-rating-row">
+                            <span class="deal-stars">★★★★★</span>
+                            <span style="color:#fff; font-weight:800;">4.8</span>
+                            <span>(6,200+ ratings)</span>
+                        </div>
+                        <p class="deal-desc-premium">Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast shootouts.</p>
+                        <div class="deal-price-bar">
+                            <div>
+                                <span style="font-size:0.72rem; color:#94a3b8; display:block;">Amazon Prime</span>
+                                <span class="deal-price-current" style="color:var(--neon-cyan);">$199.99</span>
+                            </div>
+                            <span class="deal-pill-discount">FREE 1-DAY</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0 1.15rem 1.15rem;">
+                    <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-deals-controller" class="btn-deal-amazon">🎮 Check Deal on Amazon &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 7: Eneba & G2A Gift Cards -->
             <div class="deal-card-premium">
                 <div>
                     <div class="deal-img-stage">
                         <img src="assets/eneba-gift-cards.jpg?v=20261118_clean_v1" alt="PlayStation &amp; Xbox Digital Store Gift Cards" loading="lazy">
                         <span class="deal-badge-verified">✓ INSTANT CODE</span>
-                        <span class="deal-badge-merchant">ENEBA GLOBAL</span>
+                        <span class="deal-badge-merchant">ENEBA &bull; G2A</span>
                     </div>
                     <div class="deal-body-premium">
                         <h4 class="deal-title-premium">PSN &amp; Xbox Gift Cards</h4>
@@ -789,8 +879,40 @@
                         </div>
                     </div>
                 </div>
-                <div style="padding:0 1.15rem 1.15rem;">
-                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" class="btn-deal-g2a" style="background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);">💳 Compare Eneba Deals &rarr;</a>
+                <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
+                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="store-deals-cards" class="btn-deal-g2a" style="background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);">💳 Compare Eneba Deals &rarr;</a>
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="store-deals-cards" class="btn-deal-g2a">⚡ Check G2A Key Deals (-20%) &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 8: CutFlow Pro & ClipBounty Studio -->
+            <div class="deal-card-premium">
+                <div>
+                    <div class="deal-img-stage">
+                        <img src="assets/bundle-cover.png" alt="CutFlow Pro &amp; ClipBounty Studio" loading="lazy">
+                        <span class="deal-badge-verified">CREATOR BUNDLE</span>
+                        <span class="deal-badge-merchant">9:16 SHORTS</span>
+                    </div>
+                    <div class="deal-body-premium">
+                        <h4 class="deal-title-premium">CutFlow Pro ($49)</h4>
+                        <div class="deal-rating-row">
+                            <span class="deal-stars">★★★★★</span>
+                            <span style="color:#fff; font-weight:800;">4.9</span>
+                            <span>(Verified Offline Editor)</span>
+                        </div>
+                        <p class="deal-desc-premium">Auto-detect squad voice peaks, cut dead air, and export 9:16 vertical TikTok/Shorts offline with zero cloud latency.</p>
+                        <div class="deal-price-bar">
+                            <div>
+                                <span style="font-size:0.72rem; color:#94a3b8; display:block;">Lifetime License</span>
+                                <span class="deal-price-current" style="color:var(--neon-green);">$49</span>
+                            </div>
+                            <span class="deal-pill-discount">OFFLINE SUITE</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
+                    <a href="https://getapexlocal.com" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="store-deals-cutflow" class="btn-deal-g2a" style="background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);">🎬 GetApexLocal ($49) &rarr;</a>
+                    <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="store-deals-cutflow" class="btn-deal-amazon">⚡ Whop Store Checkout &rarr;</a>
                 </div>
             </div>
         </div>
@@ -864,6 +986,16 @@
                 <div style="font-size:0.8rem; color:#fff; margin:0.35rem 0;">Tactical Alert Audio Engine</div>
                 <button type="button" class="btn btn-secondary" style="padding:0.25rem 0.6rem; font-size:0.72rem; width:100%;" onclick="window.GTA6Audio && window.GTA6Audio.toggleAudio()">🔊 Toggle Alert SFX</button>
             </div>
+        
+        <!-- HUD Bottom Utility Strip -->
+        <div class="contextual-tool-strip" style="margin-top:1.15rem; padding:0.6rem 0.9rem; background:rgba(0,0,0,0.45); border:1px solid rgba(0,240,255,0.25); border-radius:6px; font-size:0.83rem; display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:0.6rem; color:#cbd5e1; text-align:center;">
+            <span>🔋 Pulling a Vice City all-nighter?</span>
+            <a href="https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="companion-hud" style="color:var(--neon-green); font-weight:800;">[DualSense Dock (Amazon)]</a>
+            <span style="color:rgba(255,255,255,0.3);">&bull;</span>
+            <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="companion-hud" style="color:var(--neon-cyan); font-weight:800;">[ExitLag Low-Ping (Code: 10386953)]</a>
+            <span style="color:rgba(255,255,255,0.3);">&bull;</span>
+            <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="companion-hud" style="color:var(--neon-yellow); font-weight:800;">[PSN/Xbox Cards (Eneba)]</a>
+        </div>
         </div>
     </div>
 
@@ -944,7 +1076,7 @@
                     <strong style="color:#fff; font-size:0.98rem; display:block; margin-bottom:0.4rem;">New Zealand &amp; Australia Servers Live: 210 GB Install Underway</strong>
                     <p style="color:var(--text-muted); font-size:0.83rem; margin-bottom:0.75rem;">Midnight time zones are officially playing GTA 6 on PS5 &amp; Xbox Series X|S. Pre-loads average 210 GB with high-speed day-1 optimization patches actively installing.</p>
                 </div>
-                <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" style="color:var(--neon-cyan); font-size:0.78rem; text-decoration:none; font-weight:700;">Pre-Order Day-1 Amazon PS5 &rarr;</a>
+                <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" style="color:var(--neon-cyan); font-size:0.78rem; text-decoration:none; font-weight:700;">Pre-Order Day-1 Amazon PS5 &rarr;</a>
             </div>
 
             <!-- Story 6: Smartphone Witness Livestreams -->
@@ -1050,9 +1182,9 @@
         <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
             🛰️ TACTICAL BLUEPRINT &bull; STATE GOLD DEPOSITORY
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-            <span>RADAR: ACTIVE (48m Cycle)</span>
-            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $18.8M</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
+            <span>RADAR: ACTIVE (48m)</span>
+            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $25.0M</span>
         </div>
     </div>
                     <span class="card-tag tag-mastermind">Mastermind Tier</span>
@@ -1085,9 +1217,9 @@
         <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
             🛰️ TACTICAL BLUEPRINT &bull; STARLET SUPERYACHT
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-            <span>RADAR: ACTIVE (48m Cycle)</span>
-            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $6.4M</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
+            <span>RADAR: ACTIVE (48m)</span>
+            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $11.8M</span>
         </div>
     </div>
                     <span class="card-tag tag-expert">Expert Tier</span>
@@ -1120,9 +1252,9 @@
         <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
             🛰️ TACTICAL BLUEPRINT &bull; GRASSRIVERS AIRSTRIP
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-            <span>RADAR: ACTIVE (48m Cycle)</span>
-            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $5.9M</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
+            <span>RADAR: ACTIVE (48m)</span>
+            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $6.5M Base / $9.75M 1.5X</span>
         </div>
     </div>
                     <span class="card-tag tag-intermediate">Intermediate Tier</span>
@@ -1155,9 +1287,9 @@
         <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
             🛰️ TACTICAL BLUEPRINT &bull; OCEAN DRIVE CONVOY
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-            <span>RADAR: ACTIVE (48m Cycle)</span>
-            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $4.8M</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
+            <span>RADAR: ACTIVE (48m)</span>
+            <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $9.4M</span>
         </div>
     </div>
                     <span class="card-tag tag-mastermind">Mastermind Tier</span>
@@ -1337,7 +1469,7 @@
                     </div>
                 </div>
                 <div style="margin-top:1rem;">
-                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-amber" style="padding: 0.55rem 1rem; font-size: 0.82rem; width:100%; text-align:center;">📦 Check Samsung 990 PRO Deals on Amazon &rarr;</a>
+                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-amber" style="padding: 0.55rem 1rem; font-size: 0.82rem; width:100%; text-align:center;">📦 Check Samsung 990 PRO Deals on Amazon &rarr;</a>
                 </div>
             </div>
 
@@ -1349,100 +1481,132 @@
                     <h3 class="card-title">Rockstar Anti-DDoS Architecture &amp; How to Protect Your $25M Heist Lobby</h3>
                     <p class="card-desc">High-roller public lobbies are prime targets for malicious peer-to-peer IP sniffing, connection booting, and lobby host lag attacks. Running an encrypted low-latency tunnel masks your residential IP address from other players in the session.</p>
                     <div style="margin-top:0.65rem; padding:0.55rem 0.75rem; background:rgba(0,240,255,0.05); border-left:3px solid var(--neon-green); border-radius:4px; font-size:0.8rem; color:var(--text-muted);">
-                        <strong style="color:var(--neon-green);">Syndicate Tactical Takeaway:</strong> Keep NordVPN connected to Miami or Atlanta low-ping gaming nodes to prevent malicious disconnect drops during vault finale cashouts.
+                        <strong style="color:var(--neon-green);">Syndicate Tactical Takeaway:</strong> Keep ExitLag connected to Miami or Atlanta low-ping gaming nodes to prevent malicious disconnect drops during vault finale cashouts.
                     </div>
                 </div>
                 <div style="margin-top:1rem;">
-                    <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" class="btn btn-primary" style="padding: 0.55rem 1rem; font-size: 0.82rem; width:100%; text-align:center;">🛡️ Secure Your Lobby with NordVPN (72% Off) &rarr;</a>
+                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="homepage-security-intel" class="btn btn-primary" style="padding: 0.55rem 1rem; font-size: 0.82rem; width:100%; text-align:center;">🛡️ Boost Connection with ExitLag (Free Trial) &bull; Code: 10386953 &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
         <!-- AFFILIATE PRE-ORDER & GEAR PROMO -->
-    <section class="affiliate-banner" style="margin-top: 3.5rem;">
+    <section class="affiliate-banner" id="verified-gear" style="margin-top: 3.5rem;">
         <div>
             <span class="affiliate-badge">Verified Syndicate Equipment</span>
             <div class="affiliate-title">Official Partner Deals &amp; Hardware Upgrades</div>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Lock in verified digital pre-order game keys at the lowest prices, upgrade to low-latency Hall Effect controllers, secure 7,450 MB/s NVMe SSDs, and guard your lobby IP against DDoS.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Lock in verified digital pre-order game keys at lowest prices, upgrade to low-latency controllers, secure 7,450 MB/s NVMe SSDs, and route your lobby traffic through low-ping gaming nodes.</p>
             <div class="affiliate-grid">
                 <!-- Product 1: G2A -->
                 <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="gear-g2a" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
                             <img src="assets/gta6-key-box.jpg?v=20261117_prod_v4" alt="G2A GTA 6 Digital Key" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                         </a>
                         <div style="font-weight: 800; color:#fff;">G2A Verified Game Keys</div>
                         <div class="gear-spec">Discounted PC &amp; Console digital codes with verified seller protection.</div>
                     </div>
-                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">View G2A Deals &rarr;</a>
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="gear-g2a" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">View G2A Deals &rarr;</a>
                 </div>
                 <!-- Product 2: Eneba -->
                 <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="gear-eneba" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
                             <img src="assets/eneba-gift-cards.jpg?v=20261117_prod_v4" alt="Eneba Gift Cards" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                         </a>
                         <div style="font-weight: 800; color:#fff;">Eneba Global Key Deals</div>
                         <div class="gear-spec">Curated GTA &amp; PSN/Xbox wallet top-ups with instant code redemption.</div>
                     </div>
-                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">Check Eneba Store &rarr;</a>
+                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="gear-eneba" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">Check Eneba Store &rarr;</a>
                 </div>
                 <!-- Product 3: Samsung SSD -->
                 <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                        <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-samsung" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
                             <img src="assets/samsung-990-pro.jpg?v=20261117_prod_v4" alt="Samsung 990 PRO Gen4 NVMe SSD" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                         </a>
-                        <div style="font-weight: 800; color:#fff;">Samsung 990 PRO NVMe SSD</div>
-                        <div class="gear-spec">7,450 MB/s Gen4 speed built for zero-pop-in Vice City streaming.</div>
+                        <div style="font-weight: 800; color:#fff;">Samsung 990 PRO 2TB SSD</div>
+                        <div class="gear-spec">212GB INSTALL READY &bull; 7,450 MB/s Gen4 speed built for zero pop-in.</div>
                     </div>
-                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-amber" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">Check Amazon Price &rarr;</a>
+                    <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-samsung" class="btn btn-amber" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">Check Amazon Price &rarr;</a>
                 </div>
-                <!-- Product 4: DualSense Controller -->
+                <!-- Product 4: PULSE Elite Headset -->
                 <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                        <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-pulse-elite" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                            <img src="assets/pulse-elite-headset.svg" alt="PlayStation PULSE Elite Headset" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>
+                        <div style="font-weight: 800; color:#fff;">PULSE Elite Wireless Headset</div>
+                        <div class="gear-spec">CO-OP VOICE COMMS • BLACK FRIDAY &bull; Planar magnetic audio + AI noise rejection.</div>
+                    </div>
+                    <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-pulse-elite" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Check Headset Deal &rarr;</a>
+                </div>
+                <!-- Product 5: KontrolFreek Thumbsticks (Under $20) -->
+                <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-kontrolfreek" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                            <img src="assets/kontrolfreek-thumbsticks.svg" alt="KontrolFreek Performance Thumbsticks" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>
+                        <div style="font-weight: 800; color:#fff;">KontrolFreek Thumbsticks ($16.99)</div>
+                        <div class="gear-spec">UNDER $20 UPGRADE &bull; High-rise crosshair grips for faster 15s keypad hacking.</div>
+                    </div>
+                    <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-kontrolfreek" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem; background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);">Check Amazon Deal ($16.99) &rarr;</a>
+                </div>
+                <!-- Product 6: DualSense Twin Charging Station (Under $30) -->
+                <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <a href="https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-charging-station" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                            <img src="assets/dualsense-charging-station.svg" alt="DualSense Twin Charging Station" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>
+                        <div style="font-weight: 800; color:#fff;">DualSense Charging Dock ($29.99)</div>
+                        <div class="gear-spec">MARATHON LAUNCH NIGHT &bull; Fast click-in charging keeps controllers always ready.</div>
+                    </div>
+                    <a href="https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-charging-station" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">Check Dock Deal ($29.99) &rarr;</a>
+                </div>
+                <!-- Product 7: DualSense Edge Controller -->
+                <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-controller" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
                             <img src="assets/dualsense-edge-controller.jpg?v=20261117_prod_v4" alt="PlayStation DualSense Edge Pro Controller" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                         </a>
-                        <div style="font-weight: 800; color:#fff;">DualSense Edge Controller</div>
+                        <div style="font-weight: 800; color:#fff;">DualSense Edge Pro Controller</div>
                         <div class="gear-spec">Customizable back paddles and instant trigger stops for precision shootouts.</div>
                     </div>
-                    <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">Check Amazon Deal &rarr;</a>
+                    <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="gear-controller" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">Check Amazon Deal &rarr;</a>
                 </div>
-                <!-- Product 5: NordVPN -->
-                <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
+                <!-- Product 8: ExitLag -->
+                <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between; border-color:var(--neon-cyan);">
                     <div>
                         <div style="height:130px; background:linear-gradient(135deg, rgba(0,240,255,0.15) 0%, rgba(10,16,26,0.9) 100%); border:1px solid rgba(0,240,255,0.3); border-radius:6px; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom:0.65rem;">
-                            <span style="font-size:2.2rem;">🛡️</span>
-                            <span style="font-size:0.8rem; font-weight:800; color:var(--neon-cyan); margin-top:0.25rem;">NORDVPN ENCRYPTED TUNNEL</span>
+                            <span style="font-size:2.2rem;">⚡</span>
+                            <span style="font-size:0.8rem; font-weight:800; color:var(--neon-cyan); margin-top:0.25rem; font-family:var(--font-mono);">EXITLAG PRO GAMING TUNNEL</span>
                         </div>
-                        <div style="font-weight: 800; color:#fff;">NordVPN Low-Ping Tunnel</div>
-                        <div class="gear-spec">Protect against GTA Online lobby DDoS attacks, IP sniffing &amp; packet loss.</div>
+                        <div style="font-weight: 800; color:#fff;">⚡ ExitLag Pro Gaming Tunnel — Cut Ping, Stop Packet Loss &amp; Prevent Mid-Heist Disconnects &bull; Use Code: 10386953</div>
+                        <div class="gear-spec" style="margin-top:0.35rem;">Multi-path gaming route optimization prevents host migration crashes, lobby booters, and packet loss on high-stakes cashouts.</div>
                     </div>
-                    <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top:0.75rem;">Get 72% Off VPN &rarr;</a>
+                    <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-top:0.75rem;">
+                        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="verified-gear" class="btn btn-primary" style="padding: 0.5rem 0.85rem; font-size: 0.8rem; flex:1; text-align:center;">Boost Connection (Free Trial) &rarr;</a>
+                        <button type="button" class="btn btn-secondary" onclick="GTA6.copyExitLagCode(this)" style="padding: 0.5rem 0.75rem; font-size: 0.78rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">📋 Copy Code: 10386953</button>
+                    </div>
                 </div>
-                <!-- Product 6: CutFlow Pro & ClipBounty -->
+                <!-- Product 9: CutFlow Pro & ClipBounty -->
                 <div class="gear-box" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
-                        <a href="https://getapexlocal.com" target="_blank" rel="noopener" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
+                        <a href="https://getapexlocal.com" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="gear-cutflow" style="display:block; overflow:hidden; border-radius:6px; margin-bottom:0.65rem;">
                             <img src="assets/bundle-cover.png" alt="CutFlow Pro &amp; ClipBounty Studio" style="width:100%; height:130px; object-fit:cover; border-radius:6px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                         </a>
-                        <div style="font-weight: 800; color:#fff;">CutFlow Pro &amp; ClipBounty</div>
+                        <div style="font-weight: 800; color:#fff;">CutFlow Pro &amp; ClipBounty ($49)</div>
                         <div class="gear-spec">Auto-cut dead air &amp; export 9:16 vertical shorts offline ($49).</div>
                     </div>
                     <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-top:0.75rem;">
-                        <a href="https://getapexlocal.com" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.45rem 0.8rem; font-size: 0.76rem; border-color:#10b981; color:#10b981; flex:1; text-align:center;">GetApexLocal</a>
-                        <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.76rem; flex:1; text-align:center;">Whop Store</a>
+                        <a href="https://getapexlocal.com" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="gear-cutflow" class="btn btn-secondary" style="padding: 0.45rem 0.8rem; font-size: 0.76rem; border-color:#10b981; color:#10b981; flex:1; text-align:center;">GetApexLocal</a>
+                        <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="gear-cutflow" class="btn btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.76rem; flex:1; text-align:center;">Whop Store</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    
-
-        
 
     <!-- LIVE SYNDICATE FORUM PREVIEW -->
     <section style="margin-top: 4rem;">
@@ -1601,7 +1765,7 @@
             <div>
                 <span class="footer-col-title" style="color: #a855f7;">🤝 Deals &amp; Syndicate</span>
                 <ul class="footer-col-links">
-                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored">🔥 Amazon PS5 Pre-Order</a></li>
+                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer">🔥 Amazon PS5 Pre-Order</a></li>
                     <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored">⚡ G2A Keys (Save 20%)</a></li>
                     <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored">🎮 Eneba PSN / Xbox Gift Cards</a></li>
                     <li><a href="/forum.html">LFG Co-Op Syndicate Lounge</a></li>
@@ -1627,7 +1791,7 @@
         <!-- Legal Disclaimer & FTC -->
         <div class="footer-disclaimer">
             <p style="margin: 0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, and Eneba partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and GetApexLocal (CutFlow Pro & ClipBounty Studio) partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
 

@@ -95,10 +95,10 @@ INSERT OR REPLACE INTO forum_threads (id, author, badge, badge_name, avatar, tit
  'Starlet Superyacht offshore extraction: Scuba Rebreathers vs. Helipad Heat Comparison',
  'Tactical heat model: rooftop helicopters trigger coastal radar sweeps immediately, whereas underwater scuba rebreather exfiltration to the Leonida Keys stays off dispatch radar.',
  'EscapeRoute', 118),
-('thread-5', 'Syndicate Security Advisory', 'badge-mastermind', 'SYNDICATE SECURITY ADVISORY • PARTNER TIP', '/assets/avatar-mastermind.png',
- 'Public Session DDoS Protection Checklist Before Launching Co-Op Heist Finales',
- 'Editorial Partner Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding and disconnects mid-heist. Routing through a low-ping encrypted gaming VPN shields your lobby stability.',
- 'StealthMeta', 77);
+('thread-5', 'Syndicate Connection Advisory', 'badge-mastermind', 'SYNDICATE CONNECTION & LAG ADVISORY', '/assets/avatar-mastermind.png',
+ '⚡ [SYNDICATE CONNECTION & LAG ADVISORY] Stop Mid-Heist Disconnects & Cut Packet Loss with ExitLag Low-Ping Routing',
+ 'Syndicate Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial at https://www.exitlag.com/refer/10386953) to lock in rock-solid connections. Use coupon code: 10386953.',
+ 'StealthMeta', 95);
 
 -- Seed official verified Leonida map markers across all 6 confirmed regions
 INSERT OR IGNORE INTO map_markers (id, title, category, region, x, y, payout_or_perk, description, link, status, votes, submitted_by) VALUES
