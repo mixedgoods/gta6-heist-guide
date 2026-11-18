@@ -2,118 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best GTA 6 Heist Getaway Cars & Trunk Armory Configurator | GTA 6 Heist Guide</title>
-    <meta name="description" content="Configure getaway vehicles for GTA 6 heists: armor plating tiers, realistic trunk weapon slots, swamp & canal speed, and police pit-maneuver survivability.">
-        <meta name="keywords" content="GTA 6 best getaway cars, trunk weapon slots, armored vehicles Leonida, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/vehicles-getaway-cars.html">
-    <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="Best GTA 6 Heist Getaway Cars & Trunk Armory Configurator">
-    <meta property="og:description" content="Calculate top escape speed, trunk weapon slots used, and police ramming resistance before launching your Leonida heist.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/vehicles-getaway-cars.html">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/lfg-squad-banner.png">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <title>Confirmed GTA 6 Vehicles, Getaway Cars & Trunk Configurator | GTA 6 Heist Guide</title>
+    <meta name="description" content="Explore confirmed GTA 6 getaway cars, muscle tuners, supercars, boats, and police interceptors with official in-game screenshots, top speed stats, and trunk weapon capacity.">
     <link rel="stylesheet" href="assets/style.css">
-    <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "GTA 6 Trunk Weapon Storage & Getaway Vehicle Configurator",
-      "description": "Calculate vehicle trunk armory capacity, ballistic armor weight, and police pit-maneuver resistance.",
-      "url": "https://www.gta6heistguide.com/vehicles-getaway-cars.html",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "gta6heistguide.com"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the best GTA 6 heist payout calculator and crew cut calculator?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The interactive Heist Planner on gta6heistguide.com simulates 1 to 4 player co-op cuts, specialist fees (Gunner, Ghost Hacker, Wheelman), and +5% stealth integrity bonuses across all 6 major vaults including Raul Bautista bank scores."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do Lucia Caminos and Jason Duval skills work with GTA 6 trunk weapon storage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Lucia Caminos excels at keypad decryption and crowd intimidation, while Jason Duval leads sniper overwatch and getaway handling. Heavy thermal drills and LMGs must be stored physically inside your getaway car trunk weapon storage slots."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where can I use a GTA 6 LFG crew finder to match PS5, Xbox, or PC heist friends?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Visit the Crew Lounge LFG matchmaker at gta6heistguide.com/forum.html to filter squads by PS5 Pro, Xbox Series X|S, or PC and exchange Discord, PSN, or Gamertag friend handles."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.gta6heistguide.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "GTA 6 Trunk Weapon Storage & Getaway Vehicle Configurator",
-          "item": "https://www.gta6heistguide.com/vehicles-getaway-cars.html"
-        }
-      ]
-    }
-  ]
-}
-    </script>
-    <script>
-        function calcVehicleBuild() {
-            const cls = document.getElementById('vehClass').value;
-            const armor = parseInt(document.getElementById('vehArmor').value);
-            const trunkChecks = document.querySelectorAll('.trunk-slot-cb:checked');
-
-            let baseSpeed = 148, maxSlots = 4, pitResist = 55;
-            if (cls === 'sport') { baseSpeed = 168; maxSlots = 3; pitResist = 48; }
-            else if (cls === 'suv') { baseSpeed = 132; maxSlots = 6; pitResist = 84; }
-            else if (cls === 'sedan') { baseSpeed = 152; maxSlots = 5; pitResist = 70; }
-            else if (cls === 'airboat') { baseSpeed = 112; maxSlots = 4; pitResist = 62; }
-
-            let slotsUsed = 0;
-            trunkChecks.forEach(cb => slotsUsed += parseInt(cb.dataset.slots || 1));
-
-            const speedPenalty = (armor * 3) + Math.max(0, slotsUsed - maxSlots) * 12;
-            const topSpeed = Math.max(85, baseSpeed - speedPenalty);
-            const survival = Math.min(99, pitResist + armor * 10);
-
-            document.getElementById('vehTopSpeed').innerText = topSpeed + ' MPH';
-            document.getElementById('vehTrunkSlots').innerText = slotsUsed + ' / ' + maxSlots + ' Slots';
-            document.getElementById('vehTrunkSlots').style.color = slotsUsed > maxSlots ? 'var(--neon-pink)' : 'var(--neon-cyan)';
-            document.getElementById('vehSurvival').innerText = survival + '% Armor';
-            document.getElementById('vehWarn').innerText = slotsUsed > maxSlots
-                ? '⚠️ OVERWEIGHT TRUNK: Remove ' + (slotsUsed - maxSlots) + ' heavy slot(s) or switch to 4-Door Sedan / Armored SUV!'
-                : '✅ Balanced Trunk Armory — Optimal Acceleration & Escape Handling.';
-        }
-    </script>
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTA6GUIDE"></script>
     <script>
@@ -122,6 +15,101 @@
       gtag('js', new Date());
       gtag('config', 'G-GTA6GUIDE', { 'anonymize_ip': true });
     </script>
+    <style>
+        .veh-card {
+            background: rgba(14, 20, 32, 0.95);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .veh-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 8px 25px rgba(0, 240, 255, 0.2);
+        }
+        .veh-img-stage {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(0, 240, 255, 0.12) 0%, rgba(5, 8, 14, 0.95) 75%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .veh-img-stage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .veh-card:hover .veh-img-stage img {
+            transform: scale(1.05);
+        }
+        .veh-badge-class {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            font-size: 0.68rem;
+            font-family: var(--font-mono);
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .veh-badge-speed {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            font-weight: 900;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .veh-content {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .veh-stat-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 0.5rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.74rem;
+            margin: 0.6rem 0;
+            font-family: var(--font-mono);
+        }
+        .veh-filter-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-muted);
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .veh-filter-pill.active, .veh-filter-pill:hover {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+    </style>
 </head>
 <body onload="calcVehicleBuild()">
 
@@ -150,117 +138,490 @@
         <a href="index.html" class="brand-logo">
             <span>GTA 6</span>
             <span class="vi">HEIST GUIDE</span>
-            <span class="brand-badge">Syndicate v3.0</span>
+            <span class="brand-badge">Syndicate v3.2</span>
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Vaults</a></li>
-            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>
-            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta &amp; Rules</a></li>
+            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Tools</a></li>
+            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta</a></li>
             <li><a href="heist-planner.html">Planner</a></li>
             <li><a href="interactive-map.html">Radar Map</a></li>
             <li><a href="crew-database.html">Crew</a></li>
             <li><a href="weapons-gear.html" style="color: var(--neon-yellow); font-weight: 800;">Items &amp; Gear</a></li>
-            <li><a href="affiliates-gear.html">Gear &amp; VPN</a></li>
-            <li><a href="forum.html" style="color: var(--neon-cyan);">Crew Lounge &amp; LFG</a></li>
+            <li><a href="vehicles-getaway-cars.html" class="active" style="color:var(--neon-pink); font-weight:900;">Vehicles</a></li>
+            <li><a href="forum.html" style="color: var(--neon-cyan);">LFG Lounge</a></li>
             <li><a href="acquisitions.html" style="color:var(--neon-yellow);">Acquisitions</a></li>
-            <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
         </ul>
         <div class="nav-actions"></div>
     </div>
 </nav>
 
-<header class="hero">
-    <div class="hero-tagline">&bull; Physical Vehicle Trunk &amp; Pursuit Dynamics &bull;</div>
-    <h1>BEST HEIST <span class="highlight-pink">GETAWAY VEHICLES</span> &amp; TRUNKS</h1>
-    <p>No more invisible 40-gun pockets. Plan your squad seats, armor plating weight, trunk weapon stashes, and terrain handling before the finale.</p>
-    <div class="hero-cta-group">
-        <button type="button" class="btn btn-secondary" onclick="GTA6.bookmarkCurrentPage()">⭐ Bookmark Configurator</button>
-        <a href="escape-routes.html" class="btn btn-primary">View Leonida Escape Routes</a>
+<!-- COMPACT ZERO-SCROLL PAGE HEADER -->
+<div style="max-width:1140px; margin:0.75rem auto 0.5rem; padding:0 1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-bottom:1px solid rgba(255,42,141,0.25); padding-bottom:0.45rem; box-sizing:border-box;">
+    <div>
+        <h1 style="color:#fff; font-size:1.35rem; font-weight:1000; margin:0; line-height:1.2;">
+            CONFIRMED GETAWAY CARS &amp; <span style="color:var(--neon-pink);">TUNER DATABASE</span>
+        </h1>
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">
+            🚗 16 CONFIRMED OFFICIAL VEHICLES &bull; TRUNK ARMORY LOADOUTS &bull; REAL 3D SCREENCAPS
+        </div>
     </div>
-</header>
+    <div style="display:flex; gap:0.4rem; align-items:center;">
+        <span class="user-badge badge-mastermind" style="background:rgba(255,42,141,0.2); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.74rem;">OFFICIAL ROCKSTAR MEDIA</span>
+    </div>
+</div>
 
-<main class="container">
-    <section class="tool-box pink-glow">
-        <h2 style="color:#fff; margin-bottom:0.4rem;">Interactive Getaway Vehicle &amp; Trunk Armory Configurator</h2>
-        <p style="color:var(--text-muted); font-size:0.94rem; margin-bottom:1.5rem;">Choose your vehicle class, armor tier, and heavy gear stashed in the trunk to test top speed &amp; capacity limits.</p>
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1rem 1rem 3rem; box-sizing:border-box;">
 
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem; margin-bottom:1.5rem;">
+    <!-- INTERACTIVE GETAWAY CAR CONFIGURATOR TOOL -->
+    <section class="tool-box pink-glow" style="margin-bottom:2rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div>
+                <h2 style="color:#fff; font-size:1.3rem; margin:0 0 0.2rem;">Physical Trunk Armory &amp; Weight Configurator</h2>
+                <p style="color:var(--text-muted); font-size:0.86rem; margin:0;">Test vehicle weight penalties, trunk gear capacity, and pit-maneuver survival before hitting bank vaults.</p>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--neon-green); font-weight:800;">⚡ Real-time GTA 6 Physics Emulation</span>
+        </div>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1rem;">
             <div class="form-group">
-                <label>Getaway Vehicle Class</label>
-                <select class="form-select" id="vehClass" onchange="calcVehicleBuild(); GTA6.playBeep(440, 'triangle', 0.04);">
-                    <option value="sedan" selected>4-Door Tuner Sedan (4 Seats &bull; 5 Trunk Slots)</option>
-                    <option value="suv">Armored 4x4 Utility SUV (4 Seats &bull; 6 Trunk Slots)</option>
-                    <option value="sport">2-Door Vice Supercar (2 Seats &bull; 3 Trunk Slots)</option>
-                    <option value="airboat">Grassrivers Swamp Airboat (4 Seats &bull; 4 Slots)</option>
+                <label style="font-size:0.75rem; color:#aaa; font-family:var(--font-mono);">GETAWAY VEHICLE CHASSIS</label>
+                <select class="form-select" id="vehClass" onchange="calcVehicleBuild(); GTA6.playBeep(440, 'triangle', 0.04);" style="width:100%; padding:0.5rem; background:rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:6px; color:#fff; font-size:0.82rem;">
+                    <option value="sedan" selected>Declasse Tulip (4 Seats &bull; 4 Trunk Slots)</option>
+                    <option value="suv">Buffalo STX Pursuit SUV (4 Seats &bull; 5 Trunk Slots)</option>
+                    <option value="sport">Bravado Banshee Supercar (2 Seats &bull; 2 Trunk Slots)</option>
+                    <option value="airboat">SeaSparrow Amphibious Chopper (2 Seats &bull; 2 Pods)</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Ballistic Armor Plating Tier</label>
-                <select class="form-select" id="vehArmor" onchange="calcVehicleBuild(); GTA6.playBeep(480, 'triangle', 0.04);">
-                    <option value="1">Light Window Tint + Run-Flat Tires (-3 MPH)</option>
-                    <option value="2" selected>Reinforced Quarter Panels (-6 MPH)</option>
-                    <option value="3">Full Ballistic Steel + Ram Bumper (-9 MPH)</option>
+                <label style="font-size:0.75rem; color:#aaa; font-family:var(--font-mono);">BALLISTIC ARMOR UPGRADE</label>
+                <select class="form-select" id="vehArmor" onchange="calcVehicleBuild(); GTA6.playBeep(480, 'triangle', 0.04);" style="width:100%; padding:0.5rem; background:rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:6px; color:#fff; font-size:0.82rem;">
+                    <option value="1">Level I: Run-Flat Ballistic Tires (-3 MPH)</option>
+                    <option value="2" selected>Level II: Reinforced Quarter Panels (-6 MPH)</option>
+                    <option value="3">Level III: Steel Bumper Ram Mesh (-10 MPH)</option>
                 </select>
             </div>
         </div>
 
-        <label style="display:block; color:var(--neon-cyan); font-weight:700; margin-bottom:0.65rem;">Stow Heavy Gear in Vehicle Trunk:</label>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem; margin-bottom:1.5rem;">
-            <label class="check-item" style="margin:0;">
+        <label style="display:block; color:var(--neon-cyan); font-weight:800; font-size:0.8rem; margin-bottom:0.5rem; font-family:var(--font-mono);">STOW GEAR IN TRUNK ARMORY:</label>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.6rem; margin-bottom:1.25rem;">
+            <label class="check-item" style="margin:0; background:rgba(0,0,0,0.4); padding:0.5rem 0.75rem; border-radius:6px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:0.5rem; font-size:0.78rem;">
                 <input type="checkbox" class="trunk-slot-cb" data-slots="2" checked onchange="calcVehicleBuild()">
-                <div><strong>Thermal Plasma Cutter</strong> (2 Slots)</div>
+                <div><strong>Duke Assault Carbine</strong> (2 Slots)</div>
             </label>
-            <label class="check-item" style="margin:0;">
+            <label class="check-item" style="margin:0; background:rgba(0,0,0,0.4); padding:0.5rem 0.75rem; border-radius:6px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:0.5rem; font-size:0.78rem;">
                 <input type="checkbox" class="trunk-slot-cb" data-slots="2" checked onchange="calcVehicleBuild()">
-                <div><strong>Heavy Suppression LMG</strong> (2 Slots)</div>
+                <div><strong>Thermal Lance Vault Rig</strong> (2 Slots)</div>
             </label>
-            <label class="check-item" style="margin:0;">
-                <input type="checkbox" class="trunk-slot-cb" data-slots="1" checked onchange="calcVehicleBuild()">
-                <div><strong>EMP Road Mines Kit</strong> (1 Slot)</div>
-            </label>
-            <label class="check-item" style="margin:0;">
+            <label class="check-item" style="margin:0; background:rgba(0,0,0,0.4); padding:0.5rem 0.75rem; border-radius:6px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:0.5rem; font-size:0.78rem;">
                 <input type="checkbox" class="trunk-slot-cb" data-slots="1" onchange="calcVehicleBuild()">
-                <div><strong>Spare Dupe License Plates &amp; Hoodies</strong> (1 Slot)</div>
+                <div><strong>EMP Stun Spikes</strong> (1 Slot)</div>
+            </label>
+            <label class="check-item" style="margin:0; background:rgba(0,0,0,0.4); padding:0.5rem 0.75rem; border-radius:6px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:0.5rem; font-size:0.78rem;">
+                <input type="checkbox" class="trunk-slot-cb" data-slots="1" onchange="calcVehicleBuild()">
+                <div><strong>Spare Dupe Plates &amp; Disguises</strong> (1 Slot)</div>
             </label>
         </div>
 
-        <div class="payout-display">
-            <div>
-                <div class="payout-item-title">Estimated Top Escape Speed</div>
-                <div class="payout-item-val" id="vehTopSpeed" style="color:var(--neon-green);">146 MPH</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; text-align:center;">
+            <div style="background:rgba(0,0,0,0.6); border:1px solid rgba(0,255,136,0.3); border-radius:8px; padding:0.75rem;">
+                <div style="font-size:0.7rem; color:#aaa; font-family:var(--font-mono);">ESTIMATED ESCAPE SPEED</div>
+                <div id="vehTopSpeed" style="color:var(--neon-green); font-size:1.4rem; font-weight:1000; font-family:var(--font-mono);">142 MPH</div>
             </div>
-            <div>
-                <div class="payout-item-title">Trunk Capacity Used</div>
-                <div class="payout-item-val" id="vehTrunkSlots" style="color:var(--neon-cyan);">5 / 5 Slots</div>
+            <div style="background:rgba(0,0,0,0.6); border:1px solid rgba(0,240,255,0.3); border-radius:8px; padding:0.75rem;">
+                <div style="font-size:0.7rem; color:#aaa; font-family:var(--font-mono);">TRUNK STORAGE USED</div>
+                <div id="vehTrunkSlots" style="color:var(--neon-cyan); font-size:1.4rem; font-weight:1000; font-family:var(--font-mono);">4 / 4 Slots</div>
             </div>
-            <div>
-                <div class="payout-item-title">Police Pit-Maneuver Survival</div>
-                <div class="payout-item-val" id="vehSurvival" style="color:var(--neon-pink);">90% Armor</div>
+            <div style="background:rgba(0,0,0,0.6); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.75rem;">
+                <div style="font-size:0.7rem; color:#aaa; font-family:var(--font-mono);">PIT-MANEUVER SURVIVAL</div>
+                <div id="vehSurvival" style="color:var(--neon-pink); font-size:1.4rem; font-weight:1000; font-family:var(--font-mono);">88% Armor</div>
             </div>
         </div>
-        <div id="vehWarn" style="margin-top:1.1rem; text-align:center; font-weight:700; color:#fff;"></div>
-        <div style="margin-top:0.85rem; padding:0.65rem 1rem; background:rgba(255,153,0,0.06); border-left:3px solid var(--neon-amber); border-radius:6px; font-size:0.85rem; color:var(--text-muted); text-align:center;">
-            ⚡ Eliminate Vice City texture pop-in during high-speed getaways &rarr; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" style="color:var(--neon-amber); font-weight:800;">Check Samsung 990 PRO Gen4 NVMe SSD Price on Amazon</a>
-        </div>
+        <div id="vehWarn" style="margin-top:0.75rem; text-align:center; font-size:0.8rem; font-weight:700; color:var(--neon-green);"></div>
     </section>
 
-    <section class="affiliate-banner">
-        <div>
-            <span class="affiliate-badge">High-Speed Streaming &amp; Control</span>
-            <div class="affiliate-title">Eliminate Texture Pop-In at 160+ MPH</div>
-            <p style="color:var(--text-muted); font-size:0.95rem;">Supercharged high-speed chases across Vice City boulevards stream gigabytes of textures per minute—pair a 7,450 MB/s Gen4 NVMe SSD with pro thumbstick control.</p>
-            <div style="margin-top:1.2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-                <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-amber">Samsung 990 PRO SSD (Amazon)</a>
-                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary">G2A Digital Keys</a>
-                <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" class="btn btn-secondary">NordVPN Low-Ping Routing</a>
+    <!-- LIVE SEARCH & FILTER BAR -->
+    <div style="background:rgba(12, 18, 28, 0.95); border:1px solid rgba(0,240,255,0.3); border-radius:10px; padding:1.25rem; margin-bottom:1.5rem; box-shadow:0 0 25px rgba(0,240,255,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
+            <div style="flex:1; min-width:min(100%, 300px); position:relative;">
+                <input type="text" id="vehSearchInput" placeholder="🔍 Search vehicles by name, real model, class, top speed..." style="width:100%; padding:0.65rem 1rem 0.65rem 2.4rem; background:rgba(0,0,0,0.6); border:1px solid var(--neon-cyan); border-radius:8px; color:#fff; font-size:0.88rem; outline:none;" onkeyup="filterVehicles()">
+                <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.95rem; pointer-events:none;">🚗</span>
+            </div>
+            <div id="vehResultCount" style="font-family:var(--font-mono); font-size:0.82rem; color:var(--neon-green); font-weight:800;">
+                Showing 16 of 16 Confirmed Vehicles
             </div>
         </div>
-    </section>
+
+        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+            <button class="veh-filter-pill active" onclick="setVehFilter('all', this)">All (16)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('muscle', this)">Muscle &amp; Tuners</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('super', this)">Sports &amp; Supercars</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('pursuit', this)">Pursuit &amp; Armored</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('marine-air', this)">Boats &amp; Aviation</button>
+        </div>
+    </div>
+
+    <!-- VEHICLES 16-GRID -->
+    <div id="vehGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:1.25rem;">
+
+        <!-- 1. Declasse Tulip M-100 -->
+        <div class="veh-card" data-category="muscle" data-keywords="declasse tulip m-100 chevelle malibu muscle getaway car jason lucia">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-tulip.jpg" alt="Declasse Tulip M-100 - Jason & Lucia Getaway Car" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">145 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Tulip M-100</h3>
+                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1972 Chevrolet Chevelle Malibu</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Heavy Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">RWD Muscle</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Steel Frame</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Jason &amp; Lucia's signature primary getaway car seen in Trailer 1, outfitted with custom stickers, reinforced quarter panels, and tuned drag suspension.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. Bravado Banshee -->
+        <div class="veh-card" data-category="super" data-keywords="bravado banshee dodge viper supercar sports coupe highway">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-banshee.jpg" alt="Bravado Banshee - Legendary Vice City Supercar" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPER</span>
+                <span class="veh-badge-speed">172 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Banshee</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Viper GTS</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">RWD V10</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Light Composite</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Vice City's legendary flagship exotic. Exceptional straight-line acceleration to leave VCPD cruisers behind on open causeways and interstates.
+                </p>
+            </div>
+        </div>
+
+        <!-- 3. Grotti Cheetah Classic -->
+        <div class="veh-card" data-category="super" data-keywords="grotti cheetah classic ferrari testarossa 1980s retro exotic ocean drive">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-cheetah.jpg" alt="Grotti Cheetah Classic - Retro Vice City Exotic" loading="lazy">
+                <span class="veh-badge-class">SPORTS CLASSIC</span>
+                <span class="veh-badge-speed">168 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Cheetah Classic</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ferrari Testarossa</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Mid-Engine RWD</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Standard</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Iconic Vice City side-straked retro exotic. Offers superb high-speed downforce and razor-sharp steering through neon-lit Ocean Drive intersections.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. Pfister Comet S2 Cabrio -->
+        <div class="veh-card" data-category="super" data-keywords="pfister comet s2 cabrio porsche 911 convertible sports coupe">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-comet-s2.jpg" alt="Pfister Comet S2 Cabrio - High End Sports Coupe" loading="lazy">
+                <span class="veh-badge-class">SPORTS CONVERTIBLE</span>
+                <span class="veh-badge-speed">175 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Pfister Comet S2 Cabrio</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Porsche 911 Turbo S Cabriolet</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">AWD Flat-6</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Reinforced Carbon</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Twin-turbo all-wheel-drive precision capable of weaving through gridlocked traffic and evading 4-Star police barricades with supreme traction.
+                </p>
+            </div>
+        </div>
+
+        <!-- 5. Bravado Gauntlet Hellfire -->
+        <div class="veh-card" data-category="muscle" data-keywords="bravado gauntlet hellfire dodge challenger demon supercharged muscle ram">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-gauntlet-hellfire.jpg" alt="Bravado Gauntlet Hellfire - Heavy Muscle Car" loading="lazy">
+                <span class="veh-badge-class">HEAVY MUSCLE</span>
+                <span class="veh-badge-speed">156 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Gauntlet Hellfire</h3>
+                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Challenger SRT Demon</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Supercharged V8</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Heavy Ram Tier</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Raw American torque engineered to punch straight through police cruisers and PIT maneuvers without sacrificing straightaway top speed.
+                </p>
+            </div>
+        </div>
+
+        <!-- 6. Annis Elegy Retro Custom -->
+        <div class="veh-card" data-category="muscle" data-keywords="annis elegy retro custom nissan skyline gtr r32 tuner drift jdm port gellhorn">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-elegy-retro.jpg" alt="Annis Elegy Retro Custom - JDM Tuner" loading="lazy">
+                <span class="veh-badge-class">JDM TUNER</span>
+                <span class="veh-badge-speed">162 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Annis Elegy Retro Custom</h3>
+                <div style="color:var(--neon-yellow); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Nissan Skyline GT-R (R32 / R33)</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">AWD Twin-Turbo</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Roll Cage Tier</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    The crown jewel of Port Gellhorn's underground import tuning scene. Unmatched wet-weather grip during torrential Florida hurricane downpours.
+                </p>
+            </div>
+        </div>
+
+        <!-- 7. Albany Buccaneer Custom -->
+        <div class="veh-card" data-category="muscle" data-keywords="albany buccaneer custom buick riviera lowrider classic little cuba">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buccaneer.jpg" alt="Albany Buccaneer Custom - Lowrider Classic" loading="lazy">
+                <span class="veh-badge-class">LOWRIDER CLASSIC</span>
+                <span class="veh-badge-speed">138 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Albany Buccaneer Custom</h3>
+                <div style="color:var(--neon-amber); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1965 Buick Riviera Lowrider</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Hydraulic RWD</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Reinforced Frame</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Little Cuba street cruiser equipped with hydraulic stance control and massive trunk capacity suited for stashing gold bullion bricks without sagging.
+                </p>
+            </div>
+        </div>
+
+        <!-- 8. Vapid Dominator ASP -->
+        <div class="veh-card" data-category="muscle" data-keywords="vapid dominator asp ford mustang svt cobra r track muscle">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-dominator-asp.jpg" alt="Vapid Dominator ASP - Track Muscle Car" loading="lazy">
+                <span class="veh-badge-class">TRACK MUSCLE</span>
+                <span class="veh-badge-speed">158 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Vapid Dominator ASP</h3>
+                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">2000 Ford Mustang SVT Cobra R</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">High-Rev V8</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Strut Brace Tier</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    High-revving aggressive track car tuned for aggressive corner-cutting around shipping yard obstacles and Port Gellhorn container terminals.
+                </p>
+            </div>
+        </div>
+
+        <!-- 9. Invetero Coquette D10 -->
+        <div class="veh-card" data-category="super" data-keywords="invetero coquette d10 chevrolet corvette c8 supercar exotic mid-engine">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-coquette-d10.jpg" alt="Invetero Coquette D10 - Mid Engine Exotic" loading="lazy">
+                <span class="veh-badge-class">MID-ENGINE EXOTIC</span>
+                <span class="veh-badge-speed">174 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Invetero Coquette D10</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Corvette C8</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Mid-Engine RWD</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Aero Splitter</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Balanced mid-engine layout delivering razor-sharp responsiveness when darting through oncoming traffic along Vice City’s multi-lane bridges.
+                </p>
+            </div>
+        </div>
+
+        <!-- 10. Declasse Vigero ZX Convertible -->
+        <div class="veh-card" data-category="muscle" data-keywords="declasse vigero zx convertible chevrolet camaro zl1 modern muscle 4-seater">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-vigero-zx.jpg" alt="Declasse Vigero ZX Convertible" loading="lazy">
+                <span class="veh-badge-class">MODERN MUSCLE</span>
+                <span class="veh-badge-speed">160 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Vigero ZX</h3>
+                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Camaro ZL1 Convertible</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Supercharged V8</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">High-Tensile Steel</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Modern muscle platform combining 4-seater crew extraction capacity with aggressive acceleration, allowing backseat shooters 360-degree firing arcs.
+                </p>
+            </div>
+        </div>
+
+        <!-- 11. Grotti Furia -->
+        <div class="veh-card" data-category="super" data-keywords="grotti furia pininfarina battista ferrari sf90 hypercar exotic butterfly doors">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-furia.jpg" alt="Grotti Furia - Butterfly Door Hypercar" loading="lazy">
+                <span class="veh-badge-class">HYPERCAR EXOTIC</span>
+                <span class="veh-badge-speed">178 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Furia</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Pininfarina Battista / Ferrari SF90</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">1 Slot</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">AWD Quad Motor</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Carbon Monocoque</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    The pinnacle of Biscayne Bay wealth. Minimal trunk luggage space compensated by breathtaking launch speeds that outrun police helicopter spotlights.
+                </p>
+            </div>
+        </div>
+
+        <!-- 12. Dinka Blista Compact -->
+        <div class="veh-card" data-category="muscle" data-keywords="dinka blista compact honda crx hatchback compact alleyway agile">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-blista-compact.jpg" alt="Dinka Blista Compact - Alleyway Runner" loading="lazy">
+                <span class="veh-badge-class">COMPACT HATCH</span>
+                <span class="veh-badge-speed">130 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Dinka Blista Compact</h3>
+                <div style="color:var(--neon-green); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1987 Honda CR-X</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">FWD Lightweight</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Light Steel</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Small footprint allows this hatchback to slip through narrow alleys, park barriers, and pedestrian plazas where heavy police cruisers get wedged.
+                </p>
+            </div>
+        </div>
+
+        <!-- 13. VCPD Police Interceptor Cruiser -->
+        <div class="veh-card" data-category="pursuit" data-keywords="vcpd police cruiser interceptor utility cop car scanner push bumper siren">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-vcpd-cruiser.jpg" alt="VCPD Police Interceptor Cruiser" loading="lazy">
+                <span class="veh-badge-class">POLICE INTERCEPTOR</span>
+                <span class="veh-badge-speed">152 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">VCPD Cruiser Interceptor</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ford Police Interceptor Utility</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">5 Heavy Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">AWD EcoBoost</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Level III Ballistic</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Can be commandeered or cloned for disguised transit. Features heavy-duty reinforced push bumpers and an integrated police radio scanner.
+                </p>
+            </div>
+        </div>
+
+        <!-- 14. Bravado Buffalo STX Pursuit -->
+        <div class="veh-card" data-category="pursuit" data-keywords="bravado buffalo stx pursuit dodge charger srt hellcat police armored sedan">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg" alt="Bravado Buffalo STX Pursuit - Armored Cruiser" loading="lazy">
+                <span class="veh-badge-class">ARMORED PURSUIT</span>
+                <span class="veh-badge-speed">164 MPH</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Buffalo STX</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Charger SRT Hellcat Pursuit</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Slots</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Supercharged Hemi</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Bullbar Armor</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    High-speed highway patrol cruiser equipped with reinforced door plates and aggressive ramming capabilities to counter road spikes and roadblocks.
+                </p>
+            </div>
+        </div>
+
+        <!-- 15. SeaSparrow Amphibious Helicopter -->
+        <div class="veh-card" data-category="marine-air" data-keywords="seasparrow amphibious helicopter chopper aircraft water pontoon extraction">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-seasparrow.jpg" alt="SeaSparrow Amphibious Helicopter" loading="lazy">
+                <span class="veh-badge-class">AMPHIBIOUS CHOPPER</span>
+                <span class="veh-badge-speed">140 KTS</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">SeaSparrow Amphibious</h3>
+                <div style="color:var(--neon-yellow); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Bell 47 with Marine Pontoons</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">2 Crew</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Marine Pods</strong></div>
+                    <div><span>Flight:</span> <strong style="color:#fff;">Turbine Rotor</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Sealed Marine Hull</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Essential extraction craft for yacht and swamp raids. Lands seamlessly on open ocean, canals, and Everglades wetlands to bypass land checkpoints.
+                </p>
+            </div>
+        </div>
+
+        <!-- 16. Grotti Squalo Offshore Speedboat -->
+        <div class="veh-card" data-category="marine-air" data-keywords="grotti squalo speedboat offshore racer cigarette boat marine maritime dre'quan">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-squalo.jpg" alt="Grotti Squalo Offshore Speedboat" loading="lazy">
+                <span class="veh-badge-class">OFFSHORE RACER</span>
+                <span class="veh-badge-speed">95 KTS</span>
+            </div>
+            <div class="veh-content">
+                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Squalo Speedboat</h3>
+                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Cigarette 38 Top Gun Offshore</div>
+                <div class="veh-stat-row">
+                    <div><span>Seats:</span> <strong style="color:#fff;">4 Crew</strong></div>
+                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Water Pods</strong></div>
+                    <div><span>Drive:</span> <strong style="color:#fff;">Twin High-HP V8</strong></div>
+                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Reinforced Kevlar</strong></div>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
+                    Dre'Quan Priest's premier maritime getaway vessel. Pierces 10-foot ocean chop at over 90 knots, crossing into international waters in under 2 minutes.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
 </main>
 
 <footer>
     <div style="max-width: 1140px; margin: 0 auto; text-align: center; padding: 2.5rem 1rem 2rem; box-sizing: border-box;">
-        
         <!-- Brand & Tagline -->
         <div style="margin-bottom: 1.5rem;">
             <a href="/index.html" class="brand-logo" style="display: inline-flex; align-items: center; gap: 0.45rem; text-decoration: none; font-size: 1.25rem;">
@@ -280,12 +641,13 @@
             <a href="/heist-planner.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;">Heist Planner</a>
             <a href="/crew-database.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;">Crew Specialists</a>
             <a href="/weapons-gear.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;">Weapons &amp; Gear</a>
+            <a href="/vehicles-getaway-cars.html" style="color: var(--neon-pink); text-decoration: none; transition: color 0.2s; font-weight: 800;">Getaway Cars</a>
             <a href="/gameplay-mechanics.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;">Mechanics</a>
             <a href="/forum.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;">LFG Lounge</a>
             <a href="/free" style="color: var(--neon-amber); text-decoration: none; transition: color 0.2s; font-weight: 700;">⚡ Free Suite</a>
         </nav>
 
-        <!-- Secondary Resources & Deals (Subtle Inline Strip) -->
+        <!-- Secondary Resources & Deals -->
         <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.6rem 1.1rem; margin-bottom: 1.75rem; font-size: 0.78rem; padding: 0.65rem 1.25rem; background: rgba(255, 255, 255, 0.02); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.06); max-width: 820px; margin-left: auto; margin-right: auto;">
             <a href="/dossier.html" style="color: #94a3b8; text-decoration: none;">Day-1 Tactical Dossier (PDF)</a>
             <span style="color: #334155;">&bull;</span>
@@ -304,9 +666,73 @@
                 <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary &amp; strategy portal. Grand Theft Auto, GTA VI, and Vice City are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, and Eneba partner, this site earns on qualifying purchases. &copy; 2026 gta6heistguide.com
             </p>
         </div>
-
     </div>
 </footer>
+
+<script>
+    let activeVehCategory = 'all';
+
+    function setVehFilter(cat, btn) {
+        activeVehCategory = cat;
+        document.querySelectorAll('.veh-filter-pill').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        filterVehicles();
+    }
+
+    function filterVehicles() {
+        const query = (document.getElementById('vehSearchInput')?.value || '').toLowerCase().trim();
+        const cards = document.querySelectorAll('#vehGrid .veh-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const cat = card.dataset.category || '';
+            const kw = card.dataset.keywords || '';
+            const text = card.innerText.toLowerCase();
+
+            const matchesCat = (activeVehCategory === 'all') || (cat === activeVehCategory);
+            const matchesQuery = !query || text.includes(query) || kw.includes(query);
+
+            if (matchesCat && matchesQuery) {
+                card.style.display = 'flex';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        const countEl = document.getElementById('vehResultCount');
+        if (countEl) {
+            countEl.innerText = `Showing ${visibleCount} of ${cards.length} Confirmed Vehicles`;
+        }
+    }
+
+    function calcVehicleBuild() {
+        const cls = document.getElementById('vehClass').value;
+        const armor = parseInt(document.getElementById('vehArmor').value);
+        const trunkChecks = document.querySelectorAll('.trunk-slot-cb:checked');
+
+        let baseSpeed = 145, maxSlots = 4, pitResist = 60;
+        if (cls === 'sport') { baseSpeed = 172; maxSlots = 2; pitResist = 45; }
+        else if (cls === 'suv') { baseSpeed = 164; maxSlots = 5; pitResist = 88; }
+        else if (cls === 'airboat') { baseSpeed = 140; maxSlots = 2; pitResist = 50; }
+
+        let slotsUsed = 0;
+        trunkChecks.forEach(cb => slotsUsed += parseInt(cb.dataset.slots || 1));
+
+        const speedPenalty = (armor * 3) + Math.max(0, slotsUsed - maxSlots) * 12;
+        const topSpeed = Math.max(85, baseSpeed - speedPenalty);
+        const survival = Math.min(99, pitResist + armor * 10);
+
+        document.getElementById('vehTopSpeed').innerText = topSpeed + ' MPH';
+        document.getElementById('vehTrunkSlots').innerText = slotsUsed + ' / ' + maxSlots + ' Slots';
+        document.getElementById('vehTrunkSlots').style.color = slotsUsed > maxSlots ? 'var(--neon-pink)' : 'var(--neon-cyan)';
+        document.getElementById('vehSurvival').innerText = survival + '% Armor';
+        document.getElementById('vehWarn').innerText = slotsUsed > maxSlots
+            ? '⚠️ OVERWEIGHT TRUNK: Remove ' + (slotsUsed - maxSlots) + ' heavy slot(s) or upgrade vehicle chassis!'
+            : '✅ Balanced Trunk Armory — Optimal Acceleration & Escape Handling.';
+    }
+</script>
+
 <script src="assets/main.js"></script>
 </body>
 </html>
