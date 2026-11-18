@@ -1383,7 +1383,13 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         <a href="forum.html#lfg-hub" class="btn btn-primary" style="padding:0.55rem 1rem; font-size:0.82rem;">🤝 Find Squad & Make Friends &rarr;</a>
       </div>
     `;
-    mainEl.insertBefore(pulse, mainEl.firstElementChild);
+    // Position BELOW main content/radar and right ABOVE the Syndicate Deals section
+    const affSection = document.querySelector('.affiliate-showcase-section') || document.querySelector('.deal-matcher-box');
+    if (affSection && affSection.parentNode) {
+      affSection.parentNode.insertBefore(pulse, affSection);
+    } else {
+      mainEl.appendChild(pulse);
+    }
   },
 
   // --------------------------------------------------------------------------
