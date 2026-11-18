@@ -695,30 +695,36 @@ footer {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 @media (max-width: 850px) {
-  .footer-container { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}
+@media (max-width: 500px) {
+  .footer-container { grid-template-columns: 1fr; gap: 1rem; }
 }
 .footer-col h4 {
   color: #fff;
   font-weight: 800;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 .footer-col ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.35rem;
+  padding: 0;
+  margin: 0;
 }
 .footer-col a {
   color: var(--text-muted);
   text-decoration: none;
+  font-size: 0.82rem;
   transition: color 0.2s;
 }
 .footer-col a:hover {
@@ -727,11 +733,11 @@ footer {
 .disclaimer-box {
   max-width: 1280px;
   margin: 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  font-size: 0.78rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.76rem;
   color: #6a667a;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 /* ==========================================================================
    GETAPEXLOCAL.COM 50% AFFILIATE & CREATOR SHOWCASE

@@ -411,43 +411,6 @@
         </div>
     </section>
 
-    <!-- 15-SECOND KEYPAD HACK MINI-GAME -->
-    <div id="keypadTrainerBox" style="margin: 2.25rem 0 2.5rem; background: radial-gradient(circle at center, rgba(14,24,38,0.95), rgba(7,11,18,0.98)); border: 2px solid var(--neon-cyan); border-radius: 12px; padding: 1.5rem; box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-bottom: 1px solid rgba(0,240,255,0.25); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
-            <div>
-                <span class="user-badge badge-hacker" style="background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan);">🎮 INTERACTIVE VAULT TRAINER</span>
-                <h3 style="color:#fff; font-size:1.35rem; margin-top:0.35rem;">⚡ 15-Second Vault Keypad Memory Drill</h3>
-            </div>
-            <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-yellow);">Practice Muscle Memory Before Launch</div>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Memorize the flashing 6-digit biometric vault passcode and enter it on the cyber keypad before the 15-second security wipe trips the alarm.</p>
-        <div style="display:flex; justify-content:center; align-items:center; gap:2rem; flex-wrap:wrap;">
-            <div style="background:#000; border:2px solid var(--neon-cyan); border-radius:8px; padding:1.25rem 1.75rem; text-align:center; min-width:280px; box-shadow:inset 0 0 15px rgba(0,240,255,0.3);">
-                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.25rem;">Security Override Code</div>
-                <div id="miniGameCodeDisplay" style="font-family:var(--font-mono); font-size:2.2rem; font-weight:900; letter-spacing:8px; color:var(--neon-cyan); min-height:48px;">READY?</div>
-                <div id="miniGameTimerDisplay" style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-pink); margin-top:0.35rem;">TIME REMAINING: 15.0s</div>
-            </div>
-            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; width:220px;">
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(1)">1</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(2)">2</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(3)">3</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(4)">4</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(5)">5</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(6)">6</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(7)">7</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(8)">8</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(9)">9</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:0.95rem; font-weight:800; color:var(--neon-pink);" onclick="window.GTA6MiniGame && window.GTA6MiniGame.clearInput()">CLR</button>
-                <button type="button" class="btn btn-secondary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:1.25rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.pressKey(0)">0</button>
-                <button type="button" class="btn btn-primary keypad-btn" style="padding:0.75rem; font-family:var(--font-mono); font-size:0.95rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.submitPasscode()">ENT</button>
-            </div>
-        </div>
-        <div style="display:flex; justify-content:center; gap:1rem; margin-top:1.25rem; flex-wrap:wrap; align-items:center;">
-            <button type="button" id="startMiniGameBtn" class="btn btn-amber" style="padding:0.6rem 1.75rem; font-weight:800;" onclick="window.GTA6MiniGame && window.GTA6MiniGame.startRound()">🔥 START OVERRIDE DRILL</button>
-            <div id="miniGameScoreTracker" style="font-family:var(--font-mono); font-size:0.88rem; color:var(--neon-green); font-weight:700;">Hacks Solved: 0 &bull; Best Time: --</div>
-        </div>
-    </div>
-
     <!-- LIVE COMPANION HUD -->
     <div style="margin: 2.5rem 0; background: linear-gradient(135deg, rgba(16,24,38,0.9), rgba(10,14,22,0.95)); border: 1px solid var(--neon-cyan); border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 0 20px rgba(0,240,255,0.15);">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.65rem;">
@@ -855,10 +818,7 @@
         </div>
     </section>
 
-    <section class="apex-compact-bar" style="border-color:var(--neon-pink);">
-        <span style="color:var(--text-muted);">🎁 <strong style="color:#fff;">Free VIP Operative Login:</strong> Vault blueprint cheat sheet, Founder badge, +2,500 Rep and weekly Thursday meta alerts.</span>
-        <button type="button" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;" onclick="GTA6.Auth.openModal()">🔓 Unlock VIP Access</button>
-    </section>
+    
 
         <!-- LIVE CRUCIAL GTA 6 BREAKING NEWS & LEAK RADAR -->
     <section style="margin-top: 3.5rem;">
@@ -1057,30 +1017,7 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE PROMO TRAILER & 9:16 AD GENERATOR -->
-    <section class="video-studio-card" id="promo-trailer">
-        <div class="video-studio-grid">
-            <div class="promo-canvas-frame">
-                <canvas id="promoVideoCanvas" width="640" height="360"></canvas>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:0.85rem;">
-                <span class="user-badge badge-mastermind" style="width:fit-content;">LIVE SYNDICATE TRAILER &amp; AD GENERATOR</span>
-                <h2 style="color:#fff; font-size:1.65rem;">Share or Export 9:16 Promo Videos Instantly</h2>
-                <p style="color:var(--text-muted); font-size:0.92rem;">
-                    Recruit friends to your squad or promote your affiliate links on TikTok, Reels &amp; Shorts! Switch to 9:16 mode and export an instant `.webm` cyberpunk video clip right from your browser.
-                </p>
-                <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
-                    <button type="button" class="btn btn-secondary" id="promoPlayBtn" onclick="GTA6.PromoVideo.togglePlay()">⏸ Pause</button>
-                    <button type="button" class="btn btn-secondary" onclick="GTA6.PromoVideo.setMode('16:9')">📺 16:9</button>
-                    <button type="button" class="btn btn-secondary" onclick="GTA6.PromoVideo.setMode('9:16')">📱 9:16 Vertical</button>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="GTA6.PromoVideo.exportPromoVideo()">
-                    🎬 Export 9:16 Promo Video (.webm)
-                </button>
-                <div id="promoExportStatus" style="font-size:0.84rem; color:var(--neon-green);"></div>
-            </div>
-        </div>
-    </section>
+    
 
         <!-- REAL-TIME CO-OP SQUAD & LFG RECRUITMENT HUB -->
     <section style="margin-top: 3.5rem;">
@@ -1125,55 +1062,47 @@
         </div>
     </section>
 
-    <!-- STRATEGY PILLARS -->
-    <section style="margin-top: 4rem;">
-        <div class="section-header">
+    <!-- STRATEGY PILLARS (COMPACT 4-COLUMN GRID) -->
+    <section style="margin-top: 2.5rem; margin-bottom: 2rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.5rem;">
             <div>
-                <h2>Tactical Arsenal &amp; Planning Pillars</h2>
-                <p>Optimize your criminal enterprise with our comprehensive guides and toolsets.</p>
+                <h3 style="color:#fff; font-size:1.25rem; margin:0;">🛰️ Tactical Arsenal &amp; Planning Pillars</h3>
             </div>
+            <span style="color:var(--text-muted); font-size:0.8rem;">Direct access to all 8 core syndicate tactical systems</span>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-cyan);">Interactive Heist Planner</h3>
-                <p class="card-desc">Simulate crew composition, specialist cuts, bonus loot bags, and bookmark builds with instant squad share URLs.</p>
-                <a href="heist-planner.html" class="btn btn-secondary">Launch Calculator</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-cyan);">Interactive Leonida Radar</h3>
-                <p class="card-desc">Clickable SVG radar map marking vault targets, canal escape routes, and subterranean storm drains.</p>
-                <a href="interactive-map.html" class="btn btn-secondary">Open Radar Map</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-cyan);">Gameplay Meta Breakdown</h3>
-                <p class="card-desc">Car trunk weapon armories, loot bag agility scaling, Lucia &amp; Jason co-op syncing, and CCTV forensics.</p>
-                <a href="gameplay-mechanics.html" class="btn btn-secondary">Study Mechanics</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-cyan);">Crew Specialists Database</h3>
-                <p class="card-desc">Stats, cut requirements, skill levels, and unlock missions for Hackers, Drivers, Gunners, and Demolitionists.</p>
-                <a href="crew-database.html" class="btn btn-secondary">Explore Crew Roster</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-pink);">Lucia &amp; Jason Skills Meta</h3>
-                <p class="card-desc">Optimize dual-protagonist heist role assignments, co-op trust buffs, and use our live Synergy Simulator.</p>
-                <a href="lucia-jason-skills.html" class="btn btn-secondary">Simulate Synergy</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-pink);">Getaway Cars &amp; Trunk Slots</h3>
-                <p class="card-desc">Test ballistic armor weight, trunk weapon slot capacity, and escape speed before launching finals.</p>
-                <a href="vehicles-getaway-cars.html" class="btn btn-secondary">Configure Vehicle</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-pink);">Safehouses &amp; Cash Laundering</h3>
-                <p class="card-desc">Compare Vice City nightclubs, offshore marinas, and black-market fences using our Clean Cash Calculator.</p>
-                <a href="safehouses-laundering.html" class="btn btn-secondary">Calculate Net Profit</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title" style="color: var(--neon-pink);">Leonida Wanted &amp; Evasion AI</h3>
-                <p class="card-desc">Counter CCTV plate tracking, witness calls, and 6-star NOOSE sweeps with our Cooldown Simulator.</p>
-                <a href="leonida-wanted-system.html" class="btn btn-secondary">Simulate Cooldown</a>
-            </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:0.75rem;">
+            <a href="heist-planner.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(0,240,255,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-cyan); font-size:0.92rem; display:block;">📊 Heist Planner &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Simulate crew cut splits, specialist fees &amp; net $/hour.</span>
+            </a>
+            <a href="interactive-map.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(0,240,255,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-cyan); font-size:0.92rem; display:block;">🗺️ Satellite Radar Map &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Full Leonida landmass, vault coordinates &amp; gas pitstops.</span>
+            </a>
+            <a href="gameplay-mechanics.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(0,255,136,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-green); font-size:0.92rem; display:block;">⚡ Gameplay Mechanics &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Fuel tanks, hostage human shields &amp; trunk armories.</span>
+            </a>
+            <a href="crew-database.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(0,255,136,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-green); font-size:0.92rem; display:block;">👥 Crew Specialists &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Hackers, drivers, gunners cut requirements &amp; unlocks.</span>
+            </a>
+            <a href="lucia-jason-skills.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-pink); font-size:0.92rem; display:block;">👫 Lucia &amp; Jason Synergy &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Dual-protagonist role assignments &amp; gym conditioning.</span>
+            </a>
+            <a href="vehicles-getaway-cars.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-pink); font-size:0.92rem; display:block;">🚗 Getaway Cars &amp; Trunks &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Trunk storage weapon capacity, armor weight &amp; speed.</span>
+            </a>
+            <a href="safehouses-laundering.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(255,184,0,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-amber); font-size:0.92rem; display:block;">🏠 Safehouses &amp; Fences &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">Clean cash laundering broker cuts &amp; garages.</span>
+            </a>
+            <a href="leonida-wanted-system.html" style="background:rgba(10,18,28,0.9); border:1px solid rgba(255,184,0,0.3); border-radius:8px; padding:0.85rem; text-decoration:none; display:block;">
+                <strong style="color:var(--neon-amber); font-size:0.92rem; display:block;">🚨 6-Star Wanted AI Evasion &rarr;</strong>
+                <span style="color:var(--text-muted); font-size:0.78rem;">ANPR toll cameras, phone witnesses &amp; outfit swaps.</span>
+            </a>
         </div>
     </section>
 
@@ -1206,56 +1135,76 @@
     </section>
 
     <!-- GETAPEXLOCAL 50% SHOWCASE -->
-    <div class="apex-compact-bar" style="background:rgba(255,255,255,0.02); border:1px solid var(--border-card); border-radius:10px; padding:0.9rem 1.25rem; margin:2rem 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; font-size:0.88rem;">
-    <span style="color:var(--text-muted);">🎬 <strong style="color:#fff;">Recording GTA 6 Clips?</strong> Trim dead-air &amp; export 9:16 vertical shorts offline with CutFlow Pro &amp; ClipBounty Studio.</span>
-    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;"><a href="https://getapexlocal.com" target="_blank" rel="noopener" class="btn btn-secondary" style="padding:0.4rem 0.9rem; font-size:0.78rem;">CutFlow Pro &amp; ClipBounty ($49) &rarr;</a><a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.9rem; font-size:0.78rem;">Whop Checkout &rarr;</a></div>
+    
 </div>
 </main>
 
 <footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h4>GTA 6 HEIST GUIDE</h4>
-            <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
-            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Real-Time Syndicate Database &bull; 100% Free Access</p>
+    <div class="footer-container" style="max-width:1100px; margin:0 auto; padding:1.5rem 1rem 1rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1rem; margin-bottom:1rem;">
+            <div>
+                <a href="/index.html" class="brand-logo" style="display:inline-flex; align-items:center; gap:0.4rem; text-decoration:none;">
+                    <span style="font-weight:900; color:#fff;">GTA 6</span>
+                    <span class="vi" style="color:var(--neon-pink); font-weight:900;">HEIST GUIDE</span>
+                    <span class="brand-badge" style="font-size:0.65rem;">Syndicate v3.2</span>
+                </a>
+                <p style="color:var(--text-muted); font-size:0.82rem; margin:0.35rem 0 0;">Real-time tactical intelligence, interactive radar, and co-op payout calculators for GTA 6.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <a href="/index.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Vaults</a>
+                <a href="/interactive-map.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Radar Map</a>
+                <a href="/heist-planner.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Planner</a>
+                <a href="/gameplay-mechanics.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Mechanics</a>
+                <a href="/free" class="btn btn-amber" style="padding:0.35rem 0.75rem; font-size:0.76rem;">⚡ Free Suite</a>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>Heist Vaults</h4>
-            <ul>
-                <li><a href="sinfrontera-bank.html">Sinfrontera Bank Raid</a></li>
-                <li><a href="port-gellhorn.html">Port Gellhorn Container Heist</a></li>
-                <li><a href="leonida-reserve.html">Leonida Gold Reserve</a></li>
-                <li><a href="vice-city-yacht-heist.html">Starlet Superyacht Heist</a></li>
-                <li><a href="everglades-smuggler-run.html">Grassrivers Smuggler Run</a></li>
-                <li><a href="ocean-drive-armored-convoy.html">Ocean Drive Armored Convoy</a></li>
-            </ul>
+
+        <!-- Compact Horizontal Quick Links Grid (No Infinite Scrolling) -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:1rem; font-size:0.8rem; margin-bottom:1rem;">
+            <div>
+                <strong style="color:var(--neon-cyan); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Heist Vaults</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="/sinfrontera-bank.html" style="color:var(--text-muted); text-decoration:none;">Sinfrontera Bank Raid ($14.5M)</a>
+                    <a href="/leonida-reserve.html" style="color:var(--text-muted); text-decoration:none;">Leonida Gold Reserve ($25.0M)</a>
+                    <a href="/vice-city-yacht-heist.html" style="color:var(--text-muted); text-decoration:none;">Starlet Superyacht ($11.8M)</a>
+                    <a href="/port-gellhorn.html" style="color:var(--text-muted); text-decoration:none;">Port Gellhorn Terminal ($8.2M)</a>
+                    <a href="/everglades-smuggler-run.html" style="color:var(--text-muted); text-decoration:none;">Cartel Airstrip ($6.5M)</a>
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--neon-green); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Tactical Tools</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="/interactive-map.html" style="color:var(--text-muted); text-decoration:none;">Satellite Radar &amp; Pins</a>
+                    <a href="/heist-payout-calculator.html" style="color:var(--text-muted); text-decoration:none;">True $/Hour Calculator</a>
+                    <a href="/crew-database.html" style="color:var(--text-muted); text-decoration:none;">Crew Specialist Roster</a>
+                    <a href="/safehouses-laundering.html" style="color:var(--text-muted); text-decoration:none;">Safehouses &amp; Laundering</a>
+                    <a href="/leonida-wanted-system.html" style="color:var(--text-muted); text-decoration:none;">6-Star Wanted AI Evasion</a>
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--neon-pink); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Field Operatives</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="/lucia-jason-skills.html" style="color:var(--text-muted); text-decoration:none;">Lucia &amp; Jason Synergy</a>
+                    <a href="/vehicles-getaway-cars.html" style="color:var(--text-muted); text-decoration:none;">Getaway Cars &amp; Trunks</a>
+                    <a href="/forum.html" style="color:var(--text-muted); text-decoration:none;">Co-Op Squad LFG Lounge</a>
+                    <a href="/live-intel.html" style="color:var(--text-muted); text-decoration:none;">Live Weekly Meta Rotations</a>
+                    <a href="/articles/" style="color:var(--text-muted); text-decoration:none;">Technical Strategy Articles</a>
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--neon-amber); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Verified Deals</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" style="color:var(--text-muted); text-decoration:none;">Amazon PS5 Day-1 Pre-Order</a>
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--text-muted); text-decoration:none;">G2A Keys (Save 20%)</a>
+                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" style="color:var(--text-muted); text-decoration:none;">Eneba PSN &amp; Xbox Cards</a>
+                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" style="color:var(--text-muted); text-decoration:none;">Samsung 990 PRO NVMe SSD</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>Tactical Tools</h4>
-            <ul>
-                <li><a href="live-intel.html">Live Meta &amp; Legal Rules</a></li>
-                <li><a href="heist-planner.html">Interactive Cut Planner</a></li>
-                <li><a href="interactive-map.html">Leonida Radar Map</a></li>
-                <li><a href="crew-database.html">Specialist Roster</a></li>
-                <li><a href="forum.html">Heist Crew Lounge &amp; LFG</a></li>
-                <li><a href="profile.html">Operative Dossier</a></li>
-                <li><a href="syndicate-command.html" style="color:var(--text-muted); font-size:0.8rem;">Owner Email Command</a></li>
-            </ul>
+
+        <div class="disclaimer-box" style="padding:0.75rem 0 0; border-top:1px solid rgba(255,255,255,0.08); font-size:0.75rem; color:var(--text-muted); line-height:1.5;">
+            <p><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary &amp; strategy portal. Grand Theft Auto, GTA VI, and Vice City are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, and Eneba partner, this site earns on qualifying purchases. &copy; 2026 gta6heistguide.com</p>
         </div>
-        <div class="footer-col">
-            <h4>Verified Partners</h4>
-            <ul>
-                <li><a href="https://getapexlocal.com/partners" target="_blank" rel="noopener">Creator Video Tools</a></li>
-                <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener">G2A Game Keys</a></li>
-                <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener">Eneba Pre-Orders</a></li>
-                <li><a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener">Amazon Gaming Gear</a></li>
-                <li><a href="affiliates-gear.html">NordVPN Low-Ping Routing</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="disclaimer-box">
-        <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
-        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Real-Time Strategy Network.</p>
     </div>
 </footer>
 <script src="assets/main.js"></script>

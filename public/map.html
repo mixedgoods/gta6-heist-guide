@@ -332,168 +332,278 @@
 
             <!-- SVG TACTICAL MAP VECTOR -->
             <svg class="map-svg" viewBox="0 0 1000 650" id="mapSvg" onmousemove="updateGps(event)">
-                <!-- Grid Lines -->
                 <defs>
+                    <!-- Tactical Grid Pattern -->
                     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1"/>
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.07)" stroke-width="1"/>
                     </pattern>
+                    <!-- Ocean Depth Gradient -->
+                    <radialGradient id="oceanGrad" cx="50%" cy="50%" r="75%">
+                        <stop offset="0%" stop-color="#081424"/>
+                        <stop offset="60%" stop-color="#050d18"/>
+                        <stop offset="100%" stop-color="#02060c"/>
+                    </radialGradient>
+                    <!-- Coastline Glow Filter -->
+                    <filter id="coastalGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00f0ff" flood-opacity="0.6"/>
+                    </filter>
+                    <!-- Coral Reef Shimmer -->
+                    <linearGradient id="reefGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(0, 240, 255, 0.25)"/>
+                        <stop offset="50%" stop-color="rgba(255, 42, 141, 0.25)"/>
+                        <stop offset="100%" stop-color="rgba(0, 255, 136, 0.25)"/>
+                    </linearGradient>
                 </defs>
-                <rect width="1000" height="650" fill="#08060f"/>
+
+                <!-- Deep Maritime Ocean Background -->
+                <rect width="1000" height="650" fill="url(#oceanGrad)"/>
                 <rect width="1000" height="650" fill="url(#grid)"/>
 
-                <!-- Landmass Silhouettes (Leonida State & Vice City Outlines) -->
-                <!-- Mainland Leonida -->
-                <path d="M 50,80 Q 200,60 380,90 T 650,70 Q 820,100 880,180 T 820,320 Q 750,420 620,460 T 400,520 Q 250,560 180,480 T 80,350 Z" fill="#130e22" stroke="#251a42" stroke-width="2"/>
-                
-                <!-- Ocean & Water Channels -->
-                <path d="M 680,240 Q 720,290 760,350 T 800,450" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="8" stroke-dasharray="4,4"/>
-                <path d="M 450,220 Q 520,300 560,400" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="6"/>
+                <!-- Continental Shelf Bathymetric Depth Rings -->
+                <ellipse cx="500" cy="330" rx="460" ry="290" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1.5" stroke-dasharray="6,8"/>
+                <ellipse cx="510" cy="340" rx="410" ry="250" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
 
-                <!-- Vice City Metro Area -->
-                <rect x="680" y="220" width="180" height="180" rx="10" fill="#1b1430" stroke="rgba(255, 42, 141, 0.3)" stroke-width="1.5"/>
-                <text x="700" y="245" fill="rgba(255, 42, 141, 0.7)" font-family="sans-serif" font-weight="900" font-size="12" letter-spacing="2">VICE CITY METRO</text>
+                <!-- ======================================================== -->
+                <!-- REALISTIC LEONIDA PENINSULA LANDMASS (FLORIDA ANATOMY)   -->
+                <!-- ======================================================== -->
 
-                <!-- Grassrivers Swamp Basin -->
-                <rect x="200" y="260" width="220" height="180" rx="10" fill="#0e171b" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5"/>
-                <text x="220" y="285" fill="rgba(16, 185, 129, 0.7)" font-family="sans-serif" font-weight="900" font-size="12" letter-spacing="2">GRASSRIVERS BASIN</text>
+                <!-- Base Landmass Outer Coastal Glow Shadow -->
+                <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#0d1824" filter="url(#coastalGlow)"/>
 
-                <!-- Pelican Valley & Lake Leonida -->
-                <ellipse cx="480" cy="180" rx="90" ry="50" fill="#091424" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1.5"/>
-                <text x="420" y="185" fill="rgba(0, 240, 255, 0.7)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
+                <!-- Main Continental Landmass Fill -->
+                <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#142130" stroke="#00f0ff" stroke-width="2.5"/>
 
-                <!-- INTERACTIVE MARKERS -->
+                <!-- Interior Elevation Contours (Higher Ground / Ridges) -->
+                <path d="M 160,110 Q 300,90 480,105 T 700,100 Q 770,130 760,200 T 720,300 Q 660,390 560,430 T 320,450 Q 210,440 180,360 T 140,220 Z" fill="#1a2b3e" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1"/>
+                <path d="M 240,130 Q 380,115 540,125 T 660,140 Q 690,190 670,260 T 580,360 Q 480,390 380,390 T 260,330 Q 220,240 240,130 Z" fill="#20344c" stroke="rgba(0, 240, 255, 0.15)" stroke-width="1"/>
+
+                <!-- ======================================================== -->
+                <!-- REGIONAL BIOMES & GEOGRAPHY                              -->
+                <!-- ======================================================== -->
+
+                <!-- 1. LUMMOX COUNTY & MOUNT KALAGA (Northern Timber & Ridge) -->
+                <path d="M 90,80 Q 240,55 460,70 T 730,65 L 710,130 Q 480,115 260,125 T 100,140 Z" fill="rgba(34, 197, 94, 0.16)" stroke="rgba(34, 197, 94, 0.45)" stroke-width="1.5"/>
+                <text x="140" y="95" fill="rgba(34, 197, 94, 0.9)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="2">🌲 LUMMOX COUNTY (NORTH TIMBER RIDGE)</text>
+
+                <!-- 2. LAKE LEONIDA (Central Great Inland Lake) -->
+                <path d="M 400,190 Q 480,165 540,195 T 550,250 Q 510,285 440,275 T 390,225 Z" fill="#061220" stroke="rgba(0, 240, 255, 0.7)" stroke-width="2"/>
+                <text x="430" y="225" fill="rgba(0, 240, 255, 0.85)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
+
+                <!-- 3. PELICAN VALLEY (Agricultural Wetland Basin) -->
+                <path d="M 370,250 Q 450,270 490,320 T 430,370 Q 360,350 350,290 Z" fill="rgba(255, 184, 0, 0.12)" stroke="rgba(255, 184, 0, 0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <text x="365" y="315" fill="rgba(255, 184, 0, 0.9)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">🌾 PELICAN VALLEY BASIN</text>
+
+                <!-- 4. GRASSRIVERS (Everglades Mangrove Swamps & Canals) -->
+                <path d="M 200,320 Q 320,330 420,380 T 540,460 Q 440,510 320,510 T 170,440 Z" fill="rgba(16, 185, 129, 0.18)" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1.5"/>
+                <!-- Winding Swamp Water Canals -->
+                <path d="M 440,275 Q 380,340 330,420 T 260,490" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="3"/>
+                <path d="M 490,320 Q 460,390 420,450 T 360,520" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2.5"/>
+                <path d="M 280,360 Q 320,400 300,460" fill="none" stroke="rgba(0, 240, 255, 0.3)" stroke-width="2"/>
+                <text x="220" y="410" fill="rgba(16, 185, 129, 0.9)" font-family="sans-serif" font-weight="900" font-size="12" letter-spacing="2">GRASSRIVERS BASIN (MANGROVE CANALS)</text>
+
+                <!-- 5. PORT GELLHORN (Western Maritime Cargo Port) -->
+                <path d="M 120,330 Q 170,350 180,410 T 150,470 L 105,430 Z" fill="#1b2838" stroke="rgba(0, 240, 255, 0.6)" stroke-width="1.5"/>
+                <text x="95" y="460" fill="rgba(0, 240, 255, 0.9)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">PORT GELLHORN</text>
+
+                <!-- 6. BISCAYNE BAY & VICE CITY WATER CHANNELS -->
+                <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="#061220" stroke-width="16"/>
+                <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="4" stroke-dasharray="4,4"/>
+
+                <!-- 7. VICE CITY METRO (Downtown & Mainland Core) -->
+                <rect x="670" y="210" width="95" height="190" rx="8" fill="#1e1832" stroke="rgba(255, 42, 141, 0.5)" stroke-width="2"/>
+                <text x="678" y="235" fill="rgba(255, 42, 141, 0.95)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">VICE CITY DOWNTOWN</text>
+
+                <!-- 8. VICE BEACH (Eastern Barrier Islands & Ocean Drive) -->
+                <path d="M 785,190 Q 805,270 800,360 T 780,430 Q 815,400 820,320 T 805,190 Z" fill="#2a1834" stroke="rgba(255, 42, 141, 0.8)" stroke-width="2"/>
+                <text x="795" y="280" fill="rgba(255, 42, 141, 0.95)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1" transform="rotate(85, 795, 280)">VICE BEACH &bull; OCEAN BLVD</text>
+
+                <!-- Venetian & MacArthur Causeways (Bridges Spanning the Bay) -->
+                <line x1="765" y1="260" x2="795" y2="260" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+                <line x1="765" y1="330" x2="790" y2="330" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+                <!-- Star Island in the Bay -->
+                <circle cx="780" cy="295" r="7" fill="#ffd700" stroke="#fff" stroke-width="1.5"/>
+
+                <!-- ======================================================== -->
+                <!-- 9. LEONIDA KEYS ARCHIPELAGO (ISLAND CHAIN & OVERSEAS HWY) -->
+                <!-- ======================================================== -->
+                <!-- Overseas Highway Bridge Arc (Golden Glowing Route) -->
+                <path d="M 730,490 Q 770,530 810,555 T 870,580 T 925,585 T 970,580" fill="none" stroke="#ffb800" stroke-width="3" stroke-dasharray="6,3" filter="url(#coastalGlow)"/>
+
+                <!-- Island 1: Key Largo / Upper Key -->
+                <ellipse cx="760" cy="520" rx="22" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.8)" stroke-width="1.5" transform="rotate(30, 760, 520)"/>
+                <!-- Island 2: Middle Key / Islamorada -->
+                <ellipse cx="810" cy="550" rx="26" ry="11" fill="#1b2838" stroke="rgba(0, 240, 255, 0.8)" stroke-width="1.5" transform="rotate(22, 810, 550)"/>
+                <!-- Island 3: Marathon / Lower Key -->
+                <ellipse cx="865" cy="575" rx="28" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.8)" stroke-width="1.5" transform="rotate(10, 865, 575)"/>
+                <!-- Island 4: Key Lento (Leaked Deep Reef Vault) -->
+                <ellipse cx="920" cy="585" rx="24" ry="14" fill="#2a1834" stroke="rgba(255, 42, 141, 0.9)" stroke-width="2"/>
+                <text x="890" y="615" fill="rgba(255, 42, 141, 0.95)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">KEY LENTO</text>
+                <!-- Island 5: Goose Key & Coral Reef Zone -->
+                <ellipse cx="965" cy="578" rx="18" ry="10" fill="#1b2838" stroke="rgba(0, 255, 136, 0.8)" stroke-width="1.5"/>
+                <text x="940" y="565" fill="rgba(0, 255, 136, 0.9)" font-family="sans-serif" font-weight="900" font-size="9">GOOSE KEY</text>
+                <text x="760" y="565" fill="rgba(255, 184, 0, 0.9)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">LEONIDA KEYS (OVERSEAS HWY)</text>
+
+                <!-- ======================================================== -->
+                <!-- 10. MAJOR STATEWIDE HIGHWAY NETWORK                      -->
+                <!-- ======================================================== -->
+                <!-- Toll 1A Arterial Highway (West-to-East Across Leonida) -->
+                <path d="M 130,410 Q 300,280 470,220 T 670,240 T 765,260" fill="none" stroke="#ffb800" stroke-width="3" stroke-dasharray="8,4"/>
+                <text x="490" y="175" fill="rgba(255, 184, 0, 0.95)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">TOLL 1A HIGHWAY (ANPR CAMERAS)</text>
+
+                <!-- Interstate 97 Spine (North-to-South Highway) -->
+                <path d="M 380,75 Q 460,140 470,220 T 560,380 T 700,460" fill="none" stroke="rgba(0, 240, 255, 0.55)" stroke-width="2.5" stroke-dasharray="5,5"/>
+                <text x="545" y="415" fill="rgba(0, 240, 255, 0.85)" font-family="sans-serif" font-weight="800" font-size="9">INTERSTATE 97 SPINE</text>
+
+                <!-- ======================================================== -->
+                <!-- TACTICAL RADAR HUD OVERLAYS                              -->
+                <!-- ======================================================== -->
+                <!-- Radar Compass Rose in Top-Right -->
+                <g transform="translate(930, 70)">
+                    <circle r="36" fill="rgba(10, 18, 28, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5"/>
+                    <circle r="26" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1"/>
+                    <line x1="0" y1="-32" x2="0" y2="32" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+                    <line x1="-32" y1="0" x2="32" y2="0" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+                    <!-- North Arrow -->
+                    <polygon points="0,-26 5,-10 0,-14 -5,-10" fill="#ff2a8d"/>
+                    <text x="-4" y="-30" fill="#ff2a8d" font-family="sans-serif" font-weight="900" font-size="10">N</text>
+                    <text x="24" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">E</text>
+                    <text x="-4" y="32" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">S</text>
+                    <text x="-32" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">W</text>
+                </g>
+
+                <!-- Radar Telemetry Box in Top-Left -->
+                <g transform="translate(20, 30)">
+                    <rect width="210" height="42" rx="4" fill="rgba(8, 14, 22, 0.9)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+                    <text x="10" y="16" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
+                    <text x="10" y="32" fill="var(--neon-green)" font-family="monospace" font-size="9">STATE OF LEONIDA • RADAR v3.2</text>
+                </g>
+
+                <!-- Sweeping Radar Scan Beam Animation -->
+                <circle cx="500" cy="325" r="380" fill="none" stroke="rgba(0, 240, 255, 0.15)" stroke-width="1"/>
+                <line x1="500" y1="325" x2="880" y2="325" stroke="rgba(0, 240, 255, 0.4)" stroke-width="2">
+                    <animateTransform attributeName="transform" type="rotate" from="0 500 325" to="360 500 325" dur="10s" repeatCount="indefinite"/>
+                </line>
+
+                <!-- ======================================================== -->
+                <!-- INTERACTIVE VAULT & TACTICAL MARKERS                     -->
+                <!-- ======================================================== -->
                 <!-- 1. Sinfrontera National Bank -->
-                <g class="map-point map-marker-vault" transform="translate(740, 290)" data-pin-id="sinfrontera" data-region="vice-city" onclick="showIntel('sinfrontera')">
-                    <circle r="12" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+                <g class="map-point map-marker-vault" transform="translate(710, 280)" data-pin-id="sinfrontera" data-region="vice-city" onclick="showIntel('sinfrontera')">
+                    <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
                     <circle r="5" fill="#ff2a8d"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Sinfrontera Bank</text>
+                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Sinfrontera Bank ($14.5M)</text>
                 </g>
 
                 <!-- 2. Port Gellhorn Container Terminal -->
-                <g class="map-point map-marker-vault" transform="translate(620, 430)" data-pin-id="port-gellhorn" data-region="port-gellhorn" onclick="showIntel('port-gellhorn')">
-                    <circle r="12" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
+                <g class="map-point map-marker-vault" transform="translate(135, 400)" data-pin-id="port-gellhorn" data-region="port-gellhorn" onclick="showIntel('port-gellhorn')">
+                    <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
                     <circle r="5" fill="#00f0ff"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Port Gellhorn</text>
+                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Port Gellhorn ($8.2M)</text>
                 </g>
 
                 <!-- 3. Leonida Gold Reserve -->
-                <g class="map-point map-marker-vault" transform="translate(380, 140)" data-pin-id="leonida-reserve" data-region="ambrosia" onclick="showIntel('leonida-reserve')">
-                    <circle r="14" fill="rgba(255, 215, 0, 0.3)" stroke="#ffd700" stroke-width="2"/>
+                <g class="map-point map-marker-vault" transform="translate(390, 140)" data-pin-id="leonida-reserve" data-region="ambrosia" onclick="showIntel('leonida-reserve')">
+                    <circle r="15" fill="rgba(255, 215, 0, 0.35)" stroke="#ffd700" stroke-width="2.5"/>
                     <circle r="6" fill="#ffd700"/>
-                    <text x="18" y="4" fill="#ffd700" font-size="11" font-weight="bold" font-family="sans-serif">Leonida Gold Reserve</text>
+                    <text x="18" y="4" fill="#ffd700" font-size="11" font-weight="bold" font-family="sans-serif">Leonida Gold Reserve ($25M)</text>
                 </g>
 
                 <!-- 4. Starlet Superyacht -->
-                <g class="map-point map-marker-vault" transform="translate(900, 310)" data-pin-id="yacht" data-region="leonida-keys" onclick="showIntel('yacht')">
-                    <circle r="12" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+                <g class="map-point map-marker-vault" transform="translate(850, 310)" data-pin-id="yacht" data-region="vice-city" onclick="showIntel('yacht')">
+                    <circle r="13" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
                     <circle r="5" fill="#ff2a8d"/>
-                    <text x="-120" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Starlet Superyacht</text>
+                    <text x="16" y="4" fill="#ff2a8d" font-size="11" font-weight="bold" font-family="sans-serif">Starlet Superyacht ($11.8M)</text>
                 </g>
 
                 <!-- 5. Grassrivers Cartel Airstrip -->
-                <g class="map-point map-marker-vault" transform="translate(290, 340)" data-pin-id="smuggler" data-region="grassrivers" onclick="showIntel('smuggler')">
-                    <circle r="12" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
+                <g class="map-point map-marker-vault" transform="translate(290, 370)" data-pin-id="smuggler" data-region="grassrivers" onclick="showIntel('smuggler')">
+                    <circle r="13" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
                     <circle r="5" fill="#10b981"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Cartel Airstrip</text>
+                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Cartel Airstrip ($6.5M)</text>
                 </g>
 
                 <!-- 6. Ocean Drive Armored Convoy -->
-                <g class="map-point map-marker-vault" transform="translate(810, 360)" data-pin-id="convoy" data-region="vice-city" onclick="showIntel('convoy')">
-                    <circle r="12" fill="rgba(255, 153, 0, 0.3)" stroke="#ff9900" stroke-width="2"/>
-                    <circle r="5" fill="#ff9900"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Ocean Dr. Ambush</text>
+                <g class="map-point map-marker-vault" transform="translate(805, 340)" data-pin-id="convoy" data-region="vice-city" onclick="showIntel('convoy')">
+                    <circle r="13" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
+                    <circle r="5" fill="#ffb800"/>
+                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Ocean Dr. Convoy ($9.4M)</text>
                 </g>
 
-                <!-- 7. Metro Sewer Escape Conduit -->
-                <g class="map-point map-marker-escape" transform="translate(710, 320)" data-pin-id="escape-metro" data-region="vice-city" onclick="showIntel('escape-metro')">
-                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#00f0ff" font-size="10" font-family="sans-serif">Sewer Tube 01</text>
-                </g>
-
-                <!-- 8. North Vice Syndicate Safehouse -->
-                <g class="map-point map-marker-safehouse" data-pin-id="safehouse-north" data-region="vice-city" transform="translate(750, 200)" onclick="showIntel('safehouse-north')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(157, 78, 221, 0.5)" stroke="#9d4edd" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#9d4edd" font-size="10" font-family="sans-serif">Safehouse Alpha</text>
-                </g>
-
-                <!-- 9. Leonida Keys Smuggler Dock -->
-                <g class="map-point map-marker-safehouse" data-pin-id="keys-dock" data-region="leonida-keys" transform="translate(780, 560)" onclick="showIntel('keys-dock')">
-                    <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle r="4" fill="#00f0ff"/>
-                    <text x="15" y="4" fill="#00f0ff" font-size="11" font-weight="bold" font-family="sans-serif">Leonida Keys Dock</text>
-                </g>
-
-                <!-- 10. Ambrosia Refinery Fence -->
-                <g class="map-point map-marker-escape" data-pin-id="ambrosia-fence" data-region="ambrosia" transform="translate(520, 330)" onclick="showIntel('ambrosia-fence')">
-                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 153, 0, 0.35)" stroke="#ff9900" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#ff9900" font-size="10" font-weight="bold" font-family="sans-serif">Ambrosia Fence</text>
-                </g>
-
-                <!-- 11. Mount Kalaga National Park Relay Outpost -->
-                <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(260, 110)" onclick="showIntel('kalaga-outpost')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(16, 185, 129, 0.45)" stroke="#10b981" stroke-width="1.5"/>
-                    <text x="14" y="4" fill="#10b981" font-size="10" font-weight="bold" font-family="sans-serif">Mt. Kalaga Outpost</text>
-                </g>
-
-                
-                <!-- NEW REGIONS FROM SELFRIDGES COLLECTOR'S MAP LEAK -->
-                <!-- Lummox County (North Timber & Swamplands) -->
-                <rect x="80" y="30" width="280" height="85" rx="8" fill="#0f1912" stroke="rgba(0, 255, 136, 0.4)" stroke-width="1.5"/>
-                <text x="95" y="52" fill="rgba(0, 255, 136, 0.85)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="2">LUMMOX COUNTY (NORTH TIMBER &amp; SWAMPS)</text>
-
-                <!-- Key Lento & Goose Key Archipelago -->
-                <ellipse cx="860" cy="530" rx="100" ry="45" fill="#091424" stroke="rgba(255, 42, 141, 0.4)" stroke-width="1.5"/>
-                <text x="790" y="535" fill="rgba(255, 42, 141, 0.85)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">KEY LENTO &amp; GOOSE KEY (REEF)</text>
-
-                <!-- Toll 1A Highway Arterial -->
-                <path d="M 120,70 Q 400,100 680,210 T 860,340" fill="none" stroke="rgba(255, 184, 0, 0.45)" stroke-width="4" stroke-dasharray="6,4"/>
-                <text x="410" y="105" fill="rgba(255, 184, 0, 0.9)" font-family="sans-serif" font-weight="800" font-size="10" letter-spacing="1">TOLL 1A HIGHWAY (ANPR SCANNER GATES)</text>
-
-                <!-- NEW INTERACTIVE MARKERS (LEAKED COLLECTOR'S MAP & FUEL MECHANICS) -->
-                <!-- 7. Lummox Timber Stash -->
-                <g class="map-point map-marker-vault" transform="translate(180, 65)" data-pin-id="lummox-stash" data-region="lummox" onclick="showIntel('lummox-stash')">
+                <!-- 7. Lummox Timber Stash (Leaked Northern Sector) -->
+                <g class="map-point map-marker-vault" transform="translate(260, 75)" data-pin-id="lummox-stash" data-region="lummox" onclick="showIntel('lummox-stash')">
                     <circle r="12" fill="rgba(0, 255, 136, 0.3)" stroke="#00ff88" stroke-width="2"/>
                     <circle r="5" fill="#00ff88"/>
                     <text x="16" y="4" fill="#00ff88" font-size="10" font-weight="bold" font-family="sans-serif">Lummox Timber Stash ($2.9M)</text>
                 </g>
 
                 <!-- 8. Pelican Valley Agricultural Bank -->
-                <g class="map-point map-marker-vault" transform="translate(460, 215)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="showIntel('pelican-bank')">
+                <g class="map-point map-marker-vault" transform="translate(425, 290)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="showIntel('pelican-bank')">
                     <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
                     <circle r="5" fill="#00f0ff"/>
                     <text x="16" y="4" fill="#00f0ff" font-size="10" font-weight="bold" font-family="sans-serif">Pelican Valley Bank ($3.8M)</text>
                 </g>
 
                 <!-- 9. Key Lento Offshore Depot -->
-                <g class="map-point map-marker-vault" transform="translate(860, 520)" data-pin-id="key-lento" data-region="key-lento" onclick="showIntel('key-lento')">
-                    <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+                <g class="map-point map-marker-vault" transform="translate(920, 585)" data-pin-id="key-lento" data-region="key-lento" onclick="showIntel('key-lento')">
+                    <circle r="14" fill="rgba(255, 42, 141, 0.35)" stroke="#ff2a8d" stroke-width="2"/>
                     <circle r="6" fill="#ff2a8d"/>
-                    <text x="16" y="4" fill="#ff2a8d" font-size="10" font-weight="bold" font-family="sans-serif">Key Lento Offshore Depot ($12.4M)</text>
+                    <text x="-160" y="-8" fill="#ff2a8d" font-size="11" font-weight="bold" font-family="sans-serif">Key Lento Bullion ($12.4M)</text>
                 </g>
 
-                <!-- 10. Toll 1A Highway Evasion Gate -->
-                <g class="map-point map-marker-escape" transform="translate(580, 160)" data-pin-id="toll-1a" data-region="toll-1a" onclick="showIntel('toll-1a')">
-                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
-                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">Toll 1A ANPR Gate Bypass</text>
+                <!-- 10. Metro Sewer Conduit 01 -->
+                <g class="map-point map-marker-escape" transform="translate(735, 330)" data-pin-id="escape-metro" data-region="vice-city" onclick="showIntel('escape-metro')">
+                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="1.5"/>
+                    <text x="12" y="4" fill="#00f0ff" font-size="10" font-family="sans-serif">Sewer Tube 01</text>
                 </g>
 
-                <!-- 11. Lummox 24/7 Gas & Refuel Station (Fuel Mechanic) -->
-                <g class="map-point map-marker-fuel" transform="translate(290, 80)" data-pin-id="fuel-lummox" data-region="lummox" onclick="showIntel('fuel-lummox')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.4)" stroke="#ffb800" stroke-width="2"/>
+                <!-- 11. North Vice Safehouse Alpha -->
+                <g class="map-point map-marker-safehouse" data-pin-id="safehouse-north" data-region="vice-city" transform="translate(720, 215)" onclick="showIntel('safehouse-north')">
+                    <polygon points="0,-10 9,6 -9,6" fill="rgba(157, 78, 221, 0.5)" stroke="#9d4edd" stroke-width="1.5"/>
+                    <text x="12" y="4" fill="#9d4edd" font-size="10" font-family="sans-serif">Safehouse Alpha</text>
+                </g>
+
+                <!-- 12. Leonida Keys Smuggler Dock -->
+                <g class="map-point map-marker-safehouse" data-pin-id="keys-dock" data-region="leonida-keys" transform="translate(810, 545)" onclick="showIntel('keys-dock')">
+                    <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
+                    <circle r="4" fill="#00f0ff"/>
+                    <text x="15" y="4" fill="#00f0ff" font-size="10" font-weight="bold" font-family="sans-serif">Keys Smuggler Dock</text>
+                </g>
+
+                <!-- 13. Ambrosia Refinery Fence -->
+                <g class="map-point map-marker-escape" data-pin-id="ambrosia-fence" data-region="ambrosia" transform="translate(510, 310)" onclick="showIntel('ambrosia-fence')">
+                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 153, 0, 0.35)" stroke="#ff9900" stroke-width="1.5"/>
+                    <text x="12" y="4" fill="#ff9900" font-size="10" font-weight="bold" font-family="sans-serif">Ambrosia Fence</text>
+                </g>
+
+                <!-- 14. Mount Kalaga Wilderness Outpost -->
+                <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(620, 75)" onclick="showIntel('kalaga-outpost')">
+                    <polygon points="0,-10 9,6 -9,6" fill="rgba(34, 197, 94, 0.5)" stroke="#22c55e" stroke-width="1.5"/>
+                    <text x="12" y="4" fill="#22c55e" font-size="10" font-family="sans-serif">Kalaga Outpost</text>
+                </g>
+
+                <!-- 15. Toll 1A Highway Evasion Gate -->
+                <g class="map-point map-marker-escape" transform="translate(560, 215)" data-pin-id="toll-1a" data-region="toll-1a" onclick="showIntel('toll-1a')">
+                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.35)" stroke="#ffb800" stroke-width="2"/>
+                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">Toll 1A ANPR Bypass</text>
+                </g>
+
+                <!-- 16. Lummox 24/7 Gas & Refuel Depot (Fuel Mechanic) -->
+                <g class="map-point map-marker-fuel" transform="translate(320, 95)" data-pin-id="fuel-lummox" data-region="lummox" onclick="showIntel('fuel-lummox')">
+                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.5)" stroke="#ffb800" stroke-width="2"/>
                     <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">⛽ Lummox Refuel Depot</text>
                 </g>
 
-                <!-- 12. Vice Beach Gas Station (Fuel Mechanic) -->
-                <g class="map-point map-marker-fuel" transform="translate(770, 240)" data-pin-id="fuel-vice" data-region="vice-city" onclick="showIntel('fuel-vice')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.4)" stroke="#ffb800" stroke-width="2"/>
+                <!-- 17. Vice Beach Sunoco Gas Pitstop (Fuel Mechanic) -->
+                <g class="map-point map-marker-fuel" transform="translate(795, 230)" data-pin-id="fuel-vice" data-region="vice-city" onclick="showIntel('fuel-vice')">
+                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.5)" stroke="#ffb800" stroke-width="2"/>
                     <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">⛽ Vice Beach 24/7 Gas</text>
                 </g>
 
-                <!-- 13. State Zoo Infiltration -->
-                <g class="map-point map-marker-vault" transform="translate(660, 180)" data-pin-id="zoo-compound" data-region="vice-city" onclick="showIntel('zoo-compound')">
-                    <circle r="11" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-                    <circle r="4" fill="#10b981"/>
-                    <text x="14" y="4" fill="#10b981" font-size="10" font-weight="bold" font-family="sans-serif">Leonida State Zoo ($4.2M)</text>
+                <!-- 18. Leonida State Zoo Infiltration -->
+                <g class="map-point map-marker-vault" transform="translate(630, 160)" data-pin-id="zoo-compound" data-region="vice-city" onclick="showIntel('zoo-compound')">
+                    <circle r="12" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
+                    <circle r="5" fill="#10b981"/>
+                    <text x="14" y="4" fill="#10b981" font-size="10" font-weight="bold" font-family="sans-serif">State Zoo ($4.2M)</text>
                 </g>
 
                 <g id="customMarkersLayer"></g>
@@ -541,80 +651,110 @@
         </section>
 
         
-    <!-- OFFICIAL LEONIDA REGIONS & SECTOR INDEX -->
-    <section style="margin: 3rem 0;">
-        <div class="section-header">
+        <!-- OFFICIAL LEONIDA REGIONS & SECTOR INDEX (COMPACT HORIZONTAL CHIPS) -->
+    <section style="margin: 2rem 0 1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.5rem;">
             <div>
-                <h2>Confirmed Leonida Regions &amp; Heist Sectors</h2>
-                <p>Navigate Vice City urban vaults, coastal offshore targets, Grassrivers wetlands, and northern mountain parks.</p>
+                <h3 style="color:#fff; font-size:1.15rem; margin:0;">🗺️ Quick Region Dossiers</h3>
+            </div>
+            <span style="color:var(--text-muted); font-size:0.78rem;">Click any region pill above the radar to jump to live pins</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap:0.65rem;">
+            <div style="background:rgba(255,42,141,0.06); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
+                <strong style="color:var(--neon-pink); font-size:0.88rem; display:block;">Vice City Metro</strong>
+                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Sinfrontera Bank &amp; Ocean Dr. Convoy. Sewer drain &amp; subway escapes.</p>
+            </div>
+            <div style="background:rgba(0,240,255,0.06); border:1px solid rgba(0,240,255,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
+                <strong style="color:var(--neon-cyan); font-size:0.88rem; display:block;">Leonida Keys</strong>
+                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Starlet Superyacht &amp; Key Lento. Scuba reef &amp; speedboat drops.</p>
+            </div>
+            <div style="background:rgba(0,255,136,0.06); border:1px solid rgba(0,255,136,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
+                <strong style="color:var(--neon-green); font-size:0.88rem; display:block;">Grassrivers</strong>
+                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Cartel Airstrip &amp; Pelican Valley. Flat-bottom airboat waterways.</p>
+            </div>
+            <div style="background:rgba(255,184,0,0.06); border:1px solid rgba(255,184,0,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
+                <strong style="color:var(--neon-amber); font-size:0.88rem; display:block;">Port Gellhorn</strong>
+                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Container Terminal crane hack &amp; industrial freight canals.</p>
+            </div>
+            <div style="background:rgba(255,215,0,0.06); border:1px solid rgba(255,215,0,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
+                <strong style="color:var(--neon-yellow); font-size:0.88rem; display:block;">Ambrosia Depository</strong>
+                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">State Gold Reserve &amp; industrial sugar refinery fence.</p>
+            </div>
+            <div style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
+                <strong style="color:#22c55e; font-size:0.88rem; display:block;">Lummox &amp; Kalaga</strong>
+                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Northern pine timber tracks, dirt bikes &amp; 24/7 gas pitstops.</p>
             </div>
         </div>
-        <div class="grid">
-            <div class="card"><span class="card-tag tag-mastermind">Metro Core</span><h3 class="card-title">Vice City &amp; Ocean Beach</h3><p class="card-desc">Sun-soaked pastel art-deco boulevards housing Sinfrontera National Bank, Boobie Ike nightclub fronts, subway tubes, and Ocean Drive armored routes.</p></div>
-            <div class="card"><span class="card-tag tag-expert">Southern Archipelago</span><h3 class="card-title">Leonida Keys</h3><p class="card-desc">Tropical coral channels used for Brian Heder's smuggling operations, scuba yacht exfiltrations, and hidden canal safehouses.</p></div>
-            <div class="card"><span class="card-tag tag-intermediate">Untamed Wetlands</span><h3 class="card-title">Grassrivers</h3><p class="card-desc">Mangrove swamps &amp; airboat channels hiding clandestine cartel airstrips and zero-radar nighttime extraction corridors.</p></div>
-            <div class="card"><span class="card-tag tag-expert">West Coast Port</span><h3 class="card-title">Port Gellhorn</h3><p class="card-desc">Working-class maritime cargo hub packed with shipping gantry cranes, pawn shop fences, and high-value manifest containers.</p></div>
-            <div class="card"><span class="card-tag tag-intermediate">Industrial Heartland</span><h3 class="card-title">Ambrosia &amp; Mount Kalaga National Park</h3><p class="card-desc">Southern sugar refinery corridors leading north toward Mount Kalaga backcountry dirt trails ideal for ditching NOOSE helicopters.</p></div>
-        </div>
     </section>
-
-<div class="apex-compact-bar" style="background:rgba(255,255,255,0.02); border:1px solid var(--border-card); border-radius:10px; padding:0.9rem 1.25rem; margin:2rem 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; font-size:0.88rem;">
-    <span style="color:var(--text-muted);">🎬 <strong style="color:#fff;">Recording GTA 6 Clips?</strong> Trim dead-air &amp; export 9:16 vertical shorts offline with CutFlow Pro &amp; ClipBounty Studio.</span>
-    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;"><a href="https://getapexlocal.com" target="_blank" rel="noopener" class="btn btn-secondary" style="padding:0.4rem 0.9rem; font-size:0.78rem;">CutFlow Pro &amp; ClipBounty ($49) &rarr;</a><a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.4rem 0.9rem; font-size:0.78rem;">Whop Checkout &rarr;</a></div>
-</div>
-
     </main>
 
     
 <footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h4>GTA 6 HEIST GUIDE</h4>
-            <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
-            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Real-Time Syndicate Database &bull; 100% Free Access</p>
+    <div class="footer-container" style="max-width:1100px; margin:0 auto; padding:1.5rem 1rem 1rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1rem; margin-bottom:1rem;">
+            <div>
+                <a href="/index.html" class="brand-logo" style="display:inline-flex; align-items:center; gap:0.4rem; text-decoration:none;">
+                    <span style="font-weight:900; color:#fff;">GTA 6</span>
+                    <span class="vi" style="color:var(--neon-pink); font-weight:900;">HEIST GUIDE</span>
+                    <span class="brand-badge" style="font-size:0.65rem;">Syndicate v3.2</span>
+                </a>
+                <p style="color:var(--text-muted); font-size:0.82rem; margin:0.35rem 0 0;">Real-time tactical intelligence, interactive radar, and co-op payout calculators for GTA 6.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <a href="/index.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Vaults</a>
+                <a href="/interactive-map.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Radar Map</a>
+                <a href="/heist-planner.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Planner</a>
+                <a href="/gameplay-mechanics.html" class="btn btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.76rem;">Mechanics</a>
+                <a href="/free" class="btn btn-amber" style="padding:0.35rem 0.75rem; font-size:0.76rem;">⚡ Free Suite</a>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>Heist Vaults</h4>
-            <ul>
-                <li><a href="sinfrontera-bank.html">Sinfrontera Bank Raid</a></li>
-                <li><a href="port-gellhorn.html">Port Gellhorn Container Heist</a></li>
-                <li><a href="leonida-reserve.html">Leonida Gold Reserve</a></li>
-                <li><a href="vice-city-yacht-heist.html">Starlet Superyacht Heist</a></li>
-                <li><a href="everglades-smuggler-run.html">Grassrivers Smuggler Run</a></li>
-                <li><a href="ocean-drive-armored-convoy.html">Ocean Drive Armored Convoy</a></li>
-            </ul>
+
+        <!-- Compact Horizontal Quick Links Grid (No Infinite Scrolling) -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:1rem; font-size:0.8rem; margin-bottom:1rem;">
+            <div>
+                <strong style="color:var(--neon-cyan); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Heist Vaults</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="/sinfrontera-bank.html" style="color:var(--text-muted); text-decoration:none;">Sinfrontera Bank Raid ($14.5M)</a>
+                    <a href="/leonida-reserve.html" style="color:var(--text-muted); text-decoration:none;">Leonida Gold Reserve ($25.0M)</a>
+                    <a href="/vice-city-yacht-heist.html" style="color:var(--text-muted); text-decoration:none;">Starlet Superyacht ($11.8M)</a>
+                    <a href="/port-gellhorn.html" style="color:var(--text-muted); text-decoration:none;">Port Gellhorn Terminal ($8.2M)</a>
+                    <a href="/everglades-smuggler-run.html" style="color:var(--text-muted); text-decoration:none;">Cartel Airstrip ($6.5M)</a>
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--neon-green); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Tactical Tools</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="/interactive-map.html" style="color:var(--text-muted); text-decoration:none;">Satellite Radar &amp; Pins</a>
+                    <a href="/heist-payout-calculator.html" style="color:var(--text-muted); text-decoration:none;">True $/Hour Calculator</a>
+                    <a href="/crew-database.html" style="color:var(--text-muted); text-decoration:none;">Crew Specialist Roster</a>
+                    <a href="/safehouses-laundering.html" style="color:var(--text-muted); text-decoration:none;">Safehouses &amp; Laundering</a>
+                    <a href="/leonida-wanted-system.html" style="color:var(--text-muted); text-decoration:none;">6-Star Wanted AI Evasion</a>
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--neon-pink); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Field Operatives</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="/lucia-jason-skills.html" style="color:var(--text-muted); text-decoration:none;">Lucia &amp; Jason Synergy</a>
+                    <a href="/vehicles-getaway-cars.html" style="color:var(--text-muted); text-decoration:none;">Getaway Cars &amp; Trunks</a>
+                    <a href="/forum.html" style="color:var(--text-muted); text-decoration:none;">Co-Op Squad LFG Lounge</a>
+                    <a href="/live-intel.html" style="color:var(--text-muted); text-decoration:none;">Live Weekly Meta Rotations</a>
+                    <a href="/articles/" style="color:var(--text-muted); text-decoration:none;">Technical Strategy Articles</a>
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--neon-amber); display:block; margin-bottom:0.4rem; font-size:0.82rem; text-transform:uppercase; letter-spacing:1px;">Verified Deals</strong>
+                <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" style="color:var(--text-muted); text-decoration:none;">Amazon PS5 Day-1 Pre-Order</a>
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--text-muted); text-decoration:none;">G2A Keys (Save 20%)</a>
+                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" style="color:var(--text-muted); text-decoration:none;">Eneba PSN &amp; Xbox Cards</a>
+                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" style="color:var(--text-muted); text-decoration:none;">Samsung 990 PRO NVMe SSD</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>Tactical Tools</h4>
-            <ul>
-                <li><a href="live-intel.html">Live Meta &amp; Legal Rules</a></li>
-                <li><a href="heist-payout-calculator.html">True $/Hour Calculator</a></li>
-                <li><a href="vault-hack-trainer.html">Vault Hack Trainer (15s)</a></li>
-                <li><a href="interactive-map.html">Leonida Radar Map</a></li>
-                <li><a href="crew-database.html">Specialist Roster</a></li>
-                <li><a href="forum.html">Heist Crew Lounge &amp; LFG</a></li>
-                <li><a href="profile.html">Operative Dossier</a></li>
-                <li><a href="lucia-jason-skills.html">Lucia &amp; Jason Skills</a></li>
-                <li><a href="vehicles-getaway-cars.html">Getaway Vehicles &amp; Trunks</a></li>
-                <li><a href="safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                <li><a href="leonida-wanted-system.html">Wanted System &amp; Evasion</a></li>
-                <li><a href="syndicate-command.html" style="color:var(--text-muted); font-size:0.8rem;">Owner Email Command</a></li>
-            </ul>
+
+        <div class="disclaimer-box" style="padding:0.75rem 0 0; border-top:1px solid rgba(255,255,255,0.08); font-size:0.75rem; color:var(--text-muted); line-height:1.5;">
+            <p><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary &amp; strategy portal. Grand Theft Auto, GTA VI, and Vice City are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, and Eneba partner, this site earns on qualifying purchases. &copy; 2026 gta6heistguide.com</p>
         </div>
-        <div class="footer-col">
-            <h4>Verified Partners</h4>
-            <ul>
-                <li><a href="https://getapexlocal.com/partners" target="_blank" rel="noopener">Creator Video Tools</a></li>
-                <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener">G2A Game Keys</a></li>
-                <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener">Eneba Pre-Orders</a></li>
-                <li><a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener">Amazon Gaming Gear</a></li>
-                <li><a href="affiliates-gear.html">NordVPN Low-Ping Routing</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="disclaimer-box">
-        <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
-        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Real-Time Strategy Network.</p>
     </div>
 </footer>
 <script src="assets/main.js"></script>
