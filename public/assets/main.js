@@ -576,7 +576,7 @@ const GTA6 = {
         vipBtn.innerText = `★ ${profile.alias} (VIP)`;
       } else {
         vipBtn.classList.remove('verified');
-        vipBtn.innerText = '🎁 VIP Login / Blueprints';
+        vipBtn.innerText = '🎁 VIP Login';
       }
     },
 
