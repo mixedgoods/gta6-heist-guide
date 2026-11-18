@@ -65,7 +65,7 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/compare/scuba-rebreather-exfil-vs-rooftop-heli-escape.html", changefreq: "weekly", priority: "0.84" },
   { loc: "https://www.gta6heistguide.com/compare/vice-city-nightclub-vs-keys-marina-laundering.html", changefreq: "weekly", priority: "0.84" },
   { loc: "https://www.gta6heistguide.com/compare/ps5-pro-vs-pc-heist-frame-rate-ssd-streaming.html", changefreq: "weekly", priority: "0.84" },
-  { loc: "https://www.gta6heistguide.com/compare/nordvpn-encrypted-tunnel-vs-unprotected-p2p-lobby.html", changefreq: "weekly", priority: "0.84" },
+  { loc: "https://www.gta6heistguide.com/compare/exitlag-optimized-gaming-routing-vs-unprotected-p2p-lobby.html", changefreq: "weekly", priority: "0.84" },
   { loc: "https://www.gta6heistguide.com/compare/g2a-verified-keys-vs-eneba-store-gta6-deals.html", changefreq: "weekly", priority: "0.84" },
   { loc: "https://www.gta6heistguide.com/compare/cutflow-pro-vs-clipbounty-studio-916-shorts.html", changefreq: "weekly", priority: "0.84" },
   { loc: "https://www.gta6heistguide.com/compare/sinfrontera-bank-vs-starlet-superyacht-duo-grind.html", changefreq: "weekly", priority: "0.84" },
