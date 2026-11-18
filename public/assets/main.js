@@ -573,10 +573,10 @@ const GTA6 = {
 
       if (profile.vipVerified) {
         vipBtn.classList.add('verified');
-        vipBtn.innerText = `★ ${profile.alias} (VIP)`;
+        vipBtn.innerText = `★ ${profile.alias}`;
       } else {
         vipBtn.classList.remove('verified');
-        vipBtn.innerText = '🎁 VIP Login';
+        vipBtn.innerHTML = `🎁 VIP<span class="vip-desktop-label"> Login</span>`;
       }
     },
 
