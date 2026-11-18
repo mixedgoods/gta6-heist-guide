@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Leonida Clock &amp; Night Stealth Window | GTA 6 Heist Guide Stream Widget</title>
+  <style>
+    :root {
+      --neon-cyan: #00f0ff;
+      --neon-green: #00ff9d;
+      --neon-pink: #ff2a8d;
+      --neon-amber: #f59e0b;
+      --bg-dark: #070a12;
+      --card-bg: rgba(11, 18, 30, 0.94);
+      --border-card: rgba(0, 240, 255, 0.28);
+      --font-mono: 'Courier New', Courier, monospace;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: #e2e8f0;
+      font-family: var(--font-main);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    body.obs-mode {
+      background: transparent !important;
+      padding: 6px;
+    }
+    .hud-box {
+      background: var(--card-bg);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+      max-width: 440px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    body.obs-mode .hud-box {
+      background: rgba(6, 10, 18, 0.82);
+      border: 1px solid rgba(0, 240, 255, 0.5);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+      backdrop-filter: blur(6px);
+    }
+    .hud-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+      padding-bottom: 6px;
+    }
+    .hud-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--neon-cyan);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .hud-cycle {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: #94a3b8;
+    }
+    .clock-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 6px 0;
+    }
+    .clock-display {
+      font-family: var(--font-mono);
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+      line-height: 1.1;
+    }
+    .stealth-status {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--neon-green);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .stealth-status.day {
+      color: var(--neon-amber);
+    }
+    .hud-progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 8px 0 6px;
+    }
+    .hud-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    .footer-watermark {
+      margin-top: 6px;
+      text-align: right;
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+    }
+    .footer-watermark a {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-watermark a:hover {
+      color: var(--neon-cyan);
+    }
+  </style>
+</head>
+<body>
+  <div class="hud-box">
+    <div class="hud-top">
+      <span class="hud-badge">🛰️ LEONIDA 48M CLOCK &bull; LIVE</span>
+      <span class="hud-cycle" id="cycleStatus">Syncing...</span>
+    </div>
+    <div class="clock-row">
+      <div class="clock-display" id="clockDisplay">22:00</div>
+      <div class="stealth-status" id="stealthStatus">🌙 Stealth +15% Active</div>
+    </div>
+    <div class="hud-progress-bar">
+      <div class="hud-progress-fill" id="progressFill"></div>
+    </div>
+    <div class="footer-watermark">
+      <a href="https://www.gta6heistguide.com/?utm_source=embed_clock" target="_blank" rel="noopener">⚡ Powered by GTA6HeistGuide.com</a>
+    </div>
+  </div>
+
+  <script>
+    const isObs = window.location.search.includes('obs=1') || window.location.search.includes('transparent=1');
+    if (isObs) document.body.classList.add('obs-mode');
+
+    function updateClock() {
+      const now = new Date();
+      // 48 minutes in ms = 48 * 60 * 1000 = 2,880,000 ms
+      const CYCLE_MS = 48 * 60 * 1000;
+      const msIntoCycle = now.getTime() % CYCLE_MS;
+      const cyclePercent = msIntoCycle / CYCLE_MS;
+
+      // 1 cycle = 24 in-game hours = 1440 in-game minutes
+      const inGameMinutes = Math.floor(cyclePercent * 1440);
+      const hours = Math.floor(inGameMinutes / 60);
+      const minutes = inGameMinutes % 60;
+
+      const hh = String(hours).padStart(2, '0');
+      const mm = String(minutes).padStart(2, '0');
+      document.getElementById('clockDisplay').textContent = `${hh}:${mm} VC`;
+
+      // Night stealth is 21:00 to 05:00
+      const isNight = hours >= 21 || hours < 5;
+      const stEl = document.getElementById('stealthStatus');
+      if (isNight) {
+        stEl.textContent = '🌙 Night Stealth +15%';
+        stEl.className = 'stealth-status';
+      } else {
+        stEl.textContent = '☀️ Day Patrol Active';
+        stEl.className = 'stealth-status day';
+      }
+
+      document.getElementById('progressFill').style.width = `${(cyclePercent * 100).toFixed(1)}%`;
+
+      const minsLeft = 48 - Math.floor(msIntoCycle / 60000);
+      document.getElementById('cycleStatus').textContent = `${minsLeft}m to Day Reset`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>

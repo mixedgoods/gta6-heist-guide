@@ -1,88 +1,124 @@
 #!/usr/bin/env python3
 """
-IndexNow Instant Batch Submission Script for https://www.gta6heistguide.com
-Pushes all 87+ canonical + pSEO URLs to IndexNow (Bing, Yahoo, DuckDuckGo, Yandex).
+IndexNow Instant Crawler Ping Engine for GTA6HeistGuide.com
+Submits all sitemap URLs to IndexNow (Bing, Yahoo, DuckDuckGo, Yandex, Naver)
 """
-import json
+
+import os
 import sys
+import re
+import json
 import urllib.request
-sys.path.insert(0, r"C:\Users\Shawn\Desktop\gta6heistguide")
-from generate_pseo_pages import ALTERNATIVE_PAGES, HEAD_TO_HEAD_PAGES, GUIDE_PAGES
+import urllib.error
 
+INDEXNOW_KEY = "df9198ac34c2f27023754589395a56d0"
 HOST = "www.gta6heistguide.com"
-KEY = "gta6indexnow2026key"
-KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
-
-urls = [
-    f"https://{HOST}/",
-    f"https://{HOST}/free/",
-    f"https://{HOST}/heist-payout-calculator",
-    f"https://{HOST}/leonida-interactive-map",
-    f"https://{HOST}/vault-hack-trainer",
-    f"https://{HOST}/compare/",
-    f"https://{HOST}/guides/",
-    f"https://{HOST}/lucia-jason-skills",
-    f"https://{HOST}/vehicles-getaway-cars",
-    f"https://{HOST}/safehouses-laundering",
-    f"https://{HOST}/leonida-wanted-system",
-    f"https://{HOST}/leonida-reserve",
-    f"https://{HOST}/sinfrontera-bank",
-    f"https://{HOST}/vice-city-yacht-heist",
-    f"https://{HOST}/port-gellhorn",
-    f"https://{HOST}/ocean-drive-armored-convoy",
-    f"https://{HOST}/everglades-smuggler-run",
-    f"https://{HOST}/heist-planner",
-    f"https://{HOST}/interactive-map",
-    f"https://{HOST}/crew-database",
-    f"https://{HOST}/gameplay-mechanics",
-    f"https://{HOST}/live-intel",
-    f"https://{HOST}/forum",
-    f"https://{HOST}/affiliates-gear",
-    f"https://{HOST}/faq",
-    f"https://{HOST}/about",
-    f"https://{HOST}/legal",
-]
-
-for item in ALTERNATIVE_PAGES + HEAD_TO_HEAD_PAGES:
-    urls.append(f"https://{HOST}/compare/{item[0]}.html")
-for item in GUIDE_PAGES:
-    urls.append(f"https://{HOST}/guides/{item[0]}.html")
-
-urls.extend([
-    f"https://{HOST}/articles/",
-    f"https://{HOST}/articles/gta-6-heist-payout-math-true-net-dollar-per-hour.html",
-    f"https://{HOST}/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates.html",
-    f"https://{HOST}/articles/how-to-beat-15-second-biometric-vault-keypad-hack-gta-6.html",
-    f"https://{HOST}/articles/solo-vs-4-player-co-op-heist-splits-gta-6-loot-weight.html",
-    f"https://{HOST}/articles/protecting-gta-6-online-heist-lobby-ip-sniffing-texture-pop-in.html",
-    f"https://{HOST}/articles/how-to-clip-auto-edit-916-vertical-gta-6-heist-highlights-offline.html",
-    f"https://{HOST}/cloud-mirrors/",
-    f"https://{HOST}/cloud-mirrors/heist-payout-calculator.html",
-    f"https://{HOST}/cloud-mirrors/vault-keypad-hack-trainer.html",
-])
-
-payload = {
-    "host": HOST,
-    "key": KEY,
-    "keyLocation": KEY_LOCATION,
-    "urlList": urls,
-}
-
-endpoints = [
+KEY_LOCATION = f"https://{HOST}/{INDEXNOW_KEY}.txt"
+ENDPOINTS = [
     "https://api.indexnow.org/indexnow",
-    "https://www.bing.com/indexnow",
-    "https://yandex.com/indexnow",
+    "https://www.bing.com/indexnow"
 ]
 
-for ep in endpoints:
-    try:
-        req = urllib.request.Request(
-            ep,
-            data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json; charset=utf-8", "User-Agent": "GTA6IndexNowBot/3.0"},
-            method="POST",
-        )
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            print(f"[IndexNow] {ep} -> HTTP {resp.status} ({len(urls)} URLs pushed)")
-    except Exception as e:
-        print(f"[IndexNow] {ep} -> {e}")
+def find_sitemap():
+    candidates = [
+        os.path.join(os.path.dirname(__file__), "public", "sitemap.xml"),
+        os.path.join(os.path.dirname(__file__), "sitemap.xml"),
+        "public/sitemap.xml",
+        "sitemap.xml"
+    ]
+    for p in candidates:
+        if os.path.isfile(p):
+            return p
+    return None
+
+def extract_urls(sitemap_path):
+    with open(sitemap_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    # Extract all <loc>...</loc> URLs
+    urls = re.findall(r"<loc>(https?://[^<]+)</loc>", content)
+    # Deduplicate while preserving order
+    seen = set()
+    deduped = []
+    for u in urls:
+        u_clean = u.strip()
+        if u_clean not in seen:
+            seen.add(u_clean)
+            deduped.append(u_clean)
+    return deduped
+
+def ping_indexnow(urls):
+    if not urls:
+        print("[!] No URLs found in sitemap.")
+        return False
+
+    payload = {
+        "host": HOST,
+        "key": INDEXNOW_KEY,
+        "keyLocation": KEY_LOCATION,
+        "urlList": urls
+    }
+
+    json_data = json.dumps(payload, indent=2).encode("utf-8")
+    headers = {
+        "Content-Type": "application/json; charset=utf-8",
+        "User-Agent": "GTA6HeistGuide-IndexNow/1.0"
+    }
+
+    print(f"[*] Submitting {len(urls)} URLs to IndexNow engines...")
+    print(f"[*] Host: {HOST}")
+    print(f"[*] Key: {INDEXNOW_KEY}")
+    print(f"[*] Key Location: {KEY_LOCATION}")
+
+    success = False
+    for endpoint in ENDPOINTS:
+        try:
+            req = urllib.request.Request(endpoint, data=json_data, headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=15) as response:
+                status = response.getcode()
+                body = response.read().decode("utf-8")
+                print(f"[✓] {endpoint} -> Status {status} (Success: URLs submitted for rapid crawler indexing)")
+                if body:
+                    print(f"    Response: {body[:200]}")
+                success = True
+        except urllib.error.HTTPError as e:
+            status = e.code
+            body = e.read().decode("utf-8")
+            if status in (200, 202):
+                print(f"[✓] {endpoint} -> Status {status} (Accepted for crawling)")
+                success = True
+            else:
+                print(f"[!] {endpoint} -> HTTP Error {status}: {e.reason}")
+                if body:
+                    print(f"    Details: {body[:300]}")
+        except Exception as ex:
+            print(f"[!] {endpoint} -> Connection Error: {ex}")
+
+    return success
+
+def main():
+    print("==================================================")
+    print("  GTA 6 HEIST GUIDE — INDEXNOW CRAWLER PING ENGINE")
+    print("==================================================")
+    
+    sitemap_path = find_sitemap()
+    if not sitemap_path:
+        print("[!] Error: Could not locate sitemap.xml in public/ or root.")
+        sys.exit(1)
+
+    print(f"[*] Loaded sitemap: {sitemap_path}")
+    urls = extract_urls(sitemap_path)
+    print(f"[*] Extracted {len(urls)} unique URLs.")
+
+    ok = ping_indexnow(urls)
+    if ok:
+        print("==================================================")
+        print("  [SUCCESS] All URLs broadcasted to IndexNow!")
+        print("==================================================")
+    else:
+        print("==================================================")
+        print("  [NOTICE] Submission attempted. Check network / key.")
+        print("==================================================")
+
+if __name__ == "__main__":
+    main()

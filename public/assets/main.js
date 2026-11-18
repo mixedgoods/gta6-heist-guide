@@ -1741,6 +1741,8 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-top:0.5rem;">
               <button type="button" class="btn btn-primary" onclick="GTA6.KeypadTrainer.start()">⚡ Start 15s Biometric Bypass</button>
               <button type="button" class="btn btn-secondary" onclick="GTA6.KeypadTrainer.copyDiscordScore()">📋 Copy Score for Discord / LFG</button>
+              <button type="button" class="btn btn-secondary" onclick="GTA6.FlexCard.downloadKeypadCard()">📸 Save Share Card (PNG)</button>
+              <button type="button" class="btn btn-secondary" onclick="GTA6.FlexCard.copyKeypadChallenge()">🔗 Copy Challenge Link</button>
             </div>
             <div style="margin-top:0.9rem; font-size:0.82rem; color:var(--text-muted);">
               <div id="keypadContextStrip" class="contextual-tool-strip" style="margin-top:0.95rem; font-size:0.83rem;">
@@ -2782,7 +2784,428 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       }
     },
 
-    DealRotator: {
+    
+  // --------------------------------------------------------------------------
+  // VIRAL HTML5 CANVAS FLEX CARD & CHALLENGE LINK ENGINE
+  // --------------------------------------------------------------------------
+  FlexCard: {
+    downloadCanvas(canvas, filename) {
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      GTA6.playSuccess();
+      GTA6.showToast('📸 Flex Card PNG Downloaded! Flex your score on Discord or X.');
+    },
+
+    downloadKeypadCard() {
+      const bestMs = GTA6.KeypadTrainer.lastElapsedMs || Number(localStorage.getItem('gta6_keypad_best_ms') || 11420);
+      const timeSecs = (bestMs / 1000).toFixed(3) + 's';
+      const rank = GTA6.KeypadTrainer.lastRank || (bestMs <= 6000 ? 'Mastermind Ghost Hacker (S-Tier)' : bestMs <= 15000 ? 'Mastermind Ghost Hacker' : 'Field Decryptor');
+      const diff = (GTA6.KeypadTrainer.difficulty || 'normal').toUpperCase();
+
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200;
+      canvas.height = 630;
+      const ctx = canvas.getContext('2d');
+
+      // Dark Cyberpunk Background
+      const bg = ctx.createLinearGradient(0, 0, 1200, 630);
+      bg.addColorStop(0, '#050811');
+      bg.addColorStop(0.5, '#0b1325');
+      bg.addColorStop(1, '#060a14');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, 1200, 630);
+
+      // Grid Pattern
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.05)';
+      ctx.lineWidth = 1;
+      for (let x = 40; x < 1200; x += 40) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, 630);
+        ctx.stroke();
+      }
+      for (let y = 40; y < 630; y += 40) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(1200, y);
+        ctx.stroke();
+      }
+
+      // Glowing Neon Cyan Outer Frame
+      ctx.strokeStyle = '#00f0ff';
+      ctx.lineWidth = 3;
+      ctx.shadowColor = 'rgba(0, 240, 255, 0.6)';
+      ctx.shadowBlur = 20;
+      ctx.strokeRect(30, 30, 1140, 570);
+      ctx.shadowBlur = 0;
+
+      // Header Brand Pill
+      ctx.fillStyle = 'rgba(0, 240, 255, 0.12)';
+      ctx.fillRect(60, 55, 430, 36);
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.5)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(60, 55, 430, 36);
+      ctx.font = 'bold 14px monospace';
+      ctx.fillStyle = '#00f0ff';
+      ctx.fillText('⚡ GTA 6 HEIST SYNDICATE // VERIFIED RECORD', 75, 78);
+
+      // Mode Badge (Right)
+      ctx.fillStyle = 'rgba(255, 42, 141, 0.14)';
+      ctx.fillRect(840, 55, 300, 36);
+      ctx.strokeStyle = 'rgba(255, 42, 141, 0.5)';
+      ctx.strokeRect(840, 55, 300, 36);
+      ctx.font = 'bold 14px monospace';
+      ctx.fillStyle = '#ff2a8d';
+      ctx.fillText(`MODE: ${diff} (15.000s LOCKDOWN)`, 855, 78);
+
+      // Title
+      ctx.font = '900 38px sans-serif';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText('15s BIOMETRIC KEYPAD BYPASS RECORD', 60, 150);
+
+      ctx.font = '18px monospace';
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText('LEONIDA STATE HIGH-SECURITY VAULT LOCKDOWN DEFENSE // ELITE S-TIER RUN', 60, 185);
+
+      // Score Center Box
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.fillRect(60, 220, 1080, 220);
+      ctx.strokeStyle = 'rgba(0, 255, 157, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(60, 220, 1080, 220);
+
+      ctx.font = 'bold 20px monospace';
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText('FASTEST BYPASS TIME', 95, 265);
+
+      ctx.font = '900 96px monospace';
+      ctx.fillStyle = '#00ff9d';
+      ctx.shadowColor = 'rgba(0, 255, 157, 0.5)';
+      ctx.shadowBlur = 25;
+      ctx.fillText(timeSecs, 95, 365);
+      ctx.shadowBlur = 0;
+
+      // Rank Pill inside box
+      ctx.fillStyle = 'rgba(0, 240, 255, 0.18)';
+      ctx.fillRect(640, 260, 460, 50);
+      ctx.strokeStyle = '#00f0ff';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(640, 260, 460, 50);
+      ctx.font = 'bold 18px monospace';
+      ctx.fillStyle = '#00f0ff';
+      ctx.fillText(`RANK: ${rank.toUpperCase()}`, 660, 292);
+
+      // Stats inside box
+      ctx.font = '16px monospace';
+      ctx.fillStyle = '#cbd5e1';
+      ctx.fillText('✓ BIOMETRIC SCAN: PASSED', 645, 345);
+      ctx.fillText('✓ ALARM SUPPRESSION: ACTIVE', 645, 375);
+      ctx.fillText('✓ SQUAD POT PROTECTION: 100%', 645, 405);
+
+      // Prominent Bottom Watermark Banner
+      ctx.fillStyle = '#0a101f';
+      ctx.fillRect(60, 480, 1080, 80);
+      ctx.strokeStyle = '#ff2a8d';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(60, 480, 1080, 80);
+
+      ctx.font = '900 26px sans-serif';
+      ctx.fillStyle = '#fff';
+      ctx.fillText('CAN YOU BEAT THIS TIME?', 95, 530);
+
+      ctx.font = '900 28px monospace';
+      ctx.fillStyle = '#00f0ff';
+      ctx.shadowColor = 'rgba(0, 240, 255, 0.6)';
+      ctx.shadowBlur = 12;
+      ctx.fillText('BEAT MY SCORE AT GTA6HEISTGUIDE.COM', 460, 530);
+      ctx.shadowBlur = 0;
+
+      this.downloadCanvas(canvas, `gta6-keypad-record-${timeSecs.replace('.', '_')}.png`);
+    },
+
+    copyKeypadChallenge() {
+      const bestMs = GTA6.KeypadTrainer.lastElapsedMs || Number(localStorage.getItem('gta6_keypad_best_ms') || 11420);
+      const timeSecs = (bestMs / 1000).toFixed(2);
+      const url = `${window.location.origin}/vault-hack-trainer.html?challenge=${timeSecs}&vault=gold-reserve`;
+      GTA6.copyText(url, 'Challenge Link');
+      GTA6.showToast(`🎯 Challenge Link Copied (${timeSecs}s)! Send it to your squad on Discord/X.`);
+    },
+
+    downloadCalcCard() {
+      const targetEl = document.getElementById('approachSelect') || document.getElementById('vaultTarget');
+      const vaultName = (targetEl && targetEl.selectedOptions && targetEl.selectedOptions[0] ? targetEl.selectedOptions[0].text : 'Leonida State Gold Reserve').replace(/ *\([^)]*\) */g, '');
+      const netPerHr = document.getElementById('netPerHourDisplay')?.innerText || '$4,280,000/hr';
+      const perPlayer = document.getElementById('perPlayerDisplay')?.innerText || '$4,687,500';
+      const squadPot = document.getElementById('squadPotDisplay')?.innerText || '$18,750,000';
+      const gross = document.getElementById('targetPayoutDisplay')?.innerText || '$25,000,000';
+
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200;
+      canvas.height = 630;
+      const ctx = canvas.getContext('2d');
+
+      // Background
+      const bg = ctx.createLinearGradient(0, 0, 1200, 630);
+      bg.addColorStop(0, '#050811');
+      bg.addColorStop(0.5, '#0c1629');
+      bg.addColorStop(1, '#060a14');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, 1200, 630);
+
+      // Grid
+      ctx.strokeStyle = 'rgba(0, 255, 157, 0.05)';
+      ctx.lineWidth = 1;
+      for (let x = 40; x < 1200; x += 40) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, 630);
+        ctx.stroke();
+      }
+      for (let y = 40; y < 630; y += 40) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(1200, y);
+        ctx.stroke();
+      }
+
+      // Outer Frame
+      ctx.strokeStyle = '#00ff9d';
+      ctx.lineWidth = 3;
+      ctx.shadowColor = 'rgba(0, 255, 157, 0.5)';
+      ctx.shadowBlur = 20;
+      ctx.strokeRect(30, 30, 1140, 570);
+      ctx.shadowBlur = 0;
+
+      // Header Pill
+      ctx.fillStyle = 'rgba(0, 255, 157, 0.12)';
+      ctx.fillRect(60, 55, 470, 36);
+      ctx.strokeStyle = 'rgba(0, 255, 157, 0.5)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(60, 55, 470, 36);
+      ctx.font = 'bold 14px monospace';
+      ctx.fillStyle = '#00ff9d';
+      ctx.fillText('⚡ GTA 6 HEIST SYNDICATE // SQUAD NET PAYOUT DOSSIER', 75, 78);
+
+      // Title
+      ctx.font = '900 38px sans-serif';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(vaultName.toUpperCase(), 60, 150);
+
+      ctx.font = '18px monospace';
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText(`GROSS: ${gross} // TOTAL SQUAD POT: ${squadPot}`, 60, 185);
+
+      // Net Per Hour Big Box
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.fillRect(60, 220, 1080, 220);
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(60, 220, 1080, 220);
+
+      ctx.font = 'bold 20px monospace';
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText('REALISTIC NET $/HOUR (PREP + FINALE)', 95, 265);
+
+      ctx.font = '900 86px monospace';
+      ctx.fillStyle = '#00f0ff';
+      ctx.shadowColor = 'rgba(0, 240, 255, 0.5)';
+      ctx.shadowBlur = 25;
+      ctx.fillText(netPerHr, 95, 365);
+      ctx.shadowBlur = 0;
+
+      // Player Share Box
+      ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
+      ctx.fillRect(640, 260, 460, 140);
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(640, 260, 460, 140);
+
+      ctx.font = 'bold 15px monospace';
+      ctx.fillStyle = '#f59e0b';
+      ctx.fillText('PER OPERATIVE TAKE-HOME', 665, 295);
+
+      ctx.font = '900 48px monospace';
+      ctx.fillStyle = '#fff';
+      ctx.fillText(perPlayer, 665, 355);
+
+      // Prominent Watermark Banner
+      ctx.fillStyle = '#0a101f';
+      ctx.fillRect(60, 480, 1080, 80);
+      ctx.strokeStyle = '#00ff9d';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(60, 480, 1080, 80);
+
+      ctx.font = '900 28px sans-serif';
+      ctx.fillStyle = '#fff';
+      ctx.fillText('BEAT MY SCORE AT', 95, 530);
+
+      ctx.font = '900 28px monospace';
+      ctx.fillStyle = '#00ff9d';
+      ctx.shadowColor = 'rgba(0, 255, 157, 0.6)';
+      ctx.shadowBlur = 12;
+      ctx.fillText('GTA6HEISTGUIDE.COM', 420, 530);
+      ctx.shadowBlur = 0;
+
+      this.downloadCanvas(canvas, 'gta6-heist-payout-split.png');
+    },
+
+    copyCalcChallenge() {
+      const netPerHr = document.getElementById('netPerHourDisplay')?.innerText || '$4,280,000/hr';
+      const cleanNum = netPerHr.replace(/[^0-9]/g, '');
+      const url = `${window.location.origin}/calculator.html?challenge=${cleanNum}&vault=gold-reserve`;
+      GTA6.copyText(url, 'Challenge Link');
+      GTA6.showToast(`🎯 Challenge Link Copied (${netPerHr})! Share it with your crew.`);
+    },
+
+    initChallengeBanner() {
+      const params = new URLSearchParams(window.location.search);
+      const challengeVal = params.get('challenge');
+      if (!challengeVal) return;
+
+      const isTime = !isNaN(Number(challengeVal)) && Number(challengeVal) < 60;
+      const label = isTime ? `${challengeVal}s` : `${Number(challengeVal).toLocaleString()}/hr`;
+
+      const banner = document.createElement('div');
+      banner.id = 'challengeBanner';
+      banner.className = 'challenge-top-banner';
+      banner.innerHTML = `
+        <div class="challenge-banner-content">
+          <span class="challenge-icon">🎯</span>
+          <span><strong>SYNDICATE CHALLENGE:</strong> Your friend cracked the vault in <strong style="color:var(--neon-green);">${label}</strong> — Can you beat them?</span>
+          <button type="button" class="btn btn-amber" onclick="GTA6.FlexCard.acceptChallenge('${challengeVal}')" style="padding:0.25rem 0.75rem; font-size:0.75rem; margin-left:0.5rem;">⚡ Accept Challenge &amp; Bypass Vault</button>
+        </div>
+        <button type="button" class="challenge-close-btn" onclick="this.parentElement.remove()" aria-label="Close Banner">✕</button>
+      `;
+      document.body.prepend(banner);
+      document.body.style.paddingTop = '45px';
+    },
+
+    acceptChallenge(val) {
+      const target = document.getElementById('syndicate-hack-trainer') || document.getElementById('keypadTrainerBox') || document.querySelector('.keypad-trainer');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          if (GTA6.KeypadTrainer && typeof GTA6.KeypadTrainer.start === 'function') {
+            GTA6.KeypadTrainer.start();
+          }
+        }, 500);
+      } else {
+        window.location.href = '/vault-hack-trainer.html?challenge=' + val;
+      }
+    }
+  },
+
+  // --------------------------------------------------------------------------
+  // FREE EMBED MODAL (OBS BROWSER SOURCE & IFRAME GENERATOR)
+  // --------------------------------------------------------------------------
+  openEmbedModal(type = 'clock') {
+    const isClock = type === 'clock';
+    const title = isClock ? 'Live Leonida 48m Clock &amp; Night Stealth Window' : 'Compact Heist Cut Splitter';
+    const embedPath = isClock ? '/embed/clock.html' : '/embed/calculator.html';
+    const embedUrl = `https://www.gta6heistguide.com${embedPath}`;
+    const obsUrl = `${embedUrl}?obs=1`;
+    const iframeCode = `<iframe src="${embedUrl}" width="460" height="${isClock ? '180' : '230'}" frameborder="0" style="border:none; border-radius:10px; overflow:hidden;" scrolling="no"></iframe>`;
+
+    let overlay = document.getElementById('embedModalOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'embedModalOverlay';
+      overlay.className = 'embed-modal-overlay';
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', (ev) => {
+        if (ev.target === overlay) GTA6.closeEmbedModal();
+      });
+    }
+
+    overlay.innerHTML = `
+      <div class="embed-modal-box" role="dialog" aria-modal="true">
+        <button type="button" class="exit-intent-close" onclick="GTA6.closeEmbedModal()" aria-label="Close Modal">✕</button>
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); letter-spacing:1.5px; font-weight:800; text-transform:uppercase; margin-bottom:0.4rem;">&lt;/&gt; FREE SYNDICATE WIDGET EMBED</div>
+        <h3 style="color:#fff; font-size:1.35rem; margin-bottom:0.4rem;">Embed ${title}</h3>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1.15rem;">Free, auto-updating widget for your gaming blog, crew site, or Twitch / Kick / TikTok Live OBS Browser Source.</p>
+
+        <div style="margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+            <strong style="color:#fff; font-size:0.82rem;">1. Web iFrame Embed (For Blogs &amp; Websites)</strong>
+            <button type="button" class="btn btn-secondary" style="padding:0.2rem 0.6rem; font-size:0.72rem;" onclick="GTA6.copyText('${iframeCode.replace(/"/g, '&quot;')}', 'iFrame Code')">📋 Copy iFrame</button>
+          </div>
+          <div class="embed-code-block">${iframeCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
+        </div>
+
+        <div style="margin-bottom:1.15rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+            <strong style="color:var(--neon-green); font-size:0.82rem;">2. OBS Browser Source URL (Twitch / Kick / TikTok Live)</strong>
+            <button type="button" class="btn btn-primary" style="padding:0.2rem 0.6rem; font-size:0.72rem;" onclick="GTA6.copyText('${obsUrl}', 'OBS Source URL')">📋 Copy OBS URL</button>
+          </div>
+          <div class="embed-code-block" style="color:var(--neon-cyan);">${obsUrl}</div>
+          <div style="font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">💡 OBS Tip: Add Browser Source &rarr; Paste URL &rarr; Width: 460, Height: ${isClock ? '180' : '230'} &bull; Background is 100% transparent with ?obs=1</div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end;">
+          <button type="button" class="btn btn-secondary" onclick="GTA6.closeEmbedModal()" style="padding:0.45rem 1rem; font-size:0.8rem;">Done</button>
+        </div>
+      </div>
+    `;
+
+    setTimeout(() => overlay.classList.add('active'), 20);
+  },
+
+  closeEmbedModal() {
+    const overlay = document.getElementById('embedModalOverlay');
+    if (overlay) overlay.classList.remove('active');
+  },
+
+  // --------------------------------------------------------------------------
+  // PWA REGISTRATION & MOBILE ADD TO HOME SCREEN PROMPT
+  // --------------------------------------------------------------------------
+  initPwa() {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (sessionStorage.getItem('gta6_pwa_dismissed')) return;
+
+      const banner = document.createElement('div');
+      banner.id = 'pwaInstallBanner';
+      banner.className = 'pwa-install-banner';
+      banner.innerHTML = `
+        <span style="font-size:1.35rem;">📲</span>
+        <div style="flex:1;">
+          <strong style="display:block; font-size:0.82rem;">GTA 6 Heist Companion</strong>
+          <span style="font-size:0.74rem; color:#94a3b8;">Add to Home Screen for 48m Leonida Clock &amp; Keypad Trainer</span>
+        </div>
+        <button type="button" class="btn btn-primary" id="pwaInstallBtn" style="padding:0.3rem 0.65rem; font-size:0.74rem;">Install</button>
+        <button type="button" class="challenge-close-btn" onclick="GTA6.dismissPwa()" style="margin-left:2px;">✕</button>
+      `;
+      document.body.appendChild(banner);
+
+      document.getElementById('pwaInstallBtn')?.addEventListener('click', async () => {
+        banner.remove();
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          deferredPrompt = null;
+        }
+      });
+    });
+  },
+
+  dismissPwa() {
+    const b = document.getElementById('pwaInstallBanner');
+    if (b) b.remove();
+    sessionStorage.setItem('gta6_pwa_dismissed', '1');
+  },
+DealRotator: {
       deals: [
         {
           id: "gta6-launch",
@@ -3102,6 +3525,8 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     GTA6.DealRotator.init();
     GTA6.DealTicker.init();
     GTA6.initAffiliateTracking();
+    GTA6.FlexCard.initChallengeBanner();
+    GTA6.initPwa();
     if (document.getElementById('squadRollResults')) {
       GTA6.SquadRoll.spin();
     }

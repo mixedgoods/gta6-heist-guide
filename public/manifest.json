@@ -1,16 +1,20 @@
 {
-  "name": "GTA 6 Heist Guide & Leonida Syndicate",
-  "short_name": "GTA6 Heists",
-  "description": "Interactive GTA 6 heist payout calculators, live Thursday meta resets, LFG crew finder, and copyright-safe tactical guides.",
-  "start_url": "/index.html",
+  "name": "GTA 6 Heist Guide & Companion HUD",
+  "short_name": "GTA 6 Heists",
+  "description": "Tactical Leonida Vault Blueprints, 48-Min Clock & 15s Keypad Hack Trainer",
+  "start_url": "/?pwa=1",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#07050d",
-  "theme_color": "#ff2a8d",
+  "orientation": "any",
+  "background_color": "#070a12",
+  "theme_color": "#00f0ff",
+  "categories": ["games", "utilities", "entertainment"],
   "icons": [
     {
-      "src": "/assets/vip-blueprint-pack.png",
-      "sizes": "1024x768",
-      "type": "image/png"
+      "src": "/assets/avatar-mastermind.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
