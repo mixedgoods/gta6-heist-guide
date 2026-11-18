@@ -2432,14 +2432,12 @@ body.has-ticker {
 
 /* CHALLENGE TOP BANNER */
 .challenge-top-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   z-index: 10001;
   background: linear-gradient(90deg, rgba(20, 10, 32, 0.98), rgba(8, 16, 28, 0.98));
   border-bottom: 2px solid var(--neon-pink);
-  box-shadow: 0 4px 25px rgba(255, 42, 141, 0.35);
+  box-shadow: 0 4px 20px rgba(255, 42, 141, 0.35);
   padding: 0.6rem 1.25rem;
   display: flex;
   align-items: center;
@@ -2447,9 +2445,14 @@ body.has-ticker {
   gap: 1rem;
   box-sizing: border-box;
   font-family: var(--font-main, sans-serif);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: #fff;
-  animation: slideDownBanner 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (max-width: 640px) {
+  .challenge-top-banner {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.78rem;
+  }
 }
 @keyframes slideDownBanner {
   from { transform: translateY(-100%); }

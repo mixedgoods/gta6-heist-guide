@@ -3081,7 +3081,12 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         <button type="button" class="challenge-close-btn" onclick="this.parentElement.remove()" aria-label="Close Banner">✕</button>
       `;
       document.body.prepend(banner);
-      document.body.style.paddingTop = '45px';
+      if (window.location.pathname.includes('vault-hack-trainer') || window.location.pathname.includes('hack-trainer')) {
+        setTimeout(() => {
+          const t = document.getElementById('syndicate-hack-trainer') || document.getElementById('keypadTrainerBox');
+          if (t) t.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
     },
 
     acceptChallenge(val) {
@@ -3092,9 +3097,9 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
           if (GTA6.KeypadTrainer && typeof GTA6.KeypadTrainer.start === 'function') {
             GTA6.KeypadTrainer.start();
           }
-        }, 500);
+        }, 600);
       } else {
-        window.location.href = '/vault-hack-trainer.html?challenge=' + val;
+        window.location.href = '/vault-hack-trainer.html?challenge=' + encodeURIComponent(val) + '#syndicate-hack-trainer';
       }
     }
   },
