@@ -1,0 +1,39 @@
+name: GTA 6 Auto-Sync Intel Database
+
+on:
+  schedule:
+    # Run every 12 hours automatically
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+    # Allows manual trigger anytime from GitHub Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run GTA 6 Intel Sync Engine
+        run: |
+          python scripts/auto_sync_gta6_database.py
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "GTA6 Intel Bot"
+          git config --global user.email "bot@gta6heistguide.com"
+          git add public/data/ public/assets/
+          if git diff --staged --quiet; then
+            echo "No new GTA 6 intel updates detected."
+          else
+            git commit -m "🤖 Auto-sync GTA 6 database: verified characters, weapons, and vehicles"
+            git push
+          fi

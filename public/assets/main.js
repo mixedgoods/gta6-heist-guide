@@ -2273,7 +2273,21 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       trigger() {
         // Disabled
       }
-    }  };
+    LiveIntelSync: {
+      async init() {
+        try {
+          const res = await fetch('/api/sync-feed');
+          if (!res.ok) return;
+          const feed = await res.json();
+          if (!feed.ok || !feed.counts) return;
+
+          document.querySelectorAll('.live-sync-badge').forEach((el) => {
+            el.innerHTML = `⚡ LIVE SYNC: ${feed.counts.characters} Operatives &bull; ${feed.counts.weapons} Weapons &bull; ${feed.counts.vehicles} Vehicles`;
+          });
+        } catch (e) {}
+      }
+    }
+  };
 
   document.addEventListener('DOMContentLoaded', () => {
     GTA6.initMobileNav();
@@ -2291,4 +2305,5 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     GTA6.PromoVideo.init();
     GTA6.CompanionHUD.init();
     GTA6.MasteryAndStreak.init();
+    GTA6.LiveIntelSync.init();
   });

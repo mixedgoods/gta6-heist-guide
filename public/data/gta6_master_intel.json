@@ -1,0 +1,440 @@
+{
+  "lastSynced": "2026-11-18T20:35:28Z",
+  "version": "1.0.0",
+  "source": "Rockstar Games Official Media & GTA Community Verified Database",
+  "characters": [
+    {
+      "id": "lucia-caminos",
+      "name": "Lucia Caminos",
+      "role": "Mastermind & Dual-Wield Gunslinger",
+      "specialty": "Lockpicking & Precision Infiltration",
+      "cut": "Leader (50% Shared)",
+      "district": "Vice City / South Beach",
+      "image": "assets/character-lucia.jpg",
+      "status": "CONFIRMED",
+      "source": "Rockstar Games Official Key Art & Trailer 1"
+    },
+    {
+      "id": "jason-duval",
+      "name": "Jason Duval",
+      "role": "Enforcer & Precision Wheelman",
+      "specialty": "Heavy Firearms & Tactical Breaching",
+      "cut": "Leader (50% Shared)",
+      "district": "Kelly County / Port Gellhorn",
+      "image": "assets/character-jason.jpg",
+      "status": "CONFIRMED",
+      "source": "Rockstar Games Official Key Art & Trailer 1"
+    },
+    {
+      "id": "stefanie",
+      "name": "Stefanie",
+      "role": "Correctional Counselor & Legal Contact",
+      "specialty": "Probation Intel & Police Clearance Bypasses",
+      "cut": "Contact / Vendor",
+      "district": "Leonida State Department of Corrections",
+      "image": "assets/character-stefanie.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Prison Intake Stills"
+    },
+    {
+      "id": "cal-hampton",
+      "name": "Cal Hampton",
+      "role": "Signals Intel & Wiretap Specialist",
+      "specialty": "Police Dispatch Scanner Delays (+30s)",
+      "cut": "8% Heist Cut",
+      "district": "Kelly County Trailer Park",
+      "image": "assets/character-cal-hampton.jpg",
+      "status": "CONFIRMED",
+      "source": "Official Leak Transcripts & Trailer 1"
+    },
+    {
+      "id": "boobie-ike",
+      "name": "Boobie Ike",
+      "role": "High-Roller Luxury Fence & Club Kingpin",
+      "specialty": "Diamond & High-Value Art Money Multipliers (+10%)",
+      "cut": "10% Fence Fee",
+      "district": "Vice Beach Club District",
+      "image": "assets/character-boobie-ike.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Club Sequences"
+    },
+    {
+      "id": "brian-heder",
+      "name": "Brian Heder",
+      "role": "Chop Shop Fabricator & Heavy Armorer",
+      "specialty": "Reinforced Getaway Plating & Run-Flat Tires",
+      "cut": "7% Heist Cut",
+      "district": "Kelly County Industrial",
+      "image": "assets/character-brian-heder.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 & Official In-Game Stills"
+    },
+    {
+      "id": "lori-heder",
+      "name": "Lori Heder",
+      "role": "Boatyard Armorer & Heavy Machinery Specialist",
+      "specialty": "Hydraulic Vault Jacks & Marine Rigging",
+      "cut": "6% Heist Cut",
+      "district": "Kelly County Boatyard",
+      "image": "assets/character-lori-heder.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Marine Sequences"
+    },
+    {
+      "id": "drequan-priest",
+      "name": "Dre'Quan Priest",
+      "role": "Offshore Pilot & Maritime Extraction Wheelman",
+      "specialty": "Deepwater Speedboat Escape & Sealed Cash Pods",
+      "cut": "8% Heist Cut",
+      "district": "Port Gellhorn Marinas",
+      "image": "assets/character-drequan-priest.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 High-Speed Catamaran Capture"
+    },
+    {
+      "id": "raul-bautista",
+      "name": "Raul Bautista",
+      "role": "Demolitions Expert & Thermal Vault Breacher",
+      "specialty": "Thermal Lance Silent Vault Melting (2,500\u00b0C)",
+      "cut": "8% Heist Cut",
+      "district": "Little Cuba / Industrial Corridor",
+      "image": "assets/character-raul-bautista.jpg",
+      "source": "Trailer 1 Bank Infiltration Sequence",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "petra-navarro",
+      "name": "Petra Navarro",
+      "role": "High Society Socialite & Museum Art Fence",
+      "specialty": "Rare Artifact Appraisals & Black-Market Auction Multipliers",
+      "cut": "8% Heist Cut",
+      "district": "Starlet Isle / Biscayne Luxury Highrises",
+      "image": "assets/character-petra.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Luxury Gallery Sequences"
+    },
+    {
+      "id": "phil",
+      "name": "Phil",
+      "role": "Gator Keys Gunrunner & Pilot",
+      "specialty": "Everglades Clandestine Airdrops & Military Surplus Delivery",
+      "cut": "7% Heist Cut",
+      "district": "Leonida Keys / Grassrivers Marsh",
+      "image": "assets/character-phil.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Airfield Stills"
+    },
+    {
+      "id": "valentina",
+      "name": "Valentina",
+      "role": "Vice City Latin Syndicate Enforcer",
+      "specialty": "Street Intel & Safehouse Clean Laundering",
+      "cut": "7% Heist Cut",
+      "district": "Little Cuba Strip",
+      "image": "assets/character-valentina.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Club & Street Capture"
+    },
+    {
+      "id": "aunt-tee",
+      "name": "Aunt Tee",
+      "role": "Underground Matriarch & Stash House Operator",
+      "specialty": "Unmarked Cash Laundering & Fake Identity Packs",
+      "cut": "5% Laundering Cut",
+      "district": "South Vice Residential",
+      "image": "assets/character-aunt-tee.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Porch Stills"
+    },
+    {
+      "id": "leonida-joker",
+      "name": "Leonida Joker",
+      "role": "Decoy & High-Heat Diversion Contact",
+      "specialty": "Smoke Screens & Split Police Response Lines",
+      "cut": "6% Heist Cut",
+      "district": "Statewide Court & Media Viral Scene",
+      "image": "assets/character-leonida-joker.jpg",
+      "status": "CONFIRMED",
+      "source": "Trailer 1 Arrest Mugshot Broadcast"
+    }
+  ],
+  "weapons": [
+    {
+      "id": "weapon-carbine",
+      "name": "Duke Special Ops Assault Carbine",
+      "category": "Primary Firearms",
+      "caliber": "5.56x45mm NATO",
+      "perk": "Suppressor Ready \u2022 Red Dot Optic",
+      "image": "assets/weapon-carbine.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-mp5",
+      "name": "Heckler & Koch MP5 SMG",
+      "category": "Primary Firearms",
+      "caliber": "9x19mm Parabellum",
+      "perk": "Collapsible Stock \u2022 Weapon Light",
+      "image": "assets/weapon-mp5.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-sniper",
+      "name": "Duke Heavy Assault Sniper Rifle",
+      "category": "Heavy & Special",
+      "caliber": ".50 BMG Heavy Anti-Materiel",
+      "perk": "Overwatch Guard Neutralization",
+      "image": "assets/weapon-sniper.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-mustang357",
+      "name": "Mustang .357 Heavy Magnum Revolver",
+      "category": "Sidearms & Pistols",
+      "caliber": ".357 Magnum Hollow-Point",
+      "perk": "Single-Shot Engine Block Disablement",
+      "image": "assets/weapon-mustang357.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-beretta",
+      "name": "Beretta 92FS 9mm Tactical Sidearm",
+      "category": "Sidearms & Pistols",
+      "caliber": "9mm Parabellum (15 Rounds)",
+      "perk": "Concealed Holster Draw (+40% Speed)",
+      "image": "assets/weapon-beretta.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-polymer",
+      "name": "Polymer Striker-Fired Concealed Pistol",
+      "category": "Sidearms & Pistols",
+      "caliber": "9mm Lightweight Frame",
+      "perk": "Metal Detector Acoustic Dampening",
+      "image": "assets/weapon-polymer.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-grenade-launcher",
+      "name": "40mm Multi-Shot Grenade Launcher",
+      "category": "Heavy & Special",
+      "caliber": "40mm High-Explosive Rounds",
+      "perk": "Instant Roadblock & Barricade Clearing",
+      "image": "assets/weapon-grenade-launcher.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-baseball-bat",
+      "name": "Port Gellhorn Baseball Bat",
+      "category": "Entry & Melee",
+      "caliber": "Solid Ash Hardwood",
+      "perk": "Silent Guard Takedowns & Glass Shatter",
+      "image": "assets/weapon-baseball-bat.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "weapon-hammer",
+      "name": "Heavy Steel Framing Hammer",
+      "category": "Entry & Melee",
+      "caliber": "Forged Carbon Steel",
+      "perk": "Pads & Display Case Smashing",
+      "image": "assets/weapon-hammer.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "gear-duffel-bag",
+      "name": "Vice City Ballistic Cash Duffel",
+      "category": "Tactical Heist Gear",
+      "caliber": "Kevlar Ballistic Nylon",
+      "perk": "$2.5M Capacity Carry Rig",
+      "image": "assets/gear-duffel-bag.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "gear-getaway-car",
+      "name": "Rideout Customs Tuned Muscle Car",
+      "category": "Tactical Heist Gear",
+      "caliber": "Supercharged V8 Getaway Platform",
+      "perk": "Nitrous Staging & Radio Interceptor",
+      "image": "assets/gear-getaway-car.jpg",
+      "status": "CONFIRMED"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "vehicle-tulip",
+      "name": "Declasse Tulip M-100",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "1972 Chevrolet Chevelle Malibu",
+      "topSpeed": "145 MPH",
+      "seats": 4,
+      "trunkSlots": 4,
+      "image": "assets/vehicle-tulip.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-banshee",
+      "name": "Bravado Banshee",
+      "category": "Sports & Supercars",
+      "realModel": "Dodge Viper GTS",
+      "topSpeed": "172 MPH",
+      "seats": 2,
+      "trunkSlots": 2,
+      "image": "assets/vehicle-banshee.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-cheetah",
+      "name": "Grotti Cheetah Classic",
+      "category": "Sports & Supercars",
+      "realModel": "Ferrari Testarossa",
+      "topSpeed": "168 MPH",
+      "seats": 2,
+      "trunkSlots": 2,
+      "image": "assets/vehicle-cheetah.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-comet-s2",
+      "name": "Pfister Comet S2 Cabrio",
+      "category": "Sports & Supercars",
+      "realModel": "Porsche 911 Turbo S Cabriolet",
+      "topSpeed": "175 MPH",
+      "seats": 2,
+      "trunkSlots": 2,
+      "image": "assets/vehicle-comet-s2.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-gauntlet-hellfire",
+      "name": "Bravado Gauntlet Hellfire",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "Dodge Challenger SRT Demon",
+      "topSpeed": "156 MPH",
+      "seats": 2,
+      "trunkSlots": 3,
+      "image": "assets/vehicle-gauntlet-hellfire.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-elegy-retro",
+      "name": "Annis Elegy Retro Custom",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "Nissan Skyline GT-R (R32 / R33)",
+      "topSpeed": "162 MPH",
+      "seats": 2,
+      "trunkSlots": 3,
+      "image": "assets/vehicle-elegy-retro.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-buccaneer",
+      "name": "Albany Buccaneer Custom",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "1965 Buick Riviera Lowrider",
+      "topSpeed": "138 MPH",
+      "seats": 2,
+      "trunkSlots": 4,
+      "image": "assets/vehicle-buccaneer.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-dominator-asp",
+      "name": "Vapid Dominator ASP",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "2000 Ford Mustang SVT Cobra R",
+      "topSpeed": "158 MPH",
+      "seats": 2,
+      "trunkSlots": 3,
+      "image": "assets/vehicle-dominator-asp.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-coquette-d10",
+      "name": "Invetero Coquette D10",
+      "category": "Sports & Supercars",
+      "realModel": "Chevrolet Corvette C8",
+      "topSpeed": "174 MPH",
+      "seats": 2,
+      "trunkSlots": 2,
+      "image": "assets/vehicle-coquette-d10.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-vigero-zx",
+      "name": "Declasse Vigero ZX Convertible",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "Chevrolet Camaro ZL1 Convertible",
+      "topSpeed": "160 MPH",
+      "seats": 4,
+      "trunkSlots": 3,
+      "image": "assets/vehicle-vigero-zx.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-furia",
+      "name": "Grotti Furia",
+      "category": "Sports & Supercars",
+      "realModel": "Pininfarina Battista / Ferrari SF90",
+      "topSpeed": "178 MPH",
+      "seats": 2,
+      "trunkSlots": 1,
+      "image": "assets/vehicle-furia.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-blista-compact",
+      "name": "Dinka Blista Compact",
+      "category": "Muscle & Getaway Tuner",
+      "realModel": "1987 Honda CR-X",
+      "topSpeed": "130 MPH",
+      "seats": 2,
+      "trunkSlots": 3,
+      "image": "assets/vehicle-blista-compact.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-vcpd-cruiser",
+      "name": "VCPD Cruiser Interceptor",
+      "category": "Pursuit & Armored",
+      "realModel": "Ford Police Interceptor Utility",
+      "topSpeed": "152 MPH",
+      "seats": 4,
+      "trunkSlots": 5,
+      "image": "assets/vehicle-vcpd-cruiser.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-buffalo-stx",
+      "name": "Bravado Buffalo STX Pursuit",
+      "category": "Pursuit & Armored",
+      "realModel": "Dodge Charger SRT Hellcat Pursuit",
+      "topSpeed": "164 MPH",
+      "seats": 4,
+      "trunkSlots": 4,
+      "image": "assets/vehicle-buffalo-stx.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-seasparrow",
+      "name": "SeaSparrow Amphibious Helicopter",
+      "category": "Boats & Aviation",
+      "realModel": "Bell 47 with Marine Pontoons",
+      "topSpeed": "140 Knots",
+      "seats": 2,
+      "trunkSlots": 2,
+      "image": "assets/vehicle-seasparrow.jpg",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "vehicle-squalo",
+      "name": "Grotti Squalo Speedboat",
+      "category": "Boats & Aviation",
+      "realModel": "Cigarette 38 Top Gun Offshore",
+      "topSpeed": "95 Knots",
+      "seats": 4,
+      "trunkSlots": 4,
+      "image": "assets/vehicle-squalo.jpg",
+      "status": "CONFIRMED"
+    }
+  ]
+}
