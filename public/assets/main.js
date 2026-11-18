@@ -1360,36 +1360,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
   },
 
   injectCommunityPulse() {
-    const file = (window.location.pathname.split('/').pop() || 'index').replace(/\.html$/, '');
-    if (file === 'forum' || file === 'syndicate-command') return;
-    if (document.querySelector('.community-pulse-strip')) return;
-
-    const mainEl = document.querySelector('main.container');
-    if (!mainEl) return;
-
-    const pulse = document.createElement('section');
-    pulse.className = 'community-pulse-strip';
-    pulse.innerHTML = `
-      <div>
-        <div style="color:var(--neon-cyan); font-size:0.78rem; font-weight:800; letter-spacing:1.2px; text-transform:uppercase;">
-          <span class="strip-pulse" style="margin-right:6px;"></span> NEED CO-OP HEIST FRIENDS OR STEALTH INTEL?
-        </div>
-        <div style="color:#fff; font-weight:800; font-size:1.1rem; margin-top:0.2rem;">
-          Join the Heist Crew Lounge &bull; Save Builds, Match PS5/Xbox/PC Squads & Unlock VIP Blueprints
-        </div>
-      </div>
-      <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-        <button type="button" class="btn btn-secondary" style="padding:0.55rem 1rem; font-size:0.82rem;" onclick="GTA6.bookmarkCurrentPage()">⭐ Bookmark Guide</button>
-        <a href="forum.html#lfg-hub" class="btn btn-primary" style="padding:0.55rem 1rem; font-size:0.82rem;">🤝 Find Squad & Make Friends &rarr;</a>
-      </div>
-    `;
-    // Position BELOW main content/radar and right ABOVE the Syndicate Deals section
-    const affSection = document.querySelector('.affiliate-showcase-section') || document.querySelector('.deal-matcher-box');
-    if (affSection && affSection.parentNode) {
-      affSection.parentNode.insertBefore(pulse, affSection);
-    } else {
-      mainEl.appendChild(pulse);
-    }
+    return; // Disabled per user request (was too wide and misaligned)
   },
 
   // --------------------------------------------------------------------------
