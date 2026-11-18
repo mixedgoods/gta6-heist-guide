@@ -2,70 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crew Specialists Roster & Hire Rates | GTA 6 Heist Guide</title>
-    <meta name="description" content="Complete GTA 6 Crew Specialist Database. Compare Hackers, Wheelmen, Gunners, unlock requirements, skill ratings, and cut percentages.">
-        <meta name="keywords" content="Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, GTA 6 crew roster, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/crew-database.html">
-    <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="Crew Specialists Roster & Hire Rates | GTA 6 Heist Guide">
-    <meta property="og:description" content="Complete GTA 6 Crew Specialist Database. Compare Hackers, Wheelmen, Gunners, unlock requirements, skill ratings, and cut percentages.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/crew-database.html">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/lfg-squad-banner.png">
-    <meta name="twitter:card" content="summary_large_image">
+    <title>Confirmed GTA 6 Characters &amp; Syndicate Crew Bios | GTA 6 Heist Guide</title>
+    <meta name="description" content="Official GTA 6 Character Bios, Protagonist Specs &amp; Syndicate Crew Roster. In-depth profiles for Lucia, Jason, Stefanie, Cal Hampton, Boobie Ike, and heist specialists with tactical stat ratings and perks.">
+    <link rel="canonical" href="https://www.gta6heistguide.com/crew-database.html">
     <link rel="stylesheet" href="assets/style.css">
-    <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "name": "Crew Specialists Roster & Hire Rates | GTA 6 Heist Guide",
-      "url": "https://www.gta6heistguide.com/crew-database.html",
-      "publisher": {
-        "@type": "Organization",
-        "name": "gta6heistguide.com"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.gta6heistguide.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Crew Specialists Roster & Hire Rates",
-          "item": "https://www.gta6heistguide.com/crew-database.html"
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .character-filter-bar {
+            background: rgba(13, 19, 29, 0.95);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            padding: 0.65rem 1rem;
+            margin: 1.25rem 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
-      ]
-    }
-  ]
-}
-    </script>
+        .char-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-card);
+            color: var(--text-main);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .char-btn.active, .char-btn:hover {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+        .char-card {
+            background: rgba(14, 19, 30, 0.92);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+        .char-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+        }
+        .stat-bar-container {
+            display: grid;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            margin: 0.85rem 0;
+        }
+        .stat-bar-bg {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 2px;
+        }
+    </style>
 </head>
 <body>
-    
+
 <div class="countdown-strip">
-    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
+    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon">
         <span class="strip-pulse"></span>
         <span class="launch-mode-label">Launch Window:</span>
         <span class="highlight" id="countdownTimer">Loading...</span>
         <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
     </a>
     <span class="strip-divider">|</span>
-    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
+    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="G2A Keys">
         <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
     </a>
     <span class="strip-divider">|</span>
     <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
 </div>
+
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="brand-logo">
@@ -75,13 +94,13 @@
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Vaults</a></li>
-            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>
-            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta &amp; Rules</a></li>
+            <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Tools</a></li>
+            <li><a href="live-intel.html" style="color: var(--neon-green); font-weight: 800;">Live Meta</a></li>
             <li><a href="heist-planner.html">Planner</a></li>
             <li><a href="interactive-map.html">Radar Map</a></li>
-            <li><a href="crew-database.html" class="active">Crew</a></li>
+            <li><a href="crew-database.html" class="active">Crew &amp; Characters</a></li>
             <li><a href="affiliates-gear.html">Gear &amp; VPN</a></li>
-            <li><a href="forum.html" style="color: var(--neon-cyan);">Crew Lounge &amp; LFG</a></li>
+            <li><a href="forum.html" style="color: var(--neon-cyan);">LFG Lounge</a></li>
             <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
         </ul>
         <div class="nav-actions">
@@ -90,168 +109,490 @@
     </div>
 </nav>
 
-
-    <header class="hero">
-        <div class="hero-tagline">&bull; Leonida Underworld Talent Directory &bull;</div>
-        <h1>CREW SPECIALISTS <span class="highlight-pink">ROSTER</span></h1>
-        <p>Hiring the right talent is the difference between a clean multimillion-dollar score and a bloody 5-star shootout.</p>
-    </header>
-
-    <main class="container">
-        <div class="section-header">
-            <h2>Confirmed Leonida Story Associates &amp; Key Operators</h2>
-            <p>Track Rockstar's confirmed criminal network figures alongside unlockable vault heist specialists.</p>
-        </div>
-        <div class="grid" style="margin-bottom: 3rem;">
-            <div class="card" style="border-color: var(--neon-pink);">
-                <span class="card-tag tag-mastermind">Veteran Bank Robber</span>
-                <h3 class="card-title">Raul Bautista</h3>
-                <div class="card-meta"><span>Specialty: High-Stakes Bank Scores</span></div>
-                <p class="card-desc">Seasoned veteran bank heist tactician recruiting adaptable, fearless talent across Vice City for escalated vault scores.</p>
+<!-- HALF-SIZE CINEMATIC HERO BILLBOARD (180px) -->
+<header class="hero-cinematic" style="max-width: 1100px; margin: 0.65rem auto 1.25rem; padding: 0 0.5rem;">
+    <div style="position:relative; border-radius:14px; overflow:hidden; border:2px solid rgba(0,240,255,0.4); box-shadow:0 0 35px rgba(0,240,255,0.2);">
+        <img src="assets/lfg-squad-banner.png?v=20261118_v3" alt="Confirmed GTA 6 Characters &amp; Crew Roster" style="width:100%; height:180px; max-height:180px; object-fit:cover; object-position:center 25%; display:block;">
+        <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent 0%, rgba(8,11,18,0.85) 50%, rgba(6,8,14,0.96) 100%); padding:0.9rem 1.25rem 0.75rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem;">
+            <div>
+                <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.2); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.75rem; margin-bottom:0.25rem; display:inline-block;">⭐ OFFICIAL &amp; LEAKED CAST DOSSIERS &bull; 10 OPERATIVES</span>
+                <h1 style="font-size:clamp(1.2rem, 2.5vw, 1.75rem); font-weight:1000; color:#fff; margin:0; line-height:1.2; text-shadow:0 2px 10px rgba(0,0,0,0.8);">
+                    CONFIRMED GTA 6 <span style="color:var(--neon-pink);">CHARACTERS &amp; CREW BIOS</span>
+                </h1>
             </div>
-            <div class="card" style="border-color: var(--neon-cyan);">
-                <span class="card-tag tag-expert">Vice City Kingpin</span>
-                <h3 class="card-title">Boobie Ike &amp; Dre'Quan Priest</h3>
-                <div class="card-meta"><span>Region: Vice City &bull; Front Businesses</span></div>
-                <p class="card-desc">Real-estate, strip-club, and Only Raw Records entrepreneurs handling urban empire fronts, laundering hubs, and club contacts.</p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <a href="lucia-jason-skills.html" class="btn btn-primary" style="padding:0.4rem 0.85rem; font-size:0.78rem;">Simulate Lucia &amp; Jason Synergy &rarr;</a>
+                <a href="heist-planner.html" class="btn btn-secondary" style="padding:0.4rem 0.85rem; font-size:0.78rem;">Open Heist Planner</a>
             </div>
-            <div class="card" style="border-color: var(--neon-amber);">
-                <span class="card-tag tag-intermediate">Keys &amp; Hardware Contacts</span>
-                <h3 class="card-title">Brian Heder &amp; Cal Hampton</h3>
-                <div class="card-meta"><span>Region: Leonida Keys &bull; Maritime Intel</span></div>
-                <p class="card-desc">Golden-era Keys smuggler operations paired with Cal Hampton's police scanner eavesdropping and boatyard support.</p>
-            </div>
-        </div>
-
-        <div class="section-header">
-            <h2>Elite Hackers &amp; Decryptors</h2>
-            <p>Controls vault security camera blind spots, alarm delay countdowns, and automated laser grids.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-tag tag-mastermind">Tier 1 &bull; 15% Cut</span>
-                <h3 class="card-title">Cipher (Rachel Vance)</h3>
-                <div class="card-meta"><span>Skill: 98/100</span> &bull; <span>Alarm Delay: +90s</span></div>
-                <p class="card-desc">Former Vice City defense contractor. Disables all vault alarms permanently and unlocks bonus safe deposit boxes. Unlocked via Vice Beach cyber stalker side mission.</p>
-            </div>
-            <div class="card">
-                <span class="card-tag tag-expert">Tier 2 &bull; 10% Cut</span>
-                <h3 class="card-title">Bit-Cracker Dave</h3>
-                <div class="card-meta"><span>Skill: 84/100</span> &bull; <span>Alarm Delay: +60s</span></div>
-                <p class="card-desc">Reliable dark-web broker. Provides accurate keycard bypass scripts and suppresses silent police alarms for 60 seconds.</p>
-            </div>
-            <div class="card">
-                <span class="card-tag tag-intermediate">Tier 3 &bull; 6% Cut</span>
-                <h3 class="card-title">Nico "Glitch" Perez</h3>
-                <div class="card-meta"><span>Skill: 65/100</span> &bull; <span>Alarm Delay: +35s</span></div>
-                <p class="card-desc">Budget option. High risk of botching keypad hacks on Expert difficulty, cutting vault time short by 30 seconds.</p>
-            </div>
-        </div>
-
-        <div class="section-header" style="margin-top: 3.5rem;">
-            <h2>Getaway Wheelmen & Pilots</h2>
-            <p>Determines getaway vehicle modifications, pre-placed tire spike strips, and off-road escape speed.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-tag tag-mastermind">Tier 1 &bull; 12% Cut</span>
-                <h3 class="card-title">Toreno "Redline" Cruz</h3>
-                <div class="card-meta"><span>Skill: 96/100</span> &bull; <span>Vehicle: Armored Sandstorm 4x4</span></div>
-                <p class="card-desc">Legendary underground street racer. Pre-stages armored off-road interceptors with bulletproof run-flat tires inside the storm drains.</p>
-            </div>
-            <div class="card">
-                <span class="card-tag tag-expert">Tier 2 &bull; 8% Cut</span>
-                <h3 class="card-title">Marta "Drift" Silva</h3>
-                <div class="card-meta"><span>Skill: 82/100</span> &bull; <span>Vehicle: Tuned Gauntlet Classic</span></div>
-                <p class="card-desc">Vice City drift queen. Exceptional urban highway evasion maneuvers with quick safehouse delivery times.</p>
-            </div>
-            <div class="card">
-                <span class="card-tag tag-intermediate">Tier 3 &bull; 5% Cut</span>
-                <h3 class="card-title">Ricky "Spins" Bell</h3>
-                <div class="card-meta"><span>Skill: 60/100</span> &bull; <span>Vehicle: Stock Minivan</span></div>
-                <p class="card-desc">Low cost rookie driver. May show up in inadequate getaway vehicles and panics under heavy police chopper spotlights.</p>
-            </div>
-        </div>
-
-        <div class="section-header" style="margin-top: 3.5rem;">
-            <h2>Heavy Gunners & Enforcers</h2>
-            <p>Provides cover fire, controls civilian hostages, and minimizes squad casualties during loud extractions.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-tag tag-mastermind">Tier 1 &bull; 14% Cut</span>
-                <h3 class="card-title">Gunner "Sarge" Callahan</h3>
-                <div class="card-meta"><span>Skill: 99/100</span> &bull; <span>Loadout: Heavy LMG + Tear Gas</span></div>
-                <p class="card-desc">Discharged combat veteran. Keeps bank tellers under absolute control, suppresses NOOSE SWAT assault teams, and never drops loot bags.</p>
-            </div>
-            <div class="card">
-                <span class="card-tag tag-expert">Tier 2 &bull; 9% Cut</span>
-                <h3 class="card-title">Hector "Bruiser" Diaz</h3>
-                <div class="card-meta"><span>Skill: 80/100</span> &bull; <span>Loadout: Tactical Shotgun + Body Armor</span></div>
-                <p class="card-desc">Port Gellhorn dock muscle. Reliable in mid-range corridor firefights and carries secondary ammo reserves.</p>
-            </div>
-            <div class="card">
-                <span class="card-tag tag-intermediate">Tier 3 &bull; 5% Cut</span>
-                <h3 class="card-title">Cletus Montgomery</h3>
-                <div class="card-meta"><span>Skill: 58/100</span> &bull; <span>Loadout: Double-Barrel + Pistol</span></div>
-                <p class="card-desc">Swamp skirmisher. Prone to accidentally discharging weapons in stealth missions, blowing operational cover.</p>
-            </div>
-        </div>
-    </main>
-
-    
-<footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h4>GTA 6 HEIST GUIDE</h4>
-            <p style="margin-bottom: 1rem; color: var(--text-muted);">The premier independent intelligence database, vault infiltration walkthroughs, crew calculators, and tactical tools for Grand Theft Auto VI and Leonida State.</p>
-            <p style="color: var(--neon-cyan); font-weight:700;">Zero Latency &bull; Real-Time Syndicate Database &bull; 100% Free Access</p>
-        </div>
-        <div class="footer-col">
-            <h4>Heist Vaults</h4>
-            <ul>
-                <li><a href="sinfrontera-bank.html">Sinfrontera Bank Raid</a></li>
-                <li><a href="port-gellhorn.html">Port Gellhorn Container Heist</a></li>
-                <li><a href="leonida-reserve.html">Leonida Gold Reserve</a></li>
-                <li><a href="vice-city-yacht-heist.html">Starlet Superyacht Heist</a></li>
-                <li><a href="everglades-smuggler-run.html">Grassrivers Smuggler Run</a></li>
-                <li><a href="ocean-drive-armored-convoy.html">Ocean Drive Armored Convoy</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Tactical Tools</h4>
-            <ul>
-                <li><a href="live-intel.html">Live Meta &amp; Legal Rules</a></li>
-                <li><a href="heist-payout-calculator.html">True $/Hour Calculator</a></li>
-                <li><a href="vault-hack-trainer.html">Vault Hack Trainer (15s)</a></li>
-                <li><a href="interactive-map.html">Leonida Radar Map</a></li>
-                <li><a href="crew-database.html">Specialist Roster</a></li>
-                <li><a href="forum.html">Heist Crew Lounge &amp; LFG</a></li>
-                <li><a href="profile.html">Operative Dossier</a></li>
-                <li><a href="lucia-jason-skills.html">Lucia &amp; Jason Skills</a></li>
-                <li><a href="vehicles-getaway-cars.html">Getaway Vehicles &amp; Trunks</a></li>
-                <li><a href="safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                <li><a href="leonida-wanted-system.html">Wanted System &amp; Evasion</a></li>
-                <li><a href="syndicate-command.html" style="color:var(--text-muted); font-size:0.8rem;">Owner Email Command</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Verified Partners</h4>
-            <ul>
-                <li><a href="https://getapexlocal.com/partners" target="_blank" rel="noopener">Creator Video Tools</a></li>
-                <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener">G2A Game Keys</a></li>
-                <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener">Eneba Pre-Orders</a></li>
-                <li><a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener">Amazon Gaming Gear</a></li>
-                <li><a href="affiliates-gear.html">NordVPN Low-Ping Routing</a></li>
-            </ul>
         </div>
     </div>
-    <div class="disclaimer-box">
-        <p><strong>LEGAL, DMCA SAFE HARBOR &amp; FTC AFFILIATE DISCLOSURE:</strong> gta6heistguide.com is an independent fan-created strategy portal, commentary database, and community tool network. Grand Theft Auto, GTA VI, Vice City, and Rockstar Games are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc. This website is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Zero copyrighted game binaries, stolen leaks, or publisher logos are hosted on this domain; all analysis and guides are original works under Fair Use. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, NordVPN, and GetApexLocal affiliate partner, this site may earn commissions on qualifying purchases at no additional cost to users.</p>
-        <p style="margin-top: 0.5rem;">&copy; 2026 gta6heistguide.com &bull; High Performance Real-Time Strategy Network.</p>
+</header>
+
+<main class="container">
+    <!-- FILTER BAR -->
+    <div class="character-filter-bar">
+        <strong style="color:var(--neon-cyan); font-size:0.84rem; font-family:var(--font-mono); margin-right:0.35rem;">👥 FILTER ROSTER:</strong>
+        <button type="button" class="char-btn active" onclick="filterCharacters('all', this)">All Characters (10)</button>
+        <button type="button" class="char-btn" onclick="filterCharacters('protagonist', this)">⭐ Playable Protagonists (2)</button>
+        <button type="button" class="char-btn" onclick="filterCharacters('story', this)">📜 Story Associates (5)</button>
+        <button type="button" class="char-btn" onclick="filterCharacters('specialist', this)">🔧 Heist Specialists (3)</button>
+    </div>
+
+    <!-- 10 CHARACTER DOSSIER CARDS GRID -->
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1.25rem;" id="characterGrid">
+
+        <!-- 1. LUCIA CAMINOS -->
+        <div class="char-card" data-category="protagonist" style="border-color:rgba(255,42,141,0.5);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative;">
+                    <img src="assets/character-lucia.jpg?v=20261118_v3" alt="Lucia Caminos - GTA 6 Protagonist" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; font-weight:800;">PLAYABLE PROTAGONIST</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-family:var(--font-mono);">VO: MANNI L. PEREZ</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Lucia Caminos</h2>
+                        <span style="color:var(--neon-pink); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">INFILTRATION LEAD</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        The first female protagonist in the GTA HD era. A Latina criminal seen in the Leonida Department of Corrections wearing a GPS ankle monitor. Partners with Jason Duval in a high-stakes Bonnie &amp; Clyde robbery syndicate across Vice-Dale County.
+                    </p>
+
+                    <!-- Tactical Stat Meters -->
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Biometric &amp; Safe Decryption</span>
+                                <span style="color:var(--neon-green);">96% (Elite)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:96%; height:100%; background:var(--neon-green);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Teller &amp; Crowd Intimidation</span>
+                                <span style="color:var(--neon-pink);">94% (Max Radius)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:94%; height:100%; background:var(--neon-pink);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Dual-Wield SMG Weapon Handling</span>
+                                <span style="color:var(--neon-cyan);">92%</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:92%; height:100%; background:var(--neon-cyan);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(255,42,141,0.08); border-left:3px solid var(--neon-pink); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-pink); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ SIGNATURE PERK: ADRENALINE REACTION</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Temporarily slows perception when breaking guard line-of-sight and boosts stamina recovery during foot pursuits.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem; border-color:var(--neon-pink); color:var(--neon-pink);">Simulate Lucia Infiltration Loadout &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 2. JASON DUVAL -->
+        <div class="char-card" data-category="protagonist" style="border-color:rgba(0,240,255,0.5);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative;">
+                    <img src="assets/character-jason.jpg?v=20261118_v3" alt="Jason Duval - GTA 6 Protagonist" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">PLAYABLE PROTAGONIST</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-family:var(--font-mono);">VO: GREGORY CONNORS</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Jason Duval</h2>
+                        <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">MARKSMAN &amp; WHEELMAN</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Ex-military tactical operative hailing from northern Kelly County and Port Gellhorn. Provides heavy tactical overwatch, perimeter surveillance, and aggressive high-speed vehicle escapes in torrential Florida weather.
+                    </p>
+
+                    <!-- Tactical Stat Meters -->
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Wet-Weather Drift &amp; Handling</span>
+                                <span style="color:var(--neon-cyan);">96% (Pro Wheelman)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:96%; height:100%; background:var(--neon-cyan);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Long-Range Ballistics &amp; Sniping</span>
+                                <span style="color:var(--neon-green);">94% (Zero Recoil)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:94%; height:100%; background:var(--neon-green);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>CCTV Camera &amp; Guard Tagging</span>
+                                <span style="color:var(--neon-yellow);">91%</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:91%; height:100%; background:var(--neon-yellow);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(0,240,255,0.08); border-left:3px solid var(--neon-cyan); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-cyan); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ SIGNATURE PERK: PRECISION DEAD-EYE</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Bullet-time targeting while driving and steady scoped breathing for perimeter spotlight sabotage.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Simulate Jason Wheelman Loadout &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 3. STEFANIE -->
+        <div class="char-card" data-category="story" style="border-color:rgba(255,184,0,0.4);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #1f1b2e, #0e131d); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">⚖️</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.72rem; font-weight:800;">TRAILER 1 CHARACTER</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono);">DEPT OF CORRECTIONS</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Stefanie</h2>
+                        <span style="color:var(--neon-yellow); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">CASE OFFICER</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Featured in the opening sequence of Trailer 1 questioning Lucia (*"Do you know why you're here?"*). Serves as Lucia's correctional caseworker and parole officer, controlling district boundaries and probation mandates.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Parole Clearance Authority</span>
+                                <span style="color:var(--neon-yellow);">High (Vice-Dale)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:90%; height:100%; background:var(--neon-yellow);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Psychological Profiling</span>
+                                <span style="color:var(--neon-green);">92%</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:92%; height:100%; background:var(--neon-green);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(255,184,0,0.08); border-left:3px solid var(--neon-yellow); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-yellow); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ STORY ROLE: PROBATION SAFE HARBOR</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Unlocks early-game district permissions and reduced heat thresholds in southern Vice City.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <button type="button" class="btn btn-secondary" style="width:100%; font-size:0.8rem; opacity:0.8;" disabled>Story Associate &bull; Non-Playable</button>
+            </div>
+        </div>
+
+        <!-- 4. CAL HAMPTON -->
+        <div class="char-card" data-category="story" style="border-color:rgba(0,255,136,0.4);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #0e201a, #081216); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">📡</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-weight:800;">LEAK CONFIRMED NPC</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-family:var(--font-mono);">KELLY COUNTY TECH</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Cal Hampton</h2>
+                        <span style="color:var(--neon-green); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">SIGNALS INTEL</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Confirmed in 2022 development leaks. An eccentric, conspiracy-obsessed trailer park resident who monitors police scanner frequencies and air traffic bands for Jason from Kelly County.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Police Radio Jamming &amp; Wiretap</span>
+                                <span style="color:var(--neon-green);">94% (+30s Delay)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:94%; height:100%; background:var(--neon-green);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>ANPR Roadblock Flagging</span>
+                                <span style="color:var(--neon-cyan);">89%</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:89%; height:100%; background:var(--neon-cyan);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(0,255,136,0.08); border-left:3px solid var(--neon-green); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-green); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ CREW PERK: FREQUENCY DELAY</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Delays SWAT arrival times by 30 seconds and exposes police road spikes on the minimap.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="heist-planner.html" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem; border-color:var(--neon-green); color:var(--neon-green);">Assign Cal to Heist Recon &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 5. BOOBIE IKE -->
+        <div class="char-card" data-category="story" style="border-color:rgba(255,42,141,0.4);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #2a1124, #12091c); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">💎</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; font-weight:800;">VICE BEACH KINGPIN</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.72rem; font-family:var(--font-mono);">HIGH ROLLER FENCE</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Boobie Ike</h2>
+                        <span style="color:var(--neon-pink); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">LUXURY FENCE</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Vice Beach nightlife kingpin featured in Trailer 1 club scenes and yacht parties. Connects the syndicate to high-society vaults, luxury superyachts, and international diamond fences.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Diamond &amp; Bearer Bond Payout</span>
+                                <span style="color:var(--neon-pink);">+10% Cash Value</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:95%; height:100%; background:var(--neon-pink);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(255,42,141,0.08); border-left:3px solid var(--neon-pink); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-pink); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ CREW PERK: BLACK-MARKET PREMIUM</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Unlocks VIP access codes for the Starlet Superyacht and Ocean Drive penthouse vaults.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="interactive-map.html#radarMap" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem; border-color:var(--neon-pink); color:var(--neon-pink);">View Boobie's Target Vaults &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 6. BRIAN HEDER -->
+        <div class="char-card" data-category="story" style="border-color:rgba(255,184,0,0.4);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #261908, #130d06); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">🔧</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-amber); color:var(--neon-amber); font-size:0.72rem; font-weight:800;">LEAK CONFIRMED NPC</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.72rem; font-family:var(--font-mono);">CHOP SHOP BOSS</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Brian Heder</h2>
+                        <span style="color:var(--neon-amber); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">CHOP SHOP ARMORER</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Kelly County auto salvage and chop shop proprietor from the 2022 leaks. Outfits getaway cars with reinforced armor plating, hidden trunk stash boxes, and run-flat ballistic tires.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Getaway Vehicle Armor Plating</span>
+                                <span style="color:var(--neon-amber);">+40% Durability</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:88%; height:100%; background:var(--neon-amber);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(255,184,0,0.08); border-left:3px solid var(--neon-amber); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-amber); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ CREW PERK: REINFORCED HULLS</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Vehicles withstand police roadblock ramming and puncture-proof tires ignore road spikes.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="heist-planner.html" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem; border-color:var(--neon-amber); color:var(--neon-amber);">Select Brian's Getaway Fleet &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 7. DRE'QUAN PRIEST -->
+        <div class="char-card" data-category="story" style="border-color:rgba(0,240,255,0.4);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #091a24, #040d14); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">🚤</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">PORT GELLHORN DOCKS</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono);">MARITIME PILOT</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Dre'Quan Priest</h2>
+                        <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">SPEEDBOAT CAPTAIN</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Port Gellhorn industrial smuggler. Arranges offshore shipping container stashes and high-speed cigarette boat evacuations through Biscayne Bay and the Leonida Keys.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Sea-Route Evacuation Speed</span>
+                                <span style="color:var(--neon-cyan);">+25% Speedboat Accel</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:91%; height:100%; background:var(--neon-cyan);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(0,240,255,0.08); border-left:3px solid var(--neon-cyan); padding:0.6rem 0.8rem; border-radius:0 6px 6px 0; margin-bottom:0.85rem;">
+                        <strong style="color:var(--neon-cyan); font-size:0.78rem; display:block; margin-bottom:0.2rem;">⚡ CREW PERK: WATER EXTRACTION</strong>
+                        <span style="color:var(--text-muted); font-size:0.78rem; line-height:1.4;">Zero Coast Guard radar detection while transiting the Biscayne Bay shipping corridor.</span>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="interactive-map.html#radarMap" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">View Port Gellhorn Docks &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 8. RAUL BAUTISTA -->
+        <div class="char-card" data-category="specialist" style="border-color:rgba(255,42,141,0.3);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #220e18, #0e070c); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">💥</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; font-weight:800;">HEIST SPECIALIST</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-family:var(--font-mono);">CUT: 8%</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Raul Bautista</h2>
+                        <span style="color:var(--neon-pink); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">DEMOLITIONS EXPERT</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Former mining demolitionist in Ambrosia. Specializes in silent thermal charges, concrete breaching, and precision vault door blast-downs.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Thermal Breaching Speed</span>
+                                <span style="color:var(--neon-pink);">95% (Fast Cut)</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:95%; height:100%; background:var(--neon-pink);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="heist-planner.html" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem;">Hire Raul for Heist (8% Cut) &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 9. RACHEL "CIPHER" VANCE -->
+        <div class="char-card" data-category="specialist" style="border-color:rgba(0,255,136,0.3);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #091f14, #05100a); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">💻</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-weight:800;">HEIST SPECIALIST</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-family:var(--font-mono);">CUT: 9%</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Cipher (Rachel Vance)</h2>
+                        <span style="color:var(--neon-green); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">MASTER HACKER</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Ex-fintech cybersecurity engineer in Downtown Vice City. Bypasses biometric vaults and loops security cameras for an extra 45 seconds of undetected vault looting.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Vault Time Loot Window</span>
+                                <span style="color:var(--neon-green);">+45 Seconds Looting</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:96%; height:100%; background:var(--neon-green);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="heist-planner.html" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem;">Hire Cipher for Heist (9% Cut) &rarr;</a>
+            </div>
+        </div>
+
+        <!-- 10. TORENO "REDLINE" CRUZ -->
+        <div class="char-card" data-category="specialist" style="border-color:rgba(0,240,255,0.3);">
+            <div>
+                <div style="height:220px; overflow:hidden; position:relative; background:linear-gradient(135deg, #0a1726, #050b12); display:flex; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem;">🏎️</div>
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">HEIST SPECIALIST</span>
+                    <span class="user-badge" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.72rem; font-family:var(--font-mono);">CUT: 7%</span>
+                </div>
+                <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                        <h2 style="color:#fff; font-size:1.35rem; margin:0;">Toreno "Redline" Cruz</h2>
+                        <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">NIGHT DRIFT WHEELMAN</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
+                        Underground street racer from Little Cuba. Escapes 4-star police pursuits through narrow alley shortcuts and highway off-ramps.
+                    </p>
+
+                    <div class="stat-bar-container">
+                        <div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span>Alleyway Evasion Speed</span>
+                                <span style="color:var(--neon-cyan);">94% Handling</span>
+                            </div>
+                            <div class="stat-bar-bg"><div style="width:94%; height:100%; background:var(--neon-cyan);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.25rem 1.25rem;">
+                <a href="heist-planner.html" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.5rem; font-size:0.8rem;">Hire Toreno for Heist (7% Cut) &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="footer-compact">
+    <div class="footer-matrix">
+        <div>
+            <div style="font-weight:900; color:#fff; font-size:0.85rem; margin-bottom:0.4rem;">GTA 6 HEIST GUIDE</div>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Independent tactical companion &bull; Unofficial syndicate research database.</p>
+        </div>
+        <div>
+            <div style="font-weight:700; color:var(--neon-cyan); font-size:0.8rem; margin-bottom:0.35rem;">TACTICAL RADAR</div>
+            <a href="interactive-map.html">Interactive Map</a><br>
+            <a href="heist-planner.html">Heist Planner</a><br>
+            <a href="gameplay-mechanics.html">Mechanics &amp; Rules</a>
+        </div>
+        <div>
+            <div style="font-weight:700; color:var(--neon-pink); font-size:0.8rem; margin-bottom:0.35rem;">SYNDICATE CREW</div>
+            <a href="crew-database.html">Character Bios</a><br>
+            <a href="lucia-jason-skills.html">Lucia &amp; Jason</a><br>
+            <a href="forum.html">LFG Matchmaker</a>
+        </div>
+        <div>
+            <div style="font-weight:700; color:var(--neon-yellow); font-size:0.8rem; margin-bottom:0.35rem;">LEGAL &amp; DISCOUNTS</div>
+            <a href="affiliates-gear.html">Amazon &amp; Key Deals</a><br>
+            <a href="legal.html">Fair Use &amp; Safe Harbor</a>
+        </div>
     </div>
 </footer>
-<script src="assets/main.js"></script>
 
+<script src="assets/main.js"></script>
+<script>
+    function filterCharacters(cat, btn) {
+        document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        document.querySelectorAll('#characterGrid .char-card').forEach(card => {
+            if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(480, 'triangle', 0.04);
+    }
+</script>
 </body>
 </html>
