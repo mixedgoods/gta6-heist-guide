@@ -131,24 +131,26 @@
 </head>
 <body>
     
-<div class="countdown-strip" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; padding:0.35rem 1rem;">
-    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
-        <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
-            <span class="strip-pulse"></span>
-            <span class="launch-mode-label">Launch Window:</span>
-            <span class="highlight" id="countdownTimer">Loading...</span>
-            <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
-        </a>
-        <span class="strip-divider">|</span>
-        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
-            <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
-        </a>
-        <span class="strip-divider">|</span>
-        <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-    </div>
-    <div class="strip-right-actions" style="display:flex; align-items:center; gap:0.6rem; margin-left:auto;">
-        <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
-        <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+<div class="countdown-strip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
+                <span class="strip-pulse"></span>
+                <span class="launch-mode-label">Launch Window:</span>
+                <span class="highlight" id="countdownTimer">Loading...</span>
+                <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
+            </a>
+            <span class="strip-divider">|</span>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
+                <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
+            </a>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+        </div>
+        <div class="strip-right-actions">
+            <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
+            <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+        </div>
     </div>
 </div>
 
@@ -159,6 +161,10 @@
             <span class="vi">HEIST GUIDE</span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
+        <div class="nav-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span>LEONIDA NETWORK &bull; ALL SYSTEMS ONLINE</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html" class="nav-pill active">Vaults</a></li>
             <li><a href="interactive-map.html" class="nav-pill">Radar Map</a></li>
@@ -171,20 +177,21 @@
             <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
         </ul>
         <div class="nav-actions">
+            <button type="button" class="btn-vip-nav" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints & Syndicate Rep">🎁 VIP Login</button>
             <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 Audio FX</button>
         </div>
     </div>
 </nav>
 
 <!-- VISUAL-FIRST AAA HERO CENTERPIECE: 4K PROTAGONISTS MASTER BILLBOARD -->
-<header class="hero-cinematic" style="max-width: 1140px; margin: 0.65rem auto 1.25rem; padding: 0 1rem; box-sizing: border-box;">
-    <div style="position:relative; border-radius:14px; overflow:hidden; border:2px solid rgba(0,240,255,0.4); box-shadow:0 0 35px rgba(0,240,255,0.2);">
+<header class="hero-cinematic">
+    <div class="hero-banner-frame">
         <a href="lucia-jason-skills.html" style="display:block;">
-            <img src="assets/characters-duo-banner.jpg?v=20261118_v3" alt="Grand Theft Auto VI - Jason and Lucia Vice City" style="width:100%; height:auto; display:block; transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='none'">
+            <img src="assets/characters-duo-banner.jpg?v=20261118_v3" alt="Grand Theft Auto VI - Jason and Lucia Vice City" loading="eager" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='none'">
         </a>
-        <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent 0%, rgba(8,11,18,0.85) 60%, rgba(6,8,14,0.96) 100%); padding:1.25rem 1.5rem 0.9rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+        <div class="hero-overlay-bar">
             <div>
-                <h1 style="font-size:clamp(1.25rem, 2.8vw, 1.9rem); font-weight:1000; color:#fff; margin:0; line-height:1.2; text-shadow:0 2px 10px rgba(0,0,0,0.8);">
+                <h1 style="font-size:clamp(1.15rem, 2.5vw, 1.85rem); font-weight:1000; color:#fff; margin:0; line-height:1.2; text-shadow:0 2px 10px rgba(0,0,0,0.8);">
                     GTA 6 HEIST GUIDE, <span style="color:var(--neon-pink);">PAYOUT CALCULATOR</span> &amp; TACTICAL RADAR
                 </h1>
             </div>
@@ -220,13 +227,13 @@
             <strong style="color:#fff; font-size:1.15rem; margin-left:0.5rem;">Lucia Caminos &amp; Jason Duval &mdash; Confirmed Character Bios &amp; Synergy</strong>
         </div>
         <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-            <a href="crew-database.html" class="btn btn-primary" style="font-size:0.78rem; padding:0.35rem 0.85rem;">👥 All 11 Character Bios &rarr;</a>
-            <a href="lucia-jason-skills.html" class="btn btn-secondary" style="font-size:0.78rem; padding:0.35rem 0.85rem; border-color:var(--neon-pink); color:var(--neon-pink);">Synergy Simulator</a>
+            <a href="crew-database.html" class="btn btn-primary" style="font-size:0.78rem; padding:0.35rem 0.85rem;">👥 All 14 Confirmed Operatives&nbsp;&rarr;</a>
+            <a href="lucia-jason-skills.html" class="btn btn-secondary" style="font-size:0.78rem; padding:0.35rem 0.85rem; border-color:var(--neon-pink); color:var(--neon-pink);">Synergy Simulator&nbsp;&rarr;</a>
         </div>
     </div>
 
         <!-- 2 Character Deep-Dive Cards -->
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 1.25rem;">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1.25rem;">
             <!-- Lucia Caminos Card -->
             <div class="character-feature-card" onclick="GTA6.CharacterModal.open('lucia-caminos')" style="background:rgba(18,12,24,0.9); border-radius:12px; overflow:hidden; border:2px solid rgba(255,42,141,0.5); box-shadow:0 0 25px rgba(255,42,141,0.15); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to open classified dossier">
                 <div>
@@ -265,9 +272,9 @@
                 </div>
                 <div style="padding:0 1.25rem 1.25rem;">
                     <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                    <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); GTA6.CharacterModal.open('lucia-caminos')" style="flex:1; padding:0.55rem; font-size:0.8rem; cursor:pointer;">📂 Inspect Bio &amp; Dossier &rarr;</button>
-                    <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.55rem; font-size:0.8rem; border-color:var(--neon-pink); color:var(--neon-pink);">Simulate Skills &rarr;</a>
-                </div>
+                        <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); GTA6.CharacterModal.open('lucia-caminos')" style="flex:1; padding:0.55rem; font-size:0.8rem; cursor:pointer; white-space:nowrap;">📂 Inspect Dossier&nbsp;&rarr;</button>
+                        <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.55rem; font-size:0.8rem; border-color:var(--neon-pink); color:var(--neon-pink); white-space:nowrap;">Simulate Skills&nbsp;&rarr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -309,9 +316,9 @@
                 </div>
                 <div style="padding:0 1.25rem 1.25rem;">
                     <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                    <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); GTA6.CharacterModal.open('jason-duval')" style="flex:1; padding:0.55rem; font-size:0.8rem; cursor:pointer;">📂 Inspect Bio &amp; Dossier &rarr;</button>
-                    <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.55rem; font-size:0.8rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Simulate Skills &rarr;</a>
-                </div>
+                        <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); GTA6.CharacterModal.open('jason-duval')" style="flex:1; padding:0.55rem; font-size:0.8rem; cursor:pointer; white-space:nowrap;">📂 Inspect Dossier&nbsp;&rarr;</button>
+                        <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.55rem; font-size:0.8rem; border-color:var(--neon-cyan); color:var(--neon-cyan); white-space:nowrap;">Simulate Skills&nbsp;&rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -329,7 +336,7 @@
                 🎲 Roll Heist Crew
             </button>
         </div>
-        <div id="squadRollResults" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:1rem;">
+        <div id="squadRollResults" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:1rem;">
             <!-- Dynamically populated by GTA6.SquadRoll -->
         </div>
     </div>
@@ -341,7 +348,7 @@
             <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.18); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem;">LEONIDA UNDERWORLD CONTACTS</span>
             <strong style="color:#fff; font-size:1rem; margin-left:0.5rem;">Confirmed Story NPCs &amp; Specialists &mdash; Click Any Card For Full Dossier</strong>
         </div>
-        <a href="crew-database.html" class="btn btn-secondary" style="font-size:0.76rem; padding:0.3rem 0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">View All 14 Confirmed Operatives &rarr;</a>
+        <a href="crew-database.html" class="btn btn-secondary" style="font-size:0.76rem; padding:0.3rem 0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan); white-space:nowrap;">View All 14 Confirmed Operatives&nbsp;&rarr;</a>
     </div>
 
     <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:1rem;">
@@ -961,7 +968,7 @@
         <p>Comprehensive blueprints, security countermeasures, payout calculations, and escape logistics for every confirmed major operation across the State of Leonida.</p>
     </div>
 
-    <div class="grid">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));">
         <!-- CARD 1 -->
             <div class="card">
                 <div class="card-header">
@@ -1008,8 +1015,8 @@
         <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
             🛰️ TACTICAL BLUEPRINT &bull; PORT GELLHORN FREIGHT
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-            <span>RADAR: ACTIVE (48m Cycle)</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
+            <span>RADAR: ACTIVE (48m)</span>
             <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $8.2M</span>
         </div>
     </div>

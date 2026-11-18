@@ -861,6 +861,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       const list = this.getAll();
       const countEl = document.getElementById('bookmarkFabCount');
       if (countEl) countEl.innerText = String(list.length);
+      const fabEl = document.getElementById('bookmarksFab');
+      if (fabEl) {
+        fabEl.style.display = list.length > 0 ? 'inline-flex' : 'none';
+      }
 
       const listEl = document.getElementById('bookmarksDrawerList');
       if (!listEl) return;

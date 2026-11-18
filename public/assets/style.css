@@ -86,8 +86,33 @@ body {
   letter-spacing: 0.8px;
   font-family: var(--font-mono);
 }
-.nav-actions {
+.nav-status-badge {
   order: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--neon-green);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  padding: 0.26rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.status-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 8px var(--neon-green);
+  animation: pulseDot 1.6s infinite;
+}
+.nav-actions {
+  order: 3;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -95,7 +120,7 @@ body {
   margin-left: auto;
 }
 .nav-links {
-  order: 3;
+  order: 4;
   width: 100%;
   display: flex;
   align-items: center;
@@ -177,20 +202,80 @@ body {
 
 /* COUNTDOWN BANNER */
 .countdown-strip {
-  background: linear-gradient(90deg, rgba(255,42,141,0.2), rgba(0,240,255,0.2));
+  background: linear-gradient(90deg, rgba(255,42,141,0.22), rgba(0,240,255,0.22));
   border-bottom: 1px solid rgba(255, 42, 141, 0.3);
   text-align: center;
-  padding: 0.5rem 1rem;
-  font-size: 0.88rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+.countdown-strip-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+}
+.strip-left-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+}
+.strip-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto;
 }
 .countdown-strip span.highlight {
   color: var(--neon-cyan);
   font-family: var(--font-mono);
   font-weight: 800;
+}
+
+/* HERO CINEMATIC 4K MASTER BILLBOARD */
+.hero-cinematic {
+  max-width: 1140px;
+  margin: 0.65rem auto 1.25rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+.hero-banner-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
+  background: #080b12;
+}
+.hero-banner-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.hero-overlay-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 18, 0.92) 50%, rgba(8, 11, 18, 0.98) 100%);
+  padding: 1.5rem 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 /* HERO SECTION */
@@ -1264,22 +1349,23 @@ footer {
 /* FLOATING BOOKMARK DRAWER & MODAL OVERLAYS */
 .bookmarks-fab {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   z-index: 1200;
   background: linear-gradient(135deg, var(--neon-cyan), #0099ff);
   color: #050a14;
   border: none;
   border-radius: 999px;
-  padding: 0.75rem 1.25rem;
-  font-weight: 900;
-  font-size: 0.88rem;
+  padding: 0.5rem 1.05rem;
+  font-weight: 800;
+  font-size: 0.82rem;
   cursor: pointer;
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.55);
-  display: flex;
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.45);
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: transform 0.2s;
+  gap: 0.45rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  backdrop-filter: blur(8px);
 }
 .bookmarks-fab:hover {
   transform: scale(1.04);
@@ -1552,41 +1638,59 @@ html, body {
 }
 
 @media (max-width: 900px) {
-  .mobile-menu-btn {
-    display: inline-flex;
-    order: 2;
-  }
   .nav-container {
-    gap: 0.65rem;
+    gap: 0.4rem;
+  }
+  .nav-status-badge {
+    display: none !important;
+  }
+  .brand-badge {
+    display: none !important;
+  }
+  .brand-logo {
+    font-size: 1.15rem;
   }
   .nav-actions {
-    order: 3;
-    flex-wrap: wrap;
-    gap: 0.45rem;
+    order: 2;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: nowrap;
+  }
+  .btn-vip-nav {
+    padding: 0.32rem 0.6rem;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+  .btn-sound {
+    padding: 0.32rem 0.55rem;
+    font-size: 0.74rem;
+    white-space: nowrap;
   }
   .nav-links {
-    display: none;
+    order: 3;
     width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.35rem;
-    padding: 0.75rem 0 0.25rem;
-    border-top: 1px solid var(--border-card);
-    order: 4;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding: 0.35rem 0.15rem 0.1rem;
+    gap: 0.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .nav-links.open {
-    display: flex;
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
   .nav-links a {
-    display: block;
-    padding: 0.65rem 0.85rem;
-    font-size: 0.95rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  .nav-actions {
-    flex-wrap: wrap;
-    gap: 0.45rem;
+    display: inline-flex;
+    flex-shrink: 0;
+    padding: 0.32rem 0.65rem;
+    font-size: 0.76rem;
+    white-space: nowrap;
   }
   .payout-table {
     display: block;
@@ -1597,23 +1701,41 @@ html, body {
 
 @media (max-width: 768px) {
   .countdown-strip {
-    max-width: 100vw;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
+    padding: 0.35rem 0.5rem;
     font-size: 0.74rem;
-    letter-spacing: 0.4px;
-    padding: 0.4rem 0.5rem;
-    white-space: normal;
   }
-  .strip-pill {
-    flex-wrap: wrap;
+  .countdown-strip-inner {
     justify-content: center;
-    max-width: 100%;
+    gap: 0.35rem;
   }
-  .countdown-strip .strip-pill:not(:first-child),
-  .countdown-strip .strip-divider {
-    display: none;
+  .strip-left-items {
+    justify-content: center;
+    gap: 0.35rem;
+  }
+  .strip-right-actions {
+    display: none !important;
+  }
+  .hero-cinematic {
+    padding: 0 0.5rem;
+    margin: 0.5rem auto 1rem;
+  }
+  .hero-banner-frame {
+    border-radius: 10px;
+  }
+  .hero-overlay-bar {
+    position: relative;
+    background: rgba(8, 11, 18, 0.98);
+    padding: 0.9rem 1rem;
+    align-items: stretch;
+    border-top: 1px solid rgba(0, 240, 255, 0.25);
+  }
+  .hero-overlay-bar h1 {
+    font-size: 1.12rem !important;
+    text-align: center;
+    margin-bottom: 0.6rem !important;
+  }
+  .hero-overlay-bar > div:last-child {
+    justify-content: center;
   }
 }
 
@@ -1737,8 +1859,14 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   position: relative;
+}
+.deal-card-premium > div:first-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .deal-card-premium:hover {
   transform: translateY(-4px);
@@ -1823,6 +1951,7 @@ html, body {
   line-height: 1.45;
   margin-bottom: 0.85rem;
   flex-grow: 1;
+  min-height: 3.5rem;
 }
 .deal-price-bar {
   display: flex;
@@ -2016,6 +2145,21 @@ html, body {
 .character-clickable-card {
   cursor: pointer;
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.character-clickable-card > div:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.character-clickable-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.05rem;
 }
 .character-feature-card:hover,
 .char-card:hover,
