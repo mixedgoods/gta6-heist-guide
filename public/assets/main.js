@@ -153,18 +153,19 @@ const GTA6 = {
 
   copyExitLagCode(btn) {
     const code = '10386953';
-    this.copyText(code, 'Coupon Code 10386953');
-    if (btn) {
-      const orig = btn.innerHTML;
-      btn.innerHTML = '✓ Copied: 10386953!';
-      btn.style.color = 'var(--neon-green)';
-      btn.style.borderColor = 'var(--neon-green)';
+    const el = (btn && btn.nodeType === 1) ? btn : (window.event && window.event.target ? window.event.target.closest('button') : null);
+    if (el) {
+      const orig = el.innerHTML;
+      el.innerHTML = '✓ Copied: 10386953!';
+      el.style.color = 'var(--neon-green)';
+      el.style.borderColor = 'var(--neon-green)';
       setTimeout(() => {
-        btn.innerHTML = orig;
-        btn.style.color = '';
-        btn.style.borderColor = '';
-      }, 2200);
+        el.innerHTML = orig;
+        el.style.color = '';
+        el.style.borderColor = '';
+      }, 2500);
     }
+    this.copyText(code, 'Coupon Code 10386953');
   },
 
   initAffiliateTracking() {

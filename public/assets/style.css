@@ -2419,3 +2419,13 @@ body.has-ticker {
 }
 
 
+
+@media (max-width: 640px) {
+  .deal-ticker-bar {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.74rem;
+  }
+  .deal-ticker-content {
+    font-size: 0.73rem;
+  }
+}
