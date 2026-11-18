@@ -2488,38 +2488,6 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         perk: "Public Mayhem: Reduces initial police pursuit stars by 1 level upon bank exit.",
         stats: { decryption: 60, intimidation: 88, combat: 72, wheelman: 70 }
       },
-      "rachel-vance": {
-        name: "Cipher (Rachel Vance)",
-        alias: "The Network Ghost",
-        category: "Underworld Specialist",
-        role: "Elite Cyber Hacker & Digital Infiltrator",
-        source: "Confirmed Dossiers & Syndicate Intel",
-        actor: "Undisclosed",
-        district: "Vice City Financial District",
-        image: "assets/character-rachel-vance.jpg",
-        bio: "An elusive white-hat turned underground cyber operative specializing in remote CCTV subversions, laser grid disablement, and digital biometric cloning. Infiltrates encrypted financial backdoors for high-value vault heists.",
-        specialty: "Zero-day bank network exploits, remote camera looping, and silent terminal hacks.",
-        weapon: "Encrypted Cyber Rig & EMP Disrupter",
-        weaponLink: "weapons-gear.html",
-        perk: "Ghost Protocol: Completely disables silent alarm triggers for an additional 60 seconds.",
-        stats: { decryption: 99, intimidation: 50, combat: 60, wheelman: 70 }
-      },
-      "toreno-cruz": {
-        name: "Toreno 'Redline' Cruz",
-        alias: "Redline",
-        category: "Underworld Specialist",
-        role: "Underground Street Racer & Master Wheelman",
-        source: "Confirmed Dossiers & Syndicate Intel",
-        actor: "Undisclosed",
-        district: "Little Haiti / Vice-Dale Expressway",
-        image: "assets/character-toreno-cruz.jpg",
-        bio: "Legendary Vice City tuner and midnight street racer who engineers high-boost nitro getaways and specializes in evading high-speed VCPD interceptor cruisers on expressways.",
-        specialty: "Nitro injection tuning, PIT-maneuver counters, and causeway evasion.",
-        weapon: "Modified AP Pistol & Nitro Trigger",
-        weaponLink: "weapons-gear.html",
-        perk: "Apex Drift: Getaway cars instantly shed 2 pursuit stars upon crossing county bridges.",
-        stats: { decryption: 55, intimidation: 85, combat: 82, wheelman: 100 }
-      },
       "valentina": {
         name: "Valentina",
         alias: "La Jefa",
@@ -2585,12 +2553,6 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
           'phil': 'phil',
           'joker': 'leonida-joker',
           'leonida-joker': 'leonida-joker',
-          'cipher': 'rachel-vance',
-          'rachel': 'rachel-vance',
-          'rachel-vance': 'rachel-vance',
-          'redline': 'toreno-cruz',
-          'toreno': 'toreno-cruz',
-          'toreno-cruz': 'toreno-cruz',
           'valentina': 'valentina',
           'aunt-tee': 'aunt-tee'
         };
