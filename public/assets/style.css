@@ -1647,3 +1647,25 @@ html, body {
   opacity: 0.35;
   stroke-dasharray: 2, 2;
 }
+
+/* --- CONFIRMED ITEMS & CHARACTER GEAR ENHANCEMENTS --- */
+.char-gear-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 4px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.74rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 0.25rem;
+}
+.char-gear-pill:hover {
+  background: rgba(0, 240, 255, 0.25);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+  color: var(--neon-yellow);
+}
