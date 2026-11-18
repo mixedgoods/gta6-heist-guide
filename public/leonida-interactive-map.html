@@ -214,6 +214,9 @@
     }
   ]
 }
+    
+        document.addEventListener("DOMContentLoaded", initMapInteraction);
+        if (document.readyState === "complete" || document.readyState === "interactive") { initMapInteraction(); }
     </script>
 </head>
 <body>
@@ -418,283 +421,290 @@
             <div class="map-hud" id="mapHud">GPS GRID: 25.7617&deg; N, 80.1918&deg; W &bull; SATELLITE: SYNDICATE-6</div>
 
             <!-- SVG TACTICAL MAP VECTOR -->
-            <svg class="map-svg" viewBox="0 0 1000 650" id="mapSvg" onmousemove="updateGps(event)">
-                <defs>
-                    <!-- Tactical Grid Pattern -->
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.07)" stroke-width="1"/>
-                    </pattern>
-                    <!-- Ocean Depth Gradient -->
-                    <radialGradient id="oceanGrad" cx="50%" cy="50%" r="75%">
-                        <stop offset="0%" stop-color="#081424"/>
-                        <stop offset="60%" stop-color="#050d18"/>
-                        <stop offset="100%" stop-color="#02060c"/>
-                    </radialGradient>
-                    <!-- Coastline Glow Filter -->
-                    <filter id="coastalGlow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00f0ff" flood-opacity="0.6"/>
-                    </filter>
-                    <!-- Coral Reef Shimmer -->
-                    <linearGradient id="reefGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="rgba(0, 240, 255, 0.25)"/>
-                        <stop offset="50%" stop-color="rgba(255, 42, 141, 0.25)"/>
-                        <stop offset="100%" stop-color="rgba(0, 255, 136, 0.25)"/>
-                    </linearGradient>
-                </defs>
+            <svg class="map-svg" viewBox="0 0 1000 650" id="mapSvg" style="cursor:grab; user-select:none; -webkit-user-select:none;">
+    <defs>
+        <!-- Tactical Grid Pattern -->
+        <pattern id="tacticalGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.06)" stroke-width="1"/>
+            <circle cx="0" cy="0" r="1" fill="rgba(0, 240, 255, 0.2)"/>
+        </pattern>
+        <!-- Deep Ocean Gradient -->
+        <radialGradient id="hdOceanGrad" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#081424"/>
+            <stop offset="55%" stop-color="#040b14"/>
+            <stop offset="100%" stop-color="#010408"/>
+        </radialGradient>
+        <!-- Coastal Neon Cyan Glow Filter -->
+        <filter id="hdCoastalGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00f0ff" flood-opacity="0.75"/>
+            <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#00f0ff" flood-opacity="0.9"/>
+        </filter>
+        <!-- Hot Pink Vice Beach Glow Filter -->
+        <filter id="hdViceGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ff2a8d" flood-opacity="0.7"/>
+        </filter>
+        <!-- Gold Vault Pin Glow -->
+        <filter id="hdGoldGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ffd700" flood-opacity="0.8"/>
+        </filter>
+    </defs>
 
-                <!-- Deep Maritime Ocean Background -->
-                <rect width="1000" height="650" fill="url(#oceanGrad)"/>
-                <rect width="1000" height="650" fill="url(#grid)"/>
+    <!-- 1. Deep Maritime Ocean Background -->
+    <rect width="1000" height="650" fill="url(#hdOceanGrad)"/>
+    <rect width="1000" height="650" fill="url(#tacticalGrid)"/>
 
-                <!-- Continental Shelf Bathymetric Depth Rings -->
-                <ellipse cx="500" cy="330" rx="460" ry="290" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1.5" stroke-dasharray="6,8"/>
-                <ellipse cx="510" cy="340" rx="410" ry="250" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
+    <!-- 2. Bathymetric Depth Rings & Continental Shelf Contours -->
+    <ellipse cx="500" cy="330" rx="470" ry="300" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1.5" stroke-dasharray="6,8"/>
+    <ellipse cx="510" cy="340" rx="420" ry="260" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
+    <ellipse cx="520" cy="350" rx="360" ry="210" fill="none" stroke="rgba(0, 240, 255, 0.04)" stroke-width="1" stroke-dasharray="3,6"/>
 
-                <!-- ======================================================== -->
-                <!-- REALISTIC LEONIDA PENINSULA LANDMASS (FLORIDA ANATOMY)   -->
-                <!-- ======================================================== -->
+    <!-- ======================================================== -->
+    <!-- 3. REALISTIC LEONIDA PENINSULA MAINLAND (FLORIDA ANATOMY)-->
+    <!-- ======================================================== -->
+    <!-- Outer Neon Coastal Glow Underlay -->
+    <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#0d1824" filter="url(#hdCoastalGlow)"/>
 
-                <!-- Base Landmass Outer Coastal Glow Shadow -->
-                <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#0d1824" filter="url(#coastalGlow)"/>
+    <!-- Main Solid Continental Landmass -->
+    <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#142130" stroke="#00f0ff" stroke-width="2.5"/>
 
-                <!-- Main Continental Landmass Fill -->
-                <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#142130" stroke="#00f0ff" stroke-width="2.5"/>
+    <!-- Interior Elevation Contours (Topography & Mountain Ridges) -->
+    <path d="M 160,110 Q 300,90 480,105 T 700,100 Q 770,130 760,200 T 720,300 Q 660,390 560,430 T 320,450 Q 210,440 180,360 T 140,220 Z" fill="#1a2b3e" stroke="rgba(0, 240, 255, 0.22)" stroke-width="1"/>
+    <path d="M 240,130 Q 380,115 540,125 T 660,140 Q 690,190 670,260 T 580,360 Q 480,390 380,390 T 260,330 Q 220,240 240,130 Z" fill="#20344c" stroke="rgba(0, 240, 255, 0.14)" stroke-width="1"/>
 
-                <!-- Interior Elevation Contours (Higher Ground / Ridges) -->
-                <path d="M 160,110 Q 300,90 480,105 T 700,100 Q 770,130 760,200 T 720,300 Q 660,390 560,430 T 320,450 Q 210,440 180,360 T 140,220 Z" fill="#1a2b3e" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1"/>
-                <path d="M 240,130 Q 380,115 540,125 T 660,140 Q 690,190 670,260 T 580,360 Q 480,390 380,390 T 260,330 Q 220,240 240,130 Z" fill="#20344c" stroke="rgba(0, 240, 255, 0.15)" stroke-width="1"/>
+    <!-- ======================================================== -->
+    <!-- 4. CONFIRMED 5 COUNTIES (MAPPING PROJECT BORDERS)        -->
+    <!-- ======================================================== -->
+    <!-- County 1: LUMMOX COUNTY (Northern Rural & Timber) -->
+    <path d="M 90,80 Q 240,55 460,70 T 730,65 L 710,135 Q 480,120 260,130 T 100,145 Z" fill="rgba(34, 197, 94, 0.14)" stroke="rgba(34, 197, 94, 0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <text x="135" y="96" fill="rgba(34, 197, 94, 0.95)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="2">🌲 LUMMOX COUNTY (NORTHERN TIMBER &amp; RIDGES)</text>
 
-                <!-- ======================================================== -->
-                <!-- REGIONAL BIOMES & GEOGRAPHY                              -->
-                <!-- ======================================================== -->
+    <!-- County 2: KELLY COUNTY / AMBROSIA (Central Basin & Sugar Refining) -->
+    <path d="M 320,135 Q 480,120 700,135 T 670,240 Q 560,260 420,240 T 320,180 Z" fill="rgba(255, 184, 0, 0.08)" stroke="rgba(255, 184, 0, 0.35)" stroke-width="1" stroke-dasharray="5,4"/>
+    <text x="340" y="152" fill="rgba(255, 184, 0, 0.85)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">KELLY COUNTY &bull; AMBROSIA REFINERY BASIN</text>
 
-                <!-- 1. LUMMOX COUNTY & MOUNT KALAGA (Northern Timber & Ridge) -->
-                <path d="M 90,80 Q 240,55 460,70 T 730,65 L 710,130 Q 480,115 260,125 T 100,140 Z" fill="rgba(34, 197, 94, 0.16)" stroke="rgba(34, 197, 94, 0.45)" stroke-width="1.5"/>
-                <text x="140" y="95" fill="rgba(34, 197, 94, 0.9)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="2">🌲 LUMMOX COUNTY (NORTH TIMBER RIDGE)</text>
+    <!-- County 3: LEONARD COUNTY / GRASSRIVERS (Everglades & Pelican River) -->
+    <path d="M 190,310 Q 320,320 420,370 T 540,460 Q 440,515 320,515 T 160,445 Z" fill="rgba(16, 185, 129, 0.16)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.5"/>
+    <!-- Pelican River Navigable Artery -->
+    <path d="M 440,275 Q 380,340 330,420 T 260,490" fill="none" stroke="rgba(0, 240, 255, 0.45)" stroke-width="3.5"/>
+    <path d="M 490,320 Q 460,390 420,450 T 360,520" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2.5"/>
+    <path d="M 280,360 Q 320,400 300,460" fill="none" stroke="rgba(0, 240, 255, 0.3)" stroke-width="2"/>
+    <text x="210" y="405" fill="rgba(16, 185, 129, 0.95)" font-family="monospace" font-weight="900" font-size="12" letter-spacing="2">LEONARD COUNTY &bull; GRASSRIVERS SWAMP BASIN</text>
 
-                <!-- 2. LAKE LEONIDA (Central Great Inland Lake) -->
-                <path d="M 400,190 Q 480,165 540,195 T 550,250 Q 510,285 440,275 T 390,225 Z" fill="#061220" stroke="rgba(0, 240, 255, 0.7)" stroke-width="2"/>
-                <text x="430" y="225" fill="rgba(0, 240, 255, 0.85)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
+    <!-- County 4: VICE-DALE COUNTY (Metropolitan Vice City Core) -->
+    <rect x="660" y="200" width="115" height="210" rx="10" fill="rgba(255, 42, 141, 0.08)" stroke="rgba(255, 42, 141, 0.5)" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="668" y="218" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">VICE-DALE COUNTY &bull; METRO JURISDICTION</text>
 
-                <!-- 3. PELICAN VALLEY (Agricultural Wetland Basin) -->
-                <path d="M 370,250 Q 450,270 490,320 T 430,370 Q 360,350 350,290 Z" fill="rgba(255, 184, 0, 0.12)" stroke="rgba(255, 184, 0, 0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
-                <text x="365" y="315" fill="rgba(255, 184, 0, 0.9)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">🌾 PELICAN VALLEY BASIN</text>
+    <!-- County 5: MARIANA COUNTY (Keys Archipelago & Maritime Waters) -->
+    <text x="730" y="525" fill="rgba(0, 240, 255, 0.7)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">MARIANA COUNTY &bull; STRAITS OF LEONIDA</text>
 
-                <!-- 4. GRASSRIVERS (Everglades Mangrove Swamps & Canals) -->
-                <path d="M 200,320 Q 320,330 420,380 T 540,460 Q 440,510 320,510 T 170,440 Z" fill="rgba(16, 185, 129, 0.18)" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1.5"/>
-                <!-- Winding Swamp Water Canals -->
-                <path d="M 440,275 Q 380,340 330,420 T 260,490" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="3"/>
-                <path d="M 490,320 Q 460,390 420,450 T 360,520" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2.5"/>
-                <path d="M 280,360 Q 320,400 300,460" fill="none" stroke="rgba(0, 240, 255, 0.3)" stroke-width="2"/>
-                <text x="220" y="410" fill="rgba(16, 185, 129, 0.9)" font-family="sans-serif" font-weight="900" font-size="12" letter-spacing="2">GRASSRIVERS BASIN (MANGROVE CANALS)</text>
+    <!-- ======================================================== -->
+    <!-- 5. INLAND LAKES & WATERWAYS                              -->
+    <!-- ======================================================== -->
+    <!-- Lake Leonida (Lake Okeechobee Equivalent) -->
+    <path d="M 400,190 Q 480,165 540,195 T 550,250 Q 510,285 440,275 T 390,225 Z" fill="#061220" stroke="rgba(0, 240, 255, 0.75)" stroke-width="2.5"/>
+    <text x="430" y="225" fill="rgba(0, 240, 255, 0.9)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
 
-                <!-- 5. PORT GELLHORN (Western Maritime Cargo Port) -->
-                <path d="M 120,330 Q 170,350 180,410 T 150,470 L 105,430 Z" fill="#1b2838" stroke="rgba(0, 240, 255, 0.6)" stroke-width="1.5"/>
-                <text x="95" y="460" fill="rgba(0, 240, 255, 0.9)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">PORT GELLHORN</text>
+    <!-- Pelican Valley Agricultural Basin -->
+    <path d="M 370,250 Q 450,270 490,320 T 430,370 Q 360,350 350,290 Z" fill="rgba(255, 184, 0, 0.12)" stroke="rgba(255, 184, 0, 0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="360" y="315" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">🌾 PELICAN VALLEY BASIN</text>
 
-                <!-- 6. BISCAYNE BAY & VICE CITY WATER CHANNELS -->
-                <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="#061220" stroke-width="16"/>
-                <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="4" stroke-dasharray="4,4"/>
+    <!-- Port Gellhorn Western Basin & Docks -->
+    <path d="M 120,330 Q 170,350 180,410 T 150,470 L 105,430 Z" fill="#1b2838" stroke="rgba(0, 240, 255, 0.7)" stroke-width="2"/>
+    <rect x="95" y="415" width="30" height="8" fill="rgba(0,240,255,0.4)"/>
+    <rect x="100" y="427" width="25" height="7" fill="rgba(0,240,255,0.4)"/>
+    <text x="85" y="455" fill="rgba(0, 240, 255, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">PORT GELLHORN</text>
 
-                <!-- 7. VICE CITY METRO (Downtown & Mainland Core) -->
-                <rect x="670" y="210" width="95" height="190" rx="8" fill="#1e1832" stroke="rgba(255, 42, 141, 0.5)" stroke-width="2"/>
-                <text x="678" y="235" fill="rgba(255, 42, 141, 0.95)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">VICE CITY DOWNTOWN</text>
+    <!-- ======================================================== -->
+    <!-- 6. VICE CITY METRO, BISCAYNE BAY & BEACH BARRIERS        -->
+    <!-- ======================================================== -->
+    <!-- Biscayne Bay Water Channel -->
+    <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="#061220" stroke-width="18"/>
+    <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="4" stroke-dasharray="4,4"/>
 
-                <!-- 8. VICE BEACH (Eastern Barrier Islands & Ocean Drive) -->
-                <path d="M 785,190 Q 805,270 800,360 T 780,430 Q 815,400 820,320 T 805,190 Z" fill="#2a1834" stroke="rgba(255, 42, 141, 0.8)" stroke-width="2"/>
-                <text x="795" y="280" fill="rgba(255, 42, 141, 0.95)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1" transform="rotate(85, 795, 280)">VICE BEACH &bull; OCEAN BLVD</text>
+    <!-- Downtown Vice City Mainland Core -->
+    <rect x="670" y="225" width="95" height="175" rx="8" fill="#1e1832" stroke="rgba(255, 42, 141, 0.6)" stroke-width="2"/>
+    <text x="678" y="248" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="1">VICE CITY DOWNTOWN</text>
 
-                <!-- Venetian & MacArthur Causeways (Bridges Spanning the Bay) -->
-                <line x1="765" y1="260" x2="795" y2="260" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
-                <line x1="765" y1="330" x2="790" y2="330" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
-                <!-- Star Island in the Bay -->
-                <circle cx="780" cy="295" r="7" fill="#ffd700" stroke="#fff" stroke-width="1.5"/>
+    <!-- Escobar International Airport (EIA) Dual Runways -->
+    <g transform="translate(680, 360)">
+        <line x1="0" y1="0" x2="38" y2="28" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="square"/>
+        <line x1="0" y1="28" x2="38" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="square"/>
+        <text x="-5" y="42" fill="rgba(255,255,255,0.85)" font-family="monospace" font-size="8" font-weight="bold">ESCOBAR INTL (EIA)</text>
+    </g>
 
-                <!-- ======================================================== -->
-                <!-- 9. LEONIDA KEYS ARCHIPELAGO (ISLAND CHAIN & OVERSEAS HWY) -->
-                <!-- ======================================================== -->
-                <!-- Overseas Highway Bridge Arc (Golden Glowing Route) -->
-                <path d="M 730,490 Q 770,530 810,555 T 870,580 T 925,585 T 970,580" fill="none" stroke="#ffb800" stroke-width="3" stroke-dasharray="6,3" filter="url(#coastalGlow)"/>
+    <!-- Vice Beach Eastern Barrier Island & Ocean Drive -->
+    <path d="M 785,190 Q 805,270 800,360 T 780,430 Q 815,400 820,320 T 805,190 Z" fill="#2a1834" stroke="rgba(255, 42, 141, 0.9)" stroke-width="2.5" filter="url(#hdViceGlow)"/>
+    <text x="795" y="280" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1" transform="rotate(85, 795, 280)">VICE BEACH &bull; OCEAN BLVD</text>
 
-                <!-- Island 1: Key Largo / Upper Key -->
-                <ellipse cx="760" cy="520" rx="22" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.8)" stroke-width="1.5" transform="rotate(30, 760, 520)"/>
-                <!-- Island 2: Middle Key / Islamorada -->
-                <ellipse cx="810" cy="550" rx="26" ry="11" fill="#1b2838" stroke="rgba(0, 240, 255, 0.8)" stroke-width="1.5" transform="rotate(22, 810, 550)"/>
-                <!-- Island 3: Marathon / Lower Key -->
-                <ellipse cx="865" cy="575" rx="28" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.8)" stroke-width="1.5" transform="rotate(10, 865, 575)"/>
-                <!-- Island 4: Key Lento (Leaked Deep Reef Vault) -->
-                <ellipse cx="920" cy="585" rx="24" ry="14" fill="#2a1834" stroke="rgba(255, 42, 141, 0.9)" stroke-width="2"/>
-                <text x="890" y="615" fill="rgba(255, 42, 141, 0.95)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">KEY LENTO</text>
-                <!-- Island 5: Goose Key & Coral Reef Zone -->
-                <ellipse cx="965" cy="578" rx="18" ry="10" fill="#1b2838" stroke="rgba(0, 255, 136, 0.8)" stroke-width="1.5"/>
-                <text x="940" y="565" fill="rgba(0, 255, 136, 0.9)" font-family="sans-serif" font-weight="900" font-size="9">GOOSE KEY</text>
-                <text x="760" y="565" fill="rgba(255, 184, 0, 0.9)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">LEONIDA KEYS (OVERSEAS HWY)</text>
+    <!-- Causeways Connecting Mainland to Beach -->
+    <!-- 1. Venetian Causeway -->
+    <line x1="765" y1="260" x2="795" y2="260" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+    <!-- 2. MacArthur Causeway -->
+    <line x1="765" y1="330" x2="790" y2="330" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+    <!-- Starfish Island / Leaf Links Golf Island -->
+    <circle cx="780" cy="295" r="7" fill="#ffd700" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="778" cy="240" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"/>
 
-                <!-- ======================================================== -->
-                <!-- 10. MAJOR STATEWIDE HIGHWAY NETWORK                      -->
-                <!-- ======================================================== -->
-                <!-- Toll 1A Arterial Highway (West-to-East Across Leonida) -->
-                <path d="M 130,410 Q 300,280 470,220 T 670,240 T 765,260" fill="none" stroke="#ffb800" stroke-width="3" stroke-dasharray="8,4"/>
-                <text x="490" y="175" fill="rgba(255, 184, 0, 0.95)" font-family="sans-serif" font-weight="900" font-size="10" letter-spacing="1">TOLL 1A HIGHWAY (ANPR CAMERAS)</text>
+    <!-- ======================================================== -->
+    <!-- 7. LEONIDA KEYS ARCHIPELAGO (CONFIRMED CHAIN)            -->
+    <!-- ======================================================== -->
+    <!-- Overseas Highway Bridge Arc (Golden Glowing 7-Mile Bridge) -->
+    <path d="M 730,490 Q 770,530 810,555 T 870,580 T 925,585 T 970,580" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="6,3" filter="url(#hdCoastalGlow)"/>
 
-                <!-- Interstate 97 Spine (North-to-South Highway) -->
-                <path d="M 380,75 Q 460,140 470,220 T 560,380 T 700,460" fill="none" stroke="rgba(0, 240, 255, 0.55)" stroke-width="2.5" stroke-dasharray="5,5"/>
-                <text x="545" y="415" fill="rgba(0, 240, 255, 0.85)" font-family="sans-serif" font-weight="800" font-size="9">INTERSTATE 97 SPINE</text>
+    <!-- Island 1: Key Largo (Upper Key) -->
+    <ellipse cx="760" cy="520" rx="22" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(30, 760, 520)"/>
+    <!-- Island 2: Middle Key (Islamorada) -->
+    <ellipse cx="810" cy="550" rx="26" ry="11" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(22, 810, 550)"/>
+    <!-- Island 3: Marathon / Big Pine Key -->
+    <ellipse cx="865" cy="575" rx="28" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(10, 865, 575)"/>
+    <!-- Island 4: Key Lento (Confirmed Leaked Deep Vault) -->
+    <ellipse cx="920" cy="585" rx="24" ry="14" fill="#2a1834" stroke="rgba(255, 42, 141, 0.95)" stroke-width="2"/>
+    <text x="890" y="618" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">KEY LENTO</text>
+    <!-- Island 5: Goose Key & Deep Coral Reef -->
+    <ellipse cx="965" cy="578" rx="18" ry="10" fill="#1b2838" stroke="rgba(0, 255, 136, 0.85)" stroke-width="1.5"/>
+    <text x="940" y="565" fill="rgba(0, 255, 136, 0.95)" font-family="monospace" font-weight="900" font-size="9">GOOSE KEY</text>
+    <text x="755" y="565" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">LEONIDA KEYS (OVERSEAS HWY)</text>
 
-                <!-- ======================================================== -->
-                <!-- TACTICAL RADAR HUD OVERLAYS                              -->
-                <!-- ======================================================== -->
-                <!-- Radar Compass Rose in Top-Right -->
-                <g transform="translate(930, 70)">
-                    <circle r="36" fill="rgba(10, 18, 28, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5"/>
-                    <circle r="26" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1"/>
-                    <line x1="0" y1="-32" x2="0" y2="32" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
-                    <line x1="-32" y1="0" x2="32" y2="0" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
-                    <!-- North Arrow -->
-                    <polygon points="0,-26 5,-10 0,-14 -5,-10" fill="#ff2a8d"/>
-                    <text x="-4" y="-30" fill="#ff2a8d" font-family="sans-serif" font-weight="900" font-size="10">N</text>
-                    <text x="24" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">E</text>
-                    <text x="-4" y="32" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">S</text>
-                    <text x="-32" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">W</text>
-                </g>
+    <!-- ======================================================== -->
+    <!-- 8. ARTERIAL HIGHWAY NETWORK                              -->
+    <!-- ======================================================== -->
+    <!-- Toll 1A Arterial Highway (West-East Across Alligator Alley) -->
+    <path d="M 130,410 Q 300,280 470,220 T 670,240 T 765,260" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="8,4"/>
+    <text x="480" y="172" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">TOLL 1A HIGHWAY (ANPR CAMERAS)</text>
 
-                <!-- Radar Telemetry Box in Top-Left -->
-                <g transform="translate(20, 30)">
-                    <rect width="210" height="42" rx="4" fill="rgba(8, 14, 22, 0.9)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
-                    <text x="10" y="16" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
-                    <text x="10" y="32" fill="var(--neon-green)" font-family="monospace" font-size="9">STATE OF LEONIDA • RADAR v3.2</text>
-                </g>
+    <!-- Interstate 97 Spine (North-to-South Spine) -->
+    <path d="M 380,75 Q 460,140 470,220 T 560,380 T 700,460" fill="none" stroke="rgba(0, 240, 255, 0.6)" stroke-width="2.5" stroke-dasharray="6,5"/>
+    <text x="545" y="415" fill="rgba(0, 240, 255, 0.85)" font-family="monospace" font-weight="800" font-size="9">INTERSTATE 97 SPINE</text>
 
-                <!-- Sweeping Radar Scan Beam Animation -->
-                <circle cx="500" cy="325" r="380" fill="none" stroke="rgba(0, 240, 255, 0.15)" stroke-width="1"/>
-                <line x1="500" y1="325" x2="880" y2="325" stroke="rgba(0, 240, 255, 0.4)" stroke-width="2">
-                    <animateTransform attributeName="transform" type="rotate" from="0 500 325" to="360 500 325" dur="10s" repeatCount="indefinite"/>
-                </line>
+    <!-- ======================================================== -->
+    <!-- 9. TACTICAL HUD OVERLAYS & RADAR SWEEP                   -->
+    <!-- ======================================================== -->
+    <!-- Compass Rose in Top-Right -->
+    <g transform="translate(930, 70)">
+        <circle r="36" fill="rgba(10, 18, 28, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5"/>
+        <circle r="26" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1"/>
+        <line x1="0" y1="-32" x2="0" y2="32" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+        <line x1="-32" y1="0" x2="32" y2="0" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
+        <polygon points="0,-26 5,-10 0,-14 -5,-10" fill="#ff2a8d"/>
+        <text x="-4" y="-30" fill="#ff2a8d" font-family="sans-serif" font-weight="900" font-size="10">N</text>
+        <text x="24" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">E</text>
+        <text x="-4" y="32" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">S</text>
+        <text x="-32" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">W</text>
+    </g>
 
-                <!-- ======================================================== -->
-                <!-- INTERACTIVE VAULT & TACTICAL MARKERS                     -->
-                <!-- ======================================================== -->
-                <!-- 1. Sinfrontera National Bank -->
-                <g class="map-point map-marker-vault" transform="translate(710, 280)" data-pin-id="sinfrontera" data-region="vice-city" onclick="showIntel('sinfrontera')">
-                    <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
-                    <circle r="5" fill="#ff2a8d"/>
-                    
-                </g>
+    <!-- Telemetry Box in Top-Left -->
+    <g transform="translate(20, 30)">
+        <rect width="230" height="42" rx="4" fill="rgba(8, 14, 22, 0.9)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+        <text x="10" y="16" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
+        <text x="10" y="32" fill="var(--neon-green)" font-family="monospace" font-size="9">LEONIDA HD RADAR &bull; DRAG TO PAN &bull; WHEEL ZOOM</text>
+    </g>
 
-                <!-- 2. Port Gellhorn Container Terminal -->
-                <g class="map-point map-marker-vault" transform="translate(135, 400)" data-pin-id="port-gellhorn" data-region="port-gellhorn" onclick="showIntel('port-gellhorn')">
-                    <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle r="5" fill="#00f0ff"/>
-                    
-                </g>
+    <!-- Sweeping Radar Beam Animation -->
+    <circle cx="500" cy="325" r="380" fill="none" stroke="rgba(0, 240, 255, 0.12)" stroke-width="1"/>
+    <line x1="500" y1="325" x2="880" y2="325" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate" from="0 500 325" to="360 500 325" dur="12s" repeatCount="indefinite"/>
+    </line>
 
-                <!-- 3. Leonida Gold Reserve -->
-                <g class="map-point map-marker-vault" transform="translate(390, 140)" data-pin-id="leonida-reserve" data-region="ambrosia" onclick="showIntel('leonida-reserve')">
-                    <circle r="15" fill="rgba(255, 215, 0, 0.35)" stroke="#ffd700" stroke-width="2.5"/>
-                    <circle r="6" fill="#ffd700"/>
-                    
-                </g>
+    <!-- ======================================================== -->
+    <!-- 10. INTERACTIVE PINS (HIGH CONTRAST, GLOWING, TEXT-FREE) -->
+    <!-- ======================================================== -->
+    <!-- 1. Sinfrontera National Bank -->
+    <g class="map-point map-marker-vault" transform="translate(710, 280)" data-pin-id="sinfrontera" data-region="vice-city" onclick="handlePinClick('sinfrontera')">
+        <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+        <circle r="5" fill="#ff2a8d"/>
+        <title>Sinfrontera National Bank ($14.5M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 4. Starlet Superyacht -->
-                <g class="map-point map-marker-vault" transform="translate(850, 310)" data-pin-id="yacht" data-region="vice-city" onclick="showIntel('yacht')">
-                    <circle r="13" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
-                    <circle r="5" fill="#ff2a8d"/>
-                    
-                </g>
+    <!-- 2. Port Gellhorn Container Terminal -->
+    <g class="map-point map-marker-vault" transform="translate(135, 400)" data-pin-id="port-gellhorn" data-region="port-gellhorn" onclick="handlePinClick('port-gellhorn')">
+        <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
+        <circle r="5" fill="#00f0ff"/>
+        <title>Port Gellhorn Container Terminal ($8.2M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 5. Grassrivers Cartel Airstrip -->
-                <g class="map-point map-marker-vault" transform="translate(290, 370)" data-pin-id="smuggler" data-region="grassrivers" onclick="showIntel('smuggler')">
-                    <circle r="13" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-                    <circle r="5" fill="#10b981"/>
-                    
-                </g>
+    <!-- 3. Leonida Gold Reserve -->
+    <g class="map-point map-marker-vault" transform="translate(390, 140)" data-pin-id="leonida-reserve" data-region="ambrosia" onclick="handlePinClick('leonida-reserve')">
+        <circle r="15" fill="rgba(255, 215, 0, 0.35)" stroke="#ffd700" stroke-width="2.5" filter="url(#hdGoldGlow)"/>
+        <circle r="6" fill="#ffd700"/>
+        <title>Leonida Federal Gold Reserve ($25M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 6. Ocean Drive Armored Convoy -->
-                <g class="map-point map-marker-vault" transform="translate(805, 340)" data-pin-id="convoy" data-region="vice-city" onclick="showIntel('convoy')">
-                    <circle r="13" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
-                    <circle r="5" fill="#ffb800"/>
-                    
-                </g>
+    <!-- 4. Starlet Superyacht -->
+    <g class="map-point map-marker-vault" transform="translate(850, 310)" data-pin-id="yacht" data-region="vice-city" onclick="handlePinClick('yacht')">
+        <circle r="13" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+        <circle r="5" fill="#ff2a8d"/>
+        <title>Starlet Superyacht ($11.8M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 7. Lummox Timber Stash (Leaked Northern Sector) -->
-                <g class="map-point map-marker-vault" transform="translate(260, 75)" data-pin-id="lummox-stash" data-region="lummox" onclick="showIntel('lummox-stash')">
-                    <circle r="12" fill="rgba(0, 255, 136, 0.3)" stroke="#00ff88" stroke-width="2"/>
-                    <circle r="5" fill="#00ff88"/>
-                    
-                </g>
+    <!-- 5. Grassrivers Cartel Airstrip -->
+    <g class="map-point map-marker-vault" transform="translate(290, 370)" data-pin-id="smuggler" data-region="grassrivers" onclick="handlePinClick('smuggler')">
+        <circle r="13" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
+        <circle r="5" fill="#10b981"/>
+        <title>Cartel Airstrip ($6.5M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 8. Pelican Valley Agricultural Bank -->
-                <g class="map-point map-marker-vault" transform="translate(425, 290)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="showIntel('pelican-bank')">
-                    <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle r="5" fill="#00f0ff"/>
-                    
-                </g>
+    <!-- 6. Ocean Drive Armored Convoy -->
+    <g class="map-point map-marker-vault" transform="translate(805, 340)" data-pin-id="convoy" data-region="vice-city" onclick="handlePinClick('convoy')">
+        <circle r="13" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
+        <circle r="5" fill="#ffb800"/>
+        <title>Ocean Dr. Armored Convoy ($9.4M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 9. Key Lento Offshore Depot -->
-                <g class="map-point map-marker-vault" transform="translate(920, 585)" data-pin-id="key-lento" data-region="key-lento" onclick="showIntel('key-lento')">
-                    <circle r="14" fill="rgba(255, 42, 141, 0.35)" stroke="#ff2a8d" stroke-width="2"/>
-                    <circle r="6" fill="#ff2a8d"/>
-                    
-                </g>
+    <!-- 7. Lummox Timber Stash -->
+    <g class="map-point map-marker-vault" transform="translate(260, 75)" data-pin-id="lummox-stash" data-region="lummox" onclick="handlePinClick('lummox-stash')">
+        <circle r="12" fill="rgba(0, 255, 136, 0.3)" stroke="#00ff88" stroke-width="2"/>
+        <circle r="5" fill="#00ff88"/>
+        <title>Lummox Timber Stash ($2.9M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 10. Metro Sewer Conduit 01 -->
-                <g class="map-point map-marker-escape" transform="translate(735, 330)" data-pin-id="escape-metro" data-region="vice-city" onclick="showIntel('escape-metro')">
-                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="1.5"/>
-                    
-                </g>
+    <!-- 8. Pelican Valley Agricultural Bank -->
+    <g class="map-point map-marker-vault" transform="translate(425, 290)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="handlePinClick('pelican-bank')">
+        <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
+        <circle r="5" fill="#00f0ff"/>
+        <title>Pelican Valley Agricultural Bank ($3.8M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 11. North Vice Safehouse Alpha -->
-                <g class="map-point map-marker-safehouse" data-pin-id="safehouse-north" data-region="vice-city" transform="translate(720, 215)" onclick="showIntel('safehouse-north')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(157, 78, 221, 0.5)" stroke="#9d4edd" stroke-width="1.5"/>
-                    
-                </g>
+    <!-- 9. Key Lento Offshore Depot -->
+    <g class="map-point map-marker-vault" transform="translate(920, 585)" data-pin-id="key-lento" data-region="key-lento" onclick="handlePinClick('key-lento')">
+        <circle r="14" fill="rgba(255, 42, 141, 0.35)" stroke="#ff2a8d" stroke-width="2"/>
+        <circle r="6" fill="#ff2a8d"/>
+        <title>Key Lento Bullion Depot ($12.4M) - Click for Blueprint</title>
+    </g>
 
-                <!-- 12. Leonida Keys Smuggler Dock -->
-                <g class="map-point map-marker-safehouse" data-pin-id="keys-dock" data-region="leonida-keys" transform="translate(810, 545)" onclick="showIntel('keys-dock')">
-                    <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle r="4" fill="#00f0ff"/>
-                    
-                </g>
+    <!-- 10. Metro Sewer Conduit 01 -->
+    <g class="map-point map-marker-escape" transform="translate(735, 330)" data-pin-id="escape-metro" data-region="vice-city" onclick="handlePinClick('escape-metro')">
+        <rect x="-8" y="-8" width="16" height="16" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="1.5"/>
+        <title>Metro Sewer Conduit 01 (Clean Escape Route)</title>
+    </g>
 
-                <!-- 13. Ambrosia Refinery Fence -->
-                <g class="map-point map-marker-escape" data-pin-id="ambrosia-fence" data-region="ambrosia" transform="translate(510, 310)" onclick="showIntel('ambrosia-fence')">
-                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 153, 0, 0.35)" stroke="#ff9900" stroke-width="1.5"/>
-                    
-                </g>
+    <!-- 11. North Vice Safehouse Alpha -->
+    <g class="map-point map-marker-safehouse" data-pin-id="safehouse-north" data-region="vice-city" transform="translate(720, 215)" onclick="handlePinClick('safehouse-north')">
+        <polygon points="0,-10 9,6 -9,6" fill="rgba(157, 78, 221, 0.5)" stroke="#9d4edd" stroke-width="1.5"/>
+        <title>Safehouse Alpha (Wanted Level Clear Zone)</title>
+    </g>
 
-                <!-- 14. Mount Kalaga Wilderness Outpost -->
-                <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(620, 75)" onclick="showIntel('kalaga-outpost')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(34, 197, 94, 0.5)" stroke="#22c55e" stroke-width="1.5"/>
-                    
-                </g>
+    <!-- 12. Leonida Keys Smuggler Dock -->
+    <g class="map-point map-marker-safehouse" data-pin-id="keys-dock" data-region="leonida-keys" transform="translate(810, 545)" onclick="handlePinClick('keys-dock')">
+        <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
+        <circle r="4" fill="#00f0ff"/>
+        <title>Keys Smuggler Dock (Fast Speedboat Extraction)</title>
+    </g>
 
-                <!-- 15. Toll 1A Highway Evasion Gate -->
-                <g class="map-point map-marker-escape" transform="translate(560, 215)" data-pin-id="toll-1a" data-region="toll-1a" onclick="showIntel('toll-1a')">
-                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.35)" stroke="#ffb800" stroke-width="2"/>
-                    
-                </g>
+    <!-- 13. Ambrosia Refinery Fence -->
+    <g class="map-point map-marker-escape" data-pin-id="ambrosia-fence" data-region="ambrosia" transform="translate(510, 310)" onclick="handlePinClick('ambrosia-fence')">
+        <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 153, 0, 0.35)" stroke="#ff9900" stroke-width="1.5"/>
+        <title>Ambrosia Fence (Black Market Asset Exchange)</title>
+    </g>
 
-                <!-- 16. Lummox 24/7 Gas & Refuel Depot (Fuel Mechanic) -->
-                <g class="map-point map-marker-fuel" transform="translate(320, 95)" data-pin-id="fuel-lummox" data-region="lummox" onclick="showIntel('fuel-lummox')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.5)" stroke="#ffb800" stroke-width="2"/>
-                    
-                </g>
+    <!-- 14. Mount Kalaga Wilderness Outpost -->
+    <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(620, 75)" onclick="handlePinClick('kalaga-outpost')">
+        <polygon points="0,-10 9,6 -9,6" fill="rgba(34, 197, 94, 0.5)" stroke="#22c55e" stroke-width="1.5"/>
+        <title>Mount Kalaga Wilderness Outpost</title>
+    </g>
 
-                <!-- 17. Vice Beach Sunoco Gas Pitstop (Fuel Mechanic) -->
-                <g class="map-point map-marker-fuel" transform="translate(795, 230)" data-pin-id="fuel-vice" data-region="vice-city" onclick="showIntel('fuel-vice')">
-                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.5)" stroke="#ffb800" stroke-width="2"/>
-                    
-                </g>
-
-                <!-- 18. Leonida State Zoo Infiltration -->
-                <g class="map-point map-marker-vault" transform="translate(630, 160)" data-pin-id="zoo-compound" data-region="vice-city" onclick="showIntel('zoo-compound')">
-                    <circle r="12" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-                    <circle r="5" fill="#10b981"/>
-                    
-                </g>
-
-                <g id="customMarkersLayer"></g>
-            </svg>
+    <!-- Dynamic User Custom / Community Markers Container -->
+    <g id="customMarkersLayer"></g>
+</svg>
         </div>
 
                 <!-- LEONIDA COLLECTIBLE & TACTICAL SET CHECKLIST TOGGLES -->
@@ -1093,6 +1103,160 @@
             'all': { x: 0, y: 0, w: 1000, h: 650 }
         };
 
+        
+        /* =========================================================================
+           INTERACTIVE CLICK-AND-DRAG PAN & MOUSE WHEEL ZOOM ENGINE
+           ========================================================================= */
+        let isPanning = false;
+        let startClientX = 0;
+        let startClientY = 0;
+        let startVbX = 0;
+        let startVbY = 0;
+        let panMovedDist = 0;
+
+        function initMapInteraction() {
+            const svg = document.getElementById('mapSvg');
+            if (!svg) return;
+
+            // Mouse Down -> Start Pan
+            svg.addEventListener('mousedown', (e) => {
+                // If middle click or left click
+                if (e.button !== 0 && e.button !== 1) return;
+                isPanning = true;
+                startClientX = e.clientX;
+                startClientY = e.clientY;
+                startVbX = currentViewBox.x;
+                startVbY = currentViewBox.y;
+                panMovedDist = 0;
+                svg.style.cursor = 'grabbing';
+            });
+
+            // Mouse Move -> Pan map & Update GPS
+            window.addEventListener('mousemove', (e) => {
+                updateGps(e);
+                if (!isPanning) return;
+                const rect = svg.getBoundingClientRect();
+                const scaleX = currentViewBox.w / rect.width;
+                const scaleY = currentViewBox.h / rect.height;
+                const dx = (e.clientX - startClientX) * scaleX;
+                const dy = (e.clientY - startClientY) * scaleY;
+                panMovedDist += Math.hypot(e.clientX - startClientX, e.clientY - startClientY);
+
+                let targetX = startVbX - dx;
+                let targetY = startVbY - dy;
+
+                // Clamped boundaries (allowing slight padding beyond 1000x650)
+                const minX = -100;
+                const maxX = 1100 - currentViewBox.w;
+                const minY = -60;
+                const maxY = 710 - currentViewBox.h;
+
+                targetX = Math.max(minX, Math.min(maxX, targetX));
+                targetY = Math.max(minY, Math.min(maxY, targetY));
+
+                applyViewBox(targetX, targetY, currentViewBox.w, currentViewBox.h);
+            });
+
+            // Mouse Up -> End Pan
+            window.addEventListener('mouseup', () => {
+                if (isPanning) {
+                    isPanning = false;
+                    svg.style.cursor = 'grab';
+                }
+            });
+
+            // Mouse Wheel -> Zoom In/Out Centered at Cursor
+            svg.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = svg.getBoundingClientRect();
+                const mouseRelX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+                const mouseRelY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+
+                // Mouse location in SVG coordinates
+                const mouseSvgX = currentViewBox.x + mouseRelX * currentViewBox.w;
+                const mouseSvgY = currentViewBox.y + mouseRelY * currentViewBox.h;
+
+                const factor = e.deltaY < 0 ? 0.85 : 1.18;
+                let newW = currentViewBox.w * factor;
+                newW = Math.max(180, Math.min(1000, newW));
+                let newH = newW * (650 / 1000);
+
+                let newX = mouseSvgX - mouseRelX * newW;
+                let newY = mouseSvgY - mouseRelY * newH;
+
+                newX = Math.max(-100, Math.min(1100 - newW, newX));
+                newY = Math.max(-60, Math.min(710 - newH, newY));
+
+                applyViewBox(newX, newY, newW, newH);
+            }, { passive: false });
+
+            // Touch events for Mobile Drag & Pan
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchVbX = 0;
+            let touchVbY = 0;
+            let touchPinchDist = 0;
+
+            svg.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                    isPanning = true;
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                    touchVbX = currentViewBox.x;
+                    touchVbY = currentViewBox.y;
+                    panMovedDist = 0;
+                } else if (e.touches.length === 2) {
+                    isPanning = false;
+                    touchPinchDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                }
+            }, { passive: true });
+
+            svg.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isPanning) {
+                    const rect = svg.getBoundingClientRect();
+                    const scaleX = currentViewBox.w / rect.width;
+                    const scaleY = currentViewBox.h / rect.height;
+                    const dx = (e.touches[0].clientX - touchStartX) * scaleX;
+                    const dy = (e.touches[0].clientY - touchStartY) * scaleY;
+                    panMovedDist += Math.hypot(e.touches[0].clientX - touchStartX, e.touches[0].clientY - touchStartY);
+
+                    let targetX = touchVbX - dx;
+                    let targetY = touchVbY - dy;
+                    targetX = Math.max(-100, Math.min(1100 - currentViewBox.w, targetX));
+                    targetY = Math.max(-60, Math.min(710 - currentViewBox.h, targetY));
+                    applyViewBox(targetX, targetY, currentViewBox.w, currentViewBox.h);
+                } else if (e.touches.length === 2) {
+                    const currentDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    if (touchPinchDist > 0) {
+                        const ratio = touchPinchDist / currentDist;
+                        let newW = Math.max(180, Math.min(1000, currentViewBox.w * ratio));
+                        let newH = newW * (650 / 1000);
+                        const cx = currentViewBox.x + currentViewBox.w / 2;
+                        const cy = currentViewBox.y + currentViewBox.h / 2;
+                        applyViewBox(cx - newW / 2, cy - newH / 2, newW, newH);
+                    }
+                    touchPinchDist = currentDist;
+                }
+            }, { passive: true });
+
+            svg.addEventListener('touchend', () => {
+                isPanning = false;
+                touchPinchDist = 0;
+            });
+        }
+
+        // Safe pin click handler that avoids firing if dragging
+        function handlePinClick(key) {
+            if (panMovedDist > 6) return; // Dragged, not clicked!
+            showIntel(key);
+        }
+    
         function applyViewBox(x, y, w, h) {
             const svg = document.getElementById('mapSvg');
             if (!svg) return;
@@ -1303,7 +1467,7 @@
             const markers = getCustomMarkers();
             if (layer) {
                 const localSvg = markers.map(m => `
-                    <g class="map-point map-marker-safehouse" data-pin-id="${m.id}" data-region="${m.region}" transform="translate(${m.x}, ${m.y})" onclick="showIntel('${m.id}')">
+                    <g class="map-point map-marker-safehouse" data-pin-id="${m.id}" data-region="${m.region}" transform="translate(${m.x}, ${m.y})" onclick="handlePinClick('${m.id}')">
                         <circle r="11" fill="rgba(0, 255, 136, 0.35)" stroke="#00ff88" stroke-width="2"/>
                         <circle r="4" fill="#00ff88"/>
                         
@@ -1313,7 +1477,7 @@
                     const regSlug = normRegionSlug(m.region);
                     const strokeCol = m.status === 'verified' ? '#00ff88' : '#00f0ff';
                     return `
-                    <g class="map-point map-marker-community map-marker-safehouse" data-pin-id="${m.id}" data-region="${regSlug}" transform="translate(${m.x}, ${m.y})" onclick="showIntel('${m.id}')">
+                    <g class="map-point map-marker-community map-marker-safehouse" data-pin-id="${m.id}" data-region="${regSlug}" transform="translate(${m.x}, ${m.y})" onclick="handlePinClick('${m.id}')">
                         <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="${strokeCol}" stroke-width="2"/>
                         <circle r="4" fill="${strokeCol}"/>
                         
