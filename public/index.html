@@ -228,7 +228,7 @@
         <!-- 2 Character Deep-Dive Cards -->
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 1.25rem;">
             <!-- Lucia Caminos Card -->
-            <div class="character-feature-card" style="background:rgba(18,12,24,0.9); border-radius:12px; overflow:hidden; border:2px solid rgba(255,42,141,0.5); box-shadow:0 0 25px rgba(255,42,141,0.15); display:flex; flex-direction:column; justify-content:space-between;">
+            <div class="character-feature-card" onclick="GTA6.CharacterModal.open('lucia-caminos')" style="background:rgba(18,12,24,0.9); border-radius:12px; overflow:hidden; border:2px solid rgba(255,42,141,0.5); box-shadow:0 0 25px rgba(255,42,141,0.15); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to open classified dossier">
                 <div>
                     <div style="overflow:hidden; height:320px; position:relative;">
                         <img src="assets/character-lucia.jpg?v=20261118_v2" alt="Lucia Caminos" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='none'">
@@ -264,12 +264,15 @@
                     </div>
                 </div>
                 <div style="padding:0 1.25rem 1.25rem;">
-                    <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.82rem; border-color:var(--neon-pink); color:var(--neon-pink);">Simulate Lucia Role &rarr;</a>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); GTA6.CharacterModal.open('lucia-caminos')" style="flex:1; padding:0.55rem; font-size:0.8rem; cursor:pointer;">📂 Inspect Bio &amp; Dossier &rarr;</button>
+                    <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.55rem; font-size:0.8rem; border-color:var(--neon-pink); color:var(--neon-pink);">Simulate Skills &rarr;</a>
+                </div>
                 </div>
             </div>
 
             <!-- Jason Duval Card -->
-            <div class="character-feature-card" style="background:rgba(12,18,28,0.9); border-radius:12px; overflow:hidden; border:2px solid rgba(0,240,255,0.5); box-shadow:0 0 25px rgba(0,240,255,0.15); display:flex; flex-direction:column; justify-content:space-between;">
+            <div class="character-feature-card" onclick="GTA6.CharacterModal.open('jason-duval')" style="background:rgba(12,18,28,0.9); border-radius:12px; overflow:hidden; border:2px solid rgba(0,240,255,0.5); box-shadow:0 0 25px rgba(0,240,255,0.15); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to open classified dossier">
                 <div>
                     <div style="overflow:hidden; height:320px; position:relative;">
                         <img src="assets/character-jason.jpg?v=20261118_v2" alt="Jason Duval" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='none'">
@@ -305,11 +308,32 @@
                     </div>
                 </div>
                 <div style="padding:0 1.25rem 1.25rem;">
-                    <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.82rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Simulate Jason Role &rarr;</a>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary" onclick="event.stopPropagation(); GTA6.CharacterModal.open('jason-duval')" style="flex:1; padding:0.55rem; font-size:0.8rem; cursor:pointer;">📂 Inspect Bio &amp; Dossier &rarr;</button>
+                    <a href="lucia-jason-skills.html#synergy-calculator" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.55rem; font-size:0.8rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Simulate Skills &rarr;</a>
+                </div>
                 </div>
             </div>
         </div>
     
+
+    <!-- INTERACTIVE MINI-GAME: ROLL HEIST CREW -->
+    <div class="heist-squad-roller-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
+            <div>
+                <span class="user-badge" style="background:rgba(255,42,141,0.2); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.75rem; font-weight:800;">🎲 INTERACTIVE SIMULATOR</span>
+                <strong style="color:#fff; font-size:1.1rem; margin-left:0.5rem;">Roll Your 3-Operative Syndicate Heist Crew</strong>
+                <p style="color:#94a3b8; font-size:0.8rem; margin:0.25rem 0 0;">Simulate team synergy, predicted take bonuses, and getaway evasion rates between confirmed operatives. Click any operative to inspect their classified dossier.</p>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="GTA6.SquadRoll.spin()" style="padding:0.45rem 1.15rem; font-size:0.82rem; cursor:pointer;" id="spinSquadBtn">
+                🎲 Roll Heist Crew
+            </button>
+        </div>
+        <div id="squadRollResults" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:1rem;">
+            <!-- Dynamically populated by GTA6.SquadRoll -->
+        </div>
+    </div>
+
 <!-- CONFIRMED STORY ASSOCIATES & SYNDICATE CONTACTS -->
 <div style="margin-top:1.5rem; background:rgba(12,18,28,0.7); border:1px solid rgba(0,240,255,0.25); border-radius:12px; padding:1.25rem;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:0.5rem;">
@@ -322,7 +346,7 @@
 
     <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:1rem;">
         <!-- Stefanie -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,184,0,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('stefanie')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-stefanie.jpg?v=20261118_v1" alt="Stefanie - Prison Counselor" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.65rem;">TRAILER 1</span>
@@ -335,7 +359,7 @@
         </div>
 
         <!-- Cal Hampton -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('cal-hampton')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-cal-hampton.jpg?v=20261118_v1" alt="Cal Hampton - Signals Intel" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.65rem;">2022 LEAKS</span>
@@ -374,7 +398,7 @@
         </div>
 
         <!-- Dre'Quan Priest -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('phil')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-drequan-priest.jpg?v=20261118_v4" alt="Dre'Quan Priest - Speedboat Captain" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.65rem;">PORT GELLHORN</span>
@@ -400,7 +424,7 @@
         </div>
 
         <!-- Petra Navarro -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('petra-navarro')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-petra.jpg" alt="Petra Navarro - High Society Fence" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.65rem;">HIGH SOCIETY (8%)</span>
@@ -426,7 +450,7 @@
         </div>
 
         <!-- Leonida Joker -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('leonida-joker')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-leonida-joker.jpg?v=20261118_v4" alt="Leonida Joker - Diversion Specialist" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.65rem;">VIRAL CONTACT (6%)</span>

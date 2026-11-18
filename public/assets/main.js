@@ -2254,25 +2254,633 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     ExitIntent: {
       shown: true,
       init() {
-        this.injectFreeNavLink();
         // ExitIntent permanently disabled per user request
-      },
-      injectFreeNavLink() {
-        document.querySelectorAll('.nav-links').forEach((ul) => {
-          if (ul.querySelector('a[href*="/free"]')) return;
-          const li = document.createElement('li');
-          const isFreePage = window.location.pathname.startsWith('/free');
-          li.innerHTML = `<a href="/free" class="${isFreePage ? 'active' : ''}" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Tools</a>`;
-          if (ul.children.length > 1) {
-            ul.insertBefore(li, ul.children[1]);
-          } else {
-            ul.appendChild(li);
-          }
-        });
       },
       trigger() {
         // Disabled
       }
+    },
+    // --------------------------------------------------------------------------
+    // GTA 6 CHARACTER DOSSIERS & INTERACTIVE CLASSIFIED MODAL
+    // --------------------------------------------------------------------------
+    CharacterData: {
+      "lucia-caminos": {
+        name: "Lucia Caminos",
+        alias: "The Mastermind",
+        category: "Playable Protagonist",
+        role: "Infiltration Lead & Dual-Wield Gunslinger",
+        source: "Rockstar Official Key Art & Trailer 1",
+        actor: "Manni Perez (Confirmed / Industry Credits)",
+        district: "Vice-Dale County / Port Gellhorn",
+        image: "assets/character-lucia.jpg?v=20261118_v5",
+        bio: "The first female protagonist in the GTA HD era. A fierce Latina criminal seen inside the Leonida Department of Corrections wearing a state-issued GPS ankle monitor. Partners with Jason Duval in high-stakes Bonnie & Clyde bank heists, armored truck ambushes, and neon diner hold-ups across Leonida.",
+        specialty: "Biometric security bypass, Crowd Intimidation, and Dual SMG room clearing.",
+        weapon: "Heckler & Koch MP5 & Ballistic Heist Duffel",
+        weaponLink: "weapons-gear.html#item-mp5",
+        perk: "Adrenaline Reaction: +22% keypad decryption speed and bullet-time recovery when escaping guard line-of-sight.",
+        stats: { decryption: 96, intimidation: 94, combat: 92, wheelman: 85 }
+      },
+      "jason-duval": {
+        name: "Jason Duval",
+        alias: "The Wheelman",
+        category: "Playable Protagonist",
+        role: "Tactical Marksman & Precision Wheelman",
+        source: "Trailer 1 & 2022 Leaks",
+        actor: "Gregory Connors / Dylan Rourke (Reported)",
+        district: "Vice City / Grassrivers",
+        image: "assets/character-jason.jpg?v=20261118_v5",
+        bio: "Ex-military tactical operator with deep underworld ties in South Florida. Pairs cool-headed long-range overwatch with aggressive precision driving in tuned muscle sedans. Co-leads the Duval-Caminos syndicate.",
+        specialty: "Eagle-Eye guard/CCTV scanning, wet-weather causeway driving, and thermal lance breeching.",
+        weapon: "Duke Assault Carbine & Thermal Lance",
+        weaponLink: "weapons-gear.html#item-carbine",
+        perk: "Eagle-Eye Recon: Permanently marks patrol vectors and security camera dead-zones on your radar.",
+        stats: { decryption: 88, intimidation: 90, combat: 96, wheelman: 98 }
+      },
+      "stefanie": {
+        name: "Stefanie",
+        alias: "The Counselor",
+        category: "Story Associate",
+        role: "Correctional Counselor & Legal Gatekeeper",
+        source: "Trailer 1 Opening Cinematic",
+        actor: "Undisclosed SAG-AFTRA Cast",
+        district: "Leonida State Penitentiary",
+        image: "assets/character-stefanie.jpg?v=20261118_v4",
+        bio: "Lucia's prison counselor at the Leonida Department of Corrections. Questions Lucia on how she ended up incarcerated. Serves as the primary contact for legal paroles, county travel permits, and bail bond escorts.",
+        specialty: "State legal intelligence, parole officer clearance, and restricted municipal permits.",
+        weapon: "Department of Corrections Security Dossier",
+        weaponLink: "weapons-gear.html",
+        perk: "Probation Immunity: Reduces initial 1-Star and 2-Star search radius by 30% in metropolitan districts.",
+        stats: { decryption: 75, intimidation: 82, combat: 45, wheelman: 60 }
+      },
+      "cal-hampton": {
+        name: "Cal Hampton",
+        alias: "Signals",
+        category: "Underworld Specialist",
+        role: "Signals Intel & Wiretap Contact",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Ambrosia / Rural North",
+        image: "assets/character-cal-hampton.jpg?v=20261118_v4",
+        bio: "A deeply paranoid surveillance fanatic and ham-radio enthusiast living out of a rural trailer park. Intercepts VCPD tactical frequencies, jams cell towers, and warns crews of highway roadblocks.",
+        specialty: "Police frequency interception, radio jamming, and camera loops.",
+        weapon: "Tactical Signal Scanner & Frequency Jammer",
+        weaponLink: "weapons-gear.html",
+        perk: "Scanner Intercept: Adds a +30 second delay to SWAT and Tactical Response arrival times during alarms.",
+        stats: { decryption: 94, intimidation: 50, combat: 62, wheelman: 65 }
+      },
+      "boobie-ike": {
+        name: "Boobie Ike",
+        alias: "Club Kingpin",
+        category: "Story Associate",
+        role: "High-Roller Luxury Fence & Club Operator",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Ocean Drive / Vice Beach",
+        image: "assets/character-boobie-ike.jpg?v=20261118_v4",
+        bio: "High-profile Vice City nightclub impresario and underground loan broker. Fences luxury watches, gold chains, and high-value heist diamonds through VIP bottle-service revenue.",
+        specialty: "Cash laundering, luxury jewelry fencing, and private penthouse safehouse access.",
+        weapon: "Diamond Cuban Link & Custom 1911",
+        weaponLink: "weapons-gear.html",
+        perk: "Clean Cut: Reduces laundering transaction fees by 4%, banking cleaner profits faster.",
+        stats: { decryption: 70, intimidation: 88, combat: 78, wheelman: 80 }
+      },
+      "brian-heder": {
+        name: "Brian Heder",
+        alias: "Heavy Metal",
+        category: "Underworld Specialist",
+        role: "Chop Shop Fabricator & Armor Specialist",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Port Gellhorn Industrial",
+        image: "assets/character-brian-heder.jpg?v=20261118_v4",
+        bio: "Master mechanic and industrial chop-shop fabricator in Port Gellhorn. Strips VINs, retrofits bullet-resistant glass, and builds hidden contraband cargo boxes into getaway sedans.",
+        specialty: "Heavy vehicle armor, hydraulic cutters, and chassis reinforcement.",
+        weapon: "Heavy Acetylene Torch & Spanner",
+        weaponLink: "weapons-gear.html",
+        perk: "Bulletproof Rig: Grants +35% durability to getaway vehicle tires and engine blocks.",
+        stats: { decryption: 60, intimidation: 84, combat: 85, wheelman: 92 }
+      },
+      "lori-heder": {
+        name: "Lori Heder",
+        alias: "The Machinist",
+        category: "Underworld Specialist",
+        role: "Boatyard Armorer & Heavy Machinery",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Keys Marina / Everglades Edge",
+        image: "assets/character-brian-heder.jpg?v=20261118_v4",
+        bio: "Brian's partner managing maritime mechanics, high-speed offshore cigarette boats, and heavy winches for naval bullion recovery.",
+        specialty: "Marine engines, reinforced hulls, and swamp propellers.",
+        weapon: "Industrial Marine Welder",
+        weaponLink: "weapons-gear.html",
+        perk: "Sea Spray: Increases getaway boat top speed by +18% in shallow swamp waters.",
+        stats: { decryption: 65, intimidation: 78, combat: 80, wheelman: 94 }
+      },
+      "drequan-priest": {
+        name: "Dre'Quan Priest",
+        alias: "Altitude",
+        category: "Underworld Specialist",
+        role: "Offshore Pilot & Maritime Wheelman",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Gator Keys Archipelago",
+        image: "assets/character-drequan-priest.jpg?v=20261118_v4",
+        bio: "Elite pilot and smuggler running fast-moving maritime and airborne contraband routes across the Florida Straits and Gator Keys.",
+        specialty: "Helicopter rooftop extractions, sea plane landings, and low-radar exfiltration.",
+        weapon: "Compact Tactical SMG & Aviator Comms",
+        weaponLink: "weapons-gear.html",
+        perk: "Radar Ghost: Escapes coastal air space without triggering Coast Guard missile lock.",
+        stats: { decryption: 72, intimidation: 76, combat: 82, wheelman: 98 }
+      },
+      "raul-bautista": {
+        name: "Raul Bautista",
+        alias: "Thermite",
+        category: "Underworld Specialist",
+        role: "Demolitions Expert & Thermal Breacher",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Grassrivers Outpost",
+        image: "assets/character-raul-bautista.jpg?v=20261118_v4",
+        bio: "Ex-military munitions expert specializing in high-grade shaped charges, thermite powder recipes, and sub-surface bank vault breaches.",
+        specialty: "Heavy vault door melting, seismic charges, and silent cutting.",
+        weapon: "Military Thermite Lance & Det Cords",
+        weaponLink: "weapons-gear.html",
+        perk: "Flash Burn: Melts bank vault reinforced hinges in under 45 seconds.",
+        stats: { decryption: 85, intimidation: 88, combat: 94, wheelman: 70 }
+      },
+      "petra-navarro": {
+        name: "Petra Navarro",
+        alias: "The Appraiser",
+        category: "Underworld Contact",
+        role: "High Society Socialite & Museum Art Fence",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Starlet Island / Downtown",
+        image: "assets/character-petra.jpg",
+        bio: "Prominent Vice City cultural curator and elite art broker who connects high-stakes thieves with overseas billionaire collectors.",
+        specialty: "High-value oil paintings, royal gems, and museum artifact valuation.",
+        weapon: "Ultraviolet Gem Spectrometer",
+        weaponLink: "weapons-gear.html",
+        perk: "Art Appraisal: Grants a +15% cash bonus on all stolen museum masterpieces.",
+        stats: { decryption: 92, intimidation: 68, combat: 55, wheelman: 65 }
+      },
+      "phil": {
+        name: "Phil",
+        alias: "Gator Phil",
+        category: "Underworld Specialist",
+        role: "Gator Keys Gunrunner & Pilot",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Gator Keys",
+        image: "assets/character-phil.jpg",
+        bio: "Eccentric Everglades military surplus hoarder running heavily fortified marsh compounds packed with heavy artillery and explosives.",
+        specialty: "Heavy weapons distribution, RPG overwatch, and swamp airboats.",
+        weapon: "Heavy Rocket Launcher & Combat Rig",
+        weaponLink: "weapons-gear.html",
+        perk: "Heavy Ordnance: Crew spawns with +2 extra ballistic body armors on loud heists.",
+        stats: { decryption: 55, intimidation: 92, combat: 96, wheelman: 85 }
+      },
+      "leonida-joker": {
+        name: "Leonida Joker",
+        alias: "The Viral Decoy",
+        category: "Underworld Contact",
+        role: "Street Decoy & Diversion Specialist",
+        source: "Trailer 1 Viral Stills",
+        actor: "Florida Street Viral Cast",
+        district: "Vice City Downtown",
+        image: "assets/character-leonida-joker.jpg?v=20261118_v4",
+        bio: "The infamous tattooed street personality whose viral public escapades draw police cruisers and media helicopters away from actual robbery scenes.",
+        specialty: "Street distractions, flash crowds, and media decoys.",
+        weapon: "Smoke Canisters & Flashbangs",
+        weaponLink: "weapons-gear.html",
+        perk: "Public Mayhem: Reduces initial police pursuit stars by 1 level upon bank exit.",
+        stats: { decryption: 60, intimidation: 88, combat: 72, wheelman: 70 }
+      }
+    },
+
+    CharacterModal: {
+      open(id) {
+        let key = id || 'lucia-caminos';
+        if (key.startsWith('character-')) key = key.replace('character-', '');
+        if (key === 'lucia') key = 'lucia-caminos';
+        if (key === 'jason') key = 'jason-duval';
+        if (key === 'cal') key = 'cal-hampton';
+        if (key === 'boobie') key = 'boobie-ike';
+        if (key === 'brian') key = 'brian-heder';
+        if (key === 'lori') key = 'lori-heder';
+        if (key === 'drequan') key = 'drequan-priest';
+        if (key === 'raul') key = 'raul-bautista';
+        if (key === 'petra') key = 'petra-navarro';
+        if (key === 'joker') key = 'leonida-joker';
+
+        const data = GTA6.CharacterData[key] || GTA6.CharacterData['lucia-caminos'];
+        if (GTA6.playSound) GTA6.playSound('click');
+
+        let backdrop = document.getElementById('charModalBackdrop');
+        if (!backdrop) {
+          backdrop = document.createElement('div');
+          backdrop.id = 'charModalBackdrop';
+          backdrop.className = 'char-modal-backdrop';
+          document.body.appendChild(backdrop);
+
+          backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) GTA6.CharacterModal.close();
+          });
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+              GTA6.CharacterModal.close();
+            }
+          });
+        }
+
+        backdrop.innerHTML = `
+          <div class="char-modal-box">
+            <button type="button" class="char-modal-close" onclick="GTA6.CharacterModal.close()" title="Close Dossier">&times;</button>
+            <div style="display:flex; flex-wrap:wrap; background:#070b14; border-bottom:1px solid rgba(0,240,255,0.25);">
+              <div style="flex:1 1 280px; max-height:360px; overflow:hidden; position:relative; background:#04070e;">
+                <img src="${data.image}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;">
+                <span class="user-badge" style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">TOP SECRET // DOSSIER</span>
+                <span class="user-badge" style="position:absolute; bottom:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; font-family:var(--font-mono);">${data.category.toUpperCase()}</span>
+              </div>
+              <div style="flex:1 1 360px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                    <h2 style="color:#fff; font-size:1.6rem; margin:0; line-height:1.2;">${data.name}</h2>
+                    <span style="color:var(--neon-yellow); font-size:0.75rem; font-weight:800; font-family:var(--font-mono);">${data.alias}</span>
+                  </div>
+                  <div style="color:var(--neon-cyan); font-size:0.85rem; font-weight:800; margin-bottom:0.85rem;">${data.role}</div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; font-size:0.78rem; font-family:var(--font-mono); margin-bottom:1rem; padding:0.6rem; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                    <div><span style="color:#64748b;">SOURCE:</span> <span style="color:#fff;">${data.source}</span></div>
+                    <div><span style="color:#64748b;">DISTRICT:</span> <span style="color:#fff;">${data.district}</span></div>
+                    <div style="grid-column:1 / -1;"><span style="color:#64748b;">ACTOR / CAST:</span> <span style="color:var(--neon-green);">${data.actor}</span></div>
+                  </div>
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                  <a href="crew-database.html#character-${key}" class="btn btn-primary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.8rem;">Open in Crew Database &rarr;</a>
+                  <button type="button" class="btn btn-secondary" onclick="GTA6.CharacterModal.close()" style="padding:0.45rem 1rem; font-size:0.8rem;">Close (ESC)</button>
+                </div>
+              </div>
+            </div>
+            
+            <div style="padding:1.5rem;">
+              <h4 style="color:var(--neon-cyan); font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; margin:0 0 0.5rem; font-family:var(--font-mono);">📁 Intel Briefing &amp; Background</h4>
+              <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.6; margin:0 0 1.25rem;">${data.bio}</p>
+
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
+                <div style="background:rgba(255,184,0,0.08); border:1px solid rgba(255,184,0,0.3); border-radius:8px; padding:0.85rem;">
+                  <strong style="color:var(--neon-yellow); font-size:0.8rem; display:block; margin-bottom:0.35rem;">🎒 SIGNATURE WEAPONS &amp; RIG</strong>
+                  <span style="color:#fff; font-size:0.84rem; display:block; margin-bottom:0.45rem;">${data.weapon}</span>
+                  <a href="${data.weaponLink}" style="color:var(--neon-cyan); font-size:0.75rem; text-decoration:none; font-weight:700;">Inspect Weapon in Arsenal Database &rarr;</a>
+                </div>
+                <div style="background:rgba(255,42,141,0.08); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.85rem;">
+                  <strong style="color:var(--neon-pink); font-size:0.8rem; display:block; margin-bottom:0.35rem;">⚡ SIGNATURE SYNDICATE PERK</strong>
+                  <span style="color:#cbd5e1; font-size:0.82rem; line-height:1.4; display:block;">${data.perk}</span>
+                </div>
+              </div>
+
+              <h4 style="color:var(--neon-cyan); font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; margin:0 0 0.65rem; font-family:var(--font-mono);">📊 Syndicate Combat &amp; Heist Ratings</h4>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; font-size:0.78rem; font-family:var(--font-mono);">
+                <div>
+                  <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                    <span>Keypad / Safe Decryption</span>
+                    <span style="color:var(--neon-green);">${data.stats.decryption}%</span>
+                  </div>
+                  <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                    <div style="width:${data.stats.decryption}%; height:100%; background:var(--neon-green);"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                    <span>Crowd / Guard Intimidation</span>
+                    <span style="color:var(--neon-pink);">${data.stats.intimidation}%</span>
+                  </div>
+                  <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                    <div style="width:${data.stats.intimidation}%; height:100%; background:var(--neon-pink);"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                    <span>Combat / Ballistics</span>
+                    <span style="color:var(--neon-yellow);">${data.stats.combat}%</span>
+                  </div>
+                  <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                    <div style="width:${data.stats.combat}%; height:100%; background:var(--neon-yellow);"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                    <span>Wheelman / Evade Agility</span>
+                    <span style="color:var(--neon-cyan);">${data.stats.wheelman}%</span>
+                  </div>
+                  <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
+                    <div style="width:${data.stats.wheelman}%; height:100%; background:var(--neon-cyan);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      },
+      close() {
+        const backdrop = document.getElementById('charModalBackdrop');
+        if (backdrop) {
+          backdrop.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        if (GTA6.playSound) GTA6.playSound('click');
+      }
+    },
+
+    // --------------------------------------------------------------------------
+    // DYNAMIC REFRESH-SHUFFLED & TIMED AFFILIATE DEAL ROTATOR
+    // --------------------------------------------------------------------------
+    DealRotator: {
+      deals: [
+        {
+          id: "gta6-launch",
+          title: "GTA 6 Day-1 Launch Edition",
+          badgeVerified: "✓ OFFICIAL LAUNCH",
+          badgeMerchant: "AMAZON • G2A",
+          stars: "★★★★★",
+          rating: "4.9",
+          ratingCount: "18,500+ pre-orders",
+          desc: "Official PlayStation 5 & Xbox physical launch edition and digital keys with Amazon Day-1 Lowest Price Lock.",
+          priceLabel: "Retail Lock",
+          price: "$69.99",
+          pillDiscount: "🔥 PRE-ORDER",
+          img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
+          ctaPrimary: { text: "📦 Pre-Order on Amazon →", href: "https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20", cls: "btn-deal-amazon" },
+          ctaSecondary: { text: "⚡ Check G2A Key Deals (-20%) →", href: "https://www.g2a.com/n/reflink-4094b9aab5", cls: "btn-deal-g2a" }
+        },
+        {
+          id: "dualsense-edge",
+          title: "DualSense Edge Pro",
+          badgeVerified: "✓ SONY OFFICIAL",
+          badgeMerchant: "PRIME DELIVERY",
+          stars: "★★★★★",
+          rating: "4.8",
+          ratingCount: "6,200+ ratings",
+          desc: "Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast heist shootouts.",
+          priceLabel: "Amazon Prime",
+          price: "$199.99",
+          pillDiscount: "FREE 1-DAY",
+          img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
+          ctaPrimary: { text: "🎮 Check Deal on Amazon →", href: "https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20", cls: "btn-deal-amazon" }
+        },
+        {
+          id: "samsung-990",
+          title: "Samsung 990 PRO 2TB",
+          badgeVerified: "✓ PS5 READY",
+          badgeMerchant: "7,450 MB/s",
+          stars: "★★★★★",
+          rating: "4.9",
+          ratingCount: "21,000+ ratings",
+          desc: "Gen4 M.2 NVMe with integrated heatsink. Eliminates open-world texture pop-in during high-speed Vice City chases.",
+          priceLabel: "Sale Price",
+          price: "$169.99",
+          pillDiscount: "SAVE $50",
+          img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
+          ctaPrimary: { text: "⚡ Upgrade Storage on Amazon →", href: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20", cls: "btn-deal-amazon" }
+        },
+        {
+          id: "eneba-cards",
+          title: "PSN & Xbox Gift Cards",
+          badgeVerified: "✓ INSTANT CODE",
+          badgeMerchant: "ENEBA GLOBAL",
+          stars: "★★★★★",
+          rating: "4.9",
+          ratingCount: "45,000+ verified",
+          desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & Shark Cards with zero service markups.",
+          priceLabel: "Digital Discount",
+          price: "Up to 20% Off",
+          pillDiscount: "INSTANT",
+          img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
+          ctaPrimary: { text: "💳 Compare Eneba Deals →", href: "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide", cls: "btn-deal-g2a", style: "background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);" }
+        },
+        {
+          id: "steelseries-nova",
+          title: "Arctis Nova Pro Wireless",
+          badgeVerified: "✓ 360° SPATIAL",
+          badgeMerchant: "HEIST COMMS",
+          stars: "★★★★★",
+          rating: "4.8",
+          ratingCount: "9,800+ ratings",
+          desc: "Active noise cancellation and hot-swappable dual battery system. Pinpoint sirens and guard footsteps in 3D audio.",
+          priceLabel: "Amazon Prime",
+          price: "$349.99",
+          pillDiscount: "ELITE AUDIO",
+          img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
+          ctaPrimary: { text: "🎧 Check Headset on Amazon →", href: "https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+Pro+Wireless&tag=gta6heistguid-20", cls: "btn-deal-amazon" }
+        },
+        {
+          id: "g2a-gamepass",
+          title: "G2A Ultimate & Shark Cards",
+          badgeVerified: "✓ 20% INSTANT DISCOUNT",
+          badgeMerchant: "GLOBAL KEYS",
+          stars: "★★★★★",
+          rating: "4.7",
+          ratingCount: "82,000+ reviews",
+          desc: "Discounted digital codes, subscriptions, and game keys with instant buyer shield protection.",
+          priceLabel: "G2A Special",
+          price: "Save up to 20%",
+          pillDiscount: "TOP DISCOUNT",
+          img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
+          ctaPrimary: { text: "⚡ Browse G2A Keys (-20%) →", href: "https://www.g2a.com/n/reflink-4094b9aab5", cls: "btn-deal-g2a" }
+        }
+      ],
+      currentIndex: 0,
+      timer: null,
+      init() {
+        const container = document.getElementById('dealSpotlightGrid');
+        if (!container) return;
+
+        // Shuffle on page load
+        this.currentIndex = Math.floor(Math.random() * this.deals.length);
+        this.render();
+
+        // Auto rotate every 10 seconds
+        this.timer = setInterval(() => {
+          this.next();
+        }, 10000);
+      },
+      next() {
+        this.currentIndex = (this.currentIndex + 1) % this.deals.length;
+        this.render();
+      },
+      prev() {
+        this.currentIndex = (this.currentIndex - 1 + this.deals.length) % this.deals.length;
+        this.render();
+      },
+      render() {
+        const container = document.getElementById('dealSpotlightGrid');
+        if (!container) return;
+
+        const items = [];
+        for (let i = 0; i < 4; i++) {
+          const idx = (this.currentIndex + i) % this.deals.length;
+          items.push(this.deals[idx]);
+        }
+
+        container.style.opacity = '0.5';
+        setTimeout(() => {
+          container.innerHTML = items.map(d => `
+            <div class="deal-card-premium">
+              <div>
+                <div class="deal-img-stage">
+                  <img src="${d.img}" alt="${d.title}" loading="lazy">
+                  <span class="deal-badge-verified">${d.badgeVerified}</span>
+                  <span class="deal-badge-merchant">${d.badgeMerchant}</span>
+                </div>
+                <div class="deal-body-premium">
+                  <h4 class="deal-title-premium">${d.title}</h4>
+                  <div class="deal-rating-row">
+                    <span class="deal-stars">${d.stars}</span>
+                    <span style="color:#fff; font-weight:800;">${d.rating}</span>
+                    <span>(${d.ratingCount})</span>
+                  </div>
+                  <p class="deal-desc-premium">${d.desc}</p>
+                  <div class="deal-price-bar">
+                    <div>
+                      <span style="font-size:0.72rem; color:#94a3b8; display:block;">${d.priceLabel}</span>
+                      <span class="deal-price-current" style="color:var(--neon-green);">${d.price}</span>
+                    </div>
+                    <span class="deal-pill-discount">${d.pillDiscount}</span>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
+                <a href="${d.ctaPrimary.href}" target="_blank" rel="noopener sponsored" class="${d.ctaPrimary.cls}" ${d.ctaPrimary.style ? 'style="' + d.ctaPrimary.style + '"' : ''}>${d.ctaPrimary.text}</a>
+                ${d.ctaSecondary ? `<a href="${d.ctaSecondary.href}" target="_blank" rel="noopener sponsored" class="${d.ctaSecondary.cls}">${d.ctaSecondary.text}</a>` : ''}
+              </div>
+            </div>
+          `).join('');
+          container.style.opacity = '1';
+        }, 180);
+      }
+    },
+
+    // --------------------------------------------------------------------------
+    // INTERACTIVE ENTERTAINMENT: ROLL HEIST CREW MINI-GAME
+    // --------------------------------------------------------------------------
+    SquadRoll: {
+      leads: [
+        { id: "lucia-caminos", name: "Lucia Caminos", role: "Mastermind Lead", perk: "+22% Decryption & Line-of-Sight", img: "assets/character-lucia.jpg?v=20261118_v5" },
+        { id: "jason-duval", name: "Jason Duval", role: "Tactical Marksman Lead", perk: "Eagle-Eye Radar & Wet Traction", img: "assets/character-jason.jpg?v=20261118_v5" }
+      ],
+      specialists: [
+        { id: "cal-hampton", name: "Cal Hampton", role: "Signals Intel Contact", perk: "+30s Police Response Delay", img: "assets/character-cal-hampton.jpg?v=20261118_v4" },
+        { id: "stefanie", name: "Stefanie", role: "Correctional Counselor", perk: "Legal Clearance & Low Alert", img: "assets/character-stefanie.jpg?v=20261118_v4" },
+        { id: "brian-heder", name: "Brian Heder", role: "Armor Fabricator", perk: "+35% Chassis Bulletproofing", img: "assets/character-brian-heder.jpg?v=20261118_v4" },
+        { id: "drequan-priest", name: "Dre'Quan Priest", role: "Offshore Wheelman", perk: "Radar-Ghost Water Exfil", img: "assets/character-drequan-priest.jpg?v=20261118_v4" },
+        { id: "raul-bautista", name: "Raul Bautista", role: "Thermal Breacher", perk: "Sub-45s Vault Wall Detonation", img: "assets/character-raul-bautista.jpg?v=20261118_v4" }
+      ],
+      fences: [
+        { id: "petra-navarro", name: "Petra Navarro", role: "Museum Art Fence", perk: "+15% Take on Rare Artifacts", img: "assets/character-petra.jpg" },
+        { id: "boobie-ike", name: "Boobie Ike", role: "Luxury Club Kingpin", perk: "-4% Cash Laundering Fee", img: "assets/character-boobie-ike.jpg?v=20261118_v4" },
+        { id: "phil", name: "Phil", role: "Gator Keys Gunrunner", perk: "Ordnance Surplus: +2 Vests", img: "assets/character-phil.jpg" },
+        { id: "leonida-joker", name: "Leonida Joker", role: "Viral Decoy Contact", perk: "-1 Star Level Outside Bank", img: "assets/character-leonida-joker.jpg?v=20261118_v4" }
+      ],
+      spin() {
+        if (GTA6.playSound) GTA6.playSound('click');
+        const btn = document.getElementById('spinSquadBtn');
+        const container = document.getElementById('squadRollResults');
+        if (!container) return;
+
+        if (btn) {
+          btn.disabled = true;
+          btn.innerHTML = '🎲 Calculating Syndicate Synergy...';
+        }
+
+        let rolls = 0;
+        const interval = setInterval(() => {
+          rolls++;
+          const tempLead = this.leads[Math.floor(Math.random() * this.leads.length)];
+          const tempSpec = this.specialists[Math.floor(Math.random() * this.specialists.length)];
+          const tempFence = this.fences[Math.floor(Math.random() * this.fences.length)];
+
+          container.innerHTML = `
+            <div class="squad-slot-card" style="border-color:var(--neon-pink);">
+              <img src="${tempLead.img}" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-pink);">
+              <div>
+                <span style="font-size:0.7rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:800;">LEAD OPERATIVE</span>
+                <div style="font-weight:900; color:#fff; font-size:0.95rem;">${tempLead.name}</div>
+                <div style="font-size:0.75rem; color:#94a3b8;">${tempLead.role}</div>
+              </div>
+            </div>
+            <div class="squad-slot-card" style="border-color:var(--neon-cyan);">
+              <img src="${tempSpec.img}" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-cyan);">
+              <div>
+                <span style="font-size:0.7rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:800;">SPECIALIST</span>
+                <div style="font-weight:900; color:#fff; font-size:0.95rem;">${tempSpec.name}</div>
+                <div style="font-size:0.75rem; color:#94a3b8;">${tempSpec.role}</div>
+              </div>
+            </div>
+            <div class="squad-slot-card" style="border-color:var(--neon-yellow);">
+              <img src="${tempFence.img}" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-yellow);">
+              <div>
+                <span style="font-size:0.7rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:800;">GETAWAY / FENCE</span>
+                <div style="font-weight:900; color:#fff; font-size:0.95rem;">${tempFence.name}</div>
+                <div style="font-size:0.75rem; color:#94a3b8;">${tempFence.role}</div>
+              </div>
+            </div>
+          `;
+
+          if (rolls >= 6) {
+            clearInterval(interval);
+            const finalLead = this.leads[Math.floor(Math.random() * this.leads.length)];
+            const finalSpec = this.specialists[Math.floor(Math.random() * this.specialists.length)];
+            const finalFence = this.fences[Math.floor(Math.random() * this.fences.length)];
+            const synergy = 92 + Math.floor(Math.random() * 8); // 92% to 99%
+            const bonusTake = (1.1 + (Math.random() * 0.4)).toFixed(2); // $1.10M to $1.50M
+
+            container.innerHTML = `
+              <div class="squad-slot-card" style="border-color:var(--neon-pink); cursor:pointer;" onclick="GTA6.CharacterModal.open('${finalLead.id}')" title="Click to view full dossier">
+                <img src="${finalLead.img}" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-pink);">
+                <div style="flex:1;">
+                  <span style="font-size:0.7rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:800;">LEAD OPERATIVE</span>
+                  <div style="font-weight:900; color:#fff; font-size:0.95rem;">${finalLead.name} 📂</div>
+                  <div style="font-size:0.75rem; color:var(--neon-green);">${finalLead.perk}</div>
+                </div>
+              </div>
+              <div class="squad-slot-card" style="border-color:var(--neon-cyan); cursor:pointer;" onclick="GTA6.CharacterModal.open('${finalSpec.id}')" title="Click to view full dossier">
+                <img src="${finalSpec.img}" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-cyan);">
+                <div style="flex:1;">
+                  <span style="font-size:0.7rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:800;">SPECIALIST</span>
+                  <div style="font-weight:900; color:#fff; font-size:0.95rem;">${finalSpec.name} 📂</div>
+                  <div style="font-size:0.75rem; color:var(--neon-cyan);">${finalSpec.perk}</div>
+                </div>
+              </div>
+              <div class="squad-slot-card" style="border-color:var(--neon-yellow); cursor:pointer;" onclick="GTA6.CharacterModal.open('${finalFence.id}')" title="Click to view full dossier">
+                <img src="${finalFence.img}" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-yellow);">
+                <div style="flex:1;">
+                  <span style="font-size:0.7rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:800;">GETAWAY / FENCE</span>
+                  <div style="font-weight:900; color:#fff; font-size:0.95rem;">${finalFence.name} 📂</div>
+                  <div style="font-size:0.75rem; color:var(--neon-yellow);">${finalFence.perk}</div>
+                </div>
+              </div>
+            `;
+
+            const synergyBanner = document.createElement('div');
+            synergyBanner.style.cssText = 'grid-column: 1 / -1; margin-top: 0.65rem; background: rgba(0, 240, 255, 0.12); border: 1px solid var(--neon-cyan); border-radius: 8px; padding: 0.65rem 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;';
+            synergyBanner.innerHTML = `
+              <div style="font-size:0.85rem; color:#fff;">
+                ⭐ <strong style="color:var(--neon-green);">${synergy}% ELITE SYNDICATE SYNERGY</strong> &bull; Estimated Payout Bonus: <strong style="color:var(--neon-yellow);">+$${bonusTake}M Cash</strong>
+              </div>
+              <a href="heist-planner.html" class="btn btn-primary" style="padding:0.3rem 0.75rem; font-size:0.75rem;">Load Into Squad Planner &rarr;</a>
+            `;
+            container.appendChild(synergyBanner);
+
+            if (btn) {
+              btn.disabled = false;
+              btn.innerHTML = '🎲 Re-Roll Heist Crew';
+            }
+          }
+        }, 150);
+      }
+    },
     LiveIntelSync: {
       async init() {
         try {
@@ -2306,4 +2914,8 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     GTA6.CompanionHUD.init();
     GTA6.MasteryAndStreak.init();
     GTA6.LiveIntelSync.init();
+    GTA6.DealRotator.init();
+    if (document.getElementById('squadRollResults')) {
+      GTA6.SquadRoll.spin();
+    }
   });
