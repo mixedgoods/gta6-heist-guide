@@ -262,7 +262,7 @@
 
     <header class="hero-cinematic" style="max-width: 1100px; margin: 0.65rem auto 1.25rem; padding: 0 0.5rem;">
     <div style="position:relative; border-radius:14px; overflow:hidden; border:2px solid rgba(0,240,255,0.4); box-shadow:0 0 35px rgba(0,240,255,0.2);">
-        <img src="assets/hero-heist-banner.png?v=20261118_v3" alt="Leonida State Tactical Radar" style="width:100%; height:180px; display:block; max-height:180px; object-fit:cover; object-position:center 30%;">
+        <img src="assets/hero-heist-banner.png?v=20261118_v3" alt="Leonida State Tactical Radar" style="width:100%; height:200px; display:block; max-height:200px; object-fit:cover; object-position:center 30%;">
         <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent 0%, rgba(8,11,18,0.85) 50%, rgba(6,8,14,0.96) 100%); padding:1.25rem 1.5rem 0.9rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
             <div>
                 <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.2); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.75rem; margin-bottom:0.35rem; display:inline-block;">🛰️ SATELLITE RECONNAISSANCE ENGINE &bull; 6 REGIONS MAPPED</span>
@@ -281,32 +281,90 @@
 
     <main class="container">
                 <!-- 6 CONFIRMED LEONIDA REGIONS QUICK-JUMP BAR -->
-        <div class="map-region-bar">
-            <span class="user-badge badge-mastermind">100% FREE &mdash; NO VIP PAYWALL</span>
-            <strong style="color:#fff; font-size:0.88rem; margin-right:0.25rem;">Jump to Leonida Region:</strong>
-            <button type="button" class="map-btn active" onclick="filterRegion('all', this)">All 6 Regions</button>
-            <button type="button" class="map-btn" onclick="filterRegion('vice-city', this)">Vice City</button>
-            <button type="button" class="map-btn" onclick="filterRegion('leonida-keys', this)">Leonida Keys</button>
-            <button type="button" class="map-btn" onclick="filterRegion('grassrivers', this)">Grassrivers</button>
-            <button type="button" class="map-btn" onclick="filterRegion('port-gellhorn', this)">Port Gellhorn</button>
-            <button type="button" class="map-btn" onclick="filterRegion('ambrosia', this)">Ambrosia</button>
-            <button type="button" class="map-btn" onclick="filterRegion('mount-kalaga', this)">Mount Kalaga National Park</button>
-        </div>
+        
 
         <!-- PLAY-ALONG SECOND-SCREEN CONTROLS -->
-        <div class="map-second-screen-bar">
-            <label style="display:inline-flex; align-items:center; gap:0.45rem; cursor:pointer; font-size:0.86rem; color:#fff; font-weight:700;">
-                <input type="checkbox" id="hideFoundToggle" onchange="applyPinVisibility()">
-                <span>Hide Found / Completed Pins (<span id="foundPinsCounter">0</span> Found)</span>
-            </label>
-            <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.85rem; font-size:0.78rem;" onclick="jumpToNextUnfoundPin()">⏭️ Jump to Next Unfound Pin</button>
-            <button type="button" class="btn btn-primary" style="padding:0.4rem 0.85rem; font-size:0.78rem;" onclick="toggleCustomPinCreator()">📍 + Add Custom Personal Marker (100% Free — No VIP Paywall)</button>
-            <button type="button" class="btn btn-amber" style="padding:0.4rem 0.85rem; font-size:0.78rem;" onclick="toggleD1PinDropPanel()">📡 + Drop Day-1 Discovery Pin (Crowdsourced D1)</button>
-            <button type="button" class="map-btn" onclick="resetFoundPins()" style="margin-left:auto;">Reset Found Pins</button>
-        </div>
+        
 
         <!-- UPGRADE 7: CROWDSOURCED D1 PIN DROP ENGINE (AUTO-VERIFIES AT 3 VOTES) -->
-        <div id="drop-pin-form" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-amber);">
+        
+
+        <!-- UNLIMITED FREE CUSTOM PERSONAL MARKER CREATOR -->
+        
+
+        <!-- RADAR MAP CONTAINER -->
+        
+        <!-- STANDALONE INTEL FILTER TOOLBAR (OUTSIDE MAP - ZERO LANDMASS OBSTRUCTION) -->
+        
+        </div>
+        
+        
+        <!-- COMPACT TACTICAL RADAR COMMAND CONSOLE (MOVED TO TOP OF MAP) -->
+        <div class="map-master-console" style="background:rgba(11, 16, 25, 0.95); border:1px solid var(--border-card); border-radius:10px; padding:0.6rem 0.9rem; margin-bottom:0.65rem; box-shadow:0 4px 18px rgba(0,0,0,0.4);">
+            <!-- Row 1: Region Quick Jump -->
+            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem; padding-bottom:0.45rem; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:0.45rem;">
+                <span style="color:var(--neon-cyan); font-size:0.76rem; font-family:var(--font-mono); font-weight:800; margin-right:0.25rem;">🗺️ REGION JUMP:</span>
+                <button type="button" class="map-btn active" onclick="filterRegion('all', this)" style="padding:3px 8px; font-size:0.75rem;">All 6</button>
+                <button type="button" class="map-btn" onclick="filterRegion('vice-city', this)" style="padding:3px 8px; font-size:0.75rem;">🏙️ Vice City</button>
+                <button type="button" class="map-btn" onclick="filterRegion('leonida-keys', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">🏝️ Keys</button>
+                <button type="button" class="map-btn" onclick="filterRegion('grassrivers', this)" style="padding:3px 8px; font-size:0.75rem;">🌾 Grassrivers</button>
+                <button type="button" class="map-btn" onclick="filterRegion('port-gellhorn', this)" style="padding:3px 8px; font-size:0.75rem;">⚓ Port Gellhorn</button>
+                <button type="button" class="map-btn" onclick="filterRegion('ambrosia', this)" style="padding:3px 8px; font-size:0.75rem;">🏭 Ambrosia</button>
+                <button type="button" class="map-btn" onclick="filterRegion('lummox', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">🌲 Lummox</button>
+                <button type="button" class="map-btn" onclick="filterRegion('pelican-valley', this)" style="padding:3px 8px; font-size:0.75rem;">Pelican Valley</button>
+                <button type="button" class="map-btn" onclick="filterRegion('key-lento', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">Key Lento</button>
+            </div>
+            <!-- Row 2: Intel Filters & Quick Tools -->
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem;">
+                <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.35rem;">
+                    <span style="color:var(--neon-pink); font-size:0.76rem; font-family:var(--font-mono); font-weight:800; margin-right:0.25rem;">📡 FILTERS:</span>
+                    <button type="button" class="map-btn active" onclick="filterMap('all', this)" style="padding:3px 8px; font-size:0.75rem;">All Intel</button>
+                    <button type="button" class="map-btn" onclick="filterMap('vault', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">💰 Vaults</button>
+                    <button type="button" class="map-btn" onclick="filterMap('escape', this)" style="padding:3px 8px; font-size:0.75rem;">🚇 Escapes</button>
+                    <button type="button" class="map-btn" onclick="filterMap('safehouse', this)" style="padding:3px 8px; font-size:0.75rem;">🏠 Safehouses</button>
+                    <button type="button" class="map-btn" onclick="filterMap('radar', this)" style="padding:3px 8px; font-size:0.75rem;">📡 Air/Radar</button>
+                    <button type="button" class="map-btn" onclick="filterMap('fuel', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Fuel</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                    <label style="display:inline-flex; align-items:center; gap:0.35rem; cursor:pointer; font-size:0.75rem; color:#fff; font-weight:700;">
+                        <input type="checkbox" id="hideFoundToggle" onchange="applyPinVisibility()">
+                        <span>Hide Found (<span id="foundPinsCounter">0</span>)</span>
+                    </label>
+                    <button type="button" class="btn btn-secondary" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="toggleCustomPinCreator()">📍 + Marker</button>
+                    <button type="button" class="btn btn-amber" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="toggleD1PinDropPanel()">📡 + D1 Pin</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="map-wrapper" id="radarMap">
+
+            <!-- INTERACTIVE ZOOM HUD (TOP-RIGHT) -->
+            <div class="map-zoom-controls">
+                <button type="button" class="zoom-btn" onclick="zoomIn()" title="Zoom In (+)" aria-label="Zoom In">➕</button>
+                <button type="button" class="zoom-btn" onclick="zoomOut()" title="Zoom Out (-)" aria-label="Zoom Out">➖</button>
+                <button type="button" class="zoom-btn" onclick="resetZoom()" title="Reset Full View (1.0x)" aria-label="Reset View">⟲</button>
+                <span id="zoomLevelDisplay" class="zoom-indicator">1.0x</span>
+            </div>
+    
+            <!-- CONTROLS -->
+            <!-- INTEL CARD POPUP -->
+            <div class="map-intel-modal" id="mapModal">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <span class="card-tag tag-mastermind" id="modalTag">Vault Target</span>
+                    <button onclick="closeModal()" style="background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">&times;</button>
+                </div>
+                <h3 id="modalTitle" style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Sinfrontera National Bank</h3>
+                <div style="font-family: var(--font-mono); color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.75rem;" id="modalPayout">Max Payout: $14,500,000</div>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem;" id="modalDesc">Subterranean biometric vault beneath Downtown Vice City.</p>
+                <div style="display:flex; gap:0.5rem; flex-direction:column;">
+                    <button type="button" id="modalFoundBtn" class="btn btn-secondary" style="width:100%; padding:0.45rem; font-size:0.78rem;" onclick="toggleCurrentPinFound()">✅ Mark Pin Found / Completed</button>
+                    <button type="button" id="modalConfirmD1Btn" class="btn btn-amber" style="width:100%; padding:0.45rem; font-size:0.76rem; display:none;" onclick="confirmCurrentD1Pin()">👍 Confirm Pin (Auto-Verifies at 3 Votes • +500 Rep)</button>
+                    <a href="sinfrontera-bank.html" id="modalLink" class="btn btn-primary" style="width: 100%; padding: 0.5rem; font-size: 0.8rem; text-align: center;">Open Blueprint Dossier</a>
+                </div>
+            </div>
+        <!-- COLLAPSIBLE COMMUNITY & CUSTOM MARKER TOOLS (BELOW RADAR MAP) -->
+        <div style="margin-top:1rem;">
+            <div id="drop-pin-form" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-amber);">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
                 <div>
                     <span class="user-badge badge-mastermind">COMMUNITY CROWDSOURCED RADAR ENGINE &bull; AUTO-VERIFIES AT 3 VOTES (+500 REP)</span>
@@ -344,9 +402,7 @@
             </form>
             <div id="d1PinStatusMsg" style="margin-top:0.65rem; font-size:0.84rem;"></div>
         </div>
-
-        <!-- UNLIMITED FREE CUSTOM PERSONAL MARKER CREATOR -->
-        <div id="customMarkerPanel" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-green);">
+            <div id="customMarkerPanel" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-green);">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
                 <div>
                     <span class="user-badge badge-hacker">100% FREE &mdash; NO VIP PAYWALL (UNLIMITED MARKERS)</span>
@@ -373,49 +429,8 @@
             </form>
             <div id="customMarkersList" style="margin-top:0.85rem; display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
         </div>
-
-        <!-- RADAR MAP CONTAINER -->
-        
-        <!-- STANDALONE INTEL FILTER TOOLBAR (OUTSIDE MAP - ZERO LANDMASS OBSTRUCTION) -->
-        <div class="map-toolbar-container">
-            <strong style="color:var(--neon-cyan); font-size:0.84rem; font-family:var(--font-mono); margin-right:0.35rem;">📡 RADAR FILTERS:</strong>
-            <div class="map-controls-inline">
-                <button type="button" class="map-btn active" onclick="filterMap('all', this)">All Intel</button>
-                <button type="button" class="map-btn" onclick="filterMap('vault', this)">💰 Vault Targets</button>
-                <button type="button" class="map-btn" onclick="filterMap('escape', this)">🚇 Escape Conduits</button>
-                <button type="button" class="map-btn" onclick="filterMap('safehouse', this)">🏠 Safehouses</button>
-                <button type="button" class="map-btn" onclick="filterMap('radar', this)">📡 Air &amp; Radar</button>
-                <button type="button" class="map-btn" onclick="filterMap('community', this)">🌐 Community Intel (Live D1)</button>
-                <button type="button" class="map-btn" onclick="filterMap('fuel', this)" style="border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Gas &amp; Refuel</button>
-            </div>
         </div>
-        
-        <div class="map-wrapper" id="radarMap">
-
-            <!-- INTERACTIVE ZOOM HUD (TOP-RIGHT) -->
-            <div class="map-zoom-controls">
-                <button type="button" class="zoom-btn" onclick="zoomIn()" title="Zoom In (+)" aria-label="Zoom In">➕</button>
-                <button type="button" class="zoom-btn" onclick="zoomOut()" title="Zoom Out (-)" aria-label="Zoom Out">➖</button>
-                <button type="button" class="zoom-btn" onclick="resetZoom()" title="Reset Full View (1.0x)" aria-label="Reset View">⟲</button>
-                <span id="zoomLevelDisplay" class="zoom-indicator">1.0x</span>
-            </div>
     
-            <!-- CONTROLS -->
-            <!-- INTEL CARD POPUP -->
-            <div class="map-intel-modal" id="mapModal">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                    <span class="card-tag tag-mastermind" id="modalTag">Vault Target</span>
-                    <button onclick="closeModal()" style="background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">&times;</button>
-                </div>
-                <h3 id="modalTitle" style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Sinfrontera National Bank</h3>
-                <div style="font-family: var(--font-mono); color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.75rem;" id="modalPayout">Max Payout: $14,500,000</div>
-                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem;" id="modalDesc">Subterranean biometric vault beneath Downtown Vice City.</p>
-                <div style="display:flex; gap:0.5rem; flex-direction:column;">
-                    <button type="button" id="modalFoundBtn" class="btn btn-secondary" style="width:100%; padding:0.45rem; font-size:0.78rem;" onclick="toggleCurrentPinFound()">✅ Mark Pin Found / Completed</button>
-                    <button type="button" id="modalConfirmD1Btn" class="btn btn-amber" style="width:100%; padding:0.45rem; font-size:0.76rem; display:none;" onclick="confirmCurrentD1Pin()">👍 Confirm Pin (Auto-Verifies at 3 Votes • +500 Rep)</button>
-                    <a href="sinfrontera-bank.html" id="modalLink" class="btn btn-primary" style="width: 100%; padding: 0.5rem; font-size: 0.8rem; text-align: center;">Open Blueprint Dossier</a>
-                </div>
-            </div>
 
             <!-- HUD COORDINATES -->
             <div class="map-hud" id="mapHud">GPS GRID: 25.7617&deg; N, 80.1918&deg; W &bull; SATELLITE: SYNDICATE-6</div>
