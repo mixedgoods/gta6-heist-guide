@@ -4,32 +4,58 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmed GTA 6 Weapons, Heist Gear & Tactical Items Database | GTA 6 Heist Guide</title>
-    <meta name="description" content="Complete confirmed GTA 6 weapons, heist tools, and tactical equipment database: thermal lances, biometric cyberdecks, heavy duffels, EMP jammers, lockpicks, and loadout weight calculator.">
-    <meta name="keywords" content="GTA 6 weapons, GTA 6 heist gear, GTA 6 items, thermal lance, biometric cyberdeck, GTA 6 weapons database, loadout calculator, Grand Theft Auto VI gear, Lucia items, Jason weapons, Raul thermal lance">
+    <title>Confirmed GTA 6 Weapons, Heist Gear & Items Database | GTA 6 Heist Guide</title>
+    <meta name="description" content="Official confirmed GTA 6 weapons, heist equipment, and loadout database with real in-game screenshots: MP5, Special Ops Carbine, Sniper Rifle, Mustang .357, Duffel Bags, and interactive weight calculator.">
+    <meta name="keywords" content="GTA 6 weapons, confirmed GTA 6 weapons, GTA 6 heist gear, GTA 6 guns, MP5 GTA 6, Special Ops Carbine, Sniper Rifle GTA 6, Mustang 357, Vice City duffel bag, GTA 6 weapons database, loadout calculator">
     <link rel="canonical" href="https://www.gta6heistguide.com/weapons-gear.html">
     <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="Confirmed GTA 6 Weapons, Heist Gear & Tactical Items Database">
-    <meta property="og:description" content="Explore confirmed GTA 6 heist infiltration tools, electronic warfare devices, breaching gear, confirmed weapons, and simulate your heist bag weight.">
+    <meta property="og:title" content="Confirmed GTA 6 Weapons, Heist Gear & Items Database">
+    <meta property="og:description" content="Explore real confirmed GTA 6 weapons and gear with official in-game screenshots and simulate your heist loadout.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/weapons-gear.html">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/item-thermal-lance.jpg">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/weapon-carbine.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="assets/style.css">
     <style>
-        .gear-filter-bar {
+        .search-filter-wrapper {
+            background: rgba(10, 20, 32, 0.9);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 8px;
+            padding: 0.85rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .search-input-box {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 6px;
+            padding: 0.45rem 0.85rem;
+            gap: 0.5rem;
+        }
+        .search-input-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 0.88rem;
+            width: 100%;
+            font-family: var(--font-sans);
+        }
+        .search-input-box input::placeholder {
+            color: #64748b;
+        }
+        .gear-filter-btns {
             display: flex;
             flex-wrap: wrap;
             gap: 0.45rem;
-            margin: 0.85rem 0 1.25rem;
-            padding: 0.65rem 0.85rem;
-            background: rgba(10, 20, 32, 0.85);
-            border: 1px solid rgba(0, 240, 255, 0.25);
-            border-radius: 8px;
             align-items: center;
         }
         .gear-filter-btn {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.55);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #d1d5db;
             padding: 0.35rem 0.75rem;
@@ -38,7 +64,6 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
-            font-family: var(--font-sans);
         }
         .gear-filter-btn:hover, .gear-filter-btn.active {
             background: rgba(0, 240, 255, 0.18);
@@ -66,16 +91,18 @@
             height: 190px;
             position: relative;
             overflow: hidden;
-            background: #050b14;
+            background: radial-gradient(circle at center, rgba(30,41,59,0.5) 0%, rgba(5,11,20,0.95) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .item-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));
             transition: transform 0.35s ease;
         }
         .item-card:hover .item-img-container img {
@@ -92,7 +119,8 @@
             font-size: 0.68rem;
             font-weight: 800;
             font-family: var(--font-mono);
-            border: 1px solid;
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
         }
         .item-badge-cat {
             position: absolute;
@@ -114,7 +142,7 @@
         }
         .item-title {
             color: #fff;
-            font-size: 1.18rem;
+            font-size: 1.15rem;
             font-weight: 900;
             margin: 0 0 0.35rem;
             line-height: 1.25;
@@ -192,9 +220,9 @@
       "@graph": [
         {
           "@type": "WebPage",
-          "name": "Confirmed GTA 6 Weapons, Heist Gear & Tactical Items Database",
+          "name": "Confirmed GTA 6 Weapons, Heist Gear & Items Database",
           "url": "https://www.gta6heistguide.com/weapons-gear.html",
-          "description": "Exhaustive database of confirmed GTA 6 heist infiltration tools, weapons, electronic decrypters, and tactical loadouts.",
+          "description": "Exhaustive database of confirmed GTA 6 weapons, heist infiltration tools, and loadout weight simulator with official in-game captures.",
           "publisher": {
             "@type": "Organization",
             "name": "gta6heistguide.com"
@@ -266,19 +294,19 @@
     </div>
 </nav>
 
-<!-- ZERO-SCROLL COMPACT HEADER BAR (NO VERTICAL SCROLL) -->
+<!-- ZERO-SCROLL COMPACT HEADER BAR -->
 <div style="max-width:1200px; margin:0.65rem auto 0.45rem; padding:0 0.75rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.45rem;">
     <div>
         <h1 style="color:#fff; font-size:1.35rem; font-weight:1000; margin:0; line-height:1.2;">
-            CONFIRMED GTA 6 <span style="color:var(--neon-yellow);">ITEMS, WEAPONS &amp; HEIST GEAR</span>
+            CONFIRMED GTA 6 <span style="color:var(--neon-yellow);">WEAPONS, GEAR &amp; HEIST ITEMS</span>
         </h1>
         <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">
-            ⚡ 16 CONFIRMED INFILTRATION TOOLS &bull; BREACHING GEAR &bull; WEIGHT &amp; STEALTH SIMULATOR
+            ⚡ REAL OFFICIAL IN-GAME SCREENS &bull; BALLISTICS STATS &bull; LIVE SEARCH &amp; WEIGHT SIMULATOR
         </div>
     </div>
     <div style="display:flex; gap:0.4rem; align-items:center;">
         <a href="#loadoutSimulator" class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">⚖️ Loadout Bag Simulator &darr;</a>
-        <a href="crew-database.html" class="btn btn-primary" style="padding:0.3rem 0.75rem; font-size:0.75rem;">👥 View Crew Bios &rarr;</a>
+        <a href="crew-database.html" class="btn btn-primary" style="padding:0.3rem 0.75rem; font-size:0.75rem;">👥 Official Crew Roster &rarr;</a>
     </div>
 </div>
 
@@ -289,40 +317,40 @@
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.85rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.65rem;">
             <div>
                 <strong style="color:var(--neon-cyan); font-size:0.95rem; font-family:var(--font-mono);">🎒 TACTICAL HEIST LOADOUT &amp; STEALTH SIMULATOR</strong>
-                <div style="font-size:0.78rem; color:var(--text-muted);">Toggle items below to equip them into your syndicate duffel bag. Track bag weight, movement penalties, noise footprint, and loot capacity.</div>
+                <div style="font-size:0.78rem; color:var(--text-muted);">Equip confirmed weapons and gear into your duffel bag to calculate mobility penalties, acoustic decibels, and cash capacity.</div>
             </div>
             <div style="display:flex; gap:0.4rem;">
                 <button type="button" class="btn btn-secondary" onclick="clearLoadout()" style="padding:0.25rem 0.65rem; font-size:0.72rem;">Clear All</button>
-                <button type="button" class="btn btn-primary" onclick="setPreset('stealth')" style="padding:0.25rem 0.65rem; font-size:0.72rem; background:rgba(0,255,136,0.2); border-color:var(--neon-green); color:#fff;">Preset: Stealth Ghost</button>
-                <button type="button" class="btn btn-primary" onclick="setPreset('loud')" style="padding:0.25rem 0.65rem; font-size:0.72rem; background:rgba(255,42,141,0.2); border-color:var(--neon-pink); color:#fff;">Preset: Heavy Breacher</button>
+                <button type="button" class="btn btn-primary" onclick="setPreset('stealth')" style="padding:0.25rem 0.65rem; font-size:0.72rem; background:rgba(0,255,136,0.2); border-color:var(--neon-green); color:#fff;">Preset: Stealth Infiltration</button>
+                <button type="button" class="btn btn-primary" onclick="setPreset('loud')" style="padding:0.25rem 0.65rem; font-size:0.72rem; background:rgba(255,42,141,0.2); border-color:var(--neon-pink); color:#fff;">Preset: Heavy Assault</button>
             </div>
         </div>
 
         <!-- 4 Key Loadout Metrics -->
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:0.65rem; margin-bottom:0.85rem;">
             <div class="loadout-metric-card">
-                <div class="loadout-metric-val" id="totalWeightVal" style="color:var(--neon-yellow);">14.5 kg</div>
+                <div class="loadout-metric-val" id="totalWeightVal" style="color:var(--neon-yellow);">7.8 kg</div>
                 <div class="loadout-metric-label">Bag Weight (Max 40kg)</div>
                 <div style="height:4px; background:#1e293b; border-radius:2px; margin-top:0.4rem; overflow:hidden;">
-                    <div id="weightBar" style="width:36%; height:100%; background:var(--neon-yellow); transition:width 0.3s;"></div>
+                    <div id="weightBar" style="width:20%; height:100%; background:var(--neon-yellow); transition:width 0.3s;"></div>
                 </div>
             </div>
             <div class="loadout-metric-card">
-                <div class="loadout-metric-val" id="mobilityPenaltyVal" style="color:var(--neon-cyan);">-4% Sprint</div>
+                <div class="loadout-metric-val" id="mobilityPenaltyVal" style="color:var(--neon-cyan);">-2% Sprint</div>
                 <div class="loadout-metric-label">Mobility &amp; Stamina</div>
                 <div style="height:4px; background:#1e293b; border-radius:2px; margin-top:0.4rem; overflow:hidden;">
-                    <div id="mobilityBar" style="width:96%; height:100%; background:var(--neon-cyan); transition:width 0.3s;"></div>
+                    <div id="mobilityBar" style="width:98%; height:100%; background:var(--neon-cyan); transition:width 0.3s;"></div>
                 </div>
             </div>
             <div class="loadout-metric-card">
-                <div class="loadout-metric-val" id="noiseLevelVal" style="color:var(--neon-green);">18 dB (Stealth)</div>
+                <div class="loadout-metric-val" id="noiseLevelVal" style="color:var(--neon-green);">25 dB (Suppressed)</div>
                 <div class="loadout-metric-label">Acoustic Footprint</div>
                 <div style="height:4px; background:#1e293b; border-radius:2px; margin-top:0.4rem; overflow:hidden;">
-                    <div id="noiseBar" style="width:18%; height:100%; background:var(--neon-green); transition:width 0.3s;"></div>
+                    <div id="noiseBar" style="width:25%; height:100%; background:var(--neon-green); transition:width 0.3s;"></div>
                 </div>
             </div>
             <div class="loadout-metric-card">
-                <div class="loadout-metric-val" id="lootTakeVal" style="color:var(--neon-pink);">$2,250,000</div>
+                <div class="loadout-metric-val" id="lootTakeVal" style="color:var(--neon-pink);">$2,500,000</div>
                 <div class="loadout-metric-label">Max Cash Take Capacity</div>
                 <div style="height:4px; background:#1e293b; border-radius:2px; margin-top:0.4rem; overflow:hidden;">
                     <div id="lootBar" style="width:65%; height:100%; background:var(--neon-pink); transition:width 0.3s;"></div>
@@ -333,515 +361,368 @@
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; font-size:0.78rem;">
             <div style="color:#d1d5db;">
                 <span style="color:var(--neon-cyan); font-weight:800;">ACTIVE SYNDICATE BUILD:</span>
-                <span id="buildVerdict" style="color:#fff; font-weight:700; margin-left:0.35rem;">Silent Infiltration Mastermind (Optimal for Sinfrontera &amp; Ocean Drive)</span>
+                <span id="buildVerdict" style="color:#fff; font-weight:700; margin-left:0.35rem;">Silent Infiltration Mastermind (Optimal for Bank Vaults)</span>
             </div>
             <a href="heist-planner.html" class="btn btn-secondary" style="padding:0.22rem 0.6rem; font-size:0.72rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">Export Loadout to Heist Planner &rarr;</a>
         </div>
     </div>
 
-    <!-- FILTER BUTTONS -->
-    <div class="gear-filter-bar">
-        <strong style="color:var(--neon-cyan); font-size:0.82rem; font-family:var(--font-mono); margin-right:0.35rem;">⚙️ FILTER ITEMS:</strong>
-        <button type="button" class="gear-filter-btn active" onclick="filterGear('all', this)">All Items (16)</button>
-        <button type="button" class="gear-filter-btn" onclick="filterGear('breaching', this)">💥 Vault Breaching &amp; Infiltration (4)</button>
-        <button type="button" class="gear-filter-btn" onclick="filterGear('cyber', this)">⚡ Electronic Warfare &amp; Cyber (3)</button>
-        <button type="button" class="gear-filter-btn" onclick="filterGear('transport', this)">🎒 Loot Transport &amp; Duffels (3)</button>
-        <button type="button" class="gear-filter-btn" onclick="filterGear('ballistics', this)">🛡️ Armor &amp; Defense (3)</button>
-        <button type="button" class="gear-filter-btn" onclick="filterGear('weapons', this)">🔫 Confirmed Weapons (3)</button>
+    <!-- DYNAMIC INSTANT SEARCH & FILTER BAR -->
+    <div class="search-filter-wrapper">
+        <div class="search-input-box">
+            <span style="font-size:1rem;">🔍</span>
+            <input type="text" id="gearSearchInput" placeholder="Search confirmed weapons &amp; items by name, caliber, role, or perk..." oninput="handleSearch()">
+            <span id="itemCountDisplay" style="font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-cyan); white-space:nowrap;">Showing 11 of 11</span>
+        </div>
+        <div class="gear-filter-btns">
+            <strong style="color:var(--neon-cyan); font-size:0.8rem; font-family:var(--font-mono); margin-right:0.3rem;">CATEGORY:</strong>
+            <button type="button" class="gear-filter-btn active" onclick="filterCategory('all', this)">All Items (11)</button>
+            <button type="button" class="gear-filter-btn" onclick="filterCategory('automatic', this)">🔫 Automatic &amp; Carbines (3)</button>
+            <button type="button" class="gear-filter-btn" onclick="filterCategory('sniper', this)">🎯 Precision Snipers (1)</button>
+            <button type="button" class="gear-filter-btn" onclick="filterCategory('sidearms', this)">💥 Pistols &amp; Revolvers (3)</button>
+            <button type="button" class="gear-filter-btn" onclick="filterCategory('heavy', this)">💣 Heavy &amp; Explosive (1)</button>
+            <button type="button" class="gear-filter-btn" onclick="filterCategory('melee', this)">🔨 Melee &amp; Tools (2)</button>
+            <button type="button" class="gear-filter-btn" onclick="filterCategory('gear', this)">🎒 Duffels &amp; Fleet (2)</button>
+        </div>
     </div>
 
-    <!-- 16 DETAILED ITEMS & GEAR CARDS GRID -->
+    <!-- 11 CONFIRMED ITEMS & WEAPONS GRID (100% REAL SCREENS) -->
     <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap:1.25rem;" id="gearGrid">
 
-        <!-- 1. THERMAL CUTTING LANCE -->
-        <div class="item-card" data-category="breaching" id="item-thermal-lance" style="border-color:rgba(255,42,141,0.5);">
+        <!-- 1. H&K MP5 SUBMACHINE GUN -->
+        <div class="item-card" data-category="automatic" data-keywords="mp5 submachine gun automatic 9mm lucia jason trailer" id="item-mp5">
             <div>
                 <div class="item-img-container">
-                    <img src="assets/item-thermal-lance.jpg" alt="GTA 6 Thermal Cutting Lance &amp; Vault Breacher" loading="lazy">
-                    <span class="item-badge-source" style="border-color:var(--neon-pink); color:var(--neon-pink);">CONFIRMED LEAK SPEC</span>
-                    <span class="item-badge-cat">VAULT BREACHING</span>
+                    <img src="assets/weapon-mp5.jpg?v=20261118_real" alt="Heckler &amp; Koch MP5 Submachine Gun - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">AUTOMATIC SMG</span>
                 </div>
                 <div class="item-body">
-                    <h3 class="item-title">Oxy-Acetylene Thermal Cutting Lance</h3>
+                    <h3 class="item-title">Heckler &amp; Koch MP5 Submachine Gun</h3>
+                    <div class="item-crew-spec">
+                        <span>⭐ PROTAGONISTS:</span>
+                        <a href="crew-database.html#character-lucia" style="color:var(--neon-pink); text-decoration:underline;">Lucia Caminos</a> &bull;
+                        <a href="crew-database.html#character-jason" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval</a>
+                    </div>
+                    <p class="item-desc">
+                        Official 9x19mm submachine gun captured in Trailer 2 and robbery sequences. Features a collapsible stock, high fire rate, and optional quick-attach suppressor for bank lobby room clearing.
+                    </p>
+                    <div class="item-stats-table">
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">2.9 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">25 dB (Suppressed)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Rate of Fire:</span><span class="item-stat-val" style="color:var(--neon-yellow);">800 RPM</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Magazine:</span><span class="item-stat-val" style="color:#fff;">30 Rounds</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('mp5', 2.9, 25, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">✓ Equipped in Bag</button>
+            </div>
+        </div>
+
+        <!-- 2. DUKE SPECIAL OPS CARBINE -->
+        <div class="item-card" data-category="automatic" data-keywords="duke special ops carbine assault rifle 556 raul bautista" id="item-carbine">
+            <div>
+                <div class="item-img-container">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_real" alt="Duke Special Ops Carbine - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">ASSAULT CARBINE</span>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-title">Duke Special Ops Assault Carbine</h3>
                     <div class="item-crew-spec">
                         <span>🔧 SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Raul Bautista (Demolitions)</a>
+                        <a href="crew-database.html#character-raul" style="color:var(--neon-pink); text-decoration:underline;">Raul Bautista (Demolitions)</a>
                     </div>
                     <p class="item-desc">
-                        Industrial thermal lance that burns pressurized magnesium rods at 2,500&deg;C. Melts heavy reinforced bank vault hinges and titanium locking lugs without triggering acoustic seismic vibration alarms.
+                        Heavy tactical carbine captured in development footage and promotional stills. Delivers armor-piercing 5.56x45mm rounds designed to suppress SWAT perimeter response teams.
                     </p>
                     <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">8.5 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">12 dB (Near-Silent)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Cut Time:</span><span class="item-stat-val" style="color:var(--neon-cyan);">35s per Hinge</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Leonida Federal Reserve</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">3.4 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">98 dB (Loud)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Effective Range:</span><span class="item-stat-val" style="color:var(--neon-cyan);">400 Meters</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Damage:</span><span class="item-stat-val" style="color:#fff;">High Armor Pierce</span></div>
                     </div>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('thermal-lance', 8.5, 12, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('carbine', 3.4, 98, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
             </div>
         </div>
 
-        <!-- 2. BIOMETRIC INFILTRATION CYBERDECK -->
-        <div class="item-card" data-category="cyber" id="item-cyberdeck" style="border-color:rgba(0,240,255,0.5);">
+        <!-- 3. DUKE ASSAULT SNIPER RIFLE -->
+        <div class="item-card" data-category="sniper" data-keywords="duke assault sniper rifle long range jason duval grassrivers" id="item-sniper">
             <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #091b29, #040d16);">
-                    <img src="assets/vip-blueprint-pack.png" alt="Biometric Infiltration Cyberdeck" loading="lazy" style="filter:hue-rotate(180deg) brightness(1.2);">
-                    <span class="item-badge-source" style="border-color:var(--neon-cyan); color:var(--neon-cyan);">CONFIRMED LEAK SPEC</span>
-                    <span class="item-badge-cat">ELECTRONIC WARFARE</span>
+                <div class="item-img-container">
+                    <img src="assets/weapon-sniper.jpg?v=20261118_real" alt="Duke Assault Sniper Rifle - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">PRECISION SNIPER</span>
                 </div>
                 <div class="item-body">
-                    <h3 class="item-title">Biometric Infiltration Cyberdeck &amp; NFC Skimmer</h3>
+                    <h3 class="item-title">Duke Heavy Assault Sniper Rifle</h3>
                     <div class="item-crew-spec">
-                        <span>⚡ SPECIALISTS:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-green); text-decoration:underline;">Rachel "Cipher" Vance</a> &bull;
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Lucia Caminos</a>
+                        <span>🎯 SPECIALIST:</span>
+                        <a href="crew-database.html#character-jason" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval (Overwatch)</a>
                     </div>
                     <p class="item-desc">
-                        Ruggedized tactical tablet equipped with dual high-gain antennas and NFC field cloning. Bypasses biometric keypad locks, intercepts manager keycard codes, and loops security camera feeds for 45 seconds of stealth looting.
+                        High-caliber semi-automatic sniper rifle with high-magnification variable optic. Observed in the Grassrivers and Mount Kalaga National Park promotional shots for disabling police helicopter spotlights.
                     </p>
                     <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.8 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">0 dB (Silent)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Bypass Speed:</span><span class="item-stat-val" style="color:var(--neon-cyan);">15s Hack Window</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Sinfrontera &amp; Ocean Drive</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">5.2 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">110 dB</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Effective Range:</span><span class="item-stat-val" style="color:var(--neon-cyan);">800+ Meters</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Helicopter Disable:</span><span class="item-stat-val" style="color:#fff;">1 Tail-Rotor Shot</span></div>
                     </div>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('cyberdeck', 1.8, 0, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('sniper', 5.2, 110, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
             </div>
         </div>
 
-        <!-- 3. DIRECTIONAL EMP BURST EMITTER -->
-        <div class="item-card" data-category="cyber" id="item-emp" style="border-color:rgba(0,255,136,0.5);">
+        <!-- 4. MUSTANG .357 REVOLVER -->
+        <div class="item-card" data-category="sidearms" data-keywords="mustang 357 revolver magnum ambrosia pistol" id="item-mustang">
             <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #092019, #030d09);">
-                    <img src="assets/vip-blueprint-pack.png" alt="Directional EMP Burst Emitter" loading="lazy" style="filter:hue-rotate(90deg) contrast(1.1);">
-                    <span class="item-badge-source" style="border-color:var(--neon-green); color:var(--neon-green);">LEAK CONFIRMED</span>
-                    <span class="item-badge-cat">ELECTRONIC DISRUPT</span>
+                <div class="item-img-container">
+                    <img src="assets/weapon-mustang357.jpg?v=20261118_real" alt="Mustang .357 Revolver - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">HEAVY REVOLVER</span>
                 </div>
                 <div class="item-body">
-                    <h3 class="item-title">Directional EMP Burst Emitter &amp; Jammer</h3>
+                    <h3 class="item-title">Mustang .357 Heavy Magnum Revolver</h3>
                     <div class="item-crew-spec">
-                        <span>📡 SPECIALISTS:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-green); text-decoration:underline;">Cal Hampton</a> &bull;
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Rachel Vance</a>
+                        <span>⭐ ORIGIN:</span>
+                        <span style="color:var(--neon-amber);">Ambrosia County Screencap</span>
                     </div>
                     <p class="item-desc">
-                        Compact directional electromagnetic pulse device. Scrambles police dispatch radios, cuts emergency power grids for 90 seconds, and disables automated laser tripwires without alerting central dispatch.
+                        Classic six-shot stainless steel magnum revolver featured in official Ambrosia County captures. High kinetic energy with single-shot stopping power against armored vault guards.
                     </p>
                     <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">2.4 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">5 dB (Muffled)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Disrupt Radius:</span><span class="item-stat-val" style="color:var(--neon-cyan);">45 Meters</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Effect:</span><span class="item-stat-val" style="color:#fff;">+30s Police Response Delay</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.3 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">102 dB</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Cylinder:</span><span class="item-stat-val" style="color:var(--neon-cyan);">6 Rounds</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Stopping Power:</span><span class="item-stat-val" style="color:#fff;">Maximum Stagger</span></div>
                     </div>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('emp', 2.4, 5, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('mustang', 1.3, 102, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">+ Equip to Loadout Bag</button>
             </div>
         </div>
 
-        <!-- 4. REINFORCED KEVLAR HEIST DUFFEL -->
-        <div class="item-card" data-category="transport" id="item-tactical-duffel" style="border-color:rgba(255,184,0,0.5);">
+        <!-- 5. BERETTA 92FS SERVICE PISTOL -->
+        <div class="item-card" data-category="sidearms" data-keywords="beretta 92fs service pistol 9mm jason duval sidearm" id="item-beretta">
             <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #1f1807, #0b0903);">
-                    <img src="assets/bundle-cover.png" alt="Reinforced Kevlar Heist Duffel" loading="lazy" style="filter:contrast(1.2);">
-                    <span class="item-badge-source" style="border-color:var(--neon-yellow); color:var(--neon-yellow);">TRAILER 1 CONFIRMED</span>
+                <div class="item-img-container">
+                    <img src="assets/weapon-beretta.jpg?v=20261118_real" alt="Beretta 92FS Pistol - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">SERVICE SIDEARM</span>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-title">Beretta 92FS 9mm Tactical Sidearm</h3>
+                    <div class="item-crew-spec">
+                        <span>⭐ PROTAGONIST:</span>
+                        <a href="crew-database.html#character-jason" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval Primary Sidearm</a>
+                    </div>
+                    <p class="item-desc">
+                        Jason's signature service pistol observed in official character promo stills. Reliable, lightweight, with 15-round double-stack magazine and quick target acquisition in tight spaces.
+                    </p>
+                    <div class="item-stats-table">
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.95 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">20 dB (Suppressed)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Magazine:</span><span class="item-stat-val" style="color:var(--neon-cyan);">15 Rounds</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Concealment:</span><span class="item-stat-val" style="color:#fff;">100% Holster Conceal</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('beretta', 0.95, 20, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
+            </div>
+        </div>
+
+        <!-- 6. POLYMER SERVICE PISTOL -->
+        <div class="item-card" data-category="sidearms" data-keywords="polymer pistol striker fired boobie ike sidearm" id="item-polymer">
+            <div>
+                <div class="item-img-container">
+                    <img src="assets/weapon-polymer.jpg?v=20261118_real" alt="Polymer Tactical Pistol - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">POLYMER PISTOL</span>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-title">Polymer Striker-Fired Concealed Pistol</h3>
+                    <div class="item-crew-spec">
+                        <span>💎 ORIGIN:</span>
+                        <a href="crew-database.html#character-boobie" style="color:var(--neon-pink); text-decoration:underline;">Boobie Ike Club Security</a>
+                    </div>
+                    <p class="item-desc">
+                        Lightweight polymer frame pistol featured in Boobie Ike's nightclub security sequences. Zero metal-detector signature on select ceramic components, making it ideal for casino and yacht infiltration.
+                    </p>
+                    <div class="item-stats-table">
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.65 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">22 dB</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Capacity:</span><span class="item-stat-val" style="color:var(--neon-cyan);">17 Rounds</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Detection:</span><span class="item-stat-val" style="color:#fff;">Bypasses Basic Detectors</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('polymer', 0.65, 22, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
+            </div>
+        </div>
+
+        <!-- 7. TACTICAL GRENADE LAUNCHER -->
+        <div class="item-card" data-category="heavy" data-keywords="grenade launcher explosive 40mm trailer 2 swat" id="item-grenade-launcher">
+            <div>
+                <div class="item-img-container">
+                    <img src="assets/weapon-grenade-launcher.jpg?v=20261118_real" alt="Tactical Grenade Launcher - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">HEAVY ORDNANCE</span>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-title">40mm Multi-Shot Grenade Launcher</h3>
+                    <div class="item-crew-spec">
+                        <span>💥 ROLE:</span>
+                        <span style="color:var(--neon-pink);">Aggressive Vault &amp; SWAT Breacher</span>
+                    </div>
+                    <p class="item-desc">
+                        Revolving cylinder grenade launcher captured in Trailer 2 sequences. Fires 40mm high-explosive or smoke canisters to clear police roadblocks and destroy armored transport trucks instantly.
+                    </p>
+                    <div class="item-stats-table">
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">6.5 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">125 dB (Max Loud)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Capacity:</span><span class="item-stat-val" style="color:var(--neon-cyan);">6 Canisters</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Blast Radius:</span><span class="item-stat-val" style="color:#fff;">12 Meters</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('grenade-launcher', 6.5, 125, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
+            </div>
+        </div>
+
+        <!-- 8. HEIST INFILTRATION HAMMER -->
+        <div class="item-card" data-category="melee" data-keywords="hammer trailer 1 hammer lady display case jewelry" id="item-hammer">
+            <div>
+                <div class="item-img-container">
+                    <img src="assets/weapon-hammer.jpg?v=20261118_real" alt="Heist Infiltration Hammer - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">MELEE &amp; BREACH</span>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-title">Heavy Steel Framing Hammer (Display Case Smasher)</h3>
+                    <div class="item-crew-spec">
+                        <span>🔨 TRAILER 1 ICON:</span>
+                        <span style="color:var(--neon-green);">Hammer Lady Scene Capture</span>
+                    </div>
+                    <p class="item-desc">
+                        Heavy industrial steel hammer featured in the viral Trailer 1 neighborhood sequence. Used during store robberies and jewelry store heists to shatter display cases in a single swing.
+                    </p>
+                    <div class="item-stats-table">
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.1 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">15 dB (Glass Shatter)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Smash Speed:</span><span class="item-stat-val" style="color:var(--neon-cyan);">1 Second</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Jewelry &amp; Cash Registers</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('hammer', 1.1, 15, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">+ Equip to Loadout Bag</button>
+            </div>
+        </div>
+
+        <!-- 9. HEAVY WOODEN BASEBALL BAT -->
+        <div class="item-card" data-category="melee" data-keywords="baseball bat port gellhorn melee intimidation teller" id="item-bat">
+            <div>
+                <div class="item-img-container">
+                    <img src="assets/weapon-baseball-bat.jpg?v=20261118_real" alt="Baseball Bat - GTA 6 Official Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">BLUNT MELEE</span>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-title">Solid Ash Wooden Baseball Bat</h3>
+                    <div class="item-crew-spec">
+                        <span>⭐ ORIGIN:</span>
+                        <span style="color:var(--neon-cyan);">Port Gellhorn Official Still</span>
+                    </div>
+                    <p class="item-desc">
+                        Classic heavy wooden bat captured in the Port Gellhorn official promotional series. Ideal for silent non-lethal guard knockouts and aggressive crowd intimidation during convenience store stickups.
+                    </p>
+                    <div class="item-stats-table">
+                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.9 kg</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">5 dB (Silent)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Non-Lethal:</span><span class="item-stat-val" style="color:var(--neon-green);">Yes (Preserves Stealth)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Intimidation:</span><span class="item-stat-val" style="color:#fff;">+25% Compliance</span></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('bat', 0.9, 5, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
+            </div>
+        </div>
+
+        <!-- 10. OFFICIAL VICE CITY HEIST DUFFEL BAG -->
+        <div class="item-card" data-category="gear" data-keywords="duffel bag cash loot capacity vice city collection trailer" id="item-duffel">
+            <div>
+                <div class="item-img-container">
+                    <img src="assets/gear-duffel-bag.jpg?v=20261118_real" alt="Official Vice City Heist Duffel Bag - GTA 6 Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL GEAR STILL</span>
                     <span class="item-badge-cat">LOOT CAPACITY</span>
                 </div>
                 <div class="item-body">
-                    <h3 class="item-title">Reinforced Ballistic Cash Duffel (Max Take)</h3>
+                    <h3 class="item-title">Official Vice City Ballistic Heist Duffel</h3>
                     <div class="item-crew-spec">
-                        <span>⭐ PROTAGONISTS:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Lucia</a> &amp;
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Jason</a>
+                        <span>🎒 CORE EQUIPMENT:</span>
+                        <span style="color:var(--neon-yellow);">$2,500,000 Cash Take Capacity</span>
                     </div>
                     <p class="item-desc">
-                        Heavy-duty Kevlar-lined tactical duffel bag featured in Lucia &amp; Jason's diner and store stickups. Resistant to police gunfire tearing, with water-sealed zippers preventing cash damage during aquatic getaways.
+                        Reinforced ballistic nylon travel duffel featured in the official Vice City collection and trailer heist escapes. Waterproof zippers protect cash stacks, bearer bonds, and gold bars from water damage during boat extractions.
                     </p>
                     <div class="item-stats-table">
                         <div class="item-stat-row"><span class="item-stat-label">Empty Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.5 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Full Capacity:</span><span class="item-stat-val" style="color:var(--neon-yellow);">$2,500,000 Cash</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Sprint Penalty:</span><span class="item-stat-val" style="color:var(--neon-cyan);">-6% when full</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Tear Proof:</span><span class="item-stat-val" style="color:#fff;">100% Bill Protection</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Max Take:</span><span class="item-stat-val" style="color:var(--neon-yellow);">$2,500,000</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Sprint Penalty:</span><span class="item-stat-val" style="color:var(--neon-cyan);">-2% (Balanced)</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Water Resistance:</span><span class="item-stat-val" style="color:#fff;">100% Sealed</span></div>
                     </div>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('duffel', 1.5, 0, 2500000, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('duffel', 1.5, 0, 2500000, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">✓ Equipped in Bag</button>
             </div>
         </div>
 
-        <!-- 5. LEVEL IV CERAMIC BODY ARMOR -->
-        <div class="item-card" data-category="ballistics" id="item-ceramic-armor" style="border-color:rgba(0,240,255,0.4);">
+        <!-- 11. RIDEOUT CUSTOMS GETAWAY TUNER CAR -->
+        <div class="item-card" data-category="gear" data-keywords="rideout customs getaway car vehicle drift brian heder chop shop" id="item-getaway-car">
             <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #0d1e2e, #050b12);">
-                    <img src="assets/lfg-squad-banner.png" alt="Level IV Ceramic Body Armor" loading="lazy" style="filter:contrast(1.15);">
-                    <span class="item-badge-source" style="border-color:var(--neon-cyan); color:var(--neon-cyan);">LEAKS CONFIRMED</span>
-                    <span class="item-badge-cat">BALLISTIC DEFENSE</span>
+                <div class="item-img-container">
+                    <img src="assets/gear-getaway-car.jpg?v=20261118_real" alt="Rideout Customs Getaway Tuner Car - GTA 6 Capture" loading="lazy">
+                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
+                    <span class="item-badge-cat">GETAWAY FLEET</span>
                 </div>
                 <div class="item-body">
-                    <h3 class="item-title">Level IV Multi-Hit Ceramic Plate Carrier</h3>
-                    <div class="item-crew-spec">
-                        <span>🛡️ CARRIER:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval (Tactical Specialist)</a>
-                    </div>
-                    <p class="item-desc">
-                        Military-spec ceramic composite plate armor designed to defeat 7.62x51mm armor-piercing rifle fire and shotgun blasts during chaotic aggressive 5-star vault breakouts.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">7.2 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Damage Reduction:</span><span class="item-stat-val" style="color:var(--neon-cyan);">-65% Ballistic</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Speed Penalty:</span><span class="item-stat-val" style="color:var(--neon-pink);">-12% Sprint</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Durability:</span><span class="item-stat-val" style="color:#fff;">8 Rifle Hits</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('armor', 7.2, 0, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 6. HIGH-FREQUENCY ELECTRIC LOCKPICK GUN -->
-        <div class="item-card" data-category="breaching" id="item-lockpick-gun" style="border-color:rgba(0,255,136,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #062319, #020d09);">
-                    <img src="assets/vip-blueprint-pack.png" alt="High-Frequency Electric Lockpick Gun" loading="lazy" style="filter:hue-rotate(60deg) brightness(1.1);">
-                    <span class="item-badge-source" style="border-color:var(--neon-green); color:var(--neon-green);">CONFIRMED LEAKS</span>
-                    <span class="item-badge-cat">STEALTH INFILTRATION</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">High-Frequency Electric Lockpick Gun</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Lucia Caminos (Infiltration)</a>
-                    </div>
-                    <p class="item-desc">
-                        Motorized precision lock-picking tool that rapidly vibrates pins inside pin-tumbler deposit boxes, bank security gates, and back alley fire doors in under 5 seconds with zero noise.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.8 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">2 dB (Inaudible)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Pick Time:</span><span class="item-stat-val" style="color:var(--neon-cyan);">4.5 Seconds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Deposit Boxes &amp; Side Entrances</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('lockpick', 0.8, 2, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 7. CIRCULAR LASER GLASS CUTTER -->
-        <div class="item-card" data-category="breaching" id="item-laser-cutter" style="border-color:rgba(255,42,141,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #2b0b1e, #0f040b);">
-                    <img src="assets/vip-blueprint-pack.png" alt="Circular Laser Glass Cutter" loading="lazy" style="filter:hue-rotate(300deg);">
-                    <span class="item-badge-source" style="border-color:var(--neon-pink); color:var(--neon-pink);">CONFIRMED LEAKS</span>
-                    <span class="item-badge-cat">STEALTH GLASS CUT</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Suction Laser Glass Cutter (Museum &amp; Yacht)</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ SPECIALISTS:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Lucia</a> &bull;
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Boobie Ike</a>
-                    </div>
-                    <p class="item-desc">
-                        Dual suction cup stabilizing arm equipped with an infrared laser that carves a silent circular aperture in bullet-resistant museum and superyacht display cases without tripping shock sensors.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.2 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">0 dB (Silent)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Cut Time:</span><span class="item-stat-val" style="color:var(--neon-cyan);">12 Seconds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Starlet Superyacht Gems</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('laser-cutter', 1.2, 0, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 8. WATERPROOF SEALED MARINE LOOT PODS -->
-        <div class="item-card" data-category="transport" id="item-marine-drum" style="border-color:rgba(0,240,255,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #092534, #041018);">
-                    <img src="assets/heist-superyacht.png" alt="Waterproof Marine Loot Pods" loading="lazy" style="filter:contrast(1.1);">
-                    <span class="item-badge-source" style="border-color:var(--neon-cyan); color:var(--neon-cyan);">CONFIRMED SPEC</span>
-                    <span class="item-badge-cat">MARITIME EXTRACTION</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Waterproof Pressurized Marine Loot Pods</h3>
-                    <div class="item-crew-spec">
-                        <span>⚓ SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Dre'Quan Priest (Speedboat Captain)</a>
-                    </div>
-                    <p class="item-desc">
-                        Buoyant, hermetically sealed polymer canisters rated to 50 meters ocean depth. Allows loot to be dumped overboard into Biscayne Bay and recovered post-heist via underwater GPS beacon.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">3.0 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Buoyancy:</span><span class="item-stat-val" style="color:var(--neon-cyan);">+100% Float</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Cash Sealed:</span><span class="item-stat-val" style="color:var(--neon-green);">$1,800,000</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Port Gellhorn &amp; Keys</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('marine-drum', 3.0, 0, 1800000, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 9. WIDEBAND SCANNER & POLICE RADAR INTERCEPTOR -->
-        <div class="item-card" data-category="cyber" id="item-radar-detector" style="border-color:rgba(255,184,0,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #1b1706, #090802);">
-                    <img src="assets/vip-blueprint-pack.png" alt="Police Radar Interceptor" loading="lazy" style="filter:sepia(1) hue-rotate(5deg);">
-                    <span class="item-badge-source" style="border-color:var(--neon-yellow); color:var(--neon-yellow);">LEAK CONFIRMED</span>
-                    <span class="item-badge-cat">COUNTERMEASURES</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Police Radar Detector &amp; Frequency Interceptor</h3>
-                    <div class="item-crew-spec">
-                        <span>🏎️ SPECIALISTS:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Toreno Cruz</a> &bull;
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-green); text-decoration:underline;">Cal Hampton</a>
-                    </div>
-                    <p class="item-desc">
-                        Dash-mounted radar receiver with Ka-band interceptors. Triangulates police roadblocks, state trooper speed traps on Interstate 97, and police helicopter search cone coordinates on your HUD.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.6 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">HUD Alerts:</span><span class="item-stat-val" style="color:var(--neon-green);">Instant</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Range:</span><span class="item-stat-val" style="color:var(--neon-cyan);">800 Meters</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Benefit:</span><span class="item-stat-val" style="color:#fff;">Avoid Highway Ambush</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('radar-detector', 0.6, 0, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 10. HYDRAULIC BREACHING JAWS OF LIFE -->
-        <div class="item-card" data-category="breaching" id="item-jaws" style="border-color:rgba(255,184,0,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #1f1406, #0c0802);">
-                    <img src="assets/heist-port-gellhorn.png" alt="Hydraulic Breaching Jaws" loading="lazy" style="filter:contrast(1.1);">
-                    <span class="item-badge-source" style="border-color:var(--neon-amber); color:var(--neon-amber);">LEAK CONFIRMED</span>
-                    <span class="item-badge-cat">HEAVY BREACH</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Hydraulic Breaching Jaws of Life</h3>
-                    <div class="item-crew-spec">
-                        <span>🔧 SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-amber); text-decoration:underline;">Brian Heder (Chop Shop Boss)</a>
-                    </div>
-                    <p class="item-desc">
-                        Heavy industrial hydraulic spreader delivering 15 tons of mechanical separation force. Tears open security shutters, armored transit truck doors, and warehouse loading docks in 8 seconds flat.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">11.0 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">68 dB (Moderate)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Breach Speed:</span><span class="item-stat-val" style="color:var(--neon-cyan);">8 Seconds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Armored Convoys &amp; Gates</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('jaws', 11.0, 68, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 11. CONFIRMED WEAPON: SUPPRESSED COMPACT PDW -->
-        <div class="item-card" data-category="weapons" id="item-pdw" style="border-color:rgba(0,240,255,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #091a27, #040c12);">
-                    <img src="assets/gta6-protagonists-official.jpg" alt="GTA 6 Suppressed Tactical PDW" loading="lazy" style="filter:contrast(1.2);">
-                    <span class="item-badge-source" style="border-color:var(--neon-cyan); color:var(--neon-cyan);">LEAKS CONFIRMED</span>
-                    <span class="item-badge-cat">CONFIRMED WEAPON</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Suppressed Compact PDW (9x19mm Subsonic)</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ PROTAGONISTS:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Lucia</a> &amp;
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Jason</a>
-                    </div>
-                    <p class="item-desc">
-                        Compact tactical personal defense weapon observed in the 2022 robbery footage. Features a quick-detach suppressor, holographic sight, and folding stock for concealment under jackets.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">2.8 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Suppressed Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">28 dB</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Mag Size:</span><span class="item-stat-val" style="color:var(--neon-cyan);">30 Rounds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Concealable:</span><span class="item-stat-val" style="color:#fff;">Yes (Jacket Slot)</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('pdw', 2.8, 28, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 12. CONFIRMED WEAPON: DUAL MICRO-SMG LOADOUT -->
-        <div class="item-card" data-category="weapons" id="item-smg" style="border-color:rgba(255,42,141,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #240a1a, #0d0309);">
-                    <img src="assets/character-lucia.jpg" alt="Lucia Dual Micro-SMG Loadout" loading="lazy" style="object-position:center 25%;">
-                    <span class="item-badge-source" style="border-color:var(--neon-pink); color:var(--neon-pink);">TRAILER 1 FEATURE</span>
-                    <span class="item-badge-cat">CONFIRMED WEAPON</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Dual-Wield Micro-SMG Holster Rig</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Lucia Caminos (Dual Mastery)</a>
-                    </div>
-                    <p class="item-desc">
-                        Lucia's signature twin micro-submachine gun harness. Unleashes devastating high-volume suppressive fire inside bank lobbies to keep security guards and tellers pinned down.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">3.6 kg (Pair)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">98 dB (Very Loud)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Rate of Fire:</span><span class="item-stat-val" style="color:var(--neon-cyan);">1,200 RPM</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Crowd Control:</span><span class="item-stat-val" style="color:#fff;">+40% Intimidation</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('smg', 3.6, 98, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 13. CONFIRMED WEAPON: SCOPED HUNTING RIFLE -->
-        <div class="item-card" data-category="weapons" id="item-hunting-rifle" style="border-color:rgba(0,240,255,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #0a1f2c, #040d13);">
-                    <img src="assets/character-jason.jpg" alt="Jason Scoped Hunting Rifle" loading="lazy" style="object-position:center 25%;">
-                    <span class="item-badge-source" style="border-color:var(--neon-cyan); color:var(--neon-cyan);">CONFIRMED LEAKS</span>
-                    <span class="item-badge-cat">CONFIRMED WEAPON</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Scoped Heavy Hunting Carbine (Bolt-Action)</h3>
-                    <div class="item-crew-spec">
-                        <span>🎯 SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval (Tactical Overwatch)</a>
-                    </div>
-                    <p class="item-desc">
-                        High-caliber scoped precision rifle seen strapped to Jason's back in leaks. Used for perimeter overwatch, taking out rooftop spotters, and disabling police helicopter tail rotors.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">4.8 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">105 dB</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Effective Range:</span><span class="item-stat-val" style="color:var(--neon-cyan);">600+ Meters</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Vehicle Disable:</span><span class="item-stat-val" style="color:#fff;">1 Shot to Engine Block</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('hunting-rifle', 4.8, 105, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 14. DIAMOND LOUPE & CARAT SCALE -->
-        <div class="item-card" data-category="transport" id="item-diamond-loupe" style="border-color:rgba(255,42,141,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #220818, #0c0208);">
-                    <img src="assets/character-boobie-ike.jpg" alt="Diamond Loupe &amp; Carat Scale" loading="lazy" style="object-position:center 25%;">
-                    <span class="item-badge-source" style="border-color:var(--neon-pink); color:var(--neon-pink);">TRAILER 1 LORE</span>
-                    <span class="item-badge-cat">APPRAISAL GEAR</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">60x Achromatic Diamond Loupe &amp; Scale</h3>
-                    <div class="item-crew-spec">
-                        <span>💎 FENCE:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-pink); text-decoration:underline;">Boobie Ike (Vice Beach Kingpin)</a>
-                    </div>
-                    <p class="item-desc">
-                        Gemologist pocket appraisal kit. Allows crew members inside the vault to instantly verify clarity and cut of uncut diamonds, maximizing payout by discarding low-value synthetic stones.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.3 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Payout Bonus:</span><span class="item-stat-val" style="color:var(--neon-pink);">+10% Diamond Value</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Pocket Size:</span><span class="item-stat-val" style="color:var(--neon-cyan);">Zero Bag Slots</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Ocean Drive Safe Deposit</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('diamond-loupe', 0.3, 0, 500000, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 15. TACTICAL SMOKE GRENADE DISPENSERS -->
-        <div class="item-card" data-category="ballistics" id="item-smoke" style="border-color:rgba(0,255,136,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #071f17, #020d09);">
-                    <img src="assets/character-leonida-joker.jpg" alt="Tactical Smoke Grenades" loading="lazy" style="object-position:center 20%;">
-                    <span class="item-badge-source" style="border-color:var(--neon-green); color:var(--neon-green);">TRAILER 1 / VIRAL</span>
-                    <span class="item-badge-cat">TACTICAL COVER</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">M18 High-Density Tactical Smoke Cannisters</h3>
-                    <div class="item-crew-spec">
-                        <span>🎭 SPECIALIST:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-green); text-decoration:underline;">Leonida Joker (Chaos Diversion)</a>
-                    </div>
-                    <p class="item-desc">
-                        Rapid-release micro-particulate smoke grenades. Blankets vault exits and alleyways with an impenetrable thermal-obscuring screen that breaks police line-of-sight and prevents sniper locks.
-                    </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.1 kg (Pack of 3)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Deploy Time:</span><span class="item-stat-val" style="color:var(--neon-cyan);">Instant (2 Seconds)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Duration:</span><span class="item-stat-val" style="color:var(--neon-yellow);">45 Seconds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Benefit:</span><span class="item-stat-val" style="color:#fff;">Zero Sniper Accuracy</span></div>
-                    </div>
-                </div>
-            </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('smoke', 1.1, 5, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">+ Equip to Loadout Bag</button>
-            </div>
-        </div>
-
-        <!-- 16. RUN-FLAT BALLISTIC TIRES & ARMOR PLATES -->
-        <div class="item-card" data-category="ballistics" id="item-runflat" style="border-color:rgba(255,184,0,0.4);">
-            <div>
-                <div class="item-img-container" style="background:linear-gradient(135deg, #201706, #0c0902);">
-                    <img src="assets/character-brian-heder.jpg" alt="Run-Flat Ballistic Tires" loading="lazy" style="object-position:center 20%;">
-                    <span class="item-badge-source" style="border-color:var(--neon-amber); color:var(--neon-amber);">LEAK CONFIRMED</span>
-                    <span class="item-badge-cat">VEHICLE ARMOR</span>
-                </div>
-                <div class="item-body">
-                    <h3 class="item-title">Solid Core Run-Flat Tires &amp; Push Bar Rig</h3>
+                    <h3 class="item-title">Rideout Customs Tuned Muscle Getaway Fleet</h3>
                     <div class="item-crew-spec">
                         <span>🔧 ARMORER:</span>
-                        <a href="crew-database.html#characterGrid" style="color:var(--neon-amber); text-decoration:underline;">Brian Heder (Chop Shop)</a>
+                        <a href="crew-database.html#character-brian" style="color:var(--neon-amber); text-decoration:underline;">Brian Heder (Chop Shop)</a>
                     </div>
                     <p class="item-desc">
-                        Solid composite core wheel inserts installed on getaway vehicles. Immune to police spike strips, allowing high-speed highway escapes even after blowing through 4-star roadblocks.
+                        Official Rideout Customs tuned getaway vehicle observed in Trailer 1 night streets. Outfitted with solid run-flat tires immune to police spikes, reinforced push bumpers, and high-speed drift transmission for escaping 4-star roadblocks.
                     </p>
                     <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">Vehicle Mount</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Vehicle Armor:</span><span class="item-stat-val" style="color:var(--neon-amber);">+40% Plating</span></div>
                         <div class="item-stat-row"><span class="item-stat-label">Spike Immunity:</span><span class="item-stat-val" style="color:var(--neon-green);">100% Puncture Proof</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Handling:</span><span class="item-stat-val" style="color:var(--neon-cyan);">No Top-Speed Loss</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Interstate 97 Getaways</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Top Speed:</span><span class="item-stat-val" style="color:var(--neon-cyan);">165 MPH</span></div>
+                        <div class="item-stat-row"><span class="item-stat-label">Trunk Stash:</span><span class="item-stat-val" style="color:#fff;">4 Extra Duffel Bags</span></div>
                     </div>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.4rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('runflat', 0.0, 0, 0, this)" style="flex:1; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">+ Equip to Getaway Fleet</button>
+            <div style="padding:0 1.15rem 1.15rem;">
+                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('getaway-car', 0, 0, 1000000, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">+ Equip to Getaway Fleet</button>
             </div>
         </div>
 
     </div>
 
-    <!-- SYNDICATE DEALS & DAY-1 TACTICAL HARDWARE -->
+    <!-- PRE-ORDER & PRO HARDWARE DEALS SHOWCASE -->
     <div style="margin-top:2.5rem; background:rgba(10,16,26,0.95); border:2px solid var(--neon-cyan); border-radius:12px; padding:1.25rem 1.5rem; box-shadow:0 0 30px rgba(0,240,255,0.15);">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.15rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.65rem;">
             <div>
@@ -991,7 +872,7 @@
         </div>
         <div>
             <div style="font-weight:700; color:var(--neon-pink); font-size:0.8rem; margin-bottom:0.35rem;">SYNDICATE CREW</div>
-            <a href="crew-database.html">11 Character Bios</a><br>
+            <a href="crew-database.html">Official Character Bios</a><br>
             <a href="lucia-jason-skills.html">Lucia &amp; Jason</a><br>
             <a href="forum.html">LFG Matchmaker</a>
         </div>
@@ -1008,10 +889,41 @@
     // LOADOUT SIMULATOR STATE
     const activeLoadout = new Map();
     // Default equipped items
-    activeLoadout.set('thermal-lance', { weight: 8.5, noise: 12, loot: 0 });
-    activeLoadout.set('cyberdeck', { weight: 1.8, noise: 0, loot: 0 });
+    activeLoadout.set('mp5', { weight: 2.9, noise: 25, loot: 0 });
     activeLoadout.set('duffel', { weight: 1.5, noise: 0, loot: 2500000 });
-    activeLoadout.set('lockpick', { weight: 0.8, noise: 2, loot: 0 });
+    activeLoadout.set('beretta', { weight: 0.95, noise: 20, loot: 0 });
+
+    let currentCategory = 'all';
+
+    function handleSearch() {
+        let query = document.getElementById('gearSearchInput').value.toLowerCase().trim();
+        let cards = document.querySelectorAll('#gearGrid .item-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            let cat = card.getAttribute('data-category');
+            let keywords = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
+            let matchesCat = (currentCategory === 'all' || cat === currentCategory);
+            let matchesQuery = (!query || keywords.includes(query));
+
+            if (matchesCat && matchesQuery) {
+                card.style.display = 'flex';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        document.getElementById('itemCountDisplay').innerText = `Showing ${visibleCount} of ${cards.length}`;
+    }
+
+    function filterCategory(cat, btn) {
+        currentCategory = cat;
+        document.querySelectorAll('.gear-filter-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        handleSearch();
+        if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'triangle', 0.04);
+    }
 
     function updateSimulatorUI() {
         let totalWeight = 0;
@@ -1024,30 +936,25 @@
             totalLoot += item.loot;
         });
 
-        // Speed penalty is ~0.75% per kg above 5kg
         let penalty = Math.max(0, Math.round((totalWeight - 5) * 0.75));
         let mobPercent = Math.max(0, 100 - penalty);
 
         document.getElementById('totalWeightVal').innerText = totalWeight.toFixed(1) + ' kg';
         let weightPct = Math.min(100, Math.round((totalWeight / 40) * 100));
         document.getElementById('weightBar').style.width = weightPct + '%';
-        if (weightPct > 75) {
-            document.getElementById('weightBar').style.background = 'var(--neon-pink)';
-        } else {
-            document.getElementById('weightBar').style.background = 'var(--neon-yellow)';
-        }
+        document.getElementById('weightBar').style.background = weightPct > 75 ? 'var(--neon-pink)' : 'var(--neon-yellow)';
 
         document.getElementById('mobilityPenaltyVal').innerText = '-' + penalty + '% Sprint';
         document.getElementById('mobilityBar').style.width = mobPercent + '%';
 
-        let noiseLabel = maxNoise <= 15 ? ' (Ghost Stealth)' : (maxNoise <= 45 ? ' (Tactical Muffled)' : ' (High Acoustic Alert)');
+        let noiseLabel = maxNoise <= 25 ? ' (Suppressed)' : (maxNoise <= 60 ? ' (Muffled)' : ' (Loud Alert)');
         document.getElementById('noiseLevelVal').innerText = maxNoise + ' dB' + noiseLabel;
-        let noisePct = Math.min(100, Math.round((maxNoise / 110) * 100));
+        let noisePct = Math.min(100, Math.round((maxNoise / 125) * 100));
         document.getElementById('noiseBar').style.width = Math.max(5, noisePct) + '%';
-        if (maxNoise <= 20) {
+        if (maxNoise <= 25) {
             document.getElementById('noiseBar').style.background = 'var(--neon-green)';
             document.getElementById('noiseLevelVal').style.color = 'var(--neon-green)';
-        } else if (maxNoise <= 60) {
+        } else if (maxNoise <= 75) {
             document.getElementById('noiseBar').style.background = 'var(--neon-yellow)';
             document.getElementById('noiseLevelVal').style.color = 'var(--neon-yellow)';
         } else {
@@ -1060,14 +967,14 @@
         document.getElementById('lootBar').style.width = Math.max(5, lootPct) + '%';
 
         let verdict = document.getElementById('buildVerdict');
-        if (maxNoise <= 20 && totalWeight <= 16) {
-            verdict.innerText = 'Silent Mastermind (Optimal for Sinfrontera Bank & Ocean Drive Penthouse)';
+        if (maxNoise <= 30 && totalWeight <= 15) {
+            verdict.innerText = 'Silent Infiltration Mastermind (Optimal for Bank Vaults)';
             verdict.style.color = 'var(--neon-green)';
-        } else if (maxNoise > 50 || totalWeight > 22) {
-            verdict.innerText = 'Aggressive Breacher (Fastest brute-force entry, attracts heavy SWAT response)';
+        } else if (maxNoise > 80 || totalWeight > 20) {
+            verdict.innerText = 'Heavy Assault Breacher (High kinetic force, fast SWAT alert)';
             verdict.style.color = 'var(--neon-pink)';
         } else {
-            verdict.innerText = 'Balanced Tactical Infiltrator (Good speed, flexible audio profile)';
+            verdict.innerText = 'Balanced Tactical Strike (Versatile range and handling)';
             verdict.style.color = 'var(--neon-cyan)';
         }
     }
@@ -1078,6 +985,8 @@
             if (btn) {
                 btn.innerText = '+ Equip to Loadout Bag';
                 btn.style.background = 'transparent';
+                btn.style.borderColor = 'var(--neon-cyan)';
+                btn.style.color = 'var(--neon-cyan)';
             }
             if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(320, 'sine', 0.04);
         } else {
@@ -1085,6 +994,8 @@
             if (btn) {
                 btn.innerText = '✓ Equipped in Bag';
                 btn.style.background = 'rgba(0, 240, 255, 0.2)';
+                btn.style.borderColor = 'var(--neon-cyan)';
+                btn.style.color = '#fff';
             }
             if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(640, 'triangle', 0.05);
         }
@@ -1104,17 +1015,15 @@
     function setPreset(type) {
         activeLoadout.clear();
         if (type === 'stealth') {
-            activeLoadout.set('cyberdeck', { weight: 1.8, noise: 0, loot: 0 });
-            activeLoadout.set('lockpick', { weight: 0.8, noise: 2, loot: 0 });
-            activeLoadout.set('laser-cutter', { weight: 1.2, noise: 0, loot: 0 });
+            activeLoadout.set('mp5', { weight: 2.9, noise: 25, loot: 0 });
+            activeLoadout.set('beretta', { weight: 0.95, noise: 20, loot: 0 });
+            activeLoadout.set('hammer', { weight: 1.1, noise: 15, loot: 0 });
             activeLoadout.set('duffel', { weight: 1.5, noise: 0, loot: 2500000 });
-            activeLoadout.set('pdw', { weight: 2.8, noise: 28, loot: 0 });
         } else if (type === 'loud') {
-            activeLoadout.set('thermal-lance', { weight: 8.5, noise: 12, loot: 0 });
-            activeLoadout.set('jaws', { weight: 11.0, noise: 68, loot: 0 });
-            activeLoadout.set('armor', { weight: 7.2, noise: 0, loot: 0 });
-            activeLoadout.set('smg', { weight: 3.6, noise: 98, loot: 0 });
-            activeLoadout.set('hunting-rifle', { weight: 4.8, noise: 105, loot: 0 });
+            activeLoadout.set('carbine', { weight: 3.4, noise: 98, loot: 0 });
+            activeLoadout.set('sniper', { weight: 5.2, noise: 110, loot: 0 });
+            activeLoadout.set('grenade-launcher', { weight: 6.5, noise: 125, loot: 0 });
+            activeLoadout.set('mustang', { weight: 1.3, noise: 102, loot: 0 });
             activeLoadout.set('duffel', { weight: 1.5, noise: 0, loot: 2500000 });
         }
         syncButtonLabels();
@@ -1130,28 +1039,16 @@
                 if (activeLoadout.has(id)) {
                     btn.innerText = '✓ Equipped in Bag';
                     btn.style.background = 'rgba(0, 240, 255, 0.2)';
+                    btn.style.color = '#fff';
                 } else {
                     btn.innerText = '+ Equip to Loadout Bag';
                     btn.style.background = 'transparent';
+                    btn.style.color = 'var(--neon-cyan)';
                 }
             }
         });
     }
 
-    function filterGear(cat, btn) {
-        document.querySelectorAll('.gear-filter-btn').forEach(b => b.classList.remove('active'));
-        if (btn) btn.classList.add('active');
-        document.querySelectorAll('#gearGrid .item-card').forEach(card => {
-            if (cat === 'all' || card.getAttribute('data-category') === cat) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'triangle', 0.04);
-    }
-
-    // Initialize UI on load
     document.addEventListener('DOMContentLoaded', () => {
         syncButtonLabels();
         updateSimulatorUI();
