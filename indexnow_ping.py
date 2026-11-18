@@ -16,7 +16,9 @@ HOST = "www.gta6heistguide.com"
 KEY_LOCATION = f"https://{HOST}/{INDEXNOW_KEY}.txt"
 ENDPOINTS = [
     "https://api.indexnow.org/indexnow",
-    "https://www.bing.com/indexnow"
+    "https://www.bing.com/indexnow",
+    "https://yandex.com/indexnow",
+    "https://search.seznam.cz/indexnow"
 ]
 
 def find_sitemap():

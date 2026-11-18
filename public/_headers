@@ -5,6 +5,15 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   Cache-Control: no-cache, no-store, must-revalidate
 
+/embed/*
+  X-Frame-Options: ALLOWALL
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/df9198ac34c2f27023754589395a56d0.txt
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
 /*.css
   Cache-Control: public, max-age=86400, must-revalidate
 
