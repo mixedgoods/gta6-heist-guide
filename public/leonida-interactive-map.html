@@ -115,6 +115,72 @@
             transform: scale(1.4);
             filter: drop-shadow(0 0 8px #fff);
         }
+    
+        /* TACTICAL ZOOM CONTROLS HUD */
+        .map-zoom-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 25;
+        }
+        .zoom-btn {
+            background: rgba(10, 16, 26, 0.92);
+            border: 1px solid var(--neon-cyan);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        }
+        .zoom-btn:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+        .zoom-btn:active {
+            transform: scale(0.95);
+        }
+        .zoom-indicator {
+            background: rgba(5, 10, 18, 0.9);
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            color: var(--neon-cyan);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 3px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        /* MAP CONTROLS POSITIONED CLEANLY */
+        .map-toolbar-container {
+            background: rgba(12, 17, 26, 0.95);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            padding: 0.65rem 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .map-controls-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+    
     </style>
     <script type="application/ld+json">
     {
@@ -191,11 +257,24 @@
 </nav>
 
 
-    <header class="hero">
-        <div class="hero-tagline">&bull; Satellite Reconnaissance Engine &bull;</div>
-        <h1>LEONIDA STATE <span class="highlight-pink">TACTICAL RADAR</span></h1>
-        <p>Interactive satellite reconnaissance of high-stakes vault coordinates, sewer escape conduits, safehouses, and radar dead zones across Leonida and Vice City.</p>
-    </header>
+    <header class="hero-cinematic" style="max-width: 1100px; margin: 0.65rem auto 1.25rem; padding: 0 0.5rem;">
+    <div style="position:relative; border-radius:14px; overflow:hidden; border:2px solid rgba(0,240,255,0.4); box-shadow:0 0 35px rgba(0,240,255,0.2);">
+        <img src="assets/hero-heist-banner.png?v=20261118_v3" alt="Leonida State Tactical Radar" style="width:100%; height:auto; display:block; max-height:380px; object-fit:cover; object-position:center 30%;">
+        <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent 0%, rgba(8,11,18,0.85) 50%, rgba(6,8,14,0.96) 100%); padding:1.25rem 1.5rem 0.9rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+            <div>
+                <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.2); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.75rem; margin-bottom:0.35rem; display:inline-block;">🛰️ SATELLITE RECONNAISSANCE ENGINE &bull; 6 REGIONS MAPPED</span>
+                <h1 style="font-size:clamp(1.25rem, 2.8vw, 1.9rem); font-weight:1000; color:#fff; margin:0; line-height:1.2; text-shadow:0 2px 10px rgba(0,0,0,0.8);">
+                    LEONIDA STATE <span style="color:var(--neon-pink);">TACTICAL RADAR</span> &amp; VAULT DIRECTORY
+                </h1>
+            </div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn btn-primary" onclick="zoomToSector('vice-city')" style="padding:0.45rem 0.9rem; font-size:0.8rem;">🏙️ Vice City Focus</button>
+                <button type="button" class="btn btn-secondary" onclick="zoomToSector('leonida-keys')" style="padding:0.45rem 0.9rem; font-size:0.8rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">🏝️ Keys Focus</button>
+                <button type="button" class="btn btn-secondary" onclick="resetZoom()" style="padding:0.45rem 0.85rem; font-size:0.8rem;">⟲ Reset View</button>
+            </div>
+        </div>
+    </div>
+</header>
 
     <main class="container">
                 <!-- 6 CONFIRMED LEONIDA REGIONS QUICK-JUMP BAR -->
@@ -293,17 +372,32 @@
         </div>
 
         <!-- RADAR MAP CONTAINER -->
-        <div class="map-wrapper" id="radarMap">
-            <!-- CONTROLS -->
-            <div class="map-controls">
-                <button class="map-btn active" onclick="filterMap('all', this)">All Intel</button>
-                <button class="map-btn" onclick="filterMap('vault', this)">Vault Targets</button>
-                <button class="map-btn" onclick="filterMap('escape', this)">Escape Conduits</button>
-                <button class="map-btn" onclick="filterMap('safehouse', this)">Safehouses</button>
-                <button class="map-btn" onclick="filterMap('radar', this)">Air & Radar</button>
-                <button class="map-btn" onclick="filterMap('community', this)">Community Intel (Live D1)</button>
+        
+        <!-- STANDALONE INTEL FILTER TOOLBAR (OUTSIDE MAP - ZERO LANDMASS OBSTRUCTION) -->
+        <div class="map-toolbar-container">
+            <strong style="color:var(--neon-cyan); font-size:0.84rem; font-family:var(--font-mono); margin-right:0.35rem;">📡 RADAR FILTERS:</strong>
+            <div class="map-controls-inline">
+                <button type="button" class="map-btn active" onclick="filterMap('all', this)">All Intel</button>
+                <button type="button" class="map-btn" onclick="filterMap('vault', this)">💰 Vault Targets</button>
+                <button type="button" class="map-btn" onclick="filterMap('escape', this)">🚇 Escape Conduits</button>
+                <button type="button" class="map-btn" onclick="filterMap('safehouse', this)">🏠 Safehouses</button>
+                <button type="button" class="map-btn" onclick="filterMap('radar', this)">📡 Air &amp; Radar</button>
+                <button type="button" class="map-btn" onclick="filterMap('community', this)">🌐 Community Intel (Live D1)</button>
+                <button type="button" class="map-btn" onclick="filterMap('fuel', this)" style="border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Gas &amp; Refuel</button>
             </div>
+        </div>
+        
+        <div class="map-wrapper" id="radarMap">
 
+            <!-- INTERACTIVE ZOOM HUD (TOP-RIGHT) -->
+            <div class="map-zoom-controls">
+                <button type="button" class="zoom-btn" onclick="zoomIn()" title="Zoom In (+)" aria-label="Zoom In">➕</button>
+                <button type="button" class="zoom-btn" onclick="zoomOut()" title="Zoom Out (-)" aria-label="Zoom Out">➖</button>
+                <button type="button" class="zoom-btn" onclick="resetZoom()" title="Reset Full View (1.0x)" aria-label="Reset View">⟲</button>
+                <span id="zoomLevelDisplay" class="zoom-indicator">1.0x</span>
+            </div>
+    
+            <!-- CONTROLS -->
             <!-- INTEL CARD POPUP -->
             <div class="map-intel-modal" id="mapModal">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
@@ -484,119 +578,119 @@
                 <g class="map-point map-marker-vault" transform="translate(710, 280)" data-pin-id="sinfrontera" data-region="vice-city" onclick="showIntel('sinfrontera')">
                     <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
                     <circle r="5" fill="#ff2a8d"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Sinfrontera Bank ($14.5M)</text>
+                    
                 </g>
 
                 <!-- 2. Port Gellhorn Container Terminal -->
                 <g class="map-point map-marker-vault" transform="translate(135, 400)" data-pin-id="port-gellhorn" data-region="port-gellhorn" onclick="showIntel('port-gellhorn')">
                     <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
                     <circle r="5" fill="#00f0ff"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Port Gellhorn ($8.2M)</text>
+                    
                 </g>
 
                 <!-- 3. Leonida Gold Reserve -->
                 <g class="map-point map-marker-vault" transform="translate(390, 140)" data-pin-id="leonida-reserve" data-region="ambrosia" onclick="showIntel('leonida-reserve')">
                     <circle r="15" fill="rgba(255, 215, 0, 0.35)" stroke="#ffd700" stroke-width="2.5"/>
                     <circle r="6" fill="#ffd700"/>
-                    <text x="18" y="4" fill="#ffd700" font-size="11" font-weight="bold" font-family="sans-serif">Leonida Gold Reserve ($25M)</text>
+                    
                 </g>
 
                 <!-- 4. Starlet Superyacht -->
                 <g class="map-point map-marker-vault" transform="translate(850, 310)" data-pin-id="yacht" data-region="vice-city" onclick="showIntel('yacht')">
                     <circle r="13" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
                     <circle r="5" fill="#ff2a8d"/>
-                    <text x="16" y="4" fill="#ff2a8d" font-size="11" font-weight="bold" font-family="sans-serif">Starlet Superyacht ($11.8M)</text>
+                    
                 </g>
 
                 <!-- 5. Grassrivers Cartel Airstrip -->
                 <g class="map-point map-marker-vault" transform="translate(290, 370)" data-pin-id="smuggler" data-region="grassrivers" onclick="showIntel('smuggler')">
                     <circle r="13" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
                     <circle r="5" fill="#10b981"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Cartel Airstrip ($6.5M)</text>
+                    
                 </g>
 
                 <!-- 6. Ocean Drive Armored Convoy -->
                 <g class="map-point map-marker-vault" transform="translate(805, 340)" data-pin-id="convoy" data-region="vice-city" onclick="showIntel('convoy')">
                     <circle r="13" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
                     <circle r="5" fill="#ffb800"/>
-                    <text x="16" y="4" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">Ocean Dr. Convoy ($9.4M)</text>
+                    
                 </g>
 
                 <!-- 7. Lummox Timber Stash (Leaked Northern Sector) -->
                 <g class="map-point map-marker-vault" transform="translate(260, 75)" data-pin-id="lummox-stash" data-region="lummox" onclick="showIntel('lummox-stash')">
                     <circle r="12" fill="rgba(0, 255, 136, 0.3)" stroke="#00ff88" stroke-width="2"/>
                     <circle r="5" fill="#00ff88"/>
-                    <text x="16" y="4" fill="#00ff88" font-size="10" font-weight="bold" font-family="sans-serif">Lummox Timber Stash ($2.9M)</text>
+                    
                 </g>
 
                 <!-- 8. Pelican Valley Agricultural Bank -->
                 <g class="map-point map-marker-vault" transform="translate(425, 290)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="showIntel('pelican-bank')">
                     <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
                     <circle r="5" fill="#00f0ff"/>
-                    <text x="16" y="4" fill="#00f0ff" font-size="10" font-weight="bold" font-family="sans-serif">Pelican Valley Bank ($3.8M)</text>
+                    
                 </g>
 
                 <!-- 9. Key Lento Offshore Depot -->
                 <g class="map-point map-marker-vault" transform="translate(920, 585)" data-pin-id="key-lento" data-region="key-lento" onclick="showIntel('key-lento')">
                     <circle r="14" fill="rgba(255, 42, 141, 0.35)" stroke="#ff2a8d" stroke-width="2"/>
                     <circle r="6" fill="#ff2a8d"/>
-                    <text x="-160" y="-8" fill="#ff2a8d" font-size="11" font-weight="bold" font-family="sans-serif">Key Lento Bullion ($12.4M)</text>
+                    
                 </g>
 
                 <!-- 10. Metro Sewer Conduit 01 -->
                 <g class="map-point map-marker-escape" transform="translate(735, 330)" data-pin-id="escape-metro" data-region="vice-city" onclick="showIntel('escape-metro')">
                     <rect x="-8" y="-8" width="16" height="16" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#00f0ff" font-size="10" font-family="sans-serif">Sewer Tube 01</text>
+                    
                 </g>
 
                 <!-- 11. North Vice Safehouse Alpha -->
                 <g class="map-point map-marker-safehouse" data-pin-id="safehouse-north" data-region="vice-city" transform="translate(720, 215)" onclick="showIntel('safehouse-north')">
                     <polygon points="0,-10 9,6 -9,6" fill="rgba(157, 78, 221, 0.5)" stroke="#9d4edd" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#9d4edd" font-size="10" font-family="sans-serif">Safehouse Alpha</text>
+                    
                 </g>
 
                 <!-- 12. Leonida Keys Smuggler Dock -->
                 <g class="map-point map-marker-safehouse" data-pin-id="keys-dock" data-region="leonida-keys" transform="translate(810, 545)" onclick="showIntel('keys-dock')">
                     <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
                     <circle r="4" fill="#00f0ff"/>
-                    <text x="15" y="4" fill="#00f0ff" font-size="10" font-weight="bold" font-family="sans-serif">Keys Smuggler Dock</text>
+                    
                 </g>
 
                 <!-- 13. Ambrosia Refinery Fence -->
                 <g class="map-point map-marker-escape" data-pin-id="ambrosia-fence" data-region="ambrosia" transform="translate(510, 310)" onclick="showIntel('ambrosia-fence')">
                     <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 153, 0, 0.35)" stroke="#ff9900" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#ff9900" font-size="10" font-weight="bold" font-family="sans-serif">Ambrosia Fence</text>
+                    
                 </g>
 
                 <!-- 14. Mount Kalaga Wilderness Outpost -->
                 <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(620, 75)" onclick="showIntel('kalaga-outpost')">
                     <polygon points="0,-10 9,6 -9,6" fill="rgba(34, 197, 94, 0.5)" stroke="#22c55e" stroke-width="1.5"/>
-                    <text x="12" y="4" fill="#22c55e" font-size="10" font-family="sans-serif">Kalaga Outpost</text>
+                    
                 </g>
 
                 <!-- 15. Toll 1A Highway Evasion Gate -->
                 <g class="map-point map-marker-escape" transform="translate(560, 215)" data-pin-id="toll-1a" data-region="toll-1a" onclick="showIntel('toll-1a')">
                     <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.35)" stroke="#ffb800" stroke-width="2"/>
-                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">Toll 1A ANPR Bypass</text>
+                    
                 </g>
 
                 <!-- 16. Lummox 24/7 Gas & Refuel Depot (Fuel Mechanic) -->
                 <g class="map-point map-marker-fuel" transform="translate(320, 95)" data-pin-id="fuel-lummox" data-region="lummox" onclick="showIntel('fuel-lummox')">
                     <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.5)" stroke="#ffb800" stroke-width="2"/>
-                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">⛽ Lummox Refuel Depot</text>
+                    
                 </g>
 
                 <!-- 17. Vice Beach Sunoco Gas Pitstop (Fuel Mechanic) -->
                 <g class="map-point map-marker-fuel" transform="translate(795, 230)" data-pin-id="fuel-vice" data-region="vice-city" onclick="showIntel('fuel-vice')">
                     <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.5)" stroke="#ffb800" stroke-width="2"/>
-                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">⛽ Vice Beach 24/7 Gas</text>
+                    
                 </g>
 
                 <!-- 18. Leonida State Zoo Infiltration -->
                 <g class="map-point map-marker-vault" transform="translate(630, 160)" data-pin-id="zoo-compound" data-region="vice-city" onclick="showIntel('zoo-compound')">
                     <circle r="12" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
                     <circle r="5" fill="#10b981"/>
-                    <text x="14" y="4" fill="#10b981" font-size="10" font-weight="bold" font-family="sans-serif">State Zoo ($4.2M)</text>
+                    
                 </g>
 
                 <g id="customMarkersLayer"></g>
@@ -679,6 +773,116 @@
             </div>
         </div>
     </section>
+    
+<!-- HIGH-CONVERTING VERIFIED GAMING GEAR & KEYS SHOWCASE -->
+<section class="affiliate-showcase-section" style="margin: 2.25rem 0 1.5rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.6rem;">
+        <div>
+            <span class="user-badge badge-mastermind" style="background:rgba(255,184,0,0.18); border-color:var(--neon-yellow); color:var(--neon-yellow);">🔥 SYNDICATE DEALS &bull; DAY-1 TESTED HARDWARE</span>
+            <h2 style="color:#fff; font-size:1.25rem; margin:0.25rem 0 0;">CONFIRMED HARDWARE &amp; DISCOUNTED DIGITAL KEYS</h2>
+        </div>
+        <span style="color:var(--text-muted); font-size:0.8rem;">Official Verified Partners &bull; Lowest Price Guarantee &bull; Instant Codes</span>
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:1rem;">
+        <!-- Card 1: GTA 6 Digital Key Box -->
+        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,240,255,0.4); background:rgba(12,18,28,0.85); box-shadow:0 0 15px rgba(0,240,255,0.08);">
+            <div>
+                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
+                    <img src="assets/gta6-key-box.jpg" alt="GTA 6 Official Digital Key / Pre-Order" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.68rem; font-weight:800;">DAY-1 GUARANTEE</span>
+                </div>
+                <div style="padding:1rem;">
+                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">Grand Theft Auto VI (PS5 / Xbox Series X)</h3>
+                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
+                        <span style="color:var(--text-muted); font-size:0.75rem;">(Pre-Order Price Match)</span>
+                    </div>
+                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$69.99</div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Official physical &amp; digital pre-order with Amazon's Day-1 lowest price guarantee and release-day delivery.</p>
+                </div>
+            </div>
+            <div style="padding:0 1rem 1rem;">
+                <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="btn btn-primary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #ff9900, #ff6600); border:none; color:#000; font-weight:900;">
+                    🛒 PRE-ORDER ON AMAZON &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 2: DualSense Edge Controller -->
+        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,42,141,0.4); background:rgba(18,12,24,0.85); box-shadow:0 0 15px rgba(255,42,141,0.08);">
+            <div>
+                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
+                    <img src="assets/dualsense-edge-controller.jpg" alt="DualSense Edge Pro Controller" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.68rem; font-weight:800;">TACTICAL PRO GEAR</span>
+                </div>
+                <div style="padding:1rem;">
+                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">Sony DualSense Edge Wireless Controller</h3>
+                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
+                        <span style="color:var(--text-muted); font-size:0.75rem;">(Rear Paddle Reloads)</span>
+                    </div>
+                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$199.99</div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Essential for GTA 6 drive-by shooting and safe drilling with back paddles, hair triggers, and swappable stick caps.</p>
+                </div>
+            </div>
+            <div style="padding:0 1rem 1rem;">
+                <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="btn btn-primary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #00f0ff, #0088ff); border:none; color:#000; font-weight:900;">
+                    🛒 VIEW CONTROLLER DEALS &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 3: Samsung 990 PRO NVMe SSD -->
+        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,255,136,0.4); background:rgba(10,20,18,0.85); box-shadow:0 0 15px rgba(0,255,136,0.08);">
+            <div>
+                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
+                    <img src="assets/samsung-990-pro.jpg" alt="Samsung 990 PRO NVMe SSD" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-green); color:var(--neon-green); font-size:0.68rem; font-weight:800;">ZERO STUTTER</span>
+                </div>
+                <div style="padding:1rem;">
+                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD</h3>
+                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
+                        <span style="color:var(--text-muted); font-size:0.75rem;">(7,450 MB/s Speed)</span>
+                    </div>
+                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$169.99</div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Maximize Vice City asset streaming. Instant loading into 4-player heist lobbies without texture pop-in or stutter.</p>
+                </div>
+            </div>
+            <div style="padding:0 1rem 1rem;">
+                <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+with+Heatsink&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="btn btn-primary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #00ff88, #00aa55); border:none; color:#000; font-weight:900;">
+                    🛒 CHECK SSD PRICING &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 4: Eneba Discounted Gift Cards -->
+        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,184,0,0.4); background:rgba(24,18,10,0.85); box-shadow:0 0 15px rgba(255,184,0,0.08);">
+            <div>
+                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
+                    <img src="assets/eneba-gift-cards.jpg" alt="Eneba PlayStation and Xbox Gift Cards" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.68rem; font-weight:800;">SAVE 15-20%</span>
+                </div>
+                <div style="padding:1rem;">
+                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">PSN &amp; Xbox Store Discounted Gift Cards</h3>
+                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
+                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
+                        <span style="color:var(--text-muted); font-size:0.75rem;">(Instant Digital Delivery)</span>
+                    </div>
+                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$84.50 <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.85rem;">$100.00</span></div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Buy GTA 6 and Shark Card equivalents at 15-20% off by topping up your console wallet with verified digital vouchers.</p>
+                </div>
+            </div>
+            <div style="padding:0 1rem 1rem;">
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" class="btn btn-amber" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #ffd700, #ff8800); border:none; color:#000; font-weight:900;">
+                    ⚡ GET DISCOUNTED CARDS &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
     </main>
 
     
@@ -870,7 +1074,80 @@
             applyPinVisibility();
         }
 
+        
+        /* =========================================================================
+           INTERACTIVE TACTICAL RADAR ZOOM & SECTOR ENGINE
+           ========================================================================= */
+        let currentViewBox = { x: 0, y: 0, w: 1000, h: 650 };
+        const SECTOR_COORDINATES = {
+            'vice-city': { x: 570, y: 150, w: 350, h: 228 },
+            'leonida-keys': { x: 670, y: 430, w: 330, h: 215 },
+            'grassrivers': { x: 150, y: 280, w: 420, h: 273 },
+            'port-gellhorn': { x: 60, y: 310, w: 270, h: 176 },
+            'ambrosia': { x: 330, y: 130, w: 350, h: 228 },
+            'mount-kalaga': { x: 100, y: 40, w: 650, h: 423 },
+            'lummox': { x: 90, y: 40, w: 560, h: 364 },
+            'pelican-valley': { x: 320, y: 210, w: 290, h: 189 },
+            'key-lento': { x: 800, y: 480, w: 200, h: 130 },
+            'toll-1a': { x: 120, y: 180, w: 680, h: 250 },
+            'all': { x: 0, y: 0, w: 1000, h: 650 }
+        };
+
+        function applyViewBox(x, y, w, h) {
+            const svg = document.getElementById('mapSvg');
+            if (!svg) return;
+            // Bound coordinates inside 1000x650
+            const clampedW = Math.max(220, Math.min(1000, w));
+            const clampedH = clampedW * (650 / 1000);
+            const clampedX = Math.max(0, Math.min(1000 - clampedW, x));
+            const clampedY = Math.max(0, Math.min(650 - clampedH, y));
+            svg.setAttribute('viewBox', `${clampedX} ${clampedY} ${clampedW} ${clampedH}`);
+            currentViewBox = { x: clampedX, y: clampedY, w: clampedW, h: clampedH };
+
+            const zoomIndicator = document.getElementById('zoomLevelDisplay');
+            if (zoomIndicator) {
+                const zVal = (1000 / clampedW).toFixed(1);
+                zoomIndicator.innerText = zVal + 'x';
+            }
+        }
+
+        function zoomIn() {
+            const factor = 0.75;
+            const newW = currentViewBox.w * factor;
+            const newH = newW * (650 / 1000);
+            const cx = currentViewBox.x + currentViewBox.w / 2;
+            const cy = currentViewBox.y + currentViewBox.h / 2;
+            applyViewBox(cx - newW / 2, cy - newH / 2, newW, newH);
+            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(620, 'triangle', 0.04);
+        }
+
+        function zoomOut() {
+            const factor = 1.333;
+            const newW = currentViewBox.w * factor;
+            if (newW >= 980) {
+                resetZoom();
+            } else {
+                const newH = newW * (650 / 1000);
+                const cx = currentViewBox.x + currentViewBox.w / 2;
+                const cy = currentViewBox.y + currentViewBox.h / 2;
+                applyViewBox(cx - newW / 2, cy - newH / 2, newW, newH);
+                if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(440, 'triangle', 0.04);
+            }
+        }
+
+        function resetZoom() {
+            applyViewBox(0, 0, 1000, 650);
+            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'sine', 0.04);
+        }
+
+        function zoomToSector(sector) {
+            const target = SECTOR_COORDINATES[sector] || SECTOR_COORDINATES['all'];
+            applyViewBox(target.x, target.y, target.w, target.h);
+            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(560, 'triangle', 0.05);
+        }
+    
         function filterRegion(region, btn) {
+            zoomToSector(region);
             activeRegion = region;
             document.querySelectorAll('.map-region-bar .map-btn').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
@@ -1029,7 +1306,7 @@
                     <g class="map-point map-marker-safehouse" data-pin-id="${m.id}" data-region="${m.region}" transform="translate(${m.x}, ${m.y})" onclick="showIntel('${m.id}')">
                         <circle r="11" fill="rgba(0, 255, 136, 0.35)" stroke="#00ff88" stroke-width="2"/>
                         <circle r="4" fill="#00ff88"/>
-                        <text x="14" y="4" fill="#00ff88" font-size="10" font-weight="bold" font-family="sans-serif">${m.title.replace(/</g, '&lt;')}</text>
+                        
                     </g>
                 `).join('');
                 const d1Svg = d1CommunityMarkers.map(m => {
@@ -1039,7 +1316,7 @@
                     <g class="map-point map-marker-community map-marker-safehouse" data-pin-id="${m.id}" data-region="${regSlug}" transform="translate(${m.x}, ${m.y})" onclick="showIntel('${m.id}')">
                         <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="${strokeCol}" stroke-width="2"/>
                         <circle r="4" fill="${strokeCol}"/>
-                        <text x="14" y="4" fill="${strokeCol}" font-size="10" font-weight="bold" font-family="sans-serif">${String(m.title || '').replace(/</g, '&lt;')}</text>
+                        
                     </g>
                     `;
                 }).join('');

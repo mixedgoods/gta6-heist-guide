@@ -2275,26 +2275,17 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     // EXIT-INTENT MODAL & UNIVERSAL NAV / MULTI-CTA ENHANCER
     // --------------------------------------------------------------------------
     ExitIntent: {
-      shown: false,
-
+      shown: true,
       init() {
         this.injectFreeNavLink();
-        if (sessionStorage.getItem('gta6_exit_intent_shown') === '1') return;
-
-        document.addEventListener('mouseout', (e) => {
-          if (this.shown) return;
-          if (!e.relatedTarget && !e.toElement && e.clientY <= 12) {
-            this.trigger();
-          }
-        });
+        // ExitIntent permanently disabled per user request
       },
-
       injectFreeNavLink() {
         document.querySelectorAll('.nav-links').forEach((ul) => {
           if (ul.querySelector('a[href*="/free"]')) return;
           const li = document.createElement('li');
           const isFreePage = window.location.pathname.startsWith('/free');
-          li.innerHTML = `<a href="/free" class="${isFreePage ? 'active' : ''}" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a>`;
+          li.innerHTML = `<a href="/free" class="${isFreePage ? 'active' : ''}" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Tools</a>`;
           if (ul.children.length > 1) {
             ul.insertBefore(li, ul.children[1]);
           } else {
@@ -2302,57 +2293,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
           }
         });
       },
-
       trigger() {
-        if (this.shown || sessionStorage.getItem('gta6_exit_intent_shown') === '1') return;
-        if (document.querySelector('.modal-backdrop.open')) return;
-        this.shown = true;
-        sessionStorage.setItem('gta6_exit_intent_shown', '1');
-
-        let modal = document.getElementById('exitIntentModal');
-        if (!modal) {
-          const wrap = document.createElement('div');
-          wrap.innerHTML = `
-            <div class="modal-backdrop" id="exitIntentModal">
-              <div class="modal-box" style="max-width:620px; border:2px solid var(--neon-cyan); box-shadow:0 0 40px rgba(0,240,255,0.35);">
-                <button type="button" class="modal-close-btn" onclick="document.getElementById('exitIntentModal').classList.remove('open')">✕</button>
-                <div style="text-align:center; margin-bottom:1.1rem;">
-                  <span class="user-badge badge-mastermind" style="margin-bottom:0.5rem;">⚡ BEFORE YOU EXFILTRATE LEONIDA...</span>
-                  <h2 style="color:#fff; font-size:1.55rem; line-height:1.25; margin-bottom:0.45rem;">Grab the Free Heist $/Hour Suite &amp; VIP Vault Blueprints</h2>
-                  <p style="color:var(--text-muted); font-size:0.9rem;">
-                    Test your crew split in our 100% free browser utility suite, practice the 15-second Biometric Keypad Hack, or download the offline VIP Vault Cheat Sheet.
-                  </p>
-                </div>
-                <div style="display:grid; gap:0.65rem; margin-bottom:1.1rem;">
-                  <a href="/free" class="btn btn-primary" style="width:100%; padding:0.75rem 1rem; font-size:0.9rem;">⚡ Launch Free Heist $/Hour &amp; 15s Vault Hack Trainer (/free) &rarr;</a>
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem;">
-                    <button type="button" class="btn btn-secondary" style="padding:0.6rem 0.8rem; font-size:0.8rem;" onclick="document.getElementById('exitIntentModal').classList.remove('open'); GTA6.Auth.downloadVipPack();">📥 Download VIP Vault Cheat Sheet (.TXT)</button>
-                    <button type="button" class="btn btn-amber" style="padding:0.6rem 0.8rem; font-size:0.8rem;" onclick="document.getElementById('exitIntentModal').classList.remove('open'); GTA6.Auth.openModal();">🎁 Unlock Founder VIP +2,500 Rep</button>
-                  </div>
-                </div>
-                <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-card); border-radius:8px; padding:0.9rem; font-size:0.82rem;">
-                  <div style="color:var(--neon-cyan); font-weight:800; margin-bottom:0.45rem; text-transform:uppercase; letter-spacing:0.8px;">Verified Launch Gear &amp; Creator Deals:</div>
-                  <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.55rem;">
-                    <a href="https://nordvpn.com/" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding:0.35rem 0.7rem; font-size:0.74rem;">🛡️ NordVPN DDoS Shield</a>
-                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-amber" style="padding:0.35rem 0.7rem; font-size:0.74rem;">⚡ 990 PRO Gen4 SSD</a>
-                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary" style="padding:0.35rem 0.7rem; font-size:0.74rem;">🔑 G2A Keys</a>
-                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding:0.35rem 0.7rem; font-size:0.74rem;">🎮 Eneba Deals</a>
-                  </div>
-                  <div style="color:var(--text-muted); border-top:1px solid var(--border-card); padding-top:0.45rem;">
-                    🎬 <strong style="color:#fff;">Recording GTA 6 Clips?</strong> Auto-cut dead air &amp; export 9:16 vertical shorts offline &rarr; <a href="https://getapexlocal.com" target="_blank" rel="noopener" style="color:var(--neon-green); font-weight:800;">CutFlow Pro &amp; ClipBounty Studio</a> (<a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="noopener" style="color:var(--neon-cyan); font-weight:700;">Whop Store</a>)
-                  </div>
-                </div>
-              </div>
-            </div>
-          `;
-          document.body.appendChild(wrap);
-          modal = document.getElementById('exitIntentModal');
-        }
-        modal.classList.add('open');
-        GTA6.playBeep(540, 'triangle', 0.06);
-      },
-    },
-  };
+        // Disabled
+      }
+    }  };
 
   document.addEventListener('DOMContentLoaded', () => {
     GTA6.initMobileNav();
