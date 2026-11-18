@@ -93,6 +93,40 @@ def sync_database():
             if clean_id not in existing_char_ids and not clean_id.startswith('category'):
                 log(f"Potential new confirmed character listed: {char_title} (ID: {clean_id})")
 
+    # 3. SCAN OFFICIAL YOUTUBE FEEDS & LIVE STREAM CHANNELS
+    log("Scanning official YouTube feeds (Rockstar Games, GTA Series Videos, Digital Foundry)...")
+    yt_channels = {
+        'Rockstar Games (Official)': 'UCULwHhkI31JHAKe57LZdzcA',
+        'GTA Series Videos': 'UCrniLr5HDebHfskhSSAAt0A',
+        'Digital Foundry': 'UCLdBr5f6RcP6l_TAP4GkhDQ',
+        'LegacyKillaHD': 'UCvbsOrV7_fuuItFPEBfOdbA'
+    }
+    recent_videos = []
+    import xml.etree.ElementTree as ET
+    for cname, cid in yt_channels.items():
+        feed_url = f'https://www.youtube.com/feeds/videos.xml?channel_id={cid}'
+        req = urllib.request.Request(feed_url, headers={'User-Agent': USER_AGENT})
+        try:
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                tree = ET.fromstring(resp.read().decode('utf-8'))
+                ns = {'atom': 'http://www.w3.org/2005/Atom'}
+                for entry in tree.findall('atom:entry', ns)[:5]:
+                    v_title = entry.find('atom:title', ns).text
+                    v_link = entry.find('atom:link', ns).attrib['href']
+                    v_pub = entry.find('atom:published', ns).text
+                    if 'Rockstar' in cname or any(k in v_title.lower() for k in ['gta', 'grand theft auto', 'leonida', 'vice city', 'lucia', 'jason', 'rockstar']):
+                        recent_videos.append({
+                            'channel': cname,
+                            'title': v_title,
+                            'url': v_link,
+                            'published': v_pub
+                        })
+                        log(f"Tracked YouTube update: [{cname}] {v_title}")
+        except Exception as e:
+            log(f"Error fetching YouTube feed for {cname}: {e}")
+
+    master_data['youtubeWire'] = recent_videos[:12]
+
     # Update timestamp
     master_data['lastSynced'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
