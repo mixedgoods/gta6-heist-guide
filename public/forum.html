@@ -36,19 +36,24 @@
 </head>
 <body>
     
-<div class="countdown-strip">
-    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
-        <span class="strip-pulse"></span>
-        <span class="launch-mode-label">Launch Window:</span>
-        <span class="highlight" id="countdownTimer">Loading...</span>
-        <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
-    </a>
-    <span class="strip-divider">|</span>
-    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
-        <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
-    </a>
-    <span class="strip-divider">|</span>
-    <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+<div class="countdown-strip" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; padding:0.35rem 1rem;">
+    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
+        <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
+            <span class="strip-pulse"></span>
+            <span class="launch-mode-label">Launch Window:</span>
+            <span class="highlight" id="countdownTimer">Loading...</span>
+            <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
+        </a>
+        <span class="strip-divider">|</span>
+        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
+            <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
+        </a>
+        <span class="strip-divider">|</span>
+        <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+    </div>
+    <div class="strip-right-actions" style="display:flex; align-items:center; gap:0.4rem; margin-left:auto;">
+        <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="padding:0.22rem 0.6rem; font-size:0.72rem; cursor:pointer;">🔊 Audio FX: ON</button>
+    </div>
 </div>
 
 <nav class="navbar">
@@ -69,29 +74,26 @@
             <li><a href="forum.html" class="active" style="color: var(--neon-cyan);">Crew Lounge &amp; LFG</a></li>
             <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
         </ul>
-        <div class="nav-actions">
-            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()">🔊 Audio FX: ON</button>
-        </div>
+        <div class="nav-actions"></div>
     </div>
 </nav>
 
-<header class="hero-cinematic" style="max-width: 1100px; margin: 0.65rem auto 1.25rem; padding: 0 0.5rem;">
-    <div style="position:relative; border-radius:14px; overflow:hidden; border:2px solid rgba(0,240,255,0.4); box-shadow:0 0 35px rgba(0,240,255,0.2);">
-        <img src="assets/lfg-squad-banner.png?v=20261118_v3" alt="Co-Op Heist Squad Recruitment Lounge" style="width:100%; height:280px; display:block; max-height:280px; object-fit:cover; object-position:center 30%;">
-        <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent 0%, rgba(8,11,18,0.85) 50%, rgba(6,8,14,0.96) 100%); padding:1.25rem 1.5rem 0.9rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
-            <div>
-                <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.2); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.75rem; margin-bottom:0.35rem; display:inline-block;">👥 VERIFIED CO-OP MATCHMAKER &bull; 4-PLAYER HEIST CREWS</span>
-                <h1 style="font-size:clamp(1.25rem, 2.8vw, 1.9rem); font-weight:1000; color:#fff; margin:0; line-height:1.2; text-shadow:0 2px 10px rgba(0,0,0,0.8);">
-                    SYNDICATE CREW <span style="color:var(--neon-cyan);">LOUNGE &amp; LFG</span>
-                </h1>
-            </div>
-            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                <a href="#lfg-hub" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🎯 Find Heist Crew &rarr;</a>
-                <a href="#post-lfg" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">📢 Post Recruitment</a>
-            </div>
+
+<!-- ZERO-SCROLL COMPACT PAGE HEADER -->
+<div style="max-width:1100px; margin:0.65rem auto 0.45rem; padding:0 0.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.45rem;">
+    <div>
+        <h1 style="color:#fff; font-size:1.35rem; font-weight:1000; margin:0; line-height:1.2;">
+            SYNDICATE CREW <span style="color:var(--neon-cyan);">LOUNGE &amp; LFG</span>
+        </h1>
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">
+            👥 VERIFIED CO-OP MATCHMAKER &bull; PS5, XBOX &amp; PC 4-PLAYER SQUADS
         </div>
     </div>
-</header>
+    <div>
+        <a href="#lfg-hub" class="btn btn-primary" style="padding:0.3rem 0.75rem; font-size:0.75rem;">Jump to Tool &darr;</a>
+    </div>
+</div>
+
 
 <main class="container">
     <!-- VIP LOGIN INCENTIVE BANNER -->
