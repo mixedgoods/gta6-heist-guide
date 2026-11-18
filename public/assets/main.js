@@ -2270,7 +2270,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         category: "Playable Protagonist",
         role: "Infiltration Lead & Dual-Wield Gunslinger",
         source: "Rockstar Official Key Art & Trailer 1",
-        actor: "Manni Perez (Confirmed / Industry Credits)",
+        actor: "Manni Perez (Confirmed / SAG-AFTRA)",
         district: "Vice-Dale County / Port Gellhorn",
         image: "assets/character-lucia.jpg?v=20261118_v5",
         bio: "The first female protagonist in the GTA HD era. A fierce Latina criminal seen inside the Leonida Department of Corrections wearing a state-issued GPS ankle monitor. Partners with Jason Duval in high-stakes Bonnie & Clyde bank heists, armored truck ambushes, and neon diner hold-ups across Leonida.",
@@ -2368,7 +2368,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         source: "Confirmed 2022 Leaks",
         actor: "Undisclosed",
         district: "Keys Marina / Everglades Edge",
-        image: "assets/character-brian-heder.jpg?v=20261118_v4",
+        image: "assets/character-lori-heder.jpg?v=20261118_v4",
         bio: "Brian's partner managing maritime mechanics, high-speed offshore cigarette boats, and heavy winches for naval bullion recovery.",
         specialty: "Marine engines, reinforced hulls, and swamp propellers.",
         weapon: "Industrial Marine Welder",
@@ -2407,6 +2407,38 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         weaponLink: "weapons-gear.html",
         perk: "Flash Burn: Melts bank vault reinforced hinges in under 45 seconds.",
         stats: { decryption: 85, intimidation: 88, combat: 94, wheelman: 70 }
+      },
+      "baeluxe": {
+        name: "Bae-Luxe (Real Dimez)",
+        alias: "Live Streamer",
+        category: "Story Associate",
+        role: "Vice City Influencer & Crowd Distraction",
+        source: "Trailer 1 Viral Social Media Feed",
+        actor: "Miami Street Viral Cast",
+        district: "Ocean Drive / South Beach",
+        image: "assets/character-bae-luxe.jpg",
+        bio: "A prominent Vice City social media creator and thrillchaser seen dancing atop convertibles on Ocean Drive. Her scheduled high-energy public live streams draw enormous civilian crowds that divert VCPD patrols away from robbery blocks.",
+        specialty: "Flash crowds, viral media distractions, and public sector police decoys.",
+        weapon: "4K Mobile Streaming Rig & Custom Phone",
+        weaponLink: "weapons-gear.html",
+        perk: "Crowd Surge: Disables exterior bank perimeter surveillance during the team's initial entry phase.",
+        stats: { decryption: 50, intimidation: 72, combat: 40, wheelman: 75 }
+      },
+      "roxy": {
+        name: "Roxy (Real Dimez)",
+        alias: "Mud Clubber",
+        category: "Story Associate",
+        role: "Thrillchaser & Off-Road Exfiltration",
+        source: "Trailer 1 Thrillchaser Footage",
+        actor: "Miami Stunt Community",
+        district: "Leonida Swamps / Mud Club",
+        image: "assets/character-roxy.jpg",
+        bio: "Vice City off-road stunt enthusiast deeply entrenched in the Everglades Mud Club culture. Provides custom swamp monster trucks and off-grid exfiltration corridors across treacherous marsh terrain.",
+        specialty: "Swamp buggy drifting, mud-run escape paths, and unmapped trail navigation.",
+        weapon: "Off-Road Flare Gun & Stunt Harness",
+        weaponLink: "weapons-gear.html",
+        perk: "Mud Slick: Squad pursuit vehicles gain +30% traction and zero handling penalty in heavy mud and swamps.",
+        stats: { decryption: 45, intimidation: 75, combat: 65, wheelman: 92 }
       },
       "petra-navarro": {
         name: "Petra Navarro",
@@ -2455,24 +2487,115 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         weaponLink: "weapons-gear.html",
         perk: "Public Mayhem: Reduces initial police pursuit stars by 1 level upon bank exit.",
         stats: { decryption: 60, intimidation: 88, combat: 72, wheelman: 70 }
+      },
+      "rachel-vance": {
+        name: "Cipher (Rachel Vance)",
+        alias: "The Network Ghost",
+        category: "Underworld Specialist",
+        role: "Elite Cyber Hacker & Digital Infiltrator",
+        source: "Confirmed Dossiers & Syndicate Intel",
+        actor: "Undisclosed",
+        district: "Vice City Financial District",
+        image: "assets/character-rachel-vance.jpg",
+        bio: "An elusive white-hat turned underground cyber operative specializing in remote CCTV subversions, laser grid disablement, and digital biometric cloning. Infiltrates encrypted financial backdoors for high-value vault heists.",
+        specialty: "Zero-day bank network exploits, remote camera looping, and silent terminal hacks.",
+        weapon: "Encrypted Cyber Rig & EMP Disrupter",
+        weaponLink: "weapons-gear.html",
+        perk: "Ghost Protocol: Completely disables silent alarm triggers for an additional 60 seconds.",
+        stats: { decryption: 99, intimidation: 50, combat: 60, wheelman: 70 }
+      },
+      "toreno-cruz": {
+        name: "Toreno 'Redline' Cruz",
+        alias: "Redline",
+        category: "Underworld Specialist",
+        role: "Underground Street Racer & Master Wheelman",
+        source: "Confirmed Dossiers & Syndicate Intel",
+        actor: "Undisclosed",
+        district: "Little Haiti / Vice-Dale Expressway",
+        image: "assets/character-toreno-cruz.jpg",
+        bio: "Legendary Vice City tuner and midnight street racer who engineers high-boost nitro getaways and specializes in evading high-speed VCPD interceptor cruisers on expressways.",
+        specialty: "Nitro injection tuning, PIT-maneuver counters, and causeway evasion.",
+        weapon: "Modified AP Pistol & Nitro Trigger",
+        weaponLink: "weapons-gear.html",
+        perk: "Apex Drift: Getaway cars instantly shed 2 pursuit stars upon crossing county bridges.",
+        stats: { decryption: 55, intimidation: 85, combat: 82, wheelman: 100 }
+      },
+      "valentina": {
+        name: "Valentina",
+        alias: "La Jefa",
+        category: "Underworld Contact",
+        role: "Latin Syndicate Enforcer & Safehouse Quartermaster",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Little Haiti / Vice-Dale",
+        image: "assets/character-valentina.jpg",
+        bio: "Ruthless cartel lieutenant managing fortified safehouses and covert black-market triage for wounded crew members escaping federal manhunts.",
+        specialty: "Underground safehouses, rapid extraction, and covert medical triage.",
+        weapon: "Gold-Plated .50 Heavy Pistol",
+        weaponLink: "weapons-gear.html",
+        perk: "Triage Recovery: Revives fallen crew members with 100% health upon safehouse exfiltration.",
+        stats: { decryption: 60, intimidation: 95, combat: 90, wheelman: 75 }
+      },
+      "aunt-tee": {
+        name: "Aunt Tee",
+        alias: "The Matriarch",
+        category: "Underworld Contact",
+        role: "Underground Matriarch & Stash House Operator",
+        source: "Confirmed 2022 Leaks",
+        actor: "Undisclosed",
+        district: "Port Gellhorn Outskirts",
+        image: "assets/character-aunt-tee.jpg",
+        bio: "Veteran southern fence operating discreet stash houses, contraband lockers, and untraceable burner vehicle swaps away from city surveillance.",
+        specialty: "Stash house caches, burner cell networks, and low-heat storage.",
+        weapon: "Double-Barrel Sawed-Off Shotgun",
+        weaponLink: "weapons-gear.html",
+        perk: "Cold Storage: Stashed heist loot does not depreciate or attract police search interest.",
+        stats: { decryption: 50, intimidation: 90, combat: 70, wheelman: 60 }
       }
     },
 
     CharacterModal: {
       open(id) {
-        let key = id || 'lucia-caminos';
-        if (key.startsWith('character-')) key = key.replace('character-', '');
-        if (key === 'lucia') key = 'lucia-caminos';
-        if (key === 'jason') key = 'jason-duval';
-        if (key === 'cal') key = 'cal-hampton';
-        if (key === 'boobie') key = 'boobie-ike';
-        if (key === 'brian') key = 'brian-heder';
-        if (key === 'lori') key = 'lori-heder';
-        if (key === 'drequan') key = 'drequan-priest';
-        if (key === 'raul') key = 'raul-bautista';
-        if (key === 'petra') key = 'petra-navarro';
-        if (key === 'joker') key = 'leonida-joker';
+        let key = (id || 'lucia-caminos').toLowerCase().trim();
+        key = key.replace('character-', '');
 
+        const aliases = {
+          'lucia': 'lucia-caminos',
+          'lucia-caminos': 'lucia-caminos',
+          'jason': 'jason-duval',
+          'jason-duval': 'jason-duval',
+          'stefanie': 'stefanie',
+          'cal': 'cal-hampton',
+          'cal-hampton': 'cal-hampton',
+          'boobie': 'boobie-ike',
+          'boobie-ike': 'boobie-ike',
+          'brian': 'brian-heder',
+          'brian-heder': 'brian-heder',
+          'lori': 'lori-heder',
+          'lori-heder': 'lori-heder',
+          'drequan': 'drequan-priest',
+          'drequan-priest': 'drequan-priest',
+          'raul': 'raul-bautista',
+          'raul-bautista': 'raul-bautista',
+          'baeluxe': 'baeluxe',
+          'bae-luxe': 'baeluxe',
+          'roxy': 'roxy',
+          'petra': 'petra-navarro',
+          'petra-navarro': 'petra-navarro',
+          'phil': 'phil',
+          'joker': 'leonida-joker',
+          'leonida-joker': 'leonida-joker',
+          'cipher': 'rachel-vance',
+          'rachel': 'rachel-vance',
+          'rachel-vance': 'rachel-vance',
+          'redline': 'toreno-cruz',
+          'toreno': 'toreno-cruz',
+          'toreno-cruz': 'toreno-cruz',
+          'valentina': 'valentina',
+          'aunt-tee': 'aunt-tee'
+        };
+
+        key = aliases[key] || key;
         const data = GTA6.CharacterData[key] || GTA6.CharacterData['lucia-caminos'];
         if (GTA6.playSound) GTA6.playSound('click');
 

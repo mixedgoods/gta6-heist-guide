@@ -2,8 +2,8 @@ name: GTA 6 Auto-Sync Intel Database
 
 on:
   schedule:
-    # Run every 12 hours automatically
-    - cron: '0 */12 * * *'
+    # High-Frequency Launch Sync: Runs every 15 minutes ahead of midnight drop
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     # Allows manual trigger anytime from GitHub Actions tab
 

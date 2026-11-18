@@ -36,15 +36,41 @@ export async function onRequestGet({ request, env }) {
       }), {
         headers: {
           "Content-Type": "application/json",
-          "Cache-Control": "public, max-age=300",
+          "Cache-Control": "public, max-age=60, s-maxage=60",
           ...CORS_HEADERS,
         },
       });
     }
 
+    // High-frequency live check: fetch real-time YouTube RSS feed for Rockstar Games
+    let liveAlert = null;
+    try {
+      const rockstarFeed = await fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UCULwHhkI31JHAKe57LZdzcA", {
+        headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) GTA6LiveEdgeBot/1.0" },
+        cf: { cacheTtl: 60 }
+      });
+      if (rockstarFeed.ok) {
+        const text = await rockstarFeed.text();
+        const titleMatch = text.match(/<title>([^<]+)<\/title>/g);
+        const linkMatch = text.match(/<link rel=['"]alternate['"] href=['"]([^'"]+)['"]/);
+        if (titleMatch && titleMatch.length > 1) {
+          const latestTitle = titleMatch[1].replace(/<\/?title>/g, "");
+          const latestLink = linkMatch ? linkMatch[1] : "https://www.youtube.com/@RockstarGames";
+          liveAlert = {
+            channel: "Rockstar Games (Official)",
+            title: latestTitle,
+            url: latestLink,
+            liveChecked: new Date().toISOString()
+          };
+        }
+      }
+    } catch (e) {}
+
     return new Response(JSON.stringify({
       ok: true,
       lastSynced: data.lastSynced,
+      edgeCheckedAt: new Date().toISOString(),
+      liveAlert,
       version: data.version,
       counts: {
         characters: data.characters.length,
@@ -55,7 +81,7 @@ export async function onRequestGet({ request, env }) {
     }), {
       headers: {
         "Content-Type": "application/json",
-        "Cache-Control": "public, max-age=300",
+        "Cache-Control": "public, max-age=60, s-maxage=60",
         ...CORS_HEADERS,
       },
     });

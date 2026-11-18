@@ -339,17 +339,18 @@
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:0.5rem;">
         <div>
             <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.18); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem;">LEONIDA UNDERWORLD CONTACTS</span>
-            <strong style="color:#fff; font-size:1rem; margin-left:0.5rem;">Confirmed Story NPCs &amp; Syndicate Associates</strong>
+            <strong style="color:#fff; font-size:1rem; margin-left:0.5rem;">Confirmed Story NPCs &amp; Specialists &mdash; Click Any Card For Full Dossier</strong>
         </div>
-        <a href="crew-database.html" class="btn btn-secondary" style="font-size:0.76rem; padding:0.3rem 0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">View Full 11-Character Roster &rarr;</a>
+        <a href="crew-database.html" class="btn btn-secondary" style="font-size:0.76rem; padding:0.3rem 0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">View All 16 Operatives &rarr;</a>
     </div>
 
     <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:1rem;">
-        <!-- Stefanie -->
-        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('stefanie')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+        <!-- 1. Stefanie -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('stefanie')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,184,0,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
-                <img src="assets/character-stefanie.jpg?v=20261118_v1" alt="Stefanie - Prison Counselor" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                <img src="assets/character-stefanie.jpg?v=20261118_v4" alt="Stefanie - Prison Counselor" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.65rem;">TRAILER 1</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Stefanie</h4>
@@ -358,11 +359,12 @@
             </div>
         </div>
 
-        <!-- Cal Hampton -->
-        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('cal-hampton')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+        <!-- 2. Cal Hampton -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('cal-hampton')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
-                <img src="assets/character-cal-hampton.jpg?v=20261118_v1" alt="Cal Hampton - Signals Intel" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                <img src="assets/character-cal-hampton.jpg?v=20261118_v4" alt="Cal Hampton - Signals Intel" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.65rem;">2022 LEAKS</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Cal Hampton</h4>
@@ -371,37 +373,54 @@
             </div>
         </div>
 
-        <!-- Boobie Ike -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,42,141,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <!-- 3. Boobie Ike -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('boobie-ike')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,42,141,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
-                <img src="assets/character-boobie-ike.jpg?v=20261118_v1" alt="Boobie Ike - Vice Beach Kingpin" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                <img src="assets/character-boobie-ike.jpg?v=20261118_v4" alt="Boobie Ike - Vice Beach Kingpin" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.65rem;">VICE BEACH</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Boobie Ike</h4>
                 <div style="color:var(--neon-pink); font-size:0.72rem; font-family:var(--font-mono); margin-bottom:0.4rem;">High Roller Luxury Fence</div>
-                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Vice Beach nightclub impresario fencing diamonds and art (+10% cash value multiplier).</p>
+                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Vice Beach nightclub impresario fencing diamonds and luxury goods (-4% laundering fee).</p>
             </div>
         </div>
 
-        <!-- Brian Heder -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,184,0,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <!-- 4. Brian Heder -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('brian-heder')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,184,0,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-brian-heder.jpg?v=20261118_v4" alt="Brian Heder - Chop Shop Armorer" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-amber); color:var(--neon-amber); font-size:0.65rem;">KELLY COUNTY</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Brian Heder</h4>
                 <div style="color:var(--neon-amber); font-size:0.72rem; font-family:var(--font-mono); margin-bottom:0.4rem;">Chop Shop &amp; Armorer</div>
-                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Outfits getaway cars with reinforced plating (+40% durability) and run-flat ballistic tires.</p>
+                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Outfits getaway cars with reinforced plating (+35% durability) and run-flat ballistic tires.</p>
             </div>
         </div>
 
-        <!-- Dre'Quan Priest -->
-        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('phil')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+        <!-- 5. Lori Heder -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('lori-heder')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+            <div style="height:150px; overflow:hidden; position:relative;">
+                <img src="assets/character-lori-heder.jpg?v=20261118_v4" alt="Lori Heder - Boatyard Armorer" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.65rem;">KEYS MARINA</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
+            </div>
+            <div style="padding:0.75rem;">
+                <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Lori Heder</h4>
+                <div style="color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono); margin-bottom:0.4rem;">Maritime Armorer</div>
+                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Reinforces boat hulls and swamp airboats for naval bullion extraction (+18% water speed).</p>
+            </div>
+        </div>
+
+        <!-- 6. Dre'Quan Priest -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('drequan-priest')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-drequan-priest.jpg?v=20261118_v4" alt="Dre'Quan Priest - Speedboat Captain" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.65rem;">PORT GELLHORN</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Dre'Quan Priest</h4>
@@ -410,11 +429,12 @@
             </div>
         </div>
 
-        <!-- Raul Bautista -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,42,141,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <!-- 7. Raul Bautista -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('raul-bautista')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,42,141,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-raul-bautista.jpg?v=20261118_v4" alt="Raul Bautista - Demolitions Specialist" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.65rem;">DEMOLITIONS (8%)</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Raul Bautista</h4>
@@ -423,11 +443,40 @@
             </div>
         </div>
 
-        <!-- Petra Navarro -->
-        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('petra-navarro')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+        <!-- 8. Cipher (Rachel Vance) -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('rachel-vance')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.4); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+            <div style="height:150px; overflow:hidden; position:relative;">
+                <img src="assets/character-rachel-vance.jpg" alt="Cipher - Rachel Vance Cyber Hacker" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.65rem;">CYBER HACKER</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
+            </div>
+            <div style="padding:0.75rem;">
+                <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Cipher (Rachel Vance)</h4>
+                <div style="color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono); margin-bottom:0.4rem;">Cyber Hacker &amp; Laser Grid</div>
+                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Elite cyber infiltrator subverting bank CCTV, laser tripwires, and digital terminal encryption.</p>
+            </div>
+        </div>
+
+        <!-- 9. Toreno 'Redline' Cruz -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('toreno-cruz')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(255,42,141,0.4); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+            <div style="height:150px; overflow:hidden; position:relative;">
+                <img src="assets/character-toreno-cruz.jpg" alt="Toreno 'Redline' Cruz - Master Wheelman" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.65rem;">STREET RACER</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
+            </div>
+            <div style="padding:0.75rem;">
+                <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Toreno 'Redline' Cruz</h4>
+                <div style="color:var(--neon-pink); font-size:0.72rem; font-family:var(--font-mono); margin-bottom:0.4rem;">Underground Wheelman</div>
+                <p style="color:var(--text-muted); font-size:0.75rem; line-height:1.35; margin:0;">Midnight street racer tuning nitro boosts and evading high-speed police interceptors.</p>
+            </div>
+        </div>
+
+        <!-- 10. Petra Navarro -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('petra-navarro')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-petra.jpg" alt="Petra Navarro - High Society Fence" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.65rem;">HIGH SOCIETY (8%)</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Petra Navarro</h4>
@@ -436,11 +485,12 @@
             </div>
         </div>
 
-        <!-- Phil -->
-        <div style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between;">
+        <!-- 11. Phil -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('phil')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-phil.jpg" alt="Phil - Gator Keys Gunrunner" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.65rem;">KEYS COURIER (7%)</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Phil</h4>
@@ -449,11 +499,12 @@
             </div>
         </div>
 
-        <!-- Leonida Joker -->
-        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('leonida-joker')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
+        <!-- 12. Leonida Joker -->
+        <div class="character-clickable-card" onclick="GTA6.CharacterModal.open('leonida-joker')" style="background:rgba(18,24,36,0.9); border-radius:8px; overflow:hidden; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between; cursor:pointer;" title="Click to view full dossier">
             <div style="height:150px; overflow:hidden; position:relative;">
                 <img src="assets/character-leonida-joker.jpg?v=20261118_v4" alt="Leonida Joker - Diversion Specialist" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
                 <span class="user-badge" style="position:absolute; top:6px; left:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-green); color:var(--neon-green); font-size:0.65rem;">VIRAL CONTACT (6%)</span>
+                <span class="user-badge" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.62rem;">📂 INSPECT</span>
             </div>
             <div style="padding:0.75rem;">
                 <h4 style="color:#fff; font-size:0.95rem; margin:0 0 0.2rem;">Leonida Joker</h4>
