@@ -120,12 +120,22 @@
   ]
 }
     </script>
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTA6GUIDE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GTA6GUIDE', { 'anonymize_ip': true });
+    </script>
 </head>
 <body>
     
 <div class="countdown-strip" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; padding:0.35rem 1rem;">
     <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
-        <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
+        <a href="acquisitions.html" style="color:var(--neon-yellow); text-decoration:none;">💼 Asset Acquisitions &amp; Partner</a>
+                    <a href="dossier.html" style="color:var(--neon-pink); text-decoration:none;">🎁 Free Day-1 Dossier (PDF)</a>
+                    <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
             <span class="strip-pulse"></span>
             <span class="launch-mode-label">Launch Window:</span>
             <span class="highlight" id="countdownTimer">Loading...</span>
@@ -164,6 +174,7 @@
             <li><a href="weapons-gear.html" style="color: var(--neon-yellow); font-weight: 800;">Items &amp; Gear</a></li>
             <li><a href="affiliates-gear.html">Gear &amp; VPN</a></li>
             <li><a href="forum.html" style="color: var(--neon-cyan);">LFG Lounge</a></li>
+            <li><a href="acquisitions.html" style="color:var(--neon-yellow);">Acquisitions</a></li>
             <li><a href="profile.html" style="color: var(--neon-pink); font-weight: 800;">Profile</a></li>
         </ul>
     </div>
@@ -469,6 +480,65 @@
                 <div style="font-weight:900; color:#fff; font-size:0.95rem;">Heist Bag Weight Simulator</div>
                 <p style="font-size:0.76rem; color:var(--text-muted); margin:0.35rem 0 0.75rem;">Calculate sprint penalties, noise decibels, and maximum take capacity.</p>
                 <a href="weapons-gear.html#loadoutSimulator" class="btn btn-secondary" style="padding:0.35rem 0.65rem; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">Launch Simulator &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- DAY-1 TACTICAL SURVIVAL DOSSIER & VIP LEAD MAGNET -->
+    <div id="dossier-capture" style="margin: 1.75rem auto; max-width: 1100px; background: linear-gradient(135deg, rgba(24,14,36,0.95), rgba(8,16,28,0.98)); border: 2px solid var(--neon-pink); border-radius: 12px; padding: 1.5rem 1.75rem; box-shadow: 0 0 35px rgba(255,42,141,0.22); position:relative; overflow:hidden;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; position:relative; z-index:2;">
+            <div style="max-width:620px;">
+                <div style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(255,42,141,0.2); border:1px solid var(--neon-pink); border-radius:4px; padding:0.2rem 0.6rem; font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:800; margin-bottom:0.5rem;">
+                    <span>🎁 CLASSIFIED SYNDICATE ASSET</span> &bull; <span>FREE DOWNLOAD</span>
+                </div>
+                <h3 style="color:#fff; font-size:1.45rem; font-weight:1000; margin:0 0 0.4rem; line-height:1.25;">
+                    Download the Day-1 Vice City Tactical Survival Dossier
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.5; margin:0 0 0.75rem;">
+                    Get our printable field briefing containing verified vault take calculations, optimal 4-player crew splits, physical bag weight vs sprint modifiers, and 6-Star VCPD evasion paths &mdash; plus instant Thursday meta reset alerts.
+                </p>
+                <div style="font-size:0.78rem; color:var(--neon-green); font-family:var(--font-mono); display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                    <span>✓ 100% Free &bull; Zero Spam</span>
+                    <span>✓ Instant Printable PDF Briefing</span>
+                    <span>✓ <span class="verified-members-count">1,420+ Verified Operatives</span> Joined</span>
+                </div>
+            </div>
+
+            <!-- Email Capture Form -->
+            <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:1.25rem; min-width:min(100%, 340px); flex:1;">
+                <form id="dossierEmailForm" onsubmit="event.preventDefault(); GTA6.Auth.handleSubmit({
+                    email: document.getElementById('dossierEmailInput').value,
+                    callsign: document.getElementById('dossierCallsignInput').value || 'ViceOperative',
+                    platform: document.getElementById('dossierPlatformInput').value || 'PS5 Pro & PC',
+                    role: 'Mastermind',
+                    statusElId: 'dossierFormStatus'
+                }); document.getElementById('dossierDownloadBtn').style.display='inline-flex';">
+                    <div style="margin-bottom:0.6rem;">
+                        <label style="display:block; font-size:0.72rem; color:#aaa; margin-bottom:0.2rem; font-family:var(--font-mono);">OPERATIVE CALLSIGN</label>
+                        <input type="text" id="dossierCallsignInput" class="form-input" placeholder="e.g. GhostRunner" style="width:100%; padding:0.5rem 0.65rem; background:rgba(10,14,22,0.8); border:1px solid rgba(255,255,255,0.2); border-radius:6px; color:#fff; font-size:0.82rem;">
+                    </div>
+                    <div style="margin-bottom:0.6rem;">
+                        <label style="display:block; font-size:0.72rem; color:#aaa; margin-bottom:0.2rem; font-family:var(--font-mono);">EMAIL ADDRESS *</label>
+                        <input type="email" id="dossierEmailInput" required class="form-input" placeholder="operative@domain.com" style="width:100%; padding:0.5rem 0.65rem; background:rgba(10,14,22,0.8); border:1px solid var(--neon-cyan); border-radius:6px; color:#fff; font-size:0.82rem;">
+                    </div>
+                    <div style="margin-bottom:0.75rem;">
+                        <label style="display:block; font-size:0.72rem; color:#aaa; margin-bottom:0.2rem; font-family:var(--font-mono);">TARGET PLATFORM</label>
+                        <select id="dossierPlatformInput" class="form-input" style="width:100%; padding:0.5rem 0.65rem; background:rgba(10,14,22,0.8); border:1px solid rgba(255,255,255,0.2); border-radius:6px; color:#fff; font-size:0.82rem;">
+                            <option value="PS5 Pro">PlayStation 5 / PS5 Pro</option>
+                            <option value="Xbox Series X">Xbox Series X|S</option>
+                            <option value="PC">PC Master Race</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; padding:0.6rem; font-size:0.85rem; font-weight:900; background:linear-gradient(135deg, var(--neon-pink), #c0005e); border:none; border-radius:6px; cursor:pointer;">
+                        ⚡ Unlock Dossier &amp; VIP +2,500 Rep &rarr;
+                    </button>
+                    <div id="dossierFormStatus" style="font-size:0.75rem; margin-top:0.4rem; text-align:center;"></div>
+                    <div style="text-align:center; margin-top:0.5rem;">
+                        <a href="dossier.html" id="dossierDownloadBtn" class="btn btn-secondary" style="display:none; padding:0.35rem 0.75rem; font-size:0.76rem; border-color:var(--neon-green); color:var(--neon-green);">
+                            📂 Open &amp; Print Dossier Briefing Now &rarr;
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
