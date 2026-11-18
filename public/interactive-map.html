@@ -209,6 +209,11 @@
             <button type="button" class="map-btn" onclick="filterRegion('port-gellhorn', this)">Port Gellhorn</button>
             <button type="button" class="map-btn" onclick="filterRegion('ambrosia', this)">Ambrosia</button>
             <button type="button" class="map-btn" onclick="filterRegion('mount-kalaga', this)">Mount Kalaga National Park</button>
+            <button type="button" class="map-btn" onclick="filterRegion('lummox', this)" style="border-color:var(--neon-green); color:var(--neon-green);">🌲 Lummox County (North)</button>
+            <button type="button" class="map-btn" onclick="filterRegion('pelican-valley', this)" style="border-color:var(--neon-cyan); color:var(--neon-cyan);">🌾 Pelican Valley</button>
+            <button type="button" class="map-btn" onclick="filterRegion('key-lento', this)" style="border-color:var(--neon-pink); color:var(--neon-pink);">🏝️ Key Lento &amp; Goose Key</button>
+            <button type="button" class="map-btn" onclick="filterRegion('toll-1a', this)" style="border-color:var(--neon-yellow); color:var(--neon-yellow);">🛣️ Toll 1A Highway</button>
+
         </div>
 
         <!-- PLAY-ALONG SECOND-SCREEN CONTROLS -->
@@ -302,6 +307,8 @@
                 <button class="map-btn" onclick="filterMap('safehouse', this)">Safehouses</button>
                 <button class="map-btn" onclick="filterMap('radar', this)">Air & Radar</button>
                 <button class="map-btn" onclick="filterMap('community', this)">Community Intel (Live D1)</button>
+                <button class="map-btn" onclick="filterMap('fuel', this)" style="border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Gas &amp; Refuel Stations</button>
+
             </div>
 
             <!-- INTEL CARD POPUP -->
@@ -426,6 +433,67 @@
                 <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(260, 110)" onclick="showIntel('kalaga-outpost')">
                     <polygon points="0,-10 9,6 -9,6" fill="rgba(16, 185, 129, 0.45)" stroke="#10b981" stroke-width="1.5"/>
                     <text x="14" y="4" fill="#10b981" font-size="10" font-weight="bold" font-family="sans-serif">Mt. Kalaga Outpost</text>
+                </g>
+
+                
+                <!-- NEW REGIONS FROM SELFRIDGES COLLECTOR'S MAP LEAK -->
+                <!-- Lummox County (North Timber & Swamplands) -->
+                <rect x="80" y="30" width="280" height="85" rx="8" fill="#0f1912" stroke="rgba(0, 255, 136, 0.4)" stroke-width="1.5"/>
+                <text x="95" y="52" fill="rgba(0, 255, 136, 0.85)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="2">LUMMOX COUNTY (NORTH TIMBER &amp; SWAMPS)</text>
+
+                <!-- Key Lento & Goose Key Archipelago -->
+                <ellipse cx="860" cy="530" rx="100" ry="45" fill="#091424" stroke="rgba(255, 42, 141, 0.4)" stroke-width="1.5"/>
+                <text x="790" y="535" fill="rgba(255, 42, 141, 0.85)" font-family="sans-serif" font-weight="900" font-size="11" letter-spacing="1">KEY LENTO &amp; GOOSE KEY (REEF)</text>
+
+                <!-- Toll 1A Highway Arterial -->
+                <path d="M 120,70 Q 400,100 680,210 T 860,340" fill="none" stroke="rgba(255, 184, 0, 0.45)" stroke-width="4" stroke-dasharray="6,4"/>
+                <text x="410" y="105" fill="rgba(255, 184, 0, 0.9)" font-family="sans-serif" font-weight="800" font-size="10" letter-spacing="1">TOLL 1A HIGHWAY (ANPR SCANNER GATES)</text>
+
+                <!-- NEW INTERACTIVE MARKERS (LEAKED COLLECTOR'S MAP & FUEL MECHANICS) -->
+                <!-- 7. Lummox Timber Stash -->
+                <g class="map-point map-marker-vault" transform="translate(180, 65)" data-pin-id="lummox-stash" data-region="lummox" onclick="showIntel('lummox-stash')">
+                    <circle r="12" fill="rgba(0, 255, 136, 0.3)" stroke="#00ff88" stroke-width="2"/>
+                    <circle r="5" fill="#00ff88"/>
+                    <text x="16" y="4" fill="#00ff88" font-size="10" font-weight="bold" font-family="sans-serif">Lummox Timber Stash ($2.9M)</text>
+                </g>
+
+                <!-- 8. Pelican Valley Agricultural Bank -->
+                <g class="map-point map-marker-vault" transform="translate(460, 215)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="showIntel('pelican-bank')">
+                    <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
+                    <circle r="5" fill="#00f0ff"/>
+                    <text x="16" y="4" fill="#00f0ff" font-size="10" font-weight="bold" font-family="sans-serif">Pelican Valley Bank ($3.8M)</text>
+                </g>
+
+                <!-- 9. Key Lento Offshore Depot -->
+                <g class="map-point map-marker-vault" transform="translate(860, 520)" data-pin-id="key-lento" data-region="key-lento" onclick="showIntel('key-lento')">
+                    <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+                    <circle r="6" fill="#ff2a8d"/>
+                    <text x="16" y="4" fill="#ff2a8d" font-size="10" font-weight="bold" font-family="sans-serif">Key Lento Offshore Depot ($12.4M)</text>
+                </g>
+
+                <!-- 10. Toll 1A Highway Evasion Gate -->
+                <g class="map-point map-marker-escape" transform="translate(580, 160)" data-pin-id="toll-1a" data-region="toll-1a" onclick="showIntel('toll-1a')">
+                    <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
+                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">Toll 1A ANPR Gate Bypass</text>
+                </g>
+
+                <!-- 11. Lummox 24/7 Gas & Refuel Station (Fuel Mechanic) -->
+                <g class="map-point map-marker-fuel" transform="translate(290, 80)" data-pin-id="fuel-lummox" data-region="lummox" onclick="showIntel('fuel-lummox')">
+                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.4)" stroke="#ffb800" stroke-width="2"/>
+                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">⛽ Lummox Refuel Depot</text>
+                </g>
+
+                <!-- 12. Vice Beach Gas Station (Fuel Mechanic) -->
+                <g class="map-point map-marker-fuel" transform="translate(770, 240)" data-pin-id="fuel-vice" data-region="vice-city" onclick="showIntel('fuel-vice')">
+                    <polygon points="0,-10 9,6 -9,6" fill="rgba(255, 184, 0, 0.4)" stroke="#ffb800" stroke-width="2"/>
+                    <text x="14" y="4" fill="#ffb800" font-size="10" font-weight="bold" font-family="sans-serif">⛽ Vice Beach 24/7 Gas</text>
+                </g>
+
+                <!-- 13. State Zoo Infiltration -->
+                <g class="map-point map-marker-vault" transform="translate(660, 180)" data-pin-id="zoo-compound" data-region="vice-city" onclick="showIntel('zoo-compound')">
+                    <circle r="11" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
+                    <circle r="4" fill="#10b981"/>
+                    <text x="14" y="4" fill="#10b981" font-size="10" font-weight="bold" font-family="sans-serif">Leonida State Zoo ($4.2M)</text>
                 </g>
 
                 <g id="customMarkersLayer"></g>
@@ -554,6 +622,13 @@
 
         <script>
         const INTEL_DB = {
+            'lummox-stash': { tag: 'Leaked Northern Sector • Lummox County', title: 'Lummox Timber & Moonshine Stash', payout: 'Max Payout: $2,900,000', desc: 'Discovered on the leaked Selfridges Collector\'s Edition map. Deep northern forest logging outpost with hidden contraband trunks and backwoods dirt evasion trails ideal for shaking patrol cruisers.', link: 'everglades-smuggler-run.html', region: 'lummox' },
+            'pelican-bank': { tag: 'Agricultural Vault • Pelican Valley', title: 'Pelican Valley Agricultural Bank', payout: 'Max Payout: $3,800,000', desc: 'Central river basin credit union with rural cash vaults and sugarcane rail siding. Flat-bottom airboat exfiltration through the canal reed beds dodges highway roadblock nets.', link: 'sinfrontera-bank.html', region: 'pelican-valley' },
+            'key-lento': { tag: 'Offshore Reef Depot • Key Lento', title: 'Key Lento Smuggler Marina & Reef Cache', payout: 'Max Payout: $12,400,000', desc: 'Far southern archipelago key spotted on the Collector\'s Edition map. Deep-water coral reef drop zone for high-tier bullion yacht drops. Requires scuba rebreathers.', link: 'vice-city-yacht-heist.html', region: 'key-lento' },
+            'toll-1a': { tag: 'Toll System Evasion • Toll 1A Highway', title: 'Toll 1A Highway Radar & ANPR Bypass', payout: 'ANPR Camera Jamming Zone', desc: 'Official highway toll corridor crossing Leonida. Automated license plate recognition cameras log vehicles instantly unless Cal Hampton\'s signal jammer is active or plates are swapped.', link: 'leonida-wanted-system.html', region: 'toll-1a' },
+            'fuel-lummox': { tag: 'Confirmed Realism Mechanic • Refuel Point', title: 'Lummox County 24/7 Gas & Refuel Depot', payout: 'Vehicle Fuel Top-Off (Dodge Pursuit Stalls)', desc: 'Vital refuel point during cross-county 5-star pursuits. Confirmed in hands-on gameplay leaks: vehicles consume fuel and stall if driven on empty.', link: 'gameplay-mechanics.html', region: 'lummox' },
+            'fuel-vice': { tag: 'Confirmed Realism Mechanic • Refuel Point', title: 'Vice Beach Sunoco 24/7 Pitstop', payout: 'Quick Emergency Refuel', desc: 'Downtown refuel depot right off Ocean Boulevard. Rapid tank top-off before committing to highway or expressway getaway runs.', link: 'gameplay-mechanics.html', region: 'vice-city' },
+            'zoo-compound': { tag: 'Landmark Infiltration • Leonida Zoo', title: 'Leonida State Zoo Night Reserve', payout: 'Max Payout: $4,200,000', desc: 'Isolated zoo compound confirmed on the collector\'s physical map. Nighttime infiltration route avoiding exotic animal habitats and private security cameras.', link: 'heist-planner.html', region: 'vice-city' },
             'sinfrontera': { tag: 'Expert Vault • Vice City', title: 'Sinfrontera National Bank', payout: 'Max Payout: $14,500,000', desc: 'Located in Downtown Vice City. Features subterranean pneumatic vault doors, biometric sensors, and storm drain escape conduits.', link: 'sinfrontera-bank.html', region: 'vice-city' },
             'port-gellhorn': { tag: 'Intermediate Vault • Port Gellhorn', title: 'Port Gellhorn Container Terminal', payout: 'Max Payout: $8,200,000', desc: 'Industrial maritime hub on the west coast. Infiltrate crane software, locate contraband containers, and extract via speedboat.', link: 'port-gellhorn.html', region: 'port-gellhorn' },
             'leonida-reserve': { tag: 'Mastermind Vault • Ambrosia Border', title: 'Leonida State Gold Reserve', payout: 'Max Payout: $25,000,000', desc: 'The single largest federal depository in Leonida. Requires thermal lances, EMP blackout timing, and armored transport escape.', link: 'leonida-reserve.html', region: 'ambrosia' },
