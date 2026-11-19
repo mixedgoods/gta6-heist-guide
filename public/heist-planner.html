@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta charset="UTF-8">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Heist Planner, Crew Optimizer & Build Bookmarker | GTA 6 Heist Guide</title>
-    <meta name="description" content="Simulate any GTA 6 heist payout, crew specialist cuts, police response heat, bookmark your custom builds, and share squad links in Discord.">
+    <title>GTA 6 Heist Planner and Cut Splitter | GTA 6 Guide</title>
+    <meta name="description" content="Simulate GTA 6 heist payouts, specialist cuts, fencing fees, and net per-player take across every Leonida vault, then share custom squad builds live.">
         <meta name="keywords" content="GTA 6 heist cut calculator, crew split optimizer, keypad bypass trainer, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/heist-planner.html">
+<link rel="canonical" href="https://www.gta6heistguide.com/heist-planner">
     <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="Interactive Heist Planner, Crew Optimizer & Build Bookmarker | GTA 6 Heist Guide">
-    <meta property="og:description" content="Simulate any GTA 6 heist payout, crew specialist cuts, police response heat, bookmark your custom builds, and share squad links in Discord.">
+        <meta property="og:title" content="GTA 6 Heist Planner and Cut Splitter | GTA 6 Guide">
+    <meta property="og:description" content="Simulate GTA 6 heist payouts, specialist cuts, fencing fees, and net per-player take across every Leonida vault, then share custom squad builds live.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/heist-planner.html">
+    <meta property="og:url" content="https://www.gta6heistguide.com/heist-planner">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
     
         <script>
         const HEIST_DATABASE = {
@@ -72,9 +73,6 @@
             if (document.getElementById('failPenaltyVal')) document.getElementById('failPenaltyVal').innerText = failPenaltyPct + '%';
 
             let totalSpecialistPct = gunnerPct + hackerPct + driverPct;
-            let availableForCrew = Math.max(0, 100 - totalSpecialistPct);
-            let perPlayerPct = (availableForCrew / players);
-
             let basePayout = target.payout * (weeklyBonusActive ? 1.5 : 1.0);
             if (approach === 'stealth') basePayout *= 1.05;
 
@@ -82,6 +80,7 @@
             let grossSquadPot = basePayout - specialistCost;
             let afterLaunderAndFail = grossSquadPot * (1 - launderFeePct / 100) * (1 - failPenaltyPct / 100);
             let netPerPlayer = afterLaunderAndFail / players;
+            let perPlayerPct = basePayout > 0 ? (netPerPlayer / basePayout) * 100 : 0;
 
             let totalCycleMins = Math.max(1, setupMins + cooldownMins);
             let netPerHour = netPerPlayer / (totalCycleMins / 60);
@@ -178,59 +177,67 @@
   ]
 }
     </script>
-    <!-- Google Analytics 4 (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTA6GUIDE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GTA6GUIDE', { 'anonymize_ip': true });
-    </script>
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta name="twitter:title" content="GTA 6 Heist Planner and Cut Splitter | GTA 6 Guide">
+    <meta name="twitter:description" content="Simulate GTA 6 heist payouts, specialist cuts, fencing fees, and net per-player take across every Leonida vault, then share custom squad builds live.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
 </head>
 <body onload="calculatePlanner()">
     
-<div class="countdown-strip" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; padding:0.35rem 1rem;">
-    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
-        <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
-            <span class="strip-pulse"></span>
-            <span class="launch-mode-label">Launch Window:</span>
-            <span class="highlight" id="countdownTimer">Loading...</span>
-            <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
-        </a>
-        <span class="strip-divider">|</span>
-        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
-            <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
-        </a>
-        <span class="strip-divider">|</span>
-        <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-    </div>
-    <div class="strip-right-actions" style="display:flex; align-items:center; gap:0.6rem; margin-left:auto;">
-        <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
-        <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+<div class="countdown-strip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <a href="/live-intel.html" class="strip-pill countdown-pill-link" title="View Live Weekly 1.5X GTA 6 Heist Bonus Rotation &amp; Meta Notes">
+                <span class="strip-pulse"></span>
+                <span class="launch-mode-label">LEONIDA META:</span>
+                <span class="highlight" id="countdownTimer">WEEKLY 1.5X BONUS LIVE</span>
+                <span class="strip-badge-live">LIVE INTEL &rarr;</span>
+            </a>
+            <span class="strip-divider">|</span>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
+                <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
+            </a>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+        </div>
+        <div class="strip-right-actions">
+            <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
+            <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+        </div>
     </div>
 </div>
 
+
+
+
+
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="brand-logo">
+        <a href="/" class="brand-logo">
             <span>GTA 6</span>
             <span class="vi">HEIST GUIDE</span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
+        <div class="nav-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span>LEONIDA NETWORK &bull; ALL SYSTEMS ONLINE</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="nav-pill">Vaults</a></li>
-            <li><a href="live.html" class="nav-pill" style="color:#ef4444; font-weight:800;"><span style="display:inline-block; width:7px; height:7px; background:#ef4444; border-radius:50%; margin-right:4px; box-shadow:0 0 8px #ef4444;"></span>Live</a></li>
-            <li><a href="interactive-map.html" class="nav-pill">Radar Map</a></li>
-            <li><a href="heist-planner.html" class="nav-pill active">Planner</a></li>
-            <li><a href="crew-database.html" class="nav-pill">Crew</a></li>
-            <li><a href="weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
-            <li><a href="vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
-            <li><a href="live-intel.html" class="nav-pill">Live Meta</a></li>
-            <li><a href="forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
+            <li><a href="/" class="nav-pill">Vaults</a></li>
+            <li><a href="/live.html" class="nav-pill" style="color:#ef4444; font-weight:800;"><span style="display:inline-block; width:7px; height:7px; background:#ef4444; border-radius:50%; margin-right:4px; box-shadow:0 0 8px #ef4444;"></span>Live</a></li>
+            <li><a href="/interactive-map.html" class="nav-pill">Radar Map</a></li>
+            <li><a href="/heist-planner.html" class="nav-pill active">Planner</a></li>
+            <li><a href="/crew-database.html" class="nav-pill">Crew</a></li>
+            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
+            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
+            <li><a href="/safehouses-laundering.html" class="nav-pill" style="color:var(--neon-green);">Safehouses</a></li>
+            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
+            <li><a href="/forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
             <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 Audio FX</button>
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints &amp; Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>
     </div>
 </nav>
@@ -422,7 +429,6 @@
             <span>⚡ Lag-Free Lobby: <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="calc-results-exitlag" style="color:var(--neon-cyan); font-weight:800;">[ExitLag (Code: 10386953)]</a></span>
             <span style="color:rgba(255,255,255,0.3);">&bull;</span>
             <span>💳 Store Credit: <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="calc-results-eneba" style="color:var(--neon-yellow); font-weight:800;">[Eneba]</a> &amp; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="calc-results-g2a" style="color:var(--neon-pink); font-weight:800;">[G2A]</a></span>
-        </div>
             <div>🎬 Recording GTA 6 Clips? Auto-cut dead air &amp; export 9:16 vertical shorts offline with <a href="https://getapexlocal.com" target="_blank" rel="noopener" style="color:var(--neon-pink); font-weight:800;">CutFlow Pro &amp; ClipBounty Studio</a> (<a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="noopener" style="color:var(--neon-cyan); font-weight:700;">Whop Checkout</a>)</div>
         </div>
 
@@ -470,7 +476,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,240,255,0.4); background:rgba(12,18,28,0.85); box-shadow:0 0 15px rgba(0,240,255,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/gta6-key-box.jpg" alt="GTA 6 Official Digital Key / Pre-Order" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/gta6-key-box.jpg" alt="GTA 6 Official Digital Key / Pre-Order" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="800" height="600">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.68rem; font-weight:800;">DAY-1 GUARANTEE</span>
                 </div>
                 <div style="padding:1rem;">
@@ -494,7 +500,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,42,141,0.4); background:rgba(18,12,24,0.85); box-shadow:0 0 15px rgba(255,42,141,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/dualsense-edge-controller.jpg" alt="DualSense Edge Pro Controller" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/dualsense-edge-controller.jpg" alt="DualSense Edge Pro Controller" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="1500" height="1000">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.68rem; font-weight:800;">TACTICAL PRO GEAR</span>
                 </div>
                 <div style="padding:1rem;">
@@ -518,7 +524,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,255,136,0.4); background:rgba(10,20,18,0.85); box-shadow:0 0 15px rgba(0,255,136,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/samsung-990-pro.jpg" alt="Samsung 990 PRO NVMe SSD" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/samsung-990-pro.jpg" alt="Samsung 990 PRO NVMe SSD" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="1500" height="459">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-green); color:var(--neon-green); font-size:0.68rem; font-weight:800;">ZERO STUTTER</span>
                 </div>
                 <div style="padding:1rem;">
@@ -542,7 +548,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,184,0,0.4); background:rgba(24,18,10,0.85); box-shadow:0 0 15px rgba(255,184,0,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/eneba-gift-cards.jpg" alt="Eneba PlayStation and Xbox Gift Cards" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/eneba-gift-cards.jpg" alt="Eneba PlayStation and Xbox Gift Cards" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="800" height="600">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.68rem; font-weight:800;">SAVE 15-20%</span>
                 </div>
                 <div style="padding:1rem;">
@@ -662,7 +668,7 @@
 
     </div>
 </footer>
-<script src="assets/main.js"></script>
+<script src="/assets/main.js" defer></script>
 
 </body>
 </html>

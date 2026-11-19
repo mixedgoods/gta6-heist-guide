@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <title>GTA 6 Live Streams & Broadcast Network | Top US Streamers & SATCOM Feed</title>
-    <meta name="description" content="Watch verified top American GTA 6 and GTA V streamers live in real time. Features multi-stream cycler, automatic offline failover, live Twitch chat, and interactive second-screen vault keypad solver.">
+    <title>GTA 6 Live Streams and Vault Meta HUD | GTA 6 Guide</title>
+    <meta name="description" content="Watch live GTA 6 heist broadcasts alongside a synchronized 48-minute Leonida clock, weekly 1.5X payout multiplier tracker, and second-screen vault HUD.">
     <meta name="keywords" content="GTA 6 live stream, GTA 6 Twitch, CaseOh GTA 6, Kai Cenat GTA 6, xQc GTA 6, Summit1g GTA, Grand Theft Auto VI live, GTA 6 gameplay live, GTA 6 second screen">
-    <link rel="canonical" href="https://www.gta6heistguide.com/live.html">
+    <link rel="canonical" href="https://www.gta6heistguide.com/live">
     <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="GTA 6 Live Streams & Broadcast Network | Top US Streamers & SATCOM Feed">
-    <meta property="og:description" content="Watch top American GTA 6 and GTA V streamers live in real time with auto-failover and interactive second-screen vault tools.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.gta6heistguide.com/live.html">
+    <meta property="og:title" content="GTA 6 Live Streams and Vault Meta HUD | GTA 6 Guide">
+    <meta property="og:description" content="Watch live GTA 6 heist broadcasts alongside a synchronized 48-minute Leonida clock, weekly 1.5X payout multiplier tracker, and second-screen vault HUD.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gta6heistguide.com/live">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/gta6-protagonists-official.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
 
     <!-- Twitch Interactive Player SDK -->
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
@@ -409,36 +410,66 @@
             to { transform: translateY(0); opacity: 1; }
         }
     </style>
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta name="twitter:title" content="GTA 6 Live Streams and Vault Meta HUD | GTA 6 Guide">
+    <meta name="twitter:description" content="Watch live GTA 6 heist broadcasts alongside a synchronized 48-minute Leonida clock, weekly 1.5X payout multiplier tracker, and second-screen vault HUD.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
 </head>
 <body>
 
 <!-- TOP NAVIGATION -->
+<div class="countdown-strip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <a href="/live-intel.html" class="strip-pill countdown-pill-link" title="View Live Weekly 1.5X GTA 6 Heist Bonus Rotation &amp; Meta Notes">
+                <span class="strip-pulse"></span>
+                <span class="launch-mode-label">LEONIDA META:</span>
+                <span class="highlight" id="countdownTimer">WEEKLY 1.5X BONUS LIVE</span>
+                <span class="strip-badge-live">LIVE INTEL &rarr;</span>
+            </a>
+            <span class="strip-divider">|</span>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
+                <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
+            </a>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+        </div>
+        <div class="strip-right-actions">
+            <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
+            <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+        </div>
+    </div>
+</div>
+
+
+
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="brand-logo">
+        <a href="/" class="brand-logo">
             <span>GTA 6</span>
             <span class="vi">HEIST GUIDE</span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
         <div class="nav-status-badge">
             <span class="status-pulse-dot"></span>
-            <span>LEONIDA SATCOM &bull; SATELLITE LIVE</span>
+            <span>LEONIDA NETWORK &bull; ALL SYSTEMS ONLINE</span>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="nav-pill">Vaults</a></li>
-            <li><a href="live.html" class="nav-pill active" style="color:#ef4444; font-weight:800;"><span class="pulse-beacon" style="margin-right:4px;"></span>Live Streams</a></li>
-            <li><a href="interactive-map.html" class="nav-pill">Radar Map</a></li>
-            <li><a href="heist-planner.html" class="nav-pill">Planner</a></li>
-            <li><a href="crew-database.html" class="nav-pill">Crew</a></li>
-            <li><a href="weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
-            <li><a href="vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
-            <li><a href="safehouses-laundering.html" class="nav-pill" style="color:var(--neon-green);">Safehouses</a></li>
-            <li><a href="forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
+            <li><a href="/" class="nav-pill">Vaults</a></li>
+            <li><a href="/live.html" class="nav-pill active" style="color:#ef4444; font-weight:800;"><span style="display:inline-block; width:7px; height:7px; background:#ef4444; border-radius:50%; margin-right:4px; box-shadow:0 0 8px #ef4444;"></span>Live</a></li>
+            <li><a href="/interactive-map.html" class="nav-pill">Radar Map</a></li>
+            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
+            <li><a href="/crew-database.html" class="nav-pill">Crew</a></li>
+            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
+            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
+            <li><a href="/safehouses-laundering.html" class="nav-pill" style="color:var(--neon-green);">Safehouses</a></li>
+            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
+            <li><a href="/forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
             <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
         </ul>
         <div class="nav-actions">
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints & Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
-            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints &amp; Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>
     </div>
 </nav>
@@ -524,7 +555,7 @@
                     <div class="facade-play-icon">
                         <span style="font-size:2rem; margin-left:4px; color:#fff;">▶</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.3rem; margin:0 0 0.35rem; font-weight:900;">ENGAGE SATELLITE INTERCEPT</h3>
+                    <h2 style="color:#fff; font-size:1.3rem; margin:0 0 0.35rem; font-weight:900;">ENGAGE SATELLITE INTERCEPT</h2>
                     <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.65rem; max-width:440px;">
                         Tap to lock onto live feed. Automatic offline detection cycles to the next active US broadcast.
                     </p>
@@ -681,7 +712,7 @@
                     </p>
                 </div>
                 <div style="margin-top:0.85rem; display:grid; gap:0.4rem;">
-                    <a href="vault-code-calculator.html" class="btn btn-primary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Full Vault Calculator Suite &rarr;</a>
+                    <a href="/heist-planner.html" class="btn btn-primary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Full Vault Calculator Suite &rarr;</a>
                     <a href="interactive-map.html" class="btn btn-secondary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Open Tactical Radar Map &rarr;</a>
                 </div>
             </div>
@@ -1210,6 +1241,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script src="assets/main.js"></script>
+<script src="/assets/main.js" defer></script>
 </body>
 </html>

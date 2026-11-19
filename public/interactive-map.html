@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta charset="UTF-8">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Leonida Tactical Map & Vault Radar | GTA 6 Heist Guide</title>
-    <meta name="description" content="Interactive GTA 6 Tactical Map: Explore Leonida State vault targets, safehouse networks, sewer escape conduits, CCTV camera blindspots, and airfields.">
+    <title>Interactive Leonida Map and Vault Radar | GTA 6 Guide</title>
+    <meta name="description" content="Explore the interactive GTA 6 Leonida radar map with 18 verified vaults, safehouses, storm drains, ANPR toll bypasses, gas depots, and custom pins.">
         <meta name="keywords" content="GTA 6 interactive map, Leonida map regions, Vice City vaults, storm drains, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/interactive-map.html">
+<link rel="canonical" href="https://www.gta6heistguide.com/interactive-map">
     <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="Interactive Leonida Tactical Map & Vault Radar | GTA 6 Heist Guide">
-    <meta property="og:description" content="Interactive GTA 6 Tactical Map: Explore Leonida State vault targets, safehouse networks, sewer escape conduits, CCTV camera blindspots, and airfields.">
+        <meta property="og:title" content="Interactive Leonida Map and Vault Radar | GTA 6 Guide">
+    <meta property="og:description" content="Explore the interactive GTA 6 Leonida radar map with 18 verified vaults, safehouses, storm drains, ANPR toll bypasses, gas depots, and custom pins.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/interactive-map.html">
+    <meta property="og:url" content="https://www.gta6heistguide.com/interactive-map">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
     <style>
         .map-wrapper {
             background: #06040b;
@@ -76,17 +77,38 @@
         }
         .map-intel-modal {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: min(320px, calc(100% - 24px));
-            background: rgba(18, 14, 30, 0.95);
+            top: 68px;
+            right: 14px;
+            width: min(320px, calc(100% - 28px));
+            max-height: calc(100% - 82px);
+            overflow-y: auto;
+            background: rgba(14, 10, 26, 0.96);
             backdrop-filter: blur(10px);
             border: 1px solid var(--neon-pink);
             border-radius: 10px;
-            padding: 1.25rem;
-            box-shadow: 0 0 25px rgba(255, 42, 141, 0.3);
+            padding: 1.1rem;
+            box-shadow: 0 0 25px rgba(255, 42, 141, 0.35);
             display: none;
-            z-index: 20;
+            z-index: 30;
+        }
+        .map-modal-close {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+        .map-modal-close:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
         }
         @media (max-width: 640px) {
             .map-controls {
@@ -95,12 +117,21 @@
                 right: 8px;
                 padding: 6px 8px;
             }
+            .map-hud {
+                left: 8px;
+                right: 8px;
+                bottom: 8px;
+                font-size: 0.7rem;
+                padding: 5px 8px;
+                text-align: center;
+            }
             .map-intel-modal {
-                top: auto;
-                bottom: 12px;
-                right: 12px;
-                left: 12px;
+                top: 68px;
+                bottom: 42px;
+                right: 10px;
+                left: 10px;
                 width: auto;
+                max-height: calc(100% - 110px);
             }
         }
         .map-intel-modal.open {
@@ -109,21 +140,47 @@
         }
         .map-point {
             cursor: pointer;
-            transition: transform 0.2s;
         }
-        .map-point:hover {
-            transform: scale(1.4);
+        .map-point > circle,
+        .map-point > rect,
+        .map-point > polygon {
+            transform-box: fill-box;
+            transform-origin: center;
+            transition: transform 0.18s ease, filter 0.18s ease;
+        }
+        .map-point:hover > circle,
+        .map-point:hover > rect,
+        .map-point:hover > polygon {
+            transform: scale(1.28);
             filter: drop-shadow(0 0 8px #fff);
+        }
+        .map-point.selected > circle,
+        .map-point.selected > rect,
+        .map-point.selected > polygon {
+            transform: scale(1.36);
+            stroke: #00f0ff;
+            filter: drop-shadow(0 0 10px #00f0ff);
+        }
+        .map-svg text {
+            paint-order: stroke;
+            stroke: rgba(4, 10, 20, 0.94);
+            stroke-width: 3px;
+            stroke-linejoin: round;
         }
     
         /* TACTICAL ZOOM CONTROLS HUD */
         .map-zoom-controls {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 12px;
+            right: 14px;
             display: flex;
-            flex-direction: column;
-            gap: 6px;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 6px;
+            background: rgba(6, 10, 18, 0.9);
+            border: 1px solid rgba(0, 240, 255, 0.32);
+            border-radius: 8px;
             z-index: 25;
         }
         .zoom-btn {
@@ -183,17 +240,46 @@
     
     </style>
     <script type="application/ld+json">
-    {
+{
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "Interactive Leonida Tactical Map & Vault Radar | GTA 6 Heist Guide",
+      "@type": "WebApplication",
+      "name": "Interactive Leonida Tactical Map & Vault Radar",
       "url": "https://www.gta6heistguide.com/interactive-map.html",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
       "publisher": {
         "@type": "Organization",
-        "name": "gta6heistguide.com"
+        "name": "GTA6HeistGuide.com",
+        "url": "https://www.gta6heistguide.com/"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I filter heist vaults, safehouses, and fuel stations on the Leonida map?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the All Pins, Vaults, Safehouses, Escapes, Airfields, and Fuel category filter pills or jump straight to Vice City, Port Gellhorn, Grassrivers, Ambrosia, Leonida Keys, or Mount Kalaga using the region filter bar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I save personal waypoints or track found pins for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click + Personal Pin to save unlimited local tactical markers and use Mark Pin Found inside any location card to track 100% Leonida completion in your browser."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -207,68 +293,74 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Interactive Leonida Tactical Map & Vault Radar",
+          "name": "Interactive Leonida Tactical Map",
           "item": "https://www.gta6heistguide.com/interactive-map.html"
         }
       ]
     }
   ]
 }
-    
-        document.addEventListener("DOMContentLoaded", initMapInteraction);
-        if (document.readyState === "complete" || document.readyState === "interactive") { initMapInteraction(); }
     </script>
-    <!-- Google Analytics 4 (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTA6GUIDE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GTA6GUIDE', { 'anonymize_ip': true });
-    </script>
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta name="twitter:title" content="Interactive Leonida Map and Vault Radar | GTA 6 Guide">
+    <meta name="twitter:description" content="Explore the interactive GTA 6 Leonida radar map with 18 verified vaults, safehouses, storm drains, ANPR toll bypasses, gas depots, and custom pins.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
 </head>
 <body>
     
-<div class="countdown-strip" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; padding:0.35rem 1rem;">
-    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
-        <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="strip-pill countdown-pill-link" title="Pre-Order GTA 6 on Amazon (Day-1 Price Guarantee)">
-            <span class="strip-pulse"></span>
-            <span class="launch-mode-label">Launch Window:</span>
-            <span class="highlight" id="countdownTimer">Loading...</span>
-            <span class="strip-badge-preorder">🔥 PRE-ORDER &rarr;</span>
-        </a>
-        <span class="strip-divider">|</span>
-        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
-            <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
-        </a>
-        <span class="strip-divider">|</span>
-        <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-    </div>
-    <div class="strip-right-actions" style="display:flex; align-items:center; gap:0.6rem; margin-left:auto;">
-        <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
-        <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+<div class="countdown-strip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <a href="/live-intel.html" class="strip-pill countdown-pill-link" title="View Live Weekly 1.5X GTA 6 Heist Bonus Rotation &amp; Meta Notes">
+                <span class="strip-pulse"></span>
+                <span class="launch-mode-label">LEONIDA META:</span>
+                <span class="highlight" id="countdownTimer">WEEKLY 1.5X BONUS LIVE</span>
+                <span class="strip-badge-live">LIVE INTEL &rarr;</span>
+            </a>
+            <span class="strip-divider">|</span>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" class="strip-pill strip-pill-link" title="Check G2A Discounted GTA 6 Digital Keys">
+                <span style="color:var(--neon-yellow);">⚡ G2A KEYS:</span> <span class="highlight">SAVE UP TO 20%</span> &rarr;
+            </a>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill">Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+        </div>
+        <div class="strip-right-actions">
+            <a href="/dossier.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">📁 Day-1 Dossier</a>
+            <a href="/acquisitions.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">💼 Acquisitions</a>
+        </div>
     </div>
 </div>
+
+
+
+
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="brand-logo">
+        <a href="/" class="brand-logo">
             <span>GTA 6</span>
             <span class="vi">HEIST GUIDE</span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
+        <div class="nav-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span>LEONIDA NETWORK &bull; ALL SYSTEMS ONLINE</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="nav-pill">Vaults</a></li>
-            <li><a href="interactive-map.html" class="nav-pill active">Radar Map</a></li>
-            <li><a href="heist-planner.html" class="nav-pill">Planner</a></li>
-            <li><a href="crew-database.html" class="nav-pill">Crew</a></li>
-            <li><a href="weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
-            <li><a href="vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
-            <li><a href="live-intel.html" class="nav-pill">Live Meta</a></li>
-            <li><a href="forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
+            <li><a href="/" class="nav-pill">Vaults</a></li>
+            <li><a href="/live.html" class="nav-pill" style="color:#ef4444; font-weight:800;"><span style="display:inline-block; width:7px; height:7px; background:#ef4444; border-radius:50%; margin-right:4px; box-shadow:0 0 8px #ef4444;"></span>Live</a></li>
+            <li><a href="/interactive-map.html" class="nav-pill active">Radar Map</a></li>
+            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
+            <li><a href="/crew-database.html" class="nav-pill">Crew</a></li>
+            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
+            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
+            <li><a href="/safehouses-laundering.html" class="nav-pill" style="color:var(--neon-green);">Safehouses</a></li>
+            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
+            <li><a href="/forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
             <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 Audio FX</button>
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints &amp; Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>
     </div>
 </nav>
@@ -354,10 +446,10 @@
 
             <!-- INTERACTIVE ZOOM HUD (TOP-RIGHT) -->
             <div class="map-zoom-controls">
-                <button type="button" class="zoom-btn" onclick="zoomIn()" title="Zoom In (+)" aria-label="Zoom In">➕</button>
-                <button type="button" class="zoom-btn" onclick="zoomOut()" title="Zoom Out (-)" aria-label="Zoom Out">➖</button>
-                <button type="button" class="zoom-btn" onclick="resetZoom()" title="Reset Full View (1.0x)" aria-label="Reset View">⟲</button>
-                <span id="zoomLevelDisplay" class="zoom-indicator">1.0x</span>
+                <button type="button" class="zoom-btn" onclick="zoomIn()" title="Zoom In (+)" aria-label="Zoom In"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                <button type="button" class="zoom-btn" onclick="zoomOut()" title="Zoom Out (-)" aria-label="Zoom Out"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                <button type="button" class="zoom-btn" onclick="resetZoom()" title="Reset Full View (1.0x)" aria-label="Reset View"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+                <span id="zoomLevelDisplay" class="zoom-indicator" style="padding:3px 6px;">1.0x</span>
             </div>
     
             <!-- CONTROLS -->
@@ -365,9 +457,9 @@
             <div class="map-intel-modal" id="mapModal">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
                     <span class="card-tag tag-mastermind" id="modalTag">Vault Target</span>
-                    <button onclick="closeModal()" style="background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">&times;</button>
+                    <button type="button" class="map-modal-close" onclick="closeModal()" title="Close Pin Details" aria-label="Close Pin Details"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                 </div>
-                <h3 id="modalTitle" style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Sinfrontera National Bank</h3>
+                <h2 id="modalTitle" style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Sinfrontera National Bank</h2>
                 <div style="font-family: var(--font-mono); color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.75rem;" id="modalPayout">Max Payout: $14,500,000</div>
                 <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem;" id="modalDesc">Subterranean biometric vault beneath Downtown Vice City.</p>
                 <div style="display:flex; gap:0.5rem; flex-direction:column;">
@@ -376,75 +468,6 @@
                     <a href="sinfrontera-bank.html" id="modalLink" class="btn btn-primary" style="width: 100%; padding: 0.5rem; font-size: 0.8rem; text-align: center;">Open Blueprint Dossier</a>
                 </div>
             </div>
-        <!-- COLLAPSIBLE COMMUNITY & CUSTOM MARKER TOOLS (BELOW RADAR MAP) -->
-        <div style="margin-top:1rem;">
-            <div id="drop-pin-form" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-amber);">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                <div>
-                    <span class="user-badge badge-mastermind">COMMUNITY CROWDSOURCED RADAR ENGINE &bull; AUTO-VERIFIES AT 3 VOTES (+500 REP)</span>
-                    <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Submit Live Day-1 Discovery Pin to GlobalLeonida Map</h3>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.82rem;">Click anywhere on the radar map to set X/Y coordinates!</span>
-            </div>
-            <form onsubmit="submitD1DiscoveryPin(event)" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 175px), 1fr)); gap:0.75rem; align-items:end;">
-                <div class="form-group" style="margin:0;"><label>Discovery Title</label><input type="text" class="form-input" id="d1PinTitle" placeholder="e.g. Hidden Sewer Grate / Fence" required></div>
-                <div class="form-group" style="margin:0;"><label>Category</label>
-                    <select class="form-select" id="d1PinCat">
-                        <option value="stash">Hidden Stash / Loadout</option>
-                        <option value="escape">Escape Conduit / Drain</option>
-                        <option value="safehouse">Safehouse / Garage</option>
-                        <option value="fence">Black-Market Fence</option>
-                        <option value="scanner">Police Scanner / Relay</option>
-                        <option value="vault">Vault / Robbery Target</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin:0;"><label>Leonida Region</label>
-                    <select class="form-select" id="d1PinRegion">
-                        <option value="Vice City">Vice City</option>
-                        <option value="Leonida Keys">Leonida Keys</option>
-                        <option value="Grassrivers">Grassrivers</option>
-                        <option value="Port Gellhorn">Port Gellhorn</option>
-                        <option value="Ambrosia">Ambrosia</option>
-                        <option value="Mount Kalaga National Park">Mount Kalaga National Park</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin:0;"><label>Grid X</label><input type="number" class="form-input" id="d1PinX" min="40" max="960" value="640" required></div>
-                <div class="form-group" style="margin:0;"><label>Grid Y</label><input type="number" class="form-input" id="d1PinY" min="40" max="540" value="310" required></div>
-                <div class="form-group" style="margin:0;"><label>Your Callsign</label><input type="text" class="form-input" id="d1PinAlias" placeholder="ViceOperative" required></div>
-                <div class="form-group" style="margin:0; grid-column: 1 / -1;"><label>Tactical Discovery Notes</label><input type="text" class="form-input" id="d1PinDesc" placeholder="Describe exact entry point, loot, or heat reduction perk..." required></div>
-                <button type="submit" class="btn btn-amber" style="padding:0.7rem 1rem; font-size:0.82rem; grid-column: 1 / -1;">📡 Submit Discovery Pin to Live Radar (Auto-Promotes to Verified at 3 Confirmations)</button>
-            </form>
-            <div id="d1PinStatusMsg" style="margin-top:0.65rem; font-size:0.84rem;"></div>
-        </div>
-            <div id="customMarkerPanel" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-green);">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                <div>
-                    <span class="user-badge badge-hacker">100% FREE &mdash; NO VIP PAYWALL (UNLIMITED MARKERS)</span>
-                    <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Add Personal Tactical Marker &amp; Note (Saved in Browser)</h3>
-                </div>
-                <span style="color:var(--text-muted); font-size:0.82rem;">Tip: Click anywhere on the radar map to auto-fill X/Y coordinates!</span>
-            </div>
-            <form onsubmit="saveCustomMarker(event)" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap:0.75rem; align-items:end;">
-                <div class="form-group" style="margin:0;"><label>Marker Title</label><input type="text" class="form-input" id="cmTitle" placeholder="e.g. Clean Getaway Stash Car" required></div>
-                <div class="form-group" style="margin:0;"><label>Region</label>
-                    <select class="form-select" id="cmRegion">
-                        <option value="vice-city">Vice City</option>
-                        <option value="leonida-keys">Leonida Keys</option>
-                        <option value="grassrivers">Grassrivers</option>
-                        <option value="port-gellhorn">Port Gellhorn</option>
-                        <option value="ambrosia">Ambrosia</option>
-                        <option value="mount-kalaga">Mount Kalaga National Park</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin:0;"><label>Grid X (50-950)</label><input type="number" class="form-input" id="cmX" min="30" max="970" value="540" required></div>
-                <div class="form-group" style="margin:0;"><label>Grid Y (50-610)</label><input type="number" class="form-input" id="cmY" min="30" max="620" value="300" required></div>
-                <div class="form-group" style="margin:0;"><label>Personal Note</label><input type="text" class="form-input" id="cmNote" placeholder="e.g. Sewer grate unlocked at night"></div>
-                <button type="submit" class="btn btn-primary" style="padding:0.7rem 1rem; font-size:0.82rem;">💾 Save Free Marker</button>
-            </form>
-            <div id="customMarkersList" style="margin-top:0.85rem; display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
-        </div>
-        </div>
-    
 
             <!-- HUD COORDINATES -->
             <div class="map-hud" id="mapHud">GPS GRID: 25.7617&deg; N, 80.1918&deg; W &bull; SATELLITE: SYNDICATE-6</div>
@@ -505,11 +528,11 @@
     <!-- ======================================================== -->
     <!-- County 1: LUMMOX COUNTY (Northern Rural & Timber) -->
     <path d="M 90,80 Q 240,55 460,70 T 730,65 L 710,135 Q 480,120 260,130 T 100,145 Z" fill="rgba(34, 197, 94, 0.14)" stroke="rgba(34, 197, 94, 0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
-    <text x="135" y="96" fill="rgba(34, 197, 94, 0.95)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="2">🌲 LUMMOX COUNTY (NORTHERN TIMBER &amp; RIDGES)</text>
+    <text x="128" y="95" fill="rgba(34, 197, 94, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1.5">LUMMOX COUNTY (TIMBER &amp; RIDGES)</text>
 
     <!-- County 2: KELLY COUNTY / AMBROSIA (Central Basin & Sugar Refining) -->
     <path d="M 320,135 Q 480,120 700,135 T 670,240 Q 560,260 420,240 T 320,180 Z" fill="rgba(255, 184, 0, 0.08)" stroke="rgba(255, 184, 0, 0.35)" stroke-width="1" stroke-dasharray="5,4"/>
-    <text x="340" y="152" fill="rgba(255, 184, 0, 0.85)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">KELLY COUNTY &bull; AMBROSIA REFINERY BASIN</text>
+    <text x="530" y="132" text-anchor="middle" fill="rgba(255, 184, 0, 0.9)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">KELLY COUNTY &bull; AMBROSIA BASIN</text>
 
     <!-- County 3: LEONARD COUNTY / GRASSRIVERS (Everglades & Pelican River) -->
     <path d="M 190,310 Q 320,320 420,370 T 540,460 Q 440,515 320,515 T 160,445 Z" fill="rgba(16, 185, 129, 0.16)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.5"/>
@@ -517,25 +540,25 @@
     <path d="M 440,275 Q 380,340 330,420 T 260,490" fill="none" stroke="rgba(0, 240, 255, 0.45)" stroke-width="3.5"/>
     <path d="M 490,320 Q 460,390 420,450 T 360,520" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2.5"/>
     <path d="M 280,360 Q 320,400 300,460" fill="none" stroke="rgba(0, 240, 255, 0.3)" stroke-width="2"/>
-    <text x="210" y="405" fill="rgba(16, 185, 129, 0.95)" font-family="monospace" font-weight="900" font-size="12" letter-spacing="2">LEONARD COUNTY &bull; GRASSRIVERS SWAMP BASIN</text>
+    <text x="210" y="458" fill="rgba(16, 185, 129, 0.95)" font-family="monospace" font-weight="900" font-size="10.5" letter-spacing="1.4">LEONARD COUNTY &bull; GRASSRIVERS SWAMP</text>
 
     <!-- County 4: VICE-DALE COUNTY (Metropolitan Vice City Core) -->
     <rect x="660" y="200" width="115" height="210" rx="10" fill="rgba(255, 42, 141, 0.08)" stroke="rgba(255, 42, 141, 0.5)" stroke-width="1.5" stroke-dasharray="5,4"/>
-    <text x="668" y="218" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">VICE-DALE COUNTY &bull; METRO JURISDICTION</text>
+    <text x="664" y="192" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">VICE-DALE COUNTY</text>
 
     <!-- County 5: MARIANA COUNTY (Keys Archipelago & Maritime Waters) -->
-    <text x="730" y="525" fill="rgba(0, 240, 255, 0.7)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">MARIANA COUNTY &bull; STRAITS OF LEONIDA</text>
+    <text x="560" y="556" fill="rgba(0, 240, 255, 0.78)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">MARIANA COUNTY &bull; STRAITS OF LEONIDA</text>
 
     <!-- ======================================================== -->
     <!-- 5. INLAND LAKES & WATERWAYS                              -->
     <!-- ======================================================== -->
     <!-- Lake Leonida (Lake Okeechobee Equivalent) -->
     <path d="M 400,190 Q 480,165 540,195 T 550,250 Q 510,285 440,275 T 390,225 Z" fill="#061220" stroke="rgba(0, 240, 255, 0.75)" stroke-width="2.5"/>
-    <text x="430" y="225" fill="rgba(0, 240, 255, 0.9)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
+    <text x="472" y="232" text-anchor="middle" fill="rgba(0, 240, 255, 0.95)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
 
     <!-- Pelican Valley Agricultural Basin -->
     <path d="M 370,250 Q 450,270 490,320 T 430,370 Q 360,350 350,290 Z" fill="rgba(255, 184, 0, 0.12)" stroke="rgba(255, 184, 0, 0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
-    <text x="360" y="315" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">🌾 PELICAN VALLEY BASIN</text>
+    <text x="420" y="336" text-anchor="middle" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">PELICAN VALLEY BASIN</text>
 
     <!-- Port Gellhorn Western Basin & Docks -->
     <path d="M 120,330 Q 170,350 180,410 T 150,470 L 105,430 Z" fill="#1b2838" stroke="rgba(0, 240, 255, 0.7)" stroke-width="2"/>
@@ -552,7 +575,8 @@
 
     <!-- Downtown Vice City Mainland Core -->
     <rect x="670" y="225" width="95" height="175" rx="8" fill="#1e1832" stroke="rgba(255, 42, 141, 0.6)" stroke-width="2"/>
-    <text x="678" y="248" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="1">VICE CITY DOWNTOWN</text>
+    <text x="717" y="241" text-anchor="middle" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">VICE CITY</text>
+    <text x="717" y="253" text-anchor="middle" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">DOWNTOWN</text>
 
     <!-- Escobar International Airport (EIA) Dual Runways -->
     <g transform="translate(680, 360)">
@@ -563,7 +587,7 @@
 
     <!-- Vice Beach Eastern Barrier Island & Ocean Drive -->
     <path d="M 785,190 Q 805,270 800,360 T 780,430 Q 815,400 820,320 T 805,190 Z" fill="#2a1834" stroke="rgba(255, 42, 141, 0.9)" stroke-width="2.5" filter="url(#hdViceGlow)"/>
-    <text x="795" y="280" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1" transform="rotate(85, 795, 280)">VICE BEACH &bull; OCEAN BLVD</text>
+    <text x="836" y="280" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1" transform="rotate(86, 836, 280)">VICE BEACH &bull; OCEAN BLVD</text>
 
     <!-- Causeways Connecting Mainland to Beach -->
     <!-- 1. Venetian Causeway -->
@@ -588,22 +612,22 @@
     <ellipse cx="865" cy="575" rx="28" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(10, 865, 575)"/>
     <!-- Island 4: Key Lento (Confirmed Leaked Deep Vault) -->
     <ellipse cx="920" cy="585" rx="24" ry="14" fill="#2a1834" stroke="rgba(255, 42, 141, 0.95)" stroke-width="2"/>
-    <text x="890" y="618" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">KEY LENTO</text>
+    <text x="920" y="620" text-anchor="middle" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">KEY LENTO</text>
     <!-- Island 5: Goose Key & Deep Coral Reef -->
     <ellipse cx="965" cy="578" rx="18" ry="10" fill="#1b2838" stroke="rgba(0, 255, 136, 0.85)" stroke-width="1.5"/>
-    <text x="940" y="565" fill="rgba(0, 255, 136, 0.95)" font-family="monospace" font-weight="900" font-size="9">GOOSE KEY</text>
-    <text x="755" y="565" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">LEONIDA KEYS (OVERSEAS HWY)</text>
+    <text x="962" y="556" text-anchor="middle" fill="rgba(0, 255, 136, 0.95)" font-family="monospace" font-weight="900" font-size="9">GOOSE KEY</text>
+    <text x="720" y="616" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">LEONIDA KEYS (OVERSEAS HWY)</text>
 
     <!-- ======================================================== -->
     <!-- 8. ARTERIAL HIGHWAY NETWORK                              -->
     <!-- ======================================================== -->
-    <!-- Toll 1A Arterial Highway (West-East Across Alligator Alley) -->
-    <path d="M 130,410 Q 300,280 470,220 T 670,240 T 765,260" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="8,4"/>
-    <text x="480" y="172" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">TOLL 1A HIGHWAY (ANPR CAMERAS)</text>
+    <!-- Toll 1A Arterial Highway (Skirts North of Lake Leonida) -->
+    <path d="M 130,410 Q 250,235 450,170 T 675,245 T 765,260" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="8,4"/>
+    <text x="468" y="159" text-anchor="middle" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">TOLL 1A HIGHWAY (ANPR CAMERAS)</text>
 
-    <!-- Interstate 97 Spine (North-to-South Spine) -->
-    <path d="M 380,75 Q 460,140 470,220 T 560,380 T 700,460" fill="none" stroke="rgba(0, 240, 255, 0.6)" stroke-width="2.5" stroke-dasharray="6,5"/>
-    <text x="545" y="415" fill="rgba(0, 240, 255, 0.85)" font-family="monospace" font-weight="800" font-size="9">INTERSTATE 97 SPINE</text>
+    <!-- Interstate 97 Spine (East Shore Bypass) -->
+    <path d="M 385,78 Q 525,112 582,225 T 625,380 T 700,462" fill="none" stroke="rgba(0, 240, 255, 0.6)" stroke-width="2.5" stroke-dasharray="6,5"/>
+    <text x="590" y="346" fill="rgba(0, 240, 255, 0.9)" font-family="monospace" font-weight="800" font-size="9">INTERSTATE 97 SPINE</text>
 
     <!-- ======================================================== -->
     <!-- 9. TACTICAL HUD OVERLAYS & RADAR SWEEP                   -->
@@ -622,10 +646,10 @@
     </g>
 
     <!-- Telemetry Box in Top-Left -->
-    <g transform="translate(20, 30)">
-        <rect width="230" height="42" rx="4" fill="rgba(8, 14, 22, 0.9)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
-        <text x="10" y="16" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
-        <text x="10" y="32" fill="var(--neon-green)" font-family="monospace" font-size="9">LEONIDA HD MAP &bull; DRAG TO PAN &bull; WHEEL ZOOM</text>
+    <g id="telemetryBox" transform="translate(16, 16)">
+        <rect width="292" height="44" rx="5" fill="rgba(8, 14, 22, 0.92)" stroke="rgba(0, 240, 255, 0.45)" stroke-width="1.2"/>
+        <text x="10" y="17" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
+        <text x="10" y="34" fill="var(--neon-green)" font-family="monospace" font-size="8.4">LEONIDA HD MAP &bull; DRAG TO PAN &bull; WHEEL ZOOM</text>
     </g>
 
     <!-- ======================================================== -->
@@ -725,9 +749,105 @@
         <title>Mount Kalaga Wilderness Outpost</title>
     </g>
 
+    <!-- 15. Toll 1A Highway ANPR Camera Hub -->
+    <g class="map-point map-marker-escape" data-pin-id="toll-1a" data-region="toll-1a" transform="translate(320, 218)" onclick="handlePinClick('toll-1a')">
+        <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.35)" stroke="#ffb800" stroke-width="1.5"/>
+        <title>Toll 1A Highway Radar &amp; ANPR Bypass - Click for Intel</title>
+    </g>
+
+    <!-- 16. Lummox County 24/7 Gas & Refuel Depot -->
+    <g class="map-point map-marker-fuel" data-pin-id="fuel-lummox" data-region="lummox" transform="translate(205, 118)" onclick="handlePinClick('fuel-lummox')">
+        <circle r="10" fill="rgba(255, 153, 0, 0.3)" stroke="#ff9900" stroke-width="2"/>
+        <circle r="4" fill="#ff9900"/>
+        <title>Lummox County 24/7 Refuel Depot - Click for Intel</title>
+    </g>
+
+    <!-- 17. Vice Beach Sunoco 24/7 Pitstop -->
+    <g class="map-point map-marker-fuel" data-pin-id="fuel-vice" data-region="vice-city" transform="translate(792, 224)" onclick="handlePinClick('fuel-vice')">
+        <circle r="10" fill="rgba(255, 153, 0, 0.3)" stroke="#ff9900" stroke-width="2"/>
+        <circle r="4" fill="#ff9900"/>
+        <title>Vice Beach Sunoco 24/7 Pitstop - Click for Intel</title>
+    </g>
+
+    <!-- 18. Leonida State Zoo Night Reserve -->
+    <g class="map-point map-marker-vault" data-pin-id="zoo-compound" data-region="vice-city" transform="translate(632, 315)" onclick="handlePinClick('zoo-compound')">
+        <circle r="12" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
+        <circle r="4.5" fill="#ff2a8d"/>
+        <title>Leonida State Zoo Night Reserve ($4.2M) - Click for Intel</title>
+    </g>
+
     <!-- Dynamic User Custom / Community Markers Container -->
     <g id="customMarkersLayer"></g>
 </svg>
+        </div>
+
+<!-- COLLAPSIBLE COMMUNITY & CUSTOM MARKER TOOLS (BELOW RADAR MAP) -->
+        <div style="margin-top:1rem;">
+            <div id="drop-pin-form" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-amber);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+                <div>
+                    <span class="user-badge badge-mastermind">COMMUNITY CROWDSOURCED RADAR ENGINE &bull; AUTO-VERIFIES AT 3 VOTES (+500 REP)</span>
+                    <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Submit Live Day-1 Discovery Pin to GlobalLeonida Map</h3>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.82rem;">Click anywhere on the radar map to set X/Y coordinates!</span>
+            </div>
+            <form onsubmit="submitD1DiscoveryPin(event)" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 175px), 1fr)); gap:0.75rem; align-items:end;">
+                <div class="form-group" style="margin:0;"><label>Discovery Title</label><input type="text" class="form-input" id="d1PinTitle" placeholder="e.g. Hidden Sewer Grate / Fence" required></div>
+                <div class="form-group" style="margin:0;"><label>Category</label>
+                    <select class="form-select" id="d1PinCat">
+                        <option value="stash">Hidden Stash / Loadout</option>
+                        <option value="escape">Escape Conduit / Drain</option>
+                        <option value="safehouse">Safehouse / Garage</option>
+                        <option value="fence">Black-Market Fence</option>
+                        <option value="scanner">Police Scanner / Relay</option>
+                        <option value="vault">Vault / Robbery Target</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin:0;"><label>Leonida Region</label>
+                    <select class="form-select" id="d1PinRegion">
+                        <option value="Vice City">Vice City</option>
+                        <option value="Leonida Keys">Leonida Keys</option>
+                        <option value="Grassrivers">Grassrivers</option>
+                        <option value="Port Gellhorn">Port Gellhorn</option>
+                        <option value="Ambrosia">Ambrosia</option>
+                        <option value="Mount Kalaga National Park">Mount Kalaga National Park</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin:0;"><label>Grid X</label><input type="number" class="form-input" id="d1PinX" min="40" max="960" value="640" required></div>
+                <div class="form-group" style="margin:0;"><label>Grid Y</label><input type="number" class="form-input" id="d1PinY" min="40" max="540" value="310" required></div>
+                <div class="form-group" style="margin:0;"><label>Your Callsign</label><input type="text" class="form-input" id="d1PinAlias" placeholder="ViceOperative" required></div>
+                <div class="form-group" style="margin:0; grid-column: 1 / -1;"><label>Tactical Discovery Notes</label><input type="text" class="form-input" id="d1PinDesc" placeholder="Describe exact entry point, loot, or heat reduction perk..." required></div>
+                <button type="submit" class="btn btn-amber" style="padding:0.7rem 1rem; font-size:0.82rem; grid-column: 1 / -1;">📡 Submit Discovery Pin to Live Radar (Auto-Promotes to Verified at 3 Confirmations)</button>
+            </form>
+            <div id="d1PinStatusMsg" style="margin-top:0.65rem; font-size:0.84rem;"></div>
+        </div>
+            <div id="customMarkerPanel" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-green);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+                <div>
+                    <span class="user-badge badge-hacker">100% FREE &mdash; NO VIP PAYWALL (UNLIMITED MARKERS)</span>
+                    <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Add Personal Tactical Marker &amp; Note (Saved in Browser)</h3>
+                </div>
+                <span style="color:var(--text-muted); font-size:0.82rem;">Tip: Click anywhere on the radar map to auto-fill X/Y coordinates!</span>
+            </div>
+            <form onsubmit="saveCustomMarker(event)" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap:0.75rem; align-items:end;">
+                <div class="form-group" style="margin:0;"><label>Marker Title</label><input type="text" class="form-input" id="cmTitle" placeholder="e.g. Clean Getaway Stash Car" required></div>
+                <div class="form-group" style="margin:0;"><label>Region</label>
+                    <select class="form-select" id="cmRegion">
+                        <option value="vice-city">Vice City</option>
+                        <option value="leonida-keys">Leonida Keys</option>
+                        <option value="grassrivers">Grassrivers</option>
+                        <option value="port-gellhorn">Port Gellhorn</option>
+                        <option value="ambrosia">Ambrosia</option>
+                        <option value="mount-kalaga">Mount Kalaga National Park</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin:0;"><label>Grid X (50-950)</label><input type="number" class="form-input" id="cmX" min="30" max="970" value="540" required></div>
+                <div class="form-group" style="margin:0;"><label>Grid Y (50-610)</label><input type="number" class="form-input" id="cmY" min="30" max="620" value="300" required></div>
+                <div class="form-group" style="margin:0;"><label>Personal Note</label><input type="text" class="form-input" id="cmNote" placeholder="e.g. Sewer grate unlocked at night"></div>
+                <button type="submit" class="btn btn-primary" style="padding:0.7rem 1rem; font-size:0.82rem;">💾 Save Free Marker</button>
+            </form>
+            <div id="customMarkersList" style="margin-top:0.85rem; display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
+        </div>
         </div>
 
                 <!-- LEONIDA COLLECTIBLE & TACTICAL SET CHECKLIST TOGGLES -->
@@ -822,7 +942,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,240,255,0.4); background:rgba(12,18,28,0.85); box-shadow:0 0 15px rgba(0,240,255,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/gta6-key-box.jpg" alt="GTA 6 Official Digital Key / Pre-Order" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/gta6-key-box.jpg" alt="GTA 6 Official Digital Key / Pre-Order" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="800" height="600">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.68rem; font-weight:800;">DAY-1 GUARANTEE</span>
                 </div>
                 <div style="padding:1rem;">
@@ -846,7 +966,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,42,141,0.4); background:rgba(18,12,24,0.85); box-shadow:0 0 15px rgba(255,42,141,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/dualsense-edge-controller.jpg" alt="DualSense Edge Pro Controller" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/dualsense-edge-controller.jpg" alt="DualSense Edge Pro Controller" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="1500" height="1000">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.68rem; font-weight:800;">TACTICAL PRO GEAR</span>
                 </div>
                 <div style="padding:1rem;">
@@ -870,7 +990,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,255,136,0.4); background:rgba(10,20,18,0.85); box-shadow:0 0 15px rgba(0,255,136,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/samsung-990-pro.jpg" alt="Samsung 990 PRO NVMe SSD" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/samsung-990-pro.jpg" alt="Samsung 990 PRO NVMe SSD" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="1500" height="459">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-green); color:var(--neon-green); font-size:0.68rem; font-weight:800;">ZERO STUTTER</span>
                 </div>
                 <div style="padding:1rem;">
@@ -894,7 +1014,7 @@
         <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,184,0,0.4); background:rgba(24,18,10,0.85); box-shadow:0 0 15px rgba(255,184,0,0.08);">
             <div>
                 <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="assets/eneba-gift-cards.jpg" alt="Eneba PlayStation and Xbox Gift Cards" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                    <img src="/assets/eneba-gift-cards.jpg" alt="Eneba PlayStation and Xbox Gift Cards" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="800" height="600">
                     <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.68rem; font-weight:800;">SAVE 15-20%</span>
                 </div>
                 <div style="padding:1rem;">
@@ -1015,7 +1135,7 @@
 
     </div>
 </footer>
-<script src="assets/main.js"></script>
+<script src="/assets/main.js" defer></script>
 
 
         <script>
@@ -1091,6 +1211,9 @@
                 confirmBtn.style.display = data.isD1 ? 'block' : 'none';
             }
             updateModalFoundButton();
+            document.querySelectorAll('.map-point.selected').forEach(el => el.classList.remove('selected'));
+            const activePinEl = document.querySelector(`.map-point[data-pin-id="${key}"]`);
+            if (activePinEl) activePinEl.classList.add('selected');
             document.getElementById('mapModal').classList.add('open');
             GTA6.playBeep(520, 'triangle', 0.05);
         }
@@ -1131,10 +1254,13 @@
         }
 
         function closeModal() {
-            document.getElementById('mapModal').classList.remove('open');
+            const modal = document.getElementById('mapModal');
+            if (modal) modal.classList.remove('open');
+            document.querySelectorAll('.map-point.selected').forEach(el => el.classList.remove('selected'));
         }
 
         function filterMap(category, btn) {
+            closeModal();
             activeCategory = category;
             document.querySelectorAll('.map-controls .map-btn').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
@@ -1369,6 +1495,7 @@
         }
     
         function filterRegion(region, btn) {
+            closeModal();
             zoomToSector(region);
             activeRegion = region;
             document.querySelectorAll('.map-region-bar .map-btn').forEach(b => b.classList.remove('active'));
@@ -1596,7 +1723,7 @@
                 listEl.innerHTML = markers.map(m => `
                     <span class="user-badge badge-hacker" style="display:inline-flex; align-items:center; gap:0.4rem;">
                         📍 ${m.title.replace(/</g, '&lt;')} (${m.region})
-                        <button type="button" onclick="deleteCustomMarker('${m.id}')" style="background:none; border:none; color:var(--neon-pink); cursor:pointer; font-weight:900;">✕</button>
+                        <button type="button" onclick="deleteCustomMarker('${m.id}')" aria-label="Delete Custom Marker" style="background:none; border:none; color:var(--neon-pink); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; padding:2px;"><svg class="ui-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                     </span>
                 `).join('');
             }
@@ -1612,6 +1739,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            initMapInteraction();
             const svg = document.getElementById('mapSvg');
             if (svg) {
                 svg.addEventListener('click', (e) => {

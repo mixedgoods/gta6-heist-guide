@@ -2,6 +2,14 @@
 // GTA 6 HEIST GUIDE v3.0 - LIVE CLIENT ENGINE, D1 SYNC, BOOKMARKS, VIP & VIDEO
 // ==========================================================================
 const GTA6 = {
+  Icons: {
+    close(size = 14) {
+      return `<svg class="ui-icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+    },
+    menu(size = 18) {
+      return `<svg class="ui-icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+    }
+  },
   audioCtx: null,
   soundEnabled: true,
   synthRadio: null,
@@ -235,11 +243,11 @@ const GTA6 = {
       const now = Date.now();
       const diff = launchTarget - now;
       if (launchEl) {
-        launchEl.innerText = diff <= 0 ? 'LIVE DAY-1 LEONIDA META ACTIVE' : this.formatDiff(diff);
+        launchEl.innerText = diff <= 0 ? 'WEEKLY 1.5X BONUS LIVE' : this.formatDiff(diff);
       }
       if (diff <= 0) {
         document.querySelectorAll('.launch-mode-label').forEach((el) => {
-          el.innerText = 'LIVE DAY-1 LEONIDA META ACTIVE';
+          el.innerText = 'LEONIDA META:';
         });
       }
       if (weeklyEl) {
@@ -416,7 +424,7 @@ const GTA6 = {
       wrap.innerHTML = `
         <div class="modal-backdrop" id="dynamicGuideModal">
           <div class="modal-box" style="max-width:780px; border-color:var(--neon-cyan);">
-            <button type="button" class="modal-close-btn" onclick="GTA6.closeDynamicGuide()">✕</button>
+            <button type="button" class="modal-close-btn" onclick="GTA6.closeDynamicGuide()" aria-label="Close Guide Modal">${this.Icons.close(15)}</button>
             <div id="dynamicGuideModalBody"></div>
           </div>
         </div>
@@ -626,7 +634,7 @@ const GTA6 = {
       wrap.innerHTML = `
         <div class="modal-backdrop" id="vipLoginModal">
           <div class="modal-box">
-            <button type="button" class="modal-close-btn" onclick="GTA6.Auth.closeModal()">✕</button>
+            <button type="button" class="modal-close-btn" onclick="GTA6.Auth.closeModal()" aria-label="Close Login Modal">${GTA6.Icons.close(15)}</button>
             <div style="text-align:center; margin-bottom:1.25rem;">
               <span class="user-badge badge-mastermind" style="margin-bottom:0.6rem;">FOUNDER SYNDICATE ACCESS</span>
               <h2 style="color:#fff; font-size:1.55rem; margin-bottom:0.4rem;">Unlock Free VIP Vault Blueprints & +2,500 Rep</h2>
@@ -879,7 +887,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
           <aside class="bookmarks-drawer" id="bookmarksDrawer">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; border-bottom:1px solid var(--border-card); padding-bottom:0.75rem;">
               <h3 style="color:var(--neon-cyan); font-size:1.15rem;">📌 Saved Builds & Guides</h3>
-              <button type="button" class="modal-close-btn" style="position:static;" onclick="GTA6.Bookmarks.toggleDrawer()">✕</button>
+              <button type="button" class="modal-close-btn" style="position:static;" onclick="GTA6.Bookmarks.toggleDrawer()" aria-label="Close Saved Drawer">${GTA6.Icons.close(15)}</button>
             </div>
             <p style="color:var(--text-muted); font-size:0.82rem; margin-bottom:1rem;">
               Bookmark calculator splits or heist guides so your squad can jump straight back into action anytime.
@@ -919,7 +927,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         <div class="bookmark-item">
           <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
             <a href="${item.url}" style="color:#fff; font-weight:800; text-decoration:none; font-size:0.92rem;">${item.title}</a>
-            <button type="button" onclick="GTA6.Bookmarks.removeItem('${item.id}')" style="background:none; border:none; color:var(--neon-pink); cursor:pointer; font-weight:800;">✕</button>
+            <button type="button" onclick="GTA6.Bookmarks.removeItem('${item.id}')" aria-label="Remove Bookmark" style="background:none; border:none; color:var(--neon-pink); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; padding:4px;">${GTA6.Icons.close(14)}</button>
           </div>
           ${item.summary ? `<div style="color:var(--neon-green); font-size:0.78rem; font-family:var(--font-mono); margin-top:0.35rem;">${item.summary}</div>` : ''}
           <div style="display:flex; gap:0.5rem; margin-top:0.65rem;">
@@ -1302,7 +1310,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       <div class="thread-card" id="${t.id}">
         <div class="thread-top">
           <div class="thread-author">
-            <img src="${t.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'}" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--neon-cyan); object-fit: cover;">
+            <img src="${t.avatar || '/assets/character-lucia.jpg'}" alt="${t.author || 'Syndicate Agent'} avatar" width="32" height="32" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--neon-cyan); object-fit: cover;">
             <span>${t.author}</span>
             <span class="user-badge ${t.badge}">${t.badgeName || 'Operative'}</span>
           </div>
@@ -1891,6 +1899,31 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     const navLinks = document.querySelector('.nav-links');
     if (!navContainer || !navLinks) return;
 
+    const normPath = (p) => {
+      let clean = (p || '/').split('?')[0].split('#')[0].replace(/\/index\.html$/i, '/').replace(/\.html$/i, '');
+      if (clean.length > 1 && clean.endsWith('/')) clean = clean.slice(0, -1);
+      return clean || '/';
+    };
+    const curPath = normPath(window.location.pathname);
+    navLinks.querySelectorAll('a').forEach((link) => {
+      try {
+        const hrefPath = normPath(new URL(link.href, window.location.origin).pathname);
+        if (hrefPath === curPath) {
+          navLinks.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+          link.classList.add('active');
+        }
+      } catch (e) {}
+    });
+
+    const closeDrawer = () => {
+      navLinks.classList.remove('open');
+      const b = document.getElementById('mobileMenuBtn');
+      if (b) {
+        b.innerHTML = `${this.Icons.menu(18)}<span>Menu</span>`;
+        b.setAttribute('aria-expanded', 'false');
+      }
+    };
+
     if (!document.getElementById('mobileMenuBtn')) {
       const btn = document.createElement('button');
       btn.type = 'button';
@@ -1898,29 +1931,29 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       btn.className = 'mobile-menu-btn';
       btn.setAttribute('aria-label', 'Toggle Navigation Menu');
       btn.setAttribute('aria-expanded', 'false');
-      btn.innerText = '☰ Menu';
-      btn.onclick = () => {
+      btn.innerHTML = `${this.Icons.menu(18)}<span>Menu</span>`;
+      btn.onclick = (e) => {
+        e.stopPropagation();
         const isOpen = navLinks.classList.toggle('open');
-        btn.innerText = isOpen ? '✕ Close' : '☰ Menu';
+        btn.innerHTML = isOpen ? `${this.Icons.close(18)}<span>Close</span>` : `${this.Icons.menu(18)}<span>Menu</span>`;
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         this.playBeep(isOpen ? 540 : 380, 'sine', 0.04);
       };
       const actions = navContainer.querySelector('.nav-actions');
-      if (actions) navContainer.insertBefore(btn, actions);
+      if (actions) actions.appendChild(btn);
       else navContainer.appendChild(btn);
     }
 
-      navLinks.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          const btn = document.getElementById('mobileMenuBtn');
-          if (btn) {
-            btn.innerText = '☰ Menu';
-            btn.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
-    },
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeDrawer);
+    });
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('open') && !e.target.closest('.navbar')) closeDrawer();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) closeDrawer();
+    });
+  },
 
     // --------------------------------------------------------------------------
     // SECOND-SCREEN LIVE HEIST COMPANION HUD (CLOCK, COOLDOWN, FENCE & PANIC)
@@ -2220,7 +2253,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         wrap.innerHTML = `
           <div class="modal-backdrop" id="payoutReportModal">
             <div class="modal-box" style="max-width:540px; border-color:var(--neon-amber);">
-              <button type="button" class="modal-close-btn" onclick="document.getElementById('payoutReportModal').classList.remove('open')">✕</button>
+              <button type="button" class="modal-close-btn" onclick="document.getElementById('payoutReportModal').classList.remove('open')" aria-label="Close Modal">${GTA6.Icons.close(15)}</button>
               <span class="user-badge badge-mastermind" style="margin-bottom:0.5rem;">CROWDSOURCED D1 PATCH VERIFICATION</span>
               <h3 id="prModalTitle" style="color:#fff; font-size:1.3rem; margin-bottom:0.35rem;">Report Live Payout / Cooldown Change</h3>
               <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1rem;">
@@ -2594,7 +2627,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Optional Tier 2 Glass",
             "heistRole": "Primary Getaway Car // Jason & Lucia Starter Vehicle",
             "source": "GTA 6 Reveal Trailer (0:42 & Key Art)",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_v2",
+            "image": "assets/vehicle-tulip.jpg?v=20261119_v3",
             "stats": {
                   "speed": 78,
                   "accel": 82,
@@ -2618,7 +2651,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Armored Window Slits",
             "heistRole": "High-Impact Pursuit Breaker // Highway Escape",
             "source": "Trailer 1 Vice Beach Strip & Leaks",
-            "image": "assets/vehicle-gauntlet-hellfire.jpg?v=20261118_v2",
+            "image": "assets/vehicle-gauntlet-hellfire.jpg?v=20261119_v3",
             "stats": {
                   "speed": 88,
                   "accel": 92,
@@ -2642,7 +2675,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Lexan",
             "heistRole": "Alleyway Escape & Undercover Street Meet Racer",
             "source": "Port Gellhorn Street Meet & 2022 Leaks",
-            "image": "assets/vehicle-elegy-retro.jpg?v=20261118_v2",
+            "image": "assets/vehicle-elegy-retro.jpg?v=20261119_v3",
             "stats": {
                   "speed": 84,
                   "accel": 88,
@@ -2666,7 +2699,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Classic",
             "heistRole": "Low-Profile Covert Smuggling & Cartel Stash Car",
             "source": "Trailer 1 Little Cuba Cruising Scene",
-            "image": "assets/vehicle-buccaneer.jpg?v=20261118_v2",
+            "image": "assets/vehicle-buccaneer.jpg?v=20261119_v3",
             "stats": {
                   "speed": 72,
                   "accel": 70,
@@ -2690,7 +2723,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Shatter-Resistant Film",
             "heistRole": "Rapid Interception & Fast Extrication",
             "source": "Stockade Robbery Leak Clip 24",
-            "image": "assets/vehicle-dominator-asp.jpg?v=20261118_v2",
+            "image": "assets/vehicle-dominator-asp.jpg?v=20261119_v3",
             "stats": {
                   "speed": 85,
                   "accel": 86,
@@ -2714,7 +2747,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Driver Plate Shield",
             "heistRole": "Drive-By Suppressive Platform // 4-Seater Extraction",
             "source": "Ocean Drive Sunset Cruise Scene",
-            "image": "assets/vehicle-vigero-zx.jpg?v=20261118_v2",
+            "image": "assets/vehicle-vigero-zx.jpg?v=20261119_v3",
             "stats": {
                   "speed": 87,
                   "accel": 90,
@@ -2738,7 +2771,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Pedestrian Alleyway Threader // Anonymous Scout",
             "source": "Ambrosia Strip Mall Leaked Footage",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_v2",
+            "image": "assets/vehicle-blista-compact.jpg?v=20261119_v3",
             "stats": {
                   "speed": 68,
                   "accel": 74,
@@ -2762,7 +2795,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Thick Steel Cab",
             "heistRole": "Grassrivers Smuggling & Backwoods Extraction",
             "source": "Kelly County Mudboggers Scene",
-            "image": "assets/vehicle-rat-loader.jpg?v=20261118_v2",
+            "image": "assets/vehicle-rat-loader.jpg?v=20261119_v3",
             "stats": {
                   "speed": 65,
                   "accel": 72,
@@ -2786,7 +2819,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Cab Armor Plating",
             "heistRole": "Cargo Loot Hauler // Heavy Cash Stash",
             "source": "Wrecked Scrap Yard Leaks",
-            "image": "assets/vehicle-slamvan.jpg?v=20261118_v2",
+            "image": "assets/vehicle-slamvan.jpg?v=20261119_v3",
             "stats": {
                   "speed": 74,
                   "accel": 78,
@@ -2810,7 +2843,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Optional Front Grille Armor",
             "heistRole": "Drag-Strip Getaway & Highway Disappearance",
             "source": "Vice City North Beach Boulevard",
-            "image": "assets/vehicle-sabre-turbo.jpg?v=20261118_v2",
+            "image": "assets/vehicle-sabre-turbo.jpg?v=20261119_v3",
             "stats": {
                   "speed": 80,
                   "accel": 81,
@@ -2834,7 +2867,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tinted Bullet-Resistant Glass",
             "heistRole": "Syndicate Boss Escort & Mob Safehouse Courier",
             "source": "Little Haiti Gang Meet",
-            "image": "assets/vehicle-hermes.jpg?v=20261118_v2",
+            "image": "assets/vehicle-hermes.jpg?v=20261119_v3",
             "stats": {
                   "speed": 70,
                   "accel": 68,
@@ -2858,7 +2891,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Underbody Armor",
             "heistRole": "Precision Getaway // High-G Cornering",
             "source": "Port Gellhorn Industrial Strip",
-            "image": "assets/vehicle-deviant.jpg?v=20261118_v2",
+            "image": "assets/vehicle-deviant.jpg?v=20261119_v3",
             "stats": {
                   "speed": 84,
                   "accel": 87,
@@ -2882,7 +2915,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Decoy Pursuit Distractor // Siren Jammer",
             "source": "Trailer 1 Highway Overpass",
-            "image": "assets/vehicle-phoenix.jpg?v=20261118_v2",
+            "image": "assets/vehicle-phoenix.jpg?v=20261119_v3",
             "stats": {
                   "speed": 79,
                   "accel": 80,
@@ -2906,7 +2939,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Windshield Armor Strip",
             "heistRole": "High-Speed Interstate Ghosting",
             "source": "Official GTA 6 Artwork & Downtown Traffic",
-            "image": "assets/vehicle-banshee.jpg?v=20261118_v2",
+            "image": "assets/vehicle-banshee.jpg?v=20261119_v3",
             "stats": {
                   "speed": 94,
                   "accel": 93,
@@ -2930,7 +2963,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tinted Police-Block Film",
             "heistRole": "Luxury Casino Infiltration & Rapid Evasion",
             "source": "Ocean Drive Art Deco Strip (Trailer 1)",
-            "image": "assets/vehicle-cheetah.jpg?v=20261118_v2",
+            "image": "assets/vehicle-cheetah.jpg?v=20261119_v3",
             "stats": {
                   "speed": 89,
                   "accel": 87,
@@ -2954,7 +2987,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced A-Pillars",
             "heistRole": "Rain-Proof Wet Weather Getaway",
             "source": "Starlet Key Bridge Crossing Scene",
-            "image": "assets/vehicle-comet-s2.jpg?v=20261118_v2",
+            "image": "assets/vehicle-comet-s2.jpg?v=20261119_v3",
             "stats": {
                   "speed": 93,
                   "accel": 98,
@@ -2978,7 +3011,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Lightweight Armor Plating",
             "heistRole": "VIP Fast Extraction // Highway Pursuit Disruption",
             "source": "Trailer 1 Freeway Chase Scene",
-            "image": "assets/vehicle-coquette-d10.jpg?v=20261118_v2",
+            "image": "assets/vehicle-coquette-d10.jpg?v=20261119_v3",
             "stats": {
                   "speed": 91,
                   "accel": 95,
@@ -3002,7 +3035,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Full Run-Flat Compound",
             "heistRole": "Ultra-High Value Diamond & Bearer Bond Courier",
             "source": "Venetian Way Penthouse Driveway Scene",
-            "image": "assets/vehicle-furia.jpg?v=20261118_v2",
+            "image": "assets/vehicle-furia.jpg?v=20261119_v3",
             "stats": {
                   "speed": 98,
                   "accel": 99,
@@ -3026,7 +3059,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Missile Lock-On Jammer + Slick",
             "heistRole": "Counter-Surveillance Escort Vehicle",
             "source": "Vice City Marina Leaked Parking Deck",
-            "image": "assets/vehicle-champion.jpg?v=20261118_v2",
+            "image": "assets/vehicle-champion.jpg?v=20261119_v3",
             "stats": {
                   "speed": 92,
                   "accel": 92,
@@ -3050,7 +3083,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced Monocoque",
             "heistRole": "Executive Syndicate Interceptor",
             "source": "Trailer 1 Starlet Key Yacht Club",
-            "image": "assets/vehicle-torero-xo.jpg?v=20261118_v2",
+            "image": "assets/vehicle-torero-xo.jpg?v=20261119_v3",
             "stats": {
                   "speed": 97,
                   "accel": 97,
@@ -3074,7 +3107,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Lexan",
             "heistRole": "Undercover Social Infiltration // Valet Swap",
             "source": "Downtown Vice City Financial District",
-            "image": "assets/vehicle-carbonizzare.jpg?v=20261118_v2",
+            "image": "assets/vehicle-carbonizzare.jpg?v=20261119_v3",
             "stats": {
                   "speed": 88,
                   "accel": 89,
@@ -3098,7 +3131,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Withstands 15 AR Rounds per Panel",
             "heistRole": "Executive VIP Extrication & 4-Man Crew Escape",
             "source": "Bank Transit Robbery Leak Sequence",
-            "image": "assets/vehicle-schafter-v12.jpg?v=20261118_v2",
+            "image": "assets/vehicle-schafter-v12.jpg?v=20261119_v3",
             "stats": {
                   "speed": 89,
                   "accel": 90,
@@ -3122,7 +3155,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Heavier Tint Windows",
             "heistRole": "Rapid Squad Transport // Curb-Jumping Utility",
             "source": "Kelly County Suburb Highway Scene",
-            "image": "assets/vehicle-astron.jpg?v=20261118_v2",
+            "image": "assets/vehicle-astron.jpg?v=20261119_v3",
             "stats": {
                   "speed": 86,
                   "accel": 89,
@@ -3146,7 +3179,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Track Lexan",
             "heistRole": "Sprint Evasion // Causeway Crossing",
             "source": "Vice Port Container Yard Leak",
-            "image": "assets/vehicle-itali-gtb.jpg?v=20261118_v2",
+            "image": "assets/vehicle-itali-gtb.jpg?v=20261119_v3",
             "stats": {
                   "speed": 95,
                   "accel": 96,
@@ -3170,7 +3203,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Kevlar Seat Inserts",
             "heistRole": "Aggressive 4-Man Hit-and-Run Platform",
             "source": "Trailer 1 Nightclub Alleyway",
-            "image": "assets/vehicle-jugular.jpg?v=20261118_v2",
+            "image": "assets/vehicle-jugular.jpg?v=20261119_v3",
             "stats": {
                   "speed": 88,
                   "accel": 91,
@@ -3194,7 +3227,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Level III Door Armor Panels",
             "heistRole": "Infiltration Disguise // Police Radio Scanner Hub",
             "source": "Official Artwork & Trailer 1 Patrol Chase",
-            "image": "assets/vehicle-vcpd-cruiser.jpg?v=20261118_v2",
+            "image": "assets/vehicle-vcpd-cruiser.jpg?v=20261119_v3",
             "stats": {
                   "speed": 81,
                   "accel": 84,
@@ -3218,7 +3251,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Bulletproof Windshield + Run-Flats",
             "heistRole": "Undercover High-Speed Interceptor & Counter-Ramming",
             "source": "Freeway Pursuit & Highway Patrol Leaks",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_v2",
+            "image": "assets/vehicle-buffalo-stx.jpg?v=20261119_v3",
             "stats": {
                   "speed": 90,
                   "accel": 93,
@@ -3242,7 +3275,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Complete Bulletproof Glass & Tires",
             "heistRole": "Unstoppable Extraction Fortress // Bank Door Breacher",
             "source": "Trailer 1 Tactical SWAT Deployment Scene",
-            "image": "assets/vehicle-vcpd-riot.jpg?v=20261118_v2",
+            "image": "assets/vehicle-vcpd-riot.jpg?v=20261119_v3",
             "stats": {
                   "speed": 58,
                   "accel": 52,
@@ -3266,7 +3299,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Front Cab Reinforcements",
             "heistRole": "Swamp & Grassrivers Off-Grid Exfiltration",
             "source": "Grassrivers Leaked Patrol Encounter",
-            "image": "assets/vehicle-park-ranger.jpg?v=20261118_v2",
+            "image": "assets/vehicle-park-ranger.jpg?v=20261119_v3",
             "stats": {
                   "speed": 73,
                   "accel": 74,
@@ -3290,7 +3323,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Level III-A Hidden Window Laminate",
             "heistRole": "Covert Recon & Ambush Point Extraction",
             "source": "Ambrosia Motel Surveillance Leak",
-            "image": "assets/vehicle-vcpd-unmarked.jpg?v=20261118_v2",
+            "image": "assets/vehicle-vcpd-unmarked.jpg?v=20261119_v3",
             "stats": {
                   "speed": 82,
                   "accel": 85,
@@ -3314,7 +3347,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Bridge Glass Level III",
             "heistRole": "Maritime Contraband Interception & Water Evade",
             "source": "Vice City Harbor Leaks & Trailer 1 Marina",
-            "image": "assets/vehicle-predator-patrol.jpg?v=20261118_v2",
+            "image": "assets/vehicle-predator-patrol.jpg?v=20261119_v3",
             "stats": {
                   "speed": 78,
                   "accel": 82,
@@ -3338,7 +3371,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Lower Cockpit Deflection",
             "heistRole": "High-Altitude Overwatch & Sniper Platform",
             "source": "Trailer 1 Vice City Skyline Night Searchlight",
-            "image": "assets/vehicle-police-maverick.jpg?v=20261118_v2",
+            "image": "assets/vehicle-police-maverick.jpg?v=20261119_v3",
             "stats": {
                   "speed": 87,
                   "accel": 85,
@@ -3362,7 +3395,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Everglades Swamp Exfiltration & Bayou Crossing",
             "source": "Grassrivers Gator Farm Scene",
-            "image": "assets/vehicle-karin-rebel.jpg?v=20261118_v2",
+            "image": "assets/vehicle-karin-rebel.jpg?v=20261119_v3",
             "stats": {
                   "speed": 65,
                   "accel": 68,
@@ -3386,7 +3419,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "High Cab Clearance",
             "heistRole": "Obstacle Crusher & Heavy Payday Hauler",
             "source": "Trailer 1 Mud Club & Dirt Track Scene",
-            "image": "assets/vehicle-sandking-xl.jpg?v=20261118_v2",
+            "image": "assets/vehicle-sandking-xl.jpg?v=20261119_v3",
             "stats": {
                   "speed": 69,
                   "accel": 75,
@@ -3410,7 +3443,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Low-Key Country Getaway & Smuggler Trail Runner",
             "source": "Ambrosia Motel Parking Lot",
-            "image": "assets/vehicle-seminole.jpg?v=20261118_v2",
+            "image": "assets/vehicle-seminole.jpg?v=20261119_v3",
             "stats": {
                   "speed": 70,
                   "accel": 74,
@@ -3434,7 +3467,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced Cab Panels",
             "heistRole": "Multi-Terrain Armored Convoy Lead",
             "source": "Venetian Islands High-Net-Worth Security",
-            "image": "assets/vehicle-dubsta-6x6.jpg?v=20261118_v2",
+            "image": "assets/vehicle-dubsta-6x6.jpg?v=20261119_v3",
             "stats": {
                   "speed": 76,
                   "accel": 82,
@@ -3458,7 +3491,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Family-Profile Covert Getaway SUV",
             "source": "Vice City Suburb Leaks",
-            "image": "assets/vehicle-dorado.jpg?v=20261118_v2",
+            "image": "assets/vehicle-dorado.jpg?v=20261119_v3",
             "stats": {
                   "speed": 71,
                   "accel": 76,
@@ -3482,7 +3515,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tier 2 Ballistic Option",
             "heistRole": "Cartel Boss Escort & Heavy Syndicate Command",
             "source": "Starlet Key Mansion Gates (Trailer 1)",
-            "image": "assets/vehicle-cavalcade-xl.jpg?v=20261118_v2",
+            "image": "assets/vehicle-cavalcade-xl.jpg?v=20261119_v3",
             "stats": {
                   "speed": 82,
                   "accel": 86,
@@ -3506,7 +3539,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Central Tire Inflation + Shield Glass",
             "heistRole": "Spike-Strip Immune Ram Vehicle",
             "source": "Military Armory Leaks",
-            "image": "assets/vehicle-patriot-milspec.jpg?v=20261118_v2",
+            "image": "assets/vehicle-patriot-milspec.jpg?v=20261119_v3",
             "stats": {
                   "speed": 62,
                   "accel": 65,
@@ -3530,7 +3563,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Undercover Stash Hauler & Country Evade",
             "source": "Kelly County Bait Shop Leaks",
-            "image": "assets/vehicle-rancher-xl.jpg?v=20261118_v2",
+            "image": "assets/vehicle-rancher-xl.jpg?v=20261119_v3",
             "stats": {
                   "speed": 66,
                   "accel": 70,
@@ -3554,7 +3587,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Swamp Trail Quick Scout & Beach Infiltration",
             "source": "Trailer 1 Vice Beach Sand Cruising Scene",
-            "image": "assets/vehicle-street-blazer.jpg?v=20261118_v2",
+            "image": "assets/vehicle-street-blazer.jpg?v=20261119_v3",
             "stats": {
                   "speed": 72,
                   "accel": 88,
@@ -3578,7 +3611,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced Pontoon Skids",
             "heistRole": "Offshore Yacht Raid & Marsh Extraction",
             "source": "Vice City Waterways Leak",
-            "image": "assets/vehicle-seasparrow.jpg?v=20261118_v2",
+            "image": "assets/vehicle-seasparrow.jpg?v=20261119_v3",
             "stats": {
                   "speed": 88,
                   "accel": 84,
@@ -3602,7 +3635,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Gunwale Shields",
             "heistRole": "Maritime Contraband Dash to International Waters",
             "source": "Official Artwork & Trailer 1 Marina Scene",
-            "image": "assets/vehicle-squalo.jpg?v=20261118_v2",
+            "image": "assets/vehicle-squalo.jpg?v=20261119_v3",
             "stats": {
                   "speed": 92,
                   "accel": 94,
@@ -3626,7 +3659,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tinted Cabin Glass",
             "heistRole": "Floating Mobile Safehouse & Laundering Front",
             "source": "Starlet Key Luxury Mooring Leaks",
-            "image": "assets/vehicle-tropic-cruiser.jpg?v=20261118_v2",
+            "image": "assets/vehicle-tropic-cruiser.jpg?v=20261119_v3",
             "stats": {
                   "speed": 68,
                   "accel": 72,
@@ -3650,7 +3683,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Puncture Resistant Sponson Tubes",
             "heistRole": "Stealth Shoreline Landing & Storm Drain Insertion",
             "source": "Vice Port Drainage Infiltration Sequence",
-            "image": "assets/vehicle-nagasaki-dinghy.jpg?v=20261118_v2",
+            "image": "assets/vehicle-nagasaki-dinghy.jpg?v=20261119_v3",
             "stats": {
                   "speed": 82,
                   "accel": 86,
@@ -3674,7 +3707,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Zero (Radar Absorbent Profile)",
             "heistRole": "Silent Zero-Radar Contraband Exfiltration",
             "source": "Trailer 1 Biscayne Bay Sailboats",
-            "image": "assets/vehicle-marquis-sailboat.jpg?v=20261118_v2",
+            "image": "assets/vehicle-marquis-sailboat.jpg?v=20261119_v3",
             "stats": {
                   "speed": 45,
                   "accel": 40,
@@ -3698,7 +3731,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Grassrivers Smuggler Landing Strip Insertion",
             "source": "Kelly County Farmland Scene",
-            "image": "assets/vehicle-western-duster.jpg?v=20261118_v2",
+            "image": "assets/vehicle-western-duster.jpg?v=20261119_v3",
             "stats": {
                   "speed": 86,
                   "accel": 90,
@@ -3722,7 +3755,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Aviation Tint Glass",
             "heistRole": "Rooftop Helipad VIP Extrication",
             "source": "Ocean Drive Penthouse Helipad Leaks",
-            "image": "assets/vehicle-buckingham-maverick.jpg?v=20261118_v2",
+            "image": "assets/vehicle-buckingham-maverick.jpg?v=20261119_v3",
             "stats": {
                   "speed": 89,
                   "accel": 86,
@@ -3746,7 +3779,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Cockpit Storm Shield",
             "heistRole": "Interstate State-Border Transshipment Flight",
             "source": "Grassrivers Smuggler Airfield Sequence",
-            "image": "assets/vehicle-jobuilt-velum.jpg?v=20261118_v2",
+            "image": "assets/vehicle-jobuilt-velum.jpg?v=20261119_v3",
             "stats": {
                   "speed": 96,
                   "accel": 92,
@@ -3770,7 +3803,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Rear Door Steel Plates",
             "heistRole": "Bulky Heavy Loot Transport & Utility Disguise",
             "source": "Downtown Vice City Delivery Alleyways",
-            "image": "assets/vehicle-speedo-van.jpg?v=20261118_v2",
+            "image": "assets/vehicle-speedo-van.jpg?v=20261119_v3",
             "stats": {
                   "speed": 68,
                   "accel": 72,
@@ -3794,7 +3827,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Armored Door Latches & Slit Glass",
             "heistRole": "Gold Bullion & Heavy Bank Vault Loot Hauler",
             "source": "Bank Transit Depot Scene",
-            "image": "assets/vehicle-brute-boxville.jpg?v=20261118_v2",
+            "image": "assets/vehicle-brute-boxville.jpg?v=20261119_v3",
             "stats": {
                   "speed": 60,
                   "accel": 58,
@@ -3818,7 +3851,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Commercial Cab",
             "heistRole": "Massive Hardware Moving & Chop Shop Supply",
             "source": "Port Gellhorn Shipping Docks",
-            "image": "assets/vehicle-maibatsu-mule.jpg?v=20261118_v2",
+            "image": "assets/vehicle-maibatsu-mule.jpg?v=20261119_v3",
             "stats": {
                   "speed": 58,
                   "accel": 54,
@@ -3842,7 +3875,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Windshield Deflector",
             "heistRole": "Solo Rapid Courier & Traffic Weaving",
             "source": "Kelly County Highway 101 Leaks",
-            "image": "assets/vehicle-western-sovereign.jpg?v=20261118_v2",
+            "image": "assets/vehicle-western-sovereign.jpg?v=20261119_v3",
             "stats": {
                   "speed": 75,
                   "accel": 80,
@@ -3866,7 +3899,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Ultra-Fast Solo Courier & Gridlock Weave",
             "source": "Ocean Drive Night Street Races",
-            "image": "assets/vehicle-bati-801.jpg?v=20261118_v2",
+            "image": "assets/vehicle-bati-801.jpg?v=20261119_v3",
             "stats": {
                   "speed": 96,
                   "accel": 98,
@@ -3890,7 +3923,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Stairwell, Alley & Wetland Escape Bike",
             "source": "Port Gellhorn Drainage Canal Leaks",
-            "image": "assets/vehicle-bf400.jpg?v=20261118_v2",
+            "image": "assets/vehicle-bf400.jpg?v=20261119_v3",
             "stats": {
                   "speed": 78,
                   "accel": 89,
@@ -3914,7 +3947,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Downtown Vice City Alleyway Threader",
             "source": "Little Cuba Back Alleys Scene",
-            "image": "assets/vehicle-nemesis.jpg?v=20261118_v2",
+            "image": "assets/vehicle-nemesis.jpg?v=20261119_v3",
             "stats": {
                   "speed": 85,
                   "accel": 92,
@@ -3946,7 +3979,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 82
             },
             "source": "Trailer 1 Hold-Up Scene (Jason & Lucia) & 2022 Leaks",
-            "image": "assets/weapon-polymer.jpg?v=20261118_v2",
+            "image": "assets/weapon-polymer.jpg?v=20261119_v3",
             "bio": "The gold-standard compact striker-fired polymer sidearm carried by Lucia in the opening trailer diner robbery. Lightweight, failure-proof even when dropped in muddy Leonida wetlands, and offers near-total concealment under casual clothing."
       },
       "beretta": {
@@ -3969,7 +4002,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 86
             },
             "source": "Jason Duval Official Character Stash Art & VCPD Armory",
-            "image": "assets/weapon-beretta.jpg?v=20261118_v2",
+            "image": "assets/weapon-beretta.jpg?v=20261119_v3",
             "bio": "Classic Italian open-slide double-action military sidearm with smooth recoil characteristics and flawless feeding reliability. Standard issue for many veteran law enforcement officers and Jason’s preferred defensive weapon."
       },
       "mustang357": {
@@ -3992,7 +4025,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 90
             },
             "source": "Trailer 1 Highway Police Standoff & Leaks",
-            "image": "assets/weapon-mustang357.jpg?v=20261118_v2",
+            "image": "assets/weapon-mustang357.jpg?v=20261119_v3",
             "bio": "High-polish stainless steel revolver packing devastating stopping power. Can punch through car doors and engine blocks at close range. One shot to center-mass drops unarmored guards instantly."
       },
       "browning-hipower": {
@@ -4015,7 +4048,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 85
             },
             "source": "Raul Bautista Smuggler Cache Leak",
-            "image": "assets/weapon-browning-hipower.jpg?v=20261118_v2",
+            "image": "assets/weapon-browning-hipower.jpg?v=20261119_v3",
             "bio": "Historic single-action sidearm favored by veteran Caribbean contraband runners and cartel lieutenants for its crisp trigger break and ergonomic grip angle."
       },
       "taurus-judge": {
@@ -4059,7 +4092,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 88
             },
             "source": "Trailer 1 Bank Infiltration & Key Leaks",
-            "image": "assets/weapon-mp5.jpg?v=20261118_v2",
+            "image": "assets/weapon-mp5.jpg?v=20261119_v3",
             "bio": "The undisputed gold standard in roller-delayed submachine guns. Almost non-existent recoil allows putting an entire 30-round magazine into a 4-inch cluster while moving down bank hallways."
       },
       "micro-smg": {
@@ -4082,7 +4115,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 60
             },
             "source": "Drive-By Shooting Clip & Leaks",
-            "image": "assets/weapon-micro-smg.jpg?v=20261118_v2",
+            "image": "assets/weapon-micro-smg.jpg?v=20261119_v3",
             "bio": "Blistering 1,200 rounds per minute cyclic rate that empties a full magazine in under two seconds. The ultimate drive-by weapon from the driver seat of a getaway car."
       },
       "tec9": {
@@ -4105,7 +4138,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 64
             },
             "source": "Vice City Little Haiti Gang Leaks",
-            "image": "assets/weapon-tec9.jpg?v=20261118_v2",
+            "image": "assets/weapon-tec9.jpg?v=20261119_v3",
             "bio": "Infamous 90s Vice City street syndicate staple. Intimidating barrel shroud profile and massive 50-round drum magazine make it deadly for vault corridor suppressive fire."
       },
       "p90": {
@@ -4128,7 +4161,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 91
             },
             "source": "Port Gellhorn Shipping Facility Raid",
-            "image": "assets/weapon-p90.jpg?v=20261118_v2",
+            "image": "assets/weapon-p90.jpg?v=20261119_v3",
             "bio": "Compact bullpup design chambered in high-velocity 5.7mm armor-piercing rounds that slice through Kevlar vests worn by armored car transit guards."
       },
       "carbine": {
@@ -4151,7 +4184,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 92
             },
             "source": "Trailer 1 SWAT & Raul Bautista Syndicate Arsenal",
-            "image": "assets/weapon-carbine.jpg?v=20261118_v2",
+            "image": "assets/weapon-carbine.jpg?v=20261119_v3",
             "bio": "The military standard issue assault rifle. Extreme modularity and accuracy at medium-to-long ranges, capable of penetrating engine blocks and heavy ballistic glass."
       },
       "ak47": {
@@ -4174,7 +4207,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 78
             },
             "source": "Kelly County Militia Stash Leak",
-            "image": "assets/weapon-ak47.jpg?v=20261118_v2",
+            "image": "assets/weapon-ak47.jpg?v=20261119_v3",
             "bio": "Heavy 7.62mm stopping power that punches straight through concrete parking garage pillars and armored police vehicles. Incurably reliable in Leonida sand and mud."
       },
       "compact-rifle": {
@@ -4197,7 +4230,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 68
             },
             "source": "Trailer 1 Convenience Store Raid & Leaks",
-            "image": "assets/weapon-compact-rifle.jpg?v=20261118_v2",
+            "image": "assets/weapon-compact-rifle.jpg?v=20261119_v3",
             "bio": "A chopped-down AK platform with a 6-inch barrel that produces deafening concussive blasts and blinding muzzle fire. Offers rifle power in a package that fits under a windbreaker."
       },
       "battle-rifle": {
@@ -4220,7 +4253,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 89
             },
             "source": "Grassrivers Smuggler Fortress Clip",
-            "image": "assets/weapon-battle-rifle.jpg?v=20261118_v2",
+            "image": "assets/weapon-battle-rifle.jpg?v=20261119_v3",
             "bio": "The Right Hand of the Free World. Hits with sledgehammer energy at extreme distances, disabling pursuing patrol vehicles with shots through the radiator grille."
       },
       "pump-shotgun": {
@@ -4243,7 +4276,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 72
             },
             "source": "Bank Transit Security Footage Leak",
-            "image": "assets/weapon-pump-shotgun.jpg?v=20261118_v2",
+            "image": "assets/weapon-pump-shotgun.jpg?v=20261119_v3",
             "bio": "The ultimate room clearer and vault breach tool. Loaded with 00 buckshot, it tears open wooden security doors and immobilizes advancing swat teams in tight hallways."
       },
       "sawed-off": {
@@ -4266,7 +4299,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 45
             },
             "source": "Kelly County Bayou Robbery Leak",
-            "image": "assets/weapon-sawed-off.jpg?v=20261118_v2",
+            "image": "assets/weapon-sawed-off.jpg?v=20261119_v3",
             "bio": "Both barrels sawed down to 8 inches. Empties a devastating wall of lead at point-blank range, turning armored vault locks and cash registers into shattered fragments."
       },
       "combat-shotgun": {
@@ -4289,7 +4322,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 76
             },
             "source": "Vice City Ocean Beach Gun Shop Leak",
-            "image": "assets/weapon-combat-shotgun.jpg?v=20261118_v2",
+            "image": "assets/weapon-combat-shotgun.jpg?v=20261119_v3",
             "bio": "Iconic folding-stock combat shotgun that cycles semi-automatic 12-gauge magnum shells as fast as the operator pulls the trigger."
       },
       "grenade-launcher": {
@@ -4312,7 +4345,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 80
             },
             "source": "Trailer 2 SWAT Tactical Breach Sequence",
-            "image": "assets/weapon-grenade-launcher.jpg?v=20261118_v2",
+            "image": "assets/weapon-grenade-launcher.jpg?v=20261119_v3",
             "bio": "Lobs 40mm high-explosive or CS tear gas rounds with pinpoint trajectory over police barricades, flipping swat vans and clearing entire intersections in one thud."
       },
       "rpg7": {
@@ -4335,7 +4368,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 75
             },
             "source": "Military Armory Heist Leaks",
-            "image": "assets/weapon-rpg7.jpg?v=20261118_v2",
+            "image": "assets/weapon-rpg7.jpg?v=20261119_v3",
             "bio": "Devastating anti-armor launcher capable of blowing VCPD riot enforcers and police helicopters out of the sky in a blinding flash of shaped-charge explosive force."
       },
       "sniper": {
@@ -4358,7 +4391,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 98
             },
             "source": "Jason Duval Grassrivers Overwatch Scene",
-            "image": "assets/weapon-sniper.jpg?v=20261118_v2",
+            "image": "assets/weapon-sniper.jpg?v=20261119_v3",
             "bio": "Extreme-range bolt-action precision platform used for high-angle overwatch missions. One well-placed shot through the engine block disables pursuit vehicles before they reach the safehouse."
       },
       "heavy-sniper": {
@@ -4381,7 +4414,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 96
             },
             "source": "Vice Port Military Guard Tower Scene",
-            "image": "assets/weapon-heavy-sniper.jpg?v=20261118_v2",
+            "image": "assets/weapon-heavy-sniper.jpg?v=20261119_v3",
             "bio": "Fires massive 660-grain armor-piercing incendiary rounds that detonate fuel tanks and tear through reinforced bunker walls from over a mile away."
       },
       "hammer": {
@@ -4404,7 +4437,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 90
             },
             "source": "Trailer 1 Iconic \"Hammer Lady\" Scene",
-            "image": "assets/weapon-hammer.jpg?v=20261118_v2",
+            "image": "assets/weapon-hammer.jpg?v=20261119_v3",
             "bio": "Made famous in the first GTA 6 trailer by the neighborhood watch woman. Perfect for shattering jewelry display cases, disabling security cameras silently, and cracking door locks."
       },
       "baseball-bat": {
@@ -4427,7 +4460,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 85
             },
             "source": "Port Gellhorn Street Brawl & Pawn Shop Leaks",
-            "image": "assets/weapon-baseball-bat.jpg?v=20261118_v2",
+            "image": "assets/weapon-baseball-bat.jpg?v=20261119_v3",
             "bio": "The classic intimidation weapon. A couple of swings against a bank teller’s bulletproof glass instantly skyrockets the intimidation meter without firing a shot and alerting police dispatch."
       },
       "crowbar": {
@@ -4450,7 +4483,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 88
             },
             "source": "Backdoor Delivery Robbery Leaks",
-            "image": "assets/weapon-crowbar.jpg?v=20261118_v2",
+            "image": "assets/weapon-crowbar.jpg?v=20261119_v3",
             "bio": "Dual-purpose heist tool. Used to quietly pry open security fire doors, electrical junction boxes, and ATM access panels, or wielded as a crushing close-quarters weapon."
       },
       "combat-knife": {
@@ -4473,7 +4506,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 95
             },
             "source": "Stealth Infiltration Takedown Leak",
-            "image": "assets/weapon-combat-knife.jpg?v=20261118_v2",
+            "image": "assets/weapon-combat-knife.jpg?v=20261119_v3",
             "bio": "Black epoxy-coated 7-inch tanto blade designed for silent takedowns of security sentries from behind. Leaves zero shell casings or acoustic signature."
       }
 },
@@ -4489,7 +4522,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "98% Facial Recognition Block",
             "perk": "Blocks CCTV facial recognition & delays 911 caller identification by 35 seconds.",
             "source": "Trailer 1 Diner Hold-Up Scene (Jason Duval)",
-            "image": "assets/gear-skull-mask.jpg?v=20261118_v2",
+            "image": "assets/gear-skull-mask.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 95,
                   "ballistic": 15,
@@ -4508,7 +4541,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "92% Identity Concealment",
             "perk": "Fastest equip animation during sudden cash register grab-and-dashes.",
             "source": "Official Lucia Key Art & Diner Holdup",
-            "image": "assets/character-lucia.jpg?v=20261118_v2",
+            "image": "assets/character-lucia.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 90,
                   "ballistic": 10,
@@ -4527,7 +4560,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "99% Total Head Shield",
             "perk": "Negates 1 fatal headshot from law enforcement pistol fire.",
             "source": "Bank Vault Heist Alpha Leak 14",
-            "image": "assets/gear-ballistic-mask.jpg?v=20261118_v2",
+            "image": "assets/gear-ballistic-mask.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 98,
                   "ballistic": 92,
@@ -4546,7 +4579,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "85% Distortion",
             "perk": "Zero suspicion when stored in pockets; discarded instantly into trash bins.",
             "source": "Trailer 1 Kelly County Gas Station",
-            "image": "assets/gear-stocking-mask.jpg?v=20261118_v2",
+            "image": "assets/gear-stocking-mask.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 85,
                   "ballistic": 5,
@@ -4565,7 +4598,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "98% Identity Mask",
             "perk": "+20% Hostage Intimidation Speed; suppresses crowd panic alarms.",
             "source": "Port Gellhorn Amusement Pier Robbery Scene",
-            "image": "assets/character-leonida-joker.jpg?v=20261118_v2",
+            "image": "assets/character-leonida-joker.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 96,
                   "ballistic": 12,
@@ -4584,7 +4617,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "96% Identity Mask",
             "perk": "Cult following bonus; unlocks unique syndicate underground dialogue.",
             "source": "Ocean Drive Street Party Leaked Encounter",
-            "image": "assets/gear-animal-mask.jpg?v=20261118_v2",
+            "image": "assets/gear-animal-mask.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 94,
                   "ballistic": 10,
@@ -4603,7 +4636,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% (Submerged)",
             "perk": "Unlimited underwater breathing; zero air bubbles on radar sonar.",
             "source": "Biscayne Bay Underwater Drainage Leak",
-            "image": "assets/gear-scuba-suit.jpg?v=20261118_v2",
+            "image": "assets/gear-scuba-suit.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 99,
                   "ballistic": 30,
@@ -4622,7 +4655,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% Full Body Shield",
             "perk": "Complete immunity to tear gas, smoke canisters, and chemical dispersants.",
             "source": "Port Gellhorn Pharmaceutical Cargo Raid",
-            "image": "assets/gear-hazmat-suit.jpg?v=20261118_v2",
+            "image": "assets/gear-hazmat-suit.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 99,
                   "ballistic": 45,
@@ -4641,7 +4674,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% Law Enforcement Cover",
             "perk": "Walk through police barricades and restricted evidence lockups without drawing heat.",
             "source": "Police Precinct Infiltration Leak 31",
-            "image": "assets/character-vcpd-officer.jpg?v=20261118_v2",
+            "image": "assets/character-vcpd-officer.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 98,
                   "ballistic": 60,
@@ -4660,7 +4693,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "95% Worker Disguise",
             "perk": "Full access to cargo container shipping terminals and industrial docks.",
             "source": "Vice Port Container Yard Gameplay",
-            "image": "assets/character-brian-heder.jpg?v=20261118_v2",
+            "image": "assets/character-brian-heder.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 92,
                   "ballistic": 25,
@@ -4679,7 +4712,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% VIP Status",
             "perk": "Grants access to high-limit VIP penthouses, private poker lounges, and casino vaults.",
             "source": "Starlet Key Casino Gala Scene",
-            "image": "assets/character-drequan-priest.jpg?v=20261118_v2",
+            "image": "assets/character-drequan-priest.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 96,
                   "ballistic": 35,
@@ -4698,7 +4731,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "96% Tourist Blending",
             "perk": "Blend into Ocean Drive pedestrian crowds instantly to drop police stars.",
             "source": "Trailer 1 Vice Beach Hotel Strip",
-            "image": "assets/character-cal-hampton.jpg?v=20261118_v2",
+            "image": "assets/character-cal-hampton.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 94,
                   "ballistic": 10,
@@ -4717,7 +4750,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "0% (Heavy Military Rig)",
             "perk": "Absorbs up to 25 rifle shots; explosive blast damage reduced by 60%.",
             "source": "Trailer 1 Tactical Armor & Leaks",
-            "image": "assets/gear-juggernaut-armor.jpg?v=20261118_v2",
+            "image": "assets/gear-juggernaut-armor.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 20,
                   "ballistic": 100,
@@ -4736,7 +4769,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "Special Ops Tactical",
             "perk": "Full green-phosphor night vision; reveals sentry positions in blackout conditions.",
             "source": "Power Grid Blackout Bank Infiltration Sequence",
-            "image": "assets/gear-nvg-helmet.jpg?v=20261118_v2",
+            "image": "assets/gear-nvg-helmet.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 80,
                   "ballistic": 90,
@@ -4755,7 +4788,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% Forensic Protection",
             "perk": "Leaves zero forensic fingerprint evidence; +25% melee punch damage.",
             "source": "Trailer 1 Weapon Handling & Leaks",
-            "image": "assets/character-jason.jpg?v=20261118_v2",
+            "image": "assets/character-jason.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 100,
                   "ballistic": 40,
@@ -4774,7 +4807,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "Tactical Recon",
             "perk": "Highlights guard heat signatures through smoke clouds, fog, and thin drywall.",
             "source": "Vice City Bank Vault Heist Blueprint",
-            "image": "assets/item-thermal-lance.jpg?v=20261118_v2",
+            "image": "assets/item-thermal-lance.jpg?v=20261119_v3",
             "stats": {
                   "conceal": 85,
                   "ballistic": 35,
@@ -4808,10 +4841,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 
         backdrop.innerHTML = `
           <div class="char-modal-box">
-            <button type="button" class="char-modal-close" onclick="GTA6.VehicleModal.close()" title="Close Dossier">&times;</button>
+            <button type="button" class="char-modal-close" onclick="GTA6.VehicleModal.close()" title="Close Dossier" aria-label="Close Dossier" style="display:inline-flex;align-items:center;justify-content:center;">${GTA6.Icons.close(16)}</button>
             <div style="display:flex; flex-wrap:wrap; background:#070b14; border-bottom:1px solid rgba(0,240,255,0.25);">
               <div style="flex:1 1 280px; max-height:340px; overflow:hidden; position:relative; background:#04070e;">
-                <img src="${data.image}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img src="${data.image && data.image.startsWith('http') ? data.image : '/' + String(data.image || 'assets/character-lucia.jpg').replace(/^\/+/, '')}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <span class="user-badge" style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">CONFIRMED GTA 6 FLEET</span>
                 <span class="user-badge" style="position:absolute; bottom:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.72rem; font-family:var(--font-mono);">${data.category.toUpperCase()}</span>
               </div>
@@ -4832,7 +4865,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                   <button type="button" class="btn btn-primary" onclick="GTA6.toggleBookmark('veh-${data.id}', '${data.name}'); GTA6.showToast('Vehicle bookmarked to Syndicate HUD!');" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem;">⭐ Bookmark</button>
-                  <a href="vault-code-calculator.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan);">📲 Second-Screen HUD</a>
+                  <a href="/heist-planner.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan);">📲 Second-Screen HUD</a>
                 </div>
               </div>
             </div>
@@ -4887,9 +4920,9 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 
     WeaponModal: {
       open(id) {
-        let key = (id || 'polymer').toLowerCase().trim();
-        key = key.replace('weapon-', '').replace('item-', '');
-        const data = GTA6.WeaponData[key] || GTA6.WeaponData['polymer'];
+        const rawKey = (id || 'polymer').toLowerCase().trim();
+        const strippedKey = rawKey.replace(/^weapon-/, '').replace(/^item-/, '').replace(/^gear-/, '');
+        const data = GTA6.WeaponData[rawKey] || GTA6.WeaponData[strippedKey] || GTA6.WeaponData['weapon-' + strippedKey] || GTA6.WeaponData['polymer'];
         if (GTA6.playBeep) GTA6.playBeep(520, 'triangle', 0.05);
 
         let backdrop = document.getElementById('charModalBackdrop');
@@ -4908,10 +4941,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 
         backdrop.innerHTML = `
           <div class="char-modal-box">
-            <button type="button" class="char-modal-close" onclick="GTA6.WeaponModal.close()" title="Close Dossier">&times;</button>
+            <button type="button" class="char-modal-close" onclick="GTA6.WeaponModal.close()" title="Close Dossier" aria-label="Close Dossier" style="display:inline-flex;align-items:center;justify-content:center;">${GTA6.Icons.close(16)}</button>
             <div style="display:flex; flex-wrap:wrap; background:#070b14; border-bottom:1px solid rgba(255,184,0,0.25);">
               <div style="flex:1 1 280px; max-height:340px; overflow:hidden; position:relative; background:#04070e;">
-                <img src="${data.image}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img src="${data.image && data.image.startsWith('http') ? data.image : '/' + String(data.image || 'assets/character-lucia.jpg').replace(/^\/+/, '')}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <span class="user-badge" style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.72rem; font-weight:800;">CONFIRMED ARSENAL</span>
                 <span class="user-badge" style="position:absolute; bottom:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono);">${data.category.toUpperCase()}</span>
               </div>
@@ -5007,10 +5040,10 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 
         backdrop.innerHTML = `
           <div class="char-modal-box">
-            <button type="button" class="char-modal-close" onclick="GTA6.GearModal.close()" title="Close Dossier">&times;</button>
+            <button type="button" class="char-modal-close" onclick="GTA6.GearModal.close()" title="Close Dossier" aria-label="Close Dossier" style="display:inline-flex;align-items:center;justify-content:center;">${GTA6.Icons.close(16)}</button>
             <div style="display:flex; flex-wrap:wrap; background:#070b14; border-bottom:1px solid rgba(255,42,141,0.25);">
               <div style="flex:1 1 280px; max-height:340px; overflow:hidden; position:relative; background:#04070e;">
-                <img src="${data.image}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img src="${data.image && data.image.startsWith('http') ? data.image : '/' + String(data.image || 'assets/character-lucia.jpg').replace(/^\/+/, '')}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <span class="user-badge" style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; font-weight:800;">HEIST INFILTRATION RIG</span>
                 <span class="user-badge" style="position:absolute; bottom:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.72rem; font-family:var(--font-mono);">${data.category.toUpperCase()}</span>
               </div>
@@ -5028,7 +5061,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                   <button type="button" class="btn btn-primary" onclick="GTA6.toggleBookmark('gear-${data.id}', '${data.name}'); GTA6.showToast('Gear equipped to Infiltration Plan!');" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:linear-gradient(135deg,#ff2a8d,#ff0066); border-color:var(--neon-pink); color:#fff; font-weight:800;">⭐ Equip Infiltration Gear</button>
-                  <a href="vault-code-calculator.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);">📲 HUD Companion</a>
+                  <a href="/heist-planner.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);">📲 HUD Companion</a>
                 </div>
               </div>
             </div>
@@ -5138,10 +5171,10 @@ CharacterModal: {
 
         backdrop.innerHTML = `
           <div class="char-modal-box">
-            <button type="button" class="char-modal-close" onclick="GTA6.CharacterModal.close()" title="Close Dossier">&times;</button>
+            <button type="button" class="char-modal-close" onclick="GTA6.CharacterModal.close()" title="Close Dossier" aria-label="Close Dossier" style="display:inline-flex;align-items:center;justify-content:center;">${GTA6.Icons.close(16)}</button>
             <div style="display:flex; flex-wrap:wrap; background:#070b14; border-bottom:1px solid rgba(0,240,255,0.25);">
               <div style="flex:1 1 280px; max-height:360px; overflow:hidden; position:relative; background:#04070e;">
-                <img src="${data.image}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;">
+                <img src="${data.image && data.image.startsWith('http') ? data.image : '/' + String(data.image || 'assets/character-lucia.jpg').replace(/^\/+/, '')}" alt="${data.name}" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;">
                 <span class="user-badge" style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">TOP SECRET // DOSSIER</span>
                 <span class="user-badge" style="position:absolute; bottom:12px; left:12px; background:rgba(0,0,0,0.85); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; font-family:var(--font-mono);">${data.category.toUpperCase()}</span>
               </div>
@@ -5250,7 +5283,7 @@ CharacterModal: {
         `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
       ],
       init() {
-        if (sessionStorage.getItem('gta6_ticker_dismissed')) return;
+        try { if (localStorage.getItem('gta6_ticker_dismissed')) return; } catch (e) {}
         const bar = document.createElement('div');
         bar.id = 'dealTickerBar';
         bar.className = 'deal-ticker-bar';
@@ -5258,7 +5291,7 @@ CharacterModal: {
           <div class="deal-ticker-content">
             <span class="deal-ticker-item" id="dealTickerItem">${this.messages[0]}</span>
           </div>
-          <button type="button" class="deal-ticker-close" onclick="GTA6.DealTicker.dismiss()" title="Dismiss Ticker">✕</button>
+          <button type="button" class="deal-ticker-close" onclick="GTA6.DealTicker.dismiss()" title="Dismiss Ticker" aria-label="Dismiss Ticker">${GTA6.Icons.close(14)}</button>
         `;
         document.body.appendChild(bar);
         document.body.classList.add('has-ticker');
@@ -5284,7 +5317,7 @@ CharacterModal: {
         const bar = document.getElementById('dealTickerBar');
         if (bar) bar.remove();
         document.body.classList.remove('has-ticker');
-        sessionStorage.setItem('gta6_ticker_dismissed', '1');
+        try { localStorage.setItem('gta6_ticker_dismissed', '1'); } catch (e) {}
       }
     },
 
@@ -5440,7 +5473,7 @@ CharacterModal: {
     },
 
     downloadCalcCard() {
-      const targetEl = document.getElementById('approachSelect') || document.getElementById('vaultTarget');
+      const targetEl = document.getElementById('approachSelect') || document.getElementById('vaultTarget') || document.getElementById('fcVault');
       const vaultName = (targetEl && targetEl.selectedOptions && targetEl.selectedOptions[0] ? targetEl.selectedOptions[0].text : 'Leonida State Gold Reserve').replace(/ *\([^)]*\) */g, '');
       const netPerHr = document.getElementById('netPerHourDisplay')?.innerText || '$4,280,000/hr';
       const perPlayer = document.getElementById('perPlayerDisplay')?.innerText || '$4,687,500';
@@ -5582,7 +5615,7 @@ CharacterModal: {
           <span><strong>SYNDICATE CHALLENGE:</strong> Your friend cracked the vault in <strong style="color:var(--neon-green);">${label}</strong> — Can you beat them?</span>
           <button type="button" class="btn btn-amber" onclick="GTA6.FlexCard.acceptChallenge('${challengeVal}')" style="padding:0.25rem 0.75rem; font-size:0.75rem; margin-left:0.5rem;">⚡ Accept Challenge &amp; Bypass Vault</button>
         </div>
-        <button type="button" class="challenge-close-btn" onclick="this.parentElement.remove()" aria-label="Close Banner">✕</button>
+        <button type="button" class="challenge-close-btn" onclick="this.parentElement.remove()" aria-label="Close Banner">${GTA6.Icons.close(14)}</button>
       `;
       document.body.prepend(banner);
       if (window.location.pathname.includes('vault-hack-trainer') || window.location.pathname.includes('hack-trainer')) {
@@ -5632,7 +5665,7 @@ CharacterModal: {
 
     overlay.innerHTML = `
       <div class="embed-modal-box" role="dialog" aria-modal="true">
-        <button type="button" class="exit-intent-close" onclick="GTA6.closeEmbedModal()" aria-label="Close Modal">✕</button>
+        <button type="button" class="exit-intent-close" onclick="GTA6.closeEmbedModal()" aria-label="Close Modal">${GTA6.Icons.close(16)}</button>
         <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); letter-spacing:1.5px; font-weight:800; text-transform:uppercase; margin-bottom:0.4rem;">&lt;/&gt; FREE SYNDICATE WIDGET EMBED</div>
         <h3 style="color:#fff; font-size:1.35rem; margin-bottom:0.4rem;">Embed ${title}</h3>
         <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1.15rem;">Free, auto-updating widget for your gaming blog, crew site, or Twitch / Kick / TikTok Live OBS Browser Source.</p>
@@ -5682,21 +5715,36 @@ CharacterModal: {
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      if (sessionStorage.getItem('gta6_pwa_dismissed')) return;
+      try {
+        if (localStorage.getItem('gta6_pwa_dismissed') === '1') return;
+      } catch (err) {}
+      if (document.getElementById('pwaInstallBanner')) return;
 
       const banner = document.createElement('div');
       banner.id = 'pwaInstallBanner';
       banner.className = 'pwa-install-banner';
+      banner.setAttribute('role', 'region');
+      banner.setAttribute('aria-label', 'GTA 6 Heist Companion App Install');
       banner.innerHTML = `
-        <span style="font-size:1.35rem;">📲</span>
-        <div style="flex:1;">
-          <strong style="display:block; font-size:0.82rem;">GTA 6 Heist Companion</strong>
-          <span style="font-size:0.74rem; color:#94a3b8;">Add to Home Screen for 48m Leonida Clock &amp; Keypad Trainer</span>
+        <div style="display:flex; align-items:center; gap:0.75rem; flex:1 1 240px; min-width:0;">
+          <svg class="ui-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          <div>
+            <strong style="display:block; font-size:0.84rem; color:#fff;">GTA 6 Heist Companion</strong>
+            <span style="font-size:0.75rem; color:#94a3b8;">Install for offline 48m Leonida Clock &amp; Keypad Trainer</span>
+          </div>
         </div>
-        <button type="button" class="btn btn-primary" id="pwaInstallBtn" style="padding:0.3rem 0.65rem; font-size:0.74rem;">Install</button>
-        <button type="button" class="challenge-close-btn" onclick="GTA6.dismissPwa()" style="margin-left:2px;">✕</button>
+        <div class="pwa-install-banner-actions">
+          <button type="button" class="btn btn-primary" id="pwaInstallBtn" style="padding:0.38rem 0.85rem; font-size:0.76rem; min-height:36px;">Install App</button>
+          <button type="button" class="challenge-close-btn" onclick="GTA6.dismissPwa()" aria-label="Dismiss Companion Banner">${this.Icons.close(14)}</button>
+        </div>
       `;
-      document.body.appendChild(banner);
+
+      const footer = document.querySelector('footer');
+      if (footer && footer.parentNode) {
+        footer.parentNode.insertBefore(banner, footer);
+      } else {
+        (document.querySelector('main') || document.body).appendChild(banner);
+      }
 
       document.getElementById('pwaInstallBtn')?.addEventListener('click', async () => {
         banner.remove();
@@ -5712,7 +5760,9 @@ CharacterModal: {
   dismissPwa() {
     const b = document.getElementById('pwaInstallBanner');
     if (b) b.remove();
-    sessionStorage.setItem('gta6_pwa_dismissed', '1');
+    try {
+      localStorage.setItem('gta6_pwa_dismissed', '1');
+    } catch (e) {}
   },
 DealRotator: {
       deals: [
@@ -5920,7 +5970,7 @@ DealRotator: {
 
           container.innerHTML = `
             <div class="squad-slot-card" style="border-color:var(--neon-pink);">
-              <img src="${tempLead.img}" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-pink);">
+              <img src="/${tempLead.img.replace(/^\/+/, '')}" alt="${tempLead.name}" width="54" height="54" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-pink);">
               <div>
                 <span style="font-size:0.7rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:800;">LEAD OPERATIVE</span>
                 <div style="font-weight:900; color:#fff; font-size:0.95rem;">${tempLead.name}</div>
@@ -5928,7 +5978,7 @@ DealRotator: {
               </div>
             </div>
             <div class="squad-slot-card" style="border-color:var(--neon-cyan);">
-              <img src="${tempSpec.img}" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-cyan);">
+              <img src="/${tempSpec.img.replace(/^\/+/, '')}" alt="${tempSpec.name}" width="54" height="54" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-cyan);">
               <div>
                 <span style="font-size:0.7rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:800;">SPECIALIST</span>
                 <div style="font-weight:900; color:#fff; font-size:0.95rem;">${tempSpec.name}</div>
@@ -5936,7 +5986,7 @@ DealRotator: {
               </div>
             </div>
             <div class="squad-slot-card" style="border-color:var(--neon-yellow);">
-              <img src="${tempFence.img}" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-yellow);">
+              <img src="/${tempFence.img.replace(/^\/+/, '')}" alt="${tempFence.name}" width="54" height="54" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-yellow);">
               <div>
                 <span style="font-size:0.7rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:800;">GETAWAY / FENCE</span>
                 <div style="font-weight:900; color:#fff; font-size:0.95rem;">${tempFence.name}</div>
@@ -5955,7 +6005,7 @@ DealRotator: {
 
             container.innerHTML = `
               <div class="squad-slot-card" style="border-color:var(--neon-pink); cursor:pointer;" onclick="GTA6.CharacterModal.open('${finalLead.id}')" title="Click to view full dossier">
-                <img src="${finalLead.img}" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-pink);">
+                <img src="/${finalLead.img.replace(/^\/+/, '')}" alt="${finalLead.name}" width="58" height="58" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-pink);">
                 <div style="flex:1;">
                   <span style="font-size:0.7rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:800;">LEAD OPERATIVE</span>
                   <div style="font-weight:900; color:#fff; font-size:0.95rem;">${finalLead.name} 📂</div>
@@ -5963,7 +6013,7 @@ DealRotator: {
                 </div>
               </div>
               <div class="squad-slot-card" style="border-color:var(--neon-cyan); cursor:pointer;" onclick="GTA6.CharacterModal.open('${finalSpec.id}')" title="Click to view full dossier">
-                <img src="${finalSpec.img}" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-cyan);">
+                <img src="/${finalSpec.img.replace(/^\/+/, '')}" alt="${finalSpec.name}" width="58" height="58" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-cyan);">
                 <div style="flex:1;">
                   <span style="font-size:0.7rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:800;">SPECIALIST</span>
                   <div style="font-weight:900; color:#fff; font-size:0.95rem;">${finalSpec.name} 📂</div>
@@ -5971,7 +6021,7 @@ DealRotator: {
                 </div>
               </div>
               <div class="squad-slot-card" style="border-color:var(--neon-yellow); cursor:pointer;" onclick="GTA6.CharacterModal.open('${finalFence.id}')" title="Click to view full dossier">
-                <img src="${finalFence.img}" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-yellow);">
+                <img src="/${finalFence.img.replace(/^\/+/, '')}" alt="${finalFence.name}" width="58" height="58" style="width:58px; height:58px; border-radius:50%; object-fit:cover; border:2px solid var(--neon-yellow);">
                 <div style="flex:1;">
                   <span style="font-size:0.7rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:800;">GETAWAY / FENCE</span>
                   <div style="font-weight:900; color:#fff; font-size:0.95rem;">${finalFence.name} 📂</div>
@@ -6014,18 +6064,65 @@ DealRotator: {
       }
     },
     LiveIntelSync: {
-      latestCounts: { characters: 17, weapons: 19, vehicles: 144, properties: 8 },
+      latestCounts: { characters: 25, weapons: 47, vehicles: 186, properties: 12, masks: 16 },
+      normName(s) {
+        return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+      },
+      normalizeWeaponCategory(cat) {
+        const raw = String(cat || '').toLowerCase();
+        if (raw.includes('sniper')) return 'snipers';
+        if (raw.includes('sidearm') || raw.includes('pistol') || raw.includes('revolver')) return 'sidearms';
+        if (raw.includes('smg') || raw.includes('submachine')) return 'smg';
+        if (raw.includes('shotgun')) return 'shotguns';
+        if (raw.includes('heavy') || raw.includes('launcher')) return 'heavy';
+        if (raw.includes('melee') || raw.includes('entry')) return 'melee';
+        if (raw.includes('gear') || raw.includes('tactical') || raw.includes('tool')) return 'gear';
+        if (raw.includes('primary') || raw.includes('rifle') || raw.includes('carbine')) return 'rifles';
+        return raw || 'rifles';
+      },
+      assetPath(img, fallback) {
+        const clean = String(img || fallback || '').replace(/^\/+/, '');
+        return clean.startsWith('http') ? clean : '/' + clean;
+      },
+      esc(s) {
+        return String(s || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      },
+      updateCountDisplays() {
+        const c = this.latestCounts;
+        document.querySelectorAll('.live-sync-badge').forEach((el) => {
+          el.innerHTML = `⚡ LIVE SYNC: ${c.characters} Operatives &bull; ${c.weapons} Weapons &amp; Gear &bull; ${c.vehicles} Vehicles &bull; ${c.properties} Safehouses &bull; ${c.masks || 16} Masks`;
+        });
+        const timeEl = document.getElementById('liveSyncTimestamp');
+        if (timeEl) {
+          timeEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = String(val); };
+        setTxt('syncCharsCount', c.characters);
+        setTxt('syncWeaponsCount', c.weapons);
+        setTxt('syncVehiclesCount', c.vehicles);
+        setTxt('syncMasksCount', c.masks || 16);
+        setTxt('syncPropsCount', c.properties);
+        document.querySelectorAll('.sync-chars-total').forEach((el) => { el.textContent = String(c.characters); });
+        document.querySelectorAll('.sync-weapons-total').forEach((el) => { el.textContent = String(c.weapons); });
+        document.querySelectorAll('.sync-vehicles-total').forEach((el) => { el.textContent = String(c.vehicles); });
+        document.querySelectorAll('.sync-props-total').forEach((el) => { el.textContent = String(c.properties); });
+      },
       async poll() {
         try {
           const masterRes = await fetch('/data/gta6_master_intel.json?t=' + Math.floor(Date.now() / 60000));
           if (masterRes.ok) {
             const master = await masterRes.json();
+            const ct = master.catalogTotals || {};
             this.latestCounts = {
-              characters: (master.characters || []).length,
-              weapons: (master.weapons || []).length,
-              vehicles: (master.vehicles || []).length,
-              properties: (master.properties || []).length,
-              masks: 16
+              characters: ct.characters || (master.characters || []).length || 25,
+              weapons: ct.weapons || (master.weapons || []).length || 47,
+              vehicles: ct.vehicles || (master.vehicles || []).length || 186,
+              properties: ct.properties || (master.properties || []).length || 12,
+              masks: ct.masks || 16
             };
             this.hydrateAndRender(master);
           }
@@ -6034,194 +6131,361 @@ DealRotator: {
           if (res.ok) {
             const feed = await res.json();
             if (feed.ok && feed.counts) {
-              this.latestCounts.characters = Math.max(this.latestCounts.characters, feed.counts.characters || 0);
-              this.latestCounts.weapons = Math.max(this.latestCounts.weapons, feed.counts.weapons || 0);
-              this.latestCounts.vehicles = Math.max(this.latestCounts.vehicles, feed.counts.vehicles || 0);
-              this.latestCounts.properties = Math.max(this.latestCounts.properties, feed.counts.properties || 0);
+              if (feed.counts.characters) this.latestCounts.characters = Math.max(this.latestCounts.characters, feed.counts.characters);
+              if (feed.counts.weapons) this.latestCounts.weapons = Math.max(this.latestCounts.weapons, feed.counts.weapons);
+              if (feed.counts.vehicles) this.latestCounts.vehicles = Math.max(this.latestCounts.vehicles, feed.counts.vehicles);
+              if (feed.counts.properties) this.latestCounts.properties = Math.max(this.latestCounts.properties, feed.counts.properties);
+              if (feed.counts.masks) this.latestCounts.masks = feed.counts.masks;
             }
           }
-
-          const c = this.latestCounts;
-          document.querySelectorAll('.live-sync-badge').forEach((el) => {
-            el.innerHTML = `⚡ LIVE SYNC: ${c.characters} Operatives &bull; ${c.weapons} Weapons &bull; ${c.vehicles} Vehicles &bull; ${c.properties} Safehouses &bull; ${c.masks || 16} Masks`;
-          });
-          const timeEl = document.getElementById('liveSyncTimestamp');
-          if (timeEl) {
-            timeEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-          }
-          if (document.getElementById('syncCharsCount')) document.getElementById('syncCharsCount').textContent = c.characters;
-          if (document.getElementById('syncWeaponsCount')) document.getElementById('syncWeaponsCount').textContent = c.weapons;
-          if (document.getElementById('syncVehiclesCount')) document.getElementById('syncVehiclesCount').textContent = c.vehicles;
-          if (document.getElementById('syncMasksCount')) document.getElementById('syncMasksCount').textContent = c.masks || 16;
-          if (document.getElementById('syncPropsCount')) document.getElementById('syncPropsCount').textContent = c.properties;
-        } catch (e) {}
+          this.updateCountDisplays();
+        } catch (e) {
+          this.updateCountDisplays();
+        }
       },
       hydrateAndRender(master) {
         if (Array.isArray(master.vehicles) && GTA6.VehicleData) {
           const vehGrid = document.getElementById('vehGrid');
-          master.vehicles.forEach(v => {
+          const seenVehIds = new Set();
+          const seenVehNames = new Set();
+          if (vehGrid) {
+            vehGrid.querySelectorAll('.veh-card').forEach((card) => {
+              const oc = card.getAttribute('onclick') || '';
+              const m = oc.match(/VehicleModal\.open\(['"]([^'"]+)['"]\)/);
+              if (m) seenVehIds.add(this.normName(m[1].replace(/^vehicle-/, '')));
+              const h3 = card.querySelector('h3');
+              if (h3) seenVehNames.add(this.normName(h3.textContent));
+            });
+          }
+          master.vehicles.forEach((v) => {
             const key = v.id.toLowerCase().replace(/^vehicle-/, '');
-            if (!GTA6.VehicleData[key] && !GTA6.VehicleData[v.id]) {
-              GTA6.VehicleData[v.id] = {
-                id: v.id,
-                name: v.name,
-                realName: v.realName || 'Confirmed GTA VI Vehicle',
-                category: v.category || 'muscle',
-                speed: v.speed || '155 MPH',
-                accel: v.accel || '3.8s (0-60)',
-                handling: v.handling || '85/100',
-                driveType: v.driveType || 'RWD / Performance',
-                capacity: v.capacity || '4 Duffel Bags',
-                bulletproof: v.bulletproof || 'Standard Chassis',
-                image: v.image || 'assets/veh_tulip.jpg',
-                bio: v.bio || 'Confirmed GTA VI vehicle indexed by SATCOM Auto-Sync.',
-                stats: v.stats || { speed: 82, accel: 80, handling: 84 }
-              };
-            }
-            if (vehGrid) {
-              const exists = vehGrid.querySelector(`[onclick*="${key}"]`) || vehGrid.querySelector(`[onclick*="${v.id}"]`);
-              if (!exists) {
-                let uiCat = v.category || 'muscle';
-                if (uiCat === 'police') uiCat = 'pursuit';
-                if (uiCat === 'offroad') uiCat = 'suv';
-                const card = document.createElement('div');
-                card.className = 'veh-card';
-                card.setAttribute('data-category', uiCat);
-                card.setAttribute('data-keywords', `${v.name} ${v.realName || ''} ${uiCat} ${v.bio || ''}`.toLowerCase());
-                card.setAttribute('onclick', `GTA6.VehicleModal.open('${v.id}')`);
-                card.setAttribute('title', 'Click to view full vehicle dossier & trunk specs');
-                card.innerHTML = `
-                  <div class="veh-img-stage">
-                    <img src="${v.image || 'assets/veh_tulip.jpg'}" alt="${v.name}" loading="lazy">
-                    <span class="veh-badge-class">${uiCat.toUpperCase()} // AUTO-SYNC</span>
-                    <span class="veh-badge-speed">⚡ ${v.speed || '155 MPH'}</span>
-                  </div>
-                  <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
-                    <div>
-                      <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">${v.name}</h3>
-                      <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">${v.realName || 'Confirmed GTA VI Fleet'}</div>
-                      <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                        <div><span>Drive:</span> <strong style="color:#fff;">${(v.driveType || 'RWD').split('/')[0]}</strong></div>
-                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">${(v.capacity || '4 Bags').split('(')[0]}</strong></div>
-                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">75/100</strong></div>
-                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">${(v.accel || '3.8s').split(' ')[0]}</strong></div>
-                      </div>
-                      <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">${(v.bio || '').slice(0, 110)}...</p>
-                    </div>
-                    <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
-                  </div>
-                `;
-                vehGrid.appendChild(card);
+            const normKey = this.normName(key);
+            const normTitle = this.normName(v.name);
+            const imgSrc = this.assetPath(v.image, 'assets/vehicle-tulip.jpg');
+            const st = v.stats || {};
+            const vehObj = {
+              id: v.id,
+              name: v.name,
+              realName: v.realName || 'Confirmed GTA VI Vehicle',
+              category: v.category || 'muscle',
+              speed: v.speed || '148 MPH',
+              accel: v.accel || '4.2s (0-60)',
+              handling: v.handling || '82/100',
+              driveType: v.driveType || 'RWD / Performance',
+              capacity: v.capacity || '4 Duffel Bags',
+              bulletproof: v.bulletproof || 'Reinforced Chassis (Grade B)',
+              heistRole: v.heistRole || `Leonida ${(v.category || 'getaway').toUpperCase()} Escape Platform`,
+              source: v.source || 'GTA Wiki & Official Rockstar Reveals',
+              image: imgSrc,
+              bio: v.bio || 'Confirmed GTA VI vehicle indexed by SATCOM Auto-Sync.',
+              stats: {
+                speed: st.speed || 80,
+                accel: st.accel || 78,
+                handling: st.handling || 82,
+                armor: st.armor || (v.category === 'pursuit' || v.category === 'suv' ? 84 : 72)
               }
+            };
+            if (!GTA6.VehicleData[v.id]) GTA6.VehicleData[v.id] = vehObj;
+            if (!GTA6.VehicleData[key]) GTA6.VehicleData[key] = vehObj;
+
+            if (vehGrid && !seenVehIds.has(normKey) && !seenVehIds.has(this.normName(v.id)) && !seenVehNames.has(normTitle)) {
+              seenVehIds.add(normKey);
+              seenVehIds.add(this.normName(v.id));
+              seenVehNames.add(normTitle);
+              let uiCat = v.category || 'muscle';
+              if (uiCat === 'police') uiCat = 'pursuit';
+              if (uiCat === 'offroad') uiCat = 'suv';
+              const card = document.createElement('div');
+              card.className = 'veh-card';
+              card.setAttribute('data-category', uiCat);
+              card.setAttribute('data-keywords', `${v.name} ${v.realName || ''} ${uiCat} ${v.bio || ''}`.toLowerCase());
+              card.setAttribute('onclick', `GTA6.VehicleModal.open('${v.id}')`);
+              card.setAttribute('title', 'Click to view full vehicle dossier & trunk specs');
+              card.innerHTML = `
+                <div class="veh-img-stage">
+                  <img src="${imgSrc}" alt="${this.esc(v.name)}" width="320" height="180" loading="lazy" decoding="async">
+                  <span class="veh-badge-class">${this.esc(uiCat.toUpperCase())} // VERIFIED</span>
+                  <span class="veh-badge-speed">⚡ ${this.esc(vehObj.speed)}</span>
+                </div>
+                <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                  <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">${this.esc(v.name)}</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">${this.esc(vehObj.realName)}</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                      <div><span>Drive:</span> <strong style="color:#fff;">${this.esc(vehObj.driveType.split('/')[0])}</strong></div>
+                      <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">${this.esc(vehObj.capacity.split('(')[0])}</strong></div>
+                      <div><span>Armor:</span> <strong style="color:var(--neon-green);">${vehObj.stats.armor}/100</strong></div>
+                      <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">${this.esc(vehObj.accel.split(' ')[0])}</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">${this.esc((v.bio || '').slice(0, 110))}...</p>
+                  </div>
+                  <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+                </div>
+              `;
+              vehGrid.appendChild(card);
             }
           });
           if (vehGrid) {
             const totalCards = vehGrid.querySelectorAll('.veh-card').length;
-            const resCount = document.getElementById('vehResultCount');
-            if (resCount) resCount.textContent = `Showing ${totalCards} Confirmed Vehicles • Click any vehicle for full dossier & trunk specs`;
-            const allBtn = document.querySelector('.veh-filter-pill[onclick*="\'all\'"]');
-            if (allBtn) allBtn.textContent = `All Confirmed (${totalCards})`;
+            this.latestCounts.vehicles = totalCards;
+            if (typeof window.syncVehicleCounts === 'function') {
+              window.syncVehicleCounts();
+            } else {
+              const resCount = document.getElementById('vehResultCount');
+              if (resCount) resCount.textContent = `Showing ${totalCards} Confirmed Vehicles • Click any vehicle for full dossier & trunk specs`;
+              const allBtn = document.querySelector('.veh-filter-pill[onclick*="\'all\'"]');
+              if (allBtn) allBtn.textContent = `All Confirmed (${totalCards})`;
+            }
           }
         }
 
         if (Array.isArray(master.weapons) && GTA6.WeaponData) {
           const gearGrid = document.getElementById('gearGrid');
-          master.weapons.forEach(w => {
-            const key = w.id.toLowerCase().replace(/^weapon-/, '').replace(/^gear-/, '');
-            if (!GTA6.WeaponData[key] && !GTA6.WeaponData[w.id]) {
-              GTA6.WeaponData[w.id] = {
-                id: w.id,
-                name: w.name,
-                category: w.category || 'rifles',
-                type: w.type || 'Tactical Weapon',
-                caliber: w.caliber || 'NATO',
-                image: w.image || 'assets/weapon_carbine_rifle.jpg',
-                bio: w.bio || 'Confirmed GTA VI tactical loadout item.',
-                stats: { damage: w.damage || 80, range: w.range || 75, stealth: w.stealth || 50 }
-              };
-            }
-            if (gearGrid) {
-              const exists = gearGrid.querySelector(`[onclick*="${key}"]`) || gearGrid.querySelector(`[onclick*="${w.id}"]`);
-              if (!exists) {
-                const card = document.createElement('div');
-                card.className = 'item-card';
-                card.setAttribute('data-category', w.category || 'rifles');
-                card.setAttribute('data-keywords', `${w.name} ${w.type || ''} ${w.caliber || ''} ${w.bio || ''}`.toLowerCase());
-                card.setAttribute('onclick', `GTA6.WeaponModal.open('${w.id}')`);
-                card.style.cursor = 'pointer';
-                card.innerHTML = `
-                  <div class="item-img-stage" style="height:180px; overflow:hidden; position:relative; background:#070b14;">
-                    <img src="${w.image || 'assets/weapon_carbine_rifle.jpg'}" alt="${w.name}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.68rem;">${(w.type || 'TACTICAL').toUpperCase()}</span>
-                  </div>
-                  <div style="padding:1.15rem;">
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.25rem; font-weight:900;">${w.name}</h3>
-                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); margin-bottom:0.6rem;">${w.caliber || 'Confirmed Spec'}</div>
-                    <p style="color:var(--text-muted); font-size:0.8rem; line-height:1.45; margin-bottom:0.75rem;">${(w.bio || '').slice(0, 110)}...</p>
-                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-                      <div>DMG: <strong style="color:var(--neon-pink);">${w.damage || 80}</strong></div>
-                      <div>RNG: <strong style="color:var(--neon-green);">${w.range || 75}</strong></div>
-                    </div>
-                  </div>
-                `;
-                gearGrid.appendChild(card);
+          const seenWeapKeys = new Set();
+          const seenWeapNames = new Set();
+          if (gearGrid) {
+            gearGrid.querySelectorAll('.item-card').forEach((card) => {
+              if (card.id) seenWeapKeys.add(this.normName(card.id.replace(/^item-/, '')));
+              const oc = card.getAttribute('onclick') || '';
+              if (oc) {
+                const m = oc.match(/['"]([^'"]+)['"]/);
+                if (m) seenWeapKeys.add(this.normName(m[1].replace(/^weapon-|^gear-/, '')));
               }
+              const h3 = card.querySelector('h3');
+              if (h3) seenWeapNames.add(this.normName(h3.textContent));
+            });
+          }
+          master.weapons.forEach((w) => {
+            const key = w.id.toLowerCase().replace(/^weapon-/, '').replace(/^gear-/, '');
+            const normKey = this.normName(key);
+            const normId = this.normName(w.id);
+            const normTitle = this.normName(w.name);
+            const uiCat = this.normalizeWeaponCategory(w.category);
+            const imgSrc = this.assetPath(w.image, 'assets/weapon-carbine.jpg');
+            const wObj = {
+              id: w.id,
+              name: w.name,
+              realName: w.caliber || w.type || 'Confirmed GTA VI Ordnance',
+              category: uiCat,
+              type: w.type || 'Tactical Weapon',
+              caliber: w.caliber || 'NATO Standard',
+              magSize: uiCat === 'melee' || uiCat === 'gear' ? 'Reusable Utility' : 'Extended / Factory Mag',
+              fireRate: uiCat === 'smg' || uiCat === 'rifles' ? 'Full-Auto / Burst' : 'Precision Semi-Auto',
+              noise: (w.stealth || 50) >= 75 ? 'Silent / Suppressible' : 'Standard Ballistic Report',
+              conceal: (w.stealth || 50) >= 70 ? 'High (Under Jacket)' : 'Sling / Duffel Bag Required',
+              range: `${w.range || 75}m Effective`,
+              attachments: w.perk || 'Suppressor, Optic, Extended Mag Ready',
+              source: 'Official GTA VI Wiki & Armory Intel',
+              image: imgSrc,
+              bio: w.bio || 'Confirmed GTA VI tactical loadout item.',
+              stats: {
+                damage: w.damage || 80,
+                fireRate: uiCat === 'smg' ? 88 : (uiCat === 'rifles' ? 82 : 68),
+                range: w.range || 75,
+                accuracy: Math.max(60, Math.round(((w.range || 75) + (w.stealth || 60)) / 2))
+              }
+            };
+            if (!GTA6.WeaponData[w.id]) GTA6.WeaponData[w.id] = wObj;
+            if (!GTA6.WeaponData[key]) GTA6.WeaponData[key] = wObj;
+
+            if (gearGrid && !seenWeapKeys.has(normKey) && !seenWeapKeys.has(normId) && !seenWeapNames.has(normTitle)) {
+              seenWeapKeys.add(normKey);
+              seenWeapKeys.add(normId);
+              seenWeapNames.add(normTitle);
+              const card = document.createElement('div');
+              card.className = 'item-card';
+              card.setAttribute('data-category', uiCat);
+              card.setAttribute('data-keywords', `${w.name} ${w.type || ''} ${w.caliber || ''} ${uiCat} ${w.bio || ''}`.toLowerCase());
+              card.setAttribute('onclick', `GTA6.WeaponModal.open('${w.id}')`);
+              card.style.cursor = 'pointer';
+              card.innerHTML = `
+                <div class="item-img-stage">
+                  <img src="${imgSrc}" alt="${this.esc(w.name)}" width="320" height="175" loading="lazy" decoding="async">
+                  <span class="item-badge-cat">${this.esc((w.type || uiCat || 'TACTICAL').toUpperCase())}</span>
+                </div>
+                <div class="item-body">
+                  <h3>${this.esc(w.name)}</h3>
+                  <div class="item-subtitle">${this.esc(w.caliber || 'Confirmed Spec')}</div>
+                  <p style="color:var(--text-muted); font-size:0.8rem; line-height:1.45; margin-bottom:0.75rem;">${this.esc((w.bio || '').slice(0, 110))}...</p>
+                  <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                    <div>DMG: <strong style="color:var(--neon-pink);">${w.damage || 80}</strong></div>
+                    <div>RNG: <strong style="color:var(--neon-green);">${w.range || 75}</strong></div>
+                  </div>
+                </div>
+              `;
+              gearGrid.appendChild(card);
             }
           });
           if (gearGrid) {
             const totalItems = gearGrid.querySelectorAll('.item-card').length;
-            const cnt = document.getElementById('itemCountDisplay');
-            if (cnt) cnt.innerText = `Showing ${totalItems} of ${totalItems}`;
+            this.latestCounts.weapons = totalItems;
+            if (typeof window.syncWeaponCounts === 'function') {
+              window.syncWeaponCounts();
+            } else {
+              const cnt = document.getElementById('itemCountDisplay');
+              if (cnt) cnt.innerText = `Showing ${totalItems} of ${totalItems}`;
+            }
           }
         }
 
         if (Array.isArray(master.characters)) {
           const charGrid = document.getElementById('characterGrid');
-          master.characters.forEach(c => {
+          const seenCharIds = new Set();
+          const seenCharNames = new Set();
+          if (charGrid) {
+            charGrid.querySelectorAll('.char-card').forEach((card) => {
+              if (card.id) {
+                seenCharIds.add(this.normName(card.id));
+                seenCharIds.add(this.normName(card.id.replace(/^character-/, '')));
+              }
+              const h2 = card.querySelector('h2, h3');
+              if (h2) {
+                seenCharNames.add(this.normName(h2.textContent));
+                seenCharNames.add(this.normName(h2.textContent.replace(/\([^)]*\)/g, '')));
+              }
+            });
+          }
+          master.characters.forEach((c) => {
+            const imgSrc = this.assetPath(c.image, 'assets/character-lucia.jpg');
+            const charCat = c.category || 'story';
             if (GTA6.CharacterData && !GTA6.CharacterData[c.id]) {
               GTA6.CharacterData[c.id] = {
                 id: c.id,
                 name: c.name,
-                role: c.role || 'Syndicate Contact',
+                alias: c.cut || 'SYNDICATE INTEL',
+                category: charCat,
+                role: c.role || 'Leonida Contact',
                 specialty: c.specialty || 'Underworld Ops',
-                cut: c.cut || 'Variable',
-                district: c.district || 'Leonida State',
-                image: c.image || 'assets/gta6-protagonists-official.jpg',
-                bio: `${c.role}. ${c.specialty}. Operating out of ${c.district}. (${c.source || 'Confirmed'})`,
-                stats: { stealth: 84, combat: 82, hacking: 78 }
+                cut: c.cut || 'Story / Contact',
+                district: c.district || 'State of Leonida',
+                actor: 'Official Rockstar Reveal',
+                source: c.source || 'GTA Wiki & Official Reveals',
+                weapon: 'Compact Sidearm / Concealed Carry',
+                weaponLink: 'weapons-gear.html',
+                perk: c.specialty || 'Leonida Underground Connection',
+                image: imgSrc,
+                bio: `${c.role}. ${c.specialty}. Active across ${c.district}.`,
+                stats: { decryption: 78, intimidation: 80, combat: 82, wheelman: 76 }
               };
             }
-            if (charGrid) {
-              const exists = charGrid.querySelector(`#${c.id}`) || charGrid.querySelector(`[onclick*="${c.id}"]`);
-              if (!exists) {
-                const card = document.createElement('div');
-                card.className = 'char-card';
-                card.id = c.id;
-                card.setAttribute('data-category', 'crew');
-                card.setAttribute('data-keywords', `${c.name} ${c.role} ${c.district} ${c.specialty}`.toLowerCase());
-                card.setAttribute('onclick', `GTA6.CharacterModal.open('${c.id}')`);
-                card.style.cursor = 'pointer';
-                card.innerHTML = `
-                  <div style="height:230px; overflow:hidden; position:relative; background:#080e18;">
-                    <img src="${c.image || 'assets/gta6-protagonists-official.jpg'}" alt="${c.name}" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
-                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">AUTO-SYNCED DOSSIER</span>
+            if (charGrid && !seenCharIds.has(this.normName(c.id)) && !seenCharNames.has(this.normName(c.name))) {
+              seenCharIds.add(this.normName(c.id));
+              seenCharNames.add(this.normName(c.name));
+              const card = document.createElement('div');
+              card.className = 'char-card';
+              card.id = c.id;
+              card.setAttribute('data-category', charCat);
+              card.setAttribute('data-keywords', `${c.name} ${c.role} ${c.district} ${c.specialty} ${charCat}`.toLowerCase());
+              card.setAttribute('onclick', `GTA6.CharacterModal.open('${c.id}')`);
+              card.style.cursor = 'pointer';
+              card.innerHTML = `
+                <div style="height:230px; overflow:hidden; position:relative; background:#080e18;">
+                  <img src="${imgSrc}" alt="${this.esc(c.name)}" width="320" height="230" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                  <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">AUTO-SYNCED DOSSIER</span>
+                </div>
+                <div style="padding:1.25rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                    <h2 style="color:#fff; font-size:1.35rem; margin:0;">${this.esc(c.name)}</h2>
+                    <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">${this.esc((c.cut || 'CONTACT').toUpperCase())}</span>
                   </div>
-                  <div style="padding:1.25rem;">
-                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
-                      <h2 style="color:#fff; font-size:1.35rem; margin:0;">${c.name}</h2>
-                      <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">${(c.cut || 'CONTACT').toUpperCase()}</span>
-                    </div>
-                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">${c.role} &bull; ${c.specialty} (${c.district})</p>
-                  </div>
-                `;
-                charGrid.appendChild(card);
-              }
+                  <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">${this.esc(c.role)} &bull; ${this.esc(c.specialty)} (${this.esc(c.district)})</p>
+                </div>
+              `;
+              charGrid.appendChild(card);
             }
           });
           if (charGrid) {
             const totalChars = charGrid.querySelectorAll('.char-card').length;
-            const cnt = document.getElementById('charCountDisplay');
-            if (cnt) cnt.innerText = `Showing ${totalChars} of ${totalChars}`;
+            this.latestCounts.characters = totalChars;
+            if (typeof window.syncCrewCounts === 'function') {
+              window.syncCrewCounts();
+            } else {
+              const cnt = document.getElementById('charCountDisplay');
+              if (cnt) cnt.innerText = `Showing ${totalChars} of ${totalChars}`;
+            }
+          }
+        }
+
+        if (Array.isArray(master.properties)) {
+          const propGrid = document.getElementById('propertiesCatalogGrid');
+          if (propGrid) {
+            const seenPropIds = new Set();
+            const seenPropNames = new Set();
+            propGrid.querySelectorAll('.prop-card').forEach((card) => {
+              if (card.id) seenPropIds.add(this.normName(card.id));
+              const h3 = card.querySelector('h3');
+              if (h3) seenPropNames.add(this.normName(h3.textContent));
+            });
+            master.properties.forEach((p) => {
+              if (!p || seenPropIds.has(this.normName(p.id)) || seenPropNames.has(this.normName(p.name))) return;
+              seenPropIds.add(this.normName(p.id));
+              seenPropNames.add(this.normName(p.name));
+              const cat = p.cat || 'front';
+              const imgSrc = this.assetPath(p.image, 'assets/prop-venetian-mansion.webp');
+              const card = document.createElement('div');
+              card.className = 'card prop-card';
+              card.id = p.id;
+              card.setAttribute('data-cat', cat);
+              card.style.cssText = 'border:1px solid rgba(0,240,255,0.3); background:rgba(10,16,26,0.95); display:flex; flex-direction:column; justify-content:space-between;';
+              card.innerHTML = `
+                <div>
+                  <div class="prop-img-stage" style="height:175px; overflow:hidden; border-radius:8px; margin-bottom:0.85rem; position:relative; background:#080e18;">
+                    <img src="${imgSrc}" alt="${this.esc(p.name)}" width="640" height="360" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    <span class="card-tag tag-intermediate" style="position:absolute; top:10px; left:10px; margin:0; background:rgba(6,11,20,0.88);">${this.esc((p.tier || cat).toUpperCase())}</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
+                    <span style="font-size:0.74rem; color:var(--neon-cyan); font-family:var(--font-mono);">${this.esc(p.type || 'Syndicate Front')}</span>
+                    <span style="font-family:var(--font-mono); font-size:1.1rem; font-weight:900; color:var(--neon-green);">${this.esc(p.price || '$1,500,000')}</span>
+                  </div>
+                  <h3 class="card-title" style="margin-bottom:0.35rem;">${this.esc(p.name)}</h3>
+                  <div style="font-size:0.76rem; color:var(--neon-cyan); font-family:var(--font-mono); margin-bottom:0.85rem;">📍 ${this.esc(p.district || 'State of Leonida')}</div>
+                  <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                    <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> ${this.esc(p.garage || 'Secure Vehicle Staging')}</div>
+                    <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> ${this.esc(p.laundering || 'Front Escrow Pipeline')}</div>
+                  </div>
+                  <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">${this.esc(p.features || p.bio || '')}</p>
+                  <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                    <strong style="color:#fff;">🎯 Heist Synergy:</strong> ${this.esc(p.heistSynergy || 'Strategic regional getaway & wash hub.')}
+                  </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                  <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('marina', 3.4)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                  <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+              `;
+              propGrid.appendChild(card);
+            });
+            const totalProps = propGrid.querySelectorAll('.prop-card').length;
+            this.latestCounts.properties = totalProps;
+            if (typeof window.syncPropertyCounts === 'function') {
+              window.syncPropertyCounts();
+            }
+          }
+        }
+
+        if (Array.isArray(master.youtubeWire) && master.youtubeWire.length) {
+          const ytGrid = document.getElementById('youtubeWireGrid');
+          if (ytGrid) {
+            ytGrid.innerHTML = master.youtubeWire.slice(0, 8).map((v) => {
+              const pubDate = v.published ? String(v.published).slice(0, 10) : '';
+              const vidMatch = String(v.url || '').match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+              const thumbUrl = v.thumbnail || (vidMatch ? `https://i.ytimg.com/vi/${vidMatch[1]}/hqdefault.jpg` : '');
+              return `
+                <a href="${this.esc(v.url)}" target="_blank" rel="noopener noreferrer" class="card" style="text-decoration:none; padding:0; overflow:hidden; border:1px solid rgba(0,240,255,0.22); background:rgba(10,16,26,0.92); display:flex; flex-direction:column; justify-content:space-between;">
+                  <div>
+                    ${thumbUrl ? `<div style="height:168px; overflow:hidden; background:#050811; position:relative;"><img src="${this.esc(thumbUrl)}" alt="${this.esc(v.title)}" width="320" height="180" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; display:block;"></div>` : ''}
+                    <div style="padding:1rem;">
+                      <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                        <span class="user-badge" style="font-size:0.66rem; background:rgba(239,68,68,0.16); border-color:#ef4444; color:#fca5a5;">▶ ${this.esc(v.channel)}</span>
+                        <span style="font-size:0.7rem; color:#94a3b8; font-family:var(--font-mono);">${this.esc(pubDate)}</span>
+                      </div>
+                      <h3 style="color:#fff; font-size:0.95rem; line-height:1.35; margin:0;">${this.esc(v.title)}</h3>
+                    </div>
+                  </div>
+                  <div style="padding:0 1rem 0.9rem; font-size:0.75rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700;">Watch Broadcast on YouTube &rarr;</div>
+                </a>
+              `;
+            }).join('');
           }
         }
       },

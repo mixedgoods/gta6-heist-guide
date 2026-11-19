@@ -66,6 +66,13 @@ export async function onRequestGet({ request, env }) {
       }
     } catch (e) {}
 
+    const totals = data.catalogTotals || {};
+    const vehCount = totals.vehicles || (Array.isArray(data.vehicles) ? data.vehicles.length : 0);
+    const charCount = totals.characters || (Array.isArray(data.characters) ? data.characters.length : 0);
+    const weapCount = totals.weapons || (Array.isArray(data.weapons) ? data.weapons.length : 0);
+    const propCount = totals.properties || (Array.isArray(data.properties) ? data.properties.length : 0);
+    const maskCount = totals.masks || (data.gearCatalog ? Object.keys(data.gearCatalog).length : 16);
+
     return new Response(JSON.stringify({
       ok: true,
       lastSynced: data.lastSynced,
@@ -73,11 +80,11 @@ export async function onRequestGet({ request, env }) {
       liveAlert,
       version: data.version,
       counts: {
-        characters: data.characters ? data.characters.length : 18,
-        weapons: data.weaponCatalog ? Object.keys(data.weaponCatalog).length : (data.weapons ? data.weapons.length : 24),
-        vehicles: data.vehicleCatalog ? Object.keys(data.vehicleCatalog).length : (data.vehicles ? data.vehicles.length : 56),
-        masks: data.gearCatalog ? Object.keys(data.gearCatalog).length : 16,
-        properties: data.properties ? data.properties.length : 8,
+        characters: charCount,
+        weapons: weapCount,
+        vehicles: vehCount,
+        masks: maskCount,
+        properties: propCount,
       },
       data,
     }), {
