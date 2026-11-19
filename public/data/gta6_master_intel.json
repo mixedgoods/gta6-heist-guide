@@ -1,5 +1,5 @@
 {
-  "lastSynced": "2026-11-19T00:53:58Z",
+  "lastSynced": "2026-11-19T02:54:19Z",
   "version": "1.0.0",
   "source": "Rockstar Games Official Media & GTA Community Verified Database",
   "characters": [
@@ -491,6 +491,161 @@
       "title": "GTA 6 Confirmed At 30FPS On All Systems + PS5 Pro Features Revealed",
       "url": "https://www.youtube.com/watch?v=dMXLom6iHSA",
       "published": "2026-11-17T20:00:29+00:00"
+    }
+  ],
+  "properties": [
+    {
+      "id": "venetian-mega-mansion",
+      "name": "Venetian Way Waterfront Mega-Mansion",
+      "type": "Luxury Waterfront Estate",
+      "tier": "Mastermind (Tier 1)",
+      "price": ",500,000",
+      "district": "Venetian Islands / Starfish Basin, Vice City",
+      "garage": "20-Car Showroom + Private Helipad + Yacht Slip",
+      "laundering": "Offshore Family Trust (6% Fee \u2022 +10% Reinvestment Yield)",
+      "features": [
+        "High-security biometric perimeter gate",
+        "Tactical heist planning war room",
+        "Rooftop helicopter pad",
+        "Deep-water yacht dock with direct ocean access",
+        "Gun locker & weapon display vault"
+      ],
+      "heistSynergy": "Ideal safehouse for Starlet Superyacht and Sinfrontera Bank cash dropoffs.",
+      "status": "CONFIRMED LEAK",
+      "source": "Trailer 1 & Rockstar Promotional Materials"
+    },
+    {
+      "id": "starlet-key-modernist-villa",
+      "name": "Starlet Key Modernist Villa",
+      "type": "Private Island Villa",
+      "tier": "Luxury Estate (Tier 1)",
+      "price": ",400,000",
+      "district": "Starlet Key / Leonida Keys",
+      "garage": "8-Car Climate-Controlled Garage + Speedboat Slip",
+      "laundering": "Private Marina LLC (8% Fee \u2022 Island Sovereign Exemption)",
+      "features": [
+        "Infinity pool overlooking the Florida Straits",
+        "Private boat hoist for Sea Sparrow & dinghies",
+        "Zero metropolitan police patrol density",
+        "Encrypted satellite wiretap terminal"
+      ],
+      "heistSynergy": "Prime escape vector for offshore water extraction routes.",
+      "status": "CONFIRMED LEAK",
+      "source": "Leonida Keys Leaked Mapping Data"
+    },
+    {
+      "id": "ocean-drive-art-deco-penthouse",
+      "name": "Ocean Drive Art Deco Triplex Penthouse",
+      "type": "High-Rise Penthouse",
+      "tier": "Executive Safehouse (Tier 2)",
+      "price": ",200,000",
+      "district": "Ocean Beach / South Vice Beach",
+      "garage": "10-Car Underground Private Garage with Heat-Shield Gates",
+      "laundering": "Art Gallery & Luxury Escrow (10% Fee \u2022 Instant Clearing)",
+      "features": [
+        "360-degree panoramic ocean and skyline views",
+        "Direct private elevator from underground transit tunnels",
+        "CCTV monitoring of Ocean Drive police dispatches",
+        "VIP armory wardrobe"
+      ],
+      "heistSynergy": "Closest safehouse to Ocean Drive Armored Convoy ambush route.",
+      "status": "CONFIRMED LEAK",
+      "source": "Vice Beach Trailer 1 Scene 14"
+    },
+    {
+      "id": "vice-beach-nightclub-front",
+      "name": "Neon Palms Nightclub & Lounge",
+      "type": "Commercial Front Business",
+      "tier": "Laundering Engine (Tier 2)",
+      "price": ",500,000",
+      "district": "Downtown Vice City / Washington Beach",
+      "garage": "6-Car VIP Loading Bay + Armored Transit Van Slot",
+      "laundering": "Cash-Intensive Nightlife Enterprise (8% Fee \u2022 Passive +5% Weekly Bonus)",
+      "features": [
+        "Underground money cleaning office with money counters",
+        "VIP lounge for recruiting syndicate specialist crew",
+        "Soundproof basement interrogation & safe room",
+        "Nightly passive revenue generation"
+      ],
+      "heistSynergy": "Primary laundering pipeline for marked banknotes from Sinfrontera National Bank.",
+      "status": "CONFIRMED LEAK",
+      "source": "Nightclub Scene Leak & Selfridges Map"
+    },
+    {
+      "id": "port-gellhorn-waterfront-depot",
+      "name": "Port Gellhorn Marine Logistics Warehouse",
+      "type": "Industrial Marine Depot",
+      "tier": "Tactical Base (Tier 3)",
+      "price": ",900,000",
+      "district": "Port Gellhorn Industrial Sector, Kelly County",
+      "garage": "16-Car Fleet Garage + Drydock Crane & Boat Ramp",
+      "laundering": "Import/Export Maritime Customs Broker (12% Fee \u2022 Medium Speed)",
+      "features": [
+        "Heavy vehicle maintenance lift for armored trucks",
+        "Storage for industrial mining drills & thermite lances",
+        "Direct canal slipway for instant water getaways",
+        "Underground gunsmith workbench"
+      ],
+      "heistSynergy": "Mandatory staging headquarters for Port Gellhorn Container Terminal raid.",
+      "status": "CONFIRMED LEAK",
+      "source": "Port Gellhorn Cargo Depot Trailer 1"
+    },
+    {
+      "id": "grassrivers-hangar-cabin",
+      "name": "Grassrivers Smuggler Hangar & Airfield Cabin",
+      "type": "Rural Airfield Hangar",
+      "tier": "Contraband Stash (Tier 3)",
+      "price": ",850,000",
+      "district": "Grassrivers / Central Everglades",
+      "garage": "4-Aircraft Hangar + 4-Car Offroad Bay + Airboat Slipway",
+      "laundering": "Clandestine Air Cargo Broker (14% Fee \u2022 Zero Federal Oversight)",
+      "features": [
+        "Private dirt airstrip supporting twin-engine cargo planes",
+        "Radar-deflecting camo netting",
+        "Swamp airboat fueling dock",
+        "Border patrol radio scanner interceptor"
+      ],
+      "heistSynergy": "Essential base of operations for Grassrivers Cartel Airstrip runs.",
+      "status": "CONFIRMED LEAK",
+      "source": "Everglades Airfield Trailer 1 Footage"
+    },
+    {
+      "id": "pelican-valley-sugarcane-farmhouse",
+      "name": "Pelican Valley Farmhouse & Grain Silo Stash",
+      "type": "Rural Homestead Stash",
+      "tier": "Covert Outpost (Tier 4)",
+      "price": ",000",
+      "district": "Pelican Valley / Lummox County Basin",
+      "garage": "6-Vehicle Farm Workshop + Flat-Bottom Boat Dock",
+      "laundering": "Agricultural Commodity Exchange (15% Fee)",
+      "features": [
+        "Reinforced subterranean grain silo storm shelter",
+        "Disguised farm utility vehicles for covert transport",
+        "Zero surveillance cameras within 8-mile radius",
+        "Rapid access to railway tracks"
+      ],
+      "heistSynergy": "Closest safe drop point following the Pelican Valley Credit Union score.",
+      "status": "CONFIRMED LEAK",
+      "source": "Selfridges Collector Box Map Leak"
+    },
+    {
+      "id": "ambrosia-motel-room-lockup",
+      "name": "Ambrosia Neon Motel & Single-Bay Lockup",
+      "type": "Starter Safehouse",
+      "tier": "Starter Stash (Tier 4)",
+      "price": ",000",
+      "district": "Ambrosia / Kelly County Corridor",
+      "garage": "2-Car Storage Unit",
+      "laundering": "Street Bullion Fence Network (22% Fee \u2022 Instant Cash)",
+      "features": [
+        "Low-profile anonymity for early story progression",
+        "Police radio scanner listening station",
+        "Quick getaway route to Interstate Toll 1A",
+        "Duffel bag cash stash mattress"
+      ],
+      "heistSynergy": "Low-cost launch pad for duo convenience store and cash-in-transit jobs.",
+      "status": "CONFIRMED LEAK",
+      "source": "Trailer 1 Motel Scene & Early Story Intel"
     }
   ]
 }

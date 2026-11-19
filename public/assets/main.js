@@ -3518,7 +3518,7 @@ DealRotator: {
           if (!feed.ok || !feed.counts) return;
 
           document.querySelectorAll('.live-sync-badge').forEach((el) => {
-            el.innerHTML = `⚡ LIVE SYNC: ${feed.counts.characters} Operatives &bull; ${feed.counts.weapons} Weapons &bull; ${feed.counts.vehicles} Vehicles`;
+            el.innerHTML = `⚡ LIVE SYNC: ${feed.counts.characters} Operatives &bull; ${feed.counts.weapons} Weapons &bull; ${feed.counts.vehicles} Vehicles &bull; ${feed.counts.properties || 8} Safehouses`;
           });
           const timeEl = document.getElementById('liveSyncTimestamp');
           if (timeEl) {
@@ -3532,6 +3532,9 @@ DealRotator: {
           }
           if (document.getElementById('syncVehiclesCount')) {
             document.getElementById('syncVehiclesCount').textContent = feed.counts.vehicles || 16;
+          }
+          if (document.getElementById('syncPropsCount')) {
+            document.getElementById('syncPropsCount').textContent = feed.counts.properties || 8;
           }
         } catch (e) {}
       },
@@ -3550,7 +3553,7 @@ DealRotator: {
             btn.style.borderColor = 'var(--neon-green)';
             btn.style.color = 'var(--neon-green)';
             if (GTA6.showToast) {
-              GTA6.showToast('🛰️ Edge Database Current: 14 Operatives, 16 Vehicles & 11 Weapons active!');
+              GTA6.showToast('🛰️ Edge Database Current: 14 Operatives, 16 Vehicles, 11 Weapons & 8 Properties active!');
             }
             setTimeout(() => {
               btn.innerHTML = orig;

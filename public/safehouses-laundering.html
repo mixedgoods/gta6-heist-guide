@@ -175,6 +175,7 @@
 </header>
 
 <main class="container">
+    <div id="launderCalcAnchor"></div>
     <section class="tool-box pink-glow">
         <h2 style="color:var(--neon-cyan); margin-bottom:0.4rem;">Money Laundering &amp; Clean Cash Profit Simulator</h2>
         <p style="color:var(--text-muted); font-size:0.94rem; margin-bottom:1.5rem;">Compare quick black-market fencing vs. owning high-margin Vice Beach front properties.</p>
@@ -213,22 +214,258 @@
         <div id="lndNote" style="margin-top:1rem; text-align:center; color:var(--neon-amber); font-weight:700;"></div>
     </section>
 
-    <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-        <div class="card">
-            <div>
-                <span class="card-tag tag-mastermind">TIER 1 SAFEHOUSE</span>
-                <h3 class="card-title">Ocean View Penthouse &amp; Underground Garage</h3>
-                <p class="card-desc">Closest safehouse to Sinfrontera National Bank. Features dual basement exit ramps to clear heat cleanly while transferring duffel bags into clean getaway cars.</p>
-            </div>
+    
+    <!-- INTERACTIVE REAL ESTATE & SAFEHOUSE DIRECTORY -->
+    <section style="margin-bottom: 3rem;">
+        <div class="section-header" style="text-align:center; margin-bottom:1.5rem;">
+            <span class="user-badge badge-mastermind" style="background:rgba(0,255,136,0.15); border-color:var(--neon-green); color:var(--neon-green); font-size:0.75rem;">
+                🏘️ CONFIRMED REAL ESTATE CATALOG
+            </span>
+            <h2 style="font-size:clamp(1.5rem, 3vw, 2.2rem); color:#fff; margin:0.5rem 0;">Leonida Mansions, Safehouses &amp; Front Businesses</h2>
+            <p style="color:var(--text-muted); max-width:680px; margin:0 auto; font-size:0.92rem;">
+                Acquire high-security properties to store getaway cars, shake police heat, coordinate heist blueprints in private war rooms, and wash marked banknotes through shell enterprises.
+            </p>
         </div>
-        <div class="card">
-            <div>
-                <span class="card-tag tag-intermediate">OFFSHORE STASH</span>
-                <h3 class="card-title">Keys Boathouse &amp; Helipad Dock</h3>
-                <p class="card-desc">Mandatory drop point for Starlet Superyacht and Grassrivers runs. Keeps unmarked gold bars safe away from Vice City metropolitan police sweeps.</p>
+
+        <!-- Filter Tabs -->
+        <div style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.75rem;">
+            <button type="button" class="btn btn-secondary prop-filter-btn active" onclick="filterProps('all', this)" style="padding:0.4rem 0.9rem; font-size:0.78rem;">All Properties (8)</button>
+            <button type="button" class="btn btn-secondary prop-filter-btn" onclick="filterProps('mansion', this)" style="padding:0.4rem 0.9rem; font-size:0.78rem;">🏰 Mansions &amp; Estates (2)</button>
+            <button type="button" class="btn btn-secondary prop-filter-btn" onclick="filterProps('safehouse', this)" style="padding:0.4rem 0.9rem; font-size:0.78rem;">🛡️ Tactical Safehouses (3)</button>
+            <button type="button" class="btn btn-secondary prop-filter-btn" onclick="filterProps('front', this)" style="padding:0.4rem 0.9rem; font-size:0.78rem;">💵 Laundering Fronts (2)</button>
+            <button type="button" class="btn btn-secondary prop-filter-btn" onclick="filterProps('hangar', this)" style="padding:0.4rem 0.9rem; font-size:0.78rem;">✈️ Airfield Hangars (1)</button>
+        </div>
+
+        <!-- Property Grid -->
+        <div class="grid" id="propertiesCatalogGrid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1.5rem;">
+            
+            <!-- PROPERTY 1: Venetian Mega-Mansion -->
+            <div class="card prop-card" data-cat="mansion" style="border:1px solid rgba(0,255,136,0.35); background:linear-gradient(135deg, rgba(14,24,36,0.95), rgba(8,14,24,0.98)); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-mastermind">TIER 1 MASTERMIND</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$18,500,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Venetian Way Waterfront Mega-Mansion</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-cyan); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Venetian Islands / Starfish Basin &bull; Vice City
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 20-Car Showroom + Rooftop Helipad + Deep Yacht Slip</div>
+                        <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> Offshore Trust (6% Fee &bull; +10% Yield)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        The ultimate criminal syndicate estate in Vice City. Features a private subterranean war room, biometric laser gates, deep-water dock for the Sea Sparrow and high-speed dinghies, and private helipad.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Primary drop point for Starlet Superyacht and Sinfrontera Bank bullion scores.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('nightclub', 18.5)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
             </div>
+
+            <!-- PROPERTY 2: Starlet Key Modernist Villa -->
+            <div class="card prop-card" data-cat="mansion" style="border:1px solid rgba(0,240,255,0.35); background:linear-gradient(135deg, rgba(14,24,36,0.95), rgba(8,14,24,0.98)); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-mastermind">LUXURY ESTATE</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$12,400,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Starlet Key Modernist Oceanfront Villa</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-cyan); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Starlet Key &bull; Leonida Keys
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 8-Car Climate Garage + Private Speedboat Slip</div>
+                        <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> Island Marina LLC (8% Fee &bull; Sovereign Exempt)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Private island sanctuary facing the Florida Straits. Zero metropolitan police patrols, high-speed boat hoist, infinity terrace, and encrypted satellite listening post.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Perfect for shaking 5-star ocean pursuit boats following offshore yacht runs.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('marina', 12.4)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- PROPERTY 3: Ocean Drive Art Deco Penthouse -->
+            <div class="card prop-card" data-cat="safehouse" style="border:1px solid rgba(255,42,141,0.35); background:linear-gradient(135deg, rgba(24,14,28,0.95), rgba(8,14,24,0.98)); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-expert">EXECUTIVE SAFEHOUSE</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$8,200,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Ocean Drive Art Deco Triplex Penthouse</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-pink); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Ocean Drive / South Vice Beach
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 10-Car Underground with Blast-Shield Gates</div>
+                        <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> Art Gallery Escrow (10% Fee &bull; Instant Clean)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Direct elevator access to underground subway maintenance tracks. Features bulletproof floor-to-ceiling glass, police scanner monitoring console, and custom weapons armory.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Immediate evacuation sanctuary following Ocean Drive Armored Convoy intercept.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('nightclub', 8.2)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- PROPERTY 4: Neon Palms Nightclub Front -->
+            <div class="card prop-card" data-cat="front" style="border:1px solid rgba(255,184,0,0.35); background:linear-gradient(135deg, rgba(24,20,14,0.95), rgba(8,14,24,0.98)); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-intermediate">COMMERCIAL FRONT</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$4,500,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Neon Palms Nightclub &amp; Shell LLC</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-amber); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Downtown Vice City / Washington Beach
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 6-Car VIP Garage + Armored Van Bay</div>
+                        <div style="color:var(--neon-green);">💼 <strong>Laundering:</strong> Nightlife Cash Machine (8% Fee &bull; +5% Bonus)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Cash-intensive business disguise. Basement currency counters clean marked treasury bills overnight while generating daily passive syndicate dividend income.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Primary wash terminal for marked Sinfrontera National Bank bills.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('nightclub', 4.5)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- PROPERTY 5: Port Gellhorn Waterfront Depot -->
+            <div class="card prop-card" data-cat="safehouse" style="border:1px solid rgba(0,240,255,0.3); background:rgba(10,16,26,0.95); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-intermediate">TACTICAL DEPOT</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$2,900,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Port Gellhorn Marine Logistics Depot</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-cyan); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Port Gellhorn Industrial Sector &bull; Kelly County
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 16-Car Fleet Garage + Drydock Boat Hoist</div>
+                        <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> Freight Customs Broker (12% Fee)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Industrial staging facility with heavy machinery lifts, thermite drill modification bays, and canal ramps for immediate marine getaways.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Staging headquarters for the Port Gellhorn Container Terminal heist.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('marina', 2.9)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- PROPERTY 6: Grassrivers Airfield Hangar -->
+            <div class="card prop-card" data-cat="hangar" style="border:1px solid rgba(0,255,136,0.3); background:rgba(10,16,26,0.95); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-intermediate">CONTRABAND HANGAR</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$1,850,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Grassrivers Smuggler Hangar &amp; Stash Cabin</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-green); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Grassrivers Swamp Airfield &bull; Central Everglades
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 4-Plane Hangar + 4-Car Offroad Bay + Airboat Dock</div>
+                        <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> Clandestine Cargo Flight (14% Fee)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Private unpaved landing strip equipped with camouflage netting, av-gas refueling pumps, and swamp airboat slips beyond federal surveillance limits.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Essential extraction safehouse for Grassrivers Cartel Airstrip runs.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('marina', 1.85)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- PROPERTY 7: Pelican Valley Farmhouse -->
+            <div class="card prop-card" data-cat="front" style="border:1px solid rgba(0,240,255,0.25); background:rgba(10,16,26,0.95); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-intermediate">RURAL HOMESTEAD</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$920,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Pelican Valley Farmhouse &amp; Silo Stash</h3>
+                    <div style="font-size:0.76rem; color:var(--neon-cyan); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Pelican Valley &bull; Lummox County Basin
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 6-Vehicle Barn Workshop + Canal Boat Slip</div>
+                        <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> Agricultural Crop Exchange (15% Fee)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Newly discovered on the Selfridges Collector Box map. Hidden subterranean grain silo bunker, zero CCTV cameras, and rapid escape access to freight train lines.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Fastest drop point after hitting Pelican Valley Agricultural Credit Union.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('marina', 0.92)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
+            <!-- PROPERTY 8: Ambrosia Motel Room & Lockup -->
+            <div class="card prop-card" data-cat="safehouse" style="border:1px solid rgba(255,255,255,0.15); background:rgba(10,16,26,0.95); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+                        <span class="card-tag tag-intermediate">STARTER STASH</span>
+                        <span style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green);">$240,000</span>
+                    </div>
+                    <h3 class="card-title" style="margin-bottom:0.35rem;">Ambrosia Neon Motel &amp; Lockup Bay</h3>
+                    <div style="font-size:0.76rem; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:0.85rem;">
+                        📍 Ambrosia Corridor &bull; Kelly County
+                    </div>
+                    <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
+                        <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> 2-Car Storage Unit</div>
+                        <div style="color:var(--neon-pink);">💼 <strong>Laundering:</strong> Street Bullion Fence (22% Fee &bull; Instant)</div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">
+                        Affordable early-game sanctuary for Jason &amp; Lucia. Includes police radio interceptor, lockbox weapons case, and quick highway access to Toll 1A.
+                    </p>
+                    <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
+                        <strong style="color:#fff;">🎯 Heist Synergy:</strong> Low-cost early safehouse for store stick-ups and small armored transports.
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                    <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('fence', 0.24)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
+                    <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                </div>
+            </div>
+
         </div>
     </section>
+
 </main>
 
 <footer>
@@ -328,5 +565,29 @@
     </div>
 </footer>
 <script src="assets/main.js"></script>
+
+    <script>
+        function filterProps(cat, btn) {
+            document.querySelectorAll('.prop-filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'sine', 0.03);
+            document.querySelectorAll('.prop-card').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        function setLaunderPipeline(method, defaultVal) {
+            const mSelect = document.getElementById('launderMethod');
+            if (mSelect) {
+                mSelect.value = method;
+                if (typeof calcLaunder === 'function') calcLaunder();
+            }
+            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(650, 'triangle', 0.05);
+        }
+    </script>
+
 </body>
 </html>

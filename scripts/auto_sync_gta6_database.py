@@ -58,8 +58,9 @@ def sync_database():
     existing_char_ids = {c['id'] for c in master_data.get('characters', [])}
     existing_weapon_ids = {w['id'] for w in master_data.get('weapons', [])}
     existing_veh_ids = {v['id'] for v in master_data.get('vehicles', [])}
+    existing_prop_ids = {p['id'] for p in master_data.get('properties', [])}
 
-    log(f"Current catalog: {len(existing_char_ids)} characters, {len(existing_weapon_ids)} weapons, {len(existing_veh_ids)} vehicles")
+    log(f"Current catalog: {len(existing_char_ids)} characters, {len(existing_weapon_ids)} weapons, {len(existing_veh_ids)} vehicles, {len(existing_prop_ids)} properties")
 
     # 1. SCAN FOR VEHICLES
     log("Scanning official media wiki for newly confirmed vehicles...")
@@ -93,7 +94,18 @@ def sync_database():
             if clean_id not in existing_char_ids and not clean_id.startswith('category'):
                 log(f"Potential new confirmed character listed: {char_title} (ID: {clean_id})")
 
-    # 3. SCAN OFFICIAL YOUTUBE FEEDS & LIVE STREAM CHANNELS
+    # 3. SCAN FOR PROPERTIES & SAFEHOUSE LOCATIONS
+    log("Scanning official media wiki for newly confirmed safehouses & properties...")
+    prop_api_url = 'https://gta.fandom.com/api.php?action=query&list=categorymembers&cmtitle=Category:Grand_Theft_Auto_VI_locations&cmlimit=100&format=json'
+    prop_data = fetch_json(prop_api_url)
+    if prop_data and 'query' in prop_data:
+        for member in prop_data['query']['categorymembers']:
+            prop_title = member['title']
+            clean_id = re.sub(r'[^a-z0-9]+', '-', prop_title.lower()).strip('-')
+            if clean_id not in existing_prop_ids and not clean_id.startswith('category'):
+                log(f"Potential new confirmed property/safehouse listed: {prop_title} (ID: {clean_id})")
+
+    # 4. SCAN OFFICIAL YOUTUBE FEEDS & LIVE STREAM CHANNELS
     log("Scanning official YouTube feeds (Rockstar Games, GTA Series Videos, Digital Foundry)...")
     yt_channels = {
         'Rockstar Games (Official)': 'UCULwHhkI31JHAKe57LZdzcA',

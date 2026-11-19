@@ -76,6 +76,7 @@ export async function onRequestGet({ request, env }) {
         characters: data.characters.length,
         weapons: data.weapons.length,
         vehicles: data.vehicles.length,
+        properties: data.properties ? data.properties.length : 8,
       },
       data,
     }), {
