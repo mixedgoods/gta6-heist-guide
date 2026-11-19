@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <title>GTA 6 Live Streams, Twitch & YouTube Broadcast Hub | SATCOM Syndicate Feed</title>
-    <meta name="description" content="Watch verified live GTA 6 Twitch and YouTube streams, speedruns, and bank vault raids in real time. Features multi-stream switcher, live chat, and second-screen keypad solver.">
-    <meta name="keywords" content="GTA 6 live stream, GTA 6 Twitch stream, GTA 6 YouTube live, Grand Theft Auto VI stream, GTA 6 gameplay live, GTA 6 bank heist stream, GTA 6 vault raid, Leonida live, GTA 6 second screen">
+    <title>GTA 6 Live Streams & Broadcast Network | Top US Streamers & SATCOM Feed</title>
+    <meta name="description" content="Watch verified top American GTA 6 and GTA V streamers live in real time. Features multi-stream cycler, automatic offline failover, live Twitch chat, and interactive second-screen vault keypad solver.">
+    <meta name="keywords" content="GTA 6 live stream, GTA 6 Twitch, CaseOh GTA 6, Kai Cenat GTA 6, xQc GTA 6, Summit1g GTA, Grand Theft Auto VI live, GTA 6 gameplay live, GTA 6 second screen">
     <link rel="canonical" href="https://www.gta6heistguide.com/live.html">
     <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="GTA 6 Live Streams, Twitch & YouTube Broadcast Hub | SATCOM Syndicate Feed">
-    <meta property="og:description" content="Watch verified live GTA 6 Twitch and YouTube streams, speedruns, and bank vault raids in real time with interactive second-screen vault tools.">
+    <meta property="og:title" content="GTA 6 Live Streams & Broadcast Network | Top US Streamers & SATCOM Feed">
+    <meta property="og:description" content="Watch top American GTA 6 and GTA V streamers live in real time with auto-failover and interactive second-screen vault tools.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/live.html">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/gta6-protagonists-official.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Twitch Interactive Player SDK -->
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -26,7 +29,7 @@
           "@type": "WebPage",
           "name": "GTA 6 Live Streams & SATCOM Command Center",
           "url": "https://www.gta6heistguide.com/live.html",
-          "description": "Live GTA 6 Twitch and YouTube broadcast feeds with real-time second-screen heist tools."
+          "description": "Live GTA 6 Twitch and YouTube broadcast feeds with real-time second-screen heist tools and automatic stream failover."
         },
         {
           "@type": "BroadcastEvent",
@@ -66,6 +69,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
         .stream-aspect-ratio iframe {
             width: 100%;
@@ -90,13 +94,29 @@
         .stream-facade:hover {
             background: radial-gradient(circle at center, rgba(0,240,255,0.22) 0%, rgba(5,8,14,0.95) 75%);
         }
+        .channel-pill-scroll {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 0.25rem 0 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,240,255,0.3) transparent;
+        }
+        .channel-pill-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .channel-pill-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0,240,255,0.3);
+            border-radius: 4px;
+        }
         .channel-pill {
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 0.85rem;
             border-radius: 6px;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.65);
             border: 1px solid rgba(255,255,255,0.15);
             color: #cbd5e1;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -104,8 +124,10 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
-        .channel-pill:hover, .channel-pill.active {
+        .channel-pill:hover {
             border-color: var(--neon-cyan);
             color: var(--neon-cyan);
             background: rgba(0,240,255,0.12);
@@ -114,8 +136,19 @@
         .channel-pill.active {
             border-color: #ef4444;
             color: #fff;
-            background: rgba(239,68,68,0.2);
-            box-shadow: 0 0 15px rgba(239,68,68,0.3);
+            background: rgba(239,68,68,0.25);
+            box-shadow: 0 0 18px rgba(239,68,68,0.4);
+        }
+        .channel-pill .pill-badge {
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.15);
+            color: #f8fafc;
+        }
+        .channel-pill.active .pill-badge {
+            background: #ef4444;
+            color: #fff;
         }
         .chat-container {
             background: #070b14;
@@ -146,6 +179,66 @@
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
             70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        .stream-nav-btn {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 800;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .stream-nav-btn:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.15);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+        }
+        .stream-select-input {
+            background: rgba(5, 8, 14, 0.9);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 6px;
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            padding: 0.35rem 0.65rem;
+            outline: none;
+            cursor: pointer;
+            max-width: 200px;
+        }
+        .stream-select-input option {
+            background: #0a101a;
+            color: #fff;
+        }
+        .offline-hud-banner {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: rgba(10, 15, 26, 0.95);
+            border: 2px solid #ef4444;
+            border-radius: 10px;
+            padding: 0.85rem 1.25rem;
+            z-index: 25;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 35px rgba(239, 68, 68, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -185,7 +278,7 @@
 <main class="container" style="padding-top:1.5rem; padding-bottom:3.5rem;">
 
     <!-- SATCOM COMMAND HEADER -->
-    <header style="margin-bottom:1.5rem; text-align:center;">
+    <header style="margin-bottom:1.25rem; text-align:center;">
         <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.4); border-radius:30px; padding:0.35rem 1rem; margin-bottom:0.75rem;">
             <span class="pulse-beacon"></span>
             <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#ef4444; letter-spacing:1px;">LEONIDA SATELLITE INTERCEPT // 24/7 LIVE STREAM NETWORK</span>
@@ -194,28 +287,26 @@
             GTA 6 Live Streams &amp; Second-Screen Vault HUD
         </h1>
         <p style="color:var(--text-muted); font-size:clamp(0.85rem, 1.8vw, 1.05rem); max-width:820px; margin:0 auto; line-height:1.5;">
-            Watch verified Twitch and YouTube infiltration broadcasts live. Punch vault codes and calculate loot takes side-by-side on your PC, mobile, tablet, or PS5.
+            Watch verified top American GTA 6 and GTA V broadcasts live. If a streamer goes offline, our SATCOM scanner automatically locks onto the next top active feed, or cycle channels manually with full keypad companion tools.
         </p>
     </header>
 
-    <!-- STREAM CHANNEL SWITCHER BAR -->
-    <div style="background:rgba(10,16,26,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:10px; padding:0.85rem 1.15rem; margin-bottom:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
-        <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-            <span style="font-size:0.75rem; color:#64748b; font-family:var(--font-mono); font-weight:800;">SELECT SATELLITE FEED:</span>
-            <button type="button" class="channel-pill active" onclick="switchStream('twitch', 'gta6', this)">
-                🟣 Twitch GTA 6 Category
-            </button>
-            <button type="button" class="channel-pill" onclick="switchStream('youtube-channel', 'UCULwHhkI31JHAKe57LZdzcA', this)">
-                🔴 Rockstar Games Live
-            </button>
-            <button type="button" class="channel-pill" onclick="switchStream('twitch', 'gtavi', this)">
-                🎮 Leonida Infiltration Squad
-            </button>
+    <!-- STREAM CHANNEL ROSTER & CUSTOM INPUT BAR -->
+    <div style="background:rgba(10,16,26,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:10px; padding:0.85rem 1.15rem; margin-bottom:1.25rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.65rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+                <span style="font-size:0.75rem; color:#64748b; font-family:var(--font-mono); font-weight:800;">TOP US CHANNELS:</span>
+                <span style="font-size:0.72rem; color:var(--neon-green); font-family:var(--font-mono); font-weight:800;">🇺🇸 NORTH AMERICA SYNDICATE</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:260px; max-width:380px;">
+                <input type="text" id="customChannelInput" placeholder="Paste any Twitch user or YT ID..." style="flex:1; padding:0.45rem 0.75rem; background:rgba(0,0,0,0.7); border:1px solid rgba(0,240,255,0.3); border-radius:6px; color:#fff; font-size:0.78rem; outline:none; font-family:var(--font-mono);">
+                <button type="button" class="btn btn-primary" onclick="loadCustomChannel()" style="padding:0.45rem 0.85rem; font-size:0.78rem; font-weight:800; white-space:nowrap;">Connect</button>
+            </div>
         </div>
 
-        <div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:240px; max-width:380px;">
-            <input type="text" id="customChannelInput" placeholder="Paste any Twitch user or YT ID..." style="flex:1; padding:0.45rem 0.75rem; background:rgba(0,0,0,0.7); border:1px solid rgba(0,240,255,0.3); border-radius:6px; color:#fff; font-size:0.78rem; outline:none; font-family:var(--font-mono);">
-            <button type="button" class="btn btn-primary" onclick="loadCustomChannel()" style="padding:0.45rem 0.85rem; font-size:0.78rem; font-weight:800; white-space:nowrap;">Connect Feed</button>
+        <!-- Scrollable Top Streamer Pills -->
+        <div class="channel-pill-scroll" id="rosterPillsContainer">
+            <!-- Dynamically populated by JS -->
         </div>
     </div>
 
@@ -225,15 +316,34 @@
         <!-- STREAM VIEWPORT -->
         <div>
             <div class="stream-viewport-box">
-                <!-- Top Stream Status Bar -->
-                <div style="background:#070b14; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-                    <div style="display:flex; align-items:center; gap:0.5rem;">
-                        <span class="pulse-beacon"></span>
-                        <strong id="activeStreamTitle" style="color:#fff; font-size:0.88rem; font-family:var(--font-mono);">SIGNAL LOCKED: Twitch GTA 6 Directory</strong>
+                <!-- Top Stream Status Bar with Prev / Next Channel Cycler -->
+                <div style="background:#070b14; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.65rem;">
+                    <div style="display:flex; align-items:center; gap:0.65rem; min-width:200px;">
+                        <span id="streamStatusIndicator">
+                            <span class="pulse-beacon"></span>
+                        </span>
+                        <div>
+                            <strong id="activeStreamTitle" style="color:#fff; font-size:0.88rem; font-family:var(--font-mono); display:block;">SIGNAL LOCKED: @caseoh_ • CaseOh</strong>
+                            <span id="activeStreamDesc" style="color:#94a3b8; font-size:0.72rem; font-family:var(--font-mono);">Top US Streamer • Peak Viewership</span>
+                        </div>
                     </div>
-                    <div style="display:flex; gap:0.5rem;">
-                        <button type="button" class="btn btn-secondary" onclick="toggleChat()" style="padding:0.3rem 0.65rem; font-size:0.72rem; font-family:var(--font-mono);" id="chatToggleBtn">💬 Toggle Chat</button>
-                        <button type="button" class="btn btn-secondary" onclick="reloadStream()" style="padding:0.3rem 0.65rem; font-size:0.72rem; font-family:var(--font-mono);">🔄 Reload</button>
+
+                    <!-- Channel Navigation Bar Controls -->
+                    <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                        <button type="button" class="stream-nav-btn" onclick="prevStream()" title="Previous Stream (Shortcut: Left Arrow)">
+                            ◀ PREV
+                        </button>
+                        <select id="streamSelectDropdown" class="stream-select-input" onchange="selectStream(this.value)" title="Direct Channel Selector">
+                            <!-- Populated by JS -->
+                        </select>
+                        <button type="button" class="stream-nav-btn" onclick="nextStream()" title="Next Stream (Shortcut: Right Arrow)">
+                            NEXT ▶
+                        </button>
+                        <button type="button" class="stream-nav-btn" id="autoSkipToggleBtn" onclick="toggleAutoSkip()" title="Auto-advance if stream goes offline">
+                            ⚡ Auto-Skip: <strong style="color:var(--neon-green)">ON</strong>
+                        </button>
+                        <button type="button" class="stream-nav-btn" onclick="toggleChat()" id="chatToggleBtn">💬 Chat</button>
+                        <button type="button" class="stream-nav-btn" onclick="reloadStream()">🔄 Reload</button>
                     </div>
                 </div>
 
@@ -246,24 +356,52 @@
                         </div>
                         <h3 style="color:#fff; font-size:1.3rem; margin:0 0 0.4rem; font-weight:900;">ENGAGE SATELLITE INTERCEPT</h3>
                         <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.85rem; max-width:440px;">
-                            Tap to connect audio/video stream. Multi-platform optimized for zero background data usage on mobile.
+                            Tap to lock onto live feed. Automatic offline detection cycles to the next active US broadcast.
                         </p>
-                        <span style="display:inline-block; font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800; background:rgba(16,185,129,0.15); border:1px solid var(--neon-green); padding:0.25rem 0.75rem; border-radius:4px;">
-                            ⚡ 1080P60 LOW-LATENCY READY
-                        </span>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
+                            <span style="display:inline-block; font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800; background:rgba(16,185,129,0.15); border:1px solid var(--neon-green); padding:0.25rem 0.75rem; border-radius:4px;">
+                                ⚡ AUTO-FAILOVER ACTIVATED
+                            </span>
+                            <span style="display:inline-block; font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-cyan); font-weight:800; background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); padding:0.25rem 0.75rem; border-radius:4px;">
+                                🇺🇸 TOP US BROADCASTERS
+                            </span>
+                        </div>
                     </div>
 
-                    <!-- Stream iframe mounts here dynamically upon activation -->
+                    <!-- Offline In-Player Alert & Countdown Overlay -->
+                    <div id="offlineFailoverBanner" class="offline-hud-banner" style="display:none;">
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                            <span class="pulse-beacon" style="background:#ef4444; width:12px; height:12px;"></span>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-weight:900; font-size:0.85rem; color:#fff;">
+                                    ⚠️ BROADCAST OFFLINE: <span id="offlineStreamerName" style="color:#ef4444;">@channel</span> IS NOT LIVE
+                                </div>
+                                <div style="font-size:0.78rem; color:#cbd5e1;" id="offlineCountdownText">
+                                    Auto-routing to next top American GTA broadcast in 4 seconds...
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:0.5rem;">
+                            <button type="button" class="btn btn-primary" onclick="nextStream()" style="font-size:0.78rem; padding:0.4rem 0.85rem; background:#ef4444; border-color:#ef4444;">
+                                Skip Now ⏭️
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="cancelAutoSkip()" style="font-size:0.78rem; padding:0.4rem 0.85rem;">
+                                Stay Here ⏸️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stream iframe / Twitch SDK mounts here dynamically upon activation -->
                     <div id="streamMount" style="width:100%; height:100%;"></div>
                 </div>
 
                 <!-- Bottom Telemetry Bar -->
                 <div style="background:#070b14; padding:0.75rem 1rem; border-top:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.76rem; font-family:var(--font-mono);">
                     <div style="color:#94a3b8;">
-                        PROTOCOL: <strong style="color:var(--neon-cyan);">HTML5 ENCRYPTED SATELLITE</strong> &bull; STATUS: <strong style="color:var(--neon-green);">CONNECTED</strong>
+                        PROTOCOL: <strong style="color:var(--neon-cyan);">HTML5 ENCRYPTED SATELLITE</strong> &bull; SCANNER: <strong style="color:var(--neon-green);" id="scannerStatus">ACTIVE (11 CHANNELS)</strong>
                     </div>
                     <div style="color:var(--neon-yellow);">
-                        ⚡ COMPANION HUD SYNC: ACTIVE
+                        ⚡ SHORTCUTS: [◀] PREV FEED &bull; [▶] NEXT FEED
                     </div>
                 </div>
             </div>
@@ -338,7 +476,7 @@
         <!-- CHAT SIDEBAR -->
         <aside class="chat-container" id="chatSidebar">
             <div style="background:#0a101a; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#fff;">💬 SQUAD LIVE CHAT</span>
+                <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#fff;" id="chatHeaderTitle">💬 SQUAD LIVE CHAT</span>
                 <span style="font-size:0.72rem; color:var(--neon-green); font-family:var(--font-mono);">SYNCED</span>
             </div>
             <div id="chatMount" style="flex:1; display:flex; align-items:center; justify-content:center; background:#04070e;">
@@ -375,10 +513,92 @@
 </footer>
 
 <script>
-let currentStreamType = 'twitch';
-let currentChannelId = 'gta6';
-let isChatVisible = true;
+// CURATED TOP AMERICAN GTA STREAMERS ROSTER (Ordered by peak US viewers & relevance)
+const ROSTER = [
+    { id: 'caseoh_', name: 'CaseOh', tag: 'Top US Streamer • Peak Views', type: 'twitch', flag: '🇺🇸', badge: '🔥 PEAK VIEWS' },
+    { id: 'kaicenat', name: 'Kai Cenat', tag: 'Top US Streamer • Vice City Marathons', type: 'twitch', flag: '🇺🇸', badge: '👑 TOP US' },
+    { id: 'xqc', name: 'xQc', tag: 'GTA Legend • Syndicate Boss', type: 'twitch', flag: '🇺🇸', badge: '⚡ ALL-TIME' },
+    { id: 'jynxzi', name: 'Jynxzi', tag: 'Top US Creator • High Energy Heists', type: 'twitch', flag: '🇺🇸', badge: '🔥 TRENDING' },
+    { id: 'summit1g', name: 'Summit1g', tag: 'Tactical Shooter & Vault Specialist', type: 'twitch', flag: '🇺🇸', badge: '🎯 VETERAN' },
+    { id: 'buddha', name: 'Buddha', tag: 'NoPixel & Syndicate Mastermind', type: 'twitch', flag: '🇺🇸', badge: '💼 SYNDICATE' },
+    { id: 'lord_kebun', name: 'Lord_Kebun', tag: 'Chang Gang Heist Leader', type: 'twitch', flag: '🇺🇸', badge: '🐉 CHANG GANG' },
+    { id: 'fanum', name: 'Fanum', tag: 'AMP Syndicate • Vice City Vibes', type: 'twitch', flag: '🇺🇸', badge: '🌴 VICE CITY' },
+    { id: 'anthonyz', name: 'AnthonyZ', tag: 'Elite Getaway Driver & Exfiltration', type: 'twitch', flag: '🇺🇸', badge: '🏎️ GETAWAY' },
+    { id: 'shotz', name: 'Shotz', tag: 'Tactical Vault Breacher & Operator', type: 'twitch', flag: '🇺🇸', badge: '💥 BREACHER' },
+    { id: 'rockstargames', name: 'Rockstar Games', tag: 'Official Rockstar Studio Broadcasts', type: 'twitch', flag: '⭐', badge: '⭐ OFFICIAL' }
+];
+
+let currentIndex = 0;
+let twitchPlayer = null;
+let autoSkipEnabled = true;
+let autoSkipCountdown = 4;
+let countdownInterval = null;
 let hasActivated = false;
+let isChatVisible = true;
+let offlineGraceTimer = null;
+
+// Initialize Roster UI
+function initRosterUI() {
+    renderRosterPills();
+    renderDropdownOptions();
+    updateHeaderUI();
+}
+
+function renderRosterPills() {
+    const container = document.getElementById('rosterPillsContainer');
+    if (!container) return;
+
+    container.innerHTML = ROSTER.map((stream, idx) => `
+        <button type="button" class="channel-pill ${idx === currentIndex ? 'active' : ''}" onclick="selectStream(${idx})" id="pill-${idx}">
+            <span>${stream.flag || '🟣'}</span>
+            <strong>${stream.name}</strong>
+            <span class="pill-badge">${stream.badge || 'US'}</span>
+        </button>
+    `).join('');
+}
+
+function renderDropdownOptions() {
+    const select = document.getElementById('streamSelectDropdown');
+    if (!select) return;
+
+    select.innerHTML = ROSTER.map((stream, idx) => `
+        <option value="${idx}" ${idx === currentIndex ? 'selected' : ''}>
+            ${idx + 1}. ${stream.name} (${stream.badge || 'US'})
+        </option>
+    `).join('');
+}
+
+function updateHeaderUI() {
+    const stream = ROSTER[currentIndex];
+    const titleEl = document.getElementById('activeStreamTitle');
+    const descEl = document.getElementById('activeStreamDesc');
+    const select = document.getElementById('streamSelectDropdown');
+
+    if (titleEl) {
+        titleEl.textContent = `SIGNAL LOCKED: @${stream.id} • ${stream.name}`;
+    }
+    if (descEl) {
+        descEl.textContent = `${stream.tag} (${stream.flag || 'US'})`;
+    }
+    if (select) {
+        select.value = currentIndex;
+    }
+
+    // Update active pill highlight
+    document.querySelectorAll('.channel-pill').forEach((p, idx) => {
+        if (idx === currentIndex) {
+            p.classList.add('active');
+            p.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+            p.classList.remove('active');
+        }
+    });
+
+    const chatHeader = document.getElementById('chatHeaderTitle');
+    if (chatHeader) {
+        chatHeader.textContent = `💬 ${stream.name.toUpperCase()} LIVE CHAT`;
+    }
+}
 
 function activateStream() {
     hasActivated = true;
@@ -387,99 +607,258 @@ function activateStream() {
     mountStream();
 }
 
-function switchStream(type, id, btn) {
-    currentStreamType = type;
-    currentChannelId = id;
-    
-    document.querySelectorAll('.channel-pill').forEach(p => p.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-
-    const titleEl = document.getElementById('activeStreamTitle');
-    if (titleEl) {
-        titleEl.textContent = 'SIGNAL LOCKED: ' + (type === 'twitch' ? 'Twitch @' + id : 'YouTube Channel Feed');
-    }
+function selectStream(index) {
+    clearAutoSkipTimer();
+    hideOfflineBanner();
+    currentIndex = parseInt(index, 10);
+    updateHeaderUI();
 
     if (hasActivated) {
         mountStream();
     } else {
         activateStream();
     }
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(750, 'sine', 0.05);
 }
 
-function loadCustomChannel() {
-    const input = document.getElementById('customChannelInput');
-    const val = (input?.value || '').trim();
-    if (!val) return;
+function nextStream(isAuto = false) {
+    clearAutoSkipTimer();
+    hideOfflineBanner();
+    currentIndex = (currentIndex + 1) % ROSTER.length;
+    updateHeaderUI();
 
-    if (val.length === 11 || val.startsWith('UC')) {
-        // Likely a YouTube video ID or channel ID
-        switchStream('youtube-video', val, null);
+    if (hasActivated) {
+        mountStream();
     } else {
-        // Default to Twitch username
-        switchStream('twitch', val, null);
+        activateStream();
+    }
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(880, 'sine', 0.05);
+}
+
+function prevStream() {
+    clearAutoSkipTimer();
+    hideOfflineBanner();
+    currentIndex = (currentIndex - 1 + ROSTER.length) % ROSTER.length;
+    updateHeaderUI();
+
+    if (hasActivated) {
+        mountStream();
+    } else {
+        activateStream();
+    }
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(660, 'sine', 0.05);
+}
+
+function toggleAutoSkip() {
+    autoSkipEnabled = !autoSkipEnabled;
+    const btn = document.getElementById('autoSkipToggleBtn');
+    if (btn) {
+        if (autoSkipEnabled) {
+            btn.innerHTML = '⚡ Auto-Skip: <strong style="color:var(--neon-green)">ON</strong>';
+            btn.style.borderColor = 'var(--neon-green)';
+        } else {
+            btn.innerHTML = '⚡ Auto-Skip: <strong style="color:#ef4444">OFF</strong>';
+            btn.style.borderColor = 'rgba(255,255,255,0.2)';
+            clearAutoSkipTimer();
+            hideOfflineBanner();
+        }
+    }
+}
+
+function cancelAutoSkip() {
+    clearAutoSkipTimer();
+    hideOfflineBanner();
+    const banner = document.getElementById('offlineFailoverBanner');
+    if (banner) banner.style.display = 'none';
+}
+
+function clearAutoSkipTimer() {
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+    }
+    if (offlineGraceTimer) {
+        clearTimeout(offlineGraceTimer);
+        offlineGraceTimer = null;
+    }
+}
+
+function hideOfflineBanner() {
+    const banner = document.getElementById('offlineFailoverBanner');
+    if (banner) banner.style.display = 'none';
+}
+
+function showOfflineBanner(stream) {
+    const banner = document.getElementById('offlineFailoverBanner');
+    const nameEl = document.getElementById('offlineStreamerName');
+    if (!banner) return;
+
+    if (nameEl) nameEl.textContent = `@${stream.id} (${stream.name})`;
+    banner.style.display = 'flex';
+}
+
+function onStreamOffline() {
+    const stream = ROSTER[currentIndex];
+    console.log(`[SATCOM] Channel @${stream.id} reported OFFLINE`);
+    
+    const indicator = document.getElementById('streamStatusIndicator');
+    if (indicator) {
+        indicator.innerHTML = '<span class="pulse-beacon" style="background:#ef4444;"></span>';
+    }
+
+    if (!autoSkipEnabled) {
+        showOfflineBanner(stream);
+        const countText = document.getElementById('offlineCountdownText');
+        if (countText) countText.textContent = 'Auto-skip is OFF. Click Skip Now or select another channel above.';
+        return;
+    }
+
+    startAutoSkipCountdown(stream);
+}
+
+function onStreamOnline() {
+    const stream = ROSTER[currentIndex];
+    console.log(`[SATCOM] Channel @${stream.id} is ONLINE`);
+    clearAutoSkipTimer();
+    hideOfflineBanner();
+
+    const indicator = document.getElementById('streamStatusIndicator');
+    if (indicator) {
+        indicator.innerHTML = '<span class="pulse-beacon" style="background:#10b981; box-shadow:0 0 10px #10b981;"></span>';
+    }
+}
+
+function startAutoSkipCountdown(stream) {
+    clearAutoSkipTimer();
+    showOfflineBanner(stream);
+    autoSkipCountdown = 4;
+    updateCountdownText();
+
+    countdownInterval = setInterval(() => {
+        autoSkipCountdown--;
+        updateCountdownText();
+        if (autoSkipCountdown <= 0) {
+            clearAutoSkipTimer();
+            nextStream(true);
+        }
+    }, 1000);
+}
+
+function updateCountdownText() {
+    const countText = document.getElementById('offlineCountdownText');
+    if (countText) {
+        const nextIdx = (currentIndex + 1) % ROSTER.length;
+        const nextName = ROSTER[nextIdx].name;
+        countText.innerHTML = `Auto-routing to <strong>${nextName}</strong> in <strong>${autoSkipCountdown}s</strong>...`;
     }
 }
 
 function mountStream() {
+    clearAutoSkipTimer();
+    hideOfflineBanner();
+
     const mount = document.getElementById('streamMount');
-    const chatMount = document.getElementById('chatMount');
     if (!mount) return;
 
+    const stream = ROSTER[currentIndex];
     const hostname = window.location.hostname || 'www.gta6heistguide.com';
 
-    if (currentStreamType === 'twitch') {
-        // Twitch Player Embed (Whitelisted parents)
-        mount.innerHTML = `
-            <iframe
-                src="https://player.twitch.tv/?channel=${encodeURIComponent(currentChannelId)}&parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&muted=false&autoplay=true"
-                height="100%"
-                width="100%"
-                allowfullscreen>
-            </iframe>
-        `;
+    updateHeaderUI();
+    updateChat(stream, hostname);
 
-        if (chatMount && isChatVisible) {
-            chatMount.innerHTML = `
-                <iframe
-                    src="https://www.twitch.tv/embed/${encodeURIComponent(currentChannelId)}/chat?parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&darkpopout"
-                    height="100%"
-                    width="100%">
-                </iframe>
-            `;
+    if (stream.type === 'twitch') {
+        // Use Twitch Interactive SDK if available
+        if (window.Twitch && window.Twitch.Player) {
+            try {
+                if (!twitchPlayer) {
+                    mount.innerHTML = '';
+                    twitchPlayer = new Twitch.Player("streamMount", {
+                        width: "100%",
+                        height: "100%",
+                        channel: stream.id,
+                        parent: [hostname, "www.gta6heistguide.com", "gta6heistguide.com", "localhost"],
+                        autoplay: true,
+                        muted: false
+                    });
+
+                    twitchPlayer.addEventListener(Twitch.Player.OFFLINE, onStreamOffline);
+                    twitchPlayer.addEventListener(Twitch.Player.ONLINE, onStreamOnline);
+                } else {
+                    twitchPlayer.setChannel(stream.id);
+                }
+
+                // Watchdog: If Twitch player doesn't report online in 5 seconds and autoSkip is on, check status
+                if (autoSkipEnabled) {
+                    offlineGraceTimer = setTimeout(() => {
+                        // If still offline, Twitch usually fires OFFLINE event, but if not:
+                        if (twitchPlayer && twitchPlayer.isPaused && twitchPlayer.isPaused()) {
+                            // Can prompt user
+                        }
+                    }, 5000);
+                }
+                return;
+            } catch (err) {
+                console.warn('[SATCOM] Twitch SDK failed, falling back to iframe embed:', err);
+            }
         }
-    } else if (currentStreamType === 'youtube-channel') {
-        // YouTube Live Stream
+
+        // Iframe Fallback for Twitch
         mount.innerHTML = `
             <iframe
-                src="https://www.youtube-nocookie.com/embed/live_stream?channel=${encodeURIComponent(currentChannelId)}&autoplay=1"
+                src="https://player.twitch.tv/?channel=${encodeURIComponent(stream.id)}&parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&muted=false&autoplay=true"
+                height="100%"
+                width="100%"
+                allowfullscreen>
+            </iframe>
+        `;
+    } else if (stream.type === 'youtube-channel') {
+        mount.innerHTML = `
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/live_stream?channel=${encodeURIComponent(stream.id)}&autoplay=1"
                 height="100%"
                 width="100%"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
         `;
-        if (chatMount) {
-            chatMount.innerHTML = `
-                <div style="text-align:center; padding:2rem 1rem; color:#94a3b8; font-size:0.8rem; font-family:var(--font-mono);">
-                    📺 YouTube Live Chat syncs inside the player or via the YouTube mobile app.
-                </div>
-            `;
-        }
-    } else if (currentStreamType === 'youtube-video') {
+    } else if (stream.type === 'youtube-video') {
         mount.innerHTML = `
             <iframe
-                src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(currentChannelId)}?autoplay=1"
+                src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(stream.id)}?autoplay=1"
                 height="100%"
                 width="100%"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
+        `;
+    }
+}
+
+function updateChat(stream, hostname) {
+    const chatMount = document.getElementById('chatMount');
+    if (!chatMount || !isChatVisible) return;
+
+    if (stream.type === 'twitch') {
+        chatMount.innerHTML = `
+            <iframe
+                src="https://www.twitch.tv/embed/${encodeURIComponent(stream.id)}/chat?parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&darkpopout"
+                height="100%"
+                width="100%">
+            </iframe>
+        `;
+    } else {
+        chatMount.innerHTML = `
+            <div style="text-align:center; padding:2rem 1.5rem; color:#94a3b8; font-size:0.82rem; font-family:var(--font-mono);">
+                📺 YouTube Live Chat syncs directly inside the stream player or via the YouTube mobile app.
+            </div>
         `;
     }
 }
 
 function reloadStream() {
-    if (hasActivated) mountStream();
+    if (hasActivated) {
+        mountStream();
+    }
 }
 
 function toggleChat() {
@@ -492,14 +871,53 @@ function toggleChat() {
     if (isChatVisible) {
         grid.classList.add('with-chat');
         chat.style.display = '';
-        if (btn) btn.innerText = '💬 Hide Chat';
-        if (hasActivated && currentStreamType === 'twitch') mountStream();
+        if (btn) btn.innerText = '💬 Chat';
+        if (hasActivated) updateChat(ROSTER[currentIndex], window.location.hostname || 'www.gta6heistguide.com');
     } else {
         grid.classList.remove('with-chat');
         chat.style.display = 'none';
         if (btn) btn.innerText = '💬 Show Chat';
     }
 }
+
+function loadCustomChannel() {
+    const input = document.getElementById('customChannelInput');
+    const val = (input?.value || '').trim();
+    if (!val) return;
+
+    const cleanVal = val.replace(/^@/, '');
+    const existingIdx = ROSTER.findIndex(r => r.id.toLowerCase() === cleanVal.toLowerCase());
+    if (existingIdx !== -1) {
+        selectStream(existingIdx);
+        return;
+    }
+
+    const isYt = cleanVal.length === 11 || cleanVal.startsWith('UC');
+    const newEntry = {
+        id: cleanVal,
+        name: cleanVal,
+        tag: isYt ? 'Custom YouTube Broadcast' : 'Custom Twitch Streamer',
+        type: isYt ? (cleanVal.startsWith('UC') ? 'youtube-channel' : 'youtube-video') : 'twitch',
+        flag: '📡',
+        badge: 'CUSTOM'
+    };
+
+    ROSTER.unshift(newEntry);
+    currentIndex = 0;
+    renderRosterPills();
+    renderDropdownOptions();
+    selectStream(0);
+}
+
+// Global Keyboard Navigation (Left / Right Arrow)
+window.addEventListener('keydown', (e) => {
+    if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+    if (e.key === 'ArrowRight' || e.key === ']') {
+        nextStream();
+    } else if (e.key === 'ArrowLeft' || e.key === '[') {
+        prevStream();
+    }
+});
 
 // Second Screen Keypad Simulator Logic
 let currentSimPin = '';
@@ -545,6 +963,11 @@ function submitPin() {
         if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(240, 'square', 0.1);
     }
 }
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    initRosterUI();
+});
 </script>
 
 <script src="assets/main.js"></script>
