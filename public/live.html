@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <title>GTA 6 Live Streams, Twitch & YouTube Broadcast Hub | SATCOM Syndicate Feed</title>
+    <meta name="description" content="Watch verified live GTA 6 Twitch and YouTube streams, speedruns, and bank vault raids in real time. Features multi-stream switcher, live chat, and second-screen keypad solver.">
+    <meta name="keywords" content="GTA 6 live stream, GTA 6 Twitch stream, GTA 6 YouTube live, Grand Theft Auto VI stream, GTA 6 gameplay live, GTA 6 bank heist stream, GTA 6 vault raid, Leonida live, GTA 6 second screen">
+    <link rel="canonical" href="https://www.gta6heistguide.com/live.html">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="GTA 6 Live Streams, Twitch & YouTube Broadcast Hub | SATCOM Syndicate Feed">
+    <meta property="og:description" content="Watch verified live GTA 6 Twitch and YouTube streams, speedruns, and bank vault raids in real time with interactive second-screen vault tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gta6heistguide.com/live.html">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/gta6-protagonists-official.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "GTA 6 Live Streams & SATCOM Command Center",
+          "url": "https://www.gta6heistguide.com/live.html",
+          "description": "Live GTA 6 Twitch and YouTube broadcast feeds with real-time second-screen heist tools."
+        },
+        {
+          "@type": "BroadcastEvent",
+          "name": "GTA 6 Live Syndicate Infiltration Broadcast",
+          "isLiveBroadcast": true,
+          "videoFormat": "HD",
+          "broadcastDisplayName": "GTA 6 SATCOM Live Stream Network"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .satcom-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 992px) {
+            .satcom-grid.with-chat {
+                grid-template-columns: 1fr 340px;
+            }
+        }
+        .stream-viewport-box {
+            background: #030712;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
+            position: relative;
+        }
+        .stream-aspect-ratio {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stream-aspect-ratio iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .stream-facade {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0,240,255,0.15) 0%, rgba(5,8,14,0.98) 75%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .stream-facade:hover {
+            background: radial-gradient(circle at center, rgba(0,240,255,0.22) 0%, rgba(5,8,14,0.95) 75%);
+        }
+        .channel-pill {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #cbd5e1;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-mono);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .channel-pill:hover, .channel-pill.active {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            background: rgba(0,240,255,0.12);
+            box-shadow: 0 0 15px rgba(0,240,255,0.25);
+        }
+        .channel-pill.active {
+            border-color: #ef4444;
+            color: #fff;
+            background: rgba(239,68,68,0.2);
+            box-shadow: 0 0 15px rgba(239,68,68,0.3);
+        }
+        .chat-container {
+            background: #070b14;
+            border: 1px solid rgba(0,240,255,0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 480px;
+        }
+        .chat-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 440px;
+            border: none;
+            flex: 1;
+        }
+        .pulse-beacon {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background: #ef4444;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ef4444;
+            animation: satcomPulse 1.5s infinite;
+        }
+        @keyframes satcomPulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Syndicate v3.2</span>
+        </a>
+        <div class="nav-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span>LEONIDA SATCOM &bull; SATELLITE LIVE</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-pill">Vaults</a></li>
+            <li><a href="live.html" class="nav-pill active" style="color:#ef4444; font-weight:800;"><span class="pulse-beacon" style="margin-right:4px;"></span>Live Streams</a></li>
+            <li><a href="interactive-map.html" class="nav-pill">Radar Map</a></li>
+            <li><a href="heist-planner.html" class="nav-pill">Planner</a></li>
+            <li><a href="crew-database.html" class="nav-pill">Crew</a></li>
+            <li><a href="weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
+            <li><a href="vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
+            <li><a href="safehouses-laundering.html" class="nav-pill" style="color:var(--neon-green);">Safehouses</a></li>
+            <li><a href="forum.html" class="nav-pill" style="color:var(--neon-cyan);">LFG Lounge</a></li>
+            <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints & Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
+        </div>
+    </div>
+</nav>
+
+<main class="container" style="padding-top:1.5rem; padding-bottom:3.5rem;">
+
+    <!-- SATCOM COMMAND HEADER -->
+    <header style="margin-bottom:1.5rem; text-align:center;">
+        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.4); border-radius:30px; padding:0.35rem 1rem; margin-bottom:0.75rem;">
+            <span class="pulse-beacon"></span>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#ef4444; letter-spacing:1px;">LEONIDA SATELLITE INTERCEPT // 24/7 LIVE STREAM NETWORK</span>
+        </div>
+        <h1 style="font-size:clamp(1.8rem, 4vw, 2.6rem); color:#fff; font-weight:1000; margin:0 0 0.5rem; line-height:1.15;">
+            GTA 6 Live Streams &amp; Second-Screen Vault HUD
+        </h1>
+        <p style="color:var(--text-muted); font-size:clamp(0.85rem, 1.8vw, 1.05rem); max-width:820px; margin:0 auto; line-height:1.5;">
+            Watch verified Twitch and YouTube infiltration broadcasts live. Punch vault codes and calculate loot takes side-by-side on your PC, mobile, tablet, or PS5.
+        </p>
+    </header>
+
+    <!-- STREAM CHANNEL SWITCHER BAR -->
+    <div style="background:rgba(10,16,26,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:10px; padding:0.85rem 1.15rem; margin-bottom:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+        <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+            <span style="font-size:0.75rem; color:#64748b; font-family:var(--font-mono); font-weight:800;">SELECT SATELLITE FEED:</span>
+            <button type="button" class="channel-pill active" onclick="switchStream('twitch', 'gta6', this)">
+                🟣 Twitch GTA 6 Category
+            </button>
+            <button type="button" class="channel-pill" onclick="switchStream('youtube-channel', 'UCULwHhkI31JHAKe57LZdzcA', this)">
+                🔴 Rockstar Games Live
+            </button>
+            <button type="button" class="channel-pill" onclick="switchStream('twitch', 'gtavi', this)">
+                🎮 Leonida Infiltration Squad
+            </button>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:240px; max-width:380px;">
+            <input type="text" id="customChannelInput" placeholder="Paste any Twitch user or YT ID..." style="flex:1; padding:0.45rem 0.75rem; background:rgba(0,0,0,0.7); border:1px solid rgba(0,240,255,0.3); border-radius:6px; color:#fff; font-size:0.78rem; outline:none; font-family:var(--font-mono);">
+            <button type="button" class="btn btn-primary" onclick="loadCustomChannel()" style="padding:0.45rem 0.85rem; font-size:0.78rem; font-weight:800; white-space:nowrap;">Connect Feed</button>
+        </div>
+    </div>
+
+    <!-- MAIN VIEWPORT + CHAT GRID -->
+    <div class="satcom-grid with-chat" id="satcomGrid">
+
+        <!-- STREAM VIEWPORT -->
+        <div>
+            <div class="stream-viewport-box">
+                <!-- Top Stream Status Bar -->
+                <div style="background:#070b14; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="pulse-beacon"></span>
+                        <strong id="activeStreamTitle" style="color:#fff; font-size:0.88rem; font-family:var(--font-mono);">SIGNAL LOCKED: Twitch GTA 6 Directory</strong>
+                    </div>
+                    <div style="display:flex; gap:0.5rem;">
+                        <button type="button" class="btn btn-secondary" onclick="toggleChat()" style="padding:0.3rem 0.65rem; font-size:0.72rem; font-family:var(--font-mono);" id="chatToggleBtn">💬 Toggle Chat</button>
+                        <button type="button" class="btn btn-secondary" onclick="reloadStream()" style="padding:0.3rem 0.65rem; font-size:0.72rem; font-family:var(--font-mono);">🔄 Reload</button>
+                    </div>
+                </div>
+
+                <!-- 16:9 Video Canvas -->
+                <div class="stream-aspect-ratio" id="streamContainer">
+                    <!-- High Performance Click-to-Play Façade (Protects Mobile Speed & Data) -->
+                    <div class="stream-facade" id="streamFacade" onclick="activateStream()">
+                        <div style="width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg, #ef4444, #b91c1c); display:flex; align-items:center; justify-content:center; box-shadow:0 0 30px rgba(239,68,68,0.5); margin-bottom:1rem; transition:transform 0.2s ease;">
+                            <span style="font-size:2rem; margin-left:4px; color:#fff;">▶</span>
+                        </div>
+                        <h3 style="color:#fff; font-size:1.3rem; margin:0 0 0.4rem; font-weight:900;">ENGAGE SATELLITE INTERCEPT</h3>
+                        <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.85rem; max-width:440px;">
+                            Tap to connect audio/video stream. Multi-platform optimized for zero background data usage on mobile.
+                        </p>
+                        <span style="display:inline-block; font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800; background:rgba(16,185,129,0.15); border:1px solid var(--neon-green); padding:0.25rem 0.75rem; border-radius:4px;">
+                            ⚡ 1080P60 LOW-LATENCY READY
+                        </span>
+                    </div>
+
+                    <!-- Stream iframe mounts here dynamically upon activation -->
+                    <div id="streamMount" style="width:100%; height:100%;"></div>
+                </div>
+
+                <!-- Bottom Telemetry Bar -->
+                <div style="background:#070b14; padding:0.75rem 1rem; border-top:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.76rem; font-family:var(--font-mono);">
+                    <div style="color:#94a3b8;">
+                        PROTOCOL: <strong style="color:var(--neon-cyan);">HTML5 ENCRYPTED SATELLITE</strong> &bull; STATUS: <strong style="color:var(--neon-green);">CONNECTED</strong>
+                    </div>
+                    <div style="color:var(--neon-yellow);">
+                        ⚡ COMPANION HUD SYNC: ACTIVE
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRIME GAMING / TWITCH BOUNTY BANNER -->
+            <div style="margin-top:1.25rem; background:linear-gradient(135deg, rgba(168,85,247,0.15), rgba(10,16,26,0.95)); border:2px solid #a855f7; border-radius:10px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-shadow:0 0 25px rgba(168,85,247,0.2);">
+                <div style="display:flex; align-items:center; gap:0.85rem;">
+                    <span style="font-size:2.2rem;">👑</span>
+                    <div>
+                        <strong style="color:#fff; font-size:1.05rem; display:block;">Claim Free GTA 6 Monthly Heist Cash &amp; Free Twitch Sub</strong>
+                        <div style="color:#cbd5e1; font-size:0.8rem;">Link your Amazon Prime account with Twitch to unlock recurring Rockstar in-game bank deposits, exclusive vehicle liveries, and 1 free monthly channel sub.</div>
+                    </div>
+                </div>
+                <a href="https://www.amazon.com/prime?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="live-prime-gaming" class="btn btn-primary" style="background:linear-gradient(135deg, #a855f7, #7c3aed); border-color:#a855f7; font-weight:800; font-size:0.82rem; padding:0.55rem 1.15rem; white-space:nowrap; box-shadow:0 4px 15px rgba(168,85,247,0.35);">
+                    Claim Free Prime Trial ($0) &rarr;
+                </a>
+            </div>
+
+            <!-- SECOND-SCREEN INTERACTIVE VAULT COMPANION TOOL -->
+            <div style="margin-top:1.5rem; background:rgba(14,20,32,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:12px; padding:1.25rem 1.5rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.65rem;">
+                    <div>
+                        <span class="user-badge" style="background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono); font-weight:800;">SECOND-SCREEN COMPANION</span>
+                        <h3 style="color:#fff; font-size:1.2rem; margin:0.35rem 0 0; font-weight:900;">Live Keypad Solver &amp; Thermal Drill Timer</h3>
+                    </div>
+                    <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-green); font-weight:800;">⚡ Practice Code Decryption While Watching</span>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem;">
+                    <!-- Keypad Simulator -->
+                    <div style="background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px; border:1px solid rgba(0,240,255,0.2); text-align:center;">
+                        <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; margin-bottom:0.4rem;">PRACTICE KEYPAD PIN ENTRY</div>
+                        <div id="simPinDisplay" style="height:36px; background:#000; border:1px solid var(--neon-cyan); border-radius:6px; color:var(--neon-green); font-family:var(--font-mono); font-size:1.4rem; font-weight:1000; letter-spacing:8px; display:flex; align-items:center; justify-content:center; margin-bottom:0.85rem;">
+                            ----
+                        </div>
+                        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.4rem; max-width:200px; margin:0 auto;">
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('1')">1</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('2')">2</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('3')">3</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('4')">4</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('5')">5</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('6')">6</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('7')">7</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('8')">8</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('9')">9</button>
+                            <button type="button" class="btn btn-secondary" onclick="clearPin()" style="color:#ef4444;">CLR</button>
+                            <button type="button" class="btn btn-secondary" onclick="pressPin('0')">0</button>
+                            <button type="button" class="btn btn-primary" onclick="submitPin()">OK</button>
+                        </div>
+                        <div id="simPinFeedback" style="font-size:0.75rem; font-family:var(--font-mono); color:var(--neon-cyan); margin-top:0.65rem; min-height:1.2rem;">Enter 4-digit security code</div>
+                    </div>
+
+                    <!-- Quick Heist Target Reference -->
+                    <div style="background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px; border:1px solid rgba(255,184,0,0.2); display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>
+                            <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; margin-bottom:0.4rem;">ACTIVE VAULT TARGET META</div>
+                            <div style="font-size:1.05rem; font-weight:900; color:#fff;">Leonida State Federal Depository</div>
+                            <div style="color:var(--neon-yellow); font-size:0.8rem; font-family:var(--font-mono); font-weight:800; margin:0.25rem 0 0.65rem;">MAX TAKE: $24.8M CASH &bull; 4 CREW</div>
+                            <p style="color:#cbd5e1; font-size:0.78rem; line-height:1.45; margin:0;">
+                                Drill cycle: 85 seconds. Subterranean stormwater tunnel exfiltration bypasses 5-star road barriers.
+                            </p>
+                        </div>
+                        <div style="margin-top:0.85rem; display:grid; gap:0.4rem;">
+                            <a href="vault-code-calculator.html" class="btn btn-primary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Full Vault Calculator Suite &rarr;</a>
+                            <a href="interactive-map.html" class="btn btn-secondary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Open Tactical Radar Map &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAT SIDEBAR -->
+        <aside class="chat-container" id="chatSidebar">
+            <div style="background:#0a101a; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#fff;">💬 SQUAD LIVE CHAT</span>
+                <span style="font-size:0.72rem; color:var(--neon-green); font-family:var(--font-mono);">SYNCED</span>
+            </div>
+            <div id="chatMount" style="flex:1; display:flex; align-items:center; justify-content:center; background:#04070e;">
+                <div style="text-align:center; padding:1.5rem; color:#64748b; font-size:0.8rem; font-family:var(--font-mono);">
+                    Connect satellite feed above to engage live chat stream.
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- STREAMER PARTNER PROGRAM CALLOUT -->
+    <div style="margin-top:2.5rem; background:rgba(10,16,26,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:12px; padding:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.25rem;">
+        <div style="max-width:680px;">
+            <span class="user-badge" style="background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono); font-weight:800;">CREATOR SYNDICATE PARTNER PROGRAM</span>
+            <h3 style="color:#fff; font-size:1.35rem; margin:0.4rem 0 0.3rem; font-weight:900;">Streaming GTA 6? Get Featured on the SATCOM Feed</h3>
+            <p style="color:#94a3b8; font-size:0.85rem; margin:0; line-height:1.5;">
+                We feature active community streamers on the GTA 6 Heist Guide network. Broadcast your squad runs to thousands of heist players, get custom co-branded portals, and earn high-tier squad affiliate rev-share.
+            </p>
+        </div>
+        <a href="forum.html" class="btn btn-primary" style="padding:0.65rem 1.25rem; font-size:0.85rem; font-weight:800;">
+            Join Creator Network &rarr;
+        </a>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#04070e; border-top:1px solid rgba(255,255,255,0.08); padding:2rem 1.5rem; text-align:center; color:#64748b; font-size:0.78rem;">
+    <div style="max-width:1140px; margin:0 auto;">
+        <p style="margin:0 0 0.5rem;">&copy; 2026 gta6heistguide.com &bull; The Definitive Grand Theft Auto VI Tactical Intelligence &amp; Live Infiltration Network.</p>
+        <p style="margin:0;">Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive Software. As an Amazon Associate, this site earns from qualifying purchases.</p>
+    </div>
+</footer>
+
+<script>
+let currentStreamType = 'twitch';
+let currentChannelId = 'gta6';
+let isChatVisible = true;
+let hasActivated = false;
+
+function activateStream() {
+    hasActivated = true;
+    const facade = document.getElementById('streamFacade');
+    if (facade) facade.style.display = 'none';
+    mountStream();
+}
+
+function switchStream(type, id, btn) {
+    currentStreamType = type;
+    currentChannelId = id;
+    
+    document.querySelectorAll('.channel-pill').forEach(p => p.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const titleEl = document.getElementById('activeStreamTitle');
+    if (titleEl) {
+        titleEl.textContent = 'SIGNAL LOCKED: ' + (type === 'twitch' ? 'Twitch @' + id : 'YouTube Channel Feed');
+    }
+
+    if (hasActivated) {
+        mountStream();
+    } else {
+        activateStream();
+    }
+}
+
+function loadCustomChannel() {
+    const input = document.getElementById('customChannelInput');
+    const val = (input?.value || '').trim();
+    if (!val) return;
+
+    if (val.length === 11 || val.startsWith('UC')) {
+        // Likely a YouTube video ID or channel ID
+        switchStream('youtube-video', val, null);
+    } else {
+        // Default to Twitch username
+        switchStream('twitch', val, null);
+    }
+}
+
+function mountStream() {
+    const mount = document.getElementById('streamMount');
+    const chatMount = document.getElementById('chatMount');
+    if (!mount) return;
+
+    const hostname = window.location.hostname || 'www.gta6heistguide.com';
+
+    if (currentStreamType === 'twitch') {
+        // Twitch Player Embed (Whitelisted parents)
+        mount.innerHTML = `
+            <iframe
+                src="https://player.twitch.tv/?channel=${encodeURIComponent(currentChannelId)}&parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&muted=false&autoplay=true"
+                height="100%"
+                width="100%"
+                allowfullscreen>
+            </iframe>
+        `;
+
+        if (chatMount && isChatVisible) {
+            chatMount.innerHTML = `
+                <iframe
+                    src="https://www.twitch.tv/embed/${encodeURIComponent(currentChannelId)}/chat?parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&darkpopout"
+                    height="100%"
+                    width="100%">
+                </iframe>
+            `;
+        }
+    } else if (currentStreamType === 'youtube-channel') {
+        // YouTube Live Stream
+        mount.innerHTML = `
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/live_stream?channel=${encodeURIComponent(currentChannelId)}&autoplay=1"
+                height="100%"
+                width="100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        `;
+        if (chatMount) {
+            chatMount.innerHTML = `
+                <div style="text-align:center; padding:2rem 1rem; color:#94a3b8; font-size:0.8rem; font-family:var(--font-mono);">
+                    📺 YouTube Live Chat syncs inside the player or via the YouTube mobile app.
+                </div>
+            `;
+        }
+    } else if (currentStreamType === 'youtube-video') {
+        mount.innerHTML = `
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(currentChannelId)}?autoplay=1"
+                height="100%"
+                width="100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        `;
+    }
+}
+
+function reloadStream() {
+    if (hasActivated) mountStream();
+}
+
+function toggleChat() {
+    const grid = document.getElementById('satcomGrid');
+    const chat = document.getElementById('chatSidebar');
+    const btn = document.getElementById('chatToggleBtn');
+    if (!grid || !chat) return;
+
+    isChatVisible = !isChatVisible;
+    if (isChatVisible) {
+        grid.classList.add('with-chat');
+        chat.style.display = '';
+        if (btn) btn.innerText = '💬 Hide Chat';
+        if (hasActivated && currentStreamType === 'twitch') mountStream();
+    } else {
+        grid.classList.remove('with-chat');
+        chat.style.display = 'none';
+        if (btn) btn.innerText = '💬 Show Chat';
+    }
+}
+
+// Second Screen Keypad Simulator Logic
+let currentSimPin = '';
+function pressPin(digit) {
+    if (currentSimPin.length < 4) {
+        currentSimPin += digit;
+        updateSimDisplay();
+        if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(600 + (parseInt(digit) * 40), 'sine', 0.04);
+    }
+}
+
+function clearPin() {
+    currentSimPin = '';
+    updateSimDisplay();
+    document.getElementById('simPinFeedback').textContent = 'Keypad cleared. Enter 4-digit code.';
+    document.getElementById('simPinFeedback').style.color = 'var(--neon-cyan)';
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(300, 'sawtooth', 0.06);
+}
+
+function updateSimDisplay() {
+    const el = document.getElementById('simPinDisplay');
+    if (!el) return;
+    let text = currentSimPin.padEnd(4, '-');
+    el.textContent = text;
+}
+
+function submitPin() {
+    const feedback = document.getElementById('simPinFeedback');
+    if (currentSimPin.length === 4) {
+        if (feedback) {
+            feedback.textContent = '✅ CODE ACCEPTED // VAULT ACCESS GRANTED';
+            feedback.style.color = 'var(--neon-green)';
+        }
+        if (window.GTA6 && GTA6.playBeep) {
+            GTA6.playBeep(880, 'triangle', 0.08);
+            setTimeout(() => GTA6.playBeep(1100, 'sine', 0.12), 90);
+        }
+    } else {
+        if (feedback) {
+            feedback.textContent = '⚠️ INVALID LENGTH // 4 DIGITS REQUIRED';
+            feedback.style.color = '#ef4444';
+        }
+        if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(240, 'square', 0.1);
+    }
+}
+</script>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
