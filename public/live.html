@@ -43,16 +43,23 @@
     </script>
 
     <style>
-        .satcom-grid {
+        /* Broadcast Stage Grid: Matches Video and Chat heights 1:1 on Desktop */
+        .satcom-stage-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 1.25rem;
+            align-items: stretch;
+            margin-bottom: 1.5rem;
         }
         @media (min-width: 992px) {
-            .satcom-grid.with-chat {
+            .satcom-stage-grid.with-chat {
                 grid-template-columns: 1fr 340px;
             }
+            .satcom-stage-grid:not(.with-chat) {
+                grid-template-columns: 1fr;
+            }
         }
+
         .stream-viewport-box {
             background: #030712;
             border: 2px solid var(--neon-cyan);
@@ -60,6 +67,9 @@
             overflow: hidden;
             box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .stream-aspect-ratio {
             width: 100%;
@@ -70,6 +80,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            flex: 1;
         }
         .stream-aspect-ratio iframe {
             width: 100%;
@@ -77,6 +88,8 @@
             border: none;
             display: block;
         }
+
+        /* Responsive Click-to-Play Façade */
         .stream-facade {
             position: absolute;
             inset: 0;
@@ -89,11 +102,133 @@
             z-index: 10;
             transition: all 0.3s ease;
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.25rem 1rem;
         }
         .stream-facade:hover {
             background: radial-gradient(circle at center, rgba(0,240,255,0.22) 0%, rgba(5,8,14,0.95) 75%);
         }
+        .facade-play-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(239,68,68,0.5);
+            margin-bottom: 0.85rem;
+            transition: transform 0.2s ease;
+        }
+        .stream-facade:hover .facade-play-icon {
+            transform: scale(1.08);
+        }
+
+        /* Mobile Facade Scaling to prevent word cutoff */
+        @media (max-width: 640px) {
+            .stream-facade {
+                padding: 0.65rem 0.5rem !important;
+            }
+            .facade-play-icon {
+                width: 42px !important;
+                height: 42px !important;
+                margin-bottom: 0.35rem !important;
+            }
+            .facade-play-icon span {
+                font-size: 1.25rem !important;
+                margin-left: 2px !important;
+            }
+            .stream-facade h3 {
+                font-size: 0.96rem !important;
+                margin: 0 0 0.15rem !important;
+                line-height: 1.15 !important;
+            }
+            .stream-facade p {
+                font-size: 0.7rem !important;
+                line-height: 1.25 !important;
+                margin: 0 0 0.35rem !important;
+                max-width: 290px !important;
+            }
+            .facade-badge-row {
+                gap: 0.35rem !important;
+            }
+            .facade-badge {
+                font-size: 0.62rem !important;
+                padding: 0.15rem 0.45rem !important;
+            }
+        }
+
+        /* Chat Container Sizing: Exactly matches video viewport on desktop */
+        .chat-container {
+            background: #070b14;
+            border: 1px solid rgba(0,240,255,0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.12);
+        }
+        .chat-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border: none;
+            flex: 1;
+        }
+
+        /* Mobile View Switcher Tabs (Keypad vs Chat) */
+        .mobile-view-tabs {
+            display: none;
+            background: rgba(10, 16, 26, 0.95);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 8px;
+            padding: 0.35rem;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+        }
+        @media (max-width: 991px) {
+            .mobile-view-tabs {
+                display: flex;
+            }
+            /* Hide desktop sidebar chat on mobile to avoid duplicate iframes */
+            .satcom-stage-grid .chat-container {
+                display: none !important;
+            }
+            .mobile-chat-wrapper {
+                display: none;
+                margin-bottom: 1.5rem;
+            }
+            .mobile-chat-wrapper.active {
+                display: block;
+            }
+        }
+
+        .mobile-tab-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+            color: #94a3b8;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 800;
+            padding: 0.55rem 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+        }
+        .mobile-tab-btn.active {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+        }
+
         .channel-pill-scroll {
             display: flex;
             align-items: center;
@@ -150,22 +285,7 @@
             background: #ef4444;
             color: #fff;
         }
-        .chat-container {
-            background: #070b14;
-            border: 1px solid rgba(0,240,255,0.3);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 480px;
-        }
-        .chat-container iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 440px;
-            border: none;
-            flex: 1;
-        }
+
         .pulse-beacon {
             display: inline-block;
             width: 9px;
@@ -180,6 +300,7 @@
             70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
         }
+
         .stream-nav-btn {
             background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(0, 240, 255, 0.3);
@@ -187,13 +308,13 @@
             font-family: var(--font-mono);
             font-size: 0.76rem;
             font-weight: 800;
-            padding: 0.35rem 0.75rem;
+            padding: 0.35rem 0.65rem;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.3rem;
         }
         .stream-nav-btn:hover {
             border-color: var(--neon-cyan);
@@ -207,16 +328,44 @@
             border-radius: 6px;
             color: #fff;
             font-family: var(--font-mono);
-            font-size: 0.78rem;
-            padding: 0.35rem 0.65rem;
+            font-size: 0.76rem;
+            padding: 0.35rem 0.55rem;
             outline: none;
             cursor: pointer;
-            max-width: 200px;
+            max-width: 170px;
         }
         .stream-select-input option {
             background: #0a101a;
             color: #fff;
         }
+
+        /* Top control bar mobile styling */
+        @media (max-width: 640px) {
+            .stream-status-header {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0.5rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+            .stream-status-controls {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 0.35rem !important;
+                justify-content: space-between !important;
+            }
+            .stream-select-input {
+                max-width: 100% !important;
+                flex: 1 1 100% !important;
+                font-size: 0.72rem !important;
+            }
+            .stream-nav-btn {
+                font-size: 0.72rem !important;
+                padding: 0.3rem 0.5rem !important;
+                flex: 1 1 auto !important;
+                justify-content: center !important;
+            }
+        }
+
         .offline-hud-banner {
             position: absolute;
             bottom: 16px;
@@ -310,174 +459,112 @@
         </div>
     </div>
 
-    <!-- MAIN VIEWPORT + CHAT GRID -->
-    <div class="satcom-grid with-chat" id="satcomGrid">
+    <!-- MAIN VIEWPORT + CHAT STAGE (Pixel-aligned 1:1 Height on Desktop) -->
+    <div class="satcom-stage-grid with-chat" id="satcomGrid">
 
         <!-- STREAM VIEWPORT -->
-        <div>
-            <div class="stream-viewport-box">
-                <!-- Top Stream Status Bar with Prev / Next Channel Cycler -->
-                <div style="background:#070b14; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.65rem;">
-                    <div style="display:flex; align-items:center; gap:0.65rem; min-width:200px;">
-                        <span id="streamStatusIndicator">
-                            <span class="pulse-beacon"></span>
-                        </span>
-                        <div>
-                            <strong id="activeStreamTitle" style="color:#fff; font-size:0.88rem; font-family:var(--font-mono); display:block;">SIGNAL LOCKED: @caseoh_ • CaseOh</strong>
-                            <span id="activeStreamDesc" style="color:#94a3b8; font-size:0.72rem; font-family:var(--font-mono);">Top US Streamer • Peak Viewership</span>
-                        </div>
-                    </div>
-
-                    <!-- Channel Navigation Bar Controls -->
-                    <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
-                        <button type="button" class="stream-nav-btn" onclick="prevStream()" title="Previous Stream (Shortcut: Left Arrow)">
-                            ◀ PREV
-                        </button>
-                        <select id="streamSelectDropdown" class="stream-select-input" onchange="selectStream(this.value)" title="Direct Channel Selector">
-                            <!-- Populated by JS -->
-                        </select>
-                        <button type="button" class="stream-nav-btn" onclick="nextStream()" title="Next Stream (Shortcut: Right Arrow)">
-                            NEXT ▶
-                        </button>
-                        <button type="button" class="stream-nav-btn" id="autoSkipToggleBtn" onclick="toggleAutoSkip()" title="Auto-advance if stream goes offline">
-                            ⚡ Auto-Skip: <strong style="color:var(--neon-green)">ON</strong>
-                        </button>
-                        <button type="button" class="stream-nav-btn" onclick="toggleChat()" id="chatToggleBtn">💬 Chat</button>
-                        <button type="button" class="stream-nav-btn" onclick="reloadStream()">🔄 Reload</button>
+        <div class="stream-viewport-box" id="streamViewportBox">
+            <!-- Top Stream Status Bar with Prev / Next Channel Cycler -->
+            <div class="stream-status-header" style="background:#070b14; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.65rem;">
+                <div class="stream-status-info" style="display:flex; align-items:center; gap:0.65rem; min-width:180px;">
+                    <span id="streamStatusIndicator">
+                        <span class="pulse-beacon"></span>
+                    </span>
+                    <div style="overflow:hidden;">
+                        <strong id="activeStreamTitle" style="color:#fff; font-size:0.88rem; font-family:var(--font-mono); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">SIGNAL LOCKED: @caseoh_ • CaseOh</strong>
+                        <span id="activeStreamDesc" style="color:#94a3b8; font-size:0.72rem; font-family:var(--font-mono); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Top US Streamer • Peak Views</span>
                     </div>
                 </div>
 
-                <!-- 16:9 Video Canvas -->
-                <div class="stream-aspect-ratio" id="streamContainer">
-                    <!-- High Performance Click-to-Play Façade (Protects Mobile Speed & Data) -->
-                    <div class="stream-facade" id="streamFacade" onclick="activateStream()">
-                        <div style="width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg, #ef4444, #b91c1c); display:flex; align-items:center; justify-content:center; box-shadow:0 0 30px rgba(239,68,68,0.5); margin-bottom:1rem; transition:transform 0.2s ease;">
-                            <span style="font-size:2rem; margin-left:4px; color:#fff;">▶</span>
-                        </div>
-                        <h3 style="color:#fff; font-size:1.3rem; margin:0 0 0.4rem; font-weight:900;">ENGAGE SATELLITE INTERCEPT</h3>
-                        <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.85rem; max-width:440px;">
-                            Tap to lock onto live feed. Automatic offline detection cycles to the next active US broadcast.
-                        </p>
-                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
-                            <span style="display:inline-block; font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800; background:rgba(16,185,129,0.15); border:1px solid var(--neon-green); padding:0.25rem 0.75rem; border-radius:4px;">
-                                ⚡ AUTO-FAILOVER ACTIVATED
-                            </span>
-                            <span style="display:inline-block; font-size:0.74rem; font-family:var(--font-mono); color:var(--neon-cyan); font-weight:800; background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); padding:0.25rem 0.75rem; border-radius:4px;">
-                                🇺🇸 TOP US BROADCASTERS
-                            </span>
-                        </div>
-                    </div>
+                <!-- Channel Navigation Bar Controls -->
+                <div class="stream-status-controls" style="display:flex; align-items:center; gap:0.35rem; flex-wrap:wrap;">
+                    <button type="button" class="stream-nav-btn" onclick="prevStream()" title="Previous Stream (Shortcut: Left Arrow)">
+                        ◀ PREV
+                    </button>
+                    <select id="streamSelectDropdown" class="stream-select-input" onchange="selectStream(this.value)" title="Direct Channel Selector">
+                        <!-- Populated by JS -->
+                    </select>
+                    <button type="button" class="stream-nav-btn" onclick="nextStream()" title="Next Stream (Shortcut: Right Arrow)">
+                        NEXT ▶
+                    </button>
+                    <button type="button" class="stream-nav-btn" id="autoSkipToggleBtn" onclick="toggleAutoSkip()" title="Auto-advance if stream goes offline">
+                        ⚡ Auto: <strong style="color:var(--neon-green)">ON</strong>
+                    </button>
+                    <button type="button" class="stream-nav-btn" onclick="openPopoutChat()" title="Pop out chat in separate window">
+                        ↗ Popout
+                    </button>
+                    <button type="button" class="stream-nav-btn" onclick="toggleChat()" id="chatToggleBtn">💬 Chat</button>
+                    <button type="button" class="stream-nav-btn" onclick="reloadStream()">🔄 Reload</button>
+                </div>
+            </div>
 
-                    <!-- Offline In-Player Alert & Countdown Overlay -->
-                    <div id="offlineFailoverBanner" class="offline-hud-banner" style="display:none;">
-                        <div style="display:flex; align-items:center; gap:0.75rem;">
-                            <span class="pulse-beacon" style="background:#ef4444; width:12px; height:12px;"></span>
-                            <div>
-                                <div style="font-family:var(--font-mono); font-weight:900; font-size:0.85rem; color:#fff;">
-                                    ⚠️ BROADCAST OFFLINE: <span id="offlineStreamerName" style="color:#ef4444;">@channel</span> IS NOT LIVE
-                                </div>
-                                <div style="font-size:0.78rem; color:#cbd5e1;" id="offlineCountdownText">
-                                    Auto-routing to next top American GTA broadcast in 4 seconds...
-                                </div>
+            <!-- 16:9 Video Canvas -->
+            <div class="stream-aspect-ratio" id="streamContainer">
+                <!-- High Performance Click-to-Play Façade (Protects Mobile Speed & Sized for Mobile) -->
+                <div class="stream-facade" id="streamFacade" onclick="activateStream()">
+                    <div class="facade-play-icon">
+                        <span style="font-size:2rem; margin-left:4px; color:#fff;">▶</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1.3rem; margin:0 0 0.35rem; font-weight:900;">ENGAGE SATELLITE INTERCEPT</h3>
+                    <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.65rem; max-width:440px;">
+                        Tap to lock onto live feed. Automatic offline detection cycles to the next active US broadcast.
+                    </p>
+                    <div class="facade-badge-row" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
+                        <span class="facade-badge" style="display:inline-block; font-size:0.72rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800; background:rgba(16,185,129,0.15); border:1px solid var(--neon-green); padding:0.25rem 0.65rem; border-radius:4px;">
+                            ⚡ AUTO-FAILOVER ACTIVATED
+                        </span>
+                        <span class="facade-badge" style="display:inline-block; font-size:0.72rem; font-family:var(--font-mono); color:var(--neon-cyan); font-weight:800; background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); padding:0.25rem 0.65rem; border-radius:4px;">
+                            🇺🇸 TOP US BROADCASTERS
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Offline In-Player Alert & Countdown Overlay -->
+                <div id="offlineFailoverBanner" class="offline-hud-banner" style="display:none;">
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <span class="pulse-beacon" style="background:#ef4444; width:12px; height:12px;"></span>
+                        <div>
+                            <div style="font-family:var(--font-mono); font-weight:900; font-size:0.85rem; color:#fff;">
+                                ⚠️ BROADCAST OFFLINE: <span id="offlineStreamerName" style="color:#ef4444;">@channel</span> IS NOT LIVE
+                            </div>
+                            <div style="font-size:0.78rem; color:#cbd5e1;" id="offlineCountdownText">
+                                Auto-routing to next top American GTA broadcast in 4 seconds...
                             </div>
                         </div>
-                        <div style="display:flex; gap:0.5rem;">
-                            <button type="button" class="btn btn-primary" onclick="nextStream()" style="font-size:0.78rem; padding:0.4rem 0.85rem; background:#ef4444; border-color:#ef4444;">
-                                Skip Now ⏭️
-                            </button>
-                            <button type="button" class="btn btn-secondary" onclick="cancelAutoSkip()" style="font-size:0.78rem; padding:0.4rem 0.85rem;">
-                                Stay Here ⏸️
-                            </button>
-                        </div>
                     </div>
-
-                    <!-- Stream iframe / Twitch SDK mounts here dynamically upon activation -->
-                    <div id="streamMount" style="width:100%; height:100%;"></div>
-                </div>
-
-                <!-- Bottom Telemetry Bar -->
-                <div style="background:#070b14; padding:0.75rem 1rem; border-top:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.76rem; font-family:var(--font-mono);">
-                    <div style="color:#94a3b8;">
-                        PROTOCOL: <strong style="color:var(--neon-cyan);">HTML5 ENCRYPTED SATELLITE</strong> &bull; SCANNER: <strong style="color:var(--neon-green);" id="scannerStatus">ACTIVE (11 CHANNELS)</strong>
-                    </div>
-                    <div style="color:var(--neon-yellow);">
-                        ⚡ SHORTCUTS: [◀] PREV FEED &bull; [▶] NEXT FEED
+                    <div style="display:flex; gap:0.5rem;">
+                        <button type="button" class="btn btn-primary" onclick="nextStream()" style="font-size:0.78rem; padding:0.4rem 0.85rem; background:#ef4444; border-color:#ef4444;">
+                            Skip Now ⏭️
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelAutoSkip()" style="font-size:0.78rem; padding:0.4rem 0.85rem;">
+                            Stay Here ⏸️
+                        </button>
                     </div>
                 </div>
+
+                <!-- Stream iframe / Twitch SDK mounts here dynamically upon activation -->
+                <div id="streamMount" style="width:100%; height:100%;"></div>
             </div>
 
-            <!-- PRIME GAMING / TWITCH BOUNTY BANNER -->
-            <div style="margin-top:1.25rem; background:linear-gradient(135deg, rgba(168,85,247,0.15), rgba(10,16,26,0.95)); border:2px solid #a855f7; border-radius:10px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-shadow:0 0 25px rgba(168,85,247,0.2);">
-                <div style="display:flex; align-items:center; gap:0.85rem;">
-                    <span style="font-size:2.2rem;">👑</span>
-                    <div>
-                        <strong style="color:#fff; font-size:1.05rem; display:block;">Claim Free GTA 6 Monthly Heist Cash &amp; Free Twitch Sub</strong>
-                        <div style="color:#cbd5e1; font-size:0.8rem;">Link your Amazon Prime account with Twitch to unlock recurring Rockstar in-game bank deposits, exclusive vehicle liveries, and 1 free monthly channel sub.</div>
-                    </div>
+            <!-- Bottom Telemetry Bar -->
+            <div style="background:#070b14; padding:0.65rem 1rem; border-top:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.76rem; font-family:var(--font-mono);">
+                <div style="color:#94a3b8;">
+                    PROTOCOL: <strong style="color:var(--neon-cyan);">HTML5 ENCRYPTED SATELLITE</strong> &bull; SCANNER: <strong style="color:var(--neon-green);" id="scannerStatus">ACTIVE (11 CHANNELS)</strong>
                 </div>
-                <a href="https://www.amazon.com/prime?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="live-prime-gaming" class="btn btn-primary" style="background:linear-gradient(135deg, #a855f7, #7c3aed); border-color:#a855f7; font-weight:800; font-size:0.82rem; padding:0.55rem 1.15rem; white-space:nowrap; box-shadow:0 4px 15px rgba(168,85,247,0.35);">
-                    Claim Free Prime Trial ($0) &rarr;
-                </a>
-            </div>
-
-            <!-- SECOND-SCREEN INTERACTIVE VAULT COMPANION TOOL -->
-            <div style="margin-top:1.5rem; background:rgba(14,20,32,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:12px; padding:1.25rem 1.5rem;">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.65rem;">
-                    <div>
-                        <span class="user-badge" style="background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono); font-weight:800;">SECOND-SCREEN COMPANION</span>
-                        <h3 style="color:#fff; font-size:1.2rem; margin:0.35rem 0 0; font-weight:900;">Live Keypad Solver &amp; Thermal Drill Timer</h3>
-                    </div>
-                    <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-green); font-weight:800;">⚡ Practice Code Decryption While Watching</span>
-                </div>
-
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem;">
-                    <!-- Keypad Simulator -->
-                    <div style="background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px; border:1px solid rgba(0,240,255,0.2); text-align:center;">
-                        <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; margin-bottom:0.4rem;">PRACTICE KEYPAD PIN ENTRY</div>
-                        <div id="simPinDisplay" style="height:36px; background:#000; border:1px solid var(--neon-cyan); border-radius:6px; color:var(--neon-green); font-family:var(--font-mono); font-size:1.4rem; font-weight:1000; letter-spacing:8px; display:flex; align-items:center; justify-content:center; margin-bottom:0.85rem;">
-                            ----
-                        </div>
-                        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.4rem; max-width:200px; margin:0 auto;">
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('1')">1</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('2')">2</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('3')">3</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('4')">4</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('5')">5</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('6')">6</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('7')">7</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('8')">8</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('9')">9</button>
-                            <button type="button" class="btn btn-secondary" onclick="clearPin()" style="color:#ef4444;">CLR</button>
-                            <button type="button" class="btn btn-secondary" onclick="pressPin('0')">0</button>
-                            <button type="button" class="btn btn-primary" onclick="submitPin()">OK</button>
-                        </div>
-                        <div id="simPinFeedback" style="font-size:0.75rem; font-family:var(--font-mono); color:var(--neon-cyan); margin-top:0.65rem; min-height:1.2rem;">Enter 4-digit security code</div>
-                    </div>
-
-                    <!-- Quick Heist Target Reference -->
-                    <div style="background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px; border:1px solid rgba(255,184,0,0.2); display:flex; flex-direction:column; justify-content:space-between;">
-                        <div>
-                            <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; margin-bottom:0.4rem;">ACTIVE VAULT TARGET META</div>
-                            <div style="font-size:1.05rem; font-weight:900; color:#fff;">Leonida State Federal Depository</div>
-                            <div style="color:var(--neon-yellow); font-size:0.8rem; font-family:var(--font-mono); font-weight:800; margin:0.25rem 0 0.65rem;">MAX TAKE: $24.8M CASH &bull; 4 CREW</div>
-                            <p style="color:#cbd5e1; font-size:0.78rem; line-height:1.45; margin:0;">
-                                Drill cycle: 85 seconds. Subterranean stormwater tunnel exfiltration bypasses 5-star road barriers.
-                            </p>
-                        </div>
-                        <div style="margin-top:0.85rem; display:grid; gap:0.4rem;">
-                            <a href="vault-code-calculator.html" class="btn btn-primary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Full Vault Calculator Suite &rarr;</a>
-                            <a href="interactive-map.html" class="btn btn-secondary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Open Tactical Radar Map &rarr;</a>
-                        </div>
-                    </div>
+                <div style="color:var(--neon-yellow);">
+                    ⚡ SHORTCUTS: [◀] PREV FEED &bull; [▶] NEXT FEED
                 </div>
             </div>
         </div>
 
-        <!-- CHAT SIDEBAR -->
+        <!-- CHAT SIDEBAR (Desktop 1:1 Height Alignment) -->
         <aside class="chat-container" id="chatSidebar">
             <div style="background:#0a101a; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center;">
                 <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#fff;" id="chatHeaderTitle">💬 SQUAD LIVE CHAT</span>
-                <span style="font-size:0.72rem; color:var(--neon-green); font-family:var(--font-mono);">SYNCED</span>
+                <div style="display:flex; align-items:center; gap:0.5rem;">
+                    <button type="button" onclick="openPopoutChat()" title="Open in new window" style="background:transparent; border:none; color:var(--neon-cyan); cursor:pointer; font-size:0.8rem; font-family:var(--font-mono); padding:0;">↗ Popout</button>
+                    <span style="font-size:0.72rem; color:var(--neon-green); font-family:var(--font-mono); font-weight:800;">SYNCED</span>
+                </div>
             </div>
             <div id="chatMount" style="flex:1; display:flex; align-items:center; justify-content:center; background:#04070e;">
                 <div style="text-align:center; padding:1.5rem; color:#64748b; font-size:0.8rem; font-family:var(--font-mono);">
@@ -486,6 +573,100 @@
             </div>
         </aside>
 
+    </div>
+
+    <!-- MOBILE VIEW TABS (Shows on Mobile < 992px to seamlessly toggle Keypad vs Live Chat) -->
+    <div class="mobile-view-tabs" id="mobileViewTabs">
+        <button type="button" class="mobile-tab-btn active" id="tabBtnTools" onclick="switchMobileView('tools')">
+            🛠️ Tactical Companion &amp; Keypad
+        </button>
+        <button type="button" class="mobile-tab-btn" id="tabBtnChat" onclick="switchMobileView('chat')">
+            💬 Squad Live Chat <span class="pulse-beacon" style="width:6px; height:6px; margin-left:3px;"></span>
+        </button>
+        <button type="button" class="mobile-tab-btn" onclick="openPopoutChat()" title="Open Chat in Separate Window">
+            ↗ Popout
+        </button>
+    </div>
+
+    <!-- MOBILE CHAT VIEW (Only visible when mobile user selects 'Squad Live Chat' tab) -->
+    <div class="mobile-chat-wrapper" id="mobileChatWrapper">
+        <div class="chat-container" style="height:440px; min-height:440px;">
+            <div style="background:#0a101a; padding:0.65rem 1rem; border-bottom:1px solid rgba(0,240,255,0.2); display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:var(--font-mono); font-size:0.78rem; font-weight:800; color:#fff;" id="mobileChatHeaderTitle">💬 SQUAD LIVE CHAT</span>
+                <button type="button" onclick="openPopoutChat()" style="background:transparent; border:none; color:var(--neon-cyan); cursor:pointer; font-size:0.76rem; font-family:var(--font-mono);">↗ Popout Window</button>
+            </div>
+            <div id="mobileChatMount" style="flex:1; display:flex; align-items:center; justify-content:center; background:#04070e;">
+                <div style="text-align:center; padding:1.5rem; color:#64748b; font-size:0.8rem; font-family:var(--font-mono);">
+                    Tap 'Engage Satellite Intercept' above to sync mobile chat.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIME GAMING / TWITCH BOUNTY BANNER (Full width underneath stream stage) -->
+    <div style="margin-bottom:1.5rem; background:linear-gradient(135deg, rgba(168,85,247,0.15), rgba(10,16,26,0.95)); border:2px solid #a855f7; border-radius:10px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-shadow:0 0 25px rgba(168,85,247,0.2);">
+        <div style="display:flex; align-items:center; gap:0.85rem;">
+            <span style="font-size:2.2rem;">👑</span>
+            <div>
+                <strong style="color:#fff; font-size:1.05rem; display:block;">Claim Free GTA 6 Monthly Heist Cash &amp; Free Twitch Sub</strong>
+                <div style="color:#cbd5e1; font-size:0.8rem;">Link your Amazon Prime account with Twitch to unlock recurring Rockstar in-game bank deposits, exclusive vehicle liveries, and 1 free monthly channel sub.</div>
+            </div>
+        </div>
+        <a href="https://www.amazon.com/prime?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="live-prime-gaming" class="btn btn-primary" style="background:linear-gradient(135deg, #a855f7, #7c3aed); border-color:#a855f7; font-weight:800; font-size:0.82rem; padding:0.55rem 1.15rem; white-space:nowrap; box-shadow:0 4px 15px rgba(168,85,247,0.35);">
+            Claim Free Prime Trial ($0) &rarr;
+        </a>
+    </div>
+
+    <!-- SECOND-SCREEN INTERACTIVE VAULT COMPANION TOOL (Full Width) -->
+    <div id="tacticalCompanionContainer" style="background:rgba(14,20,32,0.95); border:1px solid rgba(0,240,255,0.25); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.65rem;">
+            <div>
+                <span class="user-badge" style="background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-family:var(--font-mono); font-weight:800;">SECOND-SCREEN COMPANION</span>
+                <h3 style="color:#fff; font-size:1.2rem; margin:0.35rem 0 0; font-weight:900;">Live Keypad Solver &amp; Thermal Drill Timer</h3>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-green); font-weight:800;">⚡ Practice Code Decryption While Watching</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem;">
+            <!-- Keypad Simulator -->
+            <div style="background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px; border:1px solid rgba(0,240,255,0.2); text-align:center;">
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; margin-bottom:0.4rem;">PRACTICE KEYPAD PIN ENTRY</div>
+                <div id="simPinDisplay" style="height:36px; background:#000; border:1px solid var(--neon-cyan); border-radius:6px; color:var(--neon-green); font-family:var(--font-mono); font-size:1.4rem; font-weight:1000; letter-spacing:8px; display:flex; align-items:center; justify-content:center; margin-bottom:0.85rem;">
+                    ----
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.4rem; max-width:200px; margin:0 auto;">
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('1')">1</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('2')">2</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('3')">3</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('4')">4</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('5')">5</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('6')">6</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('7')">7</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('8')">8</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('9')">9</button>
+                    <button type="button" class="btn btn-secondary" onclick="clearPin()" style="color:#ef4444;">CLR</button>
+                    <button type="button" class="btn btn-secondary" onclick="pressPin('0')">0</button>
+                    <button type="button" class="btn btn-primary" onclick="submitPin()">OK</button>
+                </div>
+                <div id="simPinFeedback" style="font-size:0.75rem; font-family:var(--font-mono); color:var(--neon-cyan); margin-top:0.65rem; min-height:1.2rem;">Enter 4-digit security code</div>
+            </div>
+
+            <!-- Quick Heist Target Reference -->
+            <div style="background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px; border:1px solid rgba(255,184,0,0.2); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; margin-bottom:0.4rem;">ACTIVE VAULT TARGET META</div>
+                    <div style="font-size:1.05rem; font-weight:900; color:#fff;">Leonida State Federal Depository</div>
+                    <div style="color:var(--neon-yellow); font-size:0.8rem; font-family:var(--font-mono); font-weight:800; margin:0.25rem 0 0.65rem;">MAX TAKE: $24.8M CASH &bull; 4 CREW</div>
+                    <p style="color:#cbd5e1; font-size:0.78rem; line-height:1.45; margin:0;">
+                        Drill cycle: 85 seconds. Subterranean stormwater tunnel exfiltration bypasses 5-star road barriers.
+                    </p>
+                </div>
+                <div style="margin-top:0.85rem; display:grid; gap:0.4rem;">
+                    <a href="vault-code-calculator.html" class="btn btn-primary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Full Vault Calculator Suite &rarr;</a>
+                    <a href="interactive-map.html" class="btn btn-secondary" style="text-align:center; font-size:0.78rem; padding:0.45rem;">Open Tactical Radar Map &rarr;</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- STREAMER PARTNER PROGRAM CALLOUT -->
@@ -598,6 +779,11 @@ function updateHeaderUI() {
     if (chatHeader) {
         chatHeader.textContent = `💬 ${stream.name.toUpperCase()} LIVE CHAT`;
     }
+
+    const mobileChatHeader = document.getElementById('mobileChatHeaderTitle');
+    if (mobileChatHeader) {
+        mobileChatHeader.textContent = `💬 ${stream.name.toUpperCase()} LIVE CHAT`;
+    }
 }
 
 function activateStream() {
@@ -654,10 +840,10 @@ function toggleAutoSkip() {
     const btn = document.getElementById('autoSkipToggleBtn');
     if (btn) {
         if (autoSkipEnabled) {
-            btn.innerHTML = '⚡ Auto-Skip: <strong style="color:var(--neon-green)">ON</strong>';
+            btn.innerHTML = '⚡ Auto: <strong style="color:var(--neon-green)">ON</strong>';
             btn.style.borderColor = 'var(--neon-green)';
         } else {
-            btn.innerHTML = '⚡ Auto-Skip: <strong style="color:#ef4444">OFF</strong>';
+            btn.innerHTML = '⚡ Auto: <strong style="color:#ef4444">OFF</strong>';
             btn.style.borderColor = 'rgba(255,255,255,0.2)';
             clearAutoSkipTimer();
             hideOfflineBanner();
@@ -767,7 +953,6 @@ function mountStream() {
     updateChat(stream, hostname);
 
     if (stream.type === 'twitch') {
-        // Use Twitch Interactive SDK if available
         if (window.Twitch && window.Twitch.Player) {
             try {
                 if (!twitchPlayer) {
@@ -787,12 +972,10 @@ function mountStream() {
                     twitchPlayer.setChannel(stream.id);
                 }
 
-                // Watchdog: If Twitch player doesn't report online in 5 seconds and autoSkip is on, check status
                 if (autoSkipEnabled) {
                     offlineGraceTimer = setTimeout(() => {
-                        // If still offline, Twitch usually fires OFFLINE event, but if not:
                         if (twitchPlayer && twitchPlayer.isPaused && twitchPlayer.isPaused()) {
-                            // Can prompt user
+                            // Offline or awaiting interaction
                         }
                     }, 5000);
                 }
@@ -835,24 +1018,62 @@ function mountStream() {
 }
 
 function updateChat(stream, hostname) {
-    const chatMount = document.getElementById('chatMount');
-    if (!chatMount || !isChatVisible) return;
+    const desktopChatMount = document.getElementById('chatMount');
+    const mobileChatMount = document.getElementById('mobileChatMount');
 
-    if (stream.type === 'twitch') {
-        chatMount.innerHTML = `
-            <iframe
-                src="https://www.twitch.tv/embed/${encodeURIComponent(stream.id)}/chat?parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&darkpopout"
-                height="100%"
-                width="100%">
-            </iframe>
-        `;
-    } else {
-        chatMount.innerHTML = `
-            <div style="text-align:center; padding:2rem 1.5rem; color:#94a3b8; font-size:0.82rem; font-family:var(--font-mono);">
-                📺 YouTube Live Chat syncs directly inside the stream player or via the YouTube mobile app.
-            </div>
-        `;
+    const chatHtml = stream.type === 'twitch' ? `
+        <iframe
+            src="https://www.twitch.tv/embed/${encodeURIComponent(stream.id)}/chat?parent=${hostname}&parent=www.gta6heistguide.com&parent=gta6heistguide.com&darkpopout"
+            height="100%"
+            width="100%">
+        </iframe>
+    ` : `
+        <div style="text-align:center; padding:2rem 1.5rem; color:#94a3b8; font-size:0.82rem; font-family:var(--font-mono);">
+            📺 YouTube Live Chat syncs directly inside the stream player or via the YouTube mobile app.
+        </div>
+    `;
+
+    if (desktopChatMount && isChatVisible) {
+        desktopChatMount.innerHTML = chatHtml;
     }
+    if (mobileChatMount) {
+        mobileChatMount.innerHTML = chatHtml;
+    }
+}
+
+function openPopoutChat() {
+    const stream = ROSTER[currentIndex];
+    const hostname = window.location.hostname || 'www.gta6heistguide.com';
+    if (stream.type === 'twitch') {
+        const popoutUrl = `https://www.twitch.tv/popout/${encodeURIComponent(stream.id)}/chat?popout=`;
+        window.open(popoutUrl, '_blank', 'width=420,height=650,menubar=no,toolbar=no,location=no');
+    } else {
+        window.open(`https://www.youtube.com/live_chat?is_popout=1&v=${encodeURIComponent(stream.id)}`, '_blank', 'width=420,height=650');
+    }
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(920, 'sine', 0.05);
+}
+
+function switchMobileView(view) {
+    const tabTools = document.getElementById('tabBtnTools');
+    const tabChat = document.getElementById('tabBtnChat');
+    const toolsContainer = document.getElementById('tacticalCompanionContainer');
+    const mobileChatWrapper = document.getElementById('mobileChatWrapper');
+
+    if (view === 'chat') {
+        if (tabChat) tabChat.classList.add('active');
+        if (tabTools) tabTools.classList.remove('active');
+        if (mobileChatWrapper) mobileChatWrapper.classList.add('active');
+        if (toolsContainer) toolsContainer.style.display = 'none';
+
+        // Ensure chat iframe is mounted
+        updateChat(ROSTER[currentIndex], window.location.hostname || 'www.gta6heistguide.com');
+    } else {
+        if (tabTools) tabTools.classList.add('active');
+        if (tabChat) tabChat.classList.remove('active');
+        if (mobileChatWrapper) mobileChatWrapper.classList.remove('active');
+        if (toolsContainer) toolsContainer.style.display = '';
+    }
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(700, 'sine', 0.04);
 }
 
 function reloadStream() {
