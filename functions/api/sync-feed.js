@@ -73,9 +73,10 @@ export async function onRequestGet({ request, env }) {
       liveAlert,
       version: data.version,
       counts: {
-        characters: data.characters.length,
-        weapons: data.weapons.length,
-        vehicles: data.vehicles.length,
+        characters: data.characters ? data.characters.length : 18,
+        weapons: data.weaponCatalog ? Object.keys(data.weaponCatalog).length : (data.weapons ? data.weapons.length : 24),
+        vehicles: data.vehicleCatalog ? Object.keys(data.vehicleCatalog).length : (data.vehicles ? data.vehicles.length : 56),
+        masks: data.gearCatalog ? Object.keys(data.gearCatalog).length : 16,
         properties: data.properties ? data.properties.length : 8,
       },
       data,

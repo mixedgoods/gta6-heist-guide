@@ -213,6 +213,8 @@
             letter-spacing: 0.5px;
             margin-top: 0.2rem;
         }
+        .item-card { cursor: pointer; transition: all 0.25s ease; }
+    .item-card:hover { transform: translateY(-4px); border-color: var(--neon-yellow); box-shadow: 0 8px 25px rgba(255,184,0,0.2); }
     </style>
     <script type="application/ld+json">
     {
@@ -399,337 +401,1186 @@
     <!-- 11 CONFIRMED ITEMS & WEAPONS GRID (100% REAL SCREENS) -->
     <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap:1.25rem;" id="gearGrid">
 
-        <!-- 1. H&K MP5 SUBMACHINE GUN -->
-        <div class="item-card" data-category="automatic" data-keywords="mp5 submachine gun automatic 9mm lucia jason trailer" id="item-mp5">
+        <!-- Polymer Pistol 9mm -->
+        <div class="item-card" data-category="sidearms" data-keywords="polymer pistol 9mm glock 19 gen 5 9x19mm parabellum sidearms" id="item-polymer" onclick="GTA6.WeaponModal.open('polymer')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-mp5.jpg?v=20261118_hd" alt="Heckler &amp; Koch MP5 Submachine Gun - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">AUTOMATIC SMG</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-polymer.jpg?v=20261118_hd" alt="Polymer Pistol 9mm - Glock 19 Gen 5" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Heckler &amp; Koch MP5 Submachine Gun</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ PROTAGONISTS:</span>
-                        <a href="crew-database.html#character-lucia" style="color:var(--neon-pink); text-decoration:underline;">Lucia Caminos</a> &bull;
-                        <a href="crew-database.html#character-jason" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval</a>
-                    </div>
-                    <p class="item-desc">
-                        Official 9x19mm submachine gun captured in Trailer 2 and robbery sequences. Features a collapsible stock, high fire rate, and optional quick-attach suppressor for bank lobby room clearing.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Polymer Pistol 9mm</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Glock 19 Gen 5 &bull; 9x19mm Parabellum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        The gold-standard compact striker-fired polymer sidearm carried by Lucia in the opening trailer diner robbery. Ligh...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">2.9 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">25 dB (Suppressed)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Rate of Fire:</span><span class="item-stat-val" style="color:var(--neon-yellow);">800 RPM</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Magazine:</span><span class="item-stat-val" style="color:#fff;">30 Rounds</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">68/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">65/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">55/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">82/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('mp5', 2.9, 25, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">✓ Equipped in Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-polymer', 'Polymer Pistol 9mm'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('polymer')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 2. DUKE SPECIAL OPS CARBINE -->
-        <div class="item-card" data-category="automatic" data-keywords="duke special ops carbine assault rifle 556 raul bautista" id="item-carbine">
+        <!-- Service Pistol 92FS -->
+        <div class="item-card" data-category="sidearms" data-keywords="service pistol 92fs beretta 92fs / m9 9x19mm parabellum sidearms" id="item-beretta" onclick="GTA6.WeaponModal.open('beretta')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Duke Special Ops Carbine - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">ASSAULT CARBINE</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-beretta.jpg?v=20261118_hd" alt="Service Pistol 92FS - Beretta 92FS / M9" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Duke Special Ops Assault Carbine</h3>
-                    <div class="item-crew-spec">
-                        <span>🔧 SPECIALIST:</span>
-                        <a href="crew-database.html#character-raul" style="color:var(--neon-pink); text-decoration:underline;">Raul Bautista (Demolitions)</a>
-                    </div>
-                    <p class="item-desc">
-                        Heavy tactical carbine captured in development footage and promotional stills. Delivers armor-piercing 5.56x45mm rounds designed to suppress SWAT perimeter response teams.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Service Pistol 92FS</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Beretta 92FS / M9 &bull; 9x19mm Parabellum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Classic Italian open-slide double-action military sidearm with smooth recoil characteristics and flawless feeding r...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">3.4 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">98 dB (Loud)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Effective Range:</span><span class="item-stat-val" style="color:var(--neon-cyan);">400 Meters</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Damage:</span><span class="item-stat-val" style="color:#fff;">High Armor Pierce</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">72/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">68/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">62/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">86/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('carbine', 3.4, 98, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-beretta', 'Service Pistol 92FS'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('beretta')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 3. DUKE ASSAULT SNIPER RIFLE -->
-        <div class="item-card" data-category="sniper" data-keywords="duke assault sniper rifle long range jason duval grassrivers" id="item-sniper">
+        <!-- Mustang .357 Heavy Magnum -->
+        <div class="item-card" data-category="sidearms" data-keywords="mustang .357 heavy magnum colt python .357 magnum 6-inch .357 magnum / .38 special sidearms" id="item-mustang357" onclick="GTA6.WeaponModal.open('mustang357')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-sniper.jpg?v=20261118_hd" alt="Duke Assault Sniper Rifle - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">PRECISION SNIPER</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-mustang357.jpg?v=20261118_hd" alt="Mustang .357 Heavy Magnum - Colt Python .357 Magnum 6-Inch" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Duke Heavy Assault Sniper Rifle</h3>
-                    <div class="item-crew-spec">
-                        <span>🎯 SPECIALIST:</span>
-                        <a href="crew-database.html#character-jason" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval (Overwatch)</a>
-                    </div>
-                    <p class="item-desc">
-                        High-caliber semi-automatic sniper rifle with high-magnification variable optic. Observed in the Grassrivers and Mount Kalaga National Park promotional shots for disabling police helicopter spotlights.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Mustang .357 Heavy Magnum</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Colt Python .357 Magnum 6-Inch &bull; .357 Magnum / .38 Special</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        High-polish stainless steel revolver packing devastating stopping power. Can punch through car doors and engine blo...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">5.2 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">110 dB</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Effective Range:</span><span class="item-stat-val" style="color:var(--neon-cyan);">800+ Meters</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Helicopter Disable:</span><span class="item-stat-val" style="color:#fff;">1 Tail-Rotor Shot</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">94/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">38/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">75/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">90/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('sniper', 5.2, 110, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-mustang357', 'Mustang .357 Heavy Magnum'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('mustang357')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 4. MUSTANG .357 REVOLVER -->
-        <div class="item-card" data-category="sidearms" data-keywords="mustang 357 revolver magnum ambrosia pistol" id="item-mustang">
+        <!-- Vintage P35 High-Power -->
+        <div class="item-card" data-category="sidearms" data-keywords="vintage p35 high-power browning hi-power 9mm 9x19mm parabellum sidearms" id="item-browning-hipower" onclick="GTA6.WeaponModal.open('browning-hipower')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-mustang357.jpg?v=20261118_hd" alt="Mustang .357 Revolver - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">HEAVY REVOLVER</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-beretta.jpg?v=20261118_hd" alt="Vintage P35 High-Power - Browning Hi-Power 9mm" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Mustang .357 Heavy Magnum Revolver</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ ORIGIN:</span>
-                        <span style="color:var(--neon-amber);">Ambrosia County Screencap</span>
-                    </div>
-                    <p class="item-desc">
-                        Classic six-shot stainless steel magnum revolver featured in official Ambrosia County captures. High kinetic energy with single-shot stopping power against armored vault guards.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Vintage P35 High-Power</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Browning Hi-Power 9mm &bull; 9x19mm Parabellum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Historic single-action sidearm favored by veteran Caribbean contraband runners and cartel lieutenants for its crisp...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.3 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">102 dB</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Cylinder:</span><span class="item-stat-val" style="color:var(--neon-cyan);">6 Rounds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Stopping Power:</span><span class="item-stat-val" style="color:#fff;">Maximum Stagger</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">70/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">64/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">58/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">85/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('mustang', 1.3, 102, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-browning-hipower', 'Vintage P35 High-Power'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('browning-hipower')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 5. BERETTA 92FS SERVICE PISTOL -->
-        <div class="item-card" data-category="sidearms" data-keywords="beretta 92fs service pistol 9mm jason duval sidearm" id="item-beretta">
+        <!-- The Enforcer .410 Revolver -->
+        <div class="item-card" data-category="sidearms" data-keywords="the enforcer .410 revolver taurus judge .410 shotshell / .45 lc .410 bore shotshell / .45 long colt sidearms" id="item-taurus-judge" onclick="GTA6.WeaponModal.open('taurus-judge')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-beretta.jpg?v=20261118_hd" alt="Beretta 92FS Pistol - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">SERVICE SIDEARM</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="undefined" alt="The Enforcer .410 Revolver - Taurus Judge .410 Shotshell / .45 LC" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Beretta 92FS 9mm Tactical Sidearm</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ PROTAGONIST:</span>
-                        <a href="crew-database.html#character-jason" style="color:var(--neon-cyan); text-decoration:underline;">Jason Duval Primary Sidearm</a>
-                    </div>
-                    <p class="item-desc">
-                        Jason's signature service pistol observed in official character promo stills. Reliable, lightweight, with 15-round double-stack magazine and quick target acquisition in tight spaces.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">The Enforcer .410 Revolver</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Taurus Judge .410 Shotshell / .45 LC &bull; .410 Bore Shotshell / .45 Long Colt</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Chambered in .410 shotgun buckshot shells. Devastating in close-quarters bank vestibule hold-ups where spreading sh...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.95 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">20 dB (Suppressed)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Magazine:</span><span class="item-stat-val" style="color:var(--neon-cyan);">15 Rounds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Concealment:</span><span class="item-stat-val" style="color:#fff;">100% Holster Conceal</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">92/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">35/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">35/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">65/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('beretta', 0.95, 20, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-taurus-judge', 'The Enforcer .410 Revolver'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('taurus-judge')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 6. POLYMER SERVICE PISTOL -->
-        <div class="item-card" data-category="sidearms" data-keywords="polymer pistol striker fired boobie ike sidearm" id="item-polymer">
+        <!-- Tactical MP5 Submachine Gun -->
+        <div class="item-card" data-category="smg" data-keywords="tactical mp5 submachine gun heckler & koch mp5a3 / mp5sd 9x19mm parabellum submachine guns" id="item-mp5" onclick="GTA6.WeaponModal.open('mp5')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-polymer.jpg?v=20261118_hd" alt="Polymer Tactical Pistol - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">POLYMER PISTOL</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-mp5.jpg?v=20261118_hd" alt="Tactical MP5 Submachine Gun - Heckler & Koch MP5A3 / MP5SD" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Polymer Striker-Fired Concealed Pistol</h3>
-                    <div class="item-crew-spec">
-                        <span>💎 ORIGIN:</span>
-                        <a href="crew-database.html#character-boobie" style="color:var(--neon-pink); text-decoration:underline;">Boobie Ike Club Security</a>
-                    </div>
-                    <p class="item-desc">
-                        Lightweight polymer frame pistol featured in Boobie Ike's nightclub security sequences. Zero metal-detector signature on select ceramic components, making it ideal for casino and yacht infiltration.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Tactical MP5 Submachine Gun</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Heckler & Koch MP5A3 / MP5SD &bull; 9x19mm Parabellum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        The undisputed gold standard in roller-delayed submachine guns. Almost non-existent recoil allows putting an entire...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.65 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">22 dB</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Capacity:</span><span class="item-stat-val" style="color:var(--neon-cyan);">17 Rounds</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Detection:</span><span class="item-stat-val" style="color:#fff;">Bypasses Basic Detectors</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">76/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">85/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">70/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">88/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('polymer', 0.65, 22, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-mp5', 'Tactical MP5 Submachine Gun'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('mp5')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 7. TACTICAL GRENADE LAUNCHER -->
-        <div class="item-card" data-category="heavy" data-keywords="grenade launcher explosive 40mm trailer 2 swat" id="item-grenade-launcher">
+        <!-- Micro Machine Pistol 9mm -->
+        <div class="item-card" data-category="smg" data-keywords="micro machine pistol 9mm imi micro uzi / mini uzi 9x19mm parabellum submachine guns" id="item-micro-smg" onclick="GTA6.WeaponModal.open('micro-smg')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-grenade-launcher.jpg?v=20261118_hd" alt="Tactical Grenade Launcher - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">HEAVY ORDNANCE</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-mp5.jpg?v=20261118_hd" alt="Micro Machine Pistol 9mm - IMI Micro Uzi / Mini Uzi" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">40mm Multi-Shot Grenade Launcher</h3>
-                    <div class="item-crew-spec">
-                        <span>💥 ROLE:</span>
-                        <span style="color:var(--neon-pink);">Aggressive Vault &amp; SWAT Breacher</span>
-                    </div>
-                    <p class="item-desc">
-                        Revolving cylinder grenade launcher captured in Trailer 2 sequences. Fires 40mm high-explosive or smoke canisters to clear police roadblocks and destroy armored transport trucks instantly.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Micro Machine Pistol 9mm</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">IMI Micro Uzi / Mini Uzi &bull; 9x19mm Parabellum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Blistering 1,200 rounds per minute cyclic rate that empties a full magazine in under two seconds. The ultimate driv...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-yellow);">6.5 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-pink);">125 dB (Max Loud)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Capacity:</span><span class="item-stat-val" style="color:var(--neon-cyan);">6 Canisters</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Blast Radius:</span><span class="item-stat-val" style="color:#fff;">12 Meters</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">70/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">98/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">42/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">60/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('grenade-launcher', 6.5, 125, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-micro-smg', 'Micro Machine Pistol 9mm'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('micro-smg')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 8. HEIST INFILTRATION HAMMER -->
-        <div class="item-card" data-category="melee" data-keywords="hammer trailer 1 hammer lady display case jewelry" id="item-hammer">
+        <!-- AB-10 Machine Pistol -->
+        <div class="item-card" data-category="smg" data-keywords="ab-10 machine pistol intratec tec-9 9mm 9x19mm luger submachine guns" id="item-tec9" onclick="GTA6.WeaponModal.open('tec9')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-hammer.jpg?v=20261118_hd" alt="Heist Infiltration Hammer - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">MELEE &amp; BREACH</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-mp5.jpg?v=20261118_hd" alt="AB-10 Machine Pistol - Intratec TEC-9 9mm" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Heavy Steel Framing Hammer (Display Case Smasher)</h3>
-                    <div class="item-crew-spec">
-                        <span>🔨 TRAILER 1 ICON:</span>
-                        <span style="color:var(--neon-green);">Hammer Lady Scene Capture</span>
-                    </div>
-                    <p class="item-desc">
-                        Heavy industrial steel hammer featured in the viral Trailer 1 neighborhood sequence. Used during store robberies and jewelry store heists to shatter display cases in a single swing.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">AB-10 Machine Pistol</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Intratec TEC-9 9mm &bull; 9x19mm Luger</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Infamous 90s Vice City street syndicate staple. Intimidating barrel shroud profile and massive 50-round drum magazi...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.1 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-cyan);">15 dB (Glass Shatter)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Smash Speed:</span><span class="item-stat-val" style="color:var(--neon-cyan);">1 Second</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Target:</span><span class="item-stat-val" style="color:#fff;">Jewelry &amp; Cash Registers</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">72/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">90/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">48/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">64/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('hammer', 1.1, 15, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-tec9', 'AB-10 Machine Pistol'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('tec9')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 9. HEAVY WOODEN BASEBALL BAT -->
-        <div class="item-card" data-category="melee" data-keywords="baseball bat port gellhorn melee intimidation teller" id="item-bat">
+        <!-- Tactical Bullpup PDW-57 -->
+        <div class="item-card" data-category="smg" data-keywords="tactical bullpup pdw-57 fn p90 5.7x28mm bullpup 5.7x28mm armor piercing submachine guns" id="item-p90" onclick="GTA6.WeaponModal.open('p90')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/weapon-baseball-bat.jpg?v=20261118_hd" alt="Baseball Bat - GTA 6 Official Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">BLUNT MELEE</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-mp5.jpg?v=20261118_hd" alt="Tactical Bullpup PDW-57 - FN P90 5.7x28mm Bullpup" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Solid Ash Wooden Baseball Bat</h3>
-                    <div class="item-crew-spec">
-                        <span>⭐ ORIGIN:</span>
-                        <span style="color:var(--neon-cyan);">Port Gellhorn Official Still</span>
-                    </div>
-                    <p class="item-desc">
-                        Classic heavy wooden bat captured in the Port Gellhorn official promotional series. Ideal for silent non-lethal guard knockouts and aggressive crowd intimidation during convenience store stickups.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Tactical Bullpup PDW-57</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">FN P90 5.7x28mm Bullpup &bull; 5.7x28mm Armor Piercing</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Compact bullpup design chambered in high-velocity 5.7mm armor-piercing rounds that slice through Kevlar vests worn ...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">0.9 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Acoustic Noise:</span><span class="item-stat-val" style="color:var(--neon-green);">5 dB (Silent)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Non-Lethal:</span><span class="item-stat-val" style="color:var(--neon-green);">Yes (Preserves Stealth)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Intimidation:</span><span class="item-stat-val" style="color:#fff;">+25% Compliance</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">78/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">92/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">75/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">91/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('bat', 0.9, 5, 0, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">+ Equip to Loadout Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-p90', 'Tactical Bullpup PDW-57'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('p90')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 10. OFFICIAL VICE CITY HEIST DUFFEL BAG -->
-        <div class="item-card" data-category="gear" data-keywords="duffel bag cash loot capacity vice city collection trailer" id="item-duffel">
+        <!-- Duke Special Ops Carbine M4 -->
+        <div class="item-card" data-category="rifles" data-keywords="duke special ops carbine m4 colt m4a1 tactical carbine 5.56 5.56x45mm nato assault rifles" id="item-carbine" onclick="GTA6.WeaponModal.open('carbine')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/gear-duffel-bag.jpg?v=20261118_real" alt="Official Vice City Heist Duffel Bag - GTA 6 Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL GEAR STILL</span>
-                    <span class="item-badge-cat">LOOT CAPACITY</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Duke Special Ops Carbine M4 - Colt M4A1 Tactical Carbine 5.56" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Official Vice City Ballistic Heist Duffel</h3>
-                    <div class="item-crew-spec">
-                        <span>🎒 CORE EQUIPMENT:</span>
-                        <span style="color:var(--neon-yellow);">$2,500,000 Cash Take Capacity</span>
-                    </div>
-                    <p class="item-desc">
-                        Reinforced ballistic nylon travel duffel featured in the official Vice City collection and trailer heist escapes. Waterproof zippers protect cash stacks, bearer bonds, and gold bars from water damage during boat extractions.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Duke Special Ops Carbine M4</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Colt M4A1 Tactical Carbine 5.56 &bull; 5.56x45mm NATO</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        The military standard issue assault rifle. Extreme modularity and accuracy at medium-to-long ranges, capable of pen...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Empty Weight:</span><span class="item-stat-val" style="color:var(--neon-green);">1.5 kg</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Max Take:</span><span class="item-stat-val" style="color:var(--neon-yellow);">$2,500,000</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Sprint Penalty:</span><span class="item-stat-val" style="color:var(--neon-cyan);">-2% (Balanced)</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Water Resistance:</span><span class="item-stat-val" style="color:#fff;">100% Sealed</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">85/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">82/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">88/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">92/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('duffel', 1.5, 0, 2500000, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">✓ Equipped in Bag</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-carbine', 'Duke Special Ops Carbine M4'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('carbine')">Dossier &rarr;</button>
             </div>
         </div>
 
-        <!-- 11. RIDEOUT CUSTOMS GETAWAY TUNER CAR -->
-        <div class="item-card" data-category="gear" data-keywords="rideout customs getaway car vehicle drift brian heder chop shop" id="item-getaway-car">
+        <!-- Kalashnikov AK-103 Assault Rifle -->
+        <div class="item-card" data-category="rifles" data-keywords="kalashnikov ak-103 assault rifle ak-47 / ak-103 7.62x39mm 7.62x39mm soviet assault rifles" id="item-ak47" onclick="GTA6.WeaponModal.open('ak47')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
-                <div class="item-img-container">
-                    <img src="assets/gear-getaway-car.jpg?v=20261118_real" alt="Rideout Customs Getaway Tuner Car - GTA 6 Capture" loading="lazy">
-                    <span class="item-badge-source">OFFICIAL SCREENSHOT</span>
-                    <span class="item-badge-cat">GETAWAY FLEET</span>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Kalashnikov AK-103 Assault Rifle - AK-47 / AK-103 7.62x39mm" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
                 </div>
-                <div class="item-body">
-                    <h3 class="item-title">Rideout Customs Tuned Muscle Getaway Fleet</h3>
-                    <div class="item-crew-spec">
-                        <span>🔧 ARMORER:</span>
-                        <a href="crew-database.html#character-brian" style="color:var(--neon-amber); text-decoration:underline;">Brian Heder (Chop Shop)</a>
-                    </div>
-                    <p class="item-desc">
-                        Official Rideout Customs tuned getaway vehicle observed in Trailer 1 night streets. Outfitted with solid run-flat tires immune to police spikes, reinforced push bumpers, and high-speed drift transmission for escaping 4-star roadblocks.
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Kalashnikov AK-103 Assault Rifle</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">AK-47 / AK-103 7.62x39mm &bull; 7.62x39mm Soviet</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Heavy 7.62mm stopping power that punches straight through concrete parking garage pillars and armored police vehicl...
                     </p>
-                    <div class="item-stats-table">
-                        <div class="item-stat-row"><span class="item-stat-label">Vehicle Armor:</span><span class="item-stat-val" style="color:var(--neon-amber);">+40% Plating</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Spike Immunity:</span><span class="item-stat-val" style="color:var(--neon-green);">100% Puncture Proof</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Top Speed:</span><span class="item-stat-val" style="color:var(--neon-cyan);">165 MPH</span></div>
-                        <div class="item-stat-row"><span class="item-stat-label">Trunk Stash:</span><span class="item-stat-val" style="color:#fff;">4 Extra Duffel Bags</span></div>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">90/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">72/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">84/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">78/100</strong></div>
                     </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
                 </div>
             </div>
-            <div style="padding:0 1.15rem 1.15rem;">
-                <button type="button" class="btn btn-secondary equip-btn" onclick="toggleItem('getaway-car', 0, 0, 1000000, this)" style="width:100%; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">+ Equip to Getaway Fleet</button>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-ak47', 'Kalashnikov AK-103 Assault Rifle'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('ak47')">Dossier &rarr;</button>
             </div>
         </div>
 
+        <!-- Micro Draco Compact Rifle -->
+        <div class="item-card" data-category="rifles" data-keywords="micro draco compact rifle century arms micro draco 7.62x39mm 7.62x39mm soviet assault rifles" id="item-compact-rifle" onclick="GTA6.WeaponModal.open('compact-rifle')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Micro Draco Compact Rifle - Century Arms Micro Draco 7.62x39mm" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Micro Draco Compact Rifle</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Century Arms Micro Draco 7.62x39mm &bull; 7.62x39mm Soviet</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        A chopped-down AK platform with a 6-inch barrel that produces deafening concussive blasts and blinding muzzle fire....
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">88/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">76/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">65/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">68/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-compact-rifle', 'Micro Draco Compact Rifle'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('compact-rifle')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Heavy Battle Rifle 7.62 NATO -->
+        <div class="item-card" data-category="rifles" data-keywords="heavy battle rifle 7.62 nato fn fal / sa58 paratrooper 7.62x51mm nato (.308 win) assault rifles" id="item-battle-rifle" onclick="GTA6.WeaponModal.open('battle-rifle')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Heavy Battle Rifle 7.62 NATO - FN FAL / SA58 Paratrooper" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Heavy Battle Rifle 7.62 NATO</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">FN FAL / SA58 Paratrooper &bull; 7.62x51mm NATO (.308 Win)</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        The Right Hand of the Free World. Hits with sledgehammer energy at extreme distances, disabling pursuing patrol veh...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">95/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">64/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">94/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">89/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-battle-rifle', 'Heavy Battle Rifle 7.62 NATO'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('battle-rifle')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Tactical 12-Gauge Pump Shotgun -->
+        <div class="item-card" data-category="shotguns" data-keywords="tactical 12-gauge pump shotgun remington 870 tactical / mossberg 590a1 12-gauge (00 buckshot / 1oz slug) shotguns & heavy" id="item-pump-shotgun" onclick="GTA6.WeaponModal.open('pump-shotgun')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Tactical 12-Gauge Pump Shotgun - Remington 870 Tactical / Mossberg 590A1" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Tactical 12-Gauge Pump Shotgun</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Remington 870 Tactical / Mossberg 590A1 &bull; 12-Gauge (00 Buckshot / 1oz Slug)</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        The ultimate room clearer and vault breach tool. Loaded with 00 buckshot, it tears open wooden security doors and i...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">98/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">42/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">45/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">72/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-pump-shotgun', 'Tactical 12-Gauge Pump Shotgun'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('pump-shotgun')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Sawed-Off Double Barrel -->
+        <div class="item-card" data-category="shotguns" data-keywords="sawed-off double barrel lupara 12-gauge double barrel sawed 12-gauge magnum shotguns & heavy" id="item-sawed-off" onclick="GTA6.WeaponModal.open('sawed-off')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="Sawed-Off Double Barrel - Lupara 12-Gauge Double Barrel Sawed" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Sawed-Off Double Barrel</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Lupara 12-Gauge Double Barrel Sawed &bull; 12-Gauge Magnum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Both barrels sawed down to 8 inches. Empties a devastating wall of lead at point-blank range, turning armored vault...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">100/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">50/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">25/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">45/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-sawed-off', 'Sawed-Off Double Barrel'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('sawed-off')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- SPAS-12 Combat Auto-Shotgun -->
+        <div class="item-card" data-category="shotguns" data-keywords="spas-12 combat auto-shotgun franchi spas-12 semi-auto 12-gauge heavy magnum shotguns & heavy" id="item-combat-shotgun" onclick="GTA6.WeaponModal.open('combat-shotgun')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-carbine.jpg?v=20261118_hd" alt="SPAS-12 Combat Auto-Shotgun - Franchi SPAS-12 Semi-Auto" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">SPAS-12 Combat Auto-Shotgun</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Franchi SPAS-12 Semi-Auto &bull; 12-Gauge Heavy Magnum</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Iconic folding-stock combat shotgun that cycles semi-automatic 12-gauge magnum shells as fast as the operator pulls...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">96/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">68/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">52/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">76/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-combat-shotgun', 'SPAS-12 Combat Auto-Shotgun'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('combat-shotgun')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Compact 40mm Thumper Launcher -->
+        <div class="item-card" data-category="shotguns" data-keywords="compact 40mm thumper launcher m79 / milkor m32 40mm grenade launcher 40x46mm high explosive / smoke shotguns & heavy" id="item-grenade-launcher" onclick="GTA6.WeaponModal.open('grenade-launcher')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-grenade-launcher.jpg?v=20261118_hd" alt="Compact 40mm Thumper Launcher - M79 / Milkor M32 40mm Grenade Launcher" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Compact 40mm Thumper Launcher</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">M79 / Milkor M32 40mm Grenade Launcher &bull; 40x46mm High Explosive / Smoke</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Lobs 40mm high-explosive or CS tear gas rounds with pinpoint trajectory over police barricades, flipping swat vans ...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">100/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">25/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">92/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">80/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-grenade-launcher', 'Compact 40mm Thumper Launcher'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('grenade-launcher')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Heavy Anti-Tank RPG-7 -->
+        <div class="item-card" data-category="shotguns" data-keywords="heavy anti-tank rpg-7 rpg-7v2 rocket-propelled grenade 85mm shaped charge warhead shotguns & heavy" id="item-rpg7" onclick="GTA6.WeaponModal.open('rpg7')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-grenade-launcher.jpg?v=20261118_hd" alt="Heavy Anti-Tank RPG-7 - RPG-7V2 Rocket-Propelled Grenade" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Heavy Anti-Tank RPG-7</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">RPG-7V2 Rocket-Propelled Grenade &bull; 85mm Shaped Charge Warhead</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Devastating anti-armor launcher capable of blowing VCPD riot enforcers and police helicopters out of the sky in a b...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">100/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">15/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">96/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">75/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-rpg7', 'Heavy Anti-Tank RPG-7'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('rpg7')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Duke Assault Sniper Rifle -->
+        <div class="item-card" data-category="snipers" data-keywords="duke assault sniper rifle accuracy international awm / ax308 .338 lapua magnum / 7.62 nato sniper rifles" id="item-sniper" onclick="GTA6.WeaponModal.open('sniper')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-sniper.jpg?v=20261118_hd" alt="Duke Assault Sniper Rifle - Accuracy International AWM / AX308" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SNIPER RIFLES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Duke Assault Sniper Rifle</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Accuracy International AWM / AX308 &bull; .338 Lapua Magnum / 7.62 NATO</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Extreme-range bolt-action precision platform used for high-angle overwatch missions. One well-placed shot through t...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">98/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">35/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">100/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">98/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-sniper', 'Duke Assault Sniper Rifle'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('sniper')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Anti-Material .50 Cal Sniper -->
+        <div class="item-card" data-category="snipers" data-keywords="anti-material .50 cal sniper barrett m82a1 / m107 .50 bmg .50 bmg (12.7x99mm nato) sniper rifles" id="item-heavy-sniper" onclick="GTA6.WeaponModal.open('heavy-sniper')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-sniper.jpg?v=20261118_hd" alt="Anti-Material .50 Cal Sniper - Barrett M82A1 / M107 .50 BMG" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SNIPER RIFLES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Anti-Material .50 Cal Sniper</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Barrett M82A1 / M107 .50 BMG &bull; .50 BMG (12.7x99mm NATO)</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Fires massive 660-grain armor-piercing incendiary rounds that detonate fuel tanks and tear through reinforced bunke...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">100/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">40/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">100/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">96/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-heavy-sniper', 'Anti-Material .50 Cal Sniper'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('heavy-sniper')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Forged Steel Claw Hammer -->
+        <div class="item-card" data-category="melee" data-keywords="forged steel claw hammer estwing 20oz steel rip claw hammer solid forged american steel melee & intimidation" id="item-hammer" onclick="GTA6.WeaponModal.open('hammer')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-hammer.jpg?v=20261118_hd" alt="Forged Steel Claw Hammer - Estwing 20oz Steel Rip Claw Hammer" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Forged Steel Claw Hammer</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Estwing 20oz Steel Rip Claw Hammer &bull; Solid Forged American Steel</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Made famous in the first GTA 6 trailer by the neighborhood watch woman. Perfect for shattering jewelry display case...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">78/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">60/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">15/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">90/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-hammer', 'Forged Steel Claw Hammer'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('hammer')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Solid Hardwood Baseball Bat -->
+        <div class="item-card" data-category="melee" data-keywords="solid hardwood baseball bat louisville slugger 34-inch ash bat northern white ash wood melee & intimidation" id="item-baseball-bat" onclick="GTA6.WeaponModal.open('baseball-bat')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-baseball-bat.jpg?v=20261118_hd" alt="Solid Hardwood Baseball Bat - Louisville Slugger 34-Inch Ash Bat" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Solid Hardwood Baseball Bat</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Louisville Slugger 34-Inch Ash Bat &bull; Northern White Ash Wood</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        The classic intimidation weapon. A couple of swings against a bank teller’s bulletproof glass instantly skyrockets ...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">75/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">55/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">20/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">85/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-baseball-bat', 'Solid Hardwood Baseball Bat'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('baseball-bat')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Hardened Steel Wrecking Crowbar -->
+        <div class="item-card" data-category="melee" data-keywords="hardened steel wrecking crowbar stanley 36-inch forged wrecking bar high-carbon hexagon steel melee & intimidation" id="item-crowbar" onclick="GTA6.WeaponModal.open('crowbar')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-hammer.jpg?v=20261118_hd" alt="Hardened Steel Wrecking Crowbar - Stanley 36-Inch Forged Wrecking Bar" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Hardened Steel Wrecking Crowbar</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Stanley 36-Inch Forged Wrecking Bar &bull; High-Carbon Hexagon Steel</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Dual-purpose heist tool. Used to quietly pry open security fire doors, electrical junction boxes, and ATM access pa...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">80/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">48/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">22/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">88/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-crowbar', 'Hardened Steel Wrecking Crowbar'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('crowbar')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Tactical Tanto Combat Knife -->
+        <div class="item-card" data-category="melee" data-keywords="tactical tanto combat knife ka-bar tanto fixed blade 1095 cro-van carbon steel melee & intimidation" id="item-combat-knife" onclick="GTA6.WeaponModal.open('combat-knife')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/weapon-hammer.jpg?v=20261118_hd" alt="Tactical Tanto Combat Knife - KA-BAR Tanto Fixed Blade" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Tactical Tanto Combat Knife</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">KA-BAR Tanto Fixed Blade &bull; 1095 Cro-Van Carbon Steel</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Black epoxy-coated 7-inch tanto blade designed for silent takedowns of security sentries from behind. Leaves zero s...
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Damage:</span> <strong style="color:var(--neon-pink);">84/100</strong></div>
+                        <div class="item-stat-row"><span>Fire Rate:</span> <strong style="color:var(--neon-yellow);">85/100</strong></div>
+                        <div class="item-stat-row"><span>Range:</span> <strong style="color:var(--neon-cyan);">10/100</strong></div>
+                        <div class="item-stat-row"><span>Accuracy:</span> <strong style="color:var(--neon-green);">95/100</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-yellow); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR BALLISTICS DOSSIER &amp; ATTACHMENTS &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('wpn-combat-knife', 'Tactical Tanto Combat Knife'); GTA6.showToast('Weapon bookmarked to HUD!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);" onclick="event.stopPropagation(); GTA6.WeaponModal.open('combat-knife')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION: CONFIRMED HEIST MASKS & INFILTRATION OUTFITS (16 ITEMS) -->
+    <!-- ========================================================================= -->
+    <div style="margin: 3.5rem auto 1.5rem; max-width: 1200px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem; border-bottom:2px solid var(--neon-pink); padding-bottom:0.75rem;">
+            <div>
+                <span class="user-badge" style="background:rgba(255,42,141,0.2); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.75rem; font-weight:800; font-family:var(--font-mono);">INFILTRATION &amp; EVASION WARDROBE</span>
+                <h2 style="font-size:1.8rem; color:#fff; margin:0.4rem 0 0.2rem; font-weight:900;">🎭 Confirmed Heist Masks &amp; Infiltration Outfits</h2>
+                <p style="color:#94a3b8; font-size:0.85rem; margin:0;">Facial recognition scramblers, ballistic face shields, scuba rebreathers, and disguise uniforms that delay police dispatch and drop star levels.</p>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-pink); font-weight:800;">
+                16 Confirmed Infiltration Items &bull; Click card for full specs
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap:1.25rem;" id="masksGrid">
+
+        <!-- Neoprene Skull Balaclava -->
+        <div class="item-card" data-category="stealth" data-keywords="neoprene skull balaclava heist masks blocks cctv facial recognition & delays 911 caller identification by 35 seconds." id="item-mask-skull" onclick="GTA6.GearModal.open('mask-skull')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-skull-mask.jpg" alt="Neoprene Skull Balaclava" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Neoprene Skull Balaclava</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+35 Seconds Response Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Blocks CCTV facial recognition & delays 911 caller identification by 35 seconds.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">95%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">15%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">88%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">98%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-mask-skull', 'Neoprene Skull Balaclava'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('mask-skull')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Vice City Flamingo Pink Bandana -->
+        <div class="item-card" data-category="stealth" data-keywords="vice city flamingo pink bandana heist masks fastest equip animation during sudden cash register grab-and-dashes." id="item-mask-pink-bandana" onclick="GTA6.GearModal.open('mask-pink-bandana')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-bandana.jpg" alt="Vice City Flamingo Pink Bandana" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Vice City Flamingo Pink Bandana</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+30 Seconds Response Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Fastest equip animation during sudden cash register grab-and-dashes.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">90%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">10%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">82%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">100%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-mask-pink-bandana', 'Vice City Flamingo Pink Bandana'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('mask-pink-bandana')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Level III-A Ballistic Face Shield -->
+        <div class="item-card" data-category="ballistic" data-keywords="level iii-a ballistic face shield ballistic protection negates 1 fatal headshot from law enforcement pistol fire." id="item-mask-ballistic" onclick="GTA6.GearModal.open('mask-ballistic')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="Level III-A Ballistic Face Shield" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">BALLISTIC PROTECTION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Level III-A Ballistic Face Shield</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+25 Seconds Response Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Negates 1 fatal headshot from law enforcement pistol fire.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">98%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">92%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">95%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">80%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-mask-ballistic', 'Level III-A Ballistic Face Shield'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('mask-ballistic')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Retro Nylon Stocking Mask -->
+        <div class="item-card" data-category="stealth" data-keywords="retro nylon stocking mask heist masks zero suspicion when stored in pockets; discarded instantly into trash bins." id="item-mask-stocking" onclick="GTA6.GearModal.open('mask-stocking')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-bandana.jpg" alt="Retro Nylon Stocking Mask" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Retro Nylon Stocking Mask</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+20 Seconds Response Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Zero suspicion when stored in pockets; discarded instantly into trash bins.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">85%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">5%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">75%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">100%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-mask-stocking', 'Retro Nylon Stocking Mask'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('mask-stocking')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Port Gellhorn Smiley Clown Mask -->
+        <div class="item-card" data-category="stealth" data-keywords="port gellhorn smiley clown mask heist masks +20% hostage intimidation speed; suppresses crowd panic alarms." id="item-mask-clown" onclick="GTA6.GearModal.open('mask-clown')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-skull-mask.jpg" alt="Port Gellhorn Smiley Clown Mask" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Port Gellhorn Smiley Clown Mask</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+35 Seconds Response Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        +20% Hostage Intimidation Speed; suppresses crowd panic alarms.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">96%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">12%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">96%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">92%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-mask-clown', 'Port Gellhorn Smiley Clown Mask'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('mask-clown')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Vice Beach Neon Pig Rubber Mask -->
+        <div class="item-card" data-category="stealth" data-keywords="vice beach neon pig rubber mask heist masks cult following bonus; unlocks unique syndicate underground dialogue." id="item-mask-animal" onclick="GTA6.GearModal.open('mask-animal')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-skull-mask.jpg" alt="Vice Beach Neon Pig Rubber Mask" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Vice Beach Neon Pig Rubber Mask</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+30 Seconds Response Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Cult following bonus; unlocks unique syndicate underground dialogue.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">94%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">10%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">90%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">94%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-mask-animal', 'Vice Beach Neon Pig Rubber Mask'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('mask-animal')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Rebreather Scuba Diving Rig -->
+        <div class="item-card" data-category="suits" data-keywords="rebreather scuba diving rig environmental suits unlimited underwater breathing; zero air bubbles on radar sonar." id="item-outfit-scuba" onclick="GTA6.GearModal.open('outfit-scuba')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="Rebreather Scuba Diving Rig" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">ENVIRONMENTAL SUITS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Rebreather Scuba Diving Rig</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+60 Seconds Underwater Immunity</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Unlimited underwater breathing; zero air bubbles on radar sonar.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">99%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">30%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">65%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">85%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-outfit-scuba', 'Rebreather Scuba Diving Rig'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('outfit-scuba')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Biohazard Level A Hazmat Suit -->
+        <div class="item-card" data-category="suits" data-keywords="biohazard level a hazmat suit environmental suits complete immunity to tear gas, smoke canisters, and chemical dispersants." id="item-outfit-hazmat" onclick="GTA6.GearModal.open('outfit-hazmat')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="Biohazard Level A Hazmat Suit" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">ENVIRONMENTAL SUITS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Biohazard Level A Hazmat Suit</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+45 Seconds Confusion Delay</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Complete immunity to tear gas, smoke canisters, and chemical dispersants.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">99%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">45%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">88%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">70%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-outfit-hazmat', 'Biohazard Level A Hazmat Suit'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('outfit-hazmat')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- VCPD Metro Police Uniform Disguise -->
+        <div class="item-card" data-category="disguise" data-keywords="vcpd metro police uniform disguise tactical disguises walk through police barricades and restricted evidence lockups without drawing heat." id="item-outfit-vcpd" onclick="GTA6.GearModal.open('outfit-vcpd')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="VCPD Metro Police Uniform Disguise" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">VCPD Metro Police Uniform Disguise</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+50 Seconds Infiltration Buffer</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Walk through police barricades and restricted evidence lockups without drawing heat.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">98%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">60%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">85%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">90%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-outfit-vcpd', 'VCPD Metro Police Uniform Disguise'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('outfit-vcpd')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Port Gellhorn Stevedore Coveralls -->
+        <div class="item-card" data-category="disguise" data-keywords="port gellhorn stevedore coveralls tactical disguises full access to cargo container shipping terminals and industrial docks." id="item-outfit-utility" onclick="GTA6.GearModal.open('outfit-utility')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-bandana.jpg" alt="Port Gellhorn Stevedore Coveralls" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Port Gellhorn Stevedore Coveralls</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+40 Seconds Harbor Buffer</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Full access to cargo container shipping terminals and industrial docks.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">92%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">25%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">60%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">95%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-outfit-utility', 'Port Gellhorn Stevedore Coveralls'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('outfit-utility')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- High-Roller Velvet Casino Tuxedo -->
+        <div class="item-card" data-category="disguise" data-keywords="high-roller velvet casino tuxedo tactical disguises grants access to high-limit vip penthouses, private poker lounges, and casino vaults." id="item-outfit-tuxedo" onclick="GTA6.GearModal.open('outfit-tuxedo')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-bandana.jpg" alt="High-Roller Velvet Casino Tuxedo" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">High-Roller Velvet Casino Tuxedo</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+45 Seconds Social Camouflage</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Grants access to high-limit VIP penthouses, private poker lounges, and casino vaults.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">96%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">35%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">70%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">92%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-outfit-tuxedo', 'High-Roller Velvet Casino Tuxedo'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('outfit-tuxedo')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Ocean Drive Tourist Aloha Disguise -->
+        <div class="item-card" data-category="disguise" data-keywords="ocean drive tourist aloha disguise tactical disguises blend into ocean drive pedestrian crowds instantly to drop police stars." id="item-outfit-tourist" onclick="GTA6.GearModal.open('outfit-tourist')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-bandana.jpg" alt="Ocean Drive Tourist Aloha Disguise" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Ocean Drive Tourist Aloha Disguise</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+35 Seconds Crowd Camouflage</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Blend into Ocean Drive pedestrian crowds instantly to drop police stars.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">94%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">10%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">40%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">100%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-outfit-tourist', 'Ocean Drive Tourist Aloha Disguise'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('outfit-tourist')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Heavy Assault EOD Plate Carrier -->
+        <div class="item-card" data-category="ballistic" data-keywords="heavy assault eod plate carrier ballistic protection absorbs up to 25 rifle shots; explosive blast damage reduced by 60%." id="item-armor-juggernaut" onclick="GTA6.GearModal.open('armor-juggernaut')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="Heavy Assault EOD Plate Carrier" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">BALLISTIC PROTECTION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Heavy Assault EOD Plate Carrier</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+15 Seconds (Heavy Profile)</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Absorbs up to 25 rifle shots; explosive blast damage reduced by 60%.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">20%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">100%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">99%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">55%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-armor-juggernaut', 'Heavy Assault EOD Plate Carrier'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('armor-juggernaut')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- High-Cut Ballistic Helmet with Quad-NVGs -->
+        <div class="item-card" data-category="ballistic" data-keywords="high-cut ballistic helmet with quad-nvgs ballistic protection full green-phosphor night vision; reveals sentry positions in blackout conditions." id="item-gear-nvg-helmet" onclick="GTA6.GearModal.open('gear-nvg-helmet')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="High-Cut Ballistic Helmet with Quad-NVGs" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">BALLISTIC PROTECTION</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">High-Cut Ballistic Helmet with Quad-NVGs</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">+30 Seconds Infiltration Bonus</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Full green-phosphor night vision; reveals sentry positions in blackout conditions.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">80%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">90%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">95%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">86%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-gear-nvg-helmet', 'High-Cut Ballistic Helmet with Quad-NVGs'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('gear-nvg-helmet')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Carbon Knuckle Operator Assault Gloves -->
+        <div class="item-card" data-category="stealth" data-keywords="carbon knuckle operator assault gloves tactical disguises leaves zero forensic fingerprint evidence; +25% melee punch damage." id="item-gear-gloves" onclick="GTA6.GearModal.open('gear-gloves')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-bandana.jpg" alt="Carbon Knuckle Operator Assault Gloves" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Carbon Knuckle Operator Assault Gloves</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Zero Fingerprint Evidence</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Leaves zero forensic fingerprint evidence; +25% melee punch damage.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">100%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">40%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">85%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">98%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-gear-gloves', 'Carbon Knuckle Operator Assault Gloves'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('gear-gloves')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Tactical FLIR Thermal Recon Goggles -->
+        <div class="item-card" data-category="stealth" data-keywords="tactical flir thermal recon goggles environmental suits highlights guard heat signatures through smoke clouds, fog, and thin drywall." id="item-gear-thermal-goggles" onclick="GTA6.GearModal.open('gear-thermal-goggles')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
+            <div>
+                <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <img src="assets/gear-ballistic-mask.jpg" alt="Tactical FLIR Thermal Recon Goggles" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
+                    <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">ENVIRONMENTAL SUITS</span>
+                </div>
+                <div class="item-body" style="padding:1.15rem;">
+                    <h3 class="item-title" style="color:#fff; font-size:1.1rem; margin:0 0 0.2rem; font-weight:900;">Tactical FLIR Thermal Recon Goggles</h3>
+                    <div class="item-crew-spec" style="font-size:0.75rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-bottom:0.5rem;">Overwatch Threat Detection</div>
+                    <p class="item-desc" style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0 0 0.75rem;">
+                        Highlights guard heat signatures through smoke clouds, fog, and thin drywall.
+                    </p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div class="item-stat-row"><span>Disguise:</span> <strong style="color:var(--neon-green);">85%</strong></div>
+                        <div class="item-stat-row"><span>Ballistic:</span> <strong style="color:var(--neon-cyan);">35%</strong></div>
+                        <div class="item-stat-row"><span>Intimidate:</span> <strong style="color:var(--neon-yellow);">90%</strong></div>
+                        <div class="item-stat-row"><span>Mobility:</span> <strong style="color:var(--neon-pink);">92%</strong></div>
+                    </div>
+                    <span style="display:block; font-size:0.72rem; color:var(--neon-pink); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR INFILTRATION DOSSIER &rarr;</span>
+                </div>
+            </div>
+            <div style="padding:0 1.15rem 1.15rem; display:flex; gap:0.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="event.stopPropagation(); GTA6.toggleBookmark('gear-gear-thermal-goggles', 'Tactical FLIR Thermal Recon Goggles'); GTA6.showToast('Gear bookmarked to Infiltration Plan!');" style="flex:1; font-size:0.75rem; padding:0.45rem;">⭐ Bookmark</button>
+                <button type="button" class="btn" style="flex:1; font-size:0.75rem; padding:0.45rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);" onclick="event.stopPropagation(); GTA6.GearModal.open('gear-thermal-goggles')">Dossier &rarr;</button>
+            </div>
+        </div>
+
+        </div>
     </div>
 
     <!-- PRE-ORDER & PRO HARDWARE DEALS SHOWCASE -->

@@ -110,6 +110,9 @@
             border-color: var(--neon-cyan);
             color: var(--neon-cyan);
         }
+        .veh-card { cursor: pointer; transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1); }
+    .veh-card:hover { transform: translateY(-5px); border-color: var(--neon-cyan); box-shadow: 0 10px 25px rgba(0,240,255,0.25); }
+    .veh-click-hint { display: block; font-size: 0.72rem; color: var(--neon-cyan); font-family: var(--font-mono); font-weight: 700; margin-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.45rem; }
     </style>
 </head>
 <body onload="calcVehicleBuild()">
@@ -166,7 +169,7 @@
             CONFIRMED GETAWAY CARS &amp; <span style="color:var(--neon-pink);">TUNER DATABASE</span>
         </h1>
         <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">
-            🚗 16 CONFIRMED OFFICIAL VEHICLES &bull; TRUNK ARMORY LOADOUTS &bull; REAL 3D SCREENCAPS
+            🚗 55+ CONFIRMED OFFICIAL VEHICLES &bull; TRUNK ARMORY LOADOUTS &bull; REAL 3D SCREENCAPS
         </div>
     </div>
     <div style="display:flex; gap:0.4rem; align-items:center;">
@@ -251,376 +254,1424 @@
                 <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.95rem; pointer-events:none;">🚗</span>
             </div>
             <div id="vehResultCount" style="font-family:var(--font-mono); font-size:0.82rem; color:var(--neon-green); font-weight:800;">
-                Showing 16 of 16 Confirmed Vehicles
+                Showing 55+ Confirmed Vehicles • Click any vehicle for full dossier &amp; trunk specs
             </div>
         </div>
 
         <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
-            <button class="veh-filter-pill active" onclick="setVehFilter('all', this)">All (16)</button>
-            <button class="veh-filter-pill" onclick="setVehFilter('muscle', this)">Muscle &amp; Tuners</button>
-            <button class="veh-filter-pill" onclick="setVehFilter('super', this)">Sports &amp; Supercars</button>
-            <button class="veh-filter-pill" onclick="setVehFilter('pursuit', this)">Pursuit &amp; Armored</button>
-            <button class="veh-filter-pill" onclick="setVehFilter('marine-air', this)">Boats &amp; Aviation</button>
+            <button class="veh-filter-pill active" onclick="setVehFilter('all', this)">All Confirmed (55+)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('muscle', this)">Muscle &amp; Tuners (13)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('super', this)">Sports &amp; Supercars (12)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('pursuit', this)">Law &amp; Pursuit (7)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('suv', this)">SUVs &amp; Off-Road (9)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('marine', this)">Marine &amp; Aircraft (8)</button>
+            <button class="veh-filter-pill" onclick="setVehFilter('commercial', this)">Commercial &amp; Bikes (7)</button>
         </div>
-    </div>
 
     <!-- VEHICLES 16-GRID -->
     <div id="vehGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:1.25rem;">
 
-        <!-- 1. Declasse Tulip M-100 -->
-        <div class="veh-card" data-category="muscle" data-keywords="declasse tulip m-100 chevelle malibu muscle getaway car jason lucia">
+        <!-- Declasse Tulip M-100 -->
+        <div class="veh-card" data-category="muscle" data-keywords="declasse tulip m-100 1972 chevrolet chevelle malibu muscle // tuner primary getaway car // jason & lucia starter vehicle" onclick="GTA6.VehicleModal.open('declasse-tulip')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Declasse Tulip M-100 - Jason & Lucia Getaway Car" loading="lazy">
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Declasse Tulip M-100 - 1972 Chevrolet Chevelle Malibu" loading="lazy">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
-                <span class="veh-badge-speed">145 MPH</span>
+                <span class="veh-badge-speed">⚡ 142 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Tulip M-100</h3>
-                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1972 Chevrolet Chevelle Malibu</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Heavy Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">RWD Muscle</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Steel Frame</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Tulip M-100</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1972 Chevrolet Chevelle Malibu</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">65/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The signature personal getaway coupe for Jason and Lucia across Vice City and Kelly County. Powered by a carbureted...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Jason &amp; Lucia's signature primary getaway car seen in Trailer 1, outfitted with custom stickers, reinforced quarter panels, and tuned drag suspension.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 2. Bravado Banshee -->
-        <div class="veh-card" data-category="super" data-keywords="bravado banshee dodge viper supercar sports coupe highway">
+        <!-- Bravado Gauntlet Hellfire -->
+        <div class="veh-card" data-category="muscle" data-keywords="bravado gauntlet hellfire dodge challenger srt demon muscle // supercharged high-impact pursuit breaker // highway escape" onclick="GTA6.VehicleModal.open('bravado-gauntlet-hellfire')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-banshee.jpg?v=20261118_hd" alt="Bravado Banshee - Legendary Vice City Supercar" loading="lazy">
-                <span class="veh-badge-class">SPORTS // SUPER</span>
-                <span class="veh-badge-speed">172 MPH</span>
+                <img src="assets/vehicle-gauntlet-hellfire.jpg?v=20261118_hd" alt="Bravado Gauntlet Hellfire - Dodge Challenger SRT Demon" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // SUPERCHARGED</span>
+                <span class="veh-badge-speed">⚡ 162 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Banshee</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Viper GTS</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">RWD V10</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Light Composite</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Gauntlet Hellfire</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Challenger SRT Demon</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">78/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.4s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Pure American brute force. 700+ supercharged horsepower engineered to break through police blockades and pull away ...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Vice City's legendary flagship exotic. Exceptional straight-line acceleration to leave VCPD cruisers behind on open causeways and interstates.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 3. Grotti Cheetah Classic -->
-        <div class="veh-card" data-category="super" data-keywords="grotti cheetah classic ferrari testarossa 1980s retro exotic ocean drive">
+        <!-- Annis Elegy Retro Custom -->
+        <div class="veh-card" data-category="muscle" data-keywords="annis elegy retro custom nissan skyline gt-r (r32 / r33) muscle // tuner alleyway escape & undercover street meet racer" onclick="GTA6.VehicleModal.open('annis-elegy-retro')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-cheetah.jpg?v=20261118_hd" alt="Grotti Cheetah Classic - Retro Vice City Exotic" loading="lazy">
-                <span class="veh-badge-class">SPORTS CLASSIC</span>
-                <span class="veh-badge-speed">168 MPH</span>
+                <img src="assets/vehicle-elegy-retro.jpg?v=20261118_hd" alt="Annis Elegy Retro Custom - Nissan Skyline GT-R (R32 / R33)" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 154 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Cheetah Classic</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ferrari Testarossa</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Mid-Engine RWD</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Standard</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Annis Elegy Retro Custom</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Nissan Skyline GT-R (R32 / R33)</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">ATTESA</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">52/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.6s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A legendary JDM tuner favored by Port Gellhorn street syndicates and tech specialists. Its intelligent all-wheel-dr...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Iconic Vice City side-straked retro exotic. Offers superb high-speed downforce and razor-sharp steering through neon-lit Ocean Drive intersections.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 4. Pfister Comet S2 Cabrio -->
-        <div class="veh-card" data-category="super" data-keywords="pfister comet s2 cabrio porsche 911 convertible sports coupe">
+        <!-- Albany Buccaneer Custom -->
+        <div class="veh-card" data-category="muscle" data-keywords="albany buccaneer custom 1965 buick riviera lowrider muscle // tuner low-profile covert smuggling & cartel stash car" onclick="GTA6.VehicleModal.open('albany-buccaneer')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-comet-s2.jpg?v=20261118_hd" alt="Pfister Comet S2 Cabrio - High End Sports Coupe" loading="lazy">
-                <span class="veh-badge-class">SPORTS CONVERTIBLE</span>
-                <span class="veh-badge-speed">175 MPH</span>
+                <img src="assets/vehicle-buccaneer.jpg?v=20261118_hd" alt="Albany Buccaneer Custom - 1965 Buick Riviera Lowrider" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 135 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Pfister Comet S2 Cabrio</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Porsche 911 Turbo S Cabriolet</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">AWD Flat-6</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Reinforced Carbon</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Albany Buccaneer Custom</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1965 Buick Riviera Lowrider</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">5 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">70/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.2s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A timeless Vice City classic lowrider with deep hydraulic suspension, velvet tuck upholstery, and enough trunk volu...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Twin-turbo all-wheel-drive precision capable of weaving through gridlocked traffic and evading 4-Star police barricades with supreme traction.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 5. Bravado Gauntlet Hellfire -->
-        <div class="veh-card" data-category="muscle" data-keywords="bravado gauntlet hellfire dodge challenger demon supercharged muscle ram">
+        <!-- Vapid Dominator ASP -->
+        <div class="veh-card" data-category="muscle" data-keywords="vapid dominator asp 2000 ford mustang svt cobra r muscle // tuner rapid interception & fast extrication" onclick="GTA6.VehicleModal.open('vapid-dominator-asp')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-gauntlet-hellfire.jpg?v=20261118_hd" alt="Bravado Gauntlet Hellfire - Heavy Muscle Car" loading="lazy">
-                <span class="veh-badge-class">HEAVY MUSCLE</span>
-                <span class="veh-badge-speed">156 MPH</span>
+                <img src="assets/vehicle-dominator-asp.jpg?v=20261118_hd" alt="Vapid Dominator ASP - 2000 Ford Mustang SVT Cobra R" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 158 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Gauntlet Hellfire</h3>
-                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Challenger SRT Demon</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Supercharged V8</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Heavy Ram Tier</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Vapid Dominator ASP</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">2000 Ford Mustang SVT Cobra R</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">60/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A high-revving track-focused muscle machine spotted in early bank heist rehearsals. Its stiffened chassis and aggre...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Raw American torque engineered to punch straight through police cruisers and PIT maneuvers without sacrificing straightaway top speed.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 6. Annis Elegy Retro Custom -->
-        <div class="veh-card" data-category="muscle" data-keywords="annis elegy retro custom nissan skyline gtr r32 tuner drift jdm port gellhorn">
+        <!-- Declasse Vigero ZX Convertible -->
+        <div class="veh-card" data-category="muscle" data-keywords="declasse vigero zx convertible chevrolet camaro zl1 convertible muscle // tuner drive-by suppressive platform // 4-seater extraction" onclick="GTA6.VehicleModal.open('declasse-vigero-zx')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-elegy-retro.jpg?v=20261118_hd" alt="Annis Elegy Retro Custom - JDM Tuner" loading="lazy">
-                <span class="veh-badge-class">JDM TUNER</span>
-                <span class="veh-badge-speed">162 MPH</span>
+                <img src="assets/vehicle-vigero-zx.jpg?v=20261118_hd" alt="Declasse Vigero ZX Convertible - Chevrolet Camaro ZL1 Convertible" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 160 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Annis Elegy Retro Custom</h3>
-                <div style="color:var(--neon-yellow); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Nissan Skyline GT-R (R32 / R33)</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">AWD Twin-Turbo</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Roll Cage Tier</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Vigero ZX Convertible</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Camaro ZL1 Convertible</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">63/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Modern American performance with an open roof option that allows rear crew members to fire 360-degree suppressive a...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    The crown jewel of Port Gellhorn's underground import tuning scene. Unmatched wet-weather grip during torrential Florida hurricane downpours.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 7. Albany Buccaneer Custom -->
-        <div class="veh-card" data-category="muscle" data-keywords="albany buccaneer custom buick riviera lowrider classic little cuba">
+        <!-- Dinka Blista Compact -->
+        <div class="veh-card" data-category="muscle" data-keywords="dinka blista compact 1988 honda cr-x si muscle // tuner pedestrian alleyway threader // anonymous scout" onclick="GTA6.VehicleModal.open('dinka-blista-compact')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-buccaneer.jpg?v=20261118_hd" alt="Albany Buccaneer Custom - Lowrider Classic" loading="lazy">
-                <span class="veh-badge-class">LOWRIDER CLASSIC</span>
-                <span class="veh-badge-speed">138 MPH</span>
+                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Dinka Blista Compact - 1988 Honda CR-X Si" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 128 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Albany Buccaneer Custom</h3>
-                <div style="color:var(--neon-amber); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1965 Buick Riviera Lowrider</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Hydraulic RWD</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Reinforced Frame</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Dinka Blista Compact</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1988 Honda CR-X Si</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">FWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">40/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Small, featherweight, and practically invisible to police traffic dispatch. Can squeeze through pedestrian bollards...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Little Cuba street cruiser equipped with hydraulic stance control and massive trunk capacity suited for stashing gold bullion bricks without sagging.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 8. Vapid Dominator ASP -->
-        <div class="veh-card" data-category="muscle" data-keywords="vapid dominator asp ford mustang svt cobra r track muscle">
+        <!-- Bravado Rat-Loader 500 -->
+        <div class="veh-card" data-category="muscle" data-keywords="bravado rat-loader 500 1938 dodge power wagon hot rod muscle // tuner grassrivers smuggling & backwoods extraction" onclick="GTA6.VehicleModal.open('bravado-rat-loader')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-dominator-asp.jpg?v=20261118_hd" alt="Vapid Dominator ASP - Track Muscle Car" loading="lazy">
-                <span class="veh-badge-class">TRACK MUSCLE</span>
-                <span class="veh-badge-speed">158 MPH</span>
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Bravado Rat-Loader 500 - 1938 Dodge Power Wagon Hot Rod" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 125 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Vapid Dominator ASP</h3>
-                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">2000 Ford Mustang SVT Cobra R</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">High-Rev V8</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Strut Brace Tier</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Rat-Loader 500</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1938 Dodge Power Wagon Hot Rod</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">6 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">85/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.4s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A rust-patinated Kelly County rat rod built on a solid iron ladder frame. Unstoppable when cutting across sugar can...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    High-revving aggressive track car tuned for aggressive corner-cutting around shipping yard obstacles and Port Gellhorn container terminals.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 9. Invetero Coquette D10 -->
-        <div class="veh-card" data-category="super" data-keywords="invetero coquette d10 chevrolet corvette c8 supercar exotic mid-engine">
+        <!-- Vapid Slamvan Custom -->
+        <div class="veh-card" data-category="muscle" data-keywords="vapid slamvan custom 1953 ford f-100 slammed pickup muscle // tuner cargo loot hauler // heavy cash stash" onclick="GTA6.VehicleModal.open('vapid-slamvan-custom')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-coquette-d10.jpg?v=20261118_hd" alt="Invetero Coquette D10 - Mid Engine Exotic" loading="lazy">
-                <span class="veh-badge-class">MID-ENGINE EXOTIC</span>
-                <span class="veh-badge-speed">174 MPH</span>
+                <img src="assets/vehicle-buccaneer.jpg?v=20261118_hd" alt="Vapid Slamvan Custom - 1953 Ford F-100 Slammed Pickup" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 138 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Invetero Coquette D10</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Corvette C8</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Mid-Engine RWD</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Aero Splitter</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Vapid Slamvan Custom</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1953 Ford F-100 Slammed Pickup</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">8 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">75/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.9s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Custom built by Brian Heder’s chop shop network. Boasts a dropped stance, massive rear tires, and a lockable diamon...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Balanced mid-engine layout delivering razor-sharp responsiveness when darting through oncoming traffic along Vice City’s multi-lane bridges.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 10. Declasse Vigero ZX Convertible -->
-        <div class="veh-card" data-category="muscle" data-keywords="declasse vigero zx convertible chevrolet camaro zl1 modern muscle 4-seater">
+        <!-- Declasse Sabre Turbo Classic -->
+        <div class="veh-card" data-category="muscle" data-keywords="declasse sabre turbo classic 1970 oldsmobile 442 w-30 muscle // tuner drag-strip getaway & highway disappearance" onclick="GTA6.VehicleModal.open('declasse-sabre-turbo')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-vigero-zx.jpg?v=20261118_hd" alt="Declasse Vigero ZX Convertible" loading="lazy">
-                <span class="veh-badge-class">MODERN MUSCLE</span>
-                <span class="veh-badge-speed">160 MPH</span>
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Declasse Sabre Turbo Classic - 1970 Oldsmobile 442 W-30" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 146 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Vigero ZX</h3>
-                <div style="color:var(--neon-pink); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Camaro ZL1 Convertible</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Supercharged V8</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">High-Tensile Steel</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Sabre Turbo Classic</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1970 Oldsmobile 442 W-30</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">66/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A high-displacement muscle powerhouse from the golden era of Vice City street racing. Straight-line acceleration ca...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Modern muscle platform combining 4-seater crew extraction capacity with aggressive acceleration, allowing backseat shooters 360-degree firing arcs.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 11. Grotti Furia -->
-        <div class="veh-card" data-category="super" data-keywords="grotti furia pininfarina battista ferrari sf90 hypercar exotic butterfly doors">
+        <!-- Albany Hermes Lead Sled -->
+        <div class="veh-card" data-category="muscle" data-keywords="albany hermes lead sled 1949 mercury eight coupe muscle // tuner syndicate boss escort & mob safehouse courier" onclick="GTA6.VehicleModal.open('albany-hermes')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-furia.jpg?v=20261118_hd" alt="Grotti Furia - Butterfly Door Hypercar" loading="lazy">
-                <span class="veh-badge-class">HYPERCAR EXOTIC</span>
-                <span class="veh-badge-speed">178 MPH</span>
+                <img src="assets/vehicle-buccaneer.jpg?v=20261118_hd" alt="Albany Hermes Lead Sled - 1949 Mercury Eight Coupe" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 132 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Furia</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Pininfarina Battista / Ferrari SF90</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">1 Slot</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">AWD Quad Motor</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Carbon Monocoque</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Albany Hermes Lead Sled</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1949 Mercury Eight Coupe</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">82/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Chopped roof, flame job, and airtight bullet-resistant privacy glass. The preferred transport for veteran mob bookm...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    The pinnacle of Biscayne Bay wealth. Minimal trunk luggage space compensated by breathtaking launch speeds that outrun police helicopter spotlights.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 12. Dinka Blista Compact -->
-        <div class="veh-card" data-category="muscle" data-keywords="dinka blista compact honda crx hatchback compact alleyway agile">
+        <!-- Schyster Deviant Restomod -->
+        <div class="veh-card" data-category="muscle" data-keywords="schyster deviant restomod 1972 amc javelin amx ringbrothers defiant muscle // tuner precision getaway // high-g cornering" onclick="GTA6.VehicleModal.open('schyster-deviant')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Dinka Blista Compact - Alleyway Runner" loading="lazy">
-                <span class="veh-badge-class">COMPACT HATCH</span>
-                <span class="veh-badge-speed">130 MPH</span>
+                <img src="assets/vehicle-dominator-asp.jpg?v=20261118_hd" alt="Schyster Deviant Restomod - 1972 AMC Javelin AMX Ringbrothers Defiant" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 155 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Dinka Blista Compact</h3>
-                <div style="color:var(--neon-green); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1987 Honda CR-X</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">3 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">FWD Lightweight</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-pink);">Light Steel</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Schyster Deviant Restomod</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1972 AMC Javelin AMX Ringbrothers Defiant</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">64/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.7s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A restomod marvel combining vintage muscle lines with 2026 supercar suspension and massive 6-piston Brembo brakes t...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Small footprint allows this hatchback to slip through narrow alleys, park barriers, and pedestrian plazas where heavy police cruisers get wedged.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 13. VCPD Police Interceptor Cruiser -->
-        <div class="veh-card" data-category="pursuit" data-keywords="vcpd police cruiser interceptor utility cop car scanner push bumper siren">
+        <!-- Imponte Phoenix Trans-Am -->
+        <div class="veh-card" data-category="muscle" data-keywords="imponte phoenix trans-am 1977 pontiac firebird trans am muscle // tuner decoy pursuit distractor // siren jammer" onclick="GTA6.VehicleModal.open('imponte-phoenix')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd" alt="VCPD Police Interceptor Cruiser" loading="lazy">
-                <span class="veh-badge-class">POLICE INTERCEPTOR</span>
-                <span class="veh-badge-speed">152 MPH</span>
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Imponte Phoenix Trans-Am - 1977 Pontiac Firebird Trans Am" loading="lazy">
+                <span class="veh-badge-class">MUSCLE // TUNER</span>
+                <span class="veh-badge-speed">⚡ 144 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">VCPD Cruiser Interceptor</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ford Police Interceptor Utility</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">5 Heavy Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">AWD EcoBoost</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Level III Ballistic</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Imponte Phoenix Trans-Am</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1977 Pontiac Firebird Trans Am</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">62/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.6s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Famous screaming bird hood decal with straight-pipe thunder. Ideal as a designated decoy car to trigger highway pur...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Can be commandeered or cloned for disguised transit. Features heavy-duty reinforced push bumpers and an integrated police radio scanner.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 14. Bravado Buffalo STX Pursuit -->
-        <div class="veh-card" data-category="pursuit" data-keywords="bravado buffalo stx pursuit dodge charger srt hellcat police armored sedan">
+        <!-- Bravado Banshee 900R -->
+        <div class="veh-card" data-category="super" data-keywords="bravado banshee 900r dodge viper rt/10 & acr sports // supercar high-speed interstate ghosting" onclick="GTA6.VehicleModal.open('bravado-banshee')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Bravado Buffalo STX Pursuit - Armored Cruiser" loading="lazy">
-                <span class="veh-badge-class">ARMORED PURSUIT</span>
-                <span class="veh-badge-speed">164 MPH</span>
+                <img src="assets/vehicle-banshee.jpg?v=20261118_hd" alt="Bravado Banshee 900R - Dodge Viper RT/10 & ACR" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 178 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Buffalo STX</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Charger SRT Hellcat Pursuit</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">4 Passengers</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Slots</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Supercharged Hemi</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Bullbar Armor</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Banshee 900R</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Viper RT/10 & ACR</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">48/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.1s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The immortal king of GTA getaways. 10 cylinders of naturally aspirated terror that hits nearly 180 MPH on the MacAr...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    High-speed highway patrol cruiser equipped with reinforced door plates and aggressive ramming capabilities to counter road spikes and roadblocks.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 15. SeaSparrow Amphibious Helicopter -->
-        <div class="veh-card" data-category="marine-air" data-keywords="seasparrow amphibious helicopter chopper aircraft water pontoon extraction">
+        <!-- Grotti Cheetah Classic -->
+        <div class="veh-card" data-category="super" data-keywords="grotti cheetah classic 1984 ferrari testarossa sports // supercar luxury casino infiltration & rapid evasion" onclick="GTA6.VehicleModal.open('grotti-cheetah')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-seasparrow.jpg?v=20261118_hd" alt="SeaSparrow Amphibious Helicopter" loading="lazy">
-                <span class="veh-badge-class">AMPHIBIOUS CHOPPER</span>
-                <span class="veh-badge-speed">140 KTS</span>
+                <img src="assets/vehicle-cheetah.jpg?v=20261118_hd" alt="Grotti Cheetah Classic - 1984 Ferrari Testarossa" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 168 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">SeaSparrow Amphibious</h3>
-                <div style="color:var(--neon-yellow); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Bell 47 with Marine Pontoons</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">2 Crew</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">2 Marine Pods</strong></div>
-                    <div><span>Flight:</span> <strong style="color:#fff;">Turbine Rotor</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Sealed Marine Hull</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Cheetah Classic</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1984 Ferrari Testarossa</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">50/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.7s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The definitive Miami Vice symbol. Side strakes, pop-up headlights, and a flat-12 exhaust scream that echoes off the...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Essential extraction craft for yacht and swamp raids. Lands seamlessly on open ocean, canals, and Everglades wetlands to bypass land checkpoints.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
-        <!-- 16. Grotti Squalo Offshore Speedboat -->
-        <div class="veh-card" data-category="marine-air" data-keywords="grotti squalo speedboat offshore racer cigarette boat marine maritime dre'quan">
+        <!-- Pfister Comet S2 Cabrio -->
+        <div class="veh-card" data-category="super" data-keywords="pfister comet s2 cabrio porsche 911 turbo s cabriolet (992) sports // supercar rain-proof wet weather getaway" onclick="GTA6.VehicleModal.open('pfister-comet-s2')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="assets/vehicle-squalo.jpg?v=20261118_hd" alt="Grotti Squalo Offshore Speedboat" loading="lazy">
-                <span class="veh-badge-class">OFFSHORE RACER</span>
-                <span class="veh-badge-speed">95 KTS</span>
+                <img src="assets/vehicle-comet-s2.jpg?v=20261118_hd" alt="Pfister Comet S2 Cabrio - Porsche 911 Turbo S Cabriolet (992)" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 175 MPH</span>
             </div>
-            <div class="veh-content">
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Squalo Speedboat</h3>
-                <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Cigarette 38 Top Gun Offshore</div>
-                <div class="veh-stat-row">
-                    <div><span>Seats:</span> <strong style="color:#fff;">4 Crew</strong></div>
-                    <div><span>Trunk:</span> <strong style="color:var(--neon-cyan);">4 Water Pods</strong></div>
-                    <div><span>Drive:</span> <strong style="color:#fff;">Twin High-HP V8</strong></div>
-                    <div><span>Armor:</span> <strong style="color:var(--neon-green);">Reinforced Kevlar</strong></div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Pfister Comet S2 Cabrio</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Porsche 911 Turbo S Cabriolet (992)</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">56/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">2.6s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Launches from 0 to 60 in 2.6 seconds flat, even on wet asphalt during tropical thunderstorms. If a bank job turns h...
+                    </p>
                 </div>
-                <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0; flex:1;">
-                    Dre'Quan Priest's premier maritime getaway vessel. Pierces 10-foot ocean chop at over 90 knots, crossing into international waters in under 2 minutes.
-                </p>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Invetero Coquette D10 -->
+        <div class="veh-card" data-category="super" data-keywords="invetero coquette d10 chevrolet corvette c8 stingray sports // supercar vip fast extraction // highway pursuit disruption" onclick="GTA6.VehicleModal.open('invetero-coquette-d10')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-coquette-d10.jpg?v=20261118_hd" alt="Invetero Coquette D10 - Chevrolet Corvette C8 Stingray" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 172 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Invetero Coquette D10</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Corvette C8 Stingray</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">58/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">2.9s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        American mid-engine exotic capable of supercar speeds at a fraction of the maintenance footprint. Dual luggage comp...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Grotti Furia Hypercar -->
+        <div class="veh-card" data-category="super" data-keywords="grotti furia hypercar pininfarina battista / ferrari sf90 sports // supercar ultra-high value diamond & bearer bond courier" onclick="GTA6.VehicleModal.open('grotti-furia')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-furia.jpg?v=20261118_hd" alt="Grotti Furia Hypercar - Pininfarina Battista / Ferrari SF90" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 188 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Furia Hypercar</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Pininfarina Battista / Ferrari SF90</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">1 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">55/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">2.3s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The peak of European hypercar luxury in Vice City. With active aerodynamic spoilers and hybrid electric boost, it v...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Dewbauchee Champion Spec -->
+        <div class="veh-card" data-category="super" data-keywords="dewbauchee champion spec aston martin victor / vulcan sports // supercar counter-surveillance escort vehicle" onclick="GTA6.VehicleModal.open('dewbauchee-champion')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-banshee.jpg?v=20261118_hd" alt="Dewbauchee Champion Spec - Aston Martin Victor / Vulcan" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 174 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Dewbauchee Champion Spec</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Aston Martin Victor / Vulcan</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">88/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.0s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Equipped with cutting-edge radar jamming technology that disrupts police helicopter search tracking and automated s...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Pegassi Torero XO -->
+        <div class="veh-card" data-category="super" data-keywords="pegassi torero xo lamborghini countach lpi 800-4 sports // supercar executive syndicate interceptor" onclick="GTA6.VehicleModal.open('pegassi-torero-xo')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-furia.jpg?v=20261118_hd" alt="Pegassi Torero XO - Lamborghini Countach LPI 800-4" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 184 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Pegassi Torero XO</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Lamborghini Countach LPI 800-4</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">1 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">54/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">2.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Scissor doors, angular retro-futuristic bodywork, and a blistering top speed that leaves state trooper Ford Explore...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Grotti Carbonizzare Spyder -->
+        <div class="veh-card" data-category="super" data-keywords="grotti carbonizzare spyder ferrari california t / f12 sports // supercar undercover social infiltration // valet swap" onclick="GTA6.VehicleModal.open('grotti-carbonizzare')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-cheetah.jpg?v=20261118_hd" alt="Grotti Carbonizzare Spyder - Ferrari California T / F12" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 166 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Carbonizzare Spyder</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ferrari California T / F12</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">3 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">58/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.4s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Retractable hardtop convertible that allows blending in with high-society patrons outside vice bank vaults before s...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Benefactor Schafter V12 Armored -->
+        <div class="veh-card" data-category="super" data-keywords="benefactor schafter v12 armored mercedes-amg s65 v12 biturbo sports // supercar executive vip extrication & 4-man crew escape" onclick="GTA6.VehicleModal.open('benefactor-schafter-v12')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Benefactor Schafter V12 Armored - Mercedes-AMG S65 V12 Biturbo" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 165 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Benefactor Schafter V12 Armored</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Mercedes-AMG S65 V12 Biturbo</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">5 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">86/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.3s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The undisputed king of 4-door armored extraction sedans. Protects all 4 crew members from sniper rifle fire while h...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Pfister Astron Custom -->
+        <div class="veh-card" data-category="super" data-keywords="pfister astron custom porsche macan gts turbo sports // supercar rapid squad transport // curb-jumping utility" onclick="GTA6.VehicleModal.open('pfister-astron-custom')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-comet-s2.jpg?v=20261118_hd" alt="Pfister Astron Custom - Porsche Macan GTS Turbo" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 160 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Pfister Astron Custom</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Porsche Macan GTS Turbo</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">6 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">72/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Combines the interior cargo space of an SUV with the cornering reflexes of a 911. Can jump concrete highway medians...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Progen Itali GTB Custom -->
+        <div class="veh-card" data-category="super" data-keywords="progen itali gtb custom mclaren 570s / 650s gt3 sports // supercar sprint evasion // causeway crossing" onclick="GTA6.VehicleModal.open('progen-itali-gtb')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-furia.jpg?v=20261118_hd" alt="Progen Itali GTB Custom - McLaren 570S / 650S GT3" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 180 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Progen Itali GTB Custom</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">McLaren 570S / 650S GT3</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">50/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">2.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Track-tuned aerodynamic downforce and instantaneous throttle response make this British supercar practically untouc...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Ocelot Jugular Super Sedan -->
+        <div class="veh-card" data-category="super" data-keywords="ocelot jugular super sedan jaguar xe sv project 8 sports // supercar aggressive 4-man hit-and-run platform" onclick="GTA6.VehicleModal.open('ocelot-jugular')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-banshee.jpg?v=20261118_hd" alt="Ocelot Jugular Super Sedan - Jaguar XE SV Project 8" loading="lazy">
+                <span class="veh-badge-class">SPORTS // SUPERCAR</span>
+                <span class="veh-badge-speed">⚡ 164 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Ocelot Jugular Super Sedan</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Jaguar XE SV Project 8</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">68/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.2s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A 600-horsepower all-wheel-drive super sedan with a guttural supercharger whine. Seats 4 heavily armed crew operati...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- VCPD Police Interceptor Cruiser -->
+        <div class="veh-card" data-category="pursuit" data-keywords="vcpd police interceptor cruiser ford police interceptor sedan (taurus) & crown vic pursuit // armored infiltration disguise // police radio scanner hub" onclick="GTA6.VehicleModal.open('vcpd-cruiser')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd" alt="VCPD Police Interceptor Cruiser - Ford Police Interceptor Sedan (Taurus) & Crown Vic" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 148 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">VCPD Police Interceptor Cruiser</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ford Police Interceptor Sedan (Taurus) & Crown Vic</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">85/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.2s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The front-line squad car of the Vice City Police Department. Equipped with automated license-plate recognition came...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Bravado Buffalo STX Pursuit Package -->
+        <div class="veh-card" data-category="pursuit" data-keywords="bravado buffalo stx pursuit package dodge charger srt hellcat police package pursuit // armored undercover high-speed interceptor & counter-ramming" onclick="GTA6.VehicleModal.open('buffalo-stx')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Bravado Buffalo STX Pursuit Package - Dodge Charger SRT Hellcat Police Package" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 165 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Buffalo STX Pursuit Package</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Dodge Charger SRT Hellcat Police Package</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">88/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.3s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Assigned to the Leonida Highway Patrol Special Response Unit. Features reinforced steel wheels, push-bar bumper ext...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Brute Tactical Riot Enforcer -->
+        <div class="veh-card" data-category="pursuit" data-keywords="brute tactical riot enforcer lenco bearcat tactical armored vehicle pursuit // armored unstoppable extraction fortress // bank door breacher" onclick="GTA6.VehicleModal.open('vcpd-riot')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd" alt="Brute Tactical Riot Enforcer - Lenco BearCat Tactical Armored Vehicle" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 110 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Brute Tactical Riot Enforcer</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Lenco BearCat Tactical Armored Vehicle</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">12 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">99/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">7.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A 17,000-pound armored juggernaut impervious to small-arms fire and spike strips. Its hydraulic front ram plate can...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Declasse Granger 3600LX Park Ranger -->
+        <div class="veh-card" data-category="pursuit" data-keywords="declasse granger 3600lx park ranger chevrolet suburban 2500 heavy duty pursuit // armored swamp & grassrivers off-grid exfiltration" onclick="GTA6.VehicleModal.open('vcpd-park-ranger')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Declasse Granger 3600LX Park Ranger - Chevrolet Suburban 2500 Heavy Duty" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 135 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Granger 3600LX Park Ranger</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Suburban 2500 Heavy Duty</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">8 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">84/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.1s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Patrols the vast Grassrivers wetland park perimeter. Equipped with roof lightbars, off-road winches, and lifted hea...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- VCPD Unmarked Tactical Cruiser -->
+        <div class="veh-card" data-category="pursuit" data-keywords="vcpd unmarked tactical cruiser ford police interceptor utility (explorer) unmarked pursuit // armored covert recon & ambush point extraction" onclick="GTA6.VehicleModal.open('vcpd-unmarked')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd" alt="VCPD Unmarked Tactical Cruiser - Ford Police Interceptor Utility (Explorer) Unmarked" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 146 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">VCPD Unmarked Tactical Cruiser</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ford Police Interceptor Utility (Explorer) Unmarked</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">5 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">86/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.4s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Blends into civilian traffic with zero external roof lights or livery. Hidden blue-and-red strobes behind the grill...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Coast Guard Predator Interceptor -->
+        <div class="veh-card" data-category="pursuit" data-keywords="coast guard predator interceptor safe boats international 33-foot full cabin pursuit // armored maritime contraband interception & water evade" onclick="GTA6.VehicleModal.open('predator-patrol')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-squalo.jpg?v=20261118_hd" alt="Coast Guard Predator Interceptor - Safe Boats International 33-Foot Full Cabin" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 75 Knots (86 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Coast Guard Predator Interceptor</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Safe Boats International 33-Foot Full Cabin</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Twin</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">8 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">80/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Instant</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The maritime enforcement arm of Leonida State. Armed with dual high-output outboards that track down cigarette smug...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- VCPD Police Maverick Chopper -->
+        <div class="veh-card" data-category="pursuit" data-keywords="vcpd police maverick chopper airbus helicopters h125 / as350 astar pursuit // armored high-altitude overwatch & sniper platform" onclick="GTA6.VehicleModal.open('vcpd-maverick')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-seasparrow.jpg?v=20261118_hd" alt="VCPD Police Maverick Chopper - Airbus Helicopters H125 / AS350 AStar" loading="lazy">
+                <span class="veh-badge-class">PURSUIT // ARMORED</span>
+                <span class="veh-badge-speed">⚡ 160 MPH Airspeed</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">VCPD Police Maverick Chopper</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Airbus Helicopters H125 / AS350 AStar</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Turbomeca</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">70/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Turbine</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Equipped with a high-intensity NightSun searchlight and FLIR thermal camera that tracks suspects through building s...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Karin Rebel 4x4 Off-Road -->
+        <div class="veh-card" data-category="suv" data-keywords="karin rebel 4x4 off-road 1985 toyota hilux 4wd pickup suv // off-road everglades swamp exfiltration & bayou crossing" onclick="GTA6.VehicleModal.open('karin-rebel')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Karin Rebel 4x4 Off-Road - 1985 Toyota Hilux 4WD Pickup" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 124 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Karin Rebel 4x4 Off-Road</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1985 Toyota Hilux 4WD Pickup</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">6 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">76/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.9s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Virtually unkillable Japanese truck famous for surviving extreme abuse. Fitted with 35-inch swamp tires and snorkel...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Vapid Sandking XL Crew Cab -->
+        <div class="veh-card" data-category="suv" data-keywords="vapid sandking xl crew cab ford f-350 super duty dually lifted suv // off-road obstacle crusher & heavy payday hauler" onclick="GTA6.VehicleModal.open('vapid-sandking-xl')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Vapid Sandking XL Crew Cab - Ford F-350 Super Duty Dually Lifted" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 130 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Vapid Sandking XL Crew Cab</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ford F-350 Super Duty Dually Lifted</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">10 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">88/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.3s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Monstrous ground clearance that literally drives over normal civilian sedans during traffic gridlocks. The heavy-du...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Canis Seminole Frontier 4x4 -->
+        <div class="veh-card" data-category="suv" data-keywords="canis seminole frontier 4x4 1995 jeep grand cherokee (zj) suv // off-road low-key country getaway & smuggler trail runner" onclick="GTA6.VehicleModal.open('canis-seminole-frontier')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Canis Seminole Frontier 4x4 - 1995 Jeep Grand Cherokee (ZJ)" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 132 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Canis Seminole Frontier 4x4</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1995 Jeep Grand Cherokee (ZJ)</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">5 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">65/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.2s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A favorite of Leonida locals and back-alley runners. Low key, easy to hotwire, and equipped with a full-time 4WD tr...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Benefactor Dubsta 6x6 Heavy -->
+        <div class="veh-card" data-category="suv" data-keywords="benefactor dubsta 6x6 heavy mercedes-benz g63 amg 6x6 suv // off-road multi-terrain armored convoy lead" onclick="GTA6.VehicleModal.open('benefactor-dubsta-6x6')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Benefactor Dubsta 6x6 Heavy - Mercedes-Benz G63 AMG 6x6" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 140 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Benefactor Dubsta 6x6 Heavy</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Mercedes-Benz G63 AMG 6x6</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">6x6</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">8 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">92/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.4s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        With six driven wheels on portal axles, this bespoke military-derived juggernaut climbs over shoreline seawalls and...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Bravado Dorado Custom -->
+        <div class="veh-card" data-category="suv" data-keywords="bravado dorado custom 1998 dodge durango slt suv // off-road family-profile covert getaway suv" onclick="GTA6.VehicleModal.open('bravado-dorado')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Bravado Dorado Custom - 1998 Dodge Durango SLT" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 134 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Bravado Dorado Custom</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1998 Dodge Durango SLT</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">5 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">68/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.0s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The definition of urban camouflage. Looks like an ordinary grocery-getter from 50 yards away, but packs a torquey M...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Albany Cavalcade XL Luxury -->
+        <div class="veh-card" data-category="suv" data-keywords="albany cavalcade xl luxury 2023 cadillac escalade-v suv // off-road cartel boss escort & heavy syndicate command" onclick="GTA6.VehicleModal.open('albany-cavalcade-xl')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Albany Cavalcade XL Luxury - 2023 Cadillac Escalade-V" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 152 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Albany Cavalcade XL Luxury</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">2023 Cadillac Escalade-V</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">AWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">7 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">80/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.9s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        682 supercharged horses wrapped in obsidian black leather and chrome. Provides bullet-resistant privacy for crew co...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Mammoth Patriot Mil-Spec -->
+        <div class="veh-card" data-category="suv" data-keywords="mammoth patriot mil-spec hummer h1 alpha tactical suv // off-road spike-strip immune ram vehicle" onclick="GTA6.VehicleModal.open('mammoth-patriot-milspec')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Mammoth Patriot Mil-Spec - Hummer H1 Alpha Tactical" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 120 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Mammoth Patriot Mil-Spec</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Hummer H1 Alpha Tactical</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">8 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">96/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">6.4s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Wider than a city bus lane, this military workhorse plows through spike strips using an onboard central tire inflat...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Declasse Rancher XL 4x4 -->
+        <div class="veh-card" data-category="suv" data-keywords="declasse rancher xl 4x4 1988 chevrolet suburban k20 suv // off-road undercover stash hauler & country evade" onclick="GTA6.VehicleModal.open('declasse-rancher-xl')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Declasse Rancher XL 4x4 - 1988 Chevrolet Suburban K20" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 126 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Declasse Rancher XL 4x4</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1988 Chevrolet Suburban K20</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">4WD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">8 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">78/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        A vintage steel-bodied utility workhorse with endless interior cabin room to stack millions in stolen bank bills un...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Nagasaki Street Blazer ATV -->
+        <div class="veh-card" data-category="suv" data-keywords="nagasaki street blazer atv yamaha banshee 350 quad mod suv // off-road swamp trail quick scout & beach infiltration" onclick="GTA6.VehicleModal.open('nagasaki-street-blazer')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Nagasaki Street Blazer ATV - Yamaha Banshee 350 Quad Mod" loading="lazy">
+                <span class="veh-badge-class">SUV // OFF-ROAD</span>
+                <span class="veh-badge-speed">⚡ 115 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Nagasaki Street Blazer ATV</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Yamaha Banshee 350 Quad Mod</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">1 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">25/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Lightweight two-stroke quad bike that cuts across soft beach sands, coastal dunes, and narrow swamp embankments whe...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Sea Sparrow Amphibious Chopper -->
+        <div class="veh-card" data-category="marine" data-keywords="sea sparrow amphibious chopper bell 47 / model 206 float helicopter marine // aircraft offshore yacht raid & marsh extraction" onclick="GTA6.VehicleModal.open('seasparrow')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-seasparrow.jpg?v=20261118_hd" alt="Sea Sparrow Amphibious Chopper - Bell 47 / Model 206 Float Helicopter" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 145 Knots (167 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Sea Sparrow Amphibious Chopper</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Bell 47 / Model 206 Float Helicopter</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Turboshaft</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">4 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">64/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Rapid</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Fitted with twin marine pontoons, the Sea Sparrow lands on ocean swells, inland canals, and swamp bayous alike. The...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Grotti Squalo Cigarette Boat -->
+        <div class="veh-card" data-category="marine" data-keywords="grotti squalo cigarette boat 1987 cigarette 38 top gun offshore racer marine // aircraft maritime contraband dash to international waters" onclick="GTA6.VehicleModal.open('grotti-squalo')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-squalo.jpg?v=20261118_hd" alt="Grotti Squalo Cigarette Boat - 1987 Cigarette 38 Top Gun Offshore Racer" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 85 Knots (98 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Grotti Squalo Cigarette Boat</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">1987 Cigarette 38 Top Gun Offshore Racer</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Twin</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">6 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">60/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Twin</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The quintessential Vice City cigarette speed racer. Cracks 85 knots over choppy coastal swells, easily outrunning s...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Shitzu Tropic Cabin Cruiser -->
+        <div class="veh-card" data-category="marine" data-keywords="shitzu tropic cabin cruiser sunseeker portofino 40 express cruiser marine // aircraft floating mobile safehouse & laundering front" onclick="GTA6.VehicleModal.open('shitzu-tropic')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-squalo.jpg?v=20261118_hd" alt="Shitzu Tropic Cabin Cruiser - Sunseeker Portofino 40 Express Cruiser" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 55 Knots (63 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Shitzu Tropic Cabin Cruiser</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Sunseeker Portofino 40 Express Cruiser</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Twin</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">12 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">70/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Dual</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Equipped with lower sleeping berths, kitchen galley, and a private stash hold to count cash while anchored off the ...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Nagasaki Dinghy Tactical RIB -->
+        <div class="veh-card" data-category="marine" data-keywords="nagasaki dinghy tactical rib zodiac hurricane 733 military inflatable marine // aircraft stealth shoreline landing & storm drain insertion" onclick="GTA6.VehicleModal.open('nagasaki-dinghy')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-squalo.jpg?v=20261118_hd" alt="Nagasaki Dinghy Tactical RIB - Zodiac Hurricane 733 Military Inflatable" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 65 Knots (75 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Nagasaki Dinghy Tactical RIB</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Zodiac Hurricane 733 Military Inflatable</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Twin</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">6 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">58/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Instant</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Rigid inflatable hull favored by navy SEAL teams and syndicate divers. Can navigate extremely shallow storm runoff ...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Dinka Marquis Luxury Sailboat -->
+        <div class="veh-card" data-category="marine" data-keywords="dinka marquis luxury sailboat beneteau oceanis 51.1 sailing yacht marine // aircraft silent zero-radar contraband exfiltration" onclick="GTA6.VehicleModal.open('dinka-marquis')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-squalo.jpg?v=20261118_hd" alt="Dinka Marquis Luxury Sailboat - Beneteau Oceanis 51.1 Sailing Yacht" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 25 Knots Wind Assisted</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Dinka Marquis Luxury Sailboat</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Beneteau Oceanis 51.1 Sailing Yacht</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Auxiliary</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">15 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">55/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Silent</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Produces zero engine noise and a tiny radar signature under sail. Ideal for smuggling millions worth of diamonds an...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Western Duster Crop Duster Plane -->
+        <div class="veh-card" data-category="marine" data-keywords="western duster crop duster plane air tractor at-502b crop duster marine // aircraft grassrivers smuggler landing strip insertion" onclick="GTA6.VehicleModal.open('western-duster')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-seasparrow.jpg?v=20261118_hd" alt="Western Duster Crop Duster Plane - Air Tractor AT-502B Crop Duster" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 170 MPH Airspeed</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Western Duster Crop Duster Plane</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Air Tractor AT-502B Crop Duster</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Pratt</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">Chemical Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">42/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Turboprop</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Can take off and land on unpaved dirt dikes and sugar cane roads in under 400 feet. The empty chemical hopper holds...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Buckingham Maverick VIP Chopper -->
+        <div class="veh-card" data-category="marine" data-keywords="buckingham maverick vip chopper airbus helicopters h130 vip marine // aircraft rooftop helipad vip extrication" onclick="GTA6.VehicleModal.open('buckingham-maverick')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-seasparrow.jpg?v=20261118_hd" alt="Buckingham Maverick VIP Chopper - Airbus Helicopters H130 VIP" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 155 Knots (178 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Buckingham Maverick VIP Chopper</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Airbus Helicopters H130 VIP</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Turbomeca</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">6 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">54/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">Smooth</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Quiet, plush, and engineered with an enclosed Fenestron tail rotor for tight rooftop landings on luxury skyscraper ...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- JoBuilt Velum 5-Seater Plane -->
+        <div class="veh-card" data-category="marine" data-keywords="jobuilt velum 5-seater plane socata tbm 900 single-engine turboprop marine // aircraft interstate state-border transshipment flight" onclick="GTA6.VehicleModal.open('jobuilt-velum')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-seasparrow.jpg?v=20261118_hd" alt="JoBuilt Velum 5-Seater Plane - Socata TBM 900 Single-Engine Turboprop" loading="lazy">
+                <span class="veh-badge-class">MARINE // AIRCRAFT</span>
+                <span class="veh-badge-speed">⚡ 330 Knots (380 MPH)</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">JoBuilt Velum 5-Seater Plane</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Socata TBM 900 Single-Engine Turboprop</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Pratt</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">5 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">48/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">High-Altitude</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Cruises at 31,000 feet far above state police helicopters. The ultimate high-altitude getaway craft to transport yo...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Vapid Speedo Express Lockup -->
+        <div class="veh-card" data-category="commercial" data-keywords="vapid speedo express lockup chevrolet express 3500 cargo van commercial // vans bulky heavy loot transport & utility disguise" onclick="GTA6.VehicleModal.open('vapid-speedo')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Vapid Speedo Express Lockup - Chevrolet Express 3500 Cargo Van" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 128 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Vapid Speedo Express Lockup</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Chevrolet Express 3500 Cargo Van</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">12 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">74/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">5.6s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Disguised with fictional local laundry or HVAC commercial logos. Blends in 100% anywhere in urban Vice City while c...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Brute Boxville Armored Courier -->
+        <div class="veh-card" data-category="commercial" data-keywords="brute boxville armored courier step van p-series armored postal truck commercial // vans gold bullion & heavy bank vault loot hauler" onclick="GTA6.VehicleModal.open('brute-boxville')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-buffalo-stx.jpg?v=20261118_hd" alt="Brute Boxville Armored Courier - Step Van P-Series Armored Postal Truck" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 112 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Brute Boxville Armored Courier</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Step Van P-Series Armored Postal Truck</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">20 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">90/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">6.8s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Heavy roll-up rear cargo doors with reinforced deadbolts. Built specifically to transport pallets of gold bullion a...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Maibatsu Mule Logistics Transporter -->
+        <div class="veh-card" data-category="commercial" data-keywords="maibatsu mule logistics transporter mitsubishi fuso canter box truck commercial // vans massive hardware moving & chop shop supply" onclick="GTA6.VehicleModal.open('maibatsu-mule')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-tulip.jpg?v=20261118_hd" alt="Maibatsu Mule Logistics Transporter - Mitsubishi Fuso Canter Box Truck" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 110 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Maibatsu Mule Logistics Transporter</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Mitsubishi Fuso Canter Box Truck</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">RWD</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">Full Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">72/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">7.2s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        The backbone of Port Gellhorn cargo transit. Able to transport heavy equipment, cutting torches, hydraulic jacks, a...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Western Sovereign Touring Bagger -->
+        <div class="veh-card" data-category="commercial" data-keywords="western sovereign touring bagger harley-davidson electra glide police special commercial // vans solo rapid courier & traffic weaving" onclick="GTA6.VehicleModal.open('western-sovereign')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-blista-compact.jpg?v=20261118_hd" alt="Western Sovereign Touring Bagger - Harley-Davidson Electra Glide Police Special" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 136 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Western Sovereign Touring Bagger</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Harley-Davidson Electra Glide Police Special</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Belt-Drive</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">2 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">46/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">4.6s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Equipped with lockable hard fiberglass saddlebags and a full touring fairing that splits congested highway lanes at...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Pegassi Bati 801 Superbike -->
+        <div class="veh-card" data-category="commercial" data-keywords="pegassi bati 801 superbike ducati 848 / 1098 superbike commercial // vans ultra-fast solo courier & gridlock weave" onclick="GTA6.VehicleModal.open('pegassi-bati-801')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-furia.jpg?v=20261118_hd" alt="Pegassi Bati 801 Superbike - Ducati 848 / 1098 Superbike" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 185 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Pegassi Bati 801 Superbike</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ducati 848 / 1098 Superbike</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Chain-Drive</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">1 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">20/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">2.5s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        With a 2.5-second sprint to 60 MPH and razor-sharp steering geometry, the Bati 801 weaves between gridlocked freewa...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Nagasaki BF400 Enduro Rally Bike -->
+        <div class="veh-card" data-category="commercial" data-keywords="nagasaki bf400 enduro rally bike ktm 450 rally factory replica commercial // vans stairwell, alley & wetland escape bike" onclick="GTA6.VehicleModal.open('nagasaki-bf400')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-elegy-retro.jpg?v=20261118_hd" alt="Nagasaki BF400 Enduro Rally Bike - KTM 450 Rally Factory Replica" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 140 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Nagasaki BF400 Enduro Rally Bike</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">KTM 450 Rally Factory Replica</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Chain-Drive</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">1 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">35/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.6s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Long-travel rally suspension lets this enduro bike hop over pedestrian curbs, launch down concrete drainage stairs,...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Principe Nemesis Streetfighter -->
+        <div class="veh-card" data-category="commercial" data-keywords="principe nemesis streetfighter ducati monster 1200 / streetfighter commercial // vans downtown vice city alleyway threader" onclick="GTA6.VehicleModal.open('principe-nemesis')" title="Click to view full vehicle dossier & trunk specs">
+            <div class="veh-img-stage">
+                <img src="assets/vehicle-banshee.jpg?v=20261118_hd" alt="Principe Nemesis Streetfighter - Ducati Monster 1200 / Streetfighter" loading="lazy">
+                <span class="veh-badge-class">COMMERCIAL // VANS</span>
+                <span class="veh-badge-speed">⚡ 155 MPH</span>
+            </div>
+            <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">Principe Nemesis Streetfighter</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">Ducati Monster 1200 / Streetfighter</div>
+                    <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">Chain-Drive</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">1 Bags</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">28/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">3.1s</strong></div>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">
+                        Wide motocross handlebars and upright riding ergonomics give riders incredible low-speed leverage to flick around t...
+                    </p>
+                </div>
+                <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
             </div>
         </div>
 
     </div>
-
 </main>
 
 <footer>
