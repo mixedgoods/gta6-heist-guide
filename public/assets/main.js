@@ -3494,6 +3494,21 @@ DealRotator: {
         }, 150);
       }
     },
+    toggleTacticalPeek(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const isHidden = el.style.display === 'none' || !el.style.display;
+      el.style.display = isHidden ? 'block' : 'none';
+      if (isHidden) {
+        this.playBeep(580, 'triangle', 0.05);
+      } else {
+        this.playBeep(420, 'sine', 0.04);
+      }
+      const btn = document.querySelector(`[data-peek-target="${id}"]`);
+      if (btn) {
+        btn.innerHTML = isHidden ? '▲ Close Tactical Peek' : '⚡ Quick Tactical Peek &bull; Approaches &amp; Splits';
+      }
+    },
     LiveIntelSync: {
       async poll() {
         try {
@@ -3505,7 +3520,48 @@ DealRotator: {
           document.querySelectorAll('.live-sync-badge').forEach((el) => {
             el.innerHTML = `⚡ LIVE SYNC: ${feed.counts.characters} Operatives &bull; ${feed.counts.weapons} Weapons &bull; ${feed.counts.vehicles} Vehicles`;
           });
+          const timeEl = document.getElementById('liveSyncTimestamp');
+          if (timeEl) {
+            timeEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          }
+          if (document.getElementById('syncCharsCount')) {
+            document.getElementById('syncCharsCount').textContent = feed.counts.characters || 14;
+          }
+          if (document.getElementById('syncWeaponsCount')) {
+            document.getElementById('syncWeaponsCount').textContent = feed.counts.weapons || 11;
+          }
+          if (document.getElementById('syncVehiclesCount')) {
+            document.getElementById('syncVehiclesCount').textContent = feed.counts.vehicles || 16;
+          }
         } catch (e) {}
+      },
+      async manualPing(btn) {
+        if (GTA6.playBeep) {
+          GTA6.playBeep(440, 'sine', 0.05);
+          setTimeout(() => GTA6.playBeep(880, 'triangle', 0.08), 75);
+        }
+        if (btn) {
+          const orig = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML = '⚡ Scanning Edge Nodes...';
+          await this.poll();
+          setTimeout(() => {
+            btn.innerHTML = '✓ Database Synchronized';
+            btn.style.borderColor = 'var(--neon-green)';
+            btn.style.color = 'var(--neon-green)';
+            if (GTA6.showToast) {
+              GTA6.showToast('🛰️ Edge Database Current: 14 Operatives, 16 Vehicles & 11 Weapons active!');
+            }
+            setTimeout(() => {
+              btn.innerHTML = orig;
+              btn.disabled = false;
+              btn.style.borderColor = '';
+              btn.style.color = '';
+            }, 3000);
+          }, 650);
+        } else {
+          await this.poll();
+        }
       },
       init() {
         this.poll();

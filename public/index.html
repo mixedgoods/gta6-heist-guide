@@ -220,6 +220,50 @@
     </div>
 </div>
 
+<!-- LIVE MASTER SYNDICATE DATABASE HUD & AUTO-SYNC ENGINE -->
+<div style="max-width: 1140px; margin: 0 auto 1.5rem; padding: 0 1rem; box-sizing: border-box;">
+    <div class="live-sync-terminal-bar">
+        <div class="live-sync-terminal-header">
+            <div class="live-sync-title-group">
+                <span class="pulse-beacon-dot"></span>
+                <span style="font-family:var(--font-mono); font-size:0.84rem; font-weight:900; color:#fff; letter-spacing:1px;">
+                    LIVE SYNDICATE INTEL TERMINAL
+                </span>
+                <span class="user-badge badge-mastermind" style="font-size:0.65rem; background:rgba(0,255,136,0.15); border-color:var(--neon-green); color:var(--neon-green);">
+                    ⚡ AUTO-SYNCS EVERY 10 MIN
+                </span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap;">
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">
+                    Last Sync: <strong id="liveSyncTimestamp" style="color:var(--neon-green);">Live Active</strong>
+                </span>
+                <button type="button" class="sync-ping-btn" onclick="GTA6.LiveIntelSync.manualPing(this)" title="Test Edge Connection & Ping Master Intel Nodes for Latest Trailer 2 Leaks">
+                    🔄 Ping Edge Database
+                </button>
+            </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+            <p style="color:var(--text-muted); font-size:0.83rem; margin:0; line-height:1.45; max-width:620px;">
+                Continuous background crawler monitors official Rockstar feeds, datamined builds, and community leaks to auto-update confirmed characters, weapons, getaway cars, and weekly bonus multipliers every 10 minutes.
+            </p>
+            <div class="sync-stat-chips-row">
+                <a href="crew-database.html" class="sync-stat-chip" title="View all confirmed characters & operatives">
+                    👥 <strong id="syncCharsCount">14</strong> Operatives
+                </a>
+                <a href="vehicles-getaway-cars.html" class="sync-stat-chip" title="View all verified getaway cars & pursuit cruisers">
+                    🚗 <strong id="syncVehiclesCount">16</strong> Vehicles
+                </a>
+                <a href="weapons-gear.html" class="sync-stat-chip" title="View all verified weapons & infiltration equipment">
+                    🔫 <strong id="syncWeaponsCount">11</strong> Weapons
+                </a>
+                <a href="#all-heists" class="sync-stat-chip" style="border-color:var(--neon-green);" title="View all confirmed depository vault targets">
+                    💰 <strong style="color:var(--neon-green);">$75.6M+</strong> Vault Meta
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section class="characters-showcase-section" style="max-width: 1140px; margin: 0 auto 2.25rem; padding: 0 1rem; box-sizing: border-box;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(255,42,141,0.3); padding-bottom:0.65rem;">
         <div>
@@ -1101,6 +1145,18 @@
     <div class="section-header" id="all-heists">
         <h2>High-Value Infiltration Targets</h2>
         <p>Comprehensive blueprints, security countermeasures, payout calculations, and escape logistics for every confirmed major operation across the State of Leonida.</p>
+        <!-- LIVE HEIST META & NIGHT STEALTH RADAR BANNER -->
+        <div style="background:rgba(12,20,32,0.85); border:1px solid rgba(0,240,255,0.3); border-radius:8px; padding:0.75rem 1rem; margin-top:0.85rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; font-size:0.8rem; font-family:var(--font-mono);">
+                <span class="user-badge badge-mastermind" style="background:rgba(255,42,141,0.2); border-color:var(--neon-pink); color:var(--neon-pink);">🔥 1.5X ROTATION</span>
+                <span style="color:#fff;">Grassrivers Airstrip Raid: <strong style="color:var(--neon-green);">$9,750,000 Bonus Payout Active</strong></span>
+                <span style="color:var(--text-muted);">|</span>
+                <span style="color:var(--neon-cyan);">🌙 Stealth Night Ops (00:00 - 05:00): Recommended for Depository &amp; Yacht</span>
+            </div>
+            <span style="color:var(--neon-amber); font-size:0.78rem; font-family:var(--font-mono); font-weight:700;">
+                Vault Total: $75.6M Across 7 Targets
+            </span>
+        </div>
     </div>
 
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));">
@@ -1129,13 +1185,39 @@
                 </div>
                 <div class="bonus-badge" data-vault-slug="sinfrontera-bank" data-bonus="$21,750,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$21,750,000</span></div>
                 <p class="card-desc">Downtown Vice City's commercial fortress. Features subterranean vault drilling, pneumatic safety overrides, dual-keycard biometric sync, and sewer drainage extraction.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Silent EMP vs Sub-Vault Bore Drill</span>
+                    <span class="spec-pill">👥 Solo Net: $10.1M &bull; 4-Squad: $3.6M/ea</span>
+                    <span class="spec-pill">🚁 Downtown Drainage Canal Escape</span>
+                </div>
                 <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
                     <input type="checkbox" class="mastery-bp-check" data-bp-slug="sinfrontera-bank" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('sinfrontera-bank', this.checked)">
                     <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
                 </label>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-sinfrontera" onclick="GTA6.toggleTacticalPeek('peek-sinfrontera')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="sinfrontera-bank.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Bank Raid Intel</a>
                     <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('sinfrontera-bank', 'Sinfrontera National Bank')">📡 Report Live Payout / Cooldown Change</button>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-sinfrontera" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">SILENT EMP:</span> Substation power disruption gives 90s laser bypass. Dual keycard sync avoids alarm.</p>
+                            <p><span class="badge-loud">AGGRESSIVE BORE:</span> Heavy foundation drill breach. Level IV armor required for NOOSE wave assault.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>Hacker: 10% (Required for 90s delay) &bull; Gunner: 15% &bull; Driver: 8% (Net Solo Take: ~$10,150,000)</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>Subterranean storm drain dirt bikes &rarr; Downtown canal waterway safehouse.</p>
+                        </div>
+                        <a href="sinfrontera-bank.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -1164,13 +1246,39 @@
                 </div>
                 <div class="bonus-badge" data-vault-slug="port-gellhorn" data-bonus="$12,300,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$12,300,000</span></div>
                 <p class="card-desc">Industrial shipping logistics hub. Infiltrate crane control rigs, decode high-value cartel shipping containers, and escape via high-speed water canals before patrol boats arrive.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Crane Decoy Hack vs Armed Gunboat Breach</span>
+                    <span class="spec-pill">👥 Solo Net: $5.7M &bull; 4-Squad: $2.05M/ea</span>
+                    <span class="spec-pill">🚁 Marine Waterway Slipway Escape</span>
+                </div>
                 <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
                     <input type="checkbox" class="mastery-bp-check" data-bp-slug="port-gellhorn" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('port-gellhorn', this.checked)">
                     <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
                 </label>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-port-gellhorn" onclick="GTA6.toggleTacticalPeek('peek-port-gellhorn')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="port-gellhorn.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Terminal Intel</a>
                     <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('port-gellhorn', 'Port Gellhorn Container Terminal')">📡 Report Live Payout / Cooldown Change</button>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-port-gellhorn" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">GANTRY CRANE DECOY:</span> Remote hack automated crane to drop shipping containers, creating blind spots for silent container decode.</p>
+                            <p><span class="badge-loud">WATERFRONT STRIKE:</span> Heavy machine-gun patrol boat assault; blow container security doors with thermite.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>Specialist Hacker: 9% &bull; Assault Gunner: 12% &bull; Marine Driver: 7% (Net Solo Take: ~$5,740,000)</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>High-speed armed dinghy / Sea Sparrow through Kelly County canal network.</p>
+                        </div>
+                        <a href="port-gellhorn.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -1199,13 +1307,39 @@
                 </div>
                 <div class="bonus-badge" data-vault-slug="leonida-reserve" data-bonus="$37,500,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$37,500,000</span></div>
                 <p class="card-desc">The crown jewel of Leonida. Heavily guarded federal depository requiring high-grade thermal lances, laser tripwire bypass hacks, and heavily armored convoy getaways.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Biometric Laser Grid vs Heavy Mining Tunnel</span>
+                    <span class="spec-pill">👥 Solo Net: $17.5M &bull; 4-Squad: $6.25M/ea</span>
+                    <span class="spec-pill">🚁 Armored Buffalo STX Safehouse Convoy</span>
+                </div>
                 <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
                     <input type="checkbox" class="mastery-bp-check" data-bp-slug="leonida-reserve" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('leonida-reserve', this.checked)">
                     <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
                 </label>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-leonida-reserve" onclick="GTA6.toggleTacticalPeek('peek-leonida-reserve')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="leonida-reserve.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Gold Reserve Intel</a>
                     <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('leonida-reserve', 'Leonida State Gold Reserve')">📡 Report Live Payout / Cooldown Change</button>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-leonida-reserve" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">STEALTH LASER BYPASS:</span> Coordinated dual-keycard biometric swipes, EMP capital blackout, 90s zero-alarm laser grid bypass window.</p>
+                            <p><span class="badge-loud">MINING BORE BREACH:</span> Tunnel industrial mining bore into foundation, hold central vault against NOOSE SWAT waves.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>Master Hacker: 10% &bull; Gunner: 15% &bull; Driver: 8% &bull; Leader Net Take: <strong>$17,500,000</strong></p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>Armored Buffalo STX convoy through highway subway tunnels to fortified Vice City safehouse.</p>
+                        </div>
+                        <a href="leonida-reserve.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -1234,13 +1368,39 @@
                 </div>
                 <div class="bonus-badge" data-vault-slug="vice-city-yacht-heist" data-bonus="$17,700,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$17,700,000</span></div>
                 <p class="card-desc">Luxury megayacht cruising offshore Vice Beach. Sub-aquatic scuba ingress, silent hull breaches, VIP safe cracking, and extraction via private rooftop helipad.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Scuba Hull Breach vs Helipad Air Assault</span>
+                    <span class="spec-pill">👥 Solo Net: $8.25M &bull; 4-Squad: $2.95M/ea</span>
+                    <span class="spec-pill">🚁 Speedboat Ingress &amp; Superyacht Helipad</span>
+                </div>
                 <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
                     <input type="checkbox" class="mastery-bp-check" data-bp-slug="vice-city-yacht-heist" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('vice-city-yacht-heist', this.checked)">
                     <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
                 </label>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-yacht" onclick="GTA6.toggleTacticalPeek('peek-yacht')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="vice-city-yacht-heist.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Yacht Intel</a>
                     <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('vice-city-yacht-heist', 'Starlet Superyacht Offshore')">📡 Report Live Payout / Cooldown Change</button>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-yacht" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">SUB-AQUATIC SCUBA:</span> Underwater night dive, silent thermal torch on lower keel hatch, VIP master vault decryption.</p>
+                            <p><span class="badge-loud">HELIPAD AIR DROP:</span> Fast-rope directly onto top deck helipad; suppress private security contractors with assault carbines.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>Hacker: 8% &bull; Gunner: 12% &bull; Boat/Heli Pilot: 10% (Net Solo Take: ~$8,260,000)</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>Rooftop helicopter exfil or deep-water scuba dive to submersible escape craft.</p>
+                        </div>
+                        <a href="vice-city-yacht-heist.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -1269,13 +1429,39 @@
                 </div>
                 <div class="bonus-badge" data-vault-slug="everglades-smuggler-run" data-bonus="$9,750,000" style="display:block;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$9,750,000</span></div>
                 <p class="card-desc">Deep swamp clandestine airfield. Jam border patrol radars, hijack customized smuggler twin-engine planes, and navigate swamp airboat traps under night vision.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Radar Jamming Air Raid vs Swamp Airboat Ambush</span>
+                    <span class="spec-pill">👥 1.5X Bonus Take: $9.75M &bull; Solo Net: $6.82M</span>
+                    <span class="spec-pill">🚁 Clandestine Smuggler Twin-Engine Exfil</span>
+                </div>
                 <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
                     <input type="checkbox" class="mastery-bp-check" data-bp-slug="everglades-smuggler-run" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('everglades-smuggler-run', this.checked)">
                     <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
                 </label>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-grassrivers" onclick="GTA6.toggleTacticalPeek('peek-grassrivers')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="everglades-smuggler-run.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Smuggler Intel</a>
                     <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('everglades-smuggler-run', 'Grassrivers Cartel Airstrip')">📡 Report Live Payout / Cooldown Change</button>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-grassrivers" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">RADAR JAMMING:</span> Hack Kelly County border patrol repeater towers; slip past cartel perimeter guards with suppressed weaponry.</p>
+                            <p><span class="badge-loud">SWAMP GUNBOAT STRIKE:</span> Mount .50 cal airboat strike, blow fuel depot storage to create chaos and commandeer cargo planes.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>Signals Specialist: 7% &bull; Heavy Gunner: 10% &bull; Bush Pilot: 13% (1.5X Net Solo Take: ~$6,825,000)</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>Low-altitude twin-engine flight below coastal radar ceiling across the Florida Straits.</p>
+                        </div>
+                        <a href="everglades-smuggler-run.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -1304,13 +1490,39 @@
                 </div>
                 <div class="bonus-badge" data-vault-slug="ocean-drive-armored-convoy" data-bonus="$14,100,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$14,100,000</span></div>
                 <p class="card-desc">Daylight high-speed intercept along the neon coastal strip. Employ magnetic EMP disabling charges, deploy traffic gridlock diversion hacks, and lose 5-star heat inside transit subway tubes.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Roadway EMP Trap vs Highway Precision Intercept</span>
+                    <span class="spec-pill">👥 Solo Net: $6.58M &bull; 4-Squad: $2.35M/ea</span>
+                    <span class="spec-pill">🚁 Metro Transit Subway Tunnel Evasion</span>
+                </div>
                 <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
                     <input type="checkbox" class="mastery-bp-check" data-bp-slug="ocean-drive-armored-convoy" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('ocean-drive-armored-convoy', this.checked)">
                     <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
                 </label>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-ocean-drive" onclick="GTA6.toggleTacticalPeek('peek-ocean-drive')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="ocean-drive-armored-convoy.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Convoy Intel</a>
                     <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('ocean-drive-armored-convoy', 'Ocean Drive Armored Convoy')">📡 Report Live Payout / Cooldown Change</button>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-ocean-drive" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">TRAFFIC GRIDLOCK HACK:</span> Hack Vice Beach central traffic controllers to trap armored convoy in transit tunnel with zero civilian casualties.</p>
+                            <p><span class="badge-loud">STREET BLOCKADE:</span> Frontal ramming with heavily armored trucks, rocket-propelled diversions, high-intensity street combat.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>Traffic Hacker: 10% &bull; Enforcer Gunner: 12% &bull; Pursuit Driver: 8% (Net Solo Take: ~$6,580,000)</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>Underground metro tracks into disused trolley hub safehouse; switch to civilian decoys.</p>
+                        </div>
+                        <a href="ocean-drive-armored-convoy.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+                    </div>
                 </div>
             </div>
             <!-- CARD 7: NEW DISCOVERY FROM COLLECTOR MAP -->
@@ -1337,9 +1549,35 @@
                     </div>
                 </div>
                 <p class="card-desc">Newly discovered on the Selfridges Collector's Box map! Central agricultural vault located along the Grassrivers sugarcane railway. Fast duo cash grab with flat-bottom airboat exfiltration through the canal reed beds.</p>
+                <!-- TACTICAL SPEC ROW -->
+                <div class="heist-tactical-specs">
+                    <span class="spec-pill">🛡️ Sugarcane Railway Cut vs Night Window Raid</span>
+                    <span class="spec-pill">👥 Duo Run Split: $1,900,000 Each ($3.8M Total)</span>
+                    <span class="spec-pill">🚁 Flat-Bottom Airboat Swamp Reed Escape</span>
+                </div>
                 <div style="display:grid; gap:0.45rem;">
+                    <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-pelican" onclick="GTA6.toggleTacticalPeek('peek-pelican')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
                     <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Locate on Radar Map &rarr;</a>
                     <a href="heist-planner.html" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;">Simulate 2-Player Split in Planner</a>
+                </div>
+                <!-- COLLAPSIBLE TACTICAL PEEK DRAWER -->
+                <div id="peek-pelican" class="tactical-peek-drawer" style="display:none;">
+                    <div class="peek-inner">
+                        <div class="peek-section">
+                            <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
+                            <p><span class="badge-stealth">RURAL SILENT:</span> Sever country telephone wires, drill rear safe door before Lummox County sheriff arrives.</p>
+                            <p><span class="badge-loud">TRUCK RAM:</span> Ram heavy pickup through front glass, explosive breach on lockboxes, fast 3-minute getaway.</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
+                            <p>2-Player Duo Run (Lucia &amp; Jason 50/50 split &bull; Zero NPC support cut required &bull; $1.9M take-home each)</p>
+                        </div>
+                        <div class="peek-section">
+                            <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
+                            <p>Hidden flat-bottom airboat through dense Everglades mangrove reeds into Pelican Basin safehouse.</p>
+                        </div>
+                        <a href="heist-planner.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Simulate Pelican Valley Split in Planner &rarr;</a>
+                    </div>
                 </div>
             </div>
 
