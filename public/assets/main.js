@@ -3495,9 +3495,9 @@ DealRotator: {
       }
     },
     LiveIntelSync: {
-      async init() {
+      async poll() {
         try {
-          const res = await fetch('/api/sync-feed');
+          const res = await fetch('/api/sync-feed?t=' + Date.now());
           if (!res.ok) return;
           const feed = await res.json();
           if (!feed.ok || !feed.counts) return;
@@ -3506,6 +3506,11 @@ DealRotator: {
             el.innerHTML = `⚡ LIVE SYNC: ${feed.counts.characters} Operatives &bull; ${feed.counts.weapons} Weapons &bull; ${feed.counts.vehicles} Vehicles`;
           });
         } catch (e) {}
+      },
+      init() {
+        this.poll();
+        // Auto-update every 10 minutes in the background
+        setInterval(() => this.poll(), 10 * 60 * 1000);
       }
     }
   };
