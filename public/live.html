@@ -183,9 +183,32 @@
             border: 1px solid rgba(0, 240, 255, 0.25);
             border-radius: 8px;
             padding: 0.35rem;
-            gap: 0.4rem;
+            gap: 0.35rem;
             margin-bottom: 1.25rem;
         }
+        .mobile-chat-wrapper {
+            display: none;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .mobile-chat-wrapper .chat-container {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            height: 440px;
+            min-height: 440px;
+            overflow: hidden;
+        }
+        .mobile-chat-wrapper iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box;
+        }
+
         @media (max-width: 991px) {
             .mobile-view-tabs {
                 display: flex;
@@ -194,12 +217,8 @@
             .satcom-stage-grid .chat-container {
                 display: none !important;
             }
-            .mobile-chat-wrapper {
-                display: none;
-                margin-bottom: 1.5rem;
-            }
             .mobile-chat-wrapper.active {
-                display: block;
+                display: block !important;
             }
         }
 
@@ -578,10 +597,10 @@
     <!-- MOBILE VIEW TABS (Shows on Mobile < 992px to seamlessly toggle Keypad vs Live Chat) -->
     <div class="mobile-view-tabs" id="mobileViewTabs">
         <button type="button" class="mobile-tab-btn active" id="tabBtnTools" onclick="switchMobileView('tools')">
-            🛠️ Tactical Companion &amp; Keypad
+            🛠️ Companion HUD
         </button>
         <button type="button" class="mobile-tab-btn" id="tabBtnChat" onclick="switchMobileView('chat')">
-            💬 Squad Live Chat <span class="pulse-beacon" style="width:6px; height:6px; margin-left:3px;"></span>
+            💬 Squad Chat <span class="pulse-beacon" style="width:6px; height:6px; margin-left:2px;"></span>
         </button>
         <button type="button" class="mobile-tab-btn" onclick="openPopoutChat()" title="Open Chat in Separate Window">
             ↗ Popout
