@@ -2594,7 +2594,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Optional Tier 2 Glass",
             "heistRole": "Primary Getaway Car // Jason & Lucia Starter Vehicle",
             "source": "GTA 6 Reveal Trailer (0:42 & Key Art)",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-tulip.jpg?v=20261118_v2",
             "stats": {
                   "speed": 78,
                   "accel": 82,
@@ -2618,7 +2618,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Armored Window Slits",
             "heistRole": "High-Impact Pursuit Breaker // Highway Escape",
             "source": "Trailer 1 Vice Beach Strip & Leaks",
-            "image": "assets/vehicle-gauntlet-hellfire.jpg?v=20261118_hd",
+            "image": "assets/vehicle-gauntlet-hellfire.jpg?v=20261118_v2",
             "stats": {
                   "speed": 88,
                   "accel": 92,
@@ -2642,7 +2642,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Lexan",
             "heistRole": "Alleyway Escape & Undercover Street Meet Racer",
             "source": "Port Gellhorn Street Meet & 2022 Leaks",
-            "image": "assets/vehicle-elegy-retro.jpg?v=20261118_hd",
+            "image": "assets/vehicle-elegy-retro.jpg?v=20261118_v2",
             "stats": {
                   "speed": 84,
                   "accel": 88,
@@ -2666,7 +2666,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Classic",
             "heistRole": "Low-Profile Covert Smuggling & Cartel Stash Car",
             "source": "Trailer 1 Little Cuba Cruising Scene",
-            "image": "assets/vehicle-buccaneer.jpg?v=20261118_hd",
+            "image": "assets/vehicle-buccaneer.jpg?v=20261118_v2",
             "stats": {
                   "speed": 72,
                   "accel": 70,
@@ -2690,7 +2690,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Shatter-Resistant Film",
             "heistRole": "Rapid Interception & Fast Extrication",
             "source": "Stockade Robbery Leak Clip 24",
-            "image": "assets/vehicle-dominator-asp.jpg?v=20261118_hd",
+            "image": "assets/vehicle-dominator-asp.jpg?v=20261118_v2",
             "stats": {
                   "speed": 85,
                   "accel": 86,
@@ -2714,7 +2714,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Driver Plate Shield",
             "heistRole": "Drive-By Suppressive Platform // 4-Seater Extraction",
             "source": "Ocean Drive Sunset Cruise Scene",
-            "image": "assets/vehicle-vigero-zx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-vigero-zx.jpg?v=20261118_v2",
             "stats": {
                   "speed": 87,
                   "accel": 90,
@@ -2738,7 +2738,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Pedestrian Alleyway Threader // Anonymous Scout",
             "source": "Ambrosia Strip Mall Leaked Footage",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_hd",
+            "image": "assets/vehicle-blista-compact.jpg?v=20261118_v2",
             "stats": {
                   "speed": 68,
                   "accel": 74,
@@ -2762,7 +2762,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Thick Steel Cab",
             "heistRole": "Grassrivers Smuggling & Backwoods Extraction",
             "source": "Kelly County Mudboggers Scene",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-rat-loader.jpg?v=20261118_v2",
             "stats": {
                   "speed": 65,
                   "accel": 72,
@@ -2786,7 +2786,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Cab Armor Plating",
             "heistRole": "Cargo Loot Hauler // Heavy Cash Stash",
             "source": "Wrecked Scrap Yard Leaks",
-            "image": "assets/vehicle-buccaneer.jpg?v=20261118_hd",
+            "image": "assets/vehicle-slamvan.jpg?v=20261118_v2",
             "stats": {
                   "speed": 74,
                   "accel": 78,
@@ -2810,7 +2810,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Optional Front Grille Armor",
             "heistRole": "Drag-Strip Getaway & Highway Disappearance",
             "source": "Vice City North Beach Boulevard",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-sabre-turbo.jpg?v=20261118_v2",
             "stats": {
                   "speed": 80,
                   "accel": 81,
@@ -2834,7 +2834,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tinted Bullet-Resistant Glass",
             "heistRole": "Syndicate Boss Escort & Mob Safehouse Courier",
             "source": "Little Haiti Gang Meet",
-            "image": "assets/vehicle-buccaneer.jpg?v=20261118_hd",
+            "image": "assets/vehicle-hermes.jpg?v=20261118_v2",
             "stats": {
                   "speed": 70,
                   "accel": 68,
@@ -2858,7 +2858,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Underbody Armor",
             "heistRole": "Precision Getaway // High-G Cornering",
             "source": "Port Gellhorn Industrial Strip",
-            "image": "assets/vehicle-dominator-asp.jpg?v=20261118_hd",
+            "image": "assets/vehicle-deviant.jpg?v=20261118_v2",
             "stats": {
                   "speed": 84,
                   "accel": 87,
@@ -2882,7 +2882,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Decoy Pursuit Distractor // Siren Jammer",
             "source": "Trailer 1 Highway Overpass",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-phoenix.jpg?v=20261118_v2",
             "stats": {
                   "speed": 79,
                   "accel": 80,
@@ -2906,7 +2906,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Windshield Armor Strip",
             "heistRole": "High-Speed Interstate Ghosting",
             "source": "Official GTA 6 Artwork & Downtown Traffic",
-            "image": "assets/vehicle-banshee.jpg?v=20261118_hd",
+            "image": "assets/vehicle-banshee.jpg?v=20261118_v2",
             "stats": {
                   "speed": 94,
                   "accel": 93,
@@ -2930,7 +2930,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tinted Police-Block Film",
             "heistRole": "Luxury Casino Infiltration & Rapid Evasion",
             "source": "Ocean Drive Art Deco Strip (Trailer 1)",
-            "image": "assets/vehicle-cheetah.jpg?v=20261118_hd",
+            "image": "assets/vehicle-cheetah.jpg?v=20261118_v2",
             "stats": {
                   "speed": 89,
                   "accel": 87,
@@ -2954,7 +2954,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced A-Pillars",
             "heistRole": "Rain-Proof Wet Weather Getaway",
             "source": "Starlet Key Bridge Crossing Scene",
-            "image": "assets/vehicle-comet-s2.jpg?v=20261118_hd",
+            "image": "assets/vehicle-comet-s2.jpg?v=20261118_v2",
             "stats": {
                   "speed": 93,
                   "accel": 98,
@@ -2978,7 +2978,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Lightweight Armor Plating",
             "heistRole": "VIP Fast Extraction // Highway Pursuit Disruption",
             "source": "Trailer 1 Freeway Chase Scene",
-            "image": "assets/vehicle-coquette-d10.jpg?v=20261118_hd",
+            "image": "assets/vehicle-coquette-d10.jpg?v=20261118_v2",
             "stats": {
                   "speed": 91,
                   "accel": 95,
@@ -3002,7 +3002,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Full Run-Flat Compound",
             "heistRole": "Ultra-High Value Diamond & Bearer Bond Courier",
             "source": "Venetian Way Penthouse Driveway Scene",
-            "image": "assets/vehicle-furia.jpg?v=20261118_hd",
+            "image": "assets/vehicle-furia.jpg?v=20261118_v2",
             "stats": {
                   "speed": 98,
                   "accel": 99,
@@ -3026,7 +3026,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Missile Lock-On Jammer + Slick",
             "heistRole": "Counter-Surveillance Escort Vehicle",
             "source": "Vice City Marina Leaked Parking Deck",
-            "image": "assets/vehicle-banshee.jpg?v=20261118_hd",
+            "image": "assets/vehicle-champion.jpg?v=20261118_v2",
             "stats": {
                   "speed": 92,
                   "accel": 92,
@@ -3050,7 +3050,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced Monocoque",
             "heistRole": "Executive Syndicate Interceptor",
             "source": "Trailer 1 Starlet Key Yacht Club",
-            "image": "assets/vehicle-furia.jpg?v=20261118_hd",
+            "image": "assets/vehicle-torero-xo.jpg?v=20261118_v2",
             "stats": {
                   "speed": 97,
                   "accel": 97,
@@ -3074,7 +3074,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Lexan",
             "heistRole": "Undercover Social Infiltration // Valet Swap",
             "source": "Downtown Vice City Financial District",
-            "image": "assets/vehicle-cheetah.jpg?v=20261118_hd",
+            "image": "assets/vehicle-carbonizzare.jpg?v=20261118_v2",
             "stats": {
                   "speed": 88,
                   "accel": 89,
@@ -3098,7 +3098,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Withstands 15 AR Rounds per Panel",
             "heistRole": "Executive VIP Extrication & 4-Man Crew Escape",
             "source": "Bank Transit Robbery Leak Sequence",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-schafter-v12.jpg?v=20261118_v2",
             "stats": {
                   "speed": 89,
                   "accel": 90,
@@ -3122,7 +3122,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Heavier Tint Windows",
             "heistRole": "Rapid Squad Transport // Curb-Jumping Utility",
             "source": "Kelly County Suburb Highway Scene",
-            "image": "assets/vehicle-comet-s2.jpg?v=20261118_hd",
+            "image": "assets/vehicle-astron.jpg?v=20261118_v2",
             "stats": {
                   "speed": 86,
                   "accel": 89,
@@ -3146,7 +3146,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Track Lexan",
             "heistRole": "Sprint Evasion // Causeway Crossing",
             "source": "Vice Port Container Yard Leak",
-            "image": "assets/vehicle-furia.jpg?v=20261118_hd",
+            "image": "assets/vehicle-itali-gtb.jpg?v=20261118_v2",
             "stats": {
                   "speed": 95,
                   "accel": 96,
@@ -3170,7 +3170,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Kevlar Seat Inserts",
             "heistRole": "Aggressive 4-Man Hit-and-Run Platform",
             "source": "Trailer 1 Nightclub Alleyway",
-            "image": "assets/vehicle-banshee.jpg?v=20261118_hd",
+            "image": "assets/vehicle-jugular.jpg?v=20261118_v2",
             "stats": {
                   "speed": 88,
                   "accel": 91,
@@ -3194,7 +3194,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Level III Door Armor Panels",
             "heistRole": "Infiltration Disguise // Police Radio Scanner Hub",
             "source": "Official Artwork & Trailer 1 Patrol Chase",
-            "image": "assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd",
+            "image": "assets/vehicle-vcpd-cruiser.jpg?v=20261118_v2",
             "stats": {
                   "speed": 81,
                   "accel": 84,
@@ -3218,7 +3218,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Bulletproof Windshield + Run-Flats",
             "heistRole": "Undercover High-Speed Interceptor & Counter-Ramming",
             "source": "Freeway Pursuit & Highway Patrol Leaks",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_v2",
             "stats": {
                   "speed": 90,
                   "accel": 93,
@@ -3242,7 +3242,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Complete Bulletproof Glass & Tires",
             "heistRole": "Unstoppable Extraction Fortress // Bank Door Breacher",
             "source": "Trailer 1 Tactical SWAT Deployment Scene",
-            "image": "assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd",
+            "image": "assets/vehicle-vcpd-riot.jpg?v=20261118_v2",
             "stats": {
                   "speed": 58,
                   "accel": 52,
@@ -3266,7 +3266,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Front Cab Reinforcements",
             "heistRole": "Swamp & Grassrivers Off-Grid Exfiltration",
             "source": "Grassrivers Leaked Patrol Encounter",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-park-ranger.jpg?v=20261118_v2",
             "stats": {
                   "speed": 73,
                   "accel": 74,
@@ -3290,7 +3290,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Level III-A Hidden Window Laminate",
             "heistRole": "Covert Recon & Ambush Point Extraction",
             "source": "Ambrosia Motel Surveillance Leak",
-            "image": "assets/vehicle-vcpd-cruiser.jpg?v=20261118_hd",
+            "image": "assets/vehicle-vcpd-unmarked.jpg?v=20261118_v2",
             "stats": {
                   "speed": 82,
                   "accel": 85,
@@ -3314,7 +3314,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Bridge Glass Level III",
             "heistRole": "Maritime Contraband Interception & Water Evade",
             "source": "Vice City Harbor Leaks & Trailer 1 Marina",
-            "image": "assets/vehicle-squalo.jpg?v=20261118_hd",
+            "image": "assets/vehicle-predator-patrol.jpg?v=20261118_v2",
             "stats": {
                   "speed": 78,
                   "accel": 82,
@@ -3338,7 +3338,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Lower Cockpit Deflection",
             "heistRole": "High-Altitude Overwatch & Sniper Platform",
             "source": "Trailer 1 Vice City Skyline Night Searchlight",
-            "image": "assets/vehicle-seasparrow.jpg?v=20261118_hd",
+            "image": "assets/vehicle-police-maverick.jpg?v=20261118_v2",
             "stats": {
                   "speed": 87,
                   "accel": 85,
@@ -3362,7 +3362,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Everglades Swamp Exfiltration & Bayou Crossing",
             "source": "Grassrivers Gator Farm Scene",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-karin-rebel.jpg?v=20261118_v2",
             "stats": {
                   "speed": 65,
                   "accel": 68,
@@ -3386,7 +3386,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "High Cab Clearance",
             "heistRole": "Obstacle Crusher & Heavy Payday Hauler",
             "source": "Trailer 1 Mud Club & Dirt Track Scene",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-sandking-xl.jpg?v=20261118_v2",
             "stats": {
                   "speed": 69,
                   "accel": 75,
@@ -3410,7 +3410,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Low-Key Country Getaway & Smuggler Trail Runner",
             "source": "Ambrosia Motel Parking Lot",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_hd",
+            "image": "assets/vehicle-seminole.jpg?v=20261118_v2",
             "stats": {
                   "speed": 70,
                   "accel": 74,
@@ -3434,7 +3434,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced Cab Panels",
             "heistRole": "Multi-Terrain Armored Convoy Lead",
             "source": "Venetian Islands High-Net-Worth Security",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-dubsta-6x6.jpg?v=20261118_v2",
             "stats": {
                   "speed": 76,
                   "accel": 82,
@@ -3458,7 +3458,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Family-Profile Covert Getaway SUV",
             "source": "Vice City Suburb Leaks",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_hd",
+            "image": "assets/vehicle-dorado.jpg?v=20261118_v2",
             "stats": {
                   "speed": 71,
                   "accel": 76,
@@ -3482,7 +3482,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tier 2 Ballistic Option",
             "heistRole": "Cartel Boss Escort & Heavy Syndicate Command",
             "source": "Starlet Key Mansion Gates (Trailer 1)",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-cavalcade-xl.jpg?v=20261118_v2",
             "stats": {
                   "speed": 82,
                   "accel": 86,
@@ -3506,7 +3506,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Central Tire Inflation + Shield Glass",
             "heistRole": "Spike-Strip Immune Ram Vehicle",
             "source": "Military Armory Leaks",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-patriot-milspec.jpg?v=20261118_v2",
             "stats": {
                   "speed": 62,
                   "accel": 65,
@@ -3530,7 +3530,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard",
             "heistRole": "Undercover Stash Hauler & Country Evade",
             "source": "Kelly County Bait Shop Leaks",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-rancher-xl.jpg?v=20261118_v2",
             "stats": {
                   "speed": 66,
                   "accel": 70,
@@ -3554,7 +3554,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Swamp Trail Quick Scout & Beach Infiltration",
             "source": "Trailer 1 Vice Beach Sand Cruising Scene",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_hd",
+            "image": "assets/vehicle-street-blazer.jpg?v=20261118_v2",
             "stats": {
                   "speed": 72,
                   "accel": 88,
@@ -3578,7 +3578,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Reinforced Pontoon Skids",
             "heistRole": "Offshore Yacht Raid & Marsh Extraction",
             "source": "Vice City Waterways Leak",
-            "image": "assets/vehicle-seasparrow.jpg?v=20261118_hd",
+            "image": "assets/vehicle-seasparrow.jpg?v=20261118_v2",
             "stats": {
                   "speed": 88,
                   "accel": 84,
@@ -3602,7 +3602,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Gunwale Shields",
             "heistRole": "Maritime Contraband Dash to International Waters",
             "source": "Official Artwork & Trailer 1 Marina Scene",
-            "image": "assets/vehicle-squalo.jpg?v=20261118_hd",
+            "image": "assets/vehicle-squalo.jpg?v=20261118_v2",
             "stats": {
                   "speed": 92,
                   "accel": 94,
@@ -3626,7 +3626,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Tinted Cabin Glass",
             "heistRole": "Floating Mobile Safehouse & Laundering Front",
             "source": "Starlet Key Luxury Mooring Leaks",
-            "image": "assets/vehicle-squalo.jpg?v=20261118_hd",
+            "image": "assets/vehicle-tropic-cruiser.jpg?v=20261118_v2",
             "stats": {
                   "speed": 68,
                   "accel": 72,
@@ -3650,7 +3650,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Puncture Resistant Sponson Tubes",
             "heistRole": "Stealth Shoreline Landing & Storm Drain Insertion",
             "source": "Vice Port Drainage Infiltration Sequence",
-            "image": "assets/vehicle-squalo.jpg?v=20261118_hd",
+            "image": "assets/vehicle-nagasaki-dinghy.jpg?v=20261118_v2",
             "stats": {
                   "speed": 82,
                   "accel": 86,
@@ -3674,7 +3674,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Zero (Radar Absorbent Profile)",
             "heistRole": "Silent Zero-Radar Contraband Exfiltration",
             "source": "Trailer 1 Biscayne Bay Sailboats",
-            "image": "assets/vehicle-squalo.jpg?v=20261118_hd",
+            "image": "assets/vehicle-marquis-sailboat.jpg?v=20261118_v2",
             "stats": {
                   "speed": 45,
                   "accel": 40,
@@ -3698,7 +3698,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Grassrivers Smuggler Landing Strip Insertion",
             "source": "Kelly County Farmland Scene",
-            "image": "assets/vehicle-seasparrow.jpg?v=20261118_hd",
+            "image": "assets/vehicle-western-duster.jpg?v=20261118_v2",
             "stats": {
                   "speed": 86,
                   "accel": 90,
@@ -3722,7 +3722,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Aviation Tint Glass",
             "heistRole": "Rooftop Helipad VIP Extrication",
             "source": "Ocean Drive Penthouse Helipad Leaks",
-            "image": "assets/vehicle-seasparrow.jpg?v=20261118_hd",
+            "image": "assets/vehicle-buckingham-maverick.jpg?v=20261118_v2",
             "stats": {
                   "speed": 89,
                   "accel": 86,
@@ -3746,7 +3746,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Cockpit Storm Shield",
             "heistRole": "Interstate State-Border Transshipment Flight",
             "source": "Grassrivers Smuggler Airfield Sequence",
-            "image": "assets/vehicle-seasparrow.jpg?v=20261118_hd",
+            "image": "assets/vehicle-jobuilt-velum.jpg?v=20261118_v2",
             "stats": {
                   "speed": 96,
                   "accel": 92,
@@ -3770,7 +3770,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Rear Door Steel Plates",
             "heistRole": "Bulky Heavy Loot Transport & Utility Disguise",
             "source": "Downtown Vice City Delivery Alleyways",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_hd",
+            "image": "assets/vehicle-speedo-van.jpg?v=20261118_v2",
             "stats": {
                   "speed": 68,
                   "accel": 72,
@@ -3794,7 +3794,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Armored Door Latches & Slit Glass",
             "heistRole": "Gold Bullion & Heavy Bank Vault Loot Hauler",
             "source": "Bank Transit Depot Scene",
-            "image": "assets/vehicle-buffalo-stx.jpg?v=20261118_hd",
+            "image": "assets/vehicle-brute-boxville.jpg?v=20261118_v2",
             "stats": {
                   "speed": 60,
                   "accel": 58,
@@ -3818,7 +3818,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Standard Commercial Cab",
             "heistRole": "Massive Hardware Moving & Chop Shop Supply",
             "source": "Port Gellhorn Shipping Docks",
-            "image": "assets/vehicle-tulip.jpg?v=20261118_hd",
+            "image": "assets/vehicle-maibatsu-mule.jpg?v=20261118_v2",
             "stats": {
                   "speed": 58,
                   "accel": 54,
@@ -3842,7 +3842,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "Windshield Deflector",
             "heistRole": "Solo Rapid Courier & Traffic Weaving",
             "source": "Kelly County Highway 101 Leaks",
-            "image": "assets/vehicle-blista-compact.jpg?v=20261118_hd",
+            "image": "assets/vehicle-western-sovereign.jpg?v=20261118_v2",
             "stats": {
                   "speed": 75,
                   "accel": 80,
@@ -3866,7 +3866,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Ultra-Fast Solo Courier & Gridlock Weave",
             "source": "Ocean Drive Night Street Races",
-            "image": "assets/vehicle-furia.jpg?v=20261118_hd",
+            "image": "assets/vehicle-bati-801.jpg?v=20261118_v2",
             "stats": {
                   "speed": 96,
                   "accel": 98,
@@ -3890,7 +3890,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Stairwell, Alley & Wetland Escape Bike",
             "source": "Port Gellhorn Drainage Canal Leaks",
-            "image": "assets/vehicle-elegy-retro.jpg?v=20261118_hd",
+            "image": "assets/vehicle-bf400.jpg?v=20261118_v2",
             "stats": {
                   "speed": 78,
                   "accel": 89,
@@ -3914,7 +3914,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "bulletproof": "None",
             "heistRole": "Downtown Vice City Alleyway Threader",
             "source": "Little Cuba Back Alleys Scene",
-            "image": "assets/vehicle-banshee.jpg?v=20261118_hd",
+            "image": "assets/vehicle-nemesis.jpg?v=20261118_v2",
             "stats": {
                   "speed": 85,
                   "accel": 92,
@@ -3946,7 +3946,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 82
             },
             "source": "Trailer 1 Hold-Up Scene (Jason & Lucia) & 2022 Leaks",
-            "image": "assets/weapon-polymer.jpg?v=20261118_hd",
+            "image": "assets/weapon-polymer.jpg?v=20261118_v2",
             "bio": "The gold-standard compact striker-fired polymer sidearm carried by Lucia in the opening trailer diner robbery. Lightweight, failure-proof even when dropped in muddy Leonida wetlands, and offers near-total concealment under casual clothing."
       },
       "beretta": {
@@ -3969,7 +3969,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 86
             },
             "source": "Jason Duval Official Character Stash Art & VCPD Armory",
-            "image": "assets/weapon-beretta.jpg?v=20261118_hd",
+            "image": "assets/weapon-beretta.jpg?v=20261118_v2",
             "bio": "Classic Italian open-slide double-action military sidearm with smooth recoil characteristics and flawless feeding reliability. Standard issue for many veteran law enforcement officers and Jason’s preferred defensive weapon."
       },
       "mustang357": {
@@ -3992,7 +3992,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 90
             },
             "source": "Trailer 1 Highway Police Standoff & Leaks",
-            "image": "assets/weapon-mustang357.jpg?v=20261118_hd",
+            "image": "assets/weapon-mustang357.jpg?v=20261118_v2",
             "bio": "High-polish stainless steel revolver packing devastating stopping power. Can punch through car doors and engine blocks at close range. One shot to center-mass drops unarmored guards instantly."
       },
       "browning-hipower": {
@@ -4015,7 +4015,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 85
             },
             "source": "Raul Bautista Smuggler Cache Leak",
-            "image": "assets/weapon-beretta.jpg?v=20261118_hd",
+            "image": "assets/weapon-browning-hipower.jpg?v=20261118_v2",
             "bio": "Historic single-action sidearm favored by veteran Caribbean contraband runners and cartel lieutenants for its crisp trigger break and ergonomic grip angle."
       },
       "taurus-judge": {
@@ -4059,7 +4059,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 88
             },
             "source": "Trailer 1 Bank Infiltration & Key Leaks",
-            "image": "assets/weapon-mp5.jpg?v=20261118_hd",
+            "image": "assets/weapon-mp5.jpg?v=20261118_v2",
             "bio": "The undisputed gold standard in roller-delayed submachine guns. Almost non-existent recoil allows putting an entire 30-round magazine into a 4-inch cluster while moving down bank hallways."
       },
       "micro-smg": {
@@ -4082,7 +4082,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 60
             },
             "source": "Drive-By Shooting Clip & Leaks",
-            "image": "assets/weapon-mp5.jpg?v=20261118_hd",
+            "image": "assets/weapon-micro-smg.jpg?v=20261118_v2",
             "bio": "Blistering 1,200 rounds per minute cyclic rate that empties a full magazine in under two seconds. The ultimate drive-by weapon from the driver seat of a getaway car."
       },
       "tec9": {
@@ -4105,7 +4105,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 64
             },
             "source": "Vice City Little Haiti Gang Leaks",
-            "image": "assets/weapon-mp5.jpg?v=20261118_hd",
+            "image": "assets/weapon-tec9.jpg?v=20261118_v2",
             "bio": "Infamous 90s Vice City street syndicate staple. Intimidating barrel shroud profile and massive 50-round drum magazine make it deadly for vault corridor suppressive fire."
       },
       "p90": {
@@ -4128,7 +4128,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 91
             },
             "source": "Port Gellhorn Shipping Facility Raid",
-            "image": "assets/weapon-mp5.jpg?v=20261118_hd",
+            "image": "assets/weapon-p90.jpg?v=20261118_v2",
             "bio": "Compact bullpup design chambered in high-velocity 5.7mm armor-piercing rounds that slice through Kevlar vests worn by armored car transit guards."
       },
       "carbine": {
@@ -4151,7 +4151,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 92
             },
             "source": "Trailer 1 SWAT & Raul Bautista Syndicate Arsenal",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-carbine.jpg?v=20261118_v2",
             "bio": "The military standard issue assault rifle. Extreme modularity and accuracy at medium-to-long ranges, capable of penetrating engine blocks and heavy ballistic glass."
       },
       "ak47": {
@@ -4174,7 +4174,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 78
             },
             "source": "Kelly County Militia Stash Leak",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-ak47.jpg?v=20261118_v2",
             "bio": "Heavy 7.62mm stopping power that punches straight through concrete parking garage pillars and armored police vehicles. Incurably reliable in Leonida sand and mud."
       },
       "compact-rifle": {
@@ -4197,7 +4197,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 68
             },
             "source": "Trailer 1 Convenience Store Raid & Leaks",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-compact-rifle.jpg?v=20261118_v2",
             "bio": "A chopped-down AK platform with a 6-inch barrel that produces deafening concussive blasts and blinding muzzle fire. Offers rifle power in a package that fits under a windbreaker."
       },
       "battle-rifle": {
@@ -4220,7 +4220,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 89
             },
             "source": "Grassrivers Smuggler Fortress Clip",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-battle-rifle.jpg?v=20261118_v2",
             "bio": "The Right Hand of the Free World. Hits with sledgehammer energy at extreme distances, disabling pursuing patrol vehicles with shots through the radiator grille."
       },
       "pump-shotgun": {
@@ -4243,7 +4243,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 72
             },
             "source": "Bank Transit Security Footage Leak",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-pump-shotgun.jpg?v=20261118_v2",
             "bio": "The ultimate room clearer and vault breach tool. Loaded with 00 buckshot, it tears open wooden security doors and immobilizes advancing swat teams in tight hallways."
       },
       "sawed-off": {
@@ -4266,7 +4266,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 45
             },
             "source": "Kelly County Bayou Robbery Leak",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-sawed-off.jpg?v=20261118_v2",
             "bio": "Both barrels sawed down to 8 inches. Empties a devastating wall of lead at point-blank range, turning armored vault locks and cash registers into shattered fragments."
       },
       "combat-shotgun": {
@@ -4289,7 +4289,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 76
             },
             "source": "Vice City Ocean Beach Gun Shop Leak",
-            "image": "assets/weapon-carbine.jpg?v=20261118_hd",
+            "image": "assets/weapon-combat-shotgun.jpg?v=20261118_v2",
             "bio": "Iconic folding-stock combat shotgun that cycles semi-automatic 12-gauge magnum shells as fast as the operator pulls the trigger."
       },
       "grenade-launcher": {
@@ -4312,7 +4312,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 80
             },
             "source": "Trailer 2 SWAT Tactical Breach Sequence",
-            "image": "assets/weapon-grenade-launcher.jpg?v=20261118_hd",
+            "image": "assets/weapon-grenade-launcher.jpg?v=20261118_v2",
             "bio": "Lobs 40mm high-explosive or CS tear gas rounds with pinpoint trajectory over police barricades, flipping swat vans and clearing entire intersections in one thud."
       },
       "rpg7": {
@@ -4335,7 +4335,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 75
             },
             "source": "Military Armory Heist Leaks",
-            "image": "assets/weapon-grenade-launcher.jpg?v=20261118_hd",
+            "image": "assets/weapon-rpg7.jpg?v=20261118_v2",
             "bio": "Devastating anti-armor launcher capable of blowing VCPD riot enforcers and police helicopters out of the sky in a blinding flash of shaped-charge explosive force."
       },
       "sniper": {
@@ -4358,7 +4358,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 98
             },
             "source": "Jason Duval Grassrivers Overwatch Scene",
-            "image": "assets/weapon-sniper.jpg?v=20261118_hd",
+            "image": "assets/weapon-sniper.jpg?v=20261118_v2",
             "bio": "Extreme-range bolt-action precision platform used for high-angle overwatch missions. One well-placed shot through the engine block disables pursuit vehicles before they reach the safehouse."
       },
       "heavy-sniper": {
@@ -4381,7 +4381,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 96
             },
             "source": "Vice Port Military Guard Tower Scene",
-            "image": "assets/weapon-sniper.jpg?v=20261118_hd",
+            "image": "assets/weapon-heavy-sniper.jpg?v=20261118_v2",
             "bio": "Fires massive 660-grain armor-piercing incendiary rounds that detonate fuel tanks and tear through reinforced bunker walls from over a mile away."
       },
       "hammer": {
@@ -4404,7 +4404,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 90
             },
             "source": "Trailer 1 Iconic \"Hammer Lady\" Scene",
-            "image": "assets/weapon-hammer.jpg?v=20261118_hd",
+            "image": "assets/weapon-hammer.jpg?v=20261118_v2",
             "bio": "Made famous in the first GTA 6 trailer by the neighborhood watch woman. Perfect for shattering jewelry display cases, disabling security cameras silently, and cracking door locks."
       },
       "baseball-bat": {
@@ -4427,7 +4427,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 85
             },
             "source": "Port Gellhorn Street Brawl & Pawn Shop Leaks",
-            "image": "assets/weapon-baseball-bat.jpg?v=20261118_hd",
+            "image": "assets/weapon-baseball-bat.jpg?v=20261118_v2",
             "bio": "The classic intimidation weapon. A couple of swings against a bank teller’s bulletproof glass instantly skyrockets the intimidation meter without firing a shot and alerting police dispatch."
       },
       "crowbar": {
@@ -4450,7 +4450,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 88
             },
             "source": "Backdoor Delivery Robbery Leaks",
-            "image": "assets/weapon-hammer.jpg?v=20261118_hd",
+            "image": "assets/weapon-crowbar.jpg?v=20261118_v2",
             "bio": "Dual-purpose heist tool. Used to quietly pry open security fire doors, electrical junction boxes, and ATM access panels, or wielded as a crushing close-quarters weapon."
       },
       "combat-knife": {
@@ -4473,7 +4473,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                   "accuracy": 95
             },
             "source": "Stealth Infiltration Takedown Leak",
-            "image": "assets/weapon-hammer.jpg?v=20261118_hd",
+            "image": "assets/weapon-combat-knife.jpg?v=20261118_v2",
             "bio": "Black epoxy-coated 7-inch tanto blade designed for silent takedowns of security sentries from behind. Leaves zero shell casings or acoustic signature."
       }
 },
@@ -4489,7 +4489,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "98% Facial Recognition Block",
             "perk": "Blocks CCTV facial recognition & delays 911 caller identification by 35 seconds.",
             "source": "Trailer 1 Diner Hold-Up Scene (Jason Duval)",
-            "image": "assets/gear-skull-mask.jpg",
+            "image": "assets/gear-skull-mask.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 95,
                   "ballistic": 15,
@@ -4508,7 +4508,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "92% Identity Concealment",
             "perk": "Fastest equip animation during sudden cash register grab-and-dashes.",
             "source": "Official Lucia Key Art & Diner Holdup",
-            "image": "assets/gear-bandana.jpg",
+            "image": "assets/character-lucia.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 90,
                   "ballistic": 10,
@@ -4527,7 +4527,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "99% Total Head Shield",
             "perk": "Negates 1 fatal headshot from law enforcement pistol fire.",
             "source": "Bank Vault Heist Alpha Leak 14",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/gear-ballistic-mask.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 98,
                   "ballistic": 92,
@@ -4546,7 +4546,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "85% Distortion",
             "perk": "Zero suspicion when stored in pockets; discarded instantly into trash bins.",
             "source": "Trailer 1 Kelly County Gas Station",
-            "image": "assets/gear-bandana.jpg",
+            "image": "assets/gear-stocking-mask.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 85,
                   "ballistic": 5,
@@ -4565,7 +4565,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "98% Identity Mask",
             "perk": "+20% Hostage Intimidation Speed; suppresses crowd panic alarms.",
             "source": "Port Gellhorn Amusement Pier Robbery Scene",
-            "image": "assets/gear-skull-mask.jpg",
+            "image": "assets/character-leonida-joker.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 96,
                   "ballistic": 12,
@@ -4584,7 +4584,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "96% Identity Mask",
             "perk": "Cult following bonus; unlocks unique syndicate underground dialogue.",
             "source": "Ocean Drive Street Party Leaked Encounter",
-            "image": "assets/gear-skull-mask.jpg",
+            "image": "assets/gear-animal-mask.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 94,
                   "ballistic": 10,
@@ -4603,7 +4603,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% (Submerged)",
             "perk": "Unlimited underwater breathing; zero air bubbles on radar sonar.",
             "source": "Biscayne Bay Underwater Drainage Leak",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/gear-scuba-suit.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 99,
                   "ballistic": 30,
@@ -4622,7 +4622,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% Full Body Shield",
             "perk": "Complete immunity to tear gas, smoke canisters, and chemical dispersants.",
             "source": "Port Gellhorn Pharmaceutical Cargo Raid",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/gear-hazmat-suit.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 99,
                   "ballistic": 45,
@@ -4641,7 +4641,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% Law Enforcement Cover",
             "perk": "Walk through police barricades and restricted evidence lockups without drawing heat.",
             "source": "Police Precinct Infiltration Leak 31",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/character-vcpd-officer.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 98,
                   "ballistic": 60,
@@ -4660,7 +4660,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "95% Worker Disguise",
             "perk": "Full access to cargo container shipping terminals and industrial docks.",
             "source": "Vice Port Container Yard Gameplay",
-            "image": "assets/gear-bandana.jpg",
+            "image": "assets/character-brian-heder.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 92,
                   "ballistic": 25,
@@ -4679,7 +4679,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% VIP Status",
             "perk": "Grants access to high-limit VIP penthouses, private poker lounges, and casino vaults.",
             "source": "Starlet Key Casino Gala Scene",
-            "image": "assets/gear-bandana.jpg",
+            "image": "assets/character-drequan-priest.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 96,
                   "ballistic": 35,
@@ -4698,7 +4698,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "96% Tourist Blending",
             "perk": "Blend into Ocean Drive pedestrian crowds instantly to drop police stars.",
             "source": "Trailer 1 Vice Beach Hotel Strip",
-            "image": "assets/gear-bandana.jpg",
+            "image": "assets/character-cal-hampton.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 94,
                   "ballistic": 10,
@@ -4717,7 +4717,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "0% (Heavy Military Rig)",
             "perk": "Absorbs up to 25 rifle shots; explosive blast damage reduced by 60%.",
             "source": "Trailer 1 Tactical Armor & Leaks",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/gear-juggernaut-armor.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 20,
                   "ballistic": 100,
@@ -4736,7 +4736,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "Special Ops Tactical",
             "perk": "Full green-phosphor night vision; reveals sentry positions in blackout conditions.",
             "source": "Power Grid Blackout Bank Infiltration Sequence",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/gear-nvg-helmet.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 80,
                   "ballistic": 90,
@@ -4755,7 +4755,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "100% Forensic Protection",
             "perk": "Leaves zero forensic fingerprint evidence; +25% melee punch damage.",
             "source": "Trailer 1 Weapon Handling & Leaks",
-            "image": "assets/gear-bandana.jpg",
+            "image": "assets/character-jason.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 100,
                   "ballistic": 40,
@@ -4774,7 +4774,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
             "concealIndex": "Tactical Recon",
             "perk": "Highlights guard heat signatures through smoke clouds, fog, and thin drywall.",
             "source": "Vice City Bank Vault Heist Blueprint",
-            "image": "assets/gear-ballistic-mask.jpg",
+            "image": "assets/item-thermal-lance.jpg?v=20261118_v2",
             "stats": {
                   "conceal": 85,
                   "ballistic": 35,
