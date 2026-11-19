@@ -275,54 +275,77 @@
 
 
     
-        <!-- COMPACT RADAR TITLE (RADAR POSITIONED AT VERY TOP) -->
-        <div style="max-width:1100px; margin:0.75rem auto 0.5rem; padding:0 0.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <!-- CLEAN INTERACTIVE MAP HEADER -->
+        <div style="max-width:1100px; margin:0.75rem auto 0.65rem; padding:0 0.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.65rem;">
             <div style="display:flex; align-items:center; gap:0.6rem;">
-                <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.18); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem;">🛰️ GPS RECON v3.2</span>
+                <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.18); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem;">🗺️ INTERACTIVE ATLAS v4.0</span>
                 <h1 style="color:#fff; font-size:1.35rem; font-weight:1000; margin:0; line-height:1.2;">
-                    LEONIDA STATE <span style="color:var(--neon-pink);">TACTICAL RADAR</span>
+                    LEONIDA STATE <span style="color:var(--neon-pink);">INTERACTIVE MAP</span>
                 </h1>
             </div>
-            <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--neon-green);">
-                6 CONFIRMED REGIONS &bull; CLICK &amp; DRAG TO PAN &bull; WHEEL ZOOM
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn btn-primary" onclick="bookmarkMapPage()" style="padding:0.35rem 0.75rem; font-size:0.76rem; background:linear-gradient(135deg, #ffd700, #ff8800); border:none; color:#000; font-weight:900;">
+                    ⭐ Bookmark Map
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="copyShareLink()" style="padding:0.35rem 0.75rem; font-size:0.76rem;">
+                    🔗 Share GPS
+                </button>
             </div>
         </div>
-        
 
     <main class="container" style="padding-top: 0.25rem;">
-        <!-- COMPACT TACTICAL RADAR COMMAND CONSOLE (MOVED TO TOP OF MAP) -->
-        <div class="map-master-console" style="background:rgba(11, 16, 25, 0.95); border:1px solid var(--border-card); border-radius:10px; padding:0.6rem 0.9rem; margin-bottom:0.65rem; box-shadow:0 4px 18px rgba(0,0,0,0.4);">
-            <!-- Row 1: Region Quick Jump -->
-            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem; padding-bottom:0.45rem; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:0.45rem;">
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-family:var(--font-mono); font-weight:800; margin-right:0.25rem;">🗺️ REGION JUMP:</span>
-                <button type="button" class="map-btn active" onclick="filterRegion('all', this)" style="padding:3px 8px; font-size:0.75rem;">All 6</button>
-                <button type="button" class="map-btn" onclick="filterRegion('vice-city', this)" style="padding:3px 8px; font-size:0.75rem;">🏙️ Vice City</button>
-                <button type="button" class="map-btn" onclick="filterRegion('leonida-keys', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">🏝️ Keys</button>
-                <button type="button" class="map-btn" onclick="filterRegion('grassrivers', this)" style="padding:3px 8px; font-size:0.75rem;">🌾 Grassrivers</button>
-                <button type="button" class="map-btn" onclick="filterRegion('port-gellhorn', this)" style="padding:3px 8px; font-size:0.75rem;">⚓ Port Gellhorn</button>
-                <button type="button" class="map-btn" onclick="filterRegion('ambrosia', this)" style="padding:3px 8px; font-size:0.75rem;">🏭 Ambrosia</button>
-                <button type="button" class="map-btn" onclick="filterRegion('lummox', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">🌲 Lummox</button>
-                <button type="button" class="map-btn" onclick="filterRegion('pelican-valley', this)" style="padding:3px 8px; font-size:0.75rem;">Pelican Valley</button>
-                <button type="button" class="map-btn" onclick="filterRegion('key-lento', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">Key Lento</button>
-            </div>
-            <!-- Row 2: Intel Filters & Quick Tools -->
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem;">
-                <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.35rem;">
-                    <span style="color:var(--neon-pink); font-size:0.76rem; font-family:var(--font-mono); font-weight:800; margin-right:0.25rem;">📡 FILTERS:</span>
-                    <button type="button" class="map-btn active" onclick="filterMap('all', this)" style="padding:3px 8px; font-size:0.75rem;">All Intel</button>
-                    <button type="button" class="map-btn" onclick="filterMap('vault', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">💰 Vaults</button>
-                    <button type="button" class="map-btn" onclick="filterMap('escape', this)" style="padding:3px 8px; font-size:0.75rem;">🚇 Escapes</button>
-                    <button type="button" class="map-btn" onclick="filterMap('safehouse', this)" style="padding:3px 8px; font-size:0.75rem;">🏠 Safehouses</button>
-                    <button type="button" class="map-btn" onclick="filterMap('radar', this)" style="padding:3px 8px; font-size:0.75rem;">📡 Air/Radar</button>
-                    <button type="button" class="map-btn" onclick="filterMap('fuel', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Fuel</button>
+        <!-- SLEEK MAPGENIE-STYLE COMMAND CONSOLE -->
+        <div class="map-master-console" style="background:rgba(11, 16, 25, 0.96); border:1px solid rgba(0,240,255,0.3); border-radius:10px; padding:0.75rem 1rem; margin-bottom:0.75rem; box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+            <!-- Top Row: Search + Region Dropdown + Progress Bar -->
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.65rem;">
+                <div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:240px;">
+                    <div style="position:relative; flex:1;">
+                        <input type="text" id="mapSearchInput" placeholder="🔍 Search vaults, safehouses, tunnels, gas stations..." oninput="searchMapPins(this.value)" style="width:100%; padding:0.45rem 0.75rem; background:rgba(0,0,0,0.75); border:1px solid rgba(0,240,255,0.35); border-radius:6px; color:#fff; font-size:0.8rem; outline:none; font-family:var(--font-mono); box-sizing:border-box;">
+                    </div>
+                    <select id="regionSelectDropdown" onchange="filterRegion(this.value, null)" style="padding:0.45rem 0.65rem; background:rgba(0,0,0,0.85); border:1px solid rgba(255,255,255,0.2); border-radius:6px; color:var(--neon-cyan); font-size:0.78rem; font-weight:700; font-family:var(--font-mono); outline:none; cursor:pointer;">
+                        <option value="all">📍 All Regions (6)</option>
+                        <option value="vice-city">🏙️ Vice City</option>
+                        <option value="leonida-keys">🏝️ Leonida Keys</option>
+                        <option value="grassrivers">🌾 Grassrivers</option>
+                        <option value="port-gellhorn">⚓ Port Gellhorn</option>
+                        <option value="ambrosia">🏭 Ambrosia</option>
+                        <option value="lummox">🌲 Lummox County</option>
+                        <option value="pelican-valley">🏖️ Pelican Valley</option>
+                        <option value="key-lento">🗝️ Key Lento</option>
+                    </select>
                 </div>
-                <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
-                    <label style="display:inline-flex; align-items:center; gap:0.35rem; cursor:pointer; font-size:0.75rem; color:#fff; font-weight:700;">
+
+                <!-- 100% Completion Progress Bar (Persisted in localStorage) -->
+                <div style="display:flex; align-items:center; gap:0.65rem; background:rgba(0,0,0,0.5); padding:0.4rem 0.85rem; border-radius:8px; border:1px solid rgba(16,185,129,0.3);">
+                    <div>
+                        <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--neon-green); font-weight:800;" id="progressText">
+                            PROGRESS: 0 / 22 FOUND (0%)
+                        </div>
+                        <div style="width:140px; height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden; margin-top:3px;">
+                            <div id="progressBarFill" style="width:0%; height:100%; background:linear-gradient(90deg, #10b981, #00f0ff); transition:width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="jumpToNextUnfoundPin()" class="btn btn-secondary" style="padding:0.25rem 0.55rem; font-size:0.7rem; border-color:var(--neon-green); color:var(--neon-green);" title="Jump to next unfound location">🎯 Next</button>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Clean Category Filter Pills & Marker Tools -->
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                <div class="map-controls" style="position:static; background:transparent; border:none; padding:0; display:flex; align-items:center; flex-wrap:wrap; gap:0.35rem;">
+                    <button type="button" class="map-btn active" onclick="filterMap('all', this)" style="padding:4px 10px; font-size:0.76rem;">All Pins</button>
+                    <button type="button" class="map-btn" onclick="filterMap('vault', this)" style="padding:4px 10px; font-size:0.76rem; border-color:var(--neon-pink); color:var(--neon-pink);">💰 Vaults</button>
+                    <button type="button" class="map-btn" onclick="filterMap('safehouse', this)" style="padding:4px 10px; font-size:0.76rem;">🏠 Safehouses</button>
+                    <button type="button" class="map-btn" onclick="filterMap('escape', this)" style="padding:4px 10px; font-size:0.76rem;">🚇 Escapes</button>
+                    <button type="button" class="map-btn" onclick="filterMap('radar', this)" style="padding:4px 10px; font-size:0.76rem;">📡 Airfields</button>
+                    <button type="button" class="map-btn" onclick="filterMap('fuel', this)" style="padding:4px 10px; font-size:0.76rem; border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Fuel</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                    <label style="display:inline-flex; align-items:center; gap:0.35rem; cursor:pointer; font-size:0.75rem; color:#cbd5e1; font-weight:700;">
                         <input type="checkbox" id="hideFoundToggle" onchange="applyPinVisibility()">
                         <span>Hide Found (<span id="foundPinsCounter">0</span>)</span>
                     </label>
-                    <button type="button" class="btn btn-secondary" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="toggleCustomPinCreator()">📍 + Marker</button>
-                    <button type="button" class="btn btn-amber" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="toggleD1PinDropPanel()">📡 + D1 Pin</button>
+                    <button type="button" class="btn btn-secondary" style="padding:0.25rem 0.65rem; font-size:0.74rem;" onclick="toggleCustomPinCreator()">📍 + Personal Pin</button>
+                    <button type="button" class="btn btn-amber" style="padding:0.25rem 0.65rem; font-size:0.74rem;" onclick="toggleD1PinDropPanel()">📡 + Community Pin</button>
                 </div>
             </div>
         </div>
@@ -602,14 +625,8 @@
     <g transform="translate(20, 30)">
         <rect width="230" height="42" rx="4" fill="rgba(8, 14, 22, 0.9)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
         <text x="10" y="16" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
-        <text x="10" y="32" fill="var(--neon-green)" font-family="monospace" font-size="9">LEONIDA HD RADAR &bull; DRAG TO PAN &bull; WHEEL ZOOM</text>
+        <text x="10" y="32" fill="var(--neon-green)" font-family="monospace" font-size="9">LEONIDA HD MAP &bull; DRAG TO PAN &bull; WHEEL ZOOM</text>
     </g>
-
-    <!-- Sweeping Radar Beam Animation -->
-    <circle cx="500" cy="325" r="380" fill="none" stroke="rgba(0, 240, 255, 0.12)" stroke-width="1"/>
-    <line x1="500" y1="325" x2="880" y2="325" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2">
-        <animateTransform attributeName="transform" type="rotate" from="0 500 325" to="360 500 325" dur="12s" repeatCount="indefinite"/>
-    </line>
 
     <!-- ======================================================== -->
     <!-- 10. INTERACTIVE PINS (HIGH CONTRAST, GLOWING, TEXT-FREE) -->
@@ -1360,11 +1377,49 @@
             applyPinVisibility();
         }
 
+        let activeSearchQuery = '';
+
+        function searchMapPins(query) {
+            activeSearchQuery = (query || '').toLowerCase().trim();
+            applyPinVisibility();
+        }
+
+        function bookmarkMapPage() {
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
+            if (window.GTA6 && GTA6.showToast) {
+                GTA6.showToast(`⭐ Press ${shortcut} (or Tap Share -> Add to Bookmarks) to save your 100% Leonida Progress!`);
+            }
+            if (window.GTA6 && GTA6.playSuccess) GTA6.playSuccess();
+        }
+
+        function copyShareLink() {
+            const url = new URL(window.location.href);
+            if (currentPinKey) url.searchParams.set('pin', currentPinKey);
+            navigator.clipboard?.writeText(url.toString()).then(() => {
+                if (window.GTA6 && GTA6.showToast) GTA6.showToast('🔗 GPS Map Link copied to clipboard!');
+            }).catch(() => {
+                if (window.GTA6 && GTA6.showToast) GTA6.showToast('🔗 Share URL: ' + url.toString());
+            });
+            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(880, 'sine', 0.05);
+        }
+
+        function updateProgressTracker() {
+            const found = getFoundPins();
+            const total = Object.keys(INTEL_DB).length || 22;
+            const pct = Math.min(100, Math.round((found.length / total) * 100));
+            const txt = document.getElementById('progressText');
+            const bar = document.getElementById('progressBarFill');
+            if (txt) txt.textContent = `PROGRESS: ${found.length} / ${total} FOUND (${pct}%)`;
+            if (bar) bar.style.width = `${pct}%`;
+        }
+
         function applyPinVisibility() {
             const found = getFoundPins();
             const hideFound = document.getElementById('hideFoundToggle')?.checked;
             const cntEl = document.getElementById('foundPinsCounter');
             if (cntEl) cntEl.innerText = String(found.length);
+            updateProgressTracker();
 
             document.querySelectorAll('.map-point').forEach(m => {
                 const pinId = m.getAttribute('data-pin-id') || '';
@@ -1377,11 +1432,21 @@
                 else if (activeCategory === 'escape') catOk = m.classList.contains('map-marker-escape');
                 else if (activeCategory === 'safehouse') catOk = m.classList.contains('map-marker-safehouse');
                 else if (activeCategory === 'radar') catOk = pinId === 'smuggler' || pinId === 'kalaga-outpost';
+                else if (activeCategory === 'fuel') catOk = m.classList.contains('map-marker-fuel') || pinId.includes('fuel');
                 else if (activeCategory === 'community') catOk = m.classList.contains('map-marker-community');
 
                 const regOk = activeRegion === 'all' || pinReg === activeRegion;
                 const foundOk = !(hideFound && isFound);
-                m.style.display = (catOk && regOk && foundOk) ? 'block' : 'none';
+
+                let searchOk = true;
+                if (activeSearchQuery) {
+                    const intel = INTEL_DB[pinId];
+                    const titleAttr = (m.querySelector('title')?.textContent || '').toLowerCase();
+                    const searchable = intel ? `${intel.title} ${intel.tag} ${intel.desc}`.toLowerCase() : `${pinId} ${titleAttr}`;
+                    searchOk = searchable.includes(activeSearchQuery);
+                }
+
+                m.style.display = (catOk && regOk && foundOk && searchOk) ? 'block' : 'none';
             });
         }
 
@@ -1568,6 +1633,14 @@
             }
             renderCustomMarkers();
             loadD1Markers();
+            updateProgressTracker();
+
+            // Support direct shared pin links (?pin=sinfrontera)
+            const params = new URLSearchParams(window.location.search);
+            const targetPin = params.get('pin');
+            if (targetPin) {
+                setTimeout(() => showIntel(targetPin), 350);
+            }
         });
     </script>
 </body>

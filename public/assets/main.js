@@ -6014,36 +6014,216 @@ DealRotator: {
       }
     },
     LiveIntelSync: {
+      latestCounts: { characters: 17, weapons: 19, vehicles: 144, properties: 8 },
       async poll() {
         try {
-          const res = await fetch('/api/sync-feed?t=' + Date.now());
-          if (!res.ok) return;
-          const feed = await res.json();
-          if (!feed.ok || !feed.counts) return;
+          const masterRes = await fetch('/data/gta6_master_intel.json?t=' + Math.floor(Date.now() / 60000));
+          if (masterRes.ok) {
+            const master = await masterRes.json();
+            this.latestCounts = {
+              characters: (master.characters || []).length,
+              weapons: (master.weapons || []).length,
+              vehicles: (master.vehicles || []).length,
+              properties: (master.properties || []).length,
+              masks: 16
+            };
+            this.hydrateAndRender(master);
+          }
 
+          const res = await fetch('/api/sync-feed?t=' + Date.now());
+          if (res.ok) {
+            const feed = await res.json();
+            if (feed.ok && feed.counts) {
+              this.latestCounts.characters = Math.max(this.latestCounts.characters, feed.counts.characters || 0);
+              this.latestCounts.weapons = Math.max(this.latestCounts.weapons, feed.counts.weapons || 0);
+              this.latestCounts.vehicles = Math.max(this.latestCounts.vehicles, feed.counts.vehicles || 0);
+              this.latestCounts.properties = Math.max(this.latestCounts.properties, feed.counts.properties || 0);
+            }
+          }
+
+          const c = this.latestCounts;
           document.querySelectorAll('.live-sync-badge').forEach((el) => {
-            el.innerHTML = `⚡ LIVE SYNC: ${feed.counts.characters} Operatives &bull; ${feed.counts.weapons} Weapons &bull; ${feed.counts.vehicles} Vehicles &bull; ${feed.counts.properties || 8} Safehouses &bull; ${feed.counts.masks || 16} Masks`;
+            el.innerHTML = `⚡ LIVE SYNC: ${c.characters} Operatives &bull; ${c.weapons} Weapons &bull; ${c.vehicles} Vehicles &bull; ${c.properties} Safehouses &bull; ${c.masks || 16} Masks`;
           });
           const timeEl = document.getElementById('liveSyncTimestamp');
           if (timeEl) {
             timeEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
           }
-          if (document.getElementById('syncCharsCount')) {
-            document.getElementById('syncCharsCount').textContent = feed.counts.characters || 18;
-          }
-          if (document.getElementById('syncWeaponsCount')) {
-            document.getElementById('syncWeaponsCount').textContent = feed.counts.weapons || 24;
-          }
-          if (document.getElementById('syncVehiclesCount')) {
-            document.getElementById('syncVehiclesCount').textContent = feed.counts.vehicles || 56;
-          }
-          if (document.getElementById('syncMasksCount')) {
-            document.getElementById('syncMasksCount').textContent = feed.counts.masks || 16;
-          }
-          if (document.getElementById('syncPropsCount')) {
-            document.getElementById('syncPropsCount').textContent = feed.counts.properties || 8;
-          }
+          if (document.getElementById('syncCharsCount')) document.getElementById('syncCharsCount').textContent = c.characters;
+          if (document.getElementById('syncWeaponsCount')) document.getElementById('syncWeaponsCount').textContent = c.weapons;
+          if (document.getElementById('syncVehiclesCount')) document.getElementById('syncVehiclesCount').textContent = c.vehicles;
+          if (document.getElementById('syncMasksCount')) document.getElementById('syncMasksCount').textContent = c.masks || 16;
+          if (document.getElementById('syncPropsCount')) document.getElementById('syncPropsCount').textContent = c.properties;
         } catch (e) {}
+      },
+      hydrateAndRender(master) {
+        if (Array.isArray(master.vehicles) && GTA6.VehicleData) {
+          const vehGrid = document.getElementById('vehGrid');
+          master.vehicles.forEach(v => {
+            const key = v.id.toLowerCase().replace(/^vehicle-/, '');
+            if (!GTA6.VehicleData[key] && !GTA6.VehicleData[v.id]) {
+              GTA6.VehicleData[v.id] = {
+                id: v.id,
+                name: v.name,
+                realName: v.realName || 'Confirmed GTA VI Vehicle',
+                category: v.category || 'muscle',
+                speed: v.speed || '155 MPH',
+                accel: v.accel || '3.8s (0-60)',
+                handling: v.handling || '85/100',
+                driveType: v.driveType || 'RWD / Performance',
+                capacity: v.capacity || '4 Duffel Bags',
+                bulletproof: v.bulletproof || 'Standard Chassis',
+                image: v.image || 'assets/veh_tulip.jpg',
+                bio: v.bio || 'Confirmed GTA VI vehicle indexed by SATCOM Auto-Sync.',
+                stats: v.stats || { speed: 82, accel: 80, handling: 84 }
+              };
+            }
+            if (vehGrid) {
+              const exists = vehGrid.querySelector(`[onclick*="${key}"]`) || vehGrid.querySelector(`[onclick*="${v.id}"]`);
+              if (!exists) {
+                let uiCat = v.category || 'muscle';
+                if (uiCat === 'police') uiCat = 'pursuit';
+                if (uiCat === 'offroad') uiCat = 'suv';
+                const card = document.createElement('div');
+                card.className = 'veh-card';
+                card.setAttribute('data-category', uiCat);
+                card.setAttribute('data-keywords', `${v.name} ${v.realName || ''} ${uiCat} ${v.bio || ''}`.toLowerCase());
+                card.setAttribute('onclick', `GTA6.VehicleModal.open('${v.id}')`);
+                card.setAttribute('title', 'Click to view full vehicle dossier & trunk specs');
+                card.innerHTML = `
+                  <div class="veh-img-stage">
+                    <img src="${v.image || 'assets/veh_tulip.jpg'}" alt="${v.name}" loading="lazy">
+                    <span class="veh-badge-class">${uiCat.toUpperCase()} // AUTO-SYNC</span>
+                    <span class="veh-badge-speed">⚡ ${v.speed || '155 MPH'}</span>
+                  </div>
+                  <div class="veh-content" style="padding:1.15rem; display:flex; flex-direction:column; flex:1; justify-content:space-between;">
+                    <div>
+                      <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.15rem; font-weight:900;">${v.name}</h3>
+                      <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">${v.realName || 'Confirmed GTA VI Fleet'}</div>
+                      <div class="veh-stat-row" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; margin:0.6rem 0; font-size:0.75rem; font-family:var(--font-mono); background:rgba(0,0,0,0.4); padding:0.45rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                        <div><span>Drive:</span> <strong style="color:#fff;">${(v.driveType || 'RWD').split('/')[0]}</strong></div>
+                        <div><span>Trunk:</span> <strong style="color:var(--neon-yellow);">${(v.capacity || '4 Bags').split('(')[0]}</strong></div>
+                        <div><span>Armor:</span> <strong style="color:var(--neon-green);">75/100</strong></div>
+                        <div><span>Accel:</span> <strong style="color:var(--neon-cyan);">${(v.accel || '3.8s').split(' ')[0]}</strong></div>
+                      </div>
+                      <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin:0;">${(v.bio || '').slice(0, 110)}...</p>
+                    </div>
+                    <span class="veh-click-hint" style="display:block; font-size:0.72rem; color:var(--neon-cyan); font-family:var(--font-mono); font-weight:700; margin-top:0.65rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">📂 CLICK FOR DOSSIER &amp; TRUNK SPECS &rarr;</span>
+                  </div>
+                `;
+                vehGrid.appendChild(card);
+              }
+            }
+          });
+          if (vehGrid) {
+            const totalCards = vehGrid.querySelectorAll('.veh-card').length;
+            const resCount = document.getElementById('vehResultCount');
+            if (resCount) resCount.textContent = `Showing ${totalCards} Confirmed Vehicles • Click any vehicle for full dossier & trunk specs`;
+            const allBtn = document.querySelector('.veh-filter-pill[onclick*="\'all\'"]');
+            if (allBtn) allBtn.textContent = `All Confirmed (${totalCards})`;
+          }
+        }
+
+        if (Array.isArray(master.weapons) && GTA6.WeaponData) {
+          const gearGrid = document.getElementById('gearGrid');
+          master.weapons.forEach(w => {
+            const key = w.id.toLowerCase().replace(/^weapon-/, '').replace(/^gear-/, '');
+            if (!GTA6.WeaponData[key] && !GTA6.WeaponData[w.id]) {
+              GTA6.WeaponData[w.id] = {
+                id: w.id,
+                name: w.name,
+                category: w.category || 'rifles',
+                type: w.type || 'Tactical Weapon',
+                caliber: w.caliber || 'NATO',
+                image: w.image || 'assets/weapon_carbine_rifle.jpg',
+                bio: w.bio || 'Confirmed GTA VI tactical loadout item.',
+                stats: { damage: w.damage || 80, range: w.range || 75, stealth: w.stealth || 50 }
+              };
+            }
+            if (gearGrid) {
+              const exists = gearGrid.querySelector(`[onclick*="${key}"]`) || gearGrid.querySelector(`[onclick*="${w.id}"]`);
+              if (!exists) {
+                const card = document.createElement('div');
+                card.className = 'item-card';
+                card.setAttribute('data-category', w.category || 'rifles');
+                card.setAttribute('data-keywords', `${w.name} ${w.type || ''} ${w.caliber || ''} ${w.bio || ''}`.toLowerCase());
+                card.setAttribute('onclick', `GTA6.WeaponModal.open('${w.id}')`);
+                card.style.cursor = 'pointer';
+                card.innerHTML = `
+                  <div class="item-img-stage" style="height:180px; overflow:hidden; position:relative; background:#070b14;">
+                    <img src="${w.image || 'assets/weapon_carbine_rifle.jpg'}" alt="${w.name}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.85); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.68rem;">${(w.type || 'TACTICAL').toUpperCase()}</span>
+                  </div>
+                  <div style="padding:1.15rem;">
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.25rem; font-weight:900;">${w.name}</h3>
+                    <div style="color:var(--neon-cyan); font-size:0.75rem; font-family:var(--font-mono); margin-bottom:0.6rem;">${w.caliber || 'Confirmed Spec'}</div>
+                    <p style="color:var(--text-muted); font-size:0.8rem; line-height:1.45; margin-bottom:0.75rem;">${(w.bio || '').slice(0, 110)}...</p>
+                    <div class="item-stats-table" style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; font-size:0.74rem; font-family:var(--font-mono); background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+                      <div>DMG: <strong style="color:var(--neon-pink);">${w.damage || 80}</strong></div>
+                      <div>RNG: <strong style="color:var(--neon-green);">${w.range || 75}</strong></div>
+                    </div>
+                  </div>
+                `;
+                gearGrid.appendChild(card);
+              }
+            }
+          });
+          if (gearGrid) {
+            const totalItems = gearGrid.querySelectorAll('.item-card').length;
+            const cnt = document.getElementById('itemCountDisplay');
+            if (cnt) cnt.innerText = `Showing ${totalItems} of ${totalItems}`;
+          }
+        }
+
+        if (Array.isArray(master.characters)) {
+          const charGrid = document.getElementById('characterGrid');
+          master.characters.forEach(c => {
+            if (GTA6.CharacterData && !GTA6.CharacterData[c.id]) {
+              GTA6.CharacterData[c.id] = {
+                id: c.id,
+                name: c.name,
+                role: c.role || 'Syndicate Contact',
+                specialty: c.specialty || 'Underworld Ops',
+                cut: c.cut || 'Variable',
+                district: c.district || 'Leonida State',
+                image: c.image || 'assets/gta6-protagonists-official.jpg',
+                bio: `${c.role}. ${c.specialty}. Operating out of ${c.district}. (${c.source || 'Confirmed'})`,
+                stats: { stealth: 84, combat: 82, hacking: 78 }
+              };
+            }
+            if (charGrid) {
+              const exists = charGrid.querySelector(`#${c.id}`) || charGrid.querySelector(`[onclick*="${c.id}"]`);
+              if (!exists) {
+                const card = document.createElement('div');
+                card.className = 'char-card';
+                card.id = c.id;
+                card.setAttribute('data-category', 'crew');
+                card.setAttribute('data-keywords', `${c.name} ${c.role} ${c.district} ${c.specialty}`.toLowerCase());
+                card.setAttribute('onclick', `GTA6.CharacterModal.open('${c.id}')`);
+                card.style.cursor = 'pointer';
+                card.innerHTML = `
+                  <div style="height:230px; overflow:hidden; position:relative; background:#080e18;">
+                    <img src="${c.image || 'assets/gta6-protagonists-official.jpg'}" alt="${c.name}" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
+                    <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">AUTO-SYNCED DOSSIER</span>
+                  </div>
+                  <div style="padding:1.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                      <h2 style="color:#fff; font-size:1.35rem; margin:0;">${c.name}</h2>
+                      <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">${(c.cut || 'CONTACT').toUpperCase()}</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">${c.role} &bull; ${c.specialty} (${c.district})</p>
+                  </div>
+                `;
+                charGrid.appendChild(card);
+              }
+            }
+          });
+          if (charGrid) {
+            const totalChars = charGrid.querySelectorAll('.char-card').length;
+            const cnt = document.getElementById('charCountDisplay');
+            if (cnt) cnt.innerText = `Showing ${totalChars} of ${totalChars}`;
+          }
+        }
       },
       async manualPing(btn) {
         if (GTA6.playBeep) {
@@ -6053,14 +6233,15 @@ DealRotator: {
         if (btn) {
           const orig = btn.innerHTML;
           btn.disabled = true;
-          btn.innerHTML = '⚡ Scanning Edge Nodes...';
+          btn.innerHTML = '⚡ Scanning Master Intel...';
           await this.poll();
+          const c = this.latestCounts;
           setTimeout(() => {
             btn.innerHTML = '✓ Database Synchronized';
             btn.style.borderColor = 'var(--neon-green)';
             btn.style.color = 'var(--neon-green)';
             if (GTA6.showToast) {
-              GTA6.showToast('🛰️ Edge Database Current: 14 Operatives, 16 Vehicles, 11 Weapons & 8 Properties active!');
+              GTA6.showToast(`🛰️ Live Sync Complete: ${c.characters} Characters, ${c.vehicles} Vehicles, ${c.weapons} Weapons & ${c.properties} Safehouses active!`);
             }
             setTimeout(() => {
               btn.innerHTML = orig;
@@ -6068,14 +6249,13 @@ DealRotator: {
               btn.style.borderColor = '';
               btn.style.color = '';
             }, 3000);
-          }, 650);
+          }, 500);
         } else {
           await this.poll();
         }
       },
       init() {
         this.poll();
-        // Auto-update every 10 minutes in the background
         setInterval(() => this.poll(), 10 * 60 * 1000);
       }
     }

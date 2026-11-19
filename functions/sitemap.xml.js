@@ -1,5 +1,6 @@
 const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/", changefreq: "daily", priority: "1.0" },
+  { loc: "https://www.gta6heistguide.com/live", changefreq: "hourly", priority: "0.95" },
   { loc: "https://www.gta6heistguide.com/free/", changefreq: "daily", priority: "0.98" },
   { loc: "https://www.gta6heistguide.com/rss.xml", changefreq: "hourly", priority: "0.95" },
   { loc: "https://www.gta6heistguide.com/embed/clock.html", changefreq: "daily", priority: "0.85" },
