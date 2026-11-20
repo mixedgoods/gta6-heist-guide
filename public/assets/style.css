@@ -1144,6 +1144,51 @@ footer {
   50% { opacity: 0.4; transform: scale(0.75); }
 }
 
+
+/* GLOWING RED LIVE PILL BUTTON */
+.btn-live-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(185, 28, 28, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  padding: 0.42rem 0.8rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: var(--font-mono, monospace);
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.65), inset 0 0 6px rgba(255, 255, 255, 0.25);
+  animation: livePillPulse 2s infinite alternate ease-in-out;
+}
+
+.btn-live-pill:hover {
+  transform: translateY(-1px) scale(1.03);
+  background: linear-gradient(135deg, #f87171, #dc2626);
+  border-color: #ff8585;
+  box-shadow: 0 0 22px rgba(239, 68, 68, 0.95), 0 0 35px rgba(239, 68, 68, 0.5);
+  color: #fff;
+}
+
+@keyframes livePillPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.55), inset 0 0 4px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 120, 120, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.95), 0 0 32px rgba(239, 68, 68, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.45);
+    border-color: #ff4d4d;
+  }
+}
+
 .btn-vip-nav {
   background: linear-gradient(90deg, #ff2a8d, #9d4edd);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -1690,6 +1735,7 @@ html, body {
     gap: 0.35rem;
     flex-wrap: nowrap;
   }
+  .btn-live-pill,
   .btn-vip-nav,
   .btn-sound {
     padding: 0.32rem 0.58rem;

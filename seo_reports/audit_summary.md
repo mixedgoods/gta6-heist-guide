@@ -1,6 +1,6 @@
 # GTA6HeistGuide.com — Plain-English SEO & Technical Health Report
 
-**Run Mode:** `LOCAL` | **Checked At:** `2026-11-20T17:16:05Z` | **Total Sitemap URLs:** `117`
+**Run Mode:** `LOCAL` | **Checked At:** `2026-11-20T17:27:30Z` | **Total Sitemap URLs:** `117`
 
 ## 1. Two-Stage Audit Results
 - **Stage 1 (Raw HTML Check — what Googlebot & AI crawlers read first):**
