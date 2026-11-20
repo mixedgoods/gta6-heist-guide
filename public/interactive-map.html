@@ -400,10 +400,12 @@
 
         .inspector-payout {
             font-family: var(--font-mono, monospace);
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             font-weight: 800;
             color: var(--neon-green);
             margin-bottom: 0.5rem;
+            word-break: break-word;
+            line-height: 1.35;
         }
 
         .inspector-desc {
@@ -544,11 +546,11 @@
 
         .loc-item-meta {
             font-size: 0.68rem;
-            color: #64748b;
+            color: #94a3b8;
             font-family: var(--font-mono, monospace);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            white-space: normal;
+            line-height: 1.35;
+            word-break: break-word;
         }
 
         .loc-item-check {
@@ -1021,7 +1023,7 @@
         </ul>
         <div class="nav-actions">
             <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub">🔴 Live</a>
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints &amp; Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
             <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>
     </div>
@@ -1123,6 +1125,12 @@
             <!-- Dynamic Location List -->
             <div id="locationsListContainer" style="display:flex; flex-direction:column; gap:0.4rem;"></div>
         </div>
+        <!-- SLIM 1-LINE AFFILIATE STRIP -->
+        <div class="sidebar-affiliate-strip" style="flex-shrink:0; padding:0.45rem 0.65rem; background:rgba(6,10,18,0.98); border-top:1px solid rgba(0,240,255,0.25); font-size:0.68rem; line-height:1.35; text-align:center; color:#94a3b8; font-family:var(--font-mono, monospace); z-index:10;">
+            <span>💾 Zero Vice City map pop-in: <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="map-sidebar-bottom" style="color:var(--neon-green); font-weight:700; text-decoration:none;">Samsung 990 PRO 2TB SSD (Amazon)</a></span>
+            <span style="color:rgba(0,240,255,0.4); margin:0 4px;">&bull;</span>
+            <span>⚡ Low-Ping Lobby: <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="map-sidebar-bottom" style="color:var(--neon-cyan); font-weight:700; text-decoration:none;">ExitLag (Code: 10386953)</a></span>
+        </div>
     </aside>
 
     <!-- RIGHT MAP STAGE PANE -->
@@ -1135,8 +1143,12 @@
             <div class="hud-zoom-btn-group">
                 <button type="button" class="hud-btn" onclick="zoomInMap()" title="Zoom In (+)" aria-label="Zoom In">+</button>
                 <button type="button" class="hud-btn" onclick="zoomOutMap()" title="Zoom Out (-)" aria-label="Zoom Out">&minus;</button>
-                <button type="button" class="hud-btn" onclick="resetMapView()" title="Reset Full View (↺)" aria-label="Reset View">↺</button>
-                <button type="button" class="hud-btn" onclick="toggleMapFullscreen()" title="Toggle Fullscreen (⛶)" aria-label="Fullscreen">⛶</button>
+                <button type="button" class="hud-btn" onclick="resetMapView()" title="Reset Full View" aria-label="Reset View">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                </button>
+                <button type="button" class="hud-btn" onclick="toggleMapFullscreen()" title="Toggle Fullscreen" aria-label="Fullscreen">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; display:inline-block;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                </button>
             </div>
         </div>
 

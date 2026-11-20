@@ -306,7 +306,7 @@ const GTA6 = {
           s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(pubId)}`;
           document.head.appendChild(s);
         }
-        document.querySelectorAll('.gta-ad-slot').forEach((slot) => {
+        document.querySelectorAll('.adsense-slot, .gta-ad-slot').forEach((slot) => {
           slot.style.display = 'block';
           if (!slot.querySelector('ins.adsbygoogle')) {
             const ins = document.createElement('ins');
@@ -864,7 +864,7 @@ const GTA6 = {
         vipBtn.innerText = `★ ${profile.alias}`;
       } else {
         vipBtn.classList.remove('verified');
-        vipBtn.innerHTML = `🎁 VIP<span class="vip-desktop-label"> Login</span>`;
+        vipBtn.innerHTML = `💾 Save Progress<span class="vip-desktop-label"> / Alerts</span>`;
       }
     },
 
@@ -878,7 +878,7 @@ const GTA6 = {
             <button type="button" class="modal-close-btn" onclick="GTA6.Auth.closeModal()" aria-label="Close Login Modal">${GTA6.Icons.close(15)}</button>
             <div style="text-align:center; margin-bottom:1.25rem;">
               <span class="user-badge badge-mastermind" style="margin-bottom:0.6rem;">FOUNDER SYNDICATE ACCESS</span>
-              <h2 style="color:#fff; font-size:1.55rem; margin-bottom:0.4rem;">Unlock Free VIP Vault Blueprints & +2,500 Rep</h2>
+              <h2 style="color:#fff; font-size:1.55rem; margin-bottom:0.4rem;">💾 Save Progress & Get Free Heist Alerts</h2>
               <p style="color:var(--text-muted); font-size:0.88rem;">Back up your Leonida Criminal Enterprise Mastery %, receive weekly GTA 6 heist meta alerts, Thursday 1.5X payout rotations, and unlock free VIP strategy blueprints (<strong style="color:var(--neon-cyan);">6 Leonida Regions Mapped &bull; 100% Free Tools</strong>).</p>
             </div>
             <div class="vip-pack-preview">
@@ -922,7 +922,7 @@ const GTA6 = {
                 <input type="checkbox" id="vipOptInModal" checked style="margin-top:3px;">
                 <span>Send me weekly GTA 6 heist patch updates, 1.5X payout alerts, and vetted partner gear deals (Unsubscribe anytime).</span>
               </label>
-              <button type="submit" class="btn btn-primary" style="width:100%;">🔓 Unlock VIP Blueprint Pack & Verify Profile</button>
+              <button type="submit" class="btn btn-primary" style="width:100%; padding:0.85rem; font-size:0.95rem; font-weight:800;">💾 Save Progress &amp; Unlock Free Blueprints (+2,500 Rep)</button>
               <div id="vipModalStatus" style="margin-top:0.75rem; font-size:0.85rem; text-align:center;"></div>
             </form>
             <div id="vipUnlockedActions" style="display:${profile.vipVerified ? 'block' : 'none'}; margin-top:1.2rem; padding:1rem; background:rgba(0,255,136,0.08); border:1px solid var(--neon-green); border-radius:8px; text-align:center;">

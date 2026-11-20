@@ -2014,19 +2014,31 @@ html, body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .deal-img-stage img {
-  max-height: 154px;
-  max-width: 90%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
   border-radius: 8px;
-  background: rgba(11, 18, 30, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
-  padding: 8px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  background: rgba(8, 12, 20, 0.95);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+  padding: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 .deal-card-premium:hover .deal-img-stage img {
   transform: scale(1.04);
-  border-color: rgba(0, 240, 255, 0.35);
+  border-color: var(--neon-cyan);
+}
+.adsense-slot {
+  display: none;
+  margin: 1.75rem auto;
+  max-width: 1140px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  background: transparent;
+  min-height: 0;
 }
 .deal-badge-verified {
   position: absolute;
