@@ -83,13 +83,19 @@ const GTA6 = {
   },
 
   applyWeeklyBadges(v) {
-    const targetSlug = 'everglades-smuggler-run';
+    const targetSlug = (v && (v.slug || '').replace(/\.html$/, '')) || 'leonida-reserve';
+    const targetBonus = (v && v.bonusPayout) || '$37,500,000';
     document.querySelectorAll('.bonus-badge[data-vault-slug]').forEach((b) => {
-      const on = b.dataset.vaultSlug === targetSlug;
+      const bSlug = (b.dataset.vaultSlug || '').replace(/\.html$/, '');
+      const on = bSlug === targetSlug;
       b.style.display = on ? 'block' : 'none';
       const amt = b.querySelector('.bonus-amt');
-      if (on && amt) amt.textContent = '$9,750,000';
+      if (on && amt) amt.textContent = targetBonus;
     });
+    const bonusNameEl = document.getElementById('vaultGridBonusName');
+    if (bonusNameEl && v && v.name) bonusNameEl.textContent = v.name;
+    const bonusPayoutEl = document.getElementById('vaultGridBonusPayout');
+    if (bonusPayoutEl && v && v.bonusPayout) bonusPayoutEl.textContent = `${v.bonusPayout} Bonus Payout Active`;
   },
 
   heistTier(target) {
@@ -529,6 +535,29 @@ const GTA6 = {
       const res = await fetch('/api/intel');
       if (res.ok) data = await res.json();
     } catch (e) {}
+
+    if (!data || !data.featuredVault) {
+      try {
+        const res2 = await fetch('/data/live_intel.json');
+        if (res2.ok) {
+          const liveJson = await res2.json();
+          const fallback = this.getDeterministicIntelFallback();
+          if (liveJson && Array.isArray(liveJson.intelFeed) && liveJson.intelFeed.length > 0) {
+            fallback.intelFeed = liveJson.intelFeed.map((item) => ({
+              id: item.id || ('intel-' + Math.random().toString(36).slice(2)),
+              category: /cheat/i.test(item.category || item.badge) ? 'meta' : /cash|money/i.test(item.category || item.badge) ? 'meta' : /setting|ps5|hardware/i.test(item.category || item.badge) ? 'hardware' : 'official',
+              badge: item.badge || 'LIVE INTEL',
+              title: item.title,
+              date: item.pubDate ? new Date(item.pubDate).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10),
+              source_name: item.source || 'Syndicate Intel Wire',
+              summary: item.summary,
+              link: item.link || 'live-intel.html'
+            }));
+          }
+          data = fallback;
+        }
+      } catch (e2) {}
+    }
 
     if (!data || !data.featuredVault) {
       data = this.getDeterministicIntelFallback();
