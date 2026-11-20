@@ -89,11 +89,8 @@ body {
 }
 .nav-status-badge {
   order: 2;
-  position: absolute;
-  top: 0.52rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   gap: 0.45rem;
   font-family: var(--font-mono);
@@ -123,7 +120,6 @@ body {
   align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
-  margin-left: auto;
 }
 .nav-links {
   order: 4;
@@ -1805,44 +1801,27 @@ html, body {
   }
 }
 
-@media (max-width: 767px) {
-  .mobile-menu-btn {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0.45rem 0.65rem;
-  }
+@media (max-width: 1023px) {
   .nav-links {
-    display: none !important;
-    order: 4;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    max-height: calc(100vh - 68px);
-    overflow-y: auto;
-    z-index: 1001;
-    background: rgba(9, 7, 16, 0.98);
-    border-top: 1px solid rgba(0, 240, 255, 0.25);
-    border-bottom: 1px solid rgba(0, 240, 255, 0.35);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
-    padding: 0.75rem 1rem 1rem;
-    gap: 0.45rem;
-  }
-  .nav-links.open {
+    order: 4 !important;
+    width: 100% !important;
+    position: static !important;
     display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 8px 12px !important;
+    gap: 6px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
   }
   .nav-links a {
-    width: 100%;
-    min-height: 44px;
-    padding: 0.65rem 0.9rem;
-    font-size: 0.9rem;
-    justify-content: flex-start;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    font-size: 12px !important;
+    padding: 5px 10px !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -2999,111 +2978,119 @@ body.has-ticker .bookmarks-fab {
   color: #fff;
 }
 
-/* HIGH-VALUE TARGETS 4-COLUMN DESKTOP GRID */
+/* HIGH-VALUE TARGETS 2-COLUMN DESKTOP GRID */
 .targets-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
-@media (max-width: 992px) {
-  .targets-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .targets-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
-/* COMPACT TARGET CARDS FOR HOMEPAGE */
+/* COMPACT TARGET CARDS FOR HOMEPAGE (WIDE 2x2 LAYOUT) */
 .targets-grid .card {
-  padding: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
+  background: rgba(14, 20, 32, 0.95);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 8px;
+  position: relative;
+  min-height: 240px;
 }
-.targets-grid .tactical-schematic-bar > div:first-child {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 6px !important;
-  overflow: visible !important;
-}
-.targets-grid .tactical-schematic-bar {
-  min-height: unset !important;
-  padding: 6px 8px !important;
-  margin-bottom: 6px !important;
-}
-.targets-grid .tactical-schematic-bar > div:nth-child(2) {
-  display: none;
+.targets-grid .vault-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 .targets-grid .card-tag {
-  font-size: 0.65rem;
-  padding: 2px 6px;
-  margin-bottom: 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.targets-grid .sec-lvl-badge {
+  font-size: 11px !important;
+  font-weight: 700;
+  padding: 2px 7px !important;
+  border-radius: 4px;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
 }
 .targets-grid .card-title {
-  font-size: 0.95rem;
-  margin: 2px 0 3px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 6px 0;
   line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.targets-grid .card-meta {
-  font-size: 0.76rem;
-  margin-bottom: 3px;
 }
 .targets-grid .card-desc {
-  font-size: 0.74rem;
-  line-height: 1.3;
-  margin: 0 0 6px 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin: 0 0 10px 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.targets-grid .heist-tactical-specs {
+.targets-grid .vault-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  white-space: normal;
+  overflow: visible;
+}
+.targets-grid .vault-stat-item {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  margin-bottom: 6px;
+  gap: 2px;
+  white-space: normal;
+  overflow: visible;
 }
-.targets-grid .spec-pill {
-  font-size: 0.66rem;
-  padding: 2px 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.targets-grid .vault-stat-lbl {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
 }
-.targets-grid .spec-pill:nth-child(n+3) {
-  display: none;
+.targets-grid .vault-stat-val {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  font-family: var(--font-mono);
 }
-.targets-grid .card label {
-  display: none;
-}
-.targets-grid .card > div:last-of-type,
-.targets-grid .card > div[style*="display:grid"] {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.targets-grid .vault-card-actions {
   margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
-.targets-grid .card > div[style*="display:grid"] > button:last-child {
-  display: none;
-}
-.targets-grid .btn {
-  padding: 5px 8px;
-  font-size: 0.74rem;
-}
-
-.sec-lvl-badge {
-  white-space: nowrap !important;
-  font-size: 11px !important;
-  flex-shrink: 0 !important;
-  padding: 2px 6px !important;
-  line-height: 1.2 !important;
+.targets-grid .vault-card-actions .btn {
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 /* COMPACT 2-COLUMN FAQ GRID */
@@ -3143,17 +3130,5 @@ body.has-ticker .bookmarks-fab {
   .faq-accordion-compact {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-  }
-}
-
-
-@media (max-width: 1023px) {
-  .nav-links {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 8px 12px;
-    gap: 6px;
   }
 }

@@ -447,449 +447,205 @@
 
     <div class="targets-grid">
         <!-- CARD 1: Sinfrontera National Bank -->
-        <div class="card">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(0,240,255,0.1), rgba(10,16,26,0.95)); border-radius:6px; margin-bottom:0.75rem; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-cyan); letter-spacing:1px;">LAT: 25.7617° N | LON: 80.1918° W</span>
-                        <span class="user-badge badge-wheelman sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: MAXIMUM</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; VICE CITY DOWNTOWN
-                    </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: ACTIVE (48m Cycle)</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $14.5M</span>
-                    </div>
-                </div>
+        <div class="card vault-card-redesign">
+            <div class="vault-card-top">
                 <span class="card-tag tag-expert">Expert Tier</span>
-                <h3 class="card-title">Sinfrontera National Bank Vault Raid</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$14,500,000</span>
-                </div>
+                <span class="sec-lvl-badge badge-wheelman">SEC-LVL: MAXIMUM</span>
             </div>
             <div class="bonus-badge" data-vault-slug="sinfrontera-bank" data-bonus="$21,750,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$21,750,000</span></div>
-            <p class="card-desc">Downtown Vice City's commercial fortress. Features subterranean vault drilling, pneumatic safety overrides, dual-keycard biometric sync, and sewer drainage extraction.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Silent EMP vs Sub-Vault Bore Drill</span>
-                <span class="spec-pill">👥 Solo Net: $10.1M &bull; 4-Squad: $3.6M/ea</span>
-                <span class="spec-pill">🚁 Downtown Drainage Canal Escape</span>
-            </div>
-            <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
-                <input type="checkbox" class="mastery-bp-check" data-bp-slug="sinfrontera-bank" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('sinfrontera-bank', this.checked)">
-                <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
-            </label>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-sinfrontera" onclick="GTA6.toggleTacticalPeek('peek-sinfrontera')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="sinfrontera-bank.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Bank Raid Intel</a>
-                <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('sinfrontera-bank', 'Sinfrontera National Bank')">📡 Report Live Payout / Cooldown Change</button>
-            </div>
-            <div id="peek-sinfrontera" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">SILENT EMP:</span> Substation power disruption gives 90s laser bypass. Dual keycard sync avoids alarm.</p>
-                        <p><span class="badge-loud">AGGRESSIVE BORE:</span> Heavy foundation drill breach. Level IV armor required for NOOSE wave assault.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>Hacker: 10% (Required for 90s delay) &bull; Gunner: 15% &bull; Driver: 8% (Net Solo Take: ~$10,150,000)</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>Subterranean storm drain dirt bikes &rarr; Downtown canal waterway safehouse.</p>
-                    </div>
-                    <a href="sinfrontera-bank.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+            <h3 class="card-title">Sinfrontera National Bank Vault Raid</h3>
+            <p class="card-desc">Downtown Vice City's commercial fortress. Infiltrate via subterranean bore drills, sync dual-keycard biometric gates, and escape through drainage canals.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$10,150,000</span>
                 </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$3,625,000 / ea</span>
+                </div>
+            </div>
+            <div class="vault-card-actions">
+                <a href="sinfrontera-bank.html" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html?heist=sinfrontera-bank" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
         <!-- CARD 2: Port Gellhorn Container Terminal -->
-        <div class="card">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(0,255,136,0.1), rgba(10,16,26,0.95)); border-radius:6px; margin-bottom:0.75rem; border:1px solid rgba(0,255,136,0.3); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-green); letter-spacing:1px;">LAT: 26.1224° N | LON: 80.1373° W</span>
-                        <span class="user-badge badge-mastermind sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: HIGH</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; PORT GELLHORN FREIGHT
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: ACTIVE (48m)</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $8.2M</span>
-                    </div>
-                </div>
+        <div class="card vault-card-redesign">
+            <div class="vault-card-top">
                 <span class="card-tag tag-intermediate">Intermediate Tier</span>
-                <h3 class="card-title">Port Gellhorn Container Terminal Heist</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$8,200,000</span>
-                </div>
+                <span class="sec-lvl-badge badge-mastermind">SEC-LVL: HIGH</span>
             </div>
             <div class="bonus-badge" data-vault-slug="port-gellhorn" data-bonus="$12,300,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$12,300,000</span></div>
-            <p class="card-desc">Industrial shipping logistics hub. Infiltrate crane control rigs, decode high-value cartel shipping containers, and escape via high-speed water canals before patrol boats arrive.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Crane Decoy Hack vs Armed Gunboat Breach</span>
-                <span class="spec-pill">👥 Solo Net: $5.7M &bull; 4-Squad: $2.05M/ea</span>
-                <span class="spec-pill">🚁 Marine Waterway Slipway Escape</span>
-            </div>
-            <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
-                <input type="checkbox" class="mastery-bp-check" data-bp-slug="port-gellhorn" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('port-gellhorn', this.checked)">
-                <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
-            </label>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-port-gellhorn" onclick="GTA6.toggleTacticalPeek('peek-port-gellhorn')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="port-gellhorn.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Terminal Intel</a>
-                <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('port-gellhorn', 'Port Gellhorn Container Terminal')">📡 Report Live Payout / Cooldown Change</button>
-            </div>
-            <div id="peek-port-gellhorn" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">GANTRY CRANE DECOY:</span> Remote hack automated crane to drop shipping containers, creating blind spots for silent container decode.</p>
-                        <p><span class="badge-loud">WATERFRONT STRIKE:</span> Heavy machine-gun patrol boat assault; blow container security doors with thermite.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>Specialist Hacker: 9% &bull; Assault Gunner: 12% &bull; Marine Driver: 7% (Net Solo Take: ~$5,740,000)</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>High-speed armed dinghy / Sea Sparrow through Kelly County canal network.</p>
-                    </div>
-                    <a href="port-gellhorn.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+            <h3 class="card-title">Port Gellhorn Container Terminal Heist</h3>
+            <p class="card-desc">Industrial shipping logistics hub. Infiltrate gantry cranes to create blind spots, decode cartel shipping containers, and flee via high-speed waterways.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$5,740,000</span>
                 </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$2,050,000 / ea</span>
+                </div>
+            </div>
+            <div class="vault-card-actions">
+                <a href="port-gellhorn.html" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html?heist=port-gellhorn" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
-        <!-- CARD 3: Leonida State Gold Reserve (ACTIVE WEEKLY 1.5X BONUS) -->
-        <div class="card">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(255,184,0,0.1), rgba(10,16,26,0.95)); border-radius:6px; margin-bottom:0.75rem; border:1px solid rgba(255,184,0,0.3); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-amber); letter-spacing:1px;">LAT: 25.7907° N | LON: 80.1300° W</span>
-                        <span class="user-badge badge-mastermind sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: FORTRESS</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; STATE GOLD DEPOSITORY
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: ACTIVE (48m)</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $25.0M / $37.5M 1.5X</span>
-                    </div>
-                </div>
+        <!-- CARD 3: Leonida State Gold Reserve -->
+        <div class="card vault-card-redesign">
+            <div class="vault-card-top">
                 <span class="card-tag tag-mastermind">Mastermind Tier</span>
-                <h3 class="card-title">Leonida State Gold Reserve Infiltration</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$25,000,000</span>
+                <span class="sec-lvl-badge badge-wheelman">SEC-LVL: MAXIMUM</span>
+            </div>
+            <div class="bonus-badge" data-vault-slug="leonida-reserve" data-bonus="$37,500,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$37,500,000</span></div>
+            <h3 class="card-title">Leonida State Gold Reserve Infiltration</h3>
+            <p class="card-desc">Subterranean federal bullion repository. Bypass 90-second laser grids, coordinated biometric gates, and exfiltrate through transit subway tubes.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$17,500,000</span>
+                </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$6,250,000 / ea</span>
                 </div>
             </div>
-            <div class="bonus-badge" data-vault-slug="leonida-reserve" data-bonus="$37,500,000" style="display:block;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$37,500,000</span></div>
-            <p class="card-desc">The crown jewel of Leonida. Heavily guarded federal depository requiring high-grade thermal lances, laser tripwire bypass hacks, and heavily armored convoy getaways.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Biometric Laser Grid vs Heavy Mining Tunnel</span>
-                <span class="spec-pill">👥 1.5X Take: $37.5M &bull; Solo Net: $26.25M</span>
-                <span class="spec-pill">🚁 Armored Buffalo STX Safehouse Convoy</span>
-            </div>
-            <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
-                <input type="checkbox" class="mastery-bp-check" data-bp-slug="leonida-reserve" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('leonida-reserve', this.checked)">
-                <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
-            </label>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-leonida-reserve" onclick="GTA6.toggleTacticalPeek('peek-leonida-reserve')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="leonida-reserve.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Gold Reserve Intel</a>
-                <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('leonida-reserve', 'Leonida State Gold Reserve')">📡 Report Live Payout / Cooldown Change</button>
-            </div>
-            <div id="peek-leonida-reserve" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">STEALTH LASER BYPASS:</span> Coordinated dual-keycard biometric swipes, EMP capital blackout, 90s zero-alarm laser grid bypass window.</p>
-                        <p><span class="badge-loud">MINING BORE BREACH:</span> Tunnel industrial mining bore into foundation, hold central vault against NOOSE SWAT waves.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>Master Hacker: 10% &bull; Gunner: 15% &bull; Driver: 8% &bull; Leader Net Take: <strong>$17,500,000 Base ($26.25M 1.5X)</strong></p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>Armored Buffalo STX convoy through highway subway tunnels to fortified Vice City safehouse.</p>
-                    </div>
-                    <a href="leonida-reserve.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
-                </div>
+            <div class="vault-card-actions">
+                <a href="leonida-reserve.html" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html?heist=leonida-reserve" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
         <!-- CARD 4: Starlet Superyacht -->
-        <div class="card">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(0,240,255,0.1), rgba(10,16,26,0.95)); border-radius:6px; margin-bottom:0.75rem; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-cyan); letter-spacing:1px;">OFFSHORE SECTOR 04</span>
-                        <span class="user-badge badge-wheelman sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: MILITARY</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; STARLET SUPERYACHT
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:gap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: ACTIVE (48m)</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $11.8M</span>
-                    </div>
-                </div>
+        <div class="card vault-card-redesign">
+            <div class="vault-card-top">
                 <span class="card-tag tag-expert">Expert Tier</span>
-                <h3 class="card-title">Starlet Superyacht Offshore Heist</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$11,800,000</span>
-                </div>
+                <span class="sec-lvl-badge badge-wheelman">SEC-LVL: MILITARY</span>
             </div>
             <div class="bonus-badge" data-vault-slug="vice-city-yacht-heist" data-bonus="$17,700,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$17,700,000</span></div>
-            <p class="card-desc">Luxury megayacht cruising offshore Vice Beach. Sub-aquatic scuba ingress, silent hull breaches, VIP safe cracking, and extraction via private rooftop helipad.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Scuba Hull Breach vs Helipad Air Assault</span>
-                <span class="spec-pill">👥 Solo Net: $8.25M &bull; 4-Squad: $2.95M/ea</span>
-                <span class="spec-pill">🚁 Speedboat Ingress &amp; Superyacht Helipad</span>
-            </div>
-            <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
-                <input type="checkbox" class="mastery-bp-check" data-bp-slug="vice-city-yacht-heist" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('vice-city-yacht-heist', this.checked)">
-                <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
-            </label>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-yacht" onclick="GTA6.toggleTacticalPeek('peek-yacht')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="vice-city-yacht-heist.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Yacht Intel</a>
-                <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('vice-city-yacht-heist', 'Starlet Superyacht Offshore')">📡 Report Live Payout / Cooldown Change</button>
-            </div>
-            <div id="peek-yacht" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">SUB-AQUATIC SCUBA:</span> Underwater night dive, silent thermal torch on lower keel hatch, VIP master vault decryption.</p>
-                        <p><span class="badge-loud">HELIPAD AIR DROP:</span> Fast-rope directly onto top deck helipad; suppress private security contractors with assault carbines.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>Hacker: 8% &bull; Gunner: 12% &bull; Boat/Heli Pilot: 10% (Net Solo Take: ~$8,260,000)</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>Rooftop helicopter exfil or deep-water scuba dive to submersible escape craft.</p>
-                    </div>
-                    <a href="vice-city-yacht-heist.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+            <h3 class="card-title">Starlet Superyacht Offshore Heist</h3>
+            <p class="card-desc">Luxury megayacht cruising offshore Vice Beach. Sub-aquatic scuba hull penetration, private master vault cracking, and extraction via rooftop helipad.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$8,260,000</span>
                 </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$2,950,000 / ea</span>
+                </div>
+            </div>
+            <div class="vault-card-actions">
+                <a href="vice-city-yacht-heist.html" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html?heist=vice-city-yacht-heist" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
         <!-- CARD 5: Grassrivers Cartel Airstrip -->
-        <div class="card heist-extra-target" style="display:none;">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(255,42,141,0.1), rgba(10,16,26,0.95)); border-radius:6px; margin-bottom:0.75rem; border:1px solid rgba(255,42,141,0.3); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-pink); letter-spacing:1px;">LAT: 25.4851° N | LON: 80.6495° W</span>
-                        <span class="user-badge badge-wheelman sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: CARTEL</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; GRASSRIVERS AIRSTRIP
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: ACTIVE (48m)</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $6.5M</span>
-                    </div>
-                </div>
+        <div class="card vault-card-redesign heist-extra-target" style="display:none;">
+            <div class="vault-card-top">
                 <span class="card-tag tag-intermediate">Intermediate Tier</span>
-                <h3 class="card-title">Grassrivers Cartel Airstrip Raid</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$6,500,000</span>
-                </div>
+                <span class="sec-lvl-badge badge-wheelman">SEC-LVL: CARTEL</span>
             </div>
             <div class="bonus-badge" data-vault-slug="everglades-smuggler-run" data-bonus="$9,750,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$9,750,000</span></div>
-            <p class="card-desc">Deep swamp clandestine airfield. Jam border patrol radars, hijack customized smuggler twin-engine planes, and navigate swamp airboat traps under night vision.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Radar Jamming Air Raid vs Swamp Airboat Ambush</span>
-                <span class="spec-pill">👥 Solo Net: $4.55M &bull; 4-Squad: $1.62M/ea</span>
-                <span class="spec-pill">🚁 Clandestine Smuggler Twin-Engine Exfil</span>
-            </div>
-            <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
-                <input type="checkbox" class="mastery-bp-check" data-bp-slug="everglades-smuggler-run" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('everglades-smuggler-run', this.checked)">
-                <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
-            </label>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-grassrivers" onclick="GTA6.toggleTacticalPeek('peek-grassrivers')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="everglades-smuggler-run.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Smuggler Intel</a>
-                <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('everglades-smuggler-run', 'Grassrivers Cartel Airstrip')">📡 Report Live Payout / Cooldown Change</button>
-            </div>
-            <div id="peek-grassrivers" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">RADAR JAMMING:</span> Hack Kelly County border patrol repeater towers; slip past cartel perimeter guards with suppressed weaponry.</p>
-                        <p><span class="badge-loud">SWAMP GUNBOAT STRIKE:</span> Mount .50 cal airboat strike, blow fuel depot storage to create chaos and commandeer cargo planes.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>Signals Specialist: 7% &bull; Heavy Gunner: 10% &bull; Bush Pilot: 13% (Net Solo Take: ~$4,550,000)</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>Low-altitude twin-engine flight below coastal radar ceiling across the Florida Straits.</p>
-                    </div>
-                    <a href="everglades-smuggler-run.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+            <h3 class="card-title">Grassrivers Cartel Airstrip Raid</h3>
+            <p class="card-desc">Deep swamp clandestine airfield. Jam border patrol radar repeaters, commandeer twin-engine smuggler aircraft, and evade armed cartel airboats.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$4,550,000</span>
                 </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$1,625,000 / ea</span>
+                </div>
+            </div>
+            <div class="vault-card-actions">
+                <a href="everglades-smuggler-run.html" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html?heist=everglades-smuggler-run" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
         <!-- CARD 6: Ocean Drive Armored Convoy -->
-        <div class="card heist-extra-target" style="display:none;">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(0,240,255,0.1), rgba(10,16,26,0.95)); border-radius:6px; margin-bottom:0.75rem; border:1px solid rgba(0,240,255,0.3); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-cyan); letter-spacing:1px;">LAT: 25.7801° N | LON: 80.1300° W</span>
-                        <span class="user-badge badge-mastermind sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: NOOSE</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; OCEAN DRIVE CONVOY
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.25rem 0.5rem; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: ACTIVE (48m)</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $9.4M</span>
-                    </div>
-                </div>
+        <div class="card vault-card-redesign heist-extra-target" style="display:none;">
+            <div class="vault-card-top">
                 <span class="card-tag tag-mastermind">Mastermind Tier</span>
-                <h3 class="card-title">Ocean Drive Armored Depository Ambush</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$9,400,000</span>
-                </div>
+                <span class="sec-lvl-badge badge-mastermind">SEC-LVL: NOOSE</span>
             </div>
             <div class="bonus-badge" data-vault-slug="ocean-drive-armored-convoy" data-bonus="$14,100,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$14,100,000</span></div>
-            <p class="card-desc">Daylight high-speed intercept along the neon coastal strip. Employ magnetic EMP disabling charges, deploy traffic gridlock diversion hacks, and lose 5-star heat inside transit subway tubes.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Roadway EMP Trap vs Highway Precision Intercept</span>
-                <span class="spec-pill">👥 Solo Net: $6.58M &bull; 4-Squad: $2.35M/ea</span>
-                <span class="spec-pill">🚁 Metro Transit Subway Tunnel Evasion</span>
-            </div>
-            <label style="display:flex; align-items:center; gap:0.45rem; font-size:0.78rem; color:var(--neon-green); margin-bottom:0.55rem; cursor:pointer;">
-                <input type="checkbox" class="mastery-bp-check" data-bp-slug="ocean-drive-armored-convoy" onchange="GTA6.MasteryAndStreak.toggleBlueprintCheck('ocean-drive-armored-convoy', this.checked)">
-                <span>✓ Mark Blueprint Mastered (+5% Mastery)</span>
-            </label>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-ocean-drive" onclick="GTA6.toggleTacticalPeek('peek-ocean-drive')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="ocean-drive-armored-convoy.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">View Convoy Intel</a>
-                <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;" onclick="GTA6.openPayoutReportModal('ocean-drive-armored-convoy', 'Ocean Drive Armored Convoy')">📡 Report Live Payout / Cooldown Change</button>
-            </div>
-            <div id="peek-ocean-drive" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">TRAFFIC GRIDLOCK HACK:</span> Hack Vice Beach central traffic controllers to trap armored convoy in transit tunnel with zero civilian casualties.</p>
-                        <p><span class="badge-loud">STREET BLOCKADE:</span> Frontal ramming with heavily armored trucks, rocket-propelled diversions, high-intensity street combat.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>Traffic Hacker: 10% &bull; Enforcer Gunner: 12% &bull; Pursuit Driver: 8% (Net Solo Take: ~$6,580,000)</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>Underground metro tracks into disused trolley hub safehouse; switch to civilian decoys.</p>
-                    </div>
-                    <a href="ocean-drive-armored-convoy.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Open Full Walkthrough &amp; Crew Cut Calculator &rarr;</a>
+            <h3 class="card-title">Ocean Drive Armored Depository Ambush</h3>
+            <p class="card-desc">Daylight high-speed intercept on Ocean Drive. Deploy magnetic EMP disabling charges, gridlock police routing, and lose 5-star heat in subway tunnels.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$6,580,000</span>
                 </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$2,350,000 / ea</span>
+                </div>
+            </div>
+            <div class="vault-card-actions">
+                <a href="ocean-drive-armored-convoy.html" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html?heist=ocean-drive-armored-convoy" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
-        <!-- CARD 7: Pelican Valley Agricultural Credit Union -->
-        <div class="card heist-extra-target" style="border:2px solid var(--neon-cyan); background:rgba(10,18,28,0.95); display:none;">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(0,240,255,0.15), rgba(10,16,26,0.98)); border-radius:6px; margin-bottom:0.75rem; border:1px solid var(--neon-cyan); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-cyan); letter-spacing:1px;">PELICAN VALLEY BASIN</span>
-                        <span class="user-badge badge-wheelman sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: RURAL</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; PELICAN VALLEY CREDIT UNION
-                    </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: AIRBOAT EXTRACTION</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $3.8M</span>
-                    </div>
-                </div>
-                <span class="card-tag tag-intermediate">Rural Heist Target</span>
-                <h3 class="card-title">Pelican Valley Agricultural Credit Union</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$3,800,000</span>
-                </div>
+        <!-- CARD 7: Pelican Valley Agricultural Depository -->
+        <div class="card vault-card-redesign heist-extra-target" style="display:none;">
+            <div class="vault-card-top">
+                <span class="card-tag tag-intermediate">Intermediate Tier</span>
+                <span class="sec-lvl-badge badge-wheelman">SEC-LVL: RURAL</span>
             </div>
             <div class="bonus-badge" data-vault-slug="pelican-valley" data-bonus="$5,700,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$5,700,000</span></div>
-            <p class="card-desc">Central agricultural vault along the Grassrivers sugarcane railway. Fast duo cash grab with flat-bottom airboat exfiltration through the canal reed beds.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Sugarcane Railway Cut vs Night Window Raid</span>
-                <span class="spec-pill">👥 Duo Run Split: $1,900,000 Each ($3.8M Total)</span>
-                <span class="spec-pill">🚁 Flat-Bottom Airboat Swamp Reed Escape</span>
-            </div>
-            <div style="display:grid; gap:0.45rem;">
-                <button type="button" class="btn btn-secondary tactical-peek-btn" data-peek-target="peek-pelican" onclick="GTA6.toggleTacticalPeek('peek-pelican')" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-color:rgba(0,240,255,0.4); color:var(--neon-cyan);">⚡ Quick Tactical Peek &bull; Approaches &amp; Splits</button>
-                <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Locate on Radar Map &rarr;</a>
-                <a href="heist-planner.html" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;">Simulate 2-Player Split in Planner</a>
-            </div>
-            <div id="peek-pelican" class="tactical-peek-drawer" style="display:none;">
-                <div class="peek-inner">
-                    <div class="peek-section">
-                        <strong class="peek-title">🎯 TACTICAL APPROACHES:</strong>
-                        <p><span class="badge-stealth">RURAL SILENT:</span> Sever country telephone wires, drill rear safe door before Lummox County sheriff arrives.</p>
-                        <p><span class="badge-loud">TRUCK RAM:</span> Ram heavy pickup through front glass, explosive breach on lockboxes, fast 3-minute getaway.</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">👥 CREW SETUP &amp; DEDUCTIONS:</strong>
-                        <p>2-Player Duo Run (Lucia &amp; Jason 50/50 split &bull; Zero NPC support cut required &bull; $1.9M take-home each)</p>
-                    </div>
-                    <div class="peek-section">
-                        <strong class="peek-title">📍 EXTRACTION VECTOR:</strong>
-                        <p>Hidden flat-bottom airboat through dense Everglades mangrove reeds into Pelican Basin safehouse.</p>
-                    </div>
-                    <a href="heist-planner.html" class="btn btn-primary" style="width:100%; text-align:center; padding:0.45rem; font-size:0.78rem; margin-top:0.35rem; display:block; text-decoration:none;">Simulate Pelican Valley Split in Planner &rarr;</a>
+            <h3 class="card-title">Pelican Valley Agricultural Depository</h3>
+            <p class="card-desc">Central agricultural vault along the sugarcane railway. Fast duo cash grab with flat-bottom airboat exfiltration through swamp canal reed beds.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$2,660,000</span>
                 </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Duo Split</span>
+                    <span class="vault-stat-val">$1,900,000 / ea</span>
+                </div>
+            </div>
+            <div class="vault-card-actions">
+                <a href="/interactive-map" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
 
         <!-- CARD 8: Key Lento Offshore Bullion Depot -->
-        <div class="card heist-extra-target" style="border:2px solid var(--neon-pink); background:rgba(20,10,24,0.95); display:none;">
-            <div class="card-header">
-                <div class="tactical-schematic-bar" style="min-height:115px; height:auto; background:linear-gradient(135deg, rgba(255,42,141,0.15), rgba(10,16,26,0.98)); border-radius:6px; margin-bottom:0.75rem; border:1px solid var(--neon-pink); display:flex; flex-direction:column; justify-content:space-between; padding:0.75rem; position:relative; overflow:hidden;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-pink); letter-spacing:1px;">SOUTHERN ARCHIPELAGO</span>
-                        <span class="user-badge badge-mastermind sec-lvl-badge" style="white-space:nowrap; font-size:11px; flex-shrink:0;">SEC-LVL: REEF</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.92rem; font-weight:900; color:#fff; letter-spacing:1px;">
-                        🛰️ TACTICAL BLUEPRINT &bull; KEY LENTO OFFSHORE DEPOT
-                    </div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">
-                        <span>RADAR: SCUBA REBREATHER DITCH</span>
-                        <span style="color:var(--neon-green); font-weight:700;">MAX PAYOUT: $12.4M</span>
-                    </div>
-                </div>
-                <span class="card-tag tag-mastermind">Mastermind Offshore</span>
-                <h3 class="card-title">Key Lento Offshore Bullion Depot</h3>
-                <div class="card-meta">
-                    <span>Max Payout:</span>
-                    <span class="card-payout">$12,400,000</span>
-                </div>
+        <div class="card vault-card-redesign heist-extra-target" style="display:none;">
+            <div class="vault-card-top">
+                <span class="card-tag tag-mastermind">Mastermind Tier</span>
+                <span class="sec-lvl-badge badge-mastermind">SEC-LVL: REEF</span>
             </div>
             <div class="bonus-badge" data-vault-slug="key-lento" data-bonus="$18,600,000" style="display:none;">🔥 1.5X WEEKLY BONUS ACTIVE: <span class="bonus-amt">$18,600,000</span></div>
-            <p class="card-desc">Private deep-water bullion staging facility in the Leonida Keys. Requires sniper overwatch, underwater thermal torch entry, and scuba rebreather evasion through coral reef crevices.</p>
-            <div class="heist-tactical-specs">
-                <span class="spec-pill">🛡️ Scuba Bilge Torches vs Patrol Chopper Suppression</span>
-                <span class="spec-pill">👥 Solo Net: $8.68M &bull; 4-Squad: $3.1M/ea</span>
-                <span class="spec-pill">🚁 Deep-Water Submersible Reef Exfil</span>
+            <h3 class="card-title">Key Lento Offshore Bullion Depot</h3>
+            <p class="card-desc">Private deep-water bullion staging facility in the Florida Keys. Underwater thermal torch entry and scuba rebreather evasion through coral reef crevices.</p>
+            <div class="vault-stat-strip">
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">Solo Net</span>
+                    <span class="vault-stat-val">$8,680,000</span>
+                </div>
+                <div class="vault-stat-item">
+                    <span class="vault-stat-lbl">4-Squad Cut</span>
+                    <span class="vault-stat-val">$3,100,000 / ea</span>
+                </div>
             </div>
-            <div style="display:grid; gap:0.45rem;">
-                <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-color:var(--neon-pink);">View Key Lento Coordinates &rarr;</a>
-                <a href="heist-planner.html" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.74rem;">Calculate Cut Split in Planner</a>
+            <div class="vault-card-actions">
+                <a href="/interactive-map" class="btn btn-primary">Open Blueprint &rarr;</a>
+                <a href="calculator.html" class="btn btn-secondary">Plan Cut</a>
             </div>
         </div>
+    
     </div>
 
     <!-- EXPAND TARGETS TOGGLE -->
