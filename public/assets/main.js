@@ -6327,6 +6327,22 @@ DealRotator: {
         btn.innerHTML = isHidden ? '▲ Close Tactical Peek' : '⚡ Quick Tactical Peek &bull; Approaches &amp; Splits';
       }
     },
+    toggleAllTargets(btn) {
+      const extraCards = document.querySelectorAll('.heist-extra-target');
+      if (!extraCards.length) return;
+      const isCurrentlyHidden = extraCards[0].style.display === 'none';
+      extraCards.forEach((c) => {
+        c.style.display = isCurrentlyHidden ? 'flex' : 'none';
+      });
+      if (btn) {
+        btn.innerHTML = isCurrentlyHidden ? 'Show Less Targets &uarr;' : 'Show All 8 Infiltration Targets &darr;';
+      }
+      if (isCurrentlyHidden) {
+        this.playBeep(520, 'triangle', 0.06);
+      } else {
+        this.playBeep(380, 'sine', 0.05);
+      }
+    },
     LiveIntelSync: {
       latestCounts: { characters: 25, weapons: 47, vehicles: 186, properties: 12, masks: 16 },
       normName(s) {
