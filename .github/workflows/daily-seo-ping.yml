@@ -1,0 +1,27 @@
+name: Daily IndexNow SEO Ping
+
+on:
+  schedule:
+    # Runs at 09:00 UTC daily (every 24 hours)
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping-indexnow:
+    name: Ping Search Engines via IndexNow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run IndexNow Ping Engine
+        run: |
+          python indexnow_ping.py

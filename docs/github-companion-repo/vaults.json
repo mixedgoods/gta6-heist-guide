@@ -1,0 +1,92 @@
+[
+  {
+    "id": "leonida-reserve",
+    "name": "Leonida State Gold Reserve Infiltration",
+    "region": "Vice City Metro",
+    "base_payout": 25000000,
+    "bonus_1_5x_payout": 37500000,
+    "recommended_approach": "Silent Sewer Intake + Thermal Lance",
+    "cooldown_minutes": 48,
+    "crew_split_recommended": {
+      "leader_cut_pct": 25,
+      "crew_cuts_pct": [25, 25, 25],
+      "specialists_fee_pct": 33
+    },
+    "guide_url": "https://www.gta6heistguide.com/leonida-reserve.html"
+  },
+  {
+    "id": "sinfrontera-bank",
+    "name": "Sinfrontera National Bank Vault Raid",
+    "region": "Downtown Vice City",
+    "base_payout": 14500000,
+    "bonus_1_5x_payout": 21750000,
+    "recommended_approach": "Sub-floor Drainage + EMP Transformer",
+    "cooldown_minutes": 48,
+    "crew_split_recommended": {
+      "leader_cut_pct": 30,
+      "crew_cuts_pct": [25, 25, 20],
+      "specialists_fee_pct": 28
+    },
+    "guide_url": "https://www.gta6heistguide.com/sinfrontera-bank.html"
+  },
+  {
+    "id": "vice-city-yacht-heist",
+    "name": "Starlet Superyacht Offshore Heist",
+    "region": "Biscayne Bay / Atlantic Waters",
+    "base_payout": 11800000,
+    "bonus_1_5x_payout": 17700000,
+    "recommended_approach": "Sub-Aquatic Rebreather Hull Breach",
+    "cooldown_minutes": 48,
+    "crew_split_recommended": {
+      "leader_cut_pct": 30,
+      "crew_cuts_pct": [25, 25, 20],
+      "specialists_fee_pct": 25
+    },
+    "guide_url": "https://www.gta6heistguide.com/vice-city-superyacht.html"
+  },
+  {
+    "id": "ocean-drive-armored-convoy",
+    "name": "Ocean Drive Armored Depository Ambush",
+    "region": "Ocean Drive Corridor",
+    "base_payout": 9400000,
+    "bonus_1_5x_payout": 14100000,
+    "recommended_approach": "Magnetic EMP + Metro Subway Escape",
+    "cooldown_minutes": 36,
+    "crew_split_recommended": {
+      "leader_cut_pct": 35,
+      "crew_cuts_pct": [25, 20, 20],
+      "specialists_fee_pct": 22
+    },
+    "guide_url": "https://www.gta6heistguide.com/ocean-drive-ambush.html"
+  },
+  {
+    "id": "port-gellhorn",
+    "name": "Port Gellhorn Container Terminal Heist",
+    "region": "Port Gellhorn Industrial",
+    "base_payout": 8200000,
+    "bonus_1_5x_payout": 12300000,
+    "recommended_approach": "Nighttime Crane Terminal Hijack",
+    "cooldown_minutes": 36,
+    "crew_split_recommended": {
+      "leader_cut_pct": 35,
+      "crew_cuts_pct": [25, 20, 20],
+      "specialists_fee_pct": 20
+    },
+    "guide_url": "https://www.gta6heistguide.com/port-gellhorn.html"
+  },
+  {
+    "id": "everglades-smuggler-run",
+    "name": "Grassrivers Cartel Airstrip Raid",
+    "region": "Grassrivers / Everglades",
+    "base_payout": 6500000,
+    "bonus_1_5x_payout": 9750000,
+    "recommended_approach": "Thermal Night-Vision Airboat Ingress",
+    "cooldown_minutes": 24,
+    "crew_split_recommended": {
+      "leader_cut_pct": 40,
+      "crew_cuts_pct": [20, 20, 20],
+      "specialists_fee_pct": 18
+    },
+    "guide_url": "https://www.gta6heistguide.com/grassrivers-airstrip.html"
+  }
+]

@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-20T12:52:25Z",
-  "mode": "live",
+  "timestamp_utc": "2026-11-20T14:34:28Z",
+  "mode": "local",
   "total_sitemap_urls": 108,
   "stage1_raw_html": {
     "http_200_count": 108,
@@ -28,7 +28,7 @@
       "/terms": 200,
       "/giveaways": 200
     },
-    "live_api_clicks_unauth_status": 401
+    "live_api_clicks_unauth_status": null
   },
   "stage2_rendered_dom": {
     "pages_rendered": 108,
@@ -150,7 +150,7 @@
     {
       "url": "https://www.gta6heistguide.com/giveaways",
       "status": 200,
-      "title": "GTA 6 Twitch Drops, Prime Gaming & Launch Giveaways Tracker | GTA 6 Guide",
+      "title": "How to Get GTA 6 Free Twitch Drops & Kick Giveaway Codes | GTA 6 Guide",
       "has_description": true,
       "has_canonical": true,
       "h1_count": 1,
@@ -1440,7 +1440,7 @@
     {
       "url": "https://www.gta6heistguide.com/giveaways",
       "status": 200,
-      "title": "GTA 6 Twitch Drops, Prime Gaming & Launch Giveaways Tracker | GTA 6 Guide",
+      "title": "How to Get GTA 6 Free Twitch Drops & Kick Giveaway Codes | GTA 6 Guide",
       "h1_count": 1,
       "missing_alt_count": 0,
       "broken_local_images": [],

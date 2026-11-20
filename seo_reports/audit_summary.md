@@ -1,6 +1,6 @@
 # GTA6HeistGuide.com — Plain-English SEO & Technical Health Report
 
-**Run Mode:** `LIVE` | **Checked At:** `2026-11-20T12:52:25Z` | **Total Sitemap URLs:** `108`
+**Run Mode:** `LOCAL` | **Checked At:** `2026-11-20T14:34:28Z` | **Total Sitemap URLs:** `108`
 
 ## 1. Two-Stage Audit Results
 - **Stage 1 (Raw HTML Check — what Googlebot & AI crawlers read first):**
@@ -32,7 +32,7 @@
 - `/privacy-policy` -> HTTP `200`
 - `/terms` -> HTTP `200`
 - `/giveaways` -> HTTP `200`
-- **Protected Owner Click Proof Endpoint (`/api/clicks` without admin key):** `401`
+- **Protected Owner Click Proof Endpoint (`/api/clicks` without admin key):** `None`
 
 ## 3. Free Keyword Gap & Competitor Discovery (`seo_reports/keyword_gaps.csv`)
 - **Missing Launch Keywords Logged:** **25**
