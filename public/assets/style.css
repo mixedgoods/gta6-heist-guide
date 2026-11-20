@@ -256,7 +256,7 @@ body {
 /* HERO CINEMATIC 4K MASTER BILLBOARD */
 .hero-cinematic {
   max-width: 1140px;
-  margin: 0.5rem auto 1rem;
+  margin: 0.35rem auto 0.75rem;
   padding: 0 1rem;
   box-sizing: border-box;
 }
@@ -267,11 +267,11 @@ body {
   border: 2px solid rgba(0, 240, 255, 0.4);
   box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
   background: #080b12;
-  max-height: 360px;
+  max-height: 290px;
 }
 .hero-banner-frame img {
   width: 100%;
-  height: 360px;
+  height: 290px;
   object-fit: cover;
   object-position: center 25%;
   display: block;
@@ -282,13 +282,13 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 18, 0.88) 40%, rgba(8, 11, 18, 0.98) 100%);
-  padding: 1rem 1.25rem 0.85rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 18, 0.88) 35%, rgba(8, 11, 18, 0.98) 100%);
+  padding: 0.65rem 1rem 0.65rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.5rem;
 }
 
 /* HERO SECTION */
@@ -836,9 +836,9 @@ body {
 footer {
   border-top: 1px solid var(--border-card);
   background: #08060f;
-  padding: 4rem 1.5rem 2rem;
-  margin-top: 5rem;
-  font-size: 0.9rem;
+  padding: 1.5rem 1.5rem 1.25rem;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 .footer-container {
@@ -2172,14 +2172,14 @@ html, body {
 .footer-spread-wrap {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 2.5rem 1rem 1.5rem;
+  padding: 0.5rem 1rem;
   box-sizing: border-box;
 }
 .footer-links-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem 2rem;
-  margin: 2rem 0;
+  gap: 1.25rem 1.5rem;
+  margin: 1rem 0;
   box-sizing: border-box;
 }
 .footer-col-title {
@@ -2189,12 +2189,12 @@ html, body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
 }
 .footer-col-links {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.45rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -2888,23 +2888,217 @@ body.has-ticker .bookmarks-fab {
   max-width: 1140px;
 }
 
-/* SLEEK IMAGE-FREE GEAR MATCH CARDS */
-.gear-match-card {
-  background: rgba(18, 14, 30, 0.92);
-  border: 1px solid var(--border-card);
-  border-radius: 10px;
-  padding: 1rem 1.15rem;
+/* =========================================================================
+   SYNDICATE GEAR GRID & CARDS (SELF-CONTAINED)
+   ========================================================================= */
+.syndicate-gear-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 992px) {
+  .syndicate-gear-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 576px) {
+  .syndicate-gear-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.syndicate-gear-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  min-height: 100%;
+  padding: 16px;
+  background: #111622;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 10px;
+  min-height: 190px;
   box-sizing: border-box;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.gear-match-card:hover {
-  border-color: var(--neon-cyan);
+.syndicate-gear-card:hover {
+  border-color: rgba(0, 240, 255, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 240, 255, 0.15);
+}
+
+.syndicate-gear-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.syndicate-gear-title {
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.syndicate-gear-spec {
+  color: #94a3b8;
+  font-size: 11.5px;
+  line-height: 1.35;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.syndicate-gear-price {
+  font-family: var(--font-mono, monospace);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--neon-green, #00ff88);
+  margin-bottom: 10px;
+}
+
+.syndicate-gear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: auto;
+  box-sizing: border-box;
+  transition: filter 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+.syndicate-gear-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+.syndicate-gear-btn-amber {
+  background: #f59e0b;
+  color: #000;
+}
+.syndicate-gear-btn-purple {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: #fff;
+}
+.syndicate-gear-btn-green {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+.syndicate-gear-btn-cyan {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+}
+
+/* HIGH-VALUE TARGETS 4-COLUMN DESKTOP GRID */
+.targets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 992px) {
+  .targets-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 576px) {
+  .targets-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* COMPACT TARGET CARDS FOR HOMEPAGE */
+.targets-grid .card {
+  padding: 12px;
+}
+.targets-grid .tactical-schematic-bar {
+  min-height: unset !important;
+  padding: 6px 8px !important;
+  margin-bottom: 6px !important;
+}
+.targets-grid .tactical-schematic-bar > div:nth-child(2) {
+  display: none;
+}
+.targets-grid .card-tag {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  margin-bottom: 3px;
+}
+.targets-grid .card-title {
+  font-size: 0.95rem;
+  margin: 2px 0 3px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.targets-grid .card-meta {
+  font-size: 0.76rem;
+  margin-bottom: 3px;
+}
+.targets-grid .card-desc {
+  font-size: 0.74rem;
+  line-height: 1.3;
+  margin: 0 0 6px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.targets-grid .heist-tactical-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.targets-grid .spec-pill {
+  font-size: 0.66rem;
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.targets-grid .spec-pill:nth-child(n+3) {
+  display: none;
+}
+.targets-grid .card label {
+  display: none;
+}
+.targets-grid .card > div:last-of-type,
+.targets-grid .card > div[style*="display:grid"] {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+}
+.targets-grid .card > div[style*="display:grid"] > button:last-child {
+  display: none;
+}
+.targets-grid .btn {
+  padding: 5px 8px;
+  font-size: 0.74rem;
+}
+
+.sec-lvl-badge {
+  white-space: nowrap !important;
+  font-size: 11px !important;
+  flex-shrink: 0 !important;
+  padding: 2px 6px !important;
+  line-height: 1.2 !important;
 }
 
 /* COMPACT 2-COLUMN FAQ GRID */
@@ -2928,12 +3122,17 @@ body.has-ticker .bookmarks-fab {
   font-size: 0.82rem;
   font-weight: 700;
   line-height: 1.35;
+  cursor: pointer;
 }
 .faq-accordion-compact .faq-answer {
   padding: 0 0.85rem 0.65rem;
   font-size: 0.78rem;
   line-height: 1.45;
   color: var(--text-muted);
+  display: none;
+}
+.faq-accordion-compact .faq-item.open .faq-answer {
+  display: block;
 }
 @media (max-width: 768px) {
   .faq-accordion-compact {

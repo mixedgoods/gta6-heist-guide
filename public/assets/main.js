@@ -6335,7 +6335,7 @@ DealRotator: {
         c.style.display = isCurrentlyHidden ? 'flex' : 'none';
       });
       if (btn) {
-        btn.innerHTML = isCurrentlyHidden ? 'Show Less Targets &uarr;' : 'Show All 8 Infiltration Targets &darr;';
+        btn.innerHTML = isCurrentlyHidden ? 'Show Less Vault Targets &uarr;' : 'Show All 8 Vault Targets &darr;';
       }
       if (isCurrentlyHidden) {
         this.playBeep(520, 'triangle', 0.06);
