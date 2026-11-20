@@ -1,0 +1,308 @@
+#!/usr/bin/env python3
+"""
+Generate high-detail 100% DMCA-safe 2400x1800 Leonida Topographic Base Map SVG
+for Leaflet L.CRS.Simple imageOverlay.
+"""
+import os
+import math
+
+def generate_svg():
+    width = 2400
+    height = 1800
+    
+    svg = []
+    svg.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}" style="background:#040711; font-family:'JetBrains Mono', 'Segoe UI Mono', monospace;">
+    <defs>
+        <!-- Tactical Military Grid Pattern -->
+        <pattern id="tacticalGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
+            <circle cx="80" cy="80" r="1.5" fill="rgba(0, 240, 255, 0.25)"/>
+            <circle cx="0" cy="0" r="1.5" fill="rgba(0, 240, 255, 0.25)"/>
+        </pattern>
+        <pattern id="subGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0, 240, 255, 0.018)" stroke-width="0.5"/>
+        </pattern>
+        <pattern id="urbanGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(0, 240, 255, 0.16)" stroke-width="1"/>
+            <rect x="2" y="2" width="20" height="20" fill="rgba(0, 240, 255, 0.03)"/>
+        </pattern>
+        <pattern id="marshTexture" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 5 20 Q 15 15 25 20 T 45 20" fill="none" stroke="rgba(16, 185, 129, 0.18)" stroke-width="1.2"/>
+            <path d="M 0 35 Q 10 30 20 35 T 40 35" fill="none" stroke="rgba(16, 185, 129, 0.14)" stroke-width="1"/>
+        </pattern>
+        <pattern id="industrialHatch" width="16" height="16" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="16" stroke="rgba(255, 184, 0, 0.1)" stroke-width="2"/>
+        </pattern>
+
+        <!-- Gradients -->
+        <radialGradient id="oceanBg" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#081424"/>
+            <stop offset="60%" stop-color="#040b15"/>
+            <stop offset="100%" stop-color="#02050a"/>
+        </radialGradient>
+        <radialGradient id="kalagaPeakGrad" cx="680" cy="320" r="320" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#2a3f5a"/>
+            <stop offset="45%" stop-color="#1e2f44"/>
+            <stop offset="85%" stop-color="#142132"/>
+            <stop offset="100%" stop-color="#0f1926"/>
+        </radialGradient>
+        <radialGradient id="lakeDepth" cx="1200" cy="690" r="180" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#020812"/>
+            <stop offset="70%" stop-color="#051525"/>
+            <stop offset="100%" stop-color="#0a2238"/>
+        </radialGradient>
+
+        <!-- Glow Filters -->
+        <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00f0ff" flood-opacity="0.8"/>
+            <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#00f0ff" flood-opacity="0.95"/>
+        </filter>
+        <filter id="pinkGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ff2a8d" flood-opacity="0.8"/>
+            <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ff2a8d" flood-opacity="0.95"/>
+        </filter>
+        <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffb800" flood-opacity="0.75"/>
+        </filter>
+    </defs>
+
+    <!-- LAYER 1: Deep Ocean Background & Coordinates -->
+    <rect width="{width}" height="{height}" fill="url(#oceanBg)"/>
+    <rect width="{width}" height="{height}" fill="url(#subGrid)"/>
+    <rect width="{width}" height="{height}" fill="url(#tacticalGrid)"/>
+
+    <!-- LAYER 2: Continental Shelf & Bathymetric Depth Contours -->
+    <!-- Deep Shelf (1000m) -->
+    <path d="M 80,180 Q 500,80 1200,90 T 2150,140 Q 2350,300 2360,650 T 2350,1300 Q 2250,1740 1800,1750 T 1100,1650 Q 500,1580 200,1450 T 50,850 Q 40,400 80,180 Z" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="2" stroke-dasharray="12,12"/>
+    <text x="2100" y="240" fill="rgba(0, 240, 255, 0.25)" font-size="12" letter-spacing="2">-1000M DEPTH // ATLANTIC ABYSSAL PLAIN</text>
+    <text x="120" y="1150" fill="rgba(0, 240, 255, 0.25)" font-size="12" letter-spacing="2">-800M DEPTH // GULF BASIN</text>
+
+    <!-- Mid Shelf (500m) -->
+    <path d="M 120,220 Q 550,120 1250,140 T 2080,200 Q 2260,350 2280,700 T 2260,1280 Q 2180,1680 1780,1700 T 1150,1580 Q 560,1500 250,1380 T 90,820 Q 80,450 120,220 Z" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1.8"/>
+    <!-- Shallow Shelf (200m) -->
+    <path d="M 180,260 Q 600,170 1300,190 T 2020,250 Q 2180,400 2200,750 T 2180,1240 Q 2100,1620 1740,1640 T 1200,1520 Q 620,1440 300,1320 T 140,800 Q 130,500 180,260 Z" fill="rgba(0, 240, 255, 0.02)" stroke="rgba(0, 240, 255, 0.12)" stroke-width="1.5" stroke-dasharray="8,6"/>
+    <!-- Coastal Reef Contour (50m) -->
+    <path d="M 230,300 Q 650,220 1350,230 T 1960,300 Q 2110,450 2130,800 T 2110,1200 Q 2040,1560 1700,1580 T 1250,1460 Q 680,1380 350,1260 T 190,780 Q 180,550 230,300 Z" fill="rgba(0, 240, 255, 0.03)" stroke="rgba(0, 240, 255, 0.18)" stroke-width="1.2"/>
+
+    <!-- LAYER 3: Main Leonida Continental Landmass -->
+    <!-- Underlay glow -->
+    <path d="M 280,340 Q 700,240 1200,260 T 1780,280 Q 1920,380 1940,650 T 1910,1050 Q 1850,1180 1720,1280 T 1500,1420 Q 1380,1500 1200,1520 T 780,1460 Q 480,1380 380,1220 T 260,950 Q 220,720 250,520 Z" fill="#0d1825" filter="url(#cyanGlow)"/>
+
+    <!-- Solid Core Mainland Landmass -->
+    <path id="leonidaMainland" d="M 280,340 Q 700,240 1200,260 T 1780,280 Q 1920,380 1940,650 T 1910,1050 Q 1850,1180 1720,1280 T 1500,1420 Q 1380,1500 1200,1520 T 780,1460 Q 480,1380 380,1220 T 260,950 Q 220,720 250,520 Z" fill="#111c2a" stroke="#00f0ff" stroke-width="3"/>
+
+    <!-- LAYER 4: Regional Geographic Terranes & Topography -->
+    <!-- 4A. Mount Kalaga Elevation Contours (Top-Left Mountain Wilderness) -->
+    <!-- 100m Base Contour -->
+    <path d="M 340,380 Q 680,290 1050,310 T 1120,520 Q 1050,680 850,720 T 480,680 Q 320,580 340,380 Z" fill="#152436" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.5"/>
+    <!-- 200m Ridge Contour -->
+    <path d="M 420,360 Q 690,300 960,330 T 1000,480 Q 940,600 780,630 T 480,590 Q 380,500 420,360 Z" fill="#1b2e44" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1.5"/>
+    <!-- 300m Mountain Contour -->
+    <path d="M 500,340 Q 700,310 880,340 T 910,440 Q 860,530 730,550 T 520,510 Q 450,440 500,340 Z" fill="#223954" stroke="rgba(0, 240, 255, 0.45)" stroke-width="1.5"/>
+    <!-- 400m Sub-Peak Contour -->
+    <path d="M 580,330 Q 700,315 800,340 T 820,410 Q 780,470 690,480 T 570,440 Q 530,390 580,330 Z" fill="#2a4566" stroke="rgba(0, 240, 255, 0.6)" stroke-width="1.8"/>
+    <!-- 512m Kalaga Peak Summit -->
+    <ellipse cx="680" cy="370" rx="65" ry="38" fill="#35557d" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="680" cy="370" r="3" fill="#fff"/>
+    <text x="680" y="365" text-anchor="middle" fill="#fff" font-size="11" font-weight="900" letter-spacing="1">▲ MT. KALAGA PEAK (512M)</text>
+    <text x="680" y="385" text-anchor="middle" fill="rgba(0, 240, 255, 0.85)" font-size="9" font-weight="700">LOOKOUT RELAY // NOOSE BLINDSPOT</text>
+
+    <!-- 4B. Lummox County Northern Timber Ridges -->
+    <path d="M 1120,320 Q 1400,300 1650,330 T 1720,480 Q 1640,580 1420,580 T 1150,520 Z" fill="#162634" stroke="rgba(34, 197, 94, 0.3)" stroke-width="1.2" stroke-dasharray="6,4"/>
+    <text x="1420" y="390" text-anchor="middle" fill="rgba(34, 197, 94, 0.85)" font-size="11" font-weight="800" letter-spacing="2">LUMMOX COUNTY // PINE &amp; TIMBER RIDGE</text>
+
+    <!-- 4C. Ambrosia Agricultural Basin & Industrial Corridor -->
+    <path d="M 880,560 Q 1200,520 1520,550 T 1600,740 Q 1500,850 1280,860 T 900,810 Z" fill="#18231c" stroke="rgba(255, 184, 0, 0.25)" stroke-width="1.5"/>
+    <rect x="940" y="600" width="180" height="110" rx="6" fill="url(#industrialHatch)"/>
+    <text x="1030" y="655" text-anchor="middle" fill="rgba(255, 184, 0, 0.9)" font-size="11" font-weight="800" letter-spacing="1.5">AMBROSIA INDUSTRIAL BASIN</text>
+    <text x="1030" y="675" text-anchor="middle" fill="rgba(255, 184, 0, 0.7)" font-size="8.5">SUGAR REFINERY &bull; BULLION DEPOT</text>
+
+    <!-- 4D. Grassrivers Swamplands & Wetland Mangroves -->
+    <path d="M 450,920 Q 820,870 1220,930 T 1380,1260 Q 1240,1440 980,1450 T 450,1320 Q 380,1160 450,920 Z" fill="#0d2121" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1.5"/>
+    <rect x="480" y="960" width="750" height="420" fill="url(#marshTexture)"/>
+    <text x="820" y="1180" text-anchor="middle" fill="rgba(16, 185, 129, 0.9)" font-size="14" font-weight="900" letter-spacing="3">GRASSRIVERS WETLANDS &amp; MANGROVE CHANNELS</text>
+    <text x="820" y="1205" text-anchor="middle" fill="rgba(16, 185, 129, 0.65)" font-size="9.5" font-weight="700">FLAT-BOTTOM AIRBOATS ONLY &bull; CRUIRSER MUD TRAP</text>
+
+    <!-- 4E. Port Gellhorn Industrial Docks & Harbor -->
+    <path d="M 230,860 Q 380,880 430,990 T 360,1190 L 250,1120 Q 200,990 230,860 Z" fill="#162232" stroke="rgba(0, 240, 255, 0.6)" stroke-width="2"/>
+    <!-- Gellhorn Shipping Docks & Piers -->
+    <rect x="180" y="990" width="70" height="14" rx="2" fill="rgba(0, 240, 255, 0.45)"/>
+    <rect x="190" y="1030" width="60" height="14" rx="2" fill="rgba(0, 240, 255, 0.45)"/>
+    <rect x="200" y="1070" width="55" height="14" rx="2" fill="rgba(0, 240, 255, 0.45)"/>
+    <text x="310" y="1050" fill="rgba(0, 240, 255, 0.95)" font-size="12" font-weight="900" letter-spacing="1.5">PORT GELLHORN</text>
+    <text x="310" y="1070" fill="rgba(0, 240, 255, 0.65)" font-size="8.5">COMMERCIAL DOCKS &amp; CONTAINER GANTRY</text>
+
+    <!-- LAYER 5: Inland Lakes, Rivers & Canals -->
+    <!-- Lake Leonida (Central Lake Okeechobee Equivalent) -->
+    <path d="M 1080,600 Q 1280,560 1380,630 T 1400,740 Q 1330,830 1190,820 T 1060,710 Q 1020,640 1080,600 Z" fill="url(#lakeDepth)" stroke="rgba(0, 240, 255, 0.8)" stroke-width="2.5"/>
+    <!-- Lake Islands -->
+    <ellipse cx="1200" cy="690" rx="25" ry="14" fill="#142130" stroke="rgba(0, 240, 255, 0.5)" stroke-width="1.2"/>
+    <ellipse cx="1260" cy="720" rx="14" ry="8" fill="#142130" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+    <text x="1220" y="650" text-anchor="middle" fill="rgba(0, 240, 255, 0.95)" font-size="13" font-weight="900" letter-spacing="2">LAKE LEONIDA</text>
+    <text x="1220" y="670" text-anchor="middle" fill="rgba(0, 240, 255, 0.6)" font-size="8.5">INTERIOR FRESHWATER BASIN</text>
+
+    <!-- Navigable River Network (Grassrivers Pelican River Arteries) -->
+    <!-- Pelican River Main Stem from Lake Leonida to Gulf -->
+    <path d="M 1160,820 Q 1050,910 920,980 T 780,1090 T 650,1190 T 520,1260 T 360,1290" fill="none" stroke="#00f0ff" stroke-width="6" stroke-linecap="round" opacity="0.75"/>
+    <!-- Pelican River Northern Fork -->
+    <path d="M 920,980 Q 760,940 580,950 T 420,970" fill="none" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+    <!-- Pelican River Southern Marsh Delta -->
+    <path d="M 780,1090 Q 750,1200 780,1320 T 760,1450" fill="none" stroke="#00f0ff" stroke-width="4.5" stroke-linecap="round" opacity="0.65"/>
+    <path d="M 650,1190 Q 640,1310 610,1420" fill="none" stroke="#00f0ff" stroke-width="3" opacity="0.5"/>
+    <!-- Canal to East Coast Biscayne Bay -->
+    <path d="M 1360,760 Q 1500,820 1660,850 T 1860,890" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-dasharray="8,4" opacity="0.7"/>
+    <text x="730" y="1030" fill="rgba(0, 240, 255, 0.85)" font-size="10" font-weight="800" transform="rotate(-30 730 1030)">PELICAN RIVER ARTERY (SPEEDBOAT CORRIDOR)</text>
+
+    <!-- LAYER 6: Vice City Metro & Biscayne Bay & Barrier Islands -->
+    <!-- Biscayne Bay Lagoon -->
+    <path d="M 1860,620 Q 1920,780 1910,950 T 1840,1180 Q 1790,1260 1720,1320" fill="none" stroke="#030b14" stroke-width="70" stroke-linecap="round"/>
+    <path d="M 1860,620 Q 1920,780 1910,950 T 1840,1180 Q 1790,1260 1720,1320" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="6" stroke-dasharray="10,6"/>
+
+    <!-- Vice City Mainland Urban Core -->
+    <rect x="1620" y="660" width="230" height="360" rx="10" fill="#181326" stroke="rgba(255, 42, 141, 0.7)" stroke-width="2"/>
+    <rect x="1620" y="660" width="230" height="360" rx="10" fill="url(#urbanGrid)"/>
+    <text x="1735" y="700" text-anchor="middle" fill="#ff2a8d" font-size="16" font-weight="1000" letter-spacing="2">VICE CITY DOWNTOWN</text>
+    <text x="1735" y="720" text-anchor="middle" fill="rgba(255, 42, 141, 0.75)" font-size="9" font-weight="700">FINANCIAL DISTRICT &bull; SINFRONTERA HQ</text>
+
+    <!-- Escobar International Airport (EIA) -->
+    <g transform="translate(1640, 930)">
+        <rect x="0" y="0" width="140" height="85" rx="6" fill="#121822" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1"/>
+        <line x1="12" y1="12" x2="128" y2="72" stroke="#fff" stroke-width="5" stroke-linecap="square"/>
+        <line x1="12" y1="12" x2="128" y2="72" stroke="#ffb800" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <line x1="12" y1="72" x2="128" y2="12" stroke="#fff" stroke-width="5" stroke-linecap="square"/>
+        <line x1="12" y1="72" x2="128" y2="12" stroke="#ffb800" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="70" y="48" text-anchor="middle" fill="#fff" font-size="9" font-weight="900" letter-spacing="1">ESCOBAR INTL (EIA)</text>
+    </g>
+
+    <!-- Biscayne Bay Islands -->
+    <!-- Starfish Island -->
+    <ellipse cx="1890" cy="800" rx="22" ry="15" fill="#241a34" stroke="#ff2a8d" stroke-width="1.5"/>
+    <circle cx="1890" cy="800" r="4" fill="#ffd700"/>
+    <text x="1890" y="828" text-anchor="middle" fill="rgba(255, 42, 141, 0.9)" font-size="8" font-weight="800">STARFISH ISL.</text>
+
+    <!-- Venetian Islands Chain -->
+    <ellipse cx="1880" cy="730" rx="14" ry="9" fill="#1d2336" stroke="#00f0ff" stroke-width="1.2"/>
+    <ellipse cx="1910" cy="735" rx="15" ry="9" fill="#1d2336" stroke="#00f0ff" stroke-width="1.2"/>
+
+    <!-- Vice Beach Barrier Islands & Ocean Drive (Long Barrier Island Strip) -->
+    <path d="M 1940,580 Q 2000,750 1990,980 T 1920,1220 Q 1970,1170 1990,980 T 1970,580 Z" fill="#2b142d" stroke="#ff2a8d" stroke-width="2.5" filter="url(#pinkGlow)"/>
+    <text x="2010" y="820" fill="#ff2a8d" font-size="14" font-weight="900" letter-spacing="2" transform="rotate(86 2010 820)">VICE BEACH // OCEAN BOULEVARD</text>
+
+    <!-- Bay Bridges & Causeways -->
+    <!-- Julia Tuttle Causeway (North) -->
+    <line x1="1830" y1="670" x2="1960" y2="670" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+    <!-- Venetian Causeway (Middle) -->
+    <line x1="1850" y1="730" x2="1970" y2="740" stroke="#00f0ff" stroke-width="3" stroke-dasharray="8,3"/>
+    <!-- MacArthur Causeway (South) -->
+    <line x1="1850" y1="840" x2="1980" y2="850" stroke="#ffb800" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Rickenbacker Causeway (To South Key Biscayne) -->
+    <line x1="1800" y1="1020" x2="1910" y2="1080" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- LAYER 7: Leonida Keys Archipelago (Curving Southern Chain) -->
+    <!-- Overseas Highway Bridge Vector Arc (US-1 / 7-Mile Bridge) -->
+    <path id="overseasHwy" d="M 1720,1320 Q 1820,1400 1940,1470 T 2120,1550 T 2260,1610 T 2350,1650" fill="none" stroke="#ffb800" stroke-width="4" stroke-dasharray="10,4" filter="url(#goldGlow)"/>
+
+    <!-- Island 1: Key Largo (Upper Key) -->
+    <ellipse cx="1780" cy="1360" rx="45" ry="24" fill="#152636" stroke="#00f0ff" stroke-width="2" transform="rotate(28 1780 1360)"/>
+    <text x="1780" y="1365" text-anchor="middle" fill="#00f0ff" font-size="9" font-weight="800">KEY LARGO</text>
+
+    <!-- Island 2: Islamorada / Middle Key -->
+    <ellipse cx="1880" cy="1430" rx="50" ry="22" fill="#152636" stroke="#00f0ff" stroke-width="2" transform="rotate(24 1880 1430)"/>
+    <text x="1880" y="1435" text-anchor="middle" fill="#00f0ff" font-size="9" font-weight="800">ISLAMORADA</text>
+
+    <!-- Island 3: Marathon Key / Big Pine -->
+    <ellipse cx="2010" cy="1500" rx="55" ry="24" fill="#152636" stroke="#00f0ff" stroke-width="2" transform="rotate(18 2010 1500)"/>
+    <text x="2010" y="1505" text-anchor="middle" fill="#00f0ff" font-size="9" font-weight="800">MARATHON KEY</text>
+
+    <!-- Island 4: Key Lento (Confirmed Collector Map Secret Vault Marina) -->
+    <ellipse cx="2160" cy="1560" rx="48" ry="25" fill="#281432" stroke="#ff2a8d" stroke-width="2.5" transform="rotate(12 2160 1560)" filter="url(#pinkGlow)"/>
+    <text x="2160" y="1565" text-anchor="middle" fill="#fff" font-size="9.5" font-weight="900">KEY LENTO</text>
+    <text x="2160" y="1605" text-anchor="middle" fill="#ff2a8d" font-size="8.5" font-weight="800">LEAKED COLLECTOR VAULT</text>
+
+    <!-- Island 5: Goose Key & Deep Scuba Coral Reef -->
+    <ellipse cx="2280" cy="1620" rx="38" ry="20" fill="#122a2e" stroke="#00ff88" stroke-width="2" transform="rotate(8 2280 1620)"/>
+    <text x="2280" y="1625" text-anchor="middle" fill="#00ff88" font-size="8.5" font-weight="800">GOOSE KEY REEF</text>
+
+    <!-- Keys Region Watermark Banner -->
+    <text x="1940" y="1590" fill="rgba(255, 184, 0, 0.95)" font-size="14" font-weight="900" letter-spacing="2">LEONIDA KEYS ARCHIPELAGO // OVERSEAS HWY US-1</text>
+    <text x="1940" y="1610" fill="rgba(255, 184, 0, 0.7)" font-size="9">7-MILE CAUSEWAY BRIDGES &bull; DEEP CORAL DROP ZONES</text>
+
+    <!-- Offshore Starlet Superyacht Anchorage Zone -->
+    <g transform="translate(2180, 1400)">
+        <circle r="36" fill="rgba(255, 42, 141, 0.08)" stroke="rgba(255, 42, 141, 0.4)" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="0" y="-12" text-anchor="middle" fill="#ff2a8d" font-size="8.5" font-weight="900">STARLET YACHT</text>
+        <text x="0" y="4" text-anchor="middle" fill="#ff2a8d" font-size="8">ANCHORAGE</text>
+        <text x="0" y="18" text-anchor="middle" fill="rgba(0, 240, 255, 0.7)" font-size="7.5">SCUBA ACCESS</text>
+    </g>
+
+    <!-- LAYER 8: Major Arterial Highways & Interstates Network -->
+    <!-- 1. Interstate 97 Spine (North-South Arterial Highway) -->
+    <path d="M 680,240 Q 950,260 1150,420 T 1320,720 T 1520,1020 T 1720,1320" fill="none" stroke="#00f0ff" stroke-width="4.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 680,240 Q 950,260 1150,420 T 1320,720 T 1520,1020 T 1720,1320" fill="none" stroke="#040b15" stroke-width="1.5" stroke-dasharray="8,6"/>
+    <text x="1380" y="900" fill="rgba(0, 240, 255, 0.9)" font-size="10" font-weight="900" letter-spacing="1" transform="rotate(52 1380 900)">INTERSTATE 97 SPINE // HIGHWAY EXPRESS</text>
+
+    <!-- 2. Toll 1A Arterial Highway (West-East Highway across Lake North Shore) -->
+    <path d="M 320,900 Q 580,680 960,520 T 1420,530 T 1720,680" fill="none" stroke="#ffb800" stroke-width="4.5" stroke-linecap="round" opacity="0.9" filter="url(#goldGlow)"/>
+    <path d="M 320,900 Q 580,680 960,520 T 1420,530 T 1720,680" fill="none" stroke="#101820" stroke-width="1.5" stroke-dasharray="10,5"/>
+    <text x="1200" y="505" text-anchor="middle" fill="#ffb800" font-size="10.5" font-weight="900" letter-spacing="1.5">TOLL 1A ARTERIAL HIGHWAY (ANPR SPEED CAMERAS ACTIVE)</text>
+
+    <!-- 3. State Route 41 (Tamiami Trail across Grassrivers) -->
+    <path d="M 360,1150 Q 650,1120 1020,1110 T 1450,1140 T 1680,1050" fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-width="3" stroke-dasharray="12,6"/>
+    <text x="960" y="1095" text-anchor="middle" fill="rgba(255, 255, 255, 0.75)" font-size="9" font-weight="800">STATE ROUTE 41 // SWAMP CROSSING</text>
+
+    <!-- LAYER 9: Nautical & Tactical Cartographic Details -->
+    <!-- Compass Rose (Top-Right) -->
+    <g transform="translate(2250, 160)">
+        <circle r="60" fill="rgba(8, 16, 26, 0.88)" stroke="rgba(0, 240, 255, 0.5)" stroke-width="2"/>
+        <circle r="44" fill="none" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1"/>
+        <line x1="0" y1="-54" x2="0" y2="54" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1"/>
+        <line x1="-54" y1="0" x2="54" y2="0" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1"/>
+        <!-- North Arrow -->
+        <polygon points="0,-48 8,-18 0,-24 -8,-18" fill="#ff2a8d"/>
+        <polygon points="0,48 6,18 0,22 -6,18" fill="rgba(0, 240, 255, 0.6)"/>
+        <text x="-5" y="-52" fill="#ff2a8d" font-size="13" font-weight="900">N</text>
+        <text x="38" y="4" fill="rgba(0, 240, 255, 0.8)" font-size="10" font-weight="700">E</text>
+        <text x="-4" y="44" fill="rgba(0, 240, 255, 0.8)" font-size="10" font-weight="700">S</text>
+        <text x="-46" y="4" fill="rgba(0, 240, 255, 0.8)" font-size="10" font-weight="700">W</text>
+        <text x="0" y="76" text-anchor="middle" fill="rgba(0, 240, 255, 0.65)" font-size="8" font-weight="700" letter-spacing="1">MAG DEC +4.2° W</text>
+    </g>
+
+    <!-- Cartographic Header Banner (Top-Left) -->
+    <g transform="translate(30, 30)">
+        <rect width="480" height="75" rx="6" fill="rgba(8, 14, 22, 0.94)" stroke="rgba(0, 240, 255, 0.45)" stroke-width="1.5"/>
+        <text x="18" y="28" fill="#00f0ff" font-size="13" font-weight="900" letter-spacing="2">STATE OF LEONIDA // TACTICAL TOPOGRAPHIC ATLAS</text>
+        <text x="18" y="46" fill="#e2e8f0" font-size="10" font-weight="700">SYNDICATE-6 HIGH-RES SATELLITE RECON &bull; 100% ORIGINAL CARTOGRAPHY</text>
+        <text x="18" y="62" fill="rgba(16, 185, 129, 0.9)" font-size="9" font-weight="800">ALL 6 REGIONS CLASSIFIED // SCALE 1:50,000 // DATUM WGS-84</text>
+    </g>
+
+    <!-- Coordinate Grid Boundary Rulers -->
+    <!-- Top & Bottom Ruler Marks -->
+    <g fill="rgba(0, 240, 255, 0.4)" font-size="8.5" font-weight="700">
+        <text x="300" y="15">82°00' W</text>
+        <text x="600" y="15">81°40' W</text>
+        <text x="900" y="15">81°20' W</text>
+        <text x="1200" y="15">81°00' W</text>
+        <text x="1500" y="15">80°40' W</text>
+        <text x="1800" y="15">80°20' W</text>
+        <text x="2100" y="15">80°00' W</text>
+
+        <text x="10" y="300">27°00' N</text>
+        <text x="10" y="600">26°30' N</text>
+        <text x="10" y="900">26°00' N</text>
+        <text x="10" y="1200">25°30' N</text>
+        <text x="10" y="1500">25°00' N</text>
+        <text x="10" y="1750">24°30' N</text>
+    </g>
+
+</svg>''')
+
+    return "".join(svg)
+
+if __name__ == '__main__':
+    out_dir = r"C:\Users\Shawn\Desktop\gta6heistguide\public\assets"
+    os.makedirs(out_dir, exist_ok=True)
+    out_file = os.path.join(out_dir, "leonida-topo-map.svg")
+    svg_content = generate_svg()
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write(svg_content)
+    print(f"Generated {out_file} ({len(svg_content)} bytes)")

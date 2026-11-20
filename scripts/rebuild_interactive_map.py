@@ -1,0 +1,2420 @@
+#!/usr/bin/env python3
+"""
+Rebuild interactive-map.html with pro-grade Leaflet.js interactive map,
+clustering, fixed-size markers, fly-to & magnify, 100% DMCA-safe 2400x1800 Leonida base map,
+sidebar inspector, D1 community sync, and zero cutoff layout.
+"""
+import os
+
+HTML_CONTENT = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Interactive Leonida Map & Vault Radar | GTA 6 Guide</title>
+    <meta name="description" content="Explore the interactive GTA 6 Leonida radar map with verified vaults, safehouses, illegal operations, Ammu-Nation stores, escape canals, and live community pins.">
+    <meta name="keywords" content="GTA 6 interactive map, Leonida map regions, Vice City vaults, storm drains, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park">
+    <link rel="canonical" href="https://www.gta6heistguide.com/interactive-map">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="Interactive Leonida Map & Vault Radar | GTA 6 Guide">
+    <meta property="og:description" content="Explore the interactive GTA 6 Leonida radar map with verified vaults, safehouses, illegal operations, Ammu-Nation stores, escape canals, and live community pins.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gta6heistguide.com/interactive-map">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Interactive Leonida Map & Vault Radar | GTA 6 Guide">
+    <meta name="twitter:description" content="Explore the interactive GTA 6 Leonida radar map with verified vaults, safehouses, illegal operations, Ammu-Nation stores, escape canals, and live community pins.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+
+    <!-- Leaflet & Leaflet.markercluster CDN Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <style>
+        /* ==========================================================================
+           FULL-HEIGHT ZERO-CUTOFF APP SHELL
+           ========================================================================== */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: #040711;
+        }
+
+        .map-app-container {
+            width: 100%;
+            height: calc(100vh - 135px);
+            min-height: 520px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            background: #040711;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(0, 240, 255, 0.25);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+        }
+
+        /* LEFT SIDEBAR: 340px Fixed, Scrollable */
+        .map-sidebar {
+            width: 340px;
+            min-width: 340px;
+            max-width: 340px;
+            height: 100%;
+            background: rgba(8, 13, 22, 0.98);
+            border-right: 1px solid rgba(0, 240, 255, 0.25);
+            display: flex;
+            flex-direction: column;
+            z-index: 500;
+            position: relative;
+            box-sizing: border-box;
+            box-shadow: 4px 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .sidebar-header-box {
+            padding: 0.75rem 0.85rem 0.5rem;
+            background: rgba(12, 19, 32, 0.98);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .sidebar-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-title-badge {
+            font-size: 0.7rem;
+            font-family: var(--font-mono, monospace);
+            font-weight: 800;
+            color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.12);
+            border: 1px solid var(--neon-cyan);
+            padding: 2px 7px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-search-wrap {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-search-input {
+            width: 100%;
+            padding: 0.45rem 0.65rem 0.45rem 2rem;
+            background: rgba(4, 8, 14, 0.85);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.78rem;
+            font-family: var(--font-mono, monospace);
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        .sidebar-search-input:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
+        }
+
+        .sidebar-search-icon {
+            position: absolute;
+            left: 0.65rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            color: var(--neon-cyan);
+            pointer-events: none;
+        }
+
+        .region-select {
+            width: 100%;
+            padding: 0.4rem 0.65rem;
+            background: rgba(4, 8, 14, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: var(--neon-cyan);
+            font-size: 0.76rem;
+            font-weight: 700;
+            font-family: var(--font-mono, monospace);
+            outline: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin-bottom: 0.5rem;
+        }
+
+        .region-select:focus {
+            border-color: var(--neon-cyan);
+        }
+
+        /* CATEGORY FILTER PILLS */
+        .category-pills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .cat-pill {
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+            color: #94a3b8;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            user-select: none;
+        }
+
+        .cat-pill:hover {
+            border-color: rgba(0, 240, 255, 0.45);
+            color: #fff;
+        }
+
+        /* Active states: Solid Neon Fill */
+        .cat-pill.active {
+            background: var(--neon-cyan);
+            color: #030812 !important;
+            border-color: var(--neon-cyan);
+            font-weight: 900;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        .cat-pill[data-cat="vault"].active {
+            background: var(--neon-pink);
+            color: #fff !important;
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 10px rgba(255, 42, 141, 0.6);
+        }
+        .cat-pill[data-cat="illegal-op"].active {
+            background: #a855f7;
+            color: #fff !important;
+            border-color: #a855f7;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        }
+        .cat-pill[data-cat="ammunation"].active {
+            background: #ef4444;
+            color: #fff !important;
+            border-color: #ef4444;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+        }
+        .cat-pill[data-cat="safehouse"].active {
+            background: #10b981;
+            color: #030812 !important;
+            border-color: #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+        }
+        .cat-pill[data-cat="escape"].active {
+            background: #06b6d4;
+            color: #030812 !important;
+            border-color: #06b6d4;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+        }
+        .cat-pill[data-cat="collectible"].active {
+            background: #f59e0b;
+            color: #030812 !important;
+            border-color: #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+        }
+        .cat-pill[data-cat="community"].active {
+            background: #ec4899;
+            color: #fff !important;
+            border-color: #ec4899;
+            box-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+        }
+
+        /* PLAY-ALONG TOGGLES & PROGRESS BAR */
+        .play-along-bar {
+            background: rgba(4, 9, 16, 0.75);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 6px;
+            padding: 0.45rem 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .play-along-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+            font-family: var(--font-mono, monospace);
+        }
+
+        .progress-text {
+            color: var(--neon-green);
+            font-weight: 800;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #10b981, #00f0ff);
+            transition: width 0.3s ease;
+        }
+
+        .play-along-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+            margin-top: 2px;
+        }
+
+        .hide-found-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.72rem;
+            color: #cbd5e1;
+            font-weight: 700;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .btn-mini {
+            padding: 3px 8px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid var(--border-card);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .btn-mini:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.1);
+        }
+        .btn-mini-green {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+        }
+        .btn-mini-green:hover {
+            background: rgba(16, 185, 129, 0.2);
+            color: #fff;
+        }
+        .btn-mini-amber {
+            border-color: var(--neon-amber);
+            color: var(--neon-amber);
+        }
+        .btn-mini-amber:hover {
+            background: rgba(255, 184, 0, 0.2);
+            color: #fff;
+        }
+
+        /* SCROLLABLE SIDEBAR BODY */
+        .sidebar-scroll-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.65rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Custom Scrollbar for Sidebar */
+        .sidebar-scroll-body::-webkit-scrollbar {
+            width: 5px;
+        }
+        .sidebar-scroll-body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .sidebar-scroll-body::-webkit-scrollbar-thumb {
+            background: rgba(0, 240, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        /* SELECTED PIN INSPECTOR CARD */
+        .pin-inspector-card {
+            background: rgba(14, 22, 38, 0.96);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 8px;
+            padding: 0.85rem;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+            position: relative;
+            animation: fadeIn 0.25s ease-out;
+            margin-bottom: 0.4rem;
+        }
+
+        .inspector-badge-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.4rem;
+        }
+
+        .inspector-tag {
+            font-size: 0.68rem;
+            font-family: var(--font-mono, monospace);
+            font-weight: 900;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(255, 42, 141, 0.15);
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            letter-spacing: 0.5px;
+        }
+
+        .inspector-close-btn {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+        .inspector-close-btn:hover {
+            color: #fff;
+        }
+
+        .inspector-title {
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 900;
+            margin: 0 0 0.25rem;
+            line-height: 1.25;
+        }
+
+        .inspector-payout {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--neon-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .inspector-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted, #94a3b8);
+            line-height: 1.45;
+            margin: 0 0 0.75rem;
+        }
+
+        .inspector-gps {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.7rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.65rem;
+        }
+
+        .inspector-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .btn-inspector-action {
+            width: 100%;
+            padding: 0.45rem 0.65rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            box-sizing: border-box;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .btn-found-toggle {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+        }
+        .btn-found-toggle:hover {
+            background: var(--neon-green);
+            color: #000;
+        }
+        .btn-found-toggle.is-found {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #64748b;
+            color: #94a3b8;
+        }
+
+        .btn-dossier-link {
+            background: linear-gradient(135deg, #00f0ff, #0088ff);
+            color: #000;
+            font-weight: 900;
+        }
+        .btn-dossier-link:hover {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+            color: #000;
+        }
+
+        /* LOCATION LIST ITEMS */
+        .location-list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            font-family: var(--font-mono, monospace);
+            color: #64748b;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .location-item {
+            background: rgba(10, 16, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 0.45rem 0.65rem;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .location-item:hover {
+            border-color: rgba(0, 240, 255, 0.5);
+            background: rgba(16, 26, 42, 0.95);
+            transform: translateX(3px);
+        }
+
+        .location-item.selected {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.12);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+        }
+
+        .location-item.found-item {
+            opacity: 0.55;
+        }
+
+        .loc-item-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .loc-item-icon {
+            font-size: 1rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .loc-item-info {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .loc-item-title {
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.25;
+        }
+
+        .loc-item-meta {
+            font-size: 0.68rem;
+            color: #64748b;
+            font-family: var(--font-mono, monospace);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .loc-item-check {
+            font-size: 0.8rem;
+            color: var(--neon-green);
+            flex-shrink: 0;
+        }
+
+        /* RIGHT MAP PANE */
+        .map-stage-pane {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: #03060d;
+        }
+
+        #leafletMap {
+            width: 100%;
+            height: 100%;
+            background: #03060d;
+            cursor: crosshair;
+        }
+
+        /* FIXED OVERLAY HUD CONTROLS */
+        .map-overlay-hud {
+            position: absolute;
+            z-index: 600;
+            pointer-events: none;
+        }
+
+        .hud-top-right {
+            top: 14px;
+            right: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+            pointer-events: auto;
+        }
+
+        .hud-zoom-btn-group {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+            background: rgba(6, 12, 22, 0.92);
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            border-radius: 8px;
+            padding: 3px 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .hud-btn {
+            background: rgba(12, 20, 34, 0.9);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.18s;
+        }
+
+        .hud-btn:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+            transform: scale(1.06);
+        }
+
+        .hud-bottom-left {
+            bottom: 12px;
+            left: 14px;
+            background: rgba(6, 12, 22, 0.92);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.72rem;
+            color: var(--neon-cyan);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            letter-spacing: 0.5px;
+        }
+
+        .hud-bottom-right {
+            bottom: 12px;
+            right: 14px;
+            background: rgba(6, 12, 22, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.65rem;
+            color: #64748b;
+            pointer-events: none;
+        }
+
+        /* MOBILE FLOATING DRAWER TOGGLE */
+        .mobile-drawer-toggle {
+            display: none;
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            z-index: 700;
+            background: rgba(6, 12, 22, 0.95);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: var(--neon-cyan);
+            font-weight: 800;
+            font-size: 0.78rem;
+            font-family: var(--font-mono, monospace);
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            pointer-events: auto;
+        }
+
+        @media (max-width: 900px) {
+            .map-app-container {
+                height: calc(100vh - 120px);
+                min-height: 440px;
+            }
+            .map-sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                height: 100%;
+                transform: translateY(100%);
+                transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 800;
+            }
+            .map-sidebar.mobile-open {
+                transform: translateY(0);
+            }
+            .mobile-drawer-toggle {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .hud-bottom-left {
+                left: auto;
+                right: 14px;
+                bottom: 50px;
+                font-size: 0.68rem;
+            }
+        }
+
+        /* ==========================================================================
+           LEAFLET CUSTOM MARKERS & TOOLTIPS (FIXED PIXEL SIZE)
+           ========================================================================== */
+        .cyber-map-pin {
+            background: transparent;
+            border: none;
+        }
+
+        .pin-ring {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(10, 16, 28, 0.92);
+            border: 2px solid var(--neon-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .pin-ring:hover {
+            transform: scale(1.22);
+            box-shadow: 0 0 18px #fff;
+            border-color: #fff;
+            z-index: 1000 !important;
+        }
+
+        .pin-icon {
+            font-size: 15px;
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* Category Color Accents */
+        .pin-vault .pin-ring {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 12px rgba(255, 42, 141, 0.65);
+        }
+        .pin-illegal-op .pin-ring {
+            border-color: #a855f7;
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.65);
+        }
+        .pin-ammunation .pin-ring {
+            border-color: #ef4444;
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.65);
+        }
+        .pin-safehouse .pin-ring {
+            border-color: #10b981;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.65);
+        }
+        .pin-escape .pin-ring {
+            border-color: #06b6d4;
+            box-shadow: 0 0 12px rgba(6, 182, 212, 0.65);
+        }
+        .pin-collectible .pin-ring {
+            border-color: #f59e0b;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.65);
+        }
+        .pin-community .pin-ring {
+            border-color: #ec4899;
+            box-shadow: 0 0 12px rgba(236, 72, 153, 0.65);
+        }
+
+        /* Pulsing Target Reticle when Selected */
+        .pin-selected .pin-ring {
+            transform: scale(1.3);
+            border-color: #fff;
+            box-shadow: 0 0 25px var(--neon-cyan);
+            z-index: 9999 !important;
+        }
+
+        .pin-reticle {
+            display: none;
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            width: 54px;
+            height: 54px;
+            border: 2px dashed var(--neon-cyan);
+            border-radius: 50%;
+            animation: rotateReticle 4s linear infinite;
+            pointer-events: none;
+        }
+
+        .pin-selected .pin-reticle {
+            display: block;
+        }
+
+        @keyframes rotateReticle {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Found Pin State */
+        .pin-found .pin-ring {
+            opacity: 0.55;
+            filter: grayscale(40%);
+        }
+
+        /* SLEEK MARKERCLUSTER STYLING */
+        .cyber-cluster-marker {
+            background: transparent;
+            border: none;
+        }
+
+        .cyber-cluster-inner {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(12, 20, 34, 0.94);
+            border: 2px solid var(--neon-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+            color: #fff;
+            font-family: var(--font-mono, monospace);
+            font-weight: 900;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .cyber-cluster-inner:hover {
+            transform: scale(1.15);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 42, 141, 0.7);
+        }
+
+        /* CRISP HOVER TOOLTIPS */
+        .leaflet-tooltip.cyber-tooltip {
+            background: rgba(8, 14, 24, 0.96) !important;
+            border: 1px solid var(--neon-cyan) !important;
+            border-radius: 6px !important;
+            color: #fff !important;
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3) !important;
+            padding: 6px 10px !important;
+            font-family: var(--font-main, sans-serif) !important;
+        }
+        .leaflet-tooltip.cyber-tooltip::before {
+            border-top-color: var(--neon-cyan) !important;
+        }
+
+        .pin-tooltip-cat {
+            font-size: 0.65rem;
+            font-family: var(--font-mono, monospace);
+            color: var(--neon-pink);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pin-tooltip-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 2px 0;
+        }
+
+        .pin-tooltip-payout {
+            font-size: 0.72rem;
+            font-family: var(--font-mono, monospace);
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+
+        /* D1 COMMUNITY PIN DROP MODAL */
+        .modal-overlay-custom {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .modal-overlay-custom.open {
+            display: flex;
+        }
+
+        .modal-card-custom {
+            background: rgba(12, 18, 30, 0.98);
+            border: 1px solid var(--neon-amber);
+            border-radius: 10px;
+            width: min(540px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 1.25rem;
+            box-shadow: 0 0 35px rgba(255, 184, 0, 0.3);
+            position: relative;
+        }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Interactive Leonida Tactical Map & Vault Radar",
+      "url": "https://www.gta6heistguide.com/interactive-map",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "GTA6HeistGuide.com",
+        "url": "https://www.gta6heistguide.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I filter heist vaults, Ammu-Nation stores, and illegal operations in GTA 6 Leonida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the Category Filter Pills on the left sidebar to isolate Vaults, Illegal Ops, Ammu-Nation, Safehouses & Fences, Escape Canals, Collectibles, or Community Pins, or select one of the 6 official regions (Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I save my 100% completion progress or submit personal discovery pins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Progress is saved 100% free in your browser with zero paywall. You can also drop Day-1 Discovery Pins directly to our Cloudflare D1 community database."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gta6heistguide.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Interactive Leonida Tactical Map",
+          "item": "https://www.gta6heistguide.com/interactive-map"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+
+<!-- TOP COUNTDOWN STRIP -->
+<div class="countdown-strip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS">
+                <span class="strip-pulse"></span>
+                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS &amp; DROPS</span>
+            </a>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+            <span class="strip-divider">|</span>
+            <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
+        </div>
+        <div class="strip-right-actions">
+            <a href="/cheats.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">⚡ 61 Cheats</a>
+            <a href="/settings.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">⚙️ Settings</a>
+            <a href="/money-guide.html" class="strip-pill" style="color:var(--neon-green); text-decoration:none; font-size:0.75rem;">💰 Fast Cash</a>
+            <a href="/weapons-bonuses.html" class="strip-pill" style="color:#f43f5e; text-decoration:none; font-size:0.75rem;">🔫 Gun Stores</a>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Syndicate v3.2</span>
+        </a>
+        <div class="nav-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span>LEONIDA NETWORK &bull; ALL SYSTEMS ONLINE</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="nav-pill">Vaults</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
+            <li><a href="/settings.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">⚙️ Settings</a></li>
+            <li><a href="/money-guide.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💰 Cash Guide</a></li>
+            <li><a href="/weapons-bonuses.html" class="nav-pill" style="color:#f43f5e; font-weight:800;">🔫 Gun Stores</a></li>
+            <li><a href="/giveaways.html" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/interactive-map.html" class="nav-pill active">Radar Map</a></li>
+            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
+            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
+            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
+            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
+            <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub">🔴 Live</a>
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints &amp; Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
+        </div>
+    </div>
+</nav>
+
+<!-- FULL-HEIGHT ZERO-CUTOFF APP SHELL -->
+<div class="map-app-container">
+
+    <!-- LEFT SIDEBAR (340px) -->
+    <aside class="map-sidebar" id="mapSidebar">
+        <!-- Top Fixed Controls -->
+        <div class="sidebar-header-box">
+            <div class="sidebar-title-row">
+                <span class="sidebar-title-badge">🗺️ LEONIDA ATLAS v4.2</span>
+                <span style="font-size:0.7rem; color:var(--text-muted); font-family:var(--font-mono, monospace);" id="activeLocationCountDisplay">35 PINS LOADED</span>
+                <button type="button" class="btn-mini mobile-drawer-close" style="display:none;" onclick="toggleMobileDrawer()">✕ Close</button>
+            </div>
+
+            <!-- Live Search Box -->
+            <div class="sidebar-search-wrap">
+                <span class="sidebar-search-icon">🔍</span>
+                <input type="text" id="mapSearchInput" class="sidebar-search-input" placeholder="Search vaults, Ammu-Nation, Illegal Ops, regions..." oninput="handleSearchInput(this.value)">
+            </div>
+
+            <!-- Region Quick-Jump Dropdown (Exact 6 Official Regions) -->
+            <select id="regionQuickJump" class="region-select" onchange="handleRegionChange(this.value)">
+                <option value="all">📍 All Regions (<span id="cntAll">35</span>)</option>
+                <option value="Vice City">🏙️ Vice City (<span id="cntVC">9</span>)</option>
+                <option value="Leonida Keys">🏝️ Leonida Keys (<span id="cntKeys">4</span>)</option>
+                <option value="Grassrivers">🌾 Grassrivers (<span id="cntGrass">5</span>)</option>
+                <option value="Port Gellhorn">⚓ Port Gellhorn (<span id="cntGell">6</span>)</option>
+                <option value="Ambrosia">🏭 Ambrosia (<span id="cntAmb">7</span>)</option>
+                <option value="Mount Kalaga National Park">⛰️ Mount Kalaga National Park (<span id="cntKal">4</span>)</option>
+            </select>
+
+            <!-- Category Filter Pills -->
+            <div class="category-pills-wrap">
+                <div class="cat-pill active" data-cat="all" onclick="setCategoryFilter('all', this)">All</div>
+                <div class="cat-pill" data-cat="vault" onclick="setCategoryFilter('vault', this)">💰 Vaults</div>
+                <div class="cat-pill" data-cat="illegal-op" onclick="setCategoryFilter('illegal-op', this)">🔥 Illegal Ops</div>
+                <div class="cat-pill" data-cat="ammunation" onclick="setCategoryFilter('ammunation', this)">🔫 Ammu-Nation</div>
+                <div class="cat-pill" data-cat="safehouse" onclick="setCategoryFilter('safehouse', this)">🏠 Safehouses &amp; Fences</div>
+                <div class="cat-pill" data-cat="escape" onclick="setCategoryFilter('escape', this)">🚇 Escape Canals</div>
+                <div class="cat-pill" data-cat="collectible" onclick="setCategoryFilter('collectible', this)">💎 Collectibles</div>
+                <div class="cat-pill" data-cat="community" onclick="setCategoryFilter('community', this)">📡 Community Pins</div>
+            </div>
+
+            <!-- Play-Along Toggles & Progress Bar -->
+            <div class="play-along-bar">
+                <div class="play-along-top">
+                    <span class="progress-text" id="progressSummaryText">FOUND 0 / 35 (0%)</span>
+                    <button type="button" class="btn-mini btn-mini-green" onclick="jumpToNextUnfound()" title="Fly to next uncompleted location">🎯 Next Unfound &rarr;</button>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBarFill"></div>
+                </div>
+                <div class="play-along-actions">
+                    <label class="hide-found-label">
+                        <input type="checkbox" id="hideFoundCheckbox" onchange="toggleHideFound(this.checked)">
+                        <span>Hide Found (<span id="foundCountLabel">0</span>)</span>
+                    </label>
+                    <button type="button" class="btn-mini btn-mini-amber" onclick="openD1PinModal()">📡 + Drop Pin</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scrollable Sidebar Body (Inspector & Location List) -->
+        <div class="sidebar-scroll-body" id="sidebarScrollBody">
+            <!-- Selected Pin Inspector Card (Shown when a pin is selected) -->
+            <div class="pin-inspector-card" id="pinInspectorCard" style="display:none;">
+                <div class="inspector-badge-row">
+                    <span class="inspector-tag" id="inspTag">VAULT TARGET &bull; VICE CITY</span>
+                    <button type="button" class="inspector-close-btn" onclick="clearSelectedLocation()" title="Close Inspector">&times;</button>
+                </div>
+                <h2 class="inspector-title" id="inspTitle">Sinfrontera National Bank</h2>
+                <div class="inspector-payout" id="inspPayout">Max Payout: $14,500,000</div>
+                <p class="inspector-desc" id="inspDesc">Subterranean biometric vault beneath Downtown Vice City.</p>
+                <div class="inspector-gps" id="inspGps">GPS: 25.7617° N, 80.1918° W</div>
+
+                <div class="inspector-actions">
+                    <button type="button" id="inspFoundBtn" class="btn-inspector-action btn-found-toggle" onclick="toggleCurrentFound()">
+                        ✓ Mark Pin Found
+                    </button>
+                    <button type="button" id="inspConfirmD1Btn" class="btn-inspector-action btn-mini-amber" style="display:none;" onclick="confirmActiveD1Pin()">
+                        👍 Confirm Pin (+100 Rep)
+                    </button>
+                    <a href="sinfrontera-bank.html" id="inspDossierLink" class="btn-inspector-action btn-dossier-link">
+                        📂 Open Blueprint Dossier &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Location List Header -->
+            <div class="location-list-header">
+                <span id="listHeaderTitle">Verified Locations</span>
+                <span id="listHeaderCount">35 Pins</span>
+            </div>
+
+            <!-- Dynamic Location List -->
+            <div id="locationsListContainer" style="display:flex; flex-direction:column; gap:0.4rem;"></div>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAP STAGE PANE -->
+    <main class="map-stage-pane">
+        <!-- Leaflet Map Canvas Container -->
+        <div id="leafletMap"></div>
+
+        <!-- FIXED OVERLAY HUD CONTROLS -->
+        <div class="map-overlay-hud hud-top-right">
+            <div class="hud-zoom-btn-group">
+                <button type="button" class="hud-btn" onclick="zoomInMap()" title="Zoom In (+)" aria-label="Zoom In">+</button>
+                <button type="button" class="hud-btn" onclick="zoomOutMap()" title="Zoom Out (-)" aria-label="Zoom Out">&minus;</button>
+                <button type="button" class="hud-btn" onclick="resetMapView()" title="Reset Full View (↺)" aria-label="Reset View">↺</button>
+                <button type="button" class="hud-btn" onclick="toggleMapFullscreen()" title="Toggle Fullscreen (⛶)" aria-label="Fullscreen">⛶</button>
+            </div>
+        </div>
+
+        <div class="map-overlay-hud hud-bottom-left" id="gpsDegreeReadout">
+            GPS GRID: 25.7617° N, 80.1918° W &bull; SATELLITE: SYNDICATE-6
+        </div>
+
+        <div class="map-overlay-hud hud-bottom-right">
+            DATUM WGS-84 &bull; ORBITAL RESOLUTION 0.5M
+        </div>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button type="button" class="mobile-drawer-toggle" onclick="toggleMobileDrawer()">
+            📋 Locations &amp; Filters (<span id="mobileCountBadge">35</span>)
+        </button>
+    </main>
+</div>
+
+<!-- CLOUDFLARE D1 DAY-1 DISCOVERY PIN MODAL -->
+<div class="modal-overlay-custom" id="d1PinModal" onclick="if(event.target===this) closeD1PinModal()">
+    <div class="modal-card-custom">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+            <div>
+                <span style="font-size:0.68rem; font-family:var(--font-mono, monospace); color:var(--neon-amber); font-weight:900;">LIVE CLOUDFLARE D1 NETWORK</span>
+                <h3 style="color:#fff; font-size:1.15rem; margin:0.2rem 0 0;">📡 Drop Day-1 Discovery Pin</h3>
+            </div>
+            <button type="button" onclick="closeD1PinModal()" style="background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer;">&times;</button>
+        </div>
+
+        <p style="font-size:0.78rem; color:#94a3b8; line-height:1.45; margin-bottom:1rem;">
+            Discovered a new safehouse, secret floorboard stash, or police scanner tower? Transmit coordinates to our live Cloudflare D1 database. Auto-verifies upon 3 community confirmations (+500 Syndicate Rep).
+        </p>
+
+        <form id="d1DropForm" onsubmit="submitD1PinForm(event)" style="display:grid; grid-template-columns:1fr 1fr; gap:0.65rem;">
+            <div style="grid-column: 1 / -1;">
+                <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Pin Title</label>
+                <input type="text" id="d1Title" class="sidebar-search-input" placeholder="e.g. Secret Marina Stash Safe" required style="padding-left:0.65rem;">
+            </div>
+
+            <div>
+                <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Category</label>
+                <select id="d1Category" class="region-select" style="margin:0;">
+                    <option value="vault">💰 Heist Vault / Cash Safe</option>
+                    <option value="illegal-op">🔥 Illegal Op / Lab</option>
+                    <option value="ammunation">🔫 Ammu-Nation / Weapon Broker</option>
+                    <option value="safehouse">🏠 Safehouse / Garage</option>
+                    <option value="escape">🚇 Escape Canal / Sewer Conduit</option>
+                    <option value="collectible">💎 Stash / Collectible Relay</option>
+                </select>
+            </div>
+
+            <div>
+                <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Leonida Region</label>
+                <select id="d1Region" class="region-select" style="margin:0;">
+                    <option value="Vice City">Vice City</option>
+                    <option value="Leonida Keys">Leonida Keys</option>
+                    <option value="Grassrivers">Grassrivers</option>
+                    <option value="Port Gellhorn">Port Gellhorn</option>
+                    <option value="Ambrosia">Ambrosia</option>
+                    <option value="Mount Kalaga National Park">Mount Kalaga National Park</option>
+                </select>
+            </div>
+
+            <div>
+                <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Your Callsign</label>
+                <input type="text" id="d1Alias" class="sidebar-search-input" placeholder="ViceOperative" required style="padding-left:0.65rem;">
+            </div>
+
+            <div>
+                <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Loot / Perk Estimate</label>
+                <input type="text" id="d1Payout" class="sidebar-search-input" placeholder="e.g. $8,500 Cash + Jammer" style="padding-left:0.65rem;">
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+                <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Tactical Entry &amp; Infiltration Notes</label>
+                <textarea id="d1Notes" class="sidebar-search-input" rows="3" placeholder="Describe entry route, floorboard location, or camera blindspots..." required style="padding:0.5rem;"></textarea>
+            </div>
+
+            <input type="hidden" id="d1CoordX" value="1735">
+            <input type="hidden" id="d1CoordY" value="780">
+
+            <div style="grid-column: 1 / -1; display:flex; gap:0.5rem; margin-top:0.4rem;">
+                <button type="submit" class="btn-inspector-action btn-mini-amber" style="flex:1; padding:0.6rem; font-size:0.82rem;">
+                    📡 Submit Pin to Live Radar
+                </button>
+                <button type="button" class="btn-mini" onclick="closeD1PinModal()">Cancel</button>
+            </div>
+            <div id="d1SubmitStatus" style="grid-column:1 / -1; font-size:0.78rem; text-align:center;"></div>
+        </form>
+    </div>
+</div>
+
+<!-- LEAFLET CDN JAVASCRIPT -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<!-- REVENUE CONFIG & CORE ENGINE -->
+<script src="/site-config.js"></script>
+<script src="/assets/main.js" defer></script>
+
+<script>
+/* ==========================================================================
+   PRO-GRADE LEAFLET INTERACTIVE MAP ENGINE
+   100% DMCA-Safe Leonida Cartography (2400x1800 L.CRS.Simple)
+   ========================================================================== */
+
+const MAP_WIDTH = 2400;
+const MAP_HEIGHT = 1800;
+
+// REGION CENTERS FOR QUICK-JUMP FLYTO (In Leaflet [lat, lng] where lat = 1800 - y, lng = x)
+const REGION_CENTERS = {
+    'all': { lat: 900, lng: 1200, zoom: 0 },
+    'Vice City': { lat: 950, lng: 1850, zoom: 1.2 },
+    'Leonida Keys': { lat: 340, lng: 2050, zoom: 1.2 },
+    'Grassrivers': { lat: 720, lng: 850, zoom: 1.1 },
+    'Port Gellhorn': { lat: 800, lng: 380, zoom: 1.3 },
+    'Ambrosia': { lat: 1140, lng: 1200, zoom: 1.2 },
+    'Mount Kalaga National Park': { lat: 1450, lng: 700, zoom: 1.2 }
+};
+
+// 35 CORE VERIFIED LOCATIONS ACROSS 6 OFFICIAL REGIONS
+const CORE_VERIFIED_LOCATIONS = [
+    // 1. HEIST VAULTS (9)
+    {
+        id: 'sinfrontera',
+        category: 'vault',
+        categoryLabel: 'Vault Target',
+        region: 'Vice City',
+        title: 'Sinfrontera National Bank',
+        payout: 'Max Payout: $14,500,000',
+        desc: 'Located in Downtown Vice City. Features subterranean pneumatic vault doors, biometric laser sensors, and storm drain escape conduits directly into the Biscayne sewer system.',
+        x: 1735,
+        y: 780,
+        icon: '💰',
+        link: 'sinfrontera-bank.html'
+    },
+    {
+        id: 'leonida-reserve',
+        category: 'vault',
+        categoryLabel: 'Federal Depository',
+        region: 'Ambrosia',
+        title: 'Leonida State Gold Reserve',
+        payout: 'Max Payout: $25,000,000',
+        desc: 'The single largest federal bullion depository in Leonida. Requires dual thermal lances, EMP blackout synchronization, and armored transport escape across Toll 1A.',
+        x: 1030,
+        y: 640,
+        icon: '🏛️',
+        link: 'leonida-reserve.html'
+    },
+    {
+        id: 'port-gellhorn',
+        category: 'vault',
+        categoryLabel: 'Maritime Vault',
+        region: 'Port Gellhorn',
+        title: 'Port Gellhorn Container Terminal',
+        payout: 'Max Payout: $8,200,000',
+        desc: 'Industrial maritime freight terminal on the west coast. Hack crane telemetry manifests, drill refrigerated contraband containers, and extract via speedboat canal.',
+        x: 330,
+        y: 1040,
+        icon: '🚢',
+        link: 'port-gellhorn.html'
+    },
+    {
+        id: 'yacht',
+        category: 'vault',
+        categoryLabel: 'Offshore Megayacht',
+        region: 'Leonida Keys',
+        title: 'Starlet Superyacht Offshore',
+        payout: 'Max Payout: $11,800,000',
+        desc: 'Luxury offshore mega-yacht anchored off the Keys coral reef. Infiltrate via sub-aquatic scuba rebreathers, execute silent deck takedowns, and crack VIP safe.',
+        x: 2180,
+        y: 1400,
+        icon: '🛥️',
+        link: 'vice-city-yacht-heist.html'
+    },
+    {
+        id: 'smuggler',
+        category: 'vault',
+        categoryLabel: 'Cartel Runway',
+        region: 'Grassrivers',
+        title: 'Grassrivers Cartel Airstrip',
+        payout: 'Max Payout: $6,500,000 (1.5X: $9,750,000)',
+        desc: 'Deep swamp airstrip in the Grassrivers basin. Sabotage radar relay, hijack twin-prop cargo plane at low altitude, or flee via armed flat-bottom airboat.',
+        x: 740,
+        y: 1060,
+        icon: '✈️',
+        link: 'everglades-smuggler-run.html'
+    },
+    {
+        id: 'convoy',
+        category: 'vault',
+        categoryLabel: 'Highway Ambush',
+        region: 'Vice City',
+        title: 'Ocean Drive Armored Convoy',
+        payout: 'Max Payout: $9,400,000',
+        desc: 'High-stakes daylight coastal ambush. Hack traffic gridlock lights on Ocean Blvd, detonate dual magnetic EMPs, and drop into subway drainage tubes.',
+        x: 1980,
+        y: 880,
+        icon: '🚛',
+        link: 'ocean-drive-armored-convoy.html'
+    },
+    {
+        id: 'pelican-bank',
+        category: 'vault',
+        categoryLabel: 'Agricultural Credit Union',
+        region: 'Grassrivers',
+        title: 'Pelican Valley Agricultural Bank',
+        payout: 'Max Payout: $3,800,000',
+        desc: 'Rural central river basin branch with heavy agricultural cash drawers and sugarcane rail depot. Airboat exfiltration through reed beds dodges roadblock nets.',
+        x: 920,
+        y: 860,
+        icon: '🌾',
+        link: 'sinfrontera-bank.html'
+    },
+    {
+        id: 'key-lento',
+        category: 'vault',
+        categoryLabel: 'Collector Vault',
+        region: 'Leonida Keys',
+        title: 'Key Lento Smuggler Marina & Reef Cache',
+        payout: 'Max Payout: $12,400,000',
+        desc: 'Far southern archipelago key spotted on the Collector\'s Edition map. Deep-water coral drop zone for offshore bullion. Requires rebreathers.',
+        x: 2160,
+        y: 1560,
+        icon: '🗝️',
+        link: 'vice-city-yacht-heist.html'
+    },
+    {
+        id: 'zoo-compound',
+        category: 'vault',
+        categoryLabel: 'Night Reserve',
+        region: 'Vice City',
+        title: 'Leonida State Zoo Night Reserve',
+        payout: 'Max Payout: $4,200,000',
+        desc: 'Isolated zoo compound confirmed on collector\'s map. Nighttime infiltration route avoiding exotic animal habitats and security perimeter cameras.',
+        x: 1560,
+        y: 840,
+        icon: '🦁',
+        link: 'heist-planner.html'
+    },
+
+    // 2. VERIFIED CHAPTER 1–2 ILLEGAL OPERATIONS (7)
+    {
+        id: 'fishing-shacks',
+        category: 'illegal-op',
+        categoryLabel: 'Chapter 1 Secret Safe',
+        region: 'Grassrivers',
+        title: 'Fishing Shacks Secret Safe',
+        payout: '$4,200 Quick Cash + Contraband',
+        desc: 'North Grassrivers Basin Dock #3. Chapter 1 secret cash safe behind fish cleaning bench. Crack lockbox for instant cash and unmarked smuggler frequency codes.',
+        x: 620,
+        y: 1140,
+        icon: '🎣',
+        link: 'money-guide.html'
+    },
+    {
+        id: 'exotic-animals',
+        category: 'illegal-op',
+        categoryLabel: 'Chapter 1 Smuggler Crate',
+        region: 'Ambrosia',
+        title: 'Exotic Animals Front Smuggler Crate',
+        payout: '$6,800 Bearer Bonds + Rare Hide',
+        desc: 'Kelly County Reptile Farm Shed. Chapter 1 clandestine reptile breeding front. Pick rear shed padlock for high-grade bearer bonds and trade ledger.',
+        x: 1180,
+        y: 580,
+        icon: '🐊',
+        link: 'money-guide.html'
+    },
+    {
+        id: 'manatee-motel',
+        category: 'illegal-op',
+        categoryLabel: 'Chapter 1 Clandestine Lab',
+        region: 'Port Gellhorn',
+        title: 'Manatee Motel Clandestine Lab',
+        payout: '$5,400 Cash + Police Scanner Tap',
+        desc: 'Port Gellhorn East Strip Room 108. Cartel operative safehouse. Breach bathroom ceiling tile to recover counterfeit plates and localized police dispatch scanner codes.',
+        x: 380,
+        y: 920,
+        icon: '🏨',
+        link: 'money-guide.html'
+    },
+    {
+        id: 'sunrise-rv',
+        category: 'illegal-op',
+        categoryLabel: 'Chapter 2 Stash Floorboard',
+        region: 'Ambrosia',
+        title: 'Sunrise RV Park Hidden Floorboard',
+        payout: '$8,500 Cash + Clean Handgun',
+        desc: 'Trailer #14 (Lot B), Ambrosia Border. Pry up loose floorboards under trailer bed to loot stash roll and unregistered pistol before patrol arrives.',
+        x: 1340,
+        y: 620,
+        icon: '🚐',
+        link: 'money-guide.html'
+    },
+    {
+        id: 'nova-junkyard',
+        category: 'illegal-op',
+        categoryLabel: 'Chapter 2 Chop Shop',
+        region: 'Ambrosia',
+        title: 'Nova Auto Junkyard Chop Shop',
+        payout: '$7,200 Cash + VIN Scrambler Tool',
+        desc: 'Ambrosia Industrial Rail Yard. Underground vehicle disassembly shop. Lockpick office safe to seize VIN etching tools and marked cash bundles from luxury auto thefts.',
+        x: 1120,
+        y: 760,
+        icon: '🚗',
+        link: 'vehicles-getaway-cars.html'
+    },
+    {
+        id: 'june-warehouse',
+        category: 'illegal-op',
+        categoryLabel: 'Chapter 2 Cargo Stash',
+        region: 'Port Gellhorn',
+        title: 'June Warehouse Stash Locker',
+        payout: '$12,000 Electronics + Diamond Watches',
+        desc: 'Port Gellhorn Pier 2. Maritime shipping warehouse. Cut heavy padlock on roll-up door to access stolen high-end electronics crates and offshore cargo.',
+        x: 260,
+        y: 1060,
+        icon: '📦',
+        link: 'money-guide.html'
+    },
+    {
+        id: 'lummox-stash',
+        category: 'illegal-op',
+        categoryLabel: 'Northern Logging Stash',
+        region: 'Mount Kalaga National Park',
+        title: 'Lummox Timber & Moonshine Stash',
+        payout: 'Max Payout: $2,900,000 Contraband',
+        desc: 'Deep northern forest logging outpost with hidden contraband trunks and backwoods dirt evasion trails ideal for shaking highway patrol.',
+        x: 1360,
+        y: 440,
+        icon: '🌲',
+        link: 'everglades-smuggler-run.html'
+    },
+
+    // 3. VERIFIED GUN & PAWN / AMMU-NATION STORES (5)
+    {
+        id: 'vc-firearms',
+        category: 'ammunation',
+        categoryLabel: 'Gun & Custom Tactical',
+        region: 'Vice City',
+        title: 'Vice City Firearms & Custom Tactical',
+        payout: 'Discounted Suppressors & Combat Rifles',
+        desc: 'Downtown Vice City (corner 4th & Biscayne). Stocks discounted 9mm & 5.56 tactical suppressors, extended magazines, and Level III heavy body armor vests.',
+        x: 1780,
+        y: 740,
+        icon: '🔫',
+        link: 'weapons-bonuses.html'
+    },
+    {
+        id: 'black-eagle',
+        category: 'ammunation',
+        categoryLabel: 'Armory & Pawn',
+        region: 'Port Gellhorn',
+        title: 'Black Eagle Armory & Pawn',
+        payout: 'Military Surplus & Lockpick Kits',
+        desc: 'Port Gellhorn Central Ave. Sells high-powered pump shotguns, tactical thermite charges, and reinforced trunk armor plates.',
+        x: 360,
+        y: 1020,
+        icon: '🔫',
+        link: 'weapons-bonuses.html'
+    },
+    {
+        id: 'keys-pawn',
+        category: 'ammunation',
+        categoryLabel: 'Maritime Weapons & Pawn',
+        region: 'Leonida Keys',
+        title: 'Leonida Keys Gun & Maritime Pawn',
+        payout: 'Harpoon Guns & Flare Pistols',
+        desc: 'Islamorada (Middle Key). Stocks marine flare launchers, underwater spearguns, submachine gun drum magazines, and scuba tanks.',
+        x: 1880,
+        y: 1430,
+        icon: '🔫',
+        link: 'weapons-bonuses.html'
+    },
+    {
+        id: 'ambrosia-ammo',
+        category: 'ammunation',
+        categoryLabel: 'Ammu-Nation & Surplus',
+        region: 'Ambrosia',
+        title: 'Ambrosia Ammu-Nation & Surplus',
+        payout: 'Armor-Piercing Ammo & Lances',
+        desc: 'Ambrosia Highway Interchange. Essential prep stop for thermal vault lances, heavy caliber AP ammo, and tactical gas masks for vault break-ins.',
+        x: 1010,
+        y: 690,
+        icon: '🔫',
+        link: 'weapons-bonuses.html'
+    },
+    {
+        id: 'kalaga-ammo',
+        category: 'ammunation',
+        categoryLabel: 'Hunting & Outfitters',
+        region: 'Mount Kalaga National Park',
+        title: 'Mount Kalaga Outfitters & Hunting Supply',
+        payout: 'Sniper Rifles & Thermal Scopes',
+        desc: 'Mount Kalaga Basecamp Trail. Carries heavy sniper rifles with variable zoom, thermal imaging sights, and off-road motorcycle fuel packs.',
+        x: 640,
+        y: 480,
+        icon: '🔫',
+        link: 'weapons-bonuses.html'
+    },
+
+    // 4. SAFEHOUSES & FENCES (6)
+    {
+        id: 'safehouse-north',
+        category: 'safehouse',
+        categoryLabel: 'Safehouse Alpha',
+        region: 'Vice City',
+        title: 'North Vice Safehouse Alpha',
+        payout: 'Safe Recovery & Mod Garage',
+        desc: 'North Vice City Residential Canal. Pre-equipped safehouse with multi-car modification garage, trunk weapon armory locker, and underground exit ramp to avoid police heat.',
+        x: 1720,
+        y: 620,
+        icon: '🏠',
+        link: 'safehouses-laundering.html'
+    },
+    {
+        id: 'safehouse-keys',
+        category: 'safehouse',
+        categoryLabel: 'Smuggler Marina & Safehouse',
+        region: 'Leonida Keys',
+        title: 'Leonida Keys Boathouse Safehouse',
+        payout: '12% Offshore Laundering Broker',
+        desc: 'Key Largo Inlet. Southern archipelago boatyard and safehouse controlled by Brian Heder contacts. Ideal for offshore boat staging and cleaning dirty cash.',
+        x: 1780,
+        y: 1360,
+        icon: '🏠',
+        link: 'safehouses-laundering.html'
+    },
+    {
+        id: 'safehouse-gellhorn',
+        category: 'safehouse',
+        categoryLabel: 'Industrial Garage Safehouse',
+        region: 'Port Gellhorn',
+        title: 'Port Gellhorn Garage Safehouse',
+        payout: 'Clean Getaway Vehicle Switch',
+        desc: 'Port Gellhorn Railyard Sector. West coast industrial hideout with hydraulic vehicle lift and dual exit roll-up doors to ditch high-heat pursuit cruisers.',
+        x: 410,
+        y: 960,
+        icon: '🏠',
+        link: 'safehouses-laundering.html'
+    },
+    {
+        id: 'safehouse-swamp',
+        category: 'safehouse',
+        categoryLabel: 'Stilt Cabin Hideout',
+        region: 'Grassrivers',
+        title: 'Grassrivers Stilt Cabin Hideout',
+        payout: 'Zero Road Patrol Access',
+        desc: 'Everglades Deep Mangrove Island. Remote stilt shack in the Grassrivers marshland. Completely inaccessible to police squad cars; flat-bottom airboat dock only.',
+        x: 810,
+        y: 1220,
+        icon: '🏠',
+        link: 'safehouses-laundering.html'
+    },
+    {
+        id: 'ambrosia-fence',
+        category: 'safehouse',
+        categoryLabel: 'Refinery Scrap Fence',
+        region: 'Ambrosia',
+        title: 'Ambrosia Refinery Bullion Fence',
+        payout: 'Instant Bullion & Plate Swap',
+        desc: 'Refinery Scrap Yard. Central heartland industrial scrap yard for laundering gold bars, melting marked jewelry, and instantly swapping vehicle license plates.',
+        x: 1240,
+        y: 760,
+        icon: '⚖️',
+        link: 'safehouses-laundering.html'
+    },
+    {
+        id: 'kalaga-outpost',
+        category: 'safehouse',
+        categoryLabel: 'Mountain Scanner Outpost',
+        region: 'Mount Kalaga National Park',
+        title: 'Mount Kalaga Scanner Jammer Outpost',
+        payout: '+15s Vault Alarm Delay Relay',
+        desc: 'Mount Kalaga Ridge Outpost. Northern mountain forestry hideout and relay tower where 5-star NOOSE helicopters lose line-of-sight and radar lock.',
+        x: 620,
+        y: 350,
+        icon: '📡',
+        link: 'leonida-wanted-system.html'
+    },
+
+    // 5. ESCAPE CANALS & CORRIDORS (5)
+    {
+        id: 'escape-metro',
+        category: 'escape',
+        categoryLabel: 'Storm Drain Conduit',
+        region: 'Vice City',
+        title: 'Metro Storm Drain Conduit 01',
+        payout: 'Heat Reduction: 100%',
+        desc: 'Downtown Vice City. Direct underground stormwater transit canal beneath Ocean Boulevard. Police cruisers cannot fit through maintenance gates; instant 4-star loss.',
+        x: 1760,
+        y: 840,
+        icon: '🚇',
+        link: 'escape-routes.html'
+    },
+    {
+        id: 'escape-ocean-sewer',
+        category: 'escape',
+        categoryLabel: 'Sewer Outflow',
+        region: 'Vice City',
+        title: 'Ocean Blvd Sewer Outflow 02',
+        payout: 'Sub-Aquatic Reef Infiltration',
+        desc: 'Vice Beach Outflow. Beachside stormwater culvert emptying directly into the shallow Atlantic reef. Ideal for scuba diver getaway.',
+        x: 1970,
+        y: 780,
+        icon: '🌊',
+        link: 'escape-routes.html'
+    },
+    {
+        id: 'escape-pelican-canal',
+        category: 'escape',
+        categoryLabel: 'Drainage Canal Gate',
+        region: 'Grassrivers',
+        title: 'Pelican Valley Drainage Canal',
+        payout: 'Airboat Fast-Escape Shunt',
+        desc: 'Pelican Canal East Gate. Concrete sluice gate connecting Lake Leonida overflow into the wild Grassrivers delta. Cruiser road blocks cannot follow into shallow swamp.',
+        x: 960,
+        y: 950,
+        icon: '🛶',
+        link: 'escape-routes.html'
+    },
+    {
+        id: 'escape-gellhorn-pier',
+        category: 'escape',
+        categoryLabel: 'Freight Slipway',
+        region: 'Port Gellhorn',
+        title: 'Port Gellhorn Freight Canal Pier 4',
+        payout: 'High-Speed Boat Slipway',
+        desc: 'Port Gellhorn Southern Channel. Industrial freight slipway with open ocean access. Avoids police spikes on drawbridges.',
+        x: 280,
+        y: 1140,
+        icon: '⚓',
+        link: 'escape-routes.html'
+    },
+    {
+        id: 'toll-1a',
+        category: 'escape',
+        categoryLabel: 'ANPR Camera Bypass',
+        region: 'Ambrosia',
+        title: 'Toll 1A Highway ANPR Camera Bypass',
+        payout: 'ANPR Camera Jamming Zone',
+        desc: 'Toll 1A Highway Mile 18. Official highway toll corridor crossing Leonida. Automated license plate cameras log vehicles instantly unless signal jammer is active.',
+        x: 1420,
+        y: 530,
+        icon: '🛣️',
+        link: 'leonida-wanted-system.html'
+    },
+
+    // 6. COLLECTIBLES & RADAR RELAYS (3)
+    {
+        id: 'relay-biscayne',
+        category: 'collectible',
+        categoryLabel: 'Signal Jammer Relay',
+        region: 'Vice City',
+        title: 'Biscayne Bay Jammer Relay Tower',
+        payout: '+15s Vault Alarm Delay Perk',
+        desc: 'Starfish Island Channel. Cal Hampton frequency jammer node. Disabling this relay adds +15 seconds to vault hacker time across Vice Dale County.',
+        x: 1890,
+        y: 890,
+        icon: '📡',
+        link: 'vault-hack-trainer.html'
+    },
+    {
+        id: 'relay-kalaga',
+        category: 'collectible',
+        categoryLabel: 'Fire Watch Jammer',
+        region: 'Mount Kalaga National Park',
+        title: 'Kalaga Fire Watch Jammer',
+        payout: 'Disables Chopper Thermals',
+        desc: 'Kalaga Summit Ridge. High-altitude forest service tower. Tap frequencies to prevent police helicopter searchlights from detecting forest movement.',
+        x: 740,
+        y: 320,
+        icon: '📡',
+        link: 'leonida-wanted-system.html'
+    },
+    {
+        id: 'cache-underwater',
+        category: 'collectible',
+        categoryLabel: 'Sunken Smuggler Cache',
+        region: 'Vice City',
+        title: 'Biscayne Bay Cargo Shipwreck Cache',
+        payout: '$45,000 Uncut Diamonds Loot',
+        desc: 'Southern Bay Deep Trench. Submerged freighter hull from 1980s smuggling run. Dive with scuba tank to crack underwater cargo locker.',
+        x: 1910,
+        y: 1040,
+        icon: '💎',
+        link: 'money-guide.html'
+    }
+];
+
+// STATE VARIABLES
+let map = null;
+let markersClusterGroup = null;
+let allLocations = [...CORE_VERIFIED_LOCATIONS];
+let markerMap = new Map(); // id -> L.marker
+let activeCategory = 'all';
+let activeRegion = 'all';
+let activeSearchQuery = '';
+let currentSelectedId = null;
+let d1CommunityMarkers = [];
+
+/* ==========================================================================
+   PERSISTENCE HELPERS (100% Free localStorage)
+   ========================================================================== */
+function getFoundPins() {
+    try {
+        return JSON.parse(localStorage.getItem('gta6_found_map_pins') || '[]');
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveFoundPins(arr) {
+    localStorage.setItem('gta6_found_map_pins', JSON.stringify(arr));
+    localStorage.setItem('gta6_map_found_v2', JSON.stringify(arr));
+    updateProgressDisplay();
+    refreshAllMarkersDisplay();
+    renderLocationsList();
+    if (window.GTA6 && GTA6.MasteryAndStreak) GTA6.MasteryAndStreak.refresh();
+}
+
+function toggleCurrentFound() {
+    if (!currentSelectedId) return;
+    const foundList = getFoundPins();
+    const idx = foundList.indexOf(currentSelectedId);
+    let isNowFound = false;
+
+    if (idx >= 0) {
+        foundList.splice(idx, 1);
+        isNowFound = false;
+    } else {
+        foundList.push(currentSelectedId);
+        isNowFound = true;
+    }
+
+    saveFoundPins(foundList);
+    updateInspectorFoundButton(isNowFound);
+
+    if (window.GTA6 && GTA6.playSuccess) GTA6.playSuccess();
+    if (window.GTA6 && GTA6.showToast) {
+        GTA6.showToast(isNowFound ? '✓ Marked Pin as Found & Completed!' : '↩ Marked Pin as Unfound.');
+    }
+}
+
+function updateInspectorFoundButton(isFound) {
+    const btn = document.getElementById('inspFoundBtn');
+    if (!btn) return;
+    if (isFound) {
+        btn.classList.add('is-found');
+        btn.innerText = '↩ Marked Found (Click to Unmark)';
+    } else {
+        btn.classList.remove('is-found');
+        btn.innerText = '✓ Mark Pin Found / Completed';
+    }
+}
+
+function jumpToNextUnfound() {
+    const found = getFoundPins();
+    const candidate = allLocations.find(loc => !found.includes(loc.id));
+    if (!candidate) {
+        if (window.GTA6 && GTA6.showToast) GTA6.showToast('🏆 100% Completion Reached! All pins on Leonida are found!');
+        return;
+    }
+    selectLocation(candidate.id, true);
+    if (window.GTA6 && GTA6.showToast) GTA6.showToast('🎯 Jumped to: ' + candidate.title);
+}
+
+function updateProgressDisplay() {
+    const found = getFoundPins();
+    const total = allLocations.length || 35;
+    const pct = Math.min(100, Math.round((found.length / total) * 100));
+
+    const textEl = document.getElementById('progressSummaryText');
+    const barEl = document.getElementById('progressBarFill');
+    const counterEl = document.getElementById('foundCountLabel');
+
+    if (textEl) textEl.innerText = `FOUND ${found.length} / ${total} (${pct}%)`;
+    if (barEl) barEl.style.width = `${pct}%`;
+    if (counterEl) counterEl.innerText = String(found.length);
+}
+
+/* ==========================================================================
+   INITIALIZE LEAFLET MAP
+   ========================================================================== */
+function initLeafletMap() {
+    const mapElement = document.getElementById('leafletMap');
+    if (!mapElement) return;
+
+    // L.CRS.Simple for custom 2400x1800 vector topographic base layer
+    map = L.map('leafletMap', {
+        crs: L.CRS.Simple,
+        minZoom: -1.2,
+        maxZoom: 3.2,
+        zoomSnap: 0.1,
+        zoomDelta: 0.5,
+        attributionControl: false,
+        zoomControl: false // Handled by fixed overlay HUD
+    });
+
+    const bounds = [[0, 0], [MAP_HEIGHT, MAP_WIDTH]];
+
+    // 100% DMCA-Safe Leonida Topographic Base Map
+    const topoOverlay = L.imageOverlay('/assets/leonida-topo-map.svg', bounds, {
+        opacity: 1,
+        interactive: true
+    }).addTo(map);
+
+    map.fitBounds(bounds);
+    map.setMaxBounds([[-180, -220], [MAP_HEIGHT + 180, MAP_WIDTH + 220]]);
+
+    // Sleek MarkerCluster Group
+    markersClusterGroup = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        maxClusterRadius: 36,
+        spiderfyOnMaxZoom: true,
+        iconCreateFunction: function(cluster) {
+            const count = cluster.getChildCount();
+            return L.divIcon({
+                html: `<div class="cyber-cluster-inner"><span class="cluster-num">${count}</span></div>`,
+                className: 'cyber-cluster-marker',
+                iconSize: [40, 40],
+                iconAnchor: [20, 20]
+            });
+        }
+    });
+
+    map.addLayer(markersClusterGroup);
+
+    // Live GPS Degree Readout on Mouse Move (25.7617° N, 80.1918° W)
+    map.on('mousemove', function(e) {
+        updateGpsReadout(e.latlng);
+    });
+
+    // Deselect inspector if clicking on empty base map
+    map.on('click', function(e) {
+        // Auto-fill coordinates in D1 form if open
+        const d1X = document.getElementById('d1CoordX');
+        const d1Y = document.getElementById('d1CoordY');
+        if (d1X && d1Y) {
+            d1X.value = Math.round(e.latlng.lng);
+            d1Y.value = Math.round(MAP_HEIGHT - e.latlng.lat);
+        }
+    });
+
+    // Populate Initial Markers
+    renderAllMapMarkers();
+    updateProgressDisplay();
+    updateRegionCounts();
+    renderLocationsList();
+}
+
+/* ==========================================================================
+   GPS COORDINATES COMPUTATION (Standardized Degrees)
+   ========================================================================== */
+function updateGpsReadout(latlng) {
+    const hud = document.getElementById('gpsDegreeReadout');
+    if (!hud || !latlng) return;
+
+    // Leonida spans Latitude ~24.45°N to ~27.20°N, Longitude ~82.10°W to ~80.05°W
+    const clampedLat = Math.max(0, Math.min(MAP_HEIGHT, latlng.lat));
+    const clampedLng = Math.max(0, Math.min(MAP_WIDTH, latlng.lng));
+
+    const degLat = (24.45 + (clampedLat / MAP_HEIGHT) * (27.20 - 24.45)).toFixed(4);
+    const degLng = (82.10 - (clampedLng / MAP_WIDTH) * (82.10 - 80.05)).toFixed(4);
+
+    hud.innerText = `GPS GRID: ${degLat}° N, ${degLng}° W • SATELLITE: SYNDICATE-6`;
+}
+
+function getGpsString(loc) {
+    const lat = MAP_HEIGHT - loc.y;
+    const lng = loc.x;
+    const degLat = (24.45 + (lat / MAP_HEIGHT) * (27.20 - 24.45)).toFixed(4);
+    const degLng = (82.10 - (lng / MAP_WIDTH) * (82.10 - 80.05)).toFixed(4);
+    return `${degLat}° N, ${degLng}° W`;
+}
+
+/* ==========================================================================
+   MARKERS CREATION & MANAGEMENT (Fixed Pixel Size DivIcons)
+   ========================================================================== */
+function createMarkerDivIcon(loc, isSelected, isFound) {
+    const catClass = 'pin-' + loc.category;
+    const selClass = isSelected ? ' pin-selected' : '';
+    const fndClass = isFound ? ' pin-found' : '';
+
+    return L.divIcon({
+        className: `cyber-map-pin ${catClass}${selClass}${fndClass}`,
+        html: `
+            <div class="pin-ring">
+                <span class="pin-icon">${loc.icon || '📍'}</span>
+                <div class="pin-reticle"></div>
+            </div>
+        `,
+        iconSize: [34, 34],
+        iconAnchor: [17, 17],
+        tooltipAnchor: [0, -18]
+    });
+}
+
+function renderAllMapMarkers() {
+    if (!markersClusterGroup) return;
+    markersClusterGroup.clearLayers();
+    markerMap.clear();
+
+    const foundList = getFoundPins();
+    const hideFound = document.getElementById('hideFoundCheckbox')?.checked;
+
+    allLocations.forEach(loc => {
+        const isFound = foundList.includes(loc.id);
+        const isSelected = loc.id === currentSelectedId;
+
+        // Leaflet coordinate: lat = 1800 - y, lng = x
+        const lat = MAP_HEIGHT - loc.y;
+        const lng = loc.x;
+
+        const icon = createMarkerDivIcon(loc, isSelected, isFound);
+        const marker = L.marker([lat, lng], { icon: icon });
+
+        // Tooltip on Hover
+        marker.bindTooltip(`
+            <div class="cyber-tooltip">
+                <div class="pin-tooltip-cat">${loc.categoryLabel || loc.category.toUpperCase()}</div>
+                <div class="pin-tooltip-title">${loc.title}</div>
+                <div class="pin-tooltip-payout">${loc.payout}</div>
+            </div>
+        `, {
+            direction: 'top',
+            offset: [0, -18],
+            className: 'cyber-tooltip',
+            opacity: 1
+        });
+
+        // Click Handler -> Select Pin, Fly-To & Magnify
+        marker.on('click', function(e) {
+            L.DomEvent.stopPropagation(e);
+            selectLocation(loc.id, true);
+        });
+
+        markerMap.set(loc.id, marker);
+
+        // Filtering check
+        if (isLocationVisible(loc, hideFound, isFound)) {
+            markersClusterGroup.addLayer(marker);
+        }
+    });
+}
+
+function isLocationVisible(loc, hideFound, isFound) {
+    if (hideFound && isFound) return false;
+
+    // Category filter
+    if (activeCategory !== 'all') {
+        if (activeCategory === 'community' && !loc.isD1) return false;
+        if (activeCategory !== 'community' && loc.category !== activeCategory) return false;
+    }
+
+    // Region filter
+    if (activeRegion !== 'all' && loc.region !== activeRegion) return false;
+
+    // Search query filter
+    if (activeSearchQuery) {
+        const searchCorpus = `${loc.title} ${loc.desc} ${loc.region} ${loc.payout} ${loc.categoryLabel}`.toLowerCase();
+        if (!searchCorpus.includes(activeSearchQuery)) return false;
+    }
+
+    return true;
+}
+
+function refreshAllMarkersDisplay() {
+    if (!markersClusterGroup) return;
+    markersClusterGroup.clearLayers();
+
+    const foundList = getFoundPins();
+    const hideFound = document.getElementById('hideFoundCheckbox')?.checked;
+
+    allLocations.forEach(loc => {
+        const marker = markerMap.get(loc.id);
+        if (!marker) return;
+
+        const isFound = foundList.includes(loc.id);
+        const isSelected = loc.id === currentSelectedId;
+
+        marker.setIcon(createMarkerDivIcon(loc, isSelected, isFound));
+
+        if (isLocationVisible(loc, hideFound, isFound)) {
+            markersClusterGroup.addLayer(marker);
+        }
+    });
+}
+
+/* ==========================================================================
+   FLY-TO & MAGNIFY + INSPECTOR SELECTION
+   ========================================================================== */
+function selectLocation(id, shouldFlyTo = true) {
+    const loc = allLocations.find(l => l.id === id);
+    if (!loc) return;
+
+    currentSelectedId = id;
+
+    // Update marker appearance
+    refreshAllMarkersDisplay();
+
+    // Render Inspector in Left Sidebar
+    renderSidebarInspector(loc);
+
+    // Scroll sidebar to top to bring inspector into focus
+    const scrollBox = document.getElementById('sidebarScrollBody');
+    if (scrollBox) scrollBox.scrollTop = 0;
+
+    // Fly-To & Magnify with Leaflet
+    if (shouldFlyTo && map) {
+        const targetLat = MAP_HEIGHT - loc.y;
+        const targetLng = loc.x;
+
+        map.flyTo([targetLat, targetLng], 2.2, {
+            duration: 0.7,
+            easeLinearity: 0.25
+        });
+    }
+
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(560, 'triangle', 0.05);
+}
+
+function renderSidebarInspector(loc) {
+    const card = document.getElementById('pinInspectorCard');
+    if (!card) return;
+
+    const isFound = getFoundPins().includes(loc.id);
+
+    document.getElementById('inspTag').innerText = `${(loc.categoryLabel || loc.category).toUpperCase()} • ${loc.region.toUpperCase()}`;
+    document.getElementById('inspTitle').innerText = loc.title;
+    document.getElementById('inspPayout').innerText = loc.payout;
+    document.getElementById('inspDesc').innerText = loc.desc;
+    document.getElementById('inspGps').innerText = 'GPS: ' + getGpsString(loc);
+
+    updateInspectorFoundButton(isFound);
+
+    // Dossier button
+    const dossierBtn = document.getElementById('inspDossierLink');
+    if (dossierBtn) {
+        dossierBtn.href = loc.link || 'sinfrontera-bank.html';
+        dossierBtn.style.display = loc.isD1 ? 'none' : 'flex';
+    }
+
+    // Community Confirm button
+    const confirmBtn = document.getElementById('inspConfirmD1Btn');
+    if (confirmBtn) {
+        if (loc.isD1) {
+            confirmBtn.style.display = 'flex';
+            confirmBtn.innerText = `👍 Confirm Pin (${loc.votes || 1}/3 Votes • +100 Rep)`;
+        } else {
+            confirmBtn.style.display = 'none';
+        }
+    }
+
+    card.style.display = 'block';
+
+    // Highlight item in list
+    document.querySelectorAll('.location-item').forEach(el => {
+        el.classList.toggle('selected', el.getAttribute('data-id') === loc.id);
+    });
+}
+
+function clearSelectedLocation() {
+    currentSelectedId = null;
+    const card = document.getElementById('pinInspectorCard');
+    if (card) card.style.display = 'none';
+    refreshAllMarkersDisplay();
+    document.querySelectorAll('.location-item.selected').forEach(el => el.classList.remove('selected'));
+}
+
+/* ==========================================================================
+   SIDEBAR LOCATION LIST & FILTERS
+   ========================================================================== */
+function renderLocationsList() {
+    const container = document.getElementById('locationsListContainer');
+    if (!container) return;
+
+    const foundList = getFoundPins();
+    const hideFound = document.getElementById('hideFoundCheckbox')?.checked;
+
+    const visibleList = allLocations.filter(loc => {
+        const isFound = foundList.includes(loc.id);
+        return isLocationVisible(loc, hideFound, isFound);
+    });
+
+    // Update count displays
+    const countDisplay = document.getElementById('activeLocationCountDisplay');
+    const headerCount = document.getElementById('listHeaderCount');
+    const mobileCount = document.getElementById('mobileCountBadge');
+
+    const countStr = `${visibleList.length} PINS`;
+    if (countDisplay) countDisplay.innerText = countStr;
+    if (headerCount) headerCount.innerText = countStr;
+    if (mobileCount) mobileCount.innerText = String(visibleList.length);
+
+    if (visibleList.length === 0) {
+        container.innerHTML = `
+            <div style="text-align:center; padding:1.5rem 0.5rem; color:#64748b; font-size:0.8rem;">
+                No locations match your filter.
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = visibleList.map(loc => {
+        const isFound = foundList.includes(loc.id);
+        const isSelected = loc.id === currentSelectedId;
+        const selClass = isSelected ? ' selected' : '';
+        const fndClass = isFound ? ' found-item' : '';
+
+        return `
+            <div class="location-item${selClass}${fndClass}" data-id="${loc.id}" onclick="selectLocation('${loc.id}', true)">
+                <div class="loc-item-left">
+                    <span class="loc-item-icon">${loc.icon || '📍'}</span>
+                    <div class="loc-item-info">
+                        <div class="loc-item-title">${loc.title}</div>
+                        <div class="loc-item-meta">${loc.region} &bull; ${loc.payout}</div>
+                    </div>
+                </div>
+                ${isFound ? '<span class="loc-item-check" title="Completed">✓</span>' : ''}
+            </div>
+        `;
+    }).join('');
+}
+
+function handleSearchInput(val) {
+    activeSearchQuery = (val || '').toLowerCase().trim();
+    refreshAllMarkersDisplay();
+    renderLocationsList();
+}
+
+function setCategoryFilter(cat, btn) {
+    activeCategory = cat;
+    document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    refreshAllMarkersDisplay();
+    renderLocationsList();
+
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(440, 'sine', 0.04);
+}
+
+function handleRegionChange(reg) {
+    activeRegion = reg;
+    refreshAllMarkersDisplay();
+    renderLocationsList();
+
+    // Fly to region center
+    const target = REGION_CENTERS[reg] || REGION_CENTERS['all'];
+    if (map && target) {
+        map.flyTo([target.lat, target.lng], target.zoom, {
+            duration: 0.8
+        });
+    }
+
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(480, 'triangle', 0.04);
+}
+
+function toggleHideFound(checked) {
+    refreshAllMarkersDisplay();
+    renderLocationsList();
+}
+
+function updateRegionCounts() {
+    const counts = {
+        'all': allLocations.length,
+        'Vice City': 0,
+        'Leonida Keys': 0,
+        'Grassrivers': 0,
+        'Port Gellhorn': 0,
+        'Ambrosia': 0,
+        'Mount Kalaga National Park': 0
+    };
+
+    allLocations.forEach(loc => {
+        if (counts[loc.region] !== undefined) counts[loc.region]++;
+    });
+
+    const elAll = document.getElementById('cntAll');
+    const elVC = document.getElementById('cntVC');
+    const elKeys = document.getElementById('cntKeys');
+    const elGrass = document.getElementById('cntGrass');
+    const elGell = document.getElementById('cntGell');
+    const elAmb = document.getElementById('cntAmb');
+    const elKal = document.getElementById('cntKal');
+
+    if (elAll) elAll.innerText = String(counts['all']);
+    if (elVC) elVC.innerText = String(counts['Vice City']);
+    if (elKeys) elKeys.innerText = String(counts['Leonida Keys']);
+    if (elGrass) elGrass.innerText = String(counts['Grassrivers']);
+    if (elGell) elGell.innerText = String(counts['Port Gellhorn']);
+    if (elAmb) elAmb.innerText = String(counts['Ambrosia']);
+    if (elKal) elKal.innerText = String(counts['Mount Kalaga National Park']);
+}
+
+/* ==========================================================================
+   FIXED OVERLAY HUD ACTIONS
+   ========================================================================== */
+function zoomInMap() {
+    if (map) map.zoomIn();
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(620, 'triangle', 0.04);
+}
+
+function zoomOutMap() {
+    if (map) map.zoomOut();
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(440, 'triangle', 0.04);
+}
+
+function resetMapView() {
+    if (map) {
+        map.fitBounds([[0, 0], [MAP_HEIGHT, MAP_WIDTH]]);
+        clearSelectedLocation();
+    }
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'sine', 0.04);
+}
+
+function toggleMapFullscreen() {
+    const elem = document.querySelector('.map-app-container');
+    if (!elem) return;
+
+    if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(() => {});
+    } else {
+        document.exitFullscreen().catch(() => {});
+    }
+}
+
+function toggleMobileDrawer() {
+    const sidebar = document.getElementById('mapSidebar');
+    if (!sidebar) return;
+    sidebar.classList.toggle('mobile-open');
+    const closeBtn = document.querySelector('.mobile-drawer-close');
+    if (closeBtn) closeBtn.style.display = sidebar.classList.contains('mobile-open') ? 'block' : 'none';
+}
+
+/* ==========================================================================
+   CLOUDFLARE D1 map_markers SYNC
+   ========================================================================== */
+async function loadD1CommunityMarkers() {
+    try {
+        const res = await fetch('/api/map');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (Array.isArray(data.markers)) {
+            d1CommunityMarkers = data.markers.filter(m => String(m.id || '').startsWith('pin-comm-')).map(m => {
+                return {
+                    id: m.id,
+                    category: 'community',
+                    categoryLabel: m.status === 'verified' ? 'Verified Discovery' : 'Community Intel',
+                    region: m.region,
+                    title: m.title,
+                    payout: m.payout_or_perk || 'Community Discovery',
+                    desc: m.description,
+                    x: Number(m.x) || 1200,
+                    y: Number(m.y) || 900,
+                    icon: '📡',
+                    link: 'interactive-map.html',
+                    isD1: true,
+                    votes: m.votes || 1,
+                    status: m.status || 'community'
+                };
+            });
+
+            // Merge with allLocations
+            allLocations = [...CORE_VERIFIED_LOCATIONS, ...d1CommunityMarkers];
+            updateRegionCounts();
+            refreshAllMarkersDisplay();
+            renderLocationsList();
+            updateProgressDisplay();
+        }
+    } catch (e) {
+        // Silent fallback to core locations
+    }
+}
+
+function openD1PinModal() {
+    const modal = document.getElementById('d1PinModal');
+    if (modal) modal.classList.add('open');
+    if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'triangle', 0.05);
+}
+
+function closeD1PinModal() {
+    const modal = document.getElementById('d1PinModal');
+    if (modal) modal.classList.remove('open');
+}
+
+async function submitD1PinForm(e) {
+    e.preventDefault();
+    const statusEl = document.getElementById('d1SubmitStatus');
+    if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-cyan);">Transmitting coordinates to Cloudflare D1...</span>`;
+
+    const payload = {
+        action: 'submit',
+        title: document.getElementById('d1Title').value.trim(),
+        category: document.getElementById('d1Category').value,
+        region: document.getElementById('d1Region').value,
+        x: Number(document.getElementById('d1CoordX').value) || 1735,
+        y: Number(document.getElementById('d1CoordY').value) || 780,
+        submitted_by: document.getElementById('d1Alias').value.trim() || 'ViceOperative',
+        payout_or_perk: document.getElementById('d1Payout').value.trim() || 'Community Intel',
+        description: document.getElementById('d1Notes').value.trim()
+    };
+
+    try {
+        const res = await fetch('/api/map', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.ok && data.marker) {
+            closeD1PinModal();
+            e.target.reset();
+            await loadD1CommunityMarkers();
+            selectLocation(data.marker.id, true);
+
+            if (window.GTA6 && GTA6.playSuccess) GTA6.playSuccess();
+            if (window.GTA6 && GTA6.showToast) {
+                GTA6.showToast(data.promoted ? '🏆 Pin Reached 3 Votes & Auto-Verified (+500 Rep)!' : '📡 Discovery Pin Transmitted to Live D1 Map!');
+            }
+        } else {
+            if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">${data.error || 'Submission failed.'}</span>`;
+        }
+    } catch (err) {
+        if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">Endpoint unreachable.</span>`;
+    }
+}
+
+async function confirmActiveD1Pin() {
+    if (!currentSelectedId) return;
+    try {
+        const res = await fetch('/api/map', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'confirm', id: currentSelectedId })
+        });
+        const data = await res.json();
+        if (data.ok && data.marker) {
+            await loadD1CommunityMarkers();
+            selectLocation(data.marker.id, false);
+            if (window.GTA6 && GTA6.playSuccess) GTA6.playSuccess();
+            if (window.GTA6 && GTA6.showToast) {
+                GTA6.showToast(data.promoted ? '🏆 Pin Reached 3 Votes & Auto-Verified (+500 Rep)!' : `👍 Confirmed Pin (${data.marker.votes}/3 Votes • +100 Rep)!`);
+            }
+        }
+    } catch (e) {}
+}
+
+/* ==========================================================================
+   INITIALIZATION
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    initLeafletMap();
+    loadD1CommunityMarkers();
+
+    // Support deep link ?pin=sinfrontera
+    const params = new URLSearchParams(window.location.search);
+    const pinParam = params.get('pin');
+    if (pinParam) {
+        setTimeout(() => selectLocation(pinParam, true), 400);
+    }
+});
+</script>
+
+</body>
+</html>
+'''
+
+if __name__ == '__main__':
+    target = r"C:\Users\Shawn\Desktop\gta6heistguide\public\interactive-map.html"
+    with open(target, "w", encoding="utf-8") as f:
+        f.write(HTML_CONTENT)
+    print(f"Updated {target} ({len(HTML_CONTENT)} bytes)")
