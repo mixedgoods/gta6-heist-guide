@@ -2811,3 +2811,13 @@ body.has-ticker .bookmarks-fab {
   font-family: var(--font-mono);
   font-size: 0.72rem;
 }
+.gta-ad-slot {
+  display: none;
+  margin: 1.5rem auto;
+  padding: 0.75rem;
+  background: rgba(10, 16, 26, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  max-width: 1140px;
+}

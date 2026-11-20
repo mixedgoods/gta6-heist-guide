@@ -1,7 +1,8 @@
 // GTA 6 Heist Guide & Companion HUD - Service Worker
-const CACHE_NAME = 'gta6-heist-cache-v2';
+const CACHE_NAME = 'gta6-heist-cache-v3';
 const PRECACHE_URLS = [
   '/',
+  '/site-config.js',
   '/assets/style.css',
   '/assets/main.js',
   '/favicon.svg',

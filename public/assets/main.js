@@ -159,12 +159,189 @@ const GTA6 = {
     }
   },
 
+  SiteConfig: {
+    defaults: {
+      siteName: 'GTA6HeistGuide.com',
+      domain: 'https://www.gta6heistguide.com',
+      ownerContactEmail: 'inquiries@gta6heistguide.com',
+      amazonTag: 'gta6heistguid-20',
+      exitLagUrl: 'https://www.exitlag.com/refer/10386953',
+      exitLagCode: '10386953',
+      g2aUrl: 'https://www.g2a.com/n/reflink-4094b9aab5',
+      enebaUrl: 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide',
+      enebaAffiliateId: 'gta6heistguide',
+      whopUrl: 'https://whop.com/apexlocallabs/products/',
+      getApexLocalUrl: 'https://getapexlocal.com',
+      getApexLocalPartnersUrl: 'https://getapexlocal.com/partners',
+      adsensePublisherId: '',
+      ga4MeasurementId: '',
+      enableAffiliateClickTracking: true,
+    },
+
+    get() {
+      const ext = typeof window !== 'undefined' && window.SITE_CONFIG && typeof window.SITE_CONFIG === 'object'
+        ? window.SITE_CONFIG
+        : {};
+      return Object.assign({}, this.defaults, ext);
+    },
+
+    buildAmazonUrl(rawUrl) {
+      const cfg = this.get();
+      try {
+        const u = new URL(rawUrl);
+        if (/(^|\.)amazon\./i.test(u.hostname)) {
+          u.searchParams.set('tag', cfg.amazonTag || this.defaults.amazonTag);
+          return u.toString();
+        }
+      } catch (e) {}
+      return rawUrl;
+    },
+
+    buildEnebaUrl(rawUrl) {
+      const cfg = this.get();
+      try {
+        const u = new URL(rawUrl);
+        if (/(^|\.)eneba\.com$/i.test(u.hostname)) {
+          if (cfg.enebaAffiliateId) {
+            u.searchParams.set('af_id', cfg.enebaAffiliateId);
+            return u.toString();
+          }
+          return cfg.enebaUrl || rawUrl;
+        }
+      } catch (e) {}
+      return cfg.enebaUrl || rawUrl;
+    },
+
+    detectPartnerFromHref(href) {
+      if (!href) return null;
+      const low = String(href).toLowerCase();
+      if (low.includes('amazon.com') || low.includes('amzn.to')) return 'amazon';
+      if (low.includes('g2a.com')) return 'g2a';
+      if (low.includes('eneba.com')) return 'eneba';
+      if (low.includes('exitlag.com')) return 'exitlag';
+      if (low.includes('whop.com')) return 'whop';
+      if (low.includes('getapexlocal.com')) return 'getapexlocal';
+      return null;
+    },
+
+    applyToDom() {
+      const cfg = this.get();
+      document.querySelectorAll('a[href]').forEach((a) => {
+        const rawHref = a.getAttribute('href') || '';
+        if (!rawHref) return;
+        const low = rawHref.toLowerCase();
+        if (low.includes('amazon.com') || low.includes('amzn.to')) {
+          a.href = this.buildAmazonUrl(rawHref);
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'amazon');
+        } else if (low.includes('exitlag.com')) {
+          a.href = cfg.exitLagUrl;
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'exitlag');
+        } else if (low.includes('g2a.com')) {
+          a.href = cfg.g2aUrl;
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'g2a');
+        } else if (low.includes('eneba.com')) {
+          a.href = this.buildEnebaUrl(rawHref);
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'eneba');
+        } else if (low.includes('whop.com')) {
+          a.href = cfg.whopUrl;
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'whop');
+        } else if (low.includes('getapexlocal.com/partners')) {
+          a.href = cfg.getApexLocalPartnersUrl;
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'getapexlocal');
+        } else if (low.includes('getapexlocal.com')) {
+          a.href = cfg.getApexLocalUrl;
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'getapexlocal');
+        } else if (low.startsWith('mailto:') && (low.includes('inquiries@gta6heistguide.com') || a.hasAttribute('data-owner-email'))) {
+          a.href = `mailto:${cfg.ownerContactEmail}`;
+          if (a.textContent.includes('inquiries@gta6heistguide.com') || a.hasAttribute('data-owner-email')) {
+            a.textContent = cfg.ownerContactEmail;
+          }
+        }
+      });
+
+      document.querySelectorAll('[data-owner-email-text]').forEach((el) => {
+        el.textContent = cfg.ownerContactEmail;
+      });
+
+      document.querySelectorAll('[data-exitlag-code]').forEach((el) => {
+        el.textContent = cfg.exitLagCode;
+      });
+
+      if (cfg.exitLagCode && cfg.exitLagCode !== this.defaults.exitLagCode) {
+        document.querySelectorAll('[data-aff-partner="exitlag"], .card, .gear-box').forEach((el) => {
+          if (el.innerHTML.includes(this.defaults.exitLagCode)) {
+            el.innerHTML = el.innerHTML.split(this.defaults.exitLagCode).join(cfg.exitLagCode);
+          }
+        });
+      }
+
+      document.querySelectorAll('.footer-disclaimer, .disclaimer-box').forEach((box) => {
+        box.querySelectorAll('code').forEach((codeEl) => {
+          if (codeEl.textContent.trim() === this.defaults.amazonTag || codeEl.hasAttribute('data-config-amazon-tag')) {
+            codeEl.textContent = cfg.amazonTag;
+          }
+        });
+      });
+
+      document.querySelectorAll('[data-config-amazon-tag]').forEach((el) => {
+        el.textContent = cfg.amazonTag;
+      });
+    },
+
+    initOptionalScripts() {
+      const cfg = this.get();
+      const pubId = String(cfg.adsensePublisherId || '').trim();
+      if (/^ca-pub-\d{8,}$/i.test(pubId)) {
+        if (!document.querySelector('script[data-gta6-adsense]')) {
+          const s = document.createElement('script');
+          s.async = true;
+          s.crossOrigin = 'anonymous';
+          s.setAttribute('data-gta6-adsense', pubId);
+          s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(pubId)}`;
+          document.head.appendChild(s);
+        }
+        document.querySelectorAll('.gta-ad-slot').forEach((slot) => {
+          slot.style.display = 'block';
+          if (!slot.querySelector('ins.adsbygoogle')) {
+            const ins = document.createElement('ins');
+            ins.className = 'adsbygoogle';
+            ins.style.display = 'block';
+            ins.setAttribute('data-ad-client', pubId);
+            if (slot.getAttribute('data-ad-slot')) ins.setAttribute('data-ad-slot', slot.getAttribute('data-ad-slot'));
+            ins.setAttribute('data-ad-format', 'auto');
+            ins.setAttribute('data-full-width-responsive', 'true');
+            slot.appendChild(ins);
+            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+          }
+        });
+      }
+
+      const gaId = String(cfg.ga4MeasurementId || '').trim();
+      if (/^G-[A-Z0-9]+$/i.test(gaId) && !document.querySelector('script[data-gta6-ga4]')) {
+        const s = document.createElement('script');
+        s.async = true;
+        s.setAttribute('data-gta6-ga4', gaId);
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', gaId);
+      }
+    },
+
+    init() {
+      this.applyToDom();
+      this.initOptionalScripts();
+    },
+  },
+
   copyExitLagCode(btn) {
-    const code = '10386953';
+    const code = (this.SiteConfig && this.SiteConfig.get().exitLagCode) || '10386953';
     const el = (btn && btn.nodeType === 1) ? btn : (window.event && window.event.target ? window.event.target.closest('button') : null);
     if (el) {
       const orig = el.innerHTML;
-      el.innerHTML = '✓ Copied: 10386953!';
+      el.innerHTML = `✓ Copied: ${code}!`;
       el.style.color = 'var(--neon-green)';
       el.style.borderColor = 'var(--neon-green)';
       setTimeout(() => {
@@ -173,27 +350,49 @@ const GTA6 = {
         el.style.borderColor = '';
       }, 2500);
     }
-    this.copyText(code, 'Coupon Code 10386953');
+    this.copyText(code, `Coupon Code ${code}`);
   },
 
   initAffiliateTracking() {
     document.addEventListener('click', (e) => {
-      const el = e.target.closest('[data-aff-partner]');
-      if (!el) return;
-      const partner = el.getAttribute('data-aff-partner');
-      const placement = el.getAttribute('data-aff-placement') || 'general';
-      const targetUrl = el.href || '';
+      const cfg = this.SiteConfig ? this.SiteConfig.get() : { enableAffiliateClickTracking: true };
+      const anchor = e.target.closest('a[href], [data-aff-partner]');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href') || anchor.href || '';
+      const partner = (
+        anchor.getAttribute('data-aff-partner') ||
+        (this.SiteConfig ? this.SiteConfig.detectPartnerFromHref(href) : null)
+      );
+      if (!partner) return;
+      const placement = anchor.getAttribute('data-aff-placement') || 'sitewide';
+      const targetUrl = anchor.href || href;
+      const payload = {
+        partner: String(partner).toLowerCase(),
+        placement,
+        page_path: window.location.pathname || '/',
+        target_url: targetUrl,
+      };
       try {
         const stored = localStorage.getItem('gta6_aff_clicks') || '[]';
         const arr = JSON.parse(stored);
-        arr.push({
-          partner,
-          placement,
-          url: targetUrl,
-          ts: new Date().toISOString()
-        });
-        if (arr.length > 80) arr.shift();
+        arr.push(Object.assign({}, payload, { ts: new Date().toISOString() }));
+        if (arr.length > 120) arr.shift();
         localStorage.setItem('gta6_aff_clicks', JSON.stringify(arr));
+      } catch (err) {}
+
+      if (cfg.enableAffiliateClickTracking === false) return;
+      try {
+        const json = JSON.stringify(payload);
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/api/clicks', new Blob([json], { type: 'application/json' }));
+        } else {
+          fetch('/api/clicks', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: json,
+            keepalive: true,
+          }).catch(() => {});
+        }
       } catch (err) {}
     });
   },
@@ -782,8 +981,9 @@ const GTA6 = {
 
     downloadVipPack() {
       const profile = GTA6.getProfile();
+      const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : {};
       const content = `======================================================================
-GTA6HEISTGUIDE.COM - VIP FOUNDER TACTICAL VAULT BLUEPRINT PACK (v3.0)
+GTA6HEISTGUIDE.COM - VIP FOUNDER TACTICAL VAULT BLUEPRINT PACK (v3.2)
 Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 ======================================================================
 
@@ -802,17 +1002,18 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 
 2. ONLINE HEIST SECURITY & HARDWARE CHECKLIST
 ----------------------------------------------------------------------
-- Shield Host IP in Public Lobbies (ExitLag Low-Ping Gaming Routing):
-  https://www.gta6heistguide.com/affiliates-gear.html
-- Verify Pre-Order Keys (G2A & Eneba Global Compare):
-  https://www.g2a.com/n/reflink-4094b9aab5
-  https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide
-- Creator Growth Software (50% Affiliate Partner Program):
-  https://getapexlocal.com/partners
+- Shield Host IP in Public Lobbies (ExitLag Low-Ping Gaming Routing - Code: ${cfg.exitLagCode || '10386953'}):
+  ${cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953'}
+- Verify Digital Keys & Gift Cards (G2A & Eneba Global Compare):
+  ${cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5'}
+  ${cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide'}
+- Creator Growth Software (CutFlow Pro & ClipBounty Studio):
+  ${cfg.getApexLocalPartnersUrl || 'https://getapexlocal.com/partners'}
 
 3. BOOKMARK THE LIVE CREW FINDER & WEEKLY META BOARD:
 ----------------------------------------------------------------------
 - Live Meta & Patch Intel: https://www.gta6heistguide.com/live-intel.html
+- Giveaways & Twitch Drops: https://www.gta6heistguide.com/giveaways.html
 - LFG Crew Matchmaker: https://www.gta6heistguide.com/forum.html
 - Interactive Cut Calculator: https://www.gta6heistguide.com/heist-planner.html
 `;
@@ -5276,14 +5477,27 @@ CharacterModal: {
     DealTicker: {
       timer: null,
       currentIndex: 0,
-      messages: [
-        `🔥 <strong style="color:var(--neon-pink);">BLACK FRIDAY LAUNCH GEAR:</strong> <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 Day-1 Pre-Order &rarr; [Amazon]</a>`,
-        `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; ZERO PACKET LOSS:</strong> <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Pro Gaming Tunnel — Prevent Heist Disconnects</a> &bull; Coupon Code: <strong style="color:var(--neon-yellow);">10386953</strong> <button type="button" onclick="GTA6.copyExitLagCode(this)" style="background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); color:var(--neon-cyan); border-radius:3px; padding:1px 6px; font-size:0.75rem; cursor:pointer; margin-left:4px;">📋 Copy</button>`,
-        `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; SHARK CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
-        `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
-      ],
+      messages: [],
+      buildMessages() {
+        const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : {};
+        const amzSsd = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20') : 'https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20';
+        const amzSticks = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20';
+        const amzPs5 = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20';
+        const exitUrl = cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953';
+        const exitCode = cfg.exitLagCode || '10386953';
+        const g2aUrl = cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5';
+        const enebaUrl = cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide';
+        const whopUrl = cfg.whopUrl || 'https://whop.com/apexlocallabs/products/';
+        return [
+          `🔥 <strong style="color:var(--neon-pink);">DAY-1 LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Amazon]</a>`,
+          `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; ZERO PACKET LOSS:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Pro Gaming Tunnel — Prevent Heist Disconnects</a> &bull; Coupon Code: <strong style="color:var(--neon-yellow);" data-exitlag-code>${exitCode}</strong> <button type="button" onclick="GTA6.copyExitLagCode(this)" style="background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); color:var(--neon-cyan); border-radius:3px; padding:1px 6px; font-size:0.75rem; cursor:pointer; margin-left:4px;">📋 Copy</button>`,
+          `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; SHARK CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
+          `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${whopUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="whop" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
+        ];
+      },
       init() {
         try { if (localStorage.getItem('gta6_ticker_dismissed')) return; } catch (e) {}
+        this.messages = this.buildMessages();
         const bar = document.createElement('div');
         bar.id = 'dealTickerBar';
         bar.className = 'deal-ticker-bar';
@@ -5765,104 +5979,110 @@ CharacterModal: {
     } catch (e) {}
   },
 DealRotator: {
-      deals: [
-        {
-          id: "gta6-launch",
-          title: "GTA 6 Day-1 Launch Edition",
-          badgeVerified: "✓ OFFICIAL LAUNCH",
-          badgeMerchant: "AMAZON • G2A",
-          stars: "★★★★★",
-          rating: "4.9",
-          ratingCount: "18,500+ pre-orders",
-          desc: "Official PlayStation 5 & Xbox physical launch edition and digital keys with Amazon Day-1 Lowest Price Lock.",
-          priceLabel: "Retail Lock",
-          price: "$69.99",
-          pillDiscount: "🔥 PRE-ORDER",
-          img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-          ctaPrimary: { text: "📦 Pre-Order on Amazon →", href: "https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20", cls: "btn-deal-amazon" },
-          ctaSecondary: { text: "⚡ Check G2A Key Deals (-20%) →", href: "https://www.g2a.com/n/reflink-4094b9aab5", cls: "btn-deal-g2a" }
-        },
-        {
-          id: "dualsense-edge",
-          title: "DualSense Edge Pro",
-          badgeVerified: "✓ SONY OFFICIAL",
-          badgeMerchant: "PRIME DELIVERY",
-          stars: "★★★★★",
-          rating: "4.8",
-          ratingCount: "6,200+ ratings",
-          desc: "Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast heist shootouts.",
-          priceLabel: "Amazon Prime",
-          price: "$199.99",
-          pillDiscount: "FREE 1-DAY",
-          img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-          ctaPrimary: { text: "🎮 Check Deal on Amazon →", href: "https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20", cls: "btn-deal-amazon" }
-        },
-        {
-          id: "samsung-990",
-          title: "Samsung 990 PRO 2TB",
-          badgeVerified: "✓ PS5 READY",
-          badgeMerchant: "7,450 MB/s",
-          stars: "★★★★★",
-          rating: "4.9",
-          ratingCount: "21,000+ ratings",
-          desc: "Gen4 M.2 NVMe with integrated heatsink. Eliminates open-world texture pop-in during high-speed Vice City chases.",
-          priceLabel: "Sale Price",
-          price: "$169.99",
-          pillDiscount: "SAVE $50",
-          img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
-          ctaPrimary: { text: "⚡ Upgrade Storage on Amazon →", href: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20", cls: "btn-deal-amazon" }
-        },
-        {
-          id: "eneba-cards",
-          title: "PSN & Xbox Gift Cards",
-          badgeVerified: "✓ INSTANT CODE",
-          badgeMerchant: "ENEBA GLOBAL",
-          stars: "★★★★★",
-          rating: "4.9",
-          ratingCount: "45,000+ verified",
-          desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & Shark Cards with zero service markups.",
-          priceLabel: "Digital Discount",
-          price: "Up to 20% Off",
-          pillDiscount: "INSTANT",
-          img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
-          ctaPrimary: { text: "💳 Compare Eneba Deals →", href: "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide", cls: "btn-deal-g2a", style: "background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);" }
-        },
-        {
-          id: "steelseries-nova",
-          title: "Arctis Nova Pro Wireless",
-          badgeVerified: "✓ 360° SPATIAL",
-          badgeMerchant: "HEIST COMMS",
-          stars: "★★★★★",
-          rating: "4.8",
-          ratingCount: "9,800+ ratings",
-          desc: "Active noise cancellation and hot-swappable dual battery system. Pinpoint sirens and guard footsteps in 3D audio.",
-          priceLabel: "Amazon Prime",
-          price: "$349.99",
-          pillDiscount: "ELITE AUDIO",
-          img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-          ctaPrimary: { text: "🎧 Check Headset on Amazon →", href: "https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+Pro+Wireless&tag=gta6heistguid-20", cls: "btn-deal-amazon" }
-        },
-        {
-          id: "g2a-gamepass",
-          title: "G2A Ultimate & Shark Cards",
-          badgeVerified: "✓ 20% INSTANT DISCOUNT",
-          badgeMerchant: "GLOBAL KEYS",
-          stars: "★★★★★",
-          rating: "4.7",
-          ratingCount: "82,000+ reviews",
-          desc: "Discounted digital codes, subscriptions, and game keys with instant buyer shield protection.",
-          priceLabel: "G2A Special",
-          price: "Save up to 20%",
-          pillDiscount: "TOP DISCOUNT",
-          img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
-          ctaPrimary: { text: "⚡ Browse G2A Keys (-20%) →", href: "https://www.g2a.com/n/reflink-4094b9aab5", cls: "btn-deal-g2a" }
-        }
-      ],
+      deals: [],
+      buildDeals() {
+        const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : {};
+        const bAmz = (u) => (GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl(u) : u);
+        return [
+          {
+            id: "gta6-launch",
+            title: "GTA 6 Day-1 Launch Edition",
+            badgeVerified: "✓ OFFICIAL LAUNCH",
+            badgeMerchant: "AMAZON • G2A",
+            stars: "★★★★★",
+            rating: "4.9",
+            ratingCount: "18,500+ buyers",
+            desc: "Official PlayStation 5 & Xbox launch editions and digital keys with Amazon Prime fast shipping or instant key delivery.",
+            priceLabel: "Retail Launch",
+            price: "$69.99",
+            pillDiscount: "🔥 LIVE NOW",
+            img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "📦 Check on Amazon →", href: bAmz("https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" },
+            ctaSecondary: { text: "⚡ Check G2A Key Deals (-20%) →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
+          },
+          {
+            id: "dualsense-edge",
+            title: "DualSense Edge Pro",
+            badgeVerified: "✓ SONY OFFICIAL",
+            badgeMerchant: "PRIME DELIVERY",
+            stars: "★★★★★",
+            rating: "4.8",
+            ratingCount: "6,200+ ratings",
+            desc: "Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast heist shootouts.",
+            priceLabel: "Amazon Prime",
+            price: "$199.99",
+            pillDiscount: "FREE 1-DAY",
+            img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "🎮 Check Deal on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+          },
+          {
+            id: "samsung-990",
+            title: "Samsung 990 PRO 2TB",
+            badgeVerified: "✓ PS5 READY",
+            badgeMerchant: "7,450 MB/s",
+            stars: "★★★★★",
+            rating: "4.9",
+            ratingCount: "21,000+ ratings",
+            desc: "Gen4 M.2 NVMe with integrated heatsink. Eliminates open-world texture pop-in during high-speed Vice City chases.",
+            priceLabel: "Sale Price",
+            price: "$169.99",
+            pillDiscount: "SAVE $50",
+            img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "⚡ Upgrade Storage on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+          },
+          {
+            id: "eneba-cards",
+            title: "PSN & Xbox Gift Cards",
+            badgeVerified: "✓ INSTANT CODE",
+            badgeMerchant: "ENEBA GLOBAL",
+            stars: "★★★★★",
+            rating: "4.9",
+            ratingCount: "45,000+ verified",
+            desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & Shark Cards with zero service markups.",
+            priceLabel: "Digital Discount",
+            price: "Up to 20% Off",
+            pillDiscount: "INSTANT",
+            img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "💳 Compare Eneba Deals →", href: cfg.enebaUrl || "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide", partner: "eneba", cls: "btn-deal-g2a", style: "background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);" }
+          },
+          {
+            id: "steelseries-nova",
+            title: "Arctis Nova Pro Wireless",
+            badgeVerified: "✓ 360° SPATIAL",
+            badgeMerchant: "HEIST COMMS",
+            stars: "★★★★★",
+            rating: "4.8",
+            ratingCount: "9,800+ ratings",
+            desc: "Active noise cancellation and hot-swappable dual battery system. Pinpoint sirens and guard footsteps in 3D audio.",
+            priceLabel: "Amazon Prime",
+            price: "$349.99",
+            pillDiscount: "ELITE AUDIO",
+            img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "🎧 Check Headset on Amazon →", href: bAmz("https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+Pro+Wireless&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+          },
+          {
+            id: "g2a-gamepass",
+            title: "G2A Ultimate & Shark Cards",
+            badgeVerified: "✓ 20% INSTANT DISCOUNT",
+            badgeMerchant: "GLOBAL KEYS",
+            stars: "★★★★★",
+            rating: "4.7",
+            ratingCount: "82,000+ reviews",
+            desc: "Discounted digital codes, subscriptions, and game keys with instant buyer shield protection.",
+            priceLabel: "G2A Special",
+            price: "Save up to 20%",
+            pillDiscount: "TOP DISCOUNT",
+            img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "⚡ Browse G2A Keys (-20%) →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
+          }
+        ];
+      },
       currentIndex: 0,
       timer: null,
       init() {
         const container = document.getElementById('dealSpotlightGrid');
         if (!container) return;
+        this.deals = this.buildDeals();
 
         // Shuffle on page load
         this.currentIndex = Math.floor(Math.random() * this.deals.length);
@@ -5874,16 +6094,18 @@ DealRotator: {
         }, 10000);
       },
       next() {
+        if (!this.deals.length) return;
         this.currentIndex = (this.currentIndex + 1) % this.deals.length;
         this.render();
       },
       prev() {
+        if (!this.deals.length) return;
         this.currentIndex = (this.currentIndex - 1 + this.deals.length) % this.deals.length;
         this.render();
       },
       render() {
         const container = document.getElementById('dealSpotlightGrid');
-        if (!container) return;
+        if (!container || !this.deals.length) return;
 
         const items = [];
         for (let i = 0; i < 4; i++) {
@@ -5919,8 +6141,8 @@ DealRotator: {
                 </div>
               </div>
               <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
-                <a href="${d.ctaPrimary.href}" target="_blank" rel="noopener sponsored" class="${d.ctaPrimary.cls}" ${d.ctaPrimary.style ? 'style="' + d.ctaPrimary.style + '"' : ''}>${d.ctaPrimary.text}</a>
-                ${d.ctaSecondary ? `<a href="${d.ctaSecondary.href}" target="_blank" rel="noopener sponsored" class="${d.ctaSecondary.cls}">${d.ctaSecondary.text}</a>` : ''}
+                <a href="${d.ctaPrimary.href}" target="_blank" rel="noopener sponsored" data-aff-partner="${d.ctaPrimary.partner}" data-aff-placement="deal-rotator-${d.id}" class="${d.ctaPrimary.cls}" ${d.ctaPrimary.style ? 'style="' + d.ctaPrimary.style + '"' : ''}>${d.ctaPrimary.text}</a>
+                ${d.ctaSecondary ? `<a href="${d.ctaSecondary.href}" target="_blank" rel="noopener sponsored" data-aff-partner="${d.ctaSecondary.partner}" data-aff-placement="deal-rotator-${d.id}-sec" class="${d.ctaSecondary.cls}">${d.ctaSecondary.text}</a>` : ''}
               </div>
             </div>
           `).join('');
@@ -6522,10 +6744,218 @@ DealRotator: {
         this.poll();
         setInterval(() => this.poll(), 10 * 60 * 1000);
       }
+    },
+
+    OwnerDrawer: {
+      isOpen: false,
+      getSavedKey() {
+        try { return sessionStorage.getItem('gta6_owner_key') || ''; } catch (e) { return ''; }
+      },
+      saveKey(key) {
+        try {
+          if (key) sessionStorage.setItem('gta6_owner_key', key);
+        } catch (e) {}
+      },
+      getLocalClickCounts() {
+        const counts = { amazon: 0, g2a: 0, eneba: 0, exitlag: 0, whop: 0, getapexlocal: 0 };
+        try {
+          const arr = JSON.parse(localStorage.getItem('gta6_aff_clicks') || '[]');
+          arr.forEach((item) => {
+            const p = String(item.partner || '').toLowerCase();
+            if (p in counts) counts[p] += 1;
+          });
+        } catch (e) {}
+        return counts;
+      },
+      ensureDom() {
+        if (document.getElementById('ownerCommandDrawer')) return;
+        const wrap = document.createElement('div');
+        const saved = this.getSavedKey();
+        wrap.innerHTML = `
+          <aside class="bookmarks-drawer" id="ownerCommandDrawer" aria-label="Protected Owner Command Drawer" style="border-left-color:var(--neon-yellow);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid var(--border-card); padding-bottom:0.75rem;">
+              <div>
+                <span class="user-badge badge-mastermind" style="font-size:0.65rem;">OWNER COMMAND DRAWER</span>
+                <h3 style="color:var(--neon-yellow); font-size:1.08rem; margin:0.25rem 0 0;">📊 Click Proof &amp; CSV Export</h3>
+              </div>
+              <button type="button" class="modal-close-btn" style="position:static;" onclick="GTA6.OwnerDrawer.closeDrawer()" aria-label="Close Owner Drawer">${GTA6.Icons.close(15)}</button>
+            </div>
+            <div class="form-group" style="margin-bottom:0.85rem;">
+              <label for="ownerDrawerKeyInput" style="font-size:0.78rem;">Owner Admin Key (Cloudflare D1 Protected)</label>
+              <div style="display:flex; gap:0.45rem;">
+                <input type="password" id="ownerDrawerKeyInput" class="form-input" placeholder="Enter admin key..." value="${saved.replace(/"/g, '&quot;')}" style="flex:1; padding:0.45rem 0.65rem; font-size:0.82rem;">
+                <button type="button" class="btn btn-secondary" onclick="GTA6.OwnerDrawer.refreshAll()" style="padding:0.45rem 0.8rem; font-size:0.78rem; white-space:nowrap;">🔄 Load</button>
+              </div>
+            </div>
+            <div id="ownerDrawerStatus" style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.85rem;">Enter admin key &amp; click Load to sync live Cloudflare D1 proof.</div>
+
+            <div class="bookmark-item" style="border-color:rgba(0,240,255,0.35);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem;">
+                <strong style="color:#fff; font-size:0.9rem;">📊 Affiliate Click Counts by Partner</strong>
+                <span id="ownerD1TotalClicks" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--neon-green);">-- total</span>
+              </div>
+              <div id="ownerPartnerClickGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:0.45rem; font-size:0.78rem; font-family:var(--font-mono);"></div>
+              <div id="ownerRecentClicksList" style="margin-top:0.65rem; font-size:0.72rem; color:var(--text-muted);"></div>
+              <button type="button" class="btn btn-secondary" onclick="GTA6.OwnerDrawer.refreshClicks()" style="width:100%; margin-top:0.65rem; padding:0.45rem; font-size:0.78rem;">🔄 Refresh Click Proof</button>
+            </div>
+
+            <div class="bookmark-item" style="border-color:rgba(0,255,136,0.35);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <strong style="color:#fff; font-size:0.9rem;">📥 VIP Email Subscribers (D1)</strong>
+                <span id="ownerD1SubCount" style="font-family:var(--font-mono); font-size:0.8rem; color:var(--neon-cyan);">--</span>
+              </div>
+              <p style="font-size:0.76rem; color:var(--text-muted); margin:0 0 0.65rem;">1-click CSV download directly from Cloudflare D1 for newsletter blasts or buyer handover verification.</p>
+              <button type="button" class="btn btn-primary" onclick="GTA6.OwnerDrawer.exportSubscribersCsv()" style="width:100%; padding:0.55rem; font-size:0.82rem;">📥 Export VIP Email Subscribers (.CSV)</button>
+            </div>
+
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.75rem;">
+              <a href="/syndicate-command.html" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.76rem;">🎛️ Full Command Center</a>
+            </div>
+          </aside>
+        `;
+        document.body.appendChild(wrap);
+      },
+      openDrawer(presetKey) {
+        this.ensureDom();
+        if (presetKey) {
+          const inp = document.getElementById('ownerDrawerKeyInput');
+          if (inp) inp.value = presetKey;
+          this.saveKey(presetKey);
+        }
+        const drawer = document.getElementById('ownerCommandDrawer');
+        if (drawer) {
+          drawer.classList.add('open');
+          this.isOpen = true;
+          this.renderLocalFallback();
+          if (this.activeKey()) this.refreshAll();
+        }
+      },
+      closeDrawer() {
+        const drawer = document.getElementById('ownerCommandDrawer');
+        if (drawer) drawer.classList.remove('open');
+        this.isOpen = false;
+      },
+      toggleDrawer() {
+        if (this.isOpen) this.closeDrawer();
+        else this.openDrawer();
+      },
+      activeKey() {
+        const inp = document.getElementById('ownerDrawerKeyInput');
+        const val = (inp ? inp.value : this.getSavedKey()).trim();
+        if (val) this.saveKey(val);
+        return val;
+      },
+      renderLocalFallback() {
+        const grid = document.getElementById('ownerPartnerClickGrid');
+        if (!grid) return;
+        const local = this.getLocalClickCounts();
+        const labels = [
+          ['amazon', 'Amazon'],
+          ['g2a', 'G2A'],
+          ['eneba', 'Eneba'],
+          ['exitlag', 'ExitLag'],
+          ['whop', 'Whop'],
+          ['getapexlocal', 'GetApexLocal'],
+        ];
+        grid.innerHTML = labels.map(([k, label]) => `
+          <div style="background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.45rem 0.6rem; display:flex; justify-content:space-between;">
+            <span style="color:#cbd5e1;">${label}</span>
+            <strong style="color:var(--neon-cyan);">${local[k] || 0} (local)</strong>
+          </div>
+        `).join('');
+      },
+      async refreshClicks() {
+        const key = this.activeKey();
+        const statusEl = document.getElementById('ownerDrawerStatus');
+        if (!key) {
+          if (statusEl) statusEl.innerHTML = '<span style="color:var(--neon-yellow);">Enter your Owner Key above to load Cloudflare D1 click counts.</span>';
+          this.renderLocalFallback();
+          return;
+        }
+        try {
+          const res = await fetch('/api/clicks?key=' + encodeURIComponent(key));
+          const data = await res.json();
+          if (!res.ok || !data.ok) {
+            if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">Auth error: ${data.error || res.status}</span>`;
+            return;
+          }
+          const byP = data.byPartner || {};
+          const d7 = data.last7DaysByPartner || {};
+          const totalEl = document.getElementById('ownerD1TotalClicks');
+          if (totalEl) totalEl.textContent = `${Number(data.totalClicks || 0).toLocaleString()} D1 clicks`;
+          const labels = [
+            ['amazon', 'Amazon'],
+            ['g2a', 'G2A'],
+            ['eneba', 'Eneba'],
+            ['exitlag', 'ExitLag'],
+            ['whop', 'Whop'],
+            ['getapexlocal', 'GetApexLocal'],
+          ];
+          const grid = document.getElementById('ownerPartnerClickGrid');
+          if (grid) {
+            grid.innerHTML = labels.map(([k, label]) => `
+              <div style="background:rgba(0,0,0,0.45); border:1px solid rgba(0,240,255,0.22); border-radius:6px; padding:0.45rem 0.6rem;">
+                <div style="display:flex; justify-content:space-between;">
+                  <span style="color:#cbd5e1;">${label}</span>
+                  <strong style="color:var(--neon-green);">${Number(byP[k] || 0).toLocaleString()}</strong>
+                </div>
+                <div style="font-size:0.66rem; color:#94a3b8; margin-top:2px;">7d: ${Number(d7[k] || 0).toLocaleString()}</div>
+              </div>
+            `).join('');
+          }
+          const recentEl = document.getElementById('ownerRecentClicksList');
+          if (recentEl && Array.isArray(data.recent)) {
+            recentEl.innerHTML = data.recent.length
+              ? `Recent: ${data.recent.slice(0, 3).map((r) => `${r.partner} (${r.placement || 'site'})`).join(' • ')}`
+              : 'No outbound clicks recorded in D1 yet.';
+          }
+          if (statusEl) statusEl.innerHTML = '<span style="color:var(--neon-green);">✅ Synced live Cloudflare D1 affiliate clicks &amp; subscribers.</span>';
+        } catch (err) {
+          if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">Click API error: ${err.message}</span>`;
+        }
+      },
+      async refreshSubscribers() {
+        const key = this.activeKey();
+        if (!key) return;
+        try {
+          const res = await fetch('/api/subscribe?list=1&key=' + encodeURIComponent(key));
+          const data = await res.json();
+          const el = document.getElementById('ownerD1SubCount');
+          if (el && res.ok && data.ok) {
+            el.textContent = `${Number(data.rawCount || 0).toLocaleString()} subscribers`;
+          }
+        } catch (e) {}
+      },
+      async refreshAll() {
+        await Promise.all([this.refreshClicks(), this.refreshSubscribers()]);
+      },
+      exportSubscribersCsv() {
+        const key = this.activeKey();
+        if (!key) {
+          GTA6.showToast('⚠️ Enter your Owner Admin Key first.');
+          return;
+        }
+        window.location.href = '/api/subscribe?export=csv&key=' + encodeURIComponent(key);
+      },
+      init() {
+        document.addEventListener('keydown', (e) => {
+          if (e.ctrlKey && e.shiftKey && e.key && e.key.toLowerCase() === 'o') {
+            e.preventDefault();
+            this.toggleDrawer();
+          }
+        });
+        try {
+          const params = new URLSearchParams(window.location.search);
+          if (params.get('owner') === '1') {
+            this.openDrawer();
+          }
+        } catch (e) {}
+      }
     }
   };
 
   document.addEventListener('DOMContentLoaded', () => {
+    GTA6.SiteConfig.init();
     GTA6.initMobileNav();
     GTA6.ExitIntent.init();
     GTA6.initCountdown();
@@ -6547,6 +6977,8 @@ DealRotator: {
     GTA6.initAffiliateTracking();
     GTA6.FlexCard.initChallengeBanner();
     GTA6.initPwa();
+    GTA6.SiteConfig.applyToDom();
+    GTA6.OwnerDrawer.init();
     if (document.getElementById('squadRollResults')) {
       GTA6.SquadRoll.spin();
     }

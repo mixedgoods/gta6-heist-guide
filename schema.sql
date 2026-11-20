@@ -113,3 +113,23 @@ INSERT OR IGNORE INTO map_markers (id, title, category, region, x, y, payout_or_
 ('keys-dock', 'Leonida Keys Smuggler Marina', 'fence', 'leonida-keys', 780, 560, '12% Offshore Laundering Broker', 'Southern archipelago boathouse contact for cleaning marked heist proceeds and staging boats.', 'safehouses-laundering.html', 'verified', 6, 'Syndicate Recon'),
 ('ambrosia-fence', 'Ambrosia Refinery Bullion Fence', 'fence', 'ambrosia', 520, 330, 'Instant Bullion & Plate Swap Yard', 'Heartland industrial yard for fencing heavy gold bars and swapping vehicle plates.', 'safehouses-laundering.html', 'verified', 5, 'Syndicate Recon'),
 ('kalaga-outpost', 'Mount Kalaga Scanner Jammer Outpost', 'jammer', 'mount-kalaga', 260, 110, '+15s Vault Alarm Delay Relay', 'Northern mountain relay tower and forestry dirt trails where 5-star choppers lose visual lock.', 'leonida-wanted-system.html', 'verified', 6, 'Syndicate Recon');
+
+CREATE TABLE IF NOT EXISTS affiliate_clicks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    partner TEXT NOT NULL,
+    placement TEXT DEFAULT 'general',
+    page_path TEXT DEFAULT '/',
+    target_url TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS contact_inquiries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    inquiry_type TEXT DEFAULT 'general',
+    budget TEXT DEFAULT '',
+    message TEXT NOT NULL,
+    source_page TEXT DEFAULT '/contact.html',
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);

@@ -6,6 +6,7 @@ Allow: /*.js*
 Allow: /*.css*
 Allow: /*.png*
 Allow: /*.jpg*
+Allow: /llms.txt
 
 User-agent: Googlebot-Image
 Allow: /assets/
@@ -15,10 +16,11 @@ Allow: /*.jpg*
 User-agent: Googlebot-Mobile
 Allow: /
 
-User-agent: bingbot
+User-agent: Bingbot
 Allow: /
 Allow: /*.js*
 Allow: /*.css*
+Allow: /llms.txt
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -47,6 +49,7 @@ Allow: /llms-full.txt
 
 User-agent: Google-Extended
 Allow: /
+Allow: /llms.txt
 
 User-agent: Applebot
 Allow: /
@@ -69,5 +72,7 @@ Allow: /llms-full.txt
 Disallow: /syndicate-command.html
 Disallow: /syndicate-command
 Disallow: /api/subscribe
+Disallow: /api/clicks
+Disallow: /api/contact
 
 Sitemap: https://www.gta6heistguide.com/sitemap.xml

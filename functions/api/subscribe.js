@@ -31,6 +31,7 @@ export async function onRequestGet({ request, env }) {
   try {
     const url = new URL(request.url);
     const key = url.searchParams.get("key");
+    const adminKey = env?.ADMIN_KEY || "syndicateadmin";
     const exportType = url.searchParams.get("export");
     const listMode = url.searchParams.get("list");
 
@@ -38,7 +39,7 @@ export async function onRequestGet({ request, env }) {
     const rawCount = countRow?.count || 0;
     const totalSubscribers = rawCount;
 
-    if (exportType === "csv" && key === "syndicateadmin") {
+    if (exportType === "csv" && key === adminKey) {
       const { results } = await env.DB.prepare(
         "SELECT id, email, callsign, platform, role, discord_tag, marketing_opt_in, created_at FROM subscribers ORDER BY id DESC"
       ).all();
@@ -69,7 +70,7 @@ export async function onRequestGet({ request, env }) {
       });
     }
 
-    if (listMode === "1" && key === "syndicateadmin") {
+    if (listMode === "1" && key === adminKey) {
       const { results } = await env.DB.prepare(
         "SELECT id, email, callsign, platform, role, discord_tag, marketing_opt_in, created_at FROM subscribers ORDER BY id DESC LIMIT 200"
       ).all();

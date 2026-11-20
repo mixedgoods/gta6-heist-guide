@@ -45,6 +45,31 @@ const STATIC_ROUTES = [
     "priority": "0.92"
   },
   {
+    "loc": "https://www.gta6heistguide.com/giveaways",
+    "changefreq": "daily",
+    "priority": "0.90"
+  },
+  {
+    "loc": "https://www.gta6heistguide.com/about",
+    "changefreq": "monthly",
+    "priority": "0.65"
+  },
+  {
+    "loc": "https://www.gta6heistguide.com/contact",
+    "changefreq": "monthly",
+    "priority": "0.65"
+  },
+  {
+    "loc": "https://www.gta6heistguide.com/privacy-policy",
+    "changefreq": "monthly",
+    "priority": "0.55"
+  },
+  {
+    "loc": "https://www.gta6heistguide.com/terms",
+    "changefreq": "monthly",
+    "priority": "0.55"
+  },
+  {
     "loc": "https://www.gta6heistguide.com/vault-hack-trainer",
     "changefreq": "weekly",
     "priority": "0.92"

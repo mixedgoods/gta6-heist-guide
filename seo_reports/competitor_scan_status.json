@@ -1,0 +1,40 @@
+{
+  "autocomplete": {
+    "queries": 45,
+    "ok": 45,
+    "failed": 0,
+    "suggestions": 29
+  },
+  "competitors": [
+    {
+      "domain": "www.gtabase.com",
+      "url": "https://www.gtabase.com",
+      "status": 200,
+      "headings_found": 5,
+      "note": "ok"
+    },
+    {
+      "domain": "www.gtaboom.com",
+      "url": "https://www.gtaboom.com",
+      "status": 200,
+      "headings_found": 9,
+      "note": "ok"
+    },
+    {
+      "domain": "leonidaverse.com",
+      "url": "https://leonidaverse.com",
+      "status": 200,
+      "headings_found": 11,
+      "note": "ok"
+    },
+    {
+      "domain": "gtaheistinfo.com",
+      "url": "https://gtaheistinfo.com",
+      "status": null,
+      "headings_found": 0,
+      "note": "error:ReadTimeout"
+    }
+  ],
+  "total_candidates": 62,
+  "top_25_csv": "seo_reports\\keyword_gaps.csv"
+}
