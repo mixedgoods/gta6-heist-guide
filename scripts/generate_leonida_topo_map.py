@@ -115,13 +115,13 @@ def generate_svg():
     <path d="M 880,560 Q 1200,520 1520,550 T 1600,740 Q 1500,850 1280,860 T 900,810 Z" fill="#18231c" stroke="rgba(255, 184, 0, 0.25)" stroke-width="1.5"/>
     <rect x="940" y="600" width="180" height="110" rx="6" fill="url(#industrialHatch)"/>
     <text x="1030" y="655" text-anchor="middle" fill="rgba(255, 184, 0, 0.9)" font-size="11" font-weight="800" letter-spacing="1.5">AMBROSIA INDUSTRIAL BASIN</text>
-    <text x="1030" y="675" text-anchor="middle" fill="rgba(255, 184, 0, 0.7)" font-size="8.5">SUGAR REFINERY &bull; BULLION DEPOT</text>
+    <text x="1030" y="675" text-anchor="middle" fill="rgba(255, 184, 0, 0.7)" font-size="8.5">SUGAR REFINERY • BULLION DEPOT</text>
 
     <!-- 4D. Grassrivers Swamplands & Wetland Mangroves -->
     <path d="M 450,920 Q 820,870 1220,930 T 1380,1260 Q 1240,1440 980,1450 T 450,1320 Q 380,1160 450,920 Z" fill="#0d2121" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1.5"/>
     <rect x="480" y="960" width="750" height="420" fill="url(#marshTexture)"/>
     <text x="820" y="1180" text-anchor="middle" fill="rgba(16, 185, 129, 0.9)" font-size="14" font-weight="900" letter-spacing="3">GRASSRIVERS WETLANDS &amp; MANGROVE CHANNELS</text>
-    <text x="820" y="1205" text-anchor="middle" fill="rgba(16, 185, 129, 0.65)" font-size="9.5" font-weight="700">FLAT-BOTTOM AIRBOATS ONLY &bull; CRUIRSER MUD TRAP</text>
+    <text x="820" y="1205" text-anchor="middle" fill="rgba(16, 185, 129, 0.65)" font-size="9.5" font-weight="700">FLAT-BOTTOM AIRBOATS ONLY • CRUIRSER MUD TRAP</text>
 
     <!-- 4E. Port Gellhorn Industrial Docks & Harbor -->
     <path d="M 230,860 Q 380,880 430,990 T 360,1190 L 250,1120 Q 200,990 230,860 Z" fill="#162232" stroke="rgba(0, 240, 255, 0.6)" stroke-width="2"/>
@@ -162,7 +162,7 @@ def generate_svg():
     <rect x="1620" y="660" width="230" height="360" rx="10" fill="#181326" stroke="rgba(255, 42, 141, 0.7)" stroke-width="2"/>
     <rect x="1620" y="660" width="230" height="360" rx="10" fill="url(#urbanGrid)"/>
     <text x="1735" y="700" text-anchor="middle" fill="#ff2a8d" font-size="16" font-weight="1000" letter-spacing="2">VICE CITY DOWNTOWN</text>
-    <text x="1735" y="720" text-anchor="middle" fill="rgba(255, 42, 141, 0.75)" font-size="9" font-weight="700">FINANCIAL DISTRICT &bull; SINFRONTERA HQ</text>
+    <text x="1735" y="720" text-anchor="middle" fill="rgba(255, 42, 141, 0.75)" font-size="9" font-weight="700">FINANCIAL DISTRICT • SINFRONTERA HQ</text>
 
     <!-- Escobar International Airport (EIA) -->
     <g transform="translate(1640, 930)">
@@ -225,7 +225,7 @@ def generate_svg():
 
     <!-- Keys Region Watermark Banner -->
     <text x="1940" y="1590" fill="rgba(255, 184, 0, 0.95)" font-size="14" font-weight="900" letter-spacing="2">LEONIDA KEYS ARCHIPELAGO // OVERSEAS HWY US-1</text>
-    <text x="1940" y="1610" fill="rgba(255, 184, 0, 0.7)" font-size="9">7-MILE CAUSEWAY BRIDGES &bull; DEEP CORAL DROP ZONES</text>
+    <text x="1940" y="1610" fill="rgba(255, 184, 0, 0.7)" font-size="9">7-MILE CAUSEWAY BRIDGES • DEEP CORAL DROP ZONES</text>
 
     <!-- Offshore Starlet Superyacht Anchorage Zone -->
     <g transform="translate(2180, 1400)">
@@ -271,7 +271,7 @@ def generate_svg():
     <g transform="translate(30, 30)">
         <rect width="480" height="75" rx="6" fill="rgba(8, 14, 22, 0.94)" stroke="rgba(0, 240, 255, 0.45)" stroke-width="1.5"/>
         <text x="18" y="28" fill="#00f0ff" font-size="13" font-weight="900" letter-spacing="2">STATE OF LEONIDA // TACTICAL TOPOGRAPHIC ATLAS</text>
-        <text x="18" y="46" fill="#e2e8f0" font-size="10" font-weight="700">SYNDICATE-6 HIGH-RES SATELLITE RECON &bull; 100% ORIGINAL CARTOGRAPHY</text>
+        <text x="18" y="46" fill="#e2e8f0" font-size="10" font-weight="700">SYNDICATE-6 HIGH-RES SATELLITE RECON • 100% ORIGINAL CARTOGRAPHY</text>
         <text x="18" y="62" fill="rgba(16, 185, 129, 0.9)" font-size="9" font-weight="800">ALL 6 REGIONS CLASSIFIED // SCALE 1:50,000 // DATUM WGS-84</text>
     </g>
 
