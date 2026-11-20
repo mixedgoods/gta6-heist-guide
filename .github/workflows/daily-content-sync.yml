@@ -1,0 +1,53 @@
+﻿name: GTA 6 12-Hour Secrets & Radio Live Auto-Sync ($0/Month)
+
+on:
+  schedule:
+    # Runs every 12 hours on GitHub's free tier ($0/month)
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+    # 1-click manual trigger anytime
+
+jobs:
+  sync-content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run 12-Hour Secrets, Cryptids & Radio Auto-Sync
+        run: |
+          node scripts/sync-secrets-and-radio.mjs
+
+      - name: Commit & Push Discoveries
+        id: git_sync
+        run: |
+          git config --global user.name "GTA6 Intel Auto-Sync Bot"
+          git config --global user.email "bot@gta6heistguide.com"
+          git add data/ public/data/
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No new secrets or radio discoveries detected in this cycle."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git commit -m "chore(auto-sync): 12-hour auto-update for GTA 6 secrets and radio live feeds"
+            git push
+          fi
+
+      - name: Deploy to Cloudflare Pages (when configured)
+        if: ${{ (steps.git_sync.outputs.changed == 'true' || github.event_name == 'workflow_dispatch') && env.CF_TOKEN != '' && env.CF_ACCOUNT != '' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./public --project-name=gta6heistguide --commit-dirty=true
