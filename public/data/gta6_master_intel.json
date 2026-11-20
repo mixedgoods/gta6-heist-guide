@@ -1,5 +1,5 @@
 {
-  "lastSynced": "2026-11-20T16:49:10Z",
+  "lastSynced": "2026-11-20T23:48:15Z",
   "version": "2026.11.19-sync-v4",
   "source": "Rockstar Games Official Media & GTA Community Verified Database",
   "characters": [
@@ -183,27 +183,37 @@
       "id": "char-andr-s-de-le-n",
       "name": "Andr\u00e9s de Le\u00f3n",
       "category": "story",
-      "badge": "HIGH-ROLLER LAUNDERER",
       "role": "Megamundo Patron & High-Roller",
-      "specialty": "Offshore Cayman Accounts & Black-Market Laundering",
-      "cut": "VIP Client Contact",
+      "specialty": "Black-Market Laundering",
+      "cut": "High-Roller Client",
       "district": "Vice City Downtown",
       "image": "assets/char-andr-s-de-le-n.webp",
       "status": "CONFIRMED",
-      "source": "Leonida Syndicate Dossier"
+      "source": "Auto-Synced Official GTA Wiki"
     },
     {
       "id": "char-apex",
       "name": "Apex",
-      "category": "crew",
-      "badge": "SIGNALS & COMMS SPECIALIST",
-      "role": "Syndicate Signals & Communications Specialist",
-      "specialty": "Radio Frequency Jammers & Police Radio Intercepts",
-      "cut": "6% Specialist Cut",
-      "district": "Vice City / Port Gellhorn",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
       "image": "assets/char-apex.webp",
       "status": "CONFIRMED",
-      "source": "Leonida Syndicate Dossier"
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-arnold",
+      "name": "Arnold",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-arnold.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
     },
     {
       "id": "char-chase",
@@ -226,6 +236,30 @@
       "cut": "Story / Contact",
       "district": "State of Leonida",
       "image": "assets/char-dardan.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-donnie",
+      "name": "Donnie",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-donnie.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-evelyn-andrews",
+      "name": "Evelyn Andrews",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-evelyn-andrews.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -278,6 +312,18 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
+      "id": "char-mia-caminos",
+      "name": "Mia Caminos",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-mia-caminos.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
       "id": "char-niko-bellic",
       "name": "Niko Bellic",
       "category": "story",
@@ -322,6 +368,18 @@
       "cut": "6% Crew Cut",
       "district": "Vice Beach",
       "image": "assets/char-rudi.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-spirit",
+      "name": "Spirit",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-spirit.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -3287,6 +3345,13 @@
   "youtubeWire": [
     {
       "channel": "Digital Foundry",
+      "title": "Grand Theft Auto 6: Beyond The Tech - Our Gameplay Thoughts",
+      "url": "https://www.youtube.com/watch?v=kr3zHBiP0mU",
+      "published": "2026-11-20T18:00:31+00:00",
+      "thumbnail": "https://i.ytimg.com/vi/kr3zHBiP0mU/hqdefault.jpg"
+    },
+    {
+      "channel": "Digital Foundry",
       "title": "Grand Theft Auto 6: The Driving And Racing Experience",
       "url": "https://www.youtube.com/watch?v=bV4yvI3lWII",
       "published": "2026-11-19T18:00:08+00:00",
@@ -3312,20 +3377,6 @@
       "url": "https://www.youtube.com/watch?v=pIpWCnPaIHA",
       "published": "2026-11-18T16:00:32+00:00",
       "thumbnail": "https://i.ytimg.com/vi/pIpWCnPaIHA/hqdefault.jpg"
-    },
-    {
-      "channel": "Digital Foundry",
-      "title": "Grand Theft Auto 6: PS5 vs PS5 Pro Performance Tested!",
-      "url": "https://www.youtube.com/watch?v=Nmn2ibJAOhc",
-      "published": "2026-11-18T15:00:08+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/Nmn2ibJAOhc/hqdefault.jpg"
-    },
-    {
-      "channel": "Digital Foundry",
-      "title": "GTA 6 Confirmed At 30FPS On All Systems + PS5 Pro Features Revealed",
-      "url": "https://www.youtube.com/watch?v=dMXLom6iHSA",
-      "published": "2026-11-17T20:00:29+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/dMXLom6iHSA/hqdefault.jpg"
     },
     {
       "channel": "Rockstar Games (Official)",
@@ -8754,7 +8805,7 @@
   },
   "staticAssetVersion": "20261119_v3",
   "catalogTotals": {
-    "characters": 29,
+    "characters": 34,
     "weapons": 47,
     "vehicles": 187,
     "masks": 16,
