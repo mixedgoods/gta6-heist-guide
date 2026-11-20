@@ -1,5 +1,5 @@
 {
-  "lastSynced": "2026-11-20T06:27:47Z",
+  "lastSynced": "2026-11-20T16:49:10Z",
   "version": "2026.11.19-sync-v4",
   "source": "Rockstar Games Official Media & GTA Community Verified Database",
   "characters": [
@@ -1638,6 +1638,26 @@
         "speed": 91,
         "accel": 90,
         "handling": 92
+      },
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "veh-hauler",
+      "name": "Hauler",
+      "realName": "Confirmed GTA VI Roster Model",
+      "category": "commercial",
+      "speed": "126 MPH",
+      "accel": "5.8s (0-60)",
+      "handling": "76/100",
+      "driveType": "High-Torque / Chain",
+      "capacity": "6 Duffel Bags",
+      "bulletproof": "Heavy Utility Frame (Grade B+)",
+      "image": "assets/veh-hauler.webp",
+      "bio": "Hauler (Confirmed GTA VI Roster Model) \u2014 confirmed active in State of Leonida (Vehicles in GTA VI/table (Hauler)). Calibrated for commercial heist routing with 6 Duffel Bags capacity.",
+      "stats": {
+        "speed": 70,
+        "accel": 68,
+        "handling": 76
       },
       "status": "CONFIRMED"
     },
@@ -7527,6 +7547,26 @@
         "handling": 76
       },
       "status": "CONFIRMED"
+    },
+    "veh-hauler": {
+      "id": "veh-hauler",
+      "name": "Hauler",
+      "realName": "Confirmed GTA VI Roster Model",
+      "category": "commercial",
+      "speed": "126 MPH",
+      "accel": "5.8s (0-60)",
+      "handling": "76/100",
+      "driveType": "High-Torque / Chain",
+      "capacity": "6 Duffel Bags",
+      "bulletproof": "Heavy Utility Frame (Grade B+)",
+      "image": "assets/veh-hauler.webp",
+      "bio": "Hauler (Confirmed GTA VI Roster Model) \u2014 confirmed active in State of Leonida (Vehicles in GTA VI/table (Hauler)). Calibrated for commercial heist routing with 6 Duffel Bags capacity.",
+      "stats": {
+        "speed": 70,
+        "accel": 68,
+        "handling": 76
+      },
+      "status": "CONFIRMED"
     }
   },
   "weaponCatalog": {
@@ -8714,7 +8754,7 @@
   "catalogTotals": {
     "characters": 29,
     "weapons": 47,
-    "vehicles": 186,
+    "vehicles": 187,
     "masks": 16,
     "properties": 12
   }
