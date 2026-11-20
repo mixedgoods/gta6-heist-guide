@@ -21,6 +21,14 @@
     <meta name="twitter:description" content="Kick 10,000 giveaway tracker, Twitch daily drops countdown, and free Amazon Prime Twitch sub linking instructions.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
     <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        .giveaway-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -191,12 +199,12 @@
             </div>
             <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(0,240,255,0.35); border-radius:10px; padding:1rem 1.25rem; min-width:250px; text-align:center;">
                 <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--neon-cyan); font-weight:800; letter-spacing:1px;">CLAIM CHECKLIST PROGRESS</div>
-                <div id="giveawayProgressPct" style="font-size:2rem; font-weight:1000; color:var(--neon-green); font-family:var(--font-mono); margin:0.25rem 0;">0 / 7 Complete</div>
+                <div id="giveawayProgressPct" style="font-size:2rem; font-weight:1000; color:var(--neon-green); font-family:var(--font-mono); margin:0.25rem 0;">0 / 5 Complete</div>
                 <div style="font-size:0.76rem; color:var(--text-muted);">Kick Giveaway Closes: <strong id="kickCountdownMini" style="color:var(--neon-green);">Dec 7, 2026</strong></div>
             </div>
         </div>
         <div style="display:flex; gap:0.55rem; flex-wrap:wrap; margin-top:1.15rem;">
-            <button type="button" class="btn btn-primary giveaway-filter-btn" data-filter="all" onclick="filterGiveaways('all', this)" style="padding:0.45rem 0.9rem; font-size:0.8rem;">All Campaigns (7)</button>
+            <button type="button" class="btn btn-primary giveaway-filter-btn" data-filter="all" onclick="filterGiveaways('all', this)" style="padding:0.45rem 0.9rem; font-size:0.8rem;">All Campaigns (5)</button>
             <button type="button" class="btn btn-secondary giveaway-filter-btn" data-filter="kick" onclick="filterGiveaways('kick', this)" style="padding:0.45rem 0.9rem; font-size:0.8rem;">Kick 10K Giveaway</button>
             <button type="button" class="btn btn-secondary giveaway-filter-btn" data-filter="twitch" onclick="filterGiveaways('twitch', this)" style="padding:0.45rem 0.9rem; font-size:0.8rem;">Twitch Drops</button>
             <button type="button" class="btn btn-secondary giveaway-filter-btn" data-filter="prime" onclick="filterGiveaways('prime', this)" style="padding:0.45rem 0.9rem; font-size:0.8rem;">Prime Gaming</button>
@@ -210,9 +218,9 @@
             <!-- 1. KICK 10,000 GIVEAWAY -->
             <article class="card giveaway-card" data-category="kick" style="border-color:#53fc18; background:linear-gradient(145deg, rgba(83,252,24,0.06), rgba(10,14,22,0.95));">
                 <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                        <span class="card-tag" style="background:#53fc18; color:#000; font-weight:800;">Kick 10,000 Giveaway</span>
-                        <span style="font-family:var(--font-mono); font-size:0.75rem; color:#53fc18;">Nov 19 – Dec 7, 2026</span>
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.4rem;">
+                        <span class="card-tag" style="background:#53fc18; color:#000; font-weight:800; white-space:nowrap;">Kick 10,000 Giveaway</span>
+                        <span style="font-family:var(--font-mono); font-size:0.75rem; color:#53fc18; white-space:nowrap;">Nov 19 – Dec 7, 2026</span>
                     </div>
                     <h2 class="card-title">1. Kick 10,000 GTA 6 Ultimate Edition Giveaway</h2>
                     <div class="card-meta">Watch 3 Hours Daily &bull; Earn Sunset Cases</div>
@@ -311,43 +319,51 @@
                 </div>
             </article>
 
-            <!-- 6. PS5 SSD SPEED DEALS -->
-            <article class="card giveaway-card" data-category="hardware" style="border-color:var(--neon-yellow);">
-                <div>
-                    <span class="card-tag tag-hardware">Hardware &amp; Keys</span>
-                    <h2 class="card-title">6. Verify Best PS5 SSD Speed &amp; Storage Deals</h2>
-                    <div class="card-meta">7,450 MB/s Gen4 NVMe &bull; Zero Texture Pop-In</div>
-                    <p class="card-desc">Before downloading launch updates and HD texture packs, compare PCIe 4.0 PS5 SSD upgrades (Samsung 990 PRO 2TB with heatsink) plus DualSense Edge controller pricing.</p>
-                </div>
-                <div style="display:grid; gap:0.5rem;">
-                    <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.84rem; color:#fff; cursor:pointer; background:rgba(0,0,0,0.35); padding:0.55rem 0.75rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12);">
-                        <input type="checkbox" class="giveaway-check" data-id="gw-ps5-ssd" onchange="toggleGiveawayStep(this)">
-                        <span>Mark Storage Ready</span>
-                    </label>
-                    <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="giveaways-ssd" class="btn btn-amber" style="text-align:center;">💾 Compare Samsung 990 PRO on Amazon &rarr;</a>
-                </div>
-            </article>
+        </div>
+    </section>
 
-            <!-- 7. DIGITAL STOREFRONTS & PING PROTECTION -->
-            <article class="card giveaway-card" data-category="hardware" style="border-color:var(--neon-green);">
+    <!-- HARDWARE & DIGITAL LAUNCH DEALS BAR -->
+    <section class="tool-box" style="margin-top:2.25rem; border-color:var(--neon-cyan); background:linear-gradient(135deg, rgba(16,24,38,0.92), rgba(10,14,22,0.96)); box-shadow:0 0 20px rgba(0,240,255,0.12);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.15rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.6rem;">
+            <div>
+                <span class="user-badge" style="background:rgba(0,240,255,0.15); color:var(--neon-cyan); border:1px solid var(--neon-cyan); font-size:0.72rem;">RECOMMENDED HARDWARE &amp; STOREFRONTS</span>
+                <h2 style="color:#fff; font-size:1.25rem; margin:0.35rem 0 0.15rem;">Verified PS5 SSD Speed, Digital Keys &amp; Ping Protection</h2>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">Verified Day-1 Partner Specials</span>
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:1rem;">
+            <!-- Deal Card A: PS5 SSD -->
+            <div class="card" style="border-color:var(--neon-yellow); display:flex; flex-direction:column; justify-content:space-between; height:100%; margin:0;">
                 <div>
-                    <span class="card-tag tag-hardware">Hardware &amp; Keys</span>
-                    <h2 class="card-title">7. Digital Storefront Gift Card &amp; Ping Protection</h2>
-                    <div class="card-meta">G2A &bull; Eneba &bull; ExitLag Code <span data-exitlag-code>10386953</span></div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="card-tag tag-hardware">Hardware Upgrade</span>
+                        <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-green); font-weight:800;">7,450 MB/s</span>
+                    </div>
+                    <h3 class="card-title" style="font-size:1.1rem;">Verify Best PS5 SSD Speed &amp; Storage Deals</h3>
+                    <div class="card-meta">Samsung 990 PRO 2TB NVMe &bull; Zero Texture Pop-In</div>
+                    <p class="card-desc">Before downloading launch updates and HD texture packs, compare PCIe 4.0 PS5 SSD upgrades (Samsung 990 PRO 2TB with heatsink) to eliminate open-world texture streaming hitching.</p>
+                </div>
+                <div style="margin-top:1rem;">
+                    <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="giveaways-ssd" class="btn btn-amber" style="width:100%; text-align:center; padding:0.55rem; font-size:0.82rem; font-weight:800;">💾 Compare Samsung 990 PRO on Amazon &rarr;</a>
+                </div>
+            </div>
+            <!-- Deal Card B: Digital Storefronts & Ping -->
+            <div class="card" style="border-color:var(--neon-green); display:flex; flex-direction:column; justify-content:space-between; height:100%; margin:0;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="card-tag tag-hardware">Keys &amp; Network</span>
+                        <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); font-weight:800;">Code 10386953</span>
+                    </div>
+                    <h3 class="card-title" style="font-size:1.1rem;">Digital Storefront Gift Cards &amp; Ping Protection</h3>
+                    <div class="card-meta">G2A &bull; Eneba &bull; ExitLag Multipath Routing</div>
                     <p class="card-desc">Compare PSN and Xbox wallet top-up discounts on G2A and Eneba, and protect peer-to-peer heist lobbies from disconnects using ExitLag low-ping routing.</p>
                 </div>
-                <div style="display:grid; gap:0.5rem;">
-                    <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.84rem; color:#fff; cursor:pointer; background:rgba(0,0,0,0.35); padding:0.55rem 0.75rem; border-radius:6px; border:1px solid rgba(255,255,255,0.12);">
-                        <input type="checkbox" class="giveaway-check" data-id="gw-keys-ping" onchange="toggleGiveawayStep(this)">
-                        <span>Mark Setup Verified</span>
-                    </label>
-                    <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
-                        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" data-aff-partner="g2a" data-aff-placement="giveaways-g2a" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem;">G2A Deals</a>
-                        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" data-aff-partner="eneba" data-aff-placement="giveaways-eneba" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem;">Eneba</a>
-                        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="noopener sponsored" data-aff-partner="exitlag" data-aff-placement="giveaways-exitlag" class="btn btn-primary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem;">ExitLag</a>
-                    </div>
+                <div style="margin-top:1rem; display:flex; gap:0.45rem; flex-wrap:wrap;">
+                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" data-aff-partner="g2a" data-aff-placement="giveaways-g2a" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.5rem; font-size:0.8rem;">G2A Deals</a>
+                    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" data-aff-partner="eneba" data-aff-placement="giveaways-eneba" class="btn btn-secondary" style="flex:1; text-align:center; padding:0.5rem; font-size:0.8rem;">Eneba</a>
+                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="noopener sponsored" data-aff-partner="exitlag" data-aff-placement="giveaways-exitlag" class="btn btn-primary" style="flex:1; text-align:center; padding:0.5rem; font-size:0.8rem;">ExitLag</a>
                 </div>
-            </article>
+            </div>
         </div>
     </section>
 

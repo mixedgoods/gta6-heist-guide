@@ -531,15 +531,28 @@ const GTA6 = {
 
   async initIntelFeed() {
     let data = null;
+    const fetchWithTimeout = async (url, ms = 2000) => {
+      if (typeof AbortController === 'undefined') return fetch(url).catch(() => null);
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), ms);
+      try {
+        const res = await fetch(url, { signal: controller.signal });
+        clearTimeout(timer);
+        return res;
+      } catch (err) {
+        clearTimeout(timer);
+        return null;
+      }
+    };
     try {
-      const res = await fetch('/api/intel');
-      if (res.ok) data = await res.json();
+      const res = await fetchWithTimeout('/api/intel', 1800);
+      if (res && res.ok) data = await res.json();
     } catch (e) {}
 
     if (!data || !data.featuredVault) {
       try {
-        const res2 = await fetch('/data/live_intel.json');
-        if (res2.ok) {
+        const res2 = await fetchWithTimeout('/data/live_intel.json', 1500);
+        if (res2 && res2.ok) {
           const liveJson = await res2.json();
           const fallback = this.getDeterministicIntelFallback();
           if (liveJson && Array.isArray(liveJson.intelFeed) && liveJson.intelFeed.length > 0) {
@@ -6632,7 +6645,7 @@ DealRotator: {
               card.innerHTML = `
                 <div style="height:230px; overflow:hidden; position:relative; background:#080e18;">
                   <img src="${imgSrc}" alt="${this.esc(c.name)}" width="320" height="230" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
-                  <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">AUTO-SYNCED DOSSIER</span>
+                  <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">${this.esc(c.badge || 'CONFIRMED OPERATIVE')}</span>
                 </div>
                 <div style="padding:1.25rem;">
                   <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">

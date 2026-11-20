@@ -206,7 +206,7 @@
             OFFICIAL GTA 6 <span style="color:var(--neon-pink);">CHARACTERS &amp; CREW ROSTER</span>
         </h1>
         <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">
-            ⭐ <span class="sync-chars-total">25</span> CONFIRMED CAST &bull; OFFICIAL PORTRAITS &amp; SCREENSHOTS &bull; LIVE SEARCH &amp; SIGNATURE GEAR
+            ⭐ <span class="sync-chars-total">16</span> CONFIRMED CAST &bull; OFFICIAL PORTRAITS &amp; SCREENSHOTS &bull; LIVE SEARCH &amp; SIGNATURE GEAR
         </div>
     </div>
     <div style="display:flex; gap:0.4rem; align-items:center;">
@@ -372,7 +372,7 @@
                         <span style="color:var(--neon-yellow); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">CASE OFFICER</span>
                     </div>
                     <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
-                        Featured in the opening sequence of Trailer 1 questioning Lucia (*"Do you know why you're here?"*). Serves as Lucia's correctional caseworker and parole officer, controlling district boundaries and probation mandates.
+                        Featured in the opening sequence of Trailer 1 questioning Lucia (<em>"Do you know why you're here?"</em>). Serves as Lucia's correctional caseworker and parole officer, controlling district boundaries and probation mandates.
                     </p>
 
                     <div class="stat-bar-container">
@@ -532,7 +532,7 @@
                         <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">MUSIC MOGUL &amp; PILOT</span>
                     </div>
                     <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
-                        Aspiring music mogul managing *Only Raw Records* alongside Boobie Ike. Controls high-speed cigarette boat channels in Biscayne Bay and offshore container drops.
+                        Aspiring music mogul managing <em>Only Raw Records</em> alongside Boobie Ike. Controls high-speed cigarette boat channels in Biscayne Bay and offshore container drops.
                     </p>
 
                     <div class="stat-bar-container">
@@ -616,7 +616,7 @@
                         <span style="color:var(--neon-pink); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">RAP DUO LEAD</span>
                     </div>
                     <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
-                        Lead artist of the viral Vice City rap sensation *Real Dimez*. Featured extensively across in-game social media, club parties, and Dre'Quan Priest's music empire.
+                        Lead artist of the viral Vice City rap sensation <em>Real Dimez</em>. Featured extensively across in-game social media, club parties, and Dre'Quan Priest's music empire.
                     </p>
 
                     <div class="stat-bar-container">
@@ -654,7 +654,7 @@
                         <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">CULTURE ICON</span>
                     </div>
                     <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">
-                        Second half of the *Real Dimez* duo. Connected to Vice City's modern street scene, luxury car meets, and underground club promoters.
+                        Second half of the <em>Real Dimez</em> duo. Connected to Vice City's modern street scene, luxury car meets, and underground club promoters.
                     </p>
 
                     <div class="stat-bar-container">
@@ -1019,6 +1019,7 @@
 
     window.syncCrewCounts = function() {
         const cards = document.querySelectorAll('#characterGrid .char-card');
+        document.querySelectorAll('.sync-chars-total').forEach(el => { el.textContent = String(cards.length); });
         const counts = {};
         cards.forEach(c => {
             const cat = (c.getAttribute('data-category') || '').toLowerCase();
