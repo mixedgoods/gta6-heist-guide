@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best GTA 6 Settings (PS5, PS5 Pro &amp; Xbox Series X) | 30 FPS Performance Cheat Sheet</title>
+    <meta name="description" content="Optimize GTA 6 for 30 FPS console target on PlayStation 5, PS5 Pro, and Xbox Series X|S. Recommended aim sensitivity 7-8, deadzones, motion blur 1-2, TV Game Mode &amp; HGiG, plus Samsung 990 PRO SSD &amp; ExitLag setup.">
+    <meta name="keywords" content="best gta 6 settings, gta 6 ps5 settings, gta 6 30 fps settings, gta 6 motion blur, gta 6 aim sensitivity, gta 6 ps5 pro pssr, gta 6 tv settings, gta 6 deadzone settings">
+    <link rel="canonical" href="https://www.gta6heistguide.com/settings.html">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="Best GTA 6 Settings (PS5, PS5 Pro &amp; Xbox Series X) | 30 FPS Cheat Sheet">
+    <meta property="og:description" content="Optimal controller deadzones, aim response curves, display calibration, and hardware upgrades for rock-solid 30 FPS gameplay in Leonida.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gta6heistguide.com/settings.html">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best GTA 6 Settings Cheat Sheet (PS5 &amp; Xbox Series X)">
+    <meta name="twitter:description" content="30 FPS frame pacing optimization, aim sensitivity 7-8, KontrolFreek sticks, Samsung 990 PRO, and ExitLag low-ping settings.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <link rel="stylesheet" href="/assets/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "GTA 6 Heist Guide & Leonida Syndicate Database",
+          "url": "https://www.gta6heistguide.com/"
+        },
+        {
+          "@type": "TechArticle",
+          "headline": "Best GTA 6 Settings (PS5, PS5 Pro & Xbox Series X) 30 FPS Performance Cheat Sheet",
+          "description": "Comprehensive calibration guide for GTA 6 console frame pacing, aim sensitivity, stick deadzones, motion blur, and television HDR settings.",
+          "author": {
+            "@type": "Organization",
+            "name": "GTA6HeistGuide.com"
+          },
+          "url": "https://www.gta6heistguide.com/settings.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are the best aim sensitivity and deadzone settings for GTA 6?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For controller aiming on PS5 and Xbox, set Aim Sensitivity between 7 and 8 with a Standard Response Curve. Reduce Stick Deadzones to the lowest stable value without stick drift (typically 0.05 to 0.08) for crisp micro-adjustments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should Motion Blur be turned off for GTA 6 at 30 FPS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Do not turn motion blur completely to 0 at 30 FPS, as shutter angle blur helps mask 33.3ms frame intervals. Instead, set Motion Blur to 1 or 2 (Low). This preserves smooth cinematic motion while eliminating disorienting smear during rapid camera rotations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the recommended TV settings for GTA 6 HDR and VRR?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enable TV Game Mode, turn off all Motion Smoothing and Motion Interpolation, set HDR Tone Mapping to HGiG (or Dynamic Tone Mapping Off), and enable VRR (Variable Refresh Rate) in 120Hz container mode to eliminate screen tearing."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+      .settings-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.25rem 0;
+        font-size: 0.92rem;
+      }
+      .settings-table th {
+        background: rgba(0, 240, 255, 0.1);
+        color: var(--neon-cyan);
+        text-align: left;
+        padding: 0.85rem 1rem;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+      }
+      .settings-table td {
+        padding: 0.9rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        color: var(--text-main);
+      }
+      .settings-table tr:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .val-badge {
+        display: inline-block;
+        padding: 0.25rem 0.65rem;
+        border-radius: 4px;
+        background: rgba(0, 255, 136, 0.12);
+        color: var(--neon-green);
+        border: 1px solid rgba(0, 255, 136, 0.4);
+        font-family: var(--font-mono);
+        font-weight: 800;
+        font-size: 0.84rem;
+      }
+      .gear-match-card {
+        background: rgba(18, 14, 30, 0.92);
+        border: 1px solid var(--border-card);
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .gear-match-card:hover {
+        border-color: var(--neon-cyan);
+        transform: translateY(-2px);
+      }
+    </style>
+</head>
+<body>
+
+<div class="countdown-strip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS">
+                <span class="strip-pulse"></span>
+                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS &amp; DROPS</span>
+            </a>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
+            <span class="strip-divider">|</span>
+            <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
+        </div>
+        <div class="strip-right-actions">
+            <a href="/cheats.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">⚡ 61 Cheats</a>
+            <a href="/settings.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">⚙️ Settings</a>
+            <a href="/money-guide.html" class="strip-pill" style="color:var(--neon-green); text-decoration:none; font-size:0.75rem;">💰 Fast Cash</a>
+            <a href="/weapons-bonuses.html" class="strip-pill" style="color:#f43f5e; text-decoration:none; font-size:0.75rem;">🔫 Gun Stores</a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="brand-logo">
+            <span>GTA 6</span>
+            <span class="vi">HEIST GUIDE</span>
+            <span class="brand-badge">Syndicate v3.2</span>
+        </a>
+        <div class="nav-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span>LEONIDA NETWORK &bull; DAY-2 CHEATS &amp; INTEL LIVE</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="nav-pill">Vaults</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
+            <li><a href="/settings.html" class="nav-pill active" style="color:var(--neon-cyan); font-weight:800;">⚙️ Settings</a></li>
+            <li><a href="/money-guide.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💰 Cash Guide</a></li>
+            <li><a href="/weapons-bonuses.html" class="nav-pill" style="color:#f43f5e; font-weight:800;">🔫 Gun Stores</a></li>
+            <li><a href="/giveaways.html" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/interactive-map.html" class="nav-pill">Radar Map</a></li>
+            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
+            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
+            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
+            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
+            <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="VIP Blueprints &amp; Syndicate Rep">🎁 VIP<span class="vip-desktop-label"> Login</span></button>
+            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
+        </div>
+    </div>
+</nav>
+
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.75rem 1rem 3.5rem; box-sizing:border-box;">
+
+    <!-- TOP HERO -->
+    <header class="tool-box" style="margin-bottom:2rem; border-color:var(--neon-cyan); background:linear-gradient(135deg, rgba(10,20,35,0.95), rgba(8,12,24,0.98));">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem;">
+            <div style="flex:1 1 580px;">
+                <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap; margin-bottom:0.5rem;">
+                    <span class="user-badge" style="background:var(--neon-cyan); color:#000; font-weight:900;">⚙️ 30 FPS TARGET CHEAT SHEET</span>
+                    <span style="color:var(--neon-yellow); font-size:0.8rem; font-weight:700;">PS5 • PS5 Pro • Xbox Series X|S</span>
+                </div>
+                <h1 style="color:#fff; font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin:0 0 0.55rem; line-height:1.15;">
+                    Best GTA 6 Settings Cheat Sheet: PS5, PS5 Pro &amp; Xbox Optimization
+                </h1>
+                <p style="color:var(--text-muted); font-size:0.96rem; line-height:1.55; margin:0;">
+                    Grand Theft Auto VI pushes current-gen consoles to the absolute hardware limit with dense Vice City crowds, volumetric clouds, and real-time ray tracing targeting 30 FPS. Use this tactical calibration guide to lock in frame pacing, eliminate stick deadzone lag, and tune your TV for competitive heist execution.
+                </p>
+            </div>
+            <div style="background:rgba(0,0,0,0.6); border:1px solid rgba(0,255,136,0.35); border-radius:10px; padding:1.15rem 1.4rem; min-width:260px; text-align:center;">
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-green); font-weight:800; letter-spacing:1px;">CONSOLE ENGINE TARGET</div>
+                <div style="font-size:2rem; font-weight:1000; color:#fff; font-family:var(--font-mono); margin:0.25rem 0;">30 FPS Frame Lock</div>
+                <div style="font-size:0.78rem; color:var(--neon-cyan);">33.3ms Even Frame Pacing</div>
+                <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.35rem;">VRR 120Hz Container Recommended</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: MASTER 30 FPS SETTINGS TABLE -->
+    <section class="tool-box" style="margin-bottom:2.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:0.75rem;">
+            <div>
+                <span class="user-badge badge-mastermind">🎯 CONTROLLER &amp; DISPLAY MATRIX</span>
+                <h2 style="color:#fff; font-size:1.35rem; margin:0.35rem 0 0.15rem;">Recommended In-Game &amp; Television Settings</h2>
+            </div>
+            <span style="font-size:0.78rem; color:var(--text-muted);">Verified across PS5 Day-1 Build &amp; Xbox Series X</span>
+        </div>
+
+        <div style="overflow-x:auto;">
+            <table class="settings-table">
+                <thead>
+                    <tr>
+                        <th style="width:24%;">Setting Category</th>
+                        <th style="width:22%;">Recommended Value</th>
+                        <th style="width:54%;">Tactical Rationale &amp; 30 FPS Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Aim Sensitivity</strong></td>
+                        <td><span class="val-badge">7 – 8</span></td>
+                        <td>Compensates for 30 FPS controller input latency. Fast enough to track sprinting cops without overshooting micro-adjustments.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aim Response Curve</strong></td>
+                        <td><span class="val-badge">Standard</span></td>
+                        <td>Provides predictable linear velocity ramp-up across analog stick deflection angles during high-heat shootouts.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stick Deadzones</strong></td>
+                        <td><span class="val-badge">Lowest Stable</span></td>
+                        <td>Set Left &amp; Right Stick Min Deadzone to 0.05–0.08 (just above your hardware's drift threshold) for instant aim response.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Movement Speed</strong></td>
+                        <td><span class="val-badge">Jog</span></td>
+                        <td>Avoids sluggish walking when navigating narrow bank corridors and vault doors under heavy fire.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Combat Movement</strong></td>
+                        <td><span class="val-badge">Fast Walk</span></td>
+                        <td>Prevents accidental sprint breaks while aiming down sights behind counter barriers.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Simplified Mini-Games</strong></td>
+                        <td><span class="val-badge">On</span></td>
+                        <td>Cuts repetitive QTE latency during biometric keypad hacking, safe cracking, and crowbar door breaches.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Motion Blur</strong></td>
+                        <td><span class="val-badge">1 – 2 (Low)</span></td>
+                        <td>At 30 FPS, turning blur to 0 creates severe judder, while high blur smears textures. Level 1–2 preserves cinematic smoothness.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TV Picture Mode</strong></td>
+                        <td><span class="val-badge">Game Mode On</span></td>
+                        <td>Bypasses TV image processing boards to drop input latency from ~80ms down to sub-10ms.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TV Motion Smoothing</strong></td>
+                        <td><span class="val-badge">Off</span></td>
+                        <td>Turn off TruMotion / Motionflow / Auto Motion Plus completely; interpolation introduces catastrophic input lag.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HDR Tone Mapping</strong></td>
+                        <td><span class="val-badge">HGiG On</span></td>
+                        <td>Lets PS5 &amp; Xbox tone map HDR highlights natively instead of TV clipping neon Vice City night lights.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HDR &amp; VRR</strong></td>
+                        <td><span class="val-badge">Automatic (120Hz)</span></td>
+                        <td>Enables low-framerate compensation (LFC) to smooth out 30 FPS frame-time spikes on compatible HDMI 2.1 displays.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PS5 Pro Ray Tracing</strong></td>
+                        <td><span class="val-badge">PSSR Quality Mode</span></td>
+                        <td>PlayStation Spectral Super Resolution upscales native 1440p base to pristine 4K with ray-traced reflections and global illumination.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SECTION 2: MATCHING HARDWARE CARDS WITH NATIVE AFFILIATE INTEGRATIONS -->
+    <section style="margin-bottom:2.75rem;">
+        <div class="section-header" style="margin-bottom:1.25rem;">
+            <div>
+                <span class="user-badge" style="background:rgba(255,184,0,0.15); color:var(--neon-yellow); border:1px solid var(--neon-yellow); font-size:0.74rem;">HARDWARE ACCELERATION</span>
+                <h2 style="color:#fff; font-size:1.45rem; margin:0.35rem 0 0.25rem;">Native Gear Upgrades Matched to Your Settings</h2>
+                <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">Optimize your physical hardware to unlock maximum performance from your settings:</p>
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:1.25rem;">
+            
+            <!-- 1. KONTROLFREEK THUMBSTICKS (Aim Sensitivity & Deadzone Match) -->
+            <article class="gear-match-card" style="border-color:var(--neon-pink);">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="user-badge" style="background:var(--neon-pink); color:#fff; font-size:0.72rem; font-weight:800;">PRECISION AIM MATCH</span>
+                        <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-green); font-weight:800;">$16.99</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1.15rem; margin:0.25rem 0 0.35rem;">KontrolFreek Heist Performance Thumbsticks</h3>
+                    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.65rem;">
+                        Adds 10.2mm of added arc distance to your right analog stick, allowing you to crank Aim Sensitivity to <strong>8+</strong> while maintaining sub-millimeter headshot accuracy at 30 FPS.
+                    </p>
+                    <div style="font-size:0.75rem; color:var(--neon-cyan); background:rgba(0,240,255,0.06); padding:0.35rem 0.55rem; border-radius:4px; margin-bottom:0.75rem;">
+                        🎯 <strong>Settings Synergies:</strong> Sensitivity 7–8 &bull; Deadzones 0.05
+                    </div>
+                </div>
+                <a href="https://www.amazon.com/s?k=KontrolFreek+Performance+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-amber" style="text-align:center; padding:0.5rem; font-size:0.82rem;">
+                    📦 Check KontrolFreek on Amazon ($16.99) &rarr;
+                </a>
+            </article>
+
+            <!-- 2. DUALSENSE EDGE PRO (Aim Response Curve & Remapping Match) -->
+            <article class="gear-match-card" style="border-color:var(--neon-cyan);">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="user-badge" style="background:var(--neon-cyan); color:#000; font-size:0.72rem; font-weight:800;">CONTROLLER PRO</span>
+                        <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-cyan); font-weight:800;">Official Sony</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1.15rem; margin:0.25rem 0 0.35rem;">DualSense Edge Wireless Controller</h3>
+                    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.65rem;">
+                        Hardware-level deadzone curve customization, swappable analog stick modules, adjustable trigger stops for rapid pistol firing, and rear back paddles for jump/reload without lifting thumbs.
+                    </p>
+                    <div style="font-size:0.75rem; color:var(--neon-green); background:rgba(0,255,136,0.06); padding:0.35rem 0.55rem; border-radius:4px; margin-bottom:0.75rem;">
+                        🎯 <strong>Settings Synergies:</strong> Trigger Stops On &bull; Zero Deadzone Calibration
+                    </div>
+                </div>
+                <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-amber" style="text-align:center; padding:0.5rem; font-size:0.82rem;">
+                    📦 Compare DualSense Edge on Amazon &rarr;
+                </a>
+            </article>
+
+            <!-- 3. PULSE ELITE HEADSET (Audio & Directional Footsteps Match) -->
+            <article class="gear-match-card" style="border-color:var(--neon-yellow);">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="user-badge" style="background:var(--neon-yellow); color:#000; font-size:0.72rem; font-weight:800;">TEMPEST 3D AUDIO</span>
+                        <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-yellow); font-weight:800;">Planar Magnetic</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1.15rem; margin:0.25rem 0 0.35rem;">PlayStation PULSE Elite Wireless Headset</h3>
+                    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.65rem;">
+                        Planar magnetic drivers recreate realistic directional footsteps, vault alarm echoes, and coastal swamp helicopter flyovers with zero audio distortion or lag.
+                    </p>
+                    <div style="font-size:0.75rem; color:var(--neon-yellow); background:rgba(255,184,0,0.06); padding:0.35rem 0.55rem; border-radius:4px; margin-bottom:0.75rem;">
+                        🎯 <strong>Settings Synergies:</strong> 3D Audio Profile 2 &bull; Stealth Footstep Boost
+                    </div>
+                </div>
+                <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-amber" style="text-align:center; padding:0.5rem; font-size:0.82rem;">
+                    📦 View PULSE Elite on Amazon &rarr;
+                </a>
+            </article>
+
+            <!-- 4. SAMSUNG 990 PRO 2TB SSD (Texture Streaming & Storage Match) -->
+            <article class="gear-match-card" style="border-color:var(--neon-green);">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="user-badge" style="background:var(--neon-green); color:#000; font-size:0.72rem; font-weight:800;">212GB READY</span>
+                        <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--neon-green); font-weight:800;">7,450 MB/s</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1.15rem; margin:0.25rem 0 0.35rem;">Samsung 990 PRO 2TB NVMe SSD (Heatsink)</h3>
+                    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.65rem;">
+                        GTA 6's massive 200GB+ footprint requires blistering read speeds. The 990 PRO's 7,450 MB/s throughput eliminates open-world vehicle pop-in and fast-travel loading hitches.
+                    </p>
+                    <div style="font-size:0.75rem; color:var(--neon-cyan); background:rgba(0,240,255,0.06); padding:0.35rem 0.55rem; border-radius:4px; margin-bottom:0.75rem;">
+                        🎯 <strong>Settings Synergies:</strong> Zero Texture Pop-In &bull; Fast Travel Load Reduction
+                    </div>
+                </div>
+                <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-amber" style="text-align:center; padding:0.5rem; font-size:0.82rem;">
+                    📦 View Samsung 990 PRO on Amazon &rarr;
+                </a>
+            </article>
+
+            <!-- 5. EXITLAG LOW-PING ROUTING (Multiplayer Netcode & Anti-Lag Match) -->
+            <article class="gear-match-card" style="border-color:#a855f7;">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                        <span class="user-badge" style="background:#a855f7; color:#fff; font-size:0.72rem; font-weight:800;">LOW-PING ROUTING</span>
+                        <span style="font-family:var(--font-mono); font-size:0.85rem; color:#c084fc; font-weight:800;">Code 10386953</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1.15rem; margin:0.25rem 0 0.35rem;">ExitLag Multipath Ping Reducer</h3>
+                    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.65rem;">
+                        GTA 6 multiplayer lobbies use peer-to-peer sync during complex 4-player vault infiltrations. ExitLag multiplexes packet routes simultaneously to prevent disconnects and drop jitter.
+                    </p>
+                    <div style="font-size:0.75rem; color:#c084fc; background:rgba(168,85,247,0.06); padding:0.35rem 0.55rem; border-radius:4px; margin-bottom:0.75rem;">
+                        🎯 <strong>Settings Synergies:</strong> Zero Packet Loss &bull; Co-Op Session Lock
+                    </div>
+                </div>
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="noopener sponsored" data-aff-partner="exitlag" class="btn btn-primary" style="background:linear-gradient(135deg, #a855f7, #7c3aed); text-align:center; padding:0.5rem; font-size:0.82rem;">
+                    🚀 Try ExitLag Free (Code: 10386953) &rarr;
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: PS5 PRO & 120HZ EXPLAINER -->
+    <section class="tool-box" style="margin-bottom:2.5rem; border-color:var(--neon-cyan);">
+        <h2 style="color:#fff; font-size:1.35rem; margin:0 0 0.65rem;">Why GTA 6 Targets 30 FPS &amp; How VRR 120Hz Displays Fix It</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
+            <div>
+                <strong style="color:var(--neon-cyan);">Rockstar's Heavy Simulation Pipeline:</strong>
+                <p style="margin:0.35rem 0 0;">
+                    GTA 6 runs advanced cloth physics, water simulation across the Keys, real-time AI crowd schedules, and ray-traced global illumination that stress the CPU architecture. Rockstar chose a stable, pristine 30 FPS target over dynamic 60 FPS compromises.
+                </p>
+            </div>
+            <div>
+                <strong style="color:var(--neon-green);">The 120Hz VRR Container Advantage:</strong>
+                <p style="margin:0.35rem 0 0;">
+                    If your TV supports HDMI 2.1 120Hz with Variable Refresh Rate (VRR), the console outputs at a 120Hz refresh interval. Each 30 FPS frame is refreshed exactly 4 times (40Hz/120Hz timing), eliminating standard 60Hz 3:2 pulldown stutter and making camera pans look remarkably fluid.
+                </p>
+            </div>
+            <div>
+                <strong style="color:var(--neon-yellow);">PSSR Upscaling on PS5 Pro:</strong>
+                <p style="margin:0.35rem 0 0;">
+                    On PlayStation 5 Pro, Rockstar leverages PlayStation Spectral Super Resolution (PSSR) machine-learning reconstruction. This preserves sharp edges and neon reflections in Downtown Vice City with virtually zero temporal ghosting.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section style="margin-top:2.75rem;">
+        <div class="section-header">
+            <div>
+                <h2>Frequently Asked Questions: GTA 6 Settings</h2>
+                <p>Troubleshooting input lag, TV calibrations, and stick deadzone configurations.</p>
+            </div>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-item open">
+                <div class="faq-question">Why shouldn't I turn Motion Blur completely off at 30 FPS? <span>+</span></div>
+                <div class="faq-answer">At 30 frames per second, frames are displayed for 33.3 milliseconds each. Without slight shutter motion blur, quick camera rotations appear stepped and strobe-like (judder). Setting Motion Blur to Level 1 or 2 provides the ideal middle ground: smooth frame blending without smear.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What should I set my controller deadzones to? <span>+</span></div>
+                <div class="faq-answer">Start at 0.05. If your character or camera moves without touching the stick, incrementally increase it by 0.01 until the drift completely stops. Lower deadzones yield faster reaction times during high-stakes heist shootouts.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How does ExitLag help GTA 6 multiplayer? <span>+</span></div>
+                <div class="faq-answer">GTA 6 co-op missions link players across peer-to-peer and dedicated hybrid servers. ExitLag routes game traffic through dedicated low-congestion gaming servers using multipath packet delivery, avoiding packet drops and mid-heist disconnects.</div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="brand-logo" style="text-decoration:none; font-size:1.35rem;">
+                    <span>GTA 6</span>
+                    <span class="vi">HEIST GUIDE</span>
+                    <span class="brand-badge">Syndicate v3.2</span>
+                </a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive tactical intelligence, interactive radar, and heist payout optimization network for Grand Theft Auto VI.
+                </p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/settings.html" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem; color:var(--neon-cyan); border-color:var(--neon-cyan);">⚙️ Settings Guide</a>
+                <a href="/giveaways.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🎁 Giveaways &amp; Drops &rarr;</a>
+            </div>
+        </div>
+
+        <div class="footer-links-grid">
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Tactical Tools</span>
+                <ul class="footer-col-links">
+                    <li><a href="/cheats.html">61 Cheat Codes &amp; Tracker</a></li>
+                    <li><a href="/settings.html">Best PS5 &amp; Xbox Settings</a></li>
+                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
+                    <li><a href="/vault-hack-trainer.html">Vault Hack Trainer (3D)</a></li>
+                    <li><a href="/free" style="color:var(--neon-amber); font-weight:700;">⚡ 100% Free Tools Hub</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Radar &amp; Vaults</span>
+                <ul class="footer-col-links">
+                    <li><a href="/interactive-map.html">Leonida Radar GPS Map</a></li>
+                    <li><a href="/money-guide.html">Chapter 1 &amp; 2 Fast Cash</a></li>
+                    <li><a href="/weapons-bonuses.html">24 Ammu-Nation Locations</a></li>
+                    <li><a href="/leonida-reserve.html">Leonida State Gold Reserve</a></li>
+                    <li><a href="/sinfrontera-bank.html">Sinfrontera National Bank</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-green);">👥 Intel &amp; Lore</span>
+                <ul class="footer-col-links">
+                    <li><a href="/crew-database.html">16 Operative Bios &amp; Cuts</a></li>
+                    <li><a href="/weapons-gear.html">Weapons &amp; Bag Weight</a></li>
+                    <li><a href="/vehicles-getaway-cars.html">186 Confirmed Vehicles</a></li>
+                    <li><a href="/live-intel.html">Live 1.5X Bonus Wire</a></li>
+                    <li><a href="/forum.html">LFG Co-Op Syndicate Lounge</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-yellow);">🎁 Day-2 Deals</span>
+                <ul class="footer-col-links">
+                    <li><a href="/giveaways.html">Kick 10K &amp; Twitch Drops</a></li>
+                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer">🔥 Amazon PS5 Day-2 Delivery</a></li>
+                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored">⚡ G2A Game Keys (Save 20%)</a></li>
+                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="noopener sponsored">🛡️ ExitLag Ping Reducer (Code: 10386953)</a></li>
+                    <li><a href="/acquisitions.html" style="color:var(--neon-yellow); font-weight:700;">💼 Acquisitions &amp; Partner Hub</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-secondary-strip">
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="/cheats.html" style="color: var(--neon-yellow); text-decoration: none; font-weight: 700;">⚡ Cheats</a>
+                <a href="/settings.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">⚙️ Settings</a>
+                <a href="/money-guide.html" style="color: var(--neon-green); text-decoration: none; font-weight: 700;">💰 Cash Guide</a>
+                <a href="/weapons-bonuses.html" style="color: #f43f5e; text-decoration: none; font-weight: 700;">🔫 Gun Stores</a>
+                <a href="/giveaways.html" style="color: #c084fc; text-decoration: none; font-weight: 700;">🎁 Giveaways</a>
+                <a href="/about.html" style="color: #94a3b8; text-decoration: none;">About</a>
+                <a href="/contact.html" style="color: #94a3b8; text-decoration: none;">Contact</a>
+                <a href="/privacy-policy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                <a href="/terms.html" style="color: #94a3b8; text-decoration: none;">Terms &amp; DMCA</a>
+            </div>
+            <div>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (v3.2)</span>
+            </div>
+        </div>
+
+        <div class="footer-disclaimer">
+            <p style="margin:0;">
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and GetApexLocal (CutFlow Pro &amp; ClipBounty Studio) partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="/site-config.js"></script>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

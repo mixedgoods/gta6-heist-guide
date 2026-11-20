@@ -133,3 +133,30 @@ CREATE TABLE IF NOT EXISTS contact_inquiries (
     source_page TEXT DEFAULT '/contact.html',
     created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS live_discoveries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT NOT NULL,
+    title TEXT NOT NULL,
+    code_or_location TEXT NOT NULL,
+    unlock_condition TEXT NOT NULL,
+    upvotes INTEGER DEFAULT 1,
+    verified INTEGER DEFAULT 0,
+    submitted_by TEXT DEFAULT 'ViceOperative',
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT OR IGNORE INTO live_discoveries (id, type, title, code_or_location, unlock_condition, upvotes, verified, submitted_by) VALUES
+(1, 'cheat', '$250,000 Instant Cash', '↑ → ↓ ← ↑ ← ↓ →', 'Finish story campaign', 42, 1, 'SyndicateRecon'),
+(2, 'cheat', 'Raise Wanted Level (+1 Star)', '← ↓ → ↓ ↑ → ↑', 'Lose 3-star wanted level 50 times', 28, 1, 'ViceRunner'),
+(3, 'cheat', 'Max Body Armor', '↓ ↑ ← ↑ ↑ ↑ ↑ ↑ ↓ ↓', 'Complete 100 workouts at Vice City Muscle Gym', 35, 1, 'Enforcer99'),
+(4, 'cheat', 'Vehicle Ramming Force Multiplier', '↓ ↑ ← ← → ↓ ← ↑ ↓', 'Kill 25 cartel enemies with vehicles', 19, 1, 'WheelmanPro'),
+(5, 'cheat', '1986 Retro CRT Filter', '↓ ↓ ↑ → → ↑ ← ← ← →', 'Rob 50 convenience stores with partner', 23, 1, 'ViceNostalgia'),
+(6, 'cheat', 'Spawn HVY Bulldozer', '← ↑ → ↓ ← → → ↑', 'Discover in Progress menu in Port Gellhorn industrial yard', 31, 1, 'HeavyOperator'),
+(7, 'cash_spot', 'Fishing Shacks Secret Safe', 'North Grassrivers Basin Dock #3', 'Chapter 1: Crack lockbox behind fish cleaning bench ($4,200 cash)', 17, 1, 'SwampRat'),
+(8, 'cash_spot', 'Exotic Animals Front Smuggler Crate', 'Kelly County Reptile Farm Shed', 'Chapter 1: Pick rear padlock for bearer bonds ($6,800 cash)', 14, 1, 'AlligatorAl'),
+(9, 'cash_spot', 'Sunrise RV Park Hidden Floorboard', 'Trailer #14 (Lot B), Ambrosia Border', 'Chapter 2: Pry up loose floorboards under bed ($8,500 cash)', 11, 1, 'TrailerKing'),
+(10, 'cash_spot', 'June Warehouse Stash Locker', 'Port Gellhorn Industrial Sector Pier 2', 'Chapter 2: Bolt-cutter rear roll-up door ($12,000 cash)', 9, 1, 'DockMaster'),
+(11, 'weapon_bonus', 'Vice City Firearms Custom Suppressors', 'Downtown Vice City (corner 4th & Biscayne)', 'Open Day-1; discounted 9mm & 5.56 tactical suppressors', 16, 1, 'SilentGunner'),
+(12, 'weapon_bonus', 'Jason Duval Signature ES9 Claim', 'Any Safehouse Weapon Trunk', 'Ultimate Edition claim: check personal duffle bag in trunk armory', 25, 1, 'MastermindHQ');
+

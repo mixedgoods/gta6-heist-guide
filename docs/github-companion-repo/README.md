@@ -26,6 +26,10 @@ An open-source companion data repository and tactical intelligence index for **[
 
 All interactive tools are 100% free with zero paywalls, instant browser caching, and zero tracking cookies:
 
+- **[61 GTA 6 Cheat Codes & Input Tracker](https://www.gta6heistguide.com/cheats.html)** — Verified D-Pad arrow combinations ($250k money, bulldozer, armor, filter) with localStorage progress save and Cloudflare D1 auto-verifier.
+- **[Best GTA 6 Settings (PS5 & Xbox 30 FPS Guide)](https://www.gta6heistguide.com/settings.html)** — 33.3ms frame pacing calibration, Aim Sensitivity 7-8, deadzones, TV Game Mode & HGiG HDR, plus KontrolFreek and Samsung 990 PRO gear pairing.
+- **[Chapter 1 & 2 Fast Cash & Illegal Operations Checklist](https://www.gta6heistguide.com/money-guide.html)** — Step-by-step checklist for Fishing Shacks, Exotic Animals, Weed Grows, and Junkyards to fund the BuckMe app savings goal.
+- **[24 Ammu-Nation Gun Stores & Ultimate Edition Claim Guide](https://www.gta6heistguide.com/weapons-bonuses.html)** — Complete 24-store directory (Vice City Firearms, Martez Empenos, Black Eagle) + Jason's Duval Signature ES9 pistol & ink unlock steps.
 - **[Free Heist Tools Suite Hub](https://www.gta6heistguide.com/free)** — Instant single-page launcher for all Leonida tactical utilities.
 - **[GTA 6 Heist Payout Calculator](https://www.gta6heistguide.com/heist-payout-calculator.html)** — Calculate solo vs duo vs 4-player crew net splits, specialist cuts, and hourly earning rates.
 - **[Leonida Interactive Radar Map](https://www.gta6heistguide.com/interactive-map.html)** — Second-screen vector GPS map with safehouse fences, collectible markers, and sewer entry points.

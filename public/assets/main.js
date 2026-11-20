@@ -442,11 +442,11 @@ const GTA6 = {
       const now = Date.now();
       const diff = launchTarget - now;
       if (launchEl) {
-        launchEl.innerText = diff <= 0 ? 'WEEKLY 1.5X BONUS LIVE' : this.formatDiff(diff);
+        launchEl.innerText = diff <= 0 ? '🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS' : this.formatDiff(diff);
       }
       if (diff <= 0) {
         document.querySelectorAll('.launch-mode-label').forEach((el) => {
-          el.innerText = 'LEONIDA META:';
+          el.innerText = '🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS';
         });
       }
       if (weeklyEl) {

@@ -1,10 +1,10 @@
 # GTA6HeistGuide.com — Plain-English SEO & Technical Health Report
 
-**Run Mode:** `LOCAL` | **Checked At:** `2026-11-20T14:34:28Z` | **Total Sitemap URLs:** `108`
+**Run Mode:** `LOCAL` | **Checked At:** `2026-11-20T15:28:06Z` | **Total Sitemap URLs:** `117`
 
 ## 1. Two-Stage Audit Results
 - **Stage 1 (Raw HTML Check — what Googlebot & AI crawlers read first):**
-  - Pages returning HTTP 200 OK: **108 / 108**
+  - Pages returning HTTP 200 OK: **117 / 117**
   - Broken internal links (404s): **0**
   - Pages missing `<title>`: **0**
   - Pages missing `<meta name="description">`: **0**
@@ -15,10 +15,10 @@
   - Repeated generic boilerplate paragraphs across >15 pages: **0**
 
 - **Stage 2 (Real Browser / Playwright JavaScript Render Check):**
-  - Pages rendered in headless Chromium: **108** (`108` HTTP 200)
+  - Pages rendered in headless Chromium: **117** (`117` HTTP 200)
   - Pages with JavaScript crashes (`pageerror`): **0**
   - Pages with broken local images: **0**
-  - Pages loading 1-file `site-config.js` cleanly: **108 / 108**
+  - Pages loading 1-file `site-config.js` cleanly: **117 / 117**
 
 ## 2. AI Search & Google AdSense Readiness
 - **`robots.txt` Bot Check (`Googlebot`, `Bingbot`, `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`):** **ALL ALLOWED**

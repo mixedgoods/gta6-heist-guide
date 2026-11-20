@@ -25,6 +25,10 @@ LOG_CSV = ROOT / "seo_reports" / "seo_rankings_log.csv"
 CORE_SEARCH_CHECK_PATHS = {
     "/",
     "/free/",
+    "/cheats",
+    "/settings",
+    "/money-guide",
+    "/weapons-bonuses",
     "/heist-payout-calculator",
     "/interactive-map",
     "/vault-hack-trainer",

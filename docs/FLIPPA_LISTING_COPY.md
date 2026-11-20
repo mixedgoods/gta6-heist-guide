@@ -13,16 +13,23 @@ Hosting, edge APIs, and SQL database storage run completely on **Cloudflare Page
 ---
 
 ## Key Highlights & Value Drivers
-- **Exact-Match `.COM` Domain (`gta6heistguide.com`):** Instantly memorable category brand targeting heist walkthroughs, calculators, interactive maps, Twitch Drops, and co-op crew finding.
+- **Exact-Match `.COM` Domain (`gta6heistguide.com`):** Instantly memorable category brand targeting heist walkthroughs, cheat codes, 30 FPS settings, early cash guides, interactive maps, Twitch Drops, and co-op crew finding.
 - **$0/Month Edge Architecture:** Zero WordPress bloat, zero VPS bills, zero database maintenance. Served globally via Cloudflare CDN.
 - **High-Retention Interactive Utilities (Zero Login Paywall):**
+  - **61 Interactive Cheat Codes & Phone Unlock Tracker** (`/cheats.html`) with D1 crowdsourced auto-verifier
+  - **Best PS5, PS5 Pro & Xbox Settings 30 FPS Cheat Sheet** (`/settings.html`) with native Amazon & ExitLag hardware pairings
+  - **Chapter 1 & 2 Fast Cash & Illegal Operations Checklist** (`/money-guide.html`) with BuckMe app savings tracking
+  - **24 Ammu-Nation Gun Stores Directory & Ultimate Edition Claim Guide** (`/weapons-bonuses.html`)
+  - **Twitch Drops & Kick 10,000 Giveaway Tracker** (`/giveaways.html`) with $0 Amazon Prime sub-linking guide
   - **Net $/Hour Heist Payout Calculator & Squad Cut Splitter** (`/free`, `/heist-planner`, `/heist-payout-calculator`)
   - **Interactive 6-Region Leonida Radar Map** (`/interactive-map`, `/leonida-interactive-map`) with filterable D1 community markers
   - **15-Second Biometric Vault Keypad Hack Trainer** (`/vault-hack-trainer`)
-  - **GTA 6 Twitch Drops & Prime Gaming Giveaways Tracker** (`/giveaways`)
   - **Live SATCOM Stream Hub & Second-Screen HUD** (`/live`)
   - **D1-Backed Co-Op LFG Crew Lounge** (`/forum`)
-- **Autonomous Content & Database Updates:** GitHub Actions pipeline runs every 2 hours to refresh confirmed GTA 6 vehicles, weapons, characters, safehouses, and photography automatically.
+- **Autonomous Content & Database Updates:**
+  - 12-hour GitHub Actions RSS bot (`sync_gta6_intel.py`) syncing IGN, GameSpot, Push Square, PC Gamer, and Reddit r/GTA6 to `/data/live_intel.json`.
+  - 2-hour photo and asset scraper (`scripts/auto_sync_gta6_database.py`).
+  - Crowdsourced D1 auto-promoter that automatically verifies player-submitted cheats and cash spots once 3+ players upvote.
 - **Buyer-Ready 60-Second Monetization (`public/site-config.js`):** Change one JavaScript object to swap Amazon Associates, G2A, Eneba, ExitLag, Whop/digital store links, contact email, GA4 ID, and optional Google AdSense publisher ID across all 100+ pages simultaneously.
 - **Google AdSense & AI Search Ready:** Includes `/about.html`, `/contact.html`, `/privacy-policy.html`, `/terms.html` (FTC + DMCA), `/ads.txt`, `/llms.txt`, open AI-crawler `robots.txt` directives (`GPTBot`, `ClaudeBot`, `PerplexityBot`, `Googlebot`), and validated JSON-LD structured data.
 - **Built-In Owner Proof & Local SEO Toolkit:**

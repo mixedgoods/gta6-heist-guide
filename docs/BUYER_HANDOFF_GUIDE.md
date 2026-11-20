@@ -6,8 +6,11 @@ Welcome! This site is engineered to run at **$0/month** on Cloudflare Pages + Cl
 
 ## 1. Architecture at a Glance ($0/Month Stack)
 - **Static & Edge Hosting:** Cloudflare Pages serving `./public` + serverless Functions in `./functions/` (100% free tier).
-- **Database:** Cloudflare D1 SQLite (`gta6heistguide-db`) storing VIP email subscribers, forum LFG squads, dynamic guides, map pins, contact inquiries, and affiliate outbound click logs.
-- **2-Hour Auto Updater:** GitHub Actions (`.github/workflows/auto-update-intel.yml`) runs every 2 hours to refresh confirmed GTA 6 vehicles, characters, weapons, safehouses, photos, and deploy updates automatically.
+- **Database:** Cloudflare D1 SQLite (`gta6heistguide-db`) storing VIP email subscribers, forum LFG squads, dynamic guides, map pins, contact inquiries, live crowdsourced cheat/cash spot discoveries (`live_discoveries`), and affiliate outbound click logs.
+- **Auto-Sync Engines ($0/Month GitHub Actions):**
+  - **12-Hour Intel, Cheats & Patch Sync** (`.github/workflows/auto-sync-gta6.yml` + `sync_gta6_intel.py`): Fetches public feeds (IGN, GameSpot, Push Square, PC Gamer, Reddit r/GTA6) every 12 hours, updates `/data/live_intel.json`, deploys to Cloudflare Pages, and pings search crawlers via IndexNow.
+  - **2-Hour Auto Updater** (`.github/workflows/auto-update-intel.yml`): Refreshes confirmed GTA 6 vehicles, characters, weapons, safehouses, and photos.
+  - **Crowdsourced Auto-Verifier**: Real-time player submissions on `/cheats.html`, `/money-guide.html`, and `/weapons-bonuses.html` that auto-promote into Verified Live once 3+ players confirm.
 
 ---
 
