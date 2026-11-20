@@ -120,7 +120,6 @@ const STATIC_ROUTES = [
     "priority": "0.88"
   },
   {
-    "loc": "https://www.gta6heistguide.com/forum",
     "changefreq": "hourly",
     "priority": "0.88"
   },
@@ -165,7 +164,6 @@ const STATIC_ROUTES = [
     "priority": "0.88"
   },
   {
-    "loc": "https://www.gta6heistguide.com/profile",
     "changefreq": "weekly",
     "priority": "0.88"
   },

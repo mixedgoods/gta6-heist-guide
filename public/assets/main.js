@@ -127,7 +127,7 @@ const GTA6 = {
       `➕ **Add:** ${s.contactTag}`,
     ];
     if (s.notes) lines.push(`📝 ${s.notes}`);
-    lines.push('🔗 Find or post squads: https://www.gta6heistguide.com/forum#lfg-hub');
+    lines.push('🔗 Find or post squads: https://www.gta6heistguide.com/interactive-map');
     return lines.join('\n');
   },
 
@@ -161,7 +161,7 @@ const GTA6 = {
       this.playBeep(520, 'triangle', 0.05);
       this.showToast('✍️ Enter your real PSN / Xbox / Discord tag below to publish your Day-1 Squad!');
     } else {
-      window.location.href = '/forum#lfg-hub';
+      window.location.href = '/interactive-map';
     }
   },
 
@@ -1056,7 +1056,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 ----------------------------------------------------------------------
 - Live Meta & Patch Intel: https://www.gta6heistguide.com/live-intel.html
 - Giveaways & Twitch Drops: https://www.gta6heistguide.com/giveaways.html
-- LFG Crew Matchmaker: https://www.gta6heistguide.com/forum.html
+- LFG Crew Matchmaker: https://www.gta6heistguide.com/interactive-map
 - Interactive Cut Calculator: https://www.gta6heistguide.com/heist-planner.html
 `;
       const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
