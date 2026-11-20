@@ -1,5 +1,5 @@
 {
-  "lastSynced": "2026-11-19T22:24:38Z",
+  "lastSynced": "2026-11-20T06:27:47Z",
   "version": "2026.11.19-sync-v4",
   "source": "Rockstar Games Official Media & GTA Community Verified Database",
   "characters": [
@@ -192,6 +192,18 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
+      "id": "char-apex",
+      "name": "Apex",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-apex.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
       "id": "char-chase",
       "name": "Chase",
       "category": "story",
@@ -200,6 +212,30 @@
       "cut": "Contact",
       "district": "Ambrosia",
       "image": "assets/char-chase.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-dardan",
+      "name": "Dardan",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-dardan.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-galecki",
+      "name": "Galecki",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-galecki.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -236,6 +272,18 @@
       "cut": "Antagonist / Law",
       "district": "Vice City Metro",
       "image": "assets/char-mendez.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-niko-bellic",
+      "name": "Niko Bellic",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-niko-bellic.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -8664,7 +8712,7 @@
   },
   "staticAssetVersion": "20261119_v3",
   "catalogTotals": {
-    "characters": 25,
+    "characters": 29,
     "weapons": 47,
     "vehicles": 186,
     "masks": 16,
