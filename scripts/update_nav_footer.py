@@ -4,13 +4,13 @@ import re
 
 PUBLIC_DIR = r"C:\Users\Shawn\Desktop\gta6heistguide\public"
 
-NAV_RADIO = '<li><a href="/radio.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>'
-NAV_SECRETS = '<li><a href="/secrets.html" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>'
+NAV_RADIO = '<li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>'
+NAV_SECRETS = '<li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>'
 
-FOOTER_COL_RADIO = '<li><a href="/radio.html" style="color:var(--neon-cyan); font-weight:700;">📻 Radio Stations &amp; Music</a></li>'
-FOOTER_COL_SECRETS = '<li><a href="/secrets.html" style="color:var(--neon-pink); font-weight:700;">🥚 Secrets &amp; Cryptids</a></li>'
+FOOTER_COL_RADIO = '<li><a href="/radio" style="color:var(--neon-cyan); font-weight:700;">📻 Radio Stations &amp; Music</a></li>'
+FOOTER_COL_SECRETS = '<li><a href="/secrets" style="color:var(--neon-pink); font-weight:700;">🥚 Secrets &amp; Cryptids</a></li>'
 
-FOOTER_STRIP_LINKS = '<a href="/radio.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">📻 Radio</a>\n                  <a href="/secrets.html" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">🥚 Secrets</a>'
+FOOTER_STRIP_LINKS = '<a href="/radio" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">📻 Radio</a>\n                  <a href="/secrets" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">🥚 Secrets</a>'
 
 def update_file(filepath):
     filename = os.path.basename(filepath)
