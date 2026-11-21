@@ -1,5 +1,5 @@
 {
-  "lastSynced": "2026-11-21T15:58:32Z",
+  "lastSynced": "2026-11-21T21:36:13Z",
   "version": "2026.11.19-sync-v4",
   "source": "Rockstar Games Official Media & GTA Community Verified Database",
   "characters": [
@@ -180,6 +180,18 @@
       "source": "Rockstar Trailer 1 & Official Cast"
     },
     {
+      "id": "char-aldo-m-ndez",
+      "name": "Aldo M\u00e9ndez",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-aldo-m-ndez.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
       "id": "char-andr-s-de-le-n",
       "name": "Andr\u00e9s de Le\u00f3n",
       "category": "story",
@@ -240,14 +252,14 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
-      "id": "char-donnie",
-      "name": "Donnie",
+      "id": "char-donnie-carter",
+      "name": "Donnie Carter",
       "category": "story",
       "role": "Confirmed GTA VI Character",
       "specialty": "Leonida Underworld & Intel",
       "cut": "Story / Contact",
       "district": "State of Leonida",
-      "image": "assets/char-donnie.webp",
+      "image": "assets/char-donnie-carter.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -264,18 +276,6 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
-      "id": "char-pete-galeki",
-      "name": "Pete Galeki",
-      "category": "story",
-      "role": "Confirmed GTA VI Character",
-      "specialty": "Leonida Underworld & Intel",
-      "cut": "Story / Contact",
-      "district": "State of Leonida",
-      "image": "assets/char-pete-galeki.webp",
-      "status": "CONFIRMED",
-      "source": "Auto-Synced Official GTA Wiki"
-    },
-    {
       "id": "char-jack-howitzer",
       "name": "Jack Howitzer",
       "category": "story",
@@ -288,26 +288,26 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
-      "id": "char-mandy",
-      "name": "Mandy",
+      "id": "char-jimmy-de-santa",
+      "name": "Jimmy De Santa",
       "category": "story",
-      "role": "Port Gellhorn Harbor Informant",
-      "specialty": "Dockside Manifests",
-      "cut": "Informant",
-      "district": "Port Gellhorn",
-      "image": "assets/char-mandy.webp",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-jimmy-de-santa.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
-      "id": "char-mendez",
-      "name": "Mendez",
+      "id": "char-mandy-russell",
+      "name": "Mandy Russell",
       "category": "story",
-      "role": "VCPD Narcotics & Vice Investigator",
-      "specialty": "Federal Wiretaps & Raids",
-      "cut": "Antagonist / Law",
-      "district": "Vice City Metro",
-      "image": "assets/char-mendez.webp",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-mandy-russell.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -332,6 +332,18 @@
       "cut": "Story / Contact",
       "district": "State of Leonida",
       "image": "assets/char-niko-bellic.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-pete-galeki",
+      "name": "Pete Galeki",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-pete-galeki.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -396,6 +408,18 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
+      "id": "char-stefanie-gates",
+      "name": "Stefanie Gates",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-stefanie-gates.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
       "id": "char-tom-s",
       "name": "Tom\u00e1s",
       "category": "story",
@@ -404,6 +428,18 @@
       "cut": "Story / Contact",
       "district": "State of Leonida",
       "image": "assets/char-tom-s.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-vicki",
+      "name": "Vicki",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-vicki.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -3369,6 +3405,13 @@
   "youtubeWire": [
     {
       "channel": "Digital Foundry",
+      "title": "Is 30FPS A Deal Breaker For Grand Theft Auto 6?",
+      "url": "https://www.youtube.com/watch?v=Ekf8ek56hYE",
+      "published": "2026-11-21T16:00:39+00:00",
+      "thumbnail": "https://i.ytimg.com/vi/Ekf8ek56hYE/hqdefault.jpg"
+    },
+    {
+      "channel": "Digital Foundry",
       "title": "Grand Theft Auto 6: Beyond The Tech - Our Gameplay Thoughts",
       "url": "https://www.youtube.com/watch?v=kr3zHBiP0mU",
       "published": "2026-11-20T18:00:31+00:00",
@@ -3387,20 +3430,6 @@
       "url": "https://www.youtube.com/watch?v=SxCQbLHDBT0",
       "published": "2026-11-19T17:00:25+00:00",
       "thumbnail": "https://i.ytimg.com/vi/SxCQbLHDBT0/hqdefault.jpg"
-    },
-    {
-      "channel": "Digital Foundry",
-      "title": "Grand Theft Auto 6: Xbox Series X|S Performance + Resolution Tests",
-      "url": "https://www.youtube.com/watch?v=d7oUNVozaTE",
-      "published": "2026-11-18T18:57:51+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/d7oUNVozaTE/hqdefault.jpg"
-    },
-    {
-      "channel": "Digital Foundry",
-      "title": "Grand Theft Auto 6: The Tech That Takes It To The Next Level",
-      "url": "https://www.youtube.com/watch?v=pIpWCnPaIHA",
-      "published": "2026-11-18T16:00:32+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/pIpWCnPaIHA/hqdefault.jpg"
     },
     {
       "channel": "Rockstar Games (Official)",
@@ -8829,7 +8858,7 @@
   },
   "staticAssetVersion": "20261119_v3",
   "catalogTotals": {
-    "characters": 36,
+    "characters": 39,
     "weapons": 47,
     "vehicles": 187,
     "masks": 16,
