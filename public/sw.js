@@ -1,9 +1,11 @@
 // GTA 6 Heist Guide & Companion HUD - Service Worker
-const CACHE_NAME = 'gta6-heist-cache-v5';
+const CACHE_NAME = 'gta6-heist-cache-v6';
 const PRECACHE_URLS = [
   '/',
   '/site-config.js',
-  '/assets/style.css',
+  '/js/progress-store.js',
+  '/js/affiliates.js',
+  '/assets/style.css?v=20261121_v11',
   '/assets/main.js',
   '/assets/images/logo.webp',
   '/favicon.svg',
@@ -35,18 +37,16 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Only handle GET requests
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
-
-  // Skip cross-origin requests and API endpoints
   if (url.origin !== self.location.origin || url.pathname.startsWith('/api/')) return;
 
   const isHtmlRequest =
     event.request.mode === 'navigate' ||
     (event.request.headers.get('accept') || '').includes('text/html') ||
     url.pathname.endsWith('.html') ||
+    url.pathname.endsWith('/') ||
     url.pathname === '/';
 
   // Network-first for HTML pages so new deploys show up immediately
@@ -71,7 +71,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first with cache fallback for static assets (including /assets/images/logo.webp)
+  // Network-first with cache fallback for static assets
   event.respondWith(
     fetch(event.request)
       .then((networkResponse) => {

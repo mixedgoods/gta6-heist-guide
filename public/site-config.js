@@ -64,25 +64,47 @@ window.SITE_CONFIG = Object.freeze({
       }
     });
 
-    // Setup click support for .nav-dropdown
+    // Setup click support for .nav-dropdown (supports multiple dropdowns: Tools, Database)
     document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
       var btn = dd.querySelector('.nav-dropdown-btn');
       if (btn && !btn.dataset.bound) {
         btn.dataset.bound = 'true';
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
-          var isOpen = dd.classList.toggle('is-open');
+          var wasOpen = dd.classList.contains('is-open');
+          document.querySelectorAll('.nav-dropdown.is-open').forEach(function(other) {
+            if (other !== dd) {
+              other.classList.remove('is-open');
+              var ob = other.querySelector('.nav-dropdown-btn');
+              if (ob) ob.setAttribute('aria-expanded', 'false');
+            }
+          });
+          var isOpen = !wasOpen;
+          dd.classList.toggle('is-open', isOpen);
           btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
       }
     });
-    document.addEventListener('click', function() {
-      document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dd) {
-        dd.classList.remove('is-open');
-        var btn = dd.querySelector('.nav-dropdown-btn');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (!window._gta6DropdownGlobalBound) {
+      window._gta6DropdownGlobalBound = true;
+      document.addEventListener('click', function(e) {
+        if (e.target && e.target.closest && e.target.closest('.nav-dropdown-menu')) return;
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dd) {
+          dd.classList.remove('is-open');
+          var btn = dd.querySelector('.nav-dropdown-btn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
       });
-    });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dd) {
+            dd.classList.remove('is-open');
+            var btn = dd.querySelector('.nav-dropdown-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    }
 
     // Rotating Drops Tab label cycler in header
     var dropsTab = document.getElementById('rotatingDropsTab');

@@ -373,7 +373,7 @@ const GTA6 = {
       const now = Date.now();
       const diff = launchTarget - now;
       const launchDay = Math.max(1, Math.floor((now - launchTarget) / 86400000) + 1);
-      const liveBannerText = `🔥 GTA 6 IS LIVE — DAY-${launchDay} HEISTS, CHEATS, MAPS & DROPS`;
+      const liveBannerText = `🔥 GTA 6 Story Mode: LIVE (Day-${launchDay}) · GTA 6 Online: Expected 2027`;
       if (launchEl) {
         launchEl.innerText = diff <= 0 ? liveBannerText : this.formatDiff(diff);
       }
@@ -1635,11 +1635,26 @@ const GTA6 = {
       try {
         const hrefPath = normPath(new URL(link.href, window.location.origin).pathname);
         if (hrefPath === curPath) {
-          navLinks.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+          navLinks.querySelectorAll('a.active, .nav-dropdown-btn.active').forEach((a) => a.classList.remove('active'));
           link.classList.add('active');
+          const parentDd = link.closest('.nav-dropdown');
+          if (parentDd) {
+            const ddBtn = parentDd.querySelector('.nav-dropdown-btn');
+            if (ddBtn) ddBtn.classList.add('active');
+          }
         }
       } catch (e) {}
     });
+
+    // Ensure mobile menu drawer includes Launch Rewards & Install App actions on < 1024px
+    if (!navLinks.querySelector('.mobile-drawer-actions')) {
+      const mobileActLi = document.createElement('li');
+      mobileActLi.className = 'mobile-drawer-actions';
+      mobileActLi.innerHTML =
+        '<a href="/drops.html" class="btn-launch-rewards" style="flex:1; justify-content:center;">🎁 Launch Rewards</a>' +
+        '<button type="button" class="btn-pwa-top" style="flex:1; justify-content:center;" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert(\'Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!\')">📱 Install App</button>';
+      navLinks.appendChild(mobileActLi);
+    }
 
     const closeDrawer = () => {
       navLinks.classList.remove('open');

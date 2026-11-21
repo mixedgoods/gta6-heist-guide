@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.gta6heistguide.com/leonida-wanted-system">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/gear/gta6-box-pro.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v10">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v11">
     <script type="application/ld+json">
     {
   "@context": "https://schema.org",
@@ -89,33 +89,54 @@
     </script>
     <script>
         function calcEvasion() {
-            const stars = parseInt(document.getElementById('heatStarsRange').value);
-            document.getElementById('heatStarsVal').innerText = '★'.repeat(stars) + '☆'.repeat(6 - stars) + ' (' + stars + ' Stars)';
+            var rangeEl = document.getElementById('heatStarsRange');
+            if (!rangeEl) return;
+            var stars = parseInt(rangeEl.value, 10) || 4;
+            var starsValEl = document.getElementById('heatStarsVal');
+            if (starsValEl) {
+                starsValEl.textContent = '★'.repeat(stars) + '☆'.repeat(6 - stars) + ' (' + stars + ' Stars)';
+            }
 
-            const swapCar = document.getElementById('swapPlateCb').checked;
-            const disguise = document.getElementById('swapClothCb').checked;
-            const nightFog = document.getElementById('nightCoverCb').checked;
+            var swapCarEl = document.getElementById('swapPlateCb');
+            var disguiseEl = document.getElementById('swapClothCb');
+            var nightFogEl = document.getElementById('nightCoverCb');
+            var swapCar = swapCarEl ? swapCarEl.checked : false;
+            var disguise = disguiseEl ? disguiseEl.checked : false;
+            var nightFog = nightFogEl ? nightFogEl.checked : false;
 
-            let secs = stars * 48;
+            var baseSecs = stars * 48;
+            var secs = baseSecs;
             if (swapCar) secs *= 0.62;
             if (disguise) secs *= 0.72;
             if (nightFog) secs *= 0.85;
             secs = Math.max(15, Math.round(secs));
+            var savedPct = Math.round(((baseSecs - secs) / baseSecs) * 100);
 
-            let responseUnit = 'Vice Patrol Cruisers';
-            let conduit = 'Side-Alley Respray Garage';
+            var responseUnit = 'Vice Patrol Cruisers';
+            var conduit = 'Side-Alley Respray Garage';
+            var anprRisk = 'Low (Manual Plate Visual Only)';
             if (stars >= 5) {
                 responseUnit = 'NOOSE Helicopters + Armored Tactical Vans';
                 conduit = 'Vice Transit Subway Tunnel -> Swap Plates Underground';
+                anprRisk = 'Extreme (Citywide Toll Gantries + Chopper Thermal)';
             } else if (stars >= 3) {
                 responseUnit = 'High-Speed Interceptors + Drone Searchlights';
                 conduit = 'Ocean Blvd Storm Drain Conduits';
+                anprRisk = 'High (Bridge ANPR Cameras + Witness BOLO)';
             }
 
-            document.getElementById('evCooldown').innerText = secs + ' Seconds';
-            document.getElementById('evUnit').innerText = responseUnit;
-            document.getElementById('evRoute').innerText = conduit;
+            var cdEl = document.getElementById('evCooldown');
+            var unitEl = document.getElementById('evUnit');
+            var routeEl = document.getElementById('evRoute');
+            var redEl = document.getElementById('evReductionNote');
+            var anprEl = document.getElementById('evAnprRisk');
+            if (cdEl) cdEl.textContent = secs + ' Seconds';
+            if (unitEl) unitEl.textContent = responseUnit;
+            if (routeEl) routeEl.textContent = conduit;
+            if (redEl) redEl.textContent = savedPct > 0 ? ('-' + savedPct + '% vs ' + baseSecs + 's base heat') : ('Base ' + baseSecs + 's cooldown (no counter-forensics)');
+            if (anprEl) anprEl.textContent = anprRisk;
         }
+        document.addEventListener('DOMContentLoaded', calcEvasion);
     </script>
     <meta property="og:site_name" content="GTA6HeistGuide.com">
     <meta name="twitter:title" content="GTA 6 Wanted System, ANPR and Evasion | GTA 6 Guide">
@@ -135,10 +156,8 @@
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 Story Mode: LIVE (Day-3) · GTA 6 Online: Expected 2027</span>
             </span>
-            <span class="strip-divider">|</span>
-            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
     </div>
 </div>
@@ -150,30 +169,33 @@
             <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
         </div>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill active">Heists</a></li>
-            <li><a href="/map.html" class="nav-pill">🗺️ Map</a></li>
-            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
-            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
-            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/" class="nav-pill">Heists</a></li>
+            <li><a href="/map.html" class="nav-pill">Map</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">Money</a></li>
+            <li><a href="/gta-6-tips-and-tricks/" class="nav-pill">Tips &amp; Tricks</a></li>
+            <li><a href="/cheats.html" class="nav-pill">Cheats</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
-                    More <span class="nav-arrow">▾</span>
-                </button>
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio</a>
-                    <a href="/drops.html" class="nav-dropdown-item">🎁 Kick 10K Giveaway &amp; Drops</a>
-                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="nav-dropdown-item">🔑 Keys &amp; Deals</a>
-                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🛠️ All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
-                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
+                    <a href="/map.html" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Database <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
+                    <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
                     <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
-                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
-                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
-                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
+                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio Stations</a>
                 </div>
             </li>
         </ul>
@@ -222,16 +244,20 @@
             <div>
                 <div class="payout-item-title">Estimated Clear Time</div>
                 <div class="payout-item-val" id="evCooldown" style="color:var(--neon-green);">101 Seconds</div>
+                <div id="evReductionNote" style="font-size:0.74rem; color:#94a3b8; margin-top:0.25rem;">-47% vs 192s base heat</div>
             </div>
             <div>
                 <div class="payout-item-title">Active Pursuit Force</div>
-                <div class="payout-item-val" id="evUnit" style="color:var(--neon-pink); font-size:1.05rem;">Loading...</div>
+                <div class="payout-item-val" id="evUnit" style="color:var(--neon-pink); font-size:1.05rem;">High-Speed Interceptors + Drone Searchlights</div>
+                <div id="evAnprRisk" style="font-size:0.74rem; color:#fbbf24; margin-top:0.25rem;">High (Bridge ANPR Cameras + Witness BOLO)</div>
             </div>
             <div>
                 <div class="payout-item-title">Recommended Exit</div>
-                <div class="payout-item-val" id="evRoute" style="color:var(--neon-cyan); font-size:1.05rem;">Loading...</div>
+                <div class="payout-item-val" id="evRoute" style="color:var(--neon-cyan); font-size:1.05rem;">Ocean Blvd Storm Drain Conduits</div>
+                <div style="font-size:0.74rem; margin-top:0.25rem;"><a href="/map.html" style="color:var(--neon-cyan); text-decoration:underline;">Open Escape Conduits on Leonida Map &rarr;</a></div>
             </div>
         </div>
+        <script>if (typeof calcEvasion === 'function') calcEvasion();</script>
     </section>
 
     <section class="affiliate-banner">

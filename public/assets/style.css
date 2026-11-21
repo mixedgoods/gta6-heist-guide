@@ -4052,3 +4052,399 @@ body.has-ticker .bookmarks-fab {
     opacity: 0;
   }
 }
+
+/* =========================================================================
+   SYNDICATE v3.3 — 7-ITEM SINGLE-ROW NAV, DROPDOWNS, 4-CARD AMAZON GRID,
+   UNIFIED PROGRESS TOOLBAR & RESET MODAL, VERIFICATION BADGES
+   ========================================================================= */
+.navbar .nav-dropdown {
+  position: relative;
+}
+.navbar .nav-dropdown-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.navbar .nav-dropdown-btn:hover,
+.navbar .nav-dropdown.is-open .nav-dropdown-btn,
+.navbar .nav-dropdown-btn.active {
+  color: #fff;
+  background: rgba(0, 240, 255, 0.14);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+}
+.navbar .nav-dropdown .nav-arrow {
+  font-size: 0.72em;
+  transition: transform 0.2s ease;
+}
+.navbar .nav-dropdown.is-open .nav-arrow {
+  transform: rotate(180deg);
+}
+.navbar .nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: rgba(10, 12, 24, 0.98);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.78), 0 0 22px rgba(0, 240, 255, 0.15);
+  z-index: 1250;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.navbar .nav-dropdown.is-open > .nav-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.navbar .nav-dropdown-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 8px 11px !important;
+  height: auto !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.navbar .nav-dropdown-item:hover,
+.navbar .nav-dropdown-item.active {
+  background: rgba(0, 240, 255, 0.12) !important;
+  color: #fff !important;
+  border-color: rgba(0, 240, 255, 0.32) !important;
+  transform: none !important;
+}
+.navbar .nav-dropdown-hub {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  margin-bottom: 4px !important;
+  padding-bottom: 9px !important;
+  color: var(--neon-cyan) !important;
+}
+
+@media (min-width: 1024px) {
+  .navbar .mobile-drawer-actions {
+    display: none !important;
+  }
+  .navbar .nav-container {
+    gap: 12px !important;
+    padding: 0 18px !important;
+  }
+  .navbar .brand-logo,
+  .navbar .brand-logo-img {
+    height: 32px !important;
+  }
+  .navbar .nav-links {
+    gap: 6px !important;
+  }
+  .navbar .nav-links > li > a,
+  .navbar .nav-links .nav-pill,
+  .navbar .nav-links .nav-dropdown-btn {
+    padding: 0 10px !important;
+    font-size: 13px !important;
+    height: 34px !important;
+  }
+  .navbar .nav-actions .btn-launch-rewards,
+  .navbar .nav-actions .btn-pwa-top {
+    padding: 0 10px !important;
+    font-size: 12px !important;
+    height: 34px !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .navbar .nav-container {
+    gap: 8px !important;
+    padding: 0 12px !important;
+  }
+  .navbar .brand-logo,
+  .navbar .brand-logo-img {
+    height: 26px !important;
+  }
+  .navbar .nav-links {
+    gap: 4px !important;
+  }
+  .navbar .nav-links > li > a,
+  .navbar .nav-links .nav-pill,
+  .navbar .nav-links .nav-dropdown-btn {
+    padding: 0 7px !important;
+    font-size: 12px !important;
+  }
+  .navbar .nav-actions .btn-launch-rewards,
+  .navbar .nav-actions .btn-pwa-top {
+    padding: 0 8px !important;
+    font-size: 11.5px !important;
+  }
+}
+@media (max-width: 1023px) {
+  .navbar .mobile-drawer-actions {
+    display: flex !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  .navbar .mobile-drawer-actions .btn-launch-rewards,
+  .navbar .mobile-drawer-actions .btn-pwa-top {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 13px;
+    border-radius: 7px;
+  }
+  .navbar .nav-links.open .nav-dropdown-menu {
+    display: none !important;
+  }
+  .navbar .nav-links.open .nav-dropdown.is-open > .nav-dropdown-menu {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+/* UNBOXED 4-CARD AMAZON PRO HARDWARE GRID */
+.amazon-gear-4grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+@media (max-width: 1024px) {
+  .amazon-gear-4grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .amazon-gear-4grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* VERIFICATION BADGES */
+.verify-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.verify-confirmed {
+  background: rgba(0, 255, 136, 0.15);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.45);
+}
+.verify-community {
+  background: rgba(0, 240, 255, 0.15);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.45);
+}
+.verify-testing {
+  background: rgba(255, 184, 0, 0.16);
+  color: #ffb800;
+  border: 1px solid rgba(255, 184, 0, 0.45);
+}
+.verify-unverified {
+  background: rgba(255, 42, 141, 0.15);
+  color: #ff6aa8;
+  border: 1px solid rgba(255, 42, 141, 0.45);
+}
+
+/* UNIFIED PROGRESS TOOLBAR & RESET CONFIRMATION MODAL */
+.gta-progress-bar-widget {
+  background: linear-gradient(135deg, rgba(12, 18, 34, 0.96), rgba(8, 11, 22, 0.98));
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 11px;
+  padding: 0.85rem 1.05rem;
+  margin: 0.9rem 0 1.25rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+.gta-pb-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+}
+.gta-pb-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+.gta-pb-badge {
+  background: rgba(0, 255, 136, 0.14);
+  border: 1px solid rgba(0, 255, 136, 0.45);
+  color: #00ff88;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+}
+.gta-pb-stat strong {
+  color: #fff;
+  font-family: var(--font-mono);
+}
+.gta-pb-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.gta-pb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.38rem 0.72rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: all 0.16s ease;
+}
+.gta-pb-btn-cyan {
+  border-color: rgba(0, 240, 255, 0.45);
+  color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.09);
+}
+.gta-pb-btn-cyan:hover { background: rgba(0, 240, 255, 0.2); }
+.gta-pb-btn-green {
+  border-color: rgba(0, 255, 136, 0.45);
+  color: var(--neon-green);
+  background: rgba(0, 255, 136, 0.09);
+}
+.gta-pb-btn-green:hover { background: rgba(0, 255, 136, 0.2); }
+.gta-pb-btn-danger {
+  border-color: rgba(255, 42, 141, 0.45);
+  color: #ff6aa8;
+  background: rgba(255, 42, 141, 0.09);
+}
+.gta-pb-btn-danger:hover { background: rgba(255, 42, 141, 0.2); }
+.gta-pb-note {
+  margin-top: 0.55rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.74rem;
+  color: #94a3b8;
+}
+
+.gta-reset-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  background: rgba(4, 6, 14, 0.86);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.gta-reset-modal-backdrop.is-open {
+  display: flex;
+}
+.gta-reset-modal-card {
+  width: min(490px, 100%);
+  background: linear-gradient(160deg, #130f26 0%, #090c18 100%);
+  border: 1.5px solid rgba(255, 42, 141, 0.5);
+  border-radius: 14px;
+  padding: 1.35rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+  color: #f4f4f8;
+}
+.gta-reset-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.gta-reset-modal-head h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #fff;
+}
+.gta-reset-close {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.gta-reset-modal-desc {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0 0 0.65rem;
+}
+.gta-reset-modal-note {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  background: rgba(0, 240, 255, 0.07);
+  border-left: 3px solid var(--neon-cyan);
+  padding: 0.5rem 0.7rem;
+  border-radius: 0 6px 6px 0;
+  margin: 0 0 1.1rem;
+}
+.gta-reset-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+.gta-reset-modal-actions .btn {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.78rem;
+  text-transform: none;
+  letter-spacing: 0.2px;
+}
+.gta-progress-toast {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 10100;
+  background: rgba(10, 16, 28, 0.96);
+  border: 1px solid var(--neon-green);
+  color: #fff;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.gta-progress-toast.is-error {
+  border-color: var(--neon-pink);
+  color: #ffd1e6;
+}
+.gta-progress-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

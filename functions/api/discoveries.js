@@ -277,15 +277,15 @@ export async function onRequestPost({ request, env }) {
       });
     }
 
-    // New discovery submission
-    const type = String(body.type || "cheat").trim().toLowerCase().slice(0, 30);
+    // New discovery submission (supports cheats, cash_spot, hidden_feature, vehicle_control, location, easter_egg, money_tip, glitch, discovery)
+    const type = String(body.type || "discovery").trim().toLowerCase().slice(0, 40);
     const title = String(body.title || "").trim().slice(0, 140);
-    const code_or_location = String(body.code_or_location || body.code || body.location || "").trim().slice(0, 180);
-    const unlock_condition = String(body.unlock_condition || body.unlock || "").trim().slice(0, 240);
+    const code_or_location = String(body.code_or_location || body.code || body.location || "").trim().slice(0, 200);
+    const unlock_condition = String(body.unlock_condition || body.unlock || body.details || body.controls || "").trim().slice(0, 320);
     const submitted_by = String(body.submitted_by || "ViceOperative").trim().slice(0, 40);
 
     if (!title || !code_or_location) {
-      return jsonResponse({ ok: false, error: "Title and Code / Location details are required." }, 400);
+      return jsonResponse({ ok: false, error: "Title and Location / Code details are required." }, 400);
     }
 
     const res = await env.DB.prepare(
@@ -297,10 +297,13 @@ export async function onRequestPost({ request, env }) {
 
     return jsonResponse({
       ok: true,
-      message: "Discovery submitted to Live Community queue. It will automatically promote to Verified Live once 3+ players confirm it works!",
+      message: "Discovery submitted to the Cloudflare D1 Community Queue. It auto-promotes to Verified Live once 3+ players confirm it works!",
       id: res.meta?.last_row_id || null,
       type,
       title,
+      code_or_location,
+      unlock_condition: unlock_condition || "Community Discovery",
+      submitted_by,
     });
   } catch (err) {
     return jsonResponse({ ok: false, error: err.message }, 500);

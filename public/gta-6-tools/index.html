@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 Interactive Tools Hub: Save Planner, Map, Heist Planner &amp; Cheats (2026)</title>
+    <meta name="description" content="All 6 free GTA 6 browser tools with automatic cross-tool progress sync: Heist Planner, Payout Calculator, 15-Slot Save Planner, Interactive Leonida Map, 61-Cheat Tracker &amp; Free Suite.">
+    <link rel="canonical" href="https://www.gta6heistguide.com/gta-6-tools/">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="GTA 6 Interactive Tools Hub — Cross-Tool Progress Sync">
+    <meta property="og:description" content="Unified local progress sync across Save Planner, Leonida Map Checklist, Heist Planner, and 61-Cheat Tracker. Zero login required, JSON backup export/import included.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gta6heistguide.com/gta-6-tools/">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v11">
+    <style>
+      .hub-tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 1.15rem;
+        margin: 1.25rem 0 2rem;
+      }
+      .hub-tool-card {
+        background: linear-gradient(155deg, rgba(16, 18, 34, 0.96), rgba(9, 11, 22, 0.98));
+        border: 1px solid rgba(0, 240, 255, 0.25);
+        border-radius: 12px;
+        padding: 1.35rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .hub-tool-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--neon-cyan);
+        box-shadow: 0 12px 30px rgba(0, 240, 255, 0.16);
+      }
+      .hub-tool-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.65rem;
+      }
+      .hub-tool-stat {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 800;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(0, 255, 136, 0.12);
+        border: 1px solid rgba(0, 255, 136, 0.4);
+        color: var(--neon-green);
+      }
+      .hub-sync-map-box {
+        background: rgba(10, 16, 28, 0.94);
+        border: 1px solid rgba(0, 240, 255, 0.28);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+      }
+      .hub-sync-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.75rem;
+        margin-top: 0.85rem;
+      }
+      .hub-sync-chip {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 8px;
+        padding: 0.75rem 0.85rem;
+        font-size: 0.8rem;
+        color: #cbd5e1;
+      }
+      .hub-sync-chip strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+    </style>
+</head>
+<body>
+<div class="countdown-strip" id="siteTopStrip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 Story Mode: LIVE (Day-3) · GTA 6 Online: Expected 2027</span>
+            </span>
+        </div>
+    </div>
+</div>
+<nav class="navbar" id="siteNavbar">
+    <div class="nav-container">
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="nav-pill">Heists</a></li>
+            <li><a href="/map.html" class="nav-pill">Map</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">Money</a></li>
+            <li><a href="/gta-6-tips-and-tricks/" class="nav-pill">Tips &amp; Tricks</a></li>
+            <li><a href="/cheats.html" class="nav-pill">Cheats</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🛠️ All GTA 6 Tools Hub</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
+                    <a href="/map.html" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Database <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
+                    <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio Stations</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.5rem 1rem 3.5rem;">
+    <header class="tool-box pink-glow" style="margin-bottom:1.25rem;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+            <span class="verify-badge verify-confirmed">🔄 UNIFIED LOCAL PROGRESS SYNC</span>
+            <span class="verify-badge verify-community">ZERO ACCOUNT REQUIRED</span>
+        </div>
+        <h1 style="color:#fff; font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin:0 0 0.5rem; line-height:1.18;">
+            GTA 6 Interactive <span style="color:var(--neon-cyan);">Tools Suite</span> &amp; Progress Sync Hub
+        </h1>
+        <p style="color:#94a3b8; font-size:0.95rem; margin:0; max-width:820px; line-height:1.55;">
+            Every tool below shares one local browser progress store (<code>gta6_unified_progress_v1</code>). Mark a heist complete, lock a save slot, or check off a Leonida Map pin once and every connected tool updates automatically—plus export or import a single <code>.json</code> backup anytime.
+        </p>
+    </header>
+
+    <div id="toolsHubProgressBar"></div>
+
+    <div class="syndicate-aff-bar">
+      <div class="syndicate-aff-bar-main">
+        <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+        <span class="aff-sep">|</span>
+        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+        <span class="aff-sep">|</span>
+        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+        <span class="aff-sep">|</span>
+        <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+      </div>
+    </div>
+
+    <section aria-label="6 Featured GTA 6 Interactive Tools">
+        <div class="hub-tool-grid">
+            <article class="hub-tool-card">
+                <div>
+                    <div class="hub-tool-top">
+                        <span class="verify-badge verify-community">🎯 SYNCED TOOL #1</span>
+                        <span class="hub-tool-stat" id="toolStatHeists">0 / 8 Heists</span>
+                    </div>
+                    <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.45rem;">Heist Planner &amp; Checklist</h2>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0 0 1rem;">Plan setups, specialist cuts, Yasmani/Safehouse fence fees, Dye Pack Jammer protection, and check off completed heists—synced directly with Map pins and Save Planner slots.</p>
+                </div>
+                <a href="/heist-planner.html" class="btn btn-primary" style="width:100%; padding:0.6rem; font-size:0.82rem;">Open Heist Planner &rarr;</a>
+            </article>
+
+            <article class="hub-tool-card">
+                <div>
+                    <div class="hub-tool-top">
+                        <span class="verify-badge verify-confirmed">💰 MATH ENGINE #2</span>
+                        <span class="hub-tool-stat">Net $/Hour</span>
+                    </div>
+                    <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.45rem;">Heist Payout Calculator</h2>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0 0 1rem;">Simulate exact gross and net payouts for The Cartel Heist ($120,000 base / up to $150,000 max bonus), VCIA Takedown ($250,000), and all 22 free-roam bank vaults.</p>
+                </div>
+                <a href="/heist-payout-calculator.html" class="btn btn-secondary" style="width:100%; padding:0.6rem; font-size:0.82rem;">Open Payout Calculator &rarr;</a>
+            </article>
+
+            <article class="hub-tool-card">
+                <div>
+                    <div class="hub-tool-top">
+                        <span class="verify-badge verify-community">💾 SYNCED TOOL #3</span>
+                        <span class="hub-tool-stat" id="toolStatSlots">0 / 15 Slots</span>
+                    </div>
+                    <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.45rem;">15-Slot Save Progress Planner</h2>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0 0 1rem;">Protect your playthrough with zero mission replay at launch. Lock Chapter 1's <em>Tourist Trap</em> cutoff, missable fences, heist anchors, and your isolated Slot #15 cheat sandbox.</p>
+                </div>
+                <a href="/save-planner/" class="btn btn-primary" style="width:100%; padding:0.6rem; font-size:0.82rem;">Open Save Planner &rarr;</a>
+            </article>
+
+            <article class="hub-tool-card">
+                <div>
+                    <div class="hub-tool-top">
+                        <span class="verify-badge verify-community">🗺️ SYNCED TOOL #4</span>
+                        <span class="hub-tool-stat" id="toolStatPins">0 Pins Found</span>
+                    </div>
+                    <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.45rem;">Interactive Map Checklist</h2>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0 0 1rem;">Explore 174+ HD Leonida Map pins covering banks, 20 jewelry stores, properties, fences (Brian's Lockup 7700), wildlife habitats, and custom user pins with live checklist sync.</p>
+                </div>
+                <a href="/map.html" class="btn btn-secondary" style="width:100%; padding:0.6rem; font-size:0.82rem;">Open Interactive Map &rarr;</a>
+            </article>
+
+            <article class="hub-tool-card">
+                <div>
+                    <div class="hub-tool-top">
+                        <span class="verify-badge verify-community">⚡ SYNCED TOOL #5</span>
+                        <span class="hub-tool-stat" id="toolStatCheats">0 / 61 Cheats</span>
+                    </div>
+                    <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.45rem;">61-Cheat &amp; Glitches Tracker</h2>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0 0 1rem;">Search all 61 verified GTA 6 D-pad &amp; phone dialer cheat codes, track unlock milestones, review trophy-disable rules, and browse verified launch glitches.</p>
+                </div>
+                <a href="/cheats.html" class="btn btn-secondary" style="width:100%; padding:0.6rem; font-size:0.82rem;">Open Cheat Tracker &rarr;</a>
+            </article>
+
+            <article class="hub-tool-card">
+                <div>
+                    <div class="hub-tool-top">
+                        <span class="verify-badge verify-confirmed">🚀 UTILITY SUITE #6</span>
+                        <span class="hub-tool-stat">3-in-1 Free</span>
+                    </div>
+                    <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.45rem;">Free Tools Suite</h2>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0 0 1rem;">Zero-login browser bundle with our 6-vault $/Hour splitter, 15-second biometric keypad hack trainer, and quick squad clip cards—plus quick access to Wanted Heat &amp; 30 FPS tools.</p>
+                </div>
+                <a href="/free/" class="btn btn-secondary" style="width:100%; padding:0.6rem; font-size:0.82rem;">Open Free Tools Suite &rarr;</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="hub-sync-map-box">
+        <h2 style="color:#fff; font-size:1.2rem; margin:0 0 0.35rem;">Bonus Launch Utilities &amp; How Cross-Tool Sync Works</h2>
+        <p style="color:#94a3b8; font-size:0.84rem; margin:0;">Matched items share canonical IDs across tools—checking off a heist or Chapter 1 checkpoint in one tool updates all linked tools immediately without overwriting unrelated notes or slots.</p>
+        <div class="hub-sync-grid">
+            <div class="hub-sync-chip">
+                <strong>🚓 Wanted System &amp; Evasion Calculator</strong>
+                Calculate 1–6 star clear times, plate swaps, and ANPR camera evasion live.
+                <div style="margin-top:0.5rem;"><a href="/leonida-wanted-system.html" style="color:var(--neon-cyan); font-weight:700;">Open Wanted Calculator &rarr;</a></div>
+            </div>
+            <div class="hub-sync-chip">
+                <strong>⚙️ Console 30 FPS &amp; HDR Settings</strong>
+                Eliminate camera bob, motion blur, and aim deadzone lag on PS5 &amp; Xbox Series X|S.
+                <div style="margin-top:0.5rem;"><a href="/settings.html" style="color:var(--neon-cyan); font-weight:700;">Open Settings Guide &rarr;</a></div>
+            </div>
+            <div class="hub-sync-chip">
+                <strong>💰 Money Comparison &amp; Earnings Calc</strong>
+                Compare fastest cash routes by reward, ease, prep time, and chapter.
+                <div style="margin-top:0.5rem;"><a href="/gta-6-money-guide/#money-calculator" style="color:var(--neon-green); font-weight:700;">Open Money Calculator &rarr;</a></div>
+            </div>
+            <div class="hub-sync-chip">
+                <strong>🔒 Privacy-First Local Storage</strong>
+                Zero logins, zero paywalls, zero cloud tracking. Export your <code>.json</code> backup anytime.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="brand-logo" style="text-decoration:none;"><span class="brand-wordmark"><span class="brand-gta">GTA 6</span><span class="brand-vi-sub">HEIST GUIDE</span></span><span class="brand-badge">Syndicate v3.3</span></a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.</p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/save-planner/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com.</p>
+        </div>
+    </div>
+</footer>
+<script src="/js/progress-store.js"></script>
+<script src="/js/affiliates.js"></script>
+<script src="/site-config.js"></script>
+<script src="/assets/main.js" defer></script>
+<script>
+(function() {
+  function refreshToolCards() {
+    if (!window.GTA6Progress) return;
+    var s = window.GTA6Progress.getSummary();
+    var h = document.getElementById('toolStatHeists');
+    var sl = document.getElementById('toolStatSlots');
+    var p = document.getElementById('toolStatPins');
+    var c = document.getElementById('toolStatCheats');
+    if (h) h.textContent = s.heists + ' / 8 Heists';
+    if (sl) sl.textContent = s.slots + ' / 15 Slots';
+    if (p) p.textContent = s.pins + ' Pins Found';
+    if (c) c.textContent = s.cheats + ' / 61 Cheats';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.GTA6Progress) {
+      window.GTA6Progress.mountToolbar('#toolsHubProgressBar', {
+        scope: 'all',
+        scopeLabel: 'All Tools',
+        onSync: refreshToolCards
+      });
+      refreshToolCards();
+      window.addEventListener('gta6-progress-updated', refreshToolCards);
+    }
+  });
+})();
+</script>
+</body>
+</html>

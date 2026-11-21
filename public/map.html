@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v10">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v11">
 
     <style>
         :root {
@@ -804,10 +804,8 @@
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 Story Mode: LIVE (Day-3) · GTA 6 Online: Expected 2027</span>
             </span>
-            <span class="strip-divider">|</span>
-            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
     </div>
 </div>
@@ -820,29 +818,32 @@
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/map.html" class="nav-pill active">🗺️ Map</a></li>
-            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
-            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
-            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/map.html" class="nav-pill">Map</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">Money</a></li>
+            <li><a href="/gta-6-tips-and-tricks/" class="nav-pill">Tips &amp; Tricks</a></li>
+            <li><a href="/cheats.html" class="nav-pill">Cheats</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
-                    More <span class="nav-arrow">▾</span>
-                </button>
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio</a>
-                    <a href="/drops.html" class="nav-dropdown-item">🎁 Kick 10K Giveaway &amp; Drops</a>
-                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="nav-dropdown-item">🔑 Keys &amp; Deals</a>
-                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🛠️ All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
-                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
+                    <a href="/map.html" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Database <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
+                    <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
                     <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
-                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
-                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
-                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
+                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio Stations</a>
                 </div>
             </li>
         </ul>
@@ -985,14 +986,22 @@
             Copy your save string to transfer your checklist progress and custom dropped pins between devices with zero login required.
         </p>
         <textarea id="saveCodeTextarea" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem; padding-left:0.65rem;"></textarea>
-        <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
+        <div style="display:flex; gap:0.45rem; flex-wrap:wrap; justify-content:flex-end;">
+            <button type="button" id="mapExportJsonBtn" class="btn-mini-action" style="border-color:var(--neon-cyan,#00f0ff); color:var(--neon-cyan,#00f0ff);" onclick="window.GTA6Progress && window.GTA6Progress.exportJSON()">⬇ Export Backup (.json)</button>
+            <button type="button" id="mapImportJsonBtn" class="btn-mini-action" style="border-color:var(--neon-green,#00ff88); color:var(--neon-green,#00ff88);" onclick="document.getElementById('mapUnifiedImportInput').click()">⬆ Import Backup (.json)</button>
+            <input type="file" id="mapUnifiedImportInput" accept=".json,application/json" style="display:none;" onchange="handleMapUnifiedImport(this)">
+            <button type="button" class="btn-mini-action" style="border-color:var(--neon-pink,#ff2a8d); color:#ff6aa8;" onclick="openMapResetModal()">↺ Reset</button>
             <button type="button" class="btn-mini-action" onclick="copySaveCode()">📋 Copy Code</button>
             <button type="button" class="btn-mini-action" style="background:var(--neon-cyan,#00f0ff); color:#040711; font-weight:800;" onclick="importSaveCode()">📥 Import Code</button>
+        </div>
+        <div style="font-size:0.68rem; color:#94a3b8; margin-top:0.45rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.45rem;">
+            🔄 Progress is stored locally in this browser (no account required) and syncs automatically with Save Planner, Heist Planner &amp; Cheat Tracker unless exported.
         </div>
     </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/js/progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -1035,10 +1044,17 @@ let categoryVisibility = {};
 Object.keys(CATEGORIES).forEach(k => { categoryVisibility[k] = true; });
 
 let foundPinIds = new Set();
-try {
-    const savedFound = localStorage.getItem('gta6_found_pins');
-    if (savedFound) foundPinIds = new Set(JSON.parse(savedFound));
-} catch(e) {}
+function loadFoundPinsFromStore() {
+    if (window.GTA6Progress) {
+        foundPinIds = new Set(window.GTA6Progress.getCompletedByPrefix('pin:'));
+        return;
+    }
+    try {
+        const savedFound = localStorage.getItem('gta6_found_pins');
+        if (savedFound) foundPinIds = new Set(JSON.parse(savedFound));
+    } catch(e) {}
+}
+loadFoundPinsFromStore();
 
 let customUserPins = [];
 try {
@@ -1480,14 +1496,19 @@ function copyPinDeepLink(pinId) {
 }
 
 function togglePinFound(pinId) {
-    if (foundPinIds.has(pinId)) {
+    const nextFound = !foundPinIds.has(pinId);
+    if (nextFound) {
+        foundPinIds.add(pinId);
+        showToast('✓ Pin Marked Found (Synced Across Tools)');
+    } else {
         foundPinIds.delete(pinId);
         showToast('↺ Pin Marked Unfound');
-    } else {
-        foundPinIds.add(pinId);
-        showToast('✓ Pin Marked Found');
     }
-    try { localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds])); } catch(e) {}
+    if (window.GTA6Progress) {
+        window.GTA6Progress.setDone('pin:' + pinId, nextFound);
+    } else {
+        try { localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds])); } catch(e) {}
+    }
     const pin = allPins.find(p => p.id === pinId);
     if (pin && markersById[pinId]) {
         markersById[pinId].setIcon(createMarkerIcon(pin));
@@ -1731,6 +1752,51 @@ window.addEventListener('load', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     initEngine();
+});
+</script>
+<script>
+function handleMapUnifiedImport(input) {
+    var f = input && input.files && input.files[0];
+    if (!f || !window.GTA6Progress) return;
+    var reader = new FileReader();
+    reader.onload = function(evt) {
+        var res = window.GTA6Progress.importJSONString(evt.target.result);
+        if (res.ok) {
+            loadFoundPinsFromStore();
+            if (typeof renderAllMarkers === 'function') renderAllMarkers();
+            if (typeof renderCategoryRows === 'function') renderCategoryRows();
+            if (typeof updateChecklistStats === 'function') updateChecklistStats();
+            if (typeof renderFilteredList === 'function') renderFilteredList();
+            if (typeof closeSaveModal === 'function') closeSaveModal();
+        }
+    };
+    reader.readAsText(f);
+    input.value = '';
+}
+function openMapResetModal() {
+    if (typeof closeSaveModal === 'function') closeSaveModal();
+    if (window.GTA6Progress) {
+        window.GTA6Progress.openResetModal({
+            scope: 'pins',
+            scopeLabel: 'Map Checklist',
+            onReset: function() {
+                loadFoundPinsFromStore();
+                if (typeof renderAllMarkers === 'function') renderAllMarkers();
+                if (typeof renderCategoryRows === 'function') renderCategoryRows();
+                if (typeof updateChecklistStats === 'function') updateChecklistStats();
+                if (typeof renderFilteredList === 'function') renderFilteredList();
+            }
+        });
+    }
+}
+window.addEventListener('gta6-progress-updated', function() {
+    loadFoundPinsFromStore();
+    if (typeof renderAllMarkers === 'function' && typeof allPins !== 'undefined' && allPins.length) {
+        renderAllMarkers();
+        if (typeof renderCategoryRows === 'function') renderCategoryRows();
+        if (typeof updateChecklistStats === 'function') updateChecklistStats();
+        if (typeof renderFilteredList === 'function') renderFilteredList();
+    }
 });
 </script>
 </body>

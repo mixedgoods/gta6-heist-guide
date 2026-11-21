@@ -64,7 +64,7 @@ window.getGTA6LaunchDay = function() {
 
 window.getGTA6LaunchBannerText = function() {
   var launchDay = window.getGTA6LaunchDay();
-  return "🔥 GTA 6 IS LIVE — DAY-" + launchDay + " HEISTS, CHEATS, MAPS & DROPS";
+  return "🔥 GTA 6 Story Mode: LIVE (Day-" + launchDay + ") · GTA 6 Online: Expected 2027";
 };
 
 (function() {
