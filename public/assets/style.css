@@ -283,8 +283,8 @@ body {
   left: 0;
   right: 0;
   z-index: 3;
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 23, 0.88) 35%, rgba(10, 14, 23, 0.98) 100%);
-  padding: 0.85rem 1.25rem 0.75rem;
+  background: linear-gradient(180deg, rgba(10, 14, 23, 0) 0%, rgba(10, 14, 23, 0.78) 24%, rgba(10, 14, 23, 0.94) 55%, rgba(10, 14, 23, 0.99) 100%);
+  padding: 1.5rem 1.25rem 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -4136,6 +4136,7 @@ body.has-ticker .bookmarks-fab {
 }
 
 @media (min-width: 1024px) {
+  .navbar .nav-links > li.mobile-drawer-actions,
   .navbar .mobile-drawer-actions {
     display: none !important;
   }
@@ -4205,6 +4206,17 @@ body.has-ticker .bookmarks-fab {
     padding: 0 12px;
     font-size: 13px;
     border-radius: 7px;
+  }
+  .navbar .nav-links .mobile-drawer-actions .btn-launch-rewards {
+    background: #53fc18 !important;
+    color: #050a05 !important;
+    border: 1px solid #86efac !important;
+    font-weight: 900 !important;
+  }
+  .navbar .nav-links .mobile-drawer-actions .btn-pwa-top {
+    background: rgba(0, 240, 255, 0.12) !important;
+    color: var(--neon-cyan) !important;
+    border: 1px solid rgba(0, 240, 255, 0.45) !important;
   }
   .navbar .nav-links.open .nav-dropdown-menu {
     display: none !important;
