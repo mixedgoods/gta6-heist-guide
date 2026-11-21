@@ -1,5 +1,5 @@
 {
-  "lastSynced": "2026-11-20T23:48:15Z",
+  "lastSynced": "2026-11-21T06:18:37Z",
   "version": "2026.11.19-sync-v4",
   "source": "Rockstar Games Official Media & GTA Community Verified Database",
   "characters": [
@@ -360,6 +360,18 @@
       "source": "Auto-Synced Official GTA Wiki"
     },
     {
+      "id": "char-roxy-rashad",
+      "name": "Roxy Rashad",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-roxy-rashad.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
       "id": "char-rudi",
       "name": "Rudi",
       "category": "crew",
@@ -380,6 +392,18 @@
       "cut": "Story / Contact",
       "district": "State of Leonida",
       "image": "assets/char-spirit.webp",
+      "status": "CONFIRMED",
+      "source": "Auto-Synced Official GTA Wiki"
+    },
+    {
+      "id": "char-tom-s",
+      "name": "Tom\u00e1s",
+      "category": "story",
+      "role": "Confirmed GTA VI Character",
+      "specialty": "Leonida Underworld & Intel",
+      "cut": "Story / Contact",
+      "district": "State of Leonida",
+      "image": "assets/char-tom-s.webp",
       "status": "CONFIRMED",
       "source": "Auto-Synced Official GTA Wiki"
     },
@@ -8805,7 +8829,7 @@
   },
   "staticAssetVersion": "20261119_v3",
   "catalogTotals": {
-    "characters": 34,
+    "characters": 36,
     "weapons": 47,
     "vehicles": 187,
     "masks": 16,
