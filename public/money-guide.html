@@ -53,6 +53,13 @@
               }
             }
           ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gta6heistguide.com/" },
+            { "@type": "ListItem", "position": 2, "name": "GTA 6 Money Guide", "item": "https://www.gta6heistguide.com/gta-6-money-guide/" }
+          ]
         }
       ]
     }
@@ -221,6 +228,7 @@
             <li class="nav-dropdown nav-dropdown-right">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -233,7 +241,12 @@
     </div>
 </nav>
 
-<main class="container" style="max-width:1140px; margin:0 auto; padding:1.5rem 1rem 3.5rem;">
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.15rem 1rem 3.5rem;">
+    <nav aria-label="Breadcrumb" style="font-size:0.78rem; color:#94a3b8; margin-bottom:0.85rem; display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
+        <a href="/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Home</a>
+        <span aria-hidden="true">/</span>
+        <span style="color:#e2e8f0; font-weight:700;">GTA 6 Money Guide</span>
+    </nav>
     <!-- HERO -->
     <header class="tool-box" style="margin-bottom:1rem; border-color:var(--neon-green); background:linear-gradient(135deg, rgba(8,25,18,0.95), rgba(6,14,18,0.98));">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem;">
@@ -473,16 +486,27 @@
                     <button type="button" class="comp-pill active" data-sort="reward">🏆 Highest Reward</button>
                     <button type="button" class="comp-pill" data-sort="easiest">🟢 Easiest</button>
                     <button type="button" class="comp-pill" data-sort="prep">⚡ Lowest Prep</button>
+                    <button type="button" class="comp-pill" data-sort="story">📖 Story Progression</button>
                 </div>
-                <div style="display:flex; align-items:center; gap:0.5rem;">
-                    <label for="compChapterFilter" style="font-size:0.78rem; color:#94a3b8; font-weight:700;">Story Chapter:</label>
-                    <select id="compChapterFilter" class="form-select" style="padding:0.4rem 0.7rem; font-size:0.8rem;">
-                        <option value="all">All Chapters</option>
-                        <option value="1">Chapter 1</option>
-                        <option value="2">Chapter 2</option>
-                        <option value="3">Chapter 3</option>
-                        <option value="4">Chapter 4+</option>
-                    </select>
+                <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+                    <div style="display:flex; align-items:center; gap:0.4rem;">
+                        <label for="compChapterFilter" style="font-size:0.78rem; color:#94a3b8; font-weight:700;">Story Chapter:</label>
+                        <select id="compChapterFilter" class="form-select" style="padding:0.4rem 0.7rem; font-size:0.8rem;">
+                            <option value="all">All Chapters</option>
+                            <option value="1">Chapter 1</option>
+                            <option value="2">Chapter 2</option>
+                            <option value="3">Chapter 3</option>
+                            <option value="4">Chapter 4+</option>
+                        </select>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.4rem;">
+                        <label for="compModeFilter" style="font-size:0.78rem; color:#94a3b8; font-weight:700;">Mode:</label>
+                        <select id="compModeFilter" class="form-select" style="padding:0.4rem 0.7rem; font-size:0.8rem;">
+                            <option value="all">All (Solo &amp; Online)</option>
+                            <option value="solo">Solo / Story Mode (LIVE)</option>
+                            <option value="online">GTA 6 Online (Expected 2027)</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="money-table-wrap" style="padding:0.5rem;">
@@ -491,6 +515,7 @@
                         <tr>
                             <th>Method</th>
                             <th>Chapter</th>
+                            <th>Mode</th>
                             <th>Difficulty</th>
                             <th>Prep Time</th>
                             <th>Net Payout</th>
@@ -504,10 +529,10 @@
         </div>
 
         <!-- INTERACTIVE EARNINGS CALCULATOR -->
-        <div class="tool-box pink-glow">
-            <h3 style="color:#fff; font-size:1.2rem; margin:0 0 0.35rem;">🧮 Live GTA 6 Earnings Calculator</h3>
-            <p style="color:#94a3b8; font-size:0.84rem; margin:0 0 1rem;">Estimate net profits after fence laundering cuts, Dye Pack Jammer protection, and multiple runs.</p>
-            <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:0.9rem; margin-bottom:1rem;">
+        <div class="tool-box pink-glow" id="liveEarningsCalculatorBox">
+            <h3 style="color:#fff; font-size:1.2rem; margin:0 0 0.35rem;">🧮 Live GTA 6 Money &amp; Earnings Calculator</h3>
+            <p style="color:#94a3b8; font-size:0.84rem; margin:0 0 1rem;">Estimate net profits after fence laundering cuts, Dye Pack Jammer protection, multiple runs, and target savings milestones.</p>
+            <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(195px, 1fr)); gap:0.9rem; margin-bottom:1rem;">
                 <div class="form-group">
                     <label for="ecMethod">Money Method</label>
                     <select id="ecMethod" class="form-select"></select>
@@ -524,6 +549,15 @@
                         <option value="10">Brian's Lockup 7700 Fence (10% Cut)</option>
                         <option value="12">Safehouse Garage Fence (12% Cut)</option>
                         <option value="20">Street Fence (20% Cut)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ecGoal">Savings Target Goal</label>
+                    <select id="ecGoal" class="form-select">
+                        <option value="5000">$5,000 (Ch. 1 BuckMe Goal)</option>
+                        <option value="50000">$50,000 (Garage Reserve)</option>
+                        <option value="120000" selected>$120,000 (Cartel Heist Tier)</option>
+                        <option value="250000">$250,000 (Endgame Vault Fund)</option>
                     </select>
                 </div>
                 <div class="form-group" style="display:flex; align-items:flex-end;">
@@ -549,6 +583,14 @@
                 <div>
                     <div class="payout-item-title">Est. Total Time</div>
                     <div class="payout-item-val" id="ecTime" style="color:var(--neon-cyan);">129 Mins</div>
+                </div>
+                <div>
+                    <div class="payout-item-title">Effective Net $/Hr</div>
+                    <div class="payout-item-val" id="ecPerHour" style="color:var(--neon-yellow);">$159,070/hr</div>
+                </div>
+                <div>
+                    <div class="payout-item-title">Runs for Goal</div>
+                    <div class="payout-item-val" id="ecGoalRuns" style="color:#c084fc;">2 Runs</div>
                 </div>
             </div>
         </div>
@@ -636,21 +678,22 @@
   ];
 
   var COMPARE_METHODS = [
-    { id: 'vcia', name: 'VCIA Takedown (Story Heist #2)', chapter: 4, chLabel: 'Ch. 4', diffRank: 4, diffLabel: 'Hard (4-Star)', prepMins: 52, payout: 250000, isBank: false, link: '/heists/vcia-takedown.html' },
-    { id: 'large-bank', name: '8 Large Bank Vaults (Repeatable)', chapter: 4, chLabel: 'Ch. 4+', diffRank: 4, diffLabel: 'Hard (4-Star)', prepMins: 22, payout: 205000, isBank: true, link: '/heists/large-bank-vaults.html' },
-    { id: 'cartel', name: 'The Cartel Heist (Sinfrontera National Bank)', chapter: 3, chLabel: 'Ch. 3', diffRank: 4, diffLabel: 'Hard (5 Setups)', prepMins: 43, payout: 120000, isBank: true, link: '/heists/the-cartel-heist.html' },
-    { id: 'apollo', name: 'Apollo Aggregates Red Barn Loop', chapter: 2, chLabel: 'Ch. 2+', diffRank: 1, diffLabel: 'Easy (Save/Reload)', prepMins: 10, payout: 55000, isBank: false, link: '/cheats.html#glitches' },
-    { id: 'small-bank', name: '14 Small Banks & Payday Loans', chapter: 3, chLabel: 'Ch. 3+', diffRank: 3, diffLabel: 'Medium (Jammer)', prepMins: 13, payout: 35000, isBank: true, link: '/heists/small-banks-payday-loans.html' },
-    { id: 'jewelry', name: '20 Jewelry Stores (Yasmani 5% Fence)', chapter: 3, chLabel: 'Ch. 3+', diffRank: 2, diffLabel: 'Easy-Med (Stealth)', prepMins: 11, payout: 25000, isBank: false, link: '/heists/jewelry-stores.html' },
-    { id: 'armored', name: 'Armored Cash Trucks & 40 Gang Ops', chapter: 2, chLabel: 'Ch. 2+', diffRank: 3, diffLabel: 'Medium', prepMins: 12, payout: 24000, isBank: false, link: '/heists/armored-trucks-gang-ops.html' },
-    { id: 'pawn', name: 'Pawn Shops (Randy / 7700 Fence)', chapter: 2, chLabel: 'Ch. 2+', diffRank: 2, diffLabel: 'Easy-Med', prepMins: 8, payout: 8500, isBank: false, link: '/heists/pawn-shops.html' },
-    { id: 'moses', name: 'Moses Untracked Car Deliveries', chapter: 2, chLabel: 'Ch. 2+', diffRank: 1, diffLabel: 'Very Easy', prepMins: 5, payout: 1800, isBank: false, link: '/map.html?pin=fence-moses' },
-    { id: 'kenton', name: "Kenton's Shipwreck Dives", chapter: 1, chLabel: 'Ch. 1+', diffRank: 1, diffLabel: 'Very Easy', prepMins: 6, payout: 1400, isBank: false, link: '/map.html?pin=op-fishing-shacks' },
-    { id: 'shops', name: '72 Shops & Convenience Stick-ups', chapter: 1, chLabel: 'Ch. 1+', diffRank: 1, diffLabel: 'Very Easy (1–2★)', prepMins: 4, payout: 1200, isBank: false, link: '/heists/shops-and-stickups.html' }
+    { id: 'vcia', name: 'VCIA Takedown (Story Heist #2)', chapter: 4, chLabel: 'Ch. 4', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 4, diffLabel: 'Hard (4-Star)', prepMins: 52, payout: 250000, isBank: false, link: '/heists/vcia-takedown.html' },
+    { id: 'large-bank', name: '8 Large Bank Vaults (Repeatable)', chapter: 4, chLabel: 'Ch. 4+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 4, diffLabel: 'Hard (4-Star)', prepMins: 22, payout: 205000, isBank: true, link: '/heists/large-bank-vaults.html' },
+    { id: 'cartel', name: 'The Cartel Heist (Sinfrontera National Bank)', chapter: 3, chLabel: 'Ch. 3', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 4, diffLabel: 'Hard (5 Setups)', prepMins: 43, payout: 120000, isBank: true, link: '/heists/the-cartel-heist.html' },
+    { id: 'apollo', name: 'Apollo Aggregates Red Barn Loop', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Easy (Save/Reload)', prepMins: 10, payout: 55000, isBank: false, link: '/cheats.html#glitches' },
+    { id: 'small-bank', name: '14 Small Banks & Payday Loans', chapter: 3, chLabel: 'Ch. 3+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 3, diffLabel: 'Medium (Jammer)', prepMins: 13, payout: 35000, isBank: true, link: '/heists/small-banks-payday-loans.html' },
+    { id: 'jewelry', name: '20 Jewelry Stores (Yasmani 5% Fence)', chapter: 3, chLabel: 'Ch. 3+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 2, diffLabel: 'Easy-Med (Stealth)', prepMins: 11, payout: 25000, isBank: false, link: '/heists/jewelry-stores.html' },
+    { id: 'armored', name: 'Armored Cash Trucks & 40 Gang Ops', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 3, diffLabel: 'Medium', prepMins: 12, payout: 24000, isBank: false, link: '/heists/armored-trucks-gang-ops.html' },
+    { id: 'pawn', name: 'Pawn Shops (Randy / 7700 Fence)', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 2, diffLabel: 'Easy-Med', prepMins: 8, payout: 8500, isBank: false, link: '/heists/pawn-shops.html' },
+    { id: 'moses', name: 'Moses Untracked Car Deliveries', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy', prepMins: 5, payout: 1800, isBank: false, link: '/map.html?pin=fence-moses' },
+    { id: 'kenton', name: "Kenton's Shipwreck Dives", chapter: 1, chLabel: 'Ch. 1+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy', prepMins: 6, payout: 1400, isBank: false, link: '/map.html?pin=op-fishing-shacks' },
+    { id: 'shops', name: '72 Shops & Convenience Stick-ups', chapter: 1, chLabel: 'Ch. 1+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy (1–2★)', prepMins: 4, payout: 1200, isBank: false, link: '/heists/shops-and-stickups.html' }
   ];
 
   var compSort = 'reward';
   var compChapter = 'all';
+  var compMode = 'all';
 
   function renderSafeCodes() {
     var grid = document.getElementById('safeCodesGrid');
@@ -734,14 +777,23 @@
   function renderComparison() {
     var body = document.getElementById('moneyCompareBody');
     if (!body) return;
+    if (compMode === 'online') {
+      body.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:1.25rem; color:#e2e8f0;">' +
+        '<span class="verify-badge verify-unverified" style="margin-bottom:0.45rem;">GTA 6 ONLINE — EXPECTED 2027</span>' +
+        '<div style="margin-top:0.35rem; font-size:0.85rem; color:#cbd5e1;">GTA 6 Online is not live at launch (expected 2027). We do not publish speculative or invented Online payouts. Switch to <strong>Solo / Story Mode (LIVE)</strong> or <strong>All</strong> to compare verified launch cash routes.</div>' +
+      '</td></tr>';
+      return;
+    }
     var list = COMPARE_METHODS.filter(function(m) {
-      if (compChapter === 'all') return true;
-      return m.chapter === Number(compChapter);
+      if (compChapter !== 'all' && m.chapter !== Number(compChapter)) return false;
+      if (compMode !== 'all' && m.mode !== compMode) return false;
+      return true;
     });
     list.sort(function(a, b) {
       if (compSort === 'reward') return b.payout - a.payout;
       if (compSort === 'easiest') return a.diffRank - b.diffRank || b.payout - a.payout;
       if (compSort === 'prep') return a.prepMins - b.prepMins || b.payout - a.payout;
+      if (compSort === 'story') return a.chapter - b.chapter || b.payout - a.payout;
       return 0;
     });
     body.innerHTML = list.map(function(m) {
@@ -749,13 +801,29 @@
       return '<tr>' +
         '<td><strong>' + m.name + '</strong></td>' +
         '<td><span class="verify-badge verify-community">' + m.chLabel + '</span></td>' +
+        '<td><span class="verify-badge verify-confirmed">' + m.modeLabel + '</span></td>' +
         '<td>' + m.diffLabel + '</td>' +
         '<td style="font-family:var(--font-mono);">' + m.prepMins + ' min</td>' +
         '<td style="font-family:var(--font-mono); font-weight:900; color:var(--neon-green);">$' + m.payout.toLocaleString() + '</td>' +
         '<td style="font-family:var(--font-mono); color:var(--neon-cyan);">$' + perHr.toLocaleString() + '/hr</td>' +
-        '<td><a href="' + m.link + '" style="color:var(--neon-cyan); font-weight:800; text-decoration:none;">Open &rarr;</a></td>' +
+        '<td style="white-space:nowrap;">' +
+          '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-calc-id="' + m.id + '" style="margin-right:0.35rem; padding:0.2rem 0.5rem; font-size:0.7rem;">Calc</button>' +
+          '<a href="' + m.link + '" style="color:var(--neon-cyan); font-weight:800; text-decoration:none;">Guide &rarr;</a>' +
+        '</td>' +
       '</tr>';
     }).join('');
+
+    body.querySelectorAll('[data-calc-id]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var sel = document.getElementById('ecMethod');
+        if (sel) {
+          sel.value = btn.getAttribute('data-calc-id');
+          sel.dispatchEvent(new Event('change'));
+          var box = document.getElementById('liveEarningsCalculatorBox');
+          if (box && box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
   }
 
   function initEarningsCalc() {
@@ -771,22 +839,29 @@
       var runs = parseInt(document.getElementById('ecRuns').value, 10) || 1;
       var fencePct = parseInt(document.getElementById('ecFence').value, 10) || 0;
       var jammer = document.getElementById('ecJammer').checked;
+      var goal = parseInt((document.getElementById('ecGoal') && document.getElementById('ecGoal').value) || '120000', 10) || 120000;
       document.getElementById('ecRunsVal').textContent = String(runs);
 
-      var gross = m.payout * runs;
       var dyeFactor = (m.isBank && !jammer) ? 0.25 : 0;
-      var afterDye = gross * (1 - dyeFactor);
-      var net = Math.round(afterDye * (1 - fencePct / 100));
-      var loss = Math.round(gross - net);
+      var netPerRun = Math.max(1, Math.round(m.payout * (1 - dyeFactor) * (1 - fencePct / 100)));
+      var gross = m.payout * runs;
+      var net = netPerRun * runs;
+      var loss = Math.max(0, Math.round(gross - net));
       var mins = m.prepMins * runs;
+      var perHr = Math.round((net / Math.max(1, mins)) * 60);
+      var runsForGoal = Math.ceil(goal / netPerRun);
 
       document.getElementById('ecGross').textContent = '$' + gross.toLocaleString();
       document.getElementById('ecLoss').textContent = '-$' + loss.toLocaleString();
       document.getElementById('ecNet').textContent = '$' + net.toLocaleString();
       document.getElementById('ecTime').textContent = mins + ' Mins';
+      var phEl = document.getElementById('ecPerHour');
+      var grEl = document.getElementById('ecGoalRuns');
+      if (phEl) phEl.textContent = '$' + perHr.toLocaleString() + '/hr';
+      if (grEl) grEl.textContent = runsForGoal + (runsForGoal === 1 ? ' Run' : ' Runs');
     }
 
-    ['ecMethod', 'ecRuns', 'ecFence', 'ecJammer'].forEach(function(id) {
+    ['ecMethod', 'ecRuns', 'ecFence', 'ecJammer', 'ecGoal'].forEach(function(id) {
       var el = document.getElementById(id);
       if (el) {
         el.addEventListener('input', calc);
@@ -824,6 +899,13 @@
       compChapter = e.target.value || 'all';
       renderComparison();
     });
+    var modeSel = document.getElementById('compModeFilter');
+    if (modeSel) {
+      modeSel.addEventListener('change', function(e) {
+        compMode = e.target.value || 'all';
+        renderComparison();
+      });
+    }
   });
 })();
 </script>

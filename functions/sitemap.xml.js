@@ -32,7 +32,6 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/weapons-bonuses.html", changefreq: "weekly", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/radio.html", changefreq: "daily", priority: "0.92" },
   // Guides & Feeds
-  { loc: "https://www.gta6heistguide.com/money-guide.html", changefreq: "daily", priority: "0.92" },
   { loc: "https://www.gta6heistguide.com/secrets.html", changefreq: "daily", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/live-intel.html", changefreq: "daily", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/drops.html", changefreq: "daily", priority: "0.88" },

@@ -38,6 +38,10 @@ jobs:
         run: |
           node scripts/sync-secrets-and-radio.mjs
 
+      - name: Run Safe Daily Wildlife Text & Pending-Image Sync
+        run: |
+          node scripts/sync-animals.mjs
+
       - name: Commit & Push Discoveries
         id: git_sync
         run: |
@@ -49,7 +53,7 @@ jobs:
             echo "No new discoveries or sitemap changes detected in this cycle."
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            git commit -m "chore(daily-sync): refresh live-feed, properties/animals JSON & sitemap lastmod"
+            git commit -m "chore(daily-sync): refresh live-feed, wildlife text/pending-images JSON & sitemap lastmod"
             git push
           fi
 

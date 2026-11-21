@@ -5,16 +5,215 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 Animals &amp; Wildlife Compendium (170+ Species Across 6 Regions) | GTA6HeistGuide.com</title>
-    <meta name="description" content="Searchable GTA 6 Animals &amp; Wildlife Database with real Rockstar Leonida habitat imagery, detail popouts, and direct Leonida Map pins across all 6 regions.">
+    <title>GTA 6 Animals &amp; Wildlife Compendium: 62 Bird Species, Bret Vogel 15 Target Decks &amp; 8 Legendary Hunter | GTA6HeistGuide.com</title>
+    <meta name="description" content="Searchable GTA 6 Animals &amp; Wildlife Compendium across Leonida's 6 regions: 62 bird species (Rockstar developer figure) and 60 Birds-tab entries (in-game Progress tracker), separate Bret Vogel 15 Hunting Target Decks &amp; 8 Legendary Hunter trackers, and verified Leonida Map pins.">
     <link rel="canonical" href="https://www.gta6heistguide.com/animals.html">
-    <meta property="og:title" content="GTA 6 Animals &amp; Wildlife Compendium">
-    <meta property="og:description" content="170+ wildlife species across Leonida's 6 regions with popout habitat cards and exact Leonida Map pins.">
+    <meta property="og:title" content="GTA 6 Animals &amp; Wildlife Compendium — Bret Vogel 15 Target Decks &amp; 8 Legendary Hunter">
+    <meta property="og:description" content="Track 170+ Leonida wildlife species, separate 62 vs. 60 bird figures, Bret Vogel's 15 Hunting Target Decks (100% completion), and 8 Legendary Hunter challenge animals.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/animals.html">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/animals/grassrivers-gator.jpg">
     <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "GTA 6 Animals & Wildlife Compendium",
+          "url": "https://www.gta6heistguide.com/animals.html",
+          "dateModified": "2026-11-21",
+          "description": "Verified GTA 6 Wildlife Compendium tracking 62 bird species (Rockstar developer figure), 60 Birds-tab entries (in-game Progress tracker), Bret Vogel's 15 Hunting Target Decks, and 8 Legendary Hunter challenge animals."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gta6heistguide.com/" },
+            { "@type": "ListItem", "position": 2, "name": "World Database", "item": "https://www.gta6heistguide.com/gta-6-database/" },
+            { "@type": "ListItem", "position": 3, "name": "Animals & Wildlife", "item": "https://www.gta6heistguide.com/animals.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How many bird species are in GTA 6?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are two distinct figures: 62 bird species (Rockstar developer figure) and 60 Birds-tab entries (in-game Progress tracker), with a couple of specialized birds tracked under separate hunting categories."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do Bret Vogel's 15 Hunting Target Decks differ from the 8 Legendary Hunter animals?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bret Vogel's 15 Hunting Target Decks are Jason-only contracts unlocked after 'Veteran Hunted' at Killtelligence Provisions near Mount Kalaga and are required for 100% completion. The 8 Legendary Hunter challenge animals are a separate Survival challenge requiring you to kill all 8 unique animals across Leonida."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
+        .wildlife-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.75rem;
+            margin: 0.9rem 0 1.25rem;
+        }
+        .wildlife-stat-card {
+            background: linear-gradient(155deg, rgba(12, 18, 32, 0.96), rgba(7, 11, 20, 0.98));
+            border: 1px solid rgba(0, 255, 136, 0.28);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+        }
+        .wildlife-stat-num {
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
+            font-weight: 1000;
+            line-height: 1.15;
+            margin-bottom: 0.2rem;
+        }
+        .wildlife-stat-lbl {
+            font-size: 0.79rem;
+            color: #cbd5e1;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+        .wildlife-stat-sub {
+            font-size: 0.71rem;
+            color: #94a3b8;
+            margin-top: 0.2rem;
+        }
+        .hunt-trackers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .hunt-tracker-box {
+            background: linear-gradient(155deg, rgba(13, 18, 32, 0.96), rgba(8, 12, 22, 0.98));
+            border: 1px solid rgba(0, 240, 255, 0.28);
+            border-radius: 12px;
+            padding: 1.05rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .hunt-tracker-box.is-legendary {
+            border-color: rgba(255, 184, 0, 0.38);
+        }
+        .hunt-progress-track {
+            width: 100%;
+            height: 7px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .hunt-progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 999px;
+            transition: width 0.25s ease;
+        }
+        .hunt-slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+            gap: 0.45rem;
+            max-height: 220px;
+            overflow-y: auto;
+            padding-right: 0.2rem;
+        }
+        .hunt-slot-item {
+            background: rgba(7, 11, 20, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.45rem 0.55rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .hunt-slot-item.is-done {
+            border-color: var(--neon-green);
+            background: rgba(0, 255, 136, 0.08);
+        }
+        .hunt-slot-item.is-done-gold {
+            border-color: var(--neon-amber);
+            background: rgba(255, 184, 0, 0.1);
+        }
+        .hunt-slot-note {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: #e2e8f0;
+            font-size: 0.68rem;
+            padding: 0.2rem 0.38rem;
+            box-sizing: border-box;
+        }
+        .anim-tag-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 0.65rem;
+        }
+        .anim-tag-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #cbd5e1;
+            padding: 0.34rem 0.72rem;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .anim-tag-pill.active {
+            background: rgba(0, 255, 136, 0.18);
+            border-color: var(--neon-green);
+            color: #fff;
+        }
+        .animals-disclosed-aff {
+            background: rgba(11, 15, 26, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 10px;
+            padding: 0.68rem 0.95rem;
+            margin: 0 0 1.15rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.55rem 1rem;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+        }
+        .animals-disclosed-aff-tag {
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--neon-amber);
+            background: rgba(255, 184, 0, 0.12);
+            border: 1px solid rgba(255, 184, 0, 0.35);
+            padding: 0.16rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .animals-disclosed-aff-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .animals-disclosed-aff-links a {
+            color: var(--neon-cyan);
+            font-weight: 800;
+            text-decoration: none;
+        }
+        .animals-disclosed-aff-links a:hover { text-decoration: underline; }
         .db-card {
             background: rgba(12, 18, 32, 0.94);
             border: 1px solid rgba(255, 255, 255, 0.11);
@@ -47,30 +246,100 @@
             transition: transform 0.35s ease;
         }
         .db-card:hover .db-card-img img { transform: scale(1.04); }
+        .species-placeholder {
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.09), transparent 55%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.08), transparent 55%),
+                linear-gradient(155deg, #0b1120 0%, #060912 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .species-placeholder::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 22px 22px;
+            pointer-events: none;
+        }
+        .species-placeholder-icon {
+            font-size: 1.9rem;
+            line-height: 1;
+            margin-bottom: 0.35rem;
+            position: relative;
+            z-index: 1;
+        }
+        .species-placeholder-name {
+            color: #e2e8f0;
+            font-size: 0.84rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        .species-placeholder-status {
+            margin-top: 0.32rem;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px dashed rgba(148, 163, 184, 0.35);
+            padding: 0.16rem 0.5rem;
+            border-radius: 999px;
+            position: relative;
+            z-index: 1;
+        }
         .db-card-chip {
             position: absolute;
             top: 8px;
             left: 8px;
-            background: rgba(6, 10, 20, 0.88);
+            background: rgba(6, 10, 20, 0.9);
             border: 1px solid rgba(0, 255, 136, 0.45);
             color: var(--neon-green);
-            font-size: 0.64rem;
+            font-size: 0.63rem;
             font-weight: 800;
             font-family: var(--font-mono);
             padding: 2px 7px;
             border-radius: 4px;
             text-transform: uppercase;
+            z-index: 2;
+        }
+        .db-card-verified-shot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 255, 136, 0.18);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            font-size: 0.6rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            padding: 2px 6px;
+            border-radius: 4px;
+            z-index: 2;
         }
         .db-card-region {
             position: absolute;
             bottom: 8px;
             right: 8px;
-            background: rgba(6, 10, 20, 0.88);
+            background: rgba(6, 10, 20, 0.9);
             color: #e2e8f0;
-            font-size: 0.65rem;
+            font-size: 0.64rem;
             font-weight: 700;
             padding: 2px 7px;
             border-radius: 4px;
+            z-index: 2;
         }
         .db-card-body {
             padding: 0.85rem 0.95rem 0.9rem;
@@ -78,6 +347,29 @@
             flex-direction: column;
             gap: 0.38rem;
             flex: 1;
+        }
+        .species-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.32rem;
+            margin: 0.1rem 0;
+        }
+        .species-tag-badge {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 0.14rem 0.45rem;
+            border-radius: 4px;
+        }
+        .species-tag-deck {
+            background: rgba(0, 240, 255, 0.12);
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            color: var(--neon-cyan);
+        }
+        .species-tag-legendary {
+            background: rgba(255, 184, 0, 0.14);
+            border: 1px solid rgba(255, 184, 0, 0.45);
+            color: var(--neon-amber);
         }
         .db-card-foot {
             display: flex;
@@ -87,6 +379,11 @@
             margin-top: auto;
             padding-top: 0.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .modal-placeholder-wrap {
+            width: 100%;
+            height: 100%;
+            min-height: 210px;
         }
     </style>
 </head>
@@ -136,6 +433,7 @@
             <li class="nav-dropdown nav-dropdown-right">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -148,33 +446,100 @@
     </div>
 </nav>
 
-<main class="container" style="max-width:1140px; margin:0 auto; padding:1rem 1rem 2.5rem;">
-    <header style="margin-bottom:1rem;">
-        <span class="user-badge" style="background:rgba(0,255,136,0.16); border:1px solid var(--neon-green); color:var(--neon-green); font-size:0.72rem; padding:0.2rem 0.55rem; font-weight:800;">LEONIDA WILDLIFE COMPENDIUM</span>
-        <h1 style="font-size:clamp(1.45rem, 3vw, 2.15rem); color:#fff; margin:0.45rem 0 0.4rem;">GTA 6 Animals &amp; Wildlife Database</h1>
-        <p style="color:#94a3b8; font-size:0.9rem; margin:0;"><strong style="color:var(--neon-cyan);">170+ wildlife species across Leonida's 6 regions (including 62 bird species).</strong> Click any species card for its popout habitat dossier and exact <strong style="color:var(--neon-green);">Map Location</strong>.</p>
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.1rem 1rem 2.75rem;">
+    <nav aria-label="Breadcrumb" style="font-size:0.78rem; color:#94a3b8; margin-bottom:0.85rem; display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
+        <a href="/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/gta-6-database/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">World Database</a>
+        <span aria-hidden="true">/</span>
+        <span style="color:#e2e8f0; font-weight:700;">Animals &amp; Wildlife</span>
+    </nav>
+
+    <header style="margin-bottom:0.9rem;">
+        <span class="user-badge" style="background:rgba(0,255,136,0.16); border:1px solid var(--neon-green); color:var(--neon-green); font-size:0.72rem; padding:0.2rem 0.55rem; font-weight:800;">LEONIDA WILDLIFE COMPENDIUM &bull; VERIFIED SCREENSHOT POLICY</span>
+        <h1 style="font-size:clamp(1.45rem, 3vw, 2.2rem); color:#fff; margin:0.45rem 0 0.4rem;">GTA 6 Animals &amp; Wildlife Database</h1>
+        <p style="color:#94a3b8; font-size:0.9rem; margin:0; line-height:1.55;">
+            Explore Leonida's 170+ wildlife species across 6 regions. Only verified in-game GTA 6 screenshots are published—species awaiting verified captures display clean dark placeholders instead of stock or duplicate photos.
+        </p>
+
+        <!-- EXPLICIT SEPARATE BIRD STATS + HUNTING OVERVIEW -->
+        <div class="wildlife-stats-grid" aria-label="Verified Wildlife Statistics">
+            <div class="wildlife-stat-card" style="border-color:rgba(0,240,255,0.35);">
+                <div class="wildlife-stat-num" style="color:var(--neon-cyan);">62 bird species</div>
+                <div class="wildlife-stat-lbl">62 bird species (Rockstar developer figure)</div>
+                <div class="wildlife-stat-sub">Official total bird species figure cited by Rockstar developers across Leonida.</div>
+            </div>
+            <div class="wildlife-stat-card" style="border-color:rgba(255,184,0,0.38);">
+                <div class="wildlife-stat-num" style="color:var(--neon-amber);">60 Birds-tab entries</div>
+                <div class="wildlife-stat-lbl">60 Birds-tab entries (in-game Progress tracker)</div>
+                <div class="wildlife-stat-sub">Dedicated Birds tab count inside Pause &rarr; Progress (tracked separately from the 62-species dev figure).</div>
+            </div>
+            <div class="wildlife-stat-card" style="border-color:rgba(0,255,136,0.35);">
+                <div class="wildlife-stat-num" style="color:var(--neon-green);">15 Target Decks</div>
+                <div class="wildlife-stat-lbl">Bret Vogel's 15 Hunting Target Decks</div>
+                <div class="wildlife-stat-sub">Required for 100% completion (Jason-only via <em>Veteran Hunted</em>).</div>
+            </div>
+            <div class="wildlife-stat-card" style="border-color:rgba(255,42,141,0.38);">
+                <div class="wildlife-stat-num" style="color:var(--neon-pink);">8 Unique Animals</div>
+                <div class="wildlife-stat-lbl">8 Legendary Hunter Challenge Animals</div>
+                <div class="wildlife-stat-sub">Separate Survival challenge: "Kill all 8 unique animals" across Leonida.</div>
+            </div>
+        </div>
     </header>
 
-    <div class="syndicate-aff-bar">
-  <div class="syndicate-aff-bar-main">
-    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
-    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-    <span class="aff-sep">|</span>
-    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-    <span class="aff-sep">|</span>
-    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
-    <span class="aff-sep">|</span>
-    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-  </div>
-</div>
+    <!-- TWO SEPARATE HUNTING TRACKERS (OVERLAPPING SPECIES TAGS SUPPORTED) -->
+    <section id="hunting-trackers" class="hunt-trackers-grid" aria-label="Separate GTA 6 Hunting Trackers">
+        <!-- TRACKER 1: BRET VOGEL'S 15 HUNTING TARGET DECKS (100% COMPLETION) -->
+        <div class="hunt-tracker-box">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.6rem; flex-wrap:wrap;">
+                <div>
+                    <span class="verify-badge verify-confirmed">🎯 100% COMPLETION TRACKER</span>
+                    <h2 style="color:#fff; font-size:1.12rem; margin:0.35rem 0 0.2rem;">Bret Vogel's 15 Hunting Target Decks</h2>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">
+                        <strong>Jason-only:</strong> Unlocks after Ch. 2's <em>Veteran Hunted</em> (post-<em>Coffee Break</em>) at <em>Killtelligence Provisions</em> near Mount Kalaga (rewards <strong>Killtelligence SM-69</strong> rifle). Deliver Good/Pristine carcasses via Focus mode (<code>L3 + R3</code>).
+                    </p>
+                </div>
+                <div style="text-align:right; font-family:var(--font-mono);">
+                    <div id="vogelProgressText" style="color:var(--neon-cyan); font-size:0.95rem; font-weight:900;">0 / 15 Decks</div>
+                    <button type="button" id="filterVogelBtn" class="anim-tag-pill" style="margin-top:0.35rem; font-size:0.68rem;">Filter Tagged Species</button>
+                </div>
+            </div>
+            <div class="hunt-progress-track">
+                <div id="vogelProgressBar" class="hunt-progress-fill" style="background:linear-gradient(90deg, var(--neon-cyan), var(--neon-green));"></div>
+            </div>
+            <div id="vogelDecksGrid" class="hunt-slots-grid"></div>
+        </div>
 
-    <section style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,255,136,0.25); border-radius:10px; padding:0.9rem; margin-bottom:1.1rem;">
-        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; justify-content:space-between; margin-bottom:0.65rem;">
-            <input id="animSearch" type="search" placeholder="Search Alligator, Panther, Flamingo, Manatee, Labrador..." style="flex:1 1 260px; padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,255,136,0.35); background:#070c16; color:#fff; font-size:0.88rem;">
+        <!-- TRACKER 2: 8 LEGENDARY HUNTER CHALLENGE ANIMALS -->
+        <div class="hunt-tracker-box is-legendary">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.6rem; flex-wrap:wrap;">
+                <div>
+                    <span class="verify-badge verify-community">👑 SURVIVAL CHALLENGE TRACKER</span>
+                    <h2 style="color:#fff; font-size:1.12rem; margin:0.35rem 0 0.2rem;">8 Legendary Hunter Challenge Animals</h2>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">
+                        <strong>Progress &rarr; Challenges &rarr; Survival:</strong> <em>"Kill all 8 unique animals."</em> Separate from Bret Vogel's 15 Target Decks (species tags may overlap). Rockstar conceals the 8 unique target names at launch—check off and log each hunt as you verify it in-game.
+                    </p>
+                </div>
+                <div style="text-align:right; font-family:var(--font-mono);">
+                    <div id="legendaryProgressText" style="color:var(--neon-amber); font-size:0.95rem; font-weight:900;">0 / 8 Unique</div>
+                    <button type="button" id="filterLegendaryBtn" class="anim-tag-pill" style="margin-top:0.35rem; font-size:0.68rem;">Filter Tagged Species</button>
+                </div>
+            </div>
+            <div class="hunt-progress-track">
+                <div id="legendaryProgressBar" class="hunt-progress-fill" style="background:linear-gradient(90deg, var(--neon-amber), var(--neon-pink));"></div>
+            </div>
+            <div id="legendaryAnimalsGrid" class="hunt-slots-grid"></div>
+        </div>
+    </section>
+
+    <!-- CATEGORY & REGION FILTER BAR -->
+    <section id="animalsFilterBar" style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,255,136,0.25); border-radius:10px; padding:0.9rem; margin-bottom:0.85rem;">
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; justify-content:space-between; margin-bottom:0.6rem;">
+            <input id="animSearch" type="search" placeholder="Search Alligator, Panther, Flamingo, Manatee, habitat, tag..." style="flex:1 1 260px; padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,255,136,0.35); background:#070c16; color:#fff; font-size:0.88rem;">
             <select id="animCategory" style="padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,255,136,0.35); background:#070c16; color:#fff; font-size:0.85rem;">
                 <option value="ALL">All Categories</option>
                 <option value="Land & Predators">Land &amp; Predators</option>
-                <option value="Birds">Birds</option>
+                <option value="Birds">Birds (62 dev / 60 Progress tab)</option>
                 <option value="Marine & Aquatic">Marine &amp; Aquatic</option>
                 <option value="Domestic/Pettable">Domestic / Pettable</option>
             </select>
@@ -188,22 +553,43 @@
                 <option value="Mount Kalaga National Park">Mount Kalaga National Park</option>
             </select>
         </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.82rem; font-family:var(--font-mono);">
+        <div class="anim-tag-pills" id="animTagPills" aria-label="Filter by Hunting Tracker Tag">
+            <button type="button" class="anim-tag-pill active" data-tag="ALL">All Species</button>
+            <button type="button" class="anim-tag-pill" data-tag="target-deck">🎯 Bret Vogel Target Decks</button>
+            <button type="button" class="anim-tag-pill" data-tag="legendary-hunter">👑 Legendary Hunter</button>
+            <button type="button" class="anim-tag-pill" data-tag="verified-shot">📸 Verified In-Game Shot</button>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-top:0.65rem; font-size:0.8rem; font-family:var(--font-mono);">
             <span id="animCount" style="color:var(--neon-cyan);">Loading wildlife compendium...</span>
             <span id="animProgress" style="color:var(--neon-green); font-weight:800;">Spotted / Studied: 0 / 0</span>
         </div>
     </section>
 
+    <!-- ONE CLEAN, CLEARLY DISCLOSED AFFILIATE STRIP DIRECTLY BELOW THE CATEGORY FILTER BAR -->
+    <aside class="animals-disclosed-aff" aria-label="Partner Disclosure and Affiliate Links">
+        <div style="display:flex; align-items:center; gap:0.55rem; flex-wrap:wrap;">
+            <span class="animals-disclosed-aff-tag">Affiliate Disclosure</span>
+            <span>Partner links (we earn a commission at no extra cost to you):</span>
+        </div>
+        <div class="animals-disclosed-aff-links">
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+            <span class="aff-sep">|</span>
+            <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+            <span class="aff-sep">|</span>
+            <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+            <span class="aff-sep">|</span>
+            <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+        </div>
+    </aside>
+
     <div id="animGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:0.85rem;"></div>
 </main>
 
-<!-- ANIMAL POPOUT MODAL -->
+<!-- CLEAN ANIMAL POPOUT MODAL (ZERO AFFILIATE BARS INSIDE POPUP MODALS) -->
 <div class="syndicate-modal-backdrop" id="animModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="animModalTitle">
     <div class="syndicate-modal-card">
         <button type="button" class="syndicate-modal-close" id="animModalClose" aria-label="Close modal">&times;</button>
-        <div class="syndicate-modal-hero">
-            <img id="animModalImg" src="/assets/images/animals/grassrivers-gator.jpg" alt="">
-        </div>
+        <div class="syndicate-modal-hero" id="animModalMedia"></div>
         <div class="syndicate-modal-body">
             <div class="syndicate-modal-meta">
                 <span class="syndicate-modal-badge" id="animModalCat"></span>
@@ -211,9 +597,9 @@
                 <span class="syndicate-modal-badge" id="animModalDanger" style="border-color:rgba(255,42,141,0.45); color:#ff7cc4; background:rgba(255,42,141,0.12);"></span>
             </div>
             <h2 class="syndicate-modal-title" id="animModalTitle"></h2>
+            <div class="species-tag-row" id="animModalTags" style="margin-bottom:0.55rem;"></div>
             <div class="syndicate-modal-stats" id="animModalStats"></div>
             <p id="animModalNotes" style="color:#e2e8f0; font-size:0.9rem; line-height:1.55; margin:0.6rem 0 0.85rem;"></p>
-            <div id="animModalAff"></div>
             <div class="syndicate-modal-footer">
                 <label style="display:inline-flex; align-items:center; gap:0.45rem; cursor:pointer; font-size:0.84rem; font-weight:700; color:#fff;">
                     <input type="checkbox" id="animModalStudiedChk" style="width:17px; height:17px; accent-color:#00ff88;">
@@ -236,131 +622,204 @@
                         <span class="brand-gta">GTA 6</span>
                         <span class="brand-vi-sub">HEIST GUIDE</span>
                     </span>
-                    <span class="brand-badge">Syndicate v3.2</span>
+                    <span class="brand-badge">Syndicate v3.3</span>
                 </a>
                 <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
                     The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
-                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/gta-6-database/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">📚 World Database</a>
                 <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
-
-        <div class="footer-links-grid">
-            <div>
-                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
-                <ul class="footer-col-links">
-                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
-                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
-                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
-                    <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
-                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
-                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
-                <ul class="footer-col-links">
-                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
-                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
-                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
-                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
-                <ul class="footer-col-links">
-                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
-                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
-                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
-                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
-                <ul class="footer-col-links">
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
-                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
-                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
-                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-secondary-strip">
-            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
-                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
-                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
-                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
-                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
-                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
-                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
-                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
-                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
-            </div>
-            <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
-            </div>
-        </div>
-
         <div class="footer-disclaimer">
             <p style="margin:0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
 (function() {
-  const STORAGE_KEY = 'gta6_animals_studied_v1';
-  let items = [];
-  let studied = {};
-  let activeItem = null;
+  var STORAGE_KEY = 'gta6_animals_studied_v1';
+  var TRACKER_KEY = 'gta6_animals_trackers_v2';
+  var items = [];
+  var studied = {};
+  var trackers = { vogel: {}, vogelNotes: {}, legendary: {}, legendaryNotes: {} };
+  var activeItem = null;
+  var activeTag = 'ALL';
+
   try { studied = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { studied = {}; }
+  try {
+    var savedT = JSON.parse(localStorage.getItem(TRACKER_KEY) || '{}');
+    if (savedT && typeof savedT === 'object') {
+      trackers.vogel = savedT.vogel || {};
+      trackers.vogelNotes = savedT.vogelNotes || {};
+      trackers.legendary = savedT.legendary || {};
+      trackers.legendaryNotes = savedT.legendaryNotes || {};
+    }
+  } catch (e) {}
 
-  const grid = document.getElementById('animGrid');
-  const searchEl = document.getElementById('animSearch');
-  const catEl = document.getElementById('animCategory');
-  const regEl = document.getElementById('animRegion');
-  const countEl = document.getElementById('animCount');
-  const progEl = document.getElementById('animProgress');
+  var grid = document.getElementById('animGrid');
+  var searchEl = document.getElementById('animSearch');
+  var catEl = document.getElementById('animCategory');
+  var regEl = document.getElementById('animRegion');
+  var countEl = document.getElementById('animCount');
+  var progEl = document.getElementById('animProgress');
+  var backdrop = document.getElementById('animModalBackdrop');
+  var closeBtn = document.getElementById('animModalClose');
+  var modalChk = document.getElementById('animModalStudiedChk');
 
-  const backdrop = document.getElementById('animModalBackdrop');
-  const closeBtn = document.getElementById('animModalClose');
-  const modalChk = document.getElementById('animModalStudiedChk');
-
+  function esc(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
   function saveStudied() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(studied)); } catch (e) {}
+  }
+  function saveTrackers() {
+    try { localStorage.setItem(TRACKER_KEY, JSON.stringify(trackers)); } catch (e) {}
+  }
+
+  function categoryIcon(cat) {
+    if (cat === 'Birds') return '🦅';
+    if (cat === 'Marine & Aquatic') return '🦈';
+    if (cat === 'Domestic/Pettable') return '🐕';
+    return '🐾';
+  }
+
+  function placeholderHtml(item, extraClass) {
+    return '<div class="species-placeholder ' + (extraClass || '') + '">' +
+      '<div class="species-placeholder-icon" aria-hidden="true">' + categoryIcon(item.category) + '</div>' +
+      '<div class="species-placeholder-name">' + esc(item.name) + '</div>' +
+      '<div class="species-placeholder-status">Awaiting Verified In-Game Screenshot</div>' +
+    '</div>';
+  }
+
+  function tagBadgesHtml(tags) {
+    if (!Array.isArray(tags) || !tags.length) return '';
+    return tags.map(function(t) {
+      if (t === 'target-deck') return '<span class="species-tag-badge species-tag-deck">🎯 Target Deck</span>';
+      if (t === 'legendary-hunter') return '<span class="species-tag-badge species-tag-legendary">👑 Legendary Hunter</span>';
+      return '<span class="species-tag-badge">' + esc(t) + '</span>';
+    }).join('');
+  }
+
+  function renderVogelTracker() {
+    var container = document.getElementById('vogelDecksGrid');
+    var txt = document.getElementById('vogelProgressText');
+    var bar = document.getElementById('vogelProgressBar');
+    if (!container) return;
+    var done = 0;
+    var html = [];
+    for (var i = 1; i <= 15; i++) {
+      var key = 'deck-' + String(i).padStart(2, '0');
+      var checked = !!trackers.vogel[key];
+      if (checked) done++;
+      var noteVal = trackers.vogelNotes[key] || '';
+      html.push(
+        '<div class="hunt-slot-item' + (checked ? ' is-done' : '') + '">' +
+          '<label style="display:flex; align-items:center; gap:0.35rem; font-size:0.74rem; color:#fff; font-weight:800; cursor:pointer;">' +
+            '<input type="checkbox" data-vogel-key="' + key + '"' + (checked ? ' checked' : '') + ' style="accent-color:#00ff88;">' +
+            '<span>Deck #' + String(i).padStart(2, '0') + '</span>' +
+          '</label>' +
+          '<input type="text" class="hunt-slot-note" data-vogel-note="' + key + '" value="' + esc(noteVal) + '" placeholder="Target note...">' +
+        '</div>'
+      );
+    }
+    container.innerHTML = html.join('');
+    if (txt) txt.textContent = done + ' / 15 Decks';
+    if (bar) bar.style.width = Math.round((done / 15) * 100) + '%';
+
+    container.querySelectorAll('input[data-vogel-key]').forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        trackers.vogel[cb.getAttribute('data-vogel-key')] = cb.checked;
+        saveTrackers();
+        renderVogelTracker();
+      });
+    });
+    container.querySelectorAll('input[data-vogel-note]').forEach(function(inp) {
+      inp.addEventListener('input', function() {
+        trackers.vogelNotes[inp.getAttribute('data-vogel-note')] = inp.value;
+        saveTrackers();
+      });
+    });
+  }
+
+  function renderLegendaryTracker() {
+    var container = document.getElementById('legendaryAnimalsGrid');
+    var txt = document.getElementById('legendaryProgressText');
+    var bar = document.getElementById('legendaryProgressBar');
+    if (!container) return;
+    var done = 0;
+    var html = [];
+    for (var i = 1; i <= 8; i++) {
+      var key = 'leg-' + String(i).padStart(2, '0');
+      var checked = !!trackers.legendary[key];
+      if (checked) done++;
+      var noteVal = trackers.legendaryNotes[key] || '';
+      html.push(
+        '<div class="hunt-slot-item' + (checked ? ' is-done-gold' : '') + '">' +
+          '<label style="display:flex; align-items:center; gap:0.35rem; font-size:0.74rem; color:#fff; font-weight:800; cursor:pointer;">' +
+            '<input type="checkbox" data-leg-key="' + key + '"' + (checked ? ' checked' : '') + ' style="accent-color:#ffb800;">' +
+            '<span>Unique #' + String(i).padStart(2, '0') + '</span>' +
+          '</label>' +
+          '<input type="text" class="hunt-slot-note" data-leg-note="' + key + '" value="' + esc(noteVal) + '" placeholder="Species / region...">' +
+        '</div>'
+      );
+    }
+    container.innerHTML = html.join('');
+    if (txt) txt.textContent = done + ' / 8 Unique';
+    if (bar) bar.style.width = Math.round((done / 8) * 100) + '%';
+
+    container.querySelectorAll('input[data-leg-key]').forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        trackers.legendary[cb.getAttribute('data-leg-key')] = cb.checked;
+        saveTrackers();
+        renderLegendaryTracker();
+      });
+    });
+    container.querySelectorAll('input[data-leg-note]').forEach(function(inp) {
+      inp.addEventListener('input', function() {
+        trackers.legendaryNotes[inp.getAttribute('data-leg-note')] = inp.value;
+        saveTrackers();
+      });
+    });
+  }
+
+  function setTagFilter(tagVal) {
+    activeTag = tagVal;
+    document.querySelectorAll('#animTagPills .anim-tag-pill').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-tag') === activeTag);
+    });
+    render();
   }
 
   function openPopout(item) {
     activeItem = item;
-    document.getElementById('animModalImg').src = item.image || '/assets/images/animals/grassrivers-gator.jpg';
-    document.getElementById('animModalImg').alt = item.name + ' habitat in ' + item.region;
+    var mediaEl = document.getElementById('animModalMedia');
+    if (item.image && item.imageVerified === true) {
+      mediaEl.innerHTML = '<img src="' + esc(item.image) + '" alt="' + esc(item.name + ' verified GTA 6 screenshot') + '">';
+    } else {
+      mediaEl.innerHTML = placeholderHtml(item, 'modal-placeholder-wrap');
+    }
+
     document.getElementById('animModalCat').textContent = item.category;
     document.getElementById('animModalRegion').textContent = '📍 ' + item.region;
     document.getElementById('animModalDanger').textContent = item.danger;
     document.getElementById('animModalTitle').textContent = item.name;
-    document.getElementById('animModalStats').innerHTML = `
-      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Primary Habitat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-green);">${item.region}</div></div>
-      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Behavior / Threat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-amber);">${item.danger}</div></div>
-      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Compendium Class</div><div class="syndicate-modal-stat-val" style="color:var(--neon-cyan);">${item.category}</div></div>
-    `;
-    document.getElementById('animModalNotes').textContent = item.notes;
-    document.getElementById('animModalAff').innerHTML = window.getSyndicateAffBarHtml
-      ? window.getSyndicateAffBarHtml()
-      : '';
+    document.getElementById('animModalTags').innerHTML = tagBadgesHtml(item.tags);
+    document.getElementById('animModalStats').innerHTML =
+      '<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Primary Region</div><div class="syndicate-modal-stat-val" style="color:var(--neon-green);">' + esc(item.region) + '</div></div>' +
+      '<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Habitat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-cyan); font-size:0.78rem;">' + esc(item.habitat || item.region) + '</div></div>' +
+      '<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Behavior / Threat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-amber);">' + esc(item.danger) + '</div></div>';
+    document.getElementById('animModalNotes').textContent = item.notes || '';
     modalChk.checked = !!studied[item.id];
-    const pinId = encodeURIComponent(item.pinId || item.id);
+    var pinId = encodeURIComponent(item.pinId || item.id);
     document.getElementById('animModalMapBtn').href = '/map.html?pin=' + pinId;
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -373,9 +832,9 @@
   }
 
   closeBtn.addEventListener('click', closePopout);
-  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closePopout(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) closePopout(); });
-  modalChk.addEventListener('change', () => {
+  backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closePopout(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && backdrop.classList.contains('open')) closePopout(); });
+  modalChk.addEventListener('change', function() {
     if (!activeItem) return;
     studied[activeItem.id] = modalChk.checked;
     saveStudied();
@@ -383,52 +842,72 @@
   });
 
   function render() {
-    const q = (searchEl.value || '').trim().toLowerCase();
-    const cat = catEl.value;
-    const reg = regEl.value;
-    const filtered = items.filter(it => {
+    var q = (searchEl.value || '').trim().toLowerCase();
+    var cat = catEl.value;
+    var reg = regEl.value;
+    var filtered = items.filter(function(it) {
       if (cat !== 'ALL' && it.category !== cat) return false;
       if (reg !== 'ALL' && it.region !== reg) return false;
-      if (q && !(it.name + ' ' + it.region + ' ' + it.category + ' ' + it.danger + ' ' + it.notes).toLowerCase().includes(q)) return false;
+      if (activeTag === 'verified-shot') {
+        if (!(it.image && it.imageVerified === true)) return false;
+      } else if (activeTag !== 'ALL') {
+        if (!Array.isArray(it.tags) || it.tags.indexOf(activeTag) === -1) return false;
+      }
+      if (q) {
+        var hay = (it.name + ' ' + it.region + ' ' + (it.habitat || '') + ' ' + it.category + ' ' + it.danger + ' ' + (it.notes || '') + ' ' + (Array.isArray(it.tags) ? it.tags.join(' ') : '')).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
       return true;
     });
 
-    const totalStudied = items.filter(i => studied[i.id]).length;
-    countEl.textContent = `Showing ${filtered.length} of ${items.length} verified launch species`;
-    progEl.textContent = `Spotted / Studied: ${totalStudied} / ${items.length}`;
+    var totalStudied = items.filter(function(i) { return studied[i.id]; }).length;
+    countEl.textContent = 'Showing ' + filtered.length + ' of ' + items.length + ' indexed launch species';
+    progEl.textContent = 'Spotted / Studied: ' + totalStudied + ' / ' + items.length;
 
-    grid.innerHTML = filtered.map(it => {
-      const isChecked = !!studied[it.id];
-      const badgeColor = it.category === 'Land & Predators' ? 'var(--neon-pink)' : (it.category === 'Birds' ? 'var(--neon-amber)' : (it.category === 'Marine & Aquatic' ? 'var(--neon-cyan)' : 'var(--neon-green)'));
-      return `<article class="db-card ${isChecked ? 'is-studied' : ''}" data-open-id="${it.id}">
-        <div class="db-card-img">
-          <img src="${it.image || '/assets/images/animals/grassrivers-gator.jpg'}" alt="${it.name}" loading="lazy">
-          <span class="db-card-chip" style="color:${badgeColor}; border-color:${badgeColor};">${it.category}</span>
-          <span class="db-card-region">📍 ${it.region}</span>
-        </div>
-        <div class="db-card-body">
-          <h2 style="font-size:1rem; color:#fff; margin:0; line-height:1.25;">${it.name}</h2>
-          <div style="font-size:0.74rem; color:var(--neon-amber); font-weight:700;">Behavior: ${it.danger}</div>
-          <p style="font-size:0.79rem; color:#94a3b8; margin:0; line-height:1.45;">${it.notes}</p>
-          <div class="db-card-foot">
-            <label onclick="event.stopPropagation()" style="display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.78rem; color:${isChecked ? 'var(--neon-green)' : '#e2e8f0'}; font-weight:700;">
-              <input type="checkbox" data-anim-id="${it.id}" ${isChecked ? 'checked' : ''} style="width:15px; height:15px; accent-color:#00ff88;">
-              <span>${isChecked ? 'Studied' : 'Track'}</span>
-            </label>
-            <span style="font-size:0.74rem; color:var(--neon-green); font-weight:800; font-family:var(--font-mono);">Habitat &amp; Map &rarr;</span>
-          </div>
-        </div>
-      </article>`;
+    if (!filtered.length) {
+      grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:1.75rem; color:#94a3b8;">No wildlife entries matched your active filters.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function(it) {
+      var isChecked = !!studied[it.id];
+      var badgeColor = it.category === 'Land & Predators' ? 'var(--neon-pink)' : (it.category === 'Birds' ? 'var(--neon-amber)' : (it.category === 'Marine & Aquatic' ? 'var(--neon-cyan)' : 'var(--neon-green)'));
+      var hasVerifiedShot = Boolean(it.image && it.imageVerified === true);
+      var mediaHtml = hasVerifiedShot
+        ? '<img src="' + esc(it.image) + '" alt="' + esc(it.name) + ' verified GTA 6 screenshot" loading="lazy">' +
+          '<span class="db-card-verified-shot">✓ Verified Shot</span>'
+        : placeholderHtml(it);
+
+      return '<article class="db-card ' + (isChecked ? 'is-studied' : '') + '" data-open-id="' + esc(it.id) + '">' +
+        '<div class="db-card-img">' +
+          mediaHtml +
+          '<span class="db-card-chip" style="color:' + badgeColor + '; border-color:' + badgeColor + ';">' + esc(it.category) + '</span>' +
+          '<span class="db-card-region">📍 ' + esc(it.region) + '</span>' +
+        '</div>' +
+        '<div class="db-card-body">' +
+          '<h3 style="font-size:1rem; color:#fff; margin:0; line-height:1.25;">' + esc(it.name) + '</h3>' +
+          (Array.isArray(it.tags) && it.tags.length ? '<div class="species-tag-row">' + tagBadgesHtml(it.tags) + '</div>' : '') +
+          '<div style="font-size:0.74rem; color:var(--neon-amber); font-weight:700;">Behavior: ' + esc(it.danger) + '</div>' +
+          '<p style="font-size:0.79rem; color:#94a3b8; margin:0; line-height:1.45;">' + esc(it.notes) + '</p>' +
+          '<div class="db-card-foot">' +
+            '<label onclick="event.stopPropagation()" style="display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.78rem; color:' + (isChecked ? 'var(--neon-green)' : '#e2e8f0') + '; font-weight:700;">' +
+              '<input type="checkbox" data-anim-id="' + esc(it.id) + '"' + (isChecked ? ' checked' : '') + ' style="width:15px; height:15px; accent-color:#00ff88;">' +
+              '<span>' + (isChecked ? 'Studied' : 'Track') + '</span>' +
+            '</label>' +
+            '<span style="font-size:0.74rem; color:var(--neon-green); font-weight:800; font-family:var(--font-mono);">Habitat &amp; Map &rarr;</span>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
     }).join('');
 
-    grid.querySelectorAll('.db-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const it = items.find(x => x.id === card.getAttribute('data-open-id'));
+    grid.querySelectorAll('.db-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var it = items.find(function(x) { return x.id === card.getAttribute('data-open-id'); });
         if (it) openPopout(it);
       });
     });
-    grid.querySelectorAll('input[data-anim-id]').forEach(cb => {
-      cb.addEventListener('change', (e) => {
+    grid.querySelectorAll('input[data-anim-id]').forEach(function(cb) {
+      cb.addEventListener('change', function(e) {
         e.stopPropagation();
         studied[cb.getAttribute('data-anim-id')] = cb.checked;
         saveStudied();
@@ -437,10 +916,34 @@
     });
   }
 
-  fetch('/data/animals.json?v=45')
-    .then(r => r.json())
-    .then(data => { items = data.items || []; render(); })
-    .catch(() => { grid.innerHTML = '<p style="color:#f87171;">Failed to load animals database.</p>'; });
+  document.getElementById('animTagPills').addEventListener('click', function(e) {
+    var btn = e.target.closest('.anim-tag-pill');
+    if (!btn) return;
+    setTagFilter(btn.getAttribute('data-tag') || 'ALL');
+  });
+  document.getElementById('filterVogelBtn').addEventListener('click', function() {
+    setTagFilter(activeTag === 'target-deck' ? 'ALL' : 'target-deck');
+    var bar = document.getElementById('animalsFilterBar');
+    if (bar && bar.scrollIntoView) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  document.getElementById('filterLegendaryBtn').addEventListener('click', function() {
+    setTagFilter(activeTag === 'legendary-hunter' ? 'ALL' : 'legendary-hunter');
+    var bar = document.getElementById('animalsFilterBar');
+    if (bar && bar.scrollIntoView) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  renderVogelTracker();
+  renderLegendaryTracker();
+
+  fetch('/data/animals.json?v=20261121_v2')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      items = Array.isArray(data.items) ? data.items : [];
+      render();
+    })
+    .catch(function() {
+      grid.innerHTML = '<p style="color:#f87171;">Failed to load animals database.</p>';
+    });
 
   searchEl.addEventListener('input', render);
   catEl.addEventListener('change', render);
