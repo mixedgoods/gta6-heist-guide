@@ -983,9 +983,9 @@ HTML_CONTENT = r'''<!DOCTYPE html>
 <div class="countdown-strip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS">
+            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS & DROPS">
                 <span class="strip-pulse"></span>
-                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS &amp; DROPS</span>
+                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS &amp; DROPS</span>
             </a>
             <span class="strip-divider">|</span>
             <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>

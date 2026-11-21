@@ -1,0 +1,281 @@
+{
+  "updated": "2026-11-21",
+  "note": "Story Safehouses (4 total — houses cannot be bought in Story Mode), Garages (8 Purchasable + 4 Story-Unlocked + Ultimate Edition), and 7 Fences + BuckMe Family Savings.",
+  "items": [
+    {
+      "id": "sh-jasons-house",
+      "name": "Jason's House (Key Lento)",
+      "category": "Story Safehouses",
+      "region": "Leonida Keys",
+      "chapter": "Chapter 1",
+      "cost": "Story Unlocked",
+      "status": "Active",
+      "features": "Floorboard cash stash, wardrobe, sleep save, Ultimate Edition Enduro & Kayak spawn",
+      "notes": "Mariana County starter safehouse. Houses cannot be purchased in GTA 6 Story Mode."
+    },
+    {
+      "id": "sh-ch2-motel",
+      "name": "Chapter 2 Motel Base",
+      "category": "Story Safehouses",
+      "region": "Port Gellhorn",
+      "chapter": "Chapter 2",
+      "cost": "Story Unlocked",
+      "status": "Missable / Closes After 'Checking Out'",
+      "features": "Bed save, trunk staging, proximity to Port Gellhorn pawn shops & Moses",
+      "notes": "WARNING: Permanently closes after completing the mission 'Checking Out'. Clear your stash first."
+    },
+    {
+      "id": "sh-vc-safehouse-3",
+      "name": "Vice City Story Safehouse #3",
+      "category": "Story Safehouses",
+      "region": "Vice City",
+      "chapter": "Chapter 3",
+      "cost": "Story Unlocked",
+      "status": "Active",
+      "features": "Central Vice City base, wardrobe, weapon locker, fast access to jewelry & bank targets",
+      "notes": "Unlocks automatically through Chapter 3 story progression."
+    },
+    {
+      "id": "sh-vc-safehouse-4",
+      "name": "Vice City Story Safehouse #4",
+      "category": "Story Safehouses",
+      "region": "Vice City",
+      "chapter": "Chapter 4",
+      "cost": "Story Unlocked",
+      "status": "Active",
+      "features": "High-end endgame safehouse, full gun cabinet, planning board, garage link",
+      "notes": "Final story-unlocked safehouse in Vice City chapters."
+    },
+    {
+      "id": "gar-paradise",
+      "name": "Paradise Garage (Watson Bay)",
+      "category": "Garages",
+      "region": "Vice City",
+      "chapter": "Ultimate Edition",
+      "cost": "Included (Ultimate Edition)",
+      "status": "Ultimate Edition",
+      "features": "Built-in gun cabinet, multi-vehicle storage, rapid getaway staging",
+      "notes": "Bonus Watson Bay garage unlocked immediately for Ultimate Edition owners."
+    },
+    {
+      "id": "gar-purch-1",
+      "name": "Vice Beach Strip Garage",
+      "category": "Garages",
+      "region": "Vice City",
+      "chapter": "Purchasable #1 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Multi-car storage, quick oceanfront getaway swap",
+      "notes": "One of 8 purchasable garages across Leonida."
+    },
+    {
+      "id": "gar-purch-2",
+      "name": "Little Cuba Lockup Garage",
+      "category": "Garages",
+      "region": "Vice City",
+      "chapter": "Purchasable #2 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Vehicle storage near Yasmani's jewelry fence",
+      "notes": "Ideal staging garage for Chapter 3 jewelry & bank runs."
+    },
+    {
+      "id": "gar-purch-3",
+      "name": "Downtown Vice Parking Bay",
+      "category": "Garages",
+      "region": "Vice City",
+      "chapter": "Purchasable #3 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Underground access for losing 4-star VCPD heat",
+      "notes": "Great disguise/trunk swap point for Large Bank Vaults."
+    },
+    {
+      "id": "gar-purch-4",
+      "name": "Port Gellhorn Strip-Mall Garage",
+      "category": "Garages",
+      "region": "Port Gellhorn",
+      "chapter": "Purchasable #4 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Vehicle storage close to Moses's car fence & pawn shops",
+      "notes": "Convenient for storing untracked cars and duffel-bag haulers."
+    },
+    {
+      "id": "gar-purch-5",
+      "name": "Port Gellhorn Industrial Bay",
+      "category": "Garages",
+      "region": "Port Gellhorn",
+      "chapter": "Purchasable #5 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Heavy SUV & armored truck staging",
+      "notes": "Positioned near western highway corridors."
+    },
+    {
+      "id": "gar-purch-6",
+      "name": "Ambrosia Freight Yard Garage",
+      "category": "Garages",
+      "region": "Ambrosia",
+      "chapter": "Purchasable #6 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Industrial storage near gang ops & highway armored trucks",
+      "notes": "Purchasable garage in Leonida's industrial heartland."
+    },
+    {
+      "id": "gar-purch-7",
+      "name": "Leonida Keys Boatyard Garage",
+      "category": "Garages",
+      "region": "Leonida Keys",
+      "chapter": "Purchasable #7 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Coastal vehicle & water-access staging",
+      "notes": "Quick escape access along the Keys causeway."
+    },
+    {
+      "id": "gar-purch-8",
+      "name": "Mount Kalaga Trailhead Garage",
+      "category": "Garages",
+      "region": "Mount Kalaga National Park",
+      "chapter": "Purchasable #8 of 8",
+      "cost": "Purchasable",
+      "status": "Purchasable",
+      "features": "Off-road 4x4 & hunting rig storage",
+      "notes": "Northern Leonida staging point for wildlife & getaway cooling."
+    },
+    {
+      "id": "gar-story-1",
+      "name": "Key Lento Safehouse Drive & Shed",
+      "category": "Garages",
+      "region": "Leonida Keys",
+      "chapter": "Story Garage #1 of 4",
+      "cost": "Story Unlocked",
+      "status": "Story Unlocked",
+      "features": "Starter vehicle parking at Jason's House",
+      "notes": "1 of 4 story-unlocked garages."
+    },
+    {
+      "id": "gar-story-2",
+      "name": "Port Gellhorn Motel Parking Lot",
+      "category": "Garages",
+      "region": "Port Gellhorn",
+      "chapter": "Story Garage #2 of 4",
+      "cost": "Story Unlocked",
+      "status": "Story Unlocked",
+      "features": "Chapter 2 story vehicle bay",
+      "notes": "2 of 4 story-unlocked garages."
+    },
+    {
+      "id": "gar-story-3",
+      "name": "Vice City Chapter 3 Safehouse Garage",
+      "category": "Garages",
+      "region": "Vice City",
+      "chapter": "Story Garage #3 of 4",
+      "cost": "Story Unlocked",
+      "status": "Story Unlocked",
+      "features": "Chapter 3 heist prep vehicle storage",
+      "notes": "3 of 4 story-unlocked garages."
+    },
+    {
+      "id": "gar-story-4",
+      "name": "Vice City Chapter 4 Endgame Garage",
+      "category": "Garages",
+      "region": "Vice City",
+      "chapter": "Story Garage #4 of 4",
+      "cost": "Story Unlocked",
+      "status": "Story Unlocked",
+      "features": "Multi-slot endgame getaway garage",
+      "notes": "4 of 4 story-unlocked garages."
+    },
+    {
+      "id": "fence-moses",
+      "name": "Moses (Untracked Car Fence)",
+      "category": "Fences & Money Safes",
+      "region": "Port Gellhorn",
+      "chapter": "Chapter 2",
+      "cost": "Fence #1 of 7",
+      "status": "Active",
+      "features": "Buys untracked stolen cars for $1,000–$2,000 each",
+      "notes": "Best reliable early-to-mid-game car cash loop in Port Gellhorn."
+    },
+    {
+      "id": "fence-randy",
+      "name": "Randy (Valuables & Pawn Fence)",
+      "category": "Fences & Money Safes",
+      "region": "Port Gellhorn",
+      "chapter": "Chapter 2",
+      "cost": "Fence #2 of 7",
+      "status": "Active",
+      "features": "Buys stolen watches, electronics, and pawn shop duffel loot",
+      "notes": "Key buyer after unlocking Pawn Shops in 'Coffee Break'."
+    },
+    {
+      "id": "fence-donnie",
+      "name": "Donnie's Trailer Fence",
+      "category": "Fences & Money Safes",
+      "region": "Leonida Keys",
+      "chapter": "Chapter 1",
+      "cost": "Fence #3 of 7",
+      "status": "Missable / Closes After 'Swamped'",
+      "features": "Early Chapter 1 stolen goods & contraband buyer",
+      "notes": "WARNING: Closes permanently after completing the mission 'Swamped'."
+    },
+    {
+      "id": "fence-brians-lockup",
+      "name": "Brian's Lockup (Keypad Code: 7700)",
+      "category": "Fences & Money Safes",
+      "region": "Leonida Keys",
+      "chapter": "Chapter 1+",
+      "cost": "Fence #4 of 7",
+      "status": "Verified Code: 7700",
+      "features": "Buys drugs, jewelry, and marked bills; keypad safe code 7700",
+      "notes": "One of the highest-utility fences in Leonida—accepts dye-stained/marked bills."
+    },
+    {
+      "id": "fence-yasmani",
+      "name": "Yasmani's Jewelry Fence",
+      "category": "Fences & Money Safes",
+      "region": "Vice City",
+      "chapter": "Chapter 3",
+      "cost": "Fence #5 of 7",
+      "status": "Active",
+      "features": "Top payout buyer for stolen diamonds & luxury boutique loot (low cut)",
+      "notes": "Unlocks after 'Yasmani's Jewelry Jobs' in Chapter 3."
+    },
+    {
+      "id": "fence-ambrosia",
+      "name": "Ambrosia Industrial Contraband Fence",
+      "category": "Fences & Money Safes",
+      "region": "Ambrosia",
+      "chapter": "Chapter 3–4",
+      "cost": "Fence #6 of 7",
+      "status": "Active",
+      "features": "Liquidates gang hideout crates & heavy contraband",
+      "notes": "Ideal drop-off after clearing Ambrosia gang hideouts."
+    },
+    {
+      "id": "fence-grassrivers",
+      "name": "Grassrivers Wetlands Smuggler Fence",
+      "category": "Fences & Money Safes",
+      "region": "Grassrivers",
+      "chapter": "Chapter 3–4",
+      "cost": "Fence #7 of 7",
+      "status": "Active",
+      "features": "Off-grid airboat dock buyer for illicit cargo & cartel goods",
+      "notes": "Low police presence along the Grassrivers channels."
+    },
+    {
+      "id": "safe-buckme",
+      "name": "BuckMe Family Savings ($5,000 Ch. 1 Goal)",
+      "category": "Fences & Money Safes",
+      "region": "Leonida Keys",
+      "chapter": "Chapter 1 Critical",
+      "cost": "$5,000 Goal",
+      "status": "Protect Before 'Tourist Trap'",
+      "features": "Protects savings from Chapter 1 -> Chapter 2 pocket cash wipe; $20,000 free-roam pocket cap",
+      "notes": "Deposit your $5,000 Family Savings into BuckMe before triggering 'Tourist Trap' or loose pocket cash is wiped."
+    }
+  ]
+}

@@ -4,7 +4,7 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-const KNOWN_PARTNERS = ["amazon", "g2a", "eneba", "exitlag", "gumroad", "whop", "getapexlocal", "other"];
+const KNOWN_PARTNERS = ["amazon", "g2a", "eneba", "exitlag", "gfuel", "gumroad", "getapexlocal", "other"];
 
 function jsonResponse(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -40,7 +40,8 @@ function normalizePartner(rawPartner, targetUrl = "") {
   if (u.includes("g2a.com")) return "g2a";
   if (u.includes("eneba.com")) return "eneba";
   if (u.includes("exitlag.com")) return "exitlag";
-  if (u.includes("whop.com") || u.includes("gumroad.com")) return "gumroad";
+  if (u.includes("gfuel.com") || u.includes("gfuel")) return "gfuel";
+  if (u.includes("gumroad.com")) return "gumroad";
   if (u.includes("getapexlocal.com")) return "getapexlocal";
   return "other";
 }

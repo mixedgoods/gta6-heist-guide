@@ -518,7 +518,7 @@ def upgrade_weapons_gear():
                         <span style="font-size:2.8rem;">🛡️</span>
                         <span style="font-family:var(--font-mono); font-size:1.1rem; color:#c084fc; font-weight:900; margin-top:0.4rem;">EXITLAG SHIELD</span>
                         <span class="deal-badge-verified">✓ MULTIPATH</span>
-                        <span class="deal-badge-merchant" style="color:#c084fc; border-color:#c084fc;">CODE: 10386953</span>
+                        <span class="deal-badge-merchant" style="color:#c084fc; border-color:#c084fc;">Free Trial Active</span>
                     </div>
                     <div class="deal-body-premium">
                         <h4 class="deal-title-premium">ExitLag Low-Ping Gaming Tunnel</h4>
@@ -533,13 +533,13 @@ def upgrade_weapons_gear():
                                 <span style="font-size:0.72rem; color:#94a3b8; display:block;">Special Partner Promo</span>
                                 <span class="deal-price-current" style="color:#c084fc;">3-Day Free + 15% Off</span>
                             </div>
-                            <span class="deal-pill-discount" style="background:#a855f7; color:#fff;">CODE 10386953</span>
+                            <span class="deal-pill-discount" style="background:#a855f7; color:#fff;">Free Trial</span>
                         </div>
                     </div>
                 </div>
                 <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
-                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" class="btn-deal-g2a" style="background:linear-gradient(135deg, #a855f7, #7c3aed); border-color:#c084fc;">🚀 Activate ExitLag (Code: 10386953) &rarr;</a>
-                    <button type="button" class="btn btn-secondary" onclick="navigator.clipboard.writeText('10386953'); if(window.GTA6&&GTA6.showToast) GTA6.showToast('Copied ExitLag Discount Code: 10386953!'); if(window.GTA6&&GTA6.playBeep) GTA6.playBeep(700,'triangle',0.06);" style="font-size:0.74rem; padding:0.35rem; color:#c084fc; border-color:#c084fc;">📋 Copy Promo Code: 10386953</button>
+                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" class="btn-deal-g2a" style="background:linear-gradient(135deg, #a855f7, #7c3aed); border-color:#c084fc;">🚀 Activate ExitLag (Free Trial) &rarr;</a>
+                    <button type="button" class="btn btn-secondary" onclick="navigator.clipboard.writeText('10386953'); if(window.GTA6&&GTA6.showToast) GTA6.showToast('Copied ExitLag Discount Free Trial Active!'); if(window.GTA6&&GTA6.playBeep) GTA6.playBeep(700,'triangle',0.06);" style="font-size:0.74rem; padding:0.35rem; color:#c084fc; border-color:#c084fc;">📋 Copy Promo Free Trial Active</button>
                 </div>
             </div>
 

@@ -14,9 +14,9 @@ PUBLIC_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file
 DAY2_STRIP_HTML = """<div class="countdown-strip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS">
+            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS & DROPS">
                 <span class="strip-pulse"></span>
-                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS &amp; DROPS</span>
+                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS &amp; DROPS</span>
             </a>
             <span class="strip-divider">|</span>
             <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
@@ -177,8 +177,8 @@ def update_html_file(file_path):
     content = content.replace("Column 4: Syndicate & Pre-Orders", "Column 4: Syndicate & Day-2 Deals")
     content = content.replace("🎁 Pre-Orders &amp; Gear", "🎁 Day-2 Deals")
     content = content.replace("Pre-Orders &amp; Gear", "Day-2 Deals")
-    content = content.replace("Pre-Order GTA 6 &amp; Official Pro Gear Under Retail", "🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS &amp; DROPS")
-    content = content.replace("Pre-Order GTA 6 &amp; Tested Low-Latency Hardware", "🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS &amp; DROPS")
+    content = content.replace("Pre-Order GTA 6 &amp; Official Pro Gear Under Retail", "🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS &amp; DROPS")
+    content = content.replace("Pre-Order GTA 6 &amp; Tested Low-Latency Hardware", "🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS &amp; DROPS")
     content = content.replace("Lock in pre-orders and PSN/Xbox wallet cards under retail now before launch-window demand causes digital store queues.", "Lock in Day-2 game keys and PSN/Xbox wallet cards under retail now for instant digital delivery.")
     content = content.replace("Compare discounted GTA 6 pre-orders and PSN", "Compare discounted GTA 6 game keys and PSN")
     content = content.replace("verified digital pre-order game keys", "verified digital game keys")

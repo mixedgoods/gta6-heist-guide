@@ -220,7 +220,7 @@ def main():
         "ok": True,
         "lastSync": datetime.now(timezone.utc).isoformat(),
         "totalArticles": len(deduped),
-        "headline": "🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS",
+        "headline": "🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS & DROPS",
         "weeklyReset": "Thursday 10:00 UTC",
         "verifiedCheatsCount": 61,
         "ammuNationStoresCount": 24,

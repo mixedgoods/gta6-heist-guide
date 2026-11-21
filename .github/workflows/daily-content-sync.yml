@@ -1,9 +1,9 @@
-﻿name: GTA 6 12-Hour Secrets, Radio & Map Pins Live Auto-Sync ($0/Month)
+﻿name: GTA 6 Daily Launch Sync, Databases & Sitemap Auto-Update ($0/Month)
 
 on:
   schedule:
-    # Runs every 12 hours on GitHub's free tier ($0/month)
-    - cron: '0 */12 * * *'
+    # Runs daily at 06:00 UTC on GitHub's free tier ($0/month)
+    - cron: '0 6 * * *'
   workflow_dispatch:
     # 1-click manual trigger anytime
 
@@ -25,7 +25,16 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run 12-Hour Secrets, Cryptids, Radio & Map Pins Auto-Sync
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Daily Launch Feed, Databases & Sitemap Sync
+        run: |
+          python scripts/daily_launch_sync.py
+
+      - name: Run Secrets, Cryptids, Radio & Map Pins Auto-Sync
         run: |
           node scripts/sync-secrets-and-radio.mjs
 
@@ -34,13 +43,13 @@ jobs:
         run: |
           git config --global user.name "GTA6 Intel Auto-Sync Bot"
           git config --global user.email "bot@gta6heistguide.com"
-          git add data/ public/data/
+          git add data/ public/data/ public/sitemap.xml
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No new secrets, radio, or map discoveries detected in this cycle."
+            echo "No new discoveries or sitemap changes detected in this cycle."
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            git commit -m "chore(auto-sync): 12-hour auto-update for GTA 6 secrets, radio & live map pins"
+            git commit -m "chore(daily-sync): refresh live-feed, properties/animals JSON & sitemap lastmod"
             git push
           fi
 

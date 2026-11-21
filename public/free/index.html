@@ -53,7 +53,7 @@
               "name": "How do I calculate realistic Net $/Hour for GTA 6 Heists?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Select your target Leonida vault (Sinfrontera Bank, Leonida State Gold Reserve, Starlet Superyacht, Port Gellhorn, Grassrivers, or Ocean Drive Convoy), set your squad size (1-4 players), deduct hired specialist cuts and fence laundering fees, and divide by total setup + finale + cooldown minutes."
+                "text": "Select your verified launch target (The Cartel Heist, VCIA Takedown, Large Banks, Small Banks, or Gang Ops), set your squad size (1-2 story operatives or AI crew), deduct specialist cuts and fence laundering fees, and divide by total setup + finale + cooldown minutes."
               }
             },
             {
@@ -74,10 +74,10 @@
             },
             {
               "@type": "Question",
-              "name": "Can I calculate GTA 6 solo heists vs 4-player online heist payouts and fence cuts?",
+              "name": "Can I calculate GTA 6 story heists vs online multiplayer payouts?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Set squad size to 1 Player for GTA 6 solo heists or 2 to 4 players for GTA 6 heists online, adjust hired crew fees, and apply 6% to 15% Leonida fence laundering cuts to see exact Net $/Hour payouts."
+                "text": "Yes. GTA 6 Online is expected in 2027 and is not live at launch. The calculator simulates both launch story missions (Lucia & Jason duo + AI crew) and planned co-op team cuts, specialist deductions, and fence laundering fees."
               }
             },
             {
@@ -189,7 +189,7 @@
         🔑 Need Discounted Launch Keys, Low-Ping Lobby VPN, or 9:16 Auto-Clipping? &rarr;
         <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">G2A Keys</a> |
         <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" style="color:var(--neon-green); font-weight:800;">Eneba</a> |
-        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">ExitLag Tunnel (Code: 10386953)</a> |
+        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">ExitLag Tunnel (Free Trial)</a> |
         <a href="https://getapexlocal.com" target="_blank" rel="noopener" style="color:var(--neon-pink); font-weight:800;">CutFlow Pro &amp; ClipBounty ($49)</a>
     </div>
 </header>
@@ -211,14 +211,13 @@
 
         <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:1rem; margin-bottom:0.9rem;">
             <div class="form-group" style="min-width:0;">
-                <label for="fcVault">Select Leonida Vault Target</label>
+                <label for="fcVault">Select Verified Launch Target</label>
                 <select class="form-select" id="fcVault" onchange="onFreeVaultChange()" style="width:100%; min-width:0; text-overflow:clip;">
-                    <option value="leonida-reserve" selected>Leonida State Gold Reserve ($25.0M Base)</option>
-                    <option value="sinfrontera-bank">Sinfrontera National Bank ($14.5M Base)</option>
-                    <option value="vice-city-yacht-heist">Starlet Superyacht Offshore ($11.8M Base)</option>
-                    <option value="ocean-drive-armored-convoy">Ocean Drive Armored Convoy ($9.4M Base)</option>
-                    <option value="port-gellhorn">Port Gellhorn Container Terminal ($8.2M Base)</option>
-                    <option value="everglades-smuggler-run">Grassrivers Cartel Airstrip ($6.5M / $9.75M 1.5X)</option>
+                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera Bank ($150,000)</option>
+                    <option value="vcia-takedown">VCIA Takedown: Vice City Airport ($250,000)</option>
+                    <option value="large-banks">8 Large Bank Vaults: Lombank &amp; Ocean Beach ($205,000)</option>
+                    <option value="small-banks">14 Small Bank Vaults &amp; Fleeca ($45,000)</option>
+                    <option value="jewelry-stores">39 Gang Ops &amp; Jewelry Stores ($25,000)</option>
                 </select>
             </div>
             <div class="form-group" style="min-width:0;">
@@ -306,78 +305,81 @@
 
         <!-- CONTEXTUAL MULTI-OPTION CTA BAR -->
         <div class="multi-option-cta" style="margin-top:1rem; padding:0.85rem 1rem; background:rgba(0,240,255,0.06); border-left:3px solid var(--neon-cyan); border-radius:8px; font-size:0.84rem; color:var(--text-muted); display:grid; gap:0.45rem;">
-            <div>⚠️ <strong style="color:#fff;">Hosting a $10M+ Finale?</strong> Protect your lobby IP from DDoS disconnects &rarr; <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">Activate ExitLag Low-Ping Gaming Tunnel (Code: 10386953)</a> &bull; Eliminate Vice City texture pop-in &rarr; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" style="color:var(--neon-amber); font-weight:800;">Samsung 990 PRO Gen4 NVMe SSD (Amazon)</a></div>
+            <div>⚠️ <strong style="color:#fff;">Hosting a $10M+ Finale?</strong> Protect your lobby IP from DDoS disconnects &rarr; <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">Activate ExitLag Low-Ping Gaming Tunnel (Free Trial)</a> &bull; Eliminate Vice City texture pop-in &rarr; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" style="color:var(--neon-amber); font-weight:800;">Samsung 990 PRO Gen4 NVMe SSD (Amazon)</a></div>
             <div>🎬 <strong style="color:#fff;">Recording GTA 6 Clips?</strong> Auto-cut dead air &amp; export 9:16 vertical shorts offline with <a href="https://getapexlocal.com" target="_blank" rel="noopener" style="color:var(--neon-pink); font-weight:800;">CutFlow Pro ($49) &amp; ClipBounty Studio ($49)</a> &bull; <a href="https://apexlocallabs.gumroad.com/l/apex-pro-bundle" target="_blank" rel="noopener" style="color:var(--neon-green); font-weight:800;">Instant Access on Gumroad &rarr;</a></div>
         </div>
     </section>
 
     <!-- ALL 6 VAULTS COMPARISON TABLE -->
+    <!-- VERIFIED LAUNCH ROBBERIES & HEISTS COMPARISON TABLE -->
     <section class="tool-box" style="margin-top:2rem;">
-        <h2 style="color:#fff; font-size:1.45rem; margin-bottom:0.4rem;">All 6 Leonida Vaults: Base Payout vs. 1.5X Weekly Bonus &amp; Optimal Approach</h2>
-        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Click any vault below to load its full blueprint schematic or jump into the calculator.</p>
+        <h2 style="color:#fff; font-size:1.45rem; margin-bottom:0.4rem;">Verified Launch Scores: Story Heists, Big Banks &amp; World Targets</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Verified November 20, 2026 launch values across Leonida story operations, free-roam vaults, and early cash fronts.</p>
         <div style="overflow-x:auto;">
             <table style="width:100%; border-collapse:collapse; font-size:0.88rem; text-align:left;">
                 <thead>
                     <tr style="border-bottom:2px solid var(--neon-cyan); color:var(--neon-cyan);">
-                        <th style="padding:0.7rem;">Leonida Target Vault</th>
+                        <th style="padding:0.7rem;">Target Heist / Robbery</th>
                         <th style="padding:0.7rem;">Region</th>
-                        <th style="padding:0.7rem;">Base Payout</th>
-                        <th style="padding:0.7rem;">1.5X Weekly Bonus</th>
-                        <th style="padding:0.7rem;">Avg Cycle (Setup+Run)</th>
-                        <th style="padding:0.7rem;">Blueprint</th>
+                        <th style="padding:0.7rem;">Base Potential</th>
+                        <th style="padding:0.7rem;">Verified Payout Range</th>
+                        <th style="padding:0.7rem;">Type / Missions</th>
+                        <th style="padding:0.7rem;">Guide / Planner</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="border-bottom:1px solid var(--border-card);">
-                        <td style="padding:0.7rem; font-weight:800; color:#fff;">Leonida State Gold Reserve</td>
-                        <td style="padding:0.7rem;">Ambrosia / Pelican Valley</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$25,000,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$37,500,000</td>
-                        <td style="padding:0.7rem;">77 mins</td>
-                        <td style="padding:0.7rem;"><a href="/leonida-reserve.html" style="color:var(--neon-cyan); font-weight:700;">Open Guide &rarr;</a></td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border-card);">
-                        <td style="padding:0.7rem; font-weight:800; color:#fff;">Sinfrontera National Bank</td>
+                        <td style="padding:0.7rem; font-weight:800; color:#fff;">The Cartel Heist: Sinfrontera Bank</td>
                         <td style="padding:0.7rem;">Vice City Downtown</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$14,500,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$21,750,000</td>
-                        <td style="padding:0.7rem;">54 mins</td>
-                        <td style="padding:0.7rem;"><a href="/sinfrontera-bank.html" style="color:var(--neon-cyan); font-weight:700;">Open Guide &rarr;</a></td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$150,000</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$120K – $150K</td>
+                        <td style="padding:0.7rem;">Ch. 3 (8 Missions)</td>
+                        <td style="padding:0.7rem;"><a href="/heist-planner" style="color:var(--neon-cyan); font-weight:700;">Open Planner &rarr;</a></td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border-card);">
-                        <td style="padding:0.7rem; font-weight:800; color:#fff;">Starlet Superyacht Offshore</td>
-                        <td style="padding:0.7rem;">Leonida Keys / Vice Beach</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$11,800,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$17,700,000</td>
-                        <td style="padding:0.7rem;">56 mins</td>
-                        <td style="padding:0.7rem;"><a href="/vice-city-yacht-heist.html" style="color:var(--neon-cyan); font-weight:700;">Open Guide &rarr;</a></td>
+                        <td style="padding:0.7rem; font-weight:800; color:#fff;">VCIA Takedown: Vice City Airport</td>
+                        <td style="padding:0.7rem;">Vice City Int. Airport</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$250,000</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">~$250,000</td>
+                        <td style="padding:0.7rem;">Story Finale Heist</td>
+                        <td style="padding:0.7rem;"><a href="/heist-planner" style="color:var(--neon-cyan); font-weight:700;">Open Planner &rarr;</a></td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border-card);">
-                        <td style="padding:0.7rem; font-weight:800; color:#fff;">Ocean Drive Armored Convoy</td>
-                        <td style="padding:0.7rem;">Vice City Ocean Drive</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$9,400,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$14,100,000</td>
-                        <td style="padding:0.7rem;">35 mins</td>
-                        <td style="padding:0.7rem;"><a href="/ocean-drive-armored-convoy.html" style="color:var(--neon-cyan); font-weight:700;">Open Guide &rarr;</a></td>
+                        <td style="padding:0.7rem; font-weight:800; color:#fff;">8 Large Bank Vaults (Lombank / Ocean Beach)</td>
+                        <td style="padding:0.7rem;">Vice City &amp; Port Gellhorn</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$205,000</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$65K – $205K</td>
+                        <td style="padding:0.7rem;">Free-Roam High Tier</td>
+                        <td style="padding:0.7rem;"><a href="/cash-guide" style="color:var(--neon-cyan); font-weight:700;">Cash Guide &rarr;</a></td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border-card);">
-                        <td style="padding:0.7rem; font-weight:800; color:#fff;">Port Gellhorn Container Terminal</td>
-                        <td style="padding:0.7rem;">Port Gellhorn</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$8,200,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$12,300,000</td>
-                        <td style="padding:0.7rem;">45 mins</td>
-                        <td style="padding:0.7rem;"><a href="/port-gellhorn.html" style="color:var(--neon-cyan); font-weight:700;">Open Guide &rarr;</a></td>
+                        <td style="padding:0.7rem; font-weight:800; color:#fff;">14 Small Bank Vaults &amp; Fleeca Branches</td>
+                        <td style="padding:0.7rem;">Statewide Counties</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$45,000</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$5K – $45K</td>
+                        <td style="padding:0.7rem;">Free-Roam Mid Tier</td>
+                        <td style="padding:0.7rem;"><a href="/cash-guide" style="color:var(--neon-cyan); font-weight:700;">Cash Guide &rarr;</a></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border-card);">
+                        <td style="padding:0.7rem; font-weight:800; color:#fff;">39 Illegal Gang Ops &amp; 16 Jewelry Stores</td>
+                        <td style="padding:0.7rem;">Leonida Metro &amp; Keys</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$25,000</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$10K – $25K</td>
+                        <td style="padding:0.7rem;">Smash &amp; Grab Ops</td>
+                        <td style="padding:0.7rem;"><a href="/cash-guide" style="color:var(--neon-cyan); font-weight:700;">Cash Guide &rarr;</a></td>
                     </tr>
                     <tr>
-                        <td style="padding:0.7rem; font-weight:800; color:#fff;">Grassrivers Cartel Airstrip</td>
-                        <td style="padding:0.7rem;">Grassrivers Wetlands</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$6,500,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$9,750,000 🔥</td>
-                        <td style="padding:0.7rem;">38 mins</td>
-                        <td style="padding:0.7rem;"><a href="/everglades-smuggler-run.html" style="color:var(--neon-cyan); font-weight:700;">Open Guide &rarr;</a></td>
+                        <td style="padding:0.7rem; font-weight:800; color:#fff;">99 Towable ATMs &amp; 40 Safes (Codes Verified)</td>
+                        <td style="padding:0.7rem;">All Leonida Regions</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$7,700</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$1.5K – $7.7K</td>
+                        <td style="padding:0.7rem;">Tow Truck &amp; Safe Codes</td>
+                        <td style="padding:0.7rem;"><a href="/cash-guide" style="color:var(--neon-cyan); font-weight:700;">Safe Codes &rarr;</a></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </section>
         </div>
     </section>
 
@@ -396,9 +398,9 @@
             <div class="affiliate-title">Complete Your GTA 6 Heist Setup Under Retail</div>
             <div class="affiliate-grid">
                 <div class="gear-box">
-                    <div style="font-weight: 800; color:#fff;">ExitLag Low-Ping Gaming Tunnel (Code: 10386953)</div>
+                    <div style="font-weight: 800; color:#fff;">ExitLag Low-Ping Gaming Tunnel (Free Trial)</div>
                     <div class="gear-spec">Shield your co-op host IP from public lobby DDoS disconnects during $25M finales.</div>
-                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Activate ExitLag Shield (Code: 10386953)</a>
+                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Activate ExitLag Shield (Free Trial)</a>
                 </div>
                 <div class="gear-box">
                     <div style="font-weight: 800; color:#fff;">Samsung 990 PRO 2TB Gen4 SSD</div>
@@ -449,7 +451,7 @@
         <div class="faq-accordion">
             <div class="faq-item open">
                 <div class="faq-question">How do I calculate realistic Net $/Hour for GTA 6 Heists? <span>+</span></div>
-                <div class="faq-answer">Select your target Leonida vault (Sinfrontera Bank, Leonida State Gold Reserve, Starlet Superyacht, Port Gellhorn, Grassrivers, or Ocean Drive Convoy), set your squad size (1-4 players), deduct hired specialist cuts and fence laundering fees, and divide by total setup + finale + cooldown minutes.</div>
+                <div class="faq-answer">Select your verified launch target (The Cartel Heist, VCIA Takedown, Large Banks, Small Banks, or Gang Ops), set your squad size (1-2 story operatives or AI crew), deduct specialist cuts and fence laundering fees, and divide by total setup + finale + cooldown minutes.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Is the 15-second Vault Keypad &amp; Biometric Hack Trainer completely free? <span>+</span></div>
@@ -460,8 +462,8 @@
                 <div class="faq-answer">You can preview and export an instant 9:16 .webm promo clip right on this page, or use CutFlow Pro &amp; ClipBounty Studio (via GetApexLocal / Gumroad) to automatically cut dead air and batch-render 9:16 TikTok, Reels, and YouTube Shorts offline.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Can I calculate GTA 6 solo heists vs 4-player online heist payouts and fence cuts? <span>+</span></div>
-                <div class="faq-answer">Yes. Set squad size to 1 Player for GTA 6 solo heists or 2 to 4 players for GTA 6 heists online, adjust hired crew fees, and apply 6% to 15% Leonida fence laundering cuts to see exact Net $/Hour payouts.</div>
+                <div class="faq-question">Can I calculate GTA 6 story heists vs online multiplayer payouts? <span>+</span></div>
+                <div class="faq-answer">Yes. GTA 6 Online is expected in 2027 and is not live at launch. The calculator simulates both launch story missions (Lucia &amp; Jason duo + AI crew) and planned co-op team cuts, specialist deductions, and fence laundering fees.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Does focus, stealth, or outfit changing help maximize take-home heist cash? <span>+</span></div>
@@ -545,12 +547,11 @@
 <script src="/assets/main.js" defer></script>
 <script>
 const FREE_VAULTS = {
-    'leonida-reserve': { name: 'Leonida State Gold Reserve', base: 25000000, setupMins: 77, cooldownMins: 48 },
-    'sinfrontera-bank': { name: 'Sinfrontera National Bank', base: 14500000, setupMins: 54, cooldownMins: 45 },
-    'vice-city-yacht-heist': { name: 'Starlet Superyacht Offshore', base: 11800000, setupMins: 56, cooldownMins: 45 },
-    'ocean-drive-armored-convoy': { name: 'Ocean Drive Armored Convoy', base: 9400000, setupMins: 35, cooldownMins: 30 },
-    'port-gellhorn': { name: 'Port Gellhorn Container Terminal', base: 8200000, setupMins: 45, cooldownMins: 35 },
-    'everglades-smuggler-run': { name: 'Grassrivers Cartel Airstrip', base: 6500000, setupMins: 38, cooldownMins: 30 }
+    'cartel-heist': { name: 'The Cartel Heist: Sinfrontera Bank', base: 150000, setupMins: 25, cooldownMins: 45 },
+    'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport', base: 250000, setupMins: 30, cooldownMins: 60 },
+    'large-banks': { name: '8 Large Bank Vaults', base: 205000, setupMins: 10, cooldownMins: 30 },
+    'small-banks': { name: '14 Small Bank Vaults', base: 45000, setupMins: 5, cooldownMins: 20 },
+    'jewelry-stores': { name: '39 Gang Ops & Jewelry Stores', base: 25000, setupMins: 5, cooldownMins: 15 }
 };
 
 function fmtMoney(n) {
@@ -563,16 +564,13 @@ function onFreeVaultChange() {
     if (v) {
         document.getElementById('fcSetupMins').value = v.setupMins;
         document.getElementById('fcCooldownMins').value = v.cooldownMins;
-        if (k === 'everglades-smuggler-run') {
-            document.getElementById('fcWeeklyBonus').checked = true;
-        }
     }
     runFreeCalc();
 }
 
 function runFreeCalc() {
     const k = document.getElementById('fcVault').value;
-    const v = FREE_VAULTS[k] || FREE_VAULTS['leonida-reserve'];
+    const v = FREE_VAULTS[k] || FREE_VAULTS['cartel-heist'];
     const players = parseInt(document.getElementById('fcPlayers').value) || 4;
     const setupMins = Math.max(5, parseInt(document.getElementById('fcSetupMins').value) || 52);
     const cdMins = Math.max(0, parseInt(document.getElementById('fcCooldownMins').value) || 48);

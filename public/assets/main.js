@@ -227,7 +227,7 @@ const GTA6 = {
       if (low.includes('g2a.com')) return 'g2a';
       if (low.includes('eneba.com')) return 'eneba';
       if (low.includes('exitlag.com')) return 'exitlag';
-      if (low.includes('whop.com') || low.includes('gumroad.com')) return 'gumroad';
+      if (low.includes('gumroad.com')) return 'gumroad';
       if (low.includes('getapexlocal.com')) return 'getapexlocal';
       return null;
     },
@@ -250,7 +250,7 @@ const GTA6 = {
         } else if (low.includes('eneba.com')) {
           a.href = this.buildEnebaUrl(rawHref);
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'eneba');
-        } else if (low.includes('whop.com') || low.includes('gumroad.com')) {
+        } else if (low.includes('gumroad.com')) {
           a.href = low.includes('cutflow-pro')
             ? (cfg.gumroadCutFlowUrl || cfg.gumroadUrl || 'https://apexlocallabs.gumroad.com/l/cutflow-pro')
             : (cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle');
@@ -444,19 +444,24 @@ const GTA6 = {
   },
 
   initCountdown() {
-    const launchTarget = Date.UTC(2026, 10, 19, 0, 0, 0); // Nov 19, 2026 00:00 UTC
+    const launchTarget = Date.parse('2026-11-19T00:00:00Z'); // Nov 19, 2026 00:00 UTC
     const launchEl = document.getElementById('countdownTimer');
     const weeklyEl = document.getElementById('weeklyResetTimer');
 
     const update = () => {
       const now = Date.now();
       const diff = launchTarget - now;
+      const launchDay = Math.max(1, Math.floor((now - launchTarget) / 86400000) + 1);
+      const liveBannerText = `🔥 GTA 6 IS LIVE — DAY-${launchDay} HEISTS, CHEATS, MAPS & DROPS`;
       if (launchEl) {
-        launchEl.innerText = diff <= 0 ? '🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS' : this.formatDiff(diff);
+        launchEl.innerText = diff <= 0 ? liveBannerText : this.formatDiff(diff);
       }
       if (diff <= 0) {
-        document.querySelectorAll('.launch-mode-label').forEach((el) => {
-          el.innerText = '🔥 GTA 6 IS LIVE NOW — DAY-2 CHEATS, MAPS & DROPS';
+        document.querySelectorAll('.launch-mode-label, [data-launch-banner], #launchDayBanner').forEach((el) => {
+          el.innerText = liveBannerText;
+        });
+        document.querySelectorAll('[data-launch-day-num]').forEach((el) => {
+          el.innerText = `DAY-${launchDay}`;
         });
       }
       if (weeklyEl) {
@@ -466,7 +471,7 @@ const GTA6 = {
     };
 
     update();
-    setInterval(update, 1000);
+    setInterval(update, 60000);
   },
 
   initFAQ() {
@@ -483,7 +488,7 @@ const GTA6 = {
   // --------------------------------------------------------------------------
   getDeterministicIntelFallback() {
     const V = (slug, name, base, bonus, approach, spot, summary) => ({
-      slug, name, bonusTag: '1.5X FEATURED WEEKLY SCORE', basePayout: base, bonusPayout: bonus,
+      slug, name, bonusTag: 'VERIFIED STORY / LAUNCH TARGET', basePayout: base, bonusPayout: bonus,
       recommendedApproach: approach, specialistSpotlight: spot, summary,
     });
     const rotation = [
@@ -496,7 +501,7 @@ const GTA6 = {
     const now = new Date();
     const cycle = Math.floor((now.getTime() - 10 * 3600 * 1000) / (7 * 86400 * 1000));
     const weekNum = cycle;
-    const vault = rotation[(((cycle + 2) % 6) + 6) % 6];
+    const vault = rotation[(((cycle + 2) % rotation.length) + rotation.length) % rotation.length];
     return {
       isoWeek: 47,
       featuredVault: vault,
@@ -507,14 +512,14 @@ const GTA6 = {
           badge: 'OFFICIAL INTEL',
           title: 'Launch Readiness Protocol: PS5 Pro & Gen4 NVMe Streaming + Day-1 Patch Windows',
           date: now.toISOString().slice(0, 10),
-          summary: 'Ensure 7,000+ MB/s Gen4 NVMe storage and verify 4-player squad roles before tackling high-value depositories.',
+          summary: 'Ensure 7,000+ MB/s Gen4 NVMe storage and configure optimal 30 FPS console display settings for smooth gameplay.',
           link: 'gameplay-mechanics.html',
         },
         {
           id: 'intel-meta',
           category: 'meta',
-          badge: 'WEEKLY META',
-          title: `Featured Vault Rotation: ${vault.name} (${vault.bonusPayout} Potential)`,
+          badge: 'LAUNCH INTEL',
+          title: `Verified Target: ${vault.name} (${vault.bonusPayout} Potential)`,
           date: now.toISOString().slice(0, 10),
           summary: `${vault.summary} Recommended: ${vault.recommendedApproach}.`,
           link: vault.slug,
@@ -1032,22 +1037,28 @@ GTA6HEISTGUIDE.COM - VIP FOUNDER TACTICAL VAULT BLUEPRINT PACK (v3.2)
 Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
 ======================================================================
 
-1. HIGHEST PAYOUT HEIST TIER LIST & OPTIMAL SPLITS
+1. VERIFIED HEIST TARGETS & STORY PROGRESSION
 ----------------------------------------------------------------------
-- Leonida State Gold Reserve ($25,000,000 Base / $37.5M Featured 1.5X)
-  * Approach: Silent Sewer Intake + Thermal Lance (+5% Stealth Integrity Bonus)
-  * Crew Split Recommendation: 10% Hacker / 15% Gunner / 8% Wheelman -> 67% Squad Pot
+- The Cartel Heist: Sinfrontera National Bank ($120K–$150K Net Take)
+  * Approach: Rig 3 Cell Towers (10:47 Vault Time) & Raul Bautista 8-part chain
+  * Trophy: Break the Bank
 
-- Sinfrontera National Bank ($14,500,000 Base)
-  * Approach: Ocean Blvd Storm Drain + Electrical Transformer EMP
-  * Tip: Keep thermal drill under 800C to prevent silent lockdown.
+- VCIA Takedown: Vice City Airport Heist ($250,000 Top Story Payout)
+  * Approach: Roof Terminal Stealth & Cargo Plane Exfiltration
+  * Trophy: Hi-Jacked
 
-- Starlet Superyacht Offshore ($11,800,000 Base)
-  * Approach: Sub-Aquatic Scuba Hull Breach + Rebreather Escape (0 Coast Guard Heat)
+- 22 Free-Roam Banks: 8 Large Banks ($65K–$205K) & 14 Small Banks ($5K–$45K)
+  * Always bring Dye Pack Jammer and fence marked bills to Yasmani in Little Cuba (5% cut)
 
-2. ONLINE HEIST SECURITY & HARDWARE CHECKLIST
+- Verified Safe Codes:
+  * Brian's Lockup: 7700
+  * Kingpin Bowling: 0300
+  * Pelican Valley: 0072
+  * Crab Outpost: CLEAVES, 0072, 0212
+
+2. TACTICAL SETUP & HARDWARE CHECKLIST
 ----------------------------------------------------------------------
-- Shield Host IP in Public Lobbies (ExitLag Low-Ping Gaming Routing - Code: ${cfg.exitLagCode || '10386953'}):
+- Low-Ping Routing (ExitLag Free Trial):
   ${cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953'}
 - Verify Digital Keys & Gift Cards (G2A & Eneba Global Compare):
   ${cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5'}
@@ -1318,7 +1329,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         avatar: '/assets/avatar-mastermind.png',
         time: 'Verified Connection Note',
         title: '[SYNDICATE CONNECTION & LAG ADVISORY] Stop Mid-Heist Disconnects & Cut Packet Loss with ExitLag Low-Ping Routing',
-        content: '⚡ Syndicate Connection & Lag Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial: https://www.exitlag.com/refer/10386953) to lock in rock-solid connections. Use coupon code: 10386953.',
+        content: '⚡ Syndicate Connection & Lag Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial: https://www.exitlag.com/refer/10386953) to lock in rock-solid connections. Use Free Trial Active.',
         votes: 95,
         tag: 'StealthMeta',
       },
@@ -2492,7 +2503,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
     // --------------------------------------------------------------------------
     // CROWDSOURCED LIVE PAYOUT / COOLDOWN REPORT MODAL (/api/payout-report)
     // --------------------------------------------------------------------------
-    openPayoutReportModal(vaultSlug = 'leonida-reserve', vaultName = 'Leonida State Gold Reserve') {
+    openPayoutReportModal(vaultSlug = 'cartel-heist', vaultName = 'The Cartel Heist: Sinfrontera National Bank') {
       let modal = document.getElementById('payoutReportModal');
       if (!modal) {
         const wrap = document.createElement('div');
@@ -5529,13 +5540,13 @@ CharacterModal: {
         const amzSticks = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20';
         const amzPs5 = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20';
         const exitUrl = cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953';
-        const exitCode = cfg.exitLagCode || '10386953';
+        const gfuelUrl = (window.GTA6_AFFILIATES && window.GTA6_AFFILIATES.gfuel.url) || cfg.gfuelUrl || 'YOUR_GFUEL_TRACKING_LINK';
         const g2aUrl = cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5';
         const enebaUrl = cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide';
-        const gumroadBundleUrl = cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
+        const gumroadBundleUrl = cfg.gumroadBundleUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
         return [
-          `🔥 <strong style="color:var(--neon-pink);">DAY-1 LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Amazon]</a>`,
-          `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; ZERO PACKET LOSS:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Pro Gaming Tunnel — Prevent Heist Disconnects</a> &bull; Coupon Code: <strong style="color:var(--neon-yellow);" data-exitlag-code>${exitCode}</strong> <button type="button" onclick="GTA6.copyExitLagCode(this)" style="background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); color:var(--neon-cyan); border-radius:3px; padding:1px 6px; font-size:0.75rem; cursor:pointer; margin-left:4px;">📋 Copy</button>`,
+          `🔥 <strong style="color:var(--neon-pink);">LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Amazon]</a>`,
+          `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; GAMING ENERGY:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Low-Ping Routing (Free Trial)</a> &bull; <a href="${gfuelUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gfuel" data-aff-placement="ticker-gfuel" style="color:var(--neon-green); font-weight:800;">⚡ G FUEL Gaming Energy</a>`,
           `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; PSN & XBOX GIFT CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
           `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${gumroadBundleUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
         ];
