@@ -1,10 +1,11 @@
 // GTA 6 Heist Guide & Companion HUD - Service Worker
-const CACHE_NAME = 'gta6-heist-cache-v3';
+const CACHE_NAME = 'gta6-heist-cache-v4';
 const PRECACHE_URLS = [
   '/',
   '/site-config.js',
   '/assets/style.css',
   '/assets/main.js',
+  '/assets/images/logo.webp',
   '/favicon.svg',
   '/embed/clock.html',
   '/embed/calculator.html',
@@ -39,13 +40,41 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // Skip API or analytics endpoints
-  if (url.pathname.startsWith('/api/')) return;
+  // Skip cross-origin requests and API endpoints
+  if (url.origin !== self.location.origin || url.pathname.startsWith('/api/')) return;
 
+  const isHtmlRequest =
+    event.request.mode === 'navigate' ||
+    (event.request.headers.get('accept') || '').includes('text/html') ||
+    url.pathname.endsWith('.html') ||
+    url.pathname === '/';
+
+  // Network-first for HTML pages so new deploys show up immediately
+  if (isHtmlRequest) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-cache' })
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const clone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, clone);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(event.request).then((cachedResponse) => {
+            return cachedResponse || caches.match('/');
+          });
+        })
+    );
+    return;
+  }
+
+  // Network-first with cache fallback for static assets (including /assets/images/logo.webp)
   event.respondWith(
     fetch(event.request)
       .then((networkResponse) => {
-        // Cache successful response for static files
         if (networkResponse && networkResponse.status === 200) {
           const clone = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -54,14 +83,6 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       })
-      .catch(() => {
-        // Offline fallback
-        return caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) return cachedResponse;
-          if (event.request.mode === 'navigate') {
-            return caches.match('/');
-          }
-        });
-      })
+      .catch(() => caches.match(event.request))
   );
 });
