@@ -251,7 +251,9 @@ const GTA6 = {
           a.href = this.buildEnebaUrl(rawHref);
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'eneba');
         } else if (low.includes('whop.com') || low.includes('gumroad.com')) {
-          a.href = cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
+          a.href = low.includes('cutflow-pro')
+            ? (cfg.gumroadCutFlowUrl || cfg.gumroadUrl || 'https://apexlocallabs.gumroad.com/l/cutflow-pro')
+            : (cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle');
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'gumroad');
         } else if (low.includes('getapexlocal.com/partners')) {
           a.href = cfg.getApexLocalPartnersUrl;

@@ -15,6 +15,11 @@ const STATIC_ROUTES = [
     "priority": "0.95"
   },
   {
+    "loc": "https://www.gta6heistguide.com/save-planner",
+    "changefreq": "daily",
+    "priority": "0.96"
+  },
+  {
     "loc": "https://www.gta6heistguide.com/rss.xml",
     "changefreq": "hourly",
     "priority": "0.95"
