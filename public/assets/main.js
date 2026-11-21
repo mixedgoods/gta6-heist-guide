@@ -84,7 +84,7 @@ const GTA6 = {
 
   applyWeeklyBadges(v) {
     const targetSlug = (v && (v.slug || '').replace(/\.html$/, '')) || 'leonida-reserve';
-    const targetBonus = (v && v.bonusPayout) || '$37,500,000';
+    const targetBonus = (v && v.bonusPayout) || '$250,000';
     document.querySelectorAll('.bonus-badge[data-vault-slug]').forEach((b) => {
       const bSlug = (b.dataset.vaultSlug || '').replace(/\.html$/, '');
       const on = bSlug === targetSlug;
@@ -487,12 +487,11 @@ const GTA6 = {
       recommendedApproach: approach, specialistSpotlight: spot, summary,
     });
     const rotation = [
-      V('leonida-reserve', 'Leonida State Gold Reserve Infiltration', '$25,000,000', '$37,500,000', 'Silent Sewer Intake + Thermal Lance', 'Zero-Delay Ghost Hacker (-3% Cut Discount This Week)', 'Priority focus this week on subterranean access routes and dual-keycard vaults.'),
-      V('sinfrontera-bank', 'Sinfrontera National Bank Vault Raid', '$14,500,000', '$21,750,000', 'Sub-floor Drainage + EMP Transformer', 'Precision Laser Drill Tech (2x Vault Door Speed)', 'Downtown Vice City safety deposit boxes show elevated bearer-bond drops this rotation.'),
-      V('vice-city-yacht-heist', 'Starlet Superyacht Offshore Heist', '$11,800,000', '$17,700,000', 'Sub-Aquatic Rebreather Hull Breach', 'Offshore Boat Wheelman (+15% Coastal Escape Speed)', 'VIP stateroom keys rotate every 90 seconds; scuba exfiltration stays radar-immune.'),
-      V('port-gellhorn', 'Port Gellhorn Container Terminal Heist', '$8,200,000', '$12,300,000', 'Nighttime Crane Terminal Hijack', 'Canal Demolitionist (Silent Container Breaching)', 'Cartel manifest containers on Pier 4 carry triple bearer-share electronics crates this week.'),
-      V('ocean-drive-armored-convoy', 'Ocean Drive Armored Depository Ambush', '$9,400,000', '$14,100,000', 'Magnetic EMP + Metro Subway Escape', 'Signal Gridlock Hacker (Extended 45s Dispatch Blindness)', 'Peak coastal traffic rewards coordinated dual-EMP truck stops and subway exfiltration.'),
-      V('everglades-smuggler-run', 'Grassrivers Cartel Airstrip Raid', '$6,500,000', '$9,750,000', 'Thermal Night-Vision Airboat Ingress', 'Swamp Bush Pilot (Zero Radar Altitude Flight)', 'A low-ceiling storm front reduces patrol helicopter sweeps across the Grassrivers corridor.'),
+      V('cartel-heist', 'The Cartel Heist: Sinfrontera National Bank', '$120,000', '$150,000', 'Rig 3 Cell Towers (10:47 Vault Time)', 'Raul Bautista Lead Operative', 'Chapter 3 8-mission story heist chain. Save weapons crates in Company Property. Unlocks Break the Bank trophy.'),
+      V('vcia-takedown', 'VCIA Takedown: Vice City Airport Heist', '$200,000', '$250,000', 'Roof Terminal Stealth & Cargo Plane', 'NOOSE Countermeasure Overwatch', 'Chapter 4 4-part airport finale. Tarmac gunfight and cargo plane escape. Unlocks Hi-Jacked trophy.'),
+      V('large-banks', '22 Free-Roam Banks: Lombank Downtown', '$65,000', '$205,000', 'Dye Pack Jammer + Trunk Stash', 'Yasmani Little Cuba Fence (5% Cut)', 'Repeatable large bank vault run paying up to $205,000. Fence marked bills in Little Cuba.'),
+      V('small-banks', '22 Free-Roam Banks: 14 Small Vaults & Fleeca', '$5,000', '$45,000', 'Keypad Decryption Drill', 'Rapid Getaway Driver', '14 repeatable small bank vaults across Vice City and Leonida Keys.'),
+      V('illegal-ops', '39 Illegal Gang Ops & Jewelry Stores', '$10,000', '$25,000', 'Safe Codes: Kingpin Bowling 0300, Pelican Valley 0072', 'BuckMe ATM Deposit', 'Fast free-roam cash targets across Leonida. Deposit cash to avoid $20,000 pocket cap.'),
     ];
     const now = new Date();
     const cycle = Math.floor((now.getTime() - 10 * 3600 * 1000) / (7 * 86400 * 1000));
@@ -1784,7 +1783,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
       // Rotating scene copy every 3.5 seconds
       const sceneIdx = Math.floor(t / 3.5) % 4;
       const scenes = [
-        { k: 'STOP GUESSING CREW CUTS', v: '$25,000,000+ VAULTS', s: 'INTERACTIVE PAYOUT OPTIMIZER' },
+        { k: 'STOP GUESSING CREW CUTS', v: '$250,000 MAX STORY PAYOUT', s: 'INTERACTIVE PAYOUT OPTIMIZER' },
         { k: 'LIVE CO-OP LFG CREW FINDER', v: 'PS5 PRO • XBOX • PC', s: 'MATCH VERIFIED HEIST SQUADS' },
         { k: 'WEEKLY AUTO-UPDATING META', v: '1.5X BONUS TARGETS', s: 'THURSDAY RESET & SAFE GUIDES' },
         { k: 'UNLOCK VIP BLUEPRINTS FREE', v: 'GTA6HEISTGUIDE.COM', s: 'BOOKMARK & JOIN THE SYNDICATE' },
@@ -5738,7 +5737,7 @@ CharacterModal: {
       const netPerHr = document.getElementById('netPerHourDisplay')?.innerText || '$4,280,000/hr';
       const perPlayer = document.getElementById('perPlayerDisplay')?.innerText || '$4,687,500';
       const squadPot = document.getElementById('squadPotDisplay')?.innerText || '$18,750,000';
-      const gross = document.getElementById('targetPayoutDisplay')?.innerText || '$25,000,000';
+      const gross = document.getElementById('targetPayoutDisplay')?.innerText || '$150,000';
 
       const canvas = document.createElement('canvas');
       canvas.width = 1200;
@@ -6336,10 +6335,10 @@ DealRotator: {
       if (!extraCards.length) return;
       const isCurrentlyHidden = extraCards[0].style.display === 'none';
       extraCards.forEach((c) => {
-        c.style.display = isCurrentlyHidden ? 'flex' : 'none';
+        c.style.display = isCurrentlyHidden ? 'block' : 'none';
       });
       if (btn) {
-        btn.innerHTML = isCurrentlyHidden ? 'Show Less Vault Targets &uarr;' : 'Show All 8 Vault Targets &darr;';
+        btn.innerHTML = isCurrentlyHidden ? 'Show Less Jobs &uarr;' : 'Show All 10 Story Heists &amp; Planned Jobs &darr;';
       }
       if (isCurrentlyHidden) {
         this.playBeep(520, 'triangle', 0.06);

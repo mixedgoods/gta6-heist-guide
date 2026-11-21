@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 Heist Planner and Cut Splitter | GTA 6 Guide</title>
-    <meta name="description" content="Simulate GTA 6 heist payouts, specialist cuts, fencing fees, and net per-player take across every Leonida vault, then share custom squad builds live.">
+    <title>GTA 6 Heist Planner &amp; Cut Calculator: The Cartel Heist, VCIA &amp; 22 Bank Vaults (2026)</title>
+    <meta name="description" content="Calculate real net payouts for GTA 6 heists: The Cartel Heist ($120K-$150K), VCIA Takedown ($250K), 22 Bank Vaults ($5K-$205K), Yasmani fence cuts, and Dye Pack Jammer mechanics.">
         <meta name="keywords" content="GTA 6 heist cut calculator, crew split optimizer, keypad bypass trainer, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
 <link rel="canonical" href="https://www.gta6heistguide.com/heist-planner">
     <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="GTA 6 Heist Planner and Cut Splitter | GTA 6 Guide">
-    <meta property="og:description" content="Simulate GTA 6 heist payouts, specialist cuts, fencing fees, and net per-player take across every Leonida vault, then share custom squad builds live.">
+        <meta property="og:title" content="GTA 6 Heist Planner &amp; Cut Calculator: The Cartel Heist, VCIA &amp; 22 Bank Vaults (2026)">
+    <meta property="og:description" content="Calculate real net payouts for GTA 6 heists: The Cartel Heist ($120K-$150K), VCIA Takedown ($250K), 22 Bank Vaults ($5K-$205K), Yasmani fence cuts, and Dye Pack Jammer mechanics.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/heist-planner">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
@@ -20,15 +20,20 @@
     
         <script>
         const HEIST_DATABASE = {
-            'sinfrontera': { name: 'Sinfrontera National Bank', payout: 14500000, runMins: 24, setupMins: 30, cooldownMins: 45 },
-            'port-gellhorn': { name: 'Port Gellhorn Container Terminal', payout: 8200000, runMins: 20, setupMins: 25, cooldownMins: 35 },
-            'leonida-reserve': { name: 'Leonida State Gold Reserve', payout: 25000000, runMins: 32, setupMins: 45, cooldownMins: 60 },
-            'yacht': { name: 'Starlet Superyacht Offshore Heist', payout: 11800000, runMins: 26, setupMins: 30, cooldownMins: 45 },
-            'smuggler': { name: 'Grassrivers Cartel Airstrip (1.5X Weekly Bonus Ready)', payout: 6500000, runMins: 18, setupMins: 20, cooldownMins: 30 },
-            'convoy': { name: 'Ocean Drive Armored Convoy', payout: 9400000, runMins: 15, setupMins: 20, cooldownMins: 30 },
-            'pelican-bank': { name: 'Pelican Valley Agricultural Bank (Collector Map Discovery)', payout: 3800000, runMins: 14, setupMins: 15, cooldownMins: 25 },
-            'key-lento': { name: 'Key Lento Offshore Bullion Depot (Leaked Deep Reef Vault)', payout: 12400000, runMins: 28, setupMins: 35, cooldownMins: 50 },
-            'lummox-stash': { name: 'Lummox County Timber Stash (Northern Border Raid)', payout: 2900000, runMins: 12, setupMins: 15, cooldownMins: 20 },
+            'cartel-heist': { name: 'The Cartel Heist: Sinfrontera National Bank', payout: 150000, minPayout: 120000, maxPayout: 150000, runMins: 18, setupMins: 25, cooldownMins: 45, isBank: true },
+            'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport Heist', payout: 250000, minPayout: 250000, maxPayout: 250000, runMins: 22, setupMins: 30, cooldownMins: 60, isBank: false },
+            'large-banks': { name: '22 Free-Roam Banks: 8 Large Vaults (Lombank & Ocean Beach)', payout: 205000, minPayout: 65000, maxPayout: 205000, runMins: 12, setupMins: 10, cooldownMins: 30, isBank: true },
+            'small-banks': { name: '22 Free-Roam Banks: 14 Small Vaults & Fleeca Branches', payout: 45000, minPayout: 5000, maxPayout: 45000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: true },
+            'jewelry-stores': { name: '39 Illegal Gang Ops & Jewelry Stores', payout: 25000, minPayout: 10000, maxPayout: 25000, runMins: 6, setupMins: 5, cooldownMins: 15, isBank: false },
+            'sinfrontera': { name: 'The Cartel Heist: Sinfrontera National Bank', payout: 150000, minPayout: 120000, maxPayout: 150000, runMins: 18, setupMins: 25, cooldownMins: 45, isBank: true },
+            'port-gellhorn': { name: 'VCIA Takedown: Vice City Airport Heist', payout: 250000, minPayout: 250000, maxPayout: 250000, runMins: 22, setupMins: 30, cooldownMins: 60, isBank: false },
+            'leonida-reserve': { name: '22 Free-Roam Banks: 8 Large Vaults (Lombank & Ocean Beach)', payout: 205000, minPayout: 65000, maxPayout: 205000, runMins: 12, setupMins: 10, cooldownMins: 30, isBank: true },
+            'yacht': { name: 'Coast Guard Offshore Heist', payout: 50000, minPayout: 50000, maxPayout: 50000, runMins: 15, setupMins: 15, cooldownMins: 30, isBank: false },
+            'smuggler': { name: '39 Illegal Gang Ops & Jewelry Stores', payout: 25000, minPayout: 10000, maxPayout: 25000, runMins: 6, setupMins: 5, cooldownMins: 15, isBank: false },
+            'convoy': { name: 'Tie Up Loose Ends & Armored Trucks', payout: 25560, minPayout: 25560, maxPayout: 25560, runMins: 10, setupMins: 10, cooldownMins: 20, isBank: true },
+            'pelican-bank': { name: 'Small Bank: Pelican Valley Agricultural Branch', payout: 38000, minPayout: 15000, maxPayout: 38000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: true },
+            'key-lento': { name: '39 Gang Ops: Key Lento Smuggler Stash', payout: 24000, minPayout: 12000, maxPayout: 24000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: false },
+            'lummox-stash': { name: '39 Gang Ops: Lummox County Timber Op', payout: 21000, minPayout: 10000, maxPayout: 21000, runMins: 7, setupMins: 5, cooldownMins: 15, isBank: false }
         };
 
         const LOOT_TYPES = {
@@ -178,8 +183,8 @@
 }
     </script>
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta name="twitter:title" content="GTA 6 Heist Planner and Cut Splitter | GTA 6 Guide">
-    <meta name="twitter:description" content="Simulate GTA 6 heist payouts, specialist cuts, fencing fees, and net per-player take across every Leonida vault, then share custom squad builds live.">
+    <meta name="twitter:title" content="GTA 6 Heist Planner &amp; Cut Calculator: The Cartel Heist, VCIA &amp; 22 Bank Vaults (2026)">
+    <meta name="twitter:description" content="Calculate real net payouts for GTA 6 heists: The Cartel Heist ($120K-$150K), VCIA Takedown ($250K), 22 Bank Vaults ($5K-$205K), Yasmani fence cuts, and Dye Pack Jammer mechanics.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
 </head>
 <body onload="calculatePlanner()">
@@ -254,9 +259,7 @@
         <h1 style="color:#fff; font-size:1.35rem; font-weight:1000; margin:0; line-height:1.2;">
             LEONIDA HEIST <span style="color:var(--neon-green);">PLANNER &amp; CUT CALCULATOR</span>
         </h1>
-        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">
-            💰 1-4 PLAYER PAYOUT SIMULATOR &bull; LIVE VAULT ROTATIONS
-        </div>
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.15rem;">💰 REAL GTA 6 PAYOUTS &bull; THE CARTEL HEIST &bull; VCIA TAKEDOWN &bull; 22 BANK VAULTS</div>
     </div>
 </div>
 
@@ -272,19 +275,15 @@
         </div>
 
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            <div class="form-group">
-                <label>Select Target Heist</label>
+                        <div class="form-group">
+                <label for="targetSelect">Select Real GTA 6 Heist / Robbery Target</label>
                 <select class="form-select" id="targetSelect" onchange="onTargetChange(); GTA6.playBeep(440, 'triangle', 0.05);">
-                    <option value="sinfrontera">Sinfrontera National Bank ($14.5M)</option>
-                    <option value="port-gellhorn">Port Gellhorn Container Terminal ($8.2M)</option>
-                    <option value="leonida-reserve" selected>Leonida State Gold Reserve ($25.0M)</option>
-                    <option value="yacht">Starlet Superyacht Offshore Heist ($11.8M)</option>
-                    <option value="smuggler">Grassrivers Cartel Airstrip ($6.5M)</option>
-                    <option value="convoy">Ocean Drive Armored Convoy ($9.4M)</option>
-                                        <option value="pelican-bank">🌾 Pelican Valley Agricultural Bank (Max: $3.8M) [NEW MAP LEAK]</option>
-                        <option value="key-lento">🏝️ Key Lento Offshore Bullion Depot (Max: $12.4M) [NEW REEF VAULT]</option>
-                        <option value="lummox-stash">🌲 Lummox County Timber Stash (Max: $2.9M) [NEW NORTH BORDER]</option>
-                    </select>
+                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera National Bank ($120K–$150K)</option>
+                    <option value="vcia-takedown">VCIA Takedown: Vice City Airport Heist ($250,000)</option>
+                    <option value="large-banks">22 Free-Roam Banks: 8 Large Vaults ($65K–$205K)</option>
+                    <option value="small-banks">22 Free-Roam Banks: 14 Small Vaults ($5K–$45K)</option>
+                    <option value="jewelry-stores">39 Illegal Gang Ops &amp; Jewelry Stores ($10K–$25K)</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -354,13 +353,21 @@
             </div>
         </div>
 
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom:0;">
+                <label for="fenceSelect" style="color:var(--neon-pink); font-weight:700;">Fence Destination &amp; Laundering Rate</label>
+                <select class="form-select" id="fenceSelect" onchange="onFenceChange(); calculatePlanner(); GTA6.playBeep(480, 'sine', 0.03);">
+                    <option value="yasmani" selected>Yasmani (Little Cuba) — 5% Cut (Max Net Return)</option>
+                    <option value="garage">Owned Safehouse Garage — 12% Convenience Fee</option>
+                    <option value="shady">Shady Street Fence — 20% Fast Heat Drop</option>
+                </select>
+            </div>
             <div class="slider-row" style="margin-bottom:0;">
                 <div class="slider-label-row">
                     <span>Safehouse / Fence Laundering Fee:</span>
-                    <strong id="launderFeeVal" style="color: var(--neon-pink);">8%</strong>
+                    <strong id="launderFeeVal" style="color: var(--neon-pink);">5%</strong>
                 </div>
-                <input type="range" class="slider-input" id="launderFeeSlider" min="0" max="25" value="8" oninput="calculatePlanner()">
+                <input type="range" class="slider-input" id="launderFeeSlider" min="0" max="25" value="5" oninput="calculatePlanner()">
             </div>
             <div class="slider-row" style="margin-bottom:0;">
                 <div class="slider-label-row">
@@ -369,10 +376,28 @@
                 </div>
                 <input type="range" class="slider-input" id="failPenaltySlider" min="0" max="35" value="5" oninput="calculatePlanner()">
             </div>
-            <label class="check-item" style="margin:0; align-self:end;">
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:rgba(0,0,0,0.3); border:1px solid rgba(0,240,255,0.2); border-radius:8px; padding:0.65rem 1rem; margin-bottom:1.5rem;">
+            <label class="check-item" style="margin:0; cursor:pointer;">
+                <input type="checkbox" id="jammerToggle" checked onchange="calculatePlanner(); GTA6.playBeep(520, 'triangle', 0.03);">
+                <div>
+                    <strong style="color:var(--neon-cyan);">🛡️ Dye Pack Jammer Equipped</strong>
+                    <span style="font-size:0.75rem; color:#94a3b8;"> (Prevents 25% marked bill dye loss in bank vaults)</span>
+                </div>
+            </label>
+            <label class="check-item" style="margin:0; cursor:pointer;">
                 <input type="checkbox" id="weeklyBonusToggle" onchange="calculatePlanner()">
                 <div><strong>Apply 1.5X Weekly Featured Vault Bonus</strong></div>
             </label>
+        </div>
+
+        <!-- BUCKME CASH CAP ALERT -->
+        <div style="margin-bottom:1.25rem; padding:0.65rem 1rem; background:rgba(255,170,0,0.1); border:1px solid rgba(255,170,0,0.4); border-radius:8px; font-size:0.82rem; color:#fde047; display:flex; align-items:center; gap:0.6rem;">
+            <span style="font-size:1.2rem;">⚠️</span>
+            <div>
+                <strong>BuckMe $20,000 Pocket Cash Cap Warning:</strong> Loose pocket cash caps at $20,000 in Leonida. Immediately deposit your heist earnings into any BuckMe ATM to protect against post-heist arrest fees or street muggings!
+            </div>
         </div>
 
         <!-- LOOT BAG WEIGHT & GRAB PRIORITY MATRIX -->

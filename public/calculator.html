@@ -20,12 +20,20 @@
     
         <script>
         const HEIST_DATABASE = {
-            'sinfrontera': { name: 'Sinfrontera National Bank', payout: 14500000, runMins: 24, setupMins: 30, cooldownMins: 45 },
-            'port-gellhorn': { name: 'Port Gellhorn Container Terminal', payout: 8200000, runMins: 20, setupMins: 25, cooldownMins: 35 },
-            'leonida-reserve': { name: 'Leonida State Gold Reserve', payout: 25000000, runMins: 32, setupMins: 45, cooldownMins: 60 },
-            'yacht': { name: 'Starlet Superyacht Offshore Heist', payout: 11800000, runMins: 26, setupMins: 30, cooldownMins: 45 },
-            'smuggler': { name: 'Grassrivers Cartel Airstrip (1.5X Weekly Bonus Ready)', payout: 6500000, runMins: 18, setupMins: 20, cooldownMins: 30 },
-            'convoy': { name: 'Ocean Drive Armored Convoy', payout: 9400000, runMins: 15, setupMins: 20, cooldownMins: 30 }
+            'cartel-heist': { name: 'The Cartel Heist: Sinfrontera National Bank', payout: 150000, minPayout: 120000, maxPayout: 150000, runMins: 18, setupMins: 25, cooldownMins: 45, isBank: true },
+            'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport Heist', payout: 250000, minPayout: 250000, maxPayout: 250000, runMins: 22, setupMins: 30, cooldownMins: 60, isBank: false },
+            'large-banks': { name: '22 Free-Roam Banks: 8 Large Vaults (Lombank & Ocean Beach)', payout: 205000, minPayout: 65000, maxPayout: 205000, runMins: 12, setupMins: 10, cooldownMins: 30, isBank: true },
+            'small-banks': { name: '22 Free-Roam Banks: 14 Small Vaults & Fleeca Branches', payout: 45000, minPayout: 5000, maxPayout: 45000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: true },
+            'jewelry-stores': { name: '39 Illegal Gang Ops & Jewelry Stores', payout: 25000, minPayout: 10000, maxPayout: 25000, runMins: 6, setupMins: 5, cooldownMins: 15, isBank: false },
+            'sinfrontera': { name: 'The Cartel Heist: Sinfrontera National Bank', payout: 150000, minPayout: 120000, maxPayout: 150000, runMins: 18, setupMins: 25, cooldownMins: 45, isBank: true },
+            'port-gellhorn': { name: 'VCIA Takedown: Vice City Airport Heist', payout: 250000, minPayout: 250000, maxPayout: 250000, runMins: 22, setupMins: 30, cooldownMins: 60, isBank: false },
+            'leonida-reserve': { name: '22 Free-Roam Banks: 8 Large Vaults (Lombank & Ocean Beach)', payout: 205000, minPayout: 65000, maxPayout: 205000, runMins: 12, setupMins: 10, cooldownMins: 30, isBank: true },
+            'yacht': { name: 'Coast Guard Offshore Heist', payout: 50000, minPayout: 50000, maxPayout: 50000, runMins: 15, setupMins: 15, cooldownMins: 30, isBank: false },
+            'smuggler': { name: '39 Illegal Gang Ops & Jewelry Stores', payout: 25000, minPayout: 10000, maxPayout: 25000, runMins: 6, setupMins: 5, cooldownMins: 15, isBank: false },
+            'convoy': { name: 'Tie Up Loose Ends & Armored Trucks', payout: 25560, minPayout: 25560, maxPayout: 25560, runMins: 10, setupMins: 10, cooldownMins: 20, isBank: true },
+            'pelican-bank': { name: 'Small Bank: Pelican Valley Agricultural Branch', payout: 38000, minPayout: 15000, maxPayout: 38000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: true },
+            'key-lento': { name: '39 Gang Ops: Key Lento Smuggler Stash', payout: 24000, minPayout: 12000, maxPayout: 24000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: false },
+            'lummox-stash': { name: '39 Gang Ops: Lummox County Timber Op', payout: 21000, minPayout: 10000, maxPayout: 21000, runMins: 7, setupMins: 5, cooldownMins: 15, isBank: false }
         };
 
         const LOOT_TYPES = {
@@ -260,15 +268,14 @@
         </div>
 
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            <div class="form-group">
-                <label>Select Target Heist</label>
+                        <div class="form-group">
+                <label for="targetSelect">Select Real GTA 6 Heist / Robbery Target</label>
                 <select class="form-select" id="targetSelect" onchange="onTargetChange(); GTA6.playBeep(440, 'triangle', 0.05);">
-                    <option value="sinfrontera">Sinfrontera National Bank ($14.5M)</option>
-                    <option value="port-gellhorn">Port Gellhorn Container Terminal ($8.2M)</option>
-                    <option value="leonida-reserve" selected>Leonida State Gold Reserve ($25.0M)</option>
-                    <option value="yacht">Starlet Superyacht Offshore Heist ($11.8M)</option>
-                    <option value="smuggler">Grassrivers Cartel Airstrip ($6.5M)</option>
-                    <option value="convoy">Ocean Drive Armored Convoy ($9.4M)</option>
+                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera National Bank ($120K–$150K)</option>
+                    <option value="vcia-takedown">VCIA Takedown: Vice City Airport Heist ($250,000)</option>
+                    <option value="large-banks">22 Free-Roam Banks: 8 Large Vaults ($65K–$205K)</option>
+                    <option value="small-banks">22 Free-Roam Banks: 14 Small Vaults ($5K–$45K)</option>
+                    <option value="jewelry-stores">39 Illegal Gang Ops &amp; Jewelry Stores ($10K–$25K)</option>
                 </select>
             </div>
 
