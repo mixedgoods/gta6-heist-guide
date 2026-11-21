@@ -255,16 +255,26 @@ body {
   overflow: hidden;
   border: 2px solid rgba(0, 240, 255, 0.4);
   box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
-  background: #080b12;
-  min-height: 400px;
+  background: #0a0e17;
+  min-height: 420px;
+}
+.hero-banner-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(90deg, #0a0e17 0%, transparent 18%, transparent 82%, #0a0e17 100%);
 }
 .hero-banner-frame img {
   width: 100%;
-  min-height: 400px;
-  height: 400px;
-  object-fit: cover;
+  min-height: 420px;
+  max-height: 520px;
+  height: auto;
+  object-fit: contain;
   object-position: center top;
   display: block;
+  margin: 0 auto;
   transition: transform 0.4s ease;
 }
 .hero-overlay-bar {
@@ -272,8 +282,9 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 18, 0.88) 35%, rgba(8, 11, 18, 0.98) 100%);
-  padding: 0.65rem 1rem 0.65rem;
+  z-index: 3;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 23, 0.88) 35%, rgba(10, 14, 23, 0.98) 100%);
+  padding: 0.85rem 1.25rem 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -1764,16 +1775,19 @@ html, body {
   }
   .hero-banner-frame {
     border-radius: 10px;
-    min-height: 320px;
+    min-height: 240px;
+    background: #0a0e17;
   }
   .hero-banner-frame img {
-    min-height: 320px;
-    height: 320px;
+    min-height: 200px;
+    max-height: 320px;
+    height: auto;
+    object-fit: contain;
     object-position: center top;
   }
   .hero-overlay-bar {
     position: relative;
-    background: rgba(8, 11, 18, 0.98);
+    background: rgba(10, 14, 23, 0.98);
     padding: 0.9rem 1rem;
     align-items: stretch;
     border-top: 1px solid rgba(0, 240, 255, 0.25);
