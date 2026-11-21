@@ -256,7 +256,7 @@ body {
   border: 2px solid rgba(0, 240, 255, 0.4);
   box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
   background: #0a0e17;
-  min-height: 420px;
+  min-height: 430px;
 }
 .hero-banner-frame::before {
   content: '';
@@ -268,7 +268,7 @@ body {
 }
 .hero-banner-frame img {
   width: 100%;
-  min-height: 420px;
+  min-height: 430px;
   max-height: 520px;
   height: auto;
   object-fit: contain;
@@ -1775,11 +1775,11 @@ html, body {
   }
   .hero-banner-frame {
     border-radius: 10px;
-    min-height: 240px;
+    min-height: 430px;
     background: #0a0e17;
   }
   .hero-banner-frame img {
-    min-height: 200px;
+    min-height: 430px;
     max-height: 320px;
     height: auto;
     object-fit: contain;
@@ -2934,9 +2934,6 @@ body.has-ticker .bookmarks-fab {
   font-weight: 700;
   margin: 0 0 4px 0;
   line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .syndicate-gear-spec {
@@ -2944,9 +2941,6 @@ body.has-ticker .bookmarks-fab {
   font-size: 11.5px;
   line-height: 1.35;
   margin: 0 0 6px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .syndicate-gear-price {

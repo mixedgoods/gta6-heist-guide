@@ -176,7 +176,9 @@ const GTA6 = {
       g2aUrl: 'https://www.g2a.com/n/reflink-4094b9aab5',
       enebaUrl: 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide',
       enebaAffiliateId: 'gta6heistguide',
-      whopUrl: 'https://whop.com/apexlocallabs/products/',
+      whopUrl: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle',
+      gumroadUrl: 'https://apexlocallabs.gumroad.com/l/cutflow-pro',
+      gumroadBundleUrl: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle',
       getApexLocalUrl: 'https://getapexlocal.com',
       getApexLocalPartnersUrl: 'https://getapexlocal.com/partners',
       adsensePublisherId: '',
@@ -225,7 +227,7 @@ const GTA6 = {
       if (low.includes('g2a.com')) return 'g2a';
       if (low.includes('eneba.com')) return 'eneba';
       if (low.includes('exitlag.com')) return 'exitlag';
-      if (low.includes('whop.com')) return 'whop';
+      if (low.includes('whop.com') || low.includes('gumroad.com')) return 'gumroad';
       if (low.includes('getapexlocal.com')) return 'getapexlocal';
       return null;
     },
@@ -248,9 +250,9 @@ const GTA6 = {
         } else if (low.includes('eneba.com')) {
           a.href = this.buildEnebaUrl(rawHref);
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'eneba');
-        } else if (low.includes('whop.com')) {
-          a.href = cfg.whopUrl;
-          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'whop');
+        } else if (low.includes('whop.com') || low.includes('gumroad.com')) {
+          a.href = cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
+          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'gumroad');
         } else if (low.includes('getapexlocal.com/partners')) {
           a.href = cfg.getApexLocalPartnersUrl;
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'getapexlocal');
@@ -1999,7 +2001,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
               <div id="keypadContextStrip" class="contextual-tool-strip" style="margin-top:0.95rem; font-size:0.83rem;">
               <span>⚡ Shave 2s off hacks &amp; gunfights with <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="keypad-trainer" style="color:var(--neon-green); font-weight:800;">$16.99 Heist Thumbsticks</a> or <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="keypad-trainer" style="color:var(--neon-cyan); font-weight:800;">DualSense Edge &rarr; [Amazon]</a></span>
               <span style="color:rgba(255,255,255,0.3);">&bull;</span>
-              <span>🎬 Clip your run for TikTok/Shorts &rarr; <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="getapexlocal" data-aff-placement="keypad-trainer" style="color:var(--neon-yellow); font-weight:800;">[CutFlow Pro $49]</a></span>
+              <span>🎬 Clip your run for TikTok/Shorts &rarr; <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="keypad-trainer" style="color:var(--neon-yellow); font-weight:800;">[CutFlow Pro $49]</a></span>
             </div>
             </div>
           </div>
@@ -5529,12 +5531,12 @@ CharacterModal: {
         const exitCode = cfg.exitLagCode || '10386953';
         const g2aUrl = cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5';
         const enebaUrl = cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide';
-        const whopUrl = cfg.whopUrl || 'https://whop.com/apexlocallabs/products/';
+        const gumroadBundleUrl = cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
         return [
           `🔥 <strong style="color:var(--neon-pink);">DAY-1 LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Amazon]</a>`,
           `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; ZERO PACKET LOSS:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Pro Gaming Tunnel — Prevent Heist Disconnects</a> &bull; Coupon Code: <strong style="color:var(--neon-yellow);" data-exitlag-code>${exitCode}</strong> <button type="button" onclick="GTA6.copyExitLagCode(this)" style="background:rgba(0,240,255,0.15); border:1px solid var(--neon-cyan); color:var(--neon-cyan); border-radius:3px; padding:1px 6px; font-size:0.75rem; cursor:pointer; margin-left:4px;">📋 Copy</button>`,
-          `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; SHARK CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
-          `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${whopUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="whop" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
+          `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; PSN & XBOX GIFT CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
+          `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${gumroadBundleUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
         ];
       },
       init() {
@@ -6080,7 +6082,7 @@ DealRotator: {
             stars: "★★★★★",
             rating: "4.9",
             ratingCount: "45,000+ verified",
-            desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & Shark Cards with zero service markups.",
+            desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & PSN & Xbox Gift Cards with zero service markups.",
             priceLabel: "Digital Discount",
             price: "Up to 20% Off",
             pillDiscount: "INSTANT",
@@ -6104,7 +6106,7 @@ DealRotator: {
           },
           {
             id: "g2a-gamepass",
-            title: "G2A Ultimate & Shark Cards",
+            title: "G2A Ultimate & PSN & Xbox Gift Cards",
             badgeVerified: "✓ 20% INSTANT DISCOUNT",
             badgeMerchant: "GLOBAL KEYS",
             stars: "★★★★★",
@@ -6815,7 +6817,7 @@ DealRotator: {
         } catch (e) {}
       },
       getLocalClickCounts() {
-        const counts = { amazon: 0, g2a: 0, eneba: 0, exitlag: 0, whop: 0, getapexlocal: 0 };
+        const counts = { amazon: 0, g2a: 0, eneba: 0, exitlag: 0, gumroad: 0, whop: 0, getapexlocal: 0 };
         try {
           const arr = JSON.parse(localStorage.getItem('gta6_aff_clicks') || '[]');
           arr.forEach((item) => {
@@ -6912,7 +6914,8 @@ DealRotator: {
           ['g2a', 'G2A'],
           ['eneba', 'Eneba'],
           ['exitlag', 'ExitLag'],
-          ['whop', 'Whop'],
+          ['gumroad', 'Gumroad'],
+            ['whop', 'Whop'],
           ['getapexlocal', 'GetApexLocal'],
         ];
         grid.innerHTML = labels.map(([k, label]) => `
@@ -6946,6 +6949,7 @@ DealRotator: {
             ['g2a', 'G2A'],
             ['eneba', 'Eneba'],
             ['exitlag', 'ExitLag'],
+            ['gumroad', 'Gumroad'],
             ['whop', 'Whop'],
             ['getapexlocal', 'GetApexLocal'],
           ];

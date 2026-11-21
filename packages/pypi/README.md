@@ -50,4 +50,4 @@
 - 🛡️ **Lobby DDoS Protection:** [ExitLag Low-Ping Encrypted Gaming Tunnel](https://www.exitlag.com/refer/10386953)
 - ⚡ **Zero-Pop-In Vice City Streaming SSD:** [Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD on Amazon](https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20)
 - 🔑 **Discounted Game Keys & Console Top-Ups:** [G2A Verified Keys](https://www.g2a.com/n/reflink-4094b9aab5) | [Eneba Global Store](https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide)
-- 🎬 **Offline 9:16 Vertical Shorts Auto-Clipper ($49):** [CutFlow Pro & ClipBounty Studio at GetApexLocal](https://getapexlocal.com) | [Whop Store Checkout](https://whop.com/apexlocallabs/products/)
+- 🎬 **Offline 9:16 Vertical Shorts Auto-Clipper ($49):** [CutFlow Pro & ClipBounty Studio at GetApexLocal](https://getapexlocal.com) | [Gumroad Store Checkout](https://apexlocallabs.gumroad.com/l/apex-pro-bundle)

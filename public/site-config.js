@@ -14,7 +14,9 @@ window.SITE_CONFIG = Object.freeze({
   g2aUrl: "https://www.g2a.com/n/reflink-4094b9aab5",
   enebaUrl: "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide",
   enebaAffiliateId: "gta6heistguide",
-  whopUrl: "https://whop.com/apexlocallabs/products/",
+  whopUrl: "https://apexlocallabs.gumroad.com/l/apex-pro-bundle",
+  gumroadCutFlowUrl: "https://apexlocallabs.gumroad.com/l/cutflow-pro",
+  gumroadBundleUrl: "https://apexlocallabs.gumroad.com/l/apex-pro-bundle",
   getApexLocalUrl: "https://getapexlocal.com",
   getApexLocalPartnersUrl: "https://getapexlocal.com/partners",
 

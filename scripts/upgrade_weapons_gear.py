@@ -573,7 +573,7 @@ def upgrade_weapons_gear():
                         <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" class="btn-deal-g2a" style="flex:1; padding:0.45rem; font-size:0.75rem;">⚡ G2A Keys</a>
                         <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" class="btn-deal-g2a" style="flex:1; padding:0.45rem; font-size:0.75rem; background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);">💳 Eneba</a>
                     </div>
-                    <a href="https://whop.com/apexlocallabs/products/" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-secondary" style="font-size:0.75rem; padding:0.45rem; border-color:var(--neon-yellow); color:var(--neon-yellow); text-align:center;">🎬 CutFlow Pro Creator Suite ($49) &rarr;</a>
+                    <a href="https://apexlocallabs.gumroad.com/l/apex-pro-bundle" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-secondary" style="font-size:0.75rem; padding:0.45rem; border-color:var(--neon-yellow); color:var(--neon-yellow); text-align:center;">🎬 CutFlow Pro Creator Suite ($49) &rarr;</a>
                 </div>
             </div>
 

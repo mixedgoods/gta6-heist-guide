@@ -18,7 +18,7 @@ Cloud clipping subscriptions charge monthly fees, compress your bitrate, and cho
 
 | Creator Tool | Core Function | Processing Mode | Checkout Links |
 | :--- | :--- | :--- | :--- |
-| **CutFlow Pro ($49)** | Automatically detects and cuts dead air, lobby waiting, and silence from 2-hour heist VODs in seconds | 100% Local / Offline | [GetApexLocal](https://getapexlocal.com) • [Whop Store](https://whop.com/apexlocallabs/products/) |
-| **ClipBounty Studio ($49)** | Frames 16:9 gameplay into punchy 9:16 vertical shorts with HUD-aware crop and batch export | 100% Local / Offline | [GetApexLocal](https://getapexlocal.com) • [Whop Store](https://whop.com/apexlocallabs/products/) |
+| **CutFlow Pro ($49)** | Automatically detects and cuts dead air, lobby waiting, and silence from 2-hour heist VODs in seconds | 100% Local / Offline | [GetApexLocal](https://getapexlocal.com) • [Gumroad Store](https://apexlocallabs.gumroad.com/l/apex-pro-bundle) |
+| **ClipBounty Studio ($49)** | Frames 16:9 gameplay into punchy 9:16 vertical shorts with HUD-aware crop and batch export | 100% Local / Offline | [GetApexLocal](https://getapexlocal.com) • [Gumroad Store](https://apexlocallabs.gumroad.com/l/apex-pro-bundle) |
 
 Combine **CutFlow Pro** + **ClipBounty Studio** with our **[Second-Screen Live Companion HUD](https://www.gta6heistguide.com/)** so every vault raid turns into both maximum in-game cash and viral short-form content.
