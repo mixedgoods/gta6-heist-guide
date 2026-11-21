@@ -373,7 +373,7 @@ const GTA6 = {
       const now = Date.now();
       const diff = launchTarget - now;
       const launchDay = Math.max(1, Math.floor((now - launchTarget) / 86400000) + 1);
-      const liveBannerText = `🔥 GTA 6 Story Mode: LIVE (Day-${launchDay}) · GTA 6 Online: Expected 2027`;
+      const liveBannerText = 'Story Mode: LIVE · GTA 6 Online: Expected 2027';
       if (launchEl) {
         launchEl.innerText = diff <= 0 ? liveBannerText : this.formatDiff(diff);
       }
@@ -413,11 +413,11 @@ const GTA6 = {
       recommendedApproach: approach, specialistSpotlight: spot, summary,
     });
     const rotation = [
-      V('cartel-heist', 'The Cartel Heist: Sinfrontera National Bank', '$120,000', '$150,000', 'Rig 3 Cell Towers (10:47 Vault Time)', 'Raul Bautista Lead Operative', 'Chapter 3 8-mission story heist chain. Save weapons crates in Company Property. Unlocks Break the Bank trophy.'),
+      V('cartel-heist', 'The Cartel Heist: Sinfrontera National Bank', '$120,000', '$120,000', 'Rig 3 Cell Towers (10:47 Vault Time)', 'Raul Bautista Lead Operative', 'Chapter 3 Story Heist #1 (Mission #71). 5 setups + 10-step vault job paying $120,000. Unlocks Break the Bank trophy.'),
       V('vcia-takedown', 'VCIA Takedown: Vice City Airport Heist', '$200,000', '$250,000', 'Roof Terminal Stealth & Cargo Plane', 'NOOSE Countermeasure Overwatch', 'Chapter 4 4-part airport finale. Tarmac gunfight and cargo plane escape. Unlocks Hi-Jacked trophy.'),
       V('large-banks', '22 Free-Roam Banks: Lombank Downtown', '$65,000', '$205,000', 'Dye Pack Jammer + Trunk Stash', 'Yasmani Little Cuba Fence (5% Cut)', 'Repeatable large bank vault run paying up to $205,000. Fence marked bills in Little Cuba.'),
       V('small-banks', '22 Free-Roam Banks: 14 Small Vaults & Fleeca', '$5,000', '$45,000', 'Keypad Decryption Drill', 'Rapid Getaway Driver', '14 repeatable small bank vaults across Vice City and Leonida Keys.'),
-      V('illegal-ops', '39 Illegal Gang Ops & Jewelry Stores', '$10,000', '$25,000', 'Safe Codes: Kingpin Bowling 0300, Pelican Valley 0072', 'BuckMe ATM Deposit', 'Fast free-roam cash targets across Leonida. Deposit cash to avoid $20,000 pocket cap.'),
+      V('illegal-ops', '40 Gang Hideouts & 20 Jewelry Stores', '$15,000', '$35,000', 'Verified Safe Codes: 7700, 0420, 0300, 4444', 'BuckMe ATM Deposit', 'Fast free-roam cash targets across Leonida. Deposit cash to avoid $20,000 pocket cap.'),
     ];
     const now = new Date();
     const cycle = Math.floor((now.getTime() - 10 * 3600 * 1000) / (7 * 86400 * 1000));
@@ -5233,7 +5233,7 @@ CharacterModal: {
       const netPerHr = document.getElementById('netPerHourDisplay')?.innerText || '$4,280,000/hr';
       const perPlayer = document.getElementById('perPlayerDisplay')?.innerText || '$4,687,500';
       const squadPot = document.getElementById('squadPotDisplay')?.innerText || '$18,750,000';
-      const gross = document.getElementById('targetPayoutDisplay')?.innerText || '$150,000';
+      const gross = document.getElementById('targetPayoutDisplay')?.innerText || '$120,000';
 
       const canvas = document.createElement('canvas');
       canvas.width = 1200;

@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://www.gta6heistguide.com/gta-6-tips-and-tricks/">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v11">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
     <style>
       .tips-controls-bar {
         background: rgba(12, 16, 30, 0.94);
@@ -90,7 +90,7 @@
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 Story Mode: LIVE (Day-3) · GTA 6 Online: Expected 2027</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: Expected 2027</span>
             </span>
         </div>
     </div>
@@ -103,15 +103,21 @@
             <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
         </div>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/map.html" class="nav-pill">Map</a></li>
-            <li><a href="/gta-6-money-guide/" class="nav-pill">Money</a></li>
-            <li><a href="/gta-6-tips-and-tricks/" class="nav-pill">Tips &amp; Tricks</a></li>
-            <li><a href="/cheats.html" class="nav-pill">Cheats</a></li>
+            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-arrow">▾</span></button>
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🛠️ All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -120,10 +126,9 @@
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
-            <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Database <span class="nav-arrow">▾</span></button>
+            <li class="nav-dropdown nav-dropdown-right">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -256,8 +261,8 @@
     { id: 'tip-dye-pack-jammer', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-20', title: 'Equip Dye Pack Jammer Before Robbing Any of the 22 Banks', ps5: 'Hold L1 -> Heist Gear -> Dye Jammer', xbox: 'Hold LB -> Heist Gear -> Dye Jammer', desc: 'Unlocked after Chapter 3\'s Credit Check. Forgetting to toggle the Dye Pack Jammer ruins ~25% of marked bills inside Small Banks and Large Bank Vaults.', link: '/heists/small-banks-payday-loans.html' },
 
     // Hidden Locations
-    { id: 'tip-brians-lockup', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', title: 'Brian\'s Lockup Keypad (7700) — Stash & Fence Goods', ps5: 'Keypad -> Enter 7-7-0-0', xbox: 'Keypad -> Enter 7-7-0-0', desc: 'Brian\'s Lockup in the Leonida Keys uses verified keypad code 7700. Use it to stash and fence stolen goods—including acid in Lab Fees, marked bills, and jewelry.', link: '/gta-6-money-guide/#safe-codes', pin: 'fence-brians-lockup' },
-    { id: 'tip-safe-0420', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', title: 'Backroom Grow-Op Safe (0420) + 7 Verified Leonida Safe Codes', ps5: 'Interact (Triangle) -> Enter Code', xbox: 'Interact (Y) -> Enter Code', desc: 'Enter 0420 at the Little Haiti grow-op safe alongside verified codes 4444, 0300, 6823, 6969, 2727, and 44017. Tag Crab Outpost codes (CLEAVES, 0072, 0212) as Community Reported / Unverified.', link: '/gta-6-money-guide/#safe-codes', pin: 'op-backroom-weed' },
+    { id: 'tip-brians-lockup', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', title: 'Brian\'s Lockup Keypad (7700) — Lab Fees Acid Stash', ps5: 'Keypad -> Enter 7-7-0-0', xbox: 'Keypad -> Enter 7-7-0-0', desc: 'Brian\'s Lockup uses verified keypad code 7700 to unlock the door where you stash the acid during the "Lab Fees" mission (not a generic cash & weapons stash).', link: '/gta-6-money-guide/#safe-codes', pin: 'fence-brians-lockup' },
+    { id: 'tip-safe-0420', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', title: 'Brian\'s Boutique Lab Back Room (0420) + 7 Verified Safe Codes', ps5: 'Interact (Triangle) -> Enter Code', xbox: 'Interact (Y) -> Enter Code', desc: 'Enter verified code 0420 at Brian\'s boutique lab back room alongside verified codes 7700, 4444, 0300, 6823, 6969, 2727, and 44017. Crab Outpost codes (CLEAVES, 0072, 0212) remain Unverified / Community Reported.', link: '/gta-6-money-guide/#safe-codes', pin: 'op-backroom-weed' },
     { id: 'tip-donnie-missable', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-20', title: 'Donnie\'s Trailer Fence Closes Permanently After "Swamped"', ps5: 'Visit Keys Trailer Before Mission', xbox: 'Visit Keys Trailer Before Mission', desc: 'Sell all Chapter 1 stolen goods and contraband at Donnie\'s Trailer before launching Swamped—after that mission, the fence locks permanently.', pin: 'fence-donnie' },
 
     // Character Secrets
@@ -268,7 +273,7 @@
     // Money-Making Tips
     { id: 'tip-yasmani-5pct', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Use Yasmani\'s Fence (5% Cut) for All 20 Jewelry Stores', ps5: 'Deliver Duffels to Little Cuba Fence', xbox: 'Deliver Duffels to Little Cuba Fence', desc: 'After Yasmani\'s Jewelry Jobs in Chapter 3, all 20 jewelry stores across Leonida unlock. Always wipe CCTV servers and fence diamonds with Yasmani for the lowest 5% cut.', link: '/heists/jewelry-stores.html', pin: 'fence-yasmani' },
     { id: 'tip-kenton-moses', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Stack Kenton\'s Dives (~$1,400) + Moses Car Drops ($1K–$2K)', ps5: 'Port Gellhorn & Keys Free-Roam', xbox: 'Port Gellhorn & Keys Free-Roam', desc: 'Zero-heat early cash loop: salvage shipwrecks for Kenton (~$1,400/dive) and drop untracked vehicles at Moses in Port Gellhorn ($1,000–$2,000 each) to hit your $5K BuckMe goal safely.', link: '/gta-6-money-guide/', pin: 'fence-moses' },
-    { id: 'tip-cartel-big-stacks', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Bag Big Stacks First in The Cartel Heist ($120K -> Up to $150K Max Bonus)', ps5: 'Shoot Guard Hands -> Prioritize Center Tables', xbox: 'Shoot Guard Hands -> Prioritize Center Tables', desc: 'In Mission #71 (Sinfrontera National Bank), disarm lobby guards by shooting weapons from their hands for Professional rating and bag large center-table stacks first to maximize your $120,000 base score up to $150,000 max bonus.', link: '/heists/the-cartel-heist.html', pin: 'heist-cartel' },
+    { id: 'tip-cartel-big-stacks', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Bag Big Stacks First in The Cartel Heist ($120,000 Payout)', ps5: 'Shoot Guard Hands -> Prioritize Center Tables', xbox: 'Shoot Guard Hands -> Prioritize Center Tables', desc: 'In Mission #71 (Sinfrontera National Bank), disarm lobby guards by shooting weapons from their hands for Professional rating and bag large center-table stacks first to lock in the full $120,000 payout.', link: '/heists/the-cartel-heist.html', pin: 'heist-cartel' },
 
     // Easter Eggs (Absorbed from Secrets + Synced with GTA6Progress)
     { id: 'sec-1', secretId: 'secret:sec-1', cat: 'Easter Eggs', badge: 'Confirmed', updated: '2026-11-21', title: 'Literal Giant Easter Egg on South Feistdale Radio Tower', ps5: 'Climb Tower (~6 Min) -> Pick Up Egg (Circle)', xbox: 'Climb Tower (~6 Min) -> Pick Up Egg (B)', desc: 'Climb the tallest broadcast tower in South Feistdale County to find a giant nest of painted Easter eggs. Throwing one triggers a special cutscene.', link: '/secrets.html' },
@@ -279,7 +284,7 @@
     // Player Discoveries
     { id: 'tip-fps-workaround', cat: 'Player Discoveries', badge: 'Community Discovered', updated: '2026-11-21', title: 'Pseudo First-Person Camera Lock Workaround', ps5: 'Cover (R1) + Phone (Up) -> Aim (L2) + Exit', xbox: 'Cover (RB) + Phone (Up) -> Aim (LT) + Exit', desc: 'Since GTA 6 launched without an on-foot FPS toggle, combining closest third-person view, corner cover, phone camera, and aim locks an eye-level perspective.', link: '/gta-6-discoveries/' },
     { id: 'tip-xsx-120hz', cat: 'Player Discoveries', badge: 'Testing', updated: '2026-11-21', title: 'Xbox Series X 120Hz VRR Refresh Handshake (40–50 FPS)', ps5: 'Xbox Series X Only (Build 01.002.001)', xbox: '120Hz + VRR -> Dashboard Toggle -> Quick Resume', desc: 'Community testers documented an unlocked framerate handshake on 120Hz VRR displays on Build 01.002.001. Test strictly on Save Slot #15.', link: '/gta-6-discoveries/' },
-    { id: 'tip-crab-unverified', cat: 'Player Discoveries', badge: 'Unverified', updated: '2026-11-21', title: 'Crab Outpost Rumored Keypad Codes (CLEAVES / 0072 / 0212)', ps5: 'Wetlands Outpost Keypads (Testing)', xbox: 'Wetlands Outpost Keypads (Testing)', desc: 'Community-reported combinations circulating on launch week—tagged Unverified until 3+ independent confirmations clear our D1 queue.', link: '/gta-6-discoveries/' }
+    { id: 'tip-crab-unverified', cat: 'Player Discoveries', badge: 'Unverified', updated: '2026-11-21', title: 'Crab Outpost Rumored Keypad Codes (CLEAVES / 0072 / 0212)', ps5: 'Wetlands Outpost Keypads (Testing)', xbox: 'Wetlands Outpost Keypads (Testing)', desc: 'Unverified / Community Reported combinations circulating during launch week—tagged unconfirmed until 3+ independent confirmations clear our D1 queue.', link: '/gta-6-discoveries/' }
   ];
 
   var activeCat = 'all';

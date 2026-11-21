@@ -4054,11 +4054,16 @@ body.has-ticker .bookmarks-fab {
 }
 
 /* =========================================================================
-   SYNDICATE v3.3 — 7-ITEM SINGLE-ROW NAV, DROPDOWNS, 4-CARD AMAZON GRID,
+   SYNDICATE v3.4 — BALANCED 6-TAB SINGLE-ROW NAV, DROPDOWNS, 4-CARD AMAZON GRID,
    UNIFIED PROGRESS TOOLBAR & RESET MODAL, VERIFICATION BADGES
    ========================================================================= */
 .navbar .nav-dropdown {
   position: relative;
+}
+.navbar .nav-links > li > a.nav-pill,
+.navbar .nav-links .nav-dropdown-btn {
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
 }
 .navbar .nav-dropdown-btn {
   background: rgba(255, 255, 255, 0.03);
@@ -4089,7 +4094,7 @@ body.has-ticker .bookmarks-fab {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  min-width: 240px;
+  min-width: 230px;
   background: rgba(10, 12, 24, 0.98);
   border: 1px solid rgba(0, 240, 255, 0.35);
   border-radius: 10px;
@@ -4098,6 +4103,10 @@ body.has-ticker .bookmarks-fab {
   z-index: 1250;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+}
+.navbar .nav-dropdown.nav-dropdown-right .nav-dropdown-menu {
+  left: auto;
+  right: 0;
 }
 .navbar .nav-dropdown.is-open > .nav-dropdown-menu {
   display: flex;
@@ -4115,6 +4124,8 @@ body.has-ticker .bookmarks-fab {
   font-weight: 700 !important;
   color: #cbd5e1 !important;
   text-decoration: none !important;
+  text-transform: none !important;
+  letter-spacing: 0.2px !important;
   border-radius: 7px !important;
   background: transparent !important;
   border: 1px solid transparent !important;
@@ -4141,7 +4152,7 @@ body.has-ticker .bookmarks-fab {
     display: none !important;
   }
   .navbar .nav-container {
-    gap: 12px !important;
+    gap: 14px !important;
     padding: 0 18px !important;
   }
   .navbar .brand-logo,
@@ -4149,12 +4160,12 @@ body.has-ticker .bookmarks-fab {
     height: 32px !important;
   }
   .navbar .nav-links {
-    gap: 6px !important;
+    gap: 8px !important;
   }
   .navbar .nav-links > li > a,
   .navbar .nav-links .nav-pill,
   .navbar .nav-links .nav-dropdown-btn {
-    padding: 0 10px !important;
+    padding: 0 12px !important;
     font-size: 13px !important;
     height: 34px !important;
   }
@@ -4167,20 +4178,20 @@ body.has-ticker .bookmarks-fab {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .navbar .nav-container {
-    gap: 8px !important;
+    gap: 10px !important;
     padding: 0 12px !important;
   }
   .navbar .brand-logo,
   .navbar .brand-logo-img {
-    height: 26px !important;
+    height: 28px !important;
   }
   .navbar .nav-links {
-    gap: 4px !important;
+    gap: 5px !important;
   }
   .navbar .nav-links > li > a,
   .navbar .nav-links .nav-pill,
   .navbar .nav-links .nav-dropdown-btn {
-    padding: 0 7px !important;
+    padding: 0 9px !important;
     font-size: 12px !important;
   }
   .navbar .nav-actions .btn-launch-rewards,

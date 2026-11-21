@@ -8,15 +8,15 @@
     <title>GTA 6 Wanted System, ANPR and Evasion | GTA 6 Guide</title>
     <meta name="description" content="Learn how GTA 6 6-star police escalations, license plate ANPR toll cameras, facial recognition delays, and plate-swap mechanics work during pursuits.">
         <meta name="keywords" content="GTA 6 wanted system, CCTV forensics, 6 star police evasion GTA 6, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/leonida-wanted-system">
+<link rel="canonical" href="https://www.gta6heistguide.com/leonida-wanted-system.html">
     <link rel="manifest" href="/manifest.json">
     <meta property="og:title" content="GTA 6 Wanted System, ANPR and Evasion | GTA 6 Guide">
     <meta property="og:description" content="Learn how GTA 6 6-star police escalations, license plate ANPR toll cameras, facial recognition delays, and plate-swap mechanics work during pursuits.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/leonida-wanted-system">
+    <meta property="og:url" content="https://www.gta6heistguide.com/leonida-wanted-system.html">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/gear/gta6-box-pro.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v11">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
     <script type="application/ld+json">
     {
   "@context": "https://schema.org",
@@ -43,26 +43,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the best GTA 6 heist payout calculator and crew cut calculator?",
+          "name": "How do ANPR license plate cameras work in GTA 6?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The interactive Heist Planner on gta6heistguide.com simulates 1 to 4 player co-op cuts, specialist fees (Gunner, Ghost Hacker, Wheelman), and +5% stealth integrity bonuses across all 6 major vaults including Raul Bautista bank scores."
+            "text": "Automatic Number Plate Recognition (ANPR) gantries on Vice City bridges, highway tolls, and downtown intersections scan flagged getaway plates. Passing under a gantry in a flagged car resets your radar cooldown timer and broadcasts your heading to nearby VCPD cruisers."
           }
         },
         {
           "@type": "Question",
-          "name": "How do Lucia Caminos and Jason Duval skills work with GTA 6 trunk weapon storage?",
+          "name": "How much faster do you lose cops by swapping cars and clothes in GTA 6?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Lucia Caminos excels at keypad decryption and crowd intimidation, while Jason Duval leads sniper overwatch and getaway handling. Heavy thermal drills and LMGs must be stored physically inside your getaway car trunk weapon storage slots."
+            "text": "Breaking line of sight and swapping into an unflagged vehicle cuts police search cooldown by roughly 38%, while removing your robbery mask and changing jackets out of sight drops witness BOLO recognition time by another 28%."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I use a GTA 6 LFG crew finder to match PS5, Xbox, or PC heist friends?",
+          "name": "What is the fastest way to escape a 5-star or 6-star wanted level in Leonida?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use the Leonida Interactive Map and Strategy Guides at gta6heistguide.com/interactive-map to inspect all 6 vault routes, laser hack timings, and payout splits."
+            "text": "At 5 and 6 stars, NOOSE helicopters use thermal optics and citywide ANPR gantries lock down causeways. Dive immediately into the Vice Transit Subway Tunnels or Ocean Blvd Storm Drain Conduits to break chopper line of sight, swap into a clean vehicle underground, and exit on foot or in an unflagged car."
           }
         }
       ]
@@ -112,17 +112,29 @@
             secs = Math.max(15, Math.round(secs));
             var savedPct = Math.round(((baseSecs - secs) / baseSecs) * 100);
 
-            var responseUnit = 'Vice Patrol Cruisers';
-            var conduit = 'Side-Alley Respray Garage';
-            var anprRisk = 'Low (Manual Plate Visual Only)';
-            if (stars >= 5) {
+            var responseUnit = 'Local Foot & Beat Cruisers';
+            var conduit = 'Break Sightlines Behind Any Alley or Parking Deck';
+            var anprRisk = 'Low (Visual Patrol Only — No Gantry Alert)';
+            if (stars === 6) {
+                responseUnit = 'NOOSE Gunships + Armored BearCat Convoys + Roadblocks';
+                conduit = 'Vice Transit Subway Tunnel -> Deep Underground Car Swap';
+                anprRisk = 'Maximum (Citywide ANPR Lockdown + Thermal Choppers)';
+            } else if (stars === 5) {
                 responseUnit = 'NOOSE Helicopters + Armored Tactical Vans';
                 conduit = 'Vice Transit Subway Tunnel -> Swap Plates Underground';
                 anprRisk = 'Extreme (Citywide Toll Gantries + Chopper Thermal)';
-            } else if (stars >= 3) {
-                responseUnit = 'High-Speed Interceptors + Drone Searchlights';
-                conduit = 'Ocean Blvd Storm Drain Conduits';
-                anprRisk = 'High (Bridge ANPR Cameras + Witness BOLO)';
+            } else if (stars === 4) {
+                responseUnit = 'VCPD Interceptors + SWAT BearCat + Searchlight Chopper';
+                conduit = 'Ocean Blvd Storm Drain Conduits -> Swap Vehicle';
+                anprRisk = 'High (Bridge ANPR Cameras + Active Witness BOLO)';
+            } else if (stars === 3) {
+                responseUnit = 'High-Speed Interceptors + Tactical Drone Searchlights';
+                conduit = 'Ocean Blvd Storm Drain or Port Gellhorn Rail Yard';
+                anprRisk = 'Elevated (Causeway ANPR Scans + Vehicle Description)';
+            } else if (stars === 2) {
+                responseUnit = 'Vice Patrol Cruisers + Canine & Street Units';
+                conduit = 'Side-Alley Respray Garage or Multi-Level Garage';
+                anprRisk = 'Moderate (Local Patrol Plate Check + Witness Call-Ins)';
             }
 
             var cdEl = document.getElementById('evCooldown');
@@ -156,7 +168,7 @@
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 Story Mode: LIVE (Day-3) · GTA 6 Online: Expected 2027</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: Expected 2027</span>
             </span>
         </div>
     </div>
@@ -169,15 +181,21 @@
             <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
         </div>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/map.html" class="nav-pill">Map</a></li>
-            <li><a href="/gta-6-money-guide/" class="nav-pill">Money</a></li>
-            <li><a href="/gta-6-tips-and-tricks/" class="nav-pill">Tips &amp; Tricks</a></li>
-            <li><a href="/cheats.html" class="nav-pill">Cheats</a></li>
+            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-arrow">▾</span></button>
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🛠️ All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -186,10 +204,9 @@
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
-            <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Database <span class="nav-arrow">▾</span></button>
+            <li class="nav-dropdown nav-dropdown-right">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -258,6 +275,175 @@
             </div>
         </div>
         <script>if (typeof calcEvasion === 'function') calcEvasion();</script>
+    </section>
+
+    <div class="syndicate-aff-bar" style="margin:1.35rem 0;">
+      <div class="syndicate-aff-bar-main">
+        <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+        <span class="aff-sep">|</span>
+        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+        <span class="aff-sep">|</span>
+        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+        <span class="aff-sep">|</span>
+        <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+      </div>
+    </div>
+
+    <!-- 1-STAR TO 6-STAR ESCALATION MATRIX -->
+    <section class="tool-box" style="margin-bottom:1.75rem; border-color:rgba(0,240,255,0.35);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.85rem;">
+            <div>
+                <span class="verify-badge verify-confirmed">🚓 DISPATCH ESCALATION</span>
+                <h2 style="color:#fff; font-size:1.35rem; margin:0.35rem 0 0.15rem;">1-Star to 6-Star VCPD &amp; NOOSE Escalation Matrix</h2>
+                <p style="color:var(--text-muted); font-size:0.86rem; margin:0;">Every wanted tier unlocks stricter surveillance, faster interceptors, and wider search perimeters across Leonida.</p>
+            </div>
+        </div>
+        <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.84rem; color:#e2e8f0; text-align:left;">
+                <thead>
+                    <tr style="border-bottom:1.5px solid rgba(0,240,255,0.4); color:var(--neon-cyan); font-family:var(--font-mono); font-size:0.74rem; text-transform:uppercase;">
+                        <th style="padding:0.65rem 0.7rem;">Heat Tier</th>
+                        <th style="padding:0.65rem 0.7rem;">Dispatch Force</th>
+                        <th style="padding:0.65rem 0.7rem;">Surveillance &amp; ANPR</th>
+                        <th style="padding:0.65rem 0.7rem;">Base Cooldown</th>
+                        <th style="padding:0.65rem 0.7rem;">Best Counter-Move</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <td style="padding:0.65rem 0.7rem; font-weight:900; color:var(--neon-green);">★☆☆☆☆☆ (1 Star)</td>
+                        <td style="padding:0.65rem 0.7rem;">Beat Officers &amp; Single Patrol Car</td>
+                        <td style="padding:0.65rem 0.7rem;">Visual only; no plate broadcast</td>
+                        <td style="padding:0.65rem 0.7rem; font-family:var(--font-mono);">~48s</td>
+                        <td style="padding:0.65rem 0.7rem;">Walk or drive two blocks out of sight; avoid running red lights near patrols.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <td style="padding:0.65rem 0.7rem; font-weight:900; color:var(--neon-cyan);">★★☆☆☆☆ (2 Stars)</td>
+                        <td style="padding:0.65rem 0.7rem;">Vice Patrol Cruisers &amp; Witness Dispatch</td>
+                        <td style="padding:0.65rem 0.7rem;">Vehicle color/model logged by witnesses</td>
+                        <td style="padding:0.65rem 0.7rem; font-family:var(--font-mono);">~96s</td>
+                        <td style="padding:0.65rem 0.7rem;">Cut into a parking deck or side alley and swap out of the flagged car.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <td style="padding:0.65rem 0.7rem; font-weight:900; color:var(--neon-yellow);">★★★☆☆☆ (3 Stars)</td>
+                        <td style="padding:0.65rem 0.7rem;">High-Speed Interceptors + Tactical Drones</td>
+                        <td style="padding:0.65rem 0.7rem;">Causeway &amp; toll ANPR gantries active</td>
+                        <td style="padding:0.65rem 0.7rem; font-family:var(--font-mono);">~144s</td>
+                        <td style="padding:0.65rem 0.7rem;">Stay off main bridges until you swap plates; drop mask &amp; jacket out of LOS.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <td style="padding:0.65rem 0.7rem; font-weight:900; color:var(--neon-amber);">★★★★☆☆ (4 Stars)</td>
+                        <td style="padding:0.65rem 0.7rem;">SWAT BearCats + Searchlight Helicopter</td>
+                        <td style="padding:0.65rem 0.7rem;">Active Witness BOLO + Bridge ANPR</td>
+                        <td style="padding:0.65rem 0.7rem; font-family:var(--font-mono);">~192s</td>
+                        <td style="padding:0.65rem 0.7rem;">Enter Ocean Blvd Storm Drain Conduits to blind aerial searchlights, then switch rides.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <td style="padding:0.65rem 0.7rem; font-weight:900; color:var(--neon-pink);">★★★★★☆ (5 Stars)</td>
+                        <td style="padding:0.65rem 0.7rem;">NOOSE Tactical Vans + Twin Choppers</td>
+                        <td style="padding:0.65rem 0.7rem;">Citywide ANPR + Thermal Optics</td>
+                        <td style="padding:0.65rem 0.7rem; font-family:var(--font-mono);">~240s</td>
+                        <td style="padding:0.65rem 0.7rem;">Dive into Vice Transit Subway Tunnels; thermal cameras cannot penetrate concrete decks.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.65rem 0.7rem; font-weight:900; color:#ff4d6d;">★★★★★★ (6 Stars)</td>
+                        <td style="padding:0.65rem 0.7rem;">Heavy NOOSE Gunships + Armored Blockades</td>
+                        <td style="padding:0.65rem 0.7rem;">Full County Lockdown + Continuous BOLO</td>
+                        <td style="padding:0.65rem 0.7rem; font-family:var(--font-mono);">~288s</td>
+                        <td style="padding:0.65rem 0.7rem;">Combine Subway Tunnel shelter + unflagged vehicle swap + full disguise change.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- HOW LEONIDA COUNTER-FORENSICS WORK -->
+    <section style="margin-bottom:1.75rem;">
+        <div class="section-header" style="margin-bottom:0.85rem;">
+            <div>
+                <h2 style="font-size:1.35rem; margin:0 0 0.2rem;">How Leonida Counter-Forensics &amp; Witness Memory Work</h2>
+                <p style="font-size:0.86rem; margin:0;">Four mechanics every Jason &amp; Lucia heist getaway depends on after robbing banks, jewelry stores, or armored trucks.</p>
+            </div>
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(245px, 1fr)); gap:0.9rem;">
+            <article style="background:rgba(12,18,32,0.94); border:1px solid rgba(0,240,255,0.28); border-radius:10px; padding:1rem;">
+                <span class="verify-badge verify-confirmed" style="margin-bottom:0.45rem;">1. ANPR CAMERAS</span>
+                <h3 style="color:#fff; font-size:1rem; margin:0.25rem 0 0.4rem;">Avoid Flagged Plates Under Bridge Gantries</h3>
+                <p style="color:#cbd5e1; font-size:0.84rem; line-height:1.55; margin:0;">Vice City causeways, toll booths, and major intersections mount ANPR scanners. Driving a flagged getaway vehicle under a scanner immediately refreshes your heat timer and pings your direction to VCPD.</p>
+            </article>
+            <article style="background:rgba(12,18,32,0.94); border:1px solid rgba(0,255,136,0.28); border-radius:10px; padding:1rem;">
+                <span class="verify-badge verify-confirmed" style="margin-bottom:0.45rem;">2. VEHICLE SWAP (-38%)</span>
+                <h3 style="color:#fff; font-size:1rem; margin:0.25rem 0 0.4rem;">Switch Rides Out of Line-of-Sight</h3>
+                <p style="color:#cbd5e1; font-size:0.84rem; line-height:1.55; margin:0;">Wait until your minimap stops flashing before ditching your hot vehicle. Entering an unflagged car unseen resets VCPD vehicle BOLO tracking—cruisers can pass right beside you if you obey traffic flow.</p>
+            </article>
+            <article style="background:rgba(12,18,32,0.94); border:1px solid rgba(255,42,141,0.28); border-radius:10px; padding:1rem;">
+                <span class="verify-badge verify-community" style="margin-bottom:0.45rem;">3. DISGUISE SWAP (-28%)</span>
+                <h3 style="color:#fff; font-size:1rem; margin:0.25rem 0 0.4rem;">Discard Masks &amp; Swap Jackets</h3>
+                <p style="color:#cbd5e1; font-size:0.84rem; line-height:1.55; margin:0;">Keep spare jackets and hats stored in your personal car trunk. Pulling off your heist mask and changing outerwear out of sight breaks facial/clothing witness matches and slashes cooldown time.</p>
+            </article>
+            <article style="background:rgba(12,18,32,0.94); border:1px solid rgba(255,184,0,0.28); border-radius:10px; padding:1rem;">
+                <span class="verify-badge verify-testing" style="margin-bottom:0.45rem;">4. CCTV &amp; WEATHER (-15%)</span>
+                <h3 style="color:#fff; font-size:1rem; margin:0.25rem 0 0.4rem;">Wipe Store Servers &amp; Use Storm Cover</h3>
+                <p style="color:#cbd5e1; font-size:0.84rem; line-height:1.55; margin:0;">Wiping back-room CCTV servers inside the 20 Jewelry Stores and 8 Large Bank Vaults delays initial witness identification, while tropical storms and night fog shrink helicopter visual cones.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- TOP ESCAPE CONDUITS -->
+    <section class="tool-box" style="margin-bottom:1.75rem; border-color:rgba(0,255,136,0.32);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.85rem;">
+            <div>
+                <h2 style="color:#fff; font-size:1.25rem; margin:0 0 0.2rem;">Best Heat-Drop Escape Conduits in Leonida</h2>
+                <p style="color:var(--text-muted); font-size:0.84rem; margin:0;">Use overhead cover to break helicopter thermal locks during 4–6 star bank and story heist escapes.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <a href="/escape-routes.html" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.78rem;">Full Escape Routes &rarr;</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 0.9rem; font-size:0.78rem;">📍 Open Leonida Map</a>
+            </div>
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:0.75rem;">
+            <div style="background:rgba(8,12,24,0.88); border-left:3px solid var(--neon-cyan); padding:0.75rem 0.9rem; border-radius:0 8px 8px 0;">
+                <strong style="color:#fff; display:block; margin-bottom:0.2rem;">🚇 Vice Transit Subway Tunnels</strong>
+                <span style="color:#94a3b8; font-size:0.8rem;">Best 5–6★ shelter. Blocks NOOSE choppers completely and links Downtown to Vice Beach exits.</span>
+            </div>
+            <div style="background:rgba(8,12,24,0.88); border-left:3px solid var(--neon-green); padding:0.75rem 0.9rem; border-radius:0 8px 8px 0;">
+                <strong style="color:#fff; display:block; margin-bottom:0.2rem;">🌊 Ocean Blvd Storm Drains</strong>
+                <span style="color:#94a3b8; font-size:0.8rem;">Fast 3–4★ cut-through after Vice City bank or jewelry runs; connects straight to coastal docks.</span>
+            </div>
+            <div style="background:rgba(8,12,24,0.88); border-left:3px solid var(--neon-pink); padding:0.75rem 0.9rem; border-radius:0 8px 8px 0;">
+                <strong style="color:#fff; display:block; margin-bottom:0.2rem;">🐊 Grassrivers Airboat Canals</strong>
+                <span style="color:#94a3b8; font-size:0.8rem;">Police cruisers cannot follow into shallow cypress marsh; zero ANPR cameras anywhere in the swamp.</span>
+            </div>
+            <div style="background:rgba(8,12,24,0.88); border-left:3px solid var(--neon-amber); padding:0.75rem 0.9rem; border-radius:0 8px 8px 0;">
+                <strong style="color:#fff; display:block; margin-bottom:0.2rem;">🔧 Port Gellhorn Rail Yards</strong>
+                <span style="color:#94a3b8; font-size:0.8rem;">Dense industrial cover with multiple unflagged work trucks parked beside back-alley respray bays.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WANTED SYSTEM FAQ -->
+    <section style="margin-bottom:1.75rem;">
+        <div class="section-header" style="margin-bottom:0.8rem;">
+            <div>
+                <h2 style="font-size:1.25rem; margin:0 0 0.15rem;">Wanted System Frequently Asked Questions</h2>
+                <p style="font-size:0.82rem; margin:0;">Quick answers on ANPR plates, disguises, and losing 5–6 star pursuits.</p>
+            </div>
+        </div>
+        <div class="faq-accordion-compact">
+            <div class="faq-item open">
+                <div class="faq-question">How do ANPR license plate cameras work in GTA 6? <span>+</span></div>
+                <div class="faq-answer">ANPR toll gantries across Vice City bridges and major highways scan plates on flagged vehicles. Passing under a camera in a hot getaway car immediately resets your wanted cooldown and broadcasts your heading to nearby VCPD interceptors.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How much faster do you lose cops by swapping cars and clothes? <span>+</span></div>
+                <div class="faq-answer">Breaking line of sight and switching into an unflagged vehicle cuts police search cooldown by roughly <strong>38%</strong>. Discarding your robbery mask and swapping jackets out of sight drops witness BOLO matching by another <strong>28%</strong>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the fastest way to escape a 5-star or 6-star wanted level? <span>+</span></div>
+                <div class="faq-answer">Dive underground into the <strong>Vice Transit Subway Tunnels</strong> or <strong>Ocean Blvd Storm Drain Conduits</strong> to break NOOSE thermal helicopter sightlines, swap into a clean vehicle out of view, and bank your heist score at a physical ATM as soon as heat clears.</div>
+            </div>
+        </div>
     </section>
 
     <section class="affiliate-banner">

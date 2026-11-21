@@ -18,7 +18,7 @@
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/gear/gta6-box-pro.webp">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v11">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
 
     <script type="application/ld+json">
     {
@@ -128,7 +128,7 @@
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 Story Mode: LIVE (Day-3) · GTA 6 Online: Expected 2027</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: Expected 2027</span>
             </span>
         </div>
     </div>
@@ -141,15 +141,21 @@
             <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
         </div>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/map.html" class="nav-pill">Map</a></li>
-            <li><a href="/gta-6-money-guide/" class="nav-pill">Money</a></li>
-            <li><a href="/gta-6-tips-and-tricks/" class="nav-pill">Tips &amp; Tricks</a></li>
-            <li><a href="/cheats.html" class="nav-pill">Cheats</a></li>
+            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Tools <span class="nav-arrow">▾</span></button>
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🛠️ All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -158,10 +164,9 @@
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
-            <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">Database <span class="nav-arrow">▾</span></button>
+            <li class="nav-dropdown nav-dropdown-right">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -209,7 +214,7 @@
             <div class="form-group" style="min-width:0;">
                 <label for="fcVault">Select Verified Launch Target</label>
                 <select class="form-select" id="fcVault" onchange="onFreeVaultChange()" style="width:100%; min-width:0; text-overflow:clip;">
-                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera Bank ($120,000 base / up to $150K max)</option>
+                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera Bank ($120,000)</option>
                     <option value="vcia-takedown">VCIA Takedown: Vice City Airport ($250,000)</option>
                     <option value="large-banks">8 Large Bank Vaults: Lombank &amp; Ocean Beach ($205,000)</option>
                     <option value="small-banks">14 Small Bank Vaults &amp; Fleeca ($45,000)</option>
@@ -326,8 +331,8 @@
                     <tr style="border-bottom:1px solid var(--border-card);">
                         <td style="padding:0.7rem; font-weight:800; color:#fff;">The Cartel Heist: Sinfrontera Bank</td>
                         <td style="padding:0.7rem;">Vice City Downtown</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono);">$150,000</td>
-                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$120K – $150K</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono);">$120,000</td>
+                        <td style="padding:0.7rem; font-family:var(--font-mono); color:var(--neon-green); font-weight:800;">$120,000</td>
                         <td style="padding:0.7rem;">Ch. 3 (8 Missions)</td>
                         <td style="padding:0.7rem;"><a href="/heist-planner" style="color:var(--neon-cyan); font-weight:700;">Open Planner &rarr;</a></td>
                     </tr>
@@ -559,7 +564,7 @@
 <script src="/assets/main.js" defer></script>
 <script>
 const FREE_VAULTS = {
-    'cartel-heist': { name: 'The Cartel Heist: Sinfrontera Bank', base: 150000, setupMins: 25, cooldownMins: 45 },
+    'cartel-heist': { name: 'The Cartel Heist: Sinfrontera Bank', base: 120000, setupMins: 25, cooldownMins: 45 },
     'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport', base: 250000, setupMins: 30, cooldownMins: 60 },
     'large-banks': { name: '8 Large Bank Vaults', base: 205000, setupMins: 10, cooldownMins: 30 },
     'small-banks': { name: '14 Small Bank Vaults', base: 45000, setupMins: 5, cooldownMins: 20 },
