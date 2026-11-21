@@ -345,7 +345,7 @@
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20",
+        "url": "https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20",
         "priceCurrency": "USD",
         "price": "169.99",
         "availability": "https://schema.org/InStock"
@@ -390,12 +390,7 @@
             <span class="strip-divider">|</span>
             <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
         </div>
-        <div class="strip-right-actions">
-            <a href="/cheats.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">⚡ 61 Cheats</a>
-            <a href="/settings.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">⚙️ Settings</a>
-            <a href="/money-guide.html" class="strip-pill" style="color:var(--neon-green); text-decoration:none; font-size:0.75rem;">💰 Fast Cash</a>
-            <a href="/weapons-bonuses.html" class="strip-pill" style="color:#f43f5e; text-decoration:none; font-size:0.75rem;">🔫 Gun Stores</a>
-        </div>
+        
     </div>
 </div>
 
@@ -414,22 +409,29 @@
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Vaults</a></li>
-            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
+            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
+            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
+            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
             <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
             <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/settings.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">⚙️ Settings</a></li>
-            <li><a href="/money-guide.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💰 Cash Guide</a></li>
-            <li><a href="/weapons-bonuses.html" class="nav-pill" style="color:#f43f5e; font-weight:800;">🔫 Gun Stores</a></li>
-            <li><a href="/giveaways.html" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
-            <li><a href="/interactive-map.html" class="nav-pill">Radar Map</a></li>
-            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
-            <li><a href="/weapons-gear.html" class="nav-pill active" style="color:var(--neon-yellow);">Weapons</a></li>
-            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
-            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
-            <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
+            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">
+                    More <span class="nav-arrow">▾</span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/weapons-gear" class="nav-dropdown-item active">⚔️ Weapons</a>
+                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
+                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                </div>
+            </li>
         </ul>
         <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub">🔴 LIVE STREAMS</a>
+            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
             <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
             <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>
@@ -1848,56 +1850,56 @@
             
             <!-- Card 1: KontrolFreek Thumbsticks -->
             <article class="syndicate-gear-card" style="border-color: rgba(255, 0, 128, 0.35);">
-                <img src="/assets/gear/kontrolfreek.webp" alt="KontrolFreek Heist Thumbsticks" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/gear/kontrolfreek.jpg" alt="KontrolFreek Heist Thumbsticks" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(255, 0, 128, 0.2); color: #ff0080; border: 1px solid rgba(255, 0, 128, 0.4);">PRECISION AIM</span>
                     <h3 class="syndicate-gear-title" title="KontrolFreek Performance Sticks">KontrolFreek Heist Thumbsticks</h3>
                     <div class="syndicate-gear-spec">+10.2mm arc distance for 30 FPS recoil control</div>
                     <div class="syndicate-gear-price">$16.99</div>
                 </div>
-                <a href="https://www.amazon.com/s?k=KontrolFreek+Performance+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" data-amazon-link="kontrolfreek" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
                     📦 Grab on Amazon ($16.99) &rarr;
                 </a>
             </article>
 
             <!-- Card 2: DualSense Edge Pro Controller -->
             <article class="syndicate-gear-card" style="border-color: rgba(0, 240, 255, 0.35);">
-                <img src="/assets/gear/dualsense-edge-pro.webp" alt="DualSense Edge Wireless Controller" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/gear/dualsense-edge.jpg" alt="DualSense Edge Wireless Controller" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(0, 240, 255, 0.2); color: #00f0ff; border: 1px solid rgba(0, 240, 255, 0.4);">PRO CONTROLLER</span>
                     <h3 class="syndicate-gear-title" title="DualSense Edge Wireless Controller">DualSense Edge Wireless Controller</h3>
                     <div class="syndicate-gear-spec">Swappable stick modules &amp; hair-trigger stops</div>
                     <div class="syndicate-gear-price">$199.99</div>
                 </div>
-                <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" data-amazon-link="dualsenseEdge" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
                     🎮 View on Amazon &rarr;
                 </a>
             </article>
 
             <!-- Card 3: PlayStation PULSE Elite Wireless Headset -->
             <article class="syndicate-gear-card" style="border-color: rgba(255, 184, 0, 0.35);">
-                <img src="/assets/gear/pulse-headset-pro.webp" alt="PlayStation PULSE Elite Headset" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/gear/pulse-elite.jpg" alt="PlayStation PULSE Elite Headset" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(255, 184, 0, 0.2); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.4);">TEMPEST 3D AUDIO</span>
                     <h3 class="syndicate-gear-title" title="PlayStation PULSE Elite Headset">PULSE Elite Wireless Headset</h3>
                     <div class="syndicate-gear-spec">Planar magnetic drivers for directional audio</div>
                     <div class="syndicate-gear-price">$149.99</div>
                 </div>
-                <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" data-amazon-link="pulseElite" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
                     🎧 View on Amazon &rarr;
                 </a>
             </article>
 
             <!-- Card 4: Samsung 990 PRO 2TB Heatsink SSD -->
             <article class="syndicate-gear-card" style="border-color: rgba(0, 255, 136, 0.35);">
-                <img src="/assets/gear/samsung-990pro.webp" alt="Samsung 990 PRO 2TB Heatsink SSD" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB Heatsink SSD" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(0, 255, 136, 0.2); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.4);">212GB READY SSD</span>
                     <h3 class="syndicate-gear-title" title="Samsung 990 PRO 2TB Heatsink SSD">Samsung 990 PRO 2TB NVMe SSD</h3>
                     <div class="syndicate-gear-spec">7,450 MB/s speed eliminates map texture pop-in</div>
                     <div class="syndicate-gear-price">$169.99</div>
                 </div>
-                <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" data-amazon-link="samsung990pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
                     ⚡ Upgrade Storage &rarr;
                 </a>
             </article>
@@ -1911,7 +1913,7 @@
                     <div class="syndicate-gear-spec">Click-in dock keeps duo controllers charged</div>
                     <div class="syndicate-gear-price">$29.99</div>
                 </div>
-                <a href="https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                <a href="https://www.amazon.com/s?k=PlayStation+DualSense+Charging+Station&tag=gta6heistguid-20" data-amazon-link="dualsenseDock" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="syndicate-gear-btn syndicate-gear-btn-amber">
                     🔋 Grab Dock ($29.99) &rarr;
                 </a>
             </article>

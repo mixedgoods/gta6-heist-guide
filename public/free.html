@@ -129,12 +129,7 @@
             <span class="strip-divider">|</span>
             <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
         </div>
-        <div class="strip-right-actions">
-            <a href="/cheats.html" class="strip-pill" style="color:var(--neon-yellow); text-decoration:none; font-size:0.75rem;">⚡ 61 Cheats</a>
-            <a href="/settings.html" class="strip-pill" style="color:var(--neon-cyan); text-decoration:none; font-size:0.75rem;">⚙️ Settings</a>
-            <a href="/money-guide.html" class="strip-pill" style="color:var(--neon-green); text-decoration:none; font-size:0.75rem;">💰 Fast Cash</a>
-            <a href="/weapons-bonuses.html" class="strip-pill" style="color:#f43f5e; text-decoration:none; font-size:0.75rem;">🔫 Gun Stores</a>
-        </div>
+        
     </div>
 </div>
 
@@ -155,22 +150,29 @@
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Vaults</a></li>
-            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
+            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
+            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
+            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
             <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
             <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/settings.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">⚙️ Settings</a></li>
-            <li><a href="/money-guide.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💰 Cash Guide</a></li>
-            <li><a href="/weapons-bonuses.html" class="nav-pill" style="color:#f43f5e; font-weight:800;">🔫 Gun Stores</a></li>
-            <li><a href="/giveaways.html" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
-            <li><a href="/interactive-map.html" class="nav-pill">Radar Map</a></li>
-            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
-            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
-            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
-            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
-            <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
+            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">
+                    More <span class="nav-arrow">▾</span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
+                    <a href="/free" class="nav-dropdown-item active" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                </div>
+            </li>
         </ul>
         <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub">🔴 LIVE STREAMS</a>
+            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
             <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
             <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>

@@ -188,22 +188,29 @@
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill active">Vaults</a></li>
-            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
+            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
+            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
+            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
             <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
             <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/settings.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">⚙️ Settings</a></li>
-            <li><a href="/money-guide.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💰 Cash Guide</a></li>
-            <li><a href="/weapons-bonuses.html" class="nav-pill" style="color:#f43f5e; font-weight:800;">🔫 Gun Stores</a></li>
-            <li><a href="/giveaways.html" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
-            <li><a href="/interactive-map.html" class="nav-pill">Radar Map</a></li>
-            <li><a href="/heist-planner.html" class="nav-pill">Planner</a></li>
-            <li><a href="/weapons-gear.html" class="nav-pill" style="color:var(--neon-yellow);">Weapons</a></li>
-            <li><a href="/vehicles-getaway-cars.html" class="nav-pill" style="color:var(--neon-pink);">Vehicles</a></li>
-            <li><a href="/live-intel.html" class="nav-pill">Live Meta</a></li>
-            <li><a href="/free" class="nav-pill pill-highlight" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a></li>
+            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+                    More <span class="nav-arrow">▾</span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
+                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                </div>
+            </li>
         </ul>
         <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub">🔴 LIVE STREAMS</a>
+            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
             <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
             <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
         </div>
@@ -212,9 +219,10 @@
 
 <!-- SECTION 1 — HEADER & CLEAN HERO -->
 <header class="hero-cinematic">
-    <div class="hero-banner-frame" style="background:#0a0e17; min-height:430px; position:relative;">
-        <a href="lucia-jason-skills.html" style="display:block;">
-            <img src="/assets/characters-duo-banner.jpg?v=20261120_v5" alt="Grand Theft Auto VI - Jason and Lucia Vice City" loading="eager" width="1400" height="680" style="object-fit: contain; object-position: center top; min-height: 430px; width: 100%; display: block; margin: 0 auto;">
+    <div class="hero-banner-frame" style="background:#0a0e17; min-height:440px; position:relative; overflow:hidden;">
+        <a href="/lucia-jason-skills" style="display:block; position:relative; width:100%; height:100%;">
+            <img src="/assets/characters-duo-banner.jpg?v=20261120_v6" alt="Grand Theft Auto VI - Jason and Lucia Vice City" loading="eager" width="1400" height="680" style="object-fit: contain; object-position: center top; min-height: 440px; width: 100%; display: block; margin: 0 auto;">
+            <div style="position:absolute; inset:0; pointer-events:none; background: linear-gradient(to right, #0a0e17 0%, rgba(10,14,23,0) 8%, rgba(10,14,23,0) 92%, #0a0e17 100%), linear-gradient(to bottom, transparent 65%, #0a0e17 100%);"></div>
         </a>
         <div class="hero-overlay-bar">
             <div>
@@ -223,9 +231,9 @@
                 </h1>
             </div>
             <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
-                <a href="heist-planner.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem; font-weight:800;">OPEN PLANNER &rarr;</a>
+                <a href="/heist-planner" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem; font-weight:800;">OPEN PLANNER &rarr;</a>
                 <a href="/interactive-map" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem; font-weight:800;">🗺️ OPEN LEONIDA MAP</a>
-                <a href="live.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem; font-weight:800; background:linear-gradient(135deg, #ef4444, #b91c1c); border-color:#ef4444; color:#fff; box-shadow:0 0 15px rgba(239,68,68,0.4);">🔴 WATCH LIVE STREAMS</a>
+                <a href="/live" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem; font-weight:800; background:linear-gradient(135deg, #ef4444, #b91c1c); border-color:#ef4444; color:#fff; box-shadow:0 0 15px rgba(239,68,68,0.4); white-space:nowrap;">🔴 WATCH LIVE STREAMS</a>
             </div>
         </div>
     </div>
@@ -273,7 +281,11 @@
 
     <div class="targets-grid">
         <!-- CARD 1: Sinfrontera National Bank -->
-        <div class="card vault-card-redesign">
+        <div class="card vault-card-redesign">            <div class="vault-card-img-wrap">
+                <img src="/assets/heists/sinfrontera.jpg" alt="Sinfrontera National Bank Vault Raid" loading="lazy">
+                <div class="vault-card-img-overlay"></div>
+            </div>
+
             <div class="vault-card-top">
                 <span class="card-tag tag-expert">Expert Tier</span>
                 <span class="sec-lvl-badge badge-wheelman">SEC-LVL: MAXIMUM</span>
@@ -298,7 +310,11 @@
         </div>
 
         <!-- CARD 2: Port Gellhorn Container Terminal -->
-        <div class="card vault-card-redesign">
+        <div class="card vault-card-redesign">            <div class="vault-card-img-wrap">
+                <img src="/assets/heists/gellhorn.jpg" alt="Port Gellhorn Container Terminal Heist" loading="lazy">
+                <div class="vault-card-img-overlay"></div>
+            </div>
+
             <div class="vault-card-top">
                 <span class="card-tag tag-intermediate">Intermediate Tier</span>
                 <span class="sec-lvl-badge badge-mastermind">SEC-LVL: HIGH</span>
@@ -323,7 +339,11 @@
         </div>
 
         <!-- CARD 3: Leonida State Gold Reserve -->
-        <div class="card vault-card-redesign">
+        <div class="card vault-card-redesign">            <div class="vault-card-img-wrap">
+                <img src="/assets/heists/gold-reserve.jpg" alt="Leonida State Gold Reserve Infiltration" loading="lazy">
+                <div class="vault-card-img-overlay"></div>
+            </div>
+
             <div class="vault-card-top">
                 <span class="card-tag tag-mastermind">Mastermind Tier</span>
                 <span class="sec-lvl-badge badge-wheelman">SEC-LVL: MAXIMUM</span>
@@ -348,7 +368,11 @@
         </div>
 
         <!-- CARD 4: Starlet Superyacht -->
-        <div class="card vault-card-redesign">
+        <div class="card vault-card-redesign">            <div class="vault-card-img-wrap">
+                <img src="/assets/heists/superyacht.jpg" alt="Starlet Superyacht Offshore Heist" loading="lazy">
+                <div class="vault-card-img-overlay"></div>
+            </div>
+
             <div class="vault-card-top">
                 <span class="card-tag tag-expert">Expert Tier</span>
                 <span class="sec-lvl-badge badge-wheelman">SEC-LVL: MILITARY</span>
@@ -535,7 +559,7 @@
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.55rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.35rem;">
             <div style="display:flex; align-items:center; gap:0.5rem;">
                 <span class="user-badge badge-mastermind" style="background:rgba(255,0,128,0.2); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.68rem; padding:0.15rem 0.45rem;">🔥 PRO HARDWARE</span>
-                <strong style="color:#fff; font-size:0.95rem;">GTA 6 IS LIVE — TOP TACTICAL GEAR &amp; KEYS</strong>
+                <strong style="color:#fff; font-size:0.95rem;">GTA 6 IS LIVE — TOP TACTICAL GEAR &amp; HARDWARE</strong>
             </div>
             <div style="display:flex; align-items:center; gap:0.65rem;">
                 <span style="font-size:0.72rem; color:var(--neon-green); font-weight:800; font-family:var(--font-mono);">⚡ Lowest Verified Prices</span>
@@ -543,64 +567,70 @@
             </div>
         </div>
 
-                <div class="syndicate-gear-grid">
-            
-            <!-- Card 1: KontrolFreek Thumbsticks -->
+        <div class="syndicate-gear-grid">
+            <!-- Card 1: KontrolFreek Performance Sticks -->
             <article class="syndicate-gear-card" style="border-color: rgba(255, 0, 128, 0.35);">
-                <img src="/assets/gear/kontrolfreek.webp" alt="KontrolFreek Performance Sticks" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.65rem; background:#0c121e;">
+                    <img src="/assets/gear/kontrolfreek.jpg" alt="KontrolFreek Performance Sticks" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                </div>
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(255, 0, 128, 0.2); color: #ff0080; border: 1px solid rgba(255, 0, 128, 0.4);">AIM ASSIST</span>
-                    <h3 class="syndicate-gear-title" title="KontrolFreek Performance Sticks">KontrolFreek Heist Sticks</h3>
-                    <div class="syndicate-gear-spec">+10.2mm high-rise arc for precision 30 FPS aim control</div>
+                    <h3 class="syndicate-gear-title" title="KontrolFreek Galaxy Purple Thumbsticks">KontrolFreek Galaxy Sticks</h3>
+                    <div class="syndicate-gear-spec">+10.2mm high-rise arc increases analog precision for 30/60 FPS gunplay</div>
                     <div class="syndicate-gear-price">$16.99</div>
                 </div>
-                <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-thumbsticks" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" data-amazon-link="kontrolfreek" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-thumbsticks" class="syndicate-gear-btn syndicate-gear-btn-amber">
                     📦 Check Amazon ($16.99) &rarr;
                 </a>
             </article>
 
             <!-- Card 2: Samsung 990 PRO 2TB SSD -->
             <article class="syndicate-gear-card" style="border-color: rgba(0, 255, 136, 0.35);">
-                <img src="/assets/gear/samsung-990pro.webp" alt="Samsung 990 PRO 2TB SSD" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.65rem; background:#0c121e;">
+                    <img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                </div>
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(0, 255, 136, 0.2); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.4);">ZERO POP-IN</span>
-                    <h3 class="syndicate-gear-title" title="Samsung 990 PRO 2TB SSD">Samsung 990 PRO 2TB SSD</h3>
-                    <div class="syndicate-gear-spec">7,450 MB/s NVMe speed stops Vice City texture pop-in</div>
+                    <h3 class="syndicate-gear-title" title="Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD">Samsung 990 PRO 2TB SSD</h3>
+                    <div class="syndicate-gear-spec">7,450 MB/s NVMe speed stops texture pop-in during high-speed getaways</div>
                     <div class="syndicate-gear-price">$169.99 <span style="font-size:0.75rem; color:#94a3b8; font-weight:normal;">(Save $50)</span></div>
                 </div>
-                <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-ssd" class="syndicate-gear-btn syndicate-gear-btn-green">
+                <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" data-amazon-link="samsung990pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-ssd" class="syndicate-gear-btn syndicate-gear-btn-green">
                     ⚡ Upgrade Storage &rarr;
                 </a>
             </article>
 
-            <!-- Card 3: ExitLag Multipath Anti-Lag -->
+            <!-- Card 3: Sony PlayStation PULSE Elite Wireless Headset -->
+            <article class="syndicate-gear-card" style="border-color: rgba(255, 184, 0, 0.35);">
+                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.65rem; background:#0c121e;">
+                    <img src="/assets/gear/pulse-elite.jpg" alt="PlayStation Pulse Elite Wireless Headset" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                </div>
+                <div>
+                    <span class="syndicate-gear-pill" style="background: rgba(255, 184, 0, 0.2); color: #ffb800; border: 1px solid rgba(255, 184, 0, 0.4);">TEMPEST 3D</span>
+                    <h3 class="syndicate-gear-title" title="PlayStation Pulse Elite Wireless Headset">PULSE Elite Wireless Headset</h3>
+                    <div class="syndicate-gear-spec">Planar magnetic drivers deliver lifelike directional audio and alarm cues</div>
+                    <div class="syndicate-gear-price">$149.99</div>
+                </div>
+                <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" data-amazon-link="pulseElite" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="store-headset" class="syndicate-gear-btn syndicate-gear-btn-amber">
+                    🎧 Check Amazon ($149.99) &rarr;
+                </a>
+            </article>
+
+            <!-- Card 4: ExitLag Multipath Ping Reducer -->
             <article class="syndicate-gear-card" style="border-color: rgba(168, 85, 247, 0.35);">
-                <img src="/assets/gear/exitlag.webp" alt="ExitLag Multipath Routing" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.65rem; background:#0c121e;">
+                    <img src="/assets/gear/exitlag.webp" alt="ExitLag Multipath Ping Reducer" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                </div>
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4);">ZERO PACKET LOSS</span>
                     <h3 class="syndicate-gear-title" title="ExitLag Multipath Routing">ExitLag Low-Ping Routing</h3>
-                    <div class="syndicate-gear-spec">Multipath packet routing eliminates co-op host drops</div>
+                    <div class="syndicate-gear-spec">Multipath packet routing eliminates co-op host drops and lag spikes</div>
                     <div class="syndicate-gear-price">Code: 10386953</div>
                 </div>
                 <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="store-exitlag" class="syndicate-gear-btn syndicate-gear-btn-purple">
                     🚀 Activate Shield (Free) &rarr;
                 </a>
             </article>
-
-            <!-- Card 4: PSN & Xbox Gift Cards -->
-            <article class="syndicate-gear-card" style="border-color: rgba(16, 185, 129, 0.35);">
-                <img src="/assets/gear/keys-deal.webp" alt="PSN &amp; Xbox Gift Cards" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
-                <div>
-                    <span class="syndicate-gear-pill" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4);">SAVE UP TO 20%</span>
-                    <h3 class="syndicate-gear-title" title="PSN &amp; Xbox Gift Cards">PSN &amp; Xbox Gift Cards</h3>
-                    <div class="syndicate-gear-spec">Instant verified codes for PS Store &amp; Xbox wallets</div>
-                    <div class="syndicate-gear-price">Save Up To 20%</div>
-                </div>
-                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="store-deals-cards" class="syndicate-gear-btn syndicate-gear-btn-green">
-                    ⚡ Grab Key Deals (Save 20%) &rarr;
-                </a>
-            </article>
-
         </div>
     </section>
 

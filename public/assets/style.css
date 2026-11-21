@@ -1829,7 +1829,7 @@ html, body {
 @media (min-width: 1024px) {
   .nav-links {
     display: flex !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     justify-content: center !important;
     gap: 6px !important;
     padding: 8px 16px !important;
@@ -3141,4 +3141,153 @@ body.has-ticker .bookmarks-fab {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+}
+
+
+/* =========================================================================
+   SLEEK SINGLE-ROW BALANCED NAVIGATION & DROPDOWN MENU
+   ========================================================================= */
+.navbar .nav-links {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+@media (min-width: 1024px) {
+  .navbar .nav-links {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-dropdown-btn:hover,
+.nav-dropdown:hover .nav-dropdown-btn,
+.nav-dropdown-btn.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 240, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.nav-dropdown-btn.active {
+  background: rgba(0, 240, 255, 0.14);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 195px;
+  background: rgba(10, 14, 23, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 240, 255, 0.18);
+  padding: 0.4rem 0;
+  z-index: 9999;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.is-open .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.55rem 0.9rem !important;
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  transition: all 0.15s ease !important;
+  white-space: nowrap !important;
+}
+
+.nav-dropdown-item:hover,
+.nav-dropdown-item.active {
+  background: rgba(0, 240, 255, 0.14) !important;
+  color: var(--neon-cyan) !important;
+  padding-left: 1.15rem !important;
+}
+
+/* =========================================================================
+   BOSS-LEVEL INFILTRATION TARGET CARDS & HOVER EFFECTS
+   ========================================================================= */
+.vault-card-redesign {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.vault-card-redesign:hover {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.35), inset 0 0 15px rgba(0, 240, 255, 0.08) !important;
+  transform: translateY(-3px) scale(1.005) !important;
+}
+
+.vault-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  background: #090e17;
+}
+
+.vault-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+  display: block;
+}
+
+.vault-card-redesign:hover .vault-card-img-wrap img {
+  transform: scale(1.03);
+}
+
+.vault-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 14, 23, 0.85) 0%, rgba(10, 14, 23, 0) 60%);
+  pointer-events: none;
 }

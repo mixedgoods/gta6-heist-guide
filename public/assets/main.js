@@ -5524,7 +5524,7 @@ CharacterModal: {
       messages: [],
       buildMessages() {
         const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : {};
-        const amzSsd = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20') : 'https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20';
+        const amzSsd = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20';
         const amzSticks = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20';
         const amzPs5 = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20';
         const exitUrl = cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953';
@@ -6072,7 +6072,7 @@ DealRotator: {
             price: "$169.99",
             pillDiscount: "SAVE $50",
             img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "⚡ Upgrade Storage on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            ctaPrimary: { text: "⚡ Upgrade Storage on Amazon →", href: bAmz("https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "eneba-cards",
