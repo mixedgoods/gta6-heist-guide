@@ -20,7 +20,7 @@
     <meta name="twitter:title" content="GTA 6 Cheat Codes: 61-Cheat Unlock Tracker &amp; Directory">
     <meta name="twitter:description" content="All 61 GTA 6 cheat slots tracked with Story Mode + challenge unlock requirements, trophy/save warnings, and live community verification.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -144,6 +144,25 @@
         border-color: var(--neon-green);
         background: rgba(0, 255, 136, 0.04);
       }
+      .cheat-card.tested {
+        box-shadow: inset 0 0 0 1px rgba(0, 240, 255, 0.45);
+      }
+      .cheat-status-checks {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        flex-wrap: wrap;
+      }
+      .cheat-status-checks label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 0.74rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        cursor: pointer;
+        min-height: 28px;
+      }
       .code-display {
         display: flex;
         flex-wrap: nowrap;
@@ -263,6 +282,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -2094,7 +2114,7 @@
     </div>
 </footer>
 
-<script src="/js/progress-store.js"></script>
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -2730,12 +2750,25 @@ function cheatKey(id) {
   return 'cheat:' + String(id).padStart(2, '0');
 }
 
+function cheatTestedKey(id) {
+  return 'cheat-tested:' + String(id).padStart(2, '0');
+}
+
 function getSavedUnlocked() {
   if (window.GTA6Progress) {
     return window.GTA6Progress.getCompletedByPrefix('cheat:').map(n => parseInt(n, 10)).filter(n => !isNaN(n));
   }
   try {
     return JSON.parse(localStorage.getItem('gta6_unlocked_cheats') || '[]');
+  } catch(e) { return []; }
+}
+
+function getSavedTested() {
+  if (window.GTA6Progress && typeof window.GTA6Progress.getTestedCheats === 'function') {
+    return window.GTA6Progress.getTestedCheats();
+  }
+  try {
+    return JSON.parse(localStorage.getItem('gta6_tested_cheats') || '[]');
   } catch(e) { return []; }
 }
 
@@ -2753,14 +2786,30 @@ function toggleCheatUnlocked(id, isChecked) {
   if (card) card.classList.toggle('unlocked', Boolean(isChecked));
 }
 
+function toggleCheatTested(id, isChecked) {
+  if (window.GTA6Progress && typeof window.GTA6Progress.setCheatTested === 'function') {
+    window.GTA6Progress.setCheatTested(id, Boolean(isChecked));
+  } else {
+    let list = getSavedTested();
+    if (isChecked) { if (!list.includes(id)) list.push(id); }
+    else { list = list.filter(x => x !== id); }
+    try { localStorage.setItem('gta6_tested_cheats', JSON.stringify(list)); } catch(e) {}
+  }
+  updateProgressBar();
+  const card = document.getElementById('cheat-card-' + id);
+  if (card) card.classList.toggle('tested', Boolean(isChecked));
+}
+
 function updateProgressBar() {
   const list = getSavedUnlocked();
+  const tested = getSavedTested();
   const count = list.length;
+  const testedCount = tested.length;
   const total = MASTER_CHEATS.length;
   const pct = Math.round((count / total) * 100);
   const disp = document.getElementById('cheatProgressDisplay');
   const bar = document.getElementById('cheatProgressBar');
-  if (disp) disp.textContent = count + ' / ' + total + ' Unlocked (' + pct + '%)';
+  if (disp) disp.textContent = count + ' / ' + total + ' Unlocked · ' + testedCount + ' Tested';
   if (bar) bar.style.width = pct + '%';
 }
 
@@ -2830,6 +2879,7 @@ function renderCheats() {
   const container = document.getElementById('cheatsGrid');
   if (!container) return;
   const unlocked = getSavedUnlocked();
+  const tested = getSavedTested();
 
   const filtered = MASTER_CHEATS.filter(item => {
     if (activeTab !== 'all' && item.cat !== activeTab) return false;
@@ -2849,6 +2899,7 @@ function renderCheats() {
 
   container.innerHTML = filtered.map(item => {
     const isUnlocked = unlocked.includes(item.id);
+    const isTested = tested.includes(item.id);
     const catLabel = item.cat === 'player' ? 'Player &amp; Stats' :
                      item.cat === 'combat' ? 'Combat &amp; Weapons' :
                      item.cat === 'vehicle' ? 'Spawn Vehicle' : 'Environment &amp; World';
@@ -2874,14 +2925,20 @@ function renderCheats() {
       actionBtn = '<button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission(\'' + jsTitle + '\', \'' + jsUnlock + '\')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Verified Input</button>';
     }
 
-    return '<article class="cheat-card ' + (isUnlocked ? 'unlocked' : '') + '" id="cheat-card-' + item.id + '">' +
+    return '<article class="cheat-card ' + (isUnlocked ? 'unlocked ' : '') + (isTested ? 'tested' : '') + '" id="cheat-card-' + item.id + '">' +
       '<div>' +
         '<div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem; margin-bottom:0.4rem; flex-wrap:wrap;">' +
           '<span class="user-badge" style="background:rgba(255,255,255,0.06); color:' + catColor + '; font-size:0.72rem; border-color:' + catColor + ';">#' + item.id + ' &bull; ' + catLabel + '</span>' +
-          '<label style="display:flex; align-items:center; gap:0.35rem; font-size:0.75rem; color:var(--text-muted); cursor:pointer;">' +
-            '<input type="checkbox" ' + (isUnlocked ? 'checked' : '') + ' onchange="toggleCheatUnlocked(' + item.id + ', this.checked)" style="cursor:pointer;">' +
-            '<span>Unlocked</span>' +
-          '</label>' +
+          '<div class="cheat-status-checks">' +
+            '<label>' +
+              '<input type="checkbox" data-cheat-unlocked="' + item.id + '" ' + (isUnlocked ? 'checked' : '') + ' onchange="toggleCheatUnlocked(' + item.id + ', this.checked)" style="cursor:pointer; accent-color:var(--neon-green);">' +
+              '<span>Unlocked</span>' +
+            '</label>' +
+            '<label style="color:var(--neon-cyan);">' +
+              '<input type="checkbox" data-cheat-tested="' + item.id + '" ' + (isTested ? 'checked' : '') + ' onchange="toggleCheatTested(' + item.id + ', this.checked)" style="cursor:pointer; accent-color:var(--neon-cyan);">' +
+              '<span>Tested</span>' +
+            '</label>' +
+          '</div>' +
         '</div>' +
         '<div style="margin-bottom:0.35rem;">' + statusBadge + '</div>' +
         '<h3 style="color:#fff; font-size:1.1rem; margin:0.2rem 0 0.35rem;">' + safeTitle + '</h3>' +

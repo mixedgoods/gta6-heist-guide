@@ -4337,8 +4337,10 @@ body.has-ticker .bookmarks-fab {
 .gta-pb-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
-  padding: 0.38rem 0.72rem;
+  min-height: 36px;
+  padding: 0.42rem 0.78rem;
   border-radius: 6px;
   font-size: 0.74rem;
   font-weight: 800;
@@ -4347,6 +4349,129 @@ body.has-ticker .bookmarks-fab {
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
   transition: all 0.16s ease;
+  touch-action: manipulation;
+}
+.gta-pb-autosave {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--neon-green, #00ff88);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.32);
+  padding: 0.16rem 0.52rem;
+  border-radius: 999px;
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+.gta-pb-autosave.is-flashing {
+  background: rgba(0, 255, 136, 0.22);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.45);
+}
+.gta-pb-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--neon-green, #00ff88);
+  box-shadow: 0 0 6px var(--neon-green, #00ff88);
+  flex-shrink: 0;
+}
+.gta-progress-bar-widget.is-compact {
+  margin: 0.5rem 0 0;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(8, 13, 25, 0.94);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  box-shadow: none;
+}
+.gta-pb-compact-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+.gta-pb-compact-sync {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: #94a3b8;
+  font-weight: 700;
+}
+.gta-pb-compact-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+.gta-progress-bar-widget.is-compact .gta-pb-btn {
+  min-height: 34px;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+.gta-progress-bar-widget.is-compact .gta-pb-note {
+  margin-top: 0.4rem;
+  padding-top: 0.35rem;
+  font-size: 0.66rem;
+  line-height: 1.35;
+}
+.gta-import-modal-card {
+  border-color: rgba(0, 240, 255, 0.55);
+}
+.gta-import-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0 0 0.85rem;
+}
+.gta-import-col {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+.gta-import-col.is-incoming {
+  border-color: rgba(0, 255, 136, 0.4);
+  background: rgba(0, 255, 136, 0.06);
+}
+.gta-import-col-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--neon-cyan, #00f0ff);
+  margin-bottom: 0.15rem;
+}
+.gta-import-col.is-incoming .gta-import-col-title {
+  color: var(--neon-green, #00ff88);
+}
+@media (max-width: 640px) {
+  .gta-progress-bar-widget {
+    padding: 0.75rem 0.85rem;
+  }
+  .gta-pb-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+  .gta-pb-actions [data-pb-reset] {
+    grid-column: 1 / -1;
+  }
+  .gta-pb-btn {
+    min-height: 42px;
+    font-size: 0.78rem;
+  }
+  .gta-import-compare {
+    grid-template-columns: 1fr;
+  }
 }
 .gta-pb-btn-cyan {
   border-color: rgba(0, 240, 255, 0.45);

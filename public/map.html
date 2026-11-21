@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
 
     <style>
         :root {
@@ -832,6 +832,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -902,9 +903,10 @@
                 </label>
                 <div style="display:flex; gap:0.35rem;">
                     <button type="button" class="btn-mini-action" onclick="toggleUserPinDropMode()" id="dropPinBtn" style="color:var(--neon-green,#00ff88);">+ Drop Pin</button>
-                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Backup</button>
+                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Code</button>
                 </div>
             </div>
+            <div id="mapProgressToolbar"></div>
         </div>
 
         <div class="category-rows-container" id="categoryRowsContainer"></div>
@@ -1006,7 +1008,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="/js/progress-store.js"></script>
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -1062,10 +1064,17 @@ function loadFoundPinsFromStore() {
 loadFoundPinsFromStore();
 
 let customUserPins = [];
-try {
-    const savedCustom = localStorage.getItem('gta6_custom_user_pins');
-    if (savedCustom) customUserPins = JSON.parse(savedCustom);
-} catch(e) {}
+function loadCustomPinsFromStore() {
+    if (window.GTA6Progress && typeof window.GTA6Progress.getMapCustomPins === 'function') {
+        customUserPins = window.GTA6Progress.getMapCustomPins() || [];
+        return;
+    }
+    try {
+        const savedCustom = localStorage.getItem('gta6_custom_user_pins');
+        if (savedCustom) customUserPins = JSON.parse(savedCustom);
+    } catch(e) {}
+}
+loadCustomPinsFromStore();
 
 let hideFoundActive = false;
 let currentSearchQuery = '';
@@ -1694,7 +1703,11 @@ function saveUserPin() {
         badge: 'USER PIN'
     };
     customUserPins.push(newPin);
-    try { localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins)); } catch(e) {}
+    if (window.GTA6Progress && typeof window.GTA6Progress.setMapCustomPins === 'function') {
+        window.GTA6Progress.setMapCustomPins(customUserPins);
+    } else {
+        try { localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins)); } catch(e) {}
+    }
     allPins.push(newPin);
     renderAllMarkers();
     renderCategoryRows();
@@ -1719,13 +1732,20 @@ function importSaveCode() {
     const ta = document.getElementById('saveCodeTextarea');
     try {
         const data = JSON.parse(atob(ta.value.trim()));
-        if (data.foundPinIds) {
+        if (!confirm('Importing this backup code will overwrite your existing map pins. Continue?')) return;
+        if (data.foundPinIds && Array.isArray(data.foundPinIds)) {
             foundPinIds = new Set(data.foundPinIds);
-            localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds]));
+            if (window.GTA6Progress) {
+                window.GTA6Progress.resetScope('pins');
+                data.foundPinIds.forEach(pid => window.GTA6Progress.setDone('pin:' + pid, true));
+            } else {
+                localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds]));
+            }
         }
-        if (data.customUserPins) {
+        if (data.customUserPins && Array.isArray(data.customUserPins)) {
             customUserPins = data.customUserPins;
-            localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins));
+            if (window.GTA6Progress) window.GTA6Progress.setMapCustomPins(customUserPins);
+            else localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins));
         }
         closeSaveModal();
         loadAllPinsData();
@@ -1760,20 +1780,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <script>
+function refreshMapFromStore() {
+    loadFoundPinsFromStore();
+    loadCustomPinsFromStore();
+    if (typeof renderAllMarkers === 'function' && typeof allPins !== 'undefined' && allPins.length) {
+        renderAllMarkers();
+        if (typeof renderCategoryRows === 'function') renderCategoryRows();
+        if (typeof updateChecklistStats === 'function') updateChecklistStats();
+        if (typeof renderFilteredList === 'function') renderFilteredList();
+    }
+}
 function handleMapUnifiedImport(input) {
     var f = input && input.files && input.files[0];
     if (!f || !window.GTA6Progress) return;
     var reader = new FileReader();
     reader.onload = function(evt) {
-        var res = window.GTA6Progress.importJSONString(evt.target.result);
-        if (res.ok) {
-            loadFoundPinsFromStore();
-            if (typeof renderAllMarkers === 'function') renderAllMarkers();
-            if (typeof renderCategoryRows === 'function') renderCategoryRows();
-            if (typeof updateChecklistStats === 'function') updateChecklistStats();
-            if (typeof renderFilteredList === 'function') renderFilteredList();
-            if (typeof closeSaveModal === 'function') closeSaveModal();
-        }
+        if (typeof closeSaveModal === 'function') closeSaveModal();
+        window.GTA6Progress.openImportConfirmModal(evt.target.result, {
+            onSuccess: function() {
+                loadCustomPinsFromStore();
+                if (typeof loadAllPinsData === 'function') loadAllPinsData();
+                else refreshMapFromStore();
+            }
+        });
     };
     reader.readAsText(f);
     input.value = '';
@@ -1785,24 +1814,28 @@ function openMapResetModal() {
             scope: 'pins',
             scopeLabel: 'Map Checklist',
             onReset: function() {
-                loadFoundPinsFromStore();
-                if (typeof renderAllMarkers === 'function') renderAllMarkers();
-                if (typeof renderCategoryRows === 'function') renderCategoryRows();
-                if (typeof updateChecklistStats === 'function') updateChecklistStats();
-                if (typeof renderFilteredList === 'function') renderFilteredList();
+                loadCustomPinsFromStore();
+                if (typeof loadAllPinsData === 'function') loadAllPinsData();
+                else refreshMapFromStore();
             }
         });
     }
 }
-window.addEventListener('gta6-progress-updated', function() {
-    loadFoundPinsFromStore();
-    if (typeof renderAllMarkers === 'function' && typeof allPins !== 'undefined' && allPins.length) {
-        renderAllMarkers();
-        if (typeof renderCategoryRows === 'function') renderCategoryRows();
-        if (typeof updateChecklistStats === 'function') updateChecklistStats();
-        if (typeof renderFilteredList === 'function') renderFilteredList();
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.GTA6Progress) {
+        window.GTA6Progress.mountToolbar('#mapProgressToolbar', {
+            scope: 'pins',
+            scopeLabel: 'Map Checklist',
+            compact: true,
+            onSync: function() {
+                loadCustomPinsFromStore();
+                if (typeof loadAllPinsData === 'function') loadAllPinsData();
+                else refreshMapFromStore();
+            }
+        });
     }
 });
+window.addEventListener('gta6-progress-updated', refreshMapFromStore);
 </script>
 </body>
 </html>

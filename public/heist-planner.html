@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.gta6heistguide.com/heist-planner.html">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
     
         <script>
         const HEIST_DATABASE = {
@@ -121,8 +121,54 @@
                 document.getElementById('lootGrab4P').innerText = Math.round(loot.grabSecs * 3.1) + 's total (' + loot.speedPenalty + ')';
                 document.getElementById('lootPriorityBadge').innerText = loot.priority;
             }
+
+            if (window._hpRestored && window.GTA6Progress && typeof window.GTA6Progress.setToolState === 'function') {
+                window.GTA6Progress.setToolState('heistPlanner', {
+                    target: targetKey,
+                    approach: approach,
+                    players: players,
+                    gunner: gunnerPct,
+                    hacker: hackerPct,
+                    driver: driverPct,
+                    setupMins: setupMins,
+                    cooldownMins: cooldownMins,
+                    lootType: lootKey,
+                    fence: document.getElementById('fenceSelect')?.value || 'yasmani',
+                    launderFee: launderFeePct,
+                    failPenalty: failPenaltyPct,
+                    jammer: Boolean(jammerEquipped),
+                    weeklyBonus: Boolean(weeklyBonusActive)
+                }, true);
+            }
         }
-        document.addEventListener('DOMContentLoaded', calculatePlanner);
+        function restorePlannerState() {
+            const params = new URLSearchParams(window.location.search);
+            const hasUrlParams = params.has('target') || params.has('approach') || params.has('players');
+            if (!hasUrlParams && window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
+                const saved = window.GTA6Progress.getToolState('heistPlanner');
+                if (saved && typeof saved === 'object') {
+                    const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
+                    const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
+                    if (saved.target && HEIST_DATABASE[saved.target]) setVal('targetSelect', saved.target);
+                    if (saved.approach) setVal('approachSelect', saved.approach);
+                    if (saved.players) setVal('playerCount', saved.players);
+                    if (saved.gunner !== undefined) setVal('planGunner', saved.gunner);
+                    if (saved.hacker !== undefined) setVal('planHacker', saved.hacker);
+                    if (saved.driver !== undefined) setVal('planDriver', saved.driver);
+                    if (saved.setupMins !== undefined) setVal('setupGrindMins', saved.setupMins);
+                    if (saved.cooldownMins !== undefined) setVal('cooldownMins', saved.cooldownMins);
+                    if (saved.lootType && LOOT_TYPES[saved.lootType]) setVal('lootTypeSelect', saved.lootType);
+                    if (saved.fence) setVal('fenceSelect', saved.fence);
+                    if (saved.launderFee !== undefined) setVal('launderFeeSlider', saved.launderFee);
+                    if (saved.failPenalty !== undefined) setVal('failPenaltySlider', saved.failPenalty);
+                    setChk('jammerToggle', saved.jammer);
+                    setChk('weeklyBonusToggle', saved.weeklyBonus);
+                }
+            }
+            window._hpRestored = true;
+            calculatePlanner();
+        }
+        document.addEventListener('DOMContentLoaded', restorePlannerState);
     </script>
     <script type="application/ld+json">
     {
@@ -240,6 +286,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -727,7 +774,7 @@
         </div>
     </div>
 </footer>
-<script src="/js/progress-store.js"></script>
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -742,8 +789,8 @@
     { id: 'heist:pawn-shops', title: 'Pawn Shops (Coffee Break)', payout: '$4,000–$12,000', chapter: 'Ch. 2+', pin: 'heist-pawn', url: '/heists/pawn-shops.html' },
     { id: 'heist:jewelry-stores', title: 'Jewelry Stores (20 Locations)', payout: '$15,000–$35,000', chapter: 'Ch. 3+', pin: 'heist-jewelry', url: '/heists/jewelry-stores.html' },
     { id: 'heist:small-banks-payday-loans', title: 'Small Banks & Payday Loans (14)', payout: '$5,000–$45,000', chapter: 'Ch. 3+', pin: 'heist-small-banks', url: '/heists/small-banks-payday-loans.html' },
-    { id: 'heist:large-bank-vaults', title: 'Large Bank Vaults (8 Major)', payout: 'Up to ~$205,000', chapter: 'Ch. 4+', pin: 'heist-large-banks', url: '/heists/large-bank-vaults.html' },
-    { id: 'heist:armored-trucks-gang-ops', title: 'Armored Trucks & 40 Gang Ops', payout: '$10,000–$38,000', chapter: 'Free-Roam', pin: 'heist-trucks', url: '/heists/armored-trucks-gang-ops.html' }
+    { id: 'heist:large-bank-vaults', title: 'Large Bank Vaults (8 Major)', payout: 'Up to ~$205,000', chapter: 'Ch. 4+', pin: 'heist-large-vaults', url: '/heists/large-bank-vaults.html' },
+    { id: 'heist:armored-trucks-gang-ops', title: 'Armored Trucks & 40 Gang Ops', payout: '$10,000–$38,000', chapter: 'Free-Roam', pin: 'heist-armored-trucks', url: '/heists/armored-trucks-gang-ops.html' }
   ];
 
   function renderHeistChecklist() {
@@ -781,8 +828,11 @@
     if (window.GTA6Progress) {
       window.GTA6Progress.mountToolbar('#heistPlannerProgressToolbar', {
         scope: 'heists',
-        scopeLabel: 'Heist Checklist',
-        onSync: renderHeistChecklist
+        scopeLabel: 'Heist Planner',
+        onSync: function() {
+          renderHeistChecklist();
+          if (typeof restorePlannerState === 'function') restorePlannerState();
+        }
       });
       renderHeistChecklist();
       window.addEventListener('gta6-progress-updated', renderHeistChecklist);

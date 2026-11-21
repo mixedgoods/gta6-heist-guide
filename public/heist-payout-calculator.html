@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.gta6heistguide.com/heist-payout-calculator.html">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
     
         <script>
         const HEIST_DATABASE = {
@@ -121,8 +121,50 @@
                 document.getElementById('lootGrab4P').innerText = Math.round(loot.grabSecs * 3.1) + 's total (' + loot.speedPenalty + ')';
                 document.getElementById('lootPriorityBadge').innerText = loot.priority;
             }
+
+            if (window._calcRestored && window.GTA6Progress && typeof window.GTA6Progress.setToolState === 'function') {
+                window.GTA6Progress.setToolState('payoutCalculator', {
+                    target: targetKey,
+                    approach: approach,
+                    players: players,
+                    gunner: gunnerPct,
+                    hacker: hackerPct,
+                    driver: driverPct,
+                    setupMins: setupMins,
+                    cooldownMins: cooldownMins,
+                    lootType: lootKey,
+                    launderFee: launderFeePct,
+                    failPenalty: failPenaltyPct,
+                    weeklyBonus: Boolean(weeklyBonusActive)
+                }, true);
+            }
         }
-        document.addEventListener('DOMContentLoaded', calculatePlanner);
+        function restoreCalcState() {
+            const params = new URLSearchParams(window.location.search);
+            const hasUrlParams = params.has('target') || params.has('approach') || params.has('players');
+            if (!hasUrlParams && window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
+                const saved = window.GTA6Progress.getToolState('payoutCalculator');
+                if (saved && typeof saved === 'object') {
+                    const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
+                    const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
+                    if (saved.target && HEIST_DATABASE[saved.target]) setVal('targetSelect', saved.target);
+                    if (saved.approach) setVal('approachSelect', saved.approach);
+                    if (saved.players) setVal('playerCount', saved.players);
+                    if (saved.gunner !== undefined) setVal('planGunner', saved.gunner);
+                    if (saved.hacker !== undefined) setVal('planHacker', saved.hacker);
+                    if (saved.driver !== undefined) setVal('planDriver', saved.driver);
+                    if (saved.setupMins !== undefined) setVal('setupGrindMins', saved.setupMins);
+                    if (saved.cooldownMins !== undefined) setVal('cooldownMins', saved.cooldownMins);
+                    if (saved.lootType && LOOT_TYPES[saved.lootType]) setVal('lootTypeSelect', saved.lootType);
+                    if (saved.launderFee !== undefined) setVal('launderFeeSlider', saved.launderFee);
+                    if (saved.failPenalty !== undefined) setVal('failPenaltySlider', saved.failPenalty);
+                    setChk('weeklyBonusToggle', saved.weeklyBonus);
+                }
+            }
+            window._calcRestored = true;
+            calculatePlanner();
+        }
+        document.addEventListener('DOMContentLoaded', restoreCalcState);
     </script>
     <script type="application/ld+json">
     {
@@ -240,6 +282,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -293,7 +336,8 @@
   </div>
 </div>
 <main class="container">
-    <div class="tool-box pink-glow">
+    <div id="calcProgressToolbar"></div>
+    <div class="tool-box pink-glow" id="calcBox">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
             <h2 style="color: #fff;">Configure Mission Parameters</h2>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
@@ -689,10 +733,23 @@
         </div>
     </div>
 </footer>
-<script src="/js/progress-store.js"></script>
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.GTA6Progress) {
+    window.GTA6Progress.mountToolbar('#calcProgressToolbar', {
+      scope: 'calculator',
+      scopeLabel: 'Payout Calculator',
+      onSync: function() {
+        if (typeof restoreCalcState === 'function') restoreCalcState();
+      }
+    });
+  }
+});
+</script>
 
 </body>
 </html>

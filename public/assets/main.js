@@ -752,6 +752,10 @@ const GTA6 = {
 
     getAll() {
       try {
+        if (window.GTA6Progress && typeof window.GTA6Progress.getHeistBuilds === 'function') {
+          const synced = window.GTA6Progress.getHeistBuilds();
+          if (Array.isArray(synced) && synced.length) return synced;
+        }
         return JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
       } catch (e) {
         return [];
@@ -760,6 +764,9 @@ const GTA6 = {
 
     saveAll(list) {
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(list));
+      if (window.GTA6Progress && typeof window.GTA6Progress.setHeistBuilds === 'function') {
+        window.GTA6Progress.setHeistBuilds(list);
+      }
       this.renderDrawer();
       if (GTA6.MasteryAndStreak && typeof GTA6.MasteryAndStreak.refresh === 'function') {
         GTA6.MasteryAndStreak.refresh();

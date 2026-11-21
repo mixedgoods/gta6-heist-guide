@@ -18,7 +18,7 @@
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/hero-heist-banner.png">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
 
     <script type="application/ld+json">
     {
@@ -156,6 +156,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -208,6 +209,7 @@
 </div>
 
 <main class="container" style="padding-bottom: 5.5rem;">
+    <div id="freeToolsProgressToolbar"></div>
     <!-- TOOL 1: ALL-IN-ONE TRUE NET $/HOUR & CREW CUT SPLITTER -->
     <section class="tool-box pink-glow" id="free-net-calculator">
         <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.25rem;">
@@ -393,8 +395,6 @@
             </table>
         </div>
     </section>
-        </div>
-    </section>
 
     <!-- TOOL 2: 15-SECOND BIOMETRIC & LASER KEYPAD 15-Slot Save Planner -->
     
@@ -574,6 +574,7 @@
     </div>
 </footer>
 
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -634,6 +635,41 @@ function runFreeCalc() {
     document.getElementById('fcMemberOut').innerText = players === 1 ? 'Solo (100%)' : fmtMoney(memberTake);
     document.getElementById('fcHourOut').innerText = fmtMoney(hostTake / cycleHours) + '/hr';
     document.getElementById('fcMinOut').innerText = fmtMoney(hostTake / cycleMins) + '/min';
+
+    if (window._freeCalcRestored && window.GTA6Progress && typeof window.GTA6Progress.setToolState === 'function') {
+        window.GTA6Progress.setToolState('freeTools', {
+            vault: k,
+            players: players,
+            setupMins: setupMins,
+            cooldownMins: cdMins,
+            npcCut: npcPct,
+            fenceCut: fencePct,
+            hostShare: hostShare,
+            stealthBonus: document.getElementById('fcStealthBonus').checked,
+            weeklyBonus: document.getElementById('fcWeeklyBonus').checked
+        }, true);
+    }
+}
+
+function restoreFreeCalcState() {
+    if (window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
+        const saved = window.GTA6Progress.getToolState('freeTools');
+        if (saved && typeof saved === 'object') {
+            const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
+            const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
+            if (saved.vault && FREE_VAULTS[saved.vault]) setVal('fcVault', saved.vault);
+            if (saved.players) setVal('fcPlayers', saved.players);
+            if (saved.setupMins !== undefined) setVal('fcSetupMins', saved.setupMins);
+            if (saved.cooldownMins !== undefined) setVal('fcCooldownMins', saved.cooldownMins);
+            if (saved.npcCut !== undefined) setVal('fcNpcCut', saved.npcCut);
+            if (saved.fenceCut !== undefined) setVal('fcFenceCut', saved.fenceCut);
+            if (saved.hostShare !== undefined) setVal('fcHostShare', saved.hostShare);
+            setChk('fcStealthBonus', saved.stealthBonus);
+            setChk('fcWeeklyBonus', saved.weeklyBonus);
+        }
+    }
+    window._freeCalcRestored = true;
+    runFreeCalc();
 }
 
 function copyFreeCalcSummary() {
@@ -653,7 +689,16 @@ function copyFreeCalcSummary() {
     GTA6.copyText(msg, 'Heist Split Summary');
 }
 
-document.addEventListener('DOMContentLoaded', runFreeCalc);
+document.addEventListener('DOMContentLoaded', function() {
+    restoreFreeCalcState();
+    if (window.GTA6Progress) {
+        window.GTA6Progress.mountToolbar('#freeToolsProgressToolbar', {
+            scope: 'calculator',
+            scopeLabel: 'Free Tools Suite',
+            onSync: restoreFreeCalcState
+        });
+    }
+});
 </script>
 </body>
 </html>

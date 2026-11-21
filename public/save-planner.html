@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="Map all 15 GTA 6 manual save slots across 5 chapters, lock critical checkpoints before Tourist Trap, and keep your 100% Platinum save separate from cheats.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
 
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v13">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
 
     <script type="application/ld+json">
     {
@@ -1031,6 +1031,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -1100,6 +1101,9 @@
     <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
   </div>
 </div>
+
+    <!-- SHARED SAVE & BACKUP PROGRESS BAR -->
+    <div id="spUnifiedToolbar"></div>
 
     <!-- LIVE TELEMETRY BAR -->
     <section class="sp-telemetry-grid" aria-label="Save Planner Live Telemetry">
@@ -1408,7 +1412,7 @@
     </div>
 </footer>
 
-<script src="/js/progress-store.js"></script>
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -1631,6 +1635,12 @@
   function loadState() {
     var base = createDefaultState();
     try {
+      if (window.GTA6Progress && typeof window.GTA6Progress.getSavePlannerState === 'function') {
+        var unifiedSP = window.GTA6Progress.getSavePlannerState();
+        if (unifiedSP && typeof unifiedSP === 'object') {
+          return mergeState(base, unifiedSP);
+        }
+      }
       var raw = window.localStorage.getItem(STORAGE_KEY);
       if (!raw) return base;
       var parsed = JSON.parse(raw);
@@ -2056,6 +2066,10 @@
   }
 
   function exportJsonBackup() {
+    if (window.GTA6Progress && typeof window.GTA6Progress.exportJSON === 'function') {
+      window.GTA6Progress.exportJSON();
+      return;
+    }
     try {
       var payload = {
         app: 'gta6heistguide_15slot_planner_v1',
@@ -2081,13 +2095,25 @@
     if (!file) return;
     var reader = new FileReader();
     reader.onload = function(evt) {
+      var rawText = String(evt.target.result || '');
+      if (window.GTA6Progress && typeof window.GTA6Progress.openImportConfirmModal === 'function') {
+        window.GTA6Progress.openImportConfirmModal(rawText, {
+          onSuccess: function() {
+            state = loadState();
+            syncFromUnifiedStore();
+            renderAll();
+          }
+        });
+        return;
+      }
       try {
-        var parsed = JSON.parse(String(evt.target.result || ''));
+        var parsed = JSON.parse(rawText);
         var incomingState = (parsed && parsed.state && typeof parsed.state === 'object') ? parsed.state : parsed;
         if (!incomingState || typeof incomingState !== 'object' || (!incomingState.slots && !incomingState.checklist)) {
           showToast('Invalid JSON backup file.', true);
           return;
         }
+        if (!window.confirm('Importing this backup will overwrite your existing Save Planner progress. Continue?')) return;
         state = mergeState(createDefaultState(), incomingState);
         saveState();
         renderAll();
@@ -2273,12 +2299,27 @@
     if (!window.GTA6Progress) return;
     var unified = window.GTA6Progress.getState();
     var changed = false;
+    if (unified.savePlanner === null) {
+      var anySlotOrPf = Object.keys(unified.completed || {}).some(function(k) {
+        return k.indexOf('slot:') === 0 || k.indexOf('preflight:') === 0;
+      });
+      if (!anySlotOrPf) {
+        var keepSpoiler = state.spoilerFree;
+        state = createDefaultState();
+        state.spoilerFree = keepSpoiler;
+        changed = true;
+      }
+    } else if (unified.savePlanner && typeof unified.savePlanner === 'object') {
+      state = mergeState(createDefaultState(), unified.savePlanner);
+      changed = true;
+    }
     DEFAULT_SLOTS.forEach(function(def) {
       var sid = 'slot:' + String(def.id).padStart(2, '0');
       var isDone = Boolean(unified.completed && unified.completed[sid]);
       if (state.slots[def.id] && !state.slots[def.id].locked && state.slots[def.id].saved !== isDone) {
         state.slots[def.id].saved = isDone;
         if (isDone && !state.slots[def.id].timestamp) state.slots[def.id].timestamp = formatNowStamp();
+        if (!isDone) state.slots[def.id].timestamp = '';
         changed = true;
       }
     });
