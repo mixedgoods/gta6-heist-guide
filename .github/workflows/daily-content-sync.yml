@@ -1,4 +1,4 @@
-﻿name: GTA 6 12-Hour Secrets & Radio Live Auto-Sync ($0/Month)
+﻿name: GTA 6 12-Hour Secrets, Radio & Map Pins Live Auto-Sync ($0/Month)
 
 on:
   schedule:
@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run 12-Hour Secrets, Cryptids & Radio Auto-Sync
+      - name: Run 12-Hour Secrets, Cryptids, Radio & Map Pins Auto-Sync
         run: |
           node scripts/sync-secrets-and-radio.mjs
 
@@ -37,10 +37,10 @@ jobs:
           git add data/ public/data/
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No new secrets or radio discoveries detected in this cycle."
+            echo "No new secrets, radio, or map discoveries detected in this cycle."
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            git commit -m "chore(auto-sync): 12-hour auto-update for GTA 6 secrets and radio live feeds"
+            git commit -m "chore(auto-sync): 12-hour auto-update for GTA 6 secrets, radio & live map pins"
             git push
           fi
 
