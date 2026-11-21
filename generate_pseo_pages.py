@@ -166,11 +166,7 @@ def render_page(folder, slug, title, badge, subtitle, table_headers, table_rows,
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="/index.html" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
-            <span class="brand-badge">Syndicate v3.0</span>
-        </a>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
         <ul class="nav-links">
             <li><a href="/index.html">Vaults</a></li>
             <li><a href="/free" style="color: var(--neon-amber); font-weight: 900;">⚡ Free Calculator &amp; Hack Trainer</a></li>

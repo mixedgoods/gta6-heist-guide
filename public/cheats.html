@@ -20,7 +20,7 @@
     <meta name="twitter:title" content="GTA 6 Cheat Codes: 61 Codes &amp; Interactive Phone Tracker">
     <meta name="twitter:description" content="Verified D-Pad combinations for $250,000 cash, bulldozer, armor, super jump, and phone cheat mode on PS5 &amp; Xbox.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v9">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -244,13 +244,7 @@
 </div>
 <nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
-            <span class="brand-wordmark">
-                <span class="brand-gta">GTA 6</span>
-                <span class="brand-vi-sub">HEIST GUIDE</span>
-            </span>
-            <span class="brand-badge">Syndicate v3.2</span>
-        </a>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
         <div class="nav-actions">
             <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
             <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
@@ -435,6 +429,15 @@
             </ol>
             <a href="/map.html?pin=sh-jasons-house" target="_blank" rel="noopener" class="btn-map-ping" style="margin-left:0; font-size:0.8rem; padding:0.45rem 0.9rem;">📍 View Key Lento Marina Area on Map &rarr;</a>
         </article>
+
+        <!-- DYNAMICALLY SYNCED GLITCHES & YOUTUBE WALKTHROUGHS (data/glitches.json) -->
+        <div id="liveGlitchesSection" style="margin-top:1.5rem; display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.85rem;">
+                <h2 style="color:#fff; font-size:1.15rem; margin:0;">📡 Live Community Glitches &amp; Walkthrough Videos (Auto-Synced)</h2>
+                <span id="liveGlitchesTimestamp" style="font-family:var(--font-mono); font-size:0.74rem; color:#94a3b8;"></span>
+            </div>
+            <div id="liveGlitchesContainer"></div>
+        </div>
 
         <div class="syndicate-aff-bar">
   <div class="syndicate-aff-bar-main">
@@ -1084,7 +1087,48 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash === '#glitches' || params.get('tab') === 'glitches') {
         switchCheatsGlitchesTab('glitches');
     }
+    loadGlitchesFeed();
 });
+
+async function loadGlitchesFeed() {
+    var section = document.getElementById('liveGlitchesSection');
+    var container = document.getElementById('liveGlitchesContainer');
+    var timeEl = document.getElementById('liveGlitchesTimestamp');
+    var tabBtn = document.getElementById('tabBtnGlitches');
+    if (!section || !container) return;
+    try {
+        var res = await fetch('/data/glitches.json');
+        if (!res.ok) return;
+        var data = await res.json();
+        var items = Array.isArray(data.items) ? data.items : [];
+        if (tabBtn && items.length > 5) {
+            tabBtn.textContent = '🐛 Launch Glitches (' + items.length + ' Verified)';
+        }
+        var dynamicItems = items.filter(function(item) { return !item.pinned; });
+        if (!dynamicItems.length) return;
+        if (timeEl && data.last_synced) {
+            timeEl.textContent = 'Last Synced: ' + data.last_synced.slice(0, 10);
+        }
+        container.innerHTML = dynamicItems.map(function(item) {
+            var thumb = item.thumbnail ? '<img src="' + item.thumbnail + '" alt="" loading="lazy" style="width:140px; height:80px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.12); flex-shrink:0;">' : '';
+            return '<article class="glitch-card">' +
+                '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">' +
+                    '<span class="user-badge" style="background:rgba(0,240,255,0.16); border:1px solid var(--neon-cyan); color:var(--neon-cyan); font-size:0.7rem; font-weight:900;">' + (item.badge || 'VERIFIED') + '</span>' +
+                    '<span style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8;">' + (item.source || '') + ' &bull; ' + (item.date || '') + '</span>' +
+                '</div>' +
+                '<div style="display:flex; gap:0.9rem; align-items:flex-start; flex-wrap:wrap; margin-top:0.5rem;">' +
+                    thumb +
+                    '<div style="flex:1 1 260px;">' +
+                        '<h3 style="margin-top:0;">' + item.title + '</h3>' +
+                        '<p style="color:#94a3b8; font-size:0.86rem; margin:0 0 0.65rem;">' + (item.summary || '') + '</p>' +
+                        '<a href="' + item.url + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size:0.8rem; padding:0.4rem 0.85rem;">View Source &rarr;</a>' +
+                    '</div>' +
+                '</div>' +
+            '</article>';
+        }).join('');
+        section.style.display = 'block';
+    } catch (e) {}
+}
 </script>
 
 </body>

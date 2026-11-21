@@ -3687,3 +3687,100 @@ body.has-ticker .bookmarks-fab {
   transform: translateY(-1px);
   box-shadow: 0 0 24px rgba(0, 240, 255, 0.6);
 }
+
+/* === BRAND IMAGE LOGO + NEON PULSE & 6S DIAGONAL SHEEN === */
+.navbar .brand-logo {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 0;
+  line-height: 0;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  height: 40px;
+}
+.brand-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  aspect-ratio: 688 / 110;
+  object-fit: contain;
+  animation: logoNeonPulse 6s ease-in-out infinite;
+  transition: transform 0.22s ease, filter 0.22s ease;
+  will-change: filter;
+}
+.navbar .brand-logo:hover .brand-logo-img {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 10px rgba(255, 42, 141, 0.65)) drop-shadow(0 0 18px rgba(0, 240, 255, 0.5));
+}
+.navbar .brand-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(0, 240, 255, 0.35) 52%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  opacity: 0;
+  -webkit-mask-image: url('/assets/images/logo.webp');
+  mask-image: url('/assets/images/logo.webp');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  animation: logoLightSweep 6s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .navbar .brand-logo,
+  .brand-logo-img {
+    height: 44px;
+  }
+}
+@keyframes logoNeonPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(255, 42, 141, 0.28)) drop-shadow(0 0 10px rgba(0, 240, 255, 0.16));
+  }
+  50% {
+    filter: drop-shadow(0 0 9px rgba(255, 42, 141, 0.58)) drop-shadow(0 0 16px rgba(0, 240, 255, 0.38));
+  }
+}
+@keyframes logoLightSweep {
+  0%, 72% {
+    background-position: 100% 0;
+    opacity: 0;
+  }
+  76% {
+    background-position: 95% 0;
+    opacity: 1;
+  }
+  94% {
+    background-position: 5% 0;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 0;
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo-img {
+    animation: none;
+    filter: drop-shadow(0 0 6px rgba(255, 42, 141, 0.35)) drop-shadow(0 0 12px rgba(0, 240, 255, 0.2));
+  }
+  .navbar .brand-logo::after {
+    animation: none;
+    opacity: 0;
+  }
+}
