@@ -15,12 +15,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/giveaways">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How to Get GTA 6 Free Twitch Drops &amp; Kick Giveaway Codes">
     <meta name="twitter:description" content="Kick 10,000 giveaway tracker, Twitch daily drops countdown, and free Amazon Prime Twitch sub linking instructions.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
-    <link rel="stylesheet" href="/assets/style.css">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
     <style>
         .giveaway-card {
             display: flex;
@@ -130,62 +130,61 @@
 </head>
 <body>
 
-<div class="countdown-strip">
+
+
+<div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS & DROPS">
-                <span class="strip-pulse"></span>
-                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS &amp; DROPS</span>
-            </a>
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+            </span>
             <span class="strip-divider">|</span>
-            <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-            <span class="strip-divider">|</span>
-            <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
-        
     </div>
 </div>
-
-<nav class="navbar">
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
-        <div class="nav-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>NETWORK ONLINE</span>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
-            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
-            <li><a href="/save-planner" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💾 Save Planner</a></li>
-            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
-            <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
-            <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/giveaways" class="nav-pill active" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/map.html" class="nav-pill">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill active nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
                     More <span class="nav-arrow">▾</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
-                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
-                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
-                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
                 </div>
             </li>
         </ul>
-        <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
-            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
-        </div>
     </div>
 </nav>
 
@@ -217,6 +216,18 @@
             <button type="button" class="btn btn-secondary giveaway-filter-btn" data-filter="hardware" onclick="filterGiveaways('hardware', this)" style="padding:0.45rem 0.9rem; font-size:0.8rem;">Hardware &amp; Keys</button>
         </div>
     </header>
+    <div class="syndicate-aff-bar">
+  <div class="syndicate-aff-bar-main">
+    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+    <span class="aff-sep">|</span>
+    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+  </div>
+</div>
 
     <section aria-label="Active Reward & Giveaway Campaigns">
         <div class="grid" id="giveawayCardsGrid">
@@ -372,72 +383,67 @@
         </div>
     </section>
 
-    <!-- DIDN'T WIN A FREE CODE? MONETIZATION BAR -->
-    <section class="tool-box" style="margin-top:2.75rem; border-color:var(--neon-yellow); background:linear-gradient(135deg, rgba(20,25,35,0.95), rgba(12,16,24,0.98)); box-shadow:0 0 25px rgba(255,230,0,0.12);">
-        <div style="margin-bottom:1.25rem;">
-            <span class="user-badge" style="background:rgba(255,230,0,0.15); color:var(--neon-yellow); border:1px solid var(--neon-yellow); font-size:0.74rem;">GUARANTEED DAY-1 SYNDICATE ENTRY</span>
-            <h2 style="color:#fff; font-size:clamp(1.25rem, 2.5vw, 1.7rem); margin:0.4rem 0 0.25rem;">Didn't Win a Free Code? Skip the RNG &amp; Lock In Your Access</h2>
-            <p style="color:var(--text-muted); font-size:0.88rem; margin:0; max-width:850px;">Bypass raffle waitlists with verified digital keys, zero-packet-loss low-ping heist routing, launch-day hardware delivery, and viral video creation tools from our verified partners:</p>
+    <section class="tool-box" style="margin-top:2.5rem; border-color:var(--neon-yellow); background:linear-gradient(135deg, rgba(20,25,35,0.95), rgba(12,16,24,0.98));">
+        <div style="margin-bottom:1.15rem;">
+            <span class="user-badge" style="background:rgba(255,230,0,0.15); color:var(--neon-yellow); border:1px solid var(--neon-yellow); font-size:0.74rem;">GUARANTEED LAUNCH ACCESS &amp; HARDWARE</span>
+            <h2 style="color:#fff; font-size:clamp(1.25rem, 2.5vw, 1.65rem); margin:0.4rem 0 0.25rem;">Didn't Win a Free Code? Skip the RNG &amp; Lock In Your Setup</h2>
+            <p style="color:var(--text-muted); font-size:0.86rem; margin:0; max-width:850px;">Verified digital storefront keys, low-ping multipath routing, PS5 hardware upgrades, and offline 9:16 clipping tools from our trusted partners:</p>
         </div>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:1rem;">
+        <div class="even-promo-grid">
             <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between;">
                 <div>
-                    <div style="font-size:0.75rem; color:var(--neon-yellow); font-weight:800; text-transform:uppercase;">Instant Digital Key</div>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.3rem 0;">G2A Global Keys</h3>
-                    <p style="color:var(--text-muted); font-size:0.8rem; margin:0 0 0.75rem;">Verified seller buyer protection with up to 20% discount on preorder &amp; launch editions.</p>
+                    <div style="font-size:0.72rem; color:var(--neon-yellow); font-weight:800; text-transform:uppercase;">Instant Digital Key</div>
+                    <h3 style="color:#fff; font-size:1.02rem; margin:0.3rem 0;">G2A Global Keys</h3>
+                    <p style="color:var(--text-muted); font-size:0.79rem; margin:0 0 0.75rem;">Verified seller protection with discounts on GTA 6 editions and console gift cards.</p>
                 </div>
-                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" data-aff-partner="g2a" data-aff-placement="giveaways-didntwin-g2a" class="btn btn-secondary" style="text-align:center; font-size:0.82rem; padding:0.5rem;">⚡ Check G2A Keys &rarr;</a>
+                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" class="btn btn-secondary" style="text-align:center; font-size:0.8rem; padding:0.48rem;">🔑 Check G2A Keys &rarr;</a>
             </div>
             <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between;">
                 <div>
-                    <div style="font-size:0.75rem; color:var(--neon-pink); font-weight:800; text-transform:uppercase;">Storefront Discounts</div>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.3rem 0;">Eneba PSN &amp; Xbox</h3>
-                    <p style="color:var(--text-muted); font-size:0.8rem; margin:0 0 0.75rem;">Discounted PlayStation Network and Xbox wallet gift cards to top up your official console balance.</p>
+                    <div style="font-size:0.72rem; color:var(--neon-pink); font-weight:800; text-transform:uppercase;">Storefront Discounts</div>
+                    <h3 style="color:#fff; font-size:1.02rem; margin:0.3rem 0;">Eneba PSN &amp; Xbox</h3>
+                    <p style="color:var(--text-muted); font-size:0.79rem; margin:0 0 0.75rem;">Discounted PlayStation Network and Xbox wallet top-up cards for instant digital download.</p>
                 </div>
-                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" data-aff-partner="eneba" data-aff-placement="giveaways-didntwin-eneba" class="btn btn-secondary" style="text-align:center; font-size:0.82rem; padding:0.5rem;">🎮 Eneba Deals &rarr;</a>
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" class="btn btn-secondary" style="text-align:center; font-size:0.8rem; padding:0.48rem;">🎮 Compare Eneba &rarr;</a>
             </div>
             <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between;">
                 <div>
-                    <div style="font-size:0.75rem; color:var(--neon-cyan); font-weight:800; text-transform:uppercase;">Day-1 Physical &amp; Digital</div>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.3rem 0;">Amazon Prime Delivery</h3>
-                    <p style="color:var(--text-muted); font-size:0.8rem; margin:0 0 0.75rem;">Guaranteed launch-day doorstep delivery for PS5 &amp; Xbox consoles, controllers, and boxed discs.</p>
+                    <div style="font-size:0.72rem; color:var(--neon-cyan); font-weight:800; text-transform:uppercase;">Amazon Prime</div>
+                    <h3 style="color:#fff; font-size:1.02rem; margin:0.3rem 0;">GTA 6 PS5 Edition</h3>
+                    <p style="color:var(--text-muted); font-size:0.79rem; margin:0 0 0.75rem;">Fast Prime delivery for PS5 &amp; Xbox Series X discs, controllers, and launch bundles.</p>
                 </div>
-                <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="giveaways-didntwin-amazon" class="btn btn-amber" style="text-align:center; font-size:0.82rem; padding:0.5rem;">📦 Amazon Day-1 Order &rarr;</a>
+                <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-amber" style="text-align:center; font-size:0.8rem; padding:0.48rem;">📦 Order on Amazon &rarr;</a>
             </div>
             <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between;">
                 <div>
-                    <div style="font-size:0.75rem; color:var(--neon-green); font-weight:800; text-transform:uppercase;">Zero Packet Loss</div>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.3rem 0;">ExitLag Ping Reducer</h3>
-                    <p style="color:var(--text-muted); font-size:0.8rem; margin:0 0 0.75rem;">Optimized multiplayer routing preventing disconnects during high-stakes co-op vault infiltrations. Code: <strong>10386953</strong></p>
+                    <div style="font-size:0.72rem; color:var(--neon-green); font-weight:800; text-transform:uppercase;">Zero Packet Loss</div>
+                    <h3 style="color:#fff; font-size:1.02rem; margin:0.3rem 0;">ExitLag Tunnel (Free)</h3>
+                    <p style="color:var(--text-muted); font-size:0.79rem; margin:0 0 0.75rem;">Multipath low-ping routing built to cut packet loss and stabilize online gaming lobbies.</p>
                 </div>
-                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="noopener sponsored" data-aff-partner="exitlag" data-aff-placement="giveaways-didntwin-exitlag" class="btn btn-primary" style="text-align:center; font-size:0.82rem; padding:0.5rem;">🚀 Get ExitLag &rarr;</a>
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" class="btn btn-primary" style="text-align:center; font-size:0.8rem; padding:0.48rem;">🚀 Start ExitLag Free &rarr;</a>
             </div>
             <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between;">
                 <div>
-                    <div style="font-size:0.75rem; color:#a855f7; font-weight:800; text-transform:uppercase;">Creator &amp; Clips Studio</div>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.3rem 0;">CutFlow &amp; ClipBounty</h3>
-                    <p style="color:var(--text-muted); font-size:0.8rem; margin:0 0 0.75rem;">AI video editor &amp; viral TikTok/Shorts clipper for streaming your heist runs and growing an audience.</p>
+                    <div style="font-size:0.72rem; color:#c084fc; font-weight:800; text-transform:uppercase;">9:16 Auto-Clipper</div>
+                    <h3 style="color:#fff; font-size:1.02rem; margin:0.3rem 0;">CutFlow Pro (Gumroad)</h3>
+                    <p style="color:var(--text-muted); font-size:0.79rem; margin:0 0 0.75rem;">Offline 9:16 TikTok &amp; YouTube Shorts auto-clipper for capturing GTA 6 heist highlights.</p>
                 </div>
-                <a href="https://apexlocallabs.gumroad.com/l/apex-pro-bundle" target="_blank" rel="noopener sponsored" data-aff-partner="gumroad" data-aff-placement="giveaways-didntwin-whop" class="btn btn-secondary" style="text-align:center; font-size:0.82rem; padding:0.5rem;">🎬 Creator Apps &rarr;</a>
+                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" class="btn btn-secondary" style="text-align:center; font-size:0.8rem; padding:0.48rem;">🎬 Get CutFlow Pro &rarr;</a>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:0.72rem; color:#38bdf8; font-weight:800; text-transform:uppercase;">Zero Pop-In Storage</div>
+                    <h3 style="color:#fff; font-size:1.02rem; margin:0.3rem 0;">Samsung 990 PRO 2TB</h3>
+                    <p style="color:var(--text-muted); font-size:0.79rem; margin:0 0 0.75rem;">7,450 MB/s NVMe PS5 expansion SSD for instant Leonida streaming &amp; 210GB+ installs.</p>
+                </div>
+                <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-amber" style="text-align:center; font-size:0.8rem; padding:0.48rem;">💾 Check Amazon SSD &rarr;</a>
             </div>
         </div>
     </section>
 
     <div class="gta-ad-slot" data-ad-placement="giveaways-mid"></div>
 
-    <!-- VIP ALERT OPT-IN -->
-    <section class="tool-box" style="margin-top:2.5rem; border-color:var(--neon-cyan);">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-            <div style="max-width:680px;">
-                <h2 style="color:#fff; font-size:1.35rem; margin:0 0 0.35rem;">Unlock Instant VIP Blueprint Alerts &amp; Drop Reminders</h2>
-                <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">Verify your operative email in 10 seconds to download the Day-1 Tactical Blueprint Pack and get notified when new Twitch Drop campaigns and 1.5X heist rotations go live.</p>
-            </div>
-            <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
-                <button type="button" class="btn btn-primary" onclick="GTA6.Auth.openModal()">🎁 Unlock VIP Drop Alerts &rarr;</button>
-                <a href="/free" class="btn btn-secondary">⚡ Open Free Tools Suite</a>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- VISIBLE FAQ MATCHING FAQPage SCHEMA -->
     <section style="margin-top:2.75rem;">
@@ -481,86 +487,94 @@
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
-                <a href="/index.html" class="brand-logo" style="text-decoration: none; font-size: 1.35rem;">
-                    <span>GTA 6</span>
-                    <span class="vi">HEIST GUIDE</span>
+                <a href="/" class="brand-logo" style="text-decoration:none;">
+                    <span class="brand-wordmark">
+                        <span class="brand-gta">GTA 6</span>
+                        <span class="brand-vi-sub">HEIST GUIDE</span>
+                    </span>
                     <span class="brand-badge">Syndicate v3.2</span>
                 </a>
-                <p style="color: #64748b; font-size: 0.85rem; margin: 0.45rem 0 0; max-width: 480px; line-height: 1.5;">
-                    The definitive tactical intelligence, interactive radar, and heist payout optimization network for Grand Theft Auto VI.
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                <a href="/free" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">⚡ Free Tools Suite</a>
-                <a href="/interactive-map" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">🗺️ Leonida Radar Map &rarr;</a>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
+
         <div class="footer-links-grid">
             <div>
-                <span class="footer-col-title" style="color: var(--neon-cyan);">🛠️ Tactical Tools</span>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
                 <ul class="footer-col-links">
+                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
                     <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
                     <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
-                    <li><a href="/vault-hack-trainer.html">Vault Hack Trainer (3D)</a></li>
-                    <li><a href="/leonida-wanted-system.html">Wanted Evasion Matrix</a></li>
-                    <li><a href="/free" style="color: var(--neon-amber); font-weight: 700;">⚡ 100% Free Tools Hub</a></li>
+                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
                 </ul>
             </div>
             <div>
-                <span class="footer-col-title" style="color: var(--neon-pink);">🗺️ Radar &amp; Vaults</span>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
-                    <li><a href="/interactive-map.html">Leonida Interactive Radar</a></li>
-                    <li><a href="/escape-routes.html">Master Escape Corridors</a></li>
-                    <li><a href="/safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                    <li><a href="/index.html#vaults-grid">Confirmed Heist Targets</a></li>
-                    <li><a href="/live-intel.html" style="color: var(--neon-green); font-weight: 700;">📡 Live Wire &amp; Map Leaks</a></li>
+                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
+                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
+                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
                 </ul>
             </div>
             <div>
-                <span class="footer-col-title" style="color: var(--neon-yellow);">🏎️ Arsenal &amp; Crew</span>
+                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
                 <ul class="footer-col-links">
-                    <li><a href="/vehicles-getaway-cars.html">Confirmed Vehicles &amp; Trunk Mod</a></li>
-                    <li><a href="/weapons-gear.html">Weapons &amp; Heist Gear Database</a></li>
-                    <li><a href="/crew-database.html">Official Characters &amp; Crew</a></li>
-                    <li><a href="/lucia-jason-skills.html">Lucia &amp; Jason Skill Trees</a></li>
-                    <li><a href="/gameplay-mechanics.html">Co-Op Gameplay Mechanics</a></li>
+                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
+                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/radio.html">📻 23 Radio Stations &amp; Album</a></li>
+                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
                 </ul>
             </div>
             <div>
-                <span class="footer-col-title" style="color: #a855f7;">🤝 Deals &amp; Syndicate</span>
+                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
                 <ul class="footer-col-links">
-                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="footer-ps5">🔥 Amazon PS5 Edition</a></li>
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" data-aff-partner="g2a" data-aff-placement="footer-g2a">⚡ G2A Keys (Save 20%)</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" data-aff-partner="eneba" data-aff-placement="footer-eneba">🎮 Eneba PSN / Xbox Gift Cards</a></li>
-                    <li><a href="/giveaways.html">🎁 Twitch Drops &amp; Giveaways</a></li>
-                    </ul>
+                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
+                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
+                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
+                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
+                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
+                </ul>
             </div>
         </div>
+
         <div class="footer-secondary-strip">
-            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                <a href="/cheats.html" style="color: var(--neon-yellow); text-decoration: none; font-weight: 700;">⚡ Cheats</a>
-                <a href="/settings.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">⚙️ Settings</a>
-                <a href="/money-guide.html" style="color: var(--neon-green); text-decoration: none; font-weight: 700;">💰 Cash Guide</a>
-                <a href="/weapons-bonuses.html" style="color: #f43f5e; text-decoration: none; font-weight: 700;">🔫 Gun Stores</a>
-                <a href="/giveaways.html" style="color: #c084fc; text-decoration: none; font-weight: 700;">🎁 Giveaways</a>
-                <a href="/about.html" style="color: #94a3b8; text-decoration: none;">About</a>
-                <a href="/contact.html" style="color: #94a3b8; text-decoration: none;">Contact</a>
-                <a href="/privacy-policy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                <a href="/terms.html" style="color: #94a3b8; text-decoration: none;">Terms &amp; DMCA</a>
-                <a href="/ads.txt" style="color: #64748b; text-decoration: none; font-size:0.75rem;">ads.txt</a>
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
+                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
+                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
+                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
+                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
+                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
             </div>
             <div>
-                <span>Network Status: <strong style="color: var(--neon-green);">ALL SYSTEMS ONLINE</strong> (v3.2)</span>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
             </div>
         </div>
+
         <div class="footer-disclaimer">
-            <p style="margin: 0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code data-config-amazon-tag>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and GetApexLocal (CutFlow Pro &amp; ClipBounty Studio) partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
+            <p style="margin:0;">
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
 
+<script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>

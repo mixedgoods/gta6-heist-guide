@@ -3,1710 +3,1685 @@
 <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta charset="UTF-8">
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 Leonida Atlas and Escape Routes | GTA 6 Heists</title>
-    <meta name="description" content="Browse every confirmed GTA 6 vault target, safehouse, black-market fence, and sewer getaway conduit on our free interactive Leonida State atlas map.">
-        <meta name="keywords" content="GTA 6 interactive map, Leonida map regions, Vice City vaults, storm drains, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/map">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GTA 6 Interactive Leonida Map — Vaults, Properties, Animals &amp; Safe Codes | GTA6HeistGuide.com</title>
+    <meta name="description" content="Explore the free GTA 6 Interactive Leonida Map with 160+ verified pins: Story Heists, Big Banks, 25 Properties &amp; Fences (Brian's Lockup 7700), 49+ Wildlife Habitats, 24 Ammu-Nation stores, and launch glitches.">
+    <meta name="keywords" content="GTA 6 interactive map, Leonida map, Vice City vaults, GTA 6 properties map, GTA 6 animals map, Brian's lockup 7700 location, Apollo Aggregates Red Barn location, Ammu-Nation locations">
+    <link rel="canonical" href="https://www.gta6heistguide.com/map.html">
     <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="GTA 6 Leonida Atlas and Escape Routes | GTA 6 Heists">
-    <meta property="og:description" content="Browse every confirmed GTA 6 vault target, safehouse, black-market fence, and sewer getaway conduit on our free interactive Leonida State atlas map.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/map">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta property="og:title" content="GTA 6 Interactive Leonida Map — 160+ Verified Pins">
+    <meta property="og:description" content="Interactive GTA 6 Leonida Map with Story Heists, Properties, Garages, Fences, Wildlife Habitats, Ammu-Nation, and launch glitches.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gta6heistguide.com/map.html">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/maps/leonida-map.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
+
     <style>
-        .map-wrapper {
-            background: #06040b;
-            border: 2px solid var(--neon-cyan);
-            border-radius: 14px;
-            position: relative;
-            height: clamp(380px, 65vh, 650px);
+        :root {
+            --header-height: 118px;
+        }
+        html, body {
+            height: 100dvh;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
-            box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
-            margin-bottom: 2.5rem;
+            background: #040711;
+            font-family: var(--font-heading, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+            color: #f4f4f8;
         }
-        .map-svg {
+
+        /* BUG 1 FIX: Exact dynamic viewport height minus header so bottom-right zoom controls are NEVER cut off */
+        .map-app-container {
             width: 100%;
-            height: 100%;
-            cursor: crosshair;
-        }
-        .map-controls {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            z-index: 10;
+            height: calc(100dvh - var(--header-height));
+            min-height: 360px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            background: rgba(11, 8, 19, 0.9);
-            padding: 8px 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border-card);
+            position: relative;
+            overflow: hidden;
+            background: #040711;
         }
-        .map-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-card);
-            color: var(--text-main);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.78rem;
-            font-weight: 700;
+
+        .leaflet-container {
+            background-color: #2264a7 !important;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .tactical-active .leaflet-image-layer {
+            filter: brightness(0.65) contrast(1.35) hue-rotate(185deg) saturate(1.4) !important;
+        }
+        .tactical-active.leaflet-container {
+            background-color: #0b1526 !important;
+        }
+
+        #leafletMap {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* BUG 1 FIX: Generous bottom offset & above-Leaflet z-index for ALL bottom-right floating map controls (+, -, recenter) */
+        .leaflet-bottom.leaflet-right {
+            bottom: 84px !important;
+            right: 20px !important;
+            z-index: 1050 !important;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+        .leaflet-control-zoom {
+            border: 1.5px solid rgba(0, 240, 255, 0.55) !important;
+            border-radius: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 240, 255, 0.25) !important;
+            margin: 0 !important;
+        }
+        .leaflet-control-zoom a,
+        .leaflet-recenter-btn {
+            background: rgba(12, 10, 26, 0.95) !important;
+            color: #fff !important;
+            width: 40px !important;
+            height: 40px !important;
+            line-height: 38px !important;
+            font-size: 1.2rem !important;
+            font-weight: 900 !important;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.25) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-decoration: none !important;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: background 0.15s ease, color 0.15s ease;
         }
-        .map-btn.active, .map-btn:hover {
-            background: rgba(0, 240, 255, 0.2);
-            border-color: var(--neon-cyan);
-            color: var(--neon-cyan);
+        .leaflet-control-zoom a:last-child {
+            border-bottom: none !important;
         }
-        .map-hud {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            background: rgba(11, 8, 19, 0.9);
-            border: 1px solid var(--border-card);
+        .leaflet-control-zoom a:hover,
+        .leaflet-recenter-btn:hover {
+            background: rgba(0, 240, 255, 0.24) !important;
+            color: var(--neon-cyan) !important;
+        }
+        .leaflet-recenter-wrap {
+            border: 1.5px solid rgba(0, 240, 255, 0.55);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 240, 255, 0.25);
+            margin: 0 !important;
+        }
+
+        /* SIDEBAR */
+        .map-sidebar {
+            width: 390px;
+            height: 100%;
+            background: rgba(12, 10, 24, 0.97);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-right: 1px solid rgba(0, 240, 255, 0.22);
+            display: flex;
+            flex-direction: column;
+            z-index: 1100;
+            flex-shrink: 0;
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sidebar-header-box {
+            padding: 0.75rem 0.9rem 0.55rem;
+            background: rgba(18, 14, 30, 0.98);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 0.48rem;
+        }
+        .sidebar-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sidebar-title-badge {
+            font-size: 0.74rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--neon-cyan, #00f0ff);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .sidebar-search-wrap { position: relative; width: 100%; }
+        .sidebar-search-input {
+            width: 100%;
+            padding: 0.5rem 2rem 0.5rem 2.1rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 6px;
-            padding: 8px 14px;
-            font-family: var(--font-mono);
+            color: #fff;
             font-size: 0.8rem;
-            color: var(--neon-cyan);
+            box-sizing: border-box;
+            outline: none;
+        }
+        .sidebar-search-input:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
+        }
+        .sidebar-search-icon {
+            position: absolute;
+            left: 0.65rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.85rem;
+            opacity: 0.65;
             pointer-events: none;
         }
-        .map-intel-modal {
+        .sidebar-search-clear {
             position: absolute;
-            top: 68px;
-            right: 14px;
-            width: min(320px, calc(100% - 28px));
-            max-height: calc(100% - 82px);
-            overflow-y: auto;
-            background: rgba(14, 10, 26, 0.96);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--neon-pink);
-            border-radius: 10px;
-            padding: 1.1rem;
-            box-shadow: 0 0 25px rgba(255, 42, 141, 0.35);
-            display: none;
-            z-index: 30;
-        }
-        .map-modal-close {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+            right: 0.55rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.9rem;
             cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            flex-shrink: 0;
+            display: none;
+        }
+        .region-pills-row {
+            display: flex;
+            gap: 0.32rem;
+            overflow-x: auto;
+            padding-bottom: 0.15rem;
+            scrollbar-width: none;
+        }
+        .region-pills-row::-webkit-scrollbar { display: none; }
+        .region-jump-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 0.22rem 0.58rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            white-space: nowrap;
+            cursor: pointer;
             transition: all 0.2s;
         }
-        .map-modal-close:hover {
-            border-color: var(--neon-pink);
-            color: var(--neon-pink);
+        .region-jump-pill:hover, .region-jump-pill.active {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-cyan);
+            color: #fff;
         }
-        @media (max-width: 640px) {
-            .map-controls {
-                top: 8px;
-                left: 8px;
-                right: 8px;
-                padding: 6px 8px;
-            }
-            .map-hud {
-                left: 8px;
-                right: 8px;
-                bottom: 8px;
-                font-size: 0.7rem;
-                padding: 5px 8px;
-                text-align: center;
-            }
-            .map-intel-modal {
-                top: 68px;
-                bottom: 42px;
-                right: 10px;
-                left: 10px;
-                width: auto;
-                max-height: calc(100% - 110px);
-            }
+
+        /* Checklist & Stats Bar */
+        .progress-stats-box {
+            padding: 0.55rem 1rem;
+            background: rgba(18, 14, 30, 0.92);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
         }
-        .map-intel-modal.open {
-            display: block;
-            animation: fadeIn 0.2s ease-out;
+        .progress-bar-wrap {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
         }
-        .map-point {
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00f0ff, #00ff88);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            transition: width 0.3s ease;
+        }
+        .stats-control-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+        }
+        .stats-count-label {
+            font-weight: 800;
+            color: #cbd5e1;
+            font-family: var(--font-mono, monospace);
+        }
+        .stats-btn-group {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+        .btn-mini-action {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            border-radius: 4px;
+            padding: 0.2rem 0.45rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s;
+            text-decoration: none;
+        }
+        .btn-mini-action:hover {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-cyan, #00f0ff);
+            color: #fff;
+        }
+        .btn-next-unfound {
+            background: linear-gradient(135deg, rgba(255, 42, 141, 0.2), rgba(0, 240, 255, 0.2));
+            border: 1px solid var(--neon-pink, #ff2a8d);
+            color: #ff99cc;
+            font-weight: 800;
+        }
+        .btn-next-unfound:hover {
+            background: var(--neon-pink, #ff2a8d);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 42, 141, 0.5);
+        }
+
+        /* Hide Found Checkbox */
+        .hide-found-label {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            cursor: pointer;
+            user-select: none;
+            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .hide-found-label input[type="checkbox"] {
+            accent-color: var(--neon-cyan, #00f0ff);
             cursor: pointer;
         }
-        .map-point > circle,
-        .map-point > rect,
-        .map-point > polygon {
-            transform-box: fill-box;
-            transform-origin: center;
-            transition: transform 0.18s ease, filter 0.18s ease;
-        }
-        .map-point:hover > circle,
-        .map-point:hover > rect,
-        .map-point:hover > polygon {
-            transform: scale(1.28);
-            filter: drop-shadow(0 0 8px #fff);
-        }
-        .map-point.selected > circle,
-        .map-point.selected > rect,
-        .map-point.selected > polygon {
-            transform: scale(1.36);
-            stroke: #00f0ff;
-            filter: drop-shadow(0 0 10px #00f0ff);
-        }
-        .map-svg text {
-            paint-order: stroke;
-            stroke: rgba(4, 10, 20, 0.94);
-            stroke-width: 3px;
-            stroke-linejoin: round;
-        }
-    
-        /* TACTICAL ZOOM CONTROLS HUD */
-        .map-zoom-controls {
-            position: absolute;
-            top: 12px;
-            right: 14px;
+
+        /* Category Filter Accordion / Rows */
+        .category-rows-container {
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 5px;
-            padding: 4px 6px;
-            background: rgba(6, 10, 18, 0.9);
-            border: 1px solid rgba(0, 240, 255, 0.32);
-            border-radius: 8px;
-            z-index: 25;
+            flex-direction: column;
+            gap: 0.28rem;
+            max-height: 220px;
+            overflow-y: auto;
+            scrollbar-width: thin;
         }
-        .zoom-btn {
-            background: rgba(10, 16, 26, 0.92);
+        .cat-filter-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.32rem 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid transparent;
+            transition: all 0.18s;
+            cursor: pointer;
+        }
+        .cat-filter-row:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .cat-left-side {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+        .cat-left-side input[type="checkbox"] {
+            accent-color: var(--neon-cyan, #00f0ff);
+            cursor: pointer;
+        }
+        .cat-right-side {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .cat-count-badge {
+            font-size: 0.65rem;
+            font-family: var(--font-mono, monospace);
+            padding: 0.1rem 0.35rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            font-weight: 700;
+        }
+        .btn-cat-only {
+            padding: 0.12rem 0.35rem;
+            font-size: 0.62rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #94a3b8;
+            border-radius: 3px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.15s;
+        }
+        .btn-cat-only:hover {
+            background: var(--neon-cyan, #00f0ff);
+            color: #040711;
+            border-color: var(--neon-cyan, #00f0ff);
+        }
+
+        /* Locations List View */
+        .sidebar-locations-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            scrollbar-width: thin;
+        }
+        .pin-list-item {
+            padding: 0.5rem 0.65rem;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.18s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .pin-list-item:hover {
+            background: rgba(0, 240, 255, 0.08);
+            border-color: rgba(0, 240, 255, 0.35);
+            transform: translateX(3px);
+        }
+        .pin-list-item.is-found {
+            opacity: 0.45;
+            background: rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        .pin-item-left {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            min-width: 0;
+        }
+        .pin-item-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+        .pin-item-title-wrap {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .pin-item-title {
+            font-size: 0.77rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .pin-item-sub {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            display: flex;
+            gap: 0.35rem;
+            align-items: center;
+        }
+        .pin-item-payout {
+            color: var(--neon-green, #00ff88);
+            font-weight: 700;
+        }
+
+        /* Affiliate Gear Bottom Bar */
+        .sidebar-affiliate-box {
+            padding: 0.65rem 0.9rem;
+            background: rgba(10, 8, 20, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.68rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            flex-shrink: 0;
+        }
+        .sidebar-affiliate-box a {
+            color: var(--neon-cyan, #00f0ff);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .sidebar-affiliate-box a:hover {
+            text-decoration: underline;
+        }
+
+        
+
+        /* TOP-RIGHT HUD CONTROLS */
+        .map-hud-controls {
+            position: absolute;
+            top: 0.85rem;
+            right: 1rem;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.45rem;
+            pointer-events: none;
+        }
+        .hud-btn-row {
+            display: flex;
+            gap: 0.4rem;
+            pointer-events: auto;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .hud-btn {
+            background: rgba(14, 11, 26, 0.94);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 240, 255, 0.38);
+            color: #fff;
+            padding: 0.42rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.55);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .hud-btn:hover {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.22);
+        }
+        .hud-btn.active-mode {
+            background: var(--neon-cyan);
+            color: #040711;
+            border-color: #fff;
+        }
+        .hud-status-badge {
+            background: rgba(14, 11, 26, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #94a3b8;
+            padding: 0.22rem 0.58rem;
+            border-radius: 4px;
+            font-size: 0.67rem;
+            font-family: var(--font-mono, monospace);
+            pointer-events: auto;
+        }
+
+        /* CUSTOM MARKERS & DEEP-LINK PULSE */
+        .custom-pin-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #120e1e;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.85), 0 0 12px currentColor;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s;
+            user-select: none;
+            position: relative;
+        }
+        .custom-pin-marker:hover {
+            transform: scale(1.22);
+            z-index: 1000 !important;
+        }
+        .custom-pin-marker.is-found {
+            opacity: 0.42;
+            filter: grayscale(0.85);
+            transform: scale(0.85);
+        }
+        .live-pulse-marker::after,
+        .deep-link-pulse::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2.5px solid var(--neon-yellow, #ffb800);
+            box-shadow: 0 0 18px var(--neon-yellow, #ffb800);
+            animation: pin-pulse 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+            pointer-events: none;
+        }
+        .deep-link-pulse {
+            transform: scale(1.38) !important;
+            border-color: #00f0ff !important;
+            box-shadow: 0 0 22px #00f0ff, 0 0 10px #ff2a8d !important;
+            z-index: 2000 !important;
+        }
+        .deep-link-pulse::after {
+            border-color: #00f0ff;
+            box-shadow: 0 0 22px #00f0ff;
+        }
+        @keyframes pin-pulse {
+            0% { transform: scale(0.78); opacity: 1; }
+            100% { transform: scale(2.05); opacity: 0; }
+        }
+
+        /* POPUP STYLING */
+        .leaflet-popup-content-wrapper {
+            background: rgba(14, 11, 26, 0.98) !important;
+            backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(0, 240, 255, 0.45);
+            border-radius: 10px;
+            color: #fff !important;
+            padding: 0 !important;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 18px rgba(0, 240, 255, 0.28) !important;
+        }
+        .leaflet-popup-content {
+            margin: 0 !important;
+            line-height: 1.4;
+            width: 320px !important;
+        }
+        .leaflet-popup-tip {
+            background: #120e1e !important;
+            border: 1px solid rgba(0, 240, 255, 0.4);
+        }
+        .leaflet-container a.leaflet-popup-close-button {
+            color: #cbd5e1 !important;
+            padding: 6px 10px 0 0;
+            font-size: 1.25rem;
+            z-index: 10;
+        }
+        .popup-img-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            max-height: 145px;
+            overflow: hidden;
+            background: #070a14;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .popup-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .popup-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 0.8rem; }
+        .popup-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 0.35rem;
+        }
+        .popup-tag-badge {
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 0.14rem 0.42rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-family: var(--font-mono, monospace);
+        }
+        .popup-region { font-size: 0.68rem; color: #94a3b8; font-weight: 700; }
+        .popup-title { font-size: 0.92rem; font-weight: 800; color: #fff; margin: 0; line-height: 1.25; }
+        .popup-payout-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.74rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.28rem 0.5rem;
+            border-radius: 4px;
+        }
+        .popup-desc { font-size: 0.72rem; color: #cbd5e1; margin: 0; line-height: 1.4; }
+        .popup-tip-box {
+            font-size: 0.68rem;
+            background: rgba(0, 240, 255, 0.07);
+            border-left: 2px solid var(--neon-cyan);
+            padding: 0.32rem 0.5rem;
+            color: #cbd5e1;
+        }
+        .popup-aff-mini {
+            font-size: 0.66rem;
+            background: rgba(255, 42, 141, 0.08);
+            border: 1px solid rgba(255, 42, 141, 0.25);
+            border-radius: 5px;
+            padding: 0.32rem 0.45rem;
+            color: #cbd5e1;
+            line-height: 1.45;
+        }
+        .popup-aff-mini a { color: var(--neon-cyan); font-weight: 800; text-decoration: none; }
+        .popup-aff-mini a:hover { text-decoration: underline; }
+        .popup-actions-row { display: flex; gap: 0.35rem; margin-top: 0.25rem; }
+        .btn-popup-found {
+            flex: 1;
+            padding: 0.38rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 0.69rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .btn-popup-found:hover {
+            background: var(--neon-green);
+            border-color: var(--neon-green);
+            color: #040711;
+        }
+        .btn-popup-found.is-marked {
+            background: rgba(255, 42, 141, 0.2);
+            border-color: var(--neon-pink);
+            color: #ff99cc;
+        }
+        .btn-popup-link {
+            padding: 0.38rem 0.58rem;
+            border-radius: 4px;
+            background: rgba(0, 240, 255, 0.14);
             border: 1px solid var(--neon-cyan);
             color: #fff;
-            width: 38px;
-            height: 38px;
-            border-radius: 6px;
-            font-size: 1.15rem;
+            font-size: 0.69rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-popup-link:hover { background: var(--neon-cyan); color: #040711; }
+
+        .mobile-toggle-btn {
+            display: none;
+            position: absolute;
+            bottom: 84px;
+            left: 14px;
+            z-index: 1050;
+            background: rgba(14, 11, 26, 0.95);
+            border: 1.5px solid var(--neon-cyan);
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 0.52rem 1rem;
+            border-radius: 30px;
             cursor: pointer;
-            display: flex;
+        }
+
+        #hudToast {
+            position: absolute;
+            bottom: 1.2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(18, 14, 30, 0.97);
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.45);
+            color: #fff;
+            padding: 0.55rem 1.15rem;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2000;
+            white-space: nowrap;
+            max-width: 92vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #hudToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.82);
+            backdrop-filter: blur(8px);
+            z-index: 3000;
+            display: none;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
         }
-        .zoom-btn:hover {
-            background: var(--neon-cyan);
-            color: #000;
-            transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
-        }
-        .zoom-btn:active {
-            transform: scale(0.95);
-        }
-        .zoom-indicator {
-            background: rgba(5, 10, 18, 0.9);
-            border: 1px solid rgba(0, 240, 255, 0.4);
-            color: var(--neon-cyan);
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-align: center;
-            padding: 3px 0;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        /* MAP CONTROLS POSITIONED CLEANLY */
-        .map-toolbar-container {
-            background: rgba(12, 17, 26, 0.95);
-            border: 1px solid var(--border-card);
+        .modal-card {
+            background: #120e1e;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
             border-radius: 8px;
-            padding: 0.65rem 1rem;
-            margin-bottom: 0.75rem;
+            padding: 1.2rem;
+            width: 90%;
+            max-width: 440px;
             display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            flex-direction: column;
+            gap: 0.8rem;
         }
-        .map-controls-inline {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            align-items: center;
+
+        @media (max-width: 768px) {
+            .map-sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                transform: translateX(-100%);
+                width: 86%;
+                max-width: 355px;
+            }
+            .map-sidebar.open { transform: translateX(0); }
+            .mobile-toggle-btn { display: flex; align-items: center; gap: 0.4rem; }
+            .map-hud-controls { top: 0.55rem; right: 0.55rem; }
+            .leaflet-bottom.leaflet-right {
+                bottom: 88px !important;
+                right: 14px !important;
+            }
+            .leaflet-popup-content { width: 270px !important; }
         }
-    
     </style>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "name": "Interactive Leonida Tactical Map & Vault Radar",
-      "url": "https://www.gta6heistguide.com/map.html",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "GTA6HeistGuide.com",
-        "url": "https://www.gta6heistguide.com/"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do I filter heist vaults, safehouses, and fuel stations on the Leonida map?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Use the All Pins, Vaults, Safehouses, Escapes, Airfields, and Fuel category filter pills or jump straight to Vice City, Port Gellhorn, Grassrivers, Ambrosia, Leonida Keys, or Mount Kalaga using the region filter bar."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I save personal waypoints or track found pins for free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Click + Personal Pin to save unlimited local tactical markers and use Mark Pin Found inside any location card to track 100% Leonida completion in your browser."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.gta6heistguide.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Interactive Leonida Tactical Map",
-          "item": "https://www.gta6heistguide.com/map.html"
-        }
-      ]
-    }
-  ]
-}
-    </script>
-    <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta name="twitter:title" content="GTA 6 Leonida Atlas and Escape Routes | GTA 6 Heists">
-    <meta name="twitter:description" content="Browse every confirmed GTA 6 vault target, safehouse, black-market fence, and sewer getaway conduit on our free interactive Leonida State atlas map.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
 </head>
 <body>
-    
-<div class="countdown-strip">
+
+<div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS & DROPS">
-                <span class="strip-pulse"></span>
-                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS &amp; DROPS</span>
-            </a>
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+            </span>
             <span class="strip-divider">|</span>
-            <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-            <span class="strip-divider">|</span>
-            <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
-        
     </div>
 </div>
-
-
-
-
-<nav class="navbar">
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
-        <div class="nav-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>NETWORK ONLINE</span>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill active">Map</a></li>
-            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
-            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
-            <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
-            <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/map.html" class="nav-pill active">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
                     More <span class="nav-arrow">▾</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
-                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
-                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
-                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
                 </div>
             </li>
         </ul>
-        <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
-            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
-        </div>
     </div>
 </nav>
 
+<!-- FULL-HEIGHT INTERACTIVE MAP SHELL -->
+<div class="map-app-container" id="mapAppContainer">
 
-    
-        <!-- COMPACT RADAR TITLE (RADAR POSITIONED AT VERY TOP) -->
-        <div style="max-width:1100px; margin:0.75rem auto 0.5rem; padding:0 0.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-            <div style="display:flex; align-items:center; gap:0.6rem;">
-                <span class="user-badge badge-mastermind" style="background:rgba(0,240,255,0.18); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem;">🛰️ GPS RECON v3.2</span>
-                <h1 style="color:#fff; font-size:1.35rem; font-weight:1000; margin:0; line-height:1.2;">
-                    LEONIDA STATE <span style="color:var(--neon-pink);">TACTICAL RADAR</span>
-                </h1>
-            </div>
-            <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--neon-green);">
-                6 CONFIRMED REGIONS &bull; CLICK &amp; DRAG TO PAN &bull; WHEEL ZOOM
-            </div>
-        </div>
-        
-
-    <main class="container" style="padding-top: 0.25rem;">
-        <!-- COMPACT TACTICAL RADAR COMMAND CONSOLE (MOVED TO TOP OF MAP) -->
-        <div class="map-master-console" style="background:rgba(11, 16, 25, 0.95); border:1px solid var(--border-card); border-radius:10px; padding:0.6rem 0.9rem; margin-bottom:0.65rem; box-shadow:0 4px 18px rgba(0,0,0,0.4);">
-            <!-- Row 1: Region Quick Jump -->
-            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem; padding-bottom:0.45rem; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:0.45rem;">
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-family:var(--font-mono); font-weight:800; margin-right:0.25rem;">🗺️ REGION JUMP:</span>
-                <button type="button" class="map-btn active" onclick="filterRegion('all', this)" style="padding:3px 8px; font-size:0.75rem;">All 6</button>
-                <button type="button" class="map-btn" onclick="filterRegion('vice-city', this)" style="padding:3px 8px; font-size:0.75rem;">🏙️ Vice City</button>
-                <button type="button" class="map-btn" onclick="filterRegion('leonida-keys', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-yellow); color:var(--neon-yellow);">🏝️ Keys</button>
-                <button type="button" class="map-btn" onclick="filterRegion('grassrivers', this)" style="padding:3px 8px; font-size:0.75rem;">🌾 Grassrivers</button>
-                <button type="button" class="map-btn" onclick="filterRegion('port-gellhorn', this)" style="padding:3px 8px; font-size:0.75rem;">⚓ Port Gellhorn</button>
-                <button type="button" class="map-btn" onclick="filterRegion('ambrosia', this)" style="padding:3px 8px; font-size:0.75rem;">🏭 Ambrosia</button>
-                <button type="button" class="map-btn" onclick="filterRegion('lummox', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-green); color:var(--neon-green);">🌲 Lummox</button>
-                <button type="button" class="map-btn" onclick="filterRegion('pelican-valley', this)" style="padding:3px 8px; font-size:0.75rem;">Pelican Valley</button>
-                <button type="button" class="map-btn" onclick="filterRegion('key-lento', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">Key Lento</button>
-            </div>
-            <!-- Row 2: Intel Filters & Quick Tools -->
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem;">
-                <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.35rem;">
-                    <span style="color:var(--neon-pink); font-size:0.76rem; font-family:var(--font-mono); font-weight:800; margin-right:0.25rem;">📡 FILTERS:</span>
-                    <button type="button" class="map-btn active" onclick="filterMap('all', this)" style="padding:3px 8px; font-size:0.75rem;">All Intel</button>
-                    <button type="button" class="map-btn" onclick="filterMap('vault', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-pink); color:var(--neon-pink);">💰 Vaults</button>
-                    <button type="button" class="map-btn" onclick="filterMap('escape', this)" style="padding:3px 8px; font-size:0.75rem;">🚇 Escapes</button>
-                    <button type="button" class="map-btn" onclick="filterMap('safehouse', this)" style="padding:3px 8px; font-size:0.75rem;">🏠 Safehouses</button>
-                    <button type="button" class="map-btn" onclick="filterMap('radar', this)" style="padding:3px 8px; font-size:0.75rem;">📡 Air/Radar</button>
-                    <button type="button" class="map-btn" onclick="filterMap('fuel', this)" style="padding:3px 8px; font-size:0.75rem; border-color:var(--neon-amber); color:var(--neon-amber);">⛽ Fuel</button>
-                </div>
-                <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
-                    <label style="display:inline-flex; align-items:center; gap:0.35rem; cursor:pointer; font-size:0.75rem; color:#fff; font-weight:700;">
-                        <input type="checkbox" id="hideFoundToggle" onchange="applyPinVisibility()">
-                        <span>Hide Found (<span id="foundPinsCounter">0</span>)</span>
-                    </label>
-                    <button type="button" class="btn btn-secondary" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="toggleCustomPinCreator()">📍 + Marker</button>
-                    <button type="button" class="btn btn-amber" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="toggleD1PinDropPanel()">📡 + D1 Pin</button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="map-wrapper" id="radarMap">
-
-            <!-- INTERACTIVE ZOOM HUD (TOP-RIGHT) -->
-            <div class="map-zoom-controls">
-                <button type="button" class="zoom-btn" onclick="zoomIn()" title="Zoom In (+)" aria-label="Zoom In"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
-                <button type="button" class="zoom-btn" onclick="zoomOut()" title="Zoom Out (-)" aria-label="Zoom Out"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
-                <button type="button" class="zoom-btn" onclick="resetZoom()" title="Reset Full View (1.0x)" aria-label="Reset View"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
-                <span id="zoomLevelDisplay" class="zoom-indicator" style="padding:3px 6px;">1.0x</span>
-            </div>
-    
-            <!-- CONTROLS -->
-            <!-- INTEL CARD POPUP -->
-            <div class="map-intel-modal" id="mapModal">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                    <span class="card-tag tag-mastermind" id="modalTag">Vault Target</span>
-                    <button type="button" class="map-modal-close" onclick="closeModal()" title="Close Pin Details" aria-label="Close Pin Details"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
-                </div>
-                <h2 id="modalTitle" style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Sinfrontera National Bank</h2>
-                <div style="font-family: var(--font-mono); color: var(--neon-green); font-size: 0.85rem; margin-bottom: 0.75rem;" id="modalPayout">Max Payout: $14,500,000</div>
-                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem;" id="modalDesc">Subterranean biometric vault beneath Downtown Vice City.</p>
-                <div style="display:flex; gap:0.5rem; flex-direction:column;">
-                    <button type="button" id="modalFoundBtn" class="btn btn-secondary" style="width:100%; padding:0.45rem; font-size:0.78rem;" onclick="toggleCurrentPinFound()">✅ Mark Pin Found / Completed</button>
-                    <button type="button" id="modalConfirmD1Btn" class="btn btn-amber" style="width:100%; padding:0.45rem; font-size:0.76rem; display:none;" onclick="confirmCurrentD1Pin()">👍 Confirm Pin (Auto-Verifies at 3 Votes • +500 Rep)</button>
-                    <a href="sinfrontera-bank.html" id="modalLink" class="btn btn-primary" style="width: 100%; padding: 0.5rem; font-size: 0.8rem; text-align: center;">Open Blueprint Dossier</a>
-                </div>
+    <!-- LEFT SIDEBAR -->
+    <aside class="map-sidebar" id="mapSidebar">
+        <div class="sidebar-header-box">
+            <div class="sidebar-title-row">
+                <span class="sidebar-title-badge">🗺️ LEONIDA MAP v4.5</span>
+                <span style="font-size:0.68rem; color:#94a3b8; font-family:var(--font-mono, monospace);" id="activePinCountLabel">Loading pins...</span>
             </div>
 
-            <!-- HUD COORDINATES -->
-            <div class="map-hud" id="mapHud">GPS GRID: 25.7617&deg; N, 80.1918&deg; W &bull; SATELLITE: SYNDICATE-6</div>
-
-            <!-- SVG TACTICAL MAP VECTOR -->
-            <svg class="map-svg" viewBox="0 0 1000 650" id="mapSvg" style="cursor:grab; user-select:none; -webkit-user-select:none;">
-    <defs>
-        <!-- Tactical Grid Pattern -->
-        <pattern id="tacticalGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.06)" stroke-width="1"/>
-            <circle cx="0" cy="0" r="1" fill="rgba(0, 240, 255, 0.2)"/>
-        </pattern>
-        <!-- Deep Ocean Gradient -->
-        <radialGradient id="hdOceanGrad" cx="50%" cy="50%" r="75%">
-            <stop offset="0%" stop-color="#081424"/>
-            <stop offset="55%" stop-color="#040b14"/>
-            <stop offset="100%" stop-color="#010408"/>
-        </radialGradient>
-        <!-- Coastal Neon Cyan Glow Filter -->
-        <filter id="hdCoastalGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00f0ff" flood-opacity="0.75"/>
-            <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#00f0ff" flood-opacity="0.9"/>
-        </filter>
-        <!-- Hot Pink Vice Beach Glow Filter -->
-        <filter id="hdViceGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ff2a8d" flood-opacity="0.7"/>
-        </filter>
-        <!-- Gold Vault Pin Glow -->
-        <filter id="hdGoldGlow" x="-30%" y="-30%" width="160%" height="160%">
-            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ffd700" flood-opacity="0.8"/>
-        </filter>
-    </defs>
-
-    <!-- 1. Deep Maritime Ocean Background -->
-    <rect width="1000" height="650" fill="url(#hdOceanGrad)"/>
-    <rect width="1000" height="650" fill="url(#tacticalGrid)"/>
-
-    <!-- 2. Bathymetric Depth Rings & Continental Shelf Contours -->
-    <ellipse cx="500" cy="330" rx="470" ry="300" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1.5" stroke-dasharray="6,8"/>
-    <ellipse cx="510" cy="340" rx="420" ry="260" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
-    <ellipse cx="520" cy="350" rx="360" ry="210" fill="none" stroke="rgba(0, 240, 255, 0.04)" stroke-width="1" stroke-dasharray="3,6"/>
-
-    <!-- ======================================================== -->
-    <!-- 3. REALISTIC LEONIDA PENINSULA MAINLAND (FLORIDA ANATOMY)-->
-    <!-- ======================================================== -->
-    <!-- Outer Neon Coastal Glow Underlay -->
-    <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#0d1824" filter="url(#hdCoastalGlow)"/>
-
-    <!-- Main Solid Continental Landmass -->
-    <path d="M 90,80 Q 220,55 420,75 T 740,65 Q 840,90 870,150 T 840,240 Q 780,260 770,320 T 780,440 Q 730,490 620,510 T 360,530 Q 220,540 160,460 T 110,340 Q 70,220 90,80 Z" fill="#142130" stroke="#00f0ff" stroke-width="2.5"/>
-
-    <!-- Interior Elevation Contours (Topography & Mountain Ridges) -->
-    <path d="M 160,110 Q 300,90 480,105 T 700,100 Q 770,130 760,200 T 720,300 Q 660,390 560,430 T 320,450 Q 210,440 180,360 T 140,220 Z" fill="#1a2b3e" stroke="rgba(0, 240, 255, 0.22)" stroke-width="1"/>
-    <path d="M 240,130 Q 380,115 540,125 T 660,140 Q 690,190 670,260 T 580,360 Q 480,390 380,390 T 260,330 Q 220,240 240,130 Z" fill="#20344c" stroke="rgba(0, 240, 255, 0.14)" stroke-width="1"/>
-
-    <!-- ======================================================== -->
-    <!-- 4. CONFIRMED 5 COUNTIES (MAPPING PROJECT BORDERS)        -->
-    <!-- ======================================================== -->
-    <!-- County 1: LUMMOX COUNTY (Northern Rural & Timber) -->
-    <path d="M 90,80 Q 240,55 460,70 T 730,65 L 710,135 Q 480,120 260,130 T 100,145 Z" fill="rgba(34, 197, 94, 0.14)" stroke="rgba(34, 197, 94, 0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
-    <text x="128" y="95" fill="rgba(34, 197, 94, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1.5">LUMMOX COUNTY (TIMBER &amp; RIDGES)</text>
-
-    <!-- County 2: KELLY COUNTY / AMBROSIA (Central Basin & Sugar Refining) -->
-    <path d="M 320,135 Q 480,120 700,135 T 670,240 Q 560,260 420,240 T 320,180 Z" fill="rgba(255, 184, 0, 0.08)" stroke="rgba(255, 184, 0, 0.35)" stroke-width="1" stroke-dasharray="5,4"/>
-    <text x="530" y="132" text-anchor="middle" fill="rgba(255, 184, 0, 0.9)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">KELLY COUNTY &bull; AMBROSIA BASIN</text>
-
-    <!-- County 3: LEONARD COUNTY / GRASSRIVERS (Everglades & Pelican River) -->
-    <path d="M 190,310 Q 320,320 420,370 T 540,460 Q 440,515 320,515 T 160,445 Z" fill="rgba(16, 185, 129, 0.16)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.5"/>
-    <!-- Pelican River Navigable Artery -->
-    <path d="M 440,275 Q 380,340 330,420 T 260,490" fill="none" stroke="rgba(0, 240, 255, 0.45)" stroke-width="3.5"/>
-    <path d="M 490,320 Q 460,390 420,450 T 360,520" fill="none" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2.5"/>
-    <path d="M 280,360 Q 320,400 300,460" fill="none" stroke="rgba(0, 240, 255, 0.3)" stroke-width="2"/>
-    <text x="210" y="458" fill="rgba(16, 185, 129, 0.95)" font-family="monospace" font-weight="900" font-size="10.5" letter-spacing="1.4">LEONARD COUNTY &bull; GRASSRIVERS SWAMP</text>
-
-    <!-- County 4: VICE-DALE COUNTY (Metropolitan Vice City Core) -->
-    <rect x="660" y="200" width="115" height="210" rx="10" fill="rgba(255, 42, 141, 0.08)" stroke="rgba(255, 42, 141, 0.5)" stroke-width="1.5" stroke-dasharray="5,4"/>
-    <text x="664" y="192" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">VICE-DALE COUNTY</text>
-
-    <!-- County 5: MARIANA COUNTY (Keys Archipelago & Maritime Waters) -->
-    <text x="560" y="556" fill="rgba(0, 240, 255, 0.78)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">MARIANA COUNTY &bull; STRAITS OF LEONIDA</text>
-
-    <!-- ======================================================== -->
-    <!-- 5. INLAND LAKES & WATERWAYS                              -->
-    <!-- ======================================================== -->
-    <!-- Lake Leonida (Lake Okeechobee Equivalent) -->
-    <path d="M 400,190 Q 480,165 540,195 T 550,250 Q 510,285 440,275 T 390,225 Z" fill="#061220" stroke="rgba(0, 240, 255, 0.75)" stroke-width="2.5"/>
-    <text x="472" y="232" text-anchor="middle" fill="rgba(0, 240, 255, 0.95)" font-family="monospace" font-weight="900" font-size="11" letter-spacing="1">LAKE LEONIDA</text>
-
-    <!-- Pelican Valley Agricultural Basin -->
-    <path d="M 370,250 Q 450,270 490,320 T 430,370 Q 360,350 350,290 Z" fill="rgba(255, 184, 0, 0.12)" stroke="rgba(255, 184, 0, 0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
-    <text x="420" y="336" text-anchor="middle" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">PELICAN VALLEY BASIN</text>
-
-    <!-- Port Gellhorn Western Basin & Docks -->
-    <path d="M 120,330 Q 170,350 180,410 T 150,470 L 105,430 Z" fill="#1b2838" stroke="rgba(0, 240, 255, 0.7)" stroke-width="2"/>
-    <rect x="95" y="415" width="30" height="8" fill="rgba(0,240,255,0.4)"/>
-    <rect x="100" y="427" width="25" height="7" fill="rgba(0,240,255,0.4)"/>
-    <text x="85" y="455" fill="rgba(0, 240, 255, 0.95)" font-family="monospace" font-weight="900" font-size="10" letter-spacing="1">PORT GELLHORN</text>
-
-    <!-- ======================================================== -->
-    <!-- 6. VICE CITY METRO, BISCAYNE BAY & BEACH BARRIERS        -->
-    <!-- ======================================================== -->
-    <!-- Biscayne Bay Water Channel -->
-    <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="#061220" stroke-width="18"/>
-    <path d="M 770,200 Q 785,270 780,350 T 760,440" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="4" stroke-dasharray="4,4"/>
-
-    <!-- Downtown Vice City Mainland Core -->
-    <rect x="670" y="225" width="95" height="175" rx="8" fill="#1e1832" stroke="rgba(255, 42, 141, 0.6)" stroke-width="2"/>
-    <text x="717" y="241" text-anchor="middle" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">VICE CITY</text>
-    <text x="717" y="253" text-anchor="middle" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">DOWNTOWN</text>
-
-    <!-- Escobar International Airport (EIA) Dual Runways -->
-    <g transform="translate(680, 360)">
-        <line x1="0" y1="0" x2="38" y2="28" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="square"/>
-        <line x1="0" y1="28" x2="38" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="square"/>
-        <text x="-5" y="42" fill="rgba(255,255,255,0.85)" font-family="monospace" font-size="8" font-weight="bold">ESCOBAR INTL (EIA)</text>
-    </g>
-
-    <!-- Vice Beach Eastern Barrier Island & Ocean Drive -->
-    <path d="M 785,190 Q 805,270 800,360 T 780,430 Q 815,400 820,320 T 805,190 Z" fill="#2a1834" stroke="rgba(255, 42, 141, 0.9)" stroke-width="2.5" filter="url(#hdViceGlow)"/>
-    <text x="836" y="280" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1" transform="rotate(86, 836, 280)">VICE BEACH &bull; OCEAN BLVD</text>
-
-    <!-- Causeways Connecting Mainland to Beach -->
-    <!-- 1. Venetian Causeway -->
-    <line x1="765" y1="260" x2="795" y2="260" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
-    <!-- 2. MacArthur Causeway -->
-    <line x1="765" y1="330" x2="790" y2="330" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
-    <!-- Starfish Island / Leaf Links Golf Island -->
-    <circle cx="780" cy="295" r="7" fill="#ffd700" stroke="#fff" stroke-width="1.5"/>
-    <circle cx="778" cy="240" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"/>
-
-    <!-- ======================================================== -->
-    <!-- 7. LEONIDA KEYS ARCHIPELAGO (CONFIRMED CHAIN)            -->
-    <!-- ======================================================== -->
-    <!-- Overseas Highway Bridge Arc (Golden Glowing 7-Mile Bridge) -->
-    <path d="M 730,490 Q 770,530 810,555 T 870,580 T 925,585 T 970,580" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="6,3" filter="url(#hdCoastalGlow)"/>
-
-    <!-- Island 1: Key Largo (Upper Key) -->
-    <ellipse cx="760" cy="520" rx="22" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(30, 760, 520)"/>
-    <!-- Island 2: Middle Key (Islamorada) -->
-    <ellipse cx="810" cy="550" rx="26" ry="11" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(22, 810, 550)"/>
-    <!-- Island 3: Marathon / Big Pine Key -->
-    <ellipse cx="865" cy="575" rx="28" ry="12" fill="#1b2838" stroke="rgba(0, 240, 255, 0.85)" stroke-width="1.5" transform="rotate(10, 865, 575)"/>
-    <!-- Island 4: Key Lento (Confirmed Leaked Deep Vault) -->
-    <ellipse cx="920" cy="585" rx="24" ry="14" fill="#2a1834" stroke="rgba(255, 42, 141, 0.95)" stroke-width="2"/>
-    <text x="920" y="620" text-anchor="middle" fill="rgba(255, 42, 141, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="1">KEY LENTO</text>
-    <!-- Island 5: Goose Key & Deep Coral Reef -->
-    <ellipse cx="965" cy="578" rx="18" ry="10" fill="#1b2838" stroke="rgba(0, 255, 136, 0.85)" stroke-width="1.5"/>
-    <text x="962" y="556" text-anchor="middle" fill="rgba(0, 255, 136, 0.95)" font-family="monospace" font-weight="900" font-size="9">GOOSE KEY</text>
-    <text x="720" y="616" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">LEONIDA KEYS (OVERSEAS HWY)</text>
-
-    <!-- ======================================================== -->
-    <!-- 8. ARTERIAL HIGHWAY NETWORK                              -->
-    <!-- ======================================================== -->
-    <!-- Toll 1A Arterial Highway (Skirts North of Lake Leonida) -->
-    <path d="M 130,410 Q 250,235 450,170 T 675,245 T 765,260" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="8,4"/>
-    <text x="468" y="159" text-anchor="middle" fill="rgba(255, 184, 0, 0.95)" font-family="monospace" font-weight="900" font-size="9.5" letter-spacing="0.8">TOLL 1A HIGHWAY (ANPR CAMERAS)</text>
-
-    <!-- Interstate 97 Spine (East Shore Bypass) -->
-    <path d="M 385,78 Q 525,112 582,225 T 625,380 T 700,462" fill="none" stroke="rgba(0, 240, 255, 0.6)" stroke-width="2.5" stroke-dasharray="6,5"/>
-    <text x="590" y="346" fill="rgba(0, 240, 255, 0.9)" font-family="monospace" font-weight="800" font-size="9">INTERSTATE 97 SPINE</text>
-
-    <!-- ======================================================== -->
-    <!-- 9. TACTICAL HUD OVERLAYS & RADAR SWEEP                   -->
-    <!-- ======================================================== -->
-    <!-- Compass Rose in Top-Right -->
-    <g transform="translate(930, 70)">
-        <circle r="36" fill="rgba(10, 18, 28, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5"/>
-        <circle r="26" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1"/>
-        <line x1="0" y1="-32" x2="0" y2="32" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
-        <line x1="-32" y1="0" x2="32" y2="0" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1"/>
-        <polygon points="0,-26 5,-10 0,-14 -5,-10" fill="#ff2a8d"/>
-        <text x="-4" y="-30" fill="#ff2a8d" font-family="sans-serif" font-weight="900" font-size="10">N</text>
-        <text x="24" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">E</text>
-        <text x="-4" y="32" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">S</text>
-        <text x="-32" y="4" fill="rgba(0, 240, 255, 0.6)" font-family="sans-serif" font-weight="700" font-size="8">W</text>
-    </g>
-
-    <!-- Telemetry Box in Top-Left -->
-    <g id="telemetryBox" transform="translate(16, 16)">
-        <rect width="292" height="44" rx="5" fill="rgba(8, 14, 22, 0.92)" stroke="rgba(0, 240, 255, 0.45)" stroke-width="1.2"/>
-        <text x="10" y="17" fill="var(--neon-cyan)" font-family="monospace" font-size="9" font-weight="bold">GPS: 25.7617° N, 80.1918° W</text>
-        <text x="10" y="34" fill="var(--neon-green)" font-family="monospace" font-size="8.4">LEONIDA HD RADAR &bull; DRAG TO PAN &bull; WHEEL ZOOM</text>
-    </g>
-
-    <!-- Sweeping Radar Beam Animation -->
-    <circle cx="500" cy="325" r="380" fill="none" stroke="rgba(0, 240, 255, 0.12)" stroke-width="1"/>
-    <line x1="500" y1="325" x2="880" y2="325" stroke="rgba(0, 240, 255, 0.35)" stroke-width="2">
-        <animateTransform attributeName="transform" type="rotate" from="0 500 325" to="360 500 325" dur="12s" repeatCount="indefinite"/>
-    </line>
-
-    <!-- ======================================================== -->
-    <!-- 10. INTERACTIVE PINS (HIGH CONTRAST, GLOWING, TEXT-FREE) -->
-    <!-- ======================================================== -->
-    <!-- 1. Sinfrontera National Bank -->
-    <g class="map-point map-marker-vault" transform="translate(710, 280)" data-pin-id="sinfrontera" data-region="vice-city" onclick="handlePinClick('sinfrontera')">
-        <circle r="14" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
-        <circle r="5" fill="#ff2a8d"/>
-        <title>Sinfrontera National Bank ($14.5M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 2. Port Gellhorn Container Terminal -->
-    <g class="map-point map-marker-vault" transform="translate(135, 400)" data-pin-id="port-gellhorn" data-region="port-gellhorn" onclick="handlePinClick('port-gellhorn')">
-        <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-        <circle r="5" fill="#00f0ff"/>
-        <title>Port Gellhorn Container Terminal ($8.2M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 3. Leonida Gold Reserve -->
-    <g class="map-point map-marker-vault" transform="translate(390, 140)" data-pin-id="leonida-reserve" data-region="ambrosia" onclick="handlePinClick('leonida-reserve')">
-        <circle r="15" fill="rgba(255, 215, 0, 0.35)" stroke="#ffd700" stroke-width="2.5" filter="url(#hdGoldGlow)"/>
-        <circle r="6" fill="#ffd700"/>
-        <title>Leonida Federal Gold Reserve ($25M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 4. Starlet Superyacht -->
-    <g class="map-point map-marker-vault" transform="translate(850, 310)" data-pin-id="yacht" data-region="vice-city" onclick="handlePinClick('yacht')">
-        <circle r="13" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
-        <circle r="5" fill="#ff2a8d"/>
-        <title>Starlet Superyacht ($11.8M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 5. Grassrivers Cartel Airstrip -->
-    <g class="map-point map-marker-vault" transform="translate(290, 370)" data-pin-id="smuggler" data-region="grassrivers" onclick="handlePinClick('smuggler')">
-        <circle r="13" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-        <circle r="5" fill="#10b981"/>
-        <title>Cartel Airstrip ($6.5M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 6. Ocean Drive Armored Convoy -->
-    <g class="map-point map-marker-vault" transform="translate(805, 340)" data-pin-id="convoy" data-region="vice-city" onclick="handlePinClick('convoy')">
-        <circle r="13" fill="rgba(255, 184, 0, 0.3)" stroke="#ffb800" stroke-width="2"/>
-        <circle r="5" fill="#ffb800"/>
-        <title>Ocean Dr. Armored Convoy ($9.4M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 7. Lummox Timber Stash -->
-    <g class="map-point map-marker-vault" transform="translate(260, 75)" data-pin-id="lummox-stash" data-region="lummox" onclick="handlePinClick('lummox-stash')">
-        <circle r="12" fill="rgba(0, 255, 136, 0.3)" stroke="#00ff88" stroke-width="2"/>
-        <circle r="5" fill="#00ff88"/>
-        <title>Lummox Timber Stash ($2.9M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 8. Pelican Valley Agricultural Bank -->
-    <g class="map-point map-marker-vault" transform="translate(425, 290)" data-pin-id="pelican-bank" data-region="pelican-valley" onclick="handlePinClick('pelican-bank')">
-        <circle r="13" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-        <circle r="5" fill="#00f0ff"/>
-        <title>Pelican Valley Agricultural Bank ($3.8M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 9. Key Lento Offshore Depot -->
-    <g class="map-point map-marker-vault" transform="translate(920, 585)" data-pin-id="key-lento" data-region="key-lento" onclick="handlePinClick('key-lento')">
-        <circle r="14" fill="rgba(255, 42, 141, 0.35)" stroke="#ff2a8d" stroke-width="2"/>
-        <circle r="6" fill="#ff2a8d"/>
-        <title>Key Lento Bullion Depot ($12.4M) - Click for Blueprint</title>
-    </g>
-
-    <!-- 10. Metro Sewer Conduit 01 -->
-    <g class="map-point map-marker-escape" transform="translate(735, 330)" data-pin-id="escape-metro" data-region="vice-city" onclick="handlePinClick('escape-metro')">
-        <rect x="-8" y="-8" width="16" height="16" fill="rgba(0, 240, 255, 0.4)" stroke="#00f0ff" stroke-width="1.5"/>
-        <title>Metro Sewer Conduit 01 (Clean Escape Route)</title>
-    </g>
-
-    <!-- 11. North Vice Safehouse Alpha -->
-    <g class="map-point map-marker-safehouse" data-pin-id="safehouse-north" data-region="vice-city" transform="translate(720, 215)" onclick="handlePinClick('safehouse-north')">
-        <polygon points="0,-10 9,6 -9,6" fill="rgba(157, 78, 221, 0.5)" stroke="#9d4edd" stroke-width="1.5"/>
-        <title>Safehouse Alpha (Wanted Level Clear Zone)</title>
-    </g>
-
-    <!-- 12. Leonida Keys Smuggler Dock -->
-    <g class="map-point map-marker-safehouse" data-pin-id="keys-dock" data-region="leonida-keys" transform="translate(810, 545)" onclick="handlePinClick('keys-dock')">
-        <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff" stroke-width="2"/>
-        <circle r="4" fill="#00f0ff"/>
-        <title>Keys Smuggler Dock (Fast Speedboat Extraction)</title>
-    </g>
-
-    <!-- 13. Ambrosia Refinery Fence -->
-    <g class="map-point map-marker-escape" data-pin-id="ambrosia-fence" data-region="ambrosia" transform="translate(510, 310)" onclick="handlePinClick('ambrosia-fence')">
-        <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 153, 0, 0.35)" stroke="#ff9900" stroke-width="1.5"/>
-        <title>Ambrosia Fence (Black Market Asset Exchange)</title>
-    </g>
-
-    <!-- 14. Mount Kalaga Wilderness Outpost -->
-    <g class="map-point map-marker-safehouse" data-pin-id="kalaga-outpost" data-region="mount-kalaga" transform="translate(620, 75)" onclick="handlePinClick('kalaga-outpost')">
-        <polygon points="0,-10 9,6 -9,6" fill="rgba(34, 197, 94, 0.5)" stroke="#22c55e" stroke-width="1.5"/>
-        <title>Mount Kalaga Wilderness Outpost</title>
-    </g>
-
-    <!-- 15. Toll 1A Highway ANPR Camera Hub -->
-    <g class="map-point map-marker-escape" data-pin-id="toll-1a" data-region="toll-1a" transform="translate(320, 218)" onclick="handlePinClick('toll-1a')">
-        <rect x="-8" y="-8" width="16" height="16" fill="rgba(255, 184, 0, 0.35)" stroke="#ffb800" stroke-width="1.5"/>
-        <title>Toll 1A Highway Radar &amp; ANPR Bypass - Click for Intel</title>
-    </g>
-
-    <!-- 16. Lummox County 24/7 Gas & Refuel Depot -->
-    <g class="map-point map-marker-fuel" data-pin-id="fuel-lummox" data-region="lummox" transform="translate(205, 118)" onclick="handlePinClick('fuel-lummox')">
-        <circle r="10" fill="rgba(255, 153, 0, 0.3)" stroke="#ff9900" stroke-width="2"/>
-        <circle r="4" fill="#ff9900"/>
-        <title>Lummox County 24/7 Refuel Depot - Click for Intel</title>
-    </g>
-
-    <!-- 17. Vice Beach Sunoco 24/7 Pitstop -->
-    <g class="map-point map-marker-fuel" data-pin-id="fuel-vice" data-region="vice-city" transform="translate(792, 224)" onclick="handlePinClick('fuel-vice')">
-        <circle r="10" fill="rgba(255, 153, 0, 0.3)" stroke="#ff9900" stroke-width="2"/>
-        <circle r="4" fill="#ff9900"/>
-        <title>Vice Beach Sunoco 24/7 Pitstop - Click for Intel</title>
-    </g>
-
-    <!-- 18. Leonida State Zoo Night Reserve -->
-    <g class="map-point map-marker-vault" data-pin-id="zoo-compound" data-region="vice-city" transform="translate(632, 315)" onclick="handlePinClick('zoo-compound')">
-        <circle r="12" fill="rgba(255, 42, 141, 0.3)" stroke="#ff2a8d" stroke-width="2"/>
-        <circle r="4.5" fill="#ff2a8d"/>
-        <title>Leonida State Zoo Night Reserve ($4.2M) - Click for Intel</title>
-    </g>
-
-    <!-- Dynamic User Custom / Community Markers Container -->
-    <g id="customMarkersLayer"></g>
-</svg>
-        </div>
-
-<!-- COLLAPSIBLE COMMUNITY & CUSTOM MARKER TOOLS (BELOW RADAR MAP) -->
-        <div style="margin-top:1rem;">
-            <div id="drop-pin-form" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-amber);">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                <div>
-                    <span class="user-badge badge-mastermind">COMMUNITY CROWDSOURCED RADAR ENGINE &bull; AUTO-VERIFIES AT 3 VOTES (+500 REP)</span>
-                    <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Submit Live Day-1 Discovery Pin to GlobalLeonida Map</h3>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.82rem;">Click anywhere on the radar map to set X/Y coordinates!</span>
+            <div class="sidebar-search-wrap">
+                <span class="sidebar-search-icon">🔍</span>
+                <input type="text" id="mapSearchInput" class="sidebar-search-input" placeholder="Search 160+ vaults, properties, animals, code 7700..." oninput="handleSearch(this.value)">
+                <button type="button" class="sidebar-search-clear" id="searchClearBtn" onclick="clearSearch()">✕</button>
             </div>
-            <form onsubmit="submitD1DiscoveryPin(event)" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 175px), 1fr)); gap:0.75rem; align-items:end;">
-                <div class="form-group" style="margin:0;"><label>Discovery Title</label><input type="text" class="form-input" id="d1PinTitle" placeholder="e.g. Hidden Sewer Grate / Fence" required></div>
-                <div class="form-group" style="margin:0;"><label>Category</label>
-                    <select class="form-select" id="d1PinCat">
-                        <option value="stash">Hidden Stash / Loadout</option>
-                        <option value="escape">Escape Conduit / Drain</option>
-                        <option value="safehouse">Safehouse / Garage</option>
-                        <option value="fence">Black-Market Fence</option>
-                        <option value="scanner">Police Scanner / Relay</option>
-                        <option value="vault">Vault / Robbery Target</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin:0;"><label>Leonida Region</label>
-                    <select class="form-select" id="d1PinRegion">
-                        <option value="Vice City">Vice City</option>
-                        <option value="Leonida Keys">Leonida Keys</option>
-                        <option value="Grassrivers">Grassrivers</option>
-                        <option value="Port Gellhorn">Port Gellhorn</option>
-                        <option value="Ambrosia">Ambrosia</option>
-                        <option value="Mount Kalaga National Park">Mount Kalaga National Park</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin:0;"><label>Grid X</label><input type="number" class="form-input" id="d1PinX" min="40" max="960" value="640" required></div>
-                <div class="form-group" style="margin:0;"><label>Grid Y</label><input type="number" class="form-input" id="d1PinY" min="40" max="540" value="310" required></div>
-                <div class="form-group" style="margin:0;"><label>Your Callsign</label><input type="text" class="form-input" id="d1PinAlias" placeholder="ViceOperative" required></div>
-                <div class="form-group" style="margin:0; grid-column: 1 / -1;"><label>Tactical Discovery Notes</label><input type="text" class="form-input" id="d1PinDesc" placeholder="Describe exact entry point, loot, or heat reduction perk..." required></div>
-                <button type="submit" class="btn btn-amber" style="padding:0.7rem 1rem; font-size:0.82rem; grid-column: 1 / -1;">📡 Submit Discovery Pin to Live Radar (Auto-Promotes to Verified at 3 Confirmations)</button>
-            </form>
-            <div id="d1PinStatusMsg" style="margin-top:0.65rem; font-size:0.84rem;"></div>
-        </div>
-            <div id="customMarkerPanel" class="tool-box" style="display:none; padding:1.25rem; margin-bottom:1.25rem; border-color:var(--neon-green);">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                <div>
-                    <span class="user-badge badge-hacker">100% FREE &mdash; NO VIP PAYWALL (UNLIMITED MARKERS)</span>
-                    <h3 style="color:#fff; font-size:1.15rem; margin-top:0.25rem;">Add Personal Tactical Marker &amp; Note (Saved in Browser)</h3>
-                </div>
-                <span style="color:var(--text-muted); font-size:0.82rem;">Tip: Click anywhere on the radar map to auto-fill X/Y coordinates!</span>
-            </div>
-            <form onsubmit="saveCustomMarker(event)" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap:0.75rem; align-items:end;">
-                <div class="form-group" style="margin:0;"><label>Marker Title</label><input type="text" class="form-input" id="cmTitle" placeholder="e.g. Clean Getaway Stash Car" required></div>
-                <div class="form-group" style="margin:0;"><label>Region</label>
-                    <select class="form-select" id="cmRegion">
-                        <option value="vice-city">Vice City</option>
-                        <option value="leonida-keys">Leonida Keys</option>
-                        <option value="grassrivers">Grassrivers</option>
-                        <option value="port-gellhorn">Port Gellhorn</option>
-                        <option value="ambrosia">Ambrosia</option>
-                        <option value="mount-kalaga">Mount Kalaga National Park</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin:0;"><label>Grid X (50-950)</label><input type="number" class="form-input" id="cmX" min="30" max="970" value="540" required></div>
-                <div class="form-group" style="margin:0;"><label>Grid Y (50-610)</label><input type="number" class="form-input" id="cmY" min="30" max="620" value="300" required></div>
-                <div class="form-group" style="margin:0;"><label>Personal Note</label><input type="text" class="form-input" id="cmNote" placeholder="e.g. Sewer grate unlocked at night"></div>
-                <button type="submit" class="btn btn-primary" style="padding:0.7rem 1rem; font-size:0.82rem;">💾 Save Free Marker</button>
-            </form>
-            <div id="customMarkersList" style="margin-top:0.85rem; display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
-        </div>
-        </div>
 
-                <!-- LEONIDA COLLECTIBLE & TACTICAL SET CHECKLIST TOGGLES -->
-        <section class="tool-box" id="leonida-collectibles" style="margin-top:2rem; border-color:var(--neon-cyan);">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
-                <div>
-                    <span class="user-badge badge-mastermind">SECOND-SCREEN COLLECTIBLE TRACKER (100% FREE)</span>
-                    <h2 style="color:#fff; font-size:1.5rem; margin-top:0.3rem;">Leonida Heist Prep Sets &amp; Collectible Checklists</h2>
-                </div>
-                <span style="color:var(--neon-green); font-family:var(--font-mono); font-weight:800; font-size:0.9rem;">Auto-Saved to Browser</span>
-            </div>
-            <div class="checklist-group">
-                <label class="check-item"><input type="checkbox"><div><strong>Safehouses Set (6/6 Regions):</strong> Unlock North Vice Alpha, Keys Boathouse, Port Gellhorn Garage, Grassrivers Stilt Cabin, Ambrosia Hideout &amp; Mount Kalaga Outpost.</div></label>
-                <label class="check-item"><input type="checkbox"><div><strong>Black-Market Fences (5/5 Brokers):</strong> Locate Downtown Bullion Fence, Port Gellhorn Pawn Broker, Vice Beach Nightclub Shell, Keys Smuggler Dock &amp; Ambrosia Scrap Fence.</div></label>
-                <label class="check-item"><input type="checkbox"><div><strong>Police Scanners &amp; Signal Jammers (8/8 Relays):</strong> Disable Leonida dispatch relay towers with Cal Hampton's scanner frequencies to add +15s vault hacker time.</div></label>
-                <label class="check-item"><input type="checkbox"><div><strong>Hidden Weapon &amp; Dupe Plate Stashes (10/10 Caches):</strong> Pre-stage suppressed carbines, thermal lances, and clean license plates along primary highway exits.</div></label>
-                <label class="check-item"><input type="checkbox"><div><strong>Fast-Escape Canals &amp; Storm Drains (6/6 Conduits):</strong> Scout Ocean Blvd Sewer Tube 01, Pelican Valley Intake, Port Gellhorn Canal Pier 4 &amp; Grassrivers Airboat Channel.</div></label>
-            </div>
-            <div style="margin-top:1rem; padding:0.65rem 1rem; background:rgba(255,153,0,0.06); border-left:3px solid var(--neon-amber); border-radius:6px; font-size:0.85rem; color:var(--text-muted);">
-                ⚡ Eliminate Vice City texture pop-in during high-speed getaways &rarr; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" style="color:var(--neon-amber); font-weight:800;">Check Samsung 990 PRO Gen4 NVMe SSD Price on Amazon</a>
-            </div>
-        </section>
-
-        <!-- SATELLITE BRIEFING MATRIX -->
-        <section class="tool-box pink-glow">
-            <h2 style="color: #fff; margin-bottom: 1rem;">Leonida State Topographical Intel</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-card);">
-                    <h3 style="color: var(--neon-cyan); margin-bottom: 0.5rem;">Sector 1: Vice City Metro</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Dense urban canyons, high police cruiser density, traffic light grids, and underground stormwater bypass routes. Ideal for high-speed sport bike and subway escapes.</p>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-card);">
-                    <h3 style="color: #10b981; margin-bottom: 0.5rem;">Sector 2: Grassrivers Swamps</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Mangrove labyrinths, mud bogs, alligator hazards, and clandestine smuggler runways. Standard police cruisers get trapped in deep muck; use flat-bottom airboats.</p>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-card);">
-                    <h3 style="color: #ffd700; margin-bottom: 0.5rem;">Sector 3: Capital & Depository</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Maximum security government sector. Reinforced military barracks, seismic vibration sensors, and automated NOOSE SWAT mobilization corridors.</p>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- OFFICIAL LEONIDA REGIONS & SECTOR INDEX (COMPACT HORIZONTAL CHIPS) -->
-    <section style="margin: 2rem 0 1.5rem;">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.5rem;">
-            <div>
-                <h3 style="color:#fff; font-size:1.15rem; margin:0;">🗺️ Quick Region Dossiers</h3>
-            </div>
-            <span style="color:var(--text-muted); font-size:0.78rem;">Click any region pill above the radar to jump to live pins</span>
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap:0.65rem;">
-            <div style="background:rgba(255,42,141,0.06); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
-                <strong style="color:var(--neon-pink); font-size:0.88rem; display:block;">Vice City Metro</strong>
-                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Sinfrontera Bank &amp; Ocean Dr. Convoy. Sewer drain &amp; subway escapes.</p>
-            </div>
-            <div style="background:rgba(0,240,255,0.06); border:1px solid rgba(0,240,255,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
-                <strong style="color:var(--neon-cyan); font-size:0.88rem; display:block;">Leonida Keys</strong>
-                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Starlet Superyacht &amp; Key Lento. Scuba reef &amp; speedboat drops.</p>
-            </div>
-            <div style="background:rgba(0,255,136,0.06); border:1px solid rgba(0,255,136,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
-                <strong style="color:var(--neon-green); font-size:0.88rem; display:block;">Grassrivers</strong>
-                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Cartel Airstrip &amp; Pelican Valley. Flat-bottom airboat waterways.</p>
-            </div>
-            <div style="background:rgba(255,184,0,0.06); border:1px solid rgba(255,184,0,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
-                <strong style="color:var(--neon-amber); font-size:0.88rem; display:block;">Port Gellhorn</strong>
-                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Container Terminal crane hack &amp; industrial freight canals.</p>
-            </div>
-            <div style="background:rgba(255,215,0,0.06); border:1px solid rgba(255,215,0,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
-                <strong style="color:var(--neon-yellow); font-size:0.88rem; display:block;">Ambrosia Depository</strong>
-                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">State Gold Reserve &amp; industrial sugar refinery fence.</p>
-            </div>
-            <div style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.3); border-radius:8px; padding:0.65rem 0.85rem;">
-                <strong style="color:#22c55e; font-size:0.88rem; display:block;">Lummox &amp; Kalaga</strong>
-                <p style="color:var(--text-muted); font-size:0.76rem; margin:0.25rem 0 0;">Northern pine timber tracks, dirt bikes &amp; 24/7 gas pitstops.</p>
-            </div>
-        </div>
-    </section>
-    
-<!-- HIGH-CONVERTING VERIFIED GAMING GEAR & KEYS SHOWCASE -->
-<section class="affiliate-showcase-section" style="margin: 2.25rem 0 1.5rem;">
-    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.6rem;">
-        <div>
-            <span class="user-badge badge-mastermind" style="background:rgba(255,184,0,0.18); border-color:var(--neon-yellow); color:var(--neon-yellow);">🔥 SYNDICATE DEALS &bull; DAY-1 TESTED HARDWARE</span>
-            <h2 style="color:#fff; font-size:1.25rem; margin:0.25rem 0 0;">CONFIRMED HARDWARE &amp; DISCOUNTED DIGITAL KEYS</h2>
-        </div>
-        <span style="color:var(--text-muted); font-size:0.8rem;">Official Verified Partners &bull; Lowest Price Guarantee &bull; Instant Codes</span>
-    </div>
-
-    <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:1rem;">
-        <!-- Card 1: GTA 6 Digital Key Box -->
-        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,240,255,0.4); background:rgba(12,18,28,0.85); box-shadow:0 0 15px rgba(0,240,255,0.08);">
-            <div>
-                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="/assets/gear/gta6-box-pro.webp" alt="GTA 6 Official Digital Key / Pre-Order" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="800" height="600">
-                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.68rem; font-weight:800;">DAY-1 GUARANTEE</span>
-                </div>
-                <div style="padding:1rem;">
-                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">Grand Theft Auto VI (PS5 / Xbox Series X)</h3>
-                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
-                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
-                        <span style="color:var(--text-muted); font-size:0.75rem;">(Day-2 Delivery Price Match)</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$69.99</div>
-                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Official physical &amp; digital pre-order with Amazon's Day-1 lowest price guarantee and release-day delivery.</p>
-                </div>
-            </div>
-            <div style="padding:0 1rem 1rem;">
-                <a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #ff9900, #ff6600); border:none; color:#000; font-weight:900;">
-                    🛒 ORDER ON AMAZON (DAY-2 DELIVERY) &rarr;
-                </a>
+            <div class="region-pills-row" id="regionPillsRow">
+                <button type="button" class="region-jump-pill" onclick="resetFullMap()">🌎 Full Map</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Vice City')">🏙️ Vice City</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Grassrivers')">🌾 Grassrivers</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Leonida Keys')">🏝️ Leonida Keys</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Mt. Kalaga')">⛰️ Mt. Kalaga</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Port Gellhorn')">⚓ Port Gellhorn</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
             </div>
         </div>
 
-        <!-- Card 2: DualSense Edge Controller -->
-        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,42,141,0.4); background:rgba(18,12,24,0.85); box-shadow:0 0 15px rgba(255,42,141,0.08);">
-            <div>
-                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="/assets/gear/dualsense-edge-pro.webp" alt="DualSense Edge Pro Controller" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="1500" height="1000">
-                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.68rem; font-weight:800;">TACTICAL PRO GEAR</span>
-                </div>
-                <div style="padding:1rem;">
-                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">Sony DualSense Edge Wireless Controller</h3>
-                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
-                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
-                        <span style="color:var(--text-muted); font-size:0.75rem;">(Rear Paddle Reloads)</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$199.99</div>
-                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Essential for GTA 6 drive-by shooting and safe drilling with back paddles, hair triggers, and swappable stick caps.</p>
+        <div class="progress-stats-box">
+            <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="checklistProgressBar"></div>
+            </div>
+            <div class="stats-control-row">
+                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 162 (0%)</span>
+                <div class="stats-btn-group">
+                    <button type="button" class="btn-mini-action btn-next-unfound" onclick="flyToNextUnfound()">Next Unfound &rarr;</button>
+                    <button type="button" class="btn-mini-action" onclick="toggleAllCategories(true)">All</button>
+                    <button type="button" class="btn-mini-action" onclick="toggleAllCategories(false)">None</button>
                 </div>
             </div>
-            <div style="padding:0 1rem 1rem;">
-                <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #00f0ff, #0088ff); border:none; color:#000; font-weight:900;">
-                    🛒 VIEW CONTROLLER DEALS &rarr;
-                </a>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.2rem;">
+                <label class="hide-found-label">
+                    <input type="checkbox" id="hideFoundCheckbox" onchange="toggleHideFound(this.checked)">
+                    <span>Hide Found</span>
+                </label>
+                <div style="display:flex; gap:0.35rem;">
+                    <button type="button" class="btn-mini-action" onclick="toggleUserPinDropMode()" id="dropPinBtn" style="color:var(--neon-green,#00ff88);">+ Drop Pin</button>
+                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Backup</button>
+                </div>
             </div>
         </div>
 
-        <!-- Card 3: Samsung 990 PRO NVMe SSD -->
-        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(0,255,136,0.4); background:rgba(10,20,18,0.85); box-shadow:0 0 15px rgba(0,255,136,0.08);">
-            <div>
-                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="/assets/gear/nvme-ssd-pro.webp" alt="Samsung 990 PRO NVMe SSD" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="1500" height="459">
-                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-green); color:var(--neon-green); font-size:0.68rem; font-weight:800;">ZERO STUTTER</span>
-                </div>
-                <div style="padding:1rem;">
-                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD</h3>
-                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
-                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
-                        <span style="color:var(--text-muted); font-size:0.75rem;">(7,450 MB/s Speed)</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$169.99</div>
-                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Maximize Vice City asset streaming. Instant loading into 4-player heist lobbies without texture pop-in or stutter.</p>
-                </div>
+        <div class="category-rows-container" id="categoryRowsContainer"></div>
+
+        <div class="sidebar-locations-list" id="sidebarLocationsList"></div>
+
+        <!-- High-Retention Compact Inline Affiliate Text Bar -->
+        <div class="sidebar-affiliate-box" style="padding:0.45rem 0.65rem;">
+            <div style="font-size:0.68rem; line-height:1.45; color:#cbd5e1;">
+                🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;
+                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" style="color:var(--neon-yellow);">G2A Keys</a> |
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" style="color:#f472b6;">Eneba</a> |
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" style="color:var(--neon-green);">ExitLag Tunnel (Free)</a> |
+                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" style="color:var(--neon-cyan);">CutFlow Pro</a>
             </div>
-            <div style="padding:0 1rem 1rem;">
-                <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+with+Heatsink&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-primary" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #00ff88, #00aa55); border:none; color:#000; font-weight:900;">
-                    🛒 CHECK SSD PRICING &rarr;
-                </a>
+        </div>
+    </aside>
+
+    <!-- MAP CONTAINER -->
+    <main id="leafletMap">
+        <div class="map-hud-controls">
+            <div class="hud-btn-row">
+                <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()">
+                    <span id="styleIcon">🗺️</span> <span id="styleLabel">Atlas Day</span>
+                </button>
+                <button type="button" class="hud-btn" onclick="resetFullMap()" title="Fit entire Leonida Map in view">
+                    🌎 Full Leonida Map
+                </button>
+            </div>
+            <div class="hud-status-badge" id="hudCoordsDisplay">
+                LEONIDA MAP &bull; 3840&times;5120 HD
             </div>
         </div>
 
-        <!-- Card 4: Eneba Discounted Gift Cards -->
-        <div class="tool-box" style="padding:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,184,0,0.4); background:rgba(24,18,10,0.85); box-shadow:0 0 15px rgba(255,184,0,0.08);">
-            <div>
-                <div style="height:170px; overflow:hidden; position:relative; background:#070b12;">
-                    <img src="/assets/eneba-gift-cards.jpg" alt="Eneba PlayStation and Xbox Gift Cards" style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" width="800" height="600">
-                    <span class="user-badge" style="position:absolute; top:8px; left:8px; background:rgba(0,0,0,0.8); border-color:var(--neon-yellow); color:var(--neon-yellow); font-size:0.68rem; font-weight:800;">SAVE 15-20%</span>
-                </div>
-                <div style="padding:1rem;">
-                    <h3 style="color:#fff; font-size:0.95rem; margin-bottom:0.35rem; line-height:1.3;">PSN &amp; Xbox Store Discounted Gift Cards</h3>
-                    <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.5rem;">
-                        <span style="color:var(--neon-yellow); font-size:0.85rem;">★★★★★</span>
-                        <span style="color:var(--text-muted); font-size:0.75rem;">(Instant Digital Delivery)</span>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:1.15rem; font-weight:900; color:var(--neon-green); margin-bottom:0.5rem;">$84.50 <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.85rem;">$100.00</span></div>
-                    <p style="color:var(--text-muted); font-size:0.78rem; line-height:1.4; margin-bottom:0.75rem;">Buy GTA 6 and PSN & Xbox Gift Cards at 15-20% off by topping up your console wallet with verified digital vouchers.</p>
-                </div>
-            </div>
-            <div style="padding:0 1rem 1rem;">
-                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" class="btn btn-amber" style="width:100%; text-align:center; padding:0.55rem; font-size:0.8rem; background:linear-gradient(135deg, #ffd700, #ff8800); border:none; color:#000; font-weight:900;">
-                    ⚡ GET DISCOUNTED CARDS &rarr;
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
+        <button type="button" class="mobile-toggle-btn" onclick="toggleMobileDrawer()">
+            ☰ Pins &amp; Filters (<span id="mobileCountBadge">162</span>)
+        </button>
     </main>
+</div>
 
-    
-<footer>
-    <div class="footer-spread-wrap">
-        
-        <!-- Top Footer Branding Strip -->
-        <div class="footer-top-brand">
-            <div>
-                <a href="/index.html" class="brand-logo" style="text-decoration: none; font-size: 1.35rem;">
-                    <span>GTA 6</span>
-                    <span class="vi">HEIST GUIDE</span>
-                    <span class="brand-badge">Syndicate v3.2</span>
-                </a>
-                <p style="color: #64748b; font-size: 0.85rem; margin: 0.45rem 0 0; max-width: 480px; line-height: 1.5;">
-                    The definitive tactical intelligence, interactive radar, and heist payout optimization network for Grand Theft Auto VI.
-                </p>
-            </div>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                <a href="/free" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">⚡ Free Tools Suite</a>
-                <a href="/interactive-map" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">🗺️ Leonida Radar Map &rarr;</a>
-            </div>
+<div id="hudToast">Notification</div>
+
+<!-- Custom User Pin Drop Modal -->
+<div class="modal-overlay" id="userPinModal" onclick="if(event.target===this) closeUserPinModal()">
+    <div class="modal-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; font-size:1.05rem; color:#fff;">📍 Place Custom Map Pin</h3>
+            <button type="button" onclick="closeUserPinModal()" style="background:none; border:none; color:#cbd5e1; font-size:1.2rem; cursor:pointer;">&times;</button>
         </div>
-
-        <!-- 4-Column Spread-Out Footer Links Grid -->
-        <div class="footer-links-grid">
-            
-            <!-- Column 1: Tactical Calculators & Tools -->
-            <div>
-                <span class="footer-col-title" style="color: var(--neon-cyan);">🛠️ Tactical Tools</span>
-                <ul class="footer-col-links">
-                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
-                    <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
-                    <li><a href="/vault-hack-trainer.html">Vault Hack Trainer (3D)</a></li>
-                    <li><a href="/leonida-wanted-system.html">Wanted Evasion Matrix</a></li>
-                    <li><a href="/free" style="color: var(--neon-amber); font-weight: 700;">⚡ 100% Free Tools Hub</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 2: Maps & Vault Targets -->
-            <div>
-                <span class="footer-col-title" style="color: var(--neon-pink);">🗺️ Radar &amp; Vaults</span>
-                <ul class="footer-col-links">
-                    <li><a href="/interactive-map.html">Leonida Interactive Radar</a></li>
-                    <li><a href="/escape-routes.html">Master Escape Corridors</a></li>
-                    <li><a href="/safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                    <li><a href="/index.html#vaults-grid">Confirmed Heist Targets</a></li>
-                    <li><a href="/live-intel.html" style="color: var(--neon-green); font-weight: 700;">📡 Live Wire &amp; Map Leaks</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Field Database & Fleet -->
-            <div>
-                <span class="footer-col-title" style="color: var(--neon-yellow);">🏎️ Arsenal &amp; Crew</span>
-                <ul class="footer-col-links">
-                    <li><a href="/vehicles-getaway-cars.html">Confirmed Vehicles &amp; Trunk Mod</a></li>
-                    <li><a href="/weapons-gear.html">Weapons &amp; Heist Gear Database</a></li>
-                    <li><a href="/crew-database.html">Official Characters &amp; Crew</a></li>
-                    <li><a href="/lucia-jason-skills.html">Lucia &amp; Jason Skill Trees</a></li>
-                    <li><a href="/gameplay-mechanics.html">Co-Op Gameplay Mechanics</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Syndicate & Day-2 Deals -->
-            <div>
-                <span class="footer-col-title" style="color: #a855f7;">🤝 Deals &amp; Syndicate</span>
-                <ul class="footer-col-links">
-                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer">🔥 Amazon PS5 Day-2 Delivery</a></li>
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored">⚡ G2A Keys (Save 20%)</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored">🎮 Eneba PSN / Xbox Gift Cards</a></li>
-                    <li><a href="/interactive-map">🗺️ Leonida Interactive Map</a></li>
-                    </ul>
-            </div>
-
+        <div>
+            <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Pin Title</label>
+            <input type="text" id="userPinTitle" class="sidebar-search-input" placeholder="e.g. Secret Alley Stash / Sniper Perch" style="margin-top:0.25rem; padding-left:0.75rem;">
         </div>
-
-        <!-- Spacious Horizontal Secondary Strip -->
-        <div class="footer-secondary-strip">
-            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                <a href="/cheats.html" style="color: var(--neon-yellow); text-decoration: none; font-weight: 700;">⚡ Cheats</a>
-                <a href="/settings.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">⚙️ Settings</a>
-                <a href="/money-guide.html" style="color: var(--neon-green); text-decoration: none; font-weight: 700;">💰 Cash Guide</a>
-                <a href="/weapons-bonuses.html" style="color: #f43f5e; text-decoration: none; font-weight: 700;">🔫 Gun Stores</a>
-                <a href="/giveaways.html" style="color: #c084fc; text-decoration: none; font-weight: 700;">🎁 Giveaways</a>
-                <a href="/about.html" style="color: #94a3b8; text-decoration: none;">About</a>
-                <a href="/contact.html" style="color: #94a3b8; text-decoration: none;">Contact</a>
-                <a href="/privacy-policy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                <a href="/terms.html" style="color: #94a3b8; text-decoration: none;">Terms &amp; DMCA</a>
-                <a href="/ads.txt" style="color: #64748b; text-decoration: none; font-size:0.75rem;">ads.txt</a>
-            </div>
-            <div>
-                <span>Network Status: <strong style="color: var(--neon-green);">ALL SYSTEMS ONLINE</strong> (v3.2)</span>
-            </div>
+        <div>
+            <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Category</label>
+            <select id="userPinCategory" class="sidebar-search-input" style="margin-top:0.25rem; padding-left:0.65rem;">
+                <option value="vault">💰 Heist Vault / Cash Safe</option>
+                <option value="property">🏠 Property / Garage / Fence</option>
+                <option value="animal">🐊 Wildlife / Animal Spot</option>
+                <option value="ammunation">🔫 Ammu-Nation / Weapon Stash</option>
+                <option value="easter-egg">🥚 Easter Egg / Glitch</option>
+                <option value="user-custom" selected>📍 Custom Waypoint</option>
+            </select>
         </div>
-
-        <!-- Legal Disclaimer & FTC -->
-        <div class="footer-disclaimer">
-            <p style="margin: 0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and GetApexLocal (CutFlow Pro & ClipBounty Studio) partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
-            </p>
+        <div>
+            <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Tactical Notes</label>
+            <textarea id="userPinNotes" class="sidebar-search-input" rows="3" placeholder="Entry route, roof access, escape vehicle..." style="margin-top:0.25rem; padding-left:0.75rem;"></textarea>
         </div>
-
+        <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
+            <button type="button" class="btn-mini-action" onclick="closeUserPinModal()">Cancel</button>
+            <button type="button" class="btn-mini-action" style="background:var(--neon-green,#00ff88); color:#040711; font-weight:800;" onclick="saveUserPin()">Save Pin</button>
+        </div>
     </div>
-</footer>
+</div>
+
+<!-- Save Code Export / Import Modal -->
+<div class="modal-overlay" id="saveCodeModal" onclick="if(event.target===this) closeSaveModal()">
+    <div class="modal-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="margin:0; font-size:1.05rem; color:#fff;">💾 Backup / Transfer Map Progress</h3>
+            <button type="button" onclick="closeSaveModal()" style="background:none; border:none; color:#cbd5e1; font-size:1.2rem; cursor:pointer;">&times;</button>
+        </div>
+        <p style="font-size:0.72rem; color:#94a3b8; margin:0;">
+            Copy your save string to transfer your checklist progress and custom dropped pins between devices with zero login required.
+        </p>
+        <textarea id="saveCodeTextarea" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem; padding-left:0.65rem;"></textarea>
+        <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
+            <button type="button" class="btn-mini-action" onclick="copySaveCode()">📋 Copy Code</button>
+            <button type="button" class="btn-mini-action" style="background:var(--neon-cyan,#00f0ff); color:#040711; font-weight:800;" onclick="importSaveCode()">📥 Import Code</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 
+<script>
+/* ==========================================================================
+   SYNDICATE v3.2 INTERACTIVE LEONIDA MAP ENGINE (ALL 3 BUGS FIXED)
+   ========================================================================== */
+let map = null;
+let imageOverlay = null;
+let mapBounds = null;
+let naturalWidth = 3840;
+let naturalHeight = 5120;
+let fitZoomLevel = -2.5;
+let isTacticalMode = false;
+let isDevMode = false;
+let isDropMode = false;
+let pendingDropCoords = null;
+let highlightedPinId = null;
 
-        <script>
-        const INTEL_DB = {
-            'lummox-stash': { tag: 'Leaked Northern Sector • Lummox County', title: 'Lummox Timber & Moonshine Stash', payout: 'Max Payout: $2,900,000', desc: 'Discovered on the leaked Selfridges Collector\'s Edition map. Deep northern forest logging outpost with hidden contraband trunks and backwoods dirt evasion trails ideal for shaking patrol cruisers.', link: 'everglades-smuggler-run.html', region: 'lummox' },
-            'pelican-bank': { tag: 'Agricultural Vault • Pelican Valley', title: 'Pelican Valley Agricultural Bank', payout: 'Max Payout: $3,800,000', desc: 'Central river basin credit union with rural cash vaults and sugarcane rail siding. Flat-bottom airboat exfiltration through the canal reed beds dodges highway roadblock nets.', link: 'sinfrontera-bank.html', region: 'pelican-valley' },
-            'key-lento': { tag: 'Offshore Reef Depot • Key Lento', title: 'Key Lento Smuggler Marina & Reef Cache', payout: 'Max Payout: $12,400,000', desc: 'Far southern archipelago key spotted on the Collector\'s Edition map. Deep-water coral reef drop zone for high-tier bullion yacht drops. Requires scuba rebreathers.', link: 'vice-city-yacht-heist.html', region: 'key-lento' },
-            'toll-1a': { tag: 'Toll System Evasion • Toll 1A Highway', title: 'Toll 1A Highway Radar & ANPR Bypass', payout: 'ANPR Camera Jamming Zone', desc: 'Official highway toll corridor crossing Leonida. Automated license plate recognition cameras log vehicles instantly unless Cal Hampton\'s signal jammer is active or plates are swapped.', link: 'leonida-wanted-system.html', region: 'toll-1a' },
-            'fuel-lummox': { tag: 'Confirmed Realism Mechanic • Refuel Point', title: 'Lummox County 24/7 Gas & Refuel Depot', payout: 'Vehicle Fuel Top-Off (Dodge Pursuit Stalls)', desc: 'Vital refuel point during cross-county 5-star pursuits. Confirmed in hands-on gameplay leaks: vehicles consume fuel and stall if driven on empty.', link: 'gameplay-mechanics.html', region: 'lummox' },
-            'fuel-vice': { tag: 'Confirmed Realism Mechanic • Refuel Point', title: 'Vice Beach Sunoco 24/7 Pitstop', payout: 'Quick Emergency Refuel', desc: 'Downtown refuel depot right off Ocean Boulevard. Rapid tank top-off before committing to highway or expressway getaway runs.', link: 'gameplay-mechanics.html', region: 'vice-city' },
-            'zoo-compound': { tag: 'Landmark Infiltration • Leonida Zoo', title: 'Leonida State Zoo Night Reserve', payout: 'Max Payout: $4,200,000', desc: 'Isolated zoo compound confirmed on the collector\'s physical map. Nighttime infiltration route avoiding exotic animal habitats and private security cameras.', link: 'heist-planner.html', region: 'vice-city' },
-            'sinfrontera': { tag: 'Expert Vault • Vice City', title: 'Sinfrontera National Bank', payout: 'Max Payout: $14,500,000', desc: 'Located in Downtown Vice City. Features subterranean pneumatic vault doors, biometric sensors, and storm drain escape conduits.', link: 'sinfrontera-bank.html', region: 'vice-city' },
-            'port-gellhorn': { tag: 'Intermediate Vault • Port Gellhorn', title: 'Port Gellhorn Container Terminal', payout: 'Max Payout: $8,200,000', desc: 'Industrial maritime hub on the west coast. Infiltrate crane software, locate contraband containers, and extract via speedboat.', link: 'port-gellhorn.html', region: 'port-gellhorn' },
-            'leonida-reserve': { tag: 'Mastermind Vault • Ambrosia Border', title: 'Leonida State Gold Reserve', payout: 'Max Payout: $25,000,000', desc: 'The single largest federal depository in Leonida. Requires thermal lances, EMP blackout timing, and armored transport escape.', link: 'leonida-reserve.html', region: 'ambrosia' },
-            'yacht': { tag: 'Expert Offshore • Leonida Keys', title: 'Starlet Superyacht Heist', payout: 'Max Payout: $11,800,000', desc: 'Luxury offshore yacht anchored off the Keys. Scuba rebreather ingress, silent deck guard takedowns, and VIP safe cracking.', link: 'vice-city-yacht-heist.html', region: 'leonida-keys' },
-            'smuggler': { tag: '1.5X Weekly Bonus • Grassrivers', title: 'Grassrivers Cartel Airstrip', payout: 'Max Payout: $6,500,000 (1.5X: $9,750,000)', desc: 'Deep swamp airfield in the Grassrivers basin. Radar sabotage, low-altitude twin-prop aircraft getaway, and airboat evasion.', link: 'everglades-smuggler-run.html', region: 'grassrivers' },
-            'convoy': { tag: 'Mastermind Ambush • Vice City', title: 'Ocean Drive Armored Convoy', payout: 'Max Payout: $9,400,000', desc: 'Daylight coastal ambush. Traffic gridlock hack, magnetic EMP charge, and transit subway tunnel getaway.', link: 'ocean-drive-armored-convoy.html', region: 'vice-city' },
-            'escape-metro': { tag: 'Escape Conduit • Vice City', title: 'Metro Storm Drain Conduit 01', payout: 'Heat Reduction: 100%', desc: 'Direct underground transit route beneath Ocean Boulevard. Police cruisers cannot fit past maintenance turnstiles.', link: 'escape-routes.html', region: 'vice-city' },
-            'safehouse-north': { tag: 'Safehouse • Vice City', title: 'North Vice Safehouse Alpha', payout: 'Safe Recovery Zone', desc: 'Pre-equipped safehouse with vehicle mod garage, trunk armory locker, and underground ramp.', link: 'safehouses-laundering.html', region: 'vice-city' },
-            'keys-dock': { tag: 'Smuggler Dock • Leonida Keys', title: 'Leonida Keys Boathouse & Marina', payout: '12% Offshore Laundering Broker', desc: 'Southern archipelago boatyard controlled by Brian Heder & Cal Hampton contacts. Ideal for offshore scuba drops.', link: 'safehouses-laundering.html', region: 'leonida-keys' },
-            'ambrosia-fence': { tag: 'Bullion Fence • Ambrosia', title: 'Ambrosia Industrial Refinery Fence', payout: 'Instant Bullion & Cash Fence', desc: 'Central heartland industrial yard for swapping marked getaway plates and fencing heavy gold pallets.', link: 'safehouses-laundering.html', region: 'ambrosia' },
-            'kalaga-outpost': { tag: 'Wilderness Outpost • Mount Kalaga', title: 'Mount Kalaga National Park Outpost', payout: 'Zero Chopper Thermal Visibility', desc: 'Northern mountain forest hideout and dirt-bike trail network where 5-star NOOSE helicopters lose line-of-sight.', link: 'leonida-wanted-system.html', region: 'mount-kalaga' }
-        };
+let allPins = [];
+let markersById = {};
+let markerLayersByCategory = {};
 
-        let currentPinKey = 'sinfrontera';
-        let activeCategory = 'all';
-        let activeRegion = 'all';
-        let d1CommunityMarkers = [];
+const CATEGORIES = {
+    'vault':          { name: 'Big Banks & Story Heists', color: '#fbbf24', icon: '🏦' },
+    'property':       { name: 'Properties, Garages & Fences', color: '#00f0ff', icon: '🏠' },
+    'animal':         { name: 'Animals & Wildlife Habitats', color: '#22c55e', icon: '🐊' },
+    'bank':           { name: 'Regular Banks & Shops', color: '#10b981', icon: '🏧' },
+    'jewelry':        { name: 'Jewelry & Pawn Shops', color: '#06b6d4', icon: '💎' },
+    'ammunation':     { name: '24 Ammu-Nation Stores', color: '#ef4444', icon: '🔫' },
+    'illegal-op':     { name: 'Illegal Ops & Gang Camps', color: '#a855f7', icon: '🧪' },
+    'easter-egg':     { name: 'Easter Eggs & Secrets', color: '#f43f5e', icon: '🥚' },
+    'safehouse':      { name: 'Escape Canals & Docks', color: '#3b82f6', icon: '🚤' },
+    'live-discovery': { name: 'Launch Glitches & Live Hotspots', color: '#ffb800', icon: '📡' },
+    'user-custom':    { name: 'Custom User Pins', color: '#10b981', icon: '📍' }
+};
 
-        function getFoundPins() {
-            try { return JSON.parse(localStorage.getItem('gta6_found_map_pins') || '[]'); } catch (e) { return []; }
+let categoryVisibility = {};
+Object.keys(CATEGORIES).forEach(k => { categoryVisibility[k] = true; });
+
+let foundPinIds = new Set();
+try {
+    const savedFound = localStorage.getItem('gta6_found_pins');
+    if (savedFound) foundPinIds = new Set(JSON.parse(savedFound));
+} catch(e) {}
+
+let customUserPins = [];
+try {
+    const savedCustom = localStorage.getItem('gta6_custom_user_pins');
+    if (savedCustom) customUserPins = JSON.parse(savedCustom);
+} catch(e) {}
+
+let hideFoundActive = false;
+let currentSearchQuery = '';
+
+const REGION_CENTERS = {
+    'Vice City':     { yPct: 0.5000, xPct: 0.7450, zoom: 0.5 },
+    'Grassrivers':   { yPct: 0.2650, xPct: 0.4750, zoom: 0.25 },
+    'Leonida Keys':  { yPct: 0.1350, xPct: 0.4200, zoom: 0.25 },
+    'Mt. Kalaga':    { yPct: 0.7650, xPct: 0.5000, zoom: 0.25 },
+    'Port Gellhorn': { yPct: 0.5700, xPct: 0.2950, zoom: 0.5 },
+    'Ambrosia':      { yPct: 0.6650, xPct: 0.6050, zoom: 0.5 },
+    'Lake Leonida':  { yPct: 0.6750, xPct: 0.5900, zoom: 0.5 }
+};
+
+/* Measure real header height dynamically so --header-height is ALWAYS exact */
+function syncHeaderHeight() {
+    const strip = document.getElementById('siteTopStrip');
+    const nav = document.getElementById('siteNavbar');
+    const total = (strip ? strip.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
+    if (total > 0) {
+        document.documentElement.style.setProperty('--header-height', total + 'px');
+    }
+    if (map) {
+        map.invalidateSize(false);
+        recomputeZoomBounds(false);
+    }
+}
+
+function recomputeZoomBounds(refit) {
+    if (!map || !mapBounds) return;
+    fitZoomLevel = map.getBoundsZoom(mapBounds, false);
+    const dynamicMinZoom = Math.min(-2.5, Math.floor(fitZoomLevel * 4) / 4 - 0.5);
+    map.setMinZoom(dynamicMinZoom);
+    map.setMaxBounds([[-naturalHeight * 0.25, -naturalWidth * 0.25], [naturalHeight * 1.25, naturalWidth * 1.25]]);
+    if (refit) {
+        map.fitBounds(mapBounds, { padding: [24, 24], animate: false });
+    }
+}
+
+function initEngine() {
+    syncHeaderHeight();
+    const mapEl = document.getElementById('leafletMap');
+    if (!mapEl) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    isDevMode = urlParams.get('dev') === '1';
+
+    /* BUG 2 FIX: Allow zooming all the way out to fit the full 3840x5120 Leonida portrait map */
+    map = L.map('leafletMap', {
+        crs: L.CRS.Simple,
+        minZoom: -3.5,
+        maxZoom: 3,
+        zoomSnap: 0.25,
+        zoomDelta: 0.5,
+        attributionControl: false,
+        zoomControl: true
+    });
+
+    map.zoomControl.setPosition('bottomright');
+
+    /* Custom Bottom-Right Recenter / Fit-Full-Map Button inside bottom-right control stack */
+    const RecenterControl = L.Control.extend({
+        options: { position: 'bottomright' },
+        onAdd: function() {
+            const div = L.DomUtil.create('div', 'leaflet-recenter-wrap');
+            div.innerHTML = '<button type="button" class="leaflet-recenter-btn" id="mapRecenterBtn" title="Recenter &amp; Fit Full Leonida Map" aria-label="Recenter Full Map">⌖</button>';
+            L.DomEvent.disableClickPropagation(div);
+            div.querySelector('button').addEventListener('click', () => resetFullMap());
+            return div;
         }
-        function saveFoundPins(arr) {
-            localStorage.setItem('gta6_found_map_pins', JSON.stringify(arr));
-            localStorage.setItem('gta6_map_found_v2', JSON.stringify(arr));
-            applyPinVisibility();
-            if (window.GTA6 && GTA6.MasteryAndStreak) GTA6.MasteryAndStreak.refresh();
-        }
-        function getCustomMarkers() {
-            try { return JSON.parse(localStorage.getItem('gta6_custom_map_markers') || '[]'); } catch (e) { return []; }
-        }
-        function setCustomMarkers(arr) {
-            localStorage.setItem('gta6_custom_map_markers', JSON.stringify(arr));
-            renderCustomMarkers();
-        }
+    });
+    map.addControl(new RecenterControl());
 
-        function showIntel(key) {
-            const custom = getCustomMarkers().find(m => m.id === key);
-            const d1Pin = d1CommunityMarkers.find(m => m.id === key);
-            const data = INTEL_DB[key] || (d1Pin ? {
-                tag: (d1Pin.status === 'verified' ? '✅ VERIFIED D1 PIN • ' : '📡 COMMUNITY INTEL (' + (d1Pin.votes || 1) + '/3 VOTES) • ') + d1Pin.region.toUpperCase(),
-                title: d1Pin.title,
-                payout: d1Pin.payout_or_perk || ('Submitted by ' + (d1Pin.submitted_by || 'Operative')),
-                desc: d1Pin.description,
-                link: d1Pin.link || 'interactive-map.html',
-                isD1: true
-            } : (custom ? {
-                tag: 'Custom Personal Marker • ' + custom.region.toUpperCase(),
-                title: custom.title,
-                payout: '100% Free Personal Note',
-                desc: custom.note || 'Custom player waypoint saved locally.',
-                link: 'leonida-interactive-map.html'
-            } : null));
-            if (!data) return;
-            currentPinKey = key;
-            document.getElementById('modalTag').innerText = data.tag;
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalPayout').innerText = data.payout;
-            document.getElementById('modalDesc').innerText = data.desc;
-            document.getElementById('modalLink').href = data.link;
-            const confirmBtn = document.getElementById('modalConfirmD1Btn');
-            if (confirmBtn) {
-                confirmBtn.style.display = data.isD1 ? 'block' : 'none';
-            }
-            updateModalFoundButton();
-            document.querySelectorAll('.map-point.selected').forEach(el => el.classList.remove('selected'));
-            const activePinEl = document.querySelector(`.map-point[data-pin-id="${key}"]`);
-            if (activePinEl) activePinEl.classList.add('selected');
-            document.getElementById('mapModal').classList.add('open');
-            GTA6.playBeep(520, 'triangle', 0.05);
-        }
+    const mapImg = new Image();
+    mapImg.src = '/assets/maps/leonida-map.jpg';
 
-        function updateModalFoundButton() {
-            const btn = document.getElementById('modalFoundBtn');
-            if (!btn) return;
-            const found = getFoundPins().includes(currentPinKey);
-            btn.innerText = found ? '↩️ Marked Found (Click to Unmark)' : '✅ Mark Pin Found / Completed';
-        }
+    let initialized = false;
+    async function setupMapBounds() {
+        if (initialized) return;
+        initialized = true;
+        mapBounds = [[0, 0], [naturalHeight, naturalWidth]];
+        window._gta6Map = map;
+        window._gta6MapBounds = mapBounds;
+        imageOverlay = L.imageOverlay('/assets/maps/leonida-map.jpg', mapBounds).addTo(map);
 
-        function toggleCurrentPinFound() {
-            const list = getFoundPins();
-            const idx = list.indexOf(currentPinKey);
-            if (idx >= 0) list.splice(idx, 1);
-            else list.push(currentPinKey);
-            saveFoundPins(list);
-            updateModalFoundButton();
-            GTA6.playSuccess();
-        }
+        map.invalidateSize(false);
+        recomputeZoomBounds(true);
 
-        function resetFoundPins() {
-            saveFoundPins([]);
-            updateModalFoundButton();
-            GTA6.showToast('🔄 Reset all Found/Completed pins.');
-        }
-
-        function jumpToNextUnfoundPin() {
-            const found = getFoundPins();
-            const allKeys = Object.keys(INTEL_DB).concat(getCustomMarkers().map(m => m.id));
-            const nextKey = allKeys.find(k => !found.includes(k));
-            if (!nextKey) {
-                GTA6.showToast('🏆 All pins on the Leonida radar are marked Found!');
-                return;
-            }
-            showIntel(nextKey);
-            GTA6.showToast('🎯 Jumped to next unfound pin: ' + (INTEL_DB[nextKey]?.title || 'Custom Marker'));
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('mapModal');
-            if (modal) modal.classList.remove('open');
-            document.querySelectorAll('.map-point.selected').forEach(el => el.classList.remove('selected'));
-        }
-
-        function filterMap(category, btn) {
-            closeModal();
-            activeCategory = category;
-            document.querySelectorAll('.map-controls .map-btn').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-            GTA6.playBeep(440, 'sine', 0.04);
-            applyPinVisibility();
-        }
-
-        
-        /* =========================================================================
-           INTERACTIVE TACTICAL RADAR ZOOM & SECTOR ENGINE
-           ========================================================================= */
-        let currentViewBox = { x: 0, y: 0, w: 1000, h: 650 };
-        const SECTOR_COORDINATES = {
-            'vice-city': { x: 570, y: 150, w: 350, h: 228 },
-            'leonida-keys': { x: 670, y: 430, w: 330, h: 215 },
-            'grassrivers': { x: 150, y: 280, w: 420, h: 273 },
-            'port-gellhorn': { x: 60, y: 310, w: 270, h: 176 },
-            'ambrosia': { x: 330, y: 130, w: 350, h: 228 },
-            'mount-kalaga': { x: 100, y: 40, w: 650, h: 423 },
-            'lummox': { x: 90, y: 40, w: 560, h: 364 },
-            'pelican-valley': { x: 320, y: 210, w: 290, h: 189 },
-            'key-lento': { x: 800, y: 480, w: 200, h: 130 },
-            'toll-1a': { x: 120, y: 180, w: 680, h: 250 },
-            'all': { x: 0, y: 0, w: 1000, h: 650 }
-        };
-
-        
-        /* =========================================================================
-           INTERACTIVE CLICK-AND-DRAG PAN & MOUSE WHEEL ZOOM ENGINE
-           ========================================================================= */
-        let isPanning = false;
-        let startClientX = 0;
-        let startClientY = 0;
-        let startVbX = 0;
-        let startVbY = 0;
-        let panMovedDist = 0;
-
-        function initMapInteraction() {
-            const svg = document.getElementById('mapSvg');
-            if (!svg) return;
-
-            // Mouse Down -> Start Pan
-            svg.addEventListener('mousedown', (e) => {
-                // If middle click or left click
-                if (e.button !== 0 && e.button !== 1) return;
-                isPanning = true;
-                startClientX = e.clientX;
-                startClientY = e.clientY;
-                startVbX = currentViewBox.x;
-                startVbY = currentViewBox.y;
-                panMovedDist = 0;
-                svg.style.cursor = 'grabbing';
-            });
-
-            // Mouse Move -> Pan map & Update GPS
-            window.addEventListener('mousemove', (e) => {
-                updateGps(e);
-                if (!isPanning) return;
-                const rect = svg.getBoundingClientRect();
-                const scaleX = currentViewBox.w / rect.width;
-                const scaleY = currentViewBox.h / rect.height;
-                const dx = (e.clientX - startClientX) * scaleX;
-                const dy = (e.clientY - startClientY) * scaleY;
-                panMovedDist += Math.hypot(e.clientX - startClientX, e.clientY - startClientY);
-
-                let targetX = startVbX - dx;
-                let targetY = startVbY - dy;
-
-                // Clamped boundaries (allowing slight padding beyond 1000x650)
-                const minX = -100;
-                const maxX = 1100 - currentViewBox.w;
-                const minY = -60;
-                const maxY = 710 - currentViewBox.h;
-
-                targetX = Math.max(minX, Math.min(maxX, targetX));
-                targetY = Math.max(minY, Math.min(maxY, targetY));
-
-                applyViewBox(targetX, targetY, currentViewBox.w, currentViewBox.h);
-            });
-
-            // Mouse Up -> End Pan
-            window.addEventListener('mouseup', () => {
-                if (isPanning) {
-                    isPanning = false;
-                    svg.style.cursor = 'grab';
-                }
-            });
-
-            // Mouse Wheel -> Zoom In/Out Centered at Cursor
-            svg.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                const rect = svg.getBoundingClientRect();
-                const mouseRelX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-                const mouseRelY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
-
-                // Mouse location in SVG coordinates
-                const mouseSvgX = currentViewBox.x + mouseRelX * currentViewBox.w;
-                const mouseSvgY = currentViewBox.y + mouseRelY * currentViewBox.h;
-
-                const factor = e.deltaY < 0 ? 0.85 : 1.18;
-                let newW = currentViewBox.w * factor;
-                newW = Math.max(180, Math.min(1000, newW));
-                let newH = newW * (650 / 1000);
-
-                let newX = mouseSvgX - mouseRelX * newW;
-                let newY = mouseSvgY - mouseRelY * newH;
-
-                newX = Math.max(-100, Math.min(1100 - newW, newX));
-                newY = Math.max(-60, Math.min(710 - newH, newY));
-
-                applyViewBox(newX, newY, newW, newH);
-            }, { passive: false });
-
-            // Touch events for Mobile Drag & Pan
-            let touchStartX = 0;
-            let touchStartY = 0;
-            let touchVbX = 0;
-            let touchVbY = 0;
-            let touchPinchDist = 0;
-
-            svg.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) {
-                    isPanning = true;
-                    touchStartX = e.touches[0].clientX;
-                    touchStartY = e.touches[0].clientY;
-                    touchVbX = currentViewBox.x;
-                    touchVbY = currentViewBox.y;
-                    panMovedDist = 0;
-                } else if (e.touches.length === 2) {
-                    isPanning = false;
-                    touchPinchDist = Math.hypot(
-                        e.touches[0].clientX - e.touches[1].clientX,
-                        e.touches[0].clientY - e.touches[1].clientY
-                    );
-                }
-            }, { passive: true });
-
-            svg.addEventListener('touchmove', (e) => {
-                if (e.touches.length === 1 && isPanning) {
-                    const rect = svg.getBoundingClientRect();
-                    const scaleX = currentViewBox.w / rect.width;
-                    const scaleY = currentViewBox.h / rect.height;
-                    const dx = (e.touches[0].clientX - touchStartX) * scaleX;
-                    const dy = (e.touches[0].clientY - touchStartY) * scaleY;
-                    panMovedDist += Math.hypot(e.touches[0].clientX - touchStartX, e.touches[0].clientY - touchStartY);
-
-                    let targetX = touchVbX - dx;
-                    let targetY = touchVbY - dy;
-                    targetX = Math.max(-100, Math.min(1100 - currentViewBox.w, targetX));
-                    targetY = Math.max(-60, Math.min(710 - currentViewBox.h, targetY));
-                    applyViewBox(targetX, targetY, currentViewBox.w, currentViewBox.h);
-                } else if (e.touches.length === 2) {
-                    const currentDist = Math.hypot(
-                        e.touches[0].clientX - e.touches[1].clientX,
-                        e.touches[0].clientY - e.touches[1].clientY
-                    );
-                    if (touchPinchDist > 0) {
-                        const ratio = touchPinchDist / currentDist;
-                        let newW = Math.max(180, Math.min(1000, currentViewBox.w * ratio));
-                        let newH = newW * (650 / 1000);
-                        const cx = currentViewBox.x + currentViewBox.w / 2;
-                        const cy = currentViewBox.y + currentViewBox.h / 2;
-                        applyViewBox(cx - newW / 2, cy - newH / 2, newW, newH);
-                    }
-                    touchPinchDist = currentDist;
-                }
-            }, { passive: true });
-
-            svg.addEventListener('touchend', () => {
-                isPanning = false;
-                touchPinchDist = 0;
-            });
-        }
-
-        // Safe pin click handler that avoids firing if dragging
-        function handlePinClick(key) {
-            if (panMovedDist > 6) return; // Dragged, not clicked!
-            showIntel(key);
-        }
-    
-        function applyViewBox(x, y, w, h) {
-            const svg = document.getElementById('mapSvg');
-            if (!svg) return;
-            // Bound coordinates inside 1000x650
-            const clampedW = Math.max(220, Math.min(1000, w));
-            const clampedH = clampedW * (650 / 1000);
-            const clampedX = Math.max(0, Math.min(1000 - clampedW, x));
-            const clampedY = Math.max(0, Math.min(650 - clampedH, y));
-            svg.setAttribute('viewBox', `${clampedX} ${clampedY} ${clampedW} ${clampedH}`);
-            currentViewBox = { x: clampedX, y: clampedY, w: clampedW, h: clampedH };
-
-            const zoomIndicator = document.getElementById('zoomLevelDisplay');
-            if (zoomIndicator) {
-                const zVal = (1000 / clampedW).toFixed(1);
-                zoomIndicator.innerText = zVal + 'x';
-            }
-        }
-
-        function zoomIn() {
-            const factor = 0.75;
-            const newW = currentViewBox.w * factor;
-            const newH = newW * (650 / 1000);
-            const cx = currentViewBox.x + currentViewBox.w / 2;
-            const cy = currentViewBox.y + currentViewBox.h / 2;
-            applyViewBox(cx - newW / 2, cy - newH / 2, newW, newH);
-            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(620, 'triangle', 0.04);
-        }
-
-        function zoomOut() {
-            const factor = 1.333;
-            const newW = currentViewBox.w * factor;
-            if (newW >= 980) {
-                resetZoom();
-            } else {
-                const newH = newW * (650 / 1000);
-                const cx = currentViewBox.x + currentViewBox.w / 2;
-                const cy = currentViewBox.y + currentViewBox.h / 2;
-                applyViewBox(cx - newW / 2, cy - newH / 2, newW, newH);
-                if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(440, 'triangle', 0.04);
-            }
-        }
-
-        function resetZoom() {
-            applyViewBox(0, 0, 1000, 650);
-            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(520, 'sine', 0.04);
-        }
-
-        function zoomToSector(sector) {
-            const target = SECTOR_COORDINATES[sector] || SECTOR_COORDINATES['all'];
-            applyViewBox(target.x, target.y, target.w, target.h);
-            if (window.GTA6 && GTA6.playBeep) GTA6.playBeep(560, 'triangle', 0.05);
-        }
-    
-        function filterRegion(region, btn) {
-            closeModal();
-            zoomToSector(region);
-            activeRegion = region;
-            document.querySelectorAll('.map-region-bar .map-btn').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-            GTA6.playBeep(480, 'triangle', 0.04);
-            applyPinVisibility();
-        }
-
-        function applyPinVisibility() {
-            const found = getFoundPins();
-            const hideFound = document.getElementById('hideFoundToggle')?.checked;
-            const cntEl = document.getElementById('foundPinsCounter');
-            if (cntEl) cntEl.innerText = String(found.length);
-
-            document.querySelectorAll('.map-point').forEach(m => {
-                const pinId = m.getAttribute('data-pin-id') || '';
-                const pinReg = m.getAttribute('data-region') || 'vice-city';
-                const isFound = found.includes(pinId);
-                m.classList.toggle('pin-found', isFound);
-
-                let catOk = true;
-                if (activeCategory === 'vault') catOk = m.classList.contains('map-marker-vault');
-                else if (activeCategory === 'escape') catOk = m.classList.contains('map-marker-escape');
-                else if (activeCategory === 'safehouse') catOk = m.classList.contains('map-marker-safehouse');
-                else if (activeCategory === 'radar') catOk = pinId === 'smuggler' || pinId === 'kalaga-outpost';
-                else if (activeCategory === 'community') catOk = m.classList.contains('map-marker-community');
-
-                const regOk = activeRegion === 'all' || pinReg === activeRegion;
-                const foundOk = !(hideFound && isFound);
-                m.style.display = (catOk && regOk && foundOk) ? 'block' : 'none';
-            });
-        }
-
-        function toggleD1PinDropPanel() {
-            const panel = document.getElementById('drop-pin-form');
-            if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-            GTA6.playBeep(520, 'triangle', 0.05);
-        }
-
-        function normRegionSlug(reg) {
-            const r = String(reg || '').toLowerCase();
-            if (r.includes('keys')) return 'leonida-keys';
-            if (r.includes('grass')) return 'grassrivers';
-            if (r.includes('gellhorn')) return 'port-gellhorn';
-            if (r.includes('ambrosia')) return 'ambrosia';
-            if (r.includes('kalaga')) return 'mount-kalaga';
-            return 'vice-city';
-        }
-
-        async function loadD1Markers() {
-            try {
-                const res = await fetch('/api/map');
-                if (!res.ok) return;
-                const data = await res.json();
-                if (Array.isArray(data.markers)) {
-                    d1CommunityMarkers = data.markers.filter(m => String(m.id || '').startsWith('pin-comm-'));
-                    renderCustomMarkers();
-                }
-            } catch (e) {}
-        }
-
-        async function submitD1DiscoveryPin(e) {
-            e.preventDefault();
-            const st = document.getElementById('d1PinStatusMsg');
-            if (st) st.innerHTML = `<span style="color:var(--neon-cyan);">Transmitting discovery pin to live radar database...</span>`;
-            const payload = {
-                action: 'submit',
-                title: document.getElementById('d1PinTitle').value.trim(),
-                category: document.getElementById('d1PinCat').value,
-                region: document.getElementById('d1PinRegion').value,
-                x: Number(document.getElementById('d1PinX').value),
-                y: Number(document.getElementById('d1PinY').value),
-                submitted_by: document.getElementById('d1PinAlias').value.trim() || 'ViceOperative',
-                description: document.getElementById('d1PinDesc').value.trim(),
-            };
-            try {
-                const res = await fetch('/api/map', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload),
-                });
-                const data = await res.json();
-                if (data.ok && data.marker) {
-                    const p = GTA6.getProfile();
-                    p.syndicateRep = (Number(p.syndicateRep) || 1240) + (data.repAwarded || 200);
-                    GTA6.saveProfile(p);
-                    await loadD1Markers();
-                    showIntel(data.marker.id);
-                    e.target.reset();
-                    GTA6.playSuccess();
-                    if (st) {
-                        st.innerHTML = data.promoted
-                            ? `<span style="color:var(--neon-green);">🏆 3-Vote Consensus Reached! Pin Auto-Promoted to VERIFIED (+500 Rep)!</span>`
-                            : `<span style="color:var(--neon-green);">✅ Pin Live on D1 Map (${data.marker.votes}/3 confirmations • +${data.repAwarded || 200} Rep)!</span>`;
-                    }
-                }
-            } catch (err) {
-                if (st) st.innerHTML = `<span style="color:var(--neon-pink);">Failed to reach /api/map endpoint.</span>`;
-            }
-        }
-
-        async function confirmCurrentD1Pin() {
-            if (!currentPinKey) return;
-            try {
-                const res = await fetch('/api/map', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'confirm', id: currentPinKey }),
-                });
-                const data = await res.json();
-                if (data.ok && data.marker) {
-                    const p = GTA6.getProfile();
-                    p.syndicateRep = (Number(p.syndicateRep) || 1240) + (data.repAwarded || 100);
-                    GTA6.saveProfile(p);
-                    await loadD1Markers();
-                    showIntel(data.marker.id);
-                    GTA6.playSuccess();
-                    GTA6.showToast(data.promoted ? '🏆 Pin Reached 3 Votes & Auto-Verified (+500 Rep)!' : `👍 Confirmed Pin (${data.marker.votes}/3 Votes • +100 Rep)!`);
-                }
-            } catch (e) {}
-        }
-
-        function toggleCustomPinCreator() {
-            const panel = document.getElementById('customMarkerPanel');
-            if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-            GTA6.playBeep(500, 'sine', 0.04);
-        }
-
-        function saveCustomMarker(e) {
-            e.preventDefault();
-            const title = document.getElementById('cmTitle').value.trim();
-            const region = document.getElementById('cmRegion').value;
-            const x = Math.min(970, Math.max(30, parseInt(document.getElementById('cmX').value) || 500));
-            const y = Math.min(620, Math.max(30, parseInt(document.getElementById('cmY').value) || 300));
-            const note = document.getElementById('cmNote').value.trim();
-            if (!title) return;
-
-            const list = getCustomMarkers();
-            list.push({ id: 'custom-' + Date.now(), title, region, x, y, note });
-            setCustomMarkers(list);
-            e.target.reset();
-            GTA6.playSuccess();
-            GTA6.showToast('📍 Custom Marker Saved (100% Free — Unlimited)!');
-        }
-
-        function deleteCustomMarker(id) {
-            setCustomMarkers(getCustomMarkers().filter(m => m.id !== id));
-            GTA6.playBeep(320, 'sine', 0.04);
-        }
-
-        function renderCustomMarkers() {
-            const layer = document.getElementById('customMarkersLayer');
-            const listEl = document.getElementById('customMarkersList');
-            const markers = getCustomMarkers();
-            if (layer) {
-                const localSvg = markers.map(m => `
-                    <g class="map-point map-marker-safehouse" data-pin-id="${m.id}" data-region="${m.region}" transform="translate(${m.x}, ${m.y})" onclick="handlePinClick('${m.id}')">
-                        <circle r="11" fill="rgba(0, 255, 136, 0.35)" stroke="#00ff88" stroke-width="2"/>
-                        <circle r="4" fill="#00ff88"/>
-                        
-                    </g>
-                `).join('');
-                const d1Svg = d1CommunityMarkers.map(m => {
-                    const regSlug = normRegionSlug(m.region);
-                    const strokeCol = m.status === 'verified' ? '#00ff88' : '#00f0ff';
-                    return `
-                    <g class="map-point map-marker-community map-marker-safehouse" data-pin-id="${m.id}" data-region="${regSlug}" transform="translate(${m.x}, ${m.y})" onclick="handlePinClick('${m.id}')">
-                        <circle r="11" fill="rgba(0, 240, 255, 0.3)" stroke="${strokeCol}" stroke-width="2"/>
-                        <circle r="4" fill="${strokeCol}"/>
-                        
-                    </g>
-                    `;
-                }).join('');
-                layer.innerHTML = localSvg + d1Svg;
-            }
-            if (listEl) {
-                listEl.innerHTML = markers.map(m => `
-                    <span class="user-badge badge-hacker" style="display:inline-flex; align-items:center; gap:0.4rem;">
-                        📍 ${m.title.replace(/</g, '&lt;')} (${m.region})
-                        <button type="button" onclick="deleteCustomMarker('${m.id}')" aria-label="Delete Custom Marker" style="background:none; border:none; color:var(--neon-pink); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; padding:2px;"><svg class="ui-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
-                    </span>
-                `).join('');
-            }
-            applyPinVisibility();
-        }
-
-        function updateGps(e) {
-            const svg = document.getElementById('mapSvg');
-            const rect = svg.getBoundingClientRect();
-            const xPct = ((e.clientX - rect.left) / rect.width * 100).toFixed(2);
-            const yPct = ((e.clientY - rect.top) / rect.height * 100).toFixed(2);
-            document.getElementById('mapHud').innerText = `GPS GRID: ${xPct}% E, ${yPct}% N • SATELLITE: SYNDICATE-6`;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initMapInteraction();
-            const svg = document.getElementById('mapSvg');
-            if (svg) {
-                svg.addEventListener('click', (e) => {
-                    if (e.target.closest('.map-point')) return;
-                    const rect = svg.getBoundingClientRect();
-                    const vx = Math.round((e.clientX - rect.left) / rect.width * 1000);
-                    const vy = Math.round((e.clientY - rect.top) / rect.height * 650);
-                    const xIn = document.getElementById('cmX');
-                    const yIn = document.getElementById('cmY');
-                    if (xIn && yIn) { xIn.value = vx; yIn.value = vy; }
-                    const dxIn = document.getElementById('d1PinX');
-                    const dyIn = document.getElementById('d1PinY');
-                    if (dxIn && dyIn) { dxIn.value = vx; dyIn.value = vy; }
-                });
-            }
-            if (window.location.hash === '#drop-pin-form') {
-                const panel = document.getElementById('drop-pin-form');
-                if (panel) panel.style.display = 'block';
-            }
-            renderCustomMarkers();
-            loadD1Markers();
+        Object.keys(CATEGORIES).forEach(cat => {
+            markerLayersByCategory[cat] = L.layerGroup().addTo(map);
         });
-    </script>
+
+        /* BUG 3 FIX: AWAIT pin loading FIRST before resolving ?pin=<id> deep-link! */
+        await loadAllPinsData();
+        handleInitialDeepLinks();
+    }
+
+    mapImg.onload = function() {
+        naturalWidth = this.naturalWidth || 3840;
+        naturalHeight = this.naturalHeight || 5120;
+        setupMapBounds();
+    };
+    mapImg.onerror = function() {
+        naturalWidth = 3840;
+        naturalHeight = 5120;
+        setupMapBounds();
+    };
+    setTimeout(setupMapBounds, 1800);
+
+    map.on('click', function(e) {
+        const yPct = +(e.latlng.lat / naturalHeight).toFixed(4);
+        const xPct = +(e.latlng.lng / naturalWidth).toFixed(4);
+        if (isDropMode) {
+            isDropMode = false;
+            document.getElementById('dropPinBtn').style.background = '';
+            document.getElementById('dropPinBtn').style.color = 'var(--neon-green,#00ff88)';
+            pendingDropCoords = { yPct, xPct };
+            openUserPinModal();
+            return;
+        }
+        if (isDevMode) {
+            const coordStr = `{ "yPct": ${yPct}, "xPct": ${xPct} }`;
+            navigator.clipboard.writeText(coordStr).catch(() => {});
+            showToast(`📋 Copied Coords: ${coordStr}`);
+        }
+    });
+}
+
+function toggleMapStyle() {
+    isTacticalMode = !isTacticalMode;
+    const mapEl = document.getElementById('leafletMap');
+    const styleLabel = document.getElementById('styleLabel');
+    const styleIcon = document.getElementById('styleIcon');
+    const toggleBtn = document.getElementById('mapStyleToggleBtn');
+    if (isTacticalMode) {
+        mapEl.classList.add('tactical-active');
+        toggleBtn.classList.add('active-mode');
+        styleIcon.innerText = '🕶️';
+        styleLabel.innerText = 'Night Tactical';
+        showToast('🕶️ Night Tactical Filter Activated');
+    } else {
+        mapEl.classList.remove('tactical-active');
+        toggleBtn.classList.remove('active-mode');
+        styleIcon.innerText = '🗺️';
+        styleLabel.innerText = 'Atlas Day';
+        showToast('🗺️ Atlas Day Mode Restored');
+    }
+}
+
+function resetFullMap() {
+    if (!map || !mapBounds) return;
+    recomputeZoomBounds(false);
+    map.flyToBounds(mapBounds, { padding: [24, 24], duration: 0.75 });
+    showToast('🌎 Full Leonida Map View Restored');
+}
+
+async function loadAllPinsData() {
+    allPins = [];
+    const seen = new Set();
+
+    try {
+        const res = await fetch('/data/map-pins.json?v=45');
+        if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data.pins)) {
+                data.pins.forEach(p => {
+                    if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
+                });
+            }
+        }
+    } catch(err) { console.warn('Could not load /data/map-pins.json:', err); }
+
+    try {
+        const resLive = await fetch('/data/map-pins-live.json');
+        if (resLive.ok) {
+            const dataLive = await resLive.json();
+            if (Array.isArray(dataLive.items)) {
+                dataLive.items.forEach(p => {
+                    if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
+                });
+            }
+        }
+    } catch(err) { console.warn('Could not load /data/map-pins-live.json:', err); }
+
+    if (customUserPins && customUserPins.length) {
+        customUserPins.forEach(p => {
+            if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
+        });
+    }
+
+    renderAllMarkers();
+    renderCategoryRows();
+    updateChecklistStats();
+    renderFilteredList();
+}
+
+function createMarkerIcon(pin) {
+    const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
+    const color = cat.color;
+    const iconChar = pin.icon || cat.icon || '📍';
+    const isFound = foundPinIds.has(pin.id);
+    const isLive = pin.category === 'live-discovery';
+    const isHighlighted = highlightedPinId === pin.id;
+
+    const extraClass = (isFound ? 'is-found ' : '') + (isLive ? 'live-pulse-marker ' : '') + (isHighlighted ? 'deep-link-pulse' : '');
+    const html = `
+        <div class="custom-pin-marker ${extraClass}" data-marker-id="${pin.id}" style="width:28px; height:28px; color:${color}; border-color:${color};">
+            <span style="font-size:14px; line-height:1;">${iconChar}</span>
+        </div>
+    `;
+    return L.divIcon({
+        className: 'div-icon-wrapper',
+        html: html,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        popupAnchor: [0, -16]
+    });
+}
+
+function createPopupContent(pin) {
+    const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
+    const isFound = foundPinIds.has(pin.id);
+    const imgHtml = pin.image ? `<div class="popup-img-wrap"><img src="${pin.image}" alt="${pin.title}" loading="lazy"></div>` : '';
+    const blueprintBtn = pin.link ? `<a href="${pin.link}" class="btn-popup-link">Guide &rarr;</a>` : '';
+
+    return `
+        ${imgHtml}
+        <div class="popup-card">
+            <div class="popup-header">
+                <span class="popup-tag-badge" style="background:${cat.color}22; color:${cat.color}; border:1px solid ${cat.color}66;">
+                    ${pin.badge || cat.name}
+                </span>
+                <span class="popup-region">📍 ${pin.region || 'Leonida'}</span>
+            </div>
+            <h4 class="popup-title">${pin.title}</h4>
+            ${pin.payout ? `<div class="popup-payout-row"><span style="color:#94a3b8;">Info / Payout:</span><strong style="color:var(--neon-green,#00ff88);">${pin.payout}</strong></div>` : ''}
+            ${pin.security ? `<div style="font-size:0.68rem; color:#f87171;">🔒 <strong>Security:</strong> ${pin.security}</div>` : ''}
+            <p class="popup-desc">${pin.description || ''}</p>
+            ${pin.tips ? `<div class="popup-tip-box">💡 <strong>Tactical Note:</strong> ${pin.tips}</div>` : ''}
+            <div class="popup-aff-mini">
+                🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;
+                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a> |
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a> |
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a> |
+                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+            </div>
+            <div class="popup-actions-row">
+                <button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${pin.id}')">
+                    ${isFound ? '↺ Unfound' : '✓ Found'}
+                </button>
+                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${pin.id}')" title="Copy Pin Link">
+                    🔗 Copy Pin
+                </button>
+                ${blueprintBtn}
+            </div>
+        </div>
+    `;
+}
+
+function renderAllMarkers() {
+    Object.keys(markerLayersByCategory).forEach(cat => {
+        if (markerLayersByCategory[cat]) markerLayersByCategory[cat].clearLayers();
+    });
+    markersById = {};
+
+    allPins.forEach(pin => {
+        const y = pin.yPct * naturalHeight;
+        const x = pin.xPct * naturalWidth;
+        const marker = L.marker([y, x], {
+            icon: createMarkerIcon(pin),
+            title: pin.title
+        });
+        marker.bindPopup(() => createPopupContent(pin), {
+            maxWidth: 330,
+            autoPan: true,
+            autoPanPadding: [48, 48]
+        });
+        marker.on('click', () => {
+            flyToPin(pin.id, false);
+        });
+
+        markersById[pin.id] = marker;
+        const cat = pin.category || 'vault';
+        if (!markerLayersByCategory[cat]) {
+            markerLayersByCategory[cat] = L.layerGroup().addTo(map);
+        }
+        if (categoryVisibility[cat] !== false && !(hideFoundActive && foundPinIds.has(pin.id))) {
+            markerLayersByCategory[cat].addLayer(marker);
+        }
+    });
+
+    const lbl = document.getElementById('activePinCountLabel');
+    if (lbl) lbl.innerText = `${allPins.length} PINS LIVE`;
+    const badge = document.getElementById('mobileCountBadge');
+    if (badge) badge.innerText = `${allPins.length}`;
+}
+
+function findPinByIdOrAlias(rawId) {
+    if (!rawId) return null;
+    const clean = String(rawId).trim();
+    let pin = allPins.find(p => p.id === clean);
+    if (pin) return pin;
+    const low = clean.toLowerCase();
+    pin = allPins.find(p => p.id.toLowerCase() === low);
+    if (pin) return pin;
+    // Normalized partial match fallback
+    const slug = low.replace(/[^a-z0-9]/g, '');
+    return allPins.find(p => p.id.toLowerCase().replace(/[^a-z0-9]/g, '') === slug)
+        || allPins.find(p => p.title.toLowerCase().includes(low))
+        || null;
+}
+
+function flyToPin(pinId, openPopup = true, highlightPulse = false) {
+    const pin = findPinByIdOrAlias(pinId);
+    if (!pin || !map) {
+        showToast('⚠️ Pin not found — showing full Leonida Map');
+        return false;
+    }
+
+    const cat = pin.category || 'vault';
+    if (!categoryVisibility[cat]) {
+        categoryVisibility[cat] = true;
+    }
+    if (hideFoundActive && foundPinIds.has(pin.id)) {
+        hideFoundActive = false;
+        const chk = document.getElementById('hideFoundCheckbox');
+        if (chk) chk.checked = false;
+    }
+
+    if (highlightPulse) {
+        const prev = highlightedPinId;
+        highlightedPinId = pin.id;
+        if (prev && markersById[prev]) {
+            const prevPin = allPins.find(p => p.id === prev);
+            if (prevPin) markersById[prev].setIcon(createMarkerIcon(prevPin));
+        }
+        if (markersById[pin.id]) {
+            markersById[pin.id].setIcon(createMarkerIcon(pin));
+        }
+    }
+
+    updateCategoryLayers();
+    renderCategoryRows();
+
+    const y = pin.yPct * naturalHeight;
+    const x = pin.xPct * naturalWidth;
+    const targetZoom = Math.max(fitZoomLevel + 2.25, 0.75);
+
+    map.flyTo([y, x], targetZoom, { duration: 0.7 });
+
+    if (openPopup) {
+        setTimeout(() => {
+            const marker = markersById[pin.id];
+            if (marker) {
+                marker.openPopup();
+            }
+        }, 760);
+    }
+    return true;
+}
+
+function jumpToRegion(regionName) {
+    const conf = REGION_CENTERS[regionName];
+    if (!conf || !map) return;
+    const y = conf.yPct * naturalHeight;
+    const x = conf.xPct * naturalWidth;
+    map.flyTo([y, x], conf.zoom, { duration: 0.75 });
+    showToast(`📍 Jumped to ${regionName}`);
+}
+
+function flyToNextUnfound() {
+    const unfound = allPins.filter(p => !foundPinIds.has(p.id));
+    if (unfound.length === 0) {
+        showToast('🏆 All Pins Found & Completed!');
+        return;
+    }
+    const target = unfound[Math.floor(Math.random() * unfound.length)];
+    flyToPin(target.id, true, true);
+    showToast(`🎯 Flying to: ${target.title}`);
+}
+
+function handleInitialDeepLinks() {
+    const params = new URLSearchParams(window.location.search);
+    const pinParam = params.get('pin') || params.get('id') || params.get('marker');
+    const regionParam = params.get('region');
+
+    if (pinParam) {
+        const ok = flyToPin(pinParam, true, true);
+        if (ok) {
+            const p = findPinByIdOrAlias(pinParam);
+            if (p) showToast(`📍 Locked Pin: ${p.title}`);
+        }
+    } else if (regionParam) {
+        const match = Object.keys(REGION_CENTERS).find(r => r.toLowerCase().replace(/[^a-z]/g, '') === regionParam.toLowerCase().replace(/[^a-z]/g, ''));
+        if (match) jumpToRegion(match);
+    }
+}
+
+function copyPinDeepLink(pinId) {
+    const url = `${window.location.origin}/map.html?pin=${encodeURIComponent(pinId)}`;
+    navigator.clipboard.writeText(url).catch(() => {});
+    showToast('🔗 Map Pin Link Copied!');
+}
+
+function togglePinFound(pinId) {
+    if (foundPinIds.has(pinId)) {
+        foundPinIds.delete(pinId);
+        showToast('↺ Pin Marked Unfound');
+    } else {
+        foundPinIds.add(pinId);
+        showToast('✓ Pin Marked Found');
+    }
+    try { localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds])); } catch(e) {}
+    const pin = allPins.find(p => p.id === pinId);
+    if (pin && markersById[pinId]) {
+        markersById[pinId].setIcon(createMarkerIcon(pin));
+        if (markersById[pinId].isPopupOpen()) {
+            markersById[pinId].setPopupContent(createPopupContent(pin));
+        }
+    }
+    updateChecklistStats();
+    updateCategoryLayers();
+    renderFilteredList();
+}
+
+function updateChecklistStats() {
+    const total = allPins.length || 162;
+    const found = [...foundPinIds].filter(id => allPins.some(p => p.id === id)).length;
+    const pct = Math.round((found / total) * 100);
+    const progressBar = document.getElementById('checklistProgressBar');
+    const countLabel = document.getElementById('foundCountLabel');
+    if (progressBar) progressBar.style.width = `${pct}%`;
+    if (countLabel) countLabel.innerText = `Found: ${found} / ${total} (${pct}%)`;
+}
+
+function toggleHideFound(checked) {
+    hideFoundActive = checked;
+    updateCategoryLayers();
+    renderFilteredList();
+}
+
+function renderCategoryRows() {
+    const container = document.getElementById('categoryRowsContainer');
+    if (!container) return;
+    let html = '';
+    Object.keys(CATEGORIES).forEach(catKey => {
+        const cat = CATEGORIES[catKey];
+        const isChecked = categoryVisibility[catKey];
+        const totalInCat = allPins.filter(p => p.category === catKey).length;
+        const foundInCat = allPins.filter(p => p.category === catKey && foundPinIds.has(p.id)).length;
+        html += `
+            <div class="cat-filter-row" onclick="handleCategoryRowClick('${catKey}')">
+                <div class="cat-left-side">
+                    <input type="checkbox" id="cat-chk-${catKey}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); setCategoryVisible('${catKey}', this.checked)">
+                    <span style="font-size:1rem;">${cat.icon}</span>
+                    <span style="color:${isChecked ? '#fff' : '#94a3b8'};">${cat.name}</span>
+                </div>
+                <div class="cat-right-side">
+                    <span class="cat-count-badge" style="border:1px solid ${cat.color}44;">${totalInCat - foundInCat}/${totalInCat}</span>
+                    <button type="button" class="btn-cat-only" onclick="event.stopPropagation(); isolateCategory('${catKey}')">Only</button>
+                </div>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
+function handleCategoryRowClick(catKey) {
+    const nextState = !categoryVisibility[catKey];
+    setCategoryVisible(catKey, nextState);
+}
+
+function setCategoryVisible(catKey, visible) {
+    categoryVisibility[catKey] = visible;
+    updateCategoryLayers();
+    renderFilteredList();
+    renderCategoryRows();
+}
+
+function isolateCategory(catKey) {
+    Object.keys(categoryVisibility).forEach(k => { categoryVisibility[k] = (k === catKey); });
+    updateCategoryLayers();
+    renderFilteredList();
+    renderCategoryRows();
+    showToast(`🎯 Showing Only: ${CATEGORIES[catKey].name}`);
+}
+
+function toggleAllCategories(show) {
+    Object.keys(categoryVisibility).forEach(k => { categoryVisibility[k] = show; });
+    updateCategoryLayers();
+    renderFilteredList();
+    renderCategoryRows();
+}
+
+function updateCategoryLayers() {
+    Object.keys(CATEGORIES).forEach(cat => {
+        const layer = markerLayersByCategory[cat];
+        if (!layer) return;
+        layer.clearLayers();
+        if (categoryVisibility[cat]) {
+            allPins.filter(p => p.category === cat).forEach(pin => {
+                if (hideFoundActive && foundPinIds.has(pin.id)) return;
+                const m = markersById[pin.id];
+                if (m) layer.addLayer(m);
+            });
+        }
+    });
+}
+
+function handleSearch(query) {
+    currentSearchQuery = query.toLowerCase().trim();
+    const clearBtn = document.getElementById('searchClearBtn');
+    if (clearBtn) clearBtn.style.display = currentSearchQuery ? 'block' : 'none';
+    renderFilteredList();
+}
+
+function clearSearch() {
+    const input = document.getElementById('mapSearchInput');
+    if (input) input.value = '';
+    handleSearch('');
+}
+
+function renderFilteredList() {
+    const listEl = document.getElementById('sidebarLocationsList');
+    if (!listEl) return;
+    const filtered = allPins.filter(pin => {
+        const cat = pin.category || 'vault';
+        if (!categoryVisibility[cat]) return false;
+        if (hideFoundActive && foundPinIds.has(pin.id)) return false;
+        if (!currentSearchQuery) return true;
+        const text = `${pin.title} ${pin.region || ''} ${pin.description || ''} ${pin.payout || ''} ${pin.id}`.toLowerCase();
+        return text.includes(currentSearchQuery);
+    });
+
+    if (filtered.length === 0) {
+        listEl.innerHTML = '<div style="text-align:center; padding:1.5rem 1rem; color:#94a3b8; font-size:0.8rem;">🔍 No matching locations found.</div>';
+        return;
+    }
+
+    listEl.innerHTML = filtered.slice(0, 100).map(pin => {
+        const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
+        const isFound = foundPinIds.has(pin.id);
+        return `
+            <div class="pin-list-item ${isFound ? 'is-found' : ''}" onclick="flyToPin('${pin.id}', true, true)">
+                <div class="pin-item-left">
+                    <span class="pin-item-icon">${pin.icon || cat.icon}</span>
+                    <div class="pin-item-title-wrap">
+                        <span class="pin-item-title">${pin.title}</span>
+                        <div class="pin-item-sub">
+                            <span>📍 ${pin.region || 'Leonida'}</span>
+                            ${pin.payout ? `<span>&bull;</span><span class="pin-item-payout">${pin.payout}</span>` : ''}
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-mini-action" onclick="event.stopPropagation(); togglePinFound('${pin.id}')">${isFound ? '↺' : '✓'}</button>
+            </div>
+        `;
+    }).join('');
+}
+
+function toggleUserPinDropMode() {
+    isDropMode = !isDropMode;
+    const btn = document.getElementById('dropPinBtn');
+    if (isDropMode) {
+        btn.style.background = 'var(--neon-green,#00ff88)';
+        btn.style.color = '#040711';
+        showToast('📍 Click anywhere on the map to place your custom pin!');
+    } else {
+        btn.style.background = '';
+        btn.style.color = 'var(--neon-green,#00ff88)';
+    }
+}
+function openUserPinModal() { document.getElementById('userPinModal').style.display = 'flex'; }
+function closeUserPinModal() { document.getElementById('userPinModal').style.display = 'none'; pendingDropCoords = null; }
+
+function saveUserPin() {
+    if (!pendingDropCoords) return;
+    const title = document.getElementById('userPinTitle').value.trim() || 'Custom Waypoint';
+    const category = document.getElementById('userPinCategory').value || 'user-custom';
+    const notes = document.getElementById('userPinNotes').value.trim();
+    const newPin = {
+        id: `user-${Date.now()}`,
+        title, category,
+        icon: (CATEGORIES[category] && CATEGORIES[category].icon) || '📍',
+        region: 'User Marked',
+        yPct: pendingDropCoords.yPct,
+        xPct: pendingDropCoords.xPct,
+        description: notes || 'Custom waypoint saved locally.',
+        badge: 'USER PIN'
+    };
+    customUserPins.push(newPin);
+    try { localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins)); } catch(e) {}
+    allPins.push(newPin);
+    renderAllMarkers();
+    renderCategoryRows();
+    renderFilteredList();
+    closeUserPinModal();
+    flyToPin(newPin.id, true, true);
+}
+
+function openSaveModal() {
+    const data = { version: '4.5', timestamp: new Date().toISOString(), foundPinIds: [...foundPinIds], customUserPins };
+    document.getElementById('saveCodeTextarea').value = btoa(JSON.stringify(data));
+    document.getElementById('saveCodeModal').style.display = 'flex';
+}
+function closeSaveModal() { document.getElementById('saveCodeModal').style.display = 'none'; }
+function copySaveCode() {
+    const ta = document.getElementById('saveCodeTextarea');
+    ta.select();
+    navigator.clipboard.writeText(ta.value).catch(() => {});
+    showToast('📋 Backup Code Copied!');
+}
+function importSaveCode() {
+    const ta = document.getElementById('saveCodeTextarea');
+    try {
+        const data = JSON.parse(atob(ta.value.trim()));
+        if (data.foundPinIds) {
+            foundPinIds = new Set(data.foundPinIds);
+            localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds]));
+        }
+        if (data.customUserPins) {
+            customUserPins = data.customUserPins;
+            localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins));
+        }
+        closeSaveModal();
+        loadAllPinsData();
+        showToast('📥 Progress Imported!');
+    } catch(err) { alert('Invalid Save Code string.'); }
+}
+
+function showToast(msg) {
+    const t = document.getElementById('hudToast');
+    if (!t) return;
+    t.innerText = msg;
+    t.classList.add('show');
+    clearTimeout(t._hideTimeout);
+    t._hideTimeout = setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+function toggleMobileDrawer() {
+    const sidebar = document.getElementById('mapSidebar');
+    if (sidebar) sidebar.classList.toggle('open');
+}
+
+window.addEventListener('resize', () => {
+    clearTimeout(window._mapResizeTimer);
+    window._mapResizeTimer = setTimeout(syncHeaderHeight, 120);
+});
+window.addEventListener('load', () => {
+    setTimeout(syncHeaderHeight, 80);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initEngine();
+});
+</script>
 </body>
 </html>

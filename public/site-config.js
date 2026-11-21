@@ -1,5 +1,5 @@
 ﻿// ==========================================================================
-// GTA6HEISTGUIDE.COM — 1-FILE MASTER REVENUE & OWNER CONFIGURATION
+// GTA6HEISTGUIDE.COM — 1-FILE MASTER REVENUE & OWNER CONFIGURATION (v3.2)
 // Swap 100% of affiliate IDs, contact email, AdSense & GA4 in 60 seconds.
 // ==========================================================================
 window.SITE_CONFIG = Object.freeze({
@@ -7,21 +7,21 @@ window.SITE_CONFIG = Object.freeze({
   domain: "https://www.gta6heistguide.com",
   ownerContactEmail: "inquiries@gta6heistguide.com",
 
-  // Centralized Direct Amazon Product Links (Paste exact https://amzn.to/... SiteStripe links here)
+  // Centralized Direct Amazon Product Links
   amazonLinks: {
     kontrolfreek: "https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20",
     samsung990pro: "https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20",
     pulseElite: "https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20",
+    pulseExplore: "https://www.amazon.com/s?k=PlayStation+PULSE+Explore+Wireless+Earbuds&tag=gta6heistguid-20",
     dualsenseDock: "https://www.amazon.com/s?k=PlayStation+DualSense+Charging+Station&tag=gta6heistguid-20",
-    dualsenseEdge: "https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20"
+    dualsenseEdge: "https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20",
+    amazonMusic: "https://www.amazon.com/music/unlimited?tag=gta6heistguid-20",
+    gamingMonitor: "https://www.amazon.com/s?k=4K+120Hz+HDMI+2.1+Gaming+Monitor+PS5&tag=gta6heistguid-20"
   },
 
   // Affiliate & Store Monetization IDs
   amazonTag: "gta6heistguid-20",
   exitLagUrl: "https://www.exitlag.com/refer/10386953",
-  gfuelUrl: "YOUR_GFUEL_TRACKING_LINK",
-  gfuelPartner: "gta6heistguide",
-  gfuelId: "3162838",
   g2aUrl: "https://www.g2a.com/n/reflink-4094b9aab5",
   enebaUrl: "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide",
   enebaAffiliateId: "gta6heistguide",
@@ -31,18 +31,17 @@ window.SITE_CONFIG = Object.freeze({
   getApexLocalPartnersUrl: "https://getapexlocal.com/partners",
 
   // Optional Buyer Activations (leave blank "" to keep disabled)
-  adsensePublisherId: "",   // Example: "ca-pub-1234567890123456"
-  ga4MeasurementId: "",     // Example: "G-XXXXXXXXXX"
+  adsensePublisherId: "",
+  ga4MeasurementId: "",
   enableAffiliateClickTracking: true
 });
 
-// Auto-hydrate centralized Amazon product links sitewide
+// Auto-hydrate centralized Amazon product links & nav dropdowns sitewide
 (function() {
   function hydrateLinks() {
     var cfg = window.SITE_CONFIG;
     if (!cfg || !cfg.amazonLinks) return;
 
-    // 1. Explicit data-amazon-link hooks
     document.querySelectorAll('[data-amazon-link]').forEach(function(el) {
       var key = el.getAttribute('data-amazon-link');
       if (cfg.amazonLinks[key]) {
@@ -50,7 +49,6 @@ window.SITE_CONFIG = Object.freeze({
       }
     });
 
-    // 2. Sitewide automatic mapping of product buttons to centralized links
     document.querySelectorAll('a[href*="amazon.com"]').forEach(function(a) {
       var h = a.getAttribute('href') || '';
       if (/B0BHJJ9Y77|samsung.*990|990\+pro/i.test(h)) {
@@ -66,7 +64,7 @@ window.SITE_CONFIG = Object.freeze({
       }
     });
 
-    // 3. Setup click / hover support for .nav-dropdown
+    // Setup click support for .nav-dropdown
     document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
       var btn = dd.querySelector('.nav-dropdown-btn');
       if (btn && !btn.dataset.bound) {
@@ -85,6 +83,26 @@ window.SITE_CONFIG = Object.freeze({
         if (btn) btn.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // Rotating Drops Tab label cycler in header
+    var dropsTab = document.getElementById('rotatingDropsTab');
+    if (dropsTab && !dropsTab.dataset.rotatorBound) {
+      dropsTab.dataset.rotatorBound = 'true';
+      var labels = [
+        '🎁 Kick 10K Giveaway',
+        '🎁 Twitch Drops Live',
+        '🎁 $0 Prime Sub'
+      ];
+      var idx = 0;
+      setInterval(function() {
+        idx = (idx + 1) % labels.length;
+        dropsTab.style.opacity = '0.35';
+        setTimeout(function() {
+          dropsTab.textContent = labels[idx];
+          dropsTab.style.opacity = '1';
+        }, 180);
+      }, 4000);
+    }
   }
 
   if (document.readyState === 'loading') {

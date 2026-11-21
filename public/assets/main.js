@@ -1,5 +1,5 @@
 // ==========================================================================
-// GTA 6 HEIST GUIDE v3.0 - LIVE CLIENT ENGINE, D1 SYNC, BOOKMARKS, VIP & VIDEO
+// GTA 6 HEIST GUIDE v3.2 - LIVE CLIENT ENGINE, D1 SYNC & BOOKMARKS
 // ==========================================================================
 const GTA6 = {
   Icons: {
@@ -10,57 +10,9 @@ const GTA6 = {
       return `<svg class="ui-icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
     }
   },
-  audioCtx: null,
-  soundEnabled: true,
-  synthRadio: null,
-  radioPlaying: false,
   intelData: null,
-  currentIntelFilter: 'all',
-  currentThreadFilter: 'all',
-  cachedThreads: [],
-  cachedSquads: [],
-
-  // --------------------------------------------------------------------------
-  // SOUND & TOAST ENGINE
-  // --------------------------------------------------------------------------
-  initSound() {
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      this.audioCtx = new AudioContext();
-    } catch (e) {}
-  },
-
-  playBeep(freq = 440, type = 'sine', duration = 0.08) {
-    if (!this.soundEnabled) return;
-    if (!this.audioCtx) this.initSound();
-    if (!this.audioCtx) return;
-    if (this.audioCtx.state === 'suspended') this.audioCtx.resume();
-    try {
-      const osc = this.audioCtx.createOscillator();
-      const gain = this.audioCtx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, this.audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.08, this.audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.audioCtx.currentTime + duration);
-      osc.connect(gain);
-      gain.connect(this.audioCtx.destination);
-      osc.start();
-      osc.stop(this.audioCtx.currentTime + duration);
-    } catch (e) {}
-  },
-
-  playSuccess() {
-    this.playBeep(523.25, 'triangle', 0.06);
-    setTimeout(() => this.playBeep(659.25, 'triangle', 0.06), 60);
-    setTimeout(() => this.playBeep(783.99, 'triangle', 0.12), 120);
-  },
-
-  toggleSound() {
-    this.soundEnabled = !this.soundEnabled;
-    const btn = document.getElementById('soundBtn');
-    if (btn) btn.innerText = this.soundEnabled ? '🔊 Audio FX: ON' : '🔇 Audio FX: OFF';
-    if (this.soundEnabled) this.playSuccess();
-  },
+  playBeep() {},
+  playSuccess() {},
 
   showToast(message) {
     let toast = document.getElementById('gtaToast');
@@ -100,8 +52,8 @@ const GTA6 = {
 
   heistTier(target) {
     const t = String(target || '');
-    if (/Leonida State|Ocean Drive/i.test(t)) return 'Mastermind';
-    if (/Sinfrontera|Starlet/i.test(t)) return 'Expert';
+    if (/VCIA|Large Bank/i.test(t)) return 'Mastermind';
+    if (/Sinfrontera|Cartel/i.test(t)) return 'Expert';
     return 'Intermediate';
   },
 
@@ -127,7 +79,7 @@ const GTA6 = {
       `➕ **Add:** ${s.contactTag}`,
     ];
     if (s.notes) lines.push(`📝 ${s.notes}`);
-    lines.push('🔗 Find or post squads: https://www.gta6heistguide.com/interactive-map');
+    lines.push('🔗 Open Leonida Map: https://www.gta6heistguide.com/map.html');
     return lines.join('\n');
   },
 
@@ -161,7 +113,7 @@ const GTA6 = {
       this.playBeep(520, 'triangle', 0.05);
       this.showToast('✍️ Enter your real PSN / Xbox / Discord tag below to publish your Day-1 Squad!');
     } else {
-      window.location.href = '/interactive-map';
+      window.location.href = '/map.html';
     }
   },
 
@@ -172,11 +124,9 @@ const GTA6 = {
       ownerContactEmail: 'inquiries@gta6heistguide.com',
       amazonTag: 'gta6heistguid-20',
       exitLagUrl: 'https://www.exitlag.com/refer/10386953',
-      exitLagCode: '10386953',
       g2aUrl: 'https://www.g2a.com/n/reflink-4094b9aab5',
       enebaUrl: 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide',
       enebaAffiliateId: 'gta6heistguide',
-      whopUrl: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle',
       gumroadUrl: 'https://apexlocallabs.gumroad.com/l/cutflow-pro',
       gumroadBundleUrl: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle',
       getApexLocalUrl: 'https://getapexlocal.com',
@@ -253,7 +203,7 @@ const GTA6 = {
         } else if (low.includes('gumroad.com')) {
           a.href = low.includes('cutflow-pro')
             ? (cfg.gumroadCutFlowUrl || cfg.gumroadUrl || 'https://apexlocallabs.gumroad.com/l/cutflow-pro')
-            : (cfg.gumroadBundleUrl || cfg.whopUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle');
+            : (cfg.gumroadBundleUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle');
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'gumroad');
         } else if (low.includes('getapexlocal.com/partners')) {
           a.href = cfg.getApexLocalPartnersUrl;
@@ -272,18 +222,6 @@ const GTA6 = {
       document.querySelectorAll('[data-owner-email-text]').forEach((el) => {
         el.textContent = cfg.ownerContactEmail;
       });
-
-      document.querySelectorAll('[data-exitlag-code]').forEach((el) => {
-        el.textContent = cfg.exitLagCode;
-      });
-
-      if (cfg.exitLagCode && cfg.exitLagCode !== this.defaults.exitLagCode) {
-        document.querySelectorAll('[data-aff-partner="exitlag"], .card, .gear-box').forEach((el) => {
-          if (el.innerHTML.includes(this.defaults.exitLagCode)) {
-            el.innerHTML = el.innerHTML.split(this.defaults.exitLagCode).join(cfg.exitLagCode);
-          }
-        });
-      }
 
       document.querySelectorAll('.footer-disclaimer, .disclaimer-box').forEach((box) => {
         box.querySelectorAll('code').forEach((codeEl) => {
@@ -344,23 +282,6 @@ const GTA6 = {
       this.applyToDom();
       this.initOptionalScripts();
     },
-  },
-
-  copyExitLagCode(btn) {
-    const code = (this.SiteConfig && this.SiteConfig.get().exitLagCode) || '10386953';
-    const el = (btn && btn.nodeType === 1) ? btn : (window.event && window.event.target ? window.event.target.closest('button') : null);
-    if (el) {
-      const orig = el.innerHTML;
-      el.innerHTML = `✓ Copied: ${code}!`;
-      el.style.color = 'var(--neon-green)';
-      el.style.borderColor = 'var(--neon-green)';
-      setTimeout(() => {
-        el.innerHTML = orig;
-        el.style.color = '';
-        el.style.borderColor = '';
-      }, 2500);
-    }
-    this.copyText(code, `Coupon Code ${code}`);
   },
 
   initAffiliateTracking() {
@@ -770,7 +691,7 @@ const GTA6 = {
     bindText('headerBioDisplay', profile.bio);
     const badgeEl = document.getElementById('headerBadgeDisplay');
     if (badgeEl) {
-      badgeEl.innerText = profile.vipVerified ? `${profile.role} ★ VIP` : profile.role;
+      badgeEl.innerText = profile.role;
       badgeEl.className = `user-badge ${profile.badgeClass}`;
     }
 
@@ -782,12 +703,7 @@ const GTA6 = {
 
     const vipBadgeBox = document.getElementById('profileVipStatusBox');
     if (vipBadgeBox) {
-      if (profile.vipVerified) {
-        vipBadgeBox.innerHTML = `<span class="user-badge badge-mastermind" style="font-size:0.85rem;">✅ VERIFIED FOUNDER // VIP EMAIL UNLOCKED (${profile.email})</span>
-        <button type="button" class="btn btn-secondary" style="padding:0.4rem 0.9rem; font-size:0.78rem; margin-left:0.5rem;" onclick="GTA6.Auth.openCheatSheet()">Download VIP Blueprints</button>`;
-      } else {
-        vipBadgeBox.innerHTML = `<button type="button" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.82rem;" onclick="GTA6.Auth.openModal()">🎁 Verify Email for Founder Badge & +2,500 Rep</button>`;
-      }
+      vipBadgeBox.innerHTML = `<a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 Open 15-Slot Save Planner</a>`;
     }
 
     const form = document.getElementById('profileEditForm');
@@ -821,270 +737,11 @@ const GTA6 = {
   // VIP EMAIL LOGIN & INCENTIVE SYSTEM
   // --------------------------------------------------------------------------
   Auth: {
-    init() {
-      this.updateNavButton();
-      this.fetchSubscriberCount();
-
-      const inlineForm = document.getElementById('vipUnlockForm');
-      if (inlineForm) {
-        inlineForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          this.handleSubmit({
-            email: document.getElementById('vipEmailInline')?.value,
-            callsign: document.getElementById('vipAliasInline')?.value,
-            platform: document.getElementById('vipPlatformInline')?.value || 'PS5 Pro & PC',
-            role: document.getElementById('vipRoleInline')?.value || 'Mastermind',
-            discord_tag: document.getElementById('vipDiscordInline')?.value || '',
-            statusElId: 'vipInlineStatus',
-          });
-        });
-      }
-    },
-
-    async fetchSubscriberCount() {
-      try {
-        const res = await fetch('/api/subscribe');
-        if (!res.ok) return;
-        const data = await res.json();
-        const raw = Number(data.totalSubscribers || 0);
-        document.querySelectorAll('.verified-members-count').forEach((el) => {
-          el.innerText = raw > 0 ? `${raw.toLocaleString()} Verified Operatives` : '6 Leonida Regions Mapped';
-        });
-      } catch (e) {}
-    },
-
-    updateNavButton() {
-      const profile = GTA6.getProfile();
-      const actionsEl = document.querySelector('.nav-actions');
-      if (!actionsEl) return;
-
-      let vipBtn = document.getElementById('navVipBtn');
-      if (!vipBtn) {
-        vipBtn = document.createElement('button');
-        vipBtn.id = 'navVipBtn';
-        vipBtn.className = 'btn-vip-nav';
-        vipBtn.onclick = () => this.openModal();
-        actionsEl.insertBefore(vipBtn, actionsEl.firstChild);
-      }
-
-      if (profile.vipVerified) {
-        vipBtn.classList.add('verified');
-        vipBtn.innerText = `★ ${profile.alias}`;
-      } else {
-        vipBtn.classList.remove('verified');
-        vipBtn.innerHTML = `💾 Save Progress<span class="vip-desktop-label"> / Alerts</span>`;
-      }
-    },
-
-    injectModals() {
-      if (document.getElementById('vipLoginModal')) return;
-      const profile = GTA6.getProfile();
-      const wrap = document.createElement('div');
-      wrap.innerHTML = `
-        <div class="modal-backdrop" id="vipLoginModal">
-          <div class="modal-box">
-            <button type="button" class="modal-close-btn" onclick="GTA6.Auth.closeModal()" aria-label="Close Login Modal">${GTA6.Icons.close(15)}</button>
-            <div style="text-align:center; margin-bottom:1.25rem;">
-              <span class="user-badge badge-mastermind" style="margin-bottom:0.6rem;">FOUNDER SYNDICATE ACCESS</span>
-              <h2 style="color:#fff; font-size:1.55rem; margin-bottom:0.4rem;">💾 Save Progress & Get Free Heist Alerts</h2>
-              <p style="color:var(--text-muted); font-size:0.88rem;">Back up your Leonida Criminal Enterprise Mastery %, receive weekly GTA 6 heist meta alerts, Thursday 1.5X payout rotations, and unlock free VIP strategy blueprints (<strong style="color:var(--neon-cyan);">6 Leonida Regions Mapped &bull; 100% Free Tools</strong>).</p>
-            </div>
-            <div class="vip-pack-preview">
-              <img src="assets/vip-blueprint-pack.png" alt="VIP Holographic Vault Blueprint Pack">
-            </div>
-            <form id="modalVipForm">
-              <div class="grid" style="grid-template-columns:1fr 1fr; gap:0.8rem;">
-                <div class="form-group">
-                  <label>Operative Callsign</label>
-                  <input type="text" class="form-input" id="vipAliasModal" value="${profile.alias}" required>
-                </div>
-                <div class="form-group">
-                  <label>Preferred Platform</label>
-                  <select class="form-select" id="vipPlatformModal">
-                    <option value="PS5 Pro">PS5 Pro</option>
-                    <option value="Xbox Series X|S">Xbox Series X|S</option>
-                    <option value="PC">PC</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Email Address (Delivers Weekly Meta & Blueprint Pack)</label>
-                <input type="email" class="form-input" id="vipEmailModal" value="${profile.email || ''}" placeholder="operative@email.com" required>
-              </div>
-              <div class="grid" style="grid-template-columns:1fr 1fr; gap:0.8rem;">
-                <div class="form-group">
-                  <label>Crew Role Badge</label>
-                  <select class="form-select" id="vipRoleModal">
-                    <option value="Mastermind">Mastermind</option>
-                    <option value="Hacker">Ghost Hacker</option>
-                    <option value="Wheelman">Wheelman</option>
-                    <option value="Enforcer">Enforcer</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Discord / PSN / Gamertag (Optional LFG)</label>
-                  <input type="text" class="form-input" id="vipDiscordModal" value="${profile.discordTag || ''}" placeholder="e.g. ViceBoss#1024">
-                </div>
-              </div>
-              <label style="display:flex; align-items:flex-start; gap:0.5rem; font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; cursor:pointer;">
-                <input type="checkbox" id="vipOptInModal" checked style="margin-top:3px;">
-                <span>Send me weekly GTA 6 heist patch updates, 1.5X payout alerts, and vetted partner gear deals (Unsubscribe anytime).</span>
-              </label>
-              <button type="submit" class="btn btn-primary" style="width:100%; padding:0.85rem; font-size:0.95rem; font-weight:800;">💾 Save Progress &amp; Unlock Free Blueprints (+2,500 Rep)</button>
-              <div id="vipModalStatus" style="margin-top:0.75rem; font-size:0.85rem; text-align:center;"></div>
-            </form>
-            <div id="vipUnlockedActions" style="display:${profile.vipVerified ? 'block' : 'none'}; margin-top:1.2rem; padding:1rem; background:rgba(0,255,136,0.08); border:1px solid var(--neon-green); border-radius:8px; text-align:center;">
-              <div style="color:var(--neon-green); font-weight:800; margin-bottom:0.5rem;">✅ VIP ACCESS ACTIVE // CODE: FOUNDER-VIP-2026</div>
-              <button type="button" class="btn btn-secondary" style="width:100%;" onclick="GTA6.Auth.downloadVipPack()">📥 Download VIP Tactical Vault Cheat Sheet (.TXT)</button>
-            </div>
-          </div>
-        </div>
-      `;
-      document.body.appendChild(wrap);
-
-      const modalForm = document.getElementById('modalVipForm');
-      if (modalForm) {
-        modalForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          this.handleSubmit({
-            email: document.getElementById('vipEmailModal')?.value,
-            callsign: document.getElementById('vipAliasModal')?.value,
-            platform: document.getElementById('vipPlatformModal')?.value || 'PS5 Pro',
-            role: document.getElementById('vipRoleModal')?.value || 'Mastermind',
-            discord_tag: document.getElementById('vipDiscordModal')?.value || '',
-            marketing_opt_in: document.getElementById('vipOptInModal')?.checked !== false,
-            statusElId: 'vipModalStatus',
-          });
-        });
-      }
-    },
-
-    openModal() {
-      if (!document.getElementById('vipLoginModal')) {
-        this.injectModals();
-        this.fetchSubscriberCount();
-      }
-      const m = document.getElementById('vipLoginModal');
-      if (m) m.classList.add('open');
-      GTA6.playBeep(520, 'triangle', 0.05);
-    },
-
-    closeModal() {
-      const m = document.getElementById('vipLoginModal');
-      if (m) m.classList.remove('open');
-    },
-
-    openCheatSheet() {
-      this.openModal();
-    },
-
-    async handleSubmit({ email, callsign, platform, role, discord_tag, marketing_opt_in = true, statusElId }) {
-      const cleanEmail = String(email || '').trim();
-      const cleanAlias = String(callsign || '').trim() || 'ViceOperative';
-      const statusEl = statusElId ? document.getElementById(statusElId) : null;
-
-      if (!cleanEmail || !cleanEmail.includes('@')) {
-        if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">Please enter a valid email address.</span>`;
-        return;
-      }
-      if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-cyan);">Encrypting Operative Credentials...</span>`;
-
-      let apiRes = { ok: true, perkCode: 'FOUNDER-VIP-2026', repBonus: 2500 };
-      try {
-        const res = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: cleanEmail, callsign: cleanAlias, platform, role, discord_tag, marketing_opt_in }),
-        });
-        if (res.ok) apiRes = await res.json();
-      } catch (e) {}
-
-      const profile = GTA6.getProfile();
-      profile.alias = cleanAlias;
-      profile.email = cleanEmail;
-      profile.platform = platform;
-      profile.role = role;
-      profile.discordTag = discord_tag;
-      if (!profile.vipVerified) {
-        profile.syndicateRep = (Number(profile.syndicateRep) || 1240) + 2500;
-      }
-      profile.vipVerified = true;
-      profile.perkCode = apiRes.perkCode || 'FOUNDER-VIP-2026';
-      if (role === 'Mastermind') profile.badgeClass = 'badge-mastermind';
-      else if (role === 'Hacker') profile.badgeClass = 'badge-hacker';
-      else if (role === 'Wheelman') profile.badgeClass = 'badge-wheelman';
-      else if (role === 'Enforcer') profile.badgeClass = 'badge-enforcer';
-
-      GTA6.saveProfile(profile);
-      this.updateNavButton();
-      this.fetchSubscriberCount();
-      GTA6.playSuccess();
-
-      const unlockedBox = document.getElementById('vipUnlockedActions');
-      if (unlockedBox) unlockedBox.style.display = 'block';
-
-      if (statusEl) {
-        statusEl.innerHTML = `<span style="color:var(--neon-green);">✅ Welcome, ${cleanAlias}! Founder VIP Badge & +2,500 Rep unlocked!</span>`;
-      }
-      GTA6.showToast(`🎉 VIP Unlocked for ${cleanAlias}! Downloading Cheat Sheet Ready.`);
-    },
-
-    downloadVipPack() {
-      const profile = GTA6.getProfile();
-      const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : {};
-      const content = `======================================================================
-GTA6HEISTGUIDE.COM - VIP FOUNDER TACTICAL VAULT BLUEPRINT PACK (v3.2)
-Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
-======================================================================
-
-1. VERIFIED HEIST TARGETS & STORY PROGRESSION
-----------------------------------------------------------------------
-- The Cartel Heist: Sinfrontera National Bank ($120K–$150K Net Take)
-  * Approach: Rig 3 Cell Towers (10:47 Vault Time) & Raul Bautista 8-part chain
-  * Trophy: Break the Bank
-
-- VCIA Takedown: Vice City Airport Heist ($250,000 Top Story Payout)
-  * Approach: Roof Terminal Stealth & Cargo Plane Exfiltration
-  * Trophy: Hi-Jacked
-
-- 22 Free-Roam Banks: 8 Large Banks ($65K–$205K) & 14 Small Banks ($5K–$45K)
-  * Always bring Dye Pack Jammer and fence marked bills to Yasmani in Little Cuba (5% cut)
-
-- Verified Safe Codes:
-  * Brian's Lockup: 7700
-  * Kingpin Bowling: 0300
-  * Pelican Valley: 0072
-  * Crab Outpost: CLEAVES, 0072, 0212
-
-2. TACTICAL SETUP & HARDWARE CHECKLIST
-----------------------------------------------------------------------
-- Low-Ping Routing (ExitLag Free Trial):
-  ${cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953'}
-- Verify Digital Keys & Gift Cards (G2A & Eneba Global Compare):
-  ${cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5'}
-  ${cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide'}
-- Creator Growth Software (CutFlow Pro & ClipBounty Studio):
-  ${cfg.getApexLocalPartnersUrl || 'https://getapexlocal.com/partners'}
-
-3. BOOKMARK THE LIVE CREW FINDER & WEEKLY META BOARD:
-----------------------------------------------------------------------
-- Live Meta & Patch Intel: https://www.gta6heistguide.com/live-intel.html
-- Giveaways & Twitch Drops: https://www.gta6heistguide.com/giveaways.html
-- LFG Crew Matchmaker: https://www.gta6heistguide.com/interactive-map
-- Interactive Cut Calculator: https://www.gta6heistguide.com/heist-planner.html
-`;
-      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `GTA6HeistGuide_VIP_Blueprints_${profile.alias}.txt`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      GTA6.playSuccess();
-      GTA6.showToast('📥 Downloaded VIP Tactical Vault Cheat Sheet!');
-    },
+    init() {},
+    updateNavButton() {},
+    openModal() { window.location.href = '/save-planner'; },
+    closeModal() {},
+    openCheatSheet() { window.location.href = '/save-planner'; }
   },
 
   // --------------------------------------------------------------------------
@@ -1329,7 +986,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         avatar: '/assets/avatar-mastermind.png',
         time: 'Verified Connection Note',
         title: '[SYNDICATE CONNECTION & LAG ADVISORY] Stop Mid-Heist Disconnects & Cut Packet Loss with ExitLag Low-Ping Routing',
-        content: '⚡ Syndicate Connection & Lag Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial: https://www.exitlag.com/refer/10386953) to lock in rock-solid connections. Use Free Trial Active.',
+        content: '⚡ Syndicate Connection & Lag Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial: https://www.exitlag.com/refer/10386953) to lock in rock-solid connections.',
         votes: 95,
         tag: 'StealthMeta',
       },
@@ -1343,14 +1000,14 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
   getRecommendedSquadTemplates() {
     return [
       {
-        id: 'tpl-gold-reserve',
+        id: 'tpl-vcia-takedown',
         isTemplate: true,
-        templateTitle: '4-Player Gold Reserve Stealth Squad Template',
-        callsign: 'OPEN DAY-1 ARCHETYPE',
-        platform: 'PS5 Pro / Xbox Series X|S / PC',
+        templateTitle: '4-Player VCIA Takedown Finale Squad Template',
+        callsign: 'OPEN LAUNCH ARCHETYPE',
+        platform: 'PS5 Pro / Xbox Series X|S',
         role: 'Mastermind + Ghost Hacker + Wheelman + Enforcer',
-        roleNeeded: '1 Ghost Hacker (Sub-15s) + 1 Canal Wheelman',
-        targetHeist: 'Leonida State Gold Reserve ($25.0M)',
+        roleNeeded: '1 Roof Stealth Lead + 1 Tarmac Pilot',
+        targetHeist: 'VCIA Takedown — Airport Finale ($250,000)',
         micRequired: 'Mic Recommended',
         cutOffered: '25% / 25% / 25% / 25% Equal Split',
         contactTag: 'Template Ready — Click below to post your real tag',
@@ -1797,7 +1454,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
         { k: 'STOP GUESSING CREW CUTS', v: '$250,000 MAX STORY PAYOUT', s: 'INTERACTIVE PAYOUT OPTIMIZER' },
         { k: 'LIVE CO-OP LFG CREW FINDER', v: 'PS5 PRO • XBOX • PC', s: 'MATCH VERIFIED HEIST SQUADS' },
         { k: 'WEEKLY AUTO-UPDATING META', v: '1.5X BONUS TARGETS', s: 'THURSDAY RESET & SAFE GUIDES' },
-        { k: 'UNLOCK VIP BLUEPRINTS FREE', v: 'GTA6HEISTGUIDE.COM', s: 'BOOKMARK & JOIN THE SYNDICATE' },
+        { k: '15-SLOT SAVE PLANNER FREE', v: 'GTA6HEISTGUIDE.COM', s: 'BOOKMARK & JOIN THE SYNDICATE' },
       ];
       const sc = scenes[sceneIdx];
 
@@ -1958,195 +1615,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
   // --------------------------------------------------------------------------
   // INTERACTIVE VAULT KEYPAD DECRYPTION MINI-GAME TRAINER
   // --------------------------------------------------------------------------
-  KeypadTrainer: {
-    seq: [],
-    step: 0,
-    active: false,
-    locking: false,
-    difficulty: 'normal',
-    startTime: 0,
-    lastElapsedMs: 0,
-    lastRank: 'Unranked Operative',
-    timerInterval: null,
-
-    init() {
-      const box = document.getElementById('keypadTrainerBox');
-      if (!box) return;
-      const bestMs = localStorage.getItem('gta6_keypad_best_ms');
-      const bestText = bestMs ? `${Number(bestMs).toLocaleString()} ms (${(Number(bestMs) / 1000).toFixed(3)}s)` : 'No Record Yet';
-
-      box.innerHTML = `
-        <div class="keypad-trainer" id="syndicate-hack-trainer">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
-            <div>
-              <span class="user-badge badge-hacker" style="margin-bottom:0.45rem;">100% FREE INTERACTIVE MINI-GAME</span>
-              <h2 style="color:#fff; font-size:1.55rem;">🔐 Syndicate Vault Hack Trainer (15s Biometric &amp; Laser Bypass)</h2>
-              <p style="color:var(--text-muted); font-size:0.9rem;">Memorize the glowing biometric frequency nodes and input the sequence before the <strong>15.000s</strong> vault lockdown timer expires.</p>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Fastest Bypass Record</div>
-              <div id="keypadBestDisplay" style="font-size:1.25rem; font-weight:900; color:var(--neon-green); font-family:var(--font-mono);">${bestText}</div>
-              <div id="keypadRankDisplay" style="font-size:0.8rem; color:var(--neon-cyan); font-weight:800; margin-top:0.2rem;">Rank: Ready</div>
-            </div>
-          </div>
-
-          <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
-            <button type="button" class="tab-btn active" id="kpDiffNormal" onclick="GTA6.KeypadTrainer.setDifficulty('normal')">Normal Mode (5 Nodes &bull; 15s)</button>
-            <button type="button" class="tab-btn" id="kpDiffHardcore" onclick="GTA6.KeypadTrainer.setDifficulty('hardcore')">💀 Hardcore Mode (7 Nodes + Laser Speed &bull; 15s)</button>
-          </div>
-
-          <div style="text-align:center; margin-top:1rem;">
-            <div id="keypadTimerBar" style="font-family:var(--font-mono); font-size:1.35rem; color:var(--neon-amber); font-weight:900; margin-bottom:0.35rem;">⏱️ 15.000s REMAINING</div>
-            <div id="keypadStatus" style="font-family:var(--font-mono); color:var(--neon-cyan); font-weight:700; min-height:24px;">Select difficulty and click "Start 15s Biometric Bypass"</div>
-            <div class="keypad-grid">
-              ${[1, 2, 3, 4, 5, 6, 7, 8, 9]
-                .map((n) => `<button type="button" class="keypad-btn" id="kp-${n}" onclick="GTA6.KeypadTrainer.press(${n})">${n}</button>`)
-                .join('')}
-            </div>
-            <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-top:0.5rem;">
-              <button type="button" class="btn btn-primary" onclick="GTA6.KeypadTrainer.start()">⚡ Start 15s Biometric Bypass</button>
-              <button type="button" class="btn btn-secondary" onclick="GTA6.KeypadTrainer.copyDiscordScore()">📋 Copy Score for Discord / LFG</button>
-              <button type="button" class="btn btn-secondary" onclick="GTA6.FlexCard.downloadKeypadCard()">📸 Save Share Card (PNG)</button>
-              <button type="button" class="btn btn-secondary" onclick="GTA6.FlexCard.copyKeypadChallenge()">🔗 Copy Challenge Link</button>
-            </div>
-            <div style="margin-top:0.9rem; font-size:0.82rem; color:var(--text-muted);">
-              <div id="keypadContextStrip" class="contextual-tool-strip" style="margin-top:0.95rem; font-size:0.83rem;">
-              <span>⚡ Shave 2s off hacks &amp; gunfights with <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="keypad-trainer" style="color:var(--neon-green); font-weight:800;">$16.99 Heist Thumbsticks</a> or <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="keypad-trainer" style="color:var(--neon-cyan); font-weight:800;">DualSense Edge &rarr; [Amazon]</a></span>
-              <span style="color:rgba(255,255,255,0.3);">&bull;</span>
-              <span>🎬 Clip your run for TikTok/Shorts &rarr; <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="keypad-trainer" style="color:var(--neon-yellow); font-weight:800;">[CutFlow Pro $49]</a></span>
-            </div>
-            </div>
-          </div>
-        </div>
-      `;
-    },
-
-    setDifficulty(mode) {
-      if (this.locking || this.active) return;
-      this.difficulty = mode === 'hardcore' ? 'hardcore' : 'normal';
-      document.getElementById('kpDiffNormal')?.classList.toggle('active', this.difficulty === 'normal');
-      document.getElementById('kpDiffHardcore')?.classList.toggle('active', this.difficulty === 'hardcore');
-      GTA6.playBeep(this.difficulty === 'hardcore' ? 620 : 440, 'triangle', 0.05);
-    },
-
-    start() {
-      if (this.locking) return;
-      this.locking = true;
-      this.active = false;
-      this.step = 0;
-      const nodeCount = this.difficulty === 'hardcore' ? 7 : 5;
-      const flashStepMs = this.difficulty === 'hardcore' ? 310 : 430;
-      this.seq = Array.from({ length: nodeCount }, () => Math.floor(Math.random() * 9) + 1);
-      clearInterval(this.timerInterval);
-
-      const st = document.getElementById('keypadStatus');
-      const tm = document.getElementById('keypadTimerBar');
-      if (tm) tm.innerText = '⏱️ 15.000s REMAINING';
-      if (st) st.innerText = `📡 TRANSMITTING ${nodeCount}-NODE BIOMETRIC PATTERN (${this.difficulty.toUpperCase()})...`;
-
-      this.seq.forEach((digit, idx) => {
-        setTimeout(() => {
-          const btn = document.getElementById(`kp-${digit}`);
-          if (btn) {
-            btn.classList.add('lit');
-            GTA6.playBeep(360 + digit * 45, 'triangle', 0.12);
-            setTimeout(() => btn.classList.remove('lit'), Math.round(flashStepMs * 0.65));
-          }
-          if (idx === this.seq.length - 1) {
-            setTimeout(() => {
-              this.locking = false;
-              this.active = true;
-              this.startTime = performance.now();
-              if (st) st.innerText = `🔓 INPUT ${this.seq.length} NODES BEFORE 15.000s LOCKDOWN!`;
-              this.timerInterval = setInterval(() => {
-                if (!this.active) return;
-                const elapsed = performance.now() - this.startTime;
-                const rem = Math.max(0, 15000 - elapsed);
-                if (tm) tm.innerText = `⏱️ ${(rem / 1000).toFixed(3)}s REMAINING`;
-                if (rem <= 0) {
-                  this.active = false;
-                  clearInterval(this.timerInterval);
-                  GTA6.playBeep(130, 'sawtooth', 0.3);
-                  if (st) st.innerHTML = `<span style="color:var(--neon-pink);">🚨 15.000s EXPIRED — VAULT ALARM TRIGGERED! Try again.</span>`;
-                }
-              }, 35);
-            }, 300);
-          }
-        }, idx * flashStepMs + 220);
-      });
-    },
-
-    press(digit) {
-      if (!this.active || this.locking) return;
-      const btn = document.getElementById(`kp-${digit}`);
-      const expected = this.seq[this.step];
-      if (digit === expected) {
-        if (btn) {
-          btn.classList.add('hit');
-          setTimeout(() => btn.classList.remove('hit'), 180);
-        }
-        GTA6.playBeep(520 + this.step * 65, 'triangle', 0.06);
-        this.step++;
-
-        if (this.step >= this.seq.length) {
-          this.active = false;
-          clearInterval(this.timerInterval);
-          const elapsedMs = Math.round(performance.now() - this.startTime);
-          this.lastElapsedMs = elapsedMs;
-          const secsStr = (elapsedMs / 1000).toFixed(3) + 's';
-          const rank = elapsedMs <= 6000 ? 'Mastermind Ghost Hacker (S-Tier)' : elapsedMs <= 15000 ? 'Mastermind Ghost Hacker' : 'Field Decryptor';
-          this.lastRank = rank;
-
-          const prevBest = localStorage.getItem('gta6_keypad_best_ms');
-          if (!prevBest || elapsedMs < Number(prevBest)) {
-            localStorage.setItem('gta6_keypad_best_ms', String(elapsedMs));
-            const bEl = document.getElementById('keypadBestDisplay');
-            if (bEl) bEl.innerText = `${elapsedMs.toLocaleString()} ms (${secsStr})`;
-          }
-          const rkEl = document.getElementById('keypadRankDisplay');
-          if (rkEl) rkEl.innerText = `Rank: ${rank}`;
-          const st = document.getElementById('keypadStatus');
-          if (st) st.innerHTML = `<span style="color:var(--neon-green);">✅ BYPASSED IN ${elapsedMs.toLocaleString()} ms (${secsStr}) &bull; RANK: ${rank.toUpperCase()}!</span>`;
-          const kStrip = document.getElementById('keypadContextStrip');
-          if (kStrip) {
-            kStrip.style.borderColor = 'var(--neon-green)';
-            kStrip.style.boxShadow = '0 0 15px rgba(0,255,157,0.3)';
-          }
-          const p = GTA6.getProfile();
-          p.syndicateRep = (Number(p.syndicateRep) || 1240) + (this.difficulty === 'hardcore' ? 300 : 150);
-          GTA6.saveProfile(p);
-          if (GTA6.MasteryAndStreak && typeof GTA6.MasteryAndStreak.refresh === 'function') {
-            GTA6.MasteryAndStreak.refresh();
-          }
-          GTA6.playSuccess();
-          GTA6.showToast(`🔓 Hack Cleared in ${elapsedMs} ms! Rank: ${rank}`);
-        }
-      } else {
-        this.active = false;
-        clearInterval(this.timerInterval);
-        if (btn) {
-          btn.classList.add('miss');
-          setTimeout(() => btn.classList.remove('miss'), 350);
-        }
-        GTA6.playBeep(140, 'sawtooth', 0.25);
-        const st = document.getElementById('keypadStatus');
-        if (st) st.innerHTML = `<span style="color:var(--neon-pink);">🚨 LASER LOCKDOWN! Wrong node (${digit}). Click Start to retry!</span>`;
-      }
-    },
-
-    copyDiscordScore() {
-      const bestMs = this.lastElapsedMs || Number(localStorage.getItem('gta6_keypad_best_ms') || 0);
-      const timeStr = bestMs ? `${bestMs.toLocaleString()} ms (${(bestMs / 1000).toFixed(3)}s)` : 'Sub-15s Practice Ready';
-      const rank = this.lastRank || 'Mastermind Ghost Hacker';
-      const msg = [
-        '🔐 **SYNDICATE VAULT HACK TRAINER — VERIFIED SCORE**',
-        `⚡ **Bypass Time:** ${timeStr} (${this.difficulty.toUpperCase()} Mode)`,
-        `🏅 **Rank Earned:** ${rank}`,
-        '🎯 **Beat my time & find a GTA 6 Heist Squad:** https://www.gta6heistguide.com/vault-hack-trainer',
-      ].join('\n');
-      GTA6.copyText(msg, 'Discord Hack Score');
-    },
-  },
+  KeypadTrainer: { init() {} },
 
   // --------------------------------------------------------------------------
   // MOBILE HAMBURGER MENU INJECTOR
@@ -5161,6 +4630,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                 <span style="color:#fff; font-size:0.85rem; display:block; line-height:1.45;">${data.heistRole}</span>
                 <span style="display:block; margin-top:0.4rem; font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">CONFIRMATION SOURCE: ${data.source}</span>
               </div>
+              ${window.getSyndicateAffBarHtml ? window.getSyndicateAffBarHtml('🎮 Pro Getaway Control & Audio: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge Controller</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset (Amazon)</a>') : ''}
             </div>
           </div>
         `;
@@ -5261,6 +4731,7 @@ Operative: ${profile.alias} | Code: FOUNDER-VIP-2026 | Verified VIP
                 <span style="color:#fff; font-size:0.82rem; display:block; line-height:1.45; font-family:var(--font-mono);">${data.attachments}</span>
                 <span style="display:block; margin-top:0.4rem; font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">INTEL SOURCE: ${data.source}</span>
               </div>
+              ${window.getSyndicateAffBarHtml ? window.getSyndicateAffBarHtml('🎮 Pro Console Aim & Audio: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge Controller</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset (Amazon)</a>') : ''}
             </div>
           </div>
         `;
@@ -5540,13 +5011,12 @@ CharacterModal: {
         const amzSticks = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20';
         const amzPs5 = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20';
         const exitUrl = cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953';
-        const gfuelUrl = (window.GTA6_AFFILIATES && window.GTA6_AFFILIATES.gfuel.url) || cfg.gfuelUrl || 'YOUR_GFUEL_TRACKING_LINK';
         const g2aUrl = cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5';
         const enebaUrl = cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide';
         const gumroadBundleUrl = cfg.gumroadBundleUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
         return [
           `🔥 <strong style="color:var(--neon-pink);">LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Amazon]</a>`,
-          `⚡ <strong style="color:var(--neon-cyan);">LOW PING &amp; GAMING ENERGY:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Low-Ping Routing (Free Trial)</a> &bull; <a href="${gfuelUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gfuel" data-aff-placement="ticker-gfuel" style="color:var(--neon-green); font-weight:800;">⚡ G FUEL Gaming Energy</a>`,
+          `⚡ <strong style="color:var(--neon-cyan);">LOW-PING LOBBY ROUTING:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Low-Ping Routing (Free Trial)</a> `,
           `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; PSN & XBOX GIFT CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
           `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${gumroadBundleUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
         ];
@@ -5737,14 +5207,14 @@ CharacterModal: {
     copyKeypadChallenge() {
       const bestMs = GTA6.KeypadTrainer.lastElapsedMs || Number(localStorage.getItem('gta6_keypad_best_ms') || 11420);
       const timeSecs = (bestMs / 1000).toFixed(2);
-      const url = `${window.location.origin}/vault-hack-trainer.html?challenge=${timeSecs}&vault=gold-reserve`;
+      const url = `${window.location.origin}/save-planner.html?challenge=${timeSecs}&vault=gold-reserve`;
       GTA6.copyText(url, 'Challenge Link');
       GTA6.showToast(`🎯 Challenge Link Copied (${timeSecs}s)! Send it to your squad on Discord/X.`);
     },
 
     downloadCalcCard() {
       const targetEl = document.getElementById('approachSelect') || document.getElementById('vaultTarget') || document.getElementById('fcVault');
-      const vaultName = (targetEl && targetEl.selectedOptions && targetEl.selectedOptions[0] ? targetEl.selectedOptions[0].text : 'Leonida State Gold Reserve').replace(/ *\([^)]*\) */g, '');
+      const vaultName = (targetEl && targetEl.selectedOptions && targetEl.selectedOptions[0] ? targetEl.selectedOptions[0].text : 'The Cartel Heist: Sinfrontera Bank').replace(/ *\([^)]*\) */g, '');
       const netPerHr = document.getElementById('netPerHourDisplay')?.innerText || '$4,280,000/hr';
       const perPlayer = document.getElementById('perPlayerDisplay')?.innerText || '$4,687,500';
       const squadPot = document.getElementById('squadPotDisplay')?.innerText || '$18,750,000';
@@ -5888,16 +5358,16 @@ CharacterModal: {
         <button type="button" class="challenge-close-btn" onclick="this.parentElement.remove()" aria-label="Close Banner">${GTA6.Icons.close(14)}</button>
       `;
       document.body.prepend(banner);
-      if (window.location.pathname.includes('vault-hack-trainer') || window.location.pathname.includes('hack-trainer')) {
+      if (window.location.pathname.includes('save-planner') || window.location.pathname.includes('save-planner')) {
         setTimeout(() => {
-          const t = document.getElementById('syndicate-hack-trainer') || document.getElementById('keypadTrainerBox');
+          const t = document.getElementById('syndicate-save-planner') || document.getElementById('keypadTrainerBox');
           if (t) t.scrollIntoView({ behavior: 'smooth' });
         }, 500);
       }
     },
 
     acceptChallenge(val) {
-      const target = document.getElementById('syndicate-hack-trainer') || document.getElementById('keypadTrainerBox') || document.querySelector('.keypad-trainer');
+      const target = document.getElementById('syndicate-save-planner') || document.getElementById('keypadTrainerBox') || document.querySelector('.keypad-trainer');
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
         setTimeout(() => {
@@ -5906,7 +5376,7 @@ CharacterModal: {
           }
         }, 600);
       } else {
-        window.location.href = '/vault-hack-trainer.html?challenge=' + encodeURIComponent(val) + '#syndicate-hack-trainer';
+        window.location.href = '/save-planner.html?challenge=' + encodeURIComponent(val) + '#syndicate-save-planner';
       }
     }
   },
@@ -5974,57 +5444,27 @@ CharacterModal: {
   // --------------------------------------------------------------------------
   // PWA REGISTRATION & MOBILE ADD TO HOME SCREEN PROMPT
   // --------------------------------------------------------------------------
+  _deferredPwaPrompt: null,
   initPwa() {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
-
-    let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
-      deferredPrompt = e;
-      try {
-        if (localStorage.getItem('gta6_pwa_dismissed') === '1') return;
-      } catch (err) {}
-      if (document.getElementById('pwaInstallBanner')) return;
-
-      const banner = document.createElement('div');
-      banner.id = 'pwaInstallBanner';
-      banner.className = 'pwa-install-banner';
-      banner.setAttribute('role', 'region');
-      banner.setAttribute('aria-label', 'GTA 6 Heist Companion App Install');
-      banner.innerHTML = `
-        <div style="display:flex; align-items:center; gap:0.75rem; flex:1 1 240px; min-width:0;">
-          <svg class="ui-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-          <div>
-            <strong style="display:block; font-size:0.84rem; color:#fff;">GTA 6 Heist Companion</strong>
-            <span style="font-size:0.75rem; color:#94a3b8;">Install for offline 48m Leonida Clock &amp; Keypad Trainer</span>
-          </div>
-        </div>
-        <div class="pwa-install-banner-actions">
-          <button type="button" class="btn btn-primary" id="pwaInstallBtn" style="padding:0.38rem 0.85rem; font-size:0.76rem; min-height:36px;">Install App</button>
-          <button type="button" class="challenge-close-btn" onclick="GTA6.dismissPwa()" aria-label="Dismiss Companion Banner">${this.Icons.close(14)}</button>
-        </div>
-      `;
-
-      const footer = document.querySelector('footer');
-      if (footer && footer.parentNode) {
-        footer.parentNode.insertBefore(banner, footer);
-      } else {
-        (document.querySelector('main') || document.body).appendChild(banner);
-      }
-
-      document.getElementById('pwaInstallBtn')?.addEventListener('click', async () => {
-        banner.remove();
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          await deferredPrompt.userChoice;
-          deferredPrompt = null;
-        }
-      });
+      this._deferredPwaPrompt = e;
     });
+  },
+
+  async triggerPwaPrompt() {
+    if (this._deferredPwaPrompt) {
+      this._deferredPwaPrompt.prompt();
+      try { await this._deferredPwaPrompt.userChoice; } catch (e) {}
+      this._deferredPwaPrompt = null;
+      return;
+    }
+    this.showToast('📱 Tap your browser menu or Share icon → Add to Home Screen to install GTA 6 Second Screen!');
   },
 
   dismissPwa() {
@@ -6744,7 +6184,7 @@ DealRotator: {
                 </div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
                   <a href="#launderCalcAnchor" class="btn btn-secondary" onclick="setLaunderPipeline('marina', 3.4)" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Simulate Laundering</a>
-                  <a href="interactive-map.html#radarMap" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Radar &rarr;</a>
+                  <a href="/map.html" class="btn btn-primary" style="padding:0.45rem; font-size:0.75rem; text-align:center;">Locate on Map &rarr;</a>
                 </div>
               `;
               propGrid.appendChild(card);
@@ -6829,7 +6269,7 @@ DealRotator: {
         } catch (e) {}
       },
       getLocalClickCounts() {
-        const counts = { amazon: 0, g2a: 0, eneba: 0, exitlag: 0, gumroad: 0, whop: 0, getapexlocal: 0 };
+        const counts = { amazon: 0, g2a: 0, eneba: 0, exitlag: 0, gumroad: 0, getapexlocal: 0 };
         try {
           const arr = JSON.parse(localStorage.getItem('gta6_aff_clicks') || '[]');
           arr.forEach((item) => {
@@ -6873,11 +6313,11 @@ DealRotator: {
 
             <div class="bookmark-item" style="border-color:rgba(0,255,136,0.35);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-                <strong style="color:#fff; font-size:0.9rem;">📥 VIP Email Subscribers (D1)</strong>
+                <strong style="color:#fff; font-size:0.9rem;">📥 Launch Alert Subscribers (D1)</strong>
                 <span id="ownerD1SubCount" style="font-family:var(--font-mono); font-size:0.8rem; color:var(--neon-cyan);">--</span>
               </div>
               <p style="font-size:0.76rem; color:var(--text-muted); margin:0 0 0.65rem;">1-click CSV download directly from Cloudflare D1 for newsletter blasts or buyer handover verification.</p>
-              <button type="button" class="btn btn-primary" onclick="GTA6.OwnerDrawer.exportSubscribersCsv()" style="width:100%; padding:0.55rem; font-size:0.82rem;">📥 Export VIP Email Subscribers (.CSV)</button>
+              <button type="button" class="btn btn-primary" onclick="GTA6.OwnerDrawer.exportSubscribersCsv()" style="width:100%; padding:0.55rem; font-size:0.82rem;">📥 Export Alert Subscribers (.CSV)</button>
             </div>
 
             <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.75rem;">
@@ -6927,7 +6367,6 @@ DealRotator: {
           ['eneba', 'Eneba'],
           ['exitlag', 'ExitLag'],
           ['gumroad', 'Gumroad'],
-            ['whop', 'Whop'],
           ['getapexlocal', 'GetApexLocal'],
         ];
         grid.innerHTML = labels.map(([k, label]) => `
@@ -6962,7 +6401,6 @@ DealRotator: {
             ['eneba', 'Eneba'],
             ['exitlag', 'ExitLag'],
             ['gumroad', 'Gumroad'],
-            ['whop', 'Whop'],
             ['getapexlocal', 'GetApexLocal'],
           ];
           const grid = document.getElementById('ownerPartnerClickGrid');
@@ -7028,6 +6466,8 @@ DealRotator: {
     }
   };
 
+  window.GTA6 = GTA6;
+
   document.addEventListener('DOMContentLoaded', () => {
     GTA6.SiteConfig.init();
     GTA6.initMobileNav();
@@ -7041,7 +6481,7 @@ DealRotator: {
     GTA6.initForum();
     GTA6.injectCommunityPulse();
     if (document.getElementById('profileEditForm')) GTA6.initProfilePage();
-    GTA6.KeypadTrainer.init();
+    
     GTA6.PromoVideo.init();
     GTA6.CompanionHUD.init();
     GTA6.MasteryAndStreak.init();

@@ -5,32 +5,28 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Interactive Leonida Map & Vault Radar | GTA 6 Guide</title>
-    <meta name="description" content="Explore the interactive GTA 6 Leonida radar map with verified vaults, regular banks, jewelry stores, 24 Ammu-Nation locations, illegal ops, viral Easter eggs, safehouses, and 24/7 live community discoveries.">
-    <meta name="keywords" content="GTA 6 interactive map, Leonida map regions, Vice City vaults, storm drains, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, Ammu-Nation locations, Easter eggs">
-    <link rel="canonical" href="https://www.gta6heistguide.com/interactive-map">
+    <title>GTA 6 Interactive Leonida Map — Vaults, Properties, Animals &amp; Safe Codes | GTA6HeistGuide.com</title>
+    <meta name="description" content="Explore the free GTA 6 Interactive Leonida Map with 160+ verified pins: Story Heists, Big Banks, 25 Properties &amp; Fences (Brian's Lockup 7700), 49+ Wildlife Habitats, 24 Ammu-Nation stores, and launch glitches.">
+    <meta name="keywords" content="GTA 6 interactive map, Leonida map, Vice City vaults, GTA 6 properties map, GTA 6 animals map, Brian's lockup 7700 location, Apollo Aggregates Red Barn location, Ammu-Nation locations">
+    <link rel="canonical" href="https://www.gta6heistguide.com/map.html">
     <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="Interactive Leonida Map & Vault Radar | GTA 6 Guide">
-    <meta property="og:description" content="Explore the interactive GTA 6 Leonida radar map with verified vaults, regular banks, jewelry stores, 24 Ammu-Nation locations, illegal ops, viral Easter eggs, safehouses, and 24/7 live community discoveries.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.gta6heistguide.com/interactive-map">
+    <meta property="og:title" content="GTA 6 Interactive Leonida Map — 160+ Verified Pins">
+    <meta property="og:description" content="Interactive GTA 6 Leonida Map with Story Heists, Properties, Garages, Fences, Wildlife Habitats, Ammu-Nation, and launch glitches.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gta6heistguide.com/map.html">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/maps/leonida-map.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Interactive Leonida Map & Vault Radar | GTA 6 Guide">
-    <meta name="twitter:description" content="Explore the interactive GTA 6 Leonida radar map with verified vaults, banks, Ammu-Nation, Easter eggs, and 24/7 live discoveries.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/maps/leonida-map.jpg">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
-    <!-- Official Leaflet CDN Styles -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
 
     <style>
-        /* ==========================================================================
-           FULL-HEIGHT APP SHELL & ZERO-STRETCH LEAFLET MAP
-           ========================================================================== */
+        :root {
+            --header-height: 118px;
+        }
         html, body {
-            height: 100%;
+            height: 100dvh;
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -39,23 +35,23 @@
             color: #f4f4f8;
         }
 
+        /* BUG 1 FIX: Exact dynamic viewport height minus header so bottom-right zoom controls are NEVER cut off */
         .map-app-container {
             width: 100%;
-            height: calc(100vh - 65px);
+            height: calc(100dvh - var(--header-height));
+            min-height: 360px;
             display: flex;
             position: relative;
             overflow: hidden;
             background: #040711;
         }
 
-        /* Leaflet ocean background seamlessly blending with leonida-map.jpg */
         .leaflet-container {
             background-color: #2264a7 !important;
             font-family: inherit;
             outline: none;
         }
 
-        /* Tactical Night Mode CSS filter */
         .tactical-active .leaflet-image-layer {
             filter: brightness(0.65) contrast(1.35) hue-rotate(185deg) saturate(1.4) !important;
         }
@@ -70,41 +66,86 @@
             z-index: 1;
         }
 
-        /* ==========================================================================
-           IGN & GTABASE STYLE SIDEBAR
-           ========================================================================== */
+        /* BUG 1 FIX: Generous bottom offset for ALL bottom-right floating map controls (+, -, recenter) */
+        .leaflet-bottom.leaflet-right {
+            bottom: 84px !important;
+            right: 20px !important;
+            z-index: 40 !important;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+        .leaflet-control-zoom {
+            border: 1.5px solid rgba(0, 240, 255, 0.55) !important;
+            border-radius: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 240, 255, 0.25) !important;
+            margin: 0 !important;
+        }
+        .leaflet-control-zoom a,
+        .leaflet-recenter-btn {
+            background: rgba(12, 10, 26, 0.95) !important;
+            color: #fff !important;
+            width: 40px !important;
+            height: 40px !important;
+            line-height: 38px !important;
+            font-size: 1.2rem !important;
+            font-weight: 900 !important;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.25) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-decoration: none !important;
+            cursor: pointer;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .leaflet-control-zoom a:last-child {
+            border-bottom: none !important;
+        }
+        .leaflet-control-zoom a:hover,
+        .leaflet-recenter-btn:hover {
+            background: rgba(0, 240, 255, 0.24) !important;
+            color: var(--neon-cyan) !important;
+        }
+        .leaflet-recenter-wrap {
+            border: 1.5px solid rgba(0, 240, 255, 0.55);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 240, 255, 0.25);
+            margin: 0 !important;
+        }
+
+        /* SIDEBAR */
         .map-sidebar {
-            width: 400px;
+            width: 390px;
             height: 100%;
-            background: rgba(12, 10, 24, 0.96);
+            background: rgba(12, 10, 24, 0.97);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             border-right: 1px solid rgba(0, 240, 255, 0.22);
             display: flex;
             flex-direction: column;
-            z-index: 20;
+            z-index: 45;
             flex-shrink: 0;
             box-shadow: 4px 0 24px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         .sidebar-header-box {
-            padding: 0.9rem 1rem 0.6rem;
+            padding: 0.75rem 0.9rem 0.55rem;
             background: rgba(18, 14, 30, 0.98);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             flex-direction: column;
-            gap: 0.55rem;
+            gap: 0.48rem;
         }
-
         .sidebar-title-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .sidebar-title-badge {
-            font-size: 0.72rem;
+            font-size: 0.74rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -114,28 +155,21 @@
             align-items: center;
             gap: 0.4rem;
         }
-
-        /* Search input wrap */
-        .sidebar-search-wrap {
-            position: relative;
-            width: 100%;
-        }
+        .sidebar-search-wrap { position: relative; width: 100%; }
         .sidebar-search-input {
             width: 100%;
-            padding: 0.55rem 2rem 0.55rem 2.2rem;
+            padding: 0.5rem 2rem 0.5rem 2.1rem;
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 6px;
             color: #fff;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             box-sizing: border-box;
             outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
         }
         .sidebar-search-input:focus {
-            border-color: var(--neon-cyan, #00f0ff);
+            border-color: var(--neon-cyan);
             box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
-            background: rgba(255, 255, 255, 0.09);
         }
         .sidebar-search-icon {
             position: absolute;
@@ -143,12 +177,12 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 0.85rem;
-            opacity: 0.6;
+            opacity: 0.65;
             pointer-events: none;
         }
         .sidebar-search-clear {
             position: absolute;
-            right: 0.6rem;
+            right: 0.55rem;
             top: 50%;
             transform: translateY(-50%);
             background: none;
@@ -158,23 +192,19 @@
             cursor: pointer;
             display: none;
         }
-
-        /* Region Quick-Jump Pills */
         .region-pills-row {
             display: flex;
-            gap: 0.35rem;
+            gap: 0.32rem;
             overflow-x: auto;
-            padding-bottom: 0.2rem;
+            padding-bottom: 0.15rem;
             scrollbar-width: none;
         }
-        .region-pills-row::-webkit-scrollbar {
-            display: none;
-        }
+        .region-pills-row::-webkit-scrollbar { display: none; }
         .region-jump-pill {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 14px;
-            padding: 0.22rem 0.6rem;
+            padding: 0.22rem 0.58rem;
             font-size: 0.7rem;
             font-weight: 700;
             color: #cbd5e1;
@@ -183,10 +213,9 @@
             transition: all 0.2s;
         }
         .region-jump-pill:hover, .region-jump-pill.active {
-            background: rgba(0, 240, 255, 0.18);
-            border-color: var(--neon-cyan, #00f0ff);
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-cyan);
             color: #fff;
-            box-shadow: 0 0 8px rgba(0, 240, 255, 0.35);
         }
 
         /* Checklist & Stats Bar */
@@ -430,65 +459,64 @@
             text-decoration: underline;
         }
 
-        /* ==========================================================================
-           TOP-RIGHT MAP HUD CONTROLS
-           ========================================================================== */
+        
+
+        /* TOP-RIGHT HUD CONTROLS */
         .map-hud-controls {
             position: absolute;
-            top: 1rem;
+            top: 0.85rem;
             right: 1rem;
-            z-index: 1000;
+            z-index: 40;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 0.5rem;
+            gap: 0.45rem;
             pointer-events: none;
         }
         .hud-btn-row {
             display: flex;
             gap: 0.4rem;
             pointer-events: auto;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
         .hud-btn {
-            background: rgba(14, 11, 26, 0.92);
+            background: rgba(14, 11, 26, 0.94);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(0, 240, 255, 0.3);
+            border: 1px solid rgba(0, 240, 255, 0.38);
             color: #fff;
-            padding: 0.45rem 0.85rem;
+            padding: 0.42rem 0.8rem;
             border-radius: 6px;
             font-size: 0.74rem;
             font-weight: 800;
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.55);
             display: flex;
             align-items: center;
             gap: 0.35rem;
         }
         .hud-btn:hover {
-            border-color: var(--neon-cyan, #00f0ff);
-            background: rgba(0, 240, 255, 0.2);
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+            border-color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.22);
         }
         .hud-btn.active-mode {
-            background: var(--neon-cyan, #00f0ff);
+            background: var(--neon-cyan);
             color: #040711;
             border-color: #fff;
         }
         .hud-status-badge {
-            background: rgba(14, 11, 26, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(14, 11, 26, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             color: #94a3b8;
-            padding: 0.25rem 0.6rem;
+            padding: 0.22rem 0.58rem;
             border-radius: 4px;
-            font-size: 0.68rem;
+            font-size: 0.67rem;
             font-family: var(--font-mono, monospace);
             pointer-events: auto;
         }
 
-        /* ==========================================================================
-           CUSTOM LEAFLET MARKERS & POPUP STYLING
-           ========================================================================== */
+        /* CUSTOM MARKERS & DEEP-LINK PULSE */
         .custom-pin-marker {
             display: flex;
             align-items: center;
@@ -496,204 +524,197 @@
             border-radius: 50%;
             background: #120e1e;
             border: 2px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 12px currentColor;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.85), 0 0 12px currentColor;
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s;
             user-select: none;
+            position: relative;
         }
         .custom-pin-marker:hover {
             transform: scale(1.22);
             z-index: 1000 !important;
         }
         .custom-pin-marker.is-found {
-            opacity: 0.4;
+            opacity: 0.42;
             filter: grayscale(0.85);
             transform: scale(0.85);
         }
-
-        /* Pulsing Radar Ring for Live pins */
-        .live-pulse-marker {
-            position: relative;
-        }
-        .live-pulse-marker::after {
+        .live-pulse-marker::after,
+        .deep-link-pulse::after {
             content: '';
             position: absolute;
-            top: -6px;
-            left: -6px;
-            right: -6px;
-            bottom: -6px;
+            inset: -8px;
             border-radius: 50%;
-            border: 2px solid var(--neon-yellow, #ffb800);
-            box-shadow: 0 0 14px var(--neon-yellow, #ffb800);
-            animation: radar-pulse 1.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+            border: 2.5px solid var(--neon-yellow, #ffb800);
+            box-shadow: 0 0 18px var(--neon-yellow, #ffb800);
+            animation: pin-pulse 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
             pointer-events: none;
         }
-        @keyframes radar-pulse {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(1.8); opacity: 0; }
+        .deep-link-pulse {
+            transform: scale(1.38) !important;
+            border-color: #00f0ff !important;
+            box-shadow: 0 0 22px #00f0ff, 0 0 10px #ff2a8d !important;
+            z-index: 2000 !important;
+        }
+        .deep-link-pulse::after {
+            border-color: #00f0ff;
+            box-shadow: 0 0 22px #00f0ff;
+        }
+        @keyframes pin-pulse {
+            0% { transform: scale(0.78); opacity: 1; }
+            100% { transform: scale(2.05); opacity: 0; }
         }
 
-        /* Popup customization */
+        /* POPUP STYLING */
         .leaflet-popup-content-wrapper {
             background: rgba(14, 11, 26, 0.98) !important;
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 240, 255, 0.35);
-            border-radius: 8px;
+            border: 1.5px solid rgba(0, 240, 255, 0.45);
+            border-radius: 10px;
             color: #fff !important;
             padding: 0 !important;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(0, 240, 255, 0.25) !important;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 18px rgba(0, 240, 255, 0.28) !important;
         }
         .leaflet-popup-content {
             margin: 0 !important;
             line-height: 1.4;
-            width: 310px !important;
+            width: 320px !important;
         }
         .leaflet-popup-tip {
             background: #120e1e !important;
-            border: 1px solid rgba(0, 240, 255, 0.35);
+            border: 1px solid rgba(0, 240, 255, 0.4);
         }
         .leaflet-container a.leaflet-popup-close-button {
             color: #cbd5e1 !important;
             padding: 6px 10px 0 0;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            z-index: 10;
         }
-        .leaflet-container a.leaflet-popup-close-button:hover {
-            color: var(--neon-pink, #ff2a8d) !important;
+        .popup-img-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            max-height: 145px;
+            overflow: hidden;
+            background: #070a14;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
-
-        .popup-card {
-            display: flex;
-            flex-direction: column;
-            gap: 0.45rem;
-            padding: 0.85rem;
+        .popup-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
+        .popup-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 0.8rem; }
         .popup-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 0.4rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 0.4rem;
+            padding-bottom: 0.35rem;
         }
         .popup-tag-badge {
             font-size: 0.62rem;
             font-weight: 800;
-            padding: 0.15rem 0.45rem;
+            padding: 0.14rem 0.42rem;
             border-radius: 4px;
             text-transform: uppercase;
             font-family: var(--font-mono, monospace);
         }
-        .popup-region {
-            font-size: 0.68rem;
-            color: #94a3b8;
-            font-weight: 700;
-        }
-        .popup-title {
-            font-size: 0.92rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 0;
-            line-height: 1.25;
-        }
+        .popup-region { font-size: 0.68rem; color: #94a3b8; font-weight: 700; }
+        .popup-title { font-size: 0.92rem; font-weight: 800; color: #fff; margin: 0; line-height: 1.25; }
         .popup-payout-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.76rem;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 0.3rem 0.5rem;
+            font-size: 0.74rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.28rem 0.5rem;
             border-radius: 4px;
         }
-        .popup-desc {
-            font-size: 0.72rem;
-            color: #cbd5e1;
-            margin: 0;
-            line-height: 1.4;
-        }
+        .popup-desc { font-size: 0.72rem; color: #cbd5e1; margin: 0; line-height: 1.4; }
         .popup-tip-box {
             font-size: 0.68rem;
-            background: rgba(0, 240, 255, 0.06);
-            border-left: 2px solid var(--neon-cyan, #00f0ff);
-            padding: 0.35rem 0.5rem;
-            color: #94a3b8;
+            background: rgba(0, 240, 255, 0.07);
+            border-left: 2px solid var(--neon-cyan);
+            padding: 0.32rem 0.5rem;
+            color: #cbd5e1;
         }
-        .popup-actions-row {
-            display: flex;
-            gap: 0.35rem;
-            margin-top: 0.3rem;
+        .popup-aff-mini {
+            font-size: 0.66rem;
+            background: rgba(255, 42, 141, 0.08);
+            border: 1px solid rgba(255, 42, 141, 0.25);
+            border-radius: 5px;
+            padding: 0.32rem 0.45rem;
+            color: #cbd5e1;
+            line-height: 1.45;
         }
+        .popup-aff-mini a { color: var(--neon-cyan); font-weight: 800; text-decoration: none; }
+        .popup-aff-mini a:hover { text-decoration: underline; }
+        .popup-actions-row { display: flex; gap: 0.35rem; margin-top: 0.25rem; }
         .btn-popup-found {
             flex: 1;
-            padding: 0.4rem;
+            padding: 0.38rem;
             border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             background: rgba(255, 255, 255, 0.08);
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.69rem;
             font-weight: 800;
             cursor: pointer;
-            transition: all 0.2s;
         }
         .btn-popup-found:hover {
-            background: var(--neon-green, #00ff88);
-            border-color: var(--neon-green, #00ff88);
+            background: var(--neon-green);
+            border-color: var(--neon-green);
             color: #040711;
         }
         .btn-popup-found.is-marked {
             background: rgba(255, 42, 141, 0.2);
-            border-color: var(--neon-pink, #ff2a8d);
+            border-color: var(--neon-pink);
             color: #ff99cc;
         }
         .btn-popup-link {
-            padding: 0.4rem 0.6rem;
+            padding: 0.38rem 0.58rem;
             border-radius: 4px;
-            background: rgba(0, 240, 255, 0.12);
-            border: 1px solid var(--neon-cyan, #00f0ff);
+            background: rgba(0, 240, 255, 0.14);
+            border: 1px solid var(--neon-cyan);
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.69rem;
             font-weight: 800;
             text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.2rem;
-            transition: all 0.2s;
         }
-        .btn-popup-link:hover {
-            background: var(--neon-cyan, #00f0ff);
-            color: #040711;
-        }
+        .btn-popup-link:hover { background: var(--neon-cyan); color: #040711; }
 
-        /* Mobile Drawer Toggle */
         .mobile-toggle-btn {
             display: none;
             position: absolute;
-            bottom: 1.2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            background: rgba(14, 11, 26, 0.94);
-            border: 1px solid var(--neon-cyan, #00f0ff);
+            bottom: 84px;
+            left: 14px;
+            z-index: 42;
+            background: rgba(14, 11, 26, 0.95);
+            border: 1.5px solid var(--neon-cyan);
             box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
             color: #fff;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 800;
-            padding: 0.55rem 1.2rem;
+            padding: 0.52rem 1rem;
             border-radius: 30px;
             cursor: pointer;
         }
 
-        /* Toast HUD */
         #hudToast {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1.2rem;
             left: 50%;
             transform: translateX(-50%) translateY(20px);
-            background: rgba(18, 14, 30, 0.96);
-            border: 1px solid var(--neon-cyan, #00f0ff);
+            background: rgba(18, 14, 30, 0.97);
+            border: 1px solid var(--neon-cyan);
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.45);
             color: #fff;
-            padding: 0.6rem 1.2rem;
+            padding: 0.55rem 1.15rem;
             border-radius: 8px;
             font-size: 0.78rem;
             font-weight: 700;
@@ -701,20 +722,17 @@
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 2000;
+            white-space: nowrap;
+            max-width: 92vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        #hudToast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
+        #hudToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        /* Custom User Pin Modal */
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.8);
+            inset: 0;
+            background: rgba(0,0,0,0.82);
             backdrop-filter: blur(8px);
             z-index: 3000;
             display: none;
@@ -723,7 +741,7 @@
         }
         .modal-card {
             background: #120e1e;
-            border: 1px solid var(--neon-cyan, #00f0ff);
+            border: 1px solid var(--neon-cyan);
             box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
             border-radius: 8px;
             padding: 1.2rem;
@@ -741,168 +759,168 @@
                 left: 0;
                 bottom: 0;
                 transform: translateX(-100%);
-                width: 85%;
-                max-width: 360px;
+                width: 86%;
+                max-width: 355px;
             }
-            .map-sidebar.open {
-                transform: translateX(0);
+            .map-sidebar.open { transform: translateX(0); }
+            .mobile-toggle-btn { display: flex; align-items: center; gap: 0.4rem; }
+            .map-hud-controls { top: 0.55rem; right: 0.55rem; }
+            .leaflet-bottom.leaflet-right {
+                bottom: 88px !important;
+                right: 14px !important;
             }
-            .mobile-toggle-btn {
-                display: flex;
-                align-items: center;
-                gap: 0.4rem;
-            }
-            .map-hud-controls {
-                top: 0.5rem;
-                right: 0.5rem;
-            }
+            .leaflet-popup-content { width: 270px !important; }
         }
     </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
+<div class="countdown-strip" id="siteTopStrip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+            </span>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
+        </div>
+    </div>
+</div>
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
-        <div class="nav-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>NETWORK ONLINE</span>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill active">Map</a></li>
-            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
-            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
-            <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
-            <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/map.html" class="nav-pill active">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
                     More <span class="nav-arrow">▾</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
-                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
-                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
-                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
                 </div>
             </li>
         </ul>
-        <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6 && GTA6.Auth && GTA6.Auth.openModal ? GTA6.Auth.openModal() : alert('Synced to LocalStorage!')" style="cursor:pointer;" title="Save Progress & Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
-            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6 && GTA6.toggleSound && GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
-        </div>
     </div>
 </nav>
 
-<!-- FULL-HEIGHT APP SHELL -->
-<div class="map-app-container">
+<!-- FULL-HEIGHT INTERACTIVE MAP SHELL -->
+<div class="map-app-container" id="mapAppContainer">
 
     <!-- LEFT SIDEBAR -->
     <aside class="map-sidebar" id="mapSidebar">
-        <!-- Search & Title -->
         <div class="sidebar-header-box">
             <div class="sidebar-title-row">
-                <span class="sidebar-title-badge">🗺️ LEONIDA RADAR v4.2</span>
+                <span class="sidebar-title-badge">🗺️ LEONIDA MAP v4.5</span>
                 <span style="font-size:0.68rem; color:#94a3b8; font-family:var(--font-mono, monospace);" id="activePinCountLabel">Loading pins...</span>
             </div>
 
-            <!-- Instant Search Input -->
             <div class="sidebar-search-wrap">
                 <span class="sidebar-search-icon">🔍</span>
-                <input type="text" id="mapSearchInput" class="sidebar-search-input" placeholder="Search 90+ vaults, Ammu-Nation, Easter eggs, regions..." oninput="handleSearch(this.value)">
+                <input type="text" id="mapSearchInput" class="sidebar-search-input" placeholder="Search 160+ vaults, properties, animals, code 7700..." oninput="handleSearch(this.value)">
                 <button type="button" class="sidebar-search-clear" id="searchClearBtn" onclick="clearSearch()">✕</button>
             </div>
 
-            <!-- Region Quick-Jump Pills -->
             <div class="region-pills-row" id="regionPillsRow">
+                <button type="button" class="region-jump-pill" onclick="resetFullMap()">🌎 Full Map</button>
                 <button type="button" class="region-jump-pill" onclick="jumpToRegion('Vice City')">🏙️ Vice City</button>
                 <button type="button" class="region-jump-pill" onclick="jumpToRegion('Grassrivers')">🌾 Grassrivers</button>
                 <button type="button" class="region-jump-pill" onclick="jumpToRegion('Leonida Keys')">🏝️ Leonida Keys</button>
                 <button type="button" class="region-jump-pill" onclick="jumpToRegion('Mt. Kalaga')">⛰️ Mt. Kalaga</button>
                 <button type="button" class="region-jump-pill" onclick="jumpToRegion('Port Gellhorn')">⚓ Port Gellhorn</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Lake Leonida')">🏭 Lake Leonida</button>
+                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
             </div>
         </div>
 
-        <!-- Progress Bar & Master Controls -->
         <div class="progress-stats-box">
             <div class="progress-bar-wrap">
                 <div class="progress-bar-fill" id="checklistProgressBar"></div>
             </div>
             <div class="stats-control-row">
-                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 90 (0%)</span>
+                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 162 (0%)</span>
                 <div class="stats-btn-group">
-                    <button type="button" class="btn-mini-action btn-next-unfound" onclick="flyToNextUnfound()" title="Smoothly fly to next uncollected pin">Next Unfound →</button>
-                    <button type="button" class="btn-mini-action" onclick="toggleAllCategories(true)">Show All</button>
-                    <button type="button" class="btn-mini-action" onclick="toggleAllCategories(false)">Hide All</button>
+                    <button type="button" class="btn-mini-action btn-next-unfound" onclick="flyToNextUnfound()">Next Unfound &rarr;</button>
+                    <button type="button" class="btn-mini-action" onclick="toggleAllCategories(true)">All</button>
+                    <button type="button" class="btn-mini-action" onclick="toggleAllCategories(false)">None</button>
                 </div>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.2rem;">
                 <label class="hide-found-label">
                     <input type="checkbox" id="hideFoundCheckbox" onchange="toggleHideFound(this.checked)">
-                    <span>Hide Found Pins</span>
+                    <span>Hide Found</span>
                 </label>
                 <div style="display:flex; gap:0.35rem;">
                     <button type="button" class="btn-mini-action" onclick="toggleUserPinDropMode()" id="dropPinBtn" style="color:var(--neon-green,#00ff88);">+ Drop Pin</button>
-                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Save Code</button>
+                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Backup</button>
                 </div>
             </div>
         </div>
 
-        <!-- Category Rows with "Only" Buttons -->
-        <div class="category-rows-container" id="categoryRowsContainer">
-            <!-- Rendered dynamically -->
-        </div>
+        <div class="category-rows-container" id="categoryRowsContainer"></div>
 
-        <!-- Filtered Locations List View -->
-        <div class="sidebar-locations-list" id="sidebarLocationsList">
-            <!-- Pin items rendered dynamically -->
-        </div>
+        <div class="sidebar-locations-list" id="sidebarLocationsList"></div>
 
-        <!-- Affiliate Gear Bar -->
-        <div class="sidebar-affiliate-box">
-            <div>⚡ <strong>Low-Ping Heist Routing:</strong> <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="noopener sponsored" data-aff-partner="exitlag">ExitLag (Free Trial)</a></div>
-            <div>💾 <strong>Zero Map Pop-In:</strong> <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="noopener sponsored" data-aff-partner="amazon">Samsung 990 PRO 2TB (Amazon)</a></div>
-            <div>🎮 <strong>Discounted Keys:</strong> <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored" data-aff-partner="g2a">G2A PSN/Xbox</a> • <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored" data-aff-partner="eneba">Eneba Deals</a></div>
-            <div>🎬 <strong>9:16 Shorts Editor:</strong> <a href="https://apexlocallabs.gumroad.com/l/apex-pro-bundle" target="_blank" rel="noopener sponsored" data-aff-partner="gumroad">CutFlow Pro Bundle (Gumroad)</a></div>
+        <!-- High-Retention Compact Inline Affiliate Text Bar -->
+        <div class="sidebar-affiliate-box" style="padding:0.45rem 0.65rem;">
+            <div style="font-size:0.68rem; line-height:1.45; color:#cbd5e1;">
+                🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;
+                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" style="color:var(--neon-yellow);">G2A Keys</a> |
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" style="color:#f472b6;">Eneba</a> |
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" style="color:var(--neon-green);">ExitLag Tunnel (Free)</a> |
+                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" style="color:var(--neon-cyan);">CutFlow Pro</a>
+            </div>
         </div>
     </aside>
 
     <!-- MAP CONTAINER -->
     <main id="leafletMap">
-        <!-- Floating HUD Controls in Top-Right -->
         <div class="map-hud-controls">
             <div class="hud-btn-row">
                 <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()">
                     <span id="styleIcon">🗺️</span> <span id="styleLabel">Atlas Day</span>
                 </button>
-                <button type="button" class="hud-btn" onclick="resetFullMap()" title="Fit entire Leonida Map">
-                    🔄 Reset Full Map
+                <button type="button" class="hud-btn" onclick="resetFullMap()" title="Fit entire Leonida Map in view">
+                    🌎 Full Leonida Map
                 </button>
             </div>
             <div class="hud-status-badge" id="hudCoordsDisplay">
-                LEONIDA RADAR • 3840×5120 HD
+                LEONIDA MAP &bull; 3840&times;5120 HD
             </div>
         </div>
 
-        <!-- Mobile Drawer Toggle Button -->
         <button type="button" class="mobile-toggle-btn" onclick="toggleMobileDrawer()">
-            ☰ Pins &amp; Filters (<span id="mobileCountBadge">90</span>)
+            ☰ Pins &amp; Filters (<span id="mobileCountBadge">162</span>)
         </button>
     </main>
 </div>
 
-<!-- Toast HUD Notification -->
 <div id="hudToast">Notification</div>
 
 <!-- Custom User Pin Drop Modal -->
@@ -914,22 +932,22 @@
         </div>
         <div>
             <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Pin Title</label>
-            <input type="text" id="userPinTitle" class="sidebar-search-input" placeholder="e.g. Secret Alley Stash / Sniper Perch" style="margin-top:0.25rem;">
+            <input type="text" id="userPinTitle" class="sidebar-search-input" placeholder="e.g. Secret Alley Stash / Sniper Perch" style="margin-top:0.25rem; padding-left:0.75rem;">
         </div>
         <div>
             <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Category</label>
-            <select id="userPinCategory" class="sidebar-search-input" style="margin-top:0.25rem;">
+            <select id="userPinCategory" class="sidebar-search-input" style="margin-top:0.25rem; padding-left:0.65rem;">
                 <option value="vault">💰 Heist Vault / Cash Safe</option>
+                <option value="property">🏠 Property / Garage / Fence</option>
+                <option value="animal">🐊 Wildlife / Animal Spot</option>
                 <option value="ammunation">🔫 Ammu-Nation / Weapon Stash</option>
-                <option value="safehouse">🏠 Safehouse / Garage</option>
-                <option value="easter-egg">🥚 Easter Egg / Cryptid</option>
-                <option value="illegal-op">🧪 Illegal Operation</option>
+                <option value="easter-egg">🥚 Easter Egg / Glitch</option>
                 <option value="user-custom" selected>📍 Custom Waypoint</option>
             </select>
         </div>
         <div>
             <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Tactical Notes</label>
-            <textarea id="userPinNotes" class="sidebar-search-input" rows="3" placeholder="Entry route, roof access, escape vehicle..." style="margin-top:0.25rem;"></textarea>
+            <textarea id="userPinNotes" class="sidebar-search-input" rows="3" placeholder="Entry route, roof access, escape vehicle..." style="margin-top:0.25rem; padding-left:0.75rem;"></textarea>
         </div>
         <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
             <button type="button" class="btn-mini-action" onclick="closeUserPinModal()">Cancel</button>
@@ -942,13 +960,13 @@
 <div class="modal-overlay" id="saveCodeModal" onclick="if(event.target===this) closeSaveModal()">
     <div class="modal-card">
         <div style="display:flex; justify-content:space-between; align-items:center;">
-            <h3 style="margin:0; font-size:1.05rem; color:#fff;">💾 Backup / Transfer Save Code</h3>
+            <h3 style="margin:0; font-size:1.05rem; color:#fff;">💾 Backup / Transfer Map Progress</h3>
             <button type="button" onclick="closeSaveModal()" style="background:none; border:none; color:#cbd5e1; font-size:1.2rem; cursor:pointer;">&times;</button>
         </div>
         <p style="font-size:0.72rem; color:#94a3b8; margin:0;">
-            Copy your save string to transfer your checklist progress and custom dropped pins between devices with 0 login required.
+            Copy your save string to transfer your checklist progress and custom dropped pins between devices with zero login required.
         </p>
-        <textarea id="saveCodeTextarea" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem;"></textarea>
+        <textarea id="saveCodeTextarea" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem; padding-left:0.65rem;"></textarea>
         <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
             <button type="button" class="btn-mini-action" onclick="copySaveCode()">📋 Copy Code</button>
             <button type="button" class="btn-mini-action" style="background:var(--neon-cyan,#00f0ff); color:#040711; font-weight:800;" onclick="importSaveCode()">📥 Import Code</button>
@@ -956,63 +974,54 @@
     </div>
 </div>
 
-<!-- Leaflet CDN JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 
 <script>
 /* ==========================================================================
-   STATE & CONSTANTS
+   SYNDICATE v3.2 INTERACTIVE LEONIDA MAP ENGINE (ALL 3 BUGS FIXED)
    ========================================================================== */
 let map = null;
 let imageOverlay = null;
 let mapBounds = null;
 let naturalWidth = 3840;
 let naturalHeight = 5120;
+let fitZoomLevel = -2.5;
 let isTacticalMode = false;
 let isDevMode = false;
 let isDropMode = false;
 let pendingDropCoords = null;
+let highlightedPinId = null;
 
 let allPins = [];
 let markersById = {};
 let markerLayersByCategory = {};
 
-// Categories definition
 const CATEGORIES = {
-    'vault': { name: 'Big Banks & Major Vaults', color: '#fbbf24', icon: '🏦' },
-    'bank': { name: 'Regular Banks & Payday Loans', color: '#10b981', icon: '🏧' },
-    'jewelry': { name: 'Jewelry Stores & Pawn Shops', color: '#06b6d4', icon: '💎' },
-    'ammunation': { name: '24 Ammu-Nation Stores', color: '#ef4444', icon: '🔫' },
-    'illegal-op': { name: 'Chapter 1–2 Illegal Operations', color: '#a855f7', icon: '🧪' },
-    'easter-egg': { name: 'Viral Easter Eggs & Cryptids', color: '#f43f5e', icon: '🥚' },
-    'safehouse': { name: 'Safehouses & Escape Canals', color: '#3b82f6', icon: '🏠' },
-    'live-discovery': { name: '🆕 Live Auto-Discovered Hotspots', color: '#ffb800', icon: '📡' },
-    'user-custom': { name: 'Custom User Pins', color: '#10b981', icon: '📍' }
+    'vault':          { name: 'Big Banks & Story Heists', color: '#fbbf24', icon: '🏦' },
+    'property':       { name: 'Properties, Garages & Fences', color: '#00f0ff', icon: '🏠' },
+    'animal':         { name: 'Animals & Wildlife Habitats', color: '#22c55e', icon: '🐊' },
+    'bank':           { name: 'Regular Banks & Shops', color: '#10b981', icon: '🏧' },
+    'jewelry':        { name: 'Jewelry & Pawn Shops', color: '#06b6d4', icon: '💎' },
+    'ammunation':     { name: '24 Ammu-Nation Stores', color: '#ef4444', icon: '🔫' },
+    'illegal-op':     { name: 'Illegal Ops & Gang Camps', color: '#a855f7', icon: '🧪' },
+    'easter-egg':     { name: 'Easter Eggs & Secrets', color: '#f43f5e', icon: '🥚' },
+    'safehouse':      { name: 'Escape Canals & Docks', color: '#3b82f6', icon: '🚤' },
+    'live-discovery': { name: 'Launch Glitches & Live Hotspots', color: '#ffb800', icon: '📡' },
+    'user-custom':    { name: 'Custom User Pins', color: '#10b981', icon: '📍' }
 };
 
-// Category visibility filter state
-let categoryVisibility = {
-    'vault': true,
-    'bank': true,
-    'jewelry': true,
-    'ammunation': true,
-    'illegal-op': true,
-    'easter-egg': true,
-    'safehouse': true,
-    'live-discovery': true,
-    'user-custom': true
-};
+let categoryVisibility = {};
+Object.keys(CATEGORIES).forEach(k => { categoryVisibility[k] = true; });
 
-// Found pins stored in localStorage
 let foundPinIds = new Set();
 try {
     const savedFound = localStorage.getItem('gta6_found_pins');
     if (savedFound) foundPinIds = new Set(JSON.parse(savedFound));
 } catch(e) {}
 
-// Custom user pins stored in localStorage
 let customUserPins = [];
 try {
     const savedCustom = localStorage.getItem('gta6_custom_user_pins');
@@ -1022,172 +1031,188 @@ try {
 let hideFoundActive = false;
 let currentSearchQuery = '';
 
-// Region centers for Quick-Jump
 const REGION_CENTERS = {
-    'Vice City': { yPct: 0.5000, xPct: 0.7450, zoom: 2.0 },
-    'Grassrivers': { yPct: 0.2650, xPct: 0.4750, zoom: 1.85 },
-    'Leonida Keys': { yPct: 0.1350, xPct: 0.4200, zoom: 1.85 },
-    'Mt. Kalaga': { yPct: 0.7650, xPct: 0.5000, zoom: 1.85 },
-    'Port Gellhorn': { yPct: 0.5700, xPct: 0.2950, zoom: 1.95 },
-    'Lake Leonida': { yPct: 0.6750, xPct: 0.5900, zoom: 1.95 }
+    'Vice City':     { yPct: 0.5000, xPct: 0.7450, zoom: 0.5 },
+    'Grassrivers':   { yPct: 0.2650, xPct: 0.4750, zoom: 0.25 },
+    'Leonida Keys':  { yPct: 0.1350, xPct: 0.4200, zoom: 0.25 },
+    'Mt. Kalaga':    { yPct: 0.7650, xPct: 0.5000, zoom: 0.25 },
+    'Port Gellhorn': { yPct: 0.5700, xPct: 0.2950, zoom: 0.5 },
+    'Ambrosia':      { yPct: 0.6650, xPct: 0.6050, zoom: 0.5 },
+    'Lake Leonida':  { yPct: 0.6750, xPct: 0.5900, zoom: 0.5 }
 };
 
-/* ==========================================================================
-   1. REAL PORTRAIT LEAFLET.JS ENGINE WITH ZERO-STRETCH ZOOMING
-   ========================================================================== */
+/* Measure real header height dynamically so --header-height is ALWAYS exact */
+function syncHeaderHeight() {
+    const strip = document.getElementById('siteTopStrip');
+    const nav = document.getElementById('siteNavbar');
+    const total = (strip ? strip.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
+    if (total > 0) {
+        document.documentElement.style.setProperty('--header-height', total + 'px');
+    }
+    if (map) {
+        map.invalidateSize(false);
+        recomputeZoomBounds(false);
+    }
+}
+
+function recomputeZoomBounds(refit) {
+    if (!map || !mapBounds) return;
+    fitZoomLevel = map.getBoundsZoom(mapBounds, false);
+    const dynamicMinZoom = Math.min(-2.5, Math.floor(fitZoomLevel * 4) / 4 - 0.5);
+    map.setMinZoom(dynamicMinZoom);
+    map.setMaxBounds([[-naturalHeight * 0.25, -naturalWidth * 0.25], [naturalHeight * 1.25, naturalWidth * 1.25]]);
+    if (refit) {
+        map.fitBounds(mapBounds, { padding: [24, 24], animate: false });
+    }
+}
+
 function initEngine() {
+    syncHeaderHeight();
     const mapEl = document.getElementById('leafletMap');
     if (!mapEl) return;
 
-    // Check dev mode
     const urlParams = new URLSearchParams(window.location.search);
     isDevMode = urlParams.get('dev') === '1';
 
-    // 1. Create Leaflet map using L.CRS.Simple
+    /* BUG 2 FIX: Allow zooming all the way out to fit the full 3840x5120 Leonida portrait map */
     map = L.map('leafletMap', {
         crs: L.CRS.Simple,
-        minZoom: -1,
-        maxZoom: 4,
+        minZoom: -3.5,
+        maxZoom: 3,
         zoomSnap: 0.25,
         zoomDelta: 0.5,
         attributionControl: false,
         zoomControl: true
     });
 
-    // Move zoom control to bottom right
     map.zoomControl.setPosition('bottomright');
 
-    // 2. Preload /assets/maps/leonida-map.jpg with new Image() to read naturalWidth & naturalHeight
+    /* Custom Bottom-Right Recenter / Fit-Full-Map Button inside bottom-right control stack */
+    const RecenterControl = L.Control.extend({
+        options: { position: 'bottomright' },
+        onAdd: function() {
+            const div = L.DomUtil.create('div', 'leaflet-recenter-wrap');
+            div.innerHTML = '<button type="button" class="leaflet-recenter-btn" id="mapRecenterBtn" title="Recenter &amp; Fit Full Leonida Map" aria-label="Recenter Full Map">⌖</button>';
+            L.DomEvent.disableClickPropagation(div);
+            div.querySelector('button').addEventListener('click', () => resetFullMap());
+            return div;
+        }
+    });
+    map.addControl(new RecenterControl());
+
     const mapImg = new Image();
     mapImg.src = '/assets/maps/leonida-map.jpg';
+
+    let initialized = false;
+    async function setupMapBounds() {
+        if (initialized) return;
+        initialized = true;
+        mapBounds = [[0, 0], [naturalHeight, naturalWidth]];
+        imageOverlay = L.imageOverlay('/assets/maps/leonida-map.jpg', mapBounds).addTo(map);
+
+        map.invalidateSize(false);
+        recomputeZoomBounds(true);
+
+        Object.keys(CATEGORIES).forEach(cat => {
+            markerLayersByCategory[cat] = L.layerGroup().addTo(map);
+        });
+
+        /* BUG 3 FIX: AWAIT pin loading FIRST before resolving ?pin=<id> deep-link! */
+        await loadAllPinsData();
+        handleInitialDeepLinks();
+    }
 
     mapImg.onload = function() {
         naturalWidth = this.naturalWidth || 3840;
         naturalHeight = this.naturalHeight || 5120;
         setupMapBounds();
     };
-
     mapImg.onerror = function() {
-        // Fallback to calibrated 3840 x 5120
         naturalWidth = 3840;
         naturalHeight = 5120;
         setupMapBounds();
     };
+    setTimeout(setupMapBounds, 1800);
 
-    function setupMapBounds() {
-        mapBounds = [[0, 0], [naturalHeight, naturalWidth]];
-        imageOverlay = L.imageOverlay('/assets/maps/leonida-map.jpg', mapBounds).addTo(map);
-
-        map.fitBounds(mapBounds);
-        // Allow slight panning margin around the map
-        map.setMaxBounds([[-naturalHeight * 0.2, -naturalWidth * 0.2], [naturalHeight * 1.2, naturalWidth * 1.2]]);
-
-        // Initialize pin layers
-        Object.keys(CATEGORIES).forEach(cat => {
-            markerLayersByCategory[cat] = L.layerGroup().addTo(map);
-        });
-
-        // Load data and setup UI
-        loadAllPinsData();
-
-        // Check URL deep links
-        handleInitialDeepLinks();
-    }
-
-    // Map click handler (for custom pin drop or dev coordinate copy)
     map.on('click', function(e) {
-        const y = e.latlng.lat;
-        const x = e.latlng.lng;
-        const yPct = +(y / naturalHeight).toFixed(4);
-        const xPct = +(x / naturalWidth).toFixed(4);
-
+        const yPct = +(e.latlng.lat / naturalHeight).toFixed(4);
+        const xPct = +(e.latlng.lng / naturalWidth).toFixed(4);
         if (isDropMode) {
             isDropMode = false;
             document.getElementById('dropPinBtn').style.background = '';
+            document.getElementById('dropPinBtn').style.color = 'var(--neon-green,#00ff88)';
             pendingDropCoords = { yPct, xPct };
             openUserPinModal();
             return;
         }
-
         if (isDevMode) {
             const coordStr = `{ "yPct": ${yPct}, "xPct": ${xPct} }`;
-            navigator.clipboard.writeText(coordStr);
+            navigator.clipboard.writeText(coordStr).catch(() => {});
             showToast(`📋 Copied Coords: ${coordStr}`);
-            document.getElementById('hudCoordsDisplay').innerText = `DEV: yPct ${yPct} | xPct ${xPct}`;
-        }
-    });
-
-    map.on('mousemove', function(e) {
-        if (isDevMode) {
-            const yPct = +(e.latlng.lat / naturalHeight).toFixed(4);
-            const xPct = +(e.latlng.lng / naturalWidth).toFixed(4);
-            document.getElementById('hudCoordsDisplay').innerText = `DEV: yPct ${yPct} | xPct ${xPct}`;
         }
     });
 }
 
-/* ==========================================================================
-   MAP STYLE TOGGLE & RESET
-   ========================================================================== */
 function toggleMapStyle() {
     isTacticalMode = !isTacticalMode;
     const mapEl = document.getElementById('leafletMap');
     const styleLabel = document.getElementById('styleLabel');
     const styleIcon = document.getElementById('styleIcon');
     const toggleBtn = document.getElementById('mapStyleToggleBtn');
-
     if (isTacticalMode) {
         mapEl.classList.add('tactical-active');
         toggleBtn.classList.add('active-mode');
         styleIcon.innerText = '🕶️';
         styleLabel.innerText = 'Night Tactical';
-        showToast('🕶️ Night Tactical HUD Filter Activated');
+        showToast('🕶️ Night Tactical Filter Activated');
     } else {
         mapEl.classList.remove('tactical-active');
         toggleBtn.classList.remove('active-mode');
         styleIcon.innerText = '🗺️';
         styleLabel.innerText = 'Atlas Day';
-        showToast('🗺️ Standard Atlas Day Mode Restored');
+        showToast('🗺️ Atlas Day Mode Restored');
     }
 }
 
 function resetFullMap() {
     if (!map || !mapBounds) return;
-    map.flyToBounds(mapBounds, { duration: 0.85 });
-    showToast('🔄 Reset View to Full Leonida Map');
+    recomputeZoomBounds(false);
+    map.flyToBounds(mapBounds, { padding: [24, 24], duration: 0.75 });
+    showToast('🌎 Full Leonida Map View Restored');
 }
 
-/* ==========================================================================
-   2. DATA LOADING & PIN CALIBRATION
-   ========================================================================== */
 async function loadAllPinsData() {
     allPins = [];
+    const seen = new Set();
 
-    // 1. Fetch core pins from data/map-pins.json
     try {
-        const res = await fetch('/data/map-pins.json');
+        const res = await fetch('/data/map-pins.json?v=45');
         if (res.ok) {
             const data = await res.json();
-            if (data.pins) allPins.push(...data.pins);
+            if (Array.isArray(data.pins)) {
+                data.pins.forEach(p => {
+                    if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
+                });
+            }
         }
-    } catch(err) {
-        console.warn('Could not load /data/map-pins.json:', err);
-    }
+    } catch(err) { console.warn('Could not load /data/map-pins.json:', err); }
 
-    // 2. Fetch live pins from data/map-pins-live.json
     try {
         const resLive = await fetch('/data/map-pins-live.json');
         if (resLive.ok) {
             const dataLive = await resLive.json();
-            if (dataLive.items) allPins.push(...dataLive.items);
+            if (Array.isArray(dataLive.items)) {
+                dataLive.items.forEach(p => {
+                    if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
+                });
+            }
         }
-    } catch(err) {
-        console.warn('Could not load /data/map-pins-live.json:', err);
-    }
+    } catch(err) { console.warn('Could not load /data/map-pins-live.json:', err); }
 
-    // 3. Append custom user pins
     if (customUserPins && customUserPins.length) {
-        allPins.push(...customUserPins);
+        customUserPins.forEach(p => {
+            if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
+        });
     }
 
     renderAllMarkers();
@@ -1202,15 +1227,14 @@ function createMarkerIcon(pin) {
     const iconChar = pin.icon || cat.icon || '📍';
     const isFound = foundPinIds.has(pin.id);
     const isLive = pin.category === 'live-discovery';
+    const isHighlighted = highlightedPinId === pin.id;
 
-    const extraClass = (isFound ? 'is-found ' : '') + (isLive ? 'live-pulse-marker' : '');
-
+    const extraClass = (isFound ? 'is-found ' : '') + (isLive ? 'live-pulse-marker ' : '') + (isHighlighted ? 'deep-link-pulse' : '');
     const html = `
-        <div class="custom-pin-marker ${extraClass}" style="width:28px; height:28px; color:${color}; border-color:${color};">
+        <div class="custom-pin-marker ${extraClass}" data-marker-id="${pin.id}" style="width:28px; height:28px; color:${color}; border-color:${color};">
             <span style="font-size:14px; line-height:1;">${iconChar}</span>
         </div>
     `;
-
     return L.divIcon({
         className: 'div-icon-wrapper',
         html: html,
@@ -1223,14 +1247,11 @@ function createMarkerIcon(pin) {
 function createPopupContent(pin) {
     const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
     const isFound = foundPinIds.has(pin.id);
-
-    const blueprintBtn = pin.link ? `
-        <a href="${pin.link}" class="btn-popup-link" target="_blank">
-            <span>Intel &rarr;</span>
-        </a>
-    ` : '';
+    const imgHtml = pin.image ? `<div class="popup-img-wrap"><img src="${pin.image}" alt="${pin.title}" loading="lazy"></div>` : '';
+    const blueprintBtn = pin.link ? `<a href="${pin.link}" class="btn-popup-link">Guide &rarr;</a>` : '';
 
     return `
+        ${imgHtml}
         <div class="popup-card">
             <div class="popup-header">
                 <span class="popup-tag-badge" style="background:${cat.color}22; color:${cat.color}; border:1px solid ${cat.color}66;">
@@ -1239,34 +1260,22 @@ function createPopupContent(pin) {
                 <span class="popup-region">📍 ${pin.region || 'Leonida'}</span>
             </div>
             <h4 class="popup-title">${pin.title}</h4>
-            ${pin.payout ? `
-                <div class="popup-payout-row">
-                    <span style="color:#94a3b8;">Est. Payout / Perk:</span>
-                    <strong style="color:var(--neon-green,#00ff88);">${pin.payout}</strong>
-                </div>
-            ` : ''}
-            ${pin.security ? `
-                <div style="font-size:0.68rem; color:#f87171;">
-                    🔒 <strong>Security:</strong> ${pin.security}
-                </div>
-            ` : ''}
+            ${pin.payout ? `<div class="popup-payout-row"><span style="color:#94a3b8;">Info / Payout:</span><strong style="color:var(--neon-green,#00ff88);">${pin.payout}</strong></div>` : ''}
+            ${pin.security ? `<div style="font-size:0.68rem; color:#f87171;">🔒 <strong>Security:</strong> ${pin.security}</div>` : ''}
             <p class="popup-desc">${pin.description || ''}</p>
-            ${pin.tips ? `
-                <div class="popup-tip-box">
-                    💡 <strong>Tactical Note:</strong> ${pin.tips}
-                </div>
-            ` : ''}
-            ${pin.exfil ? `
-                <div style="font-size:0.66rem; color:#38bdf8;">
-                    🏎️ <strong>Exfil:</strong> ${pin.exfil}
-                </div>
-            ` : ''}
+            ${pin.tips ? `<div class="popup-tip-box">💡 <strong>Tactical Note:</strong> ${pin.tips}</div>` : ''}
+            <div class="popup-aff-mini">
+                🔑 <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer">G2A Keys</a> |
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer">Eneba</a> |
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer">ExitLag (Free)</a> |
+                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer">CutFlow Pro</a>
+            </div>
             <div class="popup-actions-row">
                 <button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${pin.id}')">
-                    ${isFound ? '↺ Mark Unfound' : '✓ Mark Found'}
+                    ${isFound ? '↺ Unfound' : '✓ Found'}
                 </button>
-                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${pin.id}')" title="Copy Deep Link">
-                    🔗 Link
+                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${pin.id}')" title="Copy Pin Link">
+                    🔗 Copy Pin
                 </button>
                 ${blueprintBtn}
             </div>
@@ -1275,7 +1284,6 @@ function createPopupContent(pin) {
 }
 
 function renderAllMarkers() {
-    // Clear existing layers
     Object.keys(markerLayersByCategory).forEach(cat => {
         if (markerLayersByCategory[cat]) markerLayersByCategory[cat].clearLayers();
     });
@@ -1284,136 +1292,151 @@ function renderAllMarkers() {
     allPins.forEach(pin => {
         const y = pin.yPct * naturalHeight;
         const x = pin.xPct * naturalWidth;
-
         const marker = L.marker([y, x], {
             icon: createMarkerIcon(pin),
             title: pin.title
         });
-
         marker.bindPopup(() => createPopupContent(pin), {
-            maxWidth: 320,
+            maxWidth: 330,
             autoPan: true,
-            autoPanPadding: [50, 50]
+            autoPanPadding: [48, 48]
         });
-
         marker.on('click', () => {
             flyToPin(pin.id, false);
         });
 
         markersById[pin.id] = marker;
-
         const cat = pin.category || 'vault';
         if (!markerLayersByCategory[cat]) {
             markerLayersByCategory[cat] = L.layerGroup().addTo(map);
         }
-
-        const isFound = foundPinIds.has(pin.id);
-        const shouldHide = hideFoundActive && isFound;
-
-        if (categoryVisibility[cat] && !shouldHide) {
+        if (categoryVisibility[cat] !== false && !(hideFoundActive && foundPinIds.has(pin.id))) {
             markerLayersByCategory[cat].addLayer(marker);
         }
     });
 
-    document.getElementById('activePinCountLabel').innerText = `${allPins.length} PINS LOADED`;
-    document.getElementById('mobileCountBadge').innerText = `${allPins.length}`;
+    const lbl = document.getElementById('activePinCountLabel');
+    if (lbl) lbl.innerText = `${allPins.length} PINS LIVE`;
+    const badge = document.getElementById('mobileCountBadge');
+    if (badge) badge.innerText = `${allPins.length}`;
 }
 
-/* ==========================================================================
-   3. SMOOTH FLY-TO ZOOMING & DEEP LINKS
-   ========================================================================== */
-function flyToPin(pinId, openPopup = true) {
-    const pin = allPins.find(p => p.id === pinId);
-    if (!pin || !map) return;
+function findPinByIdOrAlias(rawId) {
+    if (!rawId) return null;
+    const clean = String(rawId).trim();
+    let pin = allPins.find(p => p.id === clean);
+    if (pin) return pin;
+    const low = clean.toLowerCase();
+    pin = allPins.find(p => p.id.toLowerCase() === low);
+    if (pin) return pin;
+    // Normalized partial match fallback
+    const slug = low.replace(/[^a-z0-9]/g, '');
+    return allPins.find(p => p.id.toLowerCase().replace(/[^a-z0-9]/g, '') === slug)
+        || allPins.find(p => p.title.toLowerCase().includes(low))
+        || null;
+}
 
-    // Ensure category is visible
+function flyToPin(pinId, openPopup = true, highlightPulse = false) {
+    const pin = findPinByIdOrAlias(pinId);
+    if (!pin || !map) {
+        showToast('⚠️ Pin not found — showing full Leonida Map');
+        return false;
+    }
+
     const cat = pin.category || 'vault';
     if (!categoryVisibility[cat]) {
         categoryVisibility[cat] = true;
-        updateCategoryLayers();
-        renderCategoryRows();
     }
+    if (hideFoundActive && foundPinIds.has(pin.id)) {
+        hideFoundActive = false;
+        const chk = document.getElementById('hideFoundCheckbox');
+        if (chk) chk.checked = false;
+    }
+
+    if (highlightPulse) {
+        const prev = highlightedPinId;
+        highlightedPinId = pin.id;
+        if (prev && markersById[prev]) {
+            const prevPin = allPins.find(p => p.id === prev);
+            if (prevPin) markersById[prev].setIcon(createMarkerIcon(prevPin));
+        }
+        if (markersById[pin.id]) {
+            markersById[pin.id].setIcon(createMarkerIcon(pin));
+        }
+    }
+
+    updateCategoryLayers();
+    renderCategoryRows();
 
     const y = pin.yPct * naturalHeight;
     const x = pin.xPct * naturalWidth;
+    const targetZoom = Math.max(fitZoomLevel + 2.25, 0.75);
 
-    // Smooth tight fly-to zoom
-    map.flyTo([y, x], 2.5, { duration: 0.85 });
+    map.flyTo([y, x], targetZoom, { duration: 0.7 });
 
     if (openPopup) {
         setTimeout(() => {
-            const marker = markersById[pinId];
+            const marker = markersById[pin.id];
             if (marker) {
                 marker.openPopup();
-                if (window.GTA6 && GTA6.playBlip) GTA6.playBlip();
             }
-        }, 850);
+        }, 760);
     }
+    return true;
 }
 
 function jumpToRegion(regionName) {
     const conf = REGION_CENTERS[regionName];
     if (!conf || !map) return;
-
     const y = conf.yPct * naturalHeight;
     const x = conf.xPct * naturalWidth;
-
-    map.flyTo([y, x], conf.zoom || 2.0, { duration: 0.85 });
+    map.flyTo([y, x], conf.zoom, { duration: 0.75 });
     showToast(`📍 Jumped to ${regionName}`);
-    if (window.GTA6 && GTA6.playBlip) GTA6.playBlip();
 }
 
 function flyToNextUnfound() {
     const unfound = allPins.filter(p => !foundPinIds.has(p.id));
     if (unfound.length === 0) {
-        showToast('🏆 All 90+ Pins Found & Completed!');
+        showToast('🏆 All Pins Found & Completed!');
         return;
     }
-    // Pick next unfound pin
     const target = unfound[Math.floor(Math.random() * unfound.length)];
-    flyToPin(target.id, true);
-    showToast(`🎯 Flying to Unfound: ${target.title}`);
+    flyToPin(target.id, true, true);
+    showToast(`🎯 Flying to: ${target.title}`);
 }
 
 function handleInitialDeepLinks() {
     const params = new URLSearchParams(window.location.search);
-    const pinParam = params.get('pin');
+    const pinParam = params.get('pin') || params.get('id') || params.get('marker');
     const regionParam = params.get('region');
 
     if (pinParam) {
-        setTimeout(() => flyToPin(pinParam, true), 500);
+        const ok = flyToPin(pinParam, true, true);
+        if (ok) {
+            const p = findPinByIdOrAlias(pinParam);
+            if (p) showToast(`📍 Locked Pin: ${p.title}`);
+        }
     } else if (regionParam) {
         const match = Object.keys(REGION_CENTERS).find(r => r.toLowerCase().replace(/[^a-z]/g, '') === regionParam.toLowerCase().replace(/[^a-z]/g, ''));
-        if (match) {
-            setTimeout(() => jumpToRegion(match), 500);
-        }
+        if (match) jumpToRegion(match);
     }
 }
 
 function copyPinDeepLink(pinId) {
-    const url = `${window.location.origin}/interactive-map?pin=${pinId}`;
-    navigator.clipboard.writeText(url);
-    showToast('🔗 Deep Link Copied to Clipboard!');
+    const url = `${window.location.origin}/map.html?pin=${encodeURIComponent(pinId)}`;
+    navigator.clipboard.writeText(url).catch(() => {});
+    showToast('🔗 Map Pin Link Copied!');
 }
 
-/* ==========================================================================
-   4. CHECKLIST & FOUND STATUS MANAGEMENT
-   ========================================================================== */
 function togglePinFound(pinId) {
     if (foundPinIds.has(pinId)) {
         foundPinIds.delete(pinId);
         showToast('↺ Pin Marked Unfound');
     } else {
         foundPinIds.add(pinId);
-        showToast('✓ Pin Marked Found (+100 Rep)');
-        if (window.GTA6 && GTA6.playSuccess) GTA6.playSuccess();
+        showToast('✓ Pin Marked Found');
     }
-
-    try {
-        localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds]));
-    } catch(e) {}
-
-    // Update marker icon
+    try { localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds])); } catch(e) {}
     const pin = allPins.find(p => p.id === pinId);
     if (pin && markersById[pinId]) {
         markersById[pinId].setIcon(createMarkerIcon(pin));
@@ -1421,20 +1444,17 @@ function togglePinFound(pinId) {
             markersById[pinId].setPopupContent(createPopupContent(pin));
         }
     }
-
     updateChecklistStats();
     updateCategoryLayers();
     renderFilteredList();
 }
 
 function updateChecklistStats() {
-    const total = allPins.length || 90;
+    const total = allPins.length || 162;
     const found = [...foundPinIds].filter(id => allPins.some(p => p.id === id)).length;
     const pct = Math.round((found / total) * 100);
-
     const progressBar = document.getElementById('checklistProgressBar');
     const countLabel = document.getElementById('foundCountLabel');
-
     if (progressBar) progressBar.style.width = `${pct}%`;
     if (countLabel) countLabel.innerText = `Found: ${found} / ${total} (${pct}%)`;
 }
@@ -1443,50 +1463,37 @@ function toggleHideFound(checked) {
     hideFoundActive = checked;
     updateCategoryLayers();
     renderFilteredList();
-    showToast(checked ? '👁️ Hidden All Found Pins' : '👁️ Showing All Pins');
 }
 
-/* ==========================================================================
-   5. CATEGORIES ACCORDION & ISOLATION ("ONLY")
-   ========================================================================== */
 function renderCategoryRows() {
     const container = document.getElementById('categoryRowsContainer');
     if (!container) return;
-
     let html = '';
     Object.keys(CATEGORIES).forEach(catKey => {
         const cat = CATEGORIES[catKey];
         const isChecked = categoryVisibility[catKey];
         const totalInCat = allPins.filter(p => p.category === catKey).length;
         const foundInCat = allPins.filter(p => p.category === catKey && foundPinIds.has(p.id)).length;
-
         html += `
-            <div class="cat-filter-row" onclick="handleCategoryRowClick('${catKey}', event)">
+            <div class="cat-filter-row" onclick="handleCategoryRowClick('${catKey}')">
                 <div class="cat-left-side">
                     <input type="checkbox" id="cat-chk-${catKey}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); setCategoryVisible('${catKey}', this.checked)">
-                    <span style="font-size:1.05rem;">${cat.icon}</span>
+                    <span style="font-size:1rem;">${cat.icon}</span>
                     <span style="color:${isChecked ? '#fff' : '#94a3b8'};">${cat.name}</span>
                 </div>
                 <div class="cat-right-side">
-                    <span class="cat-count-badge" style="border:1px solid ${cat.color}44;">
-                        ${totalInCat - foundInCat}/${totalInCat}
-                    </span>
-                    <button type="button" class="btn-cat-only" onclick="event.stopPropagation(); isolateCategory('${catKey}')" title="Show ONLY this category">
-                        Only
-                    </button>
+                    <span class="cat-count-badge" style="border:1px solid ${cat.color}44;">${totalInCat - foundInCat}/${totalInCat}</span>
+                    <button type="button" class="btn-cat-only" onclick="event.stopPropagation(); isolateCategory('${catKey}')">Only</button>
                 </div>
             </div>
         `;
     });
-
     container.innerHTML = html;
 }
 
-function handleCategoryRowClick(catKey, event) {
+function handleCategoryRowClick(catKey) {
     const nextState = !categoryVisibility[catKey];
     setCategoryVisible(catKey, nextState);
-    const chk = document.getElementById(`cat-chk-${catKey}`);
-    if (chk) chk.checked = nextState;
 }
 
 function setCategoryVisible(catKey, visible) {
@@ -1497,9 +1504,7 @@ function setCategoryVisible(catKey, visible) {
 }
 
 function isolateCategory(catKey) {
-    Object.keys(categoryVisibility).forEach(k => {
-        categoryVisibility[k] = (k === catKey);
-    });
+    Object.keys(categoryVisibility).forEach(k => { categoryVisibility[k] = (k === catKey); });
     updateCategoryLayers();
     renderFilteredList();
     renderCategoryRows();
@@ -1507,26 +1512,20 @@ function isolateCategory(catKey) {
 }
 
 function toggleAllCategories(show) {
-    Object.keys(categoryVisibility).forEach(k => {
-        categoryVisibility[k] = show;
-    });
+    Object.keys(categoryVisibility).forEach(k => { categoryVisibility[k] = show; });
     updateCategoryLayers();
     renderFilteredList();
     renderCategoryRows();
-    showToast(show ? '🗺️ All Categories Enabled' : '🗺️ All Categories Hidden');
 }
 
 function updateCategoryLayers() {
     Object.keys(CATEGORIES).forEach(cat => {
         const layer = markerLayersByCategory[cat];
         if (!layer) return;
-
         layer.clearLayers();
-
         if (categoryVisibility[cat]) {
             allPins.filter(p => p.category === cat).forEach(pin => {
-                const isFound = foundPinIds.has(pin.id);
-                if (hideFoundActive && isFound) return;
+                if (hideFoundActive && foundPinIds.has(pin.id)) return;
                 const m = markersById[pin.id];
                 if (m) layer.addLayer(m);
             });
@@ -1534,9 +1533,6 @@ function updateCategoryLayers() {
     });
 }
 
-/* ==========================================================================
-   6. SEARCH & LIST FILTERING
-   ========================================================================== */
 function handleSearch(query) {
     currentSearchQuery = query.toLowerCase().trim();
     const clearBtn = document.getElementById('searchClearBtn');
@@ -1553,144 +1549,97 @@ function clearSearch() {
 function renderFilteredList() {
     const listEl = document.getElementById('sidebarLocationsList');
     if (!listEl) return;
-
     const filtered = allPins.filter(pin => {
-        // Category filter
         const cat = pin.category || 'vault';
         if (!categoryVisibility[cat]) return false;
-
-        // Hide found filter
         if (hideFoundActive && foundPinIds.has(pin.id)) return false;
-
-        // Text search filter
         if (!currentSearchQuery) return true;
-        const text = `${pin.title} ${pin.region || ''} ${pin.description || ''} ${pin.payout || ''}`.toLowerCase();
+        const text = `${pin.title} ${pin.region || ''} ${pin.description || ''} ${pin.payout || ''} ${pin.id}`.toLowerCase();
         return text.includes(currentSearchQuery);
     });
 
     if (filtered.length === 0) {
-        listEl.innerHTML = `
-            <div style="text-align:center; padding:2rem 1rem; color:#94a3b8; font-size:0.8rem;">
-                🔍 No matching locations found.
-            </div>
-        `;
+        listEl.innerHTML = '<div style="text-align:center; padding:1.5rem 1rem; color:#94a3b8; font-size:0.8rem;">🔍 No matching locations found.</div>';
         return;
     }
 
-    let html = '';
-    filtered.slice(0, 80).forEach(pin => {
+    listEl.innerHTML = filtered.slice(0, 100).map(pin => {
         const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
         const isFound = foundPinIds.has(pin.id);
-
-        html += `
-            <div class="pin-list-item ${isFound ? 'is-found' : ''}" onclick="flyToPin('${pin.id}', true)">
+        return `
+            <div class="pin-list-item ${isFound ? 'is-found' : ''}" onclick="flyToPin('${pin.id}', true, true)">
                 <div class="pin-item-left">
                     <span class="pin-item-icon">${pin.icon || cat.icon}</span>
                     <div class="pin-item-title-wrap">
                         <span class="pin-item-title">${pin.title}</span>
                         <div class="pin-item-sub">
                             <span>📍 ${pin.region || 'Leonida'}</span>
-                            ${pin.payout ? `<span>•</span><span class="pin-item-payout">${pin.payout}</span>` : ''}
+                            ${pin.payout ? `<span>&bull;</span><span class="pin-item-payout">${pin.payout}</span>` : ''}
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn-mini-action" onclick="event.stopPropagation(); togglePinFound('${pin.id}')" title="Toggle checklist">
-                    ${isFound ? '↺' : '✓'}
-                </button>
+                <button type="button" class="btn-mini-action" onclick="event.stopPropagation(); togglePinFound('${pin.id}')">${isFound ? '↺' : '✓'}</button>
             </div>
         `;
-    });
-
-    listEl.innerHTML = html;
+    }).join('');
 }
 
-/* ==========================================================================
-   7. CUSTOM USER PIN DROPPING
-   ========================================================================== */
 function toggleUserPinDropMode() {
     isDropMode = !isDropMode;
     const btn = document.getElementById('dropPinBtn');
     if (isDropMode) {
         btn.style.background = 'var(--neon-green,#00ff88)';
         btn.style.color = '#040711';
-        showToast('📍 Click anywhere on the map to place your pin!');
+        showToast('📍 Click anywhere on the map to place your custom pin!');
     } else {
         btn.style.background = '';
-        btn.style.color = '';
+        btn.style.color = 'var(--neon-green,#00ff88)';
     }
 }
-
-function openUserPinModal() {
-    document.getElementById('userPinModal').style.display = 'flex';
-}
-function closeUserPinModal() {
-    document.getElementById('userPinModal').style.display = 'none';
-    pendingDropCoords = null;
-}
+function openUserPinModal() { document.getElementById('userPinModal').style.display = 'flex'; }
+function closeUserPinModal() { document.getElementById('userPinModal').style.display = 'none'; pendingDropCoords = null; }
 
 function saveUserPin() {
     if (!pendingDropCoords) return;
-    const title = document.getElementById('userPinTitle').value.trim() || 'Custom User Waypoint';
+    const title = document.getElementById('userPinTitle').value.trim() || 'Custom Waypoint';
     const category = document.getElementById('userPinCategory').value || 'user-custom';
     const notes = document.getElementById('userPinNotes').value.trim();
-
     const newPin = {
         id: `user-${Date.now()}`,
-        title: title,
-        category: category,
-        icon: CATEGORIES[category].icon || '📍',
+        title, category,
+        icon: (CATEGORIES[category] && CATEGORIES[category].icon) || '📍',
         region: 'User Marked',
         yPct: pendingDropCoords.yPct,
         xPct: pendingDropCoords.xPct,
-        description: notes || 'Custom waypoint marked by operative.',
-        tips: 'Saved to your browser storage.',
+        description: notes || 'Custom waypoint saved locally.',
         badge: 'USER PIN'
     };
-
     customUserPins.push(newPin);
-    try {
-        localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins));
-    } catch(e) {}
-
+    try { localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins)); } catch(e) {}
     allPins.push(newPin);
     renderAllMarkers();
+    renderCategoryRows();
     renderFilteredList();
     closeUserPinModal();
-
-    showToast('📍 Custom Pin Saved to Local Map!');
-    flyToPin(newPin.id, true);
+    flyToPin(newPin.id, true, true);
 }
 
-/* ==========================================================================
-   8. EXPORT & IMPORT SAVE CODES
-   ========================================================================== */
 function openSaveModal() {
-    const data = {
-        version: "4.2",
-        timestamp: new Date().toISOString(),
-        foundPinIds: [...foundPinIds],
-        customUserPins: customUserPins
-    };
-    const code = btoa(JSON.stringify(data));
-    document.getElementById('saveCodeTextarea').value = code;
+    const data = { version: '4.5', timestamp: new Date().toISOString(), foundPinIds: [...foundPinIds], customUserPins };
+    document.getElementById('saveCodeTextarea').value = btoa(JSON.stringify(data));
     document.getElementById('saveCodeModal').style.display = 'flex';
 }
-function closeSaveModal() {
-    document.getElementById('saveCodeModal').style.display = 'none';
-}
-
+function closeSaveModal() { document.getElementById('saveCodeModal').style.display = 'none'; }
 function copySaveCode() {
     const ta = document.getElementById('saveCodeTextarea');
     ta.select();
-    navigator.clipboard.writeText(ta.value);
-    showToast('📋 Save Code Copied to Clipboard!');
+    navigator.clipboard.writeText(ta.value).catch(() => {});
+    showToast('📋 Backup Code Copied!');
 }
-
 function importSaveCode() {
     const ta = document.getElementById('saveCodeTextarea');
     try {
-        const jsonStr = atob(ta.value.trim());
-        const data = JSON.parse(jsonStr);
+        const data = JSON.parse(atob(ta.value.trim()));
         if (data.foundPinIds) {
             foundPinIds = new Set(data.foundPinIds);
             localStorage.setItem('gta6_found_pins', JSON.stringify([...foundPinIds]));
@@ -1700,16 +1649,11 @@ function importSaveCode() {
             localStorage.setItem('gta6_custom_user_pins', JSON.stringify(customUserPins));
         }
         closeSaveModal();
-        showToast('📥 Save Code Successfully Imported!');
         loadAllPinsData();
-    } catch(err) {
-        alert('Invalid Save Code string. Please check and try again.');
-    }
+        showToast('📥 Progress Imported!');
+    } catch(err) { alert('Invalid Save Code string.'); }
 }
 
-/* ==========================================================================
-   TOAST & MOBILE DRAWER
-   ========================================================================== */
 function showToast(msg) {
     const t = document.getElementById('hudToast');
     if (!t) return;
@@ -1724,13 +1668,14 @@ function toggleMobileDrawer() {
     if (sidebar) sidebar.classList.toggle('open');
 }
 
-/* ==========================================================================
-   INITIALIZE ON DOM LOAD
-   ========================================================================== */
+window.addEventListener('resize', () => {
+    clearTimeout(window._mapResizeTimer);
+    window._mapResizeTimer = setTimeout(syncHeaderHeight, 120);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     initEngine();
 });
 </script>
-
 </body>
 </html>

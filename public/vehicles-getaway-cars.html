@@ -8,7 +8,7 @@
     <title>GTA 6 Getaway Cars, Armor and Trunk Specs Breakdown</title>
     <meta name="description" content="Compare 179 confirmed GTA 6 getaway vehicles, supercars, armored SUVs, interceptor cruisers, and boats with top speed, armor, and trunk bag slots.">
     <link rel="canonical" href="https://www.gta6heistguide.com/vehicles-getaway-cars">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
     <style>
         .veh-card {
             background: rgba(14, 20, 32, 0.95);
@@ -112,11 +112,11 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/vehicles-getaway-cars">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GTA 6 Getaway Cars, Armor and Trunk Specs Breakdown">
     <meta name="twitter:description" content="Compare 179 confirmed GTA 6 getaway vehicles, supercars, armored SUVs, interceptor cruisers, and boats with top speed, armor, and trunk bag slots.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -162,64 +162,63 @@
 </head>
 <body onload="calcVehicleBuild()">
 
-<div class="countdown-strip">
+
+
+
+
+<div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS & DROPS">
-                <span class="strip-pulse"></span>
-                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS &amp; DROPS</span>
-            </a>
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+            </span>
             <span class="strip-divider">|</span>
-            <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-            <span class="strip-divider">|</span>
-            <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
-        
     </div>
 </div>
-
-
-
-<nav class="navbar">
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
-        <div class="nav-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>NETWORK ONLINE</span>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
-            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
-            <li><a href="/save-planner" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💾 Save Planner</a></li>
-            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
-            <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
-            <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/map.html" class="nav-pill">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">
                     More <span class="nav-arrow">▾</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
-                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item active">🏎️ Vehicles</a>
-                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
-                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item active">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
                 </div>
             </li>
         </ul>
-        <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
-            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
-        </div>
     </div>
 </nav>
 
@@ -240,7 +239,20 @@
 
 <main class="container" style="max-width:1140px; margin:0 auto; padding:1rem 1rem 3rem; box-sizing:border-box;">
 
-    <!-- INTERACTIVE GETAWAY CAR CONFIGURATOR TOOL -->
+    <div class="syndicate-aff-bar">
+  <div class="syndicate-aff-bar-main">
+    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+    <span class="aff-sep">|</span>
+    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+  </div>
+  <div class="syndicate-aff-bar-sub">🏎️ Precision high-speed Leonida getaways: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge Triggers</a> &bull; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">Samsung 990 PRO SSD (Zero Pop-In)</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset</a></div>
+</div>
+<!-- INTERACTIVE GETAWAY CAR CONFIGURATOR TOOL -->
     <section class="tool-box pink-glow" style="margin-bottom:2rem;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
             <div>
@@ -335,7 +347,7 @@
         <!-- Declasse Tulip M-100 -->
         <div class="veh-card" data-category="muscle" data-keywords="declasse tulip m-100 1972 chevrolet chevelle malibu muscle // tuner primary getaway car // jason & lucia starter vehicle" onclick="GTA6.VehicleModal.open('declasse-tulip')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-tulip.jpg?v=20261119_v3" alt="Declasse Tulip M-100 - 1972 Chevrolet Chevelle Malibu" loading="eager" width="2400" height="1350">
+                <img src="/assets/images/vehicles/veh-wyman-2.jpg" alt="Declasse Tulip M-100 - 1972 Chevrolet Chevelle Malibu" loading="eager" width="2400" height="1350">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 142 MPH</span>
             </div>
@@ -360,7 +372,7 @@
         <!-- Bravado Gauntlet Hellfire -->
         <div class="veh-card" data-category="muscle" data-keywords="bravado gauntlet hellfire dodge challenger srt demon muscle // supercharged high-impact pursuit breaker // highway escape" onclick="GTA6.VehicleModal.open('bravado-gauntlet-hellfire')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-gauntlet-hellfire.jpg?v=20261119_v3" alt="Bravado Gauntlet Hellfire - Dodge Challenger SRT Demon" loading="eager" width="1264" height="711">
+                <img src="/assets/images/vehicles/veh-wyman-3.jpg" alt="Bravado Gauntlet Hellfire - Dodge Challenger SRT Demon" loading="eager" width="1264" height="711">
                 <span class="veh-badge-class">MUSCLE // SUPERCHARGED</span>
                 <span class="veh-badge-speed">⚡ 162 MPH</span>
             </div>
@@ -385,7 +397,7 @@
         <!-- Annis Elegy Retro Custom -->
         <div class="veh-card" data-category="muscle" data-keywords="annis elegy retro custom nissan skyline gt-r (r32 / r33) muscle // tuner alleyway escape & undercover street meet racer" onclick="GTA6.VehicleModal.open('annis-elegy-retro')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-elegy-retro.jpg?v=20261119_v3" alt="Annis Elegy Retro Custom - Nissan Skyline GT-R (R32 / R33)" loading="eager" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-wyman-4.jpg" alt="Annis Elegy Retro Custom - Nissan Skyline GT-R (R32 / R33)" loading="eager" width="1376" height="768">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 154 MPH</span>
             </div>
@@ -410,7 +422,7 @@
         <!-- Albany Buccaneer Custom -->
         <div class="veh-card" data-category="muscle" data-keywords="albany buccaneer custom 1965 buick riviera lowrider muscle // tuner low-profile covert smuggling & cartel stash car" onclick="GTA6.VehicleModal.open('albany-buccaneer')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-buccaneer.jpg?v=20261119_v3" alt="Albany Buccaneer Custom - 1965 Buick Riviera Lowrider" loading="eager" width="1910" height="1074">
+                <img src="/assets/images/vehicles/veh-vapid-ganado.jpg" alt="Albany Buccaneer Custom - 1965 Buick Riviera Lowrider" loading="eager" width="1910" height="1074">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 135 MPH</span>
             </div>
@@ -435,7 +447,7 @@
         <!-- Vapid Dominator ASP -->
         <div class="veh-card" data-category="muscle" data-keywords="vapid dominator asp 2000 ford mustang svt cobra r muscle // tuner rapid interception & fast extrication" onclick="GTA6.VehicleModal.open('vapid-dominator-asp')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-dominator-asp.jpg?v=20261119_v3" alt="Vapid Dominator ASP - 2000 Ford Mustang SVT Cobra R" loading="eager" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-rideout-1.jpg" alt="Vapid Dominator ASP - 2000 Ford Mustang SVT Cobra R" loading="eager" width="1376" height="768">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 158 MPH</span>
             </div>
@@ -460,7 +472,7 @@
         <!-- Declasse Vigero ZX Convertible -->
         <div class="veh-card" data-category="muscle" data-keywords="declasse vigero zx convertible chevrolet camaro zl1 convertible muscle // tuner drive-by suppressive platform // 4-seater extraction" onclick="GTA6.VehicleModal.open('declasse-vigero-zx')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-vigero-zx.jpg?v=20261119_v3" alt="Declasse Vigero ZX Convertible - Chevrolet Camaro ZL1 Convertible" loading="eager" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-rideout-2.jpg" alt="Declasse Vigero ZX Convertible - Chevrolet Camaro ZL1 Convertible" loading="eager" width="1376" height="768">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 160 MPH</span>
             </div>
@@ -485,7 +497,7 @@
         <!-- Dinka Blista Compact -->
         <div class="veh-card" data-category="muscle" data-keywords="dinka blista compact 1988 honda cr-x si muscle // tuner pedestrian alleyway threader // anonymous scout" onclick="GTA6.VehicleModal.open('dinka-blista-compact')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-blista-compact.jpg?v=20261119_v3" alt="Dinka Blista Compact - 1988 Honda CR-X Si" loading="lazy" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-wyman-2.jpg" alt="Dinka Blista Compact - 1988 Honda CR-X Si" loading="lazy" width="1376" height="768">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 128 MPH</span>
             </div>
@@ -510,7 +522,7 @@
         <!-- Bravado Rat-Loader 500 -->
         <div class="veh-card" data-category="muscle" data-keywords="bravado rat-loader 500 1938 dodge power wagon hot rod muscle // tuner grassrivers smuggling & backwoods extraction" onclick="GTA6.VehicleModal.open('bravado-rat-loader')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-rat-loader.jpg?v=20261119_v3" alt="Bravado Rat-Loader 500 - 1938 Dodge Power Wagon Hot Rod" loading="lazy" width="1280" height="908">
+                <img src="/assets/images/vehicles/veh-wyman-3.jpg" alt="Bravado Rat-Loader 500 - 1938 Dodge Power Wagon Hot Rod" loading="lazy" width="1280" height="908">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 125 MPH</span>
             </div>
@@ -535,7 +547,7 @@
         <!-- Vapid Slamvan Custom -->
         <div class="veh-card" data-category="muscle" data-keywords="vapid slamvan custom 1953 ford f-100 slammed pickup muscle // tuner cargo loot hauler // heavy cash stash" onclick="GTA6.VehicleModal.open('vapid-slamvan-custom')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-slamvan.jpg?v=20261119_v3" alt="Vapid Slamvan Custom - 1953 Ford F-100 Slammed Pickup" loading="lazy" width="1280" height="794">
+                <img src="/assets/images/vehicles/veh-wyman-4.jpg" alt="Vapid Slamvan Custom - 1953 Ford F-100 Slammed Pickup" loading="lazy" width="1280" height="794">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 138 MPH</span>
             </div>
@@ -560,7 +572,7 @@
         <!-- Declasse Sabre Turbo Classic -->
         <div class="veh-card" data-category="muscle" data-keywords="declasse sabre turbo classic 1970 oldsmobile 442 w-30 muscle // tuner drag-strip getaway & highway disappearance" onclick="GTA6.VehicleModal.open('declasse-sabre-turbo')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-sabre-turbo.jpg?v=20261119_v3" alt="Declasse Sabre Turbo Classic - 1970 Oldsmobile 442 W-30" loading="lazy" width="1280" height="960">
+                <img src="/assets/images/vehicles/veh-vapid-ganado.jpg" alt="Declasse Sabre Turbo Classic - 1970 Oldsmobile 442 W-30" loading="lazy" width="1280" height="960">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 146 MPH</span>
             </div>
@@ -585,7 +597,7 @@
         <!-- Albany Hermes Lead Sled -->
         <div class="veh-card" data-category="muscle" data-keywords="albany hermes lead sled 1949 mercury eight coupe muscle // tuner syndicate boss escort & mob safehouse courier" onclick="GTA6.VehicleModal.open('albany-hermes')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-hermes.jpg?v=20261119_v3" alt="Albany Hermes Lead Sled - 1949 Mercury Eight Coupe" loading="lazy" width="1280" height="1013">
+                <img src="/assets/images/vehicles/veh-rideout-1.jpg" alt="Albany Hermes Lead Sled - 1949 Mercury Eight Coupe" loading="lazy" width="1280" height="1013">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 132 MPH</span>
             </div>
@@ -610,7 +622,7 @@
         <!-- Schyster Deviant Restomod -->
         <div class="veh-card" data-category="muscle" data-keywords="schyster deviant restomod 1972 amc javelin amx ringbrothers defiant muscle // tuner precision getaway // high-g cornering" onclick="GTA6.VehicleModal.open('schyster-deviant')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-deviant.jpg?v=20261119_v3" alt="Schyster Deviant Restomod - 1972 AMC Javelin AMX Ringbrothers Defiant" loading="lazy" width="1280" height="790">
+                <img src="/assets/images/vehicles/veh-rideout-2.jpg" alt="Schyster Deviant Restomod - 1972 AMC Javelin AMX Ringbrothers Defiant" loading="lazy" width="1280" height="790">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 155 MPH</span>
             </div>
@@ -635,7 +647,7 @@
         <!-- Imponte Phoenix Trans-Am -->
         <div class="veh-card" data-category="muscle" data-keywords="imponte phoenix trans-am 1977 pontiac firebird trans am muscle // tuner decoy pursuit distractor // siren jammer" onclick="GTA6.VehicleModal.open('imponte-phoenix')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-phoenix.jpg?v=20261119_v3" alt="Imponte Phoenix Trans-Am - 1977 Pontiac Firebird Trans Am" loading="lazy" width="640" height="432">
+                <img src="/assets/images/vehicles/veh-wyman-2.jpg" alt="Imponte Phoenix Trans-Am - 1977 Pontiac Firebird Trans Am" loading="lazy" width="640" height="432">
                 <span class="veh-badge-class">MUSCLE // TUNER</span>
                 <span class="veh-badge-speed">⚡ 144 MPH</span>
             </div>
@@ -660,7 +672,7 @@
         <!-- Bravado Banshee 900R -->
         <div class="veh-card" data-category="super" data-keywords="bravado banshee 900r dodge viper rt/10 & acr sports // supercar high-speed interstate ghosting" onclick="GTA6.VehicleModal.open('bravado-banshee')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-banshee.jpg?v=20261119_v3" alt="Bravado Banshee 900R - Dodge Viper RT/10 & ACR" loading="lazy" width="629" height="354">
+                <img src="/assets/images/vehicles/veh-cheetah-2.jpg" alt="Bravado Banshee 900R - Dodge Viper RT/10 & ACR" loading="lazy" width="629" height="354">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 178 MPH</span>
             </div>
@@ -685,7 +697,7 @@
         <!-- Grotti Cheetah Classic -->
         <div class="veh-card" data-category="super" data-keywords="grotti cheetah classic 1984 ferrari testarossa sports // supercar luxury casino infiltration & rapid evasion" onclick="GTA6.VehicleModal.open('grotti-cheetah')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-cheetah.jpg?v=20261119_v3" alt="Grotti Cheetah Classic - 1984 Ferrari Testarossa" loading="lazy" width="1129" height="635">
+                <img src="/assets/images/vehicles/veh-vc-supercar.jpg" alt="Grotti Cheetah Classic - 1984 Ferrari Testarossa" loading="lazy" width="1129" height="635">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 168 MPH</span>
             </div>
@@ -710,7 +722,7 @@
         <!-- Pfister Comet S2 Cabrio -->
         <div class="veh-card" data-category="super" data-keywords="pfister comet s2 cabrio porsche 911 turbo s cabriolet (992) sports // supercar rain-proof wet weather getaway" onclick="GTA6.VehicleModal.open('pfister-comet-s2')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-comet-s2.jpg?v=20261119_v3" alt="Pfister Comet S2 Cabrio - Porsche 911 Turbo S Cabriolet (992)" loading="lazy" width="1545" height="869">
+                <img src="/assets/images/vehicles/veh-wyman-1.jpg" alt="Pfister Comet S2 Cabrio - Porsche 911 Turbo S Cabriolet (992)" loading="lazy" width="1545" height="869">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 175 MPH</span>
             </div>
@@ -735,7 +747,7 @@
         <!-- Invetero Coquette D10 -->
         <div class="veh-card" data-category="super" data-keywords="invetero coquette d10 chevrolet corvette c8 stingray sports // supercar vip fast extraction // highway pursuit disruption" onclick="GTA6.VehicleModal.open('invetero-coquette-d10')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-coquette-d10.jpg?v=20261119_v3" alt="Invetero Coquette D10 - Chevrolet Corvette C8 Stingray" loading="lazy" width="1530" height="861">
+                <img src="/assets/images/vehicles/veh-cheetah-1.jpg" alt="Invetero Coquette D10 - Chevrolet Corvette C8 Stingray" loading="lazy" width="1530" height="861">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 172 MPH</span>
             </div>
@@ -760,7 +772,7 @@
         <!-- Grotti Furia Hypercar -->
         <div class="veh-card" data-category="super" data-keywords="grotti furia hypercar pininfarina battista / ferrari sf90 sports // supercar ultra-high value diamond & bearer bond courier" onclick="GTA6.VehicleModal.open('grotti-furia')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-furia.jpg?v=20261119_v3" alt="Grotti Furia Hypercar - Pininfarina Battista / Ferrari SF90" loading="lazy" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-cheetah-2.jpg" alt="Grotti Furia Hypercar - Pininfarina Battista / Ferrari SF90" loading="lazy" width="1376" height="768">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 188 MPH</span>
             </div>
@@ -785,7 +797,7 @@
         <!-- Dewbauchee Champion Spec -->
         <div class="veh-card" data-category="super" data-keywords="dewbauchee champion spec aston martin victor / vulcan sports // supercar counter-surveillance escort vehicle" onclick="GTA6.VehicleModal.open('dewbauchee-champion')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-champion.jpg?v=20261119_v3" alt="Dewbauchee Champion Spec - Aston Martin Victor / Vulcan" loading="lazy" width="1280" height="853">
+                <img src="/assets/images/vehicles/veh-vc-supercar.jpg" alt="Dewbauchee Champion Spec - Aston Martin Victor / Vulcan" loading="lazy" width="1280" height="853">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 174 MPH</span>
             </div>
@@ -810,7 +822,7 @@
         <!-- Pegassi Torero XO -->
         <div class="veh-card" data-category="super" data-keywords="pegassi torero xo lamborghini countach lpi 800-4 sports // supercar executive syndicate interceptor" onclick="GTA6.VehicleModal.open('pegassi-torero-xo')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-torero-xo.jpg?v=20261119_v3" alt="Pegassi Torero XO - Lamborghini Countach LPI 800-4" loading="lazy" width="1280" height="791">
+                <img src="/assets/images/vehicles/veh-wyman-1.jpg" alt="Pegassi Torero XO - Lamborghini Countach LPI 800-4" loading="lazy" width="1280" height="791">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 184 MPH</span>
             </div>
@@ -835,7 +847,7 @@
         <!-- Grotti Carbonizzare Spyder -->
         <div class="veh-card" data-category="super" data-keywords="grotti carbonizzare spyder ferrari california t / f12 sports // supercar undercover social infiltration // valet swap" onclick="GTA6.VehicleModal.open('grotti-carbonizzare')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-carbonizzare.jpg?v=20261119_v3" alt="Grotti Carbonizzare Spyder - Ferrari California T / F12" loading="lazy" width="1280" height="703">
+                <img src="/assets/images/vehicles/veh-cheetah-1.jpg" alt="Grotti Carbonizzare Spyder - Ferrari California T / F12" loading="lazy" width="1280" height="703">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 166 MPH</span>
             </div>
@@ -860,7 +872,7 @@
         <!-- Benefactor Schafter V12 Armored -->
         <div class="veh-card" data-category="super" data-keywords="benefactor schafter v12 armored mercedes-amg s65 v12 biturbo sports // supercar executive vip extrication & 4-man crew escape" onclick="GTA6.VehicleModal.open('benefactor-schafter-v12')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-schafter-v12.jpg?v=20261119_v3" alt="Benefactor Schafter V12 Armored - Mercedes-AMG S65 V12 Biturbo" loading="lazy" width="1280" height="854">
+                <img src="/assets/images/vehicles/veh-vapid-stanier-1.jpg" alt="Benefactor Schafter V12 Armored - Mercedes-AMG S65 V12 Biturbo" loading="lazy" width="1280" height="854">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 165 MPH</span>
             </div>
@@ -885,7 +897,7 @@
         <!-- Pfister Astron Custom -->
         <div class="veh-card" data-category="super" data-keywords="pfister astron custom porsche macan gts turbo sports // supercar rapid squad transport // curb-jumping utility" onclick="GTA6.VehicleModal.open('pfister-astron-custom')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-astron.jpg?v=20261119_v3" alt="Pfister Astron Custom - Porsche Macan GTS Turbo" loading="lazy" width="1280" height="852">
+                <img src="/assets/images/vehicles/veh-kalaga-offroad.jpg" alt="Pfister Astron Custom - Porsche Macan GTS Turbo" loading="lazy" width="1280" height="852">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 160 MPH</span>
             </div>
@@ -910,7 +922,7 @@
         <!-- Progen Itali GTB Custom -->
         <div class="veh-card" data-category="super" data-keywords="progen itali gtb custom mclaren 570s / 650s gt3 sports // supercar sprint evasion // causeway crossing" onclick="GTA6.VehicleModal.open('progen-itali-gtb')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-itali-gtb.jpg?v=20261119_v3" alt="Progen Itali GTB Custom - McLaren 570S / 650S GT3" loading="lazy" width="1280" height="780">
+                <img src="/assets/images/vehicles/veh-wyman-1.jpg" alt="Progen Itali GTB Custom - McLaren 570S / 650S GT3" loading="lazy" width="1280" height="780">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 180 MPH</span>
             </div>
@@ -935,7 +947,7 @@
         <!-- Ocelot Jugular Super Sedan -->
         <div class="veh-card" data-category="super" data-keywords="ocelot jugular super sedan jaguar xe sv project 8 sports // supercar aggressive 4-man hit-and-run platform" onclick="GTA6.VehicleModal.open('ocelot-jugular')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-jugular.jpg?v=20261119_v3" alt="Ocelot Jugular Super Sedan - Jaguar XE SV Project 8" loading="lazy" width="1280" height="618">
+                <img src="/assets/images/vehicles/veh-cheetah-1.jpg" alt="Ocelot Jugular Super Sedan - Jaguar XE SV Project 8" loading="lazy" width="1280" height="618">
                 <span class="veh-badge-class">SPORTS // SUPERCAR</span>
                 <span class="veh-badge-speed">⚡ 164 MPH</span>
             </div>
@@ -960,7 +972,7 @@
         <!-- VCPD Police Interceptor Cruiser -->
         <div class="veh-card" data-category="pursuit" data-keywords="vcpd police interceptor cruiser ford police interceptor sedan (taurus) & crown vic pursuit // armored infiltration disguise // police radio scanner hub" onclick="GTA6.VehicleModal.open('vcpd-cruiser')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-vcpd-cruiser.jpg?v=20261119_v3" alt="VCPD Police Interceptor Cruiser - Ford Police Interceptor Sedan (Taurus) & Crown Vic" loading="lazy" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-vapid-stanier-2.jpg" alt="VCPD Police Interceptor Cruiser - Ford Police Interceptor Sedan (Taurus) & Crown Vic" loading="lazy" width="1376" height="768">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 148 MPH</span>
             </div>
@@ -985,7 +997,7 @@
         <!-- Bravado Buffalo STX Pursuit Package -->
         <div class="veh-card" data-category="pursuit" data-keywords="bravado buffalo stx pursuit package dodge charger srt hellcat police package pursuit // armored undercover high-speed interceptor & counter-ramming" onclick="GTA6.VehicleModal.open('buffalo-stx')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-buffalo-stx.jpg?v=20261119_v3" alt="Bravado Buffalo STX Pursuit Package - Dodge Charger SRT Hellcat Police Package" loading="lazy" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-vc-cruiser.jpg" alt="Bravado Buffalo STX Pursuit Package - Dodge Charger SRT Hellcat Police Package" loading="lazy" width="1376" height="768">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 165 MPH</span>
             </div>
@@ -1010,7 +1022,7 @@
         <!-- Brute Tactical Riot Enforcer -->
         <div class="veh-card" data-category="pursuit" data-keywords="brute tactical riot enforcer lenco bearcat tactical armored vehicle pursuit // armored unstoppable extraction fortress // bank door breacher" onclick="GTA6.VehicleModal.open('vcpd-riot')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-vcpd-riot.jpg?v=20261119_v3" alt="Brute Tactical Riot Enforcer - Lenco BearCat Tactical Armored Vehicle" loading="lazy" width="1280" height="800">
+                <img src="/assets/images/vehicles/veh-vapid-stanier-1.jpg" alt="Brute Tactical Riot Enforcer - Lenco BearCat Tactical Armored Vehicle" loading="lazy" width="1280" height="800">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 110 MPH</span>
             </div>
@@ -1035,7 +1047,7 @@
         <!-- Declasse Granger 3600LX Park Ranger -->
         <div class="veh-card" data-category="pursuit" data-keywords="declasse granger 3600lx park ranger chevrolet suburban 2500 heavy duty pursuit // armored swamp & grassrivers off-grid exfiltration" onclick="GTA6.VehicleModal.open('vcpd-park-ranger')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-park-ranger.jpg?v=20261119_v3" alt="Declasse Granger 3600LX Park Ranger - Chevrolet Suburban 2500 Heavy Duty" loading="lazy" width="1280" height="687">
+                <img src="/assets/images/vehicles/veh-rideout-1.jpg" alt="Declasse Granger 3600LX Park Ranger - Chevrolet Suburban 2500 Heavy Duty" loading="lazy" width="1280" height="687">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 135 MPH</span>
             </div>
@@ -1060,7 +1072,7 @@
         <!-- VCPD Unmarked Tactical Cruiser -->
         <div class="veh-card" data-category="pursuit" data-keywords="vcpd unmarked tactical cruiser ford police interceptor utility (explorer) unmarked pursuit // armored covert recon & ambush point extraction" onclick="GTA6.VehicleModal.open('vcpd-unmarked')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-vcpd-unmarked.jpg?v=20261119_v3" alt="VCPD Unmarked Tactical Cruiser - Ford Police Interceptor Utility (Explorer) Unmarked" loading="lazy" width="1280" height="690">
+                <img src="/assets/images/vehicles/veh-vc-cruiser.jpg" alt="VCPD Unmarked Tactical Cruiser - Ford Police Interceptor Utility (Explorer) Unmarked" loading="lazy" width="1280" height="690">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 146 MPH</span>
             </div>
@@ -1085,7 +1097,7 @@
         <!-- Coast Guard Predator Interceptor -->
         <div class="veh-card" data-category="pursuit" data-keywords="coast guard predator interceptor safe boats international 33-foot full cabin pursuit // armored maritime contraband interception & water evade" onclick="GTA6.VehicleModal.open('predator-patrol')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-predator-patrol.jpg?v=20261119_v3" alt="Coast Guard Predator Interceptor - Safe Boats International 33-Foot Full Cabin" loading="lazy" width="1280" height="810">
+                <img src="/assets/images/vehicles/veh-wyman-2.jpg" alt="Coast Guard Predator Interceptor - Safe Boats International 33-Foot Full Cabin" loading="lazy" width="1280" height="810">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 75 Knots (86 MPH)</span>
             </div>
@@ -1110,7 +1122,7 @@
         <!-- VCPD Police Maverick Chopper -->
         <div class="veh-card" data-category="pursuit" data-keywords="vcpd police maverick chopper airbus helicopters h125 / as350 astar pursuit // armored high-altitude overwatch & sniper platform" onclick="GTA6.VehicleModal.open('vcpd-maverick')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-police-maverick.jpg?v=20261119_v3" alt="VCPD Police Maverick Chopper - Airbus Helicopters H125 / AS350 AStar" loading="lazy" width="1280" height="854">
+                <img src="/assets/images/vehicles/veh-keys-yacht.jpg" alt="VCPD Police Maverick Chopper - Airbus Helicopters H125 / AS350 AStar" loading="lazy" width="1280" height="854">
                 <span class="veh-badge-class">PURSUIT // ARMORED</span>
                 <span class="veh-badge-speed">⚡ 160 MPH Airspeed</span>
             </div>
@@ -1135,7 +1147,7 @@
         <!-- Karin Rebel 4x4 Off-Road -->
         <div class="veh-card" data-category="suv" data-keywords="karin rebel 4x4 off-road 1985 toyota hilux 4wd pickup suv // off-road everglades swamp exfiltration & bayou crossing" onclick="GTA6.VehicleModal.open('karin-rebel')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-karin-rebel.jpg?v=20261119_v3" alt="Karin Rebel 4x4 Off-Road - 1985 Toyota Hilux 4WD Pickup" loading="lazy" width="1280" height="635">
+                <img src="/assets/images/vehicles/veh-vapid-buggy-1.jpg" alt="Karin Rebel 4x4 Off-Road - 1985 Toyota Hilux 4WD Pickup" loading="lazy" width="1280" height="635">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 124 MPH</span>
             </div>
@@ -1160,7 +1172,7 @@
         <!-- Vapid Sandking XL Crew Cab -->
         <div class="veh-card" data-category="suv" data-keywords="vapid sandking xl crew cab ford f-350 super duty dually lifted suv // off-road obstacle crusher & heavy payday hauler" onclick="GTA6.VehicleModal.open('vapid-sandking-xl')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-sandking-xl.jpg?v=20261119_v3" alt="Vapid Sandking XL Crew Cab - Ford F-350 Super Duty Dually Lifted" loading="lazy" width="1280" height="960">
+                <img src="/assets/images/vehicles/veh-vapid-buggy-2.jpg" alt="Vapid Sandking XL Crew Cab - Ford F-350 Super Duty Dually Lifted" loading="lazy" width="1280" height="960">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 130 MPH</span>
             </div>
@@ -1185,7 +1197,7 @@
         <!-- Canis Seminole Frontier 4x4 -->
         <div class="veh-card" data-category="suv" data-keywords="canis seminole frontier 4x4 1995 jeep grand cherokee (zj) suv // off-road low-key country getaway & smuggler trail runner" onclick="GTA6.VehicleModal.open('canis-seminole-frontier')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-seminole.jpg?v=20261119_v3" alt="Canis Seminole Frontier 4x4 - 1995 Jeep Grand Cherokee (ZJ)" loading="lazy" width="1280" height="763">
+                <img src="/assets/images/vehicles/veh-kalaga-offroad.jpg" alt="Canis Seminole Frontier 4x4 - 1995 Jeep Grand Cherokee (ZJ)" loading="lazy" width="1280" height="763">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 132 MPH</span>
             </div>
@@ -1210,7 +1222,7 @@
         <!-- Benefactor Dubsta 6x6 Heavy -->
         <div class="veh-card" data-category="suv" data-keywords="benefactor dubsta 6x6 heavy mercedes-benz g63 amg 6x6 suv // off-road multi-terrain armored convoy lead" onclick="GTA6.VehicleModal.open('benefactor-dubsta-6x6')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-dubsta-6x6.jpg?v=20261119_v3" alt="Benefactor Dubsta 6x6 Heavy - Mercedes-Benz G63 AMG 6x6" loading="lazy" width="1280" height="806">
+                <img src="/assets/images/vehicles/veh-ambrosia-truck.jpg" alt="Benefactor Dubsta 6x6 Heavy - Mercedes-Benz G63 AMG 6x6" loading="lazy" width="1280" height="806">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 140 MPH</span>
             </div>
@@ -1235,7 +1247,7 @@
         <!-- Bravado Dorado Custom -->
         <div class="veh-card" data-category="suv" data-keywords="bravado dorado custom 1998 dodge durango slt suv // off-road family-profile covert getaway suv" onclick="GTA6.VehicleModal.open('bravado-dorado')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-dorado.jpg?v=20261119_v3" alt="Bravado Dorado Custom - 1998 Dodge Durango SLT" loading="lazy" width="1280" height="671">
+                <img src="/assets/images/vehicles/veh-wyman-2.jpg" alt="Bravado Dorado Custom - 1998 Dodge Durango SLT" loading="lazy" width="1280" height="671">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 134 MPH</span>
             </div>
@@ -1260,7 +1272,7 @@
         <!-- Albany Cavalcade XL Luxury -->
         <div class="veh-card" data-category="suv" data-keywords="albany cavalcade xl luxury 2023 cadillac escalade-v suv // off-road cartel boss escort & heavy syndicate command" onclick="GTA6.VehicleModal.open('albany-cavalcade-xl')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-cavalcade-xl.jpg?v=20261119_v3" alt="Albany Cavalcade XL Luxury - 2023 Cadillac Escalade-V" loading="lazy" width="1280" height="754">
+                <img src="/assets/images/vehicles/veh-vapid-buggy-2.jpg" alt="Albany Cavalcade XL Luxury - 2023 Cadillac Escalade-V" loading="lazy" width="1280" height="754">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 152 MPH</span>
             </div>
@@ -1285,7 +1297,7 @@
         <!-- Mammoth Patriot Mil-Spec -->
         <div class="veh-card" data-category="suv" data-keywords="mammoth patriot mil-spec hummer h1 alpha tactical suv // off-road spike-strip immune ram vehicle" onclick="GTA6.VehicleModal.open('mammoth-patriot-milspec')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-patriot-milspec.jpg?v=20261119_v3" alt="Mammoth Patriot Mil-Spec - Hummer H1 Alpha Tactical" loading="lazy" width="1280" height="941">
+                <img src="/assets/images/vehicles/veh-kalaga-offroad.jpg" alt="Mammoth Patriot Mil-Spec - Hummer H1 Alpha Tactical" loading="lazy" width="1280" height="941">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 120 MPH</span>
             </div>
@@ -1310,7 +1322,7 @@
         <!-- Declasse Rancher XL 4x4 -->
         <div class="veh-card" data-category="suv" data-keywords="declasse rancher xl 4x4 1988 chevrolet suburban k20 suv // off-road undercover stash hauler & country evade" onclick="GTA6.VehicleModal.open('declasse-rancher-xl')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-rancher-xl.jpg?v=20261119_v3" alt="Declasse Rancher XL 4x4 - 1988 Chevrolet Suburban K20" loading="lazy" width="1280" height="836">
+                <img src="/assets/images/vehicles/veh-ambrosia-truck.jpg" alt="Declasse Rancher XL 4x4 - 1988 Chevrolet Suburban K20" loading="lazy" width="1280" height="836">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 126 MPH</span>
             </div>
@@ -1335,7 +1347,7 @@
         <!-- Nagasaki Street Blazer ATV -->
         <div class="veh-card" data-category="suv" data-keywords="nagasaki street blazer atv yamaha banshee 350 quad mod suv // off-road swamp trail quick scout & beach infiltration" onclick="GTA6.VehicleModal.open('nagasaki-street-blazer')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-street-blazer.jpg?v=20261119_v3" alt="Nagasaki Street Blazer ATV - Yamaha Banshee 350 Quad Mod" loading="lazy" width="1280" height="854">
+                <img src="/assets/images/vehicles/veh-safehouse-1.jpg" alt="Nagasaki Street Blazer ATV - Yamaha Banshee 350 Quad Mod" loading="lazy" width="1280" height="854">
                 <span class="veh-badge-class">SUV // OFF-ROAD</span>
                 <span class="veh-badge-speed">⚡ 115 MPH</span>
             </div>
@@ -1360,7 +1372,7 @@
         <!-- Sea Sparrow Amphibious Chopper -->
         <div class="veh-card" data-category="marine" data-keywords="sea sparrow amphibious chopper bell 47 / model 206 float helicopter marine // aircraft offshore yacht raid & marsh extraction" onclick="GTA6.VehicleModal.open('seasparrow')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-seasparrow.jpg?v=20261119_v3" alt="Sea Sparrow Amphibious Chopper - Bell 47 / Model 206 Float Helicopter" loading="lazy" width="1376" height="768">
+                <img src="/assets/images/vehicles/veh-squalo-2.jpg" alt="Sea Sparrow Amphibious Chopper - Bell 47 / Model 206 Float Helicopter" loading="lazy" width="1376" height="768">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 145 Knots (167 MPH)</span>
             </div>
@@ -1385,7 +1397,7 @@
         <!-- Grotti Squalo Cigarette Boat -->
         <div class="veh-card" data-category="marine" data-keywords="grotti squalo cigarette boat 1987 cigarette 38 top gun offshore racer marine // aircraft maritime contraband dash to international waters" onclick="GTA6.VehicleModal.open('grotti-squalo')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-squalo.jpg?v=20261119_v3" alt="Grotti Squalo Cigarette Boat - 1987 Cigarette 38 Top Gun Offshore Racer" loading="lazy" width="2124" height="1195">
+                <img src="/assets/images/vehicles/veh-grassrivers-boat.jpg" alt="Grotti Squalo Cigarette Boat - 1987 Cigarette 38 Top Gun Offshore Racer" loading="lazy" width="2124" height="1195">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 85 Knots (98 MPH)</span>
             </div>
@@ -1410,7 +1422,7 @@
         <!-- Shitzu Tropic Cabin Cruiser -->
         <div class="veh-card" data-category="marine" data-keywords="shitzu tropic cabin cruiser sunseeker portofino 40 express cruiser marine // aircraft floating mobile safehouse & laundering front" onclick="GTA6.VehicleModal.open('shitzu-tropic')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-tropic-cruiser.jpg?v=20261119_v3" alt="Shitzu Tropic Cabin Cruiser - Sunseeker Portofino 40 Express Cruiser" loading="lazy" width="640" height="436">
+                <img src="/assets/images/vehicles/veh-keys-yacht.jpg" alt="Shitzu Tropic Cabin Cruiser - Sunseeker Portofino 40 Express Cruiser" loading="lazy" width="640" height="436">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 55 Knots (63 MPH)</span>
             </div>
@@ -1435,7 +1447,7 @@
         <!-- Nagasaki Dinghy Tactical RIB -->
         <div class="veh-card" data-category="marine" data-keywords="nagasaki dinghy tactical rib zodiac hurricane 733 military inflatable marine // aircraft stealth shoreline landing & storm drain insertion" onclick="GTA6.VehicleModal.open('nagasaki-dinghy')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-nagasaki-dinghy.jpg?v=20261119_v3" alt="Nagasaki Dinghy Tactical RIB - Zodiac Hurricane 733 Military Inflatable" loading="lazy" width="1280" height="853">
+                <img src="/assets/images/vehicles/veh-squalo-1.jpg" alt="Nagasaki Dinghy Tactical RIB - Zodiac Hurricane 733 Military Inflatable" loading="lazy" width="1280" height="853">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 65 Knots (75 MPH)</span>
             </div>
@@ -1460,7 +1472,7 @@
         <!-- Dinka Marquis Luxury Sailboat -->
         <div class="veh-card" data-category="marine" data-keywords="dinka marquis luxury sailboat beneteau oceanis 51.1 sailing yacht marine // aircraft silent zero-radar contraband exfiltration" onclick="GTA6.VehicleModal.open('dinka-marquis')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-marquis-sailboat.jpg?v=20261119_v3" alt="Dinka Marquis Luxury Sailboat - Beneteau Oceanis 51.1 Sailing Yacht" loading="lazy" width="1200" height="1538">
+                <img src="/assets/images/vehicles/veh-squalo-2.jpg" alt="Dinka Marquis Luxury Sailboat - Beneteau Oceanis 51.1 Sailing Yacht" loading="lazy" width="1200" height="1538">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 25 Knots Wind Assisted</span>
             </div>
@@ -1485,7 +1497,7 @@
         <!-- Western Duster Crop Duster Plane -->
         <div class="veh-card" data-category="marine" data-keywords="western duster crop duster plane air tractor at-502b crop duster marine // aircraft grassrivers smuggler landing strip insertion" onclick="GTA6.VehicleModal.open('western-duster')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-western-duster.jpg?v=20261119_v3" alt="Western Duster Crop Duster Plane - Air Tractor AT-502B Crop Duster" loading="lazy" width="1280" height="857">
+                <img src="/assets/images/vehicles/veh-grassrivers-boat.jpg" alt="Western Duster Crop Duster Plane - Air Tractor AT-502B Crop Duster" loading="lazy" width="1280" height="857">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 170 MPH Airspeed</span>
             </div>
@@ -1510,7 +1522,7 @@
         <!-- Buckingham Maverick VIP Chopper -->
         <div class="veh-card" data-category="marine" data-keywords="buckingham maverick vip chopper airbus helicopters h130 vip marine // aircraft rooftop helipad vip extrication" onclick="GTA6.VehicleModal.open('buckingham-maverick')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-buckingham-maverick.jpg?v=20261119_v3" alt="Buckingham Maverick VIP Chopper - Airbus Helicopters H130 VIP" loading="lazy" width="1280" height="840">
+                <img src="/assets/images/vehicles/veh-keys-yacht.jpg" alt="Buckingham Maverick VIP Chopper - Airbus Helicopters H130 VIP" loading="lazy" width="1280" height="840">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 155 Knots (178 MPH)</span>
             </div>
@@ -1535,7 +1547,7 @@
         <!-- JoBuilt Velum 5-Seater Plane -->
         <div class="veh-card" data-category="marine" data-keywords="jobuilt velum 5-seater plane socata tbm 900 single-engine turboprop marine // aircraft interstate state-border transshipment flight" onclick="GTA6.VehicleModal.open('jobuilt-velum')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-jobuilt-velum.jpg?v=20261119_v3" alt="JoBuilt Velum 5-Seater Plane - Socata TBM 900 Single-Engine Turboprop" loading="lazy" width="1280" height="914">
+                <img src="/assets/images/vehicles/veh-squalo-1.jpg" alt="JoBuilt Velum 5-Seater Plane - Socata TBM 900 Single-Engine Turboprop" loading="lazy" width="1280" height="914">
                 <span class="veh-badge-class">MARINE // AIRCRAFT</span>
                 <span class="veh-badge-speed">⚡ 330 Knots (380 MPH)</span>
             </div>
@@ -1560,7 +1572,7 @@
         <!-- Vapid Speedo Express Lockup -->
         <div class="veh-card" data-category="commercial" data-keywords="vapid speedo express lockup chevrolet express 3500 cargo van commercial // vans bulky heavy loot transport & utility disguise" onclick="GTA6.VehicleModal.open('vapid-speedo')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-speedo-van.jpg?v=20261119_v3" alt="Vapid Speedo Express Lockup - Chevrolet Express 3500 Cargo Van" loading="lazy" width="1280" height="802">
+                <img src="/assets/images/vehicles/veh-wyman-3.jpg" alt="Vapid Speedo Express Lockup - Chevrolet Express 3500 Cargo Van" loading="lazy" width="1280" height="802">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 128 MPH</span>
             </div>
@@ -1585,7 +1597,7 @@
         <!-- Brute Boxville Armored Courier -->
         <div class="veh-card" data-category="commercial" data-keywords="brute boxville armored courier step van p-series armored postal truck commercial // vans gold bullion & heavy bank vault loot hauler" onclick="GTA6.VehicleModal.open('brute-boxville')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-brute-boxville.jpg?v=20261119_v3" alt="Brute Boxville Armored Courier - Step Van P-Series Armored Postal Truck" loading="lazy" width="1280" height="720">
+                <img src="/assets/images/vehicles/veh-kalaga-offroad.jpg" alt="Brute Boxville Armored Courier - Step Van P-Series Armored Postal Truck" loading="lazy" width="1280" height="720">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 112 MPH</span>
             </div>
@@ -1610,7 +1622,7 @@
         <!-- Maibatsu Mule Logistics Transporter -->
         <div class="veh-card" data-category="commercial" data-keywords="maibatsu mule logistics transporter mitsubishi fuso canter box truck commercial // vans massive hardware moving & chop shop supply" onclick="GTA6.VehicleModal.open('maibatsu-mule')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-maibatsu-mule.jpg?v=20261119_v3" alt="Maibatsu Mule Logistics Transporter - Mitsubishi Fuso Canter Box Truck" loading="lazy" width="1280" height="942">
+                <img src="/assets/images/vehicles/veh-ambrosia-truck.jpg" alt="Maibatsu Mule Logistics Transporter - Mitsubishi Fuso Canter Box Truck" loading="lazy" width="1280" height="942">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 110 MPH</span>
             </div>
@@ -1635,7 +1647,7 @@
         <!-- Western Sovereign Touring Bagger -->
         <div class="veh-card" data-category="commercial" data-keywords="western sovereign touring bagger harley-davidson electra glide police special commercial // vans solo rapid courier & traffic weaving" onclick="GTA6.VehicleModal.open('western-sovereign')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-western-sovereign.jpg?v=20261119_v3" alt="Western Sovereign Touring Bagger - Harley-Davidson Electra Glide Police Special" loading="lazy" width="640" height="480">
+                <img src="/assets/images/vehicles/veh-safehouse-1.jpg" alt="Western Sovereign Touring Bagger - Harley-Davidson Electra Glide Police Special" loading="lazy" width="640" height="480">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 136 MPH</span>
             </div>
@@ -1660,7 +1672,7 @@
         <!-- Pegassi Bati 801 Superbike -->
         <div class="veh-card" data-category="commercial" data-keywords="pegassi bati 801 superbike ducati 848 / 1098 superbike commercial // vans ultra-fast solo courier & gridlock weave" onclick="GTA6.VehicleModal.open('pegassi-bati-801')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-bati-801.jpg?v=20261119_v3" alt="Pegassi Bati 801 Superbike - Ducati 848 / 1098 Superbike" loading="lazy" width="600" height="533">
+                <img src="/assets/images/vehicles/veh-safehouse-2.jpg" alt="Pegassi Bati 801 Superbike - Ducati 848 / 1098 Superbike" loading="lazy" width="600" height="533">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 185 MPH</span>
             </div>
@@ -1685,7 +1697,7 @@
         <!-- Nagasaki BF400 Enduro Rally Bike -->
         <div class="veh-card" data-category="commercial" data-keywords="nagasaki bf400 enduro rally bike ktm 450 rally factory replica commercial // vans stairwell, alley & wetland escape bike" onclick="GTA6.VehicleModal.open('nagasaki-bf400')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-bf400.jpg?v=20261119_v3" alt="Nagasaki BF400 Enduro Rally Bike - KTM 450 Rally Factory Replica" loading="lazy" width="1280" height="853">
+                <img src="/assets/images/vehicles/veh-vc-bike.jpg" alt="Nagasaki BF400 Enduro Rally Bike - KTM 450 Rally Factory Replica" loading="lazy" width="1280" height="853">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 140 MPH</span>
             </div>
@@ -1710,7 +1722,7 @@
         <!-- Principe Nemesis Streetfighter -->
         <div class="veh-card" data-category="commercial" data-keywords="principe nemesis streetfighter ducati monster 1200 / streetfighter commercial // vans downtown vice city alleyway threader" onclick="GTA6.VehicleModal.open('principe-nemesis')" title="Click to view full vehicle dossier & trunk specs">
             <div class="veh-img-stage">
-                <img src="/assets/vehicle-nemesis.jpg?v=20261119_v3" alt="Principe Nemesis Streetfighter - Ducati Monster 1200 / Streetfighter" loading="lazy" width="1280" height="719">
+                <img src="/assets/images/vehicles/veh-safehouse-1.jpg" alt="Principe Nemesis Streetfighter - Ducati Monster 1200 / Streetfighter" loading="lazy" width="1280" height="719">
                 <span class="veh-badge-class">COMMERCIAL // VANS</span>
                 <span class="veh-badge-speed">⚡ 155 MPH</span>
             </div>
@@ -1737,103 +1749,92 @@
 
 <footer>
     <div class="footer-spread-wrap">
-        
-        <!-- Top Footer Branding Strip -->
         <div class="footer-top-brand">
             <div>
-                <a href="/index.html" class="brand-logo" style="text-decoration: none; font-size: 1.35rem;">
-                    <span>GTA 6</span>
-                    <span class="vi">HEIST GUIDE</span>
+                <a href="/" class="brand-logo" style="text-decoration:none;">
+                    <span class="brand-wordmark">
+                        <span class="brand-gta">GTA 6</span>
+                        <span class="brand-vi-sub">HEIST GUIDE</span>
+                    </span>
                     <span class="brand-badge">Syndicate v3.2</span>
                 </a>
-                <p style="color: #64748b; font-size: 0.85rem; margin: 0.45rem 0 0; max-width: 480px; line-height: 1.5;">
-                    The definitive tactical intelligence, interactive radar, and heist payout optimization network for Grand Theft Auto VI.
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                <a href="/free" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">⚡ Free Tools Suite</a>
-                <a href="/interactive-map" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">🗺️ Leonida Radar Map &rarr;</a>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
 
-        <!-- 4-Column Spread-Out Footer Links Grid -->
         <div class="footer-links-grid">
-            
-            <!-- Column 1: Tactical Calculators & Tools -->
             <div>
-                <span class="footer-col-title" style="color: var(--neon-cyan);">🛠️ Tactical Tools</span>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
                 <ul class="footer-col-links">
+                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
                     <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
                     <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
-                    <li><a href="/vault-hack-trainer.html">Vault Hack Trainer (3D)</a></li>
-                    <li><a href="/leonida-wanted-system.html">Wanted Evasion Matrix</a></li>
-                    <li><a href="/free" style="color: var(--neon-amber); font-weight: 700;">⚡ 100% Free Tools Hub</a></li>
+                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
                 </ul>
             </div>
-
-            <!-- Column 2: Maps & Vault Targets -->
             <div>
-                <span class="footer-col-title" style="color: var(--neon-pink);">🗺️ Radar &amp; Vaults</span>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
-                    <li><a href="/interactive-map.html">Leonida Interactive Radar</a></li>
-                    <li><a href="/escape-routes.html">Master Escape Corridors</a></li>
-                    <li><a href="/safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                    <li><a href="/index.html#vaults-grid">Confirmed Heist Targets</a></li>
-                    <li><a href="/live-intel.html" style="color: var(--neon-green); font-weight: 700;">📡 Live Wire &amp; Map Leaks</a></li>
+                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
+                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
+                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
                 </ul>
             </div>
-
-            <!-- Column 3: Field Database & Fleet -->
             <div>
-                <span class="footer-col-title" style="color: var(--neon-yellow);">🏎️ Arsenal &amp; Crew</span>
+                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
                 <ul class="footer-col-links">
-                    <li><a href="/vehicles-getaway-cars.html">Confirmed Vehicles &amp; Trunk Mod</a></li>
-                    <li><a href="/weapons-gear.html">Weapons &amp; Heist Gear Database</a></li>
-                    <li><a href="/crew-database.html">Official Characters &amp; Crew</a></li>
-                    <li><a href="/lucia-jason-skills.html">Lucia &amp; Jason Skill Trees</a></li>
-                    <li><a href="/gameplay-mechanics.html">Co-Op Gameplay Mechanics</a></li>
+                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
+                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/radio.html">📻 23 Radio Stations &amp; Album</a></li>
+                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
                 </ul>
             </div>
-
-            <!-- Column 4: Syndicate & Day-2 Deals -->
             <div>
-                <span class="footer-col-title" style="color: #a855f7;">🤝 Deals &amp; Syndicate</span>
+                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
                 <ul class="footer-col-links">
-                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer">🔥 Amazon PS5 Day-2 Delivery</a></li>
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored">⚡ G2A Keys (Save 20%)</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored">🎮 Eneba PSN / Xbox Gift Cards</a></li>
-                    <li><a href="/interactive-map">🗺️ Leonida Interactive Map</a></li>
-                    </ul>
+                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
+                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
+                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
+                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
+                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
+                </ul>
             </div>
-
         </div>
 
-        <!-- Spacious Horizontal Secondary Strip -->
         <div class="footer-secondary-strip">
-            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                <a href="/cheats.html" style="color: var(--neon-yellow); text-decoration: none; font-weight: 700;">⚡ Cheats</a>
-                <a href="/settings.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">⚙️ Settings</a>
-                <a href="/money-guide.html" style="color: var(--neon-green); text-decoration: none; font-weight: 700;">💰 Cash Guide</a>
-                <a href="/weapons-bonuses.html" style="color: #f43f5e; text-decoration: none; font-weight: 700;">🔫 Gun Stores</a>
-                <a href="/giveaways.html" style="color: #c084fc; text-decoration: none; font-weight: 700;">🎁 Giveaways</a>
-                <a href="/about.html" style="color: #94a3b8; text-decoration: none;">About</a>
-                <a href="/contact.html" style="color: #94a3b8; text-decoration: none;">Contact</a>
-                <a href="/privacy-policy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                <a href="/terms.html" style="color: #94a3b8; text-decoration: none;">Terms &amp; DMCA</a>
-                <a href="/ads.txt" style="color: #64748b; text-decoration: none; font-size:0.75rem;">ads.txt</a>
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
+                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
+                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
+                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
+                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
+                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
             </div>
             <div>
-                <span>Network Status: <strong style="color: var(--neon-green);">ALL SYSTEMS ONLINE</strong> (v3.2)</span>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
             </div>
         </div>
 
-        <!-- Legal Disclaimer & FTC -->
         <div class="footer-disclaimer">
-            <p style="margin: 0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and GetApexLocal (CutFlow Pro & ClipBounty Studio) partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
+            <p style="margin:0;">
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
-
     </div>
 </footer>
 
@@ -1924,7 +1925,105 @@
     }
 </script>
 
+<script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
+
+<!-- SYNDICATE v3.2 VEHICLE & TRUNK POPOUT MODAL -->
+<div class="syndicate-modal-backdrop" id="vehPopoutBackdrop" role="dialog" aria-modal="true" aria-labelledby="vehModalTitle">
+    <div class="syndicate-modal-card">
+        <button type="button" class="syndicate-modal-close" id="vehModalClose" aria-label="Close modal">&times;</button>
+        <div class="syndicate-modal-hero">
+            <img id="vehModalImg" src="/assets/images/vehicles/veh-cheetah-1.jpg" alt="">
+        </div>
+        <div class="syndicate-modal-body">
+            <div class="syndicate-modal-meta">
+                <span class="syndicate-modal-badge" id="vehModalClass">VEHICLE</span>
+                <span class="syndicate-modal-badge" id="vehModalSpeed" style="border-color:rgba(0,255,136,0.45); color:var(--neon-green); background:rgba(0,255,136,0.12);">TOP SPEED</span>
+            </div>
+            <h2 class="syndicate-modal-title" id="vehModalTitle"></h2>
+            <div id="vehModalSub" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--neon-cyan); margin-bottom:0.55rem;"></div>
+            <div class="syndicate-modal-stats" id="vehModalStats"></div>
+            <p id="vehModalDesc" style="color:#e2e8f0; font-size:0.88rem; line-height:1.55; margin:0.55rem 0;"></p>
+            <div style="background:rgba(0,255,136,0.08); border-left:3px solid var(--neon-green); padding:0.6rem 0.85rem; border-radius:0 6px 6px 0; font-size:0.82rem; color:#cbd5e1; margin-bottom:0.75rem;">
+                <strong style="color:var(--neon-green);">🚗 Getaway &amp; Trunk Armory Tip:</strong> Stage this vehicle at one of Leonida's 8 purchasable garages (like Paradise Garage or Downtown Vice Parking Bay) loaded with backup duffel bags and outfit swaps before hitting a Large Bank Vault.
+            </div>
+            <div id="vehModalAff"></div>
+            <div class="syndicate-modal-footer">
+                <a href="/properties.html" class="btn btn-secondary" style="padding:0.48rem 0.9rem; font-size:0.8rem; font-weight:800;">🏠 All 13 Garages</a>
+                <a href="/map.html?pin=gar-paradise" target="_blank" rel="noopener" class="btn-map-ping">📍 View Garages on Map &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+(function() {
+  const backdrop = document.getElementById('vehPopoutBackdrop');
+  const closeBtn = document.getElementById('vehModalClose');
+  function closeModal() {
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) closeModal(); });
+
+  function openVehPopoutFromCard(card) {
+    if (!card) return;
+    const imgEl = card.querySelector('img');
+    const clsEl = card.querySelector('.veh-badge-class');
+    const spdEl = card.querySelector('.veh-badge-speed');
+    const titleEl = card.querySelector('h3, h2');
+    const contentDivs = card.querySelectorAll('.veh-content > div > div');
+    const subText = contentDivs[0] ? contentDivs[0].textContent.trim() : '';
+    const descEl = card.querySelector('p');
+    const stats = [...card.querySelectorAll('.veh-stat-row > div')].map(d => {
+      const sp = d.querySelector('span');
+      const st = d.querySelector('strong');
+      return `<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">${(sp ? sp.textContent : 'Spec').replace(':','')}</div><div class="syndicate-modal-stat-val" style="color:var(--neon-yellow);">${st ? st.textContent : d.textContent}</div></div>`;
+    });
+
+    document.getElementById('vehModalImg').src = imgEl ? imgEl.getAttribute('src') : '/assets/images/vehicles/veh-cheetah-1.jpg';
+    document.getElementById('vehModalImg').alt = titleEl ? titleEl.textContent.trim() : 'GTA 6 Vehicle';
+    document.getElementById('vehModalClass').textContent = clsEl ? clsEl.textContent.trim() : 'GETAWAY VEHICLE';
+    document.getElementById('vehModalSpeed').textContent = spdEl ? spdEl.textContent.trim() : 'VERIFIED';
+    document.getElementById('vehModalTitle').textContent = titleEl ? titleEl.textContent.trim() : 'Vehicle Dossier';
+    document.getElementById('vehModalSub').textContent = subText;
+    document.getElementById('vehModalStats').innerHTML = stats.join('');
+    document.getElementById('vehModalDesc').textContent = descEl ? descEl.textContent.trim() : 'Verified Grand Theft Auto VI getaway vehicle.';
+    document.getElementById('vehModalAff').innerHTML = window.getSyndicateAffBarHtml
+      ? window.getSyndicateAffBarHtml('🎮 Upgrade Console Handling &amp; Streaming: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset</a> &bull; <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">Samsung 990 PRO SSD (Amazon)</a>')
+      : '';
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function bindVehModal() {
+    window.GTA6 = window.GTA6 || {};
+    window.GTA6.VehicleModal = {
+      open(id) {
+        const card = document.querySelector(`.veh-card[data-veh-id="${id}"]`) || document.querySelector(`.veh-card[onclick*="'${id}'"]`);
+        if (card) openVehPopoutFromCard(card);
+      },
+      close: closeModal
+    };
+    document.querySelectorAll('.veh-card').forEach(card => {
+      if (card.dataset.modalBound) return;
+      card.dataset.modalBound = '1';
+      const oc = card.getAttribute('onclick') || '';
+      const m = oc.match(/VehicleModal\.open\(['"]([^'"]+)['"]\)/);
+      if (m) card.setAttribute('data-veh-id', m[1]);
+      card.removeAttribute('onclick');
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button, a')) return;
+        openVehPopoutFromCard(card);
+      });
+    });
+  }
+  window.addEventListener('load', bindVehModal);
+  document.addEventListener('DOMContentLoaded', bindVehModal);
+})();
+</script>
+
 </body>
 </html>

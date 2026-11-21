@@ -20,7 +20,7 @@
     <meta name="twitter:title" content="GTA 6 Radio Stations &amp; Music Hub (23 Stations Verified)">
     <meta name="twitter:description" content="Every station, host, tracklist, and streamer-safe guide for Grand Theft Auto VI.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/bundle-cover.png">
-    <link rel="stylesheet" href="/assets/style.css?v=20261120_v5">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -359,48 +359,61 @@
 <body>
 
   <!-- MASTER TOP HUD NAVBAR -->
-  <nav class="navbar">
-      <div class="nav-container">
-          <a href="/" class="brand-logo">
-              <span>GTA 6</span>
-              <span class="vi">HEIST GUIDE</span>
-              <span class="brand-badge">Soundtrack v3.2</span>
-          </a>
-          <div class="nav-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>NETWORK ONLINE</span>
+  <div class="countdown-strip" id="siteTopStrip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+            </span>
+            <span class="strip-divider">|</span>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
-          <ul class="nav-links">
+    </div>
+</div>
+<nav class="navbar" id="siteNavbar">
+    <div class="nav-container">
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
+            <span class="brand-badge">Syndicate v3.2</span>
+        </a>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
+        </div>
+        <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
-            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
-            <li><a href="/save-planner" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💾 Save Planner</a></li>
-            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
-            <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
-            <li><a href="/radio" class="nav-pill active" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/map.html" class="nav-pill">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill active" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
                     More <span class="nav-arrow">▾</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/weapons-gear" class="nav-dropdown-item">⚔️ Weapons</a>
-                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
-                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
-                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
                 </div>
             </li>
         </ul>
-          <div class="nav-actions">
-              <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
-              <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
-              <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
-          </div>
-      </div>
-  </nav>
+    </div>
+</nav>
 
   <main class="container" style="max-width:1140px; margin:0 auto; padding:1.75rem 1rem 3.5rem; box-sizing:border-box;">
 
@@ -421,44 +434,113 @@
       </div>
     </header>
 
-    <!-- TOP MONETIZATION BAR (SLEEK, IMAGE-FREE TACTICAL CARDS) -->
-    <section class="tactical-monetization-bar" aria-label="Official Audio Equipment and Streaming CTAs">
-      <!-- Card 1: Amazon Music Unlimited -->
+    
+    <div class="syndicate-aff-bar">
+  <div class="syndicate-aff-bar-main">
+    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+    <span class="aff-sep">|</span>
+    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+  </div>
+</div>
+
+    <!-- EMBEDDED OFFICIAL SPOTIFY & YOUTUBE PLAYERS (ZERO HOSTED MP3s — 100% DMCA SAFE) -->
+    <section aria-label="Official GTA VI Soundtrack Players" style="margin:1.25rem 0 1.75rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.85rem;">
+        <div>
+          <span class="user-badge" style="background:rgba(0,255,136,0.16); border:1px solid var(--neon-green); color:var(--neon-green); font-size:0.7rem; font-weight:900;">🎵 ZERO HOSTED MP3s &bull; OFFICIAL EMBEDS</span>
+          <h2 style="color:#fff; font-size:1.38rem; margin:0.35rem 0 0.15rem;">Stream <em>Grand Theft Auto VI: The Album</em> (34 Official Tracks)</h2>
+          <p style="color:#94a3b8; font-size:0.84rem; margin:0;">Featuring Justice, Travis Scott, Dua Lipa, Lana Del Rey, Playboi Carti, plus Flash FM (Robyn &amp; Alex Consani) &amp; Cocoteo FM.</p>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <a href="https://open.spotify.com/playlist/37i9dQZF1DX6RSJAsEDz7H" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size:0.78rem; padding:0.42rem 0.85rem; border-color:#22c55e; color:#4ade80;">Open Spotify Hub &nearr;</a>
+          <a href="https://www.amazon.com/music/unlimited?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="btn btn-primary" style="font-size:0.78rem; padding:0.42rem 0.85rem;">🎵 Amazon Music 30-Day Free Trial &rarr;</a>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap:1rem; align-items:stretch;">
+        <!-- Official Spotify Playlist Player -->
+        <div style="background:rgba(13,18,32,0.96); border:1.5px solid rgba(34,197,94,0.45); border-radius:12px; padding:0.85rem; display:flex; flex-direction:column; gap:0.55rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong style="color:#4ade80; font-size:0.88rem; font-family:var(--font-mono);">🟢 SPOTIFY OFFICIAL GTA VI PLAYLIST</strong>
+            <span style="font-size:0.7rem; color:#94a3b8;">Rockstar &times; Spotify</span>
+          </div>
+          <iframe style="border-radius:10px; width:100%; height:352px; border:0;" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6RSJAsEDz7H?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Grand Theft Auto VI Official Spotify Playlist"></iframe>
+        </div>
+
+        <!-- YouTube Playlist Embed + On-Foot Headphones Quick Guide -->
+        <div style="background:rgba(13,18,32,0.96); border:1.5px solid rgba(255,42,141,0.45); border-radius:12px; padding:0.85rem; display:flex; flex-direction:column; gap:0.65rem; justify-content:space-between;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <strong style="color:#ff7cc4; font-size:0.88rem; font-family:var(--font-mono);">🔴 YOUTUBE SOUNDTRACK &amp; ALBUM PLAYER</strong>
+              <a href="https://www.youtube.com/results?search_query=Grand+Theft+Auto+VI+The+Album+official+playlist" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem; color:var(--neon-cyan); text-decoration:none; font-weight:700;">Full YouTube Playlist &nearr;</a>
+            </div>
+            <iframe style="border-radius:10px; width:100%; height:215px; border:0; background:#070a14;" src="https://www.youtube-nocookie.com/embed/VQRLujxTm3c?playlist=QdBZY2fkU-0&amp;rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Grand Theft Auto VI: The Album YouTube Player"></iframe>
+          </div>
+
+          <!-- QUICK GUIDE: LISTEN TO RADIO ON FOOT WITH HEADPHONES -->
+          <div style="background:rgba(0,240,255,0.07); border:1px solid rgba(0,240,255,0.3); border-left:3px solid var(--neon-cyan); border-radius:8px; padding:0.75rem 0.9rem;">
+            <div style="font-size:0.72rem; color:var(--neon-cyan); font-weight:900; font-family:var(--font-mono); margin-bottom:0.25rem;">🎧 HOW TO LISTEN TO RADIO ON FOOT IN GTA 6</div>
+            <p style="margin:0; font-size:0.8rem; color:#e2e8f0; line-height:1.45;">
+              1) Visit any <strong>Electronics Shop</strong> in Vice City or Port Gellhorn &rarr; buy <strong>Wireless Headphones / In-Ear Monitors</strong>.<br>
+              2) Equip them in your Accessory Wheel, then hold <strong>L1 / LB + D-Pad Left</strong> on foot to open the full 23-station Leonida Radio Dial anywhere (even during heist setups!).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVEN 4-CARD HIGH-RETENTION AUDIO & STREAMING AFFILIATE BAR -->
+    <section aria-label="Official Audio Equipment and Streaming Offers" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(235px, 1fr)); gap:0.9rem; margin:0 0 1.75rem;">
       <div class="tactical-ad-card">
         <div>
-          <span class="tactical-ad-badge">🎵 AD-FREE STREAMING</span>
-          <div class="tactical-ad-title">Stream GTA VI: The Album &amp; Radio Tracks Ad-Free</div>
-          <p class="tactical-ad-desc">Listen to full uncompressed stations, soundtrack leaks, and official GTA 6 curator playlists offline on mobile and console.</p>
+          <span class="tactical-ad-badge">🎵 30-DAY FREE BOUNTY</span>
+          <div class="tactical-ad-title">Amazon Music Unlimited Free Trial</div>
+          <p class="tactical-ad-desc">Stream <em>GTA VI: The Album</em> (34 tracks) and lossless Leonida radio playlists ad-free for 30 days.</p>
         </div>
-        <a href="https://www.amazon.com/music/unlimited?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="tactical-btn-cta">
-          Try Amazon Music Unlimited Free &rarr;
+        <a href="https://www.amazon.com/music/unlimited?tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="tactical-btn-cta">
+          Start 30-Day Free Trial &rarr;
         </a>
       </div>
 
-      <!-- Card 2: Pulse Elite Headset -->
       <div class="tactical-ad-card">
         <div>
-          <span class="tactical-ad-badge" style="color:var(--neon-cyan);">🎧 3D TEMPEST AUDIO</span>
-          <div class="tactical-ad-title">Hear Leonida's 3D Audio &amp; On-Foot Radio</div>
-          <p class="tactical-ad-desc">Planar magnetic drivers pinpoint enemy sirens, vault alarms, and car stereo proximity audio with zero latency.</p>
+          <span class="tactical-ad-badge" style="color:var(--neon-cyan);">🎧 TEMPEST 3D AUDIO</span>
+          <div class="tactical-ad-title">PlayStation PULSE Elite Headset</div>
+          <p class="tactical-ad-desc">Planar magnetic drivers deliver studio bass on Flash FM and crisp 3D siren/alarm cues during vaults.</p>
         </div>
-        <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="tactical-btn-cta cyan">
-          PlayStation PULSE Elite Wireless Headset &rarr;
+        <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="tactical-btn-cta cyan">
+          Check PULSE Elite on Amazon &rarr;
         </a>
       </div>
 
-      <!-- Card 3: Pulse Explore Earbuds -->
       <div class="tactical-ad-card">
         <div>
-          <span class="tactical-ad-badge" style="color:var(--neon-green);">⚡ IRL ON-FOOT AUDIO</span>
-          <div class="tactical-ad-title">In-Game On-Foot Audio IRL</div>
-          <p class="tactical-ad-desc">Ultra-portable low-latency lossless earbuds designed for seamless switching between PS5, PC, and mobile handhelds.</p>
+          <span class="tactical-ad-badge" style="color:var(--neon-green);">⚡ IN-EAR MONITORS</span>
+          <div class="tactical-ad-title">PlayStation PULSE Explore Earbuds</div>
+          <p class="tactical-ad-desc">Low-latency lossless wireless earbuds — mirror Jason &amp; Lucia's on-foot headphones IRL on PS5.</p>
         </div>
-        <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Explore+Wireless+Earbuds&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" class="tactical-btn-cta cyan">
-          PlayStation PULSE Explore Wireless Earbuds &rarr;
+        <a href="https://www.amazon.com/s?k=PlayStation+PULSE+Explore+Wireless+Earbuds&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="tactical-btn-cta cyan">
+          Check PULSE Explore on Amazon &rarr;
+        </a>
+      </div>
+
+      <div class="tactical-ad-card">
+        <div>
+          <span class="tactical-ad-badge" style="color:#c084fc;">🎮 PRO GAMING AUDIO</span>
+          <div class="tactical-ad-title">Top PS5 &amp; Xbox Gaming Headsets</div>
+          <p class="tactical-ad-desc">Compare spatial-audio wireless gaming headsets rated for marathon Vice City sessions.</p>
+        </div>
+        <a href="https://www.amazon.com/s?k=Wireless+Gaming+Headset+PS5+Xbox+3D+Audio&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" class="tactical-btn-cta">
+          Compare Gaming Headsets &rarr;
         </a>
       </div>
     </section>
+
 
     <!-- LIVE SEARCH & GENRE FILTER PILLS -->
     <section class="radio-search-box">
@@ -534,7 +616,7 @@
           <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" class="tactical-btn-cta" style="background:linear-gradient(135deg, #f97316, #ea580c); font-size:0.85rem; padding:0.75rem;">
             ⚡ Fix Stream &amp; Online Lag with ExitLag (Free Trial)
           </a>
-          <a href="https://getapexlocal.com/" target="_blank" rel="sponsored noopener noreferrer" class="tactical-btn-cta cyan" style="font-size:0.85rem; padding:0.75rem;">
+          <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" class="tactical-btn-cta cyan" style="font-size:0.85rem; padding:0.75rem;">
             🎬 Auto-Clip GTA 6 Streams Offline (No Monthly Fee)
           </a>
         </div>
@@ -583,80 +665,98 @@
 
   <!-- MASTER FOOTER -->
   <footer>
-      <div class="footer-spread-wrap">
-          <div class="footer-top-brand">
-              <div>
-                  <a href="/" class="brand-logo" style="text-decoration:none; font-size:1.35rem;">
-                      <span>GTA 6</span>
-                      <span class="vi">HEIST GUIDE</span>
-                  </a>
-                  <p style="color:var(--text-muted); font-size:0.82rem; margin-top:0.4rem; max-width:480px;">
-                      The authoritative, community-verified Grand Theft Auto VI tactical database, heist calculator, radio airwaves, and classified secrets tracker.
-                  </p>
-              </div>
-          </div>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="brand-logo" style="text-decoration:none;">
+                    <span class="brand-wordmark">
+                        <span class="brand-gta">GTA 6</span>
+                        <span class="brand-vi-sub">HEIST GUIDE</span>
+                    </span>
+                    <span class="brand-badge">Syndicate v3.2</span>
+                </a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                </p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
 
-          <div class="footer-links-grid">
-              <div>
-                  <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Tactical Tools</span>
-                  <ul class="footer-col-links">
-                      <li><a href="/cheats.html">61 Cheat Codes &amp; Tracker</a></li>
-                      <li><a href="/radio" style="color:var(--neon-cyan); font-weight:700;">📻 Radio Stations &amp; Music</a></li>
-                      <li><a href="/secrets" style="color:var(--neon-pink); font-weight:700;">🥚 Secrets &amp; Cryptids</a></li>
-                      <li><a href="/settings.html">Best PS5 &amp; Xbox Settings</a></li>
-                      <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
-                  </ul>
-              </div>
-              <div>
-                  <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Radar &amp; Vaults</span>
-                  <ul class="footer-col-links">
-                      <li><a href="/interactive-map.html">Leonida Interactive Radar</a></li>
-                      <li><a href="/escape-routes.html">Master Escape Corridors</a></li>
-                      <li><a href="/safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                      <li><a href="/live-intel.html" style="color:var(--neon-green); font-weight:700;">📡 Live Wire &amp; Map Leaks</a></li>
-                  </ul>
-              </div>
-              <div>
-                  <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Crew</span>
-                  <ul class="footer-col-links">
-                      <li><a href="/vehicles-getaway-cars.html">Confirmed Vehicles &amp; Trunk Mod</a></li>
-                      <li><a href="/weapons-gear.html">Weapons &amp; Heist Gear Database</a></li>
-                      <li><a href="/crew-database.html">Official Characters &amp; Crew</a></li>
-                      <li><a href="/lucia-jason-skills.html">Lucia &amp; Jason Skill Trees</a></li>
-                  </ul>
-              </div>
-              <div>
-                  <span class="footer-col-title" style="#a855f7;">🤝 Deals &amp; Syndicate</span>
-                  <ul class="footer-col-links">
-                      <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer">🔥 Amazon PS5 Live Delivery</a></li>
-                      <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored">⚡ G2A Keys (Save 20%)</a></li>
-                      <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored">🎮 Eneba PSN / Xbox Gift Cards</a></li>
-                      </ul>
-              </div>
-          </div>
+        <div class="footer-links-grid">
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
+                <ul class="footer-col-links">
+                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
+                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
+                    <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
+                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
+                <ul class="footer-col-links">
+                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
+                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
+                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
+                <ul class="footer-col-links">
+                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
+                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/radio.html">📻 23 Radio Stations &amp; Album</a></li>
+                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
+                <ul class="footer-col-links">
+                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
+                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
+                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
+                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
+                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
+                </ul>
+            </div>
+        </div>
 
-          <div class="footer-secondary-strip">
-              <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
-                  <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats</a>
-                  <a href="/radio" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">📻 Radio</a>
-                  <a href="/secrets" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">🥚 Secrets</a>
-                  <a href="/settings.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">⚙️ Settings</a>
-                  <a href="/money-guide.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">💰 Cash Guide</a>
-                  <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
-                  <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                  <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                  <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms</a>
-              </div>
-          </div>
+        <div class="footer-secondary-strip">
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
+                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
+                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
+                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
+                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
+                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
+            </div>
+            <div>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
+            </div>
+        </div>
 
-          <!-- MANDATORY AFFILIATE DISCLOSURE -->
-          <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.06); text-align:center; color:#94a3b8; font-size:0.78rem;">
-              As an Amazon Associate and affiliate partner, GTA6HeistGuide.com earns from qualifying purchases at no extra cost to you.
-          </div>
-      </div>
-  </footer>
+        <div class="footer-disclaimer">
+            <p style="margin:0;">
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
 
-  <script src="/site-config.js"></script>
+  <script src="/js/affiliates.js"></script>
+<script src="/site-config.js"></script>
   <script src="/assets/main.js" defer></script>
   <script>
   // ALL 23 VERIFIED GTA 6 RADIO STATIONS

@@ -11,7 +11,9 @@
       "cost": "Story Unlocked",
       "status": "Active",
       "features": "Floorboard cash stash, wardrobe, sleep save, Ultimate Edition Enduro & Kayak spawn",
-      "notes": "Mariana County starter safehouse. Houses cannot be purchased in GTA 6 Story Mode."
+      "notes": "Mariana County starter safehouse. Houses cannot be purchased in GTA 6 Story Mode.",
+      "image": "/assets/images/properties/keys-safehouse.jpg",
+      "pinId": "sh-jasons-house"
     },
     {
       "id": "sh-ch2-motel",
@@ -22,7 +24,9 @@
       "cost": "Story Unlocked",
       "status": "Missable / Closes After 'Checking Out'",
       "features": "Bed save, trunk staging, proximity to Port Gellhorn pawn shops & Moses",
-      "notes": "WARNING: Permanently closes after completing the mission 'Checking Out'. Clear your stash first."
+      "notes": "WARNING: Permanently closes after completing the mission 'Checking Out'. Clear your stash first.",
+      "image": "/assets/images/properties/port-gellhorn-motel.jpg",
+      "pinId": "sh-ch2-motel"
     },
     {
       "id": "sh-vc-safehouse-3",
@@ -33,7 +37,9 @@
       "cost": "Story Unlocked",
       "status": "Active",
       "features": "Central Vice City base, wardrobe, weapon locker, fast access to jewelry & bank targets",
-      "notes": "Unlocks automatically through Chapter 3 story progression."
+      "notes": "Unlocks automatically through Chapter 3 story progression.",
+      "image": "/assets/images/properties/vice-city-safehouse.jpg",
+      "pinId": "sh-vc-safehouse-3"
     },
     {
       "id": "sh-vc-safehouse-4",
@@ -44,7 +50,9 @@
       "cost": "Story Unlocked",
       "status": "Active",
       "features": "High-end endgame safehouse, full gun cabinet, planning board, garage link",
-      "notes": "Final story-unlocked safehouse in Vice City chapters."
+      "notes": "Final story-unlocked safehouse in Vice City chapters.",
+      "image": "/assets/images/properties/vice-city-penthouse.jpg",
+      "pinId": "sh-vc-safehouse-4"
     },
     {
       "id": "gar-paradise",
@@ -55,7 +63,9 @@
       "cost": "Included (Ultimate Edition)",
       "status": "Ultimate Edition",
       "features": "Built-in gun cabinet, multi-vehicle storage, rapid getaway staging",
-      "notes": "Bonus Watson Bay garage unlocked immediately for Ultimate Edition owners."
+      "notes": "Bonus Watson Bay garage unlocked immediately for Ultimate Edition owners.",
+      "image": "/assets/images/properties/paradise-garage.jpg",
+      "pinId": "gar-paradise"
     },
     {
       "id": "gar-purch-1",
@@ -66,7 +76,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Multi-car storage, quick oceanfront getaway swap",
-      "notes": "One of 8 purchasable garages across Leonida."
+      "notes": "One of 8 purchasable garages across Leonida.",
+      "image": "/assets/images/properties/vice-beach-garage.jpg",
+      "pinId": "gar-purch-1"
     },
     {
       "id": "gar-purch-2",
@@ -77,7 +89,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Vehicle storage near Yasmani's jewelry fence",
-      "notes": "Ideal staging garage for Chapter 3 jewelry & bank runs."
+      "notes": "Ideal staging garage for Chapter 3 jewelry & bank runs.",
+      "image": "/assets/images/properties/little-cuba-garage.jpg",
+      "pinId": "gar-purch-2"
     },
     {
       "id": "gar-purch-3",
@@ -88,7 +102,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Underground access for losing 4-star VCPD heat",
-      "notes": "Great disguise/trunk swap point for Large Bank Vaults."
+      "notes": "Great disguise/trunk swap point for Large Bank Vaults.",
+      "image": "/assets/images/properties/downtown-bay.jpg",
+      "pinId": "gar-purch-3"
     },
     {
       "id": "gar-purch-4",
@@ -99,7 +115,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Vehicle storage close to Moses's car fence & pawn shops",
-      "notes": "Convenient for storing untracked cars and duffel-bag haulers."
+      "notes": "Convenient for storing untracked cars and duffel-bag haulers.",
+      "image": "/assets/images/properties/gellhorn-garage.jpg",
+      "pinId": "gar-purch-4"
     },
     {
       "id": "gar-purch-5",
@@ -110,7 +128,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Heavy SUV & armored truck staging",
-      "notes": "Positioned near western highway corridors."
+      "notes": "Positioned near western highway corridors.",
+      "image": "/assets/images/properties/gellhorn-industrial.jpg",
+      "pinId": "gar-purch-5"
     },
     {
       "id": "gar-purch-6",
@@ -121,7 +141,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Industrial storage near gang ops & highway armored trucks",
-      "notes": "Purchasable garage in Leonida's industrial heartland."
+      "notes": "Purchasable garage in Leonida's industrial heartland.",
+      "image": "/assets/images/properties/ambrosia-freight.jpg",
+      "pinId": "gar-purch-6"
     },
     {
       "id": "gar-purch-7",
@@ -132,7 +154,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Coastal vehicle & water-access staging",
-      "notes": "Quick escape access along the Keys causeway."
+      "notes": "Quick escape access along the Keys causeway.",
+      "image": "/assets/images/properties/brians-marina.jpg",
+      "pinId": "gar-purch-7"
     },
     {
       "id": "gar-purch-8",
@@ -143,7 +167,9 @@
       "cost": "Purchasable",
       "status": "Purchasable",
       "features": "Off-road 4x4 & hunting rig storage",
-      "notes": "Northern Leonida staging point for wildlife & getaway cooling."
+      "notes": "Northern Leonida staging point for wildlife & getaway cooling.",
+      "image": "/assets/images/properties/kalaga-lodge.jpg",
+      "pinId": "gar-purch-8"
     },
     {
       "id": "gar-story-1",
@@ -154,7 +180,9 @@
       "cost": "Story Unlocked",
       "status": "Story Unlocked",
       "features": "Starter vehicle parking at Jason's House",
-      "notes": "1 of 4 story-unlocked garages."
+      "notes": "1 of 4 story-unlocked garages.",
+      "image": "/assets/images/properties/keys-safehouse.jpg",
+      "pinId": "gar-story-1"
     },
     {
       "id": "gar-story-2",
@@ -165,7 +193,9 @@
       "cost": "Story Unlocked",
       "status": "Story Unlocked",
       "features": "Chapter 2 story vehicle bay",
-      "notes": "2 of 4 story-unlocked garages."
+      "notes": "2 of 4 story-unlocked garages.",
+      "image": "/assets/images/properties/port-gellhorn-motel.jpg",
+      "pinId": "gar-story-2"
     },
     {
       "id": "gar-story-3",
@@ -176,7 +206,9 @@
       "cost": "Story Unlocked",
       "status": "Story Unlocked",
       "features": "Chapter 3 heist prep vehicle storage",
-      "notes": "3 of 4 story-unlocked garages."
+      "notes": "3 of 4 story-unlocked garages.",
+      "image": "/assets/images/properties/vice-city-safehouse.jpg",
+      "pinId": "gar-story-3"
     },
     {
       "id": "gar-story-4",
@@ -187,7 +219,9 @@
       "cost": "Story Unlocked",
       "status": "Story Unlocked",
       "features": "Multi-slot endgame getaway garage",
-      "notes": "4 of 4 story-unlocked garages."
+      "notes": "4 of 4 story-unlocked garages.",
+      "image": "/assets/images/properties/vice-city-penthouse.jpg",
+      "pinId": "gar-story-4"
     },
     {
       "id": "fence-moses",
@@ -198,7 +232,9 @@
       "cost": "Fence #1 of 7",
       "status": "Active",
       "features": "Buys untracked stolen cars for $1,000–$2,000 each",
-      "notes": "Best reliable early-to-mid-game car cash loop in Port Gellhorn."
+      "notes": "Best reliable early-to-mid-game car cash loop in Port Gellhorn.",
+      "image": "/assets/images/properties/gellhorn-garage.jpg",
+      "pinId": "fence-moses"
     },
     {
       "id": "fence-randy",
@@ -209,7 +245,9 @@
       "cost": "Fence #2 of 7",
       "status": "Active",
       "features": "Buys stolen watches, electronics, and pawn shop duffel loot",
-      "notes": "Key buyer after unlocking Pawn Shops in 'Coffee Break'."
+      "notes": "Key buyer after unlocking Pawn Shops in 'Coffee Break'.",
+      "image": "/assets/images/properties/gellhorn-industrial.jpg",
+      "pinId": "fence-randy"
     },
     {
       "id": "fence-donnie",
@@ -220,7 +258,9 @@
       "cost": "Fence #3 of 7",
       "status": "Missable / Closes After 'Swamped'",
       "features": "Early Chapter 1 stolen goods & contraband buyer",
-      "notes": "WARNING: Closes permanently after completing the mission 'Swamped'."
+      "notes": "WARNING: Closes permanently after completing the mission 'Swamped'.",
+      "image": "/assets/images/properties/brians-marina.jpg",
+      "pinId": "fence-donnie"
     },
     {
       "id": "fence-brians-lockup",
@@ -231,7 +271,9 @@
       "cost": "Fence #4 of 7",
       "status": "Verified Code: 7700",
       "features": "Buys drugs, jewelry, and marked bills; keypad safe code 7700",
-      "notes": "One of the highest-utility fences in Leonida—accepts dye-stained/marked bills."
+      "notes": "One of the highest-utility fences in Leonida—accepts dye-stained/marked bills.",
+      "image": "/assets/images/properties/brians-lockup.jpg",
+      "pinId": "fence-brians-lockup"
     },
     {
       "id": "fence-yasmani",
@@ -242,7 +284,9 @@
       "cost": "Fence #5 of 7",
       "status": "Active",
       "features": "Top payout buyer for stolen diamonds & luxury boutique loot (low cut)",
-      "notes": "Unlocks after 'Yasmani's Jewelry Jobs' in Chapter 3."
+      "notes": "Unlocks after 'Yasmani's Jewelry Jobs' in Chapter 3.",
+      "image": "/assets/images/properties/boobie-club.jpg",
+      "pinId": "fence-yasmani"
     },
     {
       "id": "fence-ambrosia",
@@ -253,7 +297,9 @@
       "cost": "Fence #6 of 7",
       "status": "Active",
       "features": "Liquidates gang hideout crates & heavy contraband",
-      "notes": "Ideal drop-off after clearing Ambrosia gang hideouts."
+      "notes": "Ideal drop-off after clearing Ambrosia gang hideouts.",
+      "image": "/assets/images/properties/ambrosia-refinery.jpg",
+      "pinId": "fence-ambrosia"
     },
     {
       "id": "fence-grassrivers",
@@ -264,7 +310,9 @@
       "cost": "Fence #7 of 7",
       "status": "Active",
       "features": "Off-grid airboat dock buyer for illicit cargo & cartel goods",
-      "notes": "Low police presence along the Grassrivers channels."
+      "notes": "Low police presence along the Grassrivers channels.",
+      "image": "/assets/images/properties/grassrivers-stash.jpg",
+      "pinId": "fence-grassrivers"
     },
     {
       "id": "safe-buckme",
@@ -275,7 +323,9 @@
       "cost": "$5,000 Goal",
       "status": "Protect Before 'Tourist Trap'",
       "features": "Protects savings from Chapter 1 -> Chapter 2 pocket cash wipe; $20,000 free-roam pocket cap",
-      "notes": "Deposit your $5,000 Family Savings into BuckMe before triggering 'Tourist Trap' or loose pocket cash is wiped."
+      "notes": "Deposit your $5,000 Family Savings into BuckMe before triggering 'Tourist Trap' or loose pocket cash is wiped.",
+      "image": "/assets/images/properties/drequan-studio.jpg",
+      "pinId": "safe-buckme"
     }
   ]
 }

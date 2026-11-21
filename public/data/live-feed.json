@@ -1,14 +1,99 @@
 {
   "site": "GTA6HeistGuide.com",
-  "updated_utc": "2026-11-21T13:54:25Z",
+  "updated_utc": "2026-11-21T15:00:00Z",
   "launch_date_utc": "2026-11-19T00:00:00Z",
   "launch_day": 3,
+  "build_version": "01.002.001 (PS5 & Xbox Series X|S)",
   "banner": "🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS & DROPS",
   "online_status": "Expected 2027 — Not Live at Launch",
   "counts": {
     "heist_walkthroughs": 8,
     "properties_entries": 25,
     "animals_entries": 49,
+    "map_pins_total": 174,
+    "cheats_verified": 61,
+    "glitches_verified": 5,
+    "radio_stations": 23,
     "wildlife_total_species": "170+ (including 62 bird species)"
-  }
+  },
+  "dispatches": [
+    {
+      "id": "dispatch-apollo-red-barn",
+      "title": "Apollo Aggregates (Red Barn) ~$55K Infinite Money Loop Verified",
+      "category": "Glitches & Cash",
+      "badge": "HOT EXPLOIT • NOV 21",
+      "date": "2026-11-21",
+      "region": "Vice City",
+      "pinId": "glitch-apollo-red-barn",
+      "image": "/assets/images/intel/intel-duo-heist.jpg",
+      "guideLink": "/cheats.html#glitches",
+      "summary": "South Vice-Dale County warehouse + parked truck loop yields ~$55,000 per cycle when fenced at Brian's Lockup (Code: 7700).",
+      "details": "Drive a 4-bag personal vehicle to Apollo Aggregates (Red Barn) in South Vice-Dale County. Clear the warehouse pallets and parked truck, load 4/4 duffel bags into your trunk, trigger a manual Save & Reload to respawn the crates, then liquidate marked bills and contraband at Brian's Lockup (Keypad Code: 7700). Always test on Save Slot #15 to keep your clean Story Slot #14 safe."
+    },
+    {
+      "id": "dispatch-patch-01002001",
+      "title": "Launch Build 01.002.001: PS5 30 FPS Pacing & Xbox Series X 120Hz Unlock",
+      "category": "Patches & Tech",
+      "badge": "PATCH 01.002.001",
+      "date": "2026-11-21",
+      "region": "Vice City",
+      "pinId": "intel-launch-vc",
+      "image": "/assets/images/intel/intel-vc-launch.jpg",
+      "guideLink": "/settings.html",
+      "summary": "Official launch build targets 30 FPS on PS5 & Xbox Series X|S, with verified HDR/deadzone fixes and the Series X 120Hz toggle workaround.",
+      "details": "GTA 6 runs at a native 30 FPS target across PS5, PS5 Pro, and Xbox Series X|S at launch with no official 60 FPS Performance Mode yet. For crisp gunplay and zero camera sluggishness, disable Motion Blur, lower Camera Bob, enable HGiG HDR tone mapping, and set aim deadzones to minimum. Xbox Series X players on build 01.002.001 have also documented a 120Hz container display unlock glitch detailed in our Glitches tab."
+    },
+    {
+      "id": "dispatch-brians-lockup-7700",
+      "title": "Brian's Lockup Code 7700 & BuckMe $5,000 Chapter 1 Protection",
+      "category": "Economy & Safes",
+      "badge": "VERIFIED SAFE CODE",
+      "date": "2026-11-20",
+      "region": "Leonida Keys",
+      "pinId": "fence-brians-lockup",
+      "image": "/assets/images/intel/intel-keys-coast.jpg",
+      "guideLink": "/money-guide.html",
+      "summary": "Confirmed keypad code 7700 unlocks Brian's Lockup fence for marked bills, jewelry, and drugs—plus avoid the Ch. 1 -> Ch. 2 cash wipe.",
+      "details": "Before triggering Chapter 1's point-of-no-return mission ('Tourist Trap'), deposit your $5,000 Family Savings target into the BuckMe banking app. Unbanked pocket cash (capped at $20,000 in free-roam) is wiped entering Chapter 2. Use Brian's Lockup (Keypad Code: 7700) in the Leonida Keys to fence marked bills and early contraband cleanly."
+    },
+    {
+      "id": "dispatch-save-slots-no-replay",
+      "title": "No Mission Replay at Launch: Lock All 15 Manual Save Slots",
+      "category": "Story Progression",
+      "badge": "CRITICAL WARNING",
+      "date": "2026-11-20",
+      "region": "Port Gellhorn",
+      "pinId": "sh-ch2-motel",
+      "image": "/assets/images/intel/intel-gellhorn-ops.jpg",
+      "guideLink": "/save-planner",
+      "summary": "GTA 6 launches with 5 chapters, 91 story missions, 1 volatile autosave, and no mission replay menu—protect missables like the Ch. 2 Motel & Donnie.",
+      "details": "Because GTA 6 does not include a mission replay menu at launch, missing early fences like Donnie's Trailer (closes after 'Swamped') or the Chapter 2 Motel Base (closes after 'Checking Out') is permanent unless you maintain staggered manual saves. Use our 15-Slot Save Planner to lock Slots #1–#14 for major story checkpoints and reserve Slot #15 for testing cheats and glitches."
+    },
+    {
+      "id": "dispatch-61-cheats-phone",
+      "title": "All 61 Phone Cheats Verified: D-Pad Dialer & Trophy-Lock Rules",
+      "category": "Cheats & Exploits",
+      "badge": "61 CHEATS LIVE",
+      "date": "2026-11-20",
+      "region": "Grassrivers",
+      "pinId": "heist-cartel",
+      "image": "/assets/images/intel/intel-grassrivers.jpg",
+      "guideLink": "/cheats.html",
+      "summary": "Open Jason or Lucia's smartphone (Up D-Pad), hold L1/LB + tap R1/RB to open the Cheat Terminal, and input verified directional sequences.",
+      "details": "All 61 story-mode button and phone dialer cheats are live on PS5 and Xbox Series X|S, including the post-campaign $250,000 cash cheat, full armor, and vehicle spawns. Activating any cheat immediately disables saving and trophies/achievements for that session—always switch to Save Slot #15 first."
+    },
+    {
+      "id": "dispatch-soundtrack-drops",
+      "title": "GTA VI: The Album (34 Tracks), 23 Radio Stations & Kick 10K Drops",
+      "category": "Radio & Drops",
+      "badge": "LIVE REWARDS",
+      "date": "2026-11-21",
+      "region": "Mount Kalaga National Park",
+      "pinId": "heist-vcia",
+      "image": "/assets/images/intel/intel-kalaga.jpg",
+      "guideLink": "/radio.html",
+      "summary": "Stream the official 34-track companion album, listen to all 23 stations on foot with in-game headphones, and claim Kick Sunset Cases through Dec 7.",
+      "details": "Rockstar Games and Atlantic Records released Grand Theft Auto VI: The Album featuring Justice, Travis Scott, Dua Lipa, Lana Del Rey, and Playboi Carti alongside 23 in-game stations including Flash FM (Robyn & Alex Consani) and Cocoteo FM. Kick's 10,000 Ultimate Edition Sunset Case giveaway runs through Dec 7, alongside daily Twitch Heist Train drops."
+    }
+  ]
 }

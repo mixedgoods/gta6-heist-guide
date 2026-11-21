@@ -22,7 +22,9 @@
       "category": "Land & Predators",
       "region": "Grassrivers",
       "danger": "Hostile Predator",
-      "notes": "Common in Grassrivers swamps, waterways, and muddy banks. Lethal ambush bite in shallow water."
+      "notes": "Common in Grassrivers swamps, waterways, and muddy banks. Lethal ambush bite in shallow water.",
+      "image": "/assets/images/animals/grassrivers-gator.jpg",
+      "pinId": "an-alligator"
     },
     {
       "id": "an-panther",
@@ -30,7 +32,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Apex Predator",
-      "notes": "Stalks dense pine trails and ridges in Mount Kalaga National Park, especially at dusk and night."
+      "notes": "Stalks dense pine trails and ridges in Mount Kalaga National Park, especially at dusk and night.",
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "pinId": "an-panther"
     },
     {
       "id": "an-black-bear",
@@ -38,7 +42,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Hostile Predator",
-      "notes": "Roams Mount Kalaga forests and riverbanks; charges if provoked or cornered."
+      "notes": "Roams Mount Kalaga forests and riverbanks; charges if provoked or cornered.",
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "pinId": "an-black-bear"
     },
     {
       "id": "an-bobcat",
@@ -46,7 +52,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Cautious Predator",
-      "notes": "Agile wildcat spotted in rocky brush across Mount Kalaga and rural Ambrosia."
+      "notes": "Agile wildcat spotted in rocky brush across Mount Kalaga and rural Ambrosia.",
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "pinId": "an-bobcat"
     },
     {
       "id": "an-whitetail-buck",
@@ -54,7 +62,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Docile",
-      "notes": "Antlered male deer grazing in Mount Kalaga meadows; flees quickly when spooked."
+      "notes": "Antlered male deer grazing in Mount Kalaga meadows; flees quickly when spooked.",
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "pinId": "an-whitetail-buck"
     },
     {
       "id": "an-whitetail-doe",
@@ -62,7 +72,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Docile",
-      "notes": "Found in small herds alongside Whitetail Bucks in northern Leonida."
+      "notes": "Found in small herds alongside Whitetail Bucks in northern Leonida.",
+      "image": "/assets/images/animals/kalaga-river.jpg",
+      "pinId": "an-whitetail-doe"
     },
     {
       "id": "an-wild-boar",
@@ -70,7 +82,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Aggressive",
-      "notes": "Spotted across Mount Kalaga National Park & Leonida Keys brush; can charge on foot."
+      "notes": "Spotted across Mount Kalaga National Park & Leonida Keys brush; can charge on foot.",
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "pinId": "an-wild-boar"
     },
     {
       "id": "an-armadillo",
@@ -78,7 +92,9 @@
       "category": "Land & Predators",
       "region": "Port Gellhorn",
       "danger": "Docile",
-      "notes": "Forages along dirt roadsides and rural scrub in Port Gellhorn and Ambrosia."
+      "notes": "Forages along dirt roadsides and rural scrub in Port Gellhorn and Ambrosia.",
+      "image": "/assets/images/animals/gellhorn-scrub.jpg",
+      "pinId": "an-armadillo"
     },
     {
       "id": "an-river-otter",
@@ -86,7 +102,9 @@
       "category": "Land & Predators",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Playful wetland mammal found along Grassrivers creeks and clear marsh banks."
+      "notes": "Playful wetland mammal found along Grassrivers creeks and clear marsh banks.",
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "pinId": "an-river-otter"
     },
     {
       "id": "an-macaque",
@@ -94,7 +112,9 @@
       "category": "Land & Predators",
       "region": "Grassrivers",
       "danger": "Mischievous",
-      "notes": "Invasive primate troops living in Leonida's wooded wetlands and river islands."
+      "notes": "Invasive primate troops living in Leonida's wooded wetlands and river islands.",
+      "image": "/assets/images/animals/grassrivers-gator.jpg",
+      "pinId": "an-macaque"
     },
     {
       "id": "an-green-iguana",
@@ -102,7 +122,9 @@
       "category": "Land & Predators",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Sunbathes on seawalls, docks, and palm trunks throughout the Leonida Keys."
+      "notes": "Sunbathes on seawalls, docks, and palm trunks throughout the Leonida Keys.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-green-iguana"
     },
     {
       "id": "an-cane-toad",
@@ -110,7 +132,9 @@
       "category": "Land & Predators",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Nocturnal amphibian found in damp grass, canals, and suburban lawns after rain."
+      "notes": "Nocturnal amphibian found in damp grass, canals, and suburban lawns after rain.",
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "pinId": "an-cane-toad"
     },
     {
       "id": "an-raccoon",
@@ -118,7 +142,9 @@
       "category": "Land & Predators",
       "region": "Port Gellhorn",
       "danger": "Docile",
-      "notes": "Scavenges alley dumpsters and motel fringes at night across Port Gellhorn & Vice City."
+      "notes": "Scavenges alley dumpsters and motel fringes at night across Port Gellhorn & Vice City.",
+      "image": "/assets/images/animals/gellhorn-scrub.jpg",
+      "pinId": "an-raccoon"
     },
     {
       "id": "an-red-fox",
@@ -126,7 +152,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Docile",
-      "notes": "Spotted darting across forest clearings at dawn and dusk."
+      "notes": "Spotted darting across forest clearings at dawn and dusk.",
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "pinId": "an-red-fox"
     },
     {
       "id": "an-beaver",
@@ -134,7 +162,9 @@
       "category": "Land & Predators",
       "region": "Mount Kalaga National Park",
       "danger": "Docile",
-      "notes": "Builds lodges along Mount Kalaga streams and northern river bends."
+      "notes": "Builds lodges along Mount Kalaga streams and northern river bends.",
+      "image": "/assets/images/animals/kalaga-river.jpg",
+      "pinId": "an-beaver"
     },
     {
       "id": "an-skunk",
@@ -142,7 +172,9 @@
       "category": "Land & Predators",
       "region": "Ambrosia",
       "danger": "Defensive",
-      "notes": "Nocturnal forager around rural Ambrosia farms and roadside brush."
+      "notes": "Nocturnal forager around rural Ambrosia farms and roadside brush.",
+      "image": "/assets/images/animals/ambrosia-fields.jpg",
+      "pinId": "an-skunk"
     },
     {
       "id": "an-squirrel",
@@ -150,7 +182,9 @@
       "category": "Land & Predators",
       "region": "Vice City",
       "danger": "Docile",
-      "notes": "Common in city parks, palm trees, and wooded trails across Leonida."
+      "notes": "Common in city parks, palm trees, and wooded trails across Leonida.",
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "pinId": "an-squirrel"
     },
     {
       "id": "an-snake",
@@ -158,7 +192,9 @@
       "category": "Land & Predators",
       "region": "Grassrivers",
       "danger": "Venomous / Cautious",
-      "notes": "Slithers through tall marsh grass and rocky ledges in Grassrivers and Mount Kalaga."
+      "notes": "Slithers through tall marsh grass and rocky ledges in Grassrivers and Mount Kalaga.",
+      "image": "/assets/images/animals/grassrivers-gator.jpg",
+      "pinId": "an-snake"
     },
     {
       "id": "an-flamingo",
@@ -166,7 +202,9 @@
       "category": "Birds",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Iconic bright-pink wading flocks in Leonida Keys flats and Grassrivers wetlands."
+      "notes": "Iconic bright-pink wading flocks in Leonida Keys flats and Grassrivers wetlands.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-flamingo"
     },
     {
       "id": "an-pelican",
@@ -174,7 +212,9 @@
       "category": "Birds",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Perches on marina pilings and dives for fish along Vice Beach and the Keys."
+      "notes": "Perches on marina pilings and dives for fish along Vice Beach and the Keys.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-pelican"
     },
     {
       "id": "an-blue-heron",
@@ -182,7 +222,9 @@
       "category": "Birds",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Tall coastal wading bird stalking shallow marshes and canals."
+      "notes": "Tall coastal wading bird stalking shallow marshes and canals.",
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "pinId": "an-blue-heron"
     },
     {
       "id": "an-osprey",
@@ -190,7 +232,9 @@
       "category": "Birds",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Fish-hunting raptor nesting on channel markers and coastal towers."
+      "notes": "Fish-hunting raptor nesting on channel markers and coastal towers.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-osprey"
     },
     {
       "id": "an-spoonbill",
@@ -198,7 +242,9 @@
       "category": "Birds",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Distinctive pink marsh bird sweeping shallow Grassrivers lagoons."
+      "notes": "Distinctive pink marsh bird sweeping shallow Grassrivers lagoons.",
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "pinId": "an-spoonbill"
     },
     {
       "id": "an-whooping-crane",
@@ -206,7 +252,9 @@
       "category": "Birds",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Rare tall white wetland crane spotted in open Grassrivers flats."
+      "notes": "Rare tall white wetland crane spotted in open Grassrivers flats.",
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "pinId": "an-whooping-crane"
     },
     {
       "id": "an-cormorant",
@@ -214,7 +262,9 @@
       "category": "Birds",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Diving waterbird frequently seen drying its wings on docks and buoys."
+      "notes": "Diving waterbird frequently seen drying its wings on docks and buoys.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-cormorant"
     },
     {
       "id": "an-duck",
@@ -222,7 +272,9 @@
       "category": "Birds",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Common across ponds, canals, and calm wetland coves."
+      "notes": "Common across ponds, canals, and calm wetland coves.",
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "pinId": "an-duck"
     },
     {
       "id": "an-seagull",
@@ -230,7 +282,9 @@
       "category": "Birds",
       "region": "Vice City",
       "danger": "Docile",
-      "notes": "Flocks over Vice Beach boardwalks, piers, and marinas."
+      "notes": "Flocks over Vice Beach boardwalks, piers, and marinas.",
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "pinId": "an-seagull"
     },
     {
       "id": "an-bald-eagle",
@@ -238,7 +292,9 @@
       "category": "Birds",
       "region": "Mount Kalaga National Park",
       "danger": "Docile",
-      "notes": "Soars high above Mount Kalaga peaks and northern lakes."
+      "notes": "Soars high above Mount Kalaga peaks and northern lakes.",
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "pinId": "an-bald-eagle"
     },
     {
       "id": "an-woodpecker",
@@ -246,7 +302,9 @@
       "category": "Birds",
       "region": "Mount Kalaga National Park",
       "danger": "Docile",
-      "notes": "Heard drumming on pine trunks throughout Mount Kalaga National Park."
+      "notes": "Heard drumming on pine trunks throughout Mount Kalaga National Park.",
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "pinId": "an-woodpecker"
     },
     {
       "id": "an-pigeon",
@@ -254,7 +312,9 @@
       "category": "Birds",
       "region": "Vice City",
       "danger": "Docile",
-      "notes": "Ubiquitous across Vice City sidewalks, plazas, and rooftops."
+      "notes": "Ubiquitous across Vice City sidewalks, plazas, and rooftops.",
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "pinId": "an-pigeon"
     },
     {
       "id": "an-manatee",
@@ -262,7 +322,9 @@
       "category": "Marine & Aquatic",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Gentle marine mammal gliding through warm Keys coves and coastal springs."
+      "notes": "Gentle marine mammal gliding through warm Keys coves and coastal springs.",
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "pinId": "an-manatee"
     },
     {
       "id": "an-hammerhead",
@@ -270,7 +332,9 @@
       "category": "Marine & Aquatic",
       "region": "Leonida Keys",
       "danger": "Hostile Predator",
-      "notes": "Patrols deeper reefs and offshore channels around the Leonida Keys."
+      "notes": "Patrols deeper reefs and offshore channels around the Leonida Keys.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-hammerhead"
     },
     {
       "id": "an-great-white",
@@ -278,7 +342,9 @@
       "category": "Marine & Aquatic",
       "region": "Vice City",
       "danger": "Apex Predator",
-      "notes": "Deep offshore waters beyond the Vice City coastline—lethal to unprotected swimmers."
+      "notes": "Deep offshore waters beyond the Vice City coastline—lethal to unprotected swimmers.",
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "pinId": "an-great-white"
     },
     {
       "id": "an-dolphin",
@@ -286,7 +352,9 @@
       "category": "Marine & Aquatic",
       "region": "Vice City",
       "danger": "Docile",
-      "notes": "Pods leap alongside boats in Vice Bay and the Leonida Keys."
+      "notes": "Pods leap alongside boats in Vice Bay and the Leonida Keys.",
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "pinId": "an-dolphin"
     },
     {
       "id": "an-sea-turtle",
@@ -294,7 +362,9 @@
       "category": "Marine & Aquatic",
       "region": "Leonida Keys",
       "danger": "Docile",
-      "notes": "Swims around coral reefs and shipwreck dive spots in the Keys."
+      "notes": "Swims around coral reefs and shipwreck dive spots in the Keys.",
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "pinId": "an-sea-turtle"
     },
     {
       "id": "an-stingray",
@@ -302,7 +372,9 @@
       "category": "Marine & Aquatic",
       "region": "Leonida Keys",
       "danger": "Cautious",
-      "notes": "Glides over sandy shoals and shallow turquoise reefs."
+      "notes": "Glides over sandy shoals and shallow turquoise reefs.",
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "pinId": "an-stingray"
     },
     {
       "id": "an-lionfish",
@@ -310,7 +382,9 @@
       "category": "Marine & Aquatic",
       "region": "Leonida Keys",
       "danger": "Venomous",
-      "notes": "Striped invasive reef fish hovering near sunken wrecks and coral ledges."
+      "notes": "Striped invasive reef fish hovering near sunken wrecks and coral ledges.",
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "pinId": "an-lionfish"
     },
     {
       "id": "an-killer-whale",
@@ -318,7 +392,9 @@
       "category": "Marine & Aquatic",
       "region": "Vice City",
       "danger": "Apex Marine",
-      "notes": "Rare deep-ocean sighting far offshore beyond the continental drop-off."
+      "notes": "Rare deep-ocean sighting far offshore beyond the continental drop-off.",
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "pinId": "an-killer-whale"
     },
     {
       "id": "an-eel",
@@ -326,7 +402,9 @@
       "category": "Marine & Aquatic",
       "region": "Leonida Keys",
       "danger": "Cautious",
-      "notes": "Hides inside reef crevices and underwater wrecks."
+      "notes": "Hides inside reef crevices and underwater wrecks.",
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "pinId": "an-eel"
     },
     {
       "id": "an-jellyfish",
@@ -334,7 +412,9 @@
       "category": "Marine & Aquatic",
       "region": "Vice City",
       "danger": "Stinging",
-      "notes": "Drifts in coastal currents off Vice Beach and Keys reefs."
+      "notes": "Drifts in coastal currents off Vice Beach and Keys reefs.",
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "pinId": "an-jellyfish"
     },
     {
       "id": "an-crayfish",
@@ -342,7 +422,9 @@
       "category": "Marine & Aquatic",
       "region": "Grassrivers",
       "danger": "Docile",
-      "notes": "Freshwater crustacean found in muddy Grassrivers creeks and bayous."
+      "notes": "Freshwater crustacean found in muddy Grassrivers creeks and bayous.",
+      "image": "/assets/images/animals/grassrivers-marsh.jpg",
+      "pinId": "an-crayfish"
     },
     {
       "id": "an-aussie-shepherd",
@@ -350,7 +432,9 @@
       "category": "Domestic/Pettable",
       "region": "Vice City",
       "danger": "Pettable",
-      "notes": "Friendly herding dog seen on beaches and suburban parks."
+      "notes": "Friendly herding dog seen on beaches and suburban parks.",
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "pinId": "an-aussie-shepherd"
     },
     {
       "id": "an-chihuahua",
@@ -358,7 +442,9 @@
       "category": "Domestic/Pettable",
       "region": "Vice City",
       "danger": "Pettable",
-      "notes": "Common along Ocean Beach walkways and boutique sidewalks."
+      "notes": "Common along Ocean Beach walkways and boutique sidewalks.",
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "pinId": "an-chihuahua"
     },
     {
       "id": "an-doberman",
@@ -366,7 +452,9 @@
       "category": "Domestic/Pettable",
       "region": "Vice City",
       "danger": "Guard / Pettable",
-      "notes": "Sleek guard breed spotted near upscale Vice City estates and yards."
+      "notes": "Sleek guard breed spotted near upscale Vice City estates and yards.",
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "pinId": "an-doberman"
     },
     {
       "id": "an-german-shepherd",
@@ -374,7 +462,9 @@
       "category": "Domestic/Pettable",
       "region": "Port Gellhorn",
       "danger": "Pettable",
-      "notes": "Loyal working dog seen with locals across Port Gellhorn and Ambrosia."
+      "notes": "Loyal working dog seen with locals across Port Gellhorn and Ambrosia.",
+      "image": "/assets/images/animals/gellhorn-scrub.jpg",
+      "pinId": "an-german-shepherd"
     },
     {
       "id": "an-labrador",
@@ -382,7 +472,9 @@
       "category": "Domestic/Pettable",
       "region": "Leonida Keys",
       "danger": "Pettable",
-      "notes": "Friendly retriever frequently spotted on docks and Keys beaches."
+      "notes": "Friendly retriever frequently spotted on docks and Keys beaches.",
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "pinId": "an-labrador"
     },
     {
       "id": "an-rottweiler",
@@ -390,7 +482,9 @@
       "category": "Domestic/Pettable",
       "region": "Ambrosia",
       "danger": "Guard / Pettable",
-      "notes": "Heavy-set breed seen around industrial yards and residential porches."
+      "notes": "Heavy-set breed seen around industrial yards and residential porches.",
+      "image": "/assets/images/animals/ambrosia-fields.jpg",
+      "pinId": "an-rottweiler"
     },
     {
       "id": "an-poodle",
@@ -398,7 +492,9 @@
       "category": "Domestic/Pettable",
       "region": "Vice City",
       "danger": "Pettable",
-      "notes": "Walked along luxury Vice City shopping avenues and resorts."
+      "notes": "Walked along luxury Vice City shopping avenues and resorts.",
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "pinId": "an-poodle"
     },
     {
       "id": "an-domestic-cat",
@@ -406,7 +502,9 @@
       "category": "Domestic/Pettable",
       "region": "Vice City",
       "danger": "Pettable",
-      "notes": "Lounges on alley steps, porches, and Key Lento docks; can be petted."
+      "notes": "Lounges on alley steps, porches, and Key Lento docks; can be petted.",
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "pinId": "an-domestic-cat"
     }
   ]
 }

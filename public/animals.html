@@ -6,82 +6,170 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA 6 Animals &amp; Wildlife Compendium (170+ Species Across 6 Regions) | GTA6HeistGuide.com</title>
-    <meta name="description" content="Searchable GTA 6 Animals &amp; Wildlife Database: 170+ wildlife species across Leonida's 6 regions (including 62 bird species). Filter by region, category, and track spotted/studied animals.">
+    <meta name="description" content="Searchable GTA 6 Animals &amp; Wildlife Database with real Rockstar Leonida habitat imagery, detail popouts, and direct Leonida Map pins across all 6 regions.">
     <link rel="canonical" href="https://www.gta6heistguide.com/animals.html">
     <meta property="og:title" content="GTA 6 Animals &amp; Wildlife Compendium">
-    <meta property="og:description" content="170+ wildlife species across Leonida's 6 regions (including 62 bird species). Interactive Spotted / Studied tracker.">
+    <meta property="og:description" content="170+ wildlife species across Leonida's 6 regions with popout habitat cards and exact Leonida Map pins.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/animals.html">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/regions/mount-kalaga.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v7">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "How many animal species are in GTA 6?", "acceptedAnswer": {"@type": "Answer", "text": "GTA 6 features 170+ wildlife species across Leonida's 6 regions, including 62 bird species, predators like Alligators, Florida Panthers, and Black Bears, marine life like Manatees and Hammerhead Sharks, and pettable dogs and cats."}},
-        {"@type": "Question", "name": "Where do you find the Florida Panther and Black Bear in GTA 6?", "acceptedAnswer": {"@type": "Answer", "text": "Both the Florida Panther (Cougar) and Black Bear roam Mount Kalaga National Park in northern Leonida."}}
-      ]
-    }
-    </script>
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/animals/grassrivers-gator.jpg">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
+    <style>
+        .db-card {
+            background: rgba(12, 18, 32, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-radius: 11px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .db-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 26px rgba(0, 255, 136, 0.2);
+        }
+        .db-card.is-studied { border-color: var(--neon-green); }
+        .db-card-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #070b14;
+            position: relative;
+        }
+        .db-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+        .db-card:hover .db-card-img img { transform: scale(1.04); }
+        .db-card-chip {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(6, 10, 20, 0.88);
+            border: 1px solid rgba(0, 255, 136, 0.45);
+            color: var(--neon-green);
+            font-size: 0.64rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            padding: 2px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .db-card-region {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(6, 10, 20, 0.88);
+            color: #e2e8f0;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+        .db-card-body {
+            padding: 0.85rem 0.95rem 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.38rem;
+            flex: 1;
+        }
+        .db-card-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
 </head>
 <body>
-<div class="countdown-strip">
+<div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
             </span>
             <span class="strip-divider">|</span>
             <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
     </div>
 </div>
-<nav class="navbar">
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo"><span>GTA 6</span><span class="vi">HEIST GUIDE</span><span class="brand-badge">Syndicate v3.3</span></a>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
+            <span class="brand-badge">Syndicate v3.2</span>
+        </a>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
+        </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
-            <li><a href="/properties.html" class="nav-pill " style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/map.html" class="nav-pill">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
             <li><a href="/animals.html" class="nav-pill active" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
-            <li><a href="/save-planner" class="nav-pill">💾 Save Planner</a></li>
-            <li><a href="/cheats" class="nav-pill">⚡ Cheats</a></li>
-            <li><a href="/cash-guide" class="nav-pill">💰 Cash Guide</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+                    More <span class="nav-arrow">▾</span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
 
-<main class="container" style="max-width: 1140px; margin: 0 auto; padding: 1.25rem 1rem 2.5rem;">
-    <header style="margin-bottom:1.25rem;">
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1rem 1rem 2.5rem;">
+    <header style="margin-bottom:1rem;">
         <span class="user-badge" style="background:rgba(0,255,136,0.16); border:1px solid var(--neon-green); color:var(--neon-green); font-size:0.72rem; padding:0.2rem 0.55rem; font-weight:800;">LEONIDA WILDLIFE COMPENDIUM</span>
-        <h1 style="font-size:clamp(1.45rem, 3vw, 2.2rem); color:#fff; margin:0.45rem 0 0.45rem;">GTA 6 Animals &amp; Wildlife Database</h1>
-        <p style="color:var(--neon-cyan); font-weight:700; font-size:0.95rem; margin:0 0 0.85rem;">170+ wildlife species across Leonida's 6 regions (including 62 bird species).</p>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.6rem; margin-bottom:1rem;">
-            <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(0,255,136,0.25); background:#0a101d;">
-                <img src="/assets/images/regions/mount-kalaga.jpg" alt="Mount Kalaga National Park Wildlife" class="aspect-video object-cover" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
-                <div style="padding:0.4rem 0.6rem; font-size:0.76rem; font-weight:800; color:var(--neon-green);">Mount Kalaga National Park</div>
-            </div>
-            <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(0,255,136,0.25); background:#0a101d;">
-                <img src="/assets/images/regions/grassrivers.jpg" alt="Grassrivers Alligators & Birds" class="aspect-video object-cover" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
-                <div style="padding:0.4rem 0.6rem; font-size:0.76rem; font-weight:800; color:var(--neon-cyan);">Grassrivers Wetlands</div>
-            </div>
-            <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(0,255,136,0.25); background:#0a101d;">
-                <img src="/assets/images/regions/leonida-keys.jpg" alt="Leonida Keys Marine Life" class="aspect-video object-cover" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
-                <div style="padding:0.4rem 0.6rem; font-size:0.76rem; font-weight:800; color:var(--neon-amber);">Leonida Keys</div>
-            </div>
-            <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(0,255,136,0.25); background:#0a101d;">
-                <img src="/assets/images/regions/vice-city.jpg" alt="Vice City Coastal & Domestic Animals" class="aspect-video object-cover" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
-                <div style="padding:0.4rem 0.6rem; font-size:0.76rem; font-weight:800; color:var(--neon-pink);">Vice City</div>
-            </div>
-        </div>
+        <h1 style="font-size:clamp(1.45rem, 3vw, 2.15rem); color:#fff; margin:0.45rem 0 0.4rem;">GTA 6 Animals &amp; Wildlife Database</h1>
+        <p style="color:#94a3b8; font-size:0.9rem; margin:0;"><strong style="color:var(--neon-cyan);">170+ wildlife species across Leonida's 6 regions (including 62 bird species).</strong> Click any species card for its popout habitat dossier and exact <strong style="color:var(--neon-green);">Map Location</strong>.</p>
     </header>
 
-    <section style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,255,136,0.25); border-radius:10px; padding:1rem; margin-bottom:1.15rem;">
-        <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center; justify-content:space-between; margin-bottom:0.75rem;">
-            <input id="animSearch" type="search" placeholder="Search Alligator, Panther, Flamingo, Manatee, Shiba/Labrador..." style="flex:1 1 260px; padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,255,136,0.35); background:#070c16; color:#fff; font-size:0.88rem;">
+    <div class="syndicate-aff-bar">
+  <div class="syndicate-aff-bar-main">
+    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+    <span class="aff-sep">|</span>
+    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+  </div>
+</div>
+
+    <section style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,255,136,0.25); border-radius:10px; padding:0.9rem; margin-bottom:1.1rem;">
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; justify-content:space-between; margin-bottom:0.65rem;">
+            <input id="animSearch" type="search" placeholder="Search Alligator, Panther, Flamingo, Manatee, Labrador..." style="flex:1 1 260px; padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,255,136,0.35); background:#070c16; color:#fff; font-size:0.88rem;">
             <select id="animCategory" style="padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,255,136,0.35); background:#070c16; color:#fff; font-size:0.85rem;">
                 <option value="ALL">All Categories</option>
                 <option value="Land & Predators">Land &amp; Predators</option>
@@ -105,20 +193,128 @@
         </div>
     </section>
 
-    <div id="animGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:0.8rem;"></div>
+    <div id="animGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:0.85rem;"></div>
 </main>
 
-<footer style="border-top:1px solid rgba(255,255,255,0.08); padding:1.5rem 1rem; text-align:center; color:#64748b; font-size:0.8rem;">
-    <div style="margin-bottom:0.65rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-        <a href="/" style="color:#94a3b8; text-decoration:none;">Home</a>
-        <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none;">🏠 Properties</a>
-        <a href="/animals.html" style="color:var(--neon-green); text-decoration:none;">🐊 Animals</a>
-        <a href="/save-planner" style="color:#94a3b8; text-decoration:none;">Save Planner</a>
-        <a href="/cheats" style="color:#94a3b8; text-decoration:none;">Cheats</a>
-        <a href="/settings" style="color:#94a3b8; text-decoration:none;">Settings</a>
-        <a href="/cash-guide" style="color:#94a3b8; text-decoration:none;">Cash Guide</a>
+<!-- ANIMAL POPOUT MODAL -->
+<div class="syndicate-modal-backdrop" id="animModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="animModalTitle">
+    <div class="syndicate-modal-card">
+        <button type="button" class="syndicate-modal-close" id="animModalClose" aria-label="Close modal">&times;</button>
+        <div class="syndicate-modal-hero">
+            <img id="animModalImg" src="/assets/images/animals/grassrivers-gator.jpg" alt="">
+        </div>
+        <div class="syndicate-modal-body">
+            <div class="syndicate-modal-meta">
+                <span class="syndicate-modal-badge" id="animModalCat"></span>
+                <span class="syndicate-modal-badge" id="animModalRegion" style="border-color:rgba(0,255,136,0.45); color:var(--neon-green); background:rgba(0,255,136,0.12);"></span>
+                <span class="syndicate-modal-badge" id="animModalDanger" style="border-color:rgba(255,42,141,0.45); color:#ff7cc4; background:rgba(255,42,141,0.12);"></span>
+            </div>
+            <h2 class="syndicate-modal-title" id="animModalTitle"></h2>
+            <div class="syndicate-modal-stats" id="animModalStats"></div>
+            <p id="animModalNotes" style="color:#e2e8f0; font-size:0.9rem; line-height:1.55; margin:0.6rem 0 0.85rem;"></p>
+            <div id="animModalAff"></div>
+            <div class="syndicate-modal-footer">
+                <label style="display:inline-flex; align-items:center; gap:0.45rem; cursor:pointer; font-size:0.84rem; font-weight:700; color:#fff;">
+                    <input type="checkbox" id="animModalStudiedChk" style="width:17px; height:17px; accent-color:#00ff88;">
+                    <span>Mark Spotted / Studied</span>
+                </label>
+                <a id="animModalMapBtn" href="/map.html" target="_blank" rel="noopener" class="btn-map-ping">
+                    📍 View Exact Location on Map &rarr;
+                </a>
+            </div>
+        </div>
     </div>
-    <p style="margin:0;">GTA6HeistGuide.com — Independent GTA VI database &amp; tactical companion. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G FUEL (ID: 3162838), ExitLag, Gumroad, G2A, and Eneba partner, this site earns commissions on qualifying purchases.</p>
+</div>
+
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="brand-logo" style="text-decoration:none;">
+                    <span class="brand-wordmark">
+                        <span class="brand-gta">GTA 6</span>
+                        <span class="brand-vi-sub">HEIST GUIDE</span>
+                    </span>
+                    <span class="brand-badge">Syndicate v3.2</span>
+                </a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                </p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
+
+        <div class="footer-links-grid">
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
+                <ul class="footer-col-links">
+                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
+                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
+                    <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
+                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
+                <ul class="footer-col-links">
+                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
+                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
+                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
+                <ul class="footer-col-links">
+                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
+                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/radio.html">📻 23 Radio Stations &amp; Album</a></li>
+                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
+                <ul class="footer-col-links">
+                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
+                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
+                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
+                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
+                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-secondary-strip">
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
+                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
+                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
+                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
+                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
+                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
+            </div>
+            <div>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
+            </div>
+        </div>
+
+        <div class="footer-disclaimer">
+            <p style="margin:0;">
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+            </p>
+        </div>
+    </div>
 </footer>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
@@ -128,6 +324,7 @@
   const STORAGE_KEY = 'gta6_animals_studied_v1';
   let items = [];
   let studied = {};
+  let activeItem = null;
   try { studied = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { studied = {}; }
 
   const grid = document.getElementById('animGrid');
@@ -137,9 +334,53 @@
   const countEl = document.getElementById('animCount');
   const progEl = document.getElementById('animProgress');
 
+  const backdrop = document.getElementById('animModalBackdrop');
+  const closeBtn = document.getElementById('animModalClose');
+  const modalChk = document.getElementById('animModalStudiedChk');
+
   function saveStudied() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(studied)); } catch (e) {}
   }
+
+  function openPopout(item) {
+    activeItem = item;
+    document.getElementById('animModalImg').src = item.image || '/assets/images/animals/grassrivers-gator.jpg';
+    document.getElementById('animModalImg').alt = item.name + ' habitat in ' + item.region;
+    document.getElementById('animModalCat').textContent = item.category;
+    document.getElementById('animModalRegion').textContent = '📍 ' + item.region;
+    document.getElementById('animModalDanger').textContent = item.danger;
+    document.getElementById('animModalTitle').textContent = item.name;
+    document.getElementById('animModalStats').innerHTML = `
+      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Primary Habitat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-green);">${item.region}</div></div>
+      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Behavior / Threat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-amber);">${item.danger}</div></div>
+      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Compendium Class</div><div class="syndicate-modal-stat-val" style="color:var(--neon-cyan);">${item.category}</div></div>
+    `;
+    document.getElementById('animModalNotes').textContent = item.notes;
+    document.getElementById('animModalAff').innerHTML = window.getSyndicateAffBarHtml
+      ? window.getSyndicateAffBarHtml()
+      : '';
+    modalChk.checked = !!studied[item.id];
+    const pinId = encodeURIComponent(item.pinId || item.id);
+    document.getElementById('animModalMapBtn').href = '/map.html?pin=' + pinId;
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopout() {
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    activeItem = null;
+  }
+
+  closeBtn.addEventListener('click', closePopout);
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closePopout(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) closePopout(); });
+  modalChk.addEventListener('change', () => {
+    if (!activeItem) return;
+    studied[activeItem.id] = modalChk.checked;
+    saveStudied();
+    render();
+  });
 
   function render() {
     const q = (searchEl.value || '').trim().toLowerCase();
@@ -159,25 +400,36 @@
     grid.innerHTML = filtered.map(it => {
       const isChecked = !!studied[it.id];
       const badgeColor = it.category === 'Land & Predators' ? 'var(--neon-pink)' : (it.category === 'Birds' ? 'var(--neon-amber)' : (it.category === 'Marine & Aquatic' ? 'var(--neon-cyan)' : 'var(--neon-green)'));
-      return `<article style="background:rgba(12,18,32,0.92); border:1px solid ${isChecked ? 'var(--neon-green)' : 'rgba(255,255,255,0.1)'}; border-radius:10px; padding:0.9rem; display:flex; flex-direction:column; justify-content:space-between; gap:0.5rem;">
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem; margin-bottom:0.35rem;">
-            <span style="font-size:0.68rem; font-weight:800; color:${badgeColor}; font-family:var(--font-mono); text-transform:uppercase;">${it.category}</span>
-            <span style="font-size:0.7rem; color:#94a3b8; font-family:var(--font-mono);">${it.region}</span>
-          </div>
-          <h2 style="font-size:1rem; color:#fff; margin:0 0 0.25rem;">${it.name}</h2>
-          <div style="font-size:0.74rem; color:#e2e8f0; margin-bottom:0.35rem;"><strong>Behavior:</strong> ${it.danger}</div>
-          <p style="font-size:0.8rem; color:#94a3b8; margin:0; line-height:1.45;">${it.notes}</p>
+      return `<article class="db-card ${isChecked ? 'is-studied' : ''}" data-open-id="${it.id}">
+        <div class="db-card-img">
+          <img src="${it.image || '/assets/images/animals/grassrivers-gator.jpg'}" alt="${it.name}" loading="lazy">
+          <span class="db-card-chip" style="color:${badgeColor}; border-color:${badgeColor};">${it.category}</span>
+          <span class="db-card-region">📍 ${it.region}</span>
         </div>
-        <label style="display:flex; align-items:center; gap:0.5rem; margin-top:0.35rem; padding-top:0.45rem; border-top:1px solid rgba(255,255,255,0.08); cursor:pointer; font-size:0.8rem; color:${isChecked ? 'var(--neon-green)' : '#e2e8f0'}; font-weight:700;">
-          <input type="checkbox" data-anim-id="${it.id}" ${isChecked ? 'checked' : ''} style="width:16px; height:16px; accent-color:#00ff88;">
-          <span>${isChecked ? 'Spotted / Studied' : 'Mark Spotted / Studied'}</span>
-        </label>
+        <div class="db-card-body">
+          <h2 style="font-size:1rem; color:#fff; margin:0; line-height:1.25;">${it.name}</h2>
+          <div style="font-size:0.74rem; color:var(--neon-amber); font-weight:700;">Behavior: ${it.danger}</div>
+          <p style="font-size:0.79rem; color:#94a3b8; margin:0; line-height:1.45;">${it.notes}</p>
+          <div class="db-card-foot">
+            <label onclick="event.stopPropagation()" style="display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.78rem; color:${isChecked ? 'var(--neon-green)' : '#e2e8f0'}; font-weight:700;">
+              <input type="checkbox" data-anim-id="${it.id}" ${isChecked ? 'checked' : ''} style="width:15px; height:15px; accent-color:#00ff88;">
+              <span>${isChecked ? 'Studied' : 'Track'}</span>
+            </label>
+            <span style="font-size:0.74rem; color:var(--neon-green); font-weight:800; font-family:var(--font-mono);">Habitat &amp; Map &rarr;</span>
+          </div>
+        </div>
       </article>`;
     }).join('');
 
+    grid.querySelectorAll('.db-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const it = items.find(x => x.id === card.getAttribute('data-open-id'));
+        if (it) openPopout(it);
+      });
+    });
     grid.querySelectorAll('input[data-anim-id]').forEach(cb => {
-      cb.addEventListener('change', () => {
+      cb.addEventListener('change', (e) => {
+        e.stopPropagation();
         studied[cb.getAttribute('data-anim-id')] = cb.checked;
         saveStudied();
         render();
@@ -185,7 +437,7 @@
     });
   }
 
-  fetch('/data/animals.json')
+  fetch('/data/animals.json?v=45')
     .then(r => r.json())
     .then(data => { items = data.items || []; render(); })
     .catch(() => { grid.innerHTML = '<p style="color:#f87171;">Failed to load animals database.</p>'; });

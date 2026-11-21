@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.gta6heistguide.com/weapons-gear">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/weapon-carbine.jpg?v=20261118_hd">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css?v=20261121_v8">
     <style>
         .search-filter-wrapper {
             background: rgba(10, 20, 32, 0.9);
@@ -96,13 +96,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
+            padding: 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .item-img-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;
+            object-fit: cover; width: 100%; height: 100%;
             filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));
             transition: transform 0.35s ease;
         }
@@ -374,68 +374,67 @@
     <meta property="og:site_name" content="GTA6HeistGuide.com">
     <meta name="twitter:title" content="GTA 6 Tactical Gear, Weapons & Heist Loadout Guide (2026) | GTA 6 Heist Guide">
     <meta name="twitter:description" content="Explore verified GTA 6 tactical gear, heavy body armor unlock codes, 24 Ammu-Nation gun store locations, pro console hardware setups, and heist loadout simulators.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/vip-blueprint-pack.png">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
 </head>
 <body>
     
-<div class="countdown-strip">
+
+
+
+
+<div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
-            <a href="/cheats.html" class="strip-pill countdown-pill-link" title="🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS & DROPS">
-                <span class="strip-pulse"></span>
-                <span class="launch-mode-label" style="color:var(--neon-pink); font-weight:900;">🔥 GTA 6 IS LIVE NOW — CHEATS, MAPS &amp; DROPS</span>
-            </a>
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+            </span>
             <span class="strip-divider">|</span>
-            <span class="strip-pill">Weekly Meta Reset: <span class="highlight" id="weeklyResetTimer">Loading...</span></span>
-            <span class="strip-divider">|</span>
-            <a href="/giveaways.html" class="strip-pill" style="color:#c084fc; text-decoration:none; font-weight:800;">🎁 Twitch Drops &amp; Kick 10K</a>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
         </div>
-        
     </div>
 </div>
-
-
-
-<nav class="navbar">
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home">
+            <span class="brand-wordmark">
+                <span class="brand-gta">GTA 6</span>
+                <span class="brand-vi-sub">HEIST GUIDE</span>
+            </span>
             <span class="brand-badge">Syndicate v3.2</span>
         </a>
-        <div class="nav-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>NETWORK ONLINE</span>
+        <div class="nav-actions">
+            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
+            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
+            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="navbar-deals" class="btn-deals-top" title="Discounted GTA 6 Launch Keys &amp; Store Cards">🔑 Keys &amp; Deals</a>
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
-            <li><a href="/heist-planner" class="nav-pill">Planner</a></li>
-            <li><a href="/save-planner" class="nav-pill" style="color:var(--neon-green); font-weight:800;">💾 Save Planner</a></li>
-            <li><a href="/cheats" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats</a></li>
-            <li><a href="/secrets" class="nav-pill" style="color:var(--neon-pink); font-weight:800;">🥚 Secrets</a></li>
-            <li><a href="/radio" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">📻 Radio</a></li>
-            <li><a href="/giveaways" class="nav-pill" style="color:#c084fc; font-weight:800;">🎁 Drops</a></li>
+            <li><a href="/map.html" class="nav-pill">🗺️ Map</a></li>
+            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
+            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
+            <li><a href="/cheats.html" class="nav-pill" style="color:var(--neon-yellow); font-weight:800;">⚡ Cheats &amp; Glitches</a></li>
+            <li><a href="/radio.html" class="nav-pill" style="color:#38bdf8; font-weight:800;">📻 Radio</a></li>
+            <li><a href="/drops.html" id="rotatingDropsTab" class="nav-pill nav-drops-rotator" title="Live Drops, Kick 10K Giveaway &amp; $0 Prime Sub">🎁 Kick 10K Giveaway</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">
                     More <span class="nav-arrow">▾</span>
                 </button>
                 <div class="nav-dropdown-menu">
-                    <a href="/settings" class="nav-dropdown-item">⚙️ Settings</a>
-                    <a href="/money-guide" class="nav-dropdown-item">💰 Cash Guide</a>
-                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/weapons-gear" class="nav-dropdown-item active">⚔️ Weapons</a>
-                    <a href="/vehicles-getaway-cars" class="nav-dropdown-item">🏎️ Vehicles</a>
-                    <a href="/live-intel" class="nav-dropdown-item">📡 Live Meta</a>
-                    <a href="/free" class="nav-dropdown-item" style="color:var(--neon-amber); font-weight:800;">⚡ Free Suite</a>
+                    <a href="/save-planner" class="nav-dropdown-item">💾 Save Progress / Alerts</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/money-guide.html" class="nav-dropdown-item">💰 Cash Guide</a>
+                    <a href="/weapons.html" class="nav-dropdown-item active">⚔️ Weapons</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/settings.html" class="nav-dropdown-item">⚙️ Settings</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/live-intel.html" class="nav-dropdown-item">📡 Live Intel</a>
+                    <a href="/live.html" class="nav-dropdown-item">🔴 Live Streams</a>
+                    <a href="/free/" class="nav-dropdown-item">⚡ Free Suite</a>
                 </div>
             </li>
         </ul>
-        <div class="nav-actions">
-            <a href="/live" class="btn-live-pill" title="Live GTA 6 Drops, Streams &amp; Radio Hub" style="white-space: nowrap;">🔴 LIVE STREAMS</a>
-            <button type="button" class="btn-vip-nav" id="navVipBtn" onclick="GTA6.Auth.openModal()" style="cursor:pointer;" title="Save Progress &amp; Free Alerts">💾 Save Progress<span class="vip-desktop-label"> / Alerts</span></button>
-            <button type="button" class="btn-sound" id="soundBtn" onclick="GTA6.toggleSound()" style="cursor:pointer;" title="Toggle WebAudio Sound FX">🔊 <span class="sound-desktop-label">Audio </span>FX</button>
-        </div>
     </div>
 </nav>
 
@@ -512,7 +511,20 @@
     </div>
 
     <!-- DYNAMIC INSTANT SEARCH & FILTER BAR -->
-    <div class="search-filter-wrapper">
+    <div class="syndicate-aff-bar">
+  <div class="syndicate-aff-bar-main">
+    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
+    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
+    <span class="aff-sep">|</span>
+    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
+    <span class="aff-sep">|</span>
+    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
+  </div>
+  <div class="syndicate-aff-bar-sub">🎮 Sharpen 30 FPS console gunplay: <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">KontrolFreek Sticks ($16.99)</a> &bull; <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset (Amazon)</a></div>
+</div>
+<div class="search-filter-wrapper">
         <div class="search-input-box">
             <span style="font-size:1rem;">🔍</span>
             <input type="text" id="gearSearchInput" placeholder="Search confirmed weapons &amp; items by name, caliber, role, or perk..." oninput="handleSearch()">
@@ -539,7 +551,7 @@
         <div class="item-card" data-category="sidearms" data-keywords="polymer pistol 9mm glock 19 gen 5 9x19mm parabellum sidearms" id="item-polymer" onclick="GTA6.WeaponModal.open('polymer')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-polymer.jpg?v=20261119_v3" alt="Polymer Pistol 9mm - Glock 19 Gen 5" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-revolver.jpg" alt="Polymer Pistol 9mm - Glock 19 Gen 5" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
@@ -567,7 +579,7 @@
         <div class="item-card" data-category="sidearms" data-keywords="service pistol 92fs beretta 92fs / m9 9x19mm parabellum sidearms" id="item-beretta" onclick="GTA6.WeaponModal.open('beretta')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-beretta.jpg?v=20261119_v3" alt="Service Pistol 92FS - Beretta 92FS / M9" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-jason-pistol.jpg" alt="Service Pistol 92FS - Beretta 92FS / M9" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
@@ -595,7 +607,7 @@
         <div class="item-card" data-category="sidearms" data-keywords="mustang .357 heavy magnum colt python .357 magnum 6-inch .357 magnum / .38 special sidearms" id="item-mustang357" onclick="GTA6.WeaponModal.open('mustang357')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-mustang357.jpg?v=20261119_v3" alt="Mustang .357 Heavy Magnum - Colt Python .357 Magnum 6-Inch" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-revolver.jpg" alt="Mustang .357 Heavy Magnum - Colt Python .357 Magnum 6-Inch" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
@@ -623,7 +635,7 @@
         <div class="item-card" data-category="sidearms" data-keywords="vintage p35 high-power browning hi-power 9mm 9x19mm parabellum sidearms" id="item-browning-hipower" onclick="GTA6.WeaponModal.open('browning-hipower')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-browning-hipower.jpg?v=20261119_v3" alt="Vintage P35 High-Power - Browning Hi-Power 9mm" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-variants.jpg" alt="Vintage P35 High-Power - Browning Hi-Power 9mm" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
@@ -651,7 +663,7 @@
         <div class="item-card" data-category="sidearms" data-keywords="the enforcer .410 revolver taurus judge .410 shotshell / .45 lc .410 bore shotshell / .45 long colt sidearms" id="item-taurus-judge" onclick="GTA6.WeaponModal.open('taurus-judge')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-taurus-judge.jpg?v=20261119_v3" alt="The Enforcer .410 Revolver - Taurus Judge .410 Shotshell / .45 LC" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-revolver.jpg" alt="The Enforcer .410 Revolver - Taurus Judge .410 Shotshell / .45 LC" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SIDEARMS</span>
                 </div>
@@ -679,7 +691,7 @@
         <div class="item-card" data-category="smg" data-keywords="tactical mp5 submachine gun heckler & koch mp5a3 / mp5sd 9x19mm parabellum submachine guns" id="item-mp5" onclick="GTA6.WeaponModal.open('mp5')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-mp5.jpg?v=20261119_v3" alt="Tactical MP5 Submachine Gun - Heckler & Koch MP5A3 / MP5SD" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-lucia-tactical.jpg" alt="Tactical MP5 Submachine Gun - Heckler & Koch MP5A3 / MP5SD" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
@@ -707,7 +719,7 @@
         <div class="item-card" data-category="smg" data-keywords="micro machine pistol 9mm imi micro uzi / mini uzi 9x19mm parabellum submachine guns" id="item-micro-smg" onclick="GTA6.WeaponModal.open('micro-smg')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-micro-smg.jpg?v=20261119_v3" alt="Micro Machine Pistol 9mm - IMI Micro Uzi / Mini Uzi" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-electric-fang.jpg" alt="Micro Machine Pistol 9mm - IMI Micro Uzi / Mini Uzi" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
@@ -735,7 +747,7 @@
         <div class="item-card" data-category="smg" data-keywords="ab-10 machine pistol intratec tec-9 9mm 9x19mm luger submachine guns" id="item-tec9" onclick="GTA6.WeaponModal.open('tec9')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-tec9.jpg?v=20261119_v3" alt="AB-10 Machine Pistol - Intratec TEC-9 9mm" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-lucia-tactical.jpg" alt="AB-10 Machine Pistol - Intratec TEC-9 9mm" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
@@ -763,7 +775,7 @@
         <div class="item-card" data-category="smg" data-keywords="tactical bullpup pdw-57 fn p90 5.7x28mm bullpup 5.7x28mm armor piercing submachine guns" id="item-p90" onclick="GTA6.WeaponModal.open('p90')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-p90.jpg?v=20261119_v3" alt="Tactical Bullpup PDW-57 - FN P90 5.7x28mm Bullpup" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-electric-fang.jpg" alt="Tactical Bullpup PDW-57 - FN P90 5.7x28mm Bullpup" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SUBMACHINE GUNS</span>
                 </div>
@@ -791,7 +803,7 @@
         <div class="item-card" data-category="rifles" data-keywords="duke special ops carbine m4 colt m4a1 tactical carbine 5.56 5.56x45mm nato assault rifles" id="item-carbine" onclick="GTA6.WeaponModal.open('carbine')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-carbine.jpg?v=20261119_v3" alt="Duke Special Ops Carbine M4 - Colt M4A1 Tactical Carbine 5.56" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-variants.jpg" alt="Duke Special Ops Carbine M4 - Colt M4A1 Tactical Carbine 5.56" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
                 </div>
@@ -819,7 +831,7 @@
         <div class="item-card" data-category="rifles" data-keywords="kalashnikov ak-103 assault rifle ak-47 / ak-103 7.62x39mm 7.62x39mm soviet assault rifles" id="item-ak47" onclick="GTA6.WeaponModal.open('ak47')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-ak47.jpg?v=20261119_v3" alt="Kalashnikov AK-103 Assault Rifle - AK-47 / AK-103 7.62x39mm" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-jason-rifle.jpg" alt="Kalashnikov AK-103 Assault Rifle - AK-47 / AK-103 7.62x39mm" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
                 </div>
@@ -847,7 +859,7 @@
         <div class="item-card" data-category="rifles" data-keywords="micro draco compact rifle century arms micro draco 7.62x39mm 7.62x39mm soviet assault rifles" id="item-compact-rifle" onclick="GTA6.WeaponModal.open('compact-rifle')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-compact-rifle.jpg?v=20261119_v3" alt="Micro Draco Compact Rifle - Century Arms Micro Draco 7.62x39mm" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-vintage-pattern.jpg" alt="Micro Draco Compact Rifle - Century Arms Micro Draco 7.62x39mm" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
                 </div>
@@ -875,7 +887,7 @@
         <div class="item-card" data-category="rifles" data-keywords="heavy battle rifle 7.62 nato fn fal / sa58 paratrooper 7.62x51mm nato (.308 win) assault rifles" id="item-battle-rifle" onclick="GTA6.WeaponModal.open('battle-rifle')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-battle-rifle.jpg?v=20261119_v3" alt="Heavy Battle Rifle 7.62 NATO - FN FAL / SA58 Paratrooper" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-variants.jpg" alt="Heavy Battle Rifle 7.62 NATO - FN FAL / SA58 Paratrooper" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">ASSAULT RIFLES</span>
                 </div>
@@ -903,7 +915,7 @@
         <div class="item-card" data-category="shotguns" data-keywords="tactical 12-gauge pump shotgun remington 870 tactical / mossberg 590a1 12-gauge (00 buckshot / 1oz slug) shotguns & heavy" id="item-pump-shotgun" onclick="GTA6.WeaponModal.open('pump-shotgun')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-pump-shotgun.jpg?v=20261119_v3" alt="Tactical 12-Gauge Pump Shotgun - Remington 870 Tactical / Mossberg 590A1" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-raul-breach.jpg" alt="Tactical 12-Gauge Pump Shotgun - Remington 870 Tactical / Mossberg 590A1" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
                 </div>
@@ -931,7 +943,7 @@
         <div class="item-card" data-category="shotguns" data-keywords="sawed-off double barrel lupara 12-gauge double barrel sawed 12-gauge magnum shotguns & heavy" id="item-sawed-off" onclick="GTA6.WeaponModal.open('sawed-off')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-sawed-off.jpg?v=20261119_v3" alt="Sawed-Off Double Barrel - Lupara 12-Gauge Double Barrel Sawed" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-stock-305.jpg" alt="Sawed-Off Double Barrel - Lupara 12-Gauge Double Barrel Sawed" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
                 </div>
@@ -959,7 +971,7 @@
         <div class="item-card" data-category="shotguns" data-keywords="spas-12 combat auto-shotgun franchi spas-12 semi-auto 12-gauge heavy magnum shotguns & heavy" id="item-combat-shotgun" onclick="GTA6.WeaponModal.open('combat-shotgun')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-combat-shotgun.jpg?v=20261119_v3" alt="SPAS-12 Combat Auto-Shotgun - Franchi SPAS-12 Semi-Auto" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-raul-breach.jpg" alt="SPAS-12 Combat Auto-Shotgun - Franchi SPAS-12 Semi-Auto" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
                 </div>
@@ -987,7 +999,7 @@
         <div class="item-card" data-category="heavy" data-keywords="compact 40mm thumper launcher m79 / milkor m32 40mm grenade launcher 40x46mm high explosive / smoke shotguns & heavy" id="item-grenade-launcher" onclick="GTA6.WeaponModal.open('grenade-launcher')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-grenade-launcher.jpg?v=20261119_v3" alt="Compact 40mm Thumper Launcher - M79 / Milkor M32 40mm Grenade Launcher" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-jason-heavy.jpg" alt="Compact 40mm Thumper Launcher - M79 / Milkor M32 40mm Grenade Launcher" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
                 </div>
@@ -1015,7 +1027,7 @@
         <div class="item-card" data-category="heavy" data-keywords="heavy anti-tank rpg-7 rpg-7v2 rocket-propelled grenade 85mm shaped charge warhead shotguns & heavy" id="item-rpg7" onclick="GTA6.WeaponModal.open('rpg7')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-rpg7.jpg?v=20261119_v3" alt="Heavy Anti-Tank RPG-7 - RPG-7V2 Rocket-Propelled Grenade" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-duo-heist.jpg" alt="Heavy Anti-Tank RPG-7 - RPG-7V2 Rocket-Propelled Grenade" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SHOTGUNS & HEAVY</span>
                 </div>
@@ -1043,7 +1055,7 @@
         <div class="item-card" data-category="snipers" data-keywords="duke assault sniper rifle accuracy international awm / ax308 .338 lapua magnum / 7.62 nato sniper rifles" id="item-sniper" onclick="GTA6.WeaponModal.open('sniper')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-sniper.jpg?v=20261119_v3" alt="Duke Assault Sniper Rifle - Accuracy International AWM / AX308" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-one-eyed.jpg" alt="Duke Assault Sniper Rifle - Accuracy International AWM / AX308" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SNIPER RIFLES</span>
                 </div>
@@ -1071,7 +1083,7 @@
         <div class="item-card" data-category="snipers" data-keywords="anti-material .50 cal sniper barrett m82a1 / m107 .50 bmg .50 bmg (12.7x99mm nato) sniper rifles" id="item-heavy-sniper" onclick="GTA6.WeaponModal.open('heavy-sniper')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-heavy-sniper.jpg?v=20261119_v3" alt="Anti-Material .50 Cal Sniper - Barrett M82A1 / M107 .50 BMG" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-one-eyed.jpg" alt="Anti-Material .50 Cal Sniper - Barrett M82A1 / M107 .50 BMG" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">SNIPER RIFLES</span>
                 </div>
@@ -1099,7 +1111,7 @@
         <div class="item-card" data-category="melee" data-keywords="forged steel claw hammer estwing 20oz steel rip claw hammer solid forged american steel melee & intimidation" id="item-hammer" onclick="GTA6.WeaponModal.open('hammer')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-hammer.jpg?v=20261119_v3" alt="Forged Steel Claw Hammer - Estwing 20oz Steel Rip Claw Hammer" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-lucia-combat.jpg" alt="Forged Steel Claw Hammer - Estwing 20oz Steel Rip Claw Hammer" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
                 </div>
@@ -1127,7 +1139,7 @@
         <div class="item-card" data-category="melee" data-keywords="solid hardwood baseball bat louisville slugger 34-inch ash bat northern white ash wood melee & intimidation" id="item-baseball-bat" onclick="GTA6.WeaponModal.open('baseball-bat')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-baseball-bat.jpg?v=20261119_v3" alt="Solid Hardwood Baseball Bat - Louisville Slugger 34-Inch Ash Bat" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-lucia-combat.jpg" alt="Solid Hardwood Baseball Bat - Louisville Slugger 34-Inch Ash Bat" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
                 </div>
@@ -1155,7 +1167,7 @@
         <div class="item-card" data-category="melee" data-keywords="hardened steel wrecking crowbar stanley 36-inch forged wrecking bar high-carbon hexagon steel melee & intimidation" id="item-crowbar" onclick="GTA6.WeaponModal.open('crowbar')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-crowbar.jpg?v=20261119_v3" alt="Hardened Steel Wrecking Crowbar - Stanley 36-Inch Forged Wrecking Bar" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-lucia-combat.jpg" alt="Hardened Steel Wrecking Crowbar - Stanley 36-Inch Forged Wrecking Bar" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
                 </div>
@@ -1183,7 +1195,7 @@
         <div class="item-card" data-category="melee" data-keywords="tactical tanto combat knife ka-bar tanto fixed blade 1095 cro-van carbon steel melee & intimidation" id="item-combat-knife" onclick="GTA6.WeaponModal.open('combat-knife')" title="Click to view full arsenal specs & attachments" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,184,0,0.25); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/weapon-combat-knife.jpg?v=20261119_v3" alt="Tactical Tanto Combat Knife - KA-BAR Tanto Fixed Blade" loading="eager" decoding="async" width="320" height="175" style="max-height:100%; max-width:100%; object-fit:contain;">
+                    <img src="/assets/images/weapons/weapon-lucia-combat.jpg" alt="Tactical Tanto Combat Knife - KA-BAR Tanto Fixed Blade" loading="eager" decoding="async" width="320" height="175" style="width:100%; height:100%; object-fit:cover; display:block;">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">CONFIRMED ARSENAL</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-cyan); color:var(--neon-cyan); padding:0.2rem 0.5rem; border-radius:4px;">MELEE & INTIMIDATION</span>
                 </div>
@@ -1230,7 +1242,7 @@
         <div class="item-card" data-category="stealth" data-keywords="neoprene skull balaclava heist masks blocks cctv facial recognition & delays 911 caller identification by 35 seconds." id="item-mask-skull" onclick="GTA6.GearModal.open('mask-skull')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-skull-mask.jpg?v=20261119_v3" alt="Neoprene Skull Balaclava" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1200" height="896">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="Neoprene Skull Balaclava" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1200" height="896">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
                 </div>
@@ -1259,7 +1271,7 @@
         <div class="item-card" data-category="stealth" data-keywords="vice city flamingo pink bandana heist masks fastest equip animation during sudden cash register grab-and-dashes." id="item-mask-pink-bandana" onclick="GTA6.GearModal.open('mask-pink-bandana')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-lucia.jpg?v=20261119_v3" alt="Vice City Flamingo Pink Bandana" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1300" height="1300">
+                    <img src="/assets/images/weapons/weapon-cal-gear.jpg" alt="Vice City Flamingo Pink Bandana" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1300" height="1300">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
                 </div>
@@ -1288,7 +1300,7 @@
         <div class="item-card" data-category="ballistic" data-keywords="level iii-a ballistic face shield ballistic protection negates 1 fatal headshot from law enforcement pistol fire." id="item-mask-ballistic" onclick="GTA6.GearModal.open('mask-ballistic')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-ballistic-mask.jpg?v=20261119_v3" alt="Level III-A Ballistic Face Shield" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1000" height="1000">
+                    <img src="/assets/images/weapons/weapon-duo-heist.jpg" alt="Level III-A Ballistic Face Shield" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1000" height="1000">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">BALLISTIC PROTECTION</span>
                 </div>
@@ -1317,7 +1329,7 @@
         <div class="item-card" data-category="stealth" data-keywords="retro nylon stocking mask heist masks zero suspicion when stored in pockets; discarded instantly into trash bins." id="item-mask-stocking" onclick="GTA6.GearModal.open('mask-stocking')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-stocking-mask.jpg?v=20261119_v3" alt="Retro Nylon Stocking Mask" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="616" height="744">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="Retro Nylon Stocking Mask" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="616" height="744">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
                 </div>
@@ -1346,7 +1358,7 @@
         <div class="item-card" data-category="stealth" data-keywords="port gellhorn smiley clown mask heist masks +20% hostage intimidation speed; suppresses crowd panic alarms." id="item-mask-clown" onclick="GTA6.GearModal.open('mask-clown')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-leonida-joker.jpg?v=20261119_v3" alt="Port Gellhorn Smiley Clown Mask" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1900" height="1900">
+                    <img src="/assets/images/weapons/weapon-cal-gear.jpg" alt="Port Gellhorn Smiley Clown Mask" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1900" height="1900">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
                 </div>
@@ -1375,7 +1387,7 @@
         <div class="item-card" data-category="stealth" data-keywords="vice beach neon pig rubber mask heist masks cult following bonus; unlocks unique syndicate underground dialogue." id="item-mask-animal" onclick="GTA6.GearModal.open('mask-animal')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-animal-mask.jpg?v=20261119_v3" alt="Vice Beach Neon Pig Rubber Mask" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1180" height="1536">
+                    <img src="/assets/images/weapons/weapon-duo-heist.jpg" alt="Vice Beach Neon Pig Rubber Mask" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1180" height="1536">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">HEIST MASKS</span>
                 </div>
@@ -1404,7 +1416,7 @@
         <div class="item-card" data-category="suits" data-keywords="rebreather scuba diving rig environmental suits unlimited underwater breathing; zero air bubbles on radar sonar." id="item-outfit-scuba" onclick="GTA6.GearModal.open('outfit-scuba')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-scuba-suit.jpg?v=20261119_v3" alt="Rebreather Scuba Diving Rig" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="691" height="691">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="Rebreather Scuba Diving Rig" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="691" height="691">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">ENVIRONMENTAL SUITS</span>
                 </div>
@@ -1433,7 +1445,7 @@
         <div class="item-card" data-category="suits" data-keywords="biohazard level a hazmat suit environmental suits complete immunity to tear gas, smoke canisters, and chemical dispersants." id="item-outfit-hazmat" onclick="GTA6.GearModal.open('outfit-hazmat')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-hazmat-suit.jpg?v=20261119_v3" alt="Biohazard Level A Hazmat Suit" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="900" height="600">
+                    <img src="/assets/images/weapons/weapon-cal-gear.jpg" alt="Biohazard Level A Hazmat Suit" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="900" height="600">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">ENVIRONMENTAL SUITS</span>
                 </div>
@@ -1462,7 +1474,7 @@
         <div class="item-card" data-category="disguise" data-keywords="vcpd metro police uniform disguise tactical disguises walk through police barricades and restricted evidence lockups without drawing heat." id="item-outfit-vcpd" onclick="GTA6.GearModal.open('outfit-vcpd')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-vcpd-officer.jpg?v=20261119_v3" alt="VCPD Metro Police Uniform Disguise" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1269" height="1269">
+                    <img src="/assets/images/weapons/weapon-duo-heist.jpg" alt="VCPD Metro Police Uniform Disguise" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1269" height="1269">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
                 </div>
@@ -1491,7 +1503,7 @@
         <div class="item-card" data-category="disguise" data-keywords="port gellhorn stevedore coveralls tactical disguises full access to cargo container shipping terminals and industrial docks." id="item-outfit-utility" onclick="GTA6.GearModal.open('outfit-utility')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-brian-heder.jpg?v=20261119_v3" alt="Port Gellhorn Stevedore Coveralls" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="2160" height="2160">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="Port Gellhorn Stevedore Coveralls" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="2160" height="2160">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
                 </div>
@@ -1520,7 +1532,7 @@
         <div class="item-card" data-category="disguise" data-keywords="high-roller velvet casino tuxedo tactical disguises grants access to high-limit vip penthouses, private poker lounges, and casino vaults." id="item-outfit-tuxedo" onclick="GTA6.GearModal.open('outfit-tuxedo')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-drequan-priest.jpg?v=20261119_v3" alt="High-Roller Velvet Casino Tuxedo" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1500" height="1500">
+                    <img src="/assets/images/weapons/weapon-cal-gear.jpg" alt="High-Roller Velvet Casino Tuxedo" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1500" height="1500">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
                 </div>
@@ -1549,7 +1561,7 @@
         <div class="item-card" data-category="disguise" data-keywords="ocean drive tourist aloha disguise tactical disguises blend into ocean drive pedestrian crowds instantly to drop police stars." id="item-outfit-tourist" onclick="GTA6.GearModal.open('outfit-tourist')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-cal-hampton.jpg?v=20261119_v3" alt="Ocean Drive Tourist Aloha Disguise" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1500" height="1500">
+                    <img src="/assets/images/weapons/weapon-duo-heist.jpg" alt="Ocean Drive Tourist Aloha Disguise" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1500" height="1500">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
                 </div>
@@ -1578,7 +1590,7 @@
         <div class="item-card" data-category="ballistic" data-keywords="heavy assault eod plate carrier ballistic protection absorbs up to 25 rifle shots; explosive blast damage reduced by 60%." id="item-armor-juggernaut" onclick="GTA6.GearModal.open('armor-juggernaut')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-juggernaut-armor.jpg?v=20261119_v3" alt="Heavy Assault EOD Plate Carrier" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1280" height="967">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="Heavy Assault EOD Plate Carrier" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1280" height="967">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">BALLISTIC PROTECTION</span>
                 </div>
@@ -1607,7 +1619,7 @@
         <div class="item-card" data-category="ballistic" data-keywords="high-cut ballistic helmet with quad-nvgs ballistic protection full green-phosphor night vision; reveals sentry positions in blackout conditions." id="item-gear-nvg-helmet" onclick="GTA6.GearModal.open('gear-nvg-helmet')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/gear-nvg-helmet.jpg?v=20261119_v3" alt="High-Cut Ballistic Helmet with Quad-NVGs" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1280" height="914">
+                    <img src="/assets/images/weapons/weapon-cal-gear.jpg" alt="High-Cut Ballistic Helmet with Quad-NVGs" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1280" height="914">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">BALLISTIC PROTECTION</span>
                 </div>
@@ -1636,7 +1648,7 @@
         <div class="item-card" data-category="stealth" data-keywords="carbon knuckle operator assault gloves tactical disguises leaves zero forensic fingerprint evidence; +25% melee punch damage." id="item-gear-gloves" onclick="GTA6.GearModal.open('gear-gloves')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/character-jason.jpg?v=20261119_v3" alt="Carbon Knuckle Operator Assault Gloves" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1500" height="1500">
+                    <img src="/assets/images/weapons/weapon-duo-heist.jpg" alt="Carbon Knuckle Operator Assault Gloves" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1500" height="1500">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">TACTICAL DISGUISES</span>
                 </div>
@@ -1665,7 +1677,7 @@
         <div class="item-card" data-category="stealth" data-keywords="tactical flir thermal recon goggles environmental suits highlights guard heat signatures through smoke clouds, fog, and thin drywall." id="item-gear-thermal-goggles" onclick="GTA6.GearModal.open('gear-thermal-goggles')" title="Click to view full disguise & evasion dossier" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; background:rgba(14,20,32,0.95); border:1px solid rgba(255,42,141,0.3); border-radius:10px; overflow:hidden;">
             <div>
                 <div class="item-img-container" style="height:175px; position:relative; background:radial-gradient(circle at center, rgba(255,42,141,0.15) 0%, rgba(5,8,14,0.95) 75%); display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                    <img src="/assets/item-thermal-lance.jpg?v=20261119_v3" alt="Tactical FLIR Thermal Recon Goggles" loading="lazy" style="max-height:100%; max-width:100%; object-fit:contain;" width="1024" height="1024">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="Tactical FLIR Thermal Recon Goggles" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" width="1024" height="1024">
                     <span class="item-badge-source" style="position:absolute; top:8px; left:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-pink); color:var(--neon-pink); padding:0.2rem 0.5rem; border-radius:4px;">INFILTRATION GEAR</span>
                     <span class="item-badge-cat" style="position:absolute; bottom:8px; right:8px; font-size:0.68rem; font-family:var(--font-mono); font-weight:800; background:rgba(0,0,0,0.85); border:1px solid var(--neon-yellow); color:var(--neon-yellow); padding:0.2rem 0.5rem; border-radius:4px;">ENVIRONMENTAL SUITS</span>
                 </div>
@@ -1812,7 +1824,7 @@
                     </div>
                     <h3 style="color:#fff; font-size:1.15rem; margin:0 0 0.4rem; font-weight:900;">🎁 Jason's Duval Signature ES9 &amp; Inks</h3>
                     <div style="height:110px; background:radial-gradient(circle at center, rgba(255,184,0,0.12) 0%, rgba(5,8,14,0.9) 75%); border-radius:6px; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem; overflow:hidden; border:1px solid rgba(255,255,255,0.06);">
-                        <img src="/assets/weapon-es9.webp" alt="Jason Duval Signature ES9 Pistol Variant" style="max-height:90%; max-width:90%; object-fit:contain;" loading="lazy">
+                        <img src="/assets/images/weapons/weapon-revolver.jpg" alt="Jason Duval Signature ES9 Pistol Variant" style="max-height:90%; max-width:90%; object-fit:contain;" loading="lazy">
                     </div>
                     <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.75rem;">
                         The Duval Signature ES9 features custom nickel slide engraving, pre-threaded suppressor barrel, elevated night sights, and improved hip-fire recovery.
@@ -1935,7 +1947,7 @@
 
             <!-- Card 7: G2A Digital Keys -->
             <article class="syndicate-gear-card" style="border-color: rgba(245, 158, 11, 0.35);">
-                <img src="/assets/gear/keys-deal.webp" alt="G2A PSN &amp; Xbox Key Deals" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/gear/digital-keys-pro.webp" alt="G2A PSN &amp; Xbox Key Deals" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4);">DIGITAL GAME KEYS</span>
                     <h3 class="syndicate-gear-title" title="G2A PSN &amp; Xbox Digital Keys">G2A PSN &amp; Xbox Key Deals</h3>
@@ -1949,7 +1961,7 @@
 
             <!-- Card 8: Eneba Instant Game & Shark Keys -->
             <article class="syndicate-gear-card" style="border-color: rgba(16, 185, 129, 0.35);">
-                <img src="/assets/gear/keys-deal.webp" alt="Eneba GTA 6 Currency &amp; Keys" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/gear/digital-keys-pro.webp" alt="Eneba GTA 6 Currency &amp; Keys" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4);">INSTANT DELIVERY</span>
                     <h3 class="syndicate-gear-title" title="Eneba GTA 6 Currency & Keys">Eneba GTA 6 Currency &amp; Keys</h3>
@@ -1963,7 +1975,7 @@
 
             <!-- Card 9: CutFlow Pro Creator Suite -->
             <article class="syndicate-gear-card" style="border-color: rgba(255, 0, 128, 0.35);">
-                <img src="/assets/gear/cutflow-gumroad.webp" alt="CutFlow Pro Creator Suite" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
+                <img src="/assets/cutflow-ui.png" alt="CutFlow Pro Creator Suite" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; margin-bottom:0.65rem;" onerror="this.style.display='none'">
                 <div>
                     <span class="syndicate-gear-pill" style="background: rgba(255, 0, 128, 0.2); color: #ff0080; border: 1px solid rgba(255, 0, 128, 0.4);">CREATOR SUITE</span>
                     <h3 class="syndicate-gear-title" title="CutFlow Pro &amp; ClipBounty Studio">CutFlow Pro Creator Suite</h3>
@@ -1989,10 +2001,10 @@
                 <h2 style="color:#fff; font-size:1.45rem; margin:0 0 0.2rem; font-weight:900;">15-Second Vault Keypad &amp; Laser Hack Trainer</h2>
                 <p style="color:var(--text-muted); font-size:0.84rem; margin:0;">Practice the high-stress biometric keypad minigame before setting foot inside the Leonida Gold Reserve or Sinfrontera National Bank.</p>
             </div>
-            <a href="/vault-hack-trainer.html" class="btn btn-secondary" style="font-size:0.76rem; padding:0.35rem 0.85rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Full 3D Trainer &rarr;</a>
+            <a href="/save-planner" class="btn btn-secondary" style="font-size:0.76rem; padding:0.35rem 0.85rem; border-color:var(--neon-cyan); color:var(--neon-cyan);">Full 3D Trainer &rarr;</a>
         </div>
         
-        <div id="keypadTrainerBox"></div>
+        
     </section>
 
 </main>
@@ -2000,106 +2012,96 @@
 <div class="adsense-slot" data-ad-slot="weapons-gear-bot"></div>
 <footer>
     <div class="footer-spread-wrap">
-        
-        <!-- Top Footer Branding Strip -->
         <div class="footer-top-brand">
             <div>
-                <a href="/index.html" class="brand-logo" style="text-decoration: none; font-size: 1.35rem;">
-                    <span>GTA 6</span>
-                    <span class="vi">HEIST GUIDE</span>
+                <a href="/" class="brand-logo" style="text-decoration:none;">
+                    <span class="brand-wordmark">
+                        <span class="brand-gta">GTA 6</span>
+                        <span class="brand-vi-sub">HEIST GUIDE</span>
+                    </span>
                     <span class="brand-badge">Syndicate v3.2</span>
                 </a>
-                <p style="color: #64748b; font-size: 0.85rem; margin: 0.45rem 0 0; max-width: 480px; line-height: 1.5;">
-                    The definitive tactical intelligence, interactive radar, and heist payout optimization network for Grand Theft Auto VI.
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                <a href="/free" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">⚡ Free Tools Suite</a>
-                <a href="/interactive-map" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">🗺️ Leonida Radar Map &rarr;</a>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
 
-        <!-- 4-Column Spread-Out Footer Links Grid -->
         <div class="footer-links-grid">
-            
-            <!-- Column 1: Tactical Calculators & Tools -->
             <div>
-                <span class="footer-col-title" style="color: var(--neon-cyan);">🛠️ Tactical Tools</span>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
                 <ul class="footer-col-links">
+                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
                     <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
                     <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
-                    <li><a href="/vault-hack-trainer.html">Vault Hack Trainer (3D)</a></li>
-                    <li><a href="/leonida-wanted-system.html">Wanted Evasion Matrix</a></li>
-                    <li><a href="/free" style="color: var(--neon-amber); font-weight: 700;">⚡ 100% Free Tools Hub</a></li>
+                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
                 </ul>
             </div>
-
-            <!-- Column 2: Maps & Vault Targets -->
             <div>
-                <span class="footer-col-title" style="color: var(--neon-pink);">🗺️ Radar &amp; Vaults</span>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
-                    <li><a href="/interactive-map.html">Leonida Interactive Radar</a></li>
-                    <li><a href="/escape-routes.html">Master Escape Corridors</a></li>
-                    <li><a href="/safehouses-laundering.html">Safehouses &amp; Laundering</a></li>
-                    <li><a href="/index.html#vaults-grid">Confirmed Heist Targets</a></li>
-                    <li><a href="/live-intel.html" style="color: var(--neon-green); font-weight: 700;">📡 Live Wire &amp; Map Leaks</a></li>
+                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
+                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
+                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
                 </ul>
             </div>
-
-            <!-- Column 3: Field Database & Fleet -->
             <div>
-                <span class="footer-col-title" style="color: var(--neon-yellow);">🏎️ Arsenal &amp; Crew</span>
+                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
                 <ul class="footer-col-links">
-                    <li><a href="/vehicles-getaway-cars.html">Confirmed Vehicles &amp; Trunk Mod</a></li>
-                    <li><a href="/weapons-gear.html">Weapons &amp; Heist Gear Database</a></li>
-                    <li><a href="/crew-database.html">Official Characters &amp; Crew</a></li>
-                    <li><a href="/lucia-jason-skills.html">Lucia &amp; Jason Skill Trees</a></li>
-                    <li><a href="/gameplay-mechanics.html">Co-Op Gameplay Mechanics</a></li>
+                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
+                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/radio.html">📻 23 Radio Stations &amp; Album</a></li>
+                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
                 </ul>
             </div>
-
-            <!-- Column 4: Syndicate & Day-2 Deals -->
             <div>
-                <span class="footer-col-title" style="color: #a855f7;">🤝 Deals &amp; Syndicate</span>
+                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
                 <ul class="footer-col-links">
-                    <li><a href="https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer">🔥 Amazon PS5 Day-2 Delivery</a></li>
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="noopener sponsored">⚡ G2A Keys (Save 20%)</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="noopener sponsored">🎮 Eneba PSN / Xbox Gift Cards</a></li>
-                    <li><a href="/interactive-map">🗺️ Leonida Interactive Map</a></li>
-                    </ul>
+                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
+                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
+                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
+                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
+                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
+                </ul>
             </div>
-
         </div>
 
-        <!-- Spacious Horizontal Secondary Strip -->
         <div class="footer-secondary-strip">
-            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                <a href="/cheats.html" style="color: var(--neon-yellow); text-decoration: none; font-weight: 700;">⚡ Cheats</a>
-                <a href="/settings.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">⚙️ Settings</a>
-                <a href="/money-guide.html" style="color: var(--neon-green); text-decoration: none; font-weight: 700;">💰 Cash Guide</a>
-                <a href="/weapons-bonuses.html" style="color: #f43f5e; text-decoration: none; font-weight: 700;">🔫 Gun Stores</a>
-                <a href="/giveaways.html" style="color: #c084fc; text-decoration: none; font-weight: 700;">🎁 Giveaways</a>
-                <a href="/about.html" style="color: #94a3b8; text-decoration: none;">About</a>
-                <a href="/contact.html" style="color: #94a3b8; text-decoration: none;">Contact</a>
-                <a href="/privacy-policy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                <a href="/terms.html" style="color: #94a3b8; text-decoration: none;">Terms &amp; DMCA</a>
-                <a href="/ads.txt" style="color: #64748b; text-decoration: none; font-size:0.75rem;">ads.txt</a>
+            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
+                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
+                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
+                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
+                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
+                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
             </div>
             <div>
-                <span>Network Status: <strong style="color: var(--neon-green);">ALL SYSTEMS ONLINE</strong> (v3.2)</span>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
             </div>
         </div>
 
-        <!-- Legal Disclaimer & FTC -->
         <div class="footer-disclaimer">
-            <p style="margin: 0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and GetApexLocal (CutFlow Pro & ClipBounty Studio) partner, this site earns commissions on qualifying purchases. &copy; 2026 gta6heistguide.com. All rights reserved.
+            <p style="margin:0;">
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
-
     </div>
 </footer>
 
+<script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
@@ -2311,5 +2313,96 @@
         updateSimulatorUI();
     });
 </script>
+
+<!-- SYNDICATE v3.2 WEAPON & LOADOUT POPOUT MODAL -->
+<div class="syndicate-modal-backdrop" id="weaponPopoutBackdrop" role="dialog" aria-modal="true" aria-labelledby="wpnModalTitle">
+    <div class="syndicate-modal-card">
+        <button type="button" class="syndicate-modal-close" id="wpnModalClose" aria-label="Close modal">&times;</button>
+        <div class="syndicate-modal-hero">
+            <img id="wpnModalImg" src="/assets/images/weapons/weapon-variants.jpg" alt="">
+        </div>
+        <div class="syndicate-modal-body">
+            <div class="syndicate-modal-meta">
+                <span class="syndicate-modal-badge" id="wpnModalCat">ARSENAL</span>
+                <span class="syndicate-modal-badge" id="wpnModalSpec" style="border-color:rgba(255,184,0,0.45); color:var(--neon-yellow); background:rgba(255,184,0,0.12);">VERIFIED LAUNCH SPEC</span>
+            </div>
+            <h2 class="syndicate-modal-title" id="wpnModalTitle"></h2>
+            <div class="syndicate-modal-stats" id="wpnModalStats"></div>
+            <p id="wpnModalDesc" style="color:#e2e8f0; font-size:0.88rem; line-height:1.55; margin:0.55rem 0;"></p>
+            <div style="background:rgba(0,240,255,0.08); border-left:3px solid var(--neon-cyan); padding:0.6rem 0.85rem; border-radius:0 6px 6px 0; font-size:0.82rem; color:#cbd5e1; margin-bottom:0.75rem;">
+                <strong style="color:var(--neon-cyan);">🎒 Trunk &amp; Heist Loadout Tip:</strong> Store heavy rifles and extra armor inside your personal vehicle trunk before entering bank lobbies so Jason and Lucia stay light on foot and pass street patrols unnoticed.
+            </div>
+            <div id="wpnModalAff"></div>
+            <div class="syndicate-modal-footer">
+                <a href="/weapons-bonuses.html" class="btn btn-secondary" style="padding:0.48rem 0.9rem; font-size:0.8rem; font-weight:800;">🔫 24 Ammu-Nation Stores</a>
+                <a href="/map.html?pin=heist-cartel" target="_blank" rel="noopener" class="btn-map-ping">📍 View Gun Stores &amp; Vaults on Map &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+(function() {
+  const backdrop = document.getElementById('weaponPopoutBackdrop');
+  const closeBtn = document.getElementById('wpnModalClose');
+  function closeModal() {
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) closeModal(); });
+
+  function openWeaponPopoutFromCard(card) {
+    if (!card) return;
+    const imgEl = card.querySelector('img');
+    const titleEl = card.querySelector('.item-title, h2, h3');
+    const specEl = card.querySelector('.item-crew-spec, .item-subtitle');
+    const descEl = card.querySelector('.item-desc');
+    const cat = (card.getAttribute('data-category') || 'Arsenal').toUpperCase();
+    const statRows = [...card.querySelectorAll('.item-stat-row')].map(r => {
+      const sp = r.querySelector('span');
+      const st = r.querySelector('strong');
+      return `<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">${(sp ? sp.textContent : 'Stat').replace(':','')}</div><div class="syndicate-modal-stat-val" style="color:var(--neon-cyan);">${st ? st.textContent : r.textContent}</div></div>`;
+    });
+
+    document.getElementById('wpnModalImg').src = imgEl ? imgEl.getAttribute('src') : '/assets/images/weapons/weapon-variants.jpg';
+    document.getElementById('wpnModalImg').alt = titleEl ? titleEl.textContent.trim() : 'GTA 6 Weapon';
+    document.getElementById('wpnModalCat').textContent = cat;
+    document.getElementById('wpnModalSpec').textContent = specEl ? specEl.textContent.trim() : 'Verified GTA 6 Arsenal';
+    document.getElementById('wpnModalTitle').textContent = titleEl ? titleEl.textContent.trim() : 'Weapon Dossier';
+    document.getElementById('wpnModalStats').innerHTML = statRows.length ? statRows.join('') : '<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Class</div><div class="syndicate-modal-stat-val">' + cat + '</div></div>';
+    document.getElementById('wpnModalDesc').textContent = descEl ? descEl.textContent.trim() : 'Verified Grand Theft Auto VI heist arsenal item.';
+    document.getElementById('wpnModalAff').innerHTML = window.getSyndicateAffBarHtml
+      ? window.getSyndicateAffBarHtml('🎮 Pro Console Aim &amp; Audio: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge Controller</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset (Amazon)</a>')
+      : '';
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Override / hook GTA6.WeaponModal.open cleanly after main.js loads (single-fire guard)
+  function bindWeaponModal() {
+    window.GTA6 = window.GTA6 || {};
+    window.GTA6.WeaponModal = {
+      open(id) {
+        const card = document.getElementById('item-' + id) || document.querySelector(`[onclick*="'${id}'"]`);
+        if (card) openWeaponPopoutFromCard(card.closest('.item-card') || card);
+      },
+      close: closeModal
+    };
+    document.querySelectorAll('.item-card').forEach(card => {
+      if (card.dataset.modalBound) return;
+      card.dataset.modalBound = '1';
+      card.removeAttribute('onclick');
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button, a')) return;
+        openWeaponPopoutFromCard(card);
+      });
+    });
+  }
+  window.addEventListener('load', bindWeaponModal);
+  document.addEventListener('DOMContentLoaded', bindWeaponModal);
+})();
+</script>
+
 </body>
 </html>
