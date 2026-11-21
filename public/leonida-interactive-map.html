@@ -66,11 +66,11 @@
             z-index: 1;
         }
 
-        /* BUG 1 FIX: Generous bottom offset for ALL bottom-right floating map controls (+, -, recenter) */
+        /* BUG 1 FIX: Generous bottom offset & above-Leaflet z-index for ALL bottom-right floating map controls (+, -, recenter) */
         .leaflet-bottom.leaflet-right {
             bottom: 84px !important;
             right: 20px !important;
-            z-index: 40 !important;
+            z-index: 1050 !important;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -126,7 +126,7 @@
             border-right: 1px solid rgba(0, 240, 255, 0.22);
             display: flex;
             flex-direction: column;
-            z-index: 45;
+            z-index: 1100;
             flex-shrink: 0;
             box-shadow: 4px 0 24px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -517,15 +517,21 @@
         }
 
         /* CUSTOM MARKERS & DEEP-LINK PULSE */
+        .div-icon-wrapper {
+            background: transparent !important;
+            border: none !important;
+        }
         .custom-pin-marker {
             display: flex;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
             border-radius: 50%;
             background: #120e1e;
             border: 2px solid #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.85), 0 0 12px currentColor;
             cursor: pointer;
+            transform-origin: center center;
             transition: transform 0.2s ease, opacity 0.2s;
             user-select: none;
             position: relative;
@@ -586,10 +592,27 @@
             border: 1px solid rgba(0, 240, 255, 0.4);
         }
         .leaflet-container a.leaflet-popup-close-button {
-            color: #cbd5e1 !important;
-            padding: 6px 10px 0 0;
-            font-size: 1.25rem;
-            z-index: 10;
+            position: absolute !important;
+            top: 8px !important;
+            right: 8px !important;
+            width: 26px !important;
+            height: 26px !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border-radius: 50% !important;
+            background: rgba(12, 10, 26, 0.88) !important;
+            border: 1px solid rgba(0, 240, 255, 0.35) !important;
+            color: #e2e8f0 !important;
+            font-size: 1rem !important;
+            line-height: 1 !important;
+            z-index: 20 !important;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .leaflet-container a.leaflet-popup-close-button:hover {
+            background: rgba(0, 240, 255, 0.24) !important;
+            color: #fff !important;
         }
         .popup-img-wrap {
             width: 100%;
@@ -613,6 +636,7 @@
             gap: 0.4rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding-bottom: 0.35rem;
+            padding-right: 32px;
         }
         .popup-tag-badge {
             font-size: 0.62rem;
@@ -693,7 +717,7 @@
             position: absolute;
             bottom: 84px;
             left: 14px;
-            z-index: 42;
+            z-index: 1050;
             background: rgba(14, 11, 26, 0.95);
             border: 1.5px solid var(--neon-cyan);
             box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
@@ -1054,10 +1078,24 @@ function recomputeZoomBounds(refit) {
     fitZoomLevel = map.getBoundsZoom(mapBounds, false);
     const dynamicMinZoom = Math.min(-2.5, Math.floor(fitZoomLevel * 4) / 4 - 0.5);
     map.setMinZoom(dynamicMinZoom);
-    map.setMaxBounds([[-naturalHeight * 0.25, -naturalWidth * 0.25], [naturalHeight * 1.25, naturalWidth * 1.25]]);
+    map.setMaxBounds(mapBounds);
     if (refit) {
         map.fitBounds(mapBounds, { padding: [24, 24], animate: false });
     }
+}
+
+function getPinLatLng(pin) {
+    let y, x;
+    if (typeof pin.y === 'number' && typeof pin.x === 'number' && !Number.isNaN(pin.y) && !Number.isNaN(pin.x)) {
+        y = pin.y;
+        x = pin.x;
+    } else {
+        y = Math.round((pin.yPct || 0) * naturalHeight);
+        x = Math.round((pin.xPct || 0) * naturalWidth);
+    }
+    y = Math.max(0, Math.min(naturalHeight, y));
+    x = Math.max(0, Math.min(naturalWidth, x));
+    return [y, x];
 }
 
 function initEngine() {
@@ -1068,13 +1106,14 @@ function initEngine() {
     const urlParams = new URLSearchParams(window.location.search);
     isDevMode = urlParams.get('dev') === '1';
 
-    /* BUG 2 FIX: Allow zooming all the way out to fit the full 3840x5120 Leonida portrait map */
+    /* Exact L.CRS.Simple projection locked to Leonida map image pixel space */
     map = L.map('leafletMap', {
         crs: L.CRS.Simple,
         minZoom: -3.5,
         maxZoom: 3,
         zoomSnap: 0.25,
         zoomDelta: 0.5,
+        maxBoundsViscosity: 0.85,
         attributionControl: false,
         zoomControl: true
     });
@@ -1095,23 +1134,34 @@ function initEngine() {
     map.addControl(new RecenterControl());
 
     const mapImg = new Image();
-    mapImg.src = '/assets/maps/leonida-map.jpg';
-
     let initialized = false;
     async function setupMapBounds() {
         if (initialized) return;
         initialized = true;
-        mapBounds = [[0, 0], [naturalHeight, naturalWidth]];
-        imageOverlay = L.imageOverlay('/assets/maps/leonida-map.jpg', mapBounds).addTo(map);
+        const bounds = [[0, 0], [naturalHeight, naturalWidth]];
+        mapBounds = bounds;
+        window._gta6Map = map;
+        window._gta6MapBounds = mapBounds;
+        imageOverlay = L.imageOverlay('/assets/maps/leonida-map.jpg', bounds).addTo(map);
+        map.setMaxBounds(bounds);
 
         map.invalidateSize(false);
         recomputeZoomBounds(true);
+
+        const updateHudZoom = () => {
+            const hud = document.getElementById('hudCoordsDisplay');
+            if (!hud || !map) return;
+            const scalePct = Math.round(Math.pow(2, map.getZoom()) * 100);
+            hud.textContent = `LEONIDA MAP • ${naturalWidth}×${naturalHeight} HD • ${scalePct}%`;
+        };
+        map.on('zoomend', updateHudZoom);
+        updateHudZoom();
 
         Object.keys(CATEGORIES).forEach(cat => {
             markerLayersByCategory[cat] = L.layerGroup().addTo(map);
         });
 
-        /* BUG 3 FIX: AWAIT pin loading FIRST before resolving ?pin=<id> deep-link! */
+        /* AWAIT pin loading FIRST before resolving ?pin=<id> deep-link */
         await loadAllPinsData();
         handleInitialDeepLinks();
     }
@@ -1126,6 +1176,12 @@ function initEngine() {
         naturalHeight = 5120;
         setupMapBounds();
     };
+    mapImg.src = '/assets/maps/leonida-map.jpg';
+    if (mapImg.complete && mapImg.naturalWidth > 0) {
+        naturalWidth = mapImg.naturalWidth;
+        naturalHeight = mapImg.naturalHeight;
+        setupMapBounds();
+    }
     setTimeout(setupMapBounds, 1800);
 
     map.on('click', function(e) {
@@ -1180,7 +1236,7 @@ async function loadAllPinsData() {
     const seen = new Set();
 
     try {
-        const res = await fetch('/data/map-pins.json?v=45');
+        const res = await fetch('/data/map-pins.json?v=46');
         if (res.ok) {
             const data = await res.json();
             if (Array.isArray(data.pins)) {
@@ -1192,7 +1248,7 @@ async function loadAllPinsData() {
     } catch(err) { console.warn('Could not load /data/map-pins.json:', err); }
 
     try {
-        const resLive = await fetch('/data/map-pins-live.json');
+        const resLive = await fetch('/data/map-pins-live.json?v=46');
         if (resLive.ok) {
             const dataLive = await resLive.json();
             if (Array.isArray(dataLive.items)) {
@@ -1259,10 +1315,11 @@ function createPopupContent(pin) {
             <p class="popup-desc">${pin.description || ''}</p>
             ${pin.tips ? `<div class="popup-tip-box">💡 <strong>Tactical Note:</strong> ${pin.tips}</div>` : ''}
             <div class="popup-aff-mini">
-                🔑 <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer">G2A Keys</a> |
-                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer">Eneba</a> |
-                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer">ExitLag (Free)</a> |
-                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer">CutFlow Pro</a>
+                🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;
+                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a> |
+                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a> |
+                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a> |
+                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
             </div>
             <div class="popup-actions-row">
                 <button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${pin.id}')">
@@ -1284,8 +1341,7 @@ function renderAllMarkers() {
     markersById = {};
 
     allPins.forEach(pin => {
-        const y = pin.yPct * naturalHeight;
-        const x = pin.xPct * naturalWidth;
+        const [y, x] = getPinLatLng(pin);
         const marker = L.marker([y, x], {
             icon: createMarkerIcon(pin),
             title: pin.title
@@ -1294,9 +1350,6 @@ function renderAllMarkers() {
             maxWidth: 330,
             autoPan: true,
             autoPanPadding: [48, 48]
-        });
-        marker.on('click', () => {
-            flyToPin(pin.id, false);
         });
 
         markersById[pin.id] = marker;
@@ -1338,11 +1391,14 @@ function flyToPin(pinId, openPopup = true, highlightPulse = false) {
     }
 
     const cat = pin.category || 'vault';
+    let layersChanged = false;
     if (!categoryVisibility[cat]) {
         categoryVisibility[cat] = true;
+        layersChanged = true;
     }
     if (hideFoundActive && foundPinIds.has(pin.id)) {
         hideFoundActive = false;
+        layersChanged = true;
         const chk = document.getElementById('hideFoundCheckbox');
         if (chk) chk.checked = false;
     }
@@ -1359,11 +1415,12 @@ function flyToPin(pinId, openPopup = true, highlightPulse = false) {
         }
     }
 
-    updateCategoryLayers();
-    renderCategoryRows();
+    if (layersChanged) {
+        updateCategoryLayers();
+        renderCategoryRows();
+    }
 
-    const y = pin.yPct * naturalHeight;
-    const x = pin.xPct * naturalWidth;
+    const [y, x] = getPinLatLng(pin);
     const targetZoom = Math.max(fitZoomLevel + 2.25, 0.75);
 
     map.flyTo([y, x], targetZoom, { duration: 0.7 });
@@ -1605,6 +1662,8 @@ function saveUserPin() {
         region: 'User Marked',
         yPct: pendingDropCoords.yPct,
         xPct: pendingDropCoords.xPct,
+        x: Math.round(pendingDropCoords.xPct * naturalWidth),
+        y: Math.round(pendingDropCoords.yPct * naturalHeight),
         description: notes || 'Custom waypoint saved locally.',
         badge: 'USER PIN'
     };
@@ -1665,6 +1724,9 @@ function toggleMobileDrawer() {
 window.addEventListener('resize', () => {
     clearTimeout(window._mapResizeTimer);
     window._mapResizeTimer = setTimeout(syncHeaderHeight, 120);
+});
+window.addEventListener('load', () => {
+    setTimeout(syncHeaderHeight, 80);
 });
 
 document.addEventListener('DOMContentLoaded', () => {

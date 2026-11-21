@@ -57,15 +57,17 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏦",
       "region": "Vice City",
-      "yPct": 0.512,
-      "xPct": 0.738,
+      "yPct": 0.509,
+      "xPct": 0.712,
       "payout": "$2,850,000 - $4,200,000",
       "difficulty": "5-Star Extreme",
       "security": "Biometric Laser Grid + Class 4 Vault Door",
       "description": "The crown jewel of Leonida banking. High-security subterranean deposit vault containing gold bullion bars, bearer bonds, and private safety deposit lockboxes.",
       "tips": "Thermite breach on basement generator disables interior laser grid for 90 seconds. Sub-level loading bay provides direct storm drain access.",
       "exfil": "Escape via Ocean Drive underground stormwater conduit directly into Biscayne Bay speedboats.",
-      "link": "/sinfrontera-bank-vs-leonida-gold-reserve.html"
+      "link": "/sinfrontera-bank-vs-leonida-gold-reserve.html",
+      "x": 2734,
+      "y": 2606
     },
     {
       "id": "vault-state-gold-reserve",
@@ -74,15 +76,17 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏦",
       "region": "Ambrosia",
-      "yPct": 0.685,
-      "xPct": 0.582,
+      "yPct": 0.6918,
+      "xPct": 0.563,
       "payout": "$6,500,000 - $9,800,000",
       "difficulty": "5-Star Mastermind",
       "security": "Heavy Armored Guards + Military Perimeter Sensors",
       "description": "State treasury facility housing bulk Federal bullion ingots. Heavily fortified compound with dual biometric time-lock steel gates.",
       "tips": "Requires coordinated two-player hacking on master substation towers before drilling primary vault hinges.",
       "exfil": "Railroad flatbed switch to North Leonida industrial siding or heavy helicopter airlift.",
-      "link": "/ambrosia-gold-reserve-bullion-fences-guide.html"
+      "link": "/ambrosia-gold-reserve-bullion-fences-guide.html",
+      "x": 2162,
+      "y": 3542
     },
     {
       "id": "vault-starlet-superyacht",
@@ -99,7 +103,9 @@
       "description": "Luxury mega-yacht anchored off the Keys carrying high-roller high-stakes casino chip reserves and offshore cartel diamonds.",
       "tips": "Infiltrate underwater using scuba rebreathers through the stern jet-ski moon pool during gala fireworks.",
       "exfil": "Underwater submersible drone or stealth speedboat sprint to Southern Keys reef channels.",
-      "link": "/starlet-superyacht-vs-port-gellhorn-terminal.html"
+      "link": "/starlet-superyacht-vs-port-gellhorn-terminal.html",
+      "x": 2081,
+      "y": 655
     },
     {
       "id": "vault-port-gellhorn-terminal",
@@ -108,15 +114,17 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏗️",
       "region": "Port Gellhorn",
-      "yPct": 0.585,
-      "xPct": 0.274,
+      "yPct": 0.5762,
+      "xPct": 0.2776,
       "payout": "$1,450,000 - $2,600,000",
       "difficulty": "4-Star High",
       "security": "ANPR Gantry Scanners + Armed Yard Watchmen",
       "description": "Secure customs bonded vault storing high-value cargo shipments, seized cartel diamonds, and bearer bonds awaiting offshore freight.",
       "tips": "Hack the master gantry crane terminal to drop shipping containers blocking security reinforcement response.",
       "exfil": "Tugboat coastal run or customized flatbed ramp jumping the western seawall.",
-      "link": "/port-gellhorn-container-terminal-crane-heist.html"
+      "link": "/port-gellhorn-container-terminal-crane-heist.html",
+      "x": 1066,
+      "y": 2950
     },
     {
       "id": "vault-pelican-valley-cu",
@@ -125,15 +133,17 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏦",
       "region": "Lake Leonida",
-      "yPct": 0.654,
-      "xPct": 0.618,
+      "yPct": 0.6543,
+      "xPct": 0.6276,
       "payout": "$850,000 - $1,400,000",
       "difficulty": "3-Star Moderate",
       "security": "Dual-Key Timelock + Silent Silent Alarm",
       "description": "Regional agricultural and citrus syndicate clearing house with substantial cash reserve vault behind fortified counter barriers.",
       "tips": "EMP blast on rear power transformer disables secondary electronic lock for 2 minutes.",
       "exfil": "Speedboat run down Lake Leonida canal system heading west toward Mt. Kalaga foothills.",
-      "link": "/calculator.html"
+      "link": "/calculator.html",
+      "x": 2410,
+      "y": 3350
     },
     {
       "id": "vault-vice-beach-commercial",
@@ -142,15 +152,17 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏦",
       "region": "Vice City",
-      "yPct": 0.538,
-      "xPct": 0.812,
+      "yPct": 0.5371,
+      "xPct": 0.8328,
       "payout": "$1,200,000 - $1,950,000",
       "difficulty": "4-Star High",
       "security": "Seismic Sensors + Reinforced Bank Windows",
       "description": "Art deco beachfront institution holding celebrity safety deposit boxes and seasonal luxury hotel cash collections.",
       "tips": "Rooftop helipad breach avoids ground-level patrol choke points. Gas ventilation shaft to pacify interior security.",
       "exfil": "Speedboat awaiting at Ocean Drive marina dock #4.",
-      "link": "/escape-routes.html"
+      "link": "/escape-routes.html",
+      "x": 3198,
+      "y": 2750
     },
     {
       "id": "vault-keys-marina-depository",
@@ -159,15 +171,17 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏦",
       "region": "Leonida Keys",
-      "yPct": 0.115,
-      "xPct": 0.365,
+      "yPct": 0.1121,
+      "xPct": 0.3328,
       "payout": "$1,600,000 - $2,400,000",
       "difficulty": "4-Star High",
       "security": "Maritime Patrol + Vault Hydro-Seals",
       "description": "Secluded private island vault managing non-extradition shell accounts and high-carat uncut gemstone stockpiles.",
       "tips": "Infiltrate during low tide via coral reef tunnel under the pier.",
       "exfil": "Twin-outboard offshore cigarette boat to international waters boundary.",
-      "link": "/leonida-keys-offshore-heists-smuggler-docks.html"
+      "link": "/leonida-keys-offshore-heists-smuggler-docks.html",
+      "x": 1278,
+      "y": 574
     },
     {
       "id": "vault-south-vice-interchange",
@@ -184,7 +198,9 @@
       "description": "Central transit authority depository where all airport express, metro, and freight ticket revenues are consolidated nightly.",
       "tips": "Disrupt train signal interlocking system to stall outbound security train.",
       "exfil": "Underground metro maintenance tunnel onto southbound highway lanes.",
-      "link": "/heist-planner.html"
+      "link": "/heist-planner.html",
+      "x": 2235,
+      "y": 2022
     },
     {
       "id": "bank-vice-shores-savings",
@@ -193,15 +209,17 @@
       "categoryName": "Regular Banks & Payday Loans",
       "icon": "🏧",
       "region": "Vice City",
-      "yPct": 0.472,
-      "xPct": 0.768,
+      "yPct": 0.4723,
+      "xPct": 0.7734,
       "payout": "$320,000 - $550,000",
       "difficulty": "2-Star Standard",
       "security": "Single Guard + Silent Teller Panic Buttons",
       "description": "Neighborhood branch with twin cash drawers and a mid-grade reinforced customer vault behind the teller counter.",
       "tips": "Intimidate teller within 20 seconds to prevent silent alarm transmission to VCPD dispatch.",
       "exfil": "Alleyway tuner vehicle escape through residential side streets.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2970,
+      "y": 2418
     },
     {
       "id": "bank-escambia-trust-gellhorn",
@@ -218,7 +236,9 @@
       "description": "Industrial town bank serving dockworkers and container freight logistics firms. Holds daily payroll cash.",
       "tips": "Thermite charge on back door bypasses bulletproof lobby turnstiles.",
       "exfil": "West coast industrial canal road toward Gellhorn wetlands.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 1198,
+      "y": 2703
     },
     {
       "id": "bank-little-haiti-quickcash",
@@ -235,7 +255,9 @@
       "description": "High-volume check cashing and remittance storefront with thick cash trays behind security acrylic.",
       "tips": "Crowbar or mini-drill breaches floor safe in under 45 seconds.",
       "exfil": "Moped or motorcycle split through tight residential alleys.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2580,
+      "y": 2806
     },
     {
       "id": "bank-grassrivers-payday-express",
@@ -244,15 +266,17 @@
       "categoryName": "Regular Banks & Payday Loans",
       "icon": "💵",
       "region": "Grassrivers",
-      "yPct": 0.285,
-      "xPct": 0.442,
+      "yPct": 0.2887,
+      "xPct": 0.437,
       "payout": "$160,000 - $310,000",
       "difficulty": "2-Star Standard",
       "security": "Shotgun-wielding Guard + Remote CCTV",
       "description": "Rural highway financial outpost serving airboat operators, swamp charters, and local trade workers.",
       "tips": "Smoke grenade disables perimeter view while picking lockbox latch.",
       "exfil": "Airboat docked 50 yards behind building directly into marsh waterways.",
-      "link": "/grassrivers-wetlands-cartel-airstrip-airboats.html"
+      "link": "/grassrivers-wetlands-cartel-airstrip-airboats.html",
+      "x": 1678,
+      "y": 1478
     },
     {
       "id": "bank-keys-sunshine-credit",
@@ -261,15 +285,17 @@
       "categoryName": "Regular Banks & Payday Loans",
       "icon": "🏧",
       "region": "Leonida Keys",
-      "yPct": 0.158,
-      "xPct": 0.485,
+      "yPct": 0.1957,
+      "xPct": 0.4932,
       "payout": "$240,000 - $430,000",
       "difficulty": "2-Star Standard",
       "security": "Dual Security Cameras + Lockout Barrier",
       "description": "Bayside financial branch popular with yacht owners and seasonal vacation rental syndicates.",
       "tips": "Drill side ATM wall for quick $45k bonus cash grab.",
       "exfil": "Overseas Highway bridge sprint with radar-jammer active.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 1894,
+      "y": 1002
     },
     {
       "id": "bank-ambrosia-farmers-mercantile",
@@ -286,7 +312,9 @@
       "description": "Historic stone bank processing citrus packing plant receipts and agricultural equipment loans.",
       "tips": "Cut telephone wires on side utility pole to delay local county sheriff response by 90 seconds.",
       "exfil": "Citrus orchard backroads connecting to Route 18.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2438,
+      "y": 3287
     },
     {
       "id": "bank-kalaga-trail-trust",
@@ -303,7 +331,9 @@
       "description": "Isolated mountain highway branch catering to logging companies, outdoor lodges, and survivalists.",
       "tips": "Backdoor loading bay latch can be quietly jimmied with heavy crowbar.",
       "exfil": "Mountain dirt fire trail over the north ridgeline into forested ravines.",
-      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html"
+      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html",
+      "x": 1797,
+      "y": 3712
     },
     {
       "id": "bank-airport-currency-exchange",
@@ -320,7 +350,9 @@
       "description": "High-volume foreign exchange safe holding stacks of Euro, Yen, Swiss Franc, and pristine US $100 bills.",
       "tips": "Disguise as maintenance staff using baggage handler uniforms from locker room 4B.",
       "exfil": "Baggage conveyor belt ramp out to tarmac service vehicles.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2104,
+      "y": 1956
     },
     {
       "id": "bank-ocean-drive-payday",
@@ -329,15 +361,17 @@
       "categoryName": "Regular Banks & Payday Loans",
       "icon": "💵",
       "region": "Vice City",
-      "yPct": 0.455,
-      "xPct": 0.815,
+      "yPct": 0.452,
+      "xPct": 0.8349,
       "payout": "$175,000 - $290,000",
       "difficulty": "1-Star Light",
       "security": "Double Acrylic Partition",
       "description": "Neon-lit strip mall payday loan parlor with safe full of weekend cash reserves.",
       "tips": "Quick grab-and-go smash. 35 seconds to empty drawer.",
       "exfil": "South Beach boardwalk south to jetty docks.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 3206,
+      "y": 2314
     },
     {
       "id": "bank-lake-leonida-savings",
@@ -354,7 +388,9 @@
       "description": "Lakeside marina bank holding deposits from charter boat operators and wealthy summer homeowners.",
       "tips": "Blow the rear safe with C4 explosive or crack lock with thermal drill.",
       "exfil": "Speedboat directly into Lake Leonida open water.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2081,
+      "y": 3574
     },
     {
       "id": "jewelry-vangelico-vice-beach",
@@ -363,15 +399,17 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "💎",
       "region": "Vice City",
-      "yPct": 0.525,
-      "xPct": 0.824,
+      "yPct": 0.5223,
+      "xPct": 0.8464,
       "payout": "$850,000 - $1,450,000",
       "difficulty": "3-Star Moderate",
       "security": "Seismic Glass Vibration Sensors + Armed Security Guard",
       "description": "Prestigious luxury jeweler displaying rare yellow diamonds, Swiss timepieces, and platinum tennis bracelets in reinforced display vitrines.",
       "tips": "Smash-and-grab requires diamond-tipped hammers or shotgun blasts. Clean out 18 vitrines within 55 seconds before gas deployment.",
       "exfil": "Motorcycle escape through Ocean Drive pedestrian plazas into Biscayne underground parking.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 3250,
+      "y": 2674
     },
     {
       "id": "jewelry-starlet-diamonds-downtown",
@@ -380,15 +418,17 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "💎",
       "region": "Vice City",
-      "yPct": 0.492,
-      "xPct": 0.718,
+      "yPct": 0.4863,
+      "xPct": 0.713,
       "payout": "$720,000 - $1,180,000",
       "difficulty": "3-Star Moderate",
       "security": "Heavy Roll-down Steel Shutters + Silent Alarm",
       "description": "High-end diamond dealer catering to music moguls and cartel bosses. Deep rear safe holds uncut emeralds and iced-out chains.",
       "tips": "Cut power from alleyway breaker box to delay roll-down security shutters.",
       "exfil": "Underground sewer canal entrance 80 yards down 4th Avenue.",
-      "link": "/vice-city-vaults-storm-drains-guide.html"
+      "link": "/vice-city-vaults-storm-drains-guide.html",
+      "x": 2738,
+      "y": 2490
     },
     {
       "id": "jewelry-port-gellhorn-pawn",
@@ -405,7 +445,9 @@
       "description": "Waterfront pawn shop stacked with pawned Rolex watches, gold chains, rare firearms, and stolen marine navigation hardware.",
       "tips": "Tranquilize guard dog through rear window before cutting steel bars.",
       "exfil": "Port Gellhorn container rail line west out of city limits.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 1106,
+      "y": 2652
     },
     {
       "id": "jewelry-keys-treasure-pawn",
@@ -414,15 +456,17 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "💎",
       "region": "Leonida Keys",
-      "yPct": 0.132,
-      "xPct": 0.412,
+      "yPct": 0.1184,
+      "xPct": 0.437,
       "payout": "$420,000 - $780,000",
       "difficulty": "2-Star Standard",
       "security": "Reinforced Glass + Motion Beams",
       "description": "Authentic shipwreck salvager boutique holding Spanish doubloons, antique gold bars, and sunken emerald jewelry.",
       "tips": "Rear floor safe holds the certified shipwreck gold bullion crates.",
       "exfil": "Bayside boat dock escape toward Key West shallow flats.",
-      "link": "/sunken-fleet-treasures-underwater-collectibles-map.html"
+      "link": "/sunken-fleet-treasures-underwater-collectibles-map.html",
+      "x": 1678,
+      "y": 606
     },
     {
       "id": "jewelry-little-haiti-gems",
@@ -439,7 +483,9 @@
       "description": "Neighborhood custom jeweler specializing in solid 14k gold Cuban link chains, diamond grillz, and custom pendants.",
       "tips": "Thermite breach on rear back-office safe bypasses shopkeeper's counter defense.",
       "exfil": "Rooftop jump down to dumpster alley into waiting four-door sedan.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2627,
+      "y": 2877
     },
     {
       "id": "jewelry-ambrosia-vintage-gold",
@@ -448,15 +494,17 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "🪙",
       "region": "Ambrosia",
-      "yPct": 0.668,
-      "xPct": 0.595,
+      "yPct": 0.6434,
+      "xPct": 0.6026,
       "payout": "$290,000 - $480,000",
       "difficulty": "2-Star Standard",
       "security": "Glass Sensor + Local Night Watchman",
       "description": "High-value antique boutique holding heirloom diamond tiaras, platinum pocket watches, and collector gold coins.",
       "tips": "Pick antique showcase lock quietly without triggering acoustic glass sensors.",
       "exfil": "Citrus groves dirt track northward to Route 18.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2314,
+      "y": 3294
     },
     {
       "id": "jewelry-south-vice-pawn-king",
@@ -473,7 +521,9 @@
       "description": "Bustling pawn megastore near airport with extensive jewelry counter and locked pawn vault containing confiscated goods.",
       "tips": "Hack store security DVR to erase heist footage and prevent wanted level surge.",
       "exfil": "Highway ramp onto I-95 south corridor.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2450,
+      "y": 2109
     },
     {
       "id": "jewelry-grassrivers-bayou-traders",
@@ -482,15 +532,17 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "🪙",
       "region": "Grassrivers",
-      "yPct": 0.245,
-      "xPct": 0.482,
+      "yPct": 0.2316,
+      "xPct": 0.5089,
       "payout": "$140,000 - $260,000",
       "difficulty": "1-Star Light",
       "security": "Shotgun behind counter + Guard Hounds",
       "description": "Swamp trading hub where hunters and treasure seekers trade found bullion, vintage watches, and firearms for supplies.",
       "tips": "Smash front cabinets and sprint before owner unholsters 12-gauge shotgun.",
       "exfil": "Airboat jump across swamp canal levee.",
-      "link": "/grassrivers-wetlands-cartel-airstrip-airboats.html"
+      "link": "/grassrivers-wetlands-cartel-airstrip-airboats.html",
+      "x": 1954,
+      "y": 1186
     },
     {
       "id": "jewelry-kalaga-peak-gem-miners",
@@ -507,7 +559,9 @@
       "description": "Mountain tourist shop featuring rare cut gemstones, gold nuggets panned from Kalaga Creek, and custom jewelry.",
       "tips": "Night heist after park closing has zero police presence for 3 minutes.",
       "exfil": "Mountain dirt bike down fire road 12.",
-      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html"
+      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html",
+      "x": 2028,
+      "y": 4019
     },
     {
       "id": "jewelry-vice-harbor-luxury",
@@ -516,15 +570,17 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "💎",
       "region": "Vice City",
-      "yPct": 0.448,
-      "xPct": 0.735,
+      "yPct": 0.4402,
+      "xPct": 0.7203,
       "payout": "$680,000 - $1,150,000",
       "difficulty": "3-Star Moderate",
       "security": "Armed Marina Security + Panic Shutters",
       "description": "Exclusive marina jeweler catering to yacht captains and international travelers. Showcase full of Patek Philippe and Audemars Piguet watches.",
       "tips": "Use glass cutter on front windows to steal top-tier watches without noise.",
       "exfil": "Fast catamaran boat docked right in front of shop.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2766,
+      "y": 2254
     },
     {
       "id": "jewelry-lake-leonida-estates",
@@ -541,7 +597,9 @@
       "description": "Lakeside boutique serving affluent estate owners. Contains high-karat gold necklaces and certified sapphire rings.",
       "tips": "Thermite torch on office safe door cracks lock in 35 seconds.",
       "exfil": "Seaplane moored on private dock behind boutique.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 2170,
+      "y": 3267
     },
     {
       "id": "jewelry-keys-reef-pawn",
@@ -558,7 +616,9 @@
       "description": "End-of-the-island pawn business with heavy safe containing antique dive watches, diamond rings, and gold sovereign coins.",
       "tips": "Cut electrical line on building exterior before picking rear lock.",
       "exfil": "Overseas Highway bridge crossing heading north.",
-      "link": "/heist-payout-calculator.html"
+      "link": "/heist-payout-calculator.html",
+      "x": 1210,
+      "y": 553
     },
     {
       "id": "ammu-vice-beach-promenade",
@@ -575,7 +635,9 @@
       "description": "Flagship 2-story gun store with indoor shooting range, heavy combat shotgun inventory, and military ballistic vests.",
       "tips": "Rear gunsmith room contains lockbox with military-grade armor piercing rounds.",
       "exfil": "Ocean Drive northbound slip road.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 3126,
+      "y": 2826
     },
     {
       "id": "ammu-downtown-vice-financial",
@@ -584,15 +646,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Vice City",
-      "yPct": 0.505,
-      "xPct": 0.722,
+      "yPct": 0.5035,
+      "xPct": 0.6984,
       "payout": "Assault Rifles + Tactical SMGs",
       "difficulty": "Armed Clerk + Armed Guard",
       "security": "Biometric Case Locks",
       "description": "Caters to private corporate security details. Stocks high-end combat carbines, sound suppressors, and red-dot optics.",
       "tips": "Shooting range locker has 400 rounds of 5.56 NATO ammo.",
       "exfil": "Underground metro parking ramp.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2682,
+      "y": 2578
     },
     {
       "id": "ammu-little-haiti-express",
@@ -609,7 +673,9 @@
       "description": "Gritty urban franchise carrying high-rate-of-fire compact submachine guns and street-level sidearms.",
       "tips": "Back dumpster has discarded surplus ammo boxes.",
       "exfil": "Alleyway shortcuts avoiding main police boulevards.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2554,
+      "y": 2929
     },
     {
       "id": "ammu-south-vice-intermodal",
@@ -626,7 +692,9 @@
       "description": "Industrial depot gun store supplying truckers and warehouse security. Huge stock of 12-gauge slug shells and extended magazines.",
       "tips": "Side loading dock often has surplus military ammo crates.",
       "exfil": "Southbound freeway access within 200 feet.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2350,
+      "y": 2161
     },
     {
       "id": "ammu-vice-airport-concourse",
@@ -643,7 +711,9 @@
       "description": "Perimeter shop authorized for long-range hunting rifles, sniper scopes, and thermal optics packages.",
       "tips": "Rooftop access provides clear sniper overview of perimeter tarmac.",
       "exfil": "Airport perimeter service canal road.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2120,
+      "y": 1884
     },
     {
       "id": "ammu-starlet-island-causeway",
@@ -652,15 +722,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Vice City",
-      "yPct": 0.485,
-      "xPct": 0.785,
+      "yPct": 0.4809,
+      "xPct": 0.7932,
       "payout": "Custom Gold-Plated Pistols + Silencers",
       "difficulty": "Private Security Guard",
       "security": "Electronic Keycard Doors",
       "description": "Ultra-exclusive boutique offering engraved sidearms, luxury handguns, and discreet concealed carry holsters.",
       "tips": "Keycard found in office desk unlocks back showroom containing masterwork handguns.",
       "exfil": "Causeway bridge sprint toward Biscayne marina.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 3046,
+      "y": 2462
     },
     {
       "id": "ammu-port-gellhorn-docks",
@@ -677,7 +749,9 @@
       "description": "Hard-hitting portside store with explosive ordnance license. Sells RPG launchers, rocket canisters, and breaching charges.",
       "tips": "Gunsmith safe in workshop contains 2 remote C4 plastic explosive bricks.",
       "exfil": "Waterfront commercial docks via powerboat.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 991,
+      "y": 2775
     },
     {
       "id": "ammu-port-gellhorn-north",
@@ -694,7 +768,9 @@
       "description": "Sprawling warehouse retailer supplying the western industrial sector with heavy caliber battle rifles and level IV body armor.",
       "tips": "Backdoor loading bay gives stealth entrance without customer alert.",
       "exfil": "Northern highway toward Mt. Kalaga.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 1244,
+      "y": 3215
     },
     {
       "id": "ammu-gellhorn-rail-junction",
@@ -711,7 +787,9 @@
       "description": "Rail depot armory stocked with high-volume 9mm ammo cases and flare signaling gear.",
       "tips": "Rail flatcars offer instant bulletproof cover during firefight.",
       "exfil": "Hop moving freight train heading north.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 1313,
+      "y": 2447
     },
     {
       "id": "ammu-keys-upper-marathon",
@@ -720,15 +798,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Leonida Keys",
-      "yPct": 0.165,
-      "xPct": 0.562,
+      "yPct": 0.1605,
+      "xPct": 0.5682,
       "payout": "Harpoon Guns + Flare Pistols + SMGs",
       "difficulty": "Armed Store Clerk",
       "security": "Saltwater Corrosion Locks",
       "description": "Specializes in marine firearms, underwater spearguns, distress flares, and waterproof ammo cases.",
       "tips": "Marine ammo boxes are 100% waterproof for scuba heist exits.",
       "exfil": "Boat slip located directly behind rear parking lot.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2182,
+      "y": 822
     },
     {
       "id": "ammu-keys-southern-strip",
@@ -737,15 +817,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Leonida Keys",
-      "yPct": 0.112,
-      "xPct": 0.348,
+      "yPct": 0.1168,
+      "xPct": 0.3245,
       "payout": "Magnum Revolvers + Lever-Action Rifles",
       "difficulty": "Armed Old-Timer",
       "security": "Old-School Iron Grates",
       "description": "The southernmost gun shop in the continental United States. Packed with classic revolvers, .44 Magnum rounds, and survival gear.",
       "tips": "Wall display has rare custom engraved frontier revolver.",
       "exfil": "Overseas Highway bridge northbound.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 1246,
+      "y": 598
     },
     {
       "id": "ammu-keys-runway-outpost",
@@ -754,15 +836,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Leonida Keys",
-      "yPct": 0.098,
-      "xPct": 0.252,
+      "yPct": 0.0965,
+      "xPct": 0.2516,
       "payout": "Military Explosives + Detonators",
       "difficulty": "Armed Mercenaries",
       "security": "Private Airfield Checkpoint",
       "description": "Unregistered armory beside the southwest airstrip. Sells covert combat gear, thermite grenades, and flashbangs.",
       "tips": "Parked Duster plane on runway can be hijacked for instant takeoff.",
       "exfil": "Smuggler airstrip twin-engine plane escape.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 966,
+      "y": 494
     },
     {
       "id": "ammu-grassrivers-swamp-post",
@@ -771,15 +855,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Grassrivers",
-      "yPct": 0.298,
-      "xPct": 0.518,
+      "yPct": 0.2918,
+      "xPct": 0.5255,
       "payout": "Gator Shotguns + Machetes + Molotovs",
       "difficulty": "Swamp Hunter Clerk",
       "security": "Barbed Wire Enclosure",
       "description": "Rugged wetland supplier featuring heavy-gauge swamp shotguns, high-carbon machetes, and alligator hunting gear.",
       "tips": "Free hunting bow and stealth tranquilizer darts in wooden locker.",
       "exfil": "Airboat docked in swamp channel right behind shop.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2018,
+      "y": 1494
     },
     {
       "id": "ammu-grassrivers-south-airstrip",
@@ -788,15 +874,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Grassrivers",
-      "yPct": 0.224,
-      "xPct": 0.418,
+      "yPct": 0.2605,
+      "xPct": 0.3984,
       "payout": "AK-47s + RPG Launchers",
       "difficulty": "Armed Cartel Guards",
       "security": "Perimeter Floodlights",
       "description": "Deep swamp distribution node housing crates of surplus AK-47 assault rifles and drum magazines.",
       "tips": "Cartel lockbox under floor holds $25,000 cash and rare weapon camo.",
       "exfil": "Low-altitude dirt strip takeoff.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 1530,
+      "y": 1334
     },
     {
       "id": "ammu-grassrivers-west-crossing",
@@ -805,15 +893,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Grassrivers",
-      "yPct": 0.262,
-      "xPct": 0.448,
+      "yPct": 0.2824,
+      "xPct": 0.4203,
       "payout": "Hunting Rifles + Camo Suits",
       "difficulty": "Armed Veteran",
       "security": "Radio Transceiver Relay",
       "description": "Isolated roadside armory providing ghillie suits, scoped hunting rifles, and night vision goggles for swamp trackers.",
       "tips": "Ghillie suit gives 40% stealth bonus when evading police helicopters.",
       "exfil": "4x4 pickup truck down dirt levee.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 1614,
+      "y": 1446
     },
     {
       "id": "ammu-ambrosia-central",
@@ -822,15 +912,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Ambrosia",
-      "yPct": 0.655,
-      "xPct": 0.575,
+      "yPct": 0.6504,
+      "xPct": 0.562,
       "payout": "Full Combat Rifles + Body Armor",
       "difficulty": "Armed Clerk (Pump Shotgun)",
       "security": "Steel Drop Shutters",
       "description": "Major suburban supplier with heavy stocks of military carbines, tactical helmets, and ballistic combat gear.",
       "tips": "Gunsmith back room has work bench to install instant weapon upgrades.",
       "exfil": "Highway 18 eastbound toward Vice City.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2158,
+      "y": 3330
     },
     {
       "id": "ammu-ambrosia-refinery-gate",
@@ -839,15 +931,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Ambrosia",
-      "yPct": 0.712,
-      "xPct": 0.648,
+      "yPct": 0.7121,
+      "xPct": 0.6432,
       "payout": "Thermite Grenades + Breaching Charges",
       "difficulty": "Armed Guard",
       "security": "Heavy Industrial Fencing",
       "description": "Commercial demolition supplier stocking thermite canisters, explosive cutting tape, and industrial drills.",
       "tips": "Critical supply shop before attempting the Ambrosia Gold Reserve heist.",
       "exfil": "Refinery pipe access road heading north.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2470,
+      "y": 3646
     },
     {
       "id": "ammu-lake-leonida-north-marina",
@@ -864,7 +958,9 @@
       "description": "Lakeside sporting armory with pontoon dock. Stocks amphibious tactical gear and sub-compact firearms.",
       "tips": "Pontoon boat behind shop is always fueled and ready.",
       "exfil": "Open lake water sprint across to opposite bank.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2054,
+      "y": 3676
     },
     {
       "id": "ammu-lake-leonida-south-causeway",
@@ -881,7 +977,9 @@
       "description": "Causeway bridge shop popular with long-range marksmen and hunters. Features high-caliber bolt rifles.",
       "tips": "Bridge sniper perch offers tactical advantage over responding road blocks.",
       "exfil": "Dive off bridge into lake or use speedboat.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2004,
+      "y": 3251
     },
     {
       "id": "ammu-mt-kalaga-summit-lodge",
@@ -898,7 +996,9 @@
       "description": "The highest altitude gun shop in Leonida. Features .50 BMG heavy sniper rifles, high-altitude parachutes, and cold-weather gear.",
       "tips": "Stock up on parachutes for instant mountain cliff base-jumping escapes.",
       "exfil": "Parachute off Kalaga Peak cliff to northern riverbed.",
-      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html"
+      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html",
+      "x": 1901,
+      "y": 4275
     },
     {
       "id": "ammu-mt-kalaga-ranger-station",
@@ -915,7 +1015,9 @@
       "description": "Wooded trailhead store supplying mountain hikers and survivalists with silent crossbows and tactical backpacks.",
       "tips": "Silent crossbow allows non-lethal stealth infiltration of nearby guard towers.",
       "exfil": "Forest dirt bike track into pine woods.",
-      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html"
+      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html",
+      "x": 1517,
+      "y": 3727
     },
     {
       "id": "ammu-mt-kalaga-east-valley",
@@ -932,7 +1034,9 @@
       "description": "Mountain river armory with heavy stock of explosive powder, shotgun shells, and tactical axes.",
       "tips": "River kayak dock on property provides silent water escape.",
       "exfil": "Whitewater rapids kayak heading toward Lake Leonida.",
-      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html"
+      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html",
+      "x": 2350,
+      "y": 3932
     },
     {
       "id": "ammu-vice-biscayne-island",
@@ -949,7 +1053,9 @@
       "description": "Island gun store catering to marina residents. Specializes in laser sights, flashlights, and subcompact pistols.",
       "tips": "Quick ammunition resupply point before Vice City storm drain heist.",
       "exfil": "Bridge crossing into mainland financial district.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 2726,
+      "y": 2278
     },
     {
       "id": "ammu-vice-north-beach-pier",
@@ -958,15 +1064,17 @@
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
       "region": "Vice City",
-      "yPct": 0.575,
-      "xPct": 0.835,
+      "yPct": 0.5754,
+      "xPct": 0.8307,
       "payout": "Full Auto Carbines + Grenade Launcher Ammo",
       "difficulty": "Heavy Armed Veterans",
       "security": "Armored Glass Counters",
       "description": "Northernmost Vice Beach armory. Stocks grenade launcher rounds, military smoke canisters, and high-velocity ammo.",
       "tips": "Clerk gives 15% discount after completing 3 gun range challenges.",
       "exfil": "North coastal highway into Ambrosia county.",
-      "link": "/weapons-gear.html"
+      "link": "/weapons-gear.html",
+      "x": 3190,
+      "y": 2946
     },
     {
       "id": "op-lucia-jason-stash-motel",
@@ -983,7 +1091,9 @@
       "description": "Lucia and Jason's early-game operating base. Hidden floor cavity beneath bathroom tile contains dirty cash, counterfeit IDs, and trunk weapon duffels.",
       "tips": "Rest here to clear 2-star wanted level and restock basic ammo supplies.",
       "exfil": "Alleyway carport with customized sedan.",
-      "link": "/gameplay-mechanics.html"
+      "link": "/gameplay-mechanics.html",
+      "x": 2669,
+      "y": 2381
     },
     {
       "id": "op-grassrivers-meth-airboat-shed",
@@ -992,15 +1102,17 @@
       "categoryName": "Chapter 1–2 Illegal Operations",
       "icon": "🧪",
       "region": "Grassrivers",
-      "yPct": 0.235,
-      "xPct": 0.428,
+      "yPct": 0.2152,
+      "xPct": 0.4839,
       "payout": "$145,000 Pure Crystals + Chemicals",
       "difficulty": "3-Star Cartel Defense",
       "security": "Tripwire Flare Mines + Guard Alligators",
       "description": "Deep swamp clandestine processing shed powered by salvaged diesel generators. Produces bulk high-grade narcotics for Vice City distribution.",
       "tips": "Shoot chemical pressurized tank to wipe out 4 guards instantly without wasting rifle ammo.",
       "exfil": "Camouflaged airboat hidden in cypress reeds.",
-      "link": "/grassrivers-wetlands-cartel-airstrip-airboats.html"
+      "link": "/grassrivers-wetlands-cartel-airstrip-airboats.html",
+      "x": 1858,
+      "y": 1102
     },
     {
       "id": "op-port-gellhorn-chop-shop",
@@ -1017,7 +1129,9 @@
       "description": "Industrial warehouse stripping boosted sports cars, forging new VIN numbers, and loading luxury engines into export containers.",
       "tips": "Deliver high-end vehicles here for 2.5x standard street payout.",
       "exfil": "Port rail corridor heading northwest.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 1275,
+      "y": 2739
     },
     {
       "id": "op-keys-submarine-smuggler-dock",
@@ -1034,7 +1148,9 @@
       "description": "Concealed sea cave housing semi-submersible narco vessels running contraband across the Caribbean corridor.",
       "tips": "Steal wet-sub vehicle to transport 4 duffel bags underwater undetected by Coast Guard radar.",
       "exfil": "Underwater reef trench heading toward international shipping lanes.",
-      "link": "/leonida-keys-offshore-heists-smuggler-docks.html"
+      "link": "/leonida-keys-offshore-heists-smuggler-docks.html",
+      "x": 1797,
+      "y": 625
     },
     {
       "id": "op-ambrosia-moonshine-still",
@@ -1043,15 +1159,17 @@
       "categoryName": "Chapter 1–2 Illegal Operations",
       "icon": "🧪",
       "region": "Ambrosia",
-      "yPct": 0.672,
-      "xPct": 0.655,
+      "yPct": 0.6691,
+      "xPct": 0.6589,
       "payout": "$95,000 High-Proof Liquor Stash",
       "difficulty": "2-Star Hillbilly Clan",
       "security": "Barking Hounds + Shotgun Tree Stands",
       "description": "Generational moonshine distillery hidden among towering cypress trees. Generates high-proof spirits sold through black-market roadhouses.",
       "tips": "Blow copper boiler to trigger massive diversion fire while looting the cash lockbox.",
       "exfil": "Citrus orchard gravel road.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 2530,
+      "y": 3426
     },
     {
       "id": "op-little-haiti-voodoo-counterfeit",
@@ -1060,15 +1178,17 @@
       "categoryName": "Chapter 1–2 Illegal Operations",
       "icon": "💵",
       "region": "Vice City",
-      "yPct": 0.558,
-      "xPct": 0.688,
+      "yPct": 0.5488,
+      "xPct": 0.6911,
       "payout": "$180,000 Counterfeit $50 & $100 Plates",
       "difficulty": "2-Star Gang",
       "security": "Reinforced Basement Steel Door",
       "description": "Fronted by a traditional herbal botanica, the basement houses a vintage Heidelberg offset printing press churning out forged US currency.",
       "tips": "Steal the engraved printing master plates to unlock continuous passive income stream.",
       "exfil": "Back door into residential garden maze.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 2654,
+      "y": 2810
     },
     {
       "id": "op-vice-beach-pill-press",
@@ -1085,7 +1205,9 @@
       "description": "Luxurious high-rise penthouse converted into a high-yield synthetic party pill press supplying South Beach nightclubs.",
       "tips": "Cut penthouse circuit breaker in basement service room to disable electronic elevator lockout.",
       "exfil": "Rooftop base jump to beach sand below.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 3218,
+      "y": 2652
     },
     {
       "id": "op-airport-cargo-smuggling-ring",
@@ -1102,7 +1224,9 @@
       "description": "Corrupt airport freight workers swap sealed diplomatic cargo pouches containing uncut diamonds and foreign weapons.",
       "tips": "Bribe baggage foreman ($2,500) to receive bypass keycard for shipping bay 12.",
       "exfil": "Air cargo tug vehicle onto taxiway access road.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 1978,
+      "y": 1920
     },
     {
       "id": "op-kalaga-poacher-camp",
@@ -1119,7 +1243,9 @@
       "description": "Illegal wildlife trapping camp trafficking rare panther skins, alligator hides, and black-bear gallbladders.",
       "tips": "Watch for bear traps in high grass. Sniper rifle from mountain ridge clears camp safely.",
       "exfil": "ATV trail down eastern mountain ravine.",
-      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html"
+      "link": "/mount-kalaga-national-park-outposts-chopper-evasion.html",
+      "x": 1697,
+      "y": 3814
     },
     {
       "id": "op-port-gellhorn-dock-smuggling",
@@ -1136,7 +1262,9 @@
       "description": "Dockside container depot used by maritime smugglers to offload offshore contraband before customs inspections.",
       "tips": "Crane control booth switch shifts container stacks to crush responding patrol cars.",
       "exfil": "Harbor pilot launch boat to outer bay.",
-      "link": "/port-gellhorn-container-terminal-crane-heist.html"
+      "link": "/port-gellhorn-container-terminal-crane-heist.html",
+      "x": 941,
+      "y": 3062
     },
     {
       "id": "op-keys-radio-scrambler-bunker",
@@ -1145,15 +1273,17 @@
       "categoryName": "Chapter 1–2 Illegal Operations",
       "icon": "📡",
       "region": "Leonida Keys",
-      "yPct": 0.145,
-      "xPct": 0.385,
+      "yPct": 0.0973,
+      "xPct": 0.4036,
       "payout": "$75,000 Scrambler Chip + Tech Parts",
       "difficulty": "1-Star Low",
       "security": "High-Voltage Electric Fence",
       "description": "Underground communications bunker running illegal pirate broadcasts and police radio interception relays.",
       "tips": "Download police dispatch encryption keys to gain 60-second advance warning of police SWAT routes.",
       "exfil": "Dirt path along shoreline to highway bridge.",
-      "link": "/radio.html"
+      "link": "/radio.html",
+      "x": 1550,
+      "y": 498
     },
     {
       "id": "op-lake-leonida-hydroponics",
@@ -1170,7 +1300,9 @@
       "description": "Decommissioned gravel barge moored in secluded cove outfitted with commercial LED grow lights producing high-potency cannabis crops.",
       "tips": "Scuba approach under barge allows silent takedown of deck watchman.",
       "exfil": "Speedboat into main lake basin.",
-      "link": "/fast-cash-laundering-fences-safehouses-guide.html"
+      "link": "/fast-cash-laundering-fences-safehouses-guide.html",
+      "x": 2066,
+      "y": 3369
     },
     {
       "id": "easter-dexter-trinity-apartments",
@@ -1179,15 +1311,17 @@
       "categoryName": "Viral Easter Eggs & Cryptids",
       "icon": "🩸",
       "region": "Vice City",
-      "yPct": 0.545,
-      "xPct": 0.832,
+      "yPct": 0.5473,
+      "xPct": 0.8318,
       "payout": "Plastic-Wrapped Machete Weapon + Blood Slide Collectible",
       "difficulty": "Viral Secret Location",
       "security": "VCPD Crime Scene Caution Tape",
       "description": "Apartment 102 on Ocean Drive, completely lined in forensic plastic sheeting with blood splatter on the walls and a chainsaw on the bathtub edge, referencing Dexter Morgan.",
       "tips": "Inspect air conditioner vent to find hidden slide box containing collectible blood slide.",
       "exfil": "Ocean Drive promenade walk.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 3194,
+      "y": 2802
     },
     {
       "id": "easter-grassrivers-skunk-ape",
@@ -1196,15 +1330,17 @@
       "categoryName": "Viral Easter Eggs & Cryptids",
       "icon": "🦍",
       "region": "Grassrivers",
-      "yPct": 0.255,
-      "xPct": 0.455,
+      "yPct": 0.2801,
+      "xPct": 0.4109,
       "payout": "Cryptid Photo Trophy ($50,000) + Skunk Ape Pelt Hat",
       "difficulty": "Night Spawn (02:00 - 04:00 AM)",
       "security": "Foul Odor Screen Effect + Heavy Fog",
       "description": "Leonida's famous 8-foot-tall swamp cryptid sighted stalking among cypress roots on misty swamp nights. Leaves massive 18-inch tracks in the mud.",
       "tips": "Equip night vision camera and follow heavy breathing audio cues near the hollowed cypress trunk.",
       "exfil": "Airboat jump across muddy creek.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 1578,
+      "y": 1434
     },
     {
       "id": "easter-giant-egg-tower",
@@ -1213,15 +1349,17 @@
       "categoryName": "Viral Easter Eggs & Cryptids",
       "icon": "🥚",
       "region": "Ambrosia",
-      "yPct": 0.695,
-      "xPct": 0.625,
+      "yPct": 0.7035,
+      "xPct": 0.6432,
       "payout": "Retro GTA Vice City 1986 Hawaiian Shirt Unlock",
       "difficulty": "Parkour Climb Challenge",
       "security": "Rusty Ladder + High Fall Risk",
       "description": "Rockstar's legendary literal Easter Egg returns! A giant chocolate-colored Easter Egg sits nestled inside an abandoned municipal water tower atop the Ambrosia hill.",
       "tips": "Climb service ladder, jump through false metal panel on the western tank face to enter secret egg chamber.",
       "exfil": "Parachute down into citrus grove.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 2470,
+      "y": 3602
     },
     {
       "id": "easter-ocean-drive-haunted-hotel",
@@ -1230,15 +1368,17 @@
       "categoryName": "Viral Easter Eggs & Cryptids",
       "icon": "👻",
       "region": "Vice City",
-      "yPct": 0.482,
-      "xPct": 0.818,
+      "yPct": 0.4809,
+      "xPct": 0.8172,
       "payout": "Vintage 1980s Cassette Tape + Ghost Orb Photo",
       "difficulty": "Midnight Occurrence (00:00 - 01:00 AM)",
       "security": "Flickering Lights + Distorted Radio Audio",
       "description": "The iconic Ocean View Hotel from 1986 GTA: Vice City. Suite 3C's bathroom door creaks open at midnight to reveal bloody footprints and faint disco music from Flash FM.",
       "tips": "Tune radio to 102.9 FM to hear backwards speech revealing buried treasure coordinates.",
       "exfil": "Front lobby exit to beachfront boardwalk.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 3138,
+      "y": 2462
     },
     {
       "id": "easter-michaels-abandoned-boat",
@@ -1255,7 +1395,9 @@
       "description": "Half-submerged luxury cabin cruiser grounded on a coral sandbar. Cabin contains framed Vinewood movie posters and a coffee mug inscribed 'World's Best Dad - Jimmy & Tracey'.",
       "tips": "Bring spear gun or shark repellent to explore master cabin without taking damage.",
       "exfil": "Speedboat back to Key Largo marina.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 1670,
+      "y": 707
     },
     {
       "id": "easter-mt-chiliad-qr-truck",
@@ -1272,7 +1414,9 @@
       "description": "Blacked-out box truck parked on a mountain overlook. Side door graphic features the iconic Mount Chiliad eye mural with a scannable QR code leading to secret ARG audio.",
       "tips": "Climb truck roof to inspect satellite dish; triggers UFO sound effect during thunderstorm weather.",
       "exfil": "Mountain gravel road heading west.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 1786,
+      "y": 4070
     },
     {
       "id": "easter-bermuda-triangle-ghost-ship",
@@ -1289,7 +1433,9 @@
       "description": "Derelict 1940s cargo ship adrift in the Atlantic shelf waters. Compass spins wildly; glowing green luminescence surrounds the rusted wheelhouse.",
       "tips": "Boarding wheelhouse reveals captain's log detailing supernatural time displacement.",
       "exfil": "Speedboat return before ghost fog vanishes at 05:00 AM.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 2246,
+      "y": 522
     },
     {
       "id": "easter-scarface-blood-chainsaw-motel",
@@ -1298,15 +1444,17 @@
       "categoryName": "Viral Easter Eggs & Cryptids",
       "icon": "🪚",
       "region": "Vice City",
-      "yPct": 0.458,
-      "xPct": 0.772,
+      "yPct": 0.4598,
+      "xPct": 0.7589,
       "payout": "Rusting Yellow Chainsaw + 2 Kilos Cocaine Loot",
       "difficulty": "Hidden Easter Egg",
       "security": "Locked Window Grille",
       "description": "Direct homage to Tony Montana's Sun Ray Motel confrontation in Scarface. Shower curtain is ripped down, blood stains cover white subway tiles, and a bloodstained chainsaw rests in the corner.",
       "tips": "Climb apartment fire escape on eastern wall to peer directly into bathroom window.",
       "exfil": "Sprint down alleyway to Washington Avenue.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 2914,
+      "y": 2354
     },
     {
       "id": "easter-gellhorn-ufo-crash",
@@ -1323,7 +1471,9 @@
       "description": "A 30-foot metallic flying disc lodged deep in the brackish marsh mud beneath 15 feet of water. Emits pulsating hum and neon blue underwater glow.",
       "tips": "Equip insulated wetsuit to avoid electric shock when interacting with central cockpit hatch.",
       "exfil": "Kayak through mangrove creek.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 1094,
+      "y": 3302
     },
     {
       "id": "easter-vice-underground-mole-city",
@@ -1340,7 +1490,9 @@
       "description": "Hidden civilization living inside the massive subterranean flood control tunnels under South Vice. Lanterns, old generators, and graffiti art line the cavernous concrete walls.",
       "tips": "Only accessible during dry weather; heavy rain flash-floods tunnels within 3 minutes.",
       "exfil": "Ladder outlet into downtown alley storm grate.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 2592,
+      "y": 2227
     },
     {
       "id": "easter-florida-man-alligator-wrestler",
@@ -1349,15 +1501,17 @@
       "categoryName": "Viral Easter Eggs & Cryptids",
       "icon": "🐊",
       "region": "Lake Leonida",
-      "yPct": 0.675,
-      "xPct": 0.575,
+      "yPct": 0.6801,
+      "xPct": 0.5536,
       "payout": "Golden Alligator Tooth Necklace + Airboat Boost Part",
       "difficulty": "Hostile 14-Foot Albino Alligator",
       "security": "Wobbly Wooden Boardwalk",
       "description": "Roadside attraction run by eccentric local 'Gator Dan'. Pit contains 'Brutus', an enormous aggressive albino alligator guarding a sunken lockbox.",
       "tips": "Lure Brutus with raw meat found in refrigerator to safely open bottom safe.",
       "exfil": "Highway 18 pickup truck.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 2126,
+      "y": 3482
     },
     {
       "id": "easter-kalaga-hermit-shack",
@@ -1374,7 +1528,9 @@
       "description": "Cliffside shack built of salvage timbers covered with tin foil and satellite dishes. Hermit's walls are covered in conspiracy maps connecting FIB, IAA, and UFO sightings.",
       "tips": "Bring canned food to trade peacefully for unique custom radio tuning frequency.",
       "exfil": "Cliff ledge trail descending east.",
-      "link": "/secrets.html"
+      "link": "/secrets.html",
+      "x": 2093,
+      "y": 4173
     },
     {
       "id": "heist-cartel",
@@ -1383,8 +1539,8 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "🏦",
       "region": "Vice City",
-      "yPct": 0.515,
-      "xPct": 0.742,
+      "yPct": 0.5199,
+      "xPct": 0.7099,
       "payout": "$120,000–$150,000",
       "difficulty": "Chapter 3 Story Heist #1",
       "security": "Cell Tower Blackout (~11m Timer) + Lobby Guards",
@@ -1392,7 +1548,9 @@
       "tips": "Rig all 3 cell towers before breaching the vault. Deposit loose cash at physical ATMs after the score.",
       "exfil": "Armored bus freeway escape into downtown storm channels.",
       "link": "/heists/the-cartel-heist.html",
-      "image": "/assets/images/heists/cartel-heist.jpg"
+      "image": "/assets/images/heists/cartel-heist.jpg",
+      "x": 2726,
+      "y": 2662
     },
     {
       "id": "heist-vcia",
@@ -1410,7 +1568,9 @@
       "tips": "Keep Save Slot #10 locked before starting VCIA Takedown to replay both stealth and loud runway endings.",
       "exfil": "Cargo plane takeoff and offshore drop toward Leonida Keys.",
       "link": "/heists/vcia-takedown.html",
-      "image": "/assets/images/heists/vcia-takedown.jpg"
+      "image": "/assets/images/heists/vcia-takedown.jpg",
+      "x": 2669,
+      "y": 2263
     },
     {
       "id": "heist-shops",
@@ -1428,7 +1588,9 @@
       "tips": "Use duo intimidation without firing a shot to keep heat at 1 star, then deposit immediately at an ATM.",
       "exfil": "Alleyway vehicle swap behind strip malls.",
       "link": "/heists/shops-and-stickups.html",
-      "image": "/assets/images/heists/shops.jpg"
+      "image": "/assets/images/heists/shops.jpg",
+      "x": 1183,
+      "y": 2877
     },
     {
       "id": "heist-pawn",
@@ -1446,7 +1608,9 @@
       "tips": "Load full duffel bags into your personal vehicle trunk before hitting a second pawn shop.",
       "exfil": "West highway corridor toward Randy's fence.",
       "link": "/heists/pawn-shops.html",
-      "image": "/assets/images/heists/pawn-shops.jpg"
+      "image": "/assets/images/heists/pawn-shops.jpg",
+      "x": 1094,
+      "y": 2980
     },
     {
       "id": "heist-jewelry",
@@ -1455,8 +1619,8 @@
       "categoryName": "Jewelry Stores & Pawn Shops",
       "icon": "💎",
       "region": "Vice City",
-      "yPct": 0.525,
-      "xPct": 0.785,
+      "yPct": 0.5176,
+      "xPct": 0.7682,
       "payout": "$15,000–$35,000",
       "difficulty": "3 Stars • Ch. 3",
       "security": "CCTV Server Room + Armed Guard",
@@ -1464,7 +1628,9 @@
       "tips": "Sell all stolen diamonds at Yasmani's Fence in Little Cuba for the lowest cut (5%).",
       "exfil": "Ocean Beach side streets to Little Cuba Lockup Garage.",
       "link": "/heists/jewelry-stores.html",
-      "image": "/assets/images/heists/jewelry-stores.jpg"
+      "image": "/assets/images/heists/jewelry-stores.jpg",
+      "x": 2950,
+      "y": 2650
     },
     {
       "id": "heist-small-banks",
@@ -1482,7 +1648,9 @@
       "tips": "Always trigger the Dye Pack Jammer before opening the second vault cage.",
       "exfil": "Freight yard backroads to Ambrosia Garage.",
       "link": "/heists/small-banks-payday-loans.html",
-      "image": "/assets/images/heists/small-banks.jpg"
+      "image": "/assets/images/heists/small-banks.jpg",
+      "x": 2373,
+      "y": 3338
     },
     {
       "id": "heist-large-vaults",
@@ -1491,8 +1659,8 @@
       "categoryName": "Big Banks & Major Vaults",
       "icon": "💰",
       "region": "Vice City",
-      "yPct": 0.495,
-      "xPct": 0.755,
+      "yPct": 0.5082,
+      "xPct": 0.7505,
       "payout": "Up to ~$205,000",
       "difficulty": "4–5 Stars • End of Ch. 4",
       "security": "Heavy SWAT Breach + CCTV + Biometric Vault",
@@ -1500,7 +1668,9 @@
       "tips": "Stage an armored getaway vehicle in Downtown Vice Parking Bay before initiating the breach.",
       "exfil": "Underground parking tunnel + trunk disguise swap.",
       "link": "/heists/large-bank-vaults.html",
-      "image": "/assets/images/heists/large-bank-vaults.jpg"
+      "image": "/assets/images/heists/large-bank-vaults.jpg",
+      "x": 2882,
+      "y": 2602
     },
     {
       "id": "heist-armored-trucks",
@@ -1518,7 +1688,9 @@
       "tips": "Remember free-roam pocket cash caps at $20,000—deposit frequently at physical ATMs.",
       "exfil": "Off-road dirt lanes into Lake Leonida / Ambrosia.",
       "link": "/heists/armored-trucks-gang-ops.html",
-      "image": "/assets/images/heists/armored-trucks.jpg"
+      "image": "/assets/images/heists/armored-trucks.jpg",
+      "x": 2208,
+      "y": 3251
     },
     {
       "id": "glitch-apollo-red-barn",
@@ -1536,7 +1708,9 @@
       "tips": "Always keep a clean story save on Slot #14 and test all launch glitches on Save Slot #15.",
       "exfil": "Drive straight south along the causeway to Brian's Lockup (code 7700).",
       "link": "/cheats.html#glitches",
-      "image": "/assets/images/intel/intel-duo-heist.jpg"
+      "image": "/assets/images/intel/intel-duo-heist.jpg",
+      "x": 2488,
+      "y": 2022
     },
     {
       "id": "intel-launch-vc",
@@ -1554,7 +1728,9 @@
       "tips": "Buy wireless in-ear headphones at Vice City electronics stores to listen to all 23 radio stations on foot.",
       "exfil": "Ocean Beach boulevard to Watson Bay.",
       "link": "/live-intel.html",
-      "image": "/assets/images/intel/intel-vc-launch.jpg"
+      "image": "/assets/images/intel/intel-vc-launch.jpg",
+      "x": 2964,
+      "y": 2586
     },
     {
       "id": "sh-jasons-house",
@@ -1563,14 +1739,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🏠",
       "region": "Leonida Keys",
-      "yPct": 0.142,
-      "xPct": 0.398,
+      "yPct": 0.1191,
+      "xPct": 0.4474,
       "payout": "Chapter 1 • Story Unlocked",
       "difficulty": "Active",
       "description": "Floorboard cash stash, wardrobe, sleep save, Ultimate Edition Enduro & Kayak spawn. Mariana County starter safehouse. Houses cannot be purchased in GTA 6 Story Mode.",
       "tips": "Mariana County starter safehouse. Houses cannot be purchased in GTA 6 Story Mode.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/keys-safehouse.jpg"
+      "image": "/assets/images/properties/keys-safehouse.jpg",
+      "x": 1718,
+      "y": 610
     },
     {
       "id": "gar-purch-7",
@@ -1579,14 +1757,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Leonida Keys",
-      "yPct": 0.1502,
-      "xPct": 0.385,
+      "yPct": 0.1363,
+      "xPct": 0.3182,
       "payout": "Purchasable #7 of 8 • Purchasable",
       "difficulty": "Purchasable",
       "description": "Coastal vehicle & water-access staging. Quick escape access along the Keys causeway.",
       "tips": "Quick escape access along the Keys causeway.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/brians-marina.jpg"
+      "image": "/assets/images/properties/brians-marina.jpg",
+      "x": 1222,
+      "y": 698
     },
     {
       "id": "gar-story-1",
@@ -1595,14 +1775,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Leonida Keys",
-      "yPct": 0.1061,
-      "xPct": 0.4254,
+      "yPct": 0.0957,
+      "xPct": 0.4328,
       "payout": "Story Garage #1 of 4 • Story Unlocked",
       "difficulty": "Story Unlocked",
       "description": "Starter vehicle parking at Jason's House. 1 of 4 story-unlocked garages.",
       "tips": "1 of 4 story-unlocked garages.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/keys-safehouse.jpg"
+      "image": "/assets/images/properties/keys-safehouse.jpg",
+      "x": 1662,
+      "y": 490
     },
     {
       "id": "fence-donnie",
@@ -1611,14 +1793,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🔐",
       "region": "Leonida Keys",
-      "yPct": 0.1623,
-      "xPct": 0.4641,
+      "yPct": 0.2035,
+      "xPct": 0.4807,
       "payout": "Chapter 1 • Fence #3 of 7",
       "difficulty": "Missable / Closes After 'Swamped'",
       "description": "Early Chapter 1 stolen goods & contraband buyer. WARNING: Closes permanently after completing the mission 'Swamped'.",
       "tips": "WARNING: Closes permanently after completing the mission 'Swamped'.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/brians-marina.jpg"
+      "image": "/assets/images/properties/brians-marina.jpg",
+      "x": 1846,
+      "y": 1042
     },
     {
       "id": "fence-brians-lockup",
@@ -1627,14 +1811,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🔐",
       "region": "Leonida Keys",
-      "yPct": 0.158,
-      "xPct": 0.445,
+      "yPct": 0.1113,
+      "xPct": 0.4443,
       "payout": "Chapter 1+ • Fence #4 of 7",
       "difficulty": "Verified Code: 7700",
       "description": "Buys drugs, jewelry, and marked bills; keypad safe code 7700. One of the highest-utility fences in Leonida—accepts dye-stained/marked bills.",
       "tips": "One of the highest-utility fences in Leonida—accepts dye-stained/marked bills.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/brians-lockup.jpg"
+      "image": "/assets/images/properties/brians-lockup.jpg",
+      "x": 1706,
+      "y": 570
     },
     {
       "id": "safe-buckme",
@@ -1643,14 +1829,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🔐",
       "region": "Leonida Keys",
-      "yPct": 0.138,
-      "xPct": 0.412,
+      "yPct": 0.0965,
+      "xPct": 0.4141,
       "payout": "Chapter 1 Critical • $5,000 Goal",
       "difficulty": "Protect Before 'Tourist Trap'",
       "description": "Protects savings from Chapter 1 -> Chapter 2 pocket cash wipe; $20,000 free-roam pocket cap. Deposit your $5,000 Family Savings into BuckMe before triggering 'Tourist Trap' or loose pocket cash is wiped.",
       "tips": "Deposit your $5,000 Family Savings into BuckMe before triggering 'Tourist Trap' or loose pocket cash is wiped.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/drequan-studio.jpg"
+      "image": "/assets/images/properties/drequan-studio.jpg",
+      "x": 1590,
+      "y": 494
     },
     {
       "id": "sh-ch2-motel",
@@ -1666,7 +1854,9 @@
       "description": "Bed save, trunk staging, proximity to Port Gellhorn pawn shops & Moses. WARNING: Permanently closes after completing the mission 'Checking Out'. Clear your stash first.",
       "tips": "WARNING: Permanently closes after completing the mission 'Checking Out'. Clear your stash first.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/port-gellhorn-motel.jpg"
+      "image": "/assets/images/properties/port-gellhorn-motel.jpg",
+      "x": 1121,
+      "y": 2908
     },
     {
       "id": "gar-purch-4",
@@ -1675,14 +1865,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Port Gellhorn",
-      "yPct": 0.5886,
-      "xPct": 0.2747,
+      "yPct": 0.5887,
+      "xPct": 0.2911,
       "payout": "Purchasable #4 of 8 • Purchasable",
       "difficulty": "Purchasable",
       "description": "Vehicle storage close to Moses's car fence & pawn shops. Convenient for storing untracked cars and duffel-bag haulers.",
       "tips": "Convenient for storing untracked cars and duffel-bag haulers.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/gellhorn-garage.jpg"
+      "image": "/assets/images/properties/gellhorn-garage.jpg",
+      "x": 1118,
+      "y": 3014
     },
     {
       "id": "gar-purch-5",
@@ -1698,7 +1890,9 @@
       "description": "Heavy SUV & armored truck staging. Positioned near western highway corridors.",
       "tips": "Positioned near western highway corridors.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/gellhorn-industrial.jpg"
+      "image": "/assets/images/properties/gellhorn-industrial.jpg",
+      "x": 1145,
+      "y": 2737
     },
     {
       "id": "gar-story-2",
@@ -1714,7 +1908,9 @@
       "description": "Chapter 2 story vehicle bay. 2 of 4 story-unlocked garages.",
       "tips": "2 of 4 story-unlocked garages.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/port-gellhorn-motel.jpg"
+      "image": "/assets/images/properties/port-gellhorn-motel.jpg",
+      "x": 1231,
+      "y": 3089
     },
     {
       "id": "fence-moses",
@@ -1723,14 +1919,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🔐",
       "region": "Port Gellhorn",
-      "yPct": 0.5617,
-      "xPct": 0.2481,
+      "yPct": 0.5574,
+      "xPct": 0.2536,
       "payout": "Chapter 2 • Fence #1 of 7",
       "difficulty": "Active",
       "description": "Buys untracked stolen cars for $1,000–$2,000 each. Best reliable early-to-mid-game car cash loop in Port Gellhorn.",
       "tips": "Best reliable early-to-mid-game car cash loop in Port Gellhorn.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/gellhorn-garage.jpg"
+      "image": "/assets/images/properties/gellhorn-garage.jpg",
+      "x": 974,
+      "y": 2854
     },
     {
       "id": "fence-randy",
@@ -1746,7 +1944,9 @@
       "description": "Buys stolen watches, electronics, and pawn shop duffel loot. Key buyer after unlocking Pawn Shops in 'Coffee Break'.",
       "tips": "Key buyer after unlocking Pawn Shops in 'Coffee Break'.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/gellhorn-industrial.jpg"
+      "image": "/assets/images/properties/gellhorn-industrial.jpg",
+      "x": 1303,
+      "y": 2774
     },
     {
       "id": "sh-vc-safehouse-3",
@@ -1755,14 +1955,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🏠",
       "region": "Vice City",
-      "yPct": 0.5,
-      "xPct": 0.7591,
+      "yPct": 0.4754,
+      "xPct": 0.7484,
       "payout": "Chapter 3 • Story Unlocked",
       "difficulty": "Active",
       "description": "Central Vice City base, wardrobe, weapon locker, fast access to jewelry & bank targets. Unlocks automatically through Chapter 3 story progression.",
       "tips": "Unlocks automatically through Chapter 3 story progression.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/vice-city-safehouse.jpg"
+      "image": "/assets/images/properties/vice-city-safehouse.jpg",
+      "x": 2874,
+      "y": 2434
     },
     {
       "id": "sh-vc-safehouse-4",
@@ -1771,14 +1973,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🏠",
       "region": "Vice City",
-      "yPct": 0.5152,
-      "xPct": 0.7269,
+      "yPct": 0.5012,
+      "xPct": 0.7141,
       "payout": "Chapter 4 • Story Unlocked",
       "difficulty": "Active",
       "description": "High-end endgame safehouse, full gun cabinet, planning board, garage link. Final story-unlocked safehouse in Vice City chapters.",
       "tips": "Final story-unlocked safehouse in Vice City chapters.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/vice-city-penthouse.jpg"
+      "image": "/assets/images/properties/vice-city-penthouse.jpg",
+      "x": 2742,
+      "y": 2566
     },
     {
       "id": "gar-paradise",
@@ -1787,14 +1991,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Vice City",
-      "yPct": 0.522,
-      "xPct": 0.792,
+      "yPct": 0.5395,
+      "xPct": 0.8078,
       "payout": "Ultimate Edition • Included (Ultimate Edition)",
       "difficulty": "Ultimate Edition",
       "description": "Built-in gun cabinet, multi-vehicle storage, rapid getaway staging. Bonus Watson Bay garage unlocked immediately for Ultimate Edition owners.",
       "tips": "Bonus Watson Bay garage unlocked immediately for Ultimate Edition owners.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/paradise-garage.jpg"
+      "image": "/assets/images/properties/paradise-garage.jpg",
+      "x": 3102,
+      "y": 2762
     },
     {
       "id": "gar-purch-1",
@@ -1803,14 +2009,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Vice City",
-      "yPct": 0.5272,
-      "xPct": 0.7678,
+      "yPct": 0.548,
+      "xPct": 0.7859,
       "payout": "Purchasable #1 of 8 • Purchasable",
       "difficulty": "Purchasable",
       "description": "Multi-car storage, quick oceanfront getaway swap. One of 8 purchasable garages across Leonida.",
       "tips": "One of 8 purchasable garages across Leonida.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/vice-beach-garage.jpg"
+      "image": "/assets/images/properties/vice-beach-garage.jpg",
+      "x": 3018,
+      "y": 2806
     },
     {
       "id": "gar-purch-2",
@@ -1819,14 +2027,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Vice City",
-      "yPct": 0.4932,
-      "xPct": 0.7032,
+      "yPct": 0.4949,
+      "xPct": 0.7005,
       "payout": "Purchasable #2 of 8 • Purchasable",
       "difficulty": "Purchasable",
       "description": "Vehicle storage near Yasmani's jewelry fence. Ideal staging garage for Chapter 3 jewelry & bank runs.",
       "tips": "Ideal staging garage for Chapter 3 jewelry & bank runs.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/little-cuba-garage.jpg"
+      "image": "/assets/images/properties/little-cuba-garage.jpg",
+      "x": 2690,
+      "y": 2534
     },
     {
       "id": "gar-purch-3",
@@ -1842,7 +2052,9 @@
       "description": "Underground access for losing 4-star VCPD heat. Great disguise/trunk swap point for Large Bank Vaults.",
       "tips": "Great disguise/trunk swap point for Large Bank Vaults.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/downtown-bay.jpg"
+      "image": "/assets/images/properties/downtown-bay.jpg",
+      "x": 3013,
+      "y": 2442
     },
     {
       "id": "gar-story-3",
@@ -1858,7 +2070,9 @@
       "description": "Chapter 3 heist prep vehicle storage. 3 of 4 story-unlocked garages.",
       "tips": "3 of 4 story-unlocked garages.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/vice-city-safehouse.jpg"
+      "image": "/assets/images/properties/vice-city-safehouse.jpg",
+      "x": 2810,
+      "y": 2791
     },
     {
       "id": "gar-story-4",
@@ -1867,14 +2081,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Vice City",
-      "yPct": 0.4554,
-      "xPct": 0.7198,
+      "yPct": 0.4559,
+      "xPct": 0.7089,
       "payout": "Story Garage #4 of 4 • Story Unlocked",
       "difficulty": "Story Unlocked",
       "description": "Multi-slot endgame getaway garage. 4 of 4 story-unlocked garages.",
       "tips": "4 of 4 story-unlocked garages.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/vice-city-penthouse.jpg"
+      "image": "/assets/images/properties/vice-city-penthouse.jpg",
+      "x": 2722,
+      "y": 2334
     },
     {
       "id": "fence-yasmani",
@@ -1883,14 +2099,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🔐",
       "region": "Vice City",
-      "yPct": 0.5183,
-      "xPct": 0.7998,
+      "yPct": 0.509,
+      "xPct": 0.8224,
       "payout": "Chapter 3 • Fence #5 of 7",
       "difficulty": "Active",
       "description": "Top payout buyer for stolen diamonds & luxury boutique loot (low cut). Unlocks after 'Yasmani's Jewelry Jobs' in Chapter 3.",
       "tips": "Unlocks after 'Yasmani's Jewelry Jobs' in Chapter 3.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/boobie-club.jpg"
+      "image": "/assets/images/properties/boobie-club.jpg",
+      "x": 3158,
+      "y": 2606
     },
     {
       "id": "gar-purch-6",
@@ -1899,14 +2117,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🚗",
       "region": "Ambrosia",
-      "yPct": 0.665,
-      "xPct": 0.6325,
+      "yPct": 0.6621,
+      "xPct": 0.6339,
       "payout": "Purchasable #6 of 8 • Purchasable",
       "difficulty": "Purchasable",
       "description": "Industrial storage near gang ops & highway armored trucks. Purchasable garage in Leonida's industrial heartland.",
       "tips": "Purchasable garage in Leonida's industrial heartland.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/ambrosia-freight.jpg"
+      "image": "/assets/images/properties/ambrosia-freight.jpg",
+      "x": 2434,
+      "y": 3390
     },
     {
       "id": "fence-ambrosia",
@@ -1915,14 +2135,16 @@
       "categoryName": "Properties, Garages & Fences",
       "icon": "🔐",
       "region": "Ambrosia",
-      "yPct": 0.6913,
-      "xPct": 0.5699,
+      "yPct": 0.6996,
+      "xPct": 0.5609,
       "payout": "Chapter 3–4 • Fence #6 of 7",
       "difficulty": "Active",
       "description": "Liquidates gang hideout crates & heavy contraband. Ideal drop-off after clearing Ambrosia gang hideouts.",
       "tips": "Ideal drop-off after clearing Ambrosia gang hideouts.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/ambrosia-refinery.jpg"
+      "image": "/assets/images/properties/ambrosia-refinery.jpg",
+      "x": 2154,
+      "y": 3582
     },
     {
       "id": "gar-purch-8",
@@ -1938,7 +2160,9 @@
       "description": "Off-road 4x4 & hunting rig storage. Northern Leonida staging point for wildlife & getaway cooling.",
       "tips": "Northern Leonida staging point for wildlife & getaway cooling.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/kalaga-lodge.jpg"
+      "image": "/assets/images/properties/kalaga-lodge.jpg",
+      "x": 2137,
+      "y": 3942
     },
     {
       "id": "fence-grassrivers",
@@ -1954,7 +2178,9 @@
       "description": "Off-grid airboat dock buyer for illicit cargo & cartel goods. Low police presence along the Grassrivers channels.",
       "tips": "Low police presence along the Grassrivers channels.",
       "link": "/properties.html",
-      "image": "/assets/images/properties/grassrivers-stash.jpg"
+      "image": "/assets/images/properties/grassrivers-stash.jpg",
+      "x": 2066,
+      "y": 1408
     },
     {
       "id": "an-alligator",
@@ -1963,14 +2189,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐊",
       "region": "Grassrivers",
-      "yPct": 0.2976,
-      "xPct": 0.5087,
+      "yPct": 0.3043,
+      "xPct": 0.5245,
       "payout": "Hostile Predator",
       "difficulty": "Land & Predators",
       "description": "Common in Grassrivers swamps, waterways, and muddy banks. Lethal ambush bite in shallow water.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-gator.jpg"
+      "image": "/assets/images/animals/grassrivers-gator.jpg",
+      "x": 2014,
+      "y": 1558
     },
     {
       "id": "an-river-otter",
@@ -1979,14 +2207,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Grassrivers",
-      "yPct": 0.2694,
-      "xPct": 0.4415,
+      "yPct": 0.2887,
+      "xPct": 0.4141,
       "payout": "Docile",
       "difficulty": "Land & Predators",
       "description": "Playful wetland mammal found along Grassrivers creeks and clear marsh banks.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-birds.jpg"
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "x": 1590,
+      "y": 1478
     },
     {
       "id": "an-macaque",
@@ -1995,14 +2225,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Grassrivers",
-      "yPct": 0.2558,
-      "xPct": 0.5262,
+      "yPct": 0.2465,
+      "xPct": 0.5401,
       "payout": "Mischievous",
       "difficulty": "Land & Predators",
       "description": "Invasive primate troops living in Leonida's wooded wetlands and river islands.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-gator.jpg"
+      "image": "/assets/images/animals/grassrivers-gator.jpg",
+      "x": 2074,
+      "y": 1262
     },
     {
       "id": "an-cane-toad",
@@ -2011,14 +2243,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Grassrivers",
-      "yPct": 0.3126,
-      "xPct": 0.4712,
+      "yPct": 0.316,
+      "xPct": 0.4703,
       "payout": "Docile",
       "difficulty": "Land & Predators",
       "description": "Nocturnal amphibian found in damp grass, canals, and suburban lawns after rain.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-birds.jpg"
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "x": 1806,
+      "y": 1618
     },
     {
       "id": "an-snake",
@@ -2027,14 +2261,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Grassrivers",
-      "yPct": 0.2379,
-      "xPct": 0.4587,
+      "yPct": 0.2074,
+      "xPct": 0.4953,
       "payout": "Venomous / Cautious",
       "difficulty": "Land & Predators",
       "description": "Slithers through tall marsh grass and rocky ledges in Grassrivers and Mount Kalaga.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-gator.jpg"
+      "image": "/assets/images/animals/grassrivers-gator.jpg",
+      "x": 1902,
+      "y": 1062
     },
     {
       "id": "an-blue-heron",
@@ -2050,7 +2286,9 @@
       "description": "Tall coastal wading bird stalking shallow marshes and canals.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-birds.jpg"
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "x": 2081,
+      "y": 1486
     },
     {
       "id": "an-spoonbill",
@@ -2059,14 +2297,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Grassrivers",
-      "yPct": 0.2929,
-      "xPct": 0.4257,
+      "yPct": 0.2965,
+      "xPct": 0.4255,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Distinctive pink marsh bird sweeping shallow Grassrivers lagoons.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-birds.jpg"
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "x": 1634,
+      "y": 1518
     },
     {
       "id": "an-whooping-crane",
@@ -2075,14 +2315,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Grassrivers",
-      "yPct": 0.2302,
-      "xPct": 0.5136,
+      "yPct": 0.2309,
+      "xPct": 0.5505,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Rare tall white wetland crane spotted in open Grassrivers flats.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-birds.jpg"
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "x": 2114,
+      "y": 1182
     },
     {
       "id": "an-duck",
@@ -2098,7 +2340,9 @@
       "description": "Common across ponds, canals, and calm wetland coves.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-birds.jpg"
+      "image": "/assets/images/animals/grassrivers-birds.jpg",
+      "x": 1943,
+      "y": 1661
     },
     {
       "id": "an-crayfish",
@@ -2114,7 +2358,9 @@
       "description": "Freshwater crustacean found in muddy Grassrivers creeks and bayous.",
       "tips": "Best spotted in Grassrivers. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/grassrivers-marsh.jpg"
+      "image": "/assets/images/animals/grassrivers-marsh.jpg",
+      "x": 1618,
+      "y": 1270
     },
     {
       "id": "an-panther",
@@ -2130,7 +2376,9 @@
       "description": "Stalks dense pine trails and ridges in Mount Kalaga National Park, especially at dusk and night.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-predators.jpg"
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "x": 2017,
+      "y": 4048
     },
     {
       "id": "an-black-bear",
@@ -2146,7 +2394,9 @@
       "description": "Roams Mount Kalaga forests and riverbanks; charges if provoked or cornered.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-predators.jpg"
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "x": 1742,
+      "y": 3916
     },
     {
       "id": "an-bobcat",
@@ -2162,7 +2412,9 @@
       "description": "Agile wildcat spotted in rocky brush across Mount Kalaga and rural Ambrosia.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-predators.jpg"
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "x": 2089,
+      "y": 3853
     },
     {
       "id": "an-whitetail-buck",
@@ -2178,7 +2430,9 @@
       "description": "Antlered male deer grazing in Mount Kalaga meadows; flees quickly when spooked.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-forest.jpg"
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "x": 1864,
+      "y": 4117
     },
     {
       "id": "an-whitetail-doe",
@@ -2194,7 +2448,9 @@
       "description": "Found in small herds alongside Whitetail Bucks in northern Leonida.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-river.jpg"
+      "image": "/assets/images/animals/kalaga-river.jpg",
+      "x": 1812,
+      "y": 3770
     },
     {
       "id": "an-wild-boar",
@@ -2210,7 +2466,9 @@
       "description": "Spotted across Mount Kalaga National Park & Leonida Keys brush; can charge on foot.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-predators.jpg"
+      "image": "/assets/images/animals/kalaga-predators.jpg",
+      "x": 2153,
+      "y": 4014
     },
     {
       "id": "an-red-fox",
@@ -2226,7 +2484,9 @@
       "description": "Spotted darting across forest clearings at dawn and dusk.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-forest.jpg"
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "x": 1677,
+      "y": 4026
     },
     {
       "id": "an-beaver",
@@ -2242,7 +2502,9 @@
       "description": "Builds lodges along Mount Kalaga streams and northern river bends.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-river.jpg"
+      "image": "/assets/images/animals/kalaga-river.jpg",
+      "x": 2037,
+      "y": 3734
     },
     {
       "id": "an-bald-eagle",
@@ -2258,7 +2520,9 @@
       "description": "Soars high above Mount Kalaga peaks and northern lakes.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-forest.jpg"
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "x": 2006,
+      "y": 4172
     },
     {
       "id": "an-woodpecker",
@@ -2274,7 +2538,9 @@
       "description": "Heard drumming on pine trunks throughout Mount Kalaga National Park.",
       "tips": "Best spotted in Mount Kalaga National Park. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/kalaga-forest.jpg"
+      "image": "/assets/images/animals/kalaga-forest.jpg",
+      "x": 1659,
+      "y": 3816
     },
     {
       "id": "an-armadillo",
@@ -2290,7 +2556,9 @@
       "description": "Forages along dirt roadsides and rural scrub in Port Gellhorn and Ambrosia.",
       "tips": "Best spotted in Port Gellhorn. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/gellhorn-scrub.jpg"
+      "image": "/assets/images/animals/gellhorn-scrub.jpg",
+      "x": 1231,
+      "y": 3089
     },
     {
       "id": "an-raccoon",
@@ -2299,14 +2567,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Port Gellhorn",
-      "yPct": 0.5617,
-      "xPct": 0.2481,
+      "yPct": 0.5527,
+      "xPct": 0.2453,
       "payout": "Docile",
       "difficulty": "Land & Predators",
       "description": "Scavenges alley dumpsters and motel fringes at night across Port Gellhorn & Vice City.",
       "tips": "Best spotted in Port Gellhorn. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/gellhorn-scrub.jpg"
+      "image": "/assets/images/animals/gellhorn-scrub.jpg",
+      "x": 942,
+      "y": 2830
     },
     {
       "id": "an-german-shepherd",
@@ -2322,7 +2592,9 @@
       "description": "Loyal working dog seen with locals across Port Gellhorn and Ambrosia.",
       "tips": "Best spotted in Port Gellhorn. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/gellhorn-scrub.jpg"
+      "image": "/assets/images/animals/gellhorn-scrub.jpg",
+      "x": 1303,
+      "y": 2774
     },
     {
       "id": "an-green-iguana",
@@ -2331,14 +2603,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Leonida Keys",
-      "yPct": 0.1523,
-      "xPct": 0.4479,
+      "yPct": 0.0996,
+      "xPct": 0.4474,
       "payout": "Docile",
       "difficulty": "Land & Predators",
       "description": "Sunbathes on seawalls, docks, and palm trunks throughout the Leonida Keys.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1718,
+      "y": 510
     },
     {
       "id": "an-flamingo",
@@ -2347,14 +2621,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Leonida Keys",
-      "yPct": 0.1307,
-      "xPct": 0.3688,
+      "yPct": 0.1277,
+      "xPct": 0.3203,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Iconic bright-pink wading flocks in Leonida Keys flats and Grassrivers wetlands.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1230,
+      "y": 654
     },
     {
       "id": "an-pelican",
@@ -2363,14 +2639,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Leonida Keys",
-      "yPct": 0.1204,
-      "xPct": 0.4685,
+      "yPct": 0.0988,
+      "xPct": 0.4682,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Perches on marina pilings and dives for fish along Vice Beach and the Keys.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1798,
+      "y": 506
     },
     {
       "id": "an-osprey",
@@ -2379,14 +2657,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Leonida Keys",
-      "yPct": 0.1636,
-      "xPct": 0.4038,
+      "yPct": 0.0934,
+      "xPct": 0.3953,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Fish-hunting raptor nesting on channel markers and coastal towers.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1518,
+      "y": 478
     },
     {
       "id": "an-cormorant",
@@ -2395,14 +2675,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Leonida Keys",
-      "yPct": 0.1068,
-      "xPct": 0.389,
+      "yPct": 0.0934,
+      "xPct": 0.3818,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Diving waterbird frequently seen drying its wings on docks and buoys.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1466,
+      "y": 478
     },
     {
       "id": "an-manatee",
@@ -2418,7 +2700,9 @@
       "description": "Gentle marine mammal gliding through warm Keys coves and coastal springs.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-marine.jpg"
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "x": 1871,
+      "y": 751
     },
     {
       "id": "an-hammerhead",
@@ -2434,7 +2718,9 @@
       "description": "Patrols deeper reefs and offshore channels around the Leonida Keys.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1344,
+      "y": 761
     },
     {
       "id": "an-sea-turtle",
@@ -2443,14 +2729,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦈",
       "region": "Leonida Keys",
-      "yPct": 0.1009,
-      "xPct": 0.4537,
+      "yPct": 0.0996,
+      "xPct": 0.4578,
       "payout": "Docile",
       "difficulty": "Marine & Aquatic",
       "description": "Swims around coral reefs and shipwreck dive spots in the Keys.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-marine.jpg"
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "x": 1758,
+      "y": 510
     },
     {
       "id": "an-stingray",
@@ -2466,7 +2754,9 @@
       "description": "Glides over sandy shoals and shallow turquoise reefs.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-reef.jpg"
+      "image": "/assets/images/animals/keys-reef.jpg",
+      "x": 1708,
+      "y": 884
     },
     {
       "id": "an-lionfish",
@@ -2482,7 +2772,9 @@
       "description": "Striped invasive reef fish hovering near sunken wrecks and coral ledges.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-marine.jpg"
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "x": 1325,
+      "y": 586
     },
     {
       "id": "an-eel",
@@ -2498,7 +2790,9 @@
       "description": "Hides inside reef crevices and underwater wrecks.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-marine.jpg"
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "x": 1951,
+      "y": 644
     },
     {
       "id": "an-labrador",
@@ -2507,14 +2801,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Leonida Keys",
-      "yPct": 0.1712,
-      "xPct": 0.3663,
+      "yPct": 0.148,
+      "xPct": 0.312,
       "payout": "Pettable",
       "difficulty": "Domestic/Pettable",
       "description": "Friendly retriever frequently spotted on docks and Keys beaches.",
       "tips": "Best spotted in Leonida Keys. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/keys-marine.jpg"
+      "image": "/assets/images/animals/keys-marine.jpg",
+      "x": 1198,
+      "y": 758
     },
     {
       "id": "an-skunk",
@@ -2524,13 +2820,15 @@
       "icon": "🐾",
       "region": "Ambrosia",
       "yPct": 0.6949,
-      "xPct": 0.633,
+      "xPct": 0.6474,
       "payout": "Defensive",
       "difficulty": "Land & Predators",
       "description": "Nocturnal forager around rural Ambrosia farms and roadside brush.",
       "tips": "Best spotted in Ambrosia. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/ambrosia-fields.jpg"
+      "image": "/assets/images/animals/ambrosia-fields.jpg",
+      "x": 2486,
+      "y": 3558
     },
     {
       "id": "an-rottweiler",
@@ -2546,7 +2844,9 @@
       "description": "Heavy-set breed seen around industrial yards and residential porches.",
       "tips": "Best spotted in Ambrosia. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/ambrosia-fields.jpg"
+      "image": "/assets/images/animals/ambrosia-fields.jpg",
+      "x": 2126,
+      "y": 3367
     },
     {
       "id": "an-squirrel",
@@ -2555,14 +2855,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Vice City",
-      "yPct": 0.5211,
-      "xPct": 0.7626,
+      "yPct": 0.548,
+      "xPct": 0.7953,
       "payout": "Docile",
       "difficulty": "Land & Predators",
       "description": "Common in city parks, palm trees, and wooded trails across Leonida.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-domestic.jpg"
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "x": 3054,
+      "y": 2806
     },
     {
       "id": "an-seagull",
@@ -2571,14 +2873,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Vice City",
-      "yPct": 0.4948,
-      "xPct": 0.7126,
+      "yPct": 0.4871,
+      "xPct": 0.7036,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Flocks over Vice Beach boardwalks, piers, and marinas.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-coast.jpg"
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "x": 2702,
+      "y": 2494
     },
     {
       "id": "an-pigeon",
@@ -2587,14 +2891,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🦩",
       "region": "Vice City",
-      "yPct": 0.4821,
-      "xPct": 0.7757,
+      "yPct": 0.4699,
+      "xPct": 0.7859,
       "payout": "Docile",
       "difficulty": "Birds",
       "description": "Ubiquitous across Vice City sidewalks, plazas, and rooftops.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-coast.jpg"
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "x": 3018,
+      "y": 2406
     },
     {
       "id": "an-great-white",
@@ -2610,7 +2916,9 @@
       "description": "Deep offshore waters beyond the Vice City coastline—lethal to unprotected swimmers.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-coast.jpg"
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "x": 2821,
+      "y": 2739
     },
     {
       "id": "an-dolphin",
@@ -2626,7 +2934,9 @@
       "description": "Pods leap alongside boats in Vice Bay and the Leonida Keys.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-coast.jpg"
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "x": 2786,
+      "y": 2383
     },
     {
       "id": "an-killer-whale",
@@ -2642,7 +2952,9 @@
       "description": "Rare deep-ocean sighting far offshore beyond the continental drop-off.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-coast.jpg"
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "x": 3024,
+      "y": 2633
     },
     {
       "id": "an-jellyfish",
@@ -2658,7 +2970,9 @@
       "description": "Drifts in coastal currents off Vice Beach and Keys reefs.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-coast.jpg"
+      "image": "/assets/images/animals/vice-coast.jpg",
+      "x": 2691,
+      "y": 2646
     },
     {
       "id": "an-aussie-shepherd",
@@ -2667,14 +2981,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Vice City",
-      "yPct": 0.4583,
-      "xPct": 0.7663,
+      "yPct": 0.4668,
+      "xPct": 0.7578,
       "payout": "Pettable",
       "difficulty": "Domestic/Pettable",
       "description": "Friendly herding dog seen on beaches and suburban parks.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-domestic.jpg"
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "x": 2910,
+      "y": 2390
     },
     {
       "id": "an-chihuahua",
@@ -2683,14 +2999,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Vice City",
-      "yPct": 0.546,
-      "xPct": 0.7607,
+      "yPct": 0.5605,
+      "xPct": 0.7599,
       "payout": "Pettable",
       "difficulty": "Domestic/Pettable",
       "description": "Common along Ocean Beach walkways and boutique sidewalks.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-domestic.jpg"
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "x": 2918,
+      "y": 2870
     },
     {
       "id": "an-doberman",
@@ -2706,7 +3024,9 @@
       "description": "Sleek guard breed spotted near upscale Vice City estates and yards.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-domestic.jpg"
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "x": 2679,
+      "y": 2431
     },
     {
       "id": "an-poodle",
@@ -2715,14 +3035,16 @@
       "categoryName": "Animals & Wildlife Habitats",
       "icon": "🐾",
       "region": "Vice City",
-      "yPct": 0.4888,
-      "xPct": 0.8006,
+      "yPct": 0.4926,
+      "xPct": 0.8151,
       "payout": "Pettable",
       "difficulty": "Domestic/Pettable",
       "description": "Walked along luxury Vice City shopping avenues and resorts.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-domestic.jpg"
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "x": 3130,
+      "y": 2522
     },
     {
       "id": "an-domestic-cat",
@@ -2738,7 +3060,9 @@
       "description": "Lounges on alley steps, porches, and Key Lento docks; can be petted.",
       "tips": "Best spotted in Vice City. Track in the Wildlife Compendium.",
       "link": "/animals.html",
-      "image": "/assets/images/animals/vice-domestic.jpg"
+      "image": "/assets/images/animals/vice-domestic.jpg",
+      "x": 2731,
+      "y": 2786
     },
     {
       "id": "op-fishing-shacks",
@@ -2746,13 +3070,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Grassrivers",
-      "yPct": 0.292,
-      "xPct": 0.442,
+      "yPct": 0.2988,
+      "xPct": 0.4349,
       "payout": "$4,200 – $6,500",
       "badge": "CH. 1 CASH OP",
       "description": "Coastal fishing docks in North Grassrivers Basin contain smuggler drop-boxes behind fish cleaning tables. Crack with crowbar and deposit into BuckMe.",
       "tips": "Low risk (lone guard). Ideal early loop toward the $5,000 Chapter 1 Family Savings goal.",
-      "link": "/money-guide.html#op-card-1"
+      "link": "/money-guide.html#op-card-1",
+      "x": 1670,
+      "y": 1530
     },
     {
       "id": "op-exotic-animals",
@@ -2760,13 +3086,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Grassrivers",
-      "yPct": 0.248,
-      "xPct": 0.512,
+      "yPct": 0.2621,
+      "xPct": 0.537,
       "payout": "$6,800 – $9,200",
       "badge": "CH. 1 CASH OP",
       "description": "Gator Mile off-road shed doubling as a cartel courier handoff. Pick the rear workshop padlock for bearer bonds and rare pelts.",
       "tips": "Watchdogs + shotgun guard. Clear silently from the marsh side.",
-      "link": "/money-guide.html#op-card-2"
+      "link": "/money-guide.html#op-card-2",
+      "x": 2062,
+      "y": 1342
     },
     {
       "id": "op-backroom-weed",
@@ -2774,13 +3102,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Vice City",
-      "yPct": 0.534,
-      "xPct": 0.692,
+      "yPct": 0.5332,
+      "xPct": 0.6911,
       "payout": "$12,000 – $16,500",
       "badge": "CH. 2 CASH OP",
       "description": "Concealed basement grow-room behind a Little Haiti herbal apothecary. Bypass the rear security pad to loot register drops and bricks.",
       "tips": "Medium risk. Fence contraband at Randy or Brian's Lockup (7700).",
-      "link": "/money-guide.html#op-card-3"
+      "link": "/money-guide.html#op-card-3",
+      "x": 2654,
+      "y": 2730
     },
     {
       "id": "op-industrial-grow",
@@ -2788,13 +3118,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Ambrosia",
-      "yPct": 0.684,
-      "xPct": 0.578,
+      "yPct": 0.6926,
+      "xPct": 0.5526,
       "payout": "$28,000 – $38,000",
       "badge": "CH. 2 CASH OP",
       "description": "North Ambrosia industrial warehouse running 400 commercial grow lights. Override power transformers and load courier duffels into your trunk.",
       "tips": "High risk (6 armed guards). Bring a 4-slot getaway vehicle.",
-      "link": "/money-guide.html#op-card-4"
+      "link": "/money-guide.html#op-card-4",
+      "x": 2122,
+      "y": 3546
     },
     {
       "id": "op-manatee-motel",
@@ -2802,13 +3134,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Vice City",
-      "yPct": 0.456,
-      "xPct": 0.786,
+      "yPct": 0.4738,
+      "xPct": 0.7943,
       "payout": "$8,500 – $11,000",
       "badge": "CH. 2 CASH OP",
       "description": "Room 204 safe cracking on Coastal Ocean Drive South. Fleeing bagman left high-denomination currency bundles in the wall AC shaft.",
       "tips": "Low risk. Quick solo score right next to Vice Beach ATMs.",
-      "link": "/money-guide.html#op-card-5"
+      "link": "/money-guide.html#op-card-5",
+      "x": 3050,
+      "y": 2426
     },
     {
       "id": "op-sunrise-rv",
@@ -2822,7 +3156,9 @@
       "badge": "CH. 2 CASH OP",
       "description": "Trailer Lot B-14 floorboard cache near Ambrosia Border. Pry loose vinyl flooring beneath the fold-out sofa bed for banded stacks.",
       "tips": "Low-medium risk. Slip in at night to avoid patrol heat.",
-      "link": "/money-guide.html#op-card-6"
+      "link": "/money-guide.html#op-card-6",
+      "x": 2396,
+      "y": 3287
     },
     {
       "id": "op-brooks-boatworks",
@@ -2836,7 +3172,9 @@
       "badge": "CH. 2 CASH OP",
       "description": "Port Gellhorn Marina Dry-dock #2. Cut open false cigarette-boat fuel tanks to extract offshore bearer bonds.",
       "tips": "High risk. Boat exfiltration out of Gellhorn Bay avoids roadblocks.",
-      "link": "/money-guide.html#op-card-7"
+      "link": "/money-guide.html#op-card-7",
+      "x": 991,
+      "y": 2775
     },
     {
       "id": "op-june-warehouse",
@@ -2844,13 +3182,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Vice City",
-      "yPct": 0.432,
-      "xPct": 0.738,
+      "yPct": 0.4324,
+      "xPct": 0.7453,
       "payout": "$18,000 – $24,000",
       "badge": "CH. 2 CASH OP",
       "description": "Vice Harbor Pier 9 shipping container consolidation hub. Grab manifest paperwork from the 2nd-floor office to open locked cargo crates.",
       "tips": "Medium-high risk. Use suppressed SMG for upper catwalk guards.",
-      "link": "/money-guide.html#op-card-8"
+      "link": "/money-guide.html#op-card-8",
+      "x": 2862,
+      "y": 2214
     },
     {
       "id": "op-kingpin-bowling",
@@ -2864,7 +3204,9 @@
       "badge": "SAFE CODE: 0300",
       "description": "Crosstown Expressway bowling alley laundering front. Safe tucked behind Lane 12 pinsetter machinery (Verified Safe Code: 0300).",
       "tips": "Medium risk. Enter through rear service alley after closing hours.",
-      "link": "/money-guide.html#op-card-9"
+      "link": "/money-guide.html#op-card-9",
+      "x": 2511,
+      "y": 2621
     },
     {
       "id": "op-la-cascara-motel",
@@ -2878,7 +3220,9 @@
       "badge": "CH. 2 CASH OP",
       "description": "Cartel dead-drop in Room 108 ceiling ventilation on La Cascara Ave. Pull down the false tile above the bathroom shower.",
       "tips": "Low risk. Fast cash pickup with zero gunfire required.",
-      "link": "/money-guide.html#op-card-10"
+      "link": "/money-guide.html#op-card-10",
+      "x": 2719,
+      "y": 2806
     },
     {
       "id": "op-downtown-stash",
@@ -2886,13 +3230,15 @@
       "category": "illegal-op",
       "icon": "💰",
       "region": "Vice City",
-      "yPct": 0.494,
-      "xPct": 0.732,
+      "yPct": 0.4895,
+      "xPct": 0.6943,
       "payout": "$15,000 – $22,000",
       "badge": "CH. 2 CASH OP",
       "description": "Barricaded compound at 14th & Biscayne Alley. Breach steel door, clear 4 armed lookouts, and crack the wall floor safe.",
       "tips": "Medium-high risk. Deposit immediately at nearest Downtown ATM.",
-      "link": "/money-guide.html#op-card-11"
+      "link": "/money-guide.html#op-card-11",
+      "x": 2666,
+      "y": 2506
     },
     {
       "id": "op-nova-auto-junkyard",
@@ -2906,7 +3252,9 @@
       "badge": "CH. 2 CASH OP",
       "description": "South Scrap Corridor VIN-tampering racket. Hack master office computer for offshore ledger transfers and cash envelope stash.",
       "tips": "High risk. Combine with Moses car-fence dropoffs nearby.",
-      "link": "/money-guide.html#op-card-12"
+      "link": "/money-guide.html#op-card-12",
+      "x": 2627,
+      "y": 2038
     }
   ]
 }
