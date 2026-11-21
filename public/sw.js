@@ -1,5 +1,5 @@
 // GTA 6 Heist Guide & Companion HUD - Service Worker
-const CACHE_NAME = 'gta6-heist-cache-v10';
+const CACHE_NAME = 'gta6-heist-cache-v11';
 const PRECACHE_URLS = [
   '/',
   '/gta-6-money-guide/',
@@ -8,10 +8,21 @@ const PRECACHE_URLS = [
   '/gta-6-database/',
   '/gta-6-discoveries/',
   '/animals.html',
+  '/properties.html',
+  '/vehicles.html',
+  '/weapons.html',
+  '/weapons-bonuses.html',
+  '/radio.html',
   '/data/discoveries.json',
   '/data/animals.json',
+  '/data/properties.json',
+  '/data/vehicles.json',
+  '/data/weapons.json',
+  '/data/gun-stores.json',
+  '/data/radio.json',
   '/site-config.js',
   '/assets/js/gta6-progress-store.js',
+  '/assets/js/world-db-engine.js',
   '/js/progress-store.js',
   '/js/affiliates.js',
   '/assets/style.css?v=20261121_v14',

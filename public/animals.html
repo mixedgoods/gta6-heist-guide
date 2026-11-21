@@ -678,6 +678,19 @@
   function esc(s) {
     return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
+  function isStudied(id) {
+    if (window.GTA6Progress && typeof window.GTA6Progress.isDbOwned === 'function') {
+      return window.GTA6Progress.isDbOwned('animals', id) || !!studied[id];
+    }
+    return !!studied[id];
+  }
+  function setStudied(id, val) {
+    studied[id] = !!val;
+    saveStudied();
+    if (window.GTA6Progress && typeof window.GTA6Progress.setDbOwned === 'function') {
+      window.GTA6Progress.setDbOwned('animals', id, !!val);
+    }
+  }
   function saveStudied() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(studied)); } catch (e) {}
   }
@@ -818,9 +831,15 @@
       '<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Habitat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-cyan); font-size:0.78rem;">' + esc(item.habitat || item.region) + '</div></div>' +
       '<div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Behavior / Threat</div><div class="syndicate-modal-stat-val" style="color:var(--neon-amber);">' + esc(item.danger) + '</div></div>';
     document.getElementById('animModalNotes').textContent = item.notes || '';
-    modalChk.checked = !!studied[item.id];
-    var pinId = encodeURIComponent(item.pinId || item.id);
-    document.getElementById('animModalMapBtn').href = '/map.html?pin=' + pinId;
+    modalChk.checked = isStudied(item.id);
+    var pinId = item.mapPinId || item.pinId;
+    var mapBtn = document.getElementById('animModalMapBtn');
+    if (pinId) {
+      mapBtn.href = '/map.html?pin=' + encodeURIComponent(pinId);
+      mapBtn.style.display = '';
+    } else {
+      mapBtn.style.display = 'none';
+    }
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -836,8 +855,7 @@
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && backdrop.classList.contains('open')) closePopout(); });
   modalChk.addEventListener('change', function() {
     if (!activeItem) return;
-    studied[activeItem.id] = modalChk.checked;
-    saveStudied();
+    setStudied(activeItem.id, modalChk.checked);
     render();
   });
 
@@ -860,7 +878,7 @@
       return true;
     });
 
-    var totalStudied = items.filter(function(i) { return studied[i.id]; }).length;
+    var totalStudied = items.filter(function(i) { return isStudied(i.id); }).length;
     countEl.textContent = 'Showing ' + filtered.length + ' of ' + items.length + ' indexed launch species';
     progEl.textContent = 'Spotted / Studied: ' + totalStudied + ' / ' + items.length;
 
@@ -870,7 +888,7 @@
     }
 
     grid.innerHTML = filtered.map(function(it) {
-      var isChecked = !!studied[it.id];
+      var isChecked = isStudied(it.id);
       var badgeColor = it.category === 'Land & Predators' ? 'var(--neon-pink)' : (it.category === 'Birds' ? 'var(--neon-amber)' : (it.category === 'Marine & Aquatic' ? 'var(--neon-cyan)' : 'var(--neon-green)'));
       var hasVerifiedShot = Boolean(it.image && it.imageVerified === true);
       var mediaHtml = hasVerifiedShot
@@ -909,8 +927,7 @@
     grid.querySelectorAll('input[data-anim-id]').forEach(function(cb) {
       cb.addEventListener('change', function(e) {
         e.stopPropagation();
-        studied[cb.getAttribute('data-anim-id')] = cb.checked;
-        saveStudied();
+        setStudied(cb.getAttribute('data-anim-id'), cb.checked);
         render();
       });
     });

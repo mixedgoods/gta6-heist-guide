@@ -1,0 +1,12 @@
+{
+  "updated": "2026-11-21",
+  "policy": "Candidate image URLs discovered by scripts/sync-world-db.mjs across Vehicles, Weapons, Properties, Gun Stores, and Radio are staged here for manual editorial verification. NEVER auto-publish scraped, stock, AI-generated, character-filler, or duplicate images directly into public/data/*.json.",
+  "categories": [
+    "vehicles",
+    "weapons",
+    "properties",
+    "gun-stores",
+    "radio"
+  ],
+  "candidates": []
+}

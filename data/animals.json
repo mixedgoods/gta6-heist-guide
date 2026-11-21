@@ -48,12 +48,19 @@
       "region": "Grassrivers",
       "habitat": "Grassrivers swamps, murky waterways, and muddy banks",
       "danger": "Hostile Predator",
-      "tags": ["target-deck", "legendary-hunter"],
+      "tags": [
+        "target-deck",
+        "legendary-hunter"
+      ],
       "notes": "Common in Grassrivers swamps, waterways, and muddy banks. Lethal ambush bite in shallow water; use Focus mode (L3 + R3) for clean skull/vital shots.",
       "image": "/assets/images/animals/grassrivers-gator.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot (Grassrivers)",
-      "pinId": "an-alligator"
+      "pinId": "an-alligator",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-alligator"
     },
     {
       "id": "an-panther",
@@ -62,12 +69,19 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Dense pine trails and ridges in Mount Kalaga National Park",
       "danger": "Apex Predator",
-      "tags": ["target-deck", "legendary-hunter"],
+      "tags": [
+        "target-deck",
+        "legendary-hunter"
+      ],
       "notes": "Stalks dense pine trails and ridges in Mount Kalaga National Park, especially at dusk and night. Tracked during Jason's hunting contracts.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-panther"
+      "pinId": "an-panther",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-panther"
     },
     {
       "id": "an-black-bear",
@@ -76,12 +90,19 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Mount Kalaga forests, pine valleys, and riverbanks",
       "danger": "Hostile Predator",
-      "tags": ["target-deck", "legendary-hunter"],
+      "tags": [
+        "target-deck",
+        "legendary-hunter"
+      ],
       "notes": "Roams Mount Kalaga forests and riverbanks; charges if provoked or cornered. Bring the Killtelligence SM-69 rifle for Pristine vital kills.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-black-bear"
+      "pinId": "an-black-bear",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-black-bear"
     },
     {
       "id": "an-bobcat",
@@ -90,12 +111,18 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Rocky brush across Mount Kalaga and rural Ambrosia",
       "danger": "Cautious Predator",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Agile wildcat spotted in rocky brush across Mount Kalaga and rural Ambrosia.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-bobcat"
+      "pinId": "an-bobcat",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-bobcat"
     },
     {
       "id": "an-whitetail-buck",
@@ -104,12 +131,19 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Mount Kalaga meadows and Lummox County timberline",
       "danger": "Docile",
-      "tags": ["target-deck", "legendary-hunter"],
+      "tags": [
+        "target-deck",
+        "legendary-hunter"
+      ],
       "notes": "Antlered male deer grazing in Mount Kalaga meadows; flees quickly when spooked. Core big-game target for Pristine venison & pelt contracts.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-whitetail-buck"
+      "pinId": "an-whitetail-buck",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-whitetail-buck"
     },
     {
       "id": "an-whitetail-doe",
@@ -118,12 +152,18 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Northern Leonida meadows and forest clearings",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Found in small herds alongside Whitetail Bucks in northern Leonida.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-whitetail-doe"
+      "pinId": "an-whitetail-doe",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-whitetail-doe"
     },
     {
       "id": "an-wild-boar",
@@ -132,12 +172,19 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Mount Kalaga National Park & Leonida Keys brush",
       "danger": "Aggressive",
-      "tags": ["target-deck", "legendary-hunter"],
+      "tags": [
+        "target-deck",
+        "legendary-hunter"
+      ],
       "notes": "Spotted across Mount Kalaga National Park & Leonida Keys brush; can charge on foot. Featured in early Bret Vogel hunting mechanics.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-wild-boar"
+      "pinId": "an-wild-boar",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-wild-boar"
     },
     {
       "id": "an-armadillo",
@@ -146,12 +193,18 @@
       "region": "Port Gellhorn",
       "habitat": "Dirt roadsides and rural scrub in Port Gellhorn and Ambrosia",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Forages along dirt roadsides and rural scrub in Port Gellhorn and Ambrosia.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-armadillo"
+      "pinId": "an-armadillo",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-armadillo"
     },
     {
       "id": "an-river-otter",
@@ -165,7 +218,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-river-otter"
+      "pinId": "an-river-otter",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-river-otter"
     },
     {
       "id": "an-macaque",
@@ -179,7 +236,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-macaque"
+      "pinId": "an-macaque",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-macaque"
     },
     {
       "id": "an-green-iguana",
@@ -188,12 +249,18 @@
       "region": "Leonida Keys",
       "habitat": "Seawalls, docks, and palm trunks throughout the Leonida Keys",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Sunbathes on seawalls, docks, and palm trunks throughout the Leonida Keys.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-green-iguana"
+      "pinId": "an-green-iguana",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-green-iguana"
     },
     {
       "id": "an-cane-toad",
@@ -207,7 +274,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-cane-toad"
+      "pinId": "an-cane-toad",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-cane-toad"
     },
     {
       "id": "an-raccoon",
@@ -216,12 +287,18 @@
       "region": "Port Gellhorn",
       "habitat": "Alley dumpsters and motel fringes across Port Gellhorn & Vice City",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Nocturnal scavenger around alley dumpsters and motel fringes across Port Gellhorn & Vice City.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-raccoon"
+      "pinId": "an-raccoon",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-raccoon"
     },
     {
       "id": "an-red-fox",
@@ -230,12 +307,18 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Forest clearings and timber edges at dawn and dusk",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Spotted darting across forest clearings at dawn and dusk.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-red-fox"
+      "pinId": "an-red-fox",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-red-fox"
     },
     {
       "id": "an-beaver",
@@ -244,12 +327,18 @@
       "region": "Mount Kalaga National Park",
       "habitat": "Mount Kalaga streams and northern river bends",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Builds lodges along Mount Kalaga streams and northern river bends.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-beaver"
+      "pinId": "an-beaver",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-beaver"
     },
     {
       "id": "an-skunk",
@@ -258,12 +347,18 @@
       "region": "Ambrosia",
       "habitat": "Rural Ambrosia farms and roadside brush",
       "danger": "Defensive",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Nocturnal forager around rural Ambrosia farms and roadside brush.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-skunk"
+      "pinId": "an-skunk",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-skunk"
     },
     {
       "id": "an-squirrel",
@@ -277,7 +372,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-squirrel"
+      "pinId": "an-squirrel",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-squirrel"
     },
     {
       "id": "an-snake",
@@ -286,12 +385,18 @@
       "region": "Grassrivers",
       "habitat": "Tall marsh grass and rocky ledges in Grassrivers and Mount Kalaga",
       "danger": "Venomous / Cautious",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Slithers through tall marsh grass and rocky ledges in Grassrivers and Mount Kalaga. Listen for the warning rattle before stepping off trail.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-snake"
+      "pinId": "an-snake",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-snake"
     },
     {
       "id": "an-flamingo",
@@ -305,7 +410,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-flamingo"
+      "pinId": "an-flamingo",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-flamingo"
     },
     {
       "id": "an-pelican",
@@ -319,7 +428,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-pelican"
+      "pinId": "an-pelican",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-pelican"
     },
     {
       "id": "an-blue-heron",
@@ -333,7 +446,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-blue-heron"
+      "pinId": "an-blue-heron",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-blue-heron"
     },
     {
       "id": "an-osprey",
@@ -347,7 +464,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-osprey"
+      "pinId": "an-osprey",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-osprey"
     },
     {
       "id": "an-spoonbill",
@@ -361,7 +482,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-spoonbill"
+      "pinId": "an-spoonbill",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-spoonbill"
     },
     {
       "id": "an-whooping-crane",
@@ -375,7 +500,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-whooping-crane"
+      "pinId": "an-whooping-crane",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-whooping-crane"
     },
     {
       "id": "an-cormorant",
@@ -389,7 +518,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-cormorant"
+      "pinId": "an-cormorant",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-cormorant"
     },
     {
       "id": "an-duck",
@@ -398,12 +531,18 @@
       "region": "Grassrivers",
       "habitat": "Ponds, canals, and calm wetland coves",
       "danger": "Docile",
-      "tags": ["target-deck"],
+      "tags": [
+        "target-deck"
+      ],
       "notes": "Common across ponds, canals, and calm wetland coves.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-duck"
+      "pinId": "an-duck",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-duck"
     },
     {
       "id": "an-seagull",
@@ -417,7 +556,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-seagull"
+      "pinId": "an-seagull",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-seagull"
     },
     {
       "id": "an-bald-eagle",
@@ -431,7 +574,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-bald-eagle"
+      "pinId": "an-bald-eagle",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-bald-eagle"
     },
     {
       "id": "an-woodpecker",
@@ -445,7 +592,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-woodpecker"
+      "pinId": "an-woodpecker",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-woodpecker"
     },
     {
       "id": "an-pigeon",
@@ -459,7 +610,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-pigeon"
+      "pinId": "an-pigeon",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-pigeon"
     },
     {
       "id": "an-manatee",
@@ -473,7 +628,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-manatee"
+      "pinId": "an-manatee",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-manatee"
     },
     {
       "id": "an-hammerhead",
@@ -482,12 +641,18 @@
       "region": "Leonida Keys",
       "habitat": "Deep reefs and offshore channels around the Leonida Keys",
       "danger": "Hostile Predator",
-      "tags": ["legendary-hunter"],
+      "tags": [
+        "legendary-hunter"
+      ],
       "notes": "Patrols deeper reefs and offshore channels around the Leonida Keys.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-hammerhead"
+      "pinId": "an-hammerhead",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-hammerhead"
     },
     {
       "id": "an-great-white",
@@ -496,12 +661,18 @@
       "region": "Vice City",
       "habitat": "Deep offshore waters beyond the Vice City coastline",
       "danger": "Apex Predator",
-      "tags": ["legendary-hunter"],
+      "tags": [
+        "legendary-hunter"
+      ],
       "notes": "Deep offshore waters beyond the Vice City coastline—lethal to unprotected swimmers.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-great-white"
+      "pinId": "an-great-white",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-great-white"
     },
     {
       "id": "an-dolphin",
@@ -515,7 +686,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-dolphin"
+      "pinId": "an-dolphin",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-dolphin"
     },
     {
       "id": "an-sea-turtle",
@@ -529,7 +704,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-sea-turtle"
+      "pinId": "an-sea-turtle",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-sea-turtle"
     },
     {
       "id": "an-stingray",
@@ -543,7 +722,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-stingray"
+      "pinId": "an-stingray",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-stingray"
     },
     {
       "id": "an-lionfish",
@@ -557,7 +740,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-lionfish"
+      "pinId": "an-lionfish",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-lionfish"
     },
     {
       "id": "an-killer-whale",
@@ -566,12 +753,18 @@
       "region": "Vice City",
       "habitat": "Deep ocean far offshore beyond the continental drop-off",
       "danger": "Apex Marine",
-      "tags": ["legendary-hunter"],
+      "tags": [
+        "legendary-hunter"
+      ],
       "notes": "Rare deep-ocean sighting far offshore beyond the continental drop-off.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-killer-whale"
+      "pinId": "an-killer-whale",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-killer-whale"
     },
     {
       "id": "an-eel",
@@ -585,7 +778,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-eel"
+      "pinId": "an-eel",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-eel"
     },
     {
       "id": "an-jellyfish",
@@ -599,7 +796,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-jellyfish"
+      "pinId": "an-jellyfish",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-jellyfish"
     },
     {
       "id": "an-crayfish",
@@ -613,7 +814,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-crayfish"
+      "pinId": "an-crayfish",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-crayfish"
     },
     {
       "id": "an-aussie-shepherd",
@@ -627,7 +832,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-aussie-shepherd"
+      "pinId": "an-aussie-shepherd",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-aussie-shepherd"
     },
     {
       "id": "an-chihuahua",
@@ -641,7 +850,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-chihuahua"
+      "pinId": "an-chihuahua",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-chihuahua"
     },
     {
       "id": "an-doberman",
@@ -655,7 +868,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-doberman"
+      "pinId": "an-doberman",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-doberman"
     },
     {
       "id": "an-german-shepherd",
@@ -669,7 +886,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-german-shepherd"
+      "pinId": "an-german-shepherd",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-german-shepherd"
     },
     {
       "id": "an-labrador",
@@ -683,7 +904,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-labrador"
+      "pinId": "an-labrador",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-labrador"
     },
     {
       "id": "an-rottweiler",
@@ -697,7 +922,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-rottweiler"
+      "pinId": "an-rottweiler",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-rottweiler"
     },
     {
       "id": "an-poodle",
@@ -711,7 +940,11 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-poodle"
+      "pinId": "an-poodle",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-poodle"
     },
     {
       "id": "an-domestic-cat",
@@ -725,7 +958,12 @@
       "image": null,
       "imageVerified": false,
       "imageSource": null,
-      "pinId": "an-domestic-cat"
+      "pinId": "an-domestic-cat",
+      "verificationStatus": "Confirmed",
+      "lastUpdated": "2026-11-21",
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-domestic-cat"
     }
-  ]
+  ],
+  "category": "animals"
 }

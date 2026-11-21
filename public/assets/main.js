@@ -4652,7 +4652,6 @@ const GTA6 = {
                 <span style="color:#fff; font-size:0.85rem; display:block; line-height:1.45;">${data.heistRole}</span>
                 <span style="display:block; margin-top:0.4rem; font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">CONFIRMATION SOURCE: ${data.source}</span>
               </div>
-              ${window.getSyndicateAffBarHtml ? window.getSyndicateAffBarHtml('🎮 Pro Getaway Control & Audio: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge Controller</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset (Amazon)</a>') : ''}
             </div>
           </div>
         `;
@@ -4753,7 +4752,6 @@ const GTA6 = {
                 <span style="color:#fff; font-size:0.82rem; display:block; line-height:1.45; font-family:var(--font-mono);">${data.attachments}</span>
                 <span style="display:block; margin-top:0.4rem; font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">INTEL SOURCE: ${data.source}</span>
               </div>
-              ${window.getSyndicateAffBarHtml ? window.getSyndicateAffBarHtml('🎮 Pro Console Aim & Audio: <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">DualSense Edge Controller</a> &bull; <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon">PULSE Elite Headset (Amazon)</a>') : ''}
             </div>
           </div>
         `;

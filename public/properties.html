@@ -3,93 +3,73 @@
 <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 Properties Database: Safehouses, 12+ Garages &amp; 7 Fences | GTA6HeistGuide.com</title>
-    <meta name="description" content="Searchable GTA 6 Properties Database with official Rockstar images, detail popouts, and direct Leonida Map pins: all 4 Story Safehouses, 13 Garages, and 7 Fences including Brian's Lockup (7700).">
+    <title>GTA 6 Properties Database: 4 Story Safehouses, 8 Purchasable + 4 Story Garages &amp; 7 Fences | GTA6HeistGuide.com</title>
+    <meta name="description" content="Verified GTA 6 Properties Database accurately separating all 4 Story Safehouses (no purchasable story houses), 8 Purchasable + 4 Story Garages, Paradise Garage, and 7 Fences with Compare, Owned/Favorites sync, and verified Leonida Map pins.">
     <link rel="canonical" href="https://www.gta6heistguide.com/properties.html">
-    <meta property="og:title" content="GTA 6 Properties Database: Safehouses, Garages &amp; Fences">
-    <meta property="og:description" content="Track every GTA 6 Story Safehouse, Purchasable Garage, and Fence across Leonida with popout details and exact Map pins.">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="GTA 6 Properties Database — 4 Story Safehouses, 12+ Garages &amp; 7 Fences">
+    <meta property="og:description" content="Track every GTA 6 Story Safehouse, Purchasable Garage, Story Garage, and Fence across Leonida with Compare (up to 3) and exact verified Map pins.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/properties.html">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/properties/vice-city-safehouse.jpg">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/properties/paradise-garage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "GTA 6 Properties, Garages & Fences Database",
+          "url": "https://www.gta6heistguide.com/properties.html",
+          "dateModified": "2026-11-21",
+          "description": "Verified GTA 6 Story Mode Properties Database separating 4 Story Safehouses (no purchasable story houses), 8 Purchasable Garages, 4 Story Garages, and 7 Fences."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gta6heistguide.com/" },
+            { "@type": "ListItem", "position": 2, "name": "World Database", "item": "https://www.gta6heistguide.com/gta-6-database/" },
+            { "@type": "ListItem", "position": 3, "name": "Properties", "item": "https://www.gta6heistguide.com/properties.html" }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
-        .db-card {
-            background: rgba(12, 18, 32, 0.94);
-            border: 1px solid rgba(255, 255, 255, 0.11);
-            border-radius: 11px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .db-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 10px 26px rgba(0, 240, 255, 0.2);
-        }
-        .db-card.is-owned {
-            border-color: var(--neon-green);
-        }
-        .db-card-img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            background: #070b14;
-            position: relative;
-        }
-        .db-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.35s ease;
-        }
-        .db-card:hover .db-card-img img { transform: scale(1.04); }
-        .db-card-chip {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: rgba(6, 10, 20, 0.88);
-            border: 1px solid rgba(0, 240, 255, 0.45);
-            color: var(--neon-cyan);
-            font-size: 0.65rem;
-            font-weight: 800;
-            font-family: var(--font-mono);
-            padding: 2px 7px;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-        .db-card-region {
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
-            background: rgba(6, 10, 20, 0.88);
-            color: #e2e8f0;
-            font-size: 0.66rem;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 4px;
-        }
-        .db-card-body {
-            padding: 0.85rem 0.95rem 0.9rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            flex: 1;
-        }
-        .db-card-foot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: auto;
-            padding-top: 0.55rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
+      .prop-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 0.75rem;
+        margin: 0 0 1.15rem;
+      }
+      .prop-summary-card {
+        background: linear-gradient(155deg, rgba(12, 18, 32, 0.96), rgba(7, 11, 20, 0.98));
+        border: 1px solid rgba(0, 240, 255, 0.25);
+        border-radius: 10px;
+        padding: 0.8rem 0.95rem;
+      }
+      .prop-summary-num {
+        font-family: var(--font-mono);
+        font-size: 1.35rem;
+        font-weight: 1000;
+        line-height: 1.15;
+      }
+      .prop-summary-lbl {
+        font-size: 0.78rem;
+        color: #e2e8f0;
+        font-weight: 800;
+        margin-top: 0.18rem;
+      }
+      .prop-summary-sub {
+        font-size: 0.71rem;
+        color: #94a3b8;
+        margin-top: 0.18rem;
+        line-height: 1.35;
+      }
     </style>
 </head>
 <body>
@@ -138,6 +118,7 @@
             <li class="nav-dropdown nav-dropdown-right">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -150,305 +131,82 @@
     </div>
 </nav>
 
-<main class="container" style="max-width:1140px; margin:0 auto; padding:1rem 1rem 2.5rem;">
-    <header style="margin-bottom:1rem;">
-        <span class="user-badge" style="background:rgba(0,240,255,0.16); border:1px solid var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; padding:0.2rem 0.55rem; font-weight:800;">VERIFIED LAUNCH DATABASE</span>
-        <h1 style="font-size:clamp(1.45rem, 3vw, 2.15rem); color:#fff; margin:0.45rem 0 0.4rem;">GTA 6 Properties, Garages &amp; Fences Database</h1>
-        <p style="color:#94a3b8; font-size:0.9rem; margin:0;">Click any Property, Garage, or Fence card to open its full official Rockstar image popout, verified perks, and exact <strong style="color:var(--neon-cyan);">Leonida Map Pin</strong>.</p>
+<main class="container" style="max-width:1160px; margin:0 auto; padding:1.1rem 1rem 4.5rem;">
+    <nav aria-label="Breadcrumb" style="font-size:0.78rem; color:#94a3b8; margin-bottom:0.85rem; display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
+        <a href="/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/gta-6-database/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">World Database</a>
+        <span aria-hidden="true">/</span>
+        <span style="color:#e2e8f0; font-weight:700;">Properties</span>
+    </nav>
+
+    <header class="tool-box" style="margin-bottom:1rem; border-color:rgba(0,240,255,0.35);">
+        <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+            <span class="verify-badge verify-confirmed">🏠 STORY MODE REAL ESTATE</span>
+            <span class="verify-badge verify-community">0 PURCHASABLE STORY HOUSES · 100% VERIFIED MAP PINS</span>
+        </div>
+        <h1 style="color:#fff; font-size:clamp(1.5rem, 3vw, 2.2rem); margin:0 0 0.45rem; line-height:1.18;">
+            GTA 6 <span style="color:var(--neon-cyan);">Properties, Garages &amp; Fences</span> Database
+        </h1>
+        <p style="color:#94a3b8; font-size:0.92rem; margin:0; max-width:860px; line-height:1.55;">
+            Accurately separated index of all <strong style="color:#fff;">4 Story Safehouses</strong> (houses cannot be bought in GTA 6 Story Mode), <strong style="color:#fff;">8 Purchasable Garages + 4 Story Garages</strong> (plus Ultimate Edition Paradise Garage), and all <strong style="color:#fff;">7 Fences</strong> including Brian's Lockup (code <code style="color:var(--neon-green);">7700</code>). Every location links directly to its verified Interactive Map pin.
+        </p>
     </header>
 
-    <div class="syndicate-aff-bar">
-  <div class="syndicate-aff-bar-main">
-    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
-    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-    <span class="aff-sep">|</span>
-    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-    <span class="aff-sep">|</span>
-    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
-    <span class="aff-sep">|</span>
-    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-  </div>
-</div>
-
-    <section style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,240,255,0.25); border-radius:10px; padding:0.9rem; margin-bottom:1.1rem;">
-        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; justify-content:space-between; margin-bottom:0.65rem;">
-            <input id="propSearch" type="search" placeholder="Search safehouses, garages, fences, code 7700..." style="flex:1 1 260px; padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,240,255,0.35); background:#070c16; color:#fff; font-size:0.88rem;">
-            <select id="propCategory" style="padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,240,255,0.35); background:#070c16; color:#fff; font-size:0.85rem;">
-                <option value="ALL">All Categories</option>
-                <option value="Story Safehouses">Story Safehouses (4)</option>
-                <option value="Garages">Garages (13)</option>
-                <option value="Fences & Money Safes">Fences &amp; Money Safes (8)</option>
-            </select>
-            <select id="propRegion" style="padding:0.55rem 0.85rem; border-radius:8px; border:1px solid rgba(0,240,255,0.35); background:#070c16; color:#fff; font-size:0.85rem;">
-                <option value="ALL">All Regions</option>
-                <option value="Vice City">Vice City</option>
-                <option value="Leonida Keys">Leonida Keys</option>
-                <option value="Port Gellhorn">Port Gellhorn</option>
-                <option value="Grassrivers">Grassrivers</option>
-                <option value="Ambrosia">Ambrosia</option>
-                <option value="Mount Kalaga National Park">Mount Kalaga National Park</option>
-            </select>
+    <section class="prop-summary-grid" aria-label="Verified property breakdown">
+        <div class="prop-summary-card" style="border-color:rgba(0,255,136,0.35);">
+            <div class="prop-summary-num" style="color:var(--neon-green);">4 Story Safehouses</div>
+            <div class="prop-summary-lbl">0 Purchasable Story Houses</div>
+            <div class="prop-summary-sub">Unlocked through Chapters 1–4 progression. Ch. 2 Motel closes after "Checking Out".</div>
         </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.82rem; font-family:var(--font-mono);">
-            <span id="propCount" style="color:var(--neon-cyan);">Loading properties...</span>
-            <span id="propProgress" style="color:var(--neon-green); font-weight:800;">Owned / Unlocked: 0 / 0</span>
+        <div class="prop-summary-card" style="border-color:rgba(0,240,255,0.35);">
+            <div class="prop-summary-num" style="color:var(--neon-cyan);">8 Purchasable + 4 Story</div>
+            <div class="prop-summary-lbl">12 Core Garages (+1 Ultimate)</div>
+            <div class="prop-summary-sub">8 purchasable bays across Leonida + 4 story garages + Paradise Garage (Ultimate Edition).</div>
+        </div>
+        <div class="prop-summary-card" style="border-color:rgba(255,184,0,0.38);">
+            <div class="prop-summary-num" style="color:var(--neon-amber);">7 Fences</div>
+            <div class="prop-summary-lbl">Cars, Jewelry &amp; Contraband</div>
+            <div class="prop-summary-sub">Moses, Randy, Donnie (missable), Brian's Lockup (7700), Yasmani, Ambrosia &amp; Grassrivers.</div>
         </div>
     </section>
 
-    <div id="propGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(305px, 1fr)); gap:0.9rem;"></div>
+    <div id="worldDbRoot"></div>
 </main>
-
-<!-- PROPERTY POPOUT MODAL -->
-<div class="syndicate-modal-backdrop" id="propModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="propModalTitle">
-    <div class="syndicate-modal-card">
-        <button type="button" class="syndicate-modal-close" id="propModalClose" aria-label="Close modal">&times;</button>
-        <div class="syndicate-modal-hero">
-            <img id="propModalImg" src="/assets/images/properties/vice-city-safehouse.jpg" alt="">
-        </div>
-        <div class="syndicate-modal-body">
-            <div class="syndicate-modal-meta">
-                <span class="syndicate-modal-badge" id="propModalCat"></span>
-                <span class="syndicate-modal-badge" id="propModalRegion" style="border-color:rgba(255,42,141,0.45); color:#ff7cc4; background:rgba(255,42,141,0.12);"></span>
-                <span class="syndicate-modal-badge" id="propModalStatus" style="border-color:rgba(0,255,136,0.4); color:var(--neon-green); background:rgba(0,255,136,0.12);"></span>
-            </div>
-            <h2 class="syndicate-modal-title" id="propModalTitle"></h2>
-            <div class="syndicate-modal-stats" id="propModalStats"></div>
-            <p id="propModalPerks" style="color:#e2e8f0; font-size:0.88rem; line-height:1.55; margin:0.55rem 0;"></p>
-            <p id="propModalNotes" style="color:#94a3b8; font-size:0.84rem; line-height:1.5; margin:0 0 0.75rem;"></p>
-            <div id="propModalAff"></div>
-            <div class="syndicate-modal-footer">
-                <label style="display:inline-flex; align-items:center; gap:0.45rem; cursor:pointer; font-size:0.84rem; font-weight:700; color:#fff;">
-                    <input type="checkbox" id="propModalOwnedChk" style="width:17px; height:17px; accent-color:#00ff88;">
-                    <span>Mark Owned / Unlocked</span>
-                </label>
-                <a id="propModalMapBtn" href="/map.html" target="_blank" rel="noopener" class="btn-map-ping">
-                    📍 View Exact Location on Map &rarr;
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <footer>
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
-                <a href="/" class="brand-logo" style="text-decoration:none;">
-                    <span class="brand-wordmark">
-                        <span class="brand-gta">GTA 6</span>
-                        <span class="brand-vi-sub">HEIST GUIDE</span>
-                    </span>
-                    <span class="brand-badge">Syndicate v3.2</span>
-                </a>
-                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
-                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
-                </p>
+                <a href="/" class="brand-logo" style="text-decoration:none;"><span class="brand-wordmark"><span class="brand-gta">GTA 6</span><span class="brand-vi-sub">HEIST GUIDE</span></span><span class="brand-badge">Syndicate v3.4</span></a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and World Database for Grand Theft Auto VI.</p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
-                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/gta-6-database/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">📚 World Database</a>
                 <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
-
-        <div class="footer-links-grid">
-            <div>
-                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
-                <ul class="footer-col-links">
-                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
-                    <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
-                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
-                    <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
-                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
-                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
-                <ul class="footer-col-links">
-                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
-                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
-                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
-                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
-                <ul class="footer-col-links">
-                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
-                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
-                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
-                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
-                <ul class="footer-col-links">
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
-                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
-                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
-                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-secondary-strip">
-            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
-                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
-                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
-                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
-                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
-                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
-                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
-                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
-                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
-            </div>
-            <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
-            </div>
-        </div>
-
         <div class="footer-disclaimer">
-            <p style="margin:0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
-            </p>
+            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary and interactive utility portal. Grand Theft Auto, GTA VI, and Rockstar Games are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro &amp; Apex Pro Bundle) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com.</p>
         </div>
     </div>
 </footer>
+
+<script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js"></script>
+<script src="/assets/js/world-db-engine.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
-(function() {
-  const STORAGE_KEY = 'gta6_properties_owned_v1';
-  let items = [];
-  let owned = {};
-  let activeItem = null;
-  try { owned = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { owned = {}; }
-
-  const grid = document.getElementById('propGrid');
-  const searchEl = document.getElementById('propSearch');
-  const catEl = document.getElementById('propCategory');
-  const regEl = document.getElementById('propRegion');
-  const countEl = document.getElementById('propCount');
-  const progEl = document.getElementById('propProgress');
-
-  const backdrop = document.getElementById('propModalBackdrop');
-  const closeBtn = document.getElementById('propModalClose');
-  const modalOwnedChk = document.getElementById('propModalOwnedChk');
-
-  function saveOwned() {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(owned)); } catch (e) {}
-  }
-
-  function openPopout(item) {
-    activeItem = item;
-    document.getElementById('propModalImg').src = item.image || '/assets/images/properties/vice-city-safehouse.jpg';
-    document.getElementById('propModalImg').alt = item.name;
-    document.getElementById('propModalCat').textContent = item.category;
-    document.getElementById('propModalRegion').textContent = '📍 ' + item.region;
-    document.getElementById('propModalStatus').textContent = item.status;
-    document.getElementById('propModalTitle').textContent = item.name;
-    document.getElementById('propModalStats').innerHTML = `
-      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Chapter / Unlock</div><div class="syndicate-modal-stat-val">${item.chapter}</div></div>
-      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Access / Cost</div><div class="syndicate-modal-stat-val" style="color:var(--neon-green);">${item.cost}</div></div>
-      <div class="syndicate-modal-stat"><div class="syndicate-modal-stat-lbl">Region</div><div class="syndicate-modal-stat-val" style="color:var(--neon-cyan);">${item.region}</div></div>
-    `;
-    document.getElementById('propModalPerks').innerHTML = '<strong>Verified Perks &amp; Utility:</strong> ' + item.features;
-    document.getElementById('propModalNotes').textContent = item.notes;
-    document.getElementById('propModalAff').innerHTML = window.getSyndicateAffBarHtml
-      ? window.getSyndicateAffBarHtml()
-      : '';
-    modalOwnedChk.checked = !!owned[item.id];
-    const pinId = encodeURIComponent(item.pinId || item.id);
-    document.getElementById('propModalMapBtn').href = '/map.html?pin=' + pinId;
-    backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closePopout() {
-    backdrop.classList.remove('open');
-    document.body.style.overflow = '';
-    activeItem = null;
-  }
-
-  closeBtn.addEventListener('click', closePopout);
-  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closePopout(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) closePopout(); });
-  modalOwnedChk.addEventListener('change', () => {
-    if (!activeItem) return;
-    owned[activeItem.id] = modalOwnedChk.checked;
-    saveOwned();
-    render();
-  });
-
-  function render() {
-    const q = (searchEl.value || '').trim().toLowerCase();
-    const cat = catEl.value;
-    const reg = regEl.value;
-    const filtered = items.filter(it => {
-      if (cat !== 'ALL' && it.category !== cat) return false;
-      if (reg !== 'ALL' && it.region !== reg) return false;
-      if (q && !(it.name + ' ' + it.region + ' ' + it.category + ' ' + it.features + ' ' + it.notes).toLowerCase().includes(q)) return false;
-      return true;
-    });
-
-    const totalOwned = items.filter(i => owned[i.id]).length;
-    countEl.textContent = `Showing ${filtered.length} of ${items.length} verified locations`;
-    progEl.textContent = `Owned / Unlocked: ${totalOwned} / ${items.length}`;
-
-    grid.innerHTML = filtered.map(it => {
-      const isChecked = !!owned[it.id];
-      const badgeColor = it.category === 'Story Safehouses' ? 'var(--neon-pink)' : (it.category === 'Garages' ? 'var(--neon-cyan)' : 'var(--neon-green)');
-      return `<article class="db-card ${isChecked ? 'is-owned' : ''}" data-open-id="${it.id}">
-        <div class="db-card-img">
-          <img src="${it.image || '/assets/images/properties/vice-city-safehouse.jpg'}" alt="${it.name}" loading="lazy">
-          <span class="db-card-chip" style="color:${badgeColor}; border-color:${badgeColor};">${it.category}</span>
-          <span class="db-card-region">📍 ${it.region}</span>
-        </div>
-        <div class="db-card-body">
-          <h2 style="font-size:1.02rem; color:#fff; margin:0; line-height:1.25;">${it.name}</h2>
-          <div style="font-size:0.75rem; color:var(--neon-amber); font-weight:700;">${it.chapter} &bull; ${it.status}</div>
-          <p style="font-size:0.8rem; color:#cbd5e1; margin:0; line-height:1.45;">${it.features}</p>
-          <div class="db-card-foot">
-            <label onclick="event.stopPropagation()" style="display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.78rem; color:${isChecked ? 'var(--neon-green)' : '#e2e8f0'}; font-weight:700;">
-              <input type="checkbox" data-prop-id="${it.id}" ${isChecked ? 'checked' : ''} style="width:15px; height:15px; accent-color:#00ff88;">
-              <span>${isChecked ? 'Owned' : 'Track'}</span>
-            </label>
-            <span style="font-size:0.74rem; color:var(--neon-cyan); font-weight:800; font-family:var(--font-mono);">Details &amp; Map &rarr;</span>
-          </div>
-        </div>
-      </article>`;
-    }).join('');
-
-    grid.querySelectorAll('.db-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const it = items.find(x => x.id === card.getAttribute('data-open-id'));
-        if (it) openPopout(it);
-      });
-    });
-    grid.querySelectorAll('input[data-prop-id]').forEach(cb => {
-      cb.addEventListener('change', (e) => {
-        e.stopPropagation();
-        owned[cb.getAttribute('data-prop-id')] = cb.checked;
-        saveOwned();
-        render();
-      });
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.GTA6WorldDB) {
+    window.GTA6WorldDB.mount({
+      container: '#worldDbRoot',
+      category: 'properties',
+      dataUrl: '/data/properties.json?v=20261121_p4'
     });
   }
-
-  fetch('/data/properties.json?v=45')
-    .then(r => r.json())
-    .then(data => { items = data.items || []; render(); })
-    .catch(() => { grid.innerHTML = '<p style="color:#f87171;">Failed to load properties database.</p>'; });
-
-  searchEl.addEventListener('input', render);
-  catEl.addEventListener('change', render);
-  regEl.addEventListener('change', render);
-})();
+});
 </script>
 </body>
 </html>
