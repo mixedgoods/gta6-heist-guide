@@ -3691,7 +3691,7 @@ body.has-ticker .bookmarks-fab {
 /* === BRAND IMAGE LOGO + NEON PULSE & 6S DIAGONAL SHEEN === */
 .navbar .brand-logo {
   position: relative;
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center !important;
   gap: 0 !important;
   padding: 0 !important;
@@ -3699,11 +3699,11 @@ body.has-ticker .bookmarks-fab {
   line-height: 0;
   text-decoration: none !important;
   flex-shrink: 0 !important;
-  height: 40px;
+  height: 36px;
 }
 .brand-logo-img {
   display: block;
-  height: 40px;
+  height: 36px;
   width: auto;
   aspect-ratio: 688 / 110;
   object-fit: contain;
@@ -3742,10 +3742,278 @@ body.has-ticker .bookmarks-fab {
   mask-position: center;
   animation: logoLightSweep 6s ease-in-out infinite;
 }
-@media (min-width: 768px) {
+
+/* =========================================================================
+   SINGLE-ROW BALANCED NAVBAR LAYOUT (DESKTOP >= 1024px & MOBILE < 1024px)
+   ========================================================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9, 7, 16, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .navbar .nav-container,
+  .navbar .nav-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    flex-wrap: nowrap !important;
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    height: 64px !important;
+    box-sizing: border-box !important;
+    position: relative;
+  }
+
+  .navbar .brand-logo {
+    order: 1 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 36px !important;
+  }
+
+  .navbar .brand-logo-img {
+    height: 36px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  .navbar .nav-links {
+    order: 2 !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: none !important;
+    list-style: none !important;
+    overflow: visible !important;
+  }
+
+  .navbar .nav-links > li {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .navbar .nav-links > li > a,
+  .navbar .nav-links .nav-pill,
+  .navbar .nav-links .nav-dropdown-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    height: 34px !important;
+    padding: 0 11px !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    border-radius: 6px !important;
+    vertical-align: middle !important;
+    margin: 0 !important;
+  }
+
+  .navbar .nav-actions {
+    order: 3 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+  }
+
+  .navbar .nav-actions .btn-launch-rewards,
+  .navbar .nav-actions .btn-pwa-top,
+  .navbar .nav-actions .btn-deals-top {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    height: 34px !important;
+    padding: 0 11px !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    border-radius: 6px !important;
+  }
+
+  .navbar .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .navbar .nav-container,
+  .navbar .nav-inner {
+    gap: 10px !important;
+    padding: 0 14px !important;
+  }
+
   .navbar .brand-logo,
-  .brand-logo-img {
-    height: 44px;
+  .navbar .brand-logo-img {
+    height: 30px !important;
+  }
+
+  .navbar .nav-links {
+    gap: 6px !important;
+  }
+
+  .navbar .nav-links > li > a,
+  .navbar .nav-links .nav-pill,
+  .navbar .nav-links .nav-dropdown-btn,
+  .navbar .nav-actions .btn-launch-rewards,
+  .navbar .nav-actions .btn-pwa-top {
+    padding: 0 9px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .navbar .nav-container,
+  .navbar .nav-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 14px !important;
+    height: 56px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  .navbar .brand-logo {
+    order: 1 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 30px !important;
+  }
+
+  .navbar .brand-logo-img {
+    height: 30px !important;
+    width: auto !important;
+    max-width: 205px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .navbar .nav-actions {
+    order: 2 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar .nav-actions .btn-launch-rewards,
+  .navbar .nav-actions .btn-pwa-top,
+  .navbar .nav-actions .btn-deals-top {
+    display: none !important;
+  }
+
+  .navbar .mobile-menu-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    height: 36px !important;
+    padding: 0 12px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    border-radius: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .navbar .nav-links {
+    display: none !important;
+  }
+
+  .navbar .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    position: absolute !important;
+    top: 56px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 16px 16px !important;
+    gap: 6px !important;
+    background: rgba(9, 7, 16, 0.98) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3) !important;
+    max-height: calc(100vh - 56px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 1001 !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .navbar .nav-links.open > li {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .navbar .nav-links.open > li > a,
+  .navbar .nav-links.open .nav-dropdown-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .navbar .nav-links.open .nav-dropdown {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .navbar .nav-links.open .nav-dropdown-menu {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 6px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
   }
 }
 @keyframes logoNeonPulse {
