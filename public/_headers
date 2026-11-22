@@ -15,6 +15,11 @@
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600
 
+/a4f3d0f33af758dff4c0219cbd28c40e.txt
+  ! Cache-Control
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
 /*.css
   Cache-Control: public, max-age=300, must-revalidate
 
