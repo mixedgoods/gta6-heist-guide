@@ -5431,13 +5431,29 @@ CharacterModal: {
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       this._deferredPwaPrompt = e;
+      document.documentElement.classList.add('pwa-installable');
+      document.querySelectorAll('.btn-pwa-top').forEach((btn) => {
+        btn.classList.add('is-installable');
+      });
+    });
+    window.addEventListener('appinstalled', () => {
+      this._deferredPwaPrompt = null;
+      document.documentElement.classList.remove('pwa-installable');
+      document.querySelectorAll('.btn-pwa-top').forEach((btn) => {
+        btn.classList.remove('is-installable');
+      });
     });
   },
 
   async triggerPwaPrompt() {
     if (this._deferredPwaPrompt) {
       this._deferredPwaPrompt.prompt();
-      try { await this._deferredPwaPrompt.userChoice; } catch (e) {}
+      try {
+        const res = await this._deferredPwaPrompt.userChoice;
+        if (res && res.outcome === 'accepted') {
+          document.documentElement.classList.remove('pwa-installable');
+        }
+      } catch (e) {}
       this._deferredPwaPrompt = null;
       return;
     }

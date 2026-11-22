@@ -23,31 +23,103 @@
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v22">
 
     <style>
         :root {
-            --header-height: 118px;
+            --header-height: 98px;
+            --map-viewport-h: calc(100dvh - var(--header-height));
         }
         html, body {
-            height: 100dvh;
+            min-height: 100vh;
+            min-height: 100dvh;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
             background: #040711;
             font-family: var(--font-heading, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
             color: #f4f4f8;
         }
 
-        /* BUG 1 FIX: Exact dynamic viewport height minus header so bottom-right zoom controls are NEVER cut off */
+        /* Exact dynamic viewport height minus header; preserves normal scrolling on short windows */
         .map-app-container {
             width: 100%;
-            height: calc(100dvh - var(--header-height));
-            min-height: 360px;
+            height: calc(100vh - var(--header-height));
+            height: var(--map-viewport-h);
+            min-height: 460px;
             display: flex;
             position: relative;
             overflow: hidden;
             background: #040711;
+            box-sizing: border-box;
+        }
+
+        .map-stage-col {
+            flex: 1 1 auto;
+            min-width: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: #071426;
+        }
+
+        /* UNIFIED MAP TOOLBAR (ONE Full Leonida Map button + 6 Regions + Map Style) */
+        .map-top-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.55rem 0.75rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0.85rem;
+            background: linear-gradient(180deg, rgba(12, 16, 30, 0.98), rgba(8, 12, 24, 0.98));
+            border-bottom: 1px solid rgba(0, 240, 255, 0.24);
+            flex-shrink: 0;
+            z-index: 50;
+        }
+        .map-toolbar-regions {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+        .map-toolbar-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.16);
+            margin: 0 0.18rem;
+            flex-shrink: 0;
+        }
+        .map-toolbar-utils {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+        .map-full-btn {
+            background: rgba(0, 240, 255, 0.14);
+            border: 1px solid rgba(0, 240, 255, 0.58);
+            color: #fff;
+            border-radius: 7px;
+            padding: 0.34rem 0.72rem;
+            font-size: 0.73rem;
+            font-weight: 900;
+            cursor: pointer;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+        }
+        .map-full-btn:hover,
+        .map-full-btn.active {
+            background: var(--neon-cyan, #00f0ff);
+            border-color: var(--neon-cyan, #00f0ff);
+            color: #04101d;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
         }
 
         .leaflet-container {
@@ -64,15 +136,16 @@
         }
 
         #leafletMap {
-            flex: 1;
-            height: 100%;
+            flex: 1 1 auto;
+            min-height: 0;
+            width: 100%;
             position: relative;
             z-index: 1;
         }
 
-        /* BUG 1 FIX: Generous bottom offset & above-Leaflet z-index for ALL bottom-right floating map controls (+, -, recenter) */
+        /* Clean bottom-right zoom controls — always visible above bottom edge & taskbar */
         .leaflet-bottom.leaflet-right {
-            bottom: 84px !important;
+            bottom: 20px !important;
             right: 20px !important;
             z-index: 1050 !important;
             display: flex;
@@ -773,16 +846,16 @@
         .mobile-toggle-btn {
             display: none;
             position: absolute;
-            bottom: 84px;
+            bottom: 22px;
             left: 14px;
             z-index: 1050;
-            background: rgba(14, 11, 26, 0.95);
+            background: rgba(14, 11, 26, 0.96);
             border: 1.5px solid var(--neon-cyan);
-            box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65), 0 0 14px rgba(0, 240, 255, 0.35);
             color: #fff;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 800;
-            padding: 0.52rem 1rem;
+            padding: 0.5rem 0.95rem;
             border-radius: 30px;
             cursor: pointer;
         }
@@ -834,7 +907,7 @@
             gap: 0.8rem;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .map-sidebar {
                 position: absolute;
                 top: 0;
@@ -846,9 +919,26 @@
             }
             .map-sidebar.open { transform: translateX(0); }
             .mobile-toggle-btn { display: flex; align-items: center; gap: 0.4rem; }
-            .map-hud-controls { top: 0.55rem; right: 0.55rem; }
+            .map-top-toolbar {
+                padding: 0.42rem 0.55rem;
+                gap: 0.4rem;
+            }
+            .map-toolbar-regions {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                max-width: 100%;
+                scrollbar-width: none;
+                padding-bottom: 2px;
+            }
+            .map-toolbar-regions::-webkit-scrollbar { display: none; }
+            .map-toolbar-utils {
+                width: 100%;
+                justify-content: space-between;
+                margin-left: 0;
+            }
+            .hud-status-badge { font-size: 0.62rem; }
             .leaflet-bottom.leaflet-right {
-                bottom: 88px !important;
+                bottom: 22px !important;
                 right: 14px !important;
             }
             .leaflet-popup-content { width: 270px !important; }
@@ -932,16 +1022,6 @@
                 <button type="button" class="sidebar-search-clear" id="searchClearBtn" aria-label="Clear map search" onclick="clearSearch()">✕</button>
             </div>
             <div class="map-search-results-panel" id="mapSearchResultsPanel" role="region" aria-label="Map search results"></div>
-
-            <div class="region-pills-row" id="regionPillsRow">
-                <button type="button" class="region-jump-pill" onclick="resetFullMap()">🌎 Full Map</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Vice City')">🏙️ Vice City</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Grassrivers')">🌾 Grassrivers</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Leonida Keys')">🏝️ Leonida Keys</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Mt. Kalaga')">⛰️ Mt. Kalaga</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Port Gellhorn')">⚓ Port Gellhorn</button>
-                <button type="button" class="region-jump-pill" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
-            </div>
         </div>
 
         <div class="progress-stats-box">
@@ -973,49 +1053,37 @@
         <div class="category-rows-container" id="categoryRowsContainer"></div>
 
         <div class="sidebar-locations-list" id="sidebarLocationsList"></div>
-
-        <!-- One Tasteful Promotional Module at Natural Sidebar Break (Session-Stable) -->
-        <div class="sidebar-affiliate-box" style="padding:0.45rem 0.65rem;"
-             data-aff-slot="map-sidebar-promo"
-             data-aff-context="map"
-             data-aff-variant="sidebar-mini">
-            <aside class="aff-card aff-card--sidebar aff-accent-cyan" aria-label="Recommended gaming hardware (affiliate link)">
-                <div class="aff-sidebar-top">
-                    <div class="aff-media aff-media--studio is-compact"><img src="/assets/gear/dualsense-edge.jpg" alt="PlayStation DualSense Edge Wireless Controller" loading="lazy"></div>
-                    <div class="aff-sidebar-info">
-                        <div class="aff-meta-row"><span class="aff-partner-pill">Amazon Partner</span><span class="aff-disclosure-tag">Affiliate</span></div>
-                        <div class="aff-sidebar-title">DualSense Edge Wireless Controller</div>
-                        <div class="aff-sidebar-benefit">Remappable back paddles &amp; custom stick profiles</div>
-                    </div>
-                </div>
-                <div class="aff-sidebar-foot">
-                    <span class="aff-disclosure-micro">Partner link &middot; Commission earned at no extra cost</span>
-                    <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" data-amazon-link="dualsenseEdge" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="map-sidebar" class="aff-cta aff-cta--sm aff-cta--cyan">Check Amazon &rarr;</a>
-                </div>
-            </aside>
-        </div>
     </aside>
 
-    <!-- MAP CONTAINER -->
-    <main id="leafletMap">
-        <div class="map-hud-controls">
-            <div class="hud-btn-row">
-                <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()">
+    <!-- MAP WORKSPACE COLUMN: CLEAN UNIFIED TOOLBAR + FULL-BLEED INTERACTIVE MAP -->
+    <div class="map-stage-col" id="mapStageCol">
+        <div class="map-top-toolbar" role="toolbar" aria-label="Leonida Map regions and view controls">
+            <div class="map-toolbar-regions" id="regionPillsRow">
+                <button type="button" class="map-full-btn active" id="fullLeonidaMapBtn" onclick="resetFullMap()" title="Fit the entire Leonida Map in view">🌎 Full Leonida Map</button>
+                <span class="map-toolbar-divider" aria-hidden="true"></span>
+                <button type="button" class="region-jump-pill" data-region="Vice City" onclick="jumpToRegion('Vice City')">🏙️ Vice City</button>
+                <button type="button" class="region-jump-pill" data-region="Grassrivers" onclick="jumpToRegion('Grassrivers')">🌾 Grassrivers</button>
+                <button type="button" class="region-jump-pill" data-region="Leonida Keys" onclick="jumpToRegion('Leonida Keys')">🏝️ Leonida Keys</button>
+                <button type="button" class="region-jump-pill" data-region="Mt. Kalaga" onclick="jumpToRegion('Mt. Kalaga')">⛰️ Mt. Kalaga</button>
+                <button type="button" class="region-jump-pill" data-region="Port Gellhorn" onclick="jumpToRegion('Port Gellhorn')">⚓ Port Gellhorn</button>
+                <button type="button" class="region-jump-pill" data-region="Ambrosia" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
+            </div>
+            <div class="map-toolbar-utils">
+                <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()" style="padding:0.34rem 0.68rem;">
                     <span id="styleIcon">🗺️</span> <span id="styleLabel">Atlas Day</span>
                 </button>
-                <button type="button" class="hud-btn" onclick="resetFullMap()" title="Fit entire Leonida Map in view">
-                    🌎 Full Leonida Map
-                </button>
-            </div>
-            <div class="hud-status-badge" id="hudCoordsDisplay">
-                LEONIDA MAP &bull; 3840&times;5120 HD
+                <div class="hud-status-badge" id="hudCoordsDisplay">
+                    LEONIDA MAP &bull; 3840&times;5120 HD
+                </div>
             </div>
         </div>
 
-        <button type="button" class="mobile-toggle-btn" onclick="toggleMobileDrawer()">
-            ☰ Pins &amp; Filters (<span id="mobileCountBadge">162</span>)
-        </button>
-    </main>
+        <main id="leafletMap">
+            <button type="button" class="mobile-toggle-btn" onclick="toggleMobileDrawer()">
+                ☰ Pins &amp; Filters (<span id="mobileCountBadge">162</span>)
+            </button>
+        </main>
+    </div>
 </div>
 
 <div id="hudToast">Notification</div>
@@ -1081,7 +1149,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js?v=20261122_v19"></script>
+<script src="/js/affiliates.js?v=20261122_v22"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 
@@ -1161,14 +1229,19 @@ const REGION_CENTERS = {
     'Lake Leonida':  { yPct: 0.6750, xPct: 0.5900, zoom: 0.5 }
 };
 
-/* Measure real header height dynamically so --header-height is ALWAYS exact */
+/* Measure real header & visual viewport height dynamically so bottom controls NEVER fall below viewport */
 function syncHeaderHeight() {
     const strip = document.getElementById('siteTopStrip');
     const nav = document.getElementById('siteNavbar');
+    const container = document.getElementById('mapAppContainer');
     const total = (strip ? strip.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
     if (total > 0) {
         document.documentElement.style.setProperty('--header-height', total + 'px');
     }
+    const vh = (window.visualViewport && window.visualViewport.height) ? window.visualViewport.height : window.innerHeight;
+    const topOffset = container ? Math.max(total, Math.round(container.getBoundingClientRect().top)) : total;
+    const availH = Math.max(460, Math.floor(vh - topOffset));
+    document.documentElement.style.setProperty('--map-viewport-h', availH + 'px');
     if (map) {
         map.invalidateSize(false);
         recomputeZoomBounds(false);
@@ -1221,19 +1294,6 @@ function initEngine() {
     });
 
     map.zoomControl.setPosition('bottomright');
-
-    /* Custom Bottom-Right Recenter / Fit-Full-Map Button inside bottom-right control stack */
-    const RecenterControl = L.Control.extend({
-        options: { position: 'bottomright' },
-        onAdd: function() {
-            const div = L.DomUtil.create('div', 'leaflet-recenter-wrap');
-            div.innerHTML = '<button type="button" class="leaflet-recenter-btn" id="mapRecenterBtn" title="Recenter &amp; Fit Full Leonida Map" aria-label="Recenter Full Map">⌖</button>';
-            L.DomEvent.disableClickPropagation(div);
-            div.querySelector('button').addEventListener('click', () => resetFullMap());
-            return div;
-        }
-    });
-    map.addControl(new RecenterControl());
 
     const mapImg = new Image();
     let initialized = false;
@@ -1326,8 +1386,17 @@ function toggleMapStyle() {
     }
 }
 
+function setActiveMapToolbarBtn(regionName) {
+    const fullBtn = document.getElementById('fullLeonidaMapBtn');
+    if (fullBtn) fullBtn.classList.toggle('active', !regionName);
+    document.querySelectorAll('#regionPillsRow .region-jump-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-region') === regionName);
+    });
+}
+
 function resetFullMap() {
     if (!map || !mapBounds) return;
+    setActiveMapToolbarBtn(null);
     recomputeZoomBounds(false);
     map.flyToBounds(mapBounds, { padding: [24, 24], duration: 0.75 });
     showToast('🌎 Full Leonida Map View Restored');
@@ -1546,6 +1615,7 @@ function flyToPin(pinId, openPopup = true, highlightPulse = false) {
 function jumpToRegion(regionName) {
     const conf = REGION_CENTERS[regionName];
     if (!conf || !map) return;
+    setActiveMapToolbarBtn(regionName);
     const y = conf.yPct * naturalHeight;
     const x = conf.xPct * naturalWidth;
     map.flyTo([y, x], conf.zoom, { duration: 0.75 });
@@ -2049,8 +2119,17 @@ function toggleMobileDrawer() {
 
 window.addEventListener('resize', () => {
     clearTimeout(window._mapResizeTimer);
-    window._mapResizeTimer = setTimeout(syncHeaderHeight, 120);
+    window._mapResizeTimer = setTimeout(syncHeaderHeight, 100);
 });
+window.addEventListener('orientationchange', () => {
+    setTimeout(syncHeaderHeight, 180);
+});
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+        clearTimeout(window._mapResizeTimer);
+        window._mapResizeTimer = setTimeout(syncHeaderHeight, 80);
+    });
+}
 window.addEventListener('load', () => {
     setTimeout(syncHeaderHeight, 80);
 });

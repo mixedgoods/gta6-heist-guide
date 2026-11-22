@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="Grand Theft Auto VI custom weapons and 24 Leonida gun store locations">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/weapons/weapon-variants.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v22">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -113,57 +113,63 @@
         <span style="color:#e2e8f0; font-weight:700;">Gun Stores</span>
     </nav>
 
-    <header class="tool-box" style="margin-bottom:1.15rem; border-color:rgba(244,63,94,0.45);">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.85rem;">
-            <div style="flex:1 1 580px;">
-                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+    <header class="tool-box" style="margin-bottom:0.9rem; padding:1.05rem 1.25rem; border-color:rgba(244,63,94,0.42);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:0.75rem 1rem;">
+            <div style="flex:1 1 560px;">
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.4rem;">
                     <span class="verify-badge verify-confirmed">🔫 24 VERIFIED LOCATIONS</span>
-                    <span class="verify-badge verify-community">100% VERIFIED INTERACTIVE MAP PINS</span>
+                    <span class="verify-badge verify-community">5 COUNTIES &middot; MAP PIN READY</span>
                 </div>
-                <h1 style="color:#fff; font-size:clamp(1.5rem, 3vw, 2.2rem); margin:0 0 0.45rem; line-height:1.18;">
-                    GTA 6 <span style="color:#f43f5e;">Gun Stores &amp; Ammu-Nation</span> Directory
+                <h1 style="color:#fff; font-size:clamp(1.5rem, 3vw, 2.1rem); margin:0 0 0.3rem; line-height:1.15;">
+                    GTA VI <span style="color:#f43f5e;">Gun Stores</span>
                 </h1>
-                <p style="color:#94a3b8; font-size:0.92rem; margin:0 0 0.75rem; max-width:820px; line-height:1.55;">
-                    Filter all 24 verified Leonida gun stores across Vice-Dale, Mariana, Kelly, Leonard, and Lummox counties by store type, inventory tier (Limited, Standard, Hunting, Expanded), and services. Track Visited/Favorites and jump directly to verified Map pins.
+                <p style="color:#94a3b8; font-size:0.88rem; margin:0; max-width:740px; line-height:1.48;">
+                    Browse all 24 verified Leonida gun stores grouped across Vice-Dale, Mariana, Kelly, Leonard, and Lummox counties. Filter by county, store type, or inventory tier and jump directly to each Map pin.
                 </p>
-                <div style="background:rgba(244,63,94,0.08); border-left:3px solid #f43f5e; border-radius:0 8px 8px 0; padding:0.65rem 0.85rem; font-size:0.82rem; color:#e2e8f0; line-height:1.5;">
-                    <strong style="color:#fb7185;">Direct Answer — All 24 Gun Stores by County:</strong> Leonida has <strong>24 gun stores</strong> across 5 counties: <strong>Vice-Dale (14)</strong>, <strong>Mariana (5)</strong>, <strong>Kelly (3)</strong>, <strong>Leonard (1)</strong>, and <strong>Lummox (1)</strong>. Visit <strong>Expanded</strong>-tier dealers (Phil's Ammu-Nation, Prestige Firearms, Big Shots, Black Eagle, Iron &amp; Oak, Woodhatch) for heavy ordnance like sniper rifles, LMGs, and launchers.
-                </div>
             </div>
             <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
-                <a href="#claimGuide" class="btn btn-secondary" style="padding:0.46rem 0.9rem; font-size:0.79rem;">⭐ Duval ES9 Claim Guide</a>
-                <a href="/weapons.html" class="btn btn-primary" style="padding:0.46rem 0.9rem; font-size:0.79rem;">⚔️ Weapons Database &rarr;</a>
+                <a href="/weapons.html" class="btn btn-primary" style="padding:0.44rem 0.9rem; font-size:0.77rem;">⚔️ Weapons Database &rarr;</a>
             </div>
         </div>
     </header>
 
-    <div id="worldDbRoot"></div>
-
-    <!-- VERIFIED 24 GUN STORES COUNTY BREAKDOWN -->
-    <section class="tool-box" id="countyBreakdown" style="margin-top:2rem; border-color:rgba(0,240,255,0.35);">
-        <span class="verify-badge verify-confirmed">📍 VERIFIED 5-COUNTY BREAKDOWN (24 STORES)</span>
-        <h2 style="color:#fff; font-size:1.25rem; margin:0.35rem 0 0.5rem;">All 24 GTA 6 Gun Stores Grouped by County &amp; Inventory Tier</h2>
-        <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.85rem; line-height:1.5;">Verified store names and counties cross-checked for Pass 5 accuracy. Existing regional Interactive Map pins are preserved without unverified coordinate moves.</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:0.8rem; font-size:0.8rem; color:#cbd5e1;">
-            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.85rem;">
-                <strong style="color:var(--neon-cyan); display:block; margin-bottom:0.35rem;">Vice-Dale County (14 Stores)</strong>
-                Phil's Ammu-Nation (Expanded), Big Shots (Expanded), Black Eagle (Expanded), Iron &amp; Oak (Expanded), Prestige Firearms (Expanded), Vice City Firearms (Standard), Martez Empenos (Standard), Jackson Firearms (Standard), Vice City Gun &amp; Pawn (Standard), Pawn &amp; Gun Crosstown (Standard), Quickscope (Standard), Tequesta Guns &amp; Ammo (Standard), Hamlet Traders (Standard), Zenon's Pawn Shop (Standard).
+    <!-- PROMINENT CLICKABLE FEATURE CARD: ULTIMATE EDITION BONUS (MOVED NEAR TOP) -->
+    <a href="#claimGuide" class="ultimate-feature-card" aria-label="How to Claim Jason's Duval Signature ES9 and Ultimate Edition Bonuses">
+        <div class="ultimate-feature-media">
+            <img src="/assets/images/weapons/weapon-variants.jpg" alt="Jason's engraved Duval Signature ES9 sidearm and Lucia's custom handgun in Grand Theft Auto VI" loading="eager" width="1600" height="900">
+            <span class="visual-shot-pill" style="color:var(--neon-yellow); border-color:rgba(255,184,0,0.65);">⭐ ULTIMATE EDITION BONUS</span>
+        </div>
+        <div class="ultimate-feature-body">
+            <div style="display:flex; gap:0.4rem; flex-wrap:wrap; align-items:center;">
+                <span class="verify-badge verify-testing">⭐ ULTIMATE EDITION BONUS</span>
+                <span class="verify-badge verify-confirmed">POST-PROLOGUE UNLOCK</span>
             </div>
-            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.85rem;">
-                <strong style="color:var(--neon-green); display:block; margin-bottom:0.35rem;">Mariana County (5 Stores)</strong>
-                Chuck's Tackle &amp; Shot (Limited — Key Lento, first Ch. 1 store), Barrage Gun Supply (Standard), Guns Aplenty! (Hunting), Richardson Hunting Supplies (Standard), Woodhatch (Expanded — Capri).
-            </div>
-            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.85rem;">
-                <strong style="color:var(--neon-amber); display:block; margin-bottom:0.35rem;">Kelly (3), Leonard (1) &amp; Lummox (1)</strong>
-                <strong>Kelly County:</strong> Gellhorn Outfitters (Standard), Pawn &amp; Gun Port Gellhorn (Standard), Biff's Gun Supply (Standard).<br>
-                <strong>Leonard County:</strong> Tactical Outlet Guns (Standard).<br>
-                <strong>Lummox County:</strong> Rusty Willis Jr. Hunting Supplies (Hunting).
+            <h2 style="color:#fff; font-size:1.18rem; margin:0.1rem 0 0; line-height:1.25;">
+                How to Claim Jason's Duval Signature ES9 &amp; Ultimate Edition Bonuses
+            </h2>
+            <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.48;">
+                Clear the prologue to reach Jason's House in Key Lento, inspect your safehouse or trunk weapon locker for the <strong style="color:#fff;">Duval Signature ES9</strong>, and unlock Paradise Garage plus bonus vehicles.
+            </p>
+            <div style="margin-top:0.25rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+                <span style="font-size:0.74rem; color:#94a3b8; font-family:var(--font-mono);">Key Lento Safehouse &bull; Trunk Locker &bull; Paradise Garage</span>
+                <span class="robbery-view-cta" style="color:var(--neon-yellow); border-color:rgba(255,184,0,0.5); background:rgba(255,184,0,0.12);">View Claim Guide &rarr;</span>
             </div>
         </div>
-    </section>
+    </a>
 
-    <!-- ULTIMATE EDITION CLAIM GUIDE -->
-    <section class="tool-box" id="claimGuide" style="margin-top:2rem; border-color:rgba(255,184,0,0.45);">
+    <!-- INTERACTIVE IMAGE-LED 24 GUN STORES DIRECTORY -->
+    <div id="worldDbRoot"></div>
+
+    <!-- SINGLE CONTEXTUAL GAMING HARDWARE AFFILIATE MODULE -->
+    <div id="gunStoresAffSlot"
+         style="margin:1.75rem 0 0.5rem;"
+         data-aff-slot="gunstores-gear"
+         data-aff-context="gunstores-gear"
+         data-aff-variant="horizontal-featured">
+    </div>
+
+    <!-- FULL STEP-BY-STEP ULTIMATE EDITION CLAIM GUIDE (ABOVE COUNTY BREAKDOWN) -->
+    <section class="tool-box" id="claimGuide" style="margin-top:1.75rem; border-color:rgba(255,184,0,0.45); scroll-margin-top:84px;">
         <div style="margin-bottom:0.9rem;">
             <span class="verify-badge verify-community">⭐ ULTIMATE EDITION BONUS</span>
             <h2 style="color:#fff; font-size:1.3rem; margin:0.35rem 0 0.2rem;">How to Claim Jason's Duval Signature ES9 &amp; Ultimate Edition Bonuses</h2>
@@ -184,6 +190,31 @@
                 <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-green); font-weight:800;">STEP 03</div>
                 <strong style="color:#fff; font-size:0.95rem; display:block; margin:0.25rem 0;">Check Paradise Garage &amp; Vehicles</strong>
                 <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">Claim the Dinka Enduro and Crest Kayak at Jason's House, plus Paradise Garage (Watson Bay) in Vice City.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VERIFIED 24 GUN STORES COUNTY BREAKDOWN (INDEXABLE REFERENCE BELOW DIRECTORY & CLAIM GUIDE) -->
+    <section class="tool-box" id="countyBreakdown" style="margin-top:1.75rem; border-color:rgba(0,240,255,0.35);">
+        <span class="verify-badge verify-confirmed">📍 VERIFIED 5-COUNTY BREAKDOWN (24 STORES)</span>
+        <h2 style="color:#fff; font-size:1.25rem; margin:0.35rem 0 0.45rem;">All 24 GTA 6 Gun Stores Grouped by County &amp; Inventory Tier</h2>
+        <p style="color:#94a3b8; font-size:0.82rem; margin:0 0 0.85rem; line-height:1.5;">
+            Leonida has <strong>24 gun stores</strong> across 5 counties: <strong>Vice-Dale (14)</strong>, <strong>Mariana (5)</strong>, <strong>Kelly (3)</strong>, <strong>Leonard (1)</strong>, and <strong>Lummox (1)</strong>. Visit <strong>Expanded</strong>-tier dealers (Phil's Ammu-Nation, Prestige Firearms, Big Shots, Black Eagle, Iron &amp; Oak, Woodhatch) for heavy ordnance like sniper rifles, LMGs, and launchers.
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:0.8rem; font-size:0.8rem; color:#cbd5e1;">
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.85rem;">
+                <strong style="color:var(--neon-cyan); display:block; margin-bottom:0.35rem;">Vice-Dale County (14 Stores)</strong>
+                Phil's Ammu-Nation (Expanded), Big Shots (Expanded), Black Eagle (Expanded), Iron &amp; Oak (Expanded), Prestige Firearms (Expanded), Vice City Firearms (Standard), Martez Empenos (Standard), Jackson Firearms (Standard), Vice City Gun &amp; Pawn (Standard), Pawn &amp; Gun Crosstown (Standard), Quickscope (Standard), Tequesta Guns &amp; Ammo (Standard), Hamlet Traders (Standard), Zenon's Pawn Shop (Standard).
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.85rem;">
+                <strong style="color:var(--neon-green); display:block; margin-bottom:0.35rem;">Mariana County (5 Stores)</strong>
+                Chuck's Tackle &amp; Shot (Limited — Key Lento, first Ch. 1 store), Barrage Gun Supply (Standard), Guns Aplenty! (Hunting), Richardson Hunting Supplies (Standard), Woodhatch (Expanded — Capri).
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.85rem;">
+                <strong style="color:var(--neon-amber); display:block; margin-bottom:0.35rem;">Kelly (3), Leonard (1) &amp; Lummox (1)</strong>
+                <strong>Kelly County:</strong> Gellhorn Outfitters (Standard), Pawn &amp; Gun Port Gellhorn (Standard), Biff's Gun Supply (Standard).<br>
+                <strong>Leonard County:</strong> Tactical Outlet Guns (Standard).<br>
+                <strong>Lummox County:</strong> Rusty Willis Jr. Hunting Supplies (Hunting).
             </div>
         </div>
     </section>
@@ -223,8 +254,8 @@
 
 <script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/assets/js/share-tools.js"></script>
-<script src="/js/affiliates.js?v=20261122_v19"></script>
-<script src="/assets/js/world-db-engine.js"></script>
+<script src="/js/affiliates.js?v=20261122_v22"></script>
+<script src="/assets/js/world-db-engine.js?v=20261122_v22"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
@@ -233,7 +264,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.GTA6WorldDB.mount({
       container: '#worldDbRoot',
       category: 'gun-stores',
-      dataUrl: '/data/gun-stores.json?v=20261121_p4'
+      dataUrl: '/data/gun-stores.json?v=20261121_p4',
+      showAffiliateBar: false,
+      progressPosition: 'after-grid'
     });
   }
 });

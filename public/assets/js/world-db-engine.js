@@ -161,9 +161,12 @@
     return ' <span class="wdb-ver-pill ' + verificationBadgeClass(status) + '" style="font-size:0.55rem; padding:1px 5px; margin-left:4px; vertical-align:middle;">' + esc(status) + '</span>';
   }
 
-  function getAffiliateStripHtml(contextLabel) {
+  function getAffiliateStripHtml(contextLabel, categoryKey) {
     if (global.GTA6AffiliateCards && typeof global.GTA6AffiliateCards.getDatabaseHardwareCardHtml === 'function') {
-      return global.GTA6AffiliateCards.getDatabaseHardwareCardHtml('wdb-hardware-card');
+      var affCtx = categoryKey === 'radio'
+        ? 'radio-audio'
+        : (categoryKey === 'gun-stores' ? 'gunstores-gear' : 'database');
+      return global.GTA6AffiliateCards.getDatabaseHardwareCardHtml('wdb-hardware-card-' + (categoryKey || 'db'), affCtx);
     }
     var aff = global.GTA6_AFFILIATES || {
       amazon: {
@@ -241,7 +244,9 @@
       '.wdb-card.is-compared { box-shadow: 0 0 0 2px var(--neon-pink, #ff2a8d), 0 8px 24px rgba(255, 42, 141, 0.22); }',
 
       '.wdb-card-media { width: 100%; aspect-ratio: 16/9; background: #060912; position: relative; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }',
-      '.wdb-card-media.is-radio { aspect-ratio: 16/6; }',
+      '.wdb-card-media.is-radio { aspect-ratio: 16/9; }',
+      '.wdb-card-cta-pill { display: inline-flex; align-items: center; gap: 0.28rem; font-family: var(--font-mono, monospace); font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.03em; color: var(--neon-cyan, #00f0ff); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 5px; padding: 0.24rem 0.52rem; transition: background 0.16s ease, color 0.16s ease; }',
+      '.wdb-card:hover .wdb-card-cta-pill { background: var(--neon-cyan, #00f0ff); color: #04101d; }',
       '.wdb-card-media picture { display: block; width: 100%; height: 100%; }',
       '.wdb-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }',
       '.wdb-card:hover .wdb-card-media img { transform: scale(1.03); }',
@@ -638,19 +643,25 @@
     key: 'gun-stores',
     title: 'Gun Stores',
     icon: '🔫',
+    isGunStore: true,
     ownedLabel: 'Visited',
-    searchPlaceholder: 'Search Ammu-Nation, Black Eagle, Martez Empenos, region, service, weapon...',
-    affiliateContext: 'Affiliate links — support GTA6HeistGuide.com with discounted PSN/Xbox keys, ExitLag, or creator tools:',
+    searchPlaceholder: 'Search Phil\'s Ammu-Nation, Black Eagle, Woodhatch, Vice-Dale, weapon, service...',
+    affiliateContext: 'Affiliate link · As an Amazon Associate we earn from qualifying purchases at no extra cost to you.',
     primaryFilter: {
-      label: 'Store Type',
-      getValue: function (it) { return it.storeType || 'Ammu-Nation'; },
-      order: ['Ammu-Nation', 'Military Surplus', 'Pawn & Armory', 'Hunting Outfitter']
+      label: 'County',
+      getValue: function (it) { return it.county || it.region || 'Vice-Dale County'; },
+      order: ['Vice-Dale County', 'Mariana County', 'Kelly County', 'Leonard County', 'Lummox County']
     },
     secondaryFilters: [
       {
-        id: 'region',
-        label: 'All Regions',
-        getValue: function (it) { return it.region || ''; }
+        id: 'storeType',
+        label: 'All Store Types',
+        getValue: function (it) { return it.storeType || 'Ammu-Nation'; }
+      },
+      {
+        id: 'tier',
+        label: 'All Inventory Tiers',
+        getValue: function (it) { return it.inventoryTier || 'Standard'; }
       },
       {
         id: 'service',
@@ -896,6 +907,8 @@
 
     var dataUrl = options.dataUrl || ('/data/' + categoryKey + '.json');
     var showAffiliateBar = options.showAffiliateBar !== false;
+    var affiliatePosition = options.affiliatePosition || 'before-grid';
+    var progressPosition = options.progressPosition || 'before-controls';
     var showProgressStrip = options.showProgressStrip !== false;
     var maxInitialItems = typeof options.maxItems === 'number' ? options.maxItems : 0;
 
@@ -913,24 +926,28 @@
 
     var uid = 'wdb_' + categoryKey.replace(/[^a-z0-9]/gi, '_') + '_' + Math.random().toString(36).slice(2, 7);
 
+    var progressHtml = showProgressStrip
+      ? '<div class="wdb-progress-strip" data-wdb-progress>' +
+          '<div class="wdb-progress-stats">' +
+            '<span class="wdb-progress-pill is-green" data-wdb-owned-count>' + esc(schema.ownedLabel || 'Owned') + ': 0 / 0</span>' +
+            '<span class="wdb-progress-pill is-amber" data-wdb-fav-count>★ Favorites: 0</span>' +
+            '<span class="wdb-progress-pill" data-wdb-verified-count>Verified Entries: 0</span>' +
+          '</div>' +
+          '<div class="wdb-progress-actions">' +
+            '<button type="button" class="wdb-mini-btn" data-wdb-export>⬇ Export .json</button>' +
+            '<button type="button" class="wdb-mini-btn is-green" data-wdb-import>⬆ Import .json</button>' +
+            '<input type="file" accept=".json,application/json" style="display:none;" data-wdb-file>' +
+            '<button type="button" class="wdb-mini-btn is-danger" data-wdb-reset>↺ Reset ' + esc(schema.title) + '</button>' +
+          '</div>' +
+        '</div>'
+      : '';
+
+    var affHtml = showAffiliateBar ? getAffiliateStripHtml(schema.affiliateContext, categoryKey) : '';
+
     // Build shell HTML
     rootEl.innerHTML =
       '<div class="wdb-shell" id="' + uid + '">' +
-        (showProgressStrip
-          ? '<div class="wdb-progress-strip" data-wdb-progress>' +
-              '<div class="wdb-progress-stats">' +
-                '<span class="wdb-progress-pill is-green" data-wdb-owned-count>' + esc(schema.ownedLabel || 'Owned') + ': 0 / 0</span>' +
-                '<span class="wdb-progress-pill is-amber" data-wdb-fav-count>★ Favorites: 0</span>' +
-                '<span class="wdb-progress-pill" data-wdb-verified-count>Verified Photos: 0</span>' +
-              '</div>' +
-              '<div class="wdb-progress-actions">' +
-                '<button type="button" class="wdb-mini-btn" data-wdb-export>⬇ Export .json</button>' +
-                '<button type="button" class="wdb-mini-btn is-green" data-wdb-import>⬆ Import .json</button>' +
-                '<input type="file" accept=".json,application/json" style="display:none;" data-wdb-file>' +
-                '<button type="button" class="wdb-mini-btn is-danger" data-wdb-reset>↺ Reset ' + esc(schema.title) + '</button>' +
-              '</div>' +
-            '</div>'
-          : '') +
+        (progressPosition === 'before-controls' ? progressHtml : '') +
         '<section class="wdb-controls" aria-label="' + esc(schema.title) + ' search and filters">' +
           '<div class="wdb-controls-top">' +
             '<div class="wdb-search-wrap">' +
@@ -950,8 +967,10 @@
             '<div class="wdb-result-meta" data-wdb-result-count>Loading ' + esc(schema.title.toLowerCase()) + '...</div>' +
           '</div>' +
         '</section>' +
-        (showAffiliateBar ? getAffiliateStripHtml(schema.affiliateContext) : '') +
+        (affiliatePosition === 'before-grid' ? affHtml : '') +
         '<div class="wdb-grid" data-wdb-grid></div>' +
+        (progressPosition === 'after-grid' ? progressHtml : '') +
+        (affiliatePosition === 'after-grid' ? affHtml : '') +
       '</div>';
 
     var shellEl = rootEl.querySelector('#' + uid);
@@ -1050,9 +1069,25 @@
       );
     }
 
+    function getGunStoreArtworkPath(item) {
+      var t = String(item.storeType || '').toLowerCase();
+      if (t.indexOf('surplus') !== -1) return '/assets/images/gun-stores/military-surplus.svg';
+      if (t.indexOf('pawn') !== -1) return '/assets/images/gun-stores/pawn-armory.svg';
+      if (t.indexOf('hunt') !== -1) return '/assets/images/gun-stores/hunting-outfitter.svg';
+      return '/assets/images/gun-stores/ammu-nation.svg';
+    }
+
     function renderMediaHtml(item, isModal) {
       if (schema.isRadio) {
-        return renderPlaceholderHtml(item, isModal);
+        var radioImg = '/assets/images/radio/' + encodeURIComponent(item.id) + '.svg';
+        var radioFallback = "var p=this.closest('.wdb-card-media,.wdb-modal-hero')||this.parentNode;p.innerHTML=this.getAttribute('data-fallback');";
+        var extraBadges =
+          (item.dmcaSafe ? '<span class="wdb-badge-tr">🎙️ DMCA-Safe</span>' : '') +
+          (item.secretUnlock ? '<span class="wdb-badge-tr" style="background:rgba(255,184,0,0.22); border-color:var(--neon-amber,#ffb800); color:var(--neon-amber,#ffb800);">🔒 Secret Unlock</span>' : '');
+        return (
+          '<img src="' + radioImg + '" alt="' + esc(item.name + ' (' + (item.frequency || 'FM') + ') original station artwork') + '" width="640" height="360" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + radioFallback + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">' +
+          extraBadges
+        );
       }
       if (item.image && item.imageVerified === true) {
         var altText = hasText(item.imageAlt) ? item.imageAlt : (item.name + ' verified GTA VI screenshot');
@@ -1075,6 +1110,11 @@
           (isModal ? '<span class="wdb-zoom-pill">🔍 View Full Image</span>' : '<span class="wdb-badge-tr">✓ Verified Shot</span>')
         );
       }
+      if (schema.isGunStore) {
+        var gsImg = getGunStoreArtworkPath(item);
+        var gsFallback = "var p=this.closest('.wdb-card-media,.wdb-modal-hero')||this.parentNode;p.innerHTML=this.getAttribute('data-fallback');";
+        return '<img src="' + gsImg + '" alt="' + esc(item.name + ' — ' + (item.storeType || 'Gun Store') + ' in ' + (item.county || item.region || 'Leonida')) + '" width="640" height="360" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + gsFallback + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">';
+      }
       return renderPlaceholderHtml(item, isModal);
     }
 
@@ -1091,7 +1131,9 @@
       if (verEl) {
         verEl.textContent = schema.isRadio
           ? ('Verified Stations: ' + state.items.length)
-          : ('Verified Screenshots: ' + shotCnt + ' / ' + state.items.length);
+          : (schema.isGunStore
+            ? ('Verified Locations: ' + state.items.length + ' · 5 Counties')
+            : ('Verified Screenshots: ' + shotCnt + ' / ' + state.items.length));
       }
     }
 
@@ -1279,8 +1321,10 @@
                   '<button type="button" class="wdb-act-btn' + (compared ? ' is-cmp' : '') + '" data-wdb-cmp="' + esc(it.id) + '" aria-pressed="' + (compared ? 'true' : 'false') + '" title="Compare up to 3">⚖️ ' + (compared ? 'Added' : 'Compare') + '</button>' +
                 '</div>' +
                 (pinId
-                  ? '<a href="/map.html?pin=' + encodeURIComponent(pinId) + '" class="wdb-map-pill" data-wdb-map-link>📍 Map</a>'
-                  : '<span style="font-size:0.7rem; color:var(--neon-cyan,#00f0ff); font-family:var(--font-mono,monospace); font-weight:800;">Details &rarr;</span>') +
+                  ? '<a href="/map.html?pin=' + encodeURIComponent(pinId) + '" class="wdb-map-pill" data-wdb-map-link>📍 Map Pin</a>'
+                  : (schema.isRadio
+                    ? '<span class="wdb-card-cta-pill">View Station &rarr;</span>'
+                    : '<span class="wdb-card-cta-pill">Details &rarr;</span>')) +
               '</div>' +
             '</div>' +
           '</article>'

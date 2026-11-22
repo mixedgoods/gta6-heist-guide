@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="MILITARY SURPLUS Leonida Gun Store Category">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07140d"/>
+      <stop offset="100%" stop-color="#050812"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="76%" cy="48%" r="54%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#glow1)"/>
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="72" x2="640" y2="72"/>
+    <line x1="0" y1="144" x2="640" y2="144"/>
+    <line x1="0" y1="216" x2="640" y2="216"/>
+    <line x1="0" y1="288" x2="640" y2="288"/>
+  </g>
+  <g transform="translate(492,178)" fill="none">
+          <polygon points="0,-96 84,-48 84,48 0,96 -84,48 -84,-48" fill="#22c55e" fill-opacity="0.12" stroke="#22c55e" stroke-width="2.6"/>
+          <polygon points="0,-64 56,-32 56,32 0,64 -56,32 -56,-32" stroke="#00f0ff" stroke-width="1.8" opacity="0.75"/>
+          <path d="M-32 -14 L0 -38 L32 -14 M-32 10 L0 -14 L32 10 M-32 34 L0 10 L32 34" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+  <rect x="28" y="34" width="150" height="24" rx="12" fill="rgba(5,9,20,0.8)" stroke="#22c55e" stroke-opacity="0.6"/>
+  <text x="103" y="50" text-anchor="middle" fill="#22c55e" font-family="ui-monospace,Consolas,monospace" font-size="10.5" font-weight="800" letter-spacing="1.1">LEONIDA OUTLET</text>
+  <text x="30" y="162" fill="#ffffff" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="33" font-weight="900" letter-spacing="-0.3">MILITARY SURPLUS</text>
+  <rect x="30" y="182" width="76" height="4" rx="2" fill="url(#g1)"/>
+  <text x="30" y="212" fill="#cbd5e1" font-family="ui-monospace,Consolas,monospace" font-size="12.5" font-weight="700" letter-spacing="1">TACTICAL GEAR &amp; HEAVY ORDNANCE</text>
+  <text x="30" y="314" fill="#94a3b8" font-family="ui-monospace,Consolas,monospace" font-size="11" font-weight="700" letter-spacing="1.2">VERIFIED DIRECTORY &#8226; MAP PIN READY</text>
+</svg>

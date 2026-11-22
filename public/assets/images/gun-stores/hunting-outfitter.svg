@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="HUNTING OUTFITTER Leonida Gun Store Category">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07121a"/>
+      <stop offset="100%" stop-color="#050812"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="76%" cy="48%" r="54%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#glow1)"/>
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="72" x2="640" y2="72"/>
+    <line x1="0" y1="144" x2="640" y2="144"/>
+    <line x1="0" y1="216" x2="640" y2="216"/>
+    <line x1="0" y1="288" x2="640" y2="288"/>
+  </g>
+  <g transform="translate(492,178)" fill="none">
+          <path d="M-104 62 L-38 -42 L4 14 L52 -58 L104 62 Z" fill="#10b981" fill-opacity="0.16" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="0" cy="-10" r="68" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8 8" opacity="0.65"/>
+          <line x1="-22" y1="-10" x2="22" y2="-10" stroke="#38bdf8" stroke-width="2.5"/>
+          <line x1="0" y1="-32" x2="0" y2="12" stroke="#38bdf8" stroke-width="2.5"/>
+        </g>
+  <rect x="28" y="34" width="150" height="24" rx="12" fill="rgba(5,9,20,0.8)" stroke="#38bdf8" stroke-opacity="0.6"/>
+  <text x="103" y="50" text-anchor="middle" fill="#38bdf8" font-family="ui-monospace,Consolas,monospace" font-size="10.5" font-weight="800" letter-spacing="1.1">LEONIDA OUTLET</text>
+  <text x="30" y="162" fill="#ffffff" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="33" font-weight="900" letter-spacing="-0.3">HUNTING OUTFITTER</text>
+  <rect x="30" y="182" width="76" height="4" rx="2" fill="url(#g1)"/>
+  <text x="30" y="212" fill="#cbd5e1" font-family="ui-monospace,Consolas,monospace" font-size="12.5" font-weight="700" letter-spacing="1">OPTICS, RIFLES &amp; BACKCOUNTRY</text>
+  <text x="30" y="314" fill="#94a3b8" font-family="ui-monospace,Consolas,monospace" font-size="11" font-weight="700" letter-spacing="1.2">VERIFIED DIRECTORY &#8226; MAP PIN READY</text>
+</svg>

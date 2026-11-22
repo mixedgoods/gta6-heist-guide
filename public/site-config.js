@@ -7,14 +7,26 @@ window.SITE_CONFIG = Object.freeze({
   domain: "https://www.gta6heistguide.com",
   ownerContactEmail: "inquiries@gta6heistguide.com",
 
-  // Centralized Direct Amazon Product Links
+  // Centralized Amazon Associates Links (Tag: gta6heistguid-20)
   amazonLinks: {
     kontrolfreek: "https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20",
-    samsung990pro: "https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20",
+    dualsenseDock: "https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20",
+    controllerStand: "https://www.amazon.com/s?k=PS5+Xbox+Controller+Headset+Stand+Desk&tag=gta6heistguid-20",
+    controllerCase: "https://www.amazon.com/s?k=PS5+DualSense+Protective+Travel+Case&tag=gta6heistguid-20",
+    replacementSticks: "https://www.amazon.com/s?k=PS5+Xbox+Controller+Thumb+Grips+Silicone+Caps&tag=gta6heistguid-20",
+    dualsenseEdge: "https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20",
+    xboxElite2: "https://www.amazon.com/s?k=Xbox+Elite+Wireless+Controller+Series+2&tag=gta6heistguid-20",
     pulseElite: "https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20",
     pulseExplore: "https://www.amazon.com/s?k=PlayStation+PULSE+Explore+Wireless+Earbuds&tag=gta6heistguid-20",
-    dualsenseDock: "https://www.amazon.com/s?k=PlayStation+DualSense+Charging+Station&tag=gta6heistguid-20",
-    dualsenseEdge: "https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20",
+    usbGamingMic: "https://www.amazon.com/s?k=USB+Gaming+Microphone+Streaming+PS5+PC&tag=gta6heistguid-20",
+    headsetStand: "https://www.amazon.com/s?k=Aluminum+Gaming+Headset+Stand+Desk+Mount&tag=gta6heistguid-20",
+    samsung990pro: "https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20",
+    ssdHeatsink: "https://www.amazon.com/s?k=PS5+M.2+NVMe+SSD+Heatsink&tag=gta6heistguid-20",
+    wdBlackSn850p: "https://www.amazon.com/s?k=WD_BLACK+SN850P+NVMe+SSD+for+PS5&tag=gta6heistguid-20",
+    elgatoHd60x: "https://www.amazon.com/s?k=Elgato+HD60+X+Capture+Card&tag=gta6heistguid-20",
+    streamLight: "https://www.amazon.com/s?k=LED+Streaming+Key+Light+Desk+Mount+Gaming&tag=gta6heistguid-20",
+    cableKit: "https://www.amazon.com/s?k=Desk+Cable+Management+Kit+Gaming+Setup&tag=gta6heistguid-20",
+    prime: "https://www.amazon.com/prime?tag=gta6heistguid-20",
     amazonMusic: "https://www.amazon.com/music/unlimited?tag=gta6heistguid-20",
     gamingMonitor: "https://www.amazon.com/s?k=4K+120Hz+HDMI+2.1+Gaming+Monitor+PS5&tag=gta6heistguid-20"
   },
