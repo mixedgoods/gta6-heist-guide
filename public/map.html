@@ -196,6 +196,60 @@
             cursor: pointer;
             display: none;
         }
+        .sidebar-search-clear:hover { color: #fff; }
+        .map-search-results-panel {
+            display: none;
+            margin-top: 0.45rem;
+            background: rgba(8, 12, 24, 0.96);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 8px;
+            max-height: 230px;
+            overflow-y: auto;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65);
+        }
+        .map-search-results-panel.is-open { display: block; }
+        .map-search-results-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.7rem;
+            font-family: var(--font-mono, monospace);
+            color: var(--neon-cyan, #00f0ff);
+            position: sticky;
+            top: 0;
+            background: rgba(8, 12, 24, 0.98);
+            z-index: 2;
+        }
+        .map-search-result-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            width: 100%;
+            text-align: left;
+            padding: 0.48rem 0.65rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #f1f5f9;
+            cursor: pointer;
+            font-size: 0.78rem;
+            transition: background 0.15s;
+        }
+        .map-search-result-row:hover,
+        .map-search-result-row:focus {
+            background: rgba(0, 240, 255, 0.14);
+            outline: none;
+        }
+        .map-search-no-results {
+            padding: 0.85rem 0.75rem;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 0.76rem;
+            line-height: 1.45;
+        }
         .region-pills-row {
             display: flex;
             gap: 0.32rem;
@@ -836,6 +890,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
@@ -873,9 +928,10 @@
 
             <div class="sidebar-search-wrap">
                 <span class="sidebar-search-icon">🔍</span>
-                <input type="text" id="mapSearchInput" class="sidebar-search-input" placeholder="Search 160+ vaults, properties, animals, code 7700..." oninput="handleSearch(this.value)">
-                <button type="button" class="sidebar-search-clear" id="searchClearBtn" onclick="clearSearch()">✕</button>
+                <input type="text" id="mapSearchInput" class="sidebar-search-input" aria-label="Search Leonida map locations" placeholder="Search Brian's Lockup, Keypad 7700, animals, garages..." oninput="handleSearch(this.value)" onkeydown="handleSearchKeydown(event)">
+                <button type="button" class="sidebar-search-clear" id="searchClearBtn" aria-label="Clear map search" onclick="clearSearch()">✕</button>
             </div>
+            <div class="map-search-results-panel" id="mapSearchResultsPanel" role="region" aria-label="Map search results"></div>
 
             <div class="region-pills-row" id="regionPillsRow">
                 <button type="button" class="region-jump-pill" onclick="resetFullMap()">🌎 Full Map</button>
@@ -1001,11 +1057,12 @@
 <div class="modal-overlay" id="saveCodeModal" onclick="if(event.target===this) closeSaveModal()">
     <div class="modal-card">
         <div style="display:flex; justify-content:space-between; align-items:center;">
-            <h3 style="margin:0; font-size:1.05rem; color:#fff;">💾 Backup / Transfer Map Progress</h3>
+            <h3 style="margin:0; font-size:1.05rem; color:#fff;">💾 BACK UP OR RESTORE YOUR MAP PROGRESS</h3>
             <button type="button" onclick="closeSaveModal()" style="background:none; border:none; color:#cbd5e1; font-size:1.2rem; cursor:pointer;">&times;</button>
         </div>
-        <p style="font-size:0.72rem; color:#94a3b8; margin:0;">
-            Copy your save string to transfer your checklist progress and custom dropped pins between devices with zero login required.
+        <p style="font-size:0.74rem; color:#cbd5e1; margin:0; line-height:1.45;">
+            <strong>EXPORT:</strong> Downloads a backup of your saved progress and custom pins.<br>
+            <strong>IMPORT:</strong> Restores previously exported map progress and custom pins to another browser or device (personal backup only &mdash; not for importing new GTA VI discoveries).
         </p>
         <textarea id="saveCodeTextarea" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem; padding-left:0.65rem;"></textarea>
         <div style="display:flex; gap:0.45rem; flex-wrap:wrap; justify-content:flex-end;">
@@ -1682,13 +1739,15 @@ function toggleAllCategories(show) {
 }
 
 function updateCategoryLayers() {
+    const hasSearch = Boolean(currentSearchQuery);
     Object.keys(CATEGORIES).forEach(cat => {
         const layer = markerLayersByCategory[cat];
         if (!layer) return;
         layer.clearLayers();
-        if (categoryVisibility[cat]) {
+        if (hasSearch || categoryVisibility[cat]) {
             allPins.filter(p => p.category === cat).forEach(pin => {
                 if (hideFoundActive && foundPinIds.has(pin.id)) return;
+                if (hasSearch && !matchesPinSearch(pin, currentSearchQuery)) return;
                 const m = markersById[pin.id];
                 if (m) layer.addLayer(m);
             });
@@ -1696,33 +1755,177 @@ function updateCategoryLayers() {
     });
 }
 
+function normalizeSearchStr(str) {
+    return String(str || '')
+        .toLowerCase()
+        .replace(/['’`]/g, '')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+}
+
+function buildPinSearchHaystack(pin) {
+    const cat = CATEGORIES[pin.category] || {};
+    const extras = [];
+    if (pin.category === 'property' || /garage|chop|boatyard|airboat|safehouse|drive|car|truck/i.test(`${pin.title} ${pin.description || ''} ${pin.exfil || ''}`)) {
+        extras.push('vehicle vehicles car cars garage');
+    }
+    if (pin.category === 'animal') {
+        extras.push('animal animals wildlife fauna');
+    }
+    if (pin.category === 'property') {
+        extras.push('property properties safehouse');
+    }
+    return normalizeSearchStr([
+        pin.title,
+        pin.region,
+        pin.description,
+        pin.tips,
+        pin.payout,
+        pin.security,
+        pin.exfil,
+        pin.badge,
+        pin.category,
+        pin.categoryName,
+        cat.name,
+        pin.id,
+        ...extras
+    ].join(' '));
+}
+
+function matchesPinSearch(pin, query) {
+    const normQuery = normalizeSearchStr(query);
+    if (!normQuery) return true;
+    const tokens = normQuery.split(' ').filter(Boolean);
+    if (tokens.length === 0) return true;
+    const hay = buildPinSearchHaystack(pin);
+    return tokens.every(tok => hay.includes(tok));
+}
+
+function getSearchMatches(query) {
+    const normQuery = normalizeSearchStr(query);
+    if (!normQuery) return [];
+    const exactTitle = [];
+    const other = [];
+    allPins.forEach(pin => {
+        if (hideFoundActive && foundPinIds.has(pin.id)) return;
+        if (!matchesPinSearch(pin, normQuery)) return;
+        if (normalizeSearchStr(pin.title).includes(normQuery)) exactTitle.push(pin);
+        else other.push(pin);
+    });
+    return exactTitle.concat(other);
+}
+
+function escapeMapHtml(str) {
+    return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function selectSearchResult(pinId) {
+    const pin = allPins.find(p => p.id === pinId);
+    if (!pin) return;
+    const cat = pin.category || 'vault';
+    if (!categoryVisibility[cat]) {
+        categoryVisibility[cat] = true;
+        renderCategoryRows();
+    }
+    updateCategoryLayers();
+    flyToPin(pin.id, true, true);
+    if (window.innerWidth <= 900) {
+        const sidebar = document.getElementById('mapSidebar');
+        if (sidebar) sidebar.classList.remove('open');
+    }
+}
+
+function renderSearchResultsPanel() {
+    const panel = document.getElementById('mapSearchResultsPanel');
+    if (!panel) return;
+    if (!currentSearchQuery) {
+        panel.classList.remove('is-open');
+        panel.innerHTML = '';
+        return;
+    }
+    const matches = getSearchMatches(currentSearchQuery);
+    panel.classList.add('is-open');
+    if (matches.length === 0) {
+        panel.innerHTML = `
+            <div class="map-search-no-results">
+                <div>🔍 No matching map locations found for <strong>"${escapeMapHtml(currentSearchQuery)}"</strong>.</div>
+                <div style="font-size:0.7rem; color:#94a3b8; margin-top:0.25rem;">Try searching Brian's Lockup, Keypad 7700, a property, animal, garage, or region.</div>
+                <button type="button" class="btn-mini-action" style="margin-top:0.5rem; border-color:var(--neon-cyan,#00f0ff); color:var(--neon-cyan,#00f0ff);" onclick="clearSearch()">✕ Clear Search</button>
+            </div>`;
+        return;
+    }
+    const head = `
+        <div class="map-search-results-head">
+            <span>✓ ${matches.length} matching location${matches.length === 1 ? '' : 's'}</span>
+            <button type="button" class="btn-mini-action" style="padding:0.15rem 0.45rem; font-size:0.65rem;" onclick="clearSearch()">Clear</button>
+        </div>`;
+    const rows = matches.slice(0, 40).map(pin => {
+        const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
+        return `
+            <button type="button" class="map-search-result-row" data-search-pin-id="${escapeMapHtml(pin.id)}" onclick="selectSearchResult('${escapeMapHtml(pin.id)}')">
+                <span style="display:flex; align-items:center; gap:0.45rem; min-width:0;">
+                    <span style="flex-shrink:0;">${pin.icon || cat.icon}</span>
+                    <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                        <strong style="color:#fff;">${escapeMapHtml(pin.title)}</strong>
+                        <span style="display:block; font-size:0.68rem; color:#94a3b8;">📍 ${escapeMapHtml(pin.region || 'Leonida')} &bull; ${escapeMapHtml(cat.name || pin.category || 'Location')}</span>
+                    </span>
+                </span>
+                <span style="color:var(--neon-cyan,#00f0ff); font-size:0.72rem; flex-shrink:0;">Go &rarr;</span>
+            </button>`;
+    }).join('');
+    panel.innerHTML = head + rows;
+}
+
+function handleSearchKeydown(event) {
+    if (event.key === 'Escape') {
+        clearSearch();
+        return;
+    }
+    if (event.key === 'Enter' && currentSearchQuery) {
+        event.preventDefault();
+        const matches = getSearchMatches(currentSearchQuery);
+        if (matches.length > 0) {
+            selectSearchResult(matches[0].id);
+        }
+    }
+}
+
 function handleSearch(query) {
-    currentSearchQuery = query.toLowerCase().trim();
+    currentSearchQuery = (query || '').trim();
     const clearBtn = document.getElementById('searchClearBtn');
     if (clearBtn) clearBtn.style.display = currentSearchQuery ? 'block' : 'none';
+    updateCategoryLayers();
+    renderSearchResultsPanel();
     renderFilteredList();
 }
 
 function clearSearch() {
     const input = document.getElementById('mapSearchInput');
-    if (input) input.value = '';
+    if (input) {
+        input.value = '';
+        input.focus();
+    }
     handleSearch('');
 }
 
 function renderFilteredList() {
     const listEl = document.getElementById('sidebarLocationsList');
     if (!listEl) return;
+    const hasSearch = Boolean(currentSearchQuery);
     const filtered = allPins.filter(pin => {
         const cat = pin.category || 'vault';
-        if (!categoryVisibility[cat]) return false;
+        if (!hasSearch && !categoryVisibility[cat]) return false;
         if (hideFoundActive && foundPinIds.has(pin.id)) return false;
-        if (!currentSearchQuery) return true;
-        const text = `${pin.title} ${pin.region || ''} ${pin.description || ''} ${pin.payout || ''} ${pin.id}`.toLowerCase();
-        return text.includes(currentSearchQuery);
+        if (!hasSearch) return true;
+        return matchesPinSearch(pin, currentSearchQuery);
     });
 
     if (filtered.length === 0) {
-        listEl.innerHTML = '<div style="text-align:center; padding:1.5rem 1rem; color:#94a3b8; font-size:0.8rem;">🔍 No matching locations found.</div>';
+        listEl.innerHTML = '<div style="text-align:center; padding:1.5rem 1rem; color:#94a3b8; font-size:0.8rem;">🔍 No matching locations found. <button type="button" class="btn-mini-action" style="margin-left:0.4rem;" onclick="clearSearch()">Clear</button></div>';
         return;
     }
 
@@ -1730,7 +1933,7 @@ function renderFilteredList() {
         const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
         const isFound = foundPinIds.has(pin.id);
         return `
-            <div class="pin-list-item ${isFound ? 'is-found' : ''}" onclick="flyToPin('${pin.id}', true, true)">
+            <div class="pin-list-item ${isFound ? 'is-found' : ''}" onclick="selectSearchResult('${pin.id}')">
                 <div class="pin-item-left">
                     <span class="pin-item-icon">${pin.icon || cat.icon}</span>
                     <div class="pin-item-title-wrap">

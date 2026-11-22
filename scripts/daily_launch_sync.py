@@ -57,7 +57,7 @@ def strip_volatile(obj):
 
 # 1. Mirror public/data/*.json -> data/*.json ONLY when bytes differ (public/data is canonical)
 mirrored = []
-for fname in ("properties.json", "animals.json", "discoveries.json", "vehicles.json", "weapons.json", "gun-stores.json", "radio.json"):
+for fname in ("properties.json", "animals.json", "discoveries.json", "vehicles.json", "weapons.json", "gun-stores.json", "radio.json", "cheats.json"):
     pub_file = os.path.join(PUB_DATA_DIR, fname)
     root_file = os.path.join(DATA_DIR, fname)
     if os.path.exists(pub_file):

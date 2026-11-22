@@ -416,11 +416,11 @@
                         <span class="visual-shot-pill">TOOL 5 OF 8 &bull; SYNCED</span>
                     </div>
                     <div class="hub-tool-top">
-                        <span class="verify-badge verify-community">⚡ 61 CODES &amp; GLITCHES</span>
+                        <span class="verify-badge verify-community">⚡ <span data-cheat-count>61</span> CHEATS &amp; GLITCHES</span>
                         <span class="hub-tool-stat" id="toolStatCheats">0 / 61 Cheats</span>
                     </div>
                     <h2 style="color:#fff; font-size:1.22rem; margin:0 0 0.45rem;">Cheat Tracker</h2>
-                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">Search all 61 GTA 6 D-pad &amp; phone dialer cheat codes, track both Unlocked and Tested status per code, review trophy-disable rules, and browse verified launch glitches.</p>
+                    <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">Search all <span data-cheat-count>61</span> published GTA 6 D-pad &amp; phone dialer cheat codes, track both Unlocked and Tested status per code, review trophy-disable rules, and browse verified launch glitches.</p>
                     <div class="hub-tool-instructions">
                         <div class="hub-tool-instructions-title">Quick Instructions</div>
                         <ol>
@@ -560,7 +560,7 @@
             </div>
             <div class="hub-sync-chip">
                 <strong>⚡ Cheat Tracker Tested Status</strong>
-                Every one of the 61 cheats retains both Unlocked and Tested flags safely inside the shared store—kept isolated from your clean Slot #14 save.
+                Every published cheat retains both Unlocked and Tested flags safely inside the shared store—kept isolated from your clean Slot #14 save.
             </div>
             <div class="hub-sync-chip">
                 <strong>📦 Portable JSON Backup</strong>
@@ -641,7 +641,7 @@
     if (h) h.textContent = s.heists + ' / 8 Heists';
     if (sl) sl.textContent = s.slots + ' / 15 Slots';
     if (p) p.textContent = s.pins + ' Pins Found';
-    if (c) c.textContent = s.cheats + ' / 61 Unlocked' + (s.cheatsTested ? ' · ' + s.cheatsTested + ' Tested' : '');
+    if (c) c.textContent = s.cheats + ' / ' + (window.GTA6_CHEAT_COUNT || 61) + ' Unlocked' + (s.cheatsTested ? ' · ' + s.cheatsTested + ' Tested' : '');
     if (calc && s.heistBuilds > 0) calc.textContent = s.heistBuilds + ' Saved Build' + (s.heistBuilds === 1 ? '' : 's');
   }
   document.addEventListener('DOMContentLoaded', function() {

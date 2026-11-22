@@ -71,6 +71,14 @@ jobs:
             node scripts/sync-world-db.mjs
           fi
 
+      - name: Run GTA VI Cheat Discovery & Verification Sync
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            node scripts/sync-cheats.mjs --dry-run
+          else
+            node scripts/sync-cheats.mjs
+          fi
+
       - name: Run GTA VI Intel Feed Sync (Zero-Change Safe)
         run: python sync_gta6_intel.py
 

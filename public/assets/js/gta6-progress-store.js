@@ -875,6 +875,7 @@
               '⚠️ <strong>Overwrite Warning:</strong> Importing this backup will replace your current locally saved progress across connected GTA 6 tools on this browser.' +
             '</p>' +
             '<div class="gta-reset-modal-actions">' +
+              '<button type="button" class="btn btn-secondary" id="gtaImportBackupFirstBtn" style="border-color:var(--neon-cyan,#00f0ff); color:var(--neon-cyan,#00f0ff);">⬇ Download Current Backup First</button>' +
               '<button type="button" class="btn btn-secondary" id="gtaImportCancelBtn">Cancel</button>' +
               '<button type="button" class="btn btn-primary" id="gtaImportConfirmBtn">Confirm Overwrite &amp; Restore</button>' +
             '</div>' +
@@ -919,10 +920,24 @@
           '<div>📚 Database: <strong>' + incoming.dbOwned + '</strong> owned &bull; <strong>' + incoming.dbFavs + '</strong> favorites</div>' +
         '</div>';
 
+      var backupFirstBtn = document.getElementById('gtaImportBackupFirstBtn');
+      if (backupFirstBtn) {
+        backupFirstBtn.onclick = function () {
+          GTA6Progress.exportJSON();
+        };
+      }
       confirmBtn.onclick = function () {
+        // Automatic pre-import safety backup in localStorage before replacing progress
+        try {
+          var snapshot = loadStore();
+          localStorage.setItem('gta6_progress_pre_import_backup_v1', JSON.stringify({
+            backedUpAt: new Date().toISOString(),
+            store: snapshot
+          }));
+        } catch (e) {}
         saveStore(check.data, false);
         backdrop.classList.remove('is-open');
-        showProgressToast('Backup restored & synced across all GTA 6 tools!', false);
+        showProgressToast('Pre-import safety backup saved. Progress restored & synced across all GTA 6 tools!', false);
         if (onSuccess) onSuccess({ ok: true, mode: check.mode, summary: GTA6Progress.getSummary() });
       };
       cancelBtn.onclick = function () { backdrop.classList.remove('is-open'); };
@@ -1076,20 +1091,26 @@
       var compact = Boolean(options.compact);
 
       if (compact) {
+        var isMapScope = (scope === 'pins');
         el.innerHTML =
           '<div class="gta-progress-bar-widget is-compact">' +
+            (isMapScope
+              ? '<div style="font-size:0.72rem; font-weight:900; letter-spacing:0.05em; color:var(--neon-cyan,#00f0ff); text-transform:uppercase; margin-bottom:0.25rem;">💾 BACK UP OR RESTORE YOUR MAP PROGRESS</div>'
+              : '') +
             '<div class="gta-pb-compact-top">' +
               '<span class="gta-pb-autosave" data-pb-autosave><span class="gta-pb-dot"></span> <span data-pb-autosave-text>Auto-saved</span></span>' +
               '<span class="gta-pb-compact-sync" data-pb-compact-stats>💾 0/15 &bull; 🎯 0/8</span>' +
             '</div>' +
             '<div class="gta-pb-actions gta-pb-compact-actions">' +
-              '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-pb-export>⬇ Export .json</button>' +
-              '<button type="button" class="gta-pb-btn gta-pb-btn-green" data-pb-import>⬆ Import .json</button>' +
+              '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-pb-export>⬇ Export Backup (.json)</button>' +
+              '<button type="button" class="gta-pb-btn gta-pb-btn-green" data-pb-import>⬆ Import Backup (.json)</button>' +
               '<input type="file" accept=".json,application/json" style="display:none;" data-pb-file>' +
               '<button type="button" class="gta-pb-btn gta-pb-btn-danger" data-pb-reset>↺ Reset</button>' +
             '</div>' +
             '<div class="gta-pb-note">' +
-              'Stored locally in this browser/device unless exported. Syncs live with Save Planner, Heist Planner &amp; Cheats.' +
+              (isMapScope
+                ? '<strong>EXPORT:</strong> Downloads a backup of your saved progress and custom pins.<br><strong>IMPORT:</strong> Restores previously exported map progress &amp; custom pins to another browser or device (personal backup only — not for importing new GTA VI discoveries). Syncs with Save Planner, Heist Planner &amp; Cheats.'
+                : 'Stored locally in this browser/device unless exported. Syncs live with Save Planner, Heist Planner &amp; Cheats.') +
             '</div>' +
           '</div>';
       } else {
@@ -1102,7 +1123,7 @@
                 '<span class="gta-pb-stat">💾 Slots: <strong data-pb-slots>0</strong>/15</span>' +
                 '<span class="gta-pb-stat">🗺️ Map Pins: <strong data-pb-pins>0</strong></span>' +
                 '<span class="gta-pb-stat">🎯 Heists: <strong data-pb-heists>0</strong>/8</span>' +
-                '<span class="gta-pb-stat">⚡ Cheats: <strong data-pb-cheats>0</strong>/61<span data-pb-cheats-tested style="color:var(--neon-cyan); margin-left:3px;"></span></span>' +
+                '<span class="gta-pb-stat">⚡ Cheats: <strong data-pb-cheats>0</strong>/<span data-pb-cheat-total>61</span><span data-pb-cheats-tested style="color:var(--neon-cyan); margin-left:3px;"></span></span>' +
               '</div>' +
               '<div class="gta-pb-actions">' +
                 '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-pb-export>⬇ Export Backup (.json)</button>' +
@@ -1117,12 +1138,20 @@
           '</div>';
       }
 
+      function getDynamicCheatTotal() {
+        return (typeof global.GTA6_CHEAT_COUNT === 'number' && global.GTA6_CHEAT_COUNT > 0)
+          ? global.GTA6_CHEAT_COUNT
+          : 61;
+      }
+
       function refreshStats(flashSaved) {
         var s = GTA6Progress.getSummary();
+        var cheatTotal = getDynamicCheatTotal();
         var sEl = el.querySelector('[data-pb-slots]');
         var pEl = el.querySelector('[data-pb-pins]');
         var hEl = el.querySelector('[data-pb-heists]');
         var cEl = el.querySelector('[data-pb-cheats]');
+        var cTotalEl = el.querySelector('[data-pb-cheat-total]');
         var ctEl = el.querySelector('[data-pb-cheats-tested]');
         var compactStatsEl = el.querySelector('[data-pb-compact-stats]');
         var autoText = el.querySelector('[data-pb-autosave-text]');
@@ -1132,9 +1161,10 @@
         if (pEl) pEl.textContent = String(s.pins);
         if (hEl) hEl.textContent = String(s.heists);
         if (cEl) cEl.textContent = String(s.cheats);
+        if (cTotalEl) cTotalEl.textContent = String(cheatTotal);
         if (ctEl) ctEl.textContent = s.cheatsTested > 0 ? '(' + s.cheatsTested + ' tested)' : '';
         if (compactStatsEl) {
-          compactStatsEl.textContent = '💾 ' + s.slots + '/15 • 🎯 ' + s.heists + '/8 • ⚡ ' + s.cheats + '/61';
+          compactStatsEl.textContent = '💾 ' + s.slots + '/15 • 🎯 ' + s.heists + '/8 • ⚡ ' + s.cheats + '/' + cheatTotal;
         }
         if (autoText) {
           autoText.textContent = 'Auto-saved · ' + formatStamp(s.updatedAt);
@@ -1204,6 +1234,25 @@
       } catch (err) {}
     }
   });
+
+  // Hydrate dynamic published cheat count from /data/cheats.json (zero hardcoded counts)
+  if (typeof fetch === 'function') {
+    fetch('/data/cheats.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.items)) return;
+        var count = data.items.length;
+        global.GTA6_CHEAT_COUNT = count;
+        var nodes = document.querySelectorAll('[data-cheat-count], [data-pb-cheat-total]');
+        for (var i = 0; i < nodes.length; i++) {
+          nodes[i].textContent = String(count);
+        }
+        try {
+          global.dispatchEvent(new CustomEvent('gta6-progress-updated', { detail: { store: loadStore(), source: 'cheats-count' } }));
+        } catch (err) {}
+      })
+      .catch(function () {});
+  }
 
   // Safe initial migration & hydration on first load
   loadStore();
