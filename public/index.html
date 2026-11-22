@@ -27,7 +27,7 @@
     <meta name="twitter:description" content="Verified GTA 6 Story Mode launch guide: 15-slot save planner, safe codes (7700, 0420), 61 cheats tracker, interactive map, and real robbery payouts.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
 
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
 
     <script type="application/ld+json">
     {
@@ -110,35 +110,10 @@
     }
     </script>
     <style>
-      .home-pillar-strip {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.75rem;
-        margin: 0.75rem 0 0.85rem;
-      }
-      @media (max-width: 900px) { .home-pillar-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-      @media (max-width: 520px) { .home-pillar-strip { grid-template-columns: 1fr; } }
-      .home-pillar-card {
-        background: linear-gradient(145deg, rgba(14, 20, 36, 0.96), rgba(8, 12, 22, 0.98));
-        border: 1px solid rgba(0, 240, 255, 0.28);
-        border-radius: 10px;
-        padding: 0.8rem 0.95rem;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-        transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-      }
-      .home-pillar-card:hover {
-        transform: translateY(-2px);
-        border-color: var(--neon-cyan);
-        box-shadow: 0 8px 22px rgba(0, 240, 255, 0.16);
-      }
       .home-disc-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.85rem;
+        gap: 0.8rem;
       }
       @media (max-width: 1024px) { .home-disc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
       @media (max-width: 560px) { .home-disc-grid { grid-template-columns: 1fr; } }
@@ -146,7 +121,7 @@
         background: linear-gradient(155deg, rgba(15, 18, 34, 0.96), rgba(9, 12, 22, 0.98));
         border: 1px solid rgba(255, 42, 141, 0.28);
         border-radius: 10px;
-        padding: 0.95rem;
+        padding: 0.9rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -156,7 +131,7 @@
       .home-tools-6grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.85rem;
+        gap: 0.8rem;
       }
       @media (max-width: 960px) { .home-tools-6grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
       @media (max-width: 560px) { .home-tools-6grid { grid-template-columns: 1fr; } }
@@ -164,7 +139,7 @@
         background: linear-gradient(155deg, rgba(14, 18, 34, 0.96), rgba(8, 11, 22, 0.98));
         border: 1px solid rgba(0, 240, 255, 0.25);
         border-radius: 11px;
-        padding: 1rem 1.05rem;
+        padding: 0.92rem 1rem;
         text-decoration: none;
         color: inherit;
         display: flex;
@@ -176,29 +151,34 @@
       .home-db-6grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.9rem;
+        gap: 0.85rem;
       }
       @media (max-width: 960px) { .home-db-6grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
       @media (max-width: 560px) { .home-db-6grid { grid-template-columns: 1fr; } }
       .home-db-card {
-        background: rgba(12, 16, 30, 0.96);
-        border: 1px solid rgba(255, 255, 255, 0.11);
+        background: linear-gradient(160deg, rgba(13, 18, 34, 0.96), rgba(8, 11, 22, 0.99));
+        border: 1px solid rgba(0, 240, 255, 0.2);
         border-radius: 11px;
         overflow: hidden;
         text-decoration: none;
         color: inherit;
         display: flex;
         flex-direction: column;
-        transition: transform 0.18s ease, border-color 0.18s ease;
+        transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
       }
-      .home-db-card:hover { transform: translateY(-2px); border-color: var(--neon-cyan); }
+      .home-db-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--neon-cyan);
+        box-shadow: 0 10px 24px rgba(0, 240, 255, 0.14);
+      }
       .home-db-thumb {
         width: 100%;
         aspect-ratio: 16/9;
         overflow: hidden;
         background: #070b14;
       }
-      .home-db-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .home-db-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+      .home-db-card:hover .home-db-thumb img { transform: scale(1.03); }
     </style>
 </head>
 <body>
@@ -221,7 +201,7 @@
             <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
         </div>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/" class="nav-pill active">HEISTS</a></li>
             <li><a href="/map.html" class="nav-pill">MAP</a></li>
             <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
@@ -263,84 +243,459 @@
     </div>
 </nav>
 
-<!-- 2. COMPACT HERO INTRO -->
-<header class="hero-cinematic">
-    <div class="hero-banner-frame" style="background:#0a0e17; min-height:360px; position:relative; overflow:hidden;">
-        <a href="/lucia-jason-skills.html" style="display:block; position:relative; width:100%; height:100%;">
-            <img src="/assets/characters-duo-banner.jpg?v=20261120_v6" alt="Grand Theft Auto VI - Jason and Lucia Vice City" loading="eager" width="1400" height="680" style="object-fit:contain; object-position:center top; min-height:360px; max-height:460px; width:100%; display:block; margin:0 auto;">
-            <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(to right, #0a0e17 0%, rgba(10,14,23,0) 8%, rgba(10,14,23,0) 92%, #0a0e17 100%), linear-gradient(to bottom, transparent 55%, #0a0e17 100%);"></div>
-        </a>
-        <div class="hero-overlay-bar">
-            <div>
-                <div class="hero-launch-badge" style="display:inline-flex; flex-wrap:wrap; align-items:center; gap:0.4rem; background:rgba(8,12,22,0.94); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid var(--neon-green); border-radius:6px; padding:0.26rem 0.7rem; margin-bottom:0.45rem; font-size:0.75rem; letter-spacing:0.03em; color:#5bffb5; font-weight:800; font-family:var(--font-mono); box-shadow:0 4px 14px rgba(0,0,0,0.85), 0 0 12px rgba(0,255,136,0.25); text-shadow:0 1px 2px rgba(0,0,0,0.9);">
+<!-- 2. HEIST-FIRST FIRST-SCREEN PRESENTATION + FEATURED AFFILIATE RECOMMENDATION -->
+<header class="home-heist-hero">
+    <div class="home-hero-grid">
+        <div class="home-hero-panel">
+            <img src="/assets/characters-duo-banner.jpg?v=20261120_v6" alt="Grand Theft Auto VI — Jason and Lucia in Vice City" class="home-hero-bg" loading="eager" fetchpriority="high" width="1400" height="680">
+            <div class="home-hero-scrim" aria-hidden="true"></div>
+            <div class="home-hero-content">
+                <div class="home-hero-kicker">
                     <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--neon-green); box-shadow:0 0 8px var(--neon-green); flex-shrink:0;"></span>
-                    VERIFIED LAUNCH INTELLIGENCE &bull; <span data-launch-day-num style="color:#ffffff;">DAY-3</span> &bull; NOVEMBER 21, 2026
+                    GTA VI HEIST &amp; GAMEPLAY GUIDE &bull; <span data-launch-day-num style="color:#fff;">DAY-4</span> &bull; 100% FREE
                 </div>
-                <h1 style="font-size:clamp(1.15rem, 2.5vw, 1.85rem); font-weight:1000; color:#fff; margin:0 0 0.35rem; line-height:1.18; text-shadow:0 2px 12px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.95);">GTA 6 LAUNCH &amp; HEIST GUIDE: <span style="color:var(--neon-pink);">15 SAVE SLOTS, SAFE CODES</span>, 61 CHEATS &amp; MAP</h1>
-                <div class="quick-answer-box" style="background:rgba(10,16,28,0.92); border-left:3px solid var(--neon-cyan); padding:0.5rem 0.8rem; margin:0.3rem 0 0.4rem; max-width:840px; border-radius:0 6px 6px 0;">
-                    <p style="margin:0; font-size:0.85rem; line-height:1.45; color:#e2e8f0; font-weight:500;">
-                        Grand Theft Auto VI Story Mode launched Nov 19, 2026 on PS5 &amp; Xbox Series X|S (30 FPS, 5 chapters, 91 missions, 2 major story heists, no mission replay). Sync your 15 save slots, 174+ Map pins, safe codes (<code>7700</code>, <code>0420</code>), and all 61 cheats below.
-                    </p>
+                <h1 class="home-hero-title">
+                    EVERY HEIST. <span class="hero-accent-pink">EVERY PAYOUT.</span> <span class="hero-accent-cyan">EVERY SECRET.</span>
+                </h1>
+                <p class="home-hero-desc">
+                    The comprehensive Grand Theft Auto VI heist &amp; gameplay guide for PS5 &amp; Xbox Series X|S. Master Story Heists (The Cartel Heist $120K &amp; VCIA Takedown $250K), 22 free-roam banks, 20 jewelry stores, verified safe codes (<code>7700</code>, <code>0420</code>), 174+ interactive Leonida Map pins, 15 manual save slots, and all 61 cheats.
+                </p>
+                <div class="home-hero-actions">
+                    <a href="#all-heists" class="btn btn-primary">🏦 Story Heist Walkthroughs &rarr;</a>
+                    <a href="/map.html" class="btn btn-secondary">🗺️ Interactive Leonida Map</a>
+                    <a href="/gta-6-money-guide/" class="btn btn-hero-green">💰 Money &amp; Payout Guide</a>
+                </div>
+                <div class="home-hero-quicklinks" aria-label="Quick Tool Shortcuts">
+                    <a href="/save-planner/" class="home-hero-chip">💾 15-Slot Save Planner</a>
+                    <a href="/cheats.html" class="home-hero-chip">⚡ 61 Cheats</a>
+                    <a href="/gta-6-tips-and-tricks/" class="home-hero-chip">💡 Tips &amp; Secrets</a>
+                    <a href="/gta-6-tools/" class="home-hero-chip">🧰 All 8 Tools</a>
+                    <a href="#world-database" class="home-hero-chip">📚 World Database</a>
                 </div>
             </div>
-            <div style="display:flex; gap:0.45rem; flex-wrap:wrap; align-items:center;">
-                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 0.95rem; font-size:0.8rem; font-weight:900; background:linear-gradient(135deg, #00f0ff, #0077ff); color:#000;">🗺️ OPEN MAP &rarr;</a>
-                <a href="/save-planner/" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.8rem; font-weight:800;">💾 SAVE PLANNER</a>
-                <a href="/cheats.html" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.8rem; font-weight:800;">⚡ 61 CHEATS</a>
-            </div>
+        </div>
+
+        <!-- PROMINENT ABOVE-THE-FOLD FEATURED HARDWARE AFFILIATE BOX (SESSION-STABLE ROTATION) -->
+        <div id="homeHeroAffSlot"
+             data-aff-slot="home-hero-featured"
+             data-aff-context="homepage-hero"
+             data-aff-variant="hero-featured">
+            <aside class="aff-card aff-card--hero aff-accent-green" aria-label="Featured console hardware recommendation (affiliate link)">
+                <div class="aff-hero-head">
+                    <span class="aff-partner-pill">Amazon Partner</span>
+                    <span class="aff-disclosure-tag">Affiliate Pick</span>
+                </div>
+                <div class="aff-media aff-media--cover">
+                    <img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD" loading="eager">
+                </div>
+                <div class="aff-card-body">
+                    <span class="aff-badge-pill">PS5 &amp; PC NVMe SSD</span>
+                    <h2 class="aff-card-title">Samsung 990 PRO 2TB SSD</h2>
+                    <p class="aff-card-desc">High-speed PCIe 4.0 M.2 NVMe storage built for PlayStation 5 expansion and large open-world installs.</p>
+                    <div class="aff-card-benefit">&#10003; 7,450 MB/s read speeds &middot; Ample room for 212 GB+ GTA VI installs</div>
+                </div>
+                <div class="aff-card-foot">
+                    <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" data-amazon-link="samsung990pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="home-hero-featured" class="aff-cta aff-cta--green">Check Price on Amazon &rarr;</a>
+                    <div class="aff-disclosure-note">Affiliate link &middot; As an Amazon Associate we earn from qualifying purchases. Prices vary on Amazon.</div>
+                </div>
+            </aside>
         </div>
     </div>
 </header>
 
 <main class="container" style="max-width:1140px; margin:0 auto; padding:0.35rem 1rem 2rem; box-sizing:border-box;">
 
-    <!-- 3. FEATURED HEISTS / MAP / MONEY / TIPS STRIP -->
-    <section class="home-pillar-strip" aria-label="Featured Launch Hubs">
-        <a href="#all-heists" class="home-pillar-card" style="border-color:rgba(255,42,141,0.4);">
-            <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:800; color:var(--neon-pink);">🏦 WALKTHROUGHS</span>
-            <strong style="color:#fff; font-size:1rem;">Story Heists &amp; Robberies</strong>
-            <span style="color:#94a3b8; font-size:0.76rem;">Cartel ($120K), VCIA ($250K), 22 Banks &amp; 20 Jewelry Stores</span>
-        </a>
-        <a href="/map.html" class="home-pillar-card" style="border-color:rgba(0,240,255,0.4);">
-            <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:800; color:var(--neon-cyan);">🗺️ 174+ PINS LIVE</span>
-            <strong style="color:#fff; font-size:1rem;">Interactive Leonida Map</strong>
-            <span style="color:#94a3b8; font-size:0.76rem;">Fences, safes, wildlife, custom pins &amp; synced checklist</span>
-        </a>
-        <a href="/gta-6-money-guide/" class="home-pillar-card" style="border-color:rgba(0,255,136,0.4);">
-            <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:800; color:var(--neon-green);">💰 SAFE CODES &amp; CALC</span>
-            <strong style="color:#fff; font-size:1rem;">Money &amp; Safe Codes Hub</strong>
-            <span style="color:#94a3b8; font-size:0.76rem;">7700, 0420, BuckMe $5K goal, comparison &amp; earnings tool</span>
-        </a>
-        <a href="/gta-6-tips-and-tricks/" class="home-pillar-card" style="border-color:rgba(255,184,0,0.4);">
-            <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:800; color:var(--neon-yellow);">💡 HIDDEN MECHANICS</span>
-            <strong style="color:#fff; font-size:1rem;">Tips, Tricks &amp; Secrets</strong>
-            <span style="color:#94a3b8; font-size:0.76rem;">PS5/Xbox secret controls, Easter eggs &amp; player finds</span>
+    <!-- 3. STORY HEIST & FREE-ROAM ROBBERY WALKTHROUGHS (COMPACT 4x2 GRID) -->
+    <section id="all-heists" style="margin:0.6rem 0 1.45rem;">
+        <div class="section-header" style="margin-bottom:0.75rem;">
+            <div>
+                <h2 style="font-size:1.3rem; margin-bottom:0.15rem;">Story Heists &amp; Free-Roam Robbery Walkthroughs</h2>
+                <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">Step-by-step GTA VI heist guides featuring official screenshots, setups, duo tactics, fence cuts, and banking loops.</p>
+            </div>
+            <a href="/gta-6-money-guide/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Full Money &amp; Payout Hub &rarr;</a>
+        </div>
+
+        <div class="targets-grid home-heists-4grid">
+            <!-- HEIST 1: The Cartel Heist -->
+            <a href="/heists/the-cartel-heist.html" class="card vault-card-redesign" style="border-color:rgba(255,42,133,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/cartel-heist.jpg" alt="The Cartel Heist — Sinfrontera National Bank Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-mastermind" style="background:rgba(255,42,133,0.2); color:var(--neon-pink); border-color:var(--neon-pink);">CH. 3 &bull; HEIST #1</span>
+                    <span class="sec-lvl-badge badge-mastermind" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">$120,000</span>
+                </div>
+                <h3 class="card-title">The Cartel Heist</h3>
+                <p class="card-desc">Mission #71 (Raul Bautista) at Sinfrontera National Bank. All 5 setups + 10-step walkthrough: rig cell towers, disarm guards, bag big stacks first.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Giver</span><span class="vault-stat-val" style="color:var(--neon-cyan);">Raul</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Setups</span><span class="vault-stat-val" style="color:var(--neon-yellow);">5 Preps</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">10-Step Guide &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 2: VCIA Takedown -->
+            <a href="/heists/vcia-takedown.html" class="card vault-card-redesign" style="border-color:rgba(0,240,255,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/vcia-takedown.jpg" alt="VCIA Takedown — Vice City International Airport Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-mastermind" style="background:rgba(0,240,255,0.2); color:var(--neon-cyan); border-color:var(--neon-cyan);">CH. 4 &bull; HEIST #2</span>
+                    <span class="sec-lvl-badge badge-mastermind" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">$250,000</span>
+                </div>
+                <h3 class="card-title">VCIA Takedown</h3>
+                <p class="card-desc">Vice City International Airport finale. Covers all 4 setups, stealth vs. loud tarmac battle, and cargo flight escape.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Target</span><span class="vault-stat-val" style="color:var(--neon-cyan);">Airport</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Setups</span><span class="vault-stat-val" style="color:var(--neon-yellow);">4 Preps</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Full Guide &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 3: Shops & Stick-ups -->
+            <a href="/heists/shops-and-stickups.html" class="card vault-card-redesign" style="border-color:rgba(0,255,136,0.4); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/shops.jpg" alt="GTA 6 Shops and Stick-ups Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-intermediate" style="background:rgba(0,255,136,0.18); color:var(--neon-green); border-color:var(--neon-green);">CH. 1 START</span>
+                    <span class="sec-lvl-badge badge-wheelman" style="background:rgba(255,230,0,0.2); color:var(--neon-yellow); border-color:var(--neon-yellow);">72 SPOTS</span>
+                </div>
+                <h3 class="card-title">Shops &amp; Stick-ups</h3>
+                <p class="card-desc">72 convenience stores &amp; gas stations. Master no-shot intimidation and the physical ATM deposit loop for Chapter 1's $5K BuckMe goal.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Payout</span><span class="vault-stat-val" style="color:var(--neon-green);">$500&ndash;$2K</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Heat</span><span class="vault-stat-val" style="color:var(--neon-yellow);">1&ndash;2 Stars</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Robbery Guide &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 4: Pawn Shops -->
+            <a href="/heists/pawn-shops.html" class="card vault-card-redesign" style="border-color:rgba(255,170,0,0.4); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/pawn-shops.jpg" alt="GTA 6 Pawn Shops Robbery Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-intermediate" style="background:rgba(255,170,0,0.18); color:var(--neon-amber); border-color:var(--neon-amber);">CH. 2</span>
+                    <span class="sec-lvl-badge badge-hacker" style="background:rgba(0,240,255,0.2); color:var(--neon-cyan); border-color:var(--neon-cyan);">$4K&ndash;$12K</span>
+                </div>
+                <h3 class="card-title">Pawn Shops</h3>
+                <p class="card-desc">Unlocks after Coffee Break. Cut under-counter alarms, clear luxury watch cases, and fence valuables at Brian's Lockup (7700) or Randy.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Unlock</span><span class="vault-stat-val" style="color:var(--neon-amber);">Coffee Break</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Fence</span><span class="vault-stat-val" style="color:var(--neon-green);">Randy / 7700</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Pawn Guide &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 5: Jewelry Stores -->
+            <a href="/heists/jewelry-stores.html" class="card vault-card-redesign" style="border-color:rgba(192,132,252,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/jewelry-stores.jpg" alt="GTA 6 Jewelry Stores Robbery Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-expert" style="background:rgba(192,132,252,0.2); color:#c084fc; border-color:#c084fc;">CH. 3 &bull; 20 STORES</span>
+                    <span class="sec-lvl-badge badge-wheelman" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">$15K&ndash;$35K</span>
+                </div>
+                <h3 class="card-title">Jewelry Stores</h3>
+                <p class="card-desc">20 locations across Leonida after Yasmani's Jewelry Jobs. Wipe CCTV servers and fence duffels with Yasmani for a 5% cut.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Count</span><span class="vault-stat-val" style="color:#c084fc;">20 Stores</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Fence</span><span class="vault-stat-val" style="color:var(--neon-green);">Yasmani 5%</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Jewelry Guide &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 6: Small Banks & Payday Loans -->
+            <a href="/heists/small-banks-payday-loans.html" class="card vault-card-redesign" style="border-color:rgba(255,230,0,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/small-banks.jpg" alt="GTA 6 Small Banks and Payday Loans Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-mastermind" style="background:rgba(255,230,0,0.18); color:var(--neon-yellow); border-color:var(--neon-yellow);">CH. 3 &bull; 14 BANKS</span>
+                    <span class="sec-lvl-badge badge-hacker" style="background:rgba(0,240,255,0.2); color:var(--neon-cyan); border-color:var(--neon-cyan);">$5K&ndash;$45K</span>
+                </div>
+                <h3 class="card-title">Small Banks &amp; Loans</h3>
+                <p class="card-desc">14 regional branches unlocked after Credit Check. Always activate the Dye Pack Jammer so marked bills stay intact.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Branches</span><span class="vault-stat-val" style="color:var(--neon-yellow);">14 Total</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Gear</span><span class="vault-stat-val" style="color:var(--neon-cyan);">Dye Jammer</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Small Banks &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 7: Large Bank Vaults -->
+            <a href="/heists/large-bank-vaults.html" class="card vault-card-redesign" style="border-color:rgba(255,42,133,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/large-bank-vaults.jpg" alt="GTA 6 Large Bank Vaults Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-mastermind" style="background:rgba(255,42,133,0.2); color:var(--neon-pink); border-color:var(--neon-pink);">CH. 4 &bull; 8 VAULTS</span>
+                    <span class="sec-lvl-badge badge-mastermind" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">UP TO ~$205K</span>
+                </div>
+                <h3 class="card-title">Large Bank Vaults</h3>
+                <p class="card-desc">8 repeatable endgame bank vaults paying up to ~$205,000. Stealth drill vs. explosives tradeoff, CCTV wipe, and getaway swaps.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Vaults</span><span class="vault-stat-val" style="color:var(--neon-pink);">8 Major</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Max</span><span class="vault-stat-val" style="color:var(--neon-green);">~$205,000</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Vault Guide &rarr;</span></div>
+            </a>
+
+            <!-- HEIST 8: Armored Trucks & Gang Ops -->
+            <a href="/heists/armored-trucks-gang-ops.html" class="card vault-card-redesign" style="border-color:rgba(0,240,255,0.4); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+                <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
+                    <img src="/assets/images/heists/armored-trucks.jpg" alt="GTA 6 Armored Trucks and Gang Ops Official Rockstar Screenshot" loading="lazy">
+                    <div class="vault-card-img-overlay"></div>
+                </div>
+                <div class="vault-card-top">
+                    <span class="card-tag tag-intermediate" style="background:rgba(0,240,255,0.18); color:var(--neon-cyan); border-color:var(--neon-cyan);">FREE-ROAM</span>
+                    <span class="sec-lvl-badge badge-wheelman" style="background:rgba(255,170,0,0.2); color:var(--neon-amber); border-color:var(--neon-amber);">40 CAMPS</span>
+                </div>
+                <h3 class="card-title">Armored Trucks &amp; Ops</h3>
+                <p class="card-desc">Ambush roaming cash trucks with clean rear-door breaches and clear 40 gang hideouts for high-value contraband crates.</p>
+                <div class="vault-stat-strip">
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Camps</span><span class="vault-stat-val" style="color:var(--neon-cyan);">40 Hideouts</span></div>
+                    <div class="vault-stat-item"><span class="vault-stat-lbl">Bank</span><span class="vault-stat-val" style="color:var(--neon-green);">ATMs</span></div>
+                </div>
+                <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Trucks &amp; Ops &rarr;</span></div>
+            </a>
+        </div>
+
+        <!-- EXPANDABLE DRAWER: ALL 10 STORY HEISTS & PLANNED JOBS -->
+        <div id="allStoryJobsDrawer" class="heist-extra-target" style="display:none; width:100%; margin-top:1rem;">
+            <div style="background:rgba(12,20,32,0.95); border:1.5px solid var(--neon-cyan); border-radius:12px; padding:1.25rem; box-shadow:0 0 25px rgba(0,240,255,0.15); overflow-x:auto;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.75rem;">
+                    <div>
+                        <span class="user-badge badge-mastermind" style="font-size:0.68rem; padding:0.15rem 0.5rem;">VERIFIED STORY MODE PROGRESSION</span>
+                        <h3 style="color:#fff; margin:0.35rem 0 0; font-size:1.15rem;">All 10 Real GTA 6 Story Heists &amp; Planned Jobs</h3>
+                    </div>
+                    <span style="color:var(--neon-green); font-family:var(--font-mono); font-size:0.84rem; font-weight:800;">Total Story Score: $531,420 Verified Payout</span>
+                </div>
+                <table class="table-compact-jobs" style="width:100%; border-collapse:collapse; font-size:0.85rem; color:#e2e8f0; text-align:left;">
+                    <thead>
+                        <tr style="border-bottom:1.5px solid rgba(0,240,255,0.4); color:var(--neon-cyan); font-family:var(--font-mono); font-size:0.78rem; text-transform:uppercase;">
+                            <th style="padding:0.6rem 0.75rem;">#</th>
+                            <th style="padding:0.6rem 0.75rem;">Job / Heist Name</th>
+                            <th style="padding:0.6rem 0.75rem;">Chapter</th>
+                            <th style="padding:0.6rem 0.75rem;">Category</th>
+                            <th style="padding:0.6rem 0.75rem; text-align:right;">Verified Payout</th>
+                            <th style="padding:0.6rem 0.75rem;">Key Details &amp; Trophy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">01</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Rob Vicki's Boss</td><td style="padding:0.6rem 0.75rem;">Ch. 1</td><td style="padding:0.6rem 0.75rem; color:var(--neon-yellow);">Early Story Job</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$10,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">First coordinated robbery score introducing physical cash grab mechanics.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">02</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Twist Wrist, Smash, Grab</td><td style="padding:0.6rem 0.75rem;">Ch. 1</td><td style="padding:0.6rem 0.75rem; color:var(--neon-yellow);">Convenience Store Hit</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$2,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Fast till sweep tutorial for crowd control and quick getaway.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">03</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Credit Check / Fleeca</td><td style="padding:0.6rem 0.75rem;">Ch. 2</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan);">Small Bank Heist</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$31,860</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Local Fleeca branch; unlocks Small Banks &amp; Dye Pack Jammer.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,42,133,0.07);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--neon-pink); font-weight:900;">04</td><td style="padding:0.6rem 0.75rem; font-weight:900; color:var(--neon-pink);">The Cartel Heist (Sinfrontera)</td><td style="padding:0.6rem 0.75rem;">Ch. 3</td><td style="padding:0.6rem 0.75rem; color:var(--neon-pink); font-weight:800;">MAJOR STORY HEIST</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:900; color:var(--neon-pink);">$120,000</td><td style="padding:0.6rem 0.75rem; color:#fff; font-size:0.8rem;">Raul Bautista 5 setups + 10-step Sinfrontera National Bank vault job ($120,000 payout). Unlocks <em>Break the Bank</em>.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">05</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Yasmani's Jewelry Jobs</td><td style="padding:0.6rem 0.75rem;">Ch. 3</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan);">Fencing Syndicate Job</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$20,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Unlocks all 20 Jewelry Stores across Leonida &amp; Yasmani's 5% fence cut.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">06</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Mall Jewelry Heist</td><td style="padding:0.6rem 0.75rem;">Ch. 3</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan);">Commercial Robbery</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$12,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Multi-case glass smash with guard pacification and fast escape.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">07</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Fresh Evidence</td><td style="padding:0.6rem 0.75rem;">Ch. 4</td><td style="padding:0.6rem 0.75rem; color:#c084fc;">Evidence Locker Raid</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$10,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Police precinct lockup breach and contraband extraction.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(0,240,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--neon-cyan); font-weight:900;">08</td><td style="padding:0.6rem 0.75rem; font-weight:900; color:var(--neon-cyan);">VCIA Takedown (Airport Heist)</td><td style="padding:0.6rem 0.75rem;">Ch. 4</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan); font-weight:800;">MAJOR STORY FINALE</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:900; color:var(--neon-cyan);">$250,000</td><td style="padding:0.6rem 0.75rem; color:#fff; font-size:0.8rem;">4-setup airport raid: roof stealth, tarmac battle, cargo flight. Unlocks <em>Hi-Jacked</em>.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">09</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Tie Up Loose Ends</td><td style="padding:0.6rem 0.75rem;">Ch. 4</td><td style="padding:0.6rem 0.75rem; color:#c084fc;">Story Epilogue Score</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$25,560</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Post-airport cleanup and payoff division.</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">10</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Coast Guard Heist</td><td style="padding:0.6rem 0.75rem;">Ch. 5</td><td style="padding:0.6rem 0.75rem; color:var(--neon-amber);">Offshore Raid</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$50,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Offshore Cutter depot interception into Leonida Keys.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:0.85rem;">
+            <button type="button" id="expandTargetsBtn" class="btn btn-secondary" onclick="GTA6.toggleAllTargets(this)" style="padding:0.46rem 1.25rem; font-size:0.82rem; font-weight:800; border-color:var(--neon-cyan); color:var(--neon-cyan); cursor:pointer;">
+                Show All 10 Story Heists &amp; Planned Jobs &darr;
+            </button>
+        </div>
+    </section>
+
+    <!-- 4. WORLD DATABASE GALLERY (MOVED HIGHER ON HOMEPAGE — ALL 6 VERIFIED CATEGORIES) -->
+    <section id="world-database" style="margin:1.35rem 0 1.6rem;">
+        <div class="section-header" style="margin-bottom:0.8rem;">
+            <div>
+                <span class="verify-badge verify-confirmed" style="margin-bottom:0.25rem;">📚 LIVE LEONIDA ENCYCLOPEDIA</span>
+                <h2 style="font-size:1.35rem; margin:0 0 0.15rem;">Leonida World Database Gallery</h2>
+                <p style="font-size:0.82rem; margin:0;">Browse all 6 live GTA VI databases with real screenshots, current record counts, comparison tools, and verified Map pins.</p>
+            </div>
+            <a href="/gta-6-database/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Explore Full Database Hub &rarr;</a>
+        </div>
+        <div class="home-db-6grid">
+            <a href="/properties.html" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/properties/vice-city-penthouse.jpg" alt="GTA 6 Properties, Garages and Fences" loading="lazy">
+                    <span class="home-db-count-pill" id="homeDbCountProperties">25 ENTRIES</span>
+                </div>
+                <div style="padding:0.8rem 0.9rem;">
+                    <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">🏠 Properties &amp; Fences</strong>
+                    <span style="color:#94a3b8; font-size:0.76rem; line-height:1.4; display:block;">4 Safehouses, 13 Garages &amp; 7 Fences including Brian's Lockup (7700)</span>
+                </div>
+            </a>
+            <a href="/animals.html" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/animals/grassrivers-gator.jpg" alt="GTA 6 Animals and Wildlife Compendium" loading="lazy">
+                    <span class="home-db-count-pill" id="homeDbCountAnimals">49 INDEXED &middot; 170+ TOTAL</span>
+                </div>
+                <div style="padding:0.8rem 0.9rem;">
+                    <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">🐊 Animals &amp; Wildlife</strong>
+                    <span style="color:#94a3b8; font-size:0.76rem; line-height:1.4; display:block;">36 verified shots &middot; 62 bird species (Rockstar) &middot; 15 Target Decks &amp; 8 Legendary</span>
+                </div>
+            </a>
+            <a href="/vehicles.html" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/vehicles/veh-cheetah-1.jpg" alt="GTA 6 Vehicles and Getaway Cars" loading="lazy">
+                    <span class="home-db-count-pill" id="homeDbCountVehicles">33 VEHICLES</span>
+                </div>
+                <div style="padding:0.8rem 0.9rem;">
+                    <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">🏎️ Vehicles &amp; Getaway Specs</strong>
+                    <span style="color:#94a3b8; font-size:0.76rem; line-height:1.4; display:block;">33/33 verified GTA VI shots &middot; Supercars, 4-bag haulers, boats &amp; aircraft</span>
+                </div>
+            </a>
+            <a href="/weapons.html" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/weapons/weapon-jason-rifle.jpg" alt="GTA 6 Weapons and Heist Loadouts" loading="lazy">
+                    <span class="home-db-count-pill" id="homeDbCountWeapons">25 WEAPONS</span>
+                </div>
+                <div style="padding:0.8rem 0.9rem;">
+                    <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">⚔️ Weapons &amp; Loadouts</strong>
+                    <span style="color:#94a3b8; font-size:0.76rem; line-height:1.4; display:block;">Suppressors, heavy rifles, Bret's SM-69 &amp; Jason/Lucia duo builds</span>
+                </div>
+            </a>
+            <a href="/weapons-bonuses.html" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="GTA 6 Gun Stores and Ammu-Nation" loading="lazy">
+                    <span class="home-db-count-pill" id="homeDbCountGunStores">24 GUN STORES</span>
+                </div>
+                <div style="padding:0.8rem 0.9rem;">
+                    <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">🔫 Gun Stores &amp; Ammu-Nation</strong>
+                    <span style="color:#94a3b8; font-size:0.76rem; line-height:1.4; display:block;">All 24 Leonida gun outlets, surplus armories &amp; Duval ES9 claim guide</span>
+                </div>
+            </a>
+            <a href="/radio.html" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/properties/drequan-studio.jpg" alt="GTA 6 Radio Stations and Tracklists" loading="lazy">
+                    <span class="home-db-count-pill" id="homeDbCountRadio">23 STATIONS</span>
+                </div>
+                <div style="padding:0.8rem 0.9rem;">
+                    <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">📻 Radio Stations</strong>
+                    <span style="color:#94a3b8; font-size:0.76rem; line-height:1.4; display:block;">Tracklists, celebrity DJs, secret poster unlocks &amp; DMCA-safe talk channels</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. CONTEXTUAL NATIVE AFFILIATE DEALS MODULE (SESSION-STABLE, ZERO DUPLICATE PARTNERS) -->
+    <div id="homeMidAffSlot"
+         data-aff-slot="home-mid-deals"
+         data-aff-context="homepage-deals"
+         data-aff-variant="card-grid-2"
+         data-aff-count="2"
+         data-aff-heading="Gaming Deals &amp; Creator Recommendations"
+         data-aff-subheading="Curated digital store deals and PC utilities for Grand Theft Auto VI players.">
+    </div>
+
+    <!-- 6. FEATURED GTA 6 INTERACTIVE TOOLS (6 CARDS + SETTINGS HUB) -->
+    <section id="featured-tools" style="margin:1.35rem 0 1.65rem;">
+        <div class="section-header" style="margin-bottom:0.75rem;">
+            <div>
+                <h2 style="font-size:1.3rem; margin:0 0 0.15rem;">Interactive GTA 6 Tools (Auto-Synced)</h2>
+                <p style="font-size:0.82rem; margin:0;">All browser tools share one local progress store with instant cross-tool sync and JSON backup—zero login required.</p>
+            </div>
+            <a href="/gta-6-tools/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Open All 8 Tools Hub &rarr;</a>
+        </div>
+        <div class="home-tools-6grid">
+            <a href="/heist-planner.html" class="home-tool-card">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-pink);">🎯 TOOL 01</span>
+                        <span class="verify-badge verify-confirmed" id="homeToolHeists">0 / 8 Done</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1rem; margin:0 0 0.22rem;">Heist Planner</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0;">Plan setups, fence cuts, Dye Jammer protection &amp; synced completion checklist.</p>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.75rem; font-weight:800; margin-top:0.55rem;">Launch Heist Planner &rarr;</span>
+            </a>
+            <a href="/heist-payout-calculator.html" class="home-tool-card">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-green);">💰 TOOL 02</span>
+                        <span class="verify-badge verify-community">Net $/Hr</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1rem; margin:0 0 0.22rem;">Heist Payout Calculator</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0;">Simulate real take-home cuts across Cartel ($120K), VCIA ($250K), and all 22 banks.</p>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.75rem; font-weight:800; margin-top:0.55rem;">Launch Calculator &rarr;</span>
+            </a>
+            <a href="/save-planner/" class="home-tool-card">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-cyan);">💾 TOOL 03</span>
+                        <span class="verify-badge verify-confirmed" id="homeToolSlots">0 / 15 Saved</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1rem; margin:0 0 0.22rem;">Save Progress Planner</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0;">Lock all 15 manual save slots with Spoiler-Free Mode, Lock Shields &amp; cutoff alerts.</p>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.75rem; font-weight:800; margin-top:0.55rem;">Launch Save Planner &rarr;</span>
+            </a>
+            <a href="/map.html" class="home-tool-card">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-cyan);">🗺️ TOOL 04</span>
+                        <span class="verify-badge verify-confirmed" id="homeToolPins">0 Found</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1rem; margin:0 0 0.22rem;">Interactive Map Checklist</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0;">HD 3840&times;5120 Leonida map with 174+ pins, Night Tactical filter &amp; custom pins.</p>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.75rem; font-weight:800; margin-top:0.55rem;">Open Leonida Map &rarr;</span>
+            </a>
+            <a href="/cheats.html" class="home-tool-card">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-yellow);">⚡ TOOL 05</span>
+                        <span class="verify-badge verify-confirmed" id="homeToolCheats">0 / 61 Unlocked</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1rem; margin:0 0 0.22rem;">Cheat Tracker &amp; Glitches</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0;">Search all 61 D-pad &amp; phone cheat codes, trophy warning &amp; launch glitches.</p>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.75rem; font-weight:800; margin-top:0.55rem;">Open Cheat Tracker &rarr;</span>
+            </a>
+            <a href="/free/" class="home-tool-card">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-amber);">🚀 TOOL 06</span>
+                        <span class="verify-badge verify-community">3-in-1 Free</span>
+                    </div>
+                    <h3 style="color:#fff; font-size:1rem; margin:0 0 0.22rem;">Free Tools Suite</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0;">Crew cut splitter, Discord export card &amp; quick link to the Wanted System tool.</p>
+                </div>
+                <span style="color:var(--neon-cyan); font-size:0.75rem; font-weight:800; margin-top:0.55rem;">Open Free Suite &rarr;</span>
+            </a>
+        </div>
+        <a href="/gta-6-settings/" class="home-tool-card" style="margin-top:0.8rem; border-color:rgba(0,255,136,0.42); background:linear-gradient(135deg, rgba(10,24,32,0.96), rgba(10,14,26,0.98)); flex-direction:row; align-items:center; gap:1rem; flex-wrap:wrap;">
+            <div style="flex:1 1 480px;">
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; align-items:center; margin-bottom:0.25rem;">
+                    <span class="verify-badge verify-confirmed">⚙️ SETTINGS &amp; HARDWARE HUB</span>
+                    <span class="verify-badge verify-community">PS5 &bull; PS5 PRO &bull; XBOX SERIES X|S</span>
+                </div>
+                <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.18rem;">GTA 6 Console Settings, 212 GB SSD Calculator, HDR/VRR Checklist &amp; Capture Card Selector</h3>
+                <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">Platform-separated PS5 M.2 SSD vs. Xbox Expansion Card guides, HGiG/VRR TV setup, capture-card trade-offs, and local PC Specs Saver.</p>
+            </div>
+            <span class="btn btn-primary" style="padding:0.46rem 0.95rem; font-size:0.78rem; white-space:nowrap;">Open Settings Hub &rarr;</span>
         </a>
     </section>
 
-    <!-- 4. HIGH-RETENTION INLINE AFFILIATE TEXT BAR -->
-    <div class="syndicate-aff-bar">
-      <div class="syndicate-aff-bar-main">
-        <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
-        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-        <span class="aff-sep">|</span>
-        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-        <span class="aff-sep">|</span>
-        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
-        <span class="aff-sep">|</span>
-        <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-      </div>
-    </div>
-
-    <!-- 5. NEW DISCOVERIES TODAY (POWERED BY /data/discoveries.json) -->
-    <section id="new-discoveries-today" style="margin:1.15rem 0 1.5rem;">
+    <!-- 7. NEW DISCOVERIES TODAY (POWERED BY /data/discoveries.json) -->
+    <section id="new-discoveries-today" style="margin:1.35rem 0 1.6rem;">
         <div class="section-header" style="margin-bottom:0.75rem;">
             <div>
                 <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem;">
                     <span class="verify-badge verify-confirmed">📡 UPDATED DAILY</span>
-                    <span id="homeDiscoveriesDate" style="font-family:var(--font-mono); font-size:0.74rem; color:#94a3b8;">2026-11-21</span>
+                    <span id="homeDiscoveriesDate" style="font-family:var(--font-mono); font-size:0.74rem; color:#94a3b8;">2026-11-22</span>
                 </div>
-                <h2 style="font-size:1.3rem; margin:0;">NEW DISCOVERIES TODAY</h2>
+                <h2 style="font-size:1.3rem; margin:0;">New Discoveries Today</h2>
             </div>
             <a href="/gta-6-discoveries/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">View All Discoveries &rarr;</a>
         </div>
@@ -352,10 +707,10 @@
                         <span style="font-family:var(--font-mono); font-size:0.68rem; color:#94a3b8;">2026-11-21</span>
                     </div>
                     <div style="font-size:0.7rem; color:var(--neon-cyan); font-weight:800; margin-bottom:0.2rem;">Hidden Features</div>
-                    <h3 style="color:#fff; font-size:0.96rem; margin:0 0 0.35rem; line-height:1.3;">Scan Nightclub Posters With Phone Camera to Unlock Secret Radio Stations</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">Aim Jason or Lucia's smartphone camera at illuminated DJ booth posters inside underground clubs like The Vault in Downtown Vice City.</p>
+                    <h3 style="color:#fff; font-size:0.94rem; margin:0 0 0.35rem; line-height:1.3;">Scan Nightclub Posters With Phone Camera to Unlock Secret Radio Stations</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0; line-height:1.45;">Aim Jason or Lucia's smartphone camera at illuminated DJ booth posters inside underground clubs like The Vault in Downtown Vice City.</p>
                 </div>
-                <a href="/radio.html" style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.65rem;">Read More &rarr;</a>
+                <a href="/radio.html" style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.6rem;">Read More &rarr;</a>
             </article>
             <article class="home-disc-card">
                 <div>
@@ -364,10 +719,10 @@
                         <span style="font-family:var(--font-mono); font-size:0.68rem; color:#94a3b8;">2026-11-21</span>
                     </div>
                     <div style="font-size:0.7rem; color:var(--neon-green); font-weight:800; margin-bottom:0.2rem;">Money-Making Tips</div>
-                    <h3 style="color:#fff; font-size:0.96rem; margin:0 0 0.35rem; line-height:1.3;">Apollo Aggregates Red Barn 4-Bag Trunk Restock Loop (~$55K/Run)</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">Load 4 trunk bags, manually save on Slot #15 and reload to restock, then fence contraband at Brian's Lockup (keypad 7700).</p>
+                    <h3 style="color:#fff; font-size:0.94rem; margin:0 0 0.35rem; line-height:1.3;">Apollo Aggregates Red Barn 4-Bag Trunk Restock Loop (~$55K/Run)</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0; line-height:1.45;">Load 4 trunk bags, manually save on Slot #15 and reload to restock, then fence contraband at Brian's Lockup (keypad 7700).</p>
                 </div>
-                <a href="/cheats.html#glitches" style="color:var(--neon-green); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.65rem;">Read More &rarr;</a>
+                <a href="/cheats.html#glitches" style="color:var(--neon-green); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.6rem;">Read More &rarr;</a>
             </article>
             <article class="home-disc-card">
                 <div>
@@ -376,10 +731,10 @@
                         <span style="font-family:var(--font-mono); font-size:0.68rem; color:#94a3b8;">2026-11-21</span>
                     </div>
                     <div style="font-size:0.7rem; color:var(--neon-yellow); font-weight:800; margin-bottom:0.2rem;">Hidden Locations</div>
-                    <h3 style="color:#fff; font-size:0.96rem; margin:0 0 0.35rem; line-height:1.3;">Verified Keypad Code 0420 &amp; 7700 (Brian's Lockup Lab Fees Stash)</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">Verified codes <code>7700</code>, <code>0420</code>, <code>4444</code>, <code>0300</code>, <code>6823</code>, <code>6969</code>, <code>2727</code> &amp; <code>44017</code> mapped.</p>
+                    <h3 style="color:#fff; font-size:0.94rem; margin:0 0 0.35rem; line-height:1.3;">Verified Keypad Code 0420 &amp; 7700 (Brian's Lockup Lab Fees Stash)</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0; line-height:1.45;">Verified codes <code>7700</code>, <code>0420</code>, <code>4444</code>, <code>0300</code>, <code>6823</code>, <code>6969</code>, <code>2727</code> &amp; <code>44017</code> mapped.</p>
                 </div>
-                <a href="/gta-6-money-guide/#safe-codes" style="color:var(--neon-yellow); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.65rem;">Read More &rarr;</a>
+                <a href="/gta-6-money-guide/#safe-codes" style="color:var(--neon-yellow); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.6rem;">Read More &rarr;</a>
             </article>
             <article class="home-disc-card">
                 <div>
@@ -388,447 +743,110 @@
                         <span style="font-family:var(--font-mono); font-size:0.68rem; color:#94a3b8;">2026-11-21</span>
                     </div>
                     <div style="font-size:0.7rem; color:var(--neon-pink); font-weight:800; margin-bottom:0.2rem;">Hidden Features</div>
-                    <h3 style="color:#fff; font-size:0.96rem; margin:0 0 0.35rem; line-height:1.3;">On-Foot Pseudo First-Person Camera Workaround</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">Lock an eye-level camera in free-roam using corner cover (R1/RB), phone lens, and Aim (L2/LT) exit.</p>
+                    <h3 style="color:#fff; font-size:0.94rem; margin:0 0 0.35rem; line-height:1.3;">On-Foot Pseudo First-Person Camera Workaround</h3>
+                    <p style="color:#94a3b8; font-size:0.77rem; margin:0; line-height:1.45;">Lock an eye-level camera in free-roam using corner cover (R1/RB), phone lens, and Aim (L2/LT) exit.</p>
                 </div>
-                <a href="/gta-6-tips-and-tricks/" style="color:var(--neon-pink); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.65rem;">Read More &rarr;</a>
+                <a href="/gta-6-tips-and-tricks/" style="color:var(--neon-pink); font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.6rem;">Read More &rarr;</a>
             </article>
         </div>
     </section>
 
-    <!-- 6. 4 REAL-PHOTO AMAZON PRO HARDWARE CARDS (UNBOXED, HIGH ON HOMEPAGE) -->
-    <section id="officialDealsBox" style="margin:1.35rem auto 1.65rem; max-width:1140px; box-sizing:border-box;">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-                <span class="user-badge badge-mastermind" style="background:rgba(255,0,128,0.2); border-color:var(--neon-pink); color:var(--neon-pink); font-size:0.68rem; padding:0.15rem 0.45rem;">🔥 AMAZON PRO HARDWARE</span>
-                <strong style="color:#fff; font-size:1.05rem;">4 Verified GTA 6 Console Hardware Upgrades</strong>
+    <!-- 8. FULL AMAZON CONSOLE HARDWARE GALLERY (4 EXISTING PRODUCTS, STUDIO FRAMING, NO HARDCODED PRICES) -->
+    <section id="officialDealsBox" style="margin:1.5rem auto 1.75rem; max-width:1140px; box-sizing:border-box;">
+        <div class="aff-module-head">
+            <div>
+                <span class="aff-module-eyebrow">AMAZON PARTNER GALLERY</span>
+                <h2 class="aff-module-title">Recommended GTA 6 Console Hardware Upgrades</h2>
+                <p class="aff-module-sub">Storage, controller, and audio upgrades matched to GTA VI on PS5 &amp; Xbox Series X|S. <a href="/gta-6-settings/" style="color:var(--neon-cyan); font-weight:700; text-decoration:none;">See Settings &amp; Storage Guide &rarr;</a></p>
             </div>
-            <a href="/settings.html" style="color:var(--neon-cyan); font-size:0.78rem; font-weight:800; text-decoration:none;">30 FPS Console Settings &rarr;</a>
+            <span class="aff-disclosure-tag">Amazon Affiliate Links</span>
         </div>
 
         <div class="amazon-gear-4grid">
             <!-- Card 1: KontrolFreek Galaxy Thumbsticks -->
-            <article class="syndicate-gear-card" style="border-color:rgba(255, 0, 128, 0.35);">
-                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.6rem; background:#0c121e;">
-                    <img src="/assets/gear/kontrolfreek.jpg" alt="KontrolFreek Performance Thumbsticks PS5" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <article class="syndicate-gear-card" style="border-color:rgba(255, 42, 141, 0.38);">
+                <div class="gear-studio-stage">
+                    <img src="/assets/gear/kontrolfreek.jpg" alt="KontrolFreek Galaxy Performance Thumbsticks PS5" loading="lazy">
                 </div>
                 <div>
-                    <span class="syndicate-gear-pill" style="background:rgba(255, 0, 128, 0.2); color:#ff0080; border:1px solid rgba(255, 0, 128, 0.4);">AIM PRECISION</span>
+                    <div class="aff-meta-row" style="margin-bottom:0.4rem;">
+                        <span class="aff-partner-pill">Amazon</span>
+                        <span class="syndicate-gear-pill" style="margin:0; background:rgba(255, 42, 141, 0.18); color:#ff5ca8; border:1px solid rgba(255, 42, 141, 0.4);">AIM PRECISION</span>
+                    </div>
                     <h3 class="syndicate-gear-title">KontrolFreek Galaxy Sticks</h3>
-                    <div class="syndicate-gear-spec">+10.2mm high-rise arc sharpens analog aim for 30 FPS console gunfights</div>
+                    <div class="syndicate-gear-spec">+10.2mm high-rise arc sharpens analog aim for 30 FPS console gunfights and heist cover fire.</div>
                 </div>
                 <a href="https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20" data-amazon-link="kontrolfreek" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="home-thumbsticks" class="syndicate-gear-btn syndicate-gear-btn-amber">
-                    📦 Check Price on Amazon &rarr;
+                    Check Price on Amazon &rarr;
                 </a>
             </article>
 
             <!-- Card 2: Samsung 990 PRO 2TB SSD -->
-            <article class="syndicate-gear-card" style="border-color:rgba(0, 255, 136, 0.35);">
-                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.6rem; background:#0c121e;">
-                    <img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <article class="syndicate-gear-card" style="border-color:rgba(0, 255, 136, 0.38);">
+                <div class="gear-cover-stage">
+                    <img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD" loading="lazy">
                 </div>
                 <div>
-                    <span class="syndicate-gear-pill" style="background:rgba(0, 255, 136, 0.2); color:#00ff88; border:1px solid rgba(0, 255, 136, 0.4);">ZERO POP-IN</span>
+                    <div class="aff-meta-row" style="margin-bottom:0.4rem;">
+                        <span class="aff-partner-pill">Amazon</span>
+                        <span class="syndicate-gear-pill" style="margin:0; background:rgba(0, 255, 136, 0.18); color:#00ff88; border:1px solid rgba(0, 255, 136, 0.4);">PS5 STORAGE</span>
+                    </div>
                     <h3 class="syndicate-gear-title">Samsung 990 PRO 2TB SSD</h3>
-                    <div class="syndicate-gear-spec">7,450 MB/s PCIe 4.0 NVMe stops Vice City texture pop-in &amp; fits 210GB+ installs</div>
+                    <div class="syndicate-gear-spec">7,450 MB/s PCIe 4.0 M.2 NVMe handles fast open-world streaming &amp; up to 212 GB installs.</div>
                 </div>
                 <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" data-amazon-link="samsung990pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="home-ssd" class="syndicate-gear-btn syndicate-gear-btn-green">
-                    ⚡ Check Price on Amazon &rarr;
+                    Check Price on Amazon &rarr;
                 </a>
             </article>
 
             <!-- Card 3: Sony PlayStation PULSE Elite Headset -->
-            <article class="syndicate-gear-card" style="border-color:rgba(255, 184, 0, 0.35);">
-                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.6rem; background:#0c121e;">
-                    <img src="/assets/gear/pulse-elite.jpg" alt="PlayStation Pulse Elite Wireless Headset" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <article class="syndicate-gear-card" style="border-color:rgba(255, 184, 0, 0.38);">
+                <div class="gear-studio-stage">
+                    <img src="/assets/gear/pulse-elite.jpg" alt="PlayStation PULSE Elite Wireless Headset" loading="lazy">
                 </div>
                 <div>
-                    <span class="syndicate-gear-pill" style="background:rgba(255, 184, 0, 0.2); color:#ffb800; border:1px solid rgba(255, 184, 0, 0.4);">TEMPEST 3D</span>
+                    <div class="aff-meta-row" style="margin-bottom:0.4rem;">
+                        <span class="aff-partner-pill">Amazon</span>
+                        <span class="syndicate-gear-pill" style="margin:0; background:rgba(255, 184, 0, 0.18); color:#ffb800; border:1px solid rgba(255, 184, 0, 0.4);">TEMPEST 3D</span>
+                    </div>
                     <h3 class="syndicate-gear-title">PULSE Elite Wireless Headset</h3>
-                    <div class="syndicate-gear-spec">Planar magnetic drivers for crisp 3D sirens, alarms &amp; 23 Leonida radio stations</div>
+                    <div class="syndicate-gear-spec">Planar magnetic drivers deliver directional alarms, stealth footsteps &amp; 23 Leonida radio stations.</div>
                 </div>
                 <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" data-amazon-link="pulseElite" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="home-headset" class="syndicate-gear-btn syndicate-gear-btn-amber">
-                    🎧 Check Price on Amazon &rarr;
+                    Check Price on Amazon &rarr;
                 </a>
             </article>
 
             <!-- Card 4: DualSense Edge Wireless Controller -->
             <article class="syndicate-gear-card" style="border-color:rgba(0, 240, 255, 0.38);">
-                <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:8px; margin-bottom:0.6rem; background:#0c121e;">
-                    <img src="/assets/gear/dualsense-edge.jpg" alt="PlayStation DualSense Edge Wireless Controller" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <div class="gear-studio-stage">
+                    <img src="/assets/gear/dualsense-edge.jpg" alt="PlayStation DualSense Edge Wireless Controller" loading="lazy">
                 </div>
                 <div>
-                    <span class="syndicate-gear-pill" style="background:rgba(0, 240, 255, 0.2); color:#00f0ff; border:1px solid rgba(0, 240, 255, 0.4);">PRO PADDLES</span>
+                    <div class="aff-meta-row" style="margin-bottom:0.4rem;">
+                        <span class="aff-partner-pill">Amazon</span>
+                        <span class="syndicate-gear-pill" style="margin:0; background:rgba(0, 240, 255, 0.18); color:#00f0ff; border:1px solid rgba(0, 240, 255, 0.4);">PRO PADDLES</span>
+                    </div>
                     <h3 class="syndicate-gear-title">DualSense Edge Controller</h3>
-                    <div class="syndicate-gear-spec">Remappable back paddles &amp; hair-trigger locks for fast weapon &amp; cover swaps</div>
+                    <div class="syndicate-gear-spec">Remappable back buttons &amp; 3-stop trigger locks for faster weapon swaps &amp; custom stick curves.</div>
                 </div>
-                <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" data-amazon-link="dualsenseEdge" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="home-edge" class="syndicate-gear-btn syndicate-gear-btn-green">
-                    🎮 Check Price on Amazon &rarr;
+                <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" data-amazon-link="dualsenseEdge" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="home-edge" class="syndicate-gear-btn syndicate-gear-btn-cyan">
+                    Check Price on Amazon &rarr;
                 </a>
             </article>
         </div>
-    </section>
-
-    <!-- 6. FEATURED GTA 6 TOOLS (6 CARDS) -->
-    <section id="featured-tools" style="margin:1.5rem 0 1.85rem;">
-        <div class="section-header" style="margin-bottom:0.75rem;">
-            <div>
-                <h2 style="font-size:1.3rem; margin:0 0 0.15rem;">Featured GTA 6 Interactive Tools (Auto-Synced)</h2>
-                <p style="font-size:0.82rem; margin:0;">All tools share one local browser store with instant cross-tool sync and JSON backup—zero login required.</p>
-            </div>
-            <a href="/gta-6-tools/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Open Tools Hub &rarr;</a>
-        </div>
-        <div class="home-tools-6grid">
-            <a href="/heist-planner.html" class="home-tool-card">
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-pink);">🎯 TOOL 01</span>
-                        <span class="verify-badge verify-confirmed" id="homeToolHeists">0 / 8 Done</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.25rem;">Heist Planner</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Plan setups, Yasmani/Safehouse fence cuts, Dye Jammer protection &amp; synced completion checklist.</p>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:0.65rem;">Launch Heist Planner &rarr;</span>
-            </a>
-            <a href="/heist-payout-calculator.html" class="home-tool-card">
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-green);">💰 TOOL 02</span>
-                        <span class="verify-badge verify-community">Net $/Hr</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.25rem;">Heist Payout Calculator</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">Simulate real take-home cuts across Cartel ($120K), VCIA ($250K), and all 22 free-roam banks.</p>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:0.65rem;">Launch Calculator &rarr;</span>
-            </a>
-            <a href="/save-planner/" class="home-tool-card">
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-cyan);">💾 TOOL 03</span>
-                        <span class="verify-badge verify-confirmed" id="homeToolSlots">0 / 15 Saved</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.25rem;">Save Progress Planner</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Lock all 15 manual save slots with Spoiler-Free Mode, Lock Shields &amp; Chapter 1 cutoff alerts.</p>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:0.65rem;">Launch Save Planner &rarr;</span>
-            </a>
-            <a href="/map.html" class="home-tool-card">
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-cyan);">🗺️ TOOL 04</span>
-                        <span class="verify-badge verify-confirmed" id="homeToolPins">0 Found</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.25rem;">Interactive Map Checklist</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">HD 3840&times;5120 Leonida map with 174+ pins, Night Tactical filter, custom waypoints &amp; sync.</p>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:0.65rem;">Open Leonida Map &rarr;</span>
-            </a>
-            <a href="/cheats.html" class="home-tool-card">
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-yellow);">⚡ TOOL 05</span>
-                        <span class="verify-badge verify-confirmed" id="homeToolCheats">0 / 61 Unlocked</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.25rem;">Cheat Tracker &amp; Glitches</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Search all 61 D-pad &amp; phone cheat codes, unlock requirements, trophy warning &amp; launch glitches.</p>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:0.65rem;">Open Cheat Tracker &rarr;</span>
-            </a>
-            <a href="/free/" class="home-tool-card">
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
-                        <span style="font-size:0.72rem; font-weight:800; color:var(--neon-amber);">🚀 TOOL 06</span>
-                        <span class="verify-badge verify-community">3-in-1 Free</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.02rem; margin:0 0 0.25rem;">Free Tools Suite</h3>
-                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Crew cut splitter, 15-second keypad hack drill, plus quick link to our Wanted System calculator.</p>
-                </div>
-                <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:0.65rem;">Open Free Suite &rarr;</span>
-            </a>
-        </div>
-        <a href="/gta-6-settings/" class="home-tool-card" style="margin-top:0.85rem; border-color:rgba(0,255,136,0.42); background:linear-gradient(135deg, rgba(10,24,32,0.96), rgba(10,14,26,0.98)); flex-direction:row; align-items:center; gap:1rem; flex-wrap:wrap;">
-            <div style="flex:1 1 480px;">
-                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; align-items:center; margin-bottom:0.3rem;">
-                    <span class="verify-badge verify-confirmed">⚙️ NEW HARDWARE &amp; SETTINGS HUB</span>
-                    <span class="verify-badge verify-community">PS5 &bull; PS5 PRO &bull; XBOX SERIES X|S</span>
-                </div>
-                <h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.2rem;">GTA 6 Settings, Up to 212 GB SSD Storage Calculator, HDR/VRR Checklist &amp; Capture Card Selector</h3>
-                <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">Platform-separated PS5 M.2 SSD vs. Xbox Expansion Card guides, HGiG/VRR TV setup, honest capture-card frame-gen trade-offs, local PC Specs Saver, and hardware comparisons—synced to your JSON backup.</p>
-            </div>
-            <span class="btn btn-primary" style="padding:0.48rem 1rem; font-size:0.8rem; white-space:nowrap;">Open Settings &amp; Hardware Hub &rarr;</span>
-        </a>
-    </section>
-
-    <div class="adsense-slot" data-ad-slot="home-mid-top"></div>
-
-    <!-- 7. LATEST HEIST & MONEY GUIDES (8 WALKTHROUGHS + ALL 10 STORY JOBS TABLE) -->
-    <div class="section-header" id="all-heists" style="margin-top:1rem; margin-bottom:0.6rem;">
-        <div>
-            <h2 style="font-size:1.3rem; margin-bottom:0.2rem;">Latest Heist &amp; Money Guides (8 Verified Walkthroughs)</h2>
-            <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">Step-by-step Story Heist &amp; Free-Roam Robbery walkthroughs featuring official GTA VI screenshots, setups, duo tactics, and ATM banking loops.</p>
-        </div>
-        <a href="/gta-6-money-guide/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Full Money Guide &rarr;</a>
-    </div>
-
-    <div class="targets-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
-        <!-- HEIST 1: The Cartel Heist -->
-        <a href="/heists/the-cartel-heist.html" class="card vault-card-redesign" style="border-color:rgba(255,42,133,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/cartel-heist.jpg" alt="The Cartel Heist — Sinfrontera National Bank Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-mastermind" style="background:rgba(255,42,133,0.2); color:var(--neon-pink); border-color:var(--neon-pink);">CH. 3 &bull; STORY HEIST #1</span>
-                <span class="sec-lvl-badge badge-mastermind" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">$120,000</span>
-            </div>
-            <h3 class="card-title">The Cartel Heist</h3>
-            <p class="card-desc">Mission #71 (Raul Bautista) at Sinfrontera National Bank ($120,000 payout). All 5 setups + 10-step walkthrough: rig cell towers, disarm guards, bag big stacks first.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Giver</span><span class="vault-stat-val" style="color:var(--neon-cyan);">Raul Bautista</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Setups</span><span class="vault-stat-val" style="color:var(--neon-yellow);">5 Preps</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open 10-Step Walkthrough &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 2: VCIA Takedown -->
-        <a href="/heists/vcia-takedown.html" class="card vault-card-redesign" style="border-color:rgba(0,240,255,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/vcia-takedown.jpg" alt="VCIA Takedown — Vice City International Airport Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-mastermind" style="background:rgba(0,240,255,0.2); color:var(--neon-cyan); border-color:var(--neon-cyan);">CH. 4 &bull; STORY HEIST #2</span>
-                <span class="sec-lvl-badge badge-mastermind" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">$250,000</span>
-            </div>
-            <h3 class="card-title">VCIA Takedown</h3>
-            <p class="card-desc">Large-scale Vice City International Airport heist. Covers all 4 setups (Close Surveillance, Delivery Method, Team Building, Heist Plans in Place), duo tactics, stealth vs. loud, and runway escape.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Target</span><span class="vault-stat-val" style="color:var(--neon-cyan);">VCIA Airport</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Setups</span><span class="vault-stat-val" style="color:var(--neon-yellow);">4 Preps</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Full Walkthrough &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 3: Shops & Stick-ups -->
-        <a href="/heists/shops-and-stickups.html" class="card vault-card-redesign" style="border-color:rgba(0,255,136,0.4); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/shops.jpg" alt="GTA 6 Shops and Stick-ups Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-intermediate" style="background:rgba(0,255,136,0.18); color:var(--neon-green); border-color:var(--neon-green);">UNLOCKED FROM START</span>
-                <span class="sec-lvl-badge badge-wheelman" style="background:rgba(255,230,0,0.2); color:var(--neon-yellow); border-color:var(--neon-yellow);">72 LOCATIONS</span>
-            </div>
-            <h3 class="card-title">Shops &amp; Stick-ups</h3>
-            <p class="card-desc">72 convenience stores, gas stations, and fast-food spots across Leonida. Master duo crowd-control, no-shot intimidation, and the physical ATM deposit loop for Chapter 1's $5K BuckMe goal.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Unlock</span><span class="vault-stat-val" style="color:var(--neon-green);">Ch. 1 Start</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Heat</span><span class="vault-stat-val" style="color:var(--neon-yellow);">1&ndash;2 Stars</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Robbery Guide &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 4: Pawn Shops -->
-        <a href="/heists/pawn-shops.html" class="card vault-card-redesign" style="border-color:rgba(255,170,0,0.4); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/pawn-shops.jpg" alt="GTA 6 Pawn Shops Robbery Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-intermediate" style="background:rgba(255,170,0,0.18); color:var(--neon-amber); border-color:var(--neon-amber);">CH. 2 &bull; COFFEE BREAK</span>
-                <span class="sec-lvl-badge badge-hacker" style="background:rgba(0,240,255,0.2); color:var(--neon-cyan); border-color:var(--neon-cyan);">FENCE LOOT</span>
-            </div>
-            <h3 class="card-title">Pawn Shops</h3>
-            <p class="card-desc">Unlocks in Chapter 2 after Coffee Break. Disable under-counter alarms, clear luxury watch &amp; firearm cases into duffel bags, and fence mid-tier valuables at Brian's Lockup (7700) or Randy.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Unlock</span><span class="vault-stat-val" style="color:var(--neon-amber);">Coffee Break</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Fence</span><span class="vault-stat-val" style="color:var(--neon-green);">Randy / 7700</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Pawn Shop Guide &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 5: Jewelry Stores -->
-        <a href="/heists/jewelry-stores.html" class="card vault-card-redesign" style="border-color:rgba(192,132,252,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/jewelry-stores.jpg" alt="GTA 6 Jewelry Stores Robbery Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-expert" style="background:rgba(192,132,252,0.2); color:#c084fc; border-color:#c084fc;">CH. 3 &bull; 20 LOCATIONS</span>
-                <span class="sec-lvl-badge badge-wheelman" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">ERASE CCTV</span>
-            </div>
-            <h3 class="card-title">Jewelry Stores</h3>
-            <p class="card-desc">Unlocks in Chapter 3 after Yasmani's Jewelry Jobs (20 locations across Leonida). Stealth entry, back-room safe combos, wiping CCTV servers, and fencing full duffels with Yasmani.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Locations</span><span class="vault-stat-val" style="color:#c084fc;">20 Across Leonida</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Payout</span><span class="vault-stat-val" style="color:var(--neon-green);">$15K&ndash;$35K</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Jewelry Guide &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 6: Small Banks & Payday Loans -->
-        <a href="/heists/small-banks-payday-loans.html" class="card vault-card-redesign" style="border-color:rgba(255,230,0,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/small-banks.jpg" alt="GTA 6 Small Banks and Payday Loans Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-mastermind" style="background:rgba(255,230,0,0.18); color:var(--neon-yellow); border-color:var(--neon-yellow);">CH. 3 &bull; 14 SMALL BANKS</span>
-                <span class="sec-lvl-badge badge-hacker" style="background:rgba(0,240,255,0.2); color:var(--neon-cyan); border-color:var(--neon-cyan);">DYE PACK JAMMER</span>
-            </div>
-            <h3 class="card-title">Small Banks &amp; Payday Loans</h3>
-            <p class="card-desc">Unlocks in Chapter 3 after Credit Check across 14 regional branches. How to unlock and activate the Dye Pack Jammer so stolen cash stacks aren't ruined during extraction.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Locations</span><span class="vault-stat-val" style="color:var(--neon-yellow);">14 Branches</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Key Tool</span><span class="vault-stat-val" style="color:var(--neon-cyan);">Dye Jammer</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Small Banks Guide &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 7: Large Bank Vaults -->
-        <a href="/heists/large-bank-vaults.html" class="card vault-card-redesign" style="border-color:rgba(255,42,133,0.45); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/large-bank-vaults.jpg" alt="GTA 6 Large Bank Vaults Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-mastermind" style="background:rgba(255,42,133,0.2); color:var(--neon-pink); border-color:var(--neon-pink);">END CH. 4 &bull; 8 VAULTS</span>
-                <span class="sec-lvl-badge badge-mastermind" style="background:rgba(0,255,136,0.2); color:var(--neon-green); border-color:var(--neon-green);">UP TO ~$205K</span>
-            </div>
-            <h3 class="card-title">Large Bank Vaults</h3>
-            <p class="card-desc">Unlocks at end of Ch. 4 after That's Where The Money Is... 8 major repeatable bank vaults paying up to ~$205,000. Stealth drill vs. explosives tradeoff, CCTV wipe, and trunk disguise swap.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Vaults</span><span class="vault-stat-val" style="color:var(--neon-pink);">8 Major</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Max Score</span><span class="vault-stat-val" style="color:var(--neon-green);">~$205,000</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Vault Guide &rarr;</span></div>
-        </a>
-
-        <!-- HEIST 8: Armored Trucks & Gang Ops -->
-        <a href="/heists/armored-trucks-gang-ops.html" class="card vault-card-redesign" style="border-color:rgba(0,240,255,0.4); text-decoration:none; color:inherit; display:flex; flex-direction:column;">
-            <div class="vault-card-img-wrap" style="aspect-ratio:16/9;">
-                <img src="/assets/images/heists/armored-trucks.jpg" alt="GTA 6 Armored Trucks and Gang Ops Official Rockstar Screenshot" loading="lazy" class="aspect-video object-cover" style="object-fit:cover; width:100%; height:100%;">
-                <div class="vault-card-img-overlay"></div>
-            </div>
-            <div class="vault-card-top">
-                <span class="card-tag tag-intermediate" style="background:rgba(0,240,255,0.18); color:var(--neon-cyan); border-color:var(--neon-cyan);">FREE-ROAM &bull; 40 HIDEOUTS</span>
-                <span class="sec-lvl-badge badge-wheelman" style="background:rgba(255,170,0,0.2); color:var(--neon-amber); border-color:var(--neon-amber);">CASH TRUCKS</span>
-            </div>
-            <h3 class="card-title">Armored Trucks &amp; Gang Ops</h3>
-            <p class="card-desc">Ambush roaming mobile cash trucks (clean rear-door breaches), raid all 40 gang hideouts for contraband crates, fence illicit loot, and deposit wallet cash at physical ATMs.</p>
-            <div class="vault-stat-strip">
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Hideouts</span><span class="vault-stat-val" style="color:var(--neon-cyan);">40 Camps</span></div>
-                <div class="vault-stat-item"><span class="vault-stat-lbl">Banking</span><span class="vault-stat-val" style="color:var(--neon-green);">Physical ATMs</span></div>
-            </div>
-            <div class="vault-card-actions"><span class="btn btn-primary" style="width:100%; text-align:center;">Open Trucks &amp; Ops Guide &rarr;</span></div>
-        </a>
-    </div>
-
-    <!-- EXPANDABLE DRAWER: ALL 10 STORY HEISTS & PLANNED JOBS -->
-    <div id="allStoryJobsDrawer" class="heist-extra-target" style="display:none; width:100%; margin-top:1.15rem;">
-        <div style="background:rgba(12,20,32,0.95); border:1.5px solid var(--neon-cyan); border-radius:12px; padding:1.25rem; box-shadow:0 0 25px rgba(0,240,255,0.15); overflow-x:auto;">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.75rem;">
-                <div>
-                    <span class="user-badge badge-mastermind" style="font-size:0.68rem; padding:0.15rem 0.5rem;">VERIFIED STORY MODE PROGRESSION</span>
-                    <h3 style="color:#fff; margin:0.35rem 0 0; font-size:1.15rem;">All 10 Real GTA 6 Story Heists &amp; Planned Jobs</h3>
-                </div>
-                <span style="color:var(--neon-green); font-family:var(--font-mono); font-size:0.84rem; font-weight:800;">Total Story Score: $531,420 Verified Payout</span>
-            </div>
-            <table class="table-compact-jobs" style="width:100%; border-collapse:collapse; font-size:0.85rem; color:#e2e8f0; text-align:left;">
-                <thead>
-                    <tr style="border-bottom:1.5px solid rgba(0,240,255,0.4); color:var(--neon-cyan); font-family:var(--font-mono); font-size:0.78rem; text-transform:uppercase;">
-                        <th style="padding:0.6rem 0.75rem;">#</th>
-                        <th style="padding:0.6rem 0.75rem;">Job / Heist Name</th>
-                        <th style="padding:0.6rem 0.75rem;">Chapter</th>
-                        <th style="padding:0.6rem 0.75rem;">Category</th>
-                        <th style="padding:0.6rem 0.75rem; text-align:right;">Verified Payout</th>
-                        <th style="padding:0.6rem 0.75rem;">Key Details &amp; Trophy</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">01</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Rob Vicki's Boss</td><td style="padding:0.6rem 0.75rem;">Ch. 1</td><td style="padding:0.6rem 0.75rem; color:var(--neon-yellow);">Early Story Job</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$10,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">First coordinated robbery score introducing physical cash grab mechanics.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">02</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Twist Wrist, Smash, Grab</td><td style="padding:0.6rem 0.75rem;">Ch. 1</td><td style="padding:0.6rem 0.75rem; color:var(--neon-yellow);">Convenience Store Hit</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$2,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Fast till sweep tutorial for crowd control and quick getaway.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">03</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Credit Check / Fleeca</td><td style="padding:0.6rem 0.75rem;">Ch. 2</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan);">Small Bank Heist</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$31,860</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Local Fleeca branch; unlocks Small Banks &amp; Dye Pack Jammer.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(255,42,133,0.07);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--neon-pink); font-weight:900;">04</td><td style="padding:0.6rem 0.75rem; font-weight:900; color:var(--neon-pink);">The Cartel Heist (Sinfrontera)</td><td style="padding:0.6rem 0.75rem;">Ch. 3</td><td style="padding:0.6rem 0.75rem; color:var(--neon-pink); font-weight:800;">MAJOR STORY HEIST</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:900; color:var(--neon-pink);">$120,000</td><td style="padding:0.6rem 0.75rem; color:#fff; font-size:0.8rem;">Raul Bautista 5 setups + 10-step Sinfrontera National Bank vault job ($120,000 payout). Unlocks <em>Break the Bank</em>.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">05</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Yasmani's Jewelry Jobs</td><td style="padding:0.6rem 0.75rem;">Ch. 3</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan);">Fencing Syndicate Job</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$20,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Unlocks all 20 Jewelry Stores across Leonida &amp; Yasmani's 5% fence cut.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">06</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Mall Jewelry Heist</td><td style="padding:0.6rem 0.75rem;">Ch. 3</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan);">Commercial Robbery</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$12,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Multi-case glass smash with guard pacification and fast escape.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">07</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Fresh Evidence</td><td style="padding:0.6rem 0.75rem;">Ch. 4</td><td style="padding:0.6rem 0.75rem; color:#c084fc;">Evidence Locker Raid</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$10,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Police precinct lockup breach and contraband extraction.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(0,240,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--neon-cyan); font-weight:900;">08</td><td style="padding:0.6rem 0.75rem; font-weight:900; color:var(--neon-cyan);">VCIA Takedown (Airport Heist)</td><td style="padding:0.6rem 0.75rem;">Ch. 4</td><td style="padding:0.6rem 0.75rem; color:var(--neon-cyan); font-weight:800;">MAJOR STORY FINALE</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:900; color:var(--neon-cyan);">$250,000</td><td style="padding:0.6rem 0.75rem; color:#fff; font-size:0.8rem;">4-setup airport raid: roof stealth, tarmac battle, cargo flight. Unlocks <em>Hi-Jacked</em>.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">09</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Tie Up Loose Ends</td><td style="padding:0.6rem 0.75rem;">Ch. 4</td><td style="padding:0.6rem 0.75rem; color:#c084fc;">Story Epilogue Score</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$25,560</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Post-airport cleanup and payoff division.</td></tr>
-                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.6rem 0.75rem; font-family:var(--font-mono); color:var(--text-muted);">10</td><td style="padding:0.6rem 0.75rem; font-weight:700; color:#fff;">Coast Guard Heist</td><td style="padding:0.6rem 0.75rem;">Ch. 5</td><td style="padding:0.6rem 0.75rem; color:var(--neon-amber);">Offshore Raid</td><td style="padding:0.6rem 0.75rem; text-align:right; font-family:var(--font-mono); font-weight:800; color:var(--neon-green);">$50,000</td><td style="padding:0.6rem 0.75rem; color:#94a3b8; font-size:0.8rem;">Offshore Cutter depot interception into Leonida Keys.</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div style="text-align:center; margin-top:0.95rem; margin-bottom:1.5rem;">
-        <button type="button" id="expandTargetsBtn" class="btn btn-secondary" onclick="GTA6.toggleAllTargets(this)" style="padding:0.5rem 1.35rem; font-size:0.85rem; font-weight:800; border-color:var(--neon-cyan); color:var(--neon-cyan); cursor:pointer;">
-            Show All 10 Story Heists &amp; Planned Jobs &darr;
-        </button>
-    </div>
-
-    <!-- 9. WORLD DATABASE CATEGORIES -->
-    <section id="world-database" style="margin:1.75rem 0 1.85rem;">
-        <div class="section-header" style="margin-bottom:0.8rem;">
-            <div>
-                <h2 style="font-size:1.3rem; margin:0 0 0.15rem;">Leonida World Database Categories</h2>
-                <p style="font-size:0.82rem; margin:0;">Explore all 6 verified GTA 6 encyclopedias with direct Leonida Map pins and unique official visuals.</p>
-            </div>
-            <a href="/gta-6-database/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Explore Full Database &rarr;</a>
-        </div>
-        <div class="home-db-6grid">
-            <a href="/properties.html" class="home-db-card">
-                <div class="home-db-thumb"><img src="/assets/images/properties/vice-city-penthouse.jpg" alt="GTA 6 Properties and Fences" loading="lazy"></div>
-                <div style="padding:0.8rem 0.9rem;">
-                    <strong style="color:#fff; font-size:0.96rem; display:block;">🏠 Properties, Garages &amp; Fences</strong>
-                    <span style="color:#94a3b8; font-size:0.76rem;">4 Safehouses, 13 Garages &amp; 7 Fences (Brian's Lockup 7700)</span>
-                </div>
-            </a>
-            <a href="/animals.html" class="home-db-card">
-                <div class="home-db-thumb"><img src="/assets/images/animals/grassrivers-gator.jpg" alt="GTA 6 Animals and Wildlife" loading="lazy"></div>
-                <div style="padding:0.8rem 0.9rem;">
-                    <strong style="color:#fff; font-size:0.96rem; display:block;">🐊 Animals &amp; Wildlife (170+)</strong>
-                    <span style="color:#94a3b8; font-size:0.76rem;">62 bird species (Rockstar) · 60 Birds-tab · Bret Vogel 15 Decks &amp; 8 Legendary Hunter</span>
-                </div>
-            </a>
-            <a href="/vehicles.html" class="home-db-card">
-                <div class="home-db-thumb"><img src="/assets/images/vehicles/veh-cheetah-1.jpg" alt="GTA 6 Vehicles and Getaway Cars" loading="lazy"></div>
-                <div style="padding:0.8rem 0.9rem;">
-                    <strong style="color:#fff; font-size:0.96rem; display:block;">🏎️ Vehicles &amp; Trunk Specs</strong>
-                    <span style="color:#94a3b8; font-size:0.76rem;">Supercars, 4-bag trunk haulers, boats &amp; getaway builds</span>
-                </div>
-            </a>
-            <a href="/weapons.html" class="home-db-card">
-                <div class="home-db-thumb"><img src="/assets/images/weapons/weapon-jason-rifle.jpg" alt="GTA 6 Weapons and Heist Loadouts" loading="lazy"></div>
-                <div style="padding:0.8rem 0.9rem;">
-                    <strong style="color:#fff; font-size:0.96rem; display:block;">⚔️ Weapons &amp; Heist Loadouts</strong>
-                    <span style="color:#94a3b8; font-size:0.76rem;">Stealth suppressors, heavy rifles &amp; Jason/Lucia duo setups</span>
-                </div>
-            </a>
-            <a href="/weapons-bonuses.html" class="home-db-card">
-                <div class="home-db-thumb"><img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="GTA 6 Gun Stores and Ammu-Nation" loading="lazy"></div>
-                <div style="padding:0.8rem 0.9rem;">
-                    <strong style="color:#fff; font-size:0.96rem; display:block;">🔫 24 Ammu-Nation Gun Stores</strong>
-                    <span style="color:#94a3b8; font-size:0.76rem;">Black Eagle Surplus, Pawn Armories &amp; Duval ES9 claim</span>
-                </div>
-            </a>
-            <a href="/radio.html" class="home-db-card">
-                <div class="home-db-thumb"><img src="/assets/images/properties/drequan-studio.jpg" alt="GTA 6 Radio Stations" loading="lazy"></div>
-                <div style="padding:0.8rem 0.9rem;">
-                    <strong style="color:#fff; font-size:0.96rem; display:block;">📻 23 Official Radio Stations</strong>
-                    <span style="color:#94a3b8; font-size:0.76rem;">Tracklists, celebrity DJs, secret poster unlocks &amp; DMCA-safe talk</span>
-                </div>
-            </a>
-        </div>
+        <p class="aff-disclosure-note" style="margin:0.55rem 0 0;">
+            <strong>Affiliate Disclosure:</strong> As an Amazon Associate (tag: <code>gta6heistguid-20</code>), GTA6HeistGuide.com earns from qualifying purchases at no extra cost to you. Live product pricing and availability are shown directly on Amazon.
+        </p>
     </section>
 
     <div class="adsense-slot" data-ad-slot="home-mid-bottom"></div>
 
-    <!-- 10. FAQ -->
-    <section style="margin-top: 1.5rem;">
-        <div class="section-header" style="margin-bottom: 0.85rem;">
+    <!-- 9. FAQ -->
+    <section style="margin-top: 1.35rem;">
+        <div class="section-header" style="margin-bottom: 0.8rem;">
             <div>
-                <h2 style="font-size: 1.25rem; margin-bottom: 0.2rem;">Frequently Asked Questions</h2>
+                <h2 style="font-size: 1.25rem; margin-bottom: 0.15rem;">Frequently Asked Questions</h2>
                 <p style="font-size: 0.82rem; margin: 0;">Verified launch answers for GTA 6 save slots, safe codes, story heists, frame rates, and cheats.</p>
             </div>
         </div>
@@ -862,20 +880,16 @@
 
 </main>
 
-<!-- 11. FOOTER -->
+<!-- 10. FOOTER (STATIC HEADER LOGO ARTWORK, CLEAN NAVIGATION & LEGAL DISCLOSURES) -->
 <footer>
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
-                <a href="/" class="brand-logo" style="text-decoration:none;">
-                    <span class="brand-wordmark">
-                        <span class="brand-gta">GTA 6</span>
-                        <span class="brand-vi-sub">HEIST GUIDE</span>
-                    </span>
-                    <span class="brand-badge">Syndicate v3.3</span>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home">
+                    <img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async">
                 </a>
-                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
-                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                <p style="color:#64748b; font-size:0.85rem; margin:0.55rem 0 0; max-width:480px; line-height:1.5;">
+                    The comprehensive Grand Theft Auto VI heist guide, interactive Leonida Map, 15-slot Save Planner, and live World Database.
                 </p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
@@ -891,8 +905,8 @@
                     <li><a href="/gta-6-tools/" style="color:var(--neon-cyan); font-weight:700;">🛠️ All GTA 6 Tools Hub</a></li>
                     <li><a href="/save-planner/" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
                     <li><a href="/cheats.html">⚡ 61 Cheats &amp; Glitches</a></li>
-                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
-                    <li><a href="/heist-planner.html">Squad Heist Planner</a></li>
+                    <li><a href="/heist-payout-calculator.html">💰 Heist Payout Calculator</a></li>
+                    <li><a href="/heist-planner.html">🎯 Squad Heist Planner</a></li>
                     <li><a href="/leonida-wanted-system.html">🚓 Wanted System Calculator</a></li>
                     <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">🚀 Free Tools Suite</a></li>
                 </ul>
@@ -904,8 +918,8 @@
                     <li><a href="/gta-6-money-guide/">💰 Money &amp; Safe Codes Hub</a></li>
                     <li><a href="/gta-6-tips-and-tricks/">💡 Tips, Tricks &amp; Secrets</a></li>
                     <li><a href="/gta-6-discoveries/">📡 New Player Discoveries</a></li>
-                    <li><a href="/gta-6-settings/" style="color:var(--neon-cyan); font-weight:700;">⚙️ Settings, SSD &amp; Capture Hub</a></li>
-                    <li><a href="/settings.html">⚙️ 30 FPS Quick Cheat Sheet</a></li>
+                    <li><a href="/gta-6-settings/" style="color:var(--neon-cyan); font-weight:700;">⚙️ Settings &amp; Hardware Hub</a></li>
+                    <li><a href="/live.html">📺 Live Companion HUD</a></li>
                     <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
                 </ul>
             </div>
@@ -914,21 +928,22 @@
                 <ul class="footer-col-links">
                     <li><a href="/gta-6-database/" style="color:var(--neon-yellow); font-weight:700;">📚 World Database Hub</a></li>
                     <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/animals.html">🐊 Animals &amp; Wildlife</a></li>
                     <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
                     <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
-                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/weapons-bonuses.html">🔫 24 Gun Stores</a></li>
                     <li><a href="/radio.html">📻 23 Radio Stations</a></li>
                 </ul>
             </div>
             <div>
-                <span class="footer-col-title" style="color:#a855f7;">🤝 Verified Deals</span>
+                <span class="footer-col-title" style="color:#a855f7;">📋 Site &amp; Legal</span>
                 <ul class="footer-col-links">
-                    <li><a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">🔑 G2A Discounted Keys</a></li>
-                    <li><a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">🎮 Eneba PSN / Xbox Cards</a></li>
-                    <li><a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">🚀 ExitLag Tunnel (Free)</a></li>
-                    <li><a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">🎬 CutFlow Pro (9:16 Clipper)</a></li>
-                    <li><a href="/drops.html" style="color:#c084fc; font-weight:700;">🎁 Drops &amp; Kick 10K</a></li>
+                    <li><a href="/about.html">About GTA6HeistGuide</a></li>
+                    <li><a href="/contact.html">Contact &amp; Corrections</a></li>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service &amp; DMCA</a></li>
+                    <li><a href="/drops.html">🎁 Launch Rewards &amp; Drops</a></li>
+                    <li><a href="/sitemap.xml">XML Sitemap</a></li>
                 </ul>
             </div>
         </div>
@@ -947,19 +962,19 @@
                 <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
             </div>
             <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.3)</span>
+                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong></span>
             </div>
         </div>
 
         <div class="footer-disclaimer">
             <p style="margin:0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. Prices and availability on partner stores are dynamic and subject to change. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js"></script>
+<script src="/js/affiliates.js?v=20261122_v19"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
@@ -979,6 +994,28 @@ document.addEventListener('DOMContentLoaded', function() {
     syncHomeBadges();
     window.addEventListener('gta6-progress-updated', syncHomeBadges);
   }
+
+  // Hydrate exact live World Database counts from /data/*.json (never invented)
+  var dbFeeds = [
+    { id: 'homeDbCountProperties', url: '/data/properties.json', suffix: 'ENTRIES' },
+    { id: 'homeDbCountAnimals', url: '/data/animals.json', suffix: 'INDEXED \u00b7 170+ TOTAL' },
+    { id: 'homeDbCountVehicles', url: '/data/vehicles.json', suffix: 'VEHICLES' },
+    { id: 'homeDbCountWeapons', url: '/data/weapons.json', suffix: 'WEAPONS' },
+    { id: 'homeDbCountGunStores', url: '/data/gun-stores.json', suffix: 'GUN STORES' },
+    { id: 'homeDbCountRadio', url: '/data/radio.json', suffix: 'STATIONS' }
+  ];
+  dbFeeds.forEach(function(feed) {
+    var el = document.getElementById(feed.id);
+    if (!el) return;
+    fetch(feed.url)
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (data && Array.isArray(data.items) && data.items.length) {
+          el.textContent = data.items.length + ' ' + feed.suffix;
+        }
+      })
+      .catch(function() {});
+  });
 
   // Hydrate NEW DISCOVERIES TODAY cleanly from /data/discoveries.json
   var discGrid = document.getElementById('homeDiscoveriesGrid');
@@ -1014,10 +1051,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 '<span style="font-family:var(--font-mono); font-size:0.68rem; color:#94a3b8;">' + escH(item.date) + '</span>' +
               '</div>' +
               '<div style="font-size:0.7rem; color:' + accent + '; font-weight:800; margin-bottom:0.2rem;">' + escH(item.category) + '</div>' +
-              '<h3 style="color:#fff; font-size:0.96rem; margin:0 0 0.35rem; line-height:1.3;">' + escH(item.title) + '</h3>' +
-              '<p style="color:#94a3b8; font-size:0.78rem; margin:0; line-height:1.45;">' + escH(desc) + '</p>' +
+              '<h3 style="color:#fff; font-size:0.94rem; margin:0 0 0.35rem; line-height:1.3;">' + escH(item.title) + '</h3>' +
+              '<p style="color:#94a3b8; font-size:0.77rem; margin:0; line-height:1.45;">' + escH(desc) + '</p>' +
             '</div>' +
-            '<a href="' + escH(href) + '" style="color:' + accent + '; font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.65rem;">Read More &rarr;</a>' +
+            '<a href="' + escH(href) + '" style="color:' + accent + '; font-size:0.76rem; font-weight:800; text-decoration:none; margin-top:0.6rem;">Read More &rarr;</a>' +
           '</article>';
         }).join('');
       })

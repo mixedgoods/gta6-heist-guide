@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="Grand Theft Auto VI Leonida money guide, safe codes, and heist earnings calculator">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,11 +82,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.45rem;
-        margin: 0.85rem 0 1.25rem;
+        margin: 0.9rem 0 0;
       }
       .money-jump-nav a {
-        background: rgba(0, 255, 136, 0.08);
-        border: 1px solid rgba(0, 255, 136, 0.3);
+        background: rgba(0, 255, 136, 0.1);
+        border: 1px solid rgba(0, 255, 136, 0.34);
         color: #e2e8f0;
         text-decoration: none;
         padding: 0.4rem 0.78rem;
@@ -96,7 +96,7 @@
         transition: all 0.16s ease;
       }
       .money-jump-nav a:hover {
-        background: rgba(0, 255, 136, 0.2);
+        background: rgba(0, 255, 136, 0.22);
         color: #fff;
         border-color: var(--neon-green);
       }
@@ -109,7 +109,7 @@
         background: rgba(12, 16, 30, 0.96);
         border: 1px solid rgba(0, 255, 136, 0.3);
         border-radius: 10px;
-        padding: 1rem;
+        padding: 0.95rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -120,23 +120,23 @@
       }
       .safe-code-num {
         font-family: var(--font-mono);
-        font-size: 1.45rem;
+        font-size: 1.4rem;
         font-weight: 1000;
         letter-spacing: 2px;
         color: var(--neon-green);
         background: rgba(0, 0, 0, 0.55);
         border: 1px dashed rgba(0, 255, 136, 0.45);
         border-radius: 7px;
-        padding: 0.3rem 0.65rem;
+        padding: 0.28rem 0.62rem;
         display: inline-block;
-        margin: 0.4rem 0 0.55rem;
+        margin: 0.38rem 0 0.5rem;
       }
       .safe-code-card.is-unverified .safe-code-num {
         color: var(--neon-amber);
         border-color: rgba(255, 184, 0, 0.45);
       }
       .money-section {
-        margin-bottom: 2.25rem;
+        margin-bottom: 2rem;
         scroll-margin-top: 84px;
       }
       .money-table-wrap {
@@ -216,11 +216,12 @@
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">HEISTS</a></li>
             <li><a href="/map.html" class="nav-pill">MAP</a></li>
-            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill active">MONEY</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
                     <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
                     <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
                     <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
@@ -230,6 +231,7 @@
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -254,108 +256,194 @@
     </div>
 </nav>
 
-<main class="container" style="max-width:1140px; margin:0 auto; padding:1.15rem 1rem 3.5rem;">
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.15rem 1rem 3rem;">
     <nav aria-label="Breadcrumb" style="font-size:0.78rem; color:#94a3b8; margin-bottom:0.85rem; display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
         <a href="/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Home</a>
         <span aria-hidden="true">/</span>
         <span style="color:#e2e8f0; font-weight:700;">GTA 6 Money Guide</span>
     </nav>
-    <!-- HERO -->
-    <header class="tool-box" style="margin-bottom:1rem; border-color:var(--neon-green); background:linear-gradient(135deg, rgba(8,25,18,0.95), rgba(6,14,18,0.98));">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem;">
-            <div style="flex:1 1 560px;">
-                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
-                    <span class="verify-badge verify-confirmed">💰 6-SECTION MONEY HUB</span>
-                    <span class="verify-badge verify-community">VERIFIED LAUNCH ECONOMY</span>
+
+    <!-- VISUAL HERO BANNER -->
+    <header class="visual-banner-header is-green">
+        <img src="/assets/images/heists/large-bank-vaults.jpg" alt="GTA 6 Leonida Bank Vaults and Heist Money Guide" class="visual-banner-bg" loading="eager">
+        <div class="visual-banner-inner">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem;">
+                <div style="flex:1 1 560px;">
+                    <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                        <span class="verify-badge verify-confirmed">💰 6-SECTION MONEY HUB</span>
+                        <span class="verify-badge verify-community">VERIFIED LAUNCH ECONOMY</span>
+                    </div>
+                    <h1 style="color:#fff; font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin:0 0 0.5rem; line-height:1.18;">
+                        GTA 6 <span style="color:var(--neon-green);">Money Guide</span>: Safe Codes, Robberies &amp; Earnings Calculator
+                    </h1>
+                    <p style="color:#cbd5e1; font-size:0.94rem; margin:0; line-height:1.55;">
+                        Master every verified cash route across Leonida—from Chapter 1's $5,000 BuckMe Family Savings goal to Chapter 3's Cartel Heist ($120,000), 20 Jewelry Stores, and 8 repeatable Large Bank Vaults (up to ~$205,000).
+                    </p>
                 </div>
-                <h1 style="color:#fff; font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin:0 0 0.5rem; line-height:1.18;">
-                    GTA 6 <span style="color:var(--neon-green);">Money Guide</span>: Safe Codes, Robberies &amp; Earnings Calculator
-                </h1>
-                <p style="color:#94a3b8; font-size:0.94rem; margin:0; line-height:1.55;">
-                    Master every cash route from Chapter 1's $5,000 BuckMe Family Savings goal to Chapter 3's Cartel Heist ($120,000), 20 Jewelry Stores across Leonida, and 8 repeatable Large Bank Vaults (up to ~$205,000).
-                </p>
-            </div>
-            <div style="background:rgba(0,0,0,0.62); border:1px solid rgba(0,255,136,0.38); border-radius:10px; padding:1rem 1.3rem; min-width:255px; text-align:center;">
-                <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-green); font-weight:800;">EARLY OPS CHECKLIST</div>
-                <div id="cashTotalDisplay" style="font-size:1.85rem; font-weight:1000; color:var(--neon-green); font-family:var(--font-mono); margin:0.2rem 0;">$0</div>
-                <div style="font-size:0.75rem; color:#94a3b8;"><span id="opsCompletedCount">0</span> of 12 Operations Cleared</div>
-                <div style="background:rgba(255,255,255,0.08); height:7px; border-radius:4px; overflow:hidden; margin:0.5rem 0;">
-                    <div id="cashProgressBar" style="height:100%; width:0%; background:linear-gradient(90deg, var(--neon-cyan), var(--neon-green)); transition:width 0.3s ease;"></div>
+                <div style="background:rgba(4,8,18,0.86); border:1px solid rgba(0,255,136,0.42); border-radius:10px; padding:1rem 1.3rem; min-width:255px; text-align:center;">
+                    <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--neon-green); font-weight:800;">EARLY OPS CHECKLIST</div>
+                    <div id="cashTotalDisplay" style="font-size:1.85rem; font-weight:1000; color:var(--neon-green); font-family:var(--font-mono); margin:0.2rem 0;">$0</div>
+                    <div style="font-size:0.75rem; color:#94a3b8;"><span id="opsCompletedCount">0</span> of 12 Operations Cleared</div>
+                    <div style="background:rgba(255,255,255,0.08); height:7px; border-radius:4px; overflow:hidden; margin:0.5rem 0;">
+                        <div id="cashProgressBar" style="height:100%; width:0%; background:linear-gradient(90deg, var(--neon-cyan), var(--neon-green)); transition:width 0.3s ease;"></div>
+                    </div>
                 </div>
             </div>
+            <nav class="money-jump-nav" aria-label="Money Hub Sections">
+                <a href="#fastest-methods">1. Fastest Methods</a>
+                <a href="#robberies-payouts">2. Robberies &amp; Payouts</a>
+                <a href="#safe-codes">3. Safe Codes &amp; Locations</a>
+                <a href="#heist-earnings">4. Heist Earnings</a>
+                <a href="#money-calculator">5. Comparison &amp; Calculator</a>
+                <a href="#money-tips">6. Money &amp; Contraband Tips</a>
+            </nav>
         </div>
-        <nav class="money-jump-nav" aria-label="Money Hub Sections">
-            <a href="#fastest-methods">1. Fastest Methods</a>
-            <a href="#robberies-payouts">2. Robberies &amp; Payouts</a>
-            <a href="#safe-codes">3. Safe Codes &amp; Locations</a>
-            <a href="#heist-earnings">4. Heist Earnings</a>
-            <a href="#money-calculator">5. Comparison &amp; Calculator</a>
-            <a href="#money-tips">6. Money Tips</a>
-        </nav>
     </header>
 
     <div id="moneyProgressToolbar"></div>
 
-    <div class="syndicate-aff-bar">
-      <div class="syndicate-aff-bar-main">
-        <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
-        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-        <span class="aff-sep">|</span>
-        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-        <span class="aff-sep">|</span>
-        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
-        <span class="aff-sep">|</span>
-        <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-      </div>
+    <!-- PROMINENT CONTEXTUAL AFFILIATE RECOMMENDATION #1 (GAMING DEALS) -->
+    <div id="moneyTopAffSlot"
+         data-aff-slot="money-top"
+         data-aff-context="money-top"
+         data-aff-variant="horizontal-featured">
     </div>
 
-    <!-- SECTION 1: FASTEST METHODS -->
+    <!-- SECTION 1: FASTEST METHODS (VISUAL GTA VI SCREENSHOT CARDS + 12 CHECKLIST OPS) -->
     <section id="fastest-methods" class="money-section">
         <div class="section-header" style="margin-bottom:0.9rem;">
             <div>
                 <span class="verify-badge verify-confirmed">SECTION 1 OF 6</span>
                 <h2 style="font-size:1.45rem; margin:0.35rem 0 0.2rem;">Fastest Money Methods (Early to Endgame)</h2>
-                <p style="font-size:0.86rem; margin:0;">Check off the 12 Chapter 1 &amp; 2 cash operations below—each checkbox syncs directly with its Leonida Map pin.</p>
+                <p style="font-size:0.86rem; margin:0;">Top verified cash methods paired with the 12 Chapter 1 &amp; 2 cash operations below—each checkbox syncs directly with its Leonida Map pin.</p>
             </div>
         </div>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:0.85rem; margin-bottom:1.25rem;">
-            <div class="op-card" style="border-color:rgba(0,255,136,0.4);">
-                <div>
-                    <span class="verify-badge verify-confirmed">CH. 4+ ENDGAME TOP</span>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.4rem 0 0.25rem;">8 Large Bank Vaults</h3>
-                    <p style="color:#94a3b8; font-size:0.8rem; margin:0 0 0.5rem;">Repeatable endgame bank vaults paying up to <strong>~$205,000</strong> (Lombank Downtown &amp; Ocean Beach). Always bring the Dye Pack Jammer.</p>
+        <div class="money-visual-3grid">
+            <a href="/heists/large-bank-vaults.html" class="visual-shot-card" style="border-color:rgba(0,255,136,0.4);">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/large-bank-vaults.jpg" alt="GTA 6 8 Large Bank Vaults Official Screenshot" loading="lazy">
+                    <span class="visual-shot-pill">CH. 4+ ENDGAME TOP</span>
+                    <span class="visual-shot-payout">UP TO ~$205K</span>
                 </div>
-                <a href="/heists/large-bank-vaults.html" style="color:var(--neon-green); font-size:0.78rem; font-weight:800;">Open Vault Guide &rarr;</a>
-            </div>
-            <div class="op-card" style="border-color:rgba(255,42,141,0.4);">
-                <div>
-                    <span class="verify-badge verify-community">LAUNCH EXPLOIT</span>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.4rem 0 0.25rem;">Apollo Aggregates Red Barn</h3>
-                    <p style="color:#94a3b8; font-size:0.8rem; margin:0 0 0.5rem;">4-bag trunk load + Save/Reload on Slot #15 fenced at Brian's Lockup (<code>7700</code>) for <strong>~$55,000/run</strong>.</p>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0;">8 Large Bank Vaults</h3>
+                    <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">Repeatable endgame bank vaults (Lombank Downtown &amp; Ocean Beach). Always bring the Dye Pack Jammer to protect stolen cash stacks.</p>
+                    <span style="color:var(--neon-green); font-size:0.78rem; font-weight:800; margin-top:auto; padding-top:0.35rem;">Open Vault Guide &rarr;</span>
                 </div>
-                <a href="/gta-6-glitches/#glitch-apollo-red-barn" style="color:var(--neon-pink); font-size:0.78rem; font-weight:800;">Check Live Patch Status &rarr;</a>
-            </div>
-            <div class="op-card" style="border-color:rgba(0,240,255,0.35);">
-                <div>
-                    <span class="verify-badge verify-confirmed">CH. 1–2 ZERO HEAT</span>
-                    <h3 style="color:#fff; font-size:1.05rem; margin:0.4rem 0 0.25rem;">Kenton's Dives &amp; Moses Cars</h3>
-                    <p style="color:#94a3b8; font-size:0.8rem; margin:0 0 0.5rem;">Salvage shipwrecks for <strong>~$1,400/dive</strong> and deliver untracked cars to Moses in Port Gellhorn for <strong>$1,000–$2,000</strong> each.</p>
+            </a>
+            <a href="/gta-6-glitches/#glitch-apollo-red-barn" class="visual-shot-card" style="border-color:rgba(255,42,141,0.4);">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/intel/intel-gellhorn-ops.jpg" alt="GTA 6 Apollo Aggregates Red Barn Contraband Loop" loading="lazy">
+                    <span class="visual-shot-pill" style="color:var(--neon-pink); border-color:rgba(255,42,141,0.5);">CONTRABAND LOOP</span>
+                    <span class="visual-shot-payout">~$55K / RUN</span>
                 </div>
-                <a href="/map.html?pin=fence-moses" style="color:var(--neon-cyan); font-size:0.78rem; font-weight:800;">📍 Moses on Map &rarr;</a>
-            </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0;">Apollo Aggregates Red Barn</h3>
+                    <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">4-bag trunk load + Save/Reload on Slot #15 fenced at Brian's Lockup (<code>7700</code>) for rapid early contraband cash.</p>
+                    <span style="color:var(--neon-pink); font-size:0.78rem; font-weight:800; margin-top:auto; padding-top:0.35rem;">Check Live Patch Status &rarr;</span>
+                </div>
+            </a>
+            <a href="/map.html?pin=fence-moses" class="visual-shot-card" style="border-color:rgba(0,240,255,0.38);">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/regions/leonida-keys.jpg" alt="GTA 6 Leonida Keys Shipwreck Dives and Moses Car Drops" loading="lazy">
+                    <span class="visual-shot-pill" style="color:var(--neon-cyan); border-color:rgba(0,240,255,0.5);">CH. 1&ndash;2 ZERO HEAT</span>
+                    <span class="visual-shot-payout">$1.4K&ndash;$2K</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1.05rem; margin:0;">Kenton's Dives &amp; Moses Cars</h3>
+                    <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">Salvage Keys shipwrecks (~$1,400/dive) and drop untracked cars at Moses in Port Gellhorn ($1,000&ndash;$2,000) with zero police heat.</p>
+                    <span style="color:var(--neon-cyan); font-size:0.78rem; font-weight:800; margin-top:auto; padding-top:0.35rem;">📍 Locate Moses on Map &rarr;</span>
+                </div>
+            </a>
         </div>
         <div id="earlyOpsGrid" class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap:0.85rem;"></div>
     </section>
 
-    <!-- SECTION 2: ROBBERIES & PAYOUTS -->
+    <!-- SECTION 2: ROBBERIES & PAYOUTS (VISUAL 6-CARD GTA VI GALLERY + FULL PAYOUT TABLE) -->
     <section id="robberies-payouts" class="money-section">
         <div class="section-header" style="margin-bottom:0.9rem;">
             <div>
                 <span class="verify-badge verify-community">SECTION 2 OF 6</span>
                 <h2 style="font-size:1.45rem; margin:0.35rem 0 0.2rem;">Free-Roam Robberies &amp; Payouts Across Leonida</h2>
-                <p style="font-size:0.86rem; margin:0;">Verified location counts, unlock missions, key tools, and realistic fenced payouts.</p>
+                <p style="font-size:0.86rem; margin:0;">Visual guide to Shop Robberies, Pawn Shops, Jewelry Stores, Banks, and Armored Trucks with verified counts and realistic fenced payouts.</p>
             </div>
         </div>
+
+        <div class="money-visual-3grid">
+            <a href="/heists/shops-and-stickups.html" class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/shops.jpg" alt="GTA 6 Shop Robberies and Convenience Stick-ups" loading="lazy">
+                    <span class="visual-shot-pill">72 LOCATIONS &bull; CH. 1</span>
+                    <span class="visual-shot-payout">$500&ndash;$2,000</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1rem; margin:0;">Shop Robberies &amp; Stick-ups</h3>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Fastest Chapter 1 cash loop using no-shot crowd control and nearby physical ATM deposits.</p>
+                    <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:auto; padding-top:0.3rem;">Open Shops Guide &rarr;</span>
+                </div>
+            </a>
+            <a href="/heists/pawn-shops.html" class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/pawn-shops.jpg" alt="GTA 6 Pawn Shop Robberies" loading="lazy">
+                    <span class="visual-shot-pill">REGIONAL &bull; CH. 2</span>
+                    <span class="visual-shot-payout">$4,000&ndash;$12,000</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1rem; margin:0;">Pawn Shops</h3>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Unlocks after <em>Coffee Break</em>. Clear luxury watches &amp; firearms cases, then fence at Randy or Brian's Lockup (7700).</p>
+                    <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:auto; padding-top:0.3rem;">Open Pawn Shop Guide &rarr;</span>
+                </div>
+            </a>
+            <a href="/heists/jewelry-stores.html" class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/jewelry-stores.jpg" alt="GTA 6 Jewelry Store Robberies" loading="lazy">
+                    <span class="visual-shot-pill">20 STORES &bull; CH. 3</span>
+                    <span class="visual-shot-payout">$15,000&ndash;$35,000</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1rem; margin:0;">Jewelry Stores</h3>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">20 Leonida stores unlocked after <em>Yasmani's Jewelry Jobs</em>. Wipe CCTV servers and fence with Yasmani (5% cut).</p>
+                    <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:auto; padding-top:0.3rem;">Open Jewelry Guide &rarr;</span>
+                </div>
+            </a>
+            <a href="/heists/small-banks-payday-loans.html" class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/small-banks.jpg" alt="GTA 6 Small Banks and Payday Loans" loading="lazy">
+                    <span class="visual-shot-pill">14 BRANCHES &bull; CH. 3</span>
+                    <span class="visual-shot-payout">$5,000&ndash;$45,000</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1rem; margin:0;">Small Banks &amp; Payday Loans</h3>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">14 regional branches unlocked after <em>Credit Check</em>. Always toggle the Dye Pack Jammer before grabbing bills.</p>
+                    <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:auto; padding-top:0.3rem;">Open Small Banks Guide &rarr;</span>
+                </div>
+            </a>
+            <a href="/heists/large-bank-vaults.html" class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/large-bank-vaults.jpg" alt="GTA 6 Large Bank Vaults" loading="lazy">
+                    <span class="visual-shot-pill">8 VAULTS &bull; CH. 4</span>
+                    <span class="visual-shot-payout">$65K&ndash;~$205K</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1rem; margin:0;">Large Bank Vaults</h3>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">8 major repeatable vaults unlocked after <em>That's Where The Money Is...</em> Combine stealth drill, Dye Jammer &amp; CCTV wipe.</p>
+                    <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:auto; padding-top:0.3rem;">Open Large Vaults Guide &rarr;</span>
+                </div>
+            </a>
+            <a href="/heists/armored-trucks-gang-ops.html" class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/armored-trucks.jpg" alt="GTA 6 Armored Trucks and Contraband Gang Ops" loading="lazy">
+                    <span class="visual-shot-pill">40 CAMPS &bull; FREE-ROAM</span>
+                    <span class="visual-shot-payout">$10,000&ndash;$38,000</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1rem; margin:0;">Armored Trucks &amp; Gang Ops</h3>
+                    <p style="color:#94a3b8; font-size:0.78rem; margin:0;">Ambush roaming mobile cash trucks with clean rear-door breaches and raid 40 gang hideouts for contraband crates.</p>
+                    <span style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; margin-top:auto; padding-top:0.3rem;">Open Trucks &amp; Ops Guide &rarr;</span>
+                </div>
+            </a>
+        </div>
+
         <div class="money-table-wrap">
             <table class="money-table">
                 <thead>
@@ -373,7 +461,7 @@
                         <td><strong>Shops &amp; Stick-ups</strong></td>
                         <td>72 Locations</td>
                         <td>Chapter 1 Start</td>
-                        <td style="color:var(--neon-green); font-weight:800;">$500 – $2,000</td>
+                        <td style="color:var(--neon-green); font-weight:800;">$500 &ndash; $2,000</td>
                         <td>No-shot intimidation + ATM loop</td>
                         <td><a href="/heists/shops-and-stickups.html" style="color:var(--neon-cyan); font-weight:700;">Guide &rarr;</a></td>
                     </tr>
@@ -381,7 +469,7 @@
                         <td><strong>Pawn Shops</strong></td>
                         <td>Regional Strip</td>
                         <td>Ch. 2 (<em>Coffee Break</em>)</td>
-                        <td style="color:var(--neon-green); font-weight:800;">$4,000 – $12,000</td>
+                        <td style="color:var(--neon-green); font-weight:800;">$4,000 &ndash; $12,000</td>
                         <td>Fence at Randy or Brian's Lockup (7700)</td>
                         <td><a href="/heists/pawn-shops.html" style="color:var(--neon-cyan); font-weight:700;">Guide &rarr;</a></td>
                     </tr>
@@ -389,7 +477,7 @@
                         <td><strong>Jewelry Stores</strong></td>
                         <td><strong>20 locations across Leonida</strong></td>
                         <td>Ch. 3 (<em>Yasmani's Jewelry Jobs</em>)</td>
-                        <td style="color:var(--neon-green); font-weight:800;">$15,000 – $35,000</td>
+                        <td style="color:var(--neon-green); font-weight:800;">$15,000 &ndash; $35,000</td>
                         <td>Erase CCTV server + Yasmani (5% cut)</td>
                         <td><a href="/heists/jewelry-stores.html" style="color:var(--neon-cyan); font-weight:700;">Guide &rarr;</a></td>
                     </tr>
@@ -397,7 +485,7 @@
                         <td><strong>Small Banks &amp; Payday Loans</strong></td>
                         <td>14 Branches</td>
                         <td>Ch. 3 (<em>Credit Check</em>)</td>
-                        <td style="color:var(--neon-green); font-weight:800;">$5,000 – $45,000</td>
+                        <td style="color:var(--neon-green); font-weight:800;">$5,000 &ndash; $45,000</td>
                         <td>Equip Dye Pack Jammer</td>
                         <td><a href="/heists/small-banks-payday-loans.html" style="color:var(--neon-cyan); font-weight:700;">Guide &rarr;</a></td>
                     </tr>
@@ -405,7 +493,7 @@
                         <td><strong>Large Bank Vaults</strong></td>
                         <td>8 Major Vaults</td>
                         <td>End Ch. 4 (<em>That's Where The Money Is...</em>)</td>
-                        <td style="color:var(--neon-green); font-weight:800;">$65,000 – ~$205,000</td>
+                        <td style="color:var(--neon-green); font-weight:800;">$65,000 &ndash; ~$205,000</td>
                         <td>Stealth drill + Dye Jammer + CCTV wipe</td>
                         <td><a href="/heists/large-bank-vaults.html" style="color:var(--neon-cyan); font-weight:700;">Guide &rarr;</a></td>
                     </tr>
@@ -413,7 +501,7 @@
                         <td><strong>Armored Trucks &amp; Gang Ops</strong></td>
                         <td>40 Hideouts + Roaming</td>
                         <td>Free-Roam</td>
-                        <td style="color:var(--neon-green); font-weight:800;">$10,000 – $38,000</td>
+                        <td style="color:var(--neon-green); font-weight:800;">$10,000 &ndash; $38,000</td>
                         <td>Clean rear-door breach + contraband fence</td>
                         <td><a href="/heists/armored-trucks-gang-ops.html" style="color:var(--neon-cyan); font-weight:700;">Guide &rarr;</a></td>
                     </tr>
@@ -431,17 +519,27 @@
                 <div style="background:rgba(0,255,136,0.07); border-left:3px solid var(--neon-green); border-radius:0 8px 8px 0; padding:0.7rem 0.9rem; margin:0.45rem 0 0.7rem; font-size:0.84rem; color:#e2e8f0; line-height:1.55;">
                     <strong style="color:var(--neon-green);">Direct Answer (Lab Fees Doors Kept Separate):</strong> In Chapter 1's <em>"Lab Fees"</em> mission, <code>0420</code> unlocks the <strong>Moonstone Boutique back-room laboratory keypad</strong> in Key Lento (where Jason retrieves the acid), while <code>7700</code> unlocks <strong>Brian's Lockup keypad</strong> further south in the Leonida Keys (where Jason deposits the acid). Do not mix up the two doors.
                     <ol style="margin:0.45rem 0 0.25rem; padding-left:1.2rem; color:#cbd5e1; font-size:0.8rem;">
-                        <li><strong>Step 1 — Moonstone Boutique (<code>0420</code>):</strong> Enter the Moonstone Boutique storefront in Key Lento and punch <code>0420</code> into the back-room laboratory keypad to collect the acid stash.</li>
-                        <li><strong>Step 2 — Brian's Lockup (<code>7700</code>):</strong> Drive south to Brian's Lockup (<a href="/map?pin=fence-brians-lockup" style="color:var(--neon-cyan); font-weight:700;">verified Leonida Map pin</a>) and enter <code>7700</code> on the storage door keypad to stash the acid.</li>
+                        <li><strong>Step 1 &mdash; Moonstone Boutique (<code>0420</code>):</strong> Enter the Moonstone Boutique storefront in Key Lento and punch <code>0420</code> into the back-room laboratory keypad to collect the acid stash.</li>
+                        <li><strong>Step 2 &mdash; Brian's Lockup (<code>7700</code>):</strong> Drive south to Brian's Lockup (<a href="/map?pin=fence-brians-lockup" style="color:var(--neon-cyan); font-weight:700;">verified Leonida Map pin</a>) and enter <code>7700</code> on the storage door keypad to stash the acid.</li>
                     </ol>
-                    <span style="font-size:0.74rem; color:#94a3b8;">Verified in-game launch walkthrough (Nov 2026). All 6 other verified launch safe codes are listed below; Crab Outpost codes (<code>CLEAVES</code>, <code>0072</code>, <code>0212</code>) remain clearly tagged <strong>Unverified / Community Reported</strong>.</span>
+                    <span style="font-size:0.74rem; color:#94a3b8;">Verified in-game launch walkthrough (Nov 2026). All 6 other verified launch safe codes are listed below with location visuals; Crab Outpost codes (<code>CLEAVES</code>, <code>0072</code>, <code>0212</code>) remain clearly tagged <strong>Unverified / Community Reported</strong>.</span>
                 </div>
             </div>
         </div>
         <div class="safe-code-grid" id="safeCodesGrid"></div>
     </section>
 
-    <!-- SECTION 4: HEIST EARNINGS -->
+    <!-- CONTEXTUAL AFFILIATE MODULE #2 (HARDWARE + NON-DUPLICATE DEALS) -->
+    <div id="moneyMidAffSlot"
+         data-aff-slot="money-mid"
+         data-aff-context="money-mid"
+         data-aff-variant="card-grid-2"
+         data-aff-count="2"
+         data-aff-heading="Recommended Console Gear &amp; Store Deals"
+         data-aff-subheading="Hardware upgrades and digital marketplace links matched to long Leonida heist sessions.">
+    </div>
+
+    <!-- SECTION 4: HEIST EARNINGS (VISUAL 2-CARD STORY HEIST SPOTLIGHT + ALL 10 JOBS TABLE) -->
     <section id="heist-earnings" class="money-section">
         <div class="section-header" style="margin-bottom:0.9rem;">
             <div>
@@ -450,6 +548,34 @@
                 <p style="font-size:0.86rem; margin:0;">Consistent verified payouts across all 5 chapters. Total Story Score: <strong>$531,420 Verified Payout</strong>.</p>
             </div>
         </div>
+
+        <div class="money-visual-2grid">
+            <a href="/heists/the-cartel-heist.html" class="visual-shot-card" style="border-color:rgba(255,42,141,0.45);">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/cartel-heist.jpg" alt="The Cartel Heist Sinfrontera National Bank $120,000 Payout" loading="lazy">
+                    <span class="visual-shot-pill" style="color:var(--neon-pink); border-color:rgba(255,42,141,0.5);">CHAPTER 3 &bull; STORY HEIST #1</span>
+                    <span class="visual-shot-payout">$120,000 PAYOUT</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1.08rem; margin:0;">The Cartel Heist (Sinfrontera National Bank)</h3>
+                    <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">5 Raul Bautista setups + 10-step vault job. Disarm lobby guards via hand shots and prioritize center-table big stacks first. Unlocks <em>Break the Bank</em>.</p>
+                    <span style="color:var(--neon-pink); font-size:0.78rem; font-weight:800; margin-top:auto; padding-top:0.35rem;">Open 10-Step Walkthrough &rarr;</span>
+                </div>
+            </a>
+            <a href="/heists/vcia-takedown.html" class="visual-shot-card" style="border-color:rgba(0,240,255,0.45);">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/heists/vcia-takedown.jpg" alt="VCIA Takedown Vice City International Airport $250,000 Payout" loading="lazy">
+                    <span class="visual-shot-pill" style="color:var(--neon-cyan); border-color:rgba(0,240,255,0.5);">CHAPTER 4 &bull; STORY HEIST #2</span>
+                    <span class="visual-shot-payout">$250,000 PAYOUT</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:#fff; font-size:1.08rem; margin:0;">VCIA Takedown (Vice City Airport Heist)</h3>
+                    <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.45;">4-setup airport finale featuring roof infiltration, tarmac combat, and cargo flight escape. Unlocks the <em>Hi-Jacked</em> trophy.</p>
+                    <span style="color:var(--neon-cyan); font-size:0.78rem; font-weight:800; margin-top:auto; padding-top:0.35rem;">Open Airport Finale Guide &rarr;</span>
+                </div>
+            </a>
+        </div>
+
         <div class="money-table-wrap">
             <table class="money-table">
                 <thead>
@@ -464,7 +590,7 @@
                 <tbody>
                     <tr><td>01</td><td><strong>Rob Vicki's Boss</strong></td><td>Ch. 1</td><td style="color:var(--neon-green); font-weight:800;">$10,000</td><td>Early coordinated cash grab.</td></tr>
                     <tr><td>02</td><td><strong>Twist Wrist, Smash, Grab</strong></td><td>Ch. 1</td><td style="color:var(--neon-green); font-weight:800;">$2,000</td><td>Convenience store crowd-control tutorial.</td></tr>
-                    <tr><td>03</td><td><strong>Credit Check / Fleeca</strong></td><td>Ch. 2–3</td><td style="color:var(--neon-green); font-weight:800;">$31,860</td><td>Unlocks Small Banks &amp; Dye Pack Jammer.</td></tr>
+                    <tr><td>03</td><td><strong>Credit Check / Fleeca</strong></td><td>Ch. 2&ndash;3</td><td style="color:var(--neon-green); font-weight:800;">$31,860</td><td>Unlocks Small Banks &amp; Dye Pack Jammer.</td></tr>
                     <tr style="background:rgba(255,42,133,0.08);">
                         <td><strong style="color:var(--neon-pink);">04</strong></td>
                         <td><a href="/heists/the-cartel-heist.html" style="color:var(--neon-pink); font-weight:900;">The Cartel Heist (Sinfrontera)</a></td>
@@ -620,33 +746,64 @@
         </div>
     </section>
 
-    <!-- SECTION 6: MONEY TIPS -->
+    <!-- CONTEXTUAL AFFILIATE MODULE #3 (NON-DUPLICATE CREATOR / HARDWARE PICK) -->
+    <div id="moneyBottomAffSlot"
+         data-aff-slot="money-bottom"
+         data-aff-context="money-bottom"
+         data-aff-variant="horizontal-featured">
+    </div>
+
+    <!-- SECTION 6: CASH, CONTRABAND & MONEY TIPS (VISUAL CARDS) -->
     <section id="money-tips" class="money-section">
         <div class="section-header" style="margin-bottom:0.9rem;">
             <div>
                 <span class="verify-badge verify-confirmed">SECTION 6 OF 6</span>
-                <h2 style="font-size:1.45rem; margin:0.35rem 0 0.25rem;">How Does "Buck Me" (Family Savings via Buck Yourself) Work?</h2>
+                <h2 style="font-size:1.45rem; margin:0.35rem 0 0.25rem;">Cash, Contraband &amp; "Buck Me" Family Savings Rules</h2>
                 <div style="background:rgba(0,240,255,0.07); border-left:3px solid var(--neon-cyan); border-radius:0 8px 8px 0; padding:0.7rem 0.9rem; margin:0.45rem 0 0.85rem; font-size:0.84rem; color:#e2e8f0; line-height:1.55;">
                     <strong style="color:var(--neon-cyan);">Direct Answer ("Buck Me" Kept Separate From "Tourist Trap"):</strong> During the early Chapter 1 mission <strong>"Buck Me"</strong> at the Key Lento Fleeca branch, Jason and Lucia install the <strong>BuckMe</strong> fintech app and use the <strong>"Buck Yourself"</strong> transfer action to move funds from <strong>Checking &rarr; Family Savings</strong> (starting with the $100 tutorial transfer). Money moved into Family Savings via <em>Buck Yourself</em> is permanently locked (cannot be withdrawn for weapons or bail, and is safe from Wasted/Busted loss). <strong>"Tourist Trap"</strong> is a separate, later Chapter 1 Point of No Return mission — track its dedicated save anchor in our <a href="/save-planner/" style="color:var(--neon-green); font-weight:700;">15-Slot Manual Save Planner</a>.
                 </div>
             </div>
         </div>
-        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.9rem;">
-            <div class="op-card">
-                <h3 style="color:var(--neon-amber); font-size:1rem; margin:0 0 0.35rem;">1. "Buck Me": Checking &rarr; Family Savings</h3>
-                <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;">Open the BuckMe app on your phone &rarr; select <strong>Family Savings</strong> &rarr; trigger <strong>"Buck Yourself"</strong> to move Checking funds into locked Family Savings. Keep enough liquid cash in Checking for guns and upgrades, and handle Chapter 1's separate <em>Tourist Trap</em> cutoff with a dedicated manual save.</p>
+        <div class="money-visual-2grid">
+            <div class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/properties/vice-city-safehouse.jpg" alt="BuckMe App Family Savings and Safehouse Banking" loading="lazy">
+                    <span class="visual-shot-pill">CASH PROTECTION</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:var(--neon-amber); font-size:1rem; margin:0;">1. "Buck Me": Checking &rarr; Family Savings</h3>
+                    <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;">Open the BuckMe app on your phone &rarr; select <strong>Family Savings</strong> &rarr; trigger <strong>"Buck Yourself"</strong> to move Checking funds into locked Family Savings. Keep enough liquid cash in Checking for guns and upgrades, and handle Chapter 1's separate <em>Tourist Trap</em> cutoff with a dedicated manual save.</p>
+                </div>
             </div>
-            <div class="op-card">
-                <h3 style="color:var(--neon-cyan); font-size:1rem; margin:0 0 0.35rem;">2. Respect the $20,000 Pocket Cash Cap</h3>
-                <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;">Free-roam pocket cash caps at $20,000. Deposit scores regularly at physical ATMs after fence drops, jewelry hits, or bank jobs.</p>
+            <div class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/properties/brians-lockup.jpg" alt="GTA 6 Cash and Contraband Fencing at Brian's Lockup" loading="lazy">
+                    <span class="visual-shot-pill">CASH &amp; CONTRABAND</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:var(--neon-cyan); font-size:1rem; margin:0;">2. Contraband Fences &amp; $20,000 Pocket Cap</h3>
+                    <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;">Free-roam pocket cash caps at $20,000. Load contraband crates into 4-bag vehicle trunks, offload to Brian's Lockup (<code>7700</code>) or Yasmani (5% jewelry cut), and deposit clean cash regularly at physical ATMs.</p>
+                </div>
             </div>
-            <div class="op-card">
-                <h3 style="color:var(--neon-green); font-size:1rem; margin:0 0 0.35rem;">3. Separate Lab Fees Doors (0420 vs. 7700)</h3>
-                <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;"><code>0420</code> opens the <strong>Moonstone Boutique back-room laboratory keypad</strong> (acid pickup), while <code>7700</code> opens <strong>Brian's Lockup keypad</strong> (acid drop-off during <em>Lab Fees</em>).</p>
+            <div class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/properties/keys-safehouse.jpg" alt="Key Lento Moonstone Boutique and Leonida Keys Lockup" loading="lazy">
+                    <span class="visual-shot-pill">KEYPAD CODES</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:var(--neon-green); font-size:1rem; margin:0;">3. Separate Lab Fees Doors (0420 vs. 7700)</h3>
+                    <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;"><code>0420</code> opens the <strong>Moonstone Boutique back-room laboratory keypad</strong> (acid pickup), while <code>7700</code> opens <strong>Brian's Lockup keypad</strong> (acid drop-off during <em>Lab Fees</em>).</p>
+                </div>
             </div>
-            <div class="op-card">
-                <h3 style="color:var(--neon-pink); font-size:1rem; margin:0 0 0.35rem;">4. Lock Clean Saves on Slot #14</h3>
-                <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;">Never test money loops or cheat codes on your main story file. Keep Slot #14 clean for trophies and check live exploit status in our <a href="/gta-6-glitches/" style="color:var(--neon-pink); font-weight:700;">Glitch &amp; Patch Tracker</a>.</p>
+            <div class="visual-shot-card">
+                <div class="visual-shot-media">
+                    <img src="/assets/images/intel/intel-duo-heist.jpg" alt="Jason and Lucia Clean Story Save Protection" loading="lazy">
+                    <span class="visual-shot-pill">SAVE DISCIPLINE</span>
+                </div>
+                <div class="visual-shot-body">
+                    <h3 style="color:var(--neon-pink); font-size:1rem; margin:0;">4. Lock Clean Saves on Slot #14</h3>
+                    <p style="color:#cbd5e1; font-size:0.82rem; margin:0; line-height:1.5;">Never test money loops or cheat codes on your main story file. Keep Slot #14 clean for trophies and check live exploit status in our <a href="/gta-6-glitches/" style="color:var(--neon-pink); font-weight:700;">Glitch &amp; Patch Tracker</a>.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -656,38 +813,53 @@
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
-                <a href="/" class="brand-logo" style="text-decoration:none;"><span class="brand-wordmark"><span class="brand-gta">GTA 6</span><span class="brand-vi-sub">HEIST GUIDE</span></span><span class="brand-badge">Syndicate v3.3</span></a>
-                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.</p>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home">
+                    <img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async">
+                </a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.55rem 0 0; max-width:480px; line-height:1.5;">Verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.</p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
                 <a href="/heist-planner.html" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">🎯 Heist Planner</a>
                 <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
+        <div class="footer-secondary-strip">
+            <div style="display:flex; gap:1.15rem; flex-wrap:wrap;">
+                <a href="/" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">Heists</a>
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Map</a>
+                <a href="/gta-6-tips-and-tricks/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Tips &amp; Tricks</a>
+                <a href="/gta-6-tools/" style="color:var(--neon-green); text-decoration:none; font-weight:700;">Tools</a>
+                <a href="/gta-6-database/" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">Database</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
+            </div>
+        </div>
         <div class="footer-disclaimer">
-            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary and interactive utility portal. Grand Theft Auto, GTA VI, and Rockstar Games are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com.</p>
+            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary and interactive utility portal. Grand Theft Auto, GTA VI, and Rockstar Games are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. Prices and availability on partner stores are dynamic and subject to change. &copy; 2026 gta6heistguide.com.</p>
         </div>
     </div>
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/assets/js/share-tools.js"></script>
-<script src="/js/affiliates.js"></script>
+<script src="/js/affiliates.js?v=20261122_v19"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
 (function() {
   var SAFE_CODES = [
-    { code: '0420', name: 'Moonstone Boutique Back-Room Laboratory Keypad (Lab Fees)', status: 'Verified', region: 'Leonida Keys', pin: 'op-backroom-weed', desc: "Verified keypad code unlocking the Moonstone Boutique back-room laboratory door in Key Lento during 'Lab Fees' (separate from Brian's Lockup 7700)." },
-    { code: '7700', name: "Brian's Lockup Keypad (Lab Fees Acid Drop-Off)", status: 'Verified', region: 'Leonida Keys', pin: 'fence-brians-lockup', desc: "Verified keypad code unlocking Brian's Lockup storage door further south in the Leonida Keys to stash the acid during 'Lab Fees' (separate from Moonstone Boutique 0420)." },
-    { code: '4444', name: 'Port Gellhorn Pawn Backroom Safe', status: 'Verified', region: 'Port Gellhorn', pin: 'heist-pawn', desc: 'Verified shopkeeper safe combination behind the main display counter.' },
-    { code: '0300', name: 'Vice Beach Motel Storage Safe', status: 'Verified', region: 'Vice Beach', pin: 'op-manatee-motel', desc: 'Verified coastal motel office lockbox accessible during late-night free-roam.' },
-    { code: '6823', name: 'Ambrosia Freight Yard Office Keypad', status: 'Verified', region: 'Ambrosia', pin: 'gar-purch-6', desc: 'Verified security keypad opening the industrial manifest room and cash drawer.' },
-    { code: '6969', name: 'Ocean Drive Nightclub VIP Lockbox', status: 'Verified', region: 'Vice City', pin: 'fence-yasmani', desc: 'Verified VIP back-office safe behind the club manager desk.' },
-    { code: '2727', name: 'Leonida Keys Boatyard Dock Locker', status: 'Verified', region: 'Leonida Keys', pin: 'gar-purch-7', desc: 'Verified marina supply locker keypad holding maritime smuggling cash.' },
-    { code: '44017', name: 'Downtown Sinfrontera Annex Keypad', status: 'Verified', region: 'Vice City', pin: 'heist-cartel', desc: 'Verified 5-digit commercial annex lockbox near the financial district.' },
-    { code: 'CLEAVES', name: 'Crab Outpost Cache #1', status: 'Unverified / Community Reported', region: 'Grassrivers', pin: 'op-fishing-shacks', desc: 'Circulating player-reported keypad word for Crab Outpost. Tagged Unverified pending 3+ independent confirmations.' },
-    { code: '0072', name: 'Crab Outpost Cache #2', status: 'Unverified / Community Reported', region: 'Grassrivers', pin: 'op-fishing-shacks', desc: 'Community-reported secondary wetlands lockbox code. Treat as unconfirmed until verified in-game.' },
-    { code: '0212', name: 'Crab Outpost Cache #3', status: 'Unverified / Community Reported', region: 'Grassrivers', pin: 'op-fishing-shacks', desc: 'Community-reported tertiary Crab Outpost combination. Tagged Unverified.' }
+    { code: '0420', name: 'Moonstone Boutique Back-Room Laboratory Keypad (Lab Fees)', status: 'Verified', region: 'Leonida Keys', pin: 'op-backroom-weed', img: '/assets/images/properties/keys-safehouse.jpg', desc: "Verified keypad code unlocking the Moonstone Boutique back-room laboratory door in Key Lento during 'Lab Fees' (separate from Brian's Lockup 7700)." },
+    { code: '7700', name: "Brian's Lockup Keypad (Lab Fees Acid Drop-Off)", status: 'Verified', region: 'Leonida Keys', pin: 'fence-brians-lockup', img: '/assets/images/properties/brians-lockup.jpg', desc: "Verified keypad code unlocking Brian's Lockup storage door further south in the Leonida Keys to stash the acid during 'Lab Fees' (separate from Moonstone Boutique 0420)." },
+    { code: '4444', name: 'Port Gellhorn Pawn Backroom Safe', status: 'Verified', region: 'Port Gellhorn', pin: 'heist-pawn', img: '/assets/images/heists/pawn-shops.jpg', desc: 'Verified shopkeeper safe combination behind the main display counter.' },
+    { code: '0300', name: 'Vice Beach Motel Storage Safe', status: 'Verified', region: 'Vice Beach', pin: 'op-manatee-motel', img: '/assets/images/properties/port-gellhorn-motel.jpg', desc: 'Verified coastal motel office lockbox accessible during late-night free-roam.' },
+    { code: '6823', name: 'Ambrosia Freight Yard Office Keypad', status: 'Verified', region: 'Ambrosia', pin: 'gar-purch-6', img: '/assets/images/properties/ambrosia-freight.jpg', desc: 'Verified security keypad opening the industrial manifest room and cash drawer.' },
+    { code: '6969', name: 'Ocean Drive Nightclub VIP Lockbox', status: 'Verified', region: 'Vice City', pin: 'fence-yasmani', img: '/assets/images/properties/boobie-club.jpg', desc: 'Verified VIP back-office safe behind the club manager desk.' },
+    { code: '2727', name: 'Leonida Keys Boatyard Dock Locker', status: 'Verified', region: 'Leonida Keys', pin: 'gar-purch-7', img: '/assets/images/properties/brians-marina.jpg', desc: 'Verified marina supply locker keypad holding maritime smuggling cash.' },
+    { code: '44017', name: 'Downtown Sinfrontera Annex Keypad', status: 'Verified', region: 'Vice City', pin: 'heist-cartel', img: '/assets/images/heists/cartel-heist.jpg', desc: 'Verified 5-digit commercial annex lockbox near the financial district.' },
+    { code: 'CLEAVES', name: 'Crab Outpost Cache #1', status: 'Unverified / Community Reported', region: 'Grassrivers', pin: 'op-fishing-shacks', img: '/assets/images/regions/grassrivers.jpg', desc: 'Circulating player-reported keypad word for Crab Outpost. Tagged Unverified pending 3+ independent confirmations.' },
+    { code: '0072', name: 'Crab Outpost Cache #2', status: 'Unverified / Community Reported', region: 'Grassrivers', pin: 'op-fishing-shacks', img: '/assets/images/regions/grassrivers.jpg', desc: 'Community-reported secondary wetlands lockbox code. Treat as unconfirmed until verified in-game.' },
+    { code: '0212', name: 'Crab Outpost Cache #3', status: 'Unverified / Community Reported', region: 'Grassrivers', pin: 'op-fishing-shacks', img: '/assets/images/regions/grassrivers.jpg', desc: 'Community-reported tertiary Crab Outpost combination. Tagged Unverified.' }
   ];
 
   var EARLY_OPS = [
@@ -728,15 +900,19 @@
     if (!grid) return;
     grid.innerHTML = SAFE_CODES.map(function(s) {
       var unv = s.status !== 'Verified';
+      var thumb = s.img
+        ? '<div class="safe-code-thumb"><img src="' + s.img + '" alt="' + s.name.replace(/"/g, '&quot;') + ' — GTA 6 location" loading="lazy"></div>'
+        : '';
       return '<article class="safe-code-card' + (unv ? ' is-unverified' : '') + '">' +
         '<div>' +
+          thumb +
           '<div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.45rem 0.65rem; margin-bottom:0.2rem;">' +
             '<span class="verify-badge ' + (unv ? 'verify-unverified' : 'verify-confirmed') + '" style="line-height:1.25;">' + s.status + '</span>' +
             '<span style="font-size:0.72rem; color:#94a3b8; white-space:nowrap; padding-top:0.12rem;">📍 ' + s.region + '</span>' +
           '</div>' +
-          '<h3 style="color:#fff; font-size:1rem; margin:0.45rem 0 0.15rem;">' + s.name + '</h3>' +
+          '<h3 style="color:#fff; font-size:0.98rem; margin:0.4rem 0 0.15rem;">' + s.name + '</h3>' +
           '<div class="safe-code-num">' + s.code + '</div>' +
-          '<p style="color:#cbd5e1; font-size:0.8rem; line-height:1.45; margin:0 0 0.7rem;">' + s.desc + '</p>' +
+          '<p style="color:#cbd5e1; font-size:0.79rem; line-height:1.45; margin:0 0 0.7rem;">' + s.desc + '</p>' +
         '</div>' +
         '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; padding-top:0.55rem; border-top:1px solid rgba(255,255,255,0.08);">' +
           '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-copy-code="' + s.code + '">📋 Copy Code</button>' +

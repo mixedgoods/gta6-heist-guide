@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="Grand Theft Auto VI Tips, Tricks, and Hidden Mechanics Guide">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,7 +29,7 @@
           "@type": "CollectionPage",
           "name": "GTA 6 Tips & Tricks, Hidden Mechanics & Secrets Hub",
           "url": "https://www.gta6heistguide.com/gta-6-tips-and-tricks/",
-          "dateModified": "2026-11-21",
+          "dateModified": "2026-11-22",
           "description": "Searchable GTA 6 Tips & Tricks Hub covering Hidden Features, Secret Vehicle Controls, Things the Game Doesn't Explain, Hidden Locations, Character Secrets, Money-Making Tips, Easter Eggs & Mysteries, and Player-Submitted Discoveries."
         },
         {
@@ -75,7 +75,7 @@
       }
       .tips-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
         gap: 1rem;
       }
       .tip-card {
@@ -83,6 +83,7 @@
         border: 1px solid rgba(255, 255, 255, 0.11);
         border-radius: 12px;
         padding: 1.15rem;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -133,9 +134,9 @@
             <li><a href="/map.html" class="nav-pill">MAP</a></li>
             <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
+                <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item active">💡 Tips &amp; Tricks</a>
                     <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
                     <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
                     <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
@@ -146,6 +147,7 @@
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -170,45 +172,44 @@
     </div>
 </nav>
 
-<main class="container" style="max-width:1140px; margin:0 auto; padding:1.15rem 1rem 3.5rem;">
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.15rem 1rem 3rem;">
     <nav aria-label="Breadcrumb" style="font-size:0.78rem; color:#94a3b8; margin-bottom:0.85rem; display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
         <a href="/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Home</a>
         <span aria-hidden="true">/</span>
         <span style="color:#e2e8f0; font-weight:700;">Tips &amp; Tricks</span>
     </nav>
-    <header class="tool-box pink-glow" style="margin-bottom:1.15rem;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
-            <div style="flex:1 1 560px;">
-                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
-                    <span class="verify-badge verify-confirmed">✅ VERIFIED LAUNCH TIPS</span>
-                    <span class="verify-badge verify-community">PS5 &amp; XBOX SERIES X|S CONTROLS</span>
+
+    <!-- VISUAL HERO BANNER -->
+    <header class="visual-banner-header is-pink">
+        <img src="/assets/images/intel/intel-duo-heist.jpg" alt="Grand Theft Auto VI Jason and Lucia Tips and Hidden Mechanics" class="visual-banner-bg" loading="eager">
+        <div class="visual-banner-inner">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+                <div style="flex:1 1 560px;">
+                    <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                        <span class="verify-badge verify-confirmed">✅ VERIFIED LAUNCH TIPS</span>
+                        <span class="verify-badge verify-community">PS5 &amp; XBOX SERIES X|S CONTROLS</span>
+                    </div>
+                    <h1 style="color:#fff; font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin:0 0 0.5rem; line-height:1.18;">
+                        GTA 6 <span style="color:var(--neon-cyan);">Tips &amp; Tricks</span>, Hidden Mechanics &amp; Secrets Hub
+                    </h1>
+                    <p style="color:#cbd5e1; font-size:0.94rem; margin:0; line-height:1.55;">
+                        Everything Rockstar doesn't spell out on screen: secret vehicle &amp; trunk controls, character abilities, hidden locations, money-saving survival rules, all 12 launch Easter Eggs, and live player discoveries.
+                    </p>
                 </div>
-                <h1 style="color:#fff; font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin:0 0 0.5rem; line-height:1.18;">
-                    GTA 6 <span style="color:var(--neon-cyan);">Tips &amp; Tricks</span>, Hidden Mechanics &amp; Secrets Hub
-                </h1>
-                <p style="color:#94a3b8; font-size:0.94rem; margin:0; line-height:1.55;">
-                    Everything Rockstar doesn't spell out on screen: secret vehicle &amp; trunk controls, character abilities, hidden locations, money-saving survival rules, all 12 launch Easter Eggs, and live player discoveries.
-                </p>
-            </div>
-            <div style="display:flex; gap:0.55rem; flex-wrap:wrap; align-items:center;">
-                <a href="/gta-6-settings/" class="btn btn-primary" style="padding:0.55rem 1rem; font-size:0.82rem;">⚙️ Settings, SSD &amp; HDR Hub &rarr;</a>
-                <a href="/gta-6-discoveries/" class="btn btn-secondary" style="padding:0.55rem 0.95rem; font-size:0.82rem;">📡 Player Discoveries</a>
-                <a href="/secrets.html" class="btn btn-secondary" style="padding:0.55rem 0.95rem; font-size:0.82rem;">🥚 Classic Secrets</a>
+                <div style="display:flex; gap:0.55rem; flex-wrap:wrap; align-items:center;">
+                    <a href="/gta-6-settings/" class="btn btn-primary" style="padding:0.55rem 1rem; font-size:0.82rem;">⚙️ Settings &amp; Hardware Hub &rarr;</a>
+                    <a href="/gta-6-discoveries/" class="btn btn-secondary" style="padding:0.55rem 0.95rem; font-size:0.82rem;">📡 Player Discoveries</a>
+                    <a href="/secrets.html" class="btn btn-secondary" style="padding:0.55rem 0.95rem; font-size:0.82rem;">🥚 Classic Secrets</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <div class="syndicate-aff-bar">
-      <div class="syndicate-aff-bar-main">
-        <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
-        <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-        <span class="aff-sep">|</span>
-        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-        <span class="aff-sep">|</span>
-        <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
-        <span class="aff-sep">|</span>
-        <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-      </div>
+    <!-- CONTEXTUAL AFFILIATE RECOMMENDATION #1 (CONTROLLERS & HEADSETS FOR TIPS) -->
+    <div id="tipsTopAffSlot"
+         data-aff-slot="tips-top"
+         data-aff-context="tips-top"
+         data-aff-variant="horizontal-featured">
     </div>
 
     <!-- SEARCH + 8 CATEGORY FILTERS -->
@@ -243,8 +244,64 @@
         <div class="tips-grid" id="tipsGrid"></div>
     </section>
 
+    <!-- VISUAL COMPANION TOOLS DISCOVERY STRIP (ALL 8 TOOLS EASY TO DISCOVER) -->
+    <section aria-label="Companion GTA 6 Tools" style="margin-top:2rem;">
+        <div class="section-header" style="margin-bottom:0.75rem;">
+            <div>
+                <span class="verify-badge verify-confirmed" style="margin-bottom:0.25rem;">🧰 SYNCED COMPANION TOOLS</span>
+                <h2 style="font-size:1.3rem; margin:0 0 0.15rem;">Put These Tips Into Action With Our 8 Free Tools</h2>
+                <p style="font-size:0.82rem; margin:0;">Track manual save slots, map pins, heist splits, cheats, and console HDR/SSD settings in one synced browser suite.</p>
+            </div>
+            <a href="/gta-6-tools/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Open Full Tools Hub &rarr;</a>
+        </div>
+        <div class="tips-tools-strip">
+            <a href="/heist-planner.html" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/heists/cartel-heist.jpg" alt="Heist Planner" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">🎯 Heist Planner</strong><span style="color:#94a3b8; font-size:0.72rem;">Setups, fences &amp; Jammer checklist</span></div>
+            </a>
+            <a href="/heist-payout-calculator.html" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/heists/large-bank-vaults.jpg" alt="Payout Calculator" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">💰 Payout Calculator</strong><span style="color:#94a3b8; font-size:0.72rem;">Net $/Hr across Story &amp; 22 banks</span></div>
+            </a>
+            <a href="/save-planner/" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/properties/vice-city-safehouse.jpg" alt="Save Progress Planner" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">💾 Save Progress Planner</strong><span style="color:#94a3b8; font-size:0.72rem;">15 manual slots &amp; Lock Shields</span></div>
+            </a>
+            <a href="/map.html" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/maps/leonida-map.webp" alt="Interactive Leonida Map" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">🗺️ Interactive Map</strong><span style="color:#94a3b8; font-size:0.72rem;">174+ HD pins &amp; custom waypoints</span></div>
+            </a>
+            <a href="/cheats.html" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/intel/intel-duo-heist.jpg" alt="Cheat Tracker" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">⚡ Cheat Tracker</strong><span style="color:#94a3b8; font-size:0.72rem;">All 61 D-pad &amp; phone cheats</span></div>
+            </a>
+            <a href="/free/" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/heists/vcia-takedown.jpg" alt="Free Tools Suite" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">🚀 Free Tools Suite</strong><span style="color:#94a3b8; font-size:0.72rem;">Rapid splitter &amp; Discord export</span></div>
+            </a>
+            <a href="/gta-6-settings/" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/regions/vice-city.jpg" alt="Settings and Hardware Hub" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">⚙️ Settings &amp; Hardware</strong><span style="color:#94a3b8; font-size:0.72rem;">SSD calc, HDR/VRR &amp; capture cards</span></div>
+            </a>
+            <a href="/live.html" class="tips-tool-mini">
+                <div class="tips-tool-mini-img"><img src="/assets/images/intel/intel-vc-launch.jpg" alt="Live Companion HUD" loading="lazy"></div>
+                <div class="tips-tool-mini-body"><strong style="color:#fff; font-size:0.86rem; display:block;">📺 Live Companion</strong><span style="color:#94a3b8; font-size:0.72rem;">48-min Leonida clock &amp; streams</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTEXTUAL AFFILIATE MODULE #2 (NON-DUPLICATE GAMING DEALS / TOOLS) -->
+    <div id="tipsBottomAffSlot"
+         data-aff-slot="tips-bottom"
+         data-aff-context="tips-bottom"
+         data-aff-variant="card-grid-2"
+         data-aff-count="2"
+         data-aff-heading="Gaming Store Deals &amp; Creator Utilities"
+         data-aff-subheading="Verified partner offers for digital wallet top-ups, video clipping, and PC routing.">
+    </div>
+
     <!-- PLAYER DISCOVERIES CTA BANNER -->
-    <section class="tool-box" style="margin-top:2rem; border-color:var(--neon-pink); background:linear-gradient(135deg, rgba(255,42,141,0.12), rgba(10,14,26,0.96)); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+    <section class="tool-box" style="margin-top:1.5rem; border-color:var(--neon-pink); background:linear-gradient(135deg, rgba(255,42,141,0.12), rgba(10,14,26,0.96)); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
         <div>
             <span class="verify-badge verify-community">📡 DAILY DISCOVERIES LOG</span>
             <h2 style="color:#fff; font-size:1.3rem; margin:0.35rem 0 0.2rem;">Want Today's Newest Verified Leonida Finds?</h2>
@@ -258,68 +315,83 @@
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
-                <a href="/" class="brand-logo" style="text-decoration:none;"><span class="brand-wordmark"><span class="brand-gta">GTA 6</span><span class="brand-vi-sub">HEIST GUIDE</span></span><span class="brand-badge">Syndicate v3.3</span></a>
-                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.</p>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home">
+                    <img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async">
+                </a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.55rem 0 0; max-width:480px; line-height:1.5;">Verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.</p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
                 <a href="/gta-6-discoveries/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">📡 Discoveries</a>
                 <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
+        <div class="footer-secondary-strip">
+            <div style="display:flex; gap:1.15rem; flex-wrap:wrap;">
+                <a href="/" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">Heists</a>
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Map</a>
+                <a href="/gta-6-money-guide/" style="color:var(--neon-green); text-decoration:none; font-weight:700;">Money</a>
+                <a href="/gta-6-tools/" style="color:#38bdf8; text-decoration:none; font-weight:700;">Tools</a>
+                <a href="/gta-6-database/" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">Database</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
+            </div>
+        </div>
         <div class="footer-disclaimer">
-            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary and interactive utility portal. Grand Theft Auto, GTA VI, and Rockstar Games are registered trademarks of Take-Two Interactive Software, Inc. &copy; 2026 gta6heistguide.com.</p>
+            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary and interactive utility portal. Grand Theft Auto, GTA VI, and Rockstar Games are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. Prices and availability on partner stores are dynamic and subject to change. &copy; 2026 gta6heistguide.com.</p>
         </div>
     </div>
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js"></script>
+<script src="/js/affiliates.js?v=20261122_v19"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
 (function() {
   var TIPS_DATA = [
     // Hidden Features
-    { id: 'tip-radio-posters', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-21', title: 'Scan Nightclub Posters With Phone Camera for Secret Radio Stations', ps5: 'D-Pad Up -> Camera -> Aim at Poster', xbox: 'D-Pad Up -> Camera -> Aim at Poster', desc: 'Inside underground clubs like The Vault in Downtown Vice City, aim your smartphone camera at illuminated DJ posters to permanently unlock hidden frequencies on your radio wheel.', link: '/radio.html', pin: 'intel-launch-vc' },
-    { id: 'tip-onfoot-radio', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-21', title: 'Listen to All 23 Radio Stations On Foot With Earbuds', ps5: 'Hold L1 -> Gear -> Headphones', xbox: 'Hold LB -> Gear -> Headphones', desc: 'Buy wireless earbuds from electronics shops in Vice City or Port Gellhorn to stream any unlocked radio station while walking, biking, or exploring rooftops.', link: '/radio.html' },
-    { id: 'tip-cheat-terminal', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-20', title: 'Hidden Syndicate Cheat Terminal Inside Smartphone', ps5: 'D-Pad Up -> Hold L1 + Tap R1', xbox: 'D-Pad Up -> Hold LB + Tap RB', desc: 'Holding the left bumper and tapping the right bumper while your phone is up flips the dialer into cyan Cheat Entry Mode for D-pad codes. Always switch to Save Slot #15 first—cheats disable trophies.', link: '/cheats.html' },
-    { id: 'tip-playable-arcades', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-21', title: '4 Fully Playable In-Game Retro Arcade & Console Games', ps5: 'Stand by Cabinet / TV -> D-Pad Right', xbox: 'Stand by Cabinet / TV -> D-Pad Right', desc: 'Safehouses and Vice Beach arcades feature 4 playable retro mini-games with local scoreboards—easy to miss if you rush straight past your safehouse lounge.', pin: 'sh-vc-safehouse-3' },
+    { id: 'tip-radio-posters', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/boobie-club.jpg', title: 'Scan Nightclub Posters With Phone Camera for Secret Radio Stations', ps5: 'D-Pad Up -> Camera -> Aim at Poster', xbox: 'D-Pad Up -> Camera -> Aim at Poster', desc: 'Inside underground clubs like The Vault in Downtown Vice City, aim your smartphone camera at illuminated DJ posters to permanently unlock hidden frequencies on your radio wheel.', link: '/radio.html', pin: 'intel-launch-vc' },
+    { id: 'tip-onfoot-radio', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/drequan-studio.jpg', title: 'Listen to All 23 Radio Stations On Foot With Earbuds', ps5: 'Hold L1 -> Gear -> Headphones', xbox: 'Hold LB -> Gear -> Headphones', desc: 'Buy wireless earbuds from electronics shops in Vice City or Port Gellhorn to stream any unlocked radio station while walking, biking, or exploring rooftops.', link: '/radio.html' },
+    { id: 'tip-cheat-terminal', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/intel/intel-vc-launch.jpg', title: 'Hidden Syndicate Cheat Terminal Inside Smartphone', ps5: 'D-Pad Up -> Hold L1 + Tap R1', xbox: 'D-Pad Up -> Hold LB + Tap RB', desc: 'Holding the left bumper and tapping the right bumper while your phone is up flips the dialer into cyan Cheat Entry Mode for D-pad codes. Always switch to Save Slot #15 first—cheats disable trophies.', link: '/cheats.html' },
+    { id: 'tip-playable-arcades', cat: 'Hidden Features', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/vice-city-safehouse.jpg', title: '4 Fully Playable In-Game Retro Arcade & Console Games', ps5: 'Stand by Cabinet / TV -> D-Pad Right', xbox: 'Stand by Cabinet / TV -> D-Pad Right', desc: 'Safehouses and Vice Beach arcades feature 4 playable retro mini-games with local scoreboards—easy to miss if you rush straight past your safehouse lounge.', pin: 'sh-vc-safehouse-3' },
 
     // Secret Vehicle Controls
-    { id: 'tip-trunk-armory', cat: 'Secret Vehicle Controls', badge: 'Confirmed', updated: '2026-11-21', title: 'Quick-Swap Heavy Rifles & Duffel Bags From Personal Trunk', ps5: 'Stand Behind Bumper -> Hold Triangle', xbox: 'Stand Behind Bumper -> Hold Y', desc: 'Long guns, heavy drills, and 4 loot duffels live physically in your personal vehicle trunk. Always pull your car rear-first toward robbery exits for instant bag loading.', link: '/vehicles.html' },
-    { id: 'tip-plate-swap', cat: 'Secret Vehicle Controls', badge: 'Confirmed', updated: '2026-11-20', title: 'Break ANPR Police Tracking by Swapping Cars Out of Sight', ps5: 'Break LOS -> Enter Unflagged Car (Triangle)', xbox: 'Break LOS -> Enter Unflagged Car (Y)', desc: 'VCPD logs your vehicle plate and model at bridge ANPR toll gantries. Ditching a hot car in an alley or underground bay drops your wanted cooldown by up to 38%.', link: '/leonida-wanted-system.html' },
-    { id: 'tip-duck-cover-drive', cat: 'Secret Vehicle Controls', badge: 'Confirmed', updated: '2026-11-20', title: 'Duck Below Dashboard & Adjust Seat Height While Driving', ps5: 'Hold X (Duck) / D-Pad Down (HUD Zoom)', xbox: 'Hold A (Duck) / D-Pad Down (HUD Zoom)', desc: 'Ducking beneath the dash prevents VCPD sniper headshots during freeway escapes like The Cartel Heist bus & highway runs.' },
+    { id: 'tip-trunk-armory', cat: 'Secret Vehicle Controls', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/vehicles/veh-cheetah-1.jpg', title: 'Quick-Swap Heavy Rifles & Duffel Bags From Personal Trunk', ps5: 'Stand Behind Bumper -> Hold Triangle', xbox: 'Stand Behind Bumper -> Hold Y', desc: 'Long guns, heavy drills, and 4 loot duffels live physically in your personal vehicle trunk. Always pull your car rear-first toward robbery exits for instant bag loading.', link: '/vehicles.html' },
+    { id: 'tip-plate-swap', cat: 'Secret Vehicle Controls', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/vehicles/veh-vcpd-buffalo-interceptor.jpg', title: 'Break ANPR Police Tracking by Swapping Cars Out of Sight', ps5: 'Break LOS -> Enter Unflagged Car (Triangle)', xbox: 'Break LOS -> Enter Unflagged Car (Y)', desc: 'VCPD logs your vehicle plate and model at bridge ANPR toll gantries. Ditching a hot car in an alley or underground bay drops your wanted cooldown by up to 38%.', link: '/leonida-wanted-system.html' },
+    { id: 'tip-duck-cover-drive', cat: 'Secret Vehicle Controls', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/heists/armored-trucks.jpg', title: 'Duck Below Dashboard & Adjust Seat Height While Driving', ps5: 'Hold X (Duck) / D-Pad Down (HUD Zoom)', xbox: 'Hold A (Duck) / D-Pad Down (HUD Zoom)', desc: 'Ducking beneath the dash prevents VCPD sniper headshots during freeway escapes like The Cartel Heist bus & highway runs.' },
 
     // Things the Game Doesn't Explain
-    { id: 'tip-no-mission-replay', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-21', title: 'No Mission Replay Menu & Only 1 Volatile Autosave', ps5: 'Pause -> Game -> Save (15 Manual Slots)', xbox: 'Menu -> Game -> Save (15 Manual Slots)', desc: 'GTA 6 launched without mission replay. Lock manual saves before Chapter 1\'s Tourist Trap cutoff, before Swamped (Donnie\'s fence closes), and before Checking Out (Ch. 2 Motel closes).', link: '/save-planner/' },
-    { id: 'tip-20k-pocket-cap', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-21', title: '"Buck Me" (Checking -> Family Savings via Buck Yourself) & $20K Pocket Cap', ps5: 'Phone -> BuckMe -> Family Savings -> Buck Yourself', xbox: 'Phone -> BuckMe -> Family Savings -> Buck Yourself', desc: 'In Chapter 1\'s "Buck Me" mission, use "Buck Yourself" inside the BuckMe app to lock Checking funds into Family Savings (protected from Wasted/Busted loss). Keep "Buck Me" separate from the later Chapter 1 Point of No Return mission "Tourist Trap". Loose pocket cash caps at $20,000.', link: '/gta-6-money-guide/' },
-    { id: 'tip-30fps-snappiness', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-21', title: 'Optimize 30 FPS Console Display Lag, HDR & Storage (PS5 & Xbox)', ps5: 'TV Game Mode + HGiG + PS5 ALLM/VRR', xbox: 'TV Game Mode + HGiG + Xbox ALLM/VRR', desc: 'GTA 6 targets 30 FPS on consoles at launch. Turning on TV Game Mode, disabling TV motion smoothing, calibrating HGiG HDR, and verifying up to 212 GB SSD storage makes gameplay sharper and far more responsive.', link: '/gta-6-settings/' },
-    { id: 'tip-dye-pack-jammer', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-20', title: 'Equip Dye Pack Jammer Before Robbing Any of the 22 Banks', ps5: 'Hold L1 -> Heist Gear -> Dye Jammer', xbox: 'Hold LB -> Heist Gear -> Dye Jammer', desc: 'Unlocked after Chapter 3\'s Credit Check. Forgetting to toggle the Dye Pack Jammer ruins ~25% of marked bills inside Small Banks and Large Bank Vaults.', link: '/heists/small-banks-payday-loans.html' },
+    { id: 'tip-no-mission-replay', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/keys-safehouse.jpg', title: 'No Mission Replay Menu & Only 1 Volatile Autosave', ps5: 'Pause -> Game -> Save (15 Manual Slots)', xbox: 'Menu -> Game -> Save (15 Manual Slots)', desc: 'GTA 6 launched without mission replay. Lock manual saves before Chapter 1\'s Tourist Trap cutoff, before Swamped (Donnie\'s fence closes), and before Checking Out (Ch. 2 Motel closes).', link: '/save-planner/' },
+    { id: 'tip-20k-pocket-cap', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/heists/shops.jpg', title: '"Buck Me" (Checking -> Family Savings via Buck Yourself) & $20K Pocket Cap', ps5: 'Phone -> BuckMe -> Family Savings -> Buck Yourself', xbox: 'Phone -> BuckMe -> Family Savings -> Buck Yourself', desc: 'In Chapter 1\'s "Buck Me" mission, use "Buck Yourself" inside the BuckMe app to lock Checking funds into Family Savings (protected from Wasted/Busted loss). Keep "Buck Me" separate from the later Chapter 1 Point of No Return mission "Tourist Trap". Loose pocket cash caps at $20,000.', link: '/gta-6-money-guide/' },
+    { id: 'tip-30fps-snappiness', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/regions/vice-city.jpg', title: 'Optimize 30 FPS Console Display Lag, HDR & Storage (PS5 & Xbox)', ps5: 'TV Game Mode + HGiG + PS5 ALLM/VRR', xbox: 'TV Game Mode + HGiG + Xbox ALLM/VRR', desc: 'GTA 6 targets 30 FPS on consoles at launch. Turning on TV Game Mode, disabling TV motion smoothing, calibrating HGiG HDR, and verifying up to 212 GB SSD storage makes gameplay sharper and far more responsive.', link: '/gta-6-settings/' },
+    { id: 'tip-dye-pack-jammer', cat: 'Things the Game Doesn\'t Explain', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/heists/small-banks.jpg', title: 'Equip Dye Pack Jammer Before Robbing Any of the 22 Banks', ps5: 'Hold L1 -> Heist Gear -> Dye Jammer', xbox: 'Hold LB -> Heist Gear -> Dye Jammer', desc: 'Unlocked after Chapter 3\'s Credit Check. Forgetting to toggle the Dye Pack Jammer ruins ~25% of marked bills inside Small Banks and Large Bank Vaults.', link: '/heists/small-banks-payday-loans.html' },
 
     // Hidden Locations
-    { id: 'tip-brians-lockup', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', title: 'Brian\'s Lockup Keypad (7700) — Lab Fees Acid Drop-Off', ps5: 'Keypad -> Enter 7-7-0-0', xbox: 'Keypad -> Enter 7-7-0-0', desc: 'Brian\'s Lockup (south Leonida Keys) uses verified keypad code 7700 to stash the acid during "Lab Fees". Keep it separate from the Moonstone Boutique back-room laboratory keypad (0420).', link: '/gta-6-money-guide/#safe-codes', pin: 'fence-brians-lockup' },
-    { id: 'tip-safe-0420', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', title: 'Moonstone Boutique Back-Room Lab Keypad (0420) + 7 Verified Safe Codes', ps5: 'Interact (Triangle) -> Enter 0-4-2-0', xbox: 'Interact (Y) -> Enter 0-4-2-0', desc: 'Enter verified code 0420 at the Moonstone Boutique back-room laboratory keypad in Key Lento during "Lab Fees" (separate from Brian\'s Lockup 7700). Crab Outpost codes (CLEAVES, 0072, 0212) remain Unverified / Community Reported.', link: '/gta-6-money-guide/#safe-codes', pin: 'op-backroom-weed' },
-    { id: 'tip-donnie-missable', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-20', title: 'Donnie\'s Trailer Fence Closes Permanently After "Swamped"', ps5: 'Visit Keys Trailer Before Mission', xbox: 'Visit Keys Trailer Before Mission', desc: 'Sell all Chapter 1 stolen goods and contraband at Donnie\'s Trailer before launching Swamped—after that mission, the fence locks permanently.', pin: 'fence-donnie' },
+    { id: 'tip-brians-lockup', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/brians-lockup.jpg', title: 'Brian\'s Lockup Keypad (7700) — Lab Fees Acid Drop-Off', ps5: 'Keypad -> Enter 7-7-0-0', xbox: 'Keypad -> Enter 7-7-0-0', desc: 'Brian\'s Lockup (south Leonida Keys) uses verified keypad code 7700 to stash the acid during "Lab Fees". Keep it separate from the Moonstone Boutique back-room laboratory keypad (0420).', link: '/gta-6-money-guide/#safe-codes', pin: 'fence-brians-lockup' },
+    { id: 'tip-safe-0420', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/regions/leonida-keys.jpg', title: 'Moonstone Boutique Back-Room Lab Keypad (0420) + 7 Verified Safe Codes', ps5: 'Interact (Triangle) -> Enter 0-4-2-0', xbox: 'Interact (Y) -> Enter 0-4-2-0', desc: 'Enter verified code 0420 at the Moonstone Boutique back-room laboratory keypad in Key Lento during "Lab Fees" (separate from Brian\'s Lockup 7700). Crab Outpost codes (CLEAVES, 0072, 0212) remain Unverified / Community Reported.', link: '/gta-6-money-guide/#safe-codes', pin: 'op-backroom-weed' },
+    { id: 'tip-donnie-missable', cat: 'Hidden Locations', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/properties/brians-marina.jpg', title: 'Donnie\'s Trailer Fence Closes Permanently After "Swamped"', ps5: 'Visit Keys Trailer Before Mission', xbox: 'Visit Keys Trailer Before Mission', desc: 'Sell all Chapter 1 stolen goods and contraband at Donnie\'s Trailer before launching Swamped—after that mission, the fence locks permanently.', pin: 'fence-donnie' },
 
     // Character Secrets
-    { id: 'tip-lucia-meditation', cat: 'Character Secrets', badge: 'Confirmed', updated: '2026-11-20', title: 'Lucia Balcony Meditation (Missable Positive Mental Attitude Trophy)', ps5: 'Switch to Lucia -> Balcony -> D-Pad Right', xbox: 'Switch to Lucia -> Balcony -> D-Pad Right', desc: 'After completing Down to Earth in Chapter 1, trigger Lucia\'s balcony meditation prompt before Tourist Trap or you miss the Positive Mental Attitude trophy.', link: '/save-planner/' },
-    { id: 'tip-duo-roles', cat: 'Character Secrets', badge: 'Confirmed', updated: '2026-11-20', title: 'Mid-Heist Duo Switching: Jason Suppressor vs. Lucia Breacher', ps5: 'Hold D-Pad Down -> Flick Stick', xbox: 'Hold D-Pad Down -> Flick Stick', desc: 'During The Cartel Heist and VCIA Takedown, swap to Lucia for faster safe/bag fills and hand-shot guard disarms, then switch to Jason for heavy rifle suppression.', link: '/heists/the-cartel-heist.html' },
-    { id: 'tip-disguise-wipe', cat: 'Character Secrets', badge: 'Confirmed', updated: '2026-11-20', title: 'Discard Mask & Swap Jacket to Slash Witness Recognition', ps5: 'Hold L1 -> Wardrobe Quick-Slot', xbox: 'Hold LB -> Wardrobe Quick-Slot', desc: 'Removing your robbery mask and swapping jackets out of police line-of-sight removes witness BOLO flags and cuts radar cooldown by 28%.', link: '/leonida-wanted-system.html' },
+    { id: 'tip-lucia-meditation', cat: 'Character Secrets', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/properties/vice-city-penthouse.jpg', title: 'Lucia Balcony Meditation (Missable Positive Mental Attitude Trophy)', ps5: 'Switch to Lucia -> Balcony -> D-Pad Right', xbox: 'Switch to Lucia -> Balcony -> D-Pad Right', desc: 'After completing Down to Earth in Chapter 1, trigger Lucia\'s balcony meditation prompt before Tourist Trap or you miss the Positive Mental Attitude trophy.', link: '/save-planner/' },
+    { id: 'tip-duo-roles', cat: 'Character Secrets', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/weapons/weapon-duo-heist.jpg', title: 'Mid-Heist Duo Switching: Jason Suppressor vs. Lucia Breacher', ps5: 'Hold D-Pad Down -> Flick Stick', xbox: 'Hold D-Pad Down -> Flick Stick', desc: 'During The Cartel Heist and VCIA Takedown, swap to Lucia for faster safe/bag fills and hand-shot guard disarms, then switch to Jason for heavy rifle suppression.', link: '/heists/the-cartel-heist.html' },
+    { id: 'tip-disguise-wipe', cat: 'Character Secrets', badge: 'Confirmed', updated: '2026-11-20', img: '/assets/images/intel/intel-duo-heist.jpg', title: 'Discard Mask & Swap Jacket to Slash Witness Recognition', ps5: 'Hold L1 -> Wardrobe Quick-Slot', xbox: 'Hold LB -> Wardrobe Quick-Slot', desc: 'Removing your robbery mask and swapping jackets out of police line-of-sight removes witness BOLO flags and cuts radar cooldown by 28%.', link: '/leonida-wanted-system.html' },
 
     // Money-Making Tips
-    { id: 'tip-yasmani-5pct', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Use Yasmani\'s Fence (5% Cut) for All 20 Jewelry Stores', ps5: 'Deliver Duffels to Little Cuba Fence', xbox: 'Deliver Duffels to Little Cuba Fence', desc: 'After Yasmani\'s Jewelry Jobs in Chapter 3, all 20 jewelry stores across Leonida unlock. Always wipe CCTV servers and fence diamonds with Yasmani for the lowest 5% cut.', link: '/heists/jewelry-stores.html', pin: 'fence-yasmani' },
-    { id: 'tip-kenton-moses', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Stack Kenton\'s Dives (~$1,400) + Moses Car Drops ($1K–$2K)', ps5: 'Port Gellhorn & Keys Free-Roam', xbox: 'Port Gellhorn & Keys Free-Roam', desc: 'Zero-heat early cash loop: salvage shipwrecks for Kenton (~$1,400/dive) and drop untracked vehicles at Moses in Port Gellhorn ($1,000–$2,000 each) to hit your $5K BuckMe goal safely.', link: '/gta-6-money-guide/', pin: 'fence-moses' },
-    { id: 'tip-cartel-big-stacks', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', title: 'Bag Big Stacks First in The Cartel Heist ($120,000 Payout)', ps5: 'Shoot Guard Hands -> Prioritize Center Tables', xbox: 'Shoot Guard Hands -> Prioritize Center Tables', desc: 'In Mission #71 (Sinfrontera National Bank), disarm lobby guards by shooting weapons from their hands for Professional rating and bag large center-table stacks first to lock in the full $120,000 payout.', link: '/heists/the-cartel-heist.html', pin: 'heist-cartel' },
+    { id: 'tip-yasmani-5pct', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/heists/jewelry-stores.jpg', title: 'Use Yasmani\'s Fence (5% Cut) for All 20 Jewelry Stores', ps5: 'Deliver Duffels to Little Cuba Fence', xbox: 'Deliver Duffels to Little Cuba Fence', desc: 'After Yasmani\'s Jewelry Jobs in Chapter 3, all 20 jewelry stores across Leonida unlock. Always wipe CCTV servers and fence diamonds with Yasmani for the lowest 5% cut.', link: '/heists/jewelry-stores.html', pin: 'fence-yasmani' },
+    { id: 'tip-kenton-moses', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/intel/intel-gellhorn-ops.jpg', title: 'Stack Kenton\'s Dives (~$1,400) + Moses Car Drops ($1K–$2K)', ps5: 'Port Gellhorn & Keys Free-Roam', xbox: 'Port Gellhorn & Keys Free-Roam', desc: 'Zero-heat early cash loop: salvage shipwrecks for Kenton (~$1,400/dive) and drop untracked vehicles at Moses in Port Gellhorn ($1,000–$2,000 each) to hit your $5K BuckMe goal safely.', link: '/gta-6-money-guide/', pin: 'fence-moses' },
+    { id: 'tip-cartel-big-stacks', cat: 'Money-Making Tips', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/heists/cartel-heist.jpg', title: 'Bag Big Stacks First in The Cartel Heist ($120,000 Payout)', ps5: 'Shoot Guard Hands -> Prioritize Center Tables', xbox: 'Shoot Guard Hands -> Prioritize Center Tables', desc: 'In Mission #71 (Sinfrontera National Bank), disarm lobby guards by shooting weapons from their hands for Professional rating and bag large center-table stacks first to lock in the full $120,000 payout.', link: '/heists/the-cartel-heist.html', pin: 'heist-cartel' },
 
     // Easter Eggs & Mysteries (Absorbed from Secrets + Synced with GTA6Progress)
-    { id: 'sec-1', secretId: 'secret:sec-1', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', title: 'Literal Giant Easter Egg on South Feistdale Radio Tower', ps5: 'Climb Tower (~6 Min) -> Pick Up Egg (Circle)', xbox: 'Climb Tower (~6 Min) -> Pick Up Egg (B)', desc: 'Climb the tallest broadcast tower in South Feistdale County to find a giant nest of painted Easter eggs. Throwing one triggers a special cutscene.', link: '/secrets.html' },
-    { id: 'sec-2', secretId: 'secret:sec-2', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', title: 'Dexter Morgan Apartment, AC Stash & "Slice of Life" Boat', ps5: 'Washington Island -> Trinity Apartments', xbox: 'Washington Island -> Trinity Apartments', desc: 'Check the 2nd-floor window AC unit and rooftop kit at Trinity Apartments in Vice Beach, then walk behind the complex to spot the boat "Slice of Life".', link: '/secrets.html', pin: 'gar-purch-1' },
-    { id: 'sec-6', secretId: 'secret:sec-6', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', title: 'Grassrivers Swamp Skunk Ape / Bigfoot Encounter', ps5: 'Explore Swamp 02:00–04:00 (Fog)', xbox: 'Explore Swamp 02:00–04:00 (Fog)', desc: 'Deep in the Grassrivers wetlands during foggy late-night hours, follow guttural roars to encounter the 8-foot Skunk Ape.', link: '/secrets.html', pin: 'an-alligator' },
-    { id: 'sec-7', secretId: 'secret:sec-7', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', title: 'Silent Hill Haunted Hotel & Warped Neon Billboard', ps5: 'Port Gellhorn Outskirts 00:00–05:00', xbox: 'Port Gellhorn Outskirts 00:00–05:00', desc: 'An abandoned art-deco resort locks into thick fog after midnight with moving mannequins, rooftop notes, and a dynamic horror billboard.', link: '/secrets.html', pin: 'sh-ch2-motel' },
+    { id: 'sec-1', secretId: 'secret:sec-1', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/regions/mount-kalaga.jpg', title: 'Literal Giant Easter Egg on South Feistdale Radio Tower', ps5: 'Climb Tower (~6 Min) -> Pick Up Egg (Circle)', xbox: 'Climb Tower (~6 Min) -> Pick Up Egg (B)', desc: 'Climb the tallest broadcast tower in South Feistdale County to find a giant nest of painted Easter eggs. Throwing one triggers a special cutscene.', link: '/secrets.html' },
+    { id: 'sec-2', secretId: 'secret:sec-2', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/vice-beach-garage.jpg', title: 'Dexter Morgan Apartment, AC Stash & "Slice of Life" Boat', ps5: 'Washington Island -> Trinity Apartments', xbox: 'Washington Island -> Trinity Apartments', desc: 'Check the 2nd-floor window AC unit and rooftop kit at Trinity Apartments in Vice Beach, then walk behind the complex to spot the boat "Slice of Life".', link: '/secrets.html', pin: 'gar-purch-1' },
+    { id: 'sec-6', secretId: 'secret:sec-6', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/regions/grassrivers.jpg', title: 'Grassrivers Swamp Skunk Ape / Bigfoot Encounter', ps5: 'Explore Swamp 02:00–04:00 (Fog)', xbox: 'Explore Swamp 02:00–04:00 (Fog)', desc: 'Deep in the Grassrivers wetlands during foggy late-night hours, follow guttural roars to encounter the 8-foot Skunk Ape.', link: '/secrets.html', pin: 'an-alligator' },
+    { id: 'sec-7', secretId: 'secret:sec-7', cat: 'Easter Eggs & Mysteries', badge: 'Confirmed', updated: '2026-11-21', img: '/assets/images/properties/port-gellhorn-motel.jpg', title: 'Silent Hill Haunted Hotel & Warped Neon Billboard', ps5: 'Port Gellhorn Outskirts 00:00–05:00', xbox: 'Port Gellhorn Outskirts 00:00–05:00', desc: 'An abandoned art-deco resort locks into thick fog after midnight with moving mannequins, rooftop notes, and a dynamic horror billboard.', link: '/secrets.html', pin: 'sh-ch2-motel' },
 
     // Player-Submitted Discoveries
-    { id: 'tip-fps-workaround', cat: 'Player-Submitted Discoveries', badge: 'Community Discovered', updated: '2026-11-21', title: 'Pseudo First-Person Camera Lock Workaround', ps5: 'Cover (R1) + Phone (Up) -> Aim (L2) + Exit', xbox: 'Cover (RB) + Phone (Up) -> Aim (LT) + Exit', desc: 'Since GTA 6 launched without an on-foot FPS toggle, combining closest third-person view, corner cover, phone camera, and aim locks an eye-level perspective.', link: '/gta-6-discoveries/' },
-    { id: 'tip-xsx-120hz', cat: 'Player-Submitted Discoveries', badge: 'Testing', updated: '2026-11-21', title: 'Xbox Series X 120Hz VRR Refresh Handshake (40–50 FPS)', ps5: 'Xbox Series X Only (Build 01.002.001)', xbox: '120Hz + VRR -> Dashboard Toggle -> Quick Resume', desc: 'Community testers documented an unlocked framerate handshake on 120Hz VRR displays on Build 01.002.001. Test strictly on Save Slot #15.', link: '/gta-6-discoveries/' },
-    { id: 'tip-crab-unverified', cat: 'Player-Submitted Discoveries', badge: 'Unverified', updated: '2026-11-21', title: 'Crab Outpost Rumored Keypad Codes (CLEAVES / 0072 / 0212)', ps5: 'Wetlands Outpost Keypads (Testing)', xbox: 'Wetlands Outpost Keypads (Testing)', desc: 'Unverified / Community Reported combinations circulating during launch week—tagged unconfirmed until independent verification.', link: '/gta-6-discoveries/' }
+    { id: 'tip-fps-workaround', cat: 'Player-Submitted Discoveries', badge: 'Community Discovered', updated: '2026-11-21', img: '/assets/images/regions/vice-city.jpg', title: 'Pseudo First-Person Camera Lock Workaround', ps5: 'Cover (R1) + Phone (Up) -> Aim (L2) + Exit', xbox: 'Cover (RB) + Phone (Up) -> Aim (LT) + Exit', desc: 'Since GTA 6 launched without an on-foot FPS toggle, combining closest third-person view, corner cover, phone camera, and aim locks an eye-level perspective.', link: '/gta-6-discoveries/' },
+    { id: 'tip-xsx-120hz', cat: 'Player-Submitted Discoveries', badge: 'Testing', updated: '2026-11-21', img: '/assets/images/heists/vcia-takedown.jpg', title: 'Xbox Series X 120Hz VRR Refresh Handshake (40–50 FPS)', ps5: 'Xbox Series X Only (Build 01.002.001)', xbox: '120Hz + VRR -> Dashboard Toggle -> Quick Resume', desc: 'Community testers documented an unlocked framerate handshake on 120Hz VRR displays on Build 01.002.001. Test strictly on Save Slot #15.', link: '/gta-6-discoveries/' },
+    { id: 'tip-crab-unverified', cat: 'Player-Submitted Discoveries', badge: 'Unverified', updated: '2026-11-21', img: '/assets/images/regions/grassrivers.jpg', title: 'Crab Outpost Rumored Keypad Codes (CLEAVES / 0072 / 0212)', ps5: 'Wetlands Outpost Keypads (Testing)', xbox: 'Wetlands Outpost Keypads (Testing)', desc: 'Unverified / Community Reported combinations circulating during launch week—tagged unconfirmed until independent verification.', link: '/gta-6-discoveries/' }
   ];
 
   var activeCat = 'all';
@@ -356,14 +428,18 @@
       var checkHtml = t.secretId
         ? '<div style="display:inline-flex; align-items:center; gap:0.65rem; flex-wrap:wrap;"><label style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.75rem; color:#fff; cursor:pointer;"><input type="checkbox" data-secret-sync="' + t.secretId + '"' + (isDone ? ' checked' : '') + ' style="accent-color:var(--neon-green);"><span>Found</span></label><span style="font-size:0.7rem; color:#94a3b8; font-family:var(--font-mono);">Updated ' + t.updated + '</span></div>'
         : '<span style="font-size:0.72rem; color:#94a3b8; font-family:var(--font-mono);">Updated ' + t.updated + '</span>';
+      var thumbHtml = t.img
+        ? '<div class="tip-card-thumb"><img src="' + t.img + '" alt="' + t.title.replace(/"/g, '&quot;') + '" loading="lazy"></div>'
+        : '';
 
       return '<article class="tip-card' + (isDone ? ' is-done' : '') + '">' +
         '<div>' +
+          thumbHtml +
           '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.5rem;">' +
             '<span class="verify-badge ' + badgeClass(t.badge) + '">' + t.badge + '</span>' +
             '<span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--neon-cyan); font-weight:800;">' + t.cat + '</span>' +
           '</div>' +
-          '<h3 style="color:#fff; font-size:1.06rem; margin:0 0 0.4rem; line-height:1.3;">' + t.title + '</h3>' +
+          '<h3 style="color:#fff; font-size:1.05rem; margin:0 0 0.4rem; line-height:1.3;">' + t.title + '</h3>' +
           '<p style="color:#cbd5e1; font-size:0.83rem; line-height:1.5; margin:0 0 0.5rem;">' + t.desc + '</p>' +
           '<div class="ctrl-chip-row">' +
             '<span class="ctrl-chip ctrl-ps5">PS5: ' + t.ps5 + '</span>' +

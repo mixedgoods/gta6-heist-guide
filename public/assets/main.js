@@ -992,8 +992,8 @@ const GTA6 = {
         badgeName: 'SYNDICATE CONNECTION & LAG ADVISORY',
         avatar: '/assets/avatar-mastermind.png',
         time: 'Verified Connection Note',
-        title: '[SYNDICATE CONNECTION & LAG ADVISORY] Stop Mid-Heist Disconnects & Cut Packet Loss with ExitLag Low-Ping Routing',
-        content: '⚡ Syndicate Connection & Lag Advisory: Peer-to-peer multiplayer sessions can expose host IPs to packet flooding, route throttling, and disconnects mid-heist. Route game traffic through ExitLag Low-Ping Multipath Routing (Free Trial: https://www.exitlag.com/refer/10386953) to lock in rock-solid connections.',
+        title: '[SYNDICATE CONNECTION NOTE] Multi-Path Gaming Routing Overview with ExitLag',
+        content: '⚡ Syndicate Connection Note: PC gamers looking to optimize multiplayer traffic routes can explore ExitLag multi-path routing software (https://www.exitlag.com/refer/10386953). Routing performance varies by ISP, game server, and region.',
         votes: 95,
         tag: 'StealthMeta',
       },
@@ -5019,65 +5019,22 @@ CharacterModal: {
     },
 
     // --------------------------------------------------------------------------
-    // DYNAMIC REFRESH-SHUFFLED & TIMED AFFILIATE DEAL ROTATOR
+    // STICKY BOTTOM TICKER RETIRED — REPLACED BY NATIVE AFFILIATE CARD SYSTEM
     // --------------------------------------------------------------------------
     DealTicker: {
       timer: null,
       currentIndex: 0,
       messages: [],
-      buildMessages() {
-        const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : {};
-        const amzSsd = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20';
-        const amzSticks = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20';
-        const amzPs5 = GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl('https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20') : 'https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20';
-        const exitUrl = cfg.exitLagUrl || 'https://www.exitlag.com/refer/10386953';
-        const g2aUrl = cfg.g2aUrl || 'https://www.g2a.com/n/reflink-4094b9aab5';
-        const enebaUrl = cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide';
-        const gumroadBundleUrl = cfg.gumroadBundleUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
-        return [
-          `🔥 <strong style="color:var(--neon-pink);">LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB SSD</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">KontrolFreek Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Check Price on Amazon]</a>`,
-          `⚡ <strong style="color:var(--neon-cyan);">LOW-PING LOBBY ROUTING:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Low-Ping Routing (Free Trial)</a> `,
-          `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; PSN & XBOX GIFT CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
-          `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${gumroadBundleUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
-        ];
-      },
+      buildMessages() { return []; },
       init() {
-        try { if (localStorage.getItem('gta6_ticker_dismissed')) return; } catch (e) {}
-        this.messages = this.buildMessages();
-        const bar = document.createElement('div');
-        bar.id = 'dealTickerBar';
-        bar.className = 'deal-ticker-bar';
-        bar.innerHTML = `
-          <div class="deal-ticker-content">
-            <span class="deal-ticker-item" id="dealTickerItem">${this.messages[0]}</span>
-          </div>
-          <button type="button" class="deal-ticker-close" onclick="GTA6.DealTicker.dismiss()" title="Dismiss Ticker" aria-label="Dismiss Ticker">${GTA6.Icons.close(14)}</button>
-        `;
-        document.body.appendChild(bar);
-        document.body.classList.add('has-ticker');
-
-        this.timer = setInterval(() => {
-          this.next();
-        }, 6000);
+        // Retired in favor of contextual, session-stable Native Affiliate Cards
+        document.body.classList.remove('has-ticker');
       },
-      next() {
-        const item = document.getElementById('dealTickerItem');
-        if (!item) return;
-        item.classList.add('fade-out');
-        setTimeout(() => {
-          this.currentIndex = (this.currentIndex + 1) % this.messages.length;
-          item.innerHTML = this.messages[this.currentIndex];
-          item.classList.remove('fade-out');
-          item.classList.add('fade-in');
-          setTimeout(() => item.classList.remove('fade-in'), 350);
-        }, 350);
-      },
+      next() {},
       dismiss() {
-        if (this.timer) clearInterval(this.timer);
         const bar = document.getElementById('dealTickerBar');
         if (bar) bar.remove();
         document.body.classList.remove('has-ticker');
-        try { localStorage.setItem('gta6_ticker_dismissed', '1'); } catch (e) {}
       }
     },
 
@@ -5514,7 +5471,7 @@ DealRotator: {
             pillDiscount: "🔥 LIVE NOW",
             img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
             ctaPrimary: { text: "📦 Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" },
-            ctaSecondary: { text: "⚡ Check G2A Key Deals (-20%) →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
+            ctaSecondary: { text: "⚡ Browse G2A Marketplace →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
           },
           {
             id: "dualsense-edge",
@@ -5555,8 +5512,8 @@ DealRotator: {
             rating: "4.9",
             ratingCount: "45,000+ verified",
             desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & PSN & Xbox Gift Cards with zero service markups.",
-            priceLabel: "Digital Discount",
-            price: "Up to 20% Off",
+            priceLabel: "Digital Storefront",
+            price: "Live Listings",
             pillDiscount: "INSTANT",
             img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
             ctaPrimary: { text: "💳 Compare Eneba Deals →", href: cfg.enebaUrl || "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide", partner: "eneba", cls: "btn-deal-g2a", style: "background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);" }
@@ -5578,18 +5535,18 @@ DealRotator: {
           },
           {
             id: "g2a-gamepass",
-            title: "G2A Ultimate & PSN & Xbox Gift Cards",
-            badgeVerified: "✓ 20% INSTANT DISCOUNT",
+            title: "G2A PSN & Xbox Gift Cards",
+            badgeVerified: "✓ DIGITAL MARKETPLACE",
             badgeMerchant: "GLOBAL KEYS",
             stars: "★★★★★",
             rating: "4.7",
             ratingCount: "82,000+ reviews",
-            desc: "Discounted digital codes, subscriptions, and game keys with instant buyer shield protection.",
-            priceLabel: "G2A Special",
-            price: "Save up to 20%",
-            pillDiscount: "TOP DISCOUNT",
+            desc: "Browse digital gift cards, console subscriptions, and game keys across verified marketplace sellers.",
+            priceLabel: "G2A Marketplace",
+            price: "Live Listings",
+            pillDiscount: "DIGITAL KEYS",
             img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "⚡ Browse G2A Keys (-20%) →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
+            ctaPrimary: { text: "⚡ Browse G2A Marketplace →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
           }
         ];
       },
@@ -5600,14 +5557,12 @@ DealRotator: {
         if (!container) return;
         this.deals = this.buildDeals();
 
-        // Shuffle on page load
-        this.currentIndex = Math.floor(Math.random() * this.deals.length);
+        // Stable session-based selection (no random jump on refresh)
+        const seed = (window.GTA6AffiliateCards && window.GTA6AffiliateCards.getSessionSeed)
+          ? window.GTA6AffiliateCards.getSessionSeed()
+          : 0;
+        this.currentIndex = seed % Math.max(1, this.deals.length);
         this.render();
-
-        // Auto rotate every 10 seconds
-        this.timer = setInterval(() => {
-          this.next();
-        }, 10000);
       },
       next() {
         if (!this.deals.length) return;

@@ -162,32 +162,29 @@
   }
 
   function getAffiliateStripHtml(contextLabel) {
+    if (global.GTA6AffiliateCards && typeof global.GTA6AffiliateCards.getDatabaseHardwareCardHtml === 'function') {
+      return global.GTA6AffiliateCards.getDatabaseHardwareCardHtml('wdb-hardware-card');
+    }
     var aff = global.GTA6_AFFILIATES || {
-      g2a: { url: 'https://www.g2a.com/n/reflink-4094b9aab5' },
-      eneba: { url: 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide' },
-      exitlag: { url: 'https://www.exitlag.com/refer/10386953' },
-      gumroad: {
-        cutflowPro: 'https://apexlocallabs.gumroad.com/l/cutflow-pro',
-        apexProBundle: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle'
+      amazon: {
+        links: {
+          samsung990pro: 'https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20'
+        }
       }
     };
+    var url = (aff.amazon && aff.amazon.links && aff.amazon.links.samsung990pro)
+      ? aff.amazon.links.samsung990pro
+      : 'https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20';
     return (
-      '<aside class="wdb-aff-strip" aria-label="Affiliate disclosure and partner links">' +
-        '<div class="wdb-aff-left">' +
-          '<span class="wdb-aff-tag">Affiliate Disclosure</span>' +
-          '<span>' + esc(contextLabel || 'Support GTA6HeistGuide.com at no extra cost — qualifying partner links earn a commission:') + '</span>' +
+      '<aside class="aff-card aff-card--compact aff-accent-green" aria-label="Recommended gaming hardware (affiliate link)">' +
+        '<div class="aff-media aff-media--cover is-compact"><img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD" loading="lazy"></div>' +
+        '<div class="aff-compact-body">' +
+          '<div class="aff-meta-row"><span class="aff-partner-pill">Amazon Partner</span><span class="aff-badge-pill">PS5 &amp; PC NVMe SSD</span><span class="aff-disclosure-tag">Affiliate</span></div>' +
+          '<div class="aff-compact-title">Samsung 990 PRO 2TB SSD</div>' +
+          '<div class="aff-compact-benefit">7,450 MB/s read speeds &middot; Ample room for 212 GB+ GTA VI installs</div>' +
+          '<div class="aff-disclosure-inline">' + esc(contextLabel || 'Affiliate link · As an Amazon Associate we earn from qualifying purchases. Prices vary on Amazon.') + '</div>' +
         '</div>' +
-        '<div class="wdb-aff-links">' +
-          '<a href="' + esc(aff.g2a.url) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>' +
-          '<span class="wdb-aff-sep">|</span>' +
-          '<a href="' + esc(aff.eneba.url) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>' +
-          '<span class="wdb-aff-sep">|</span>' +
-          '<a href="' + esc(aff.exitlag.url) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag (Free Trial)</a>' +
-          '<span class="wdb-aff-sep">|</span>' +
-          '<a href="' + esc(aff.gumroad.cutflowPro) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>' +
-          '<span class="wdb-aff-sep">|</span>' +
-          '<a href="' + esc(aff.gumroad.apexProBundle) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">Apex Pro Bundle</a>' +
-        '</div>' +
+        '<div class="aff-compact-action"><a href="' + esc(url) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="wdb-hardware-fallback" class="aff-cta aff-cta--green">Check Price on Amazon &rarr;</a></div>' +
       '</aside>'
     );
   }

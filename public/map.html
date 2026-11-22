@@ -23,7 +23,7 @@
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
 
     <style>
         :root {
@@ -918,15 +918,25 @@
 
         <div class="sidebar-locations-list" id="sidebarLocationsList"></div>
 
-        <!-- High-Retention Compact Inline Affiliate Text Bar -->
-        <div class="sidebar-affiliate-box" style="padding:0.45rem 0.65rem;">
-            <div style="font-size:0.68rem; line-height:1.45; color:#cbd5e1;">
-                🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;
-                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" style="color:var(--neon-yellow);">G2A Keys</a> |
-                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" style="color:#f472b6;">Eneba</a> |
-                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" style="color:var(--neon-green);">ExitLag Tunnel (Free)</a> |
-                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" style="color:var(--neon-cyan);">CutFlow Pro</a>
-            </div>
+        <!-- One Tasteful Promotional Module at Natural Sidebar Break (Session-Stable) -->
+        <div class="sidebar-affiliate-box" style="padding:0.45rem 0.65rem;"
+             data-aff-slot="map-sidebar-promo"
+             data-aff-context="map"
+             data-aff-variant="sidebar-mini">
+            <aside class="aff-card aff-card--sidebar aff-accent-cyan" aria-label="Recommended gaming hardware (affiliate link)">
+                <div class="aff-sidebar-top">
+                    <div class="aff-media aff-media--studio is-compact"><img src="/assets/gear/dualsense-edge.jpg" alt="PlayStation DualSense Edge Wireless Controller" loading="lazy"></div>
+                    <div class="aff-sidebar-info">
+                        <div class="aff-meta-row"><span class="aff-partner-pill">Amazon Partner</span><span class="aff-disclosure-tag">Affiliate</span></div>
+                        <div class="aff-sidebar-title">DualSense Edge Wireless Controller</div>
+                        <div class="aff-sidebar-benefit">Remappable back paddles &amp; custom stick profiles</div>
+                    </div>
+                </div>
+                <div class="aff-sidebar-foot">
+                    <span class="aff-disclosure-micro">Partner link &middot; Commission earned at no extra cost</span>
+                    <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" data-amazon-link="dualsenseEdge" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="map-sidebar" class="aff-cta aff-cta--sm aff-cta--cyan">Check Amazon &rarr;</a>
+                </div>
+            </aside>
         </div>
     </aside>
 
@@ -1014,7 +1024,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js"></script>
+<script src="/js/affiliates.js?v=20261122_v19"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 
@@ -1349,13 +1359,6 @@ function createPopupContent(pin) {
             ${pin.security ? `<div style="font-size:0.68rem; color:#f87171;">🔒 <strong>Security:</strong> ${pin.security}</div>` : ''}
             <p class="popup-desc">${pin.description || ''}</p>
             ${pin.tips ? `<div class="popup-tip-box">💡 <strong>Tactical Note:</strong> ${pin.tips}</div>` : ''}
-            <div class="popup-aff-mini">
-                🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;
-                <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a> |
-                <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a> |
-                <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a> |
-                <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-            </div>
             <div class="popup-actions-row">
                 <button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${pin.id}')">
                     ${isFound ? '↺ Unfound' : '✓ Found'}

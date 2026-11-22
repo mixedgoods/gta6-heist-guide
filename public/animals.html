@@ -19,7 +19,7 @@
     <meta property="og:image:alt" content="American Alligator stalking through Grassrivers marsh in Grand Theft Auto VI">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/animals/grassrivers-gator.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -687,21 +687,22 @@
     </section>
 
     <!-- ONE CLEAN, CLEARLY DISCLOSED AFFILIATE STRIP DIRECTLY BELOW THE CATEGORY FILTER BAR -->
-    <aside class="animals-disclosed-aff" aria-label="Partner Disclosure and Affiliate Links">
-        <div style="display:flex; align-items:center; gap:0.55rem; flex-wrap:wrap;">
-            <span class="animals-disclosed-aff-tag">Affiliate Disclosure</span>
-            <span>Partner links (we earn a commission at no extra cost to you):</span>
-        </div>
-        <div class="animals-disclosed-aff-links">
-            <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-            <span class="aff-sep">|</span>
-            <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-            <span class="aff-sep">|</span>
-            <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Tunnel (Free)</a>
-            <span class="aff-sep">|</span>
-            <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-        </div>
-    </aside>
+    <!-- ONE SMALL, UNOBTRUSIVE GAMING HARDWARE RECOMMENDATION (DATABASE CONTEXT) -->
+    <div id="animalsDbAffSlot"
+         data-aff-slot="animals-db-hw"
+         data-aff-context="database"
+         data-aff-variant="compact-inline">
+        <aside class="aff-card aff-card--compact aff-accent-green" aria-label="Recommended gaming hardware (affiliate link)">
+            <div class="aff-media aff-media--cover is-compact"><img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD" loading="lazy"></div>
+            <div class="aff-compact-body">
+                <div class="aff-meta-row"><span class="aff-partner-pill">Amazon Partner</span><span class="aff-badge-pill">PS5 &amp; PC NVMe SSD</span><span class="aff-disclosure-tag">Affiliate</span></div>
+                <div class="aff-compact-title">Samsung 990 PRO 2TB SSD</div>
+                <div class="aff-compact-benefit">7,450 MB/s read speeds &middot; Ample room for 212 GB+ GTA VI installs</div>
+                <div class="aff-disclosure-inline">Affiliate link &middot; As an Amazon Associate we earn from qualifying purchases. Prices vary on Amazon.</div>
+            </div>
+            <div class="aff-compact-action"><a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" data-amazon-link="samsung990pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="animals-db-hw" class="aff-cta aff-cta--green">Check Price on Amazon &rarr;</a></div>
+        </aside>
+    </div>
 
     <div id="animGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); gap:0.85rem;">
         <article class="db-card" data-ssr-card="animal" data-id="an-alligator"><div class="db-card-img"><img src="/assets/images/animals/grassrivers-gator.jpg" alt="American Alligator stalking through murky Grassrivers marsh at night in Grand Theft Auto VI" loading="lazy"><span class="db-card-verified-shot">✓ Verified Shot</span><span class="db-card-chip">Land &amp; Predators</span><span class="db-card-region">📍 Grassrivers</span></div><div class="db-card-body"><h3 style="margin:0 0 0.25rem; font-size:0.95rem; color:#fff;">Alligator</h3><div style="display:flex; flex-wrap:wrap; gap:0.28rem; margin-bottom:0.35rem;"><span class="species-tag-badge species-tag-deck">🎯 Target Deck</span><span class="species-tag-badge species-tag-legendary">👑 Legendary Hunter</span></div><div style="font-size:0.74rem; color:var(--neon-amber); font-weight:700; margin-bottom:0.25rem;">Behavior: Hostile Predator</div><p style="margin:0 0 0.5rem; font-size:0.78rem; color:#94a3b8; line-height:1.45;">Common in Grassrivers swamps, waterways, and muddy banks. Lethal ambush bite in shallow water; use Focus mode (L3 + R3) for clean skull/vital shots.</p></div></article>
@@ -800,13 +801,7 @@
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
-                <a href="/" class="brand-logo" style="text-decoration:none;">
-                    <span class="brand-wordmark">
-                        <span class="brand-gta">GTA 6</span>
-                        <span class="brand-vi-sub">HEIST GUIDE</span>
-                    </span>
-                    <span class="brand-badge">Syndicate v3.3</span>
-                </a>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
                 <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
                     The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
@@ -814,6 +809,20 @@
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
                 <a href="/gta-6-database/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">📚 World Database</a>
                 <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
+                <div class="footer-secondary-strip">
+            <div style="display:flex; gap:1.15rem; flex-wrap:wrap;">
+                <a href="/" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">Heists</a>
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Map</a>
+                <a href="/gta-6-money-guide/" style="color:var(--neon-green); text-decoration:none; font-weight:700;">Money</a>
+                <a href="/gta-6-tips-and-tricks/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Tips &amp; Tricks</a>
+                <a href="/gta-6-tools/" style="color:#38bdf8; text-decoration:none; font-weight:700;">Tools</a>
+                <a href="/gta-6-database/" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">Database</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
             </div>
         </div>
         <div class="footer-disclaimer">
@@ -824,7 +833,7 @@
     </div>
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js"></script>
+<script src="/js/affiliates.js?v=20261122_v19"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 <script>
