@@ -1638,30 +1638,41 @@ const GTA6 = {
       return clean || '/';
     };
     const curPath = normPath(window.location.pathname);
-    navLinks.querySelectorAll('a').forEach((link) => {
+    // Prioritize exact top-level nav pills before dropdown items so e.g. /map.html highlights MAP instead of TOOLS
+    const topLinks = Array.from(navLinks.querySelectorAll(':scope > li > a'));
+    const allLinks = Array.from(navLinks.querySelectorAll('a'));
+    let matchedLink = topLinks.find((link) => {
       try {
-        const hrefPath = normPath(new URL(link.href, window.location.origin).pathname);
-        if (hrefPath === curPath) {
-          navLinks.querySelectorAll('a.active, .nav-dropdown-btn.active').forEach((a) => a.classList.remove('active'));
-          link.classList.add('active');
-          const parentDd = link.closest('.nav-dropdown');
-          if (parentDd) {
-            const ddBtn = parentDd.querySelector('.nav-dropdown-btn');
-            if (ddBtn) ddBtn.classList.add('active');
-          }
-        }
-      } catch (e) {}
+        return normPath(new URL(link.href, window.location.origin).pathname) === curPath;
+      } catch (e) { return false; }
     });
-
-    // Ensure mobile menu drawer includes Launch Rewards & Install App actions on < 1024px
-    if (!navLinks.querySelector('.mobile-drawer-actions')) {
-      const mobileActLi = document.createElement('li');
-      mobileActLi.className = 'mobile-drawer-actions';
-      mobileActLi.innerHTML =
-        '<a href="/drops.html" class="btn-launch-rewards" style="flex:1; justify-content:center;">🎁 Launch Rewards</a>' +
-        '<button type="button" class="btn-pwa-top" style="flex:1; justify-content:center;" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert(\'Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!\')">📱 Install App</button>';
-      navLinks.appendChild(mobileActLi);
+    if (!matchedLink) {
+      matchedLink = allLinks.find((link) => {
+        try {
+          return normPath(new URL(link.href, window.location.origin).pathname) === curPath;
+        } catch (e) { return false; }
+      });
     }
+    if (!matchedLink && curPath.startsWith('/heists/')) {
+      matchedLink = topLinks.find((link) => {
+        try {
+          return normPath(new URL(link.href, window.location.origin).pathname) === '/';
+        } catch (e) { return false; }
+      });
+    }
+    if (matchedLink) {
+      navLinks.querySelectorAll('a.active, .nav-dropdown-btn.active').forEach((a) => a.classList.remove('active'));
+      matchedLink.classList.add('active');
+      const parentDd = matchedLink.closest('.nav-dropdown');
+      if (parentDd) {
+        const ddBtn = parentDd.querySelector('.nav-dropdown-btn');
+        if (ddBtn) ddBtn.classList.add('active');
+      }
+    }
+
+    // Clean up any legacy mobile drawer actions so Launch Rewards / Install App never reappear
+    const legacyDrawerActions = navLinks.querySelector('.mobile-drawer-actions');
+    if (legacyDrawerActions) legacyDrawerActions.remove();
 
     const closeDrawer = () => {
       navLinks.classList.remove('open');

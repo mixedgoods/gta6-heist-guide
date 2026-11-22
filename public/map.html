@@ -23,7 +23,7 @@
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v22">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
 
     <style>
         :root {
@@ -42,12 +42,13 @@
             color: #f4f4f8;
         }
 
-        /* Exact dynamic viewport height minus header; preserves normal scrolling on short windows */
+        /* Exact dynamic viewport height minus header; avoids hiding behind header or Windows taskbar */
         .map-app-container {
             width: 100%;
             height: calc(100vh - var(--header-height));
+            height: calc(100dvh - var(--header-height));
             height: var(--map-viewport-h);
-            min-height: 460px;
+            min-height: 440px;
             display: flex;
             position: relative;
             overflow: hidden;
@@ -58,11 +59,13 @@
         .map-stage-col {
             flex: 1 1 auto;
             min-width: 0;
+            min-height: 0;
             height: 100%;
             display: flex;
             flex-direction: column;
             position: relative;
             background: #071426;
+            overflow: hidden;
         }
 
         /* UNIFIED MAP TOOLBAR (ONE Full Leonida Map button + 6 Regions + Map Style) */
@@ -70,32 +73,32 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 0.55rem 0.75rem;
+            gap: 0.35rem 0.5rem;
             flex-wrap: wrap;
-            padding: 0.5rem 0.85rem;
+            padding: 0.4rem 0.65rem;
             background: linear-gradient(180deg, rgba(12, 16, 30, 0.98), rgba(8, 12, 24, 0.98));
-            border-bottom: 1px solid rgba(0, 240, 255, 0.24);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.22);
             flex-shrink: 0;
             z-index: 50;
         }
         .map-toolbar-regions {
             display: flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.28rem;
             flex-wrap: wrap;
             min-width: 0;
         }
         .map-toolbar-divider {
             width: 1px;
-            height: 20px;
+            height: 18px;
             background: rgba(255, 255, 255, 0.16);
-            margin: 0 0.18rem;
+            margin: 0 0.12rem;
             flex-shrink: 0;
         }
         .map-toolbar-utils {
             display: flex;
             align-items: center;
-            gap: 0.45rem;
+            gap: 0.38rem;
             flex-shrink: 0;
             margin-left: auto;
         }
@@ -104,14 +107,14 @@
             border: 1px solid rgba(0, 240, 255, 0.58);
             color: #fff;
             border-radius: 7px;
-            padding: 0.34rem 0.72rem;
-            font-size: 0.73rem;
-            font-weight: 900;
+            padding: 0.28rem 0.58rem;
+            font-size: 0.7rem;
+            font-weight: 800;
             cursor: pointer;
             white-space: nowrap;
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.3rem;
             transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
         }
         .map-full-btn:hover,
@@ -119,7 +122,7 @@
             background: var(--neon-cyan, #00f0ff);
             border-color: var(--neon-cyan, #00f0ff);
             color: #04101d;
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
         }
 
         .leaflet-container {
@@ -141,12 +144,14 @@
             width: 100%;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
+            padding-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        /* Clean bottom-right zoom controls — always visible above bottom edge & taskbar */
-        .leaflet-bottom.leaflet-right {
-            bottom: 20px !important;
-            right: 20px !important;
+        /* Upper-right zoom controls — always visible below map toolbar, never clipped by taskbar or bottom edge */
+        .leaflet-top.leaflet-right {
+            top: 14px !important;
+            right: 16px !important;
             z-index: 1050 !important;
             display: flex;
             flex-direction: column;
@@ -157,17 +162,17 @@
             border: 1.5px solid rgba(0, 240, 255, 0.55) !important;
             border-radius: 10px !important;
             overflow: hidden;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 240, 255, 0.25) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 12px rgba(0, 240, 255, 0.2) !important;
             margin: 0 !important;
         }
         .leaflet-control-zoom a,
         .leaflet-recenter-btn {
             background: rgba(12, 10, 26, 0.95) !important;
             color: #fff !important;
-            width: 40px !important;
-            height: 40px !important;
-            line-height: 38px !important;
-            font-size: 1.2rem !important;
+            width: 38px !important;
+            height: 38px !important;
+            line-height: 36px !important;
+            font-size: 1.15rem !important;
             font-weight: 900 !important;
             border-bottom: 1px solid rgba(0, 240, 255, 0.25) !important;
             display: flex !important;
@@ -185,18 +190,12 @@
             background: rgba(0, 240, 255, 0.24) !important;
             color: var(--neon-cyan) !important;
         }
-        .leaflet-recenter-wrap {
-            border: 1.5px solid rgba(0, 240, 255, 0.55);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 240, 255, 0.25);
-            margin: 0 !important;
-        }
 
         /* SIDEBAR */
         .map-sidebar {
-            width: 390px;
+            width: 360px;
             height: 100%;
+            min-height: 0;
             background: rgba(12, 10, 24, 0.97);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -205,8 +204,23 @@
             flex-direction: column;
             z-index: 1100;
             flex-shrink: 0;
+            overflow: hidden;
+            box-sizing: border-box;
             box-shadow: 4px 0 24px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sidebar-close-mobile {
+            display: none;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #e2e8f0;
+            border-radius: 6px;
+            width: 28px;
+            height: 28px;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            cursor: pointer;
         }
         .sidebar-header-box {
             padding: 0.75rem 0.9rem 0.55rem;
@@ -335,8 +349,8 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 14px;
-            padding: 0.22rem 0.58rem;
-            font-size: 0.7rem;
+            padding: 0.2rem 0.48rem;
+            font-size: 0.68rem;
             font-weight: 700;
             color: #cbd5e1;
             white-space: nowrap;
@@ -351,12 +365,56 @@
 
         /* Checklist & Stats Bar */
         .progress-stats-box {
-            padding: 0.55rem 1rem;
+            padding: 0.5rem 0.85rem;
             background: rgba(18, 14, 30, 0.92);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.36rem;
+            flex-shrink: 0;
+        }
+        /* Collapsible Backup & Share Drawer — keeps all export/import/reset/share tools 1-click accessible without crushing pin list */
+        .sidebar-tools-drawer {
+            margin-top: 0.15rem;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 7px;
+            background: rgba(8, 12, 24, 0.72);
+            overflow: hidden;
+        }
+        .sidebar-tools-drawer > summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 0.34rem 0.6rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            transition: color 0.15s ease, background 0.15s ease;
+        }
+        .sidebar-tools-drawer > summary::-webkit-details-marker { display: none; }
+        .sidebar-tools-drawer > summary:hover {
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .sidebar-tools-drawer[open] > summary {
+            color: var(--neon-cyan, #00f0ff);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .sidebar-tools-drawer-caret {
+            transition: transform 0.2s ease;
+            font-size: 0.72rem;
+        }
+        .sidebar-tools-drawer[open] .sidebar-tools-drawer-caret {
+            transform: rotate(180deg);
+        }
+        .sidebar-tools-drawer-body {
+            padding: 0.45rem 0.5rem;
+            max-height: 210px;
+            overflow-y: auto;
+            scrollbar-width: thin;
         }
         .progress-bar-wrap {
             width: 100%;
@@ -436,12 +494,13 @@
 
         /* Category Filter Accordion / Rows */
         .category-rows-container {
-            padding: 0.5rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.42rem 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             flex-direction: column;
-            gap: 0.28rem;
-            max-height: 220px;
+            gap: 0.22rem;
+            max-height: clamp(128px, 24vh, 196px);
+            flex-shrink: 0;
             overflow-y: auto;
             scrollbar-width: thin;
         }
@@ -449,7 +508,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.32rem 0.5rem;
+            padding: 0.26rem 0.46rem;
             border-radius: 6px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid transparent;
@@ -463,9 +522,10 @@
         .cat-left-side {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.76rem;
+            gap: 0.45rem;
+            font-size: 0.74rem;
             font-weight: 700;
+            min-width: 0;
         }
         .cat-left-side input[type="checkbox"] {
             accent-color: var(--neon-cyan, #00f0ff);
@@ -474,20 +534,21 @@
         .cat-right-side {
             display: flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.32rem;
+            flex-shrink: 0;
         }
         .cat-count-badge {
-            font-size: 0.65rem;
+            font-size: 0.64rem;
             font-family: var(--font-mono, monospace);
-            padding: 0.1rem 0.35rem;
+            padding: 0.08rem 0.32rem;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.08);
             color: #cbd5e1;
             font-weight: 700;
         }
         .btn-cat-only {
-            padding: 0.12rem 0.35rem;
-            font-size: 0.62rem;
+            padding: 0.1rem 0.32rem;
+            font-size: 0.6rem;
             font-weight: 800;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -503,14 +564,15 @@
             border-color: var(--neon-cyan, #00f0ff);
         }
 
-        /* Locations List View */
+        /* Locations List View — flex-grows into remaining sidebar height with safe bottom padding */
         .sidebar-locations-list {
-            flex: 1;
+            flex: 1 1 auto;
+            min-height: 150px;
             overflow-y: auto;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.85rem calc(1.75rem + env(safe-area-inset-bottom, 0px));
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.38rem;
             scrollbar-width: thin;
         }
         .pin-list-item {
@@ -569,28 +631,6 @@
             color: var(--neon-green, #00ff88);
             font-weight: 700;
         }
-
-        /* Affiliate Gear Bottom Bar */
-        .sidebar-affiliate-box {
-            padding: 0.65rem 0.9rem;
-            background: rgba(10, 8, 20, 0.98);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 0.68rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            flex-shrink: 0;
-        }
-        .sidebar-affiliate-box a {
-            color: var(--neon-cyan, #00f0ff);
-            text-decoration: none;
-            font-weight: 700;
-        }
-        .sidebar-affiliate-box a:hover {
-            text-decoration: underline;
-        }
-
-        
 
         /* TOP-RIGHT HUD CONTROLS */
         .map-hud-controls {
@@ -796,17 +836,6 @@
             padding: 0.32rem 0.5rem;
             color: #cbd5e1;
         }
-        .popup-aff-mini {
-            font-size: 0.66rem;
-            background: rgba(255, 42, 141, 0.08);
-            border: 1px solid rgba(255, 42, 141, 0.25);
-            border-radius: 5px;
-            padding: 0.32rem 0.45rem;
-            color: #cbd5e1;
-            line-height: 1.45;
-        }
-        .popup-aff-mini a { color: var(--neon-cyan); font-weight: 800; text-decoration: none; }
-        .popup-aff-mini a:hover { text-decoration: underline; }
         .popup-actions-row { display: flex; gap: 0.35rem; margin-top: 0.25rem; }
         .btn-popup-found {
             flex: 1;
@@ -846,7 +875,7 @@
         .mobile-toggle-btn {
             display: none;
             position: absolute;
-            bottom: 22px;
+            bottom: max(22px, calc(16px + env(safe-area-inset-bottom, 0px)));
             left: 14px;
             z-index: 1050;
             background: rgba(14, 11, 26, 0.96);
@@ -861,8 +890,8 @@
         }
 
         #hudToast {
-            position: absolute;
-            bottom: 1.2rem;
+            position: fixed;
+            bottom: 1.4rem;
             left: 50%;
             transform: translateX(-50%) translateY(20px);
             background: rgba(18, 14, 30, 0.97);
@@ -907,6 +936,10 @@
             gap: 0.8rem;
         }
 
+        @media (max-width: 1180px) {
+            .map-sidebar { width: 328px; }
+        }
+
         @media (max-width: 900px) {
             .map-sidebar {
                 position: absolute;
@@ -914,14 +947,15 @@
                 left: 0;
                 bottom: 0;
                 transform: translateX(-100%);
-                width: 86%;
-                max-width: 355px;
+                width: 88%;
+                max-width: 350px;
             }
             .map-sidebar.open { transform: translateX(0); }
+            .sidebar-close-mobile { display: inline-flex; }
             .mobile-toggle-btn { display: flex; align-items: center; gap: 0.4rem; }
             .map-top-toolbar {
-                padding: 0.42rem 0.55rem;
-                gap: 0.4rem;
+                padding: 0.4rem 0.55rem;
+                gap: 0.35rem;
             }
             .map-toolbar-regions {
                 flex-wrap: nowrap;
@@ -937,9 +971,9 @@
                 margin-left: 0;
             }
             .hud-status-badge { font-size: 0.62rem; }
-            .leaflet-bottom.leaflet-right {
-                bottom: 22px !important;
-                right: 14px !important;
+            .leaflet-top.leaflet-right {
+                top: 10px !important;
+                right: 10px !important;
             }
             .leaflet-popup-content { width: 270px !important; }
         }
@@ -960,18 +994,15 @@
 <nav class="navbar" id="siteNavbar">
     <div class="nav-container">
         <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
-        <div class="nav-actions">
-            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
-            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
-        </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">HEISTS</a></li>
-            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/map.html" class="nav-pill active">MAP</a></li>
             <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
                     <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
                     <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
                     <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
@@ -980,8 +1011,9 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                   <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -993,6 +1025,7 @@
             <li class="nav-dropdown nav-dropdown-right">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -1013,7 +1046,10 @@
         <div class="sidebar-header-box">
             <div class="sidebar-title-row">
                 <span class="sidebar-title-badge">🗺️ LEONIDA MAP v4.5</span>
-                <span style="font-size:0.68rem; color:#94a3b8; font-family:var(--font-mono, monospace);" id="activePinCountLabel">Loading pins...</span>
+                <div style="display:flex; align-items:center; gap:0.45rem;">
+                    <span style="font-size:0.68rem; color:#94a3b8; font-family:var(--font-mono, monospace);" id="activePinCountLabel">Loading pins...</span>
+                    <button type="button" class="sidebar-close-mobile" onclick="toggleMobileDrawer()" aria-label="Close map sidebar">✕</button>
+                </div>
             </div>
 
             <div class="sidebar-search-wrap">
@@ -1036,18 +1072,26 @@
                     <button type="button" class="btn-mini-action" onclick="toggleAllCategories(false)">None</button>
                 </div>
             </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.2rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.12rem;">
                 <label class="hide-found-label">
                     <input type="checkbox" id="hideFoundCheckbox" onchange="toggleHideFound(this.checked)">
                     <span>Hide Found</span>
                 </label>
                 <div style="display:flex; gap:0.35rem;">
                     <button type="button" class="btn-mini-action" onclick="toggleUserPinDropMode()" id="dropPinBtn" style="color:var(--neon-green,#00ff88);">+ Drop Pin</button>
-                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Code</button>
+                    <button type="button" class="btn-mini-action" onclick="openSaveModal()">💾 Backup</button>
                 </div>
             </div>
-            <div id="mapProgressToolbar"></div>
-            <div id="mapShareBar" style="margin-top:0.35rem;"></div>
+            <details class="sidebar-tools-drawer" id="mapToolsDrawer">
+                <summary>
+                    <span>⚙️ Export / Import / Share Tools</span>
+                    <span class="sidebar-tools-drawer-caret" aria-hidden="true">▾</span>
+                </summary>
+                <div class="sidebar-tools-drawer-body">
+                    <div id="mapProgressToolbar"></div>
+                    <div id="mapShareBar" style="margin-top:0.35rem;"></div>
+                </div>
+            </details>
         </div>
 
         <div class="category-rows-container" id="categoryRowsContainer"></div>
@@ -1059,21 +1103,21 @@
     <div class="map-stage-col" id="mapStageCol">
         <div class="map-top-toolbar" role="toolbar" aria-label="Leonida Map regions and view controls">
             <div class="map-toolbar-regions" id="regionPillsRow">
-                <button type="button" class="map-full-btn active" id="fullLeonidaMapBtn" onclick="resetFullMap()" title="Fit the entire Leonida Map in view">🌎 Full Leonida Map</button>
+                <button type="button" class="map-full-btn active" id="fullLeonidaMapBtn" onclick="resetFullMap()" title="Fit the entire Leonida Map in view">🌎 Full Map</button>
                 <span class="map-toolbar-divider" aria-hidden="true"></span>
                 <button type="button" class="region-jump-pill" data-region="Vice City" onclick="jumpToRegion('Vice City')">🏙️ Vice City</button>
                 <button type="button" class="region-jump-pill" data-region="Grassrivers" onclick="jumpToRegion('Grassrivers')">🌾 Grassrivers</button>
-                <button type="button" class="region-jump-pill" data-region="Leonida Keys" onclick="jumpToRegion('Leonida Keys')">🏝️ Leonida Keys</button>
+                <button type="button" class="region-jump-pill" data-region="Leonida Keys" onclick="jumpToRegion('Leonida Keys')">🏝️ Keys</button>
                 <button type="button" class="region-jump-pill" data-region="Mt. Kalaga" onclick="jumpToRegion('Mt. Kalaga')">⛰️ Mt. Kalaga</button>
                 <button type="button" class="region-jump-pill" data-region="Port Gellhorn" onclick="jumpToRegion('Port Gellhorn')">⚓ Port Gellhorn</button>
                 <button type="button" class="region-jump-pill" data-region="Ambrosia" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
             </div>
             <div class="map-toolbar-utils">
-                <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()" style="padding:0.34rem 0.68rem;">
+                <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()" style="padding:0.28rem 0.58rem; font-size:0.7rem;">
                     <span id="styleIcon">🗺️</span> <span id="styleLabel">Atlas Day</span>
                 </button>
                 <div class="hud-status-badge" id="hudCoordsDisplay">
-                    LEONIDA MAP &bull; 3840&times;5120 HD
+                    3840&times;5120 HD
                 </div>
             </div>
         </div>
@@ -1149,7 +1193,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js?v=20261122_v22"></script>
+<script src="/js/affiliates.js?v=20261122_v23"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 
@@ -1229,7 +1273,7 @@ const REGION_CENTERS = {
     'Lake Leonida':  { yPct: 0.6750, xPct: 0.5900, zoom: 0.5 }
 };
 
-/* Measure real header & visual viewport height dynamically so bottom controls NEVER fall below viewport */
+/* Measure real header & visual viewport height dynamically so map & controls fit Windows laptops and desktop viewports */
 function syncHeaderHeight() {
     const strip = document.getElementById('siteTopStrip');
     const nav = document.getElementById('siteNavbar');
@@ -1240,7 +1284,7 @@ function syncHeaderHeight() {
     }
     const vh = (window.visualViewport && window.visualViewport.height) ? window.visualViewport.height : window.innerHeight;
     const topOffset = container ? Math.max(total, Math.round(container.getBoundingClientRect().top)) : total;
-    const availH = Math.max(460, Math.floor(vh - topOffset));
+    const availH = Math.max(420, Math.floor(vh - topOffset));
     document.documentElement.style.setProperty('--map-viewport-h', availH + 'px');
     if (map) {
         map.invalidateSize(false);
@@ -1293,7 +1337,7 @@ function initEngine() {
         zoomControl: true
     });
 
-    map.zoomControl.setPosition('bottomright');
+    map.zoomControl.setPosition('topright');
 
     const mapImg = new Image();
     let initialized = false;
@@ -1314,10 +1358,20 @@ function initEngine() {
             const hud = document.getElementById('hudCoordsDisplay');
             if (!hud || !map) return;
             const scalePct = Math.round(Math.pow(2, map.getZoom()) * 100);
-            hud.textContent = `LEONIDA MAP • ${naturalWidth}×${naturalHeight} HD • ${scalePct}%`;
+            hud.textContent = `${naturalWidth}×${naturalHeight} HD • ${scalePct}%`;
         };
         map.on('zoomend', updateHudZoom);
         updateHudZoom();
+
+        if (typeof ResizeObserver === 'function') {
+            const stageEl = document.getElementById('leafletMap');
+            if (stageEl) {
+                const ro = new ResizeObserver(() => {
+                    if (map) map.invalidateSize(false);
+                });
+                ro.observe(stageEl);
+            }
+        }
 
         Object.keys(CATEGORIES).forEach(cat => {
             markerLayersByCategory[cat] = L.layerGroup().addTo(map);

@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <title>GTA 6 Live Streams and Vault Meta HUD | GTA 6 Guide</title>
-    <meta name="description" content="Watch live GTA 6 heist broadcasts alongside a synchronized 48-minute Leonida clock, weekly 1.5X payout multiplier tracker, and second-screen vault HUD.">
-    <meta name="keywords" content="GTA 6 live stream, GTA 6 Twitch, CaseOh GTA 6, Kai Cenat GTA 6, xQc GTA 6, Summit1g GTA, Grand Theft Auto VI live, GTA 6 gameplay live, GTA 6 second screen">
+    <title>GTA 6 Live Streams &amp; Companion | GTA6HeistGuide.com</title>
+    <meta name="description" content="Watch live GTA 6 Twitch and YouTube broadcasts with instant channel switching, synced live chat, custom channel connect, and automatic offline failover.">
+    <meta name="keywords" content="GTA 6 live stream, GTA 6 Twitch, CaseOh GTA 6, Kai Cenat GTA 6, xQc GTA 6, Summit1g GTA, Grand Theft Auto VI live, GTA 6 gameplay live">
     <link rel="canonical" href="https://www.gta6heistguide.com/live">
     <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="GTA 6 Live Streams and Vault Meta HUD | GTA 6 Guide">
-    <meta property="og:description" content="Watch live GTA 6 heist broadcasts alongside a synchronized 48-minute Leonida clock, weekly 1.5X payout multiplier tracker, and second-screen vault HUD.">
+    <meta property="og:title" content="GTA 6 Live Streams &amp; Companion | GTA6HeistGuide.com">
+    <meta property="og:description" content="Watch live GTA 6 Twitch and YouTube broadcasts with instant channel switching, synced live chat, and automatic offline failover.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/live">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/gta6-protagonists-official.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v22">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
 
     <!-- Twitch Interactive Player SDK -->
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
@@ -28,16 +28,16 @@
       "@graph": [
         {
           "@type": "WebPage",
-          "name": "GTA 6 Live Streams & SATCOM Command Center",
+          "name": "GTA 6 Live Streams & Companion",
           "url": "https://www.gta6heistguide.com/live.html",
-          "description": "Live GTA 6 Twitch and YouTube broadcast feeds with real-time second-screen heist tools and automatic stream failover."
+          "description": "Live GTA 6 Twitch and YouTube broadcast feeds with synced chat and automatic stream failover."
         },
         {
           "@type": "BroadcastEvent",
-          "name": "GTA 6 Live Syndicate Infiltration Broadcast",
+          "name": "GTA 6 Live Broadcast Directory",
           "isLiveBroadcast": true,
           "videoFormat": "HD",
-          "broadcastDisplayName": "GTA 6 SATCOM Live Stream Network"
+          "broadcastDisplayName": "GTA 6 Live Stream Companion"
         }
       ]
     }
@@ -63,10 +63,10 @@
 
         .stream-viewport-box {
             background: #030712;
-            border: 2px solid var(--neon-cyan);
+            border: 1px solid rgba(0, 240, 255, 0.38);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 35px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
             position: relative;
             display: flex;
             flex-direction: column;
@@ -177,7 +177,7 @@
             flex: 1;
         }
 
-        /* Mobile View Switcher Tabs (Keypad vs Chat) */
+        /* Mobile Chat & Popout Controls */
         .mobile-view-tabs {
             display: none;
             background: rgba(10, 16, 26, 0.95);
@@ -350,6 +350,7 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: #e2e8f0;
+            white-space: nowrap;
         }
         .live-region-pill {
             display: inline-flex;
@@ -365,6 +366,7 @@
             border: 1px solid rgba(0, 255, 136, 0.36);
             padding: 0.16rem 0.55rem;
             border-radius: 999px;
+            white-space: nowrap;
         }
         .live-region-badge {
             display: inline-flex;
@@ -384,12 +386,12 @@
             display: flex;
             align-items: center;
             gap: 0.45rem;
-            flex: 1 1 280px;
-            max-width: 390px;
+            flex: 1 1 320px;
+            max-width: 440px;
         }
         .live-custom-input {
             flex: 1 1 auto;
-            min-width: 0;
+            min-width: 210px;
             height: 36px;
             padding: 0 0.75rem;
             background: rgba(4, 8, 18, 0.9);
@@ -415,18 +417,24 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
         .stream-status-header {
             background: #070b14;
-            padding: 0.6rem 0.9rem;
-            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 0.65rem 0.9rem;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.18);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.55rem 0.75rem;
+            flex-direction: column;
+            gap: 0.55rem;
         }
         .stream-status-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.45rem 0.65rem;
+            flex-wrap: wrap;
+        }
+        .stream-ctrl-group {
             display: flex;
             align-items: center;
             gap: 0.35rem;
@@ -497,25 +505,32 @@
                 max-width: 100%;
                 flex: 1 1 100%;
             }
+            .live-custom-input {
+                min-width: 0;
+            }
             .stream-status-header {
-                flex-direction: column !important;
-                align-items: stretch !important;
-                gap: 0.5rem !important;
                 padding: 0.55rem 0.7rem !important;
             }
             .stream-status-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.4rem !important;
+            }
+            .stream-ctrl-group {
                 display: grid !important;
-                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
                 gap: 0.35rem !important;
             }
+            .stream-ctrl-group--nav {
+                grid-template-columns: auto 1fr auto !important;
+            }
             .stream-select-input {
-                grid-column: 1 / -1 !important;
                 width: 100% !important;
                 font-size: 0.72rem !important;
             }
             .stream-nav-btn {
                 font-size: 0.7rem !important;
-                padding: 0 0.4rem !important;
+                padding: 0 0.45rem !important;
             }
         }
 
@@ -544,8 +559,8 @@
         }
     </style>
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta name="twitter:title" content="GTA 6 Live Streams and Vault Meta HUD | GTA 6 Guide">
-    <meta name="twitter:description" content="Watch live GTA 6 heist broadcasts alongside a synchronized 48-minute Leonida clock, weekly 1.5X payout multiplier tracker, and second-screen vault HUD.">
+    <meta name="twitter:title" content="GTA 6 Live Streams &amp; Companion | GTA6HeistGuide.com">
+    <meta name="twitter:description" content="Watch live GTA 6 Twitch and YouTube broadcasts with instant channel switching, synced live chat, and automatic offline failover.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
 </head>
 <body>
@@ -568,10 +583,6 @@
 <nav class="navbar" id="siteNavbar">
     <div class="nav-container">
         <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
-        <div class="nav-actions">
-            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
-            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
-        </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">HEISTS</a></li>
             <li><a href="/map.html" class="nav-pill">MAP</a></li>
@@ -580,16 +591,18 @@
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
                     <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
                     <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
                     <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
                 </div>
             </li>
             <li class="nav-dropdown">
-                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                   <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -601,6 +614,7 @@
             <li class="nav-dropdown nav-dropdown-right">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -643,7 +657,7 @@
                 <span class="live-region-pill">NORTH AMERICA SYNDICATE</span>
             </div>
             <div class="live-custom-form">
-                <input type="text" id="customChannelInput" class="live-custom-input" aria-label="Twitch username or YouTube channel or video ID" placeholder="Paste Twitch username or YouTube ID...">
+                <input type="text" id="customChannelInput" class="live-custom-input" aria-label="Twitch channel or YouTube ID" placeholder="Twitch channel or YouTube ID">
                 <button type="button" class="btn btn-primary live-connect-btn" onclick="loadCustomChannel()">Connect</button>
             </div>
         </div>
@@ -661,35 +675,39 @@
         <div class="stream-viewport-box" id="streamViewportBox">
             <!-- Top Stream Status Bar with Prev / Next Channel Cycler -->
             <div class="stream-status-header">
-                <div class="stream-status-info" style="display:flex; align-items:center; gap:0.6rem; min-width:170px;">
+                <div class="stream-status-info" style="display:flex; align-items:center; gap:0.6rem; min-width:0;">
                     <span id="streamStatusIndicator">
                         <span class="pulse-beacon"></span>
                     </span>
-                    <div style="overflow:hidden;">
+                    <div style="overflow:hidden; min-width:0;">
                         <strong id="activeStreamTitle" style="color:#fff; font-size:0.86rem; font-family:var(--font-mono); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">SIGNAL LOCKED: @caseoh_ &bull; CaseOh</strong>
-                        <span id="activeStreamDesc" style="color:#94a3b8; font-size:0.71rem; font-family:var(--font-mono); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Top US Streamer &bull; Peak Views</span>
+                        <span id="activeStreamDesc" style="color:#94a3b8; font-size:0.71rem; font-family:var(--font-mono); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">GTA VI &amp; Variety Streamer</span>
                     </div>
                 </div>
 
-                <!-- Channel Navigation Bar Controls -->
+                <!-- Channel Navigation & Utility Controls -->
                 <div class="stream-status-controls">
-                    <button type="button" class="stream-nav-btn" onclick="prevStream()" title="Previous Stream (Shortcut: Left Arrow)">
-                        ◀ Prev
-                    </button>
-                    <select id="streamSelectDropdown" class="stream-select-input" onchange="selectStream(this.value)" aria-label="Direct Channel Selector" title="Direct Channel Selector">
-                        <!-- Populated by JS -->
-                    </select>
-                    <button type="button" class="stream-nav-btn" onclick="nextStream()" title="Next Stream (Shortcut: Right Arrow)">
-                        Next ▶
-                    </button>
-                    <button type="button" class="stream-nav-btn" id="autoSkipToggleBtn" onclick="toggleAutoSkip()" title="Auto-advance if stream goes offline">
-                        ⚡ Auto: <strong style="color:var(--neon-green)">ON</strong>
-                    </button>
-                    <button type="button" class="stream-nav-btn" onclick="openPopoutChat()" title="Pop out chat in separate window">
-                        ↗ Popout
-                    </button>
-                    <button type="button" class="stream-nav-btn" onclick="toggleChat()" id="chatToggleBtn">💬 Chat</button>
-                    <button type="button" class="stream-nav-btn" onclick="reloadStream()">🔄 Reload</button>
+                    <div class="stream-ctrl-group stream-ctrl-group--nav">
+                        <button type="button" class="stream-nav-btn" onclick="prevStream()" title="Previous Stream (Shortcut: Left Arrow)">
+                            ◀ Prev
+                        </button>
+                        <select id="streamSelectDropdown" class="stream-select-input" onchange="selectStream(this.value)" aria-label="Direct Channel Selector" title="Direct Channel Selector">
+                            <!-- Populated by JS -->
+                        </select>
+                        <button type="button" class="stream-nav-btn" onclick="nextStream()" title="Next Stream (Shortcut: Right Arrow)">
+                            Next ▶
+                        </button>
+                    </div>
+                    <div class="stream-ctrl-group">
+                        <button type="button" class="stream-nav-btn" id="autoSkipToggleBtn" onclick="toggleAutoSkip()" title="Auto-advance if stream goes offline">
+                            ⚡ Auto: <strong style="color:var(--neon-green)">ON</strong>
+                        </button>
+                        <button type="button" class="stream-nav-btn" onclick="toggleChat()" id="chatToggleBtn">💬 Chat</button>
+                        <button type="button" class="stream-nav-btn" onclick="openPopoutChat()" title="Pop out chat in separate window">
+                            ↗ Popout
+                        </button>
+                        <button type="button" class="stream-nav-btn" onclick="reloadStream()">🔄 Reload</button>
+                    </div>
                 </div>
             </div>
 
@@ -763,7 +781,7 @@
             </div>
             <div id="chatMount" style="flex:1; display:flex; align-items:center; justify-content:center; background:#04070e;">
                 <div style="text-align:center; padding:1.5rem; color:#64748b; font-size:0.8rem; font-family:var(--font-mono);">
-                    Click the stream player above to connect live chat.
+                    Click the stream player to the left to connect live chat.
                 </div>
             </div>
         </aside>
@@ -833,7 +851,7 @@
         <div class="aff-grid-2">
             <article class="aff-card aff-card--standard aff-accent-amber">
                 <div class="aff-media aff-media--ui">
-                    <img src="/assets/cutflow-ui.png" alt="CutFlow Pro Desktop Auto-Silence Remover Interface" loading="lazy" decoding="async">
+                    <img src="/assets/cutflow-ui.png" alt="CutFlow Pro Desktop Auto-Silence Remover Interface" decoding="async">
                     <span class="aff-media-brand-pill aff-media-brand-pill--cutflow">CutFlow Pro</span>
                 </div>
                 <div class="aff-card-body">
@@ -967,19 +985,19 @@
 </footer>
 
 <script>
-// CURATED TOP AMERICAN GTA STREAMERS ROSTER (Ordered by peak US viewers & relevance)
+// CURATED NORTH AMERICA GTA VI STREAMER ROSTER
 const ROSTER = [
-    { id: 'caseoh_', name: 'CaseOh', tag: 'Top US Streamer • Peak Views', type: 'twitch', region: 'US', badge: '🔥 PEAK VIEWS' },
-    { id: 'kaicenat', name: 'Kai Cenat', tag: 'Top US Streamer • Vice City Marathons', type: 'twitch', region: 'US', badge: '👑 TOP US' },
-    { id: 'xqc', name: 'xQc', tag: 'GTA Legend • Syndicate Boss', type: 'twitch', region: 'US', badge: '⚡ ALL-TIME' },
-    { id: 'jynxzi', name: 'Jynxzi', tag: 'Top US Creator • High Energy Heists', type: 'twitch', region: 'US', badge: '🔥 TRENDING' },
-    { id: 'summit1g', name: 'Summit1g', tag: 'Tactical Shooter & Vault Specialist', type: 'twitch', region: 'US', badge: '🎯 VETERAN' },
-    { id: 'buddha', name: 'Buddha', tag: 'NoPixel & Syndicate Mastermind', type: 'twitch', region: 'US', badge: '💼 SYNDICATE' },
-    { id: 'lord_kebun', name: 'Lord_Kebun', tag: 'Chang Gang Heist Leader', type: 'twitch', region: 'US', badge: '🐉 CHANG GANG' },
-    { id: 'fanum', name: 'Fanum', tag: 'AMP Syndicate • Vice City Vibes', type: 'twitch', region: 'US', badge: '🌴 VICE CITY' },
-    { id: 'anthonyz', name: 'AnthonyZ', tag: 'Elite Getaway Driver & Exfiltration', type: 'twitch', region: 'US', badge: '🏎️ GETAWAY' },
-    { id: 'shotz', name: 'Shotz', tag: 'Tactical Vault Breacher & Operator', type: 'twitch', region: 'US', badge: '💥 BREACHER' },
-    { id: 'rockstargames', name: 'Rockstar Games', tag: 'Official Rockstar Studio Broadcasts', type: 'twitch', region: 'HQ', badge: '⭐ OFFICIAL' }
+    { id: 'caseoh_', name: 'CaseOh', tag: 'GTA VI & Variety Streamer', type: 'twitch', region: 'US', badge: 'TWITCH' },
+    { id: 'kaicenat', name: 'Kai Cenat', tag: 'GTA VI & Variety Broadcasts', type: 'twitch', region: 'US', badge: 'TWITCH' },
+    { id: 'xqc', name: 'xQc', tag: 'GTA Roleplay & Variety Streamer', type: 'twitch', region: 'US', badge: 'GTA RP' },
+    { id: 'jynxzi', name: 'Jynxzi', tag: 'Shooter & GTA VI Creator', type: 'twitch', region: 'US', badge: 'TWITCH' },
+    { id: 'summit1g', name: 'Summit1g', tag: 'GTA RP & Tactical Gameplay', type: 'twitch', region: 'US', badge: 'GTA RP' },
+    { id: 'buddha', name: 'Buddha', tag: 'GTA Roleplay & Heist Crew', type: 'twitch', region: 'US', badge: 'GTA RP' },
+    { id: 'lord_kebun', name: 'Lord_Kebun', tag: 'GTA Roleplay & Crew Gameplay', type: 'twitch', region: 'US', badge: 'GTA RP' },
+    { id: 'fanum', name: 'Fanum', tag: 'GTA VI & Variety Creator', type: 'twitch', region: 'US', badge: 'TWITCH' },
+    { id: 'anthonyz', name: 'AnthonyZ', tag: 'GTA Roleplay & Driving Runs', type: 'twitch', region: 'US', badge: 'GTA RP' },
+    { id: 'shotz', name: 'Shotz', tag: 'GTA Roleplay & Co-op Heists', type: 'twitch', region: 'US', badge: 'GTA RP' },
+    { id: 'rockstargames', name: 'Rockstar Games', tag: 'Official Rockstar Studio Channel', type: 'twitch', region: 'HQ', badge: 'OFFICIAL' }
 ];
 
 let currentIndex = 0;
@@ -1409,7 +1427,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script src="/js/affiliates.js?v=20261122_v22"></script>
+<script src="/js/affiliates.js?v=20261122_v23"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 </body>

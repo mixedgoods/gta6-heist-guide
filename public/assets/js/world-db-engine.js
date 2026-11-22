@@ -1071,21 +1071,21 @@
 
     function getGunStoreArtworkPath(item) {
       var t = String(item.storeType || '').toLowerCase();
-      if (t.indexOf('surplus') !== -1) return '/assets/images/gun-stores/military-surplus.svg';
-      if (t.indexOf('pawn') !== -1) return '/assets/images/gun-stores/pawn-armory.svg';
-      if (t.indexOf('hunt') !== -1) return '/assets/images/gun-stores/hunting-outfitter.svg';
-      return '/assets/images/gun-stores/ammu-nation.svg';
+      if (t.indexOf('surplus') !== -1) return '/assets/images/gun-stores/military-surplus.svg?v=20261122_v23';
+      if (t.indexOf('pawn') !== -1) return '/assets/images/gun-stores/pawn-armory.svg?v=20261122_v23';
+      if (t.indexOf('hunt') !== -1) return '/assets/images/gun-stores/hunting-outfitter.svg?v=20261122_v23';
+      return '/assets/images/gun-stores/ammu-nation.svg?v=20261122_v23';
     }
 
     function renderMediaHtml(item, isModal) {
       if (schema.isRadio) {
-        var radioImg = '/assets/images/radio/' + encodeURIComponent(item.id) + '.svg';
+        var radioImg = '/assets/images/radio/' + encodeURIComponent(item.id) + '.svg?v=20261122_v23';
         var radioFallback = "var p=this.closest('.wdb-card-media,.wdb-modal-hero')||this.parentNode;p.innerHTML=this.getAttribute('data-fallback');";
         var extraBadges =
           (item.dmcaSafe ? '<span class="wdb-badge-tr">🎙️ DMCA-Safe</span>' : '') +
           (item.secretUnlock ? '<span class="wdb-badge-tr" style="background:rgba(255,184,0,0.22); border-color:var(--neon-amber,#ffb800); color:var(--neon-amber,#ffb800);">🔒 Secret Unlock</span>' : '');
         return (
-          '<img src="' + radioImg + '" alt="' + esc(item.name + ' (' + (item.frequency || 'FM') + ') original station artwork') + '" width="640" height="360" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + radioFallback + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">' +
+          '<img src="' + radioImg + '" alt="' + esc(item.name + ' (' + (item.frequency || 'FM') + ') original station artwork') + '" width="640" height="360" decoding="async" onerror="' + radioFallback + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">' +
           extraBadges
         );
       }
@@ -1113,7 +1113,7 @@
       if (schema.isGunStore) {
         var gsImg = getGunStoreArtworkPath(item);
         var gsFallback = "var p=this.closest('.wdb-card-media,.wdb-modal-hero')||this.parentNode;p.innerHTML=this.getAttribute('data-fallback');";
-        return '<img src="' + gsImg + '" alt="' + esc(item.name + ' — ' + (item.storeType || 'Gun Store') + ' in ' + (item.county || item.region || 'Leonida')) + '" width="640" height="360" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + gsFallback + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">';
+        return '<img src="' + gsImg + '" alt="' + esc(item.name + ' — ' + (item.storeType || 'Gun Store') + ' in ' + (item.county || item.region || 'Leonida')) + '" width="640" height="360" decoding="async" onerror="' + gsFallback + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">';
       }
       return renderPlaceholderHtml(item, isModal);
     }
@@ -1290,6 +1290,13 @@
         var topLeft = !schema.isRadio && schema.getTopLeftBadge ? schema.getTopLeftBadge(it) : '';
         var botRight = !schema.isRadio && schema.getBottomRightBadge ? schema.getBottomRightBadge(it) : '';
 
+        var cardNote = hasText(it.notes) ? String(it.notes) : '';
+        if (schema.isRadio && cardNote) {
+          cardNote = cardNote
+            .replace(/Verified Leonida radio station\.\s*/gi, '')
+            .replace(/Reference tracklist only\s*[—–-]\s*zero hosted MP3 files or audio players\.?/gi, '')
+            .trim();
+        }
         return (
           '<article class="wdb-card' + (owned ? ' is-owned' : '') + (compared ? ' is-compared' : '') + '" data-wdb-open="' + esc(it.id) + '" tabindex="0">' +
             '<div class="wdb-card-media' + (schema.isRadio ? ' is-radio' : '') + '">' +
@@ -1313,7 +1320,7 @@
                     }).join('') +
                   '</div>'
                 : '') +
-              (hasText(it.notes) ? '<p class="wdb-card-note">' + esc(it.notes) + '</p>' : '') +
+              (cardNote ? '<p class="wdb-card-note">' + esc(cardNote) + '</p>' : '') +
               '<div class="wdb-card-actions">' +
                 '<div class="wdb-action-group">' +
                   '<button type="button" class="wdb-act-btn' + (fav ? ' is-fav' : '') + '" data-wdb-fav="' + esc(it.id) + '" aria-pressed="' + (fav ? 'true' : 'false') + '" title="Toggle Favorite">' + (fav ? '★ Fav' : '☆ Fav') + '</button>' +

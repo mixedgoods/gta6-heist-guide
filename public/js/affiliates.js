@@ -1,16 +1,16 @@
 // ==========================================================================
-// GTA6HEISTGUIDE.COM — CENTRALIZED NATIVE AFFILIATE & PRODUCT CARD ENGINE (v5.0)
+// GTA6HEISTGUIDE.COM — CENTRALIZED NATIVE AFFILIATE & PRODUCT CARD ENGINE (v6.0)
 // Single source of truth for Amazon (gta6heistguid-20), G2A, Eneba, ExitLag
 // and CutFlow Pro.
 //
 // Features:
 // - Preserves all exact partner URLs & tracking IDs
-// - Amazon Creators API fallback-safe controlled catalog across 5 categories:
-//   Controllers, Headsets & Audio, Storage, Streaming, Gaming Accessories
-// - Zero scraped data, zero fabricated ASINs, zero hardcoded prices or fake stars
-// - Session- + day-stable rotation (changes over time, never flickers on refresh)
-// - Strict per-page product deduplication & multi-category diversity
-// - Native dark card design matching Animals, Vehicles & World Database cards
+// - Verified dark-integrated product photos & cutouts where available;
+//   clean dark product-information cards otherwise (zero giant generic icons,
+//   zero harsh white squares, zero fake images, zero hardcoded prices)
+// - Session- + day-stable rotation (never flickers on refresh)
+// - Strict per-page merchant & product deduplication
+// - Native dark cyberpunk design matching GTA6HeistGuide panels
 // ==========================================================================
 window.GTA6_AFFILIATES = Object.freeze({
   amazon: {
@@ -43,8 +43,8 @@ window.GTA6_AFFILIATES = Object.freeze({
   },
   exitlag: {
     url: "https://www.exitlag.com/refer/10386953",
-    label: "ExitLag Gaming Routing",
-    cta: "Explore ExitLag"
+    label: "ExitLag Network Routing",
+    cta: "Visit ExitLag"
   },
   gumroad: {
     cutflowPro: "https://apexlocallabs.gumroad.com/l/cutflow-pro",
@@ -71,12 +71,31 @@ window.getGTA6LaunchBannerText = function() {
 (function(global) {
   'use strict';
 
-  var SESSION_SEED_KEY = 'gta6hg_aff_session_seed_v2';
+  var SESSION_SEED_KEY = 'gta6hg_aff_session_seed_v3';
   var aff = global.GTA6_AFFILIATES;
   var AMZ_DISCLOSURE = 'Affiliate link \u00b7 As an Amazon Associate we earn from qualifying purchases. Prices and availability vary on Amazon.';
 
   var CATALOG = Object.freeze({
     // --- CONTROLLERS ---
+    dualsenseEdge: {
+      id: 'dualsenseEdge',
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      category: 'Controllers',
+      badge: 'Back-Paddle Controller',
+      accent: 'cyan',
+      title: 'DualSense Edge Wireless Controller',
+      specs: ['Remappable Back Paddles', 'Replaceable Stick Modules'],
+      desc: 'Official PlayStation pro controller featuring customizable back buttons, adjustable trigger stops, and swappable stick modules.',
+      benefit: 'Custom profiles & trigger stops for faster weapon swaps on PS5',
+      cta: 'Check on Amazon \u2192',
+      url: aff.amazon.links.dualsenseEdge,
+      amazonKey: 'dualsenseEdge',
+      mediaType: 'cutout',
+      image: '/assets/gear/dualsense-edge-cutout.webp',
+      alt: 'PlayStation DualSense Edge Wireless Controller',
+      disclosure: AMZ_DISCLOSURE
+    },
     kontrolfreek: {
       id: 'kontrolfreek',
       partner: 'amazon',
@@ -85,14 +104,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Controller Grips',
       accent: 'pink',
       title: 'KontrolFreek Performance Thumbsticks',
-      desc: 'High-rise & mid-rise concave thumb grips designed to expand analog stick range of motion on console.',
-      benefit: 'Finer stick control for console gunfights, cover peeks & driving precision',
+      specs: ['High-Rise & Mid-Rise Grips', 'PS5 & Xbox Variants'],
+      desc: 'Textured concave thumb grips designed to extend analog stick height for finer aim adjustments on console controllers.',
+      benefit: 'Added stick precision for console gunfights & tight cornering',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.kontrolfreek,
       amazonKey: 'kontrolfreek',
-      mediaType: 'product',
-      iconType: 'thumbsticks',
-      image: '/assets/gear/kontrolfreek.jpg',
+      mediaType: 'info',
       alt: 'KontrolFreek Performance Thumbsticks for PS5',
       disclosure: AMZ_DISCLOSURE
     },
@@ -104,14 +122,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Charging Station',
       accent: 'cyan',
       title: 'DualSense Charging Station',
-      desc: 'Drop-in dual controller charging dock that keeps two PS5 controllers powered without tying up console USB ports.',
-      benefit: 'Keep a spare controller fully charged for marathon Leonida sessions',
+      specs: ['Charges 2 Controllers', 'Click-In Cradle Design'],
+      desc: 'Drop-in dual controller charging dock that keeps two PS5 controllers powered without occupying console USB ports.',
+      benefit: 'Keep a spare DualSense topped up for long story sessions',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.dualsenseDock,
       amazonKey: 'dualsenseDock',
-      mediaType: 'product',
-      iconType: 'dock',
-      image: '/assets/dualsense-charging-station.jpg',
+      mediaType: 'info',
       alt: 'PlayStation DualSense Charging Station',
       disclosure: AMZ_DISCLOSURE
     },
@@ -123,13 +140,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Thumb Grips',
       accent: 'pink',
       title: 'Silicone Controller Thumb Grips & Caps',
-      desc: 'Affordable textured slip-on thumbstick caps that add traction and shield factory analog rubber from wear.',
-      benefit: 'Everyday grip comfort and stick protection for PS5 & Xbox pads',
+      specs: ['Slip-On Silicone Caps', 'PS5 & Xbox Compatible'],
+      desc: 'Textured slip-on thumbstick caps that improve grip traction and help shield stock analog rubber from wear.',
+      benefit: 'Simple grip comfort and stick protection for everyday play',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.replacementSticks,
       amazonKey: 'replacementSticks',
-      mediaType: 'icon-card',
-      iconType: 'thumbsticks',
+      mediaType: 'info',
       alt: 'Silicone Controller Thumb Grips and Caps',
       disclosure: AMZ_DISCLOSURE
     },
@@ -141,33 +158,14 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Protective Case',
       accent: 'amber',
       title: 'Hardshell Controller Protective Case',
-      desc: 'Molded EVA travel shell guards DualSense or Xbox triggers and analog sticks against dust and accidental bumps.',
-      benefit: 'Protects analog sticks from drift pressure when storing or traveling',
+      specs: ['Molded EVA Shell', 'Stick & Trigger Guard'],
+      desc: 'Molded EVA travel shell shields DualSense or Xbox triggers and analog sticks against dust and accidental bag pressure.',
+      benefit: 'Protects analog sticks and shoulder buttons in storage or transit',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.controllerCase,
       amazonKey: 'controllerCase',
-      mediaType: 'icon-card',
-      iconType: 'case',
+      mediaType: 'info',
       alt: 'Hardshell Controller Protective Case',
-      disclosure: AMZ_DISCLOSURE
-    },
-    dualsenseEdge: {
-      id: 'dualsenseEdge',
-      partner: 'amazon',
-      partnerName: 'Amazon',
-      category: 'Controllers',
-      badge: 'Back-Paddle Controller',
-      accent: 'cyan',
-      title: 'DualSense Edge Wireless Controller',
-      desc: 'PlayStation pro controller with remappable back paddles, 3-stop trigger locks, and swappable stick modules.',
-      benefit: 'Faster weapon swaps, cover exits & custom stick deadzones on PS5',
-      cta: 'Check on Amazon \u2192',
-      url: aff.amazon.links.dualsenseEdge,
-      amazonKey: 'dualsenseEdge',
-      mediaType: 'product',
-      iconType: 'controller',
-      image: '/assets/gear/dualsense-edge.jpg',
-      alt: 'PlayStation DualSense Edge Wireless Controller',
       disclosure: AMZ_DISCLOSURE
     },
     xboxElite2: {
@@ -178,13 +176,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Xbox Pro Controller',
       accent: 'green',
       title: 'Xbox Elite Wireless Controller Series 2',
-      desc: 'Adjustable-tension thumbsticks, wrap-around rubberized grip, and rear paddles built for Xbox Series X|S.',
-      benefit: 'Custom trigger stops & paddle profiles for rapid heist loadouts',
+      specs: ['Adjustable-Tension Sticks', 'Hair-Trigger Locks & Paddles'],
+      desc: 'Adjustable-tension thumbsticks, wrap-around rubberized grip, and rear paddles built for Xbox Series X|S and PC.',
+      benefit: 'Custom trigger stops & paddle profiles for console play',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.xboxElite2,
       amazonKey: 'xboxElite2',
-      mediaType: 'icon-card',
-      iconType: 'controller',
+      mediaType: 'info',
       alt: 'Xbox Elite Wireless Controller Series 2',
       disclosure: AMZ_DISCLOSURE
     },
@@ -198,14 +196,14 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Wireless Headset',
       accent: 'amber',
       title: 'PlayStation PULSE Elite Headset',
-      desc: 'Planar magnetic wireless headset tuned for PS5 3D spatial audio, directional sirens, and clean voice chat.',
-      benefit: 'Crisp spatial cues for stealth heists & all 23 Leonida radio stations',
+      specs: ['Planar Magnetic Drivers', 'PS Link + Bluetooth Audio'],
+      desc: 'Planar magnetic wireless headset tuned for PS5 3D spatial audio, directional audio cues, and clean voice chat.',
+      benefit: 'Spatial soundstage for stealth cues, sirens & Leonida radio',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.pulseElite,
       amazonKey: 'pulseElite',
-      mediaType: 'product',
-      iconType: 'headset',
-      image: '/assets/gear/pulse-elite.jpg',
+      mediaType: 'cutout',
+      image: '/assets/gear/pulse-elite-cutout.webp',
       alt: 'PlayStation PULSE Elite Wireless Headset',
       disclosure: AMZ_DISCLOSURE
     },
@@ -217,13 +215,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Gaming Earbuds',
       accent: 'purple',
       title: 'PlayStation PULSE Explore Earbuds',
-      desc: 'Lightweight low-latency wireless earbuds for players who prefer cool, headband-free comfort on long runs.',
-      benefit: 'Low-latency PlayStation Link audio + Bluetooth for second-screen guides',
+      specs: ['Planar Magnetic Earbuds', 'PlayStation Link + Bluetooth'],
+      desc: 'Lightweight low-latency wireless earbuds for players who prefer headband-free comfort on long gaming sessions.',
+      benefit: 'Dual-device audio lets you hear PS5 audio alongside phone guides',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.pulseExplore,
       amazonKey: 'pulseExplore',
-      mediaType: 'icon-card',
-      iconType: 'earbuds',
+      mediaType: 'info',
       alt: 'PlayStation PULSE Explore Wireless Earbuds',
       disclosure: AMZ_DISCLOSURE
     },
@@ -235,13 +233,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'USB Microphone',
       accent: 'pink',
       title: 'USB Condenser Gaming Microphone',
-      desc: 'Plug-and-play cardioid desk microphone with tap-to-mute control for clean party chat and commentary.',
-      benefit: 'Clear voice capture for squad callouts, YouTube guides & live streams',
+      specs: ['Cardioid Voice Pickup', 'Plug-and-Play USB (PS5 / PC)'],
+      desc: 'Plug-and-play cardioid desk microphone with quick mute control for clean party chat and stream commentary.',
+      benefit: 'Clear voice capture for squad callouts, guides & live streams',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.usbGamingMic,
       amazonKey: 'usbGamingMic',
-      mediaType: 'icon-card',
-      iconType: 'mic',
+      mediaType: 'info',
       alt: 'USB Condenser Gaming Microphone',
       disclosure: AMZ_DISCLOSURE
     },
@@ -253,13 +251,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Headset Stand',
       accent: 'cyan',
       title: 'Aluminum Gaming Headset Stand',
-      desc: 'Affordable weighted desktop or under-desk hanger that keeps wireless headsets safe and off clutter.',
-      benefit: 'Protects earcups and headbands while freeing desk space',
+      specs: ['Anodized Aluminum', 'Cushioned Headband Rest'],
+      desc: 'Weighted desktop or under-desk hanger that keeps wireless headsets safe, accessible, and off desk clutter.',
+      benefit: 'Protects earcups and headbands between gaming sessions',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.headsetStand,
       amazonKey: 'headsetStand',
-      mediaType: 'icon-card',
-      iconType: 'headset',
+      mediaType: 'info',
       alt: 'Aluminum Gaming Headset Stand',
       disclosure: AMZ_DISCLOSURE
     },
@@ -273,13 +271,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'PS5 M.2 NVMe SSD',
       accent: 'green',
       title: 'Samsung 990 PRO 2TB M.2 SSD',
+      specs: ['PCIe 4.0 x4 NVMe M.2', 'PS5 & PC Compatible'],
       desc: 'High-speed PCIe 4.0 M.2 NVMe storage built for PlayStation 5 expansion bays and large open-world installs.',
-      benefit: 'Up to 7,450 MB/s read speeds \u00b7 Room for 212 GB+ GTA VI installs',
+      benefit: 'Expands console & PC storage for massive modern game libraries',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.samsung990pro,
       amazonKey: 'samsung990pro',
       mediaType: 'cover',
-      iconType: 'ssd',
       image: '/assets/gear/samsung-990pro.jpg',
       alt: 'Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD',
       disclosure: AMZ_DISCLOSURE
@@ -289,16 +287,16 @@ window.getGTA6LaunchBannerText = function() {
       partner: 'amazon',
       partnerName: 'Amazon',
       category: 'Storage',
-      badge: 'SSD Heatsink',
+      badge: 'PS5 SSD Heatsink',
       accent: 'green',
       title: 'PS5 M.2 NVMe SSD Heatsink',
-      desc: 'Affordable low-profile aluminum heatsink with silicone thermal pads sized to fit inside the PS5 M.2 slot.',
-      benefit: 'Keeps bare PCIe 4.0 NVMe drives cool under heavy open-world streaming',
+      specs: ['Low-Profile Aluminum', 'Fits PS5 M.2 2280 Slot'],
+      desc: 'Low-profile aluminum heatsink with silicone thermal pads sized to meet Sony PS5 M.2 expansion slot clearances.',
+      benefit: 'Keeps bare PCIe 4.0 NVMe drives cool inside the PS5 bay',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.ssdHeatsink,
       amazonKey: 'ssdHeatsink',
-      mediaType: 'icon-card',
-      iconType: 'ssd',
+      mediaType: 'info',
       alt: 'PS5 Compatible M.2 NVMe SSD Heatsink',
       disclosure: AMZ_DISCLOSURE
     },
@@ -310,13 +308,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'PS5 Licensed SSD',
       accent: 'cyan',
       title: 'WD_BLACK SN850P NVMe SSD for PS5',
-      desc: 'Officially licensed PS5 internal M.2 drive with pre-fitted heatsink for drop-in console storage expansion.',
-      benefit: 'Ready-to-install heatsink design built for PlayStation 5 expansion',
+      specs: ['Pre-Installed Heatsink', 'PCIe Gen4 M.2 2280'],
+      desc: 'Officially licensed PS5 internal M.2 drive with pre-fitted heatsink for straightforward console storage expansion.',
+      benefit: 'Drop-in heatsink design sized directly for PS5 expansion',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.wdBlackSn850p,
       amazonKey: 'wdBlackSn850p',
-      mediaType: 'icon-card',
-      iconType: 'ssd',
+      mediaType: 'info',
       alt: 'WD_BLACK SN850P NVMe SSD for PS5',
       disclosure: AMZ_DISCLOSURE
     },
@@ -330,13 +328,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Capture Card',
       accent: 'purple',
       title: 'Elgato HD60 X Capture Card',
-      desc: 'External USB console capture card with low-latency passthrough for recording PS5 & Xbox heist runs.',
-      benefit: 'Clean gameplay capture for YouTube guides, Twitch & vertical shorts',
+      specs: ['HDMI VRR Passthrough', 'USB 3.0 PS5 / Xbox / PC'],
+      desc: 'External USB console capture card with low-latency passthrough for recording PS5 and Xbox gameplay footage.',
+      benefit: 'Clean gameplay capture for guides, Twitch streams & highlight clips',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.elgatoHd60x,
       amazonKey: 'elgatoHd60x',
-      mediaType: 'icon-card',
-      iconType: 'capture',
+      mediaType: 'info',
       alt: 'Elgato HD60 X Console Capture Card',
       disclosure: AMZ_DISCLOSURE
     },
@@ -348,13 +346,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Streaming Light',
       accent: 'amber',
       title: 'Compact LED Desk Streaming Light',
-      desc: 'Affordable adjustable bi-color key light that brightens webcam feeds for late-night streams without screen glare.',
-      benefit: 'Soft diffused lighting for sharper facecam quality in dark rooms',
+      specs: ['Bi-Color Dimming', 'Desk Clamp Mount'],
+      desc: 'Adjustable bi-color key light that brightens webcam feeds for late-night streams without harsh monitor glare.',
+      benefit: 'Soft diffused lighting for clearer facecam video in dark rooms',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.streamLight,
       amazonKey: 'streamLight',
-      mediaType: 'icon-card',
-      iconType: 'light',
+      mediaType: 'info',
       alt: 'Compact LED Desk Streaming Light',
       disclosure: AMZ_DISCLOSURE
     },
@@ -366,13 +364,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Desk Stand',
       accent: 'cyan',
       title: 'Controller & Headset Desk Stand',
-      desc: 'Affordable all-in-one desktop stand holding two console controllers and a headset in one small footprint.',
-      benefit: 'Keeps controllers, cables & headset tidy beside your monitor or TV',
+      specs: ['Dual Controller Cradle', 'Integrated Headset Hook'],
+      desc: 'Compact desktop stand holding console controllers and a headset in one organized footprint beside your display.',
+      benefit: 'Keeps controllers, headset & charging cables neatly staged',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.controllerStand,
       amazonKey: 'controllerStand',
-      mediaType: 'icon-card',
-      iconType: 'stand',
+      mediaType: 'info',
       alt: 'Desktop Controller and Headset Stand',
       disclosure: AMZ_DISCLOSURE
     },
@@ -384,13 +382,13 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Cable Management',
       accent: 'green',
       title: 'Desk Cable Management Kit',
-      desc: 'Affordable under-desk cable clips, sleeves, and ties to cleanly route console HDMI, power, and charging cords.',
-      benefit: 'Eliminates cord clutter around PS5, Xbox & dual-screen desk setups',
+      specs: ['Braided Sleeves & Clips', 'HDMI & Power Routing'],
+      desc: 'Under-desk cable clips, sleeves, and ties to cleanly route console HDMI, power, and controller charging cords.',
+      benefit: 'Reduces cord clutter around PS5, Xbox & dual-screen desks',
       cta: 'Check on Amazon \u2192',
       url: aff.amazon.links.cableKit,
       amazonKey: 'cableKit',
-      mediaType: 'icon-card',
-      iconType: 'cable',
+      mediaType: 'info',
       alt: 'Desk Cable Management Kit for Gaming Setup',
       disclosure: AMZ_DISCLOSURE
     },
@@ -404,9 +402,9 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Digital Marketplace',
       accent: 'orange',
       title: 'G2A Game Keys & Gift Cards',
-      desc: 'Browse digital PlayStation Store, Xbox Live wallet top-ups, subscriptions, and PC keys from marketplace sellers.',
-      benefit: 'Compare global PSN, Xbox & PC digital listings with instant code delivery',
-      cta: 'Browse G2A Deals \u2192',
+      desc: 'Browse digital PlayStation Store, Xbox wallet top-ups, subscriptions, and PC game listings across marketplace sellers.',
+      benefit: 'Compare regional PSN, Xbox & PC digital store listings in one place',
+      cta: 'Browse G2A \u2192',
       url: aff.g2a.url,
       mediaType: 'brand-g2a',
       alt: 'G2A.COM Digital Marketplace',
@@ -417,12 +415,12 @@ window.getGTA6LaunchBannerText = function() {
       partner: 'eneba',
       partnerName: 'Eneba',
       category: 'Store Credit',
-      badge: 'Digital Top-Ups',
+      badge: 'Digital Marketplace',
       accent: 'purple',
       title: 'Eneba GTA & Console Store Cards',
-      desc: 'Explore PlayStation, Xbox, and PC gift cards, digital game keys, and GTA storefront offers in one catalog.',
-      benefit: 'Fast region filtering for PSN & Xbox wallet cards and digital editions',
-      cta: 'Explore Eneba Store \u2192',
+      desc: 'Explore PlayStation, Xbox, and PC gift cards, digital game keys, and GTA storefront listings in one catalog.',
+      benefit: 'Region filtering for PSN & Xbox wallet cards and digital editions',
+      cta: 'Explore Eneba \u2192',
       url: aff.eneba.url,
       mediaType: 'brand-eneba',
       alt: 'Eneba Digital Storefront',
@@ -433,16 +431,16 @@ window.getGTA6LaunchBannerText = function() {
       partner: 'exitlag',
       partnerName: 'ExitLag',
       category: 'Network Routing',
-      badge: 'Gaming Routing',
+      badge: 'Connection Routing',
       accent: 'crimson',
       title: 'ExitLag Multi-Path Routing',
-      desc: 'Dedicated multi-path connection routing software built to optimize PC gaming network paths across supported titles.',
-      benefit: 'Automated route selection & connection stability tools (results vary by ISP & region)',
-      cta: 'Explore ExitLag \u2192',
+      desc: 'Connection routing software for PC games designed to manage network paths across supported titles (results vary by ISP and region).',
+      benefit: 'Multi-path route management utility for supported PC games',
+      cta: 'Visit ExitLag \u2192',
       url: aff.exitlag.url,
       mediaType: 'brand-exitlag',
       alt: 'ExitLag Multi-Path Gaming Network Routing',
-      disclosure: 'Affiliate link \u00b7 We earn a commission on qualifying ExitLag referrals at no extra cost to you.'
+      disclosure: 'Referral link \u00b7 We may earn a commission on qualifying ExitLag referrals at no extra cost to you.'
     },
     cutflow: {
       id: 'cutflow',
@@ -452,8 +450,8 @@ window.getGTA6LaunchBannerText = function() {
       badge: 'Offline Clip Tool',
       accent: 'amber',
       title: 'CutFlow Pro Clip Workstation',
-      desc: '100% offline Windows utility that auto-cuts dead air from raw heist gameplay VODs and exports clean NLE timelines.',
-      benefit: 'Local FFmpeg silence removal & timeline XML export with no monthly cloud fees',
+      desc: '100% offline Windows utility that trims dead air from raw gameplay VODs and exports clean NLE timelines locally.',
+      benefit: 'Local FFmpeg silence removal & Premiere/Resolve XML timeline export',
       cta: 'View CutFlow Pro \u2192',
       url: aff.gumroad.cutflowPro,
       mediaType: 'ui-cutflow',
@@ -464,30 +462,34 @@ window.getGTA6LaunchBannerText = function() {
   });
 
   // Category buckets for multi-category 4-card Amazon rotation
+  // Balances verified dark-integrated product photos with clean dark product-info cards
   var AMAZON_CATEGORY_BUCKETS = Object.freeze([
-    ['kontrolfreek', 'dualsenseDock', 'replacementSticks', 'controllerCase', 'dualsenseEdge', 'xboxElite2'],
-    ['pulseElite', 'pulseExplore', 'usbGamingMic', 'headsetStand'],
+    ['dualsenseEdge', 'kontrolfreek', 'dualsenseDock', 'xboxElite2', 'controllerCase', 'replacementSticks'],
+    ['pulseElite', 'usbGamingMic', 'pulseExplore', 'headsetStand'],
     ['samsung990pro', 'ssdHeatsink', 'wdBlackSn850p'],
     ['elgatoHd60x', 'controllerStand', 'streamLight', 'cableKit']
   ]);
 
   // Contextual slot pools mapped to page types
   var CONTEXT_POOLS = {
-    'homepage-hero': ['kontrolfreek', 'dualsenseDock', 'samsung990pro', 'pulseElite', 'dualsenseEdge', 'ssdHeatsink', 'controllerCase'],
-    'homepage-deals': ['eneba', 'g2a', 'exitlag', 'cutflow'],
+    'homepage-hero': ['samsung990pro', 'dualsenseEdge', 'pulseElite'],
+    'homepage-deals': ['eneba', 'g2a', 'cutflow', 'exitlag'],
+    'heist-mid': ['dualsenseEdge', 'pulseElite', 'samsung990pro', 'kontrolfreek', 'dualsenseDock'],
+    'heist-bottom': ['eneba', 'g2a', 'cutflow', 'exitlag'],
     'money-top': ['eneba', 'g2a'],
-    'money-robbery-gear': ['kontrolfreek', 'dualsenseDock', 'replacementSticks', 'dualsenseEdge', 'controllerCase'],
-    'money-mid': ['samsung990pro', 'ssdHeatsink', 'wdBlackSn850p', 'g2a', 'eneba', 'controllerStand'],
-    'money-bottom': ['samsung990pro', 'wdBlackSn850p', 'pulseElite', 'ssdHeatsink', 'externalSsd'],
+    'money-robbery-gear': ['dualsenseEdge', 'kontrolfreek', 'dualsenseDock', 'controllerCase', 'replacementSticks'],
+    'money-mid': ['g2a', 'eneba'],
+    'money-bottom': ['cutflow', 'exitlag', 'samsung990pro', 'wdBlackSn850p'],
     'radio-audio': ['pulseElite', 'pulseExplore', 'usbGamingMic', 'headsetStand'],
-    'gunstores-gear': ['kontrolfreek', 'dualsenseDock', 'dualsenseEdge', 'controllerCase', 'xboxElite2'],
+    'radio-bottom': ['eneba', 'g2a', 'cutflow'],
+    'gunstores-gear': ['dualsenseEdge', 'kontrolfreek', 'dualsenseDock', 'xboxElite2', 'controllerCase'],
     'planner-creator': ['cutflow'],
-    'tips-top': ['kontrolfreek', 'dualsenseDock', 'pulseElite', 'dualsenseEdge', 'ssdHeatsink'],
+    'tips-top': ['dualsenseEdge', 'pulseElite', 'kontrolfreek', 'dualsenseDock', 'ssdHeatsink'],
     'tips-bottom': ['eneba', 'g2a', 'cutflow', 'exitlag'],
-    'tools-top': ['exitlag', 'cutflow'],
-    'tools-mid': ['cutflow', 'exitlag', 'samsung990pro', 'dualsenseEdge'],
-    'database': ['kontrolfreek', 'samsung990pro', 'pulseElite', 'dualsenseDock', 'ssdHeatsink', 'controllerStand'],
-    'default': ['kontrolfreek', 'eneba', 'g2a', 'samsung990pro', 'pulseElite', 'dualsenseDock', 'cutflow', 'exitlag']
+    'tools-top': ['cutflow', 'exitlag'],
+    'tools-mid': ['eneba', 'g2a', 'samsung990pro', 'elgatoHd60x'],
+    'database': ['samsung990pro', 'dualsenseEdge', 'pulseElite', 'ssdHeatsink', 'controllerStand'],
+    'default': ['eneba', 'g2a', 'samsung990pro', 'dualsenseEdge', 'pulseElite', 'cutflow', 'exitlag']
   };
 
   function esc(str) {
@@ -520,6 +522,7 @@ window.getGTA6LaunchBannerText = function() {
       if (existing !== null && /^\d+$/.test(existing)) {
         return parseInt(existing, 10) + day;
       }
+      // Deterministic daily base combined with per-session salt so cards stay stable across refreshes
       var seed = Math.floor(Math.random() * 10000);
       global.sessionStorage.setItem(SESSION_SEED_KEY, String(seed));
       return seed + day;
@@ -544,6 +547,7 @@ window.getGTA6LaunchBannerText = function() {
 
   function detectDefaultContext() {
     var p = (global.location && global.location.pathname || '/').toLowerCase();
+    if (p.indexOf('/heists/') !== -1) return 'heist-mid';
     if (p.indexOf('radio') !== -1) return 'radio-audio';
     if (p.indexOf('weapons-bonuses') !== -1) return 'gunstores-gear';
     if (p.indexOf('money') !== -1) return 'money-top';
@@ -560,7 +564,7 @@ window.getGTA6LaunchBannerText = function() {
       : (CONTEXT_POOLS[contextKey] || CONTEXT_POOLS['default']).slice();
 
     var seed = getSessionSeed();
-    var offset = (seed + hashStr(slotId || contextKey)) % Math.max(1, poolIds.length);
+    var offset = (seed + hashStr(slotId || String(contextKey))) % Math.max(1, poolIds.length);
     var rotated = poolIds.slice(offset).concat(poolIds.slice(0, offset));
 
     var picked = [];
@@ -577,7 +581,7 @@ window.getGTA6LaunchBannerText = function() {
     }
 
     if (picked.length < count) {
-      var fallbackOrder = ['eneba', 'g2a', 'kontrolfreek', 'dualsenseDock', 'pulseElite', 'samsung990pro', 'cutflow', 'exitlag'];
+      var fallbackOrder = ['eneba', 'g2a', 'dualsenseEdge', 'pulseElite', 'samsung990pro', 'cutflow', 'exitlag'];
       for (var j = 0; j < fallbackOrder.length && picked.length < count; j++) {
         var fb = CATALOG[fallbackOrder[j]];
         if (!fb || pageUsedIds[fb.id]) continue;
@@ -616,37 +620,29 @@ window.getGTA6LaunchBannerText = function() {
     return picked;
   }
 
-  function getCategoryIconSvg(iconType) {
-    switch (iconType) {
-      case 'thumbsticks':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="26" r="11"/><circle cx="22" cy="26" r="5"/><path d="M16 36 v8 c0 3 12 3 12 0 v-8"/><circle cx="44" cy="30" r="10"/><circle cx="44" cy="30" r="4.5"/><path d="M39 39 v7 c0 3 10 3 10 0 v-7"/></svg>';
-      case 'dock':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="38" width="44" height="12" rx="5"/><path d="M18 38 L24 18 H40 L46 38"/><path d="M33 22 L28 31 H34 L31 37"/></svg>';
-      case 'controller':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 22 H48 C54 22 57 30 55 41 C54 47 49 49 45 45 L39 39 H25 L19 45 C15 49 10 47 9 41 C7 30 10 22 16 22 Z"/><line x1="20" y1="28" x2="20" y2="34"/><line x1="17" y1="31" x2="23" y2="31"/><circle cx="44" cy="29" r="1.6" fill="currentColor"/><circle cx="48" cy="33" r="1.6" fill="currentColor"/></svg>';
-      case 'case':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="18" width="44" height="32" rx="10"/><path d="M24 18 V14 C24 11 40 11 40 14 V18"/><line x1="10" y1="34" x2="54" y2="34"/><circle cx="32" cy="34" r="3"/></svg>';
-      case 'headset':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 34 V30 A18 18 0 0 1 50 30 V34"/><rect x="10" y="32" width="10" height="16" rx="4"/><rect x="44" y="32" width="10" height="16" rx="4"/><path d="M49 48 C49 54 42 56 34 56"/></svg>';
-      case 'earbuds':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="26" r="8"/><path d="M21 34 V48"/><circle cx="43" cy="26" r="8"/><path d="M43 34 V48"/><circle cx="21" cy="26" r="2.5"/><circle cx="43" cy="26" r="2.5"/></svg>';
-      case 'mic':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="10" width="16" height="26" rx="8"/><path d="M16 30 A16 16 0 0 0 48 30"/><line x1="32" y1="46" x2="32" y2="54"/><line x1="22" y1="54" x2="42" y2="54"/></svg>';
-      case 'ssd':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="21" width="48" height="22" rx="4"/><rect x="15" y="27" width="12" height="10" rx="1.5"/><rect x="31" y="27" width="12" height="10" rx="1.5"/><line x1="50" y1="25" x2="50" y2="39"/></svg>';
-      case 'capture':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="16" width="44" height="32" rx="6"/><circle cx="32" cy="32" r="9"/><circle cx="32" cy="32" r="3" fill="currentColor"/><circle cx="46" cy="23" r="2" fill="currentColor"/></svg>';
-      case 'light':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="12" width="36" height="24" rx="5"/><line x1="32" y1="36" x2="32" y2="54"/><line x1="22" y1="54" x2="42" y2="54"/><circle cx="24" cy="24" r="2" fill="currentColor"/><circle cx="32" cy="24" r="2" fill="currentColor"/><circle cx="40" cy="24" r="2" fill="currentColor"/></svg>';
-      case 'stand':
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 14 H42"/><line x1="32" y1="14" x2="32" y2="50"/><rect x="16" y="48" width="32" height="6" rx="3"/><path d="M22 30 H42"/></svg>';
-      case 'cable':
-      default:
-        return '<svg viewBox="0 0 64 64" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="14" width="12" height="10" rx="2"/><rect x="40" y="40" width="12" height="10" rx="2"/><path d="M18 24 V36 C18 42 26 42 32 32 C38 22 46 22 46 28 V40"/></svg>';
-    }
+  function renderSpecListHtml(specs) {
+    if (!Array.isArray(specs) || !specs.length) return '';
+    return (
+      '<ul class="aff-info-specs">' +
+        specs.slice(0, 2).map(function(s) {
+          return '<li>' + esc(s) + '</li>';
+        }).join('') +
+      '</ul>'
+    );
   }
 
-  function renderMediaHtml(offer, compact) {
+  function hasVisualMedia(offer) {
+    return (
+      offer.mediaType === 'brand-g2a' ||
+      offer.mediaType === 'brand-eneba' ||
+      offer.mediaType === 'brand-exitlag' ||
+      offer.mediaType === 'ui-cutflow' ||
+      ((offer.mediaType === 'cover' || offer.mediaType === 'cutout') && Boolean(offer.image))
+    );
+  }
+
+  function renderMediaHtml(offer, compact, eager) {
+    var loadAttr = eager ? 'eager' : 'lazy';
     if (offer.mediaType === 'brand-g2a') {
       return (
         '<div class="aff-media aff-brand-panel aff-brand-panel--g2a' + (compact ? ' is-compact' : '') + '">' +
@@ -676,31 +672,40 @@ window.getGTA6LaunchBannerText = function() {
             '<span class="aff-brand-mark aff-brand-mark--exitlag" aria-hidden="true">EXITLAG</span>' +
             '<span class="aff-brand-sub">MULTI-PATH ROUTING</span>' +
           '</div>' +
-          (!compact ? '<div class="aff-brand-chips"><span>PC ROUTING</span><span>ROUTE OPTIMIZER</span></div>' : '') +
+          (!compact ? '<div class="aff-brand-chips"><span>PC ROUTING</span><span>REFERRAL</span></div>' : '') +
         '</div>'
       );
     }
     if (offer.mediaType === 'ui-cutflow') {
       return (
         '<div class="aff-media aff-media--ui' + (compact ? ' is-compact' : '') + '">' +
-          '<img src="' + esc(offer.image) + '" alt="' + esc(offer.alt) + '" loading="lazy" decoding="async">' +
+          '<img src="' + esc(offer.image) + '" alt="' + esc(offer.alt) + '" loading="' + loadAttr + '" decoding="async">' +
           '<span class="aff-media-brand-pill aff-media-brand-pill--cutflow">CutFlow Pro</span>' +
         '</div>'
       );
     }
-    if (offer.mediaType === 'icon-card' || !offer.image) {
+    if (offer.mediaType === 'cutout' && offer.image) {
       return (
-        '<div class="aff-media aff-media--category aff-cat-accent-' + esc(offer.accent || 'cyan') + (compact ? ' is-compact' : '') + '">' +
-          '<div class="aff-cat-icon-orb">' + getCategoryIconSvg(offer.iconType) + '</div>' +
-          (!compact ? '<span class="aff-cat-kicker">' + esc(offer.category || 'Console Gear') + '</span>' : '') +
-          (!compact ? '<span class="aff-cat-retailer">AMAZON ASSOCIATES</span>' : '') +
+        '<div class="aff-media aff-media--cutout aff-cutout-accent-' + esc(offer.accent || 'cyan') + (compact ? ' is-compact' : '') + '">' +
+          '<img src="' + esc(offer.image) + '" alt="' + esc(offer.alt) + '" loading="' + loadAttr + '" decoding="async">' +
         '</div>'
       );
     }
-    var mediaCls = offer.mediaType === 'cover' ? 'aff-media aff-media--cover' : 'aff-media aff-media--product';
+    if (offer.mediaType === 'cover' && offer.image) {
+      return (
+        '<div class="aff-media aff-media--cover' + (compact ? ' is-compact' : '') + '">' +
+          '<img src="' + esc(offer.image) + '" alt="' + esc(offer.alt) + '" loading="' + loadAttr + '" decoding="async">' +
+        '</div>'
+      );
+    }
+    // Clean dark product-information header panel (zero generic icons, zero fake images)
     return (
-      '<div class="' + mediaCls + (compact ? ' is-compact' : '') + '">' +
-        '<img src="' + esc(offer.image) + '" alt="' + esc(offer.alt) + '" loading="lazy" decoding="async">' +
+      '<div class="aff-info-header aff-info-accent-' + esc(offer.accent || 'cyan') + '">' +
+        '<div class="aff-info-header-top">' +
+          '<span class="aff-info-cat">' + esc(offer.category || 'Hardware') + '</span>' +
+          '<span class="aff-info-retailer">' + esc(offer.partnerName || 'Amazon') + '</span>' +
+        '</div>' +
+        renderSpecListHtml(offer.specs) +
       '</div>'
     );
   }
@@ -711,19 +716,21 @@ window.getGTA6LaunchBannerText = function() {
       ' target="_blank" rel="sponsored noopener noreferrer"' +
       ' data-aff-partner="' + esc(offer.partner) + '"' +
       ' data-aff-placement="' + esc(placement || variant) + '"';
+    var isInfoOnly = !hasVisualMedia(offer);
 
     if (variant === 'compact-inline') {
       return (
-        '<aside class="aff-card aff-card--compact aff-accent-' + esc(offer.accent) + '" aria-label="Recommended gaming accessory (affiliate link)">' +
-          renderMediaHtml(offer, true) +
+        '<aside class="aff-card aff-card--compact' + (isInfoOnly ? ' is-info-only' : '') + ' aff-accent-' + esc(offer.accent) + '" aria-label="Recommended gaming accessory (affiliate link)">' +
+          (isInfoOnly ? '' : renderMediaHtml(offer, true, false)) +
           '<div class="aff-compact-body">' +
             '<div class="aff-meta-row">' +
               '<span class="aff-partner-pill">' + esc(offer.partnerName) + '</span>' +
               '<span class="aff-badge-pill">' + esc(offer.badge) + '</span>' +
-              '<span class="aff-disclosure-tag">Affiliate Disclosure</span>' +
+              '<span class="aff-disclosure-tag">Affiliate</span>' +
             '</div>' +
             '<div class="aff-compact-title">' + esc(offer.title) + '</div>' +
             '<div class="aff-compact-benefit">' + esc(offer.benefit) + '</div>' +
+            (isInfoOnly && offer.specs ? '<div class="aff-info-inline-specs">' + offer.specs.map(esc).join(' &middot; ') + '</div>' : '') +
             '<div class="aff-disclosure-inline">' + esc(offer.disclosure) + '</div>' +
           '</div>' +
           '<div class="aff-compact-action">' +
@@ -735,8 +742,8 @@ window.getGTA6LaunchBannerText = function() {
 
     if (variant === 'horizontal-featured') {
       return (
-        '<aside class="aff-card aff-card--horizontal aff-accent-' + esc(offer.accent) + '" aria-label="Featured partner recommendation (affiliate link)">' +
-          renderMediaHtml(offer, false) +
+        '<aside class="aff-card aff-card--horizontal' + (isInfoOnly ? ' is-info-only' : '') + ' aff-accent-' + esc(offer.accent) + '" aria-label="Featured partner recommendation (affiliate link)">' +
+          (isInfoOnly ? '' : renderMediaHtml(offer, false, false)) +
           '<div class="aff-card-body">' +
             '<div class="aff-meta-row">' +
               '<span class="aff-partner-pill">' + esc(offer.partnerName) + '</span>' +
@@ -745,6 +752,7 @@ window.getGTA6LaunchBannerText = function() {
             '</div>' +
             '<h3 class="aff-card-title">' + esc(offer.title) + '</h3>' +
             '<p class="aff-card-desc">' + esc(offer.desc) + '</p>' +
+            (isInfoOnly && offer.specs ? '<div class="aff-info-chip-row">' + offer.specs.map(function(s) { return '<span class="aff-info-chip">' + esc(s) + '</span>'; }).join('') + '</div>' : '') +
             '<div class="aff-card-benefit">\u2713 ' + esc(offer.benefit) + '</div>' +
             '<div class="aff-disclosure-note">' + esc(offer.disclosure) + '</div>' +
           '</div>' +
@@ -757,12 +765,12 @@ window.getGTA6LaunchBannerText = function() {
 
     if (variant === 'hero-featured') {
       return (
-        '<aside class="aff-card aff-card--hero aff-accent-' + esc(offer.accent) + '" aria-label="Featured console hardware recommendation (affiliate link)">' +
+        '<aside class="aff-card aff-card--hero' + (isInfoOnly ? ' is-info-only' : '') + ' aff-accent-' + esc(offer.accent) + '" aria-label="Featured console hardware recommendation (affiliate link)">' +
           '<div class="aff-hero-head">' +
             '<span class="aff-partner-pill">' + esc(offer.partnerName) + '</span>' +
             '<span class="aff-disclosure-tag">Affiliate Pick</span>' +
           '</div>' +
-          renderMediaHtml(offer, false) +
+          renderMediaHtml(offer, false, true) +
           '<div class="aff-card-body">' +
             '<span class="aff-badge-pill">' + esc(offer.category || offer.badge) + '</span>' +
             '<h2 class="aff-card-title">' + esc(offer.title) + '</h2>' +
@@ -779,8 +787,8 @@ window.getGTA6LaunchBannerText = function() {
 
     if (variant === 'amazon-tile') {
       return (
-        '<article class="aff-card aff-card--tile aff-accent-' + esc(offer.accent) + '">' +
-          renderMediaHtml(offer, false) +
+        '<article class="aff-card aff-card--tile' + (isInfoOnly ? ' is-info-only' : '') + ' aff-accent-' + esc(offer.accent) + '">' +
+          renderMediaHtml(offer, false, false) +
           '<div class="aff-card-body">' +
             '<div class="aff-meta-row">' +
               '<span class="aff-partner-pill">' + esc(offer.partnerName) + '</span>' +
@@ -796,10 +804,10 @@ window.getGTA6LaunchBannerText = function() {
       );
     }
 
-    // Standard native card (matches World Database / Animals / Vehicles card language)
+    // Standard native card
     return (
-      '<article class="aff-card aff-card--standard aff-accent-' + esc(offer.accent) + '">' +
-        renderMediaHtml(offer, false) +
+      '<article class="aff-card aff-card--standard' + (isInfoOnly ? ' is-info-only' : '') + ' aff-accent-' + esc(offer.accent) + '">' +
+        renderMediaHtml(offer, false, false) +
         '<div class="aff-card-body">' +
           '<div class="aff-meta-row">' +
             '<span class="aff-partner-pill">' + esc(offer.partnerName) + '</span>' +
@@ -885,7 +893,7 @@ window.getGTA6LaunchBannerText = function() {
       if (html) el.innerHTML = html;
     });
 
-    // 2. Auto-upgrade any legacy plain-text .syndicate-aff-bar elements cleanly
+    // 2. Auto-upgrade any legacy plain-text .syndicate-aff-bar elements cleanly (max 1 per page)
     var legacyBars = document.querySelectorAll('.syndicate-aff-bar');
     legacyBars.forEach(function(bar, idx) {
       if (bar.getAttribute('data-aff-upgraded') === '1') return;

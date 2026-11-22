@@ -350,9 +350,9 @@ def render_page(h):
         ]
     }
     stats_html = "\n".join(
-        f'''<div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">{k}</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">{v}</div>
+        f'''<div class="heist-stat-card">
+            <div class="heist-stat-k">{k}</div>
+            <div class="heist-stat-v">{v}</div>
         </div>''' for k, v in h["stats"]
     )
     setups_html = "\n".join(
@@ -361,7 +361,7 @@ def render_page(h):
         </li>''' for name, desc in h["setups"]
     )
     steps_html = "\n".join(
-        f'''<div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+        f'''<div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">{st}</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">{desc}</p>
         </div>''' for st, desc in h["steps"]
@@ -373,9 +373,13 @@ def render_page(h):
         </div>''' for q, a in h["faqs"]
     )
     other_links = "\n".join(
-        f'''<a href="/heists/{o['slug']}.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; {o['short_title']}</a>'''
+        f'''<a href="/heists/{o['slug']}.html" class="heist-guide-link-card">&rarr; {o['short_title']}</a>'''
         for o in HEISTS if o["slug"] != h["slug"]
     )
+    is_long_guide = h["slug"] in ("the-cartel-heist", "vcia-takedown")
+    mid_aff_before_tactics = '\n    <div class="heist-aff-slot" data-aff-slot="heist-mid" data-aff-context="heist-mid" data-aff-variant="compact-inline"></div>\n' if is_long_guide else ''
+    mid_aff_before_faq = '' if is_long_guide else '\n    <div class="heist-aff-slot" data-aff-slot="heist-mid" data-aff-context="heist-mid" data-aff-variant="compact-inline"></div>\n'
+    bottom_aff = '\n    <div class="heist-aff-slot" data-aff-slot="heist-bottom" data-aff-context="heist-bottom" data-aff-variant="horizontal-featured"></div>\n' if is_long_guide else ''
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -393,48 +397,71 @@ def render_page(h):
     <meta property="og:url" content="{canonical}">
     <meta property="og:image" content="{og_img}">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261121_v7">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
     <script type="application/ld+json">
 {json.dumps(schema, indent=2)}
     </script>
 </head>
 <body>
-<div class="countdown-strip">
+<div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: No official release date announced</span>
             </span>
-            <span class="strip-divider">|</span>
-            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">No official release date announced</span></span>
         </div>
     </div>
 </div>
 
-<nav class="navbar">
+<nav class="navbar" id="siteNavbar">
     <div class="nav-container">
-        <a href="/" class="brand-logo">
-            <span>GTA 6</span>
-            <span class="vi">HEIST GUIDE</span>
-            <span class="brand-badge">Syndicate v3.3</span>
-        </a>
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill active">Heists</a></li>
-            <li><a href="/interactive-map" class="nav-pill">Map</a></li>
-            <li><a href="/properties.html" class="nav-pill" style="color:var(--neon-cyan); font-weight:800;">🏠 Properties</a></li>
-            <li><a href="/animals.html" class="nav-pill" style="color:var(--neon-green); font-weight:800;">🐊 Animals</a></li>
-            <li><a href="/save-planner" class="nav-pill">💾 Save Planner</a></li>
-            <li><a href="/cheats" class="nav-pill">⚡ Cheats</a></li>
-            <li><a href="/cash-guide" class="nav-pill">💰 Cash Guide</a></li>
+            <li><a href="/" class="nav-pill active">HEISTS</a></li>
+            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
+                    <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
+                    <a href="/map.html" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
+                </div>
+            </li>
+            <li class="nav-dropdown nav-dropdown-right">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
+                    <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio Stations</a>
+                </div>
+            </li>
         </ul>
-        <div class="nav-actions">
-            <a href="/" class="btn btn-secondary" style="padding:0.38rem 0.85rem; font-size:0.78rem;">&larr; All Heists</a>
-        </div>
     </div>
 </nav>
 
-<main class="container" style="max-width: 1040px; margin: 0 auto; padding: 1.25rem 1rem 2.5rem;">
+<main class="container heist-guide-main">
     <div style="font-size:0.8rem; color:#94a3b8; margin-bottom:0.75rem; font-family:var(--font-mono);">
         <a href="/" style="color:var(--neon-cyan); text-decoration:none;">Home</a> / <a href="/#all-heists" style="color:var(--neon-cyan); text-decoration:none;">Heists</a> / <span style="color:#fff;">{h['short_title']}</span>
     </div>
@@ -443,7 +470,7 @@ def render_page(h):
         <span class="user-badge" style="background:rgba(255,42,133,0.18); border:1px solid var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; padding:0.2rem 0.55rem; font-weight:800;">{h['badge']}</span>
         <h1 style="font-size:clamp(1.5rem, 3vw, 2.25rem); font-weight:1000; color:#fff; margin:0.55rem 0 0.75rem; line-height:1.2;">{h['title']}</h1>
 
-        <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; border:1px solid rgba(0,240,255,0.3); margin-bottom:1.1rem; background:#090e18;">
+        <div class="heist-hero-media">
             <img src="{h['image']}" alt="{h['title']} — Official Rockstar GTA 6 Screenshot" class="aspect-video object-cover" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
 
@@ -454,22 +481,10 @@ def render_page(h):
         </div>
 
         <!-- KEY INTEL STATS -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:0.65rem;">
+        <div class="heist-stats-grid">
             {stats_html}
         </div>
     </header>
-
-    <!-- RECOMMENDED HEIST SETUP & FUEL BAR -->
-    <section style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,255,136,0.3); border-radius:10px; padding:0.95rem 1.15rem; margin-bottom:1.5rem;">
-        <div style="font-size:0.74rem; font-weight:900; color:var(--neon-green); text-transform:uppercase; letter-spacing:1px; font-family:var(--font-mono); margin-bottom:0.5rem;">⚡ RECOMMENDED HEIST SETUP &amp; FUEL</div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;">
-            <a href="YOUR_GFUEL_TRACKING_LINK" data-aff-link="gfuel" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gfuel" data-aff-placement="heist-setup-bar" class="btn btn-primary" style="padding:0.42rem 0.85rem; font-size:0.78rem; font-weight:800; background:linear-gradient(135deg, #00ff88, #00c2ff); color:#000;">⚡ G FUEL Gaming Energy &rarr;</a>
-            <a href="https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20" data-aff-link="pulseElite" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="heist-setup-bar" class="btn btn-secondary" style="padding:0.42rem 0.85rem; font-size:0.78rem;">🎧 PULSE Elite Headset (Amazon)</a>
-            <a href="https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20" data-aff-link="dualsenseEdge" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="heist-setup-bar" class="btn btn-secondary" style="padding:0.42rem 0.85rem; font-size:0.78rem;">🎮 DualSense Edge (Amazon)</a>
-            <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" data-aff-link="cutflow" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="heist-setup-bar" class="btn btn-secondary" style="padding:0.42rem 0.85rem; font-size:0.78rem; border-color:var(--neon-pink); color:var(--neon-pink);">🎬 CutFlow Pro Clip Editor</a>
-            <a href="https://www.exitlag.com/refer/10386953" data-aff-link="exitlag" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="heist-setup-bar" class="btn btn-secondary" style="padding:0.42rem 0.85rem; font-size:0.78rem; border-color:#c084fc; color:#c084fc;">🚀 Activate ExitLag (Free Trial)</a>
-        </div>
-    </section>
 
     <!-- SETUPS & PREPARATION -->
     <section style="margin-bottom:1.75rem;">
@@ -484,29 +499,29 @@ def render_page(h):
         <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.75rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.4rem;">Step-by-Step Tactical Walkthrough</h2>
         {steps_html}
     </section>
-
+{mid_aff_before_tactics}
     <!-- DUO TACTICS, STEALTH VS LOUD & FENCING/ATM MECHANICS -->
-    <section style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.85rem; margin-bottom:1.75rem;">
-        <div style="background:rgba(12,20,34,0.9); border:1px solid rgba(0,240,255,0.3); border-radius:10px; padding:1rem;">
+    <section class="heist-tactics-grid">
+        <div class="heist-tactic-card">
             <h3 style="margin:0 0 0.4rem; color:var(--neon-cyan); font-size:1rem;">🤝 Jason &amp; Lucia Duo Tactics</h3>
             <p style="margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">{h['duo_tactics']}</p>
         </div>
-        <div style="background:rgba(12,20,34,0.9); border:1px solid rgba(255,42,133,0.3); border-radius:10px; padding:1rem;">
+        <div class="heist-tactic-card">
             <h3 style="margin:0 0 0.4rem; color:var(--neon-pink); font-size:1rem;">🔇 Stealth vs. Loud Tradeoffs</h3>
             <p style="margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">{h['stealth_vs_loud']}</p>
         </div>
-        <div style="background:rgba(12,20,34,0.9); border:1px solid rgba(0,255,136,0.3); border-radius:10px; padding:1rem;">
+        <div class="heist-tactic-card">
             <h3 style="margin:0 0 0.4rem; color:var(--neon-green); font-size:1rem;">🏧 Fencing &amp; Physical ATM Banking</h3>
             <p style="margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">{h['fencing_banking']}</p>
         </div>
     </section>
-
+{mid_aff_before_faq}
     <!-- FAQ SECTION -->
     <section style="margin-bottom:1.75rem;">
         <h2 style="font-size:1.3rem; color:#fff; margin-bottom:0.75rem;">Frequently Asked Questions</h2>
         {faqs_html}
     </section>
-
+{bottom_aff}
     <!-- MORE GTA 6 HEIST WALKTHROUGHS -->
     <section>
         <h2 style="font-size:1.15rem; color:#fff; margin-bottom:0.7rem;">Explore All 8 GTA 6 Heist &amp; Robbery Guides</h2>
@@ -516,19 +531,22 @@ def render_page(h):
     </section>
 </main>
 
-<footer style="border-top:1px solid rgba(255,255,255,0.08); padding:1.5rem 1rem; text-align:center; color:#64748b; font-size:0.8rem;">
-    <div style="margin-bottom:0.65rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-        <a href="/" style="color:#94a3b8; text-decoration:none;">Home</a>
-        <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none;">🏠 Properties</a>
-        <a href="/animals.html" style="color:var(--neon-green); text-decoration:none;">🐊 Animals</a>
-        <a href="/save-planner" style="color:#94a3b8; text-decoration:none;">Save Planner</a>
-        <a href="/cheats" style="color:#94a3b8; text-decoration:none;">Cheats</a>
-        <a href="/settings" style="color:#94a3b8; text-decoration:none;">Settings</a>
-        <a href="/cash-guide" style="color:#94a3b8; text-decoration:none;">Cash Guide</a>
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
+                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                </p>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p style="margin:0;">GTA6HeistGuide.com is an independent fan guide. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you.</p>
+        </div>
     </div>
-    <p style="margin:0;">GTA6HeistGuide.com is an independent fan guide. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G FUEL (ID: 3162838), ExitLag, Gumroad, G2A, and Eneba partner, this site earns commissions on qualifying purchases.</p>
 </footer>
-<script src="/js/affiliates.js"></script>
+<script src="/js/affiliates.js?v=20261122_v23"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 </body>

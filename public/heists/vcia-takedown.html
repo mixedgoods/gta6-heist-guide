@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="2160">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/heists/vcia-takedown.jpg">
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v19">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -107,18 +107,15 @@
 <nav class="navbar" id="siteNavbar">
     <div class="nav-container">
         <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
-        <div class="nav-actions">
-            <a href="/drops.html" class="btn-launch-rewards" title="Launch Rewards — Kick 10K Giveaway &amp; Twitch Drops">🎁 Launch Rewards</a>
-            <button type="button" class="btn-pwa-top" onclick="window.GTA6 && window.GTA6.triggerPwaPrompt ? window.GTA6.triggerPwaPrompt() : alert('Tap Share or Browser Menu -> Add to Home Screen to install Second Screen App!')" title="Install GTA 6 Second-Screen PWA">📱 Install App</button>
-        </div>
         <ul class="nav-links">
-            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/" class="nav-pill active">HEISTS</a></li>
             <li><a href="/map.html" class="nav-pill">MAP</a></li>
             <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
                     <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
                     <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
                     <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
@@ -127,8 +124,9 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                   <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
@@ -140,6 +138,7 @@
             <li class="nav-dropdown nav-dropdown-right">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
                     <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
                     <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
                     <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
@@ -152,7 +151,7 @@
     </div>
 </nav>
 
-<main class="container" style="max-width: 1040px; margin: 0 auto; padding: 1.25rem 1rem 2.5rem;">
+<main class="container heist-guide-main">
     <div style="font-size:0.8rem; color:#94a3b8; margin-bottom:0.75rem; font-family:var(--font-mono);">
         <a href="/" style="color:var(--neon-cyan); text-decoration:none;">Home</a> / <a href="/#all-heists" style="color:var(--neon-cyan); text-decoration:none;">Heists</a> / <span style="color:#fff;">VCIA Takedown</span>
     </div>
@@ -161,7 +160,7 @@
         <span class="user-badge" style="background:rgba(255,42,133,0.18); border:1px solid var(--neon-pink); color:var(--neon-pink); font-size:0.72rem; padding:0.2rem 0.55rem; font-weight:800;">CHAPTER 4 • STORY HEIST #2</span>
         <h1 style="font-size:clamp(1.5rem, 3vw, 2.25rem); font-weight:1000; color:#fff; margin:0.55rem 0 0.75rem; line-height:1.2;">VCIA Takedown Walkthrough (Chapter 4 — Story Heist #2)</h1>
 
-        <div style="width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; border:1px solid rgba(0,240,255,0.3); margin-bottom:1.1rem; background:#090e18;">
+        <div class="heist-hero-media">
             <img src="/assets/images/heists/vcia-takedown.jpg" alt="VCIA Takedown Walkthrough (Chapter 4 — Story Heist #2) — Official Rockstar GTA 6 Screenshot" class="aspect-video object-cover" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
 
@@ -172,30 +171,30 @@
         </div>
 
         <!-- KEY INTEL STATS -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:0.65rem;">
-            <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">Chapter</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">Chapter 4 (Story Heist #2)</div>
+        <div class="heist-stats-grid">
+            <div class="heist-stat-card">
+            <div class="heist-stat-k">Chapter</div>
+            <div class="heist-stat-v">Chapter 4 (Story Heist #2)</div>
         </div>
-<div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">Target</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">Vice City International Airport</div>
+<div class="heist-stat-card">
+            <div class="heist-stat-k">Target</div>
+            <div class="heist-stat-v">Vice City International Airport</div>
         </div>
-<div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">Reward</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">$250,000 Story Score</div>
+<div class="heist-stat-card">
+            <div class="heist-stat-k">Reward</div>
+            <div class="heist-stat-v">$250,000 Story Score</div>
         </div>
-<div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">Setups</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">4 Mandatory Prep Missions</div>
+<div class="heist-stat-card">
+            <div class="heist-stat-k">Setups</div>
+            <div class="heist-stat-v">4 Mandatory Prep Missions</div>
         </div>
-<div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">Wanted Peak</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">4-Star Tarmac Lockdown</div>
+<div class="heist-stat-card">
+            <div class="heist-stat-k">Wanted Peak</div>
+            <div class="heist-stat-v">4-Star Tarmac Lockdown</div>
         </div>
-<div style="background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:8px; padding:0.7rem 0.85rem;">
-            <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.8px; color:#94a3b8; font-family:var(--font-mono);">Unlocks</div>
-            <div style="font-size:0.95rem; font-weight:800; color:#fff; margin-top:0.2rem;">Endgame Large Bank Vaults</div>
+<div class="heist-stat-card">
+            <div class="heist-stat-k">Unlocks</div>
+            <div class="heist-stat-v">Endgame Large Bank Vaults</div>
         </div>
         </div>
     
@@ -203,25 +202,7 @@
             <a href="/map.html?pin=heist-vcia" target="_blank" rel="noopener" class="btn-map-ping" style="margin-left:0;">📍 View Exact Target Location on Leonida Map &rarr;</a>
             <a href="/save-planner" class="btn btn-secondary" style="font-size:0.8rem; padding:0.48rem 0.9rem;">💾 Lock Save Slot Before Heist</a>
         </div>
-        <div class="syndicate-aff-bar">
-  <div class="syndicate-aff-bar-main">
-    <span>🔑 Need Discounted Launch Keys, Low-Ping Lobby Routing, or 9:16 Auto-Clipping? &rarr;</span>
-    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a">G2A Keys</a>
-    <span class="aff-sep">|</span>
-    <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba">Eneba</a>
-    <span class="aff-sep">|</span>
-    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag">ExitLag Routing</a>
-    <span class="aff-sep">|</span>
-    <a href="https://apexlocallabs.gumroad.com/l/cutflow-pro" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad">CutFlow Pro</a>
-  </div>
-</div>
     </header>
-
-    <!-- RECOMMENDED HEIST SETUP & FUEL BAR -->
-    <section style="background:rgba(10,16,28,0.92); border:1px solid rgba(0,255,136,0.3); border-radius:10px; padding:0.95rem 1.15rem; margin-bottom:1.5rem;">
-        <div style="font-size:0.74rem; font-weight:900; color:var(--neon-green); text-transform:uppercase; letter-spacing:1px; font-family:var(--font-mono); margin-bottom:0.5rem;">⚡ RECOMMENDED HEIST SETUP &amp; FUEL</div>
-        
-    </section>
 
     <!-- SETUPS & PREPARATION -->
     <section style="margin-bottom:1.75rem;">
@@ -245,43 +226,46 @@
     <!-- STEP-BY-STEP WALKTHROUGH -->
     <section style="margin-bottom:1.75rem;">
         <h2 style="font-size:1.35rem; color:#fff; margin-bottom:0.75rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:0.4rem;">Step-by-Step Tactical Walkthrough</h2>
-        <div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+        <div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">1. Lock a Manual Save Slot Before Starting</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">GTA 6 has no mission replay menu at launch. Save in a dedicated manual slot (Slot 8–10) before launching VCIA Takedown so you can replay both stealth and loud approaches.</p>
         </div>
-<div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+<div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">2. Infiltrate the VCIA Terminal Perimeter</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">Use your Close Surveillance blind spots to slip past the outer airport gate. Suppress exterior cameras before crossing the apron.</p>
         </div>
-<div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+<div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">3. Breach the Airport Cargo Vault</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">Coordinate Jason and Lucia to bypass the terminal keypad and secure the high-value international currency pallets.</p>
         </div>
-<div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+<div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">4. Hold the Tarmac Against VCPD & Airport Security</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">Once the alarm triggers, move between luggage tugs and cargo containers for hard cover. Prioritize patrol choppers and armored SUVs.</p>
         </div>
-<div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+<div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">5. Execute the Runway Extraction</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">Fight to your pre-staged Delivery Method getaway craft/vehicle and clear the VCIA perimeter via the coastal flight path or southern highway tunnel.</p>
         </div>
-<div style="background:rgba(10,16,28,0.88); border:1px solid rgba(0,240,255,0.2); border-radius:10px; padding:1rem 1.15rem; margin-bottom:0.75rem;">
+<div class="heist-step-card">
             <h3 style="margin:0 0 0.35rem; font-size:1.05rem; color:var(--neon-cyan);">6. Clear Heat & Bank the Payout</h3>
             <p style="margin:0; color:#e2e8f0; font-size:0.92rem; line-height:1.55;">Swap vehicles outside the airport search zone, drop your wanted stars, and deposit your cash at the nearest physical ATM to avoid the $20,000 pocket cash cap.</p>
         </div>
     </section>
 
+
+    <div class="heist-aff-slot" data-aff-slot="heist-mid" data-aff-context="heist-mid" data-aff-variant="compact-inline"></div>
+
     <!-- DUO TACTICS, STEALTH VS LOUD & FENCING/ATM MECHANICS -->
-    <section style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.85rem; margin-bottom:1.75rem;">
-        <div style="background:rgba(12,20,34,0.9); border:1px solid rgba(0,240,255,0.3); border-radius:10px; padding:1rem;">
+    <section class="heist-tactics-grid">
+        <div class="heist-tactic-card">
             <h3 style="margin:0 0 0.4rem; color:var(--neon-cyan); font-size:1rem;">🤝 Jason &amp; Lucia Duo Tactics</h3>
             <p style="margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">Use Lucia for silent terminal camera takedowns and terminal keypad overrides while Jason anchors heavy cover on the cargo ramp with an armor-piercing rifle for incoming airport security trucks.</p>
         </div>
-        <div style="background:rgba(12,20,34,0.9); border:1px solid rgba(255,42,133,0.3); border-radius:10px; padding:1rem;">
+        <div class="heist-tactic-card">
             <h3 style="margin:0 0 0.4rem; color:var(--neon-pink); font-size:1rem;">🔇 Stealth vs. Loud Tradeoffs</h3>
             <p style="margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">Stealth roof/service infiltration gives you extra uninterrupted looting time inside the cargo vault and delays the 4-star tarmac response. Going loud upfront triggers immediate airport lockdown and armored VCPD barricades on the runway.</p>
         </div>
-        <div style="background:rgba(12,20,34,0.9); border:1px solid rgba(0,255,136,0.3); border-radius:10px; padding:1rem;">
+        <div class="heist-tactic-card">
             <h3 style="margin:0 0 0.4rem; color:var(--neon-green); font-size:1rem;">🏧 Fencing &amp; Physical ATM Banking</h3>
             <p style="margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">Split loose bills from marked contraband. Fence any high-value cargo items at Brian's Lockup (Code 7700) or Yasmani's, and deposit all clean cash at physical ATMs right after losing heat.</p>
         </div>
@@ -304,17 +288,20 @@
         </div>
     </section>
 
+
+    <div class="heist-aff-slot" data-aff-slot="heist-bottom" data-aff-context="heist-bottom" data-aff-variant="horizontal-featured"></div>
+
     <!-- MORE GTA 6 HEIST WALKTHROUGHS -->
     <section>
         <h2 style="font-size:1.15rem; color:#fff; margin-bottom:0.7rem;">Explore All 8 GTA 6 Heist &amp; Robbery Guides</h2>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.6rem;">
-            <a href="/heists/the-cartel-heist.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; The Cartel Heist</a>
-<a href="/heists/shops-and-stickups.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; Shops & Stick-Ups</a>
-<a href="/heists/pawn-shops.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; Pawn Shops</a>
-<a href="/heists/jewelry-stores.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; Jewelry Stores</a>
-<a href="/heists/small-banks-payday-loans.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; Small Banks & Payday Loans</a>
-<a href="/heists/large-bank-vaults.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; Large Bank Vaults</a>
-<a href="/heists/armored-trucks-gang-ops.html" style="display:block; padding:0.6rem 0.85rem; background:rgba(15,23,42,0.85); border:1px solid rgba(0,240,255,0.25); border-radius:8px; color:#e2e8f0; text-decoration:none; font-size:0.84rem; font-weight:700;">&rarr; Armored Trucks & Gang Ops</a>
+            <a href="/heists/the-cartel-heist.html" class="heist-guide-link-card">&rarr; The Cartel Heist</a>
+<a href="/heists/shops-and-stickups.html" class="heist-guide-link-card">&rarr; Shops & Stick-Ups</a>
+<a href="/heists/pawn-shops.html" class="heist-guide-link-card">&rarr; Pawn Shops</a>
+<a href="/heists/jewelry-stores.html" class="heist-guide-link-card">&rarr; Jewelry Stores</a>
+<a href="/heists/small-banks-payday-loans.html" class="heist-guide-link-card">&rarr; Small Banks & Payday Loans</a>
+<a href="/heists/large-bank-vaults.html" class="heist-guide-link-card">&rarr; Large Bank Vaults</a>
+<a href="/heists/armored-trucks-gang-ops.html" class="heist-guide-link-card">&rarr; Armored Trucks & Gang Ops</a>
         </div>
     </section>
 </main>
@@ -403,7 +390,7 @@
         </div>
     </div>
 </footer>
-<script src="/js/affiliates.js?v=20261122_v19"></script>
+<script src="/js/affiliates.js?v=20261122_v23"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
 </body>
