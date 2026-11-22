@@ -6,12 +6,16 @@ Allow: /*.js*
 Allow: /*.css*
 Allow: /*.png*
 Allow: /*.jpg*
+Allow: /*.webp*
+Allow: /*.avif*
 Allow: /llms.txt
 
 User-agent: Googlebot-Image
 Allow: /assets/
 Allow: /*.png*
 Allow: /*.jpg*
+Allow: /*.webp*
+Allow: /*.avif*
 
 User-agent: Googlebot-Mobile
 Allow: /
@@ -66,6 +70,8 @@ Allow: /*.js*
 Allow: /*.css*
 Allow: /*.png*
 Allow: /*.jpg*
+Allow: /*.webp*
+Allow: /*.avif*
 Allow: /llms.txt
 Allow: /llms-full.txt
 

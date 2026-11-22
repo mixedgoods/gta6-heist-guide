@@ -606,11 +606,12 @@ export async function runWorldDbSync(opts = {}) {
     originalCounts[cat] = data.items.length;
     verifiedImageSnapshots[cat] = new Map();
     for (const item of data.items) {
-      if (item && item.id && item.imageVerified === true && item.image) {
+      if (item && item.id && (item.manualHqLocked === true || (item.imageVerified === true && item.image))) {
         verifiedImageSnapshots[cat].set(item.id, {
           image: item.image,
           imageVerified: item.imageVerified,
           imageSource: item.imageSource || null,
+          manualHqLocked: item.manualHqLocked === true,
         });
       }
     }
@@ -762,8 +763,8 @@ export async function runWorldDbSync(opts = {}) {
     const byId = new Map(items.map((x) => [x.id, x]));
     for (const [id, snap] of verifiedImageSnapshots[cat].entries()) {
       const it = byId.get(id);
-      if (!it || it.image !== snap.image || it.imageVerified !== true) {
-        throw new Error(`Invariant violation: verified screenshot altered for ${cat}:${id} — aborting write.`);
+      if (!it || it.image !== snap.image || it.imageVerified !== true || (snap.manualHqLocked && it.manualHqLocked !== true)) {
+        throw new Error(`Invariant violation: verified/locked screenshot altered for ${cat}:${id} — aborting write.`);
       }
     }
   }

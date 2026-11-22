@@ -19,7 +19,7 @@
 (function (global) {
   'use strict';
 
-  if (global.GTA6WorldDB && global.GTA6WorldDB.__version === '1.1') {
+  if (global.GTA6WorldDB && global.GTA6WorldDB.__version === '1.2') {
     return;
   }
 
@@ -242,6 +242,7 @@
 
       '.wdb-card-media { width: 100%; aspect-ratio: 16/9; background: #060912; position: relative; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }',
       '.wdb-card-media.is-radio { aspect-ratio: 16/6; }',
+      '.wdb-card-media picture { display: block; width: 100%; height: 100%; }',
       '.wdb-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }',
       '.wdb-card:hover .wdb-card-media img { transform: scale(1.03); }',
       '.wdb-placeholder { width: 100%; height: 100%; box-sizing: border-box; padding: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at 20% 20%, rgba(0, 240, 255, 0.08), transparent 55%), radial-gradient(circle at 80% 80%, rgba(255, 42, 141, 0.07), transparent 55%), linear-gradient(155deg, #0b1120 0%, #060912 100%); position: relative; }',
@@ -303,7 +304,9 @@
       '.wdb-modal-close:hover { border-color: var(--neon-pink, #ff2a8d); color: var(--neon-pink, #ff2a8d); }',
       '.wdb-modal-hero { width: 100%; aspect-ratio: 16/8; max-height: 320px; overflow: hidden; background: #050811; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }',
       '.wdb-modal-hero.is-zoomable { cursor: zoom-in; }',
+      '.wdb-modal-hero picture { display: block; width: 100%; height: 100%; }',
       '.wdb-modal-hero img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }',
+      '.wdb-modal-caption { font-size: 0.78rem; color: #94a3b8; line-height: 1.45; margin: -0.35rem 0 0; padding: 0.42rem 0.65rem; background: rgba(0, 240, 255, 0.05); border-left: 2px solid rgba(0, 240, 255, 0.45); border-radius: 0 6px 6px 0; }',
       '.wdb-modal-hero.is-zoomable:hover img { transform: scale(1.02); }',
       '.wdb-zoom-pill { position: absolute; right: 12px; bottom: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 5px; background: rgba(6, 10, 20, 0.88); border: 1px solid rgba(0, 240, 255, 0.5); color: #e2e8f0; font-family: var(--font-mono, monospace); font-size: 0.68rem; font-weight: 800; padding: 4px 9px; border-radius: 999px; pointer-events: none; backdrop-filter: blur(4px); }',
       '.wdb-lightbox-backdrop { position: fixed; inset: 0; z-index: 15000; background: rgba(2, 4, 10, 0.94); backdrop-filter: blur(10px); display: none; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem; box-sizing: border-box; gap: 0.75rem; }',
@@ -1053,8 +1056,22 @@
       }
       if (item.image && item.imageVerified === true) {
         var altText = hasText(item.imageAlt) ? item.imageAlt : (item.name + ' verified GTA VI screenshot');
+        var w = item.imageWidth || 1600;
+        var h = item.imageHeight || 900;
+        var sizes = isModal ? '(max-width: 820px) 96vw, 780px' : '(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 360px';
+        var fallbackHandler = "var p=this.closest('.wdb-card-media,.wdb-modal-hero')||this.parentNode;p.innerHTML=this.getAttribute('data-fallback');";
+        var imgTag = '<img src="' + esc(item.image) + '" alt="' + esc(altText) + '" width="' + esc(w) + '" height="' + esc(h) + '" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + fallbackHandler + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">';
+        var pictureHtml = imgTag;
+        if (hasText(item.imageAvifSrcset) || hasText(item.imageWebpSrcset)) {
+          pictureHtml =
+            '<picture>' +
+              (hasText(item.imageAvifSrcset) ? '<source type="image/avif" srcset="' + esc(item.imageAvifSrcset) + '" sizes="' + sizes + '">' : '') +
+              (hasText(item.imageWebpSrcset) ? '<source type="image/webp" srcset="' + esc(item.imageWebpSrcset) + '" sizes="' + sizes + '">' : '') +
+              imgTag +
+            '</picture>';
+        }
         return (
-          '<img src="' + esc(item.image) + '" alt="' + esc(altText) + '" loading="' + (isModal ? 'eager' : 'lazy') + '" onerror="this.parentNode.innerHTML=this.getAttribute(\'data-fallback\')" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">' +
+          pictureHtml +
           (isModal ? '<span class="wdb-zoom-pill">🔍 View Full Image</span>' : '<span class="wdb-badge-tr">✓ Verified Shot</span>')
         );
       }
@@ -1325,6 +1342,7 @@
               (hasVerifiedImg ? '<span class="wdb-mini-tag is-green">✓ Verified In-Game Screenshot</span>' : '') +
             '</div>' +
             '<h2 class="wdb-modal-title">' + esc(item.name) + '</h2>' +
+            (hasVerifiedImg && hasText(item.imageCaption) ? '<p class="wdb-modal-caption">' + esc(item.imageCaption) + '</p>' : '') +
             (warn ? '<div class="wdb-warn-banner">⚠️ ' + esc(warn) + '</div>' : '') +
             '<div class="wdb-modal-grid">' +
               fields.map(function (f) {
@@ -1377,12 +1395,21 @@
     function openLightbox(item) {
       if (!item || !item.image || item.imageVerified !== true) return;
       var altText = hasText(item.imageAlt) ? item.imageAlt : (item.name + ' verified GTA VI screenshot');
+      var capText = hasText(item.imageCaption) ? item.imageCaption : altText;
+      var imgTag = '<img class="wdb-lightbox-img" src="' + esc(item.image) + '" alt="' + esc(altText) + '" width="' + esc(item.imageWidth || 1600) + '" height="' + esc(item.imageHeight || 900) + '" decoding="async">';
+      var mediaHtml = (hasText(item.imageAvifSrcset) || hasText(item.imageWebpSrcset))
+        ? '<picture>' +
+            (hasText(item.imageAvifSrcset) ? '<source type="image/avif" srcset="' + esc(item.imageAvifSrcset) + '" sizes="96vw">' : '') +
+            (hasText(item.imageWebpSrcset) ? '<source type="image/webp" srcset="' + esc(item.imageWebpSrcset) + '" sizes="96vw">' : '') +
+            imgTag +
+          '</picture>'
+        : imgTag;
       lightboxModal.innerHTML =
         '<button type="button" class="wdb-lightbox-close" data-wdb-lightbox-close aria-label="Close full-resolution image">&times;</button>' +
-        '<img class="wdb-lightbox-img" src="' + esc(item.image) + '" alt="' + esc(altText) + '">' +
+        mediaHtml +
         '<div class="wdb-lightbox-caption">' +
           '<div class="wdb-lightbox-title">' + esc(item.name) + '</div>' +
-          '<div class="wdb-lightbox-desc">' + esc(altText) + '</div>' +
+          '<div class="wdb-lightbox-desc">' + esc(capText) + '</div>' +
           (hasText(item.imageSource) ? '<div class="wdb-lightbox-credit">📷 Source Attribution: ' + esc(item.imageSource) + '</div>' : '') +
         '</div>';
       lightboxModal.classList.add('is-open');
@@ -1779,7 +1806,7 @@
   }
 
   global.GTA6WorldDB = {
-    __version: '1.1',
+    __version: '1.2',
     registerCategory: registerCategory,
     getSchema: function (key) { return CATEGORY_SCHEMAS[key] || null; },
     listCategories: function () { return Object.keys(CATEGORY_SCHEMAS); },

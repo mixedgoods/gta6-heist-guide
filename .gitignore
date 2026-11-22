@@ -12,3 +12,9 @@ New Text Document*.txt
 *.log
 .DS_Store
 Thumbs.db
+
+# High-resolution Rockstar source archives & 4K masters (never commit to Git or place in public/)
+GTA6-ROCKSTAR-HIGH-QUALITY-LIBRARY/
+GTA6_APPROVED_IMAGE_LIBRARY/originals/
+GTA6_APPROVED_IMAGE_LIBRARY/web/
+GTA6_APPROVED_IMAGE_LIBRARY/contact_sheets/

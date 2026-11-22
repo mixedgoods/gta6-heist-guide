@@ -486,11 +486,12 @@ export async function runWildlifeSync(opts = {}) {
   const originalCount = existingAnimals.items.length;
   const verifiedImagesSnapshot = new Map();
   for (const item of existingAnimals.items) {
-    if (item && item.id && item.imageVerified === true && item.image) {
+    if (item && item.id && (item.manualHqLocked === true || (item.imageVerified === true && item.image))) {
       verifiedImagesSnapshot.set(item.id, {
         image: item.image,
         imageVerified: item.imageVerified,
         imageSource: item.imageSource || null,
+        manualHqLocked: item.manualHqLocked === true,
       });
     }
   }
@@ -647,8 +648,8 @@ export async function runWildlifeSync(opts = {}) {
   }
   for (const [id, snap] of verifiedImagesSnapshot.entries()) {
     const item = byId.get(id);
-    if (!item || item.image !== snap.image || item.imageVerified !== true) {
-      throw new Error(`Invariant violation: verified image altered for ${id} — aborting write.`);
+    if (!item || item.image !== snap.image || item.imageVerified !== true || (snap.manualHqLocked && item.manualHqLocked !== true)) {
+      throw new Error(`Invariant violation: verified/locked image altered for ${id} — aborting write.`);
     }
   }
   nextAnimals.birdStats = existingAnimals.birdStats;
