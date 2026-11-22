@@ -342,6 +342,7 @@ export function detectChanges(currentPagesMap, prevState) {
   const modified = [];
   const deleted = [];
   const unchanged = [];
+  const retryFailed = [];
 
   for (const [url, info] of currentPagesMap.entries()) {
     const prev = prevUrls[url];
@@ -349,6 +350,8 @@ export function detectChanges(currentPagesMap, prevState) {
       created.push(info);
     } else if (prev.contentHash !== info.contentHash) {
       modified.push(info);
+    } else if (prev.lastHttpStatus && prev.lastHttpStatus !== 200 && prev.lastHttpStatus !== 202) {
+      retryFailed.push(info);
     } else {
       unchanged.push(info);
     }
@@ -364,7 +367,7 @@ export function detectChanges(currentPagesMap, prevState) {
     }
   }
 
-  return { created, modified, deleted, unchanged };
+  return { created, modified, deleted, unchanged, retryFailed };
 }
 
 async function verifyLiveKeyFile(host, key) {
@@ -543,10 +546,11 @@ async function main() {
   const diff = detectChanges(currentPages, state);
 
   console.log(`[*] Scanned ${currentPages.size} canonical indexable pages:`);
-  console.log(`    - Created:   ${diff.created.length}`);
-  console.log(`    - Modified:  ${diff.modified.length}`);
-  console.log(`    - Deleted:   ${diff.deleted.length}`);
-  console.log(`    - Unchanged: ${diff.unchanged.length} (skipped — never re-submitted)`);
+  console.log(`    - Created:      ${diff.created.length}`);
+  console.log(`    - Modified:     ${diff.modified.length}`);
+  console.log(`    - Deleted:      ${diff.deleted.length}`);
+  console.log(`    - Retry Failed: ${diff.retryFailed.length}`);
+  console.log(`    - Unchanged:    ${diff.unchanged.length} (skipped — never re-submitted)`);
 
   const urlsToSubmit = opts.forceAll
     ? Array.from(currentPages.keys())
@@ -554,6 +558,7 @@ async function main() {
         ...diff.created.map((x) => x.canonicalUrl),
         ...diff.modified.map((x) => x.canonicalUrl),
         ...diff.deleted.map((x) => x.canonicalUrl),
+        ...diff.retryFailed.map((x) => x.canonicalUrl),
       ];
 
   if (urlsToSubmit.length === 0) {
