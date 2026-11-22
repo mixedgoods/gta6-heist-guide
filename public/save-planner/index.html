@@ -17,6 +17,9 @@
     <meta property="og:url" content="https://www.gta6heistguide.com/save-planner/">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta property="og:image:width" content="3840">
+    <meta property="og:image:height" content="2160">
+    <meta property="og:image:alt" content="Grand Theft Auto VI 15-Slot Manual Save Planner and No Mission Replay Guide">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GTA 6 15-Slot Manual Save Planner — No Mission Replay Save Guide">
     <meta name="twitter:description" content="Map all 15 GTA 6 manual save slots across 5 chapters, lock critical checkpoints before Tourist Trap, and keep your 100% Platinum save separate from cheats.">
@@ -39,7 +42,7 @@
           "description": "Interactive GTA 6 no mission replay save guide and 15-slot manual save manager with Spoiler-Free Mode, Chapter 1 point-of-no-return pre-flight checklist, Lock Shields, and JSON export/import.",
           "applicationCategory": "GameApplication",
           "operatingSystem": "All",
-          "url": "https://www.gta6heistguide.com/save-planner",
+          "url": "https://www.gta6heistguide.com/save-planner/",
           "offers": {
             "@type": "Offer",
             "price": "0",
@@ -66,7 +69,7 @@
               "name": "What is the Chapter 1 Point of No Return in GTA 6?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Accepting Take Up Mattia's Offer to begin Tourist Trap closes off Chapter 1 free roam in Key Lento. Before triggering it, move up to $5,000 into Family Savings, sell contraband at Donnie's trailer fence before Swamped, finish Get Shirley's Rum and Steal the Scooter, grab Jason's house magazines and Gone Fishing trailer cash, and complete Lucia's balcony meditation after Down to Earth."
+                "text": "Accepting Take Up Mattia's Offer to begin Tourist Trap closes off Chapter 1 free roam in Key Lento. Before triggering it, lock a manual save anchor, sell contraband at Donnie's trailer fence before Swamped, finish Get Shirley's Rum and Steal the Scooter, grab Jason's house magazines and Gone Fishing trailer cash, and complete Lucia's balcony meditation after Down to Earth. (Note: the BuckMe 'Buck Yourself' Checking -> Family Savings setup happens earlier in the separate 'Buck Me' mission.)"
               }
             },
             {
@@ -92,7 +95,7 @@
               "@type": "ListItem",
               "position": 2,
               "name": "GTA 6 15-Slot Manual Save Planner",
-              "item": "https://www.gta6heistguide.com/save-planner"
+              "item": "https://www.gta6heistguide.com/save-planner/"
             }
           ]
         }
@@ -1104,6 +1107,10 @@
 
     <!-- SHARED SAVE & BACKUP PROGRESS BAR -->
     <div id="spUnifiedToolbar"></div>
+    <div style="margin:0.6rem 0 1rem; padding:0.7rem 0.95rem; background:rgba(13,18,31,0.92); border:1px solid rgba(0,240,255,0.22); border-radius:10px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.6rem;">
+        <span style="font-size:0.76rem; color:#94a3b8;">Share your 15-Slot Save Plan summary (never includes personal slot notes or unrelated site progress):</span>
+        <div id="savePlannerShareBar"></div>
+    </div>
 
     <!-- LIVE TELEMETRY BAR -->
     <section class="sp-telemetry-grid" aria-label="Save Planner Live Telemetry">
@@ -1413,6 +1420,7 @@
 </footer>
 
 <script src="/assets/js/gta6-progress-store.js"></script>
+<script src="/assets/js/share-tools.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -2356,6 +2364,35 @@
       });
       window.addEventListener('gta6-progress-updated', function() {
         syncFromUnifiedStore();
+      });
+    }
+    if (window.GTA6ShareTools) {
+      var shareUrl = 'https://www.gta6heistguide.com/save-planner/';
+      function buildPublicSlotSummary() {
+        var secured = (document.getElementById('telemetrySecuredText') || {}).textContent || '0 / 15';
+        var locked = (document.getElementById('telemetryLockedText') || {}).textContent || '0';
+        var preflight = (document.getElementById('telemetryChecklistText') || {}).textContent || '0 / 6';
+        var spoilerMode = state && state.spoilerFree ? 'Spoiler-Free' : 'Full Mission Names';
+        return { secured: secured, locked: locked, preflight: preflight, spoilerMode: spoilerMode };
+      }
+      window.GTA6ShareTools.mountShareBar('#savePlannerShareBar', {
+        getLink: function() { return shareUrl; },
+        getReddit: function() {
+          var s = buildPublicSlotSummary();
+          return window.GTA6ShareTools.formatReddit('My GTA 6 15-Slot Manual Save Plan (' + s.spoilerMode + ')', [
+            '- **Manual Slots Secured:** ' + s.secured,
+            '- **Locked Overwrite Shields:** ' + s.locked + ' slots protected',
+            '- **Chapter 1 Pre-Flight Checklist:** ' + s.preflight,
+            '- **Key Rule:** Keep Slot #14 clean for 100% / Trophies and isolate all cheat & glitch tests on Slot #15.'
+          ], shareUrl);
+        },
+        getDiscord: function() {
+          var s = buildPublicSlotSummary();
+          return window.GTA6ShareTools.formatDiscord('💾 GTA 6 15-Slot Manual Save Plan', [
+            '• **Slots Secured:** ' + s.secured + ' | **Locked Shields:** ' + s.locked + ' | **Ch. 1 Pre-Flight:** ' + s.preflight,
+            '• Slot #14 = Clean 100% Save · Slot #15 = Cheat/Glitch Sandbox'
+          ], shareUrl);
+        }
       });
     }
   });

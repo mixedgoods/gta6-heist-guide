@@ -61,16 +61,13 @@ for target in (os.path.join(DATA_DIR, "live-feed.json"), os.path.join(PUB_DATA_D
     with open(target, "w", encoding="utf-8", newline="\n") as f:
         json.dump(live_feed, f, indent=2, ensure_ascii=False)
 
-# 3. Update <lastmod> dates in existing public/sitemap.xml without clobbering hubs or adding legacy redirect URLs
+# 3. Preserve accurate per-URL <lastmod> dates in public/sitemap.xml (NEVER fake freshness when content didn't change)
 import re
 sitemap_path = os.path.join(PUB_DIR, "sitemap.xml")
 if os.path.exists(sitemap_path):
     with open(sitemap_path, "r", encoding="utf-8") as f:
         sm_xml = f.read()
-    sm_xml = re.sub(r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>", f"<lastmod>{today_str}</lastmod>", sm_xml)
-    with open(sitemap_path, "w", encoding="utf-8", newline="\n") as f:
-        f.write(sm_xml)
     url_count = len(re.findall(r"<loc>", sm_xml))
-    print(f"[OK] Daily sync complete (DAY-{launch_day}, {url_count} sitemap URLs refreshed, lastmod={today_str})")
+    print(f"[OK] Daily sync complete (DAY-{launch_day}, {url_count} sitemap URLs preserved without fake lastmod churn)")
 else:
     print(f"[WARN] public/sitemap.xml not found at {sitemap_path}")

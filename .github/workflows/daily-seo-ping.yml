@@ -1,27 +1,39 @@
-name: Daily IndexNow SEO Ping
+name: Daily IndexNow Smart Change Ping
 
 on:
   schedule:
-    # Runs at 09:00 UTC daily (every 24 hours)
+    # Runs at 09:00 UTC daily (submits ONLY created, modified, or deleted canonical URLs)
     - cron: '0 9 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   ping-indexnow:
-    name: Ping Search Engines via IndexNow
+    name: Submit Changed URLs via Persistent IndexNow Engine
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: 20
 
-      - name: Run IndexNow Ping Engine
+      - name: Run Persistent IndexNow Change Detector & Ping
         run: |
-          python indexnow_ping.py
+          node scripts/indexnow-ping.mjs
+
+      - name: Persist IndexNow State (CF-Pages-Skip)
+        run: |
+          git config --global user.name "GTA6 Intel Auto-Sync Bot"
+          git config --global user.email "bot@gta6heistguide.com"
+          git add scripts/state/indexnow-state.json
+          if git diff --staged --quiet; then
+            echo "No IndexNow state updates to commit."
+          else
+            git commit -m "[CF-Pages-Skip] chore(indexnow): persist submission state"
+            git push
+          fi

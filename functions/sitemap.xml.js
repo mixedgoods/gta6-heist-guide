@@ -5,7 +5,8 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/gta-6-tips-and-tricks/", changefreq: "daily", priority: "0.98" },
   { loc: "https://www.gta6heistguide.com/gta-6-tools/", changefreq: "daily", priority: "0.96" },
   { loc: "https://www.gta6heistguide.com/gta-6-database/", changefreq: "daily", priority: "0.96" },
-  { loc: "https://www.gta6heistguide.com/gta-6-discoveries/", changefreq: "daily", priority: "0.96" },
+  { loc: "https://www.gta6heistguide.com/gta-6-discoveries/", lastmod: "2026-11-21", changefreq: "daily", priority: "0.96" },
+  { loc: "https://www.gta6heistguide.com/gta-6-glitches/", lastmod: "2026-11-21", changefreq: "daily", priority: "0.96" },
   // All 8 Heist & Robbery Walkthroughs
   { loc: "https://www.gta6heistguide.com/heists/the-cartel-heist.html", changefreq: "daily", priority: "0.98" },
   { loc: "https://www.gta6heistguide.com/heists/vcia-takedown.html", changefreq: "daily", priority: "0.98" },
@@ -66,13 +67,31 @@ function escapeXml(unsafe) {
     .replace(/'/g, "&apos;");
 }
 
-export async function onRequestGet() {
-  const todayStr = new Date().toISOString().slice(0, 10);
+export async function onRequestGet(context) {
+  // Prefer the static public/sitemap.xml so accurate per-URL <lastmod> dates
+  // are never overwritten with fake "today" timestamps on every crawler fetch.
+  try {
+    if (context && context.env && context.env.ASSETS) {
+      const assetUrl = new URL("/sitemap.xml", context.request.url);
+      const staticRes = await context.env.ASSETS.fetch(new Request(assetUrl));
+      if (staticRes && staticRes.ok) {
+        const xmlBody = await staticRes.text();
+        return new Response(xmlBody, {
+          status: 200,
+          headers: {
+            "Content-Type": "application/xml; charset=utf-8",
+            "Cache-Control": "public, max-age=600, s-maxage=1800",
+          },
+        });
+      }
+    }
+  } catch (_) {}
 
+  const fallbackDate = "2026-11-21";
   const staticXml = STATIC_ROUTES.map(
     (u) => `  <url>
     <loc>${escapeXml(u.loc)}</loc>
-    <lastmod>${todayStr}</lastmod>
+    <lastmod>${u.lastmod || fallbackDate}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`

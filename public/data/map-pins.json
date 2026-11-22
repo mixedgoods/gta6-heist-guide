@@ -11,7 +11,7 @@
     "Vice City": {
       "yPct": 0.5,
       "xPct": 0.745,
-      "zoom": 2.0
+      "zoom": 2
     },
     "Vice Beach": {
       "yPct": 0.535,
@@ -36,17 +36,17 @@
     "Port Gellhorn": {
       "yPct": 0.57,
       "xPct": 0.295,
-      "zoom": 2.0
+      "zoom": 2
     },
     "Lake Leonida": {
       "yPct": 0.675,
       "xPct": 0.59,
-      "zoom": 2.0
+      "zoom": 2
     },
     "Ambrosia": {
       "yPct": 0.665,
       "xPct": 0.615,
-      "zoom": 2.0
+      "zoom": 2
     }
   },
   "pins": [
@@ -622,7 +622,7 @@
     },
     {
       "id": "ammu-vice-beach-promenade",
-      "title": "Ammu-Nation #01 - Vice Beach Promenade",
+      "title": "Phil's Ammu-Nation (Vice-Dale County · Expanded)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -641,7 +641,7 @@
     },
     {
       "id": "ammu-downtown-vice-financial",
-      "title": "Ammu-Nation #02 - Downtown Financial District",
+      "title": "Vice City Firearms (Vice-Dale County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -660,7 +660,7 @@
     },
     {
       "id": "ammu-little-haiti-express",
-      "title": "Ammu-Nation #03 - Little Haiti Avenue",
+      "title": "Martez Empenos (Vice-Dale County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -679,7 +679,7 @@
     },
     {
       "id": "ammu-south-vice-intermodal",
-      "title": "Ammu-Nation #04 - South Vice Logistics Park",
+      "title": "Vice City Gun & Pawn (Vice-Dale County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -698,7 +698,7 @@
     },
     {
       "id": "ammu-vice-airport-concourse",
-      "title": "Ammu-Nation #05 - Airport North Perimeter",
+      "title": "Quickscope (Vice-Dale County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -717,7 +717,7 @@
     },
     {
       "id": "ammu-starlet-island-causeway",
-      "title": "Ammu-Nation #06 - Starlet Island Causeway",
+      "title": "Prestige Firearms (Vice-Dale County · Expanded)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -736,7 +736,7 @@
     },
     {
       "id": "ammu-port-gellhorn-docks",
-      "title": "Ammu-Nation #07 - Port Gellhorn Waterfront",
+      "title": "Gellhorn Outfitters (Kelly County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -755,7 +755,7 @@
     },
     {
       "id": "ammu-port-gellhorn-north",
-      "title": "Ammu-Nation #08 - Port Gellhorn Industrial Loop",
+      "title": "Pawn & Gun, Port Gellhorn (Kelly County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -774,7 +774,7 @@
     },
     {
       "id": "ammu-gellhorn-rail-junction",
-      "title": "Ammu-Nation #09 - Gellhorn Rail Siding",
+      "title": "Biff's Gun Supply (Kelly County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -793,7 +793,7 @@
     },
     {
       "id": "ammu-keys-upper-marathon",
-      "title": "Ammu-Nation #10 - Upper Keys Causeway",
+      "title": "Chuck's Tackle & Shot (Mariana County · Limited)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -812,7 +812,7 @@
     },
     {
       "id": "ammu-keys-southern-strip",
-      "title": "Ammu-Nation #11 - Key West Sunset Strip",
+      "title": "Barrage Gun Supply (Mariana County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -831,7 +831,7 @@
     },
     {
       "id": "ammu-keys-runway-outpost",
-      "title": "Ammu-Nation #12 - Smuggler Runway Outpost",
+      "title": "Woodhatch (Mariana County · Expanded)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -850,7 +850,7 @@
     },
     {
       "id": "ammu-grassrivers-swamp-post",
-      "title": "Ammu-Nation #13 - Grassrivers Airboat Base",
+      "title": "Guns Aplenty! (Mariana County · Hunting)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -869,7 +869,7 @@
     },
     {
       "id": "ammu-grassrivers-south-airstrip",
-      "title": "Ammu-Nation #14 - Cartel Airstrip Armory",
+      "title": "Richardson Hunting Supplies (Mariana County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -926,7 +926,7 @@
     },
     {
       "id": "ammu-ambrosia-refinery-gate",
-      "title": "Ammu-Nation #17 - Ambrosia Chemical Depot",
+      "title": "Tactical Outlet Guns (Leonard County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -983,7 +983,7 @@
     },
     {
       "id": "ammu-mt-kalaga-summit-lodge",
-      "title": "Ammu-Nation #20 - Mt. Kalaga Summit Outpost",
+      "title": "Rusty Willis Jr. Hunting Supplies (Lummox County · Hunting)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -1040,7 +1040,7 @@
     },
     {
       "id": "ammu-vice-biscayne-island",
-      "title": "Ammu-Nation #23 - Biscayne Island Bay",
+      "title": "Zenon's Pawn Shop (Vice-Dale County · Standard)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",
@@ -1059,7 +1059,7 @@
     },
     {
       "id": "ammu-vice-north-beach-pier",
-      "title": "Ammu-Nation #24 - North Beach Ocean Pier",
+      "title": "Iron & Oak (Vice-Dale County · Expanded)",
       "category": "ammunation",
       "categoryName": "24 Ammu-Nation Stores",
       "icon": "🔫",

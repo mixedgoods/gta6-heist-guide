@@ -14,8 +14,12 @@
     <meta property="og:description" content="Interactive GTA 6 Leonida Map with Story Heists, Properties, Garages, Fences, Wildlife Habitats, Ammu-Nation, and launch glitches.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/map.html">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/maps/leonida-map.jpg">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
+    <meta property="og:image:width" content="3840">
+    <meta property="og:image:height" content="2160">
+    <meta property="og:image:alt" content="Grand Theft Auto VI Interactive Leonida Map with verified vaults, properties, gun stores, and wildlife pins">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -907,6 +911,7 @@
                 </div>
             </div>
             <div id="mapProgressToolbar"></div>
+            <div id="mapShareBar" style="margin-top:0.35rem;"></div>
         </div>
 
         <div class="category-rows-container" id="categoryRowsContainer"></div>
@@ -1355,8 +1360,14 @@ function createPopupContent(pin) {
                 <button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${pin.id}')">
                     ${isFound ? '↺ Unfound' : '✓ Found'}
                 </button>
-                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${pin.id}')" title="Copy Pin Link">
-                    🔗 Copy Pin
+                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${pin.id}')" title="Copy Clean Shareable Map Pin Link">
+                    🔗 Share Link
+                </button>
+                <button type="button" class="btn-popup-found" onclick="copyPinReddit('${pin.id}')" title="Copy Pin Formatted for Reddit">
+                    📋 Reddit
+                </button>
+                <button type="button" class="btn-popup-found" onclick="copyPinDiscord('${pin.id}')" title="Copy Pin Formatted for Discord">
+                    💬 Discord
                 </button>
                 ${blueprintBtn}
             </div>
@@ -1463,6 +1474,12 @@ function flyToPin(pinId, openPopup = true, highlightPulse = false) {
             }
         }, 760);
     }
+    if (!String(pin.id).startsWith('user-') && window.history && typeof window.history.replaceState === 'function') {
+        try {
+            const cleanPath = window.location.pathname === '/map.html' ? '/map.html' : '/map';
+            window.history.replaceState(null, '', `${cleanPath}?pin=${encodeURIComponent(pin.id)}`);
+        } catch (e) {}
+    }
     return true;
 }
 
@@ -1503,10 +1520,67 @@ function handleInitialDeepLinks() {
     }
 }
 
+function getShareablePinUrl(pinId) {
+    const origin = (window.location && window.location.origin && /^https?:/i.test(window.location.origin))
+        ? window.location.origin
+        : 'https://www.gta6heistguide.com';
+    // Cloudflare Pages serves clean /map?pin=<id> directly with HTTP 200 OK (and 308s /map.html?pin=<id> -> /map?pin=<id>)
+    const basePath = (window.location && window.location.pathname === '/map.html' && window.location.hostname === 'localhost')
+        ? '/map.html'
+        : '/map';
+    return `${origin}${basePath}?pin=${encodeURIComponent(pinId)}`;
+}
+
 function copyPinDeepLink(pinId) {
-    const url = `${window.location.origin}/map.html?pin=${encodeURIComponent(pinId)}`;
-    navigator.clipboard.writeText(url).catch(() => {});
-    showToast('🔗 Map Pin Link Copied!');
+    const pin = findPinByIdOrAlias(pinId);
+    if (pin && String(pin.id).startsWith('user-')) {
+        showToast('🔒 Custom local pins stay private — share verified Leonida pins instead.');
+        return;
+    }
+    const url = getShareablePinUrl(pin ? pin.id : pinId);
+    if (window.GTA6ShareTools) {
+        window.GTA6ShareTools.copyText(url, null, '🔗 Clean Map Pin Link Copied!');
+    } else {
+        navigator.clipboard.writeText(url).catch(() => {});
+        showToast('🔗 Clean Map Pin Link Copied!');
+    }
+}
+
+function copyPinReddit(pinId) {
+    const pin = findPinByIdOrAlias(pinId);
+    if (!pin || String(pin.id).startsWith('user-')) {
+        showToast('🔒 Custom local pins stay private.');
+        return;
+    }
+    const url = getShareablePinUrl(pin.id);
+    const lines = [
+        `- **Region:** ${pin.region || 'Leonida'}`,
+        pin.payout ? `- **Info / Payout:** ${pin.payout}` : null,
+        pin.description ? `- **Details:** ${pin.description}` : null
+    ].filter(Boolean);
+    const md = window.GTA6ShareTools
+        ? window.GTA6ShareTools.formatReddit(`GTA 6 Map Pin: ${pin.title}`, lines, url)
+        : `### GTA 6 Map Pin: ${pin.title}\n\n${lines.join('\n')}\n\n${url}\n\n*Created with GTA6HeistGuide.com*`;
+    if (window.GTA6ShareTools) window.GTA6ShareTools.copyText(md, null, '📋 Reddit Pin Markdown Copied!');
+    else { navigator.clipboard.writeText(md).catch(() => {}); showToast('📋 Reddit Pin Markdown Copied!'); }
+}
+
+function copyPinDiscord(pinId) {
+    const pin = findPinByIdOrAlias(pinId);
+    if (!pin || String(pin.id).startsWith('user-')) {
+        showToast('🔒 Custom local pins stay private.');
+        return;
+    }
+    const url = getShareablePinUrl(pin.id);
+    const lines = [
+        `• **Region:** ${pin.region || 'Leonida'}` + (pin.payout ? ` | **Info:** ${pin.payout}` : ''),
+        pin.description ? `• ${pin.description}` : null
+    ].filter(Boolean);
+    const txt = window.GTA6ShareTools
+        ? window.GTA6ShareTools.formatDiscord(`📍 GTA 6 Map Pin: ${pin.title}`, lines, url)
+        : `**📍 GTA 6 Map Pin: ${pin.title}**\n${lines.join('\n')}\n${url}\n*Created with GTA6HeistGuide.com*`;
+    if (window.GTA6ShareTools) window.GTA6ShareTools.copyText(txt, null, '💬 Discord Pin Snippet Copied!');
+    else { navigator.clipboard.writeText(txt).catch(() => {}); showToast('💬 Discord Pin Snippet Copied!'); }
 }
 
 function togglePinFound(pinId) {
@@ -1779,6 +1853,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEngine();
 });
 </script>
+<script src="/assets/js/share-tools.js"></script>
 <script>
 function refreshMapFromStore() {
     loadFoundPinsFromStore();
@@ -1831,6 +1906,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadCustomPinsFromStore();
                 if (typeof loadAllPinsData === 'function') loadAllPinsData();
                 else refreshMapFromStore();
+            }
+        });
+    }
+    if (window.GTA6ShareTools) {
+        window.GTA6ShareTools.mountShareBar('#mapShareBar', {
+            getLink: function() {
+                if (typeof highlightedPinId === 'string' && highlightedPinId && !highlightedPinId.startsWith('user-')) {
+                    return getShareablePinUrl(highlightedPinId);
+                }
+                return 'https://www.gta6heistguide.com/map';
+            },
+            getReddit: function() {
+                var verifiedPins = (typeof allPins !== 'undefined' ? allPins : []).filter(function(p) { return !String(p.id).startsWith('user-'); });
+                var total = verifiedPins.length || 174;
+                var found = verifiedPins.filter(function(p) { return foundPinIds.has(p.id); }).length;
+                var pct = Math.round((found / total) * 100);
+                var lines = [
+                    '- **Leonida Map Checklist Progress:** ' + found + ' / ' + total + ' verified pins (' + pct + '%)',
+                    '- **Note:** Only public verified pin counts are shared (custom local pins and unrelated tool progress remain private).'
+                ];
+                return window.GTA6ShareTools.formatReddit('My GTA 6 Leonida Map Checklist Progress', lines, 'https://www.gta6heistguide.com/map');
+            },
+            getDiscord: function() {
+                var verifiedPins = (typeof allPins !== 'undefined' ? allPins : []).filter(function(p) { return !String(p.id).startsWith('user-'); });
+                var total = verifiedPins.length || 174;
+                var found = verifiedPins.filter(function(p) { return foundPinIds.has(p.id); }).length;
+                var pct = Math.round((found / total) * 100);
+                return window.GTA6ShareTools.formatDiscord('🗺️ GTA 6 Leonida Map Checklist', [
+                    '• **Verified Pins Found:** ' + found + ' / ' + total + ' (' + pct + '%)'
+                ], 'https://www.gta6heistguide.com/map');
             }
         });
     }

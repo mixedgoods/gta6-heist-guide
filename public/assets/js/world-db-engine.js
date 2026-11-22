@@ -19,7 +19,7 @@
 (function (global) {
   'use strict';
 
-  if (global.GTA6WorldDB && global.GTA6WorldDB.__version === '1.0') {
+  if (global.GTA6WorldDB && global.GTA6WorldDB.__version === '1.1') {
     return;
   }
 
@@ -50,6 +50,7 @@
     '/gta-6-tips-and-tricks/',
     '/gta-6-tools/',
     '/gta-6-discoveries/',
+    '/gta-6-glitches/',
     '/save-planner/',
     '/free/',
     '/heists/the-cartel-heist.html',
@@ -150,9 +151,14 @@
   function verificationBadgeClass(status) {
     var s = String(status || 'Unverified').toLowerCase();
     if (s === 'confirmed') return 'wdb-ver-confirmed';
-    if (s === 'community discovered') return 'wdb-ver-community';
-    if (s === 'testing') return 'wdb-ver-testing';
+    if (s === 'community discovered' || s === 'reported') return 'wdb-ver-community';
+    if (s === 'testing' || s === 'estimated') return 'wdb-ver-testing';
     return 'wdb-ver-unverified';
+  }
+
+  function renderStatStatusTag(status) {
+    if (!hasText(status)) return '';
+    return ' <span class="wdb-ver-pill ' + verificationBadgeClass(status) + '" style="font-size:0.55rem; padding:1px 5px; margin-left:4px; vertical-align:middle;">' + esc(status) + '</span>';
   }
 
   function getAffiliateStripHtml(contextLabel) {
@@ -397,24 +403,29 @@
     },
     getModalFields: function (it) {
       var perf = it.performance || {};
+      var ss = it.statStatus || {};
       var fields = [
         { k: 'Vehicle Class', v: formatValue(it.vehicleClass, 'Not yet confirmed') },
         { k: 'Manufacturer', v: formatValue(it.manufacturer, 'Not yet confirmed') },
         { k: 'Price / How to Acquire', v: formatValue(it.priceOrAcquisition, 'Price not confirmed') },
         { k: 'Spawn Regions', v: formatValue(it.spawnRegions, 'Location unknown') }
       ];
-      if (hasText(perf.topSpeed)) fields.push({ k: 'Top Speed', v: perf.topSpeed });
-      if (hasText(perf.acceleration)) fields.push({ k: 'Acceleration', v: perf.acceleration });
-      if (hasText(perf.handling)) fields.push({ k: 'Handling', v: perf.handling });
+      if (hasText(perf.topSpeed)) fields.push({ k: 'Top Speed', v: perf.topSpeed, status: ss.topSpeed || 'Not yet confirmed' });
+      if (hasText(perf.acceleration)) fields.push({ k: 'Acceleration', v: perf.acceleration, status: ss.acceleration || 'Not yet confirmed' });
+      if (hasText(perf.handling)) fields.push({ k: 'Handling', v: perf.handling, status: ss.handling || 'Reported' });
+      if (hasText(perf.trunk)) fields.push({ k: 'Trunk / Stowage', v: perf.trunk, status: ss.trunk || 'Not yet confirmed' });
+      if (hasText(perf.armor)) fields.push({ k: 'Armor', v: perf.armor, status: ss.armor || 'Not yet confirmed' });
       if (hasText(perf.seatingCargo)) fields.push({ k: 'Seating / Cargo', v: perf.seatingCargo });
       return fields;
     },
     compareFields: [
       { k: 'Vehicle Class', get: function (it) { return it.vehicleClass; } },
       { k: 'Manufacturer', get: function (it) { return it.manufacturer; } },
-      { k: 'Top Speed', get: function (it) { return it.performance && it.performance.topSpeed; } },
-      { k: 'Acceleration', get: function (it) { return it.performance && it.performance.acceleration; } },
-      { k: 'Handling', get: function (it) { return it.performance && it.performance.handling; } },
+      { k: 'Top Speed', get: function (it) { return it.performance && it.performance.topSpeed; }, getStatus: function (it) { return it.statStatus && it.statStatus.topSpeed; } },
+      { k: 'Acceleration', get: function (it) { return it.performance && it.performance.acceleration; }, getStatus: function (it) { return it.statStatus && it.statStatus.acceleration; } },
+      { k: 'Handling', get: function (it) { return it.performance && it.performance.handling; }, getStatus: function (it) { return it.statStatus && it.statStatus.handling; } },
+      { k: 'Trunk / Stowage', get: function (it) { return it.performance && it.performance.trunk; }, getStatus: function (it) { return it.statStatus && it.statStatus.trunk; } },
+      { k: 'Armor', get: function (it) { return it.performance && it.performance.armor; }, getStatus: function (it) { return it.statStatus && it.statStatus.armor; } },
       { k: 'Seating / Cargo', get: function (it) { return it.performance && it.performance.seatingCargo; } },
       { k: 'Price / How to Acquire', get: function (it) { return it.priceOrAcquisition; }, fallback: 'Price not confirmed' },
       { k: 'Spawn Regions', get: function (it) { return formatValue(it.spawnRegions); }, fallback: 'Location unknown' }
@@ -564,17 +575,19 @@
     },
     getModalFields: function (it) {
       var ch = it.characteristics || {};
+      var ss = it.statStatus || {};
       var fields = [
         { k: 'Weapon Class', v: formatValue(it.weaponClass, 'Not yet confirmed') },
         { k: 'How to Obtain', v: formatValue(it.howToObtain, 'Availability unverified') },
         { k: 'Ammu-Nation / Price', v: formatValue(it.price, 'Price not confirmed') },
         { k: 'Best Use Case', v: formatValue(it.bestUseCase, 'Not yet confirmed') }
       ];
-      if (hasText(ch.damage)) fields.push({ k: 'Damage', v: ch.damage });
-      if (hasText(ch.fireRate)) fields.push({ k: 'Fire Rate', v: ch.fireRate });
-      if (hasText(ch.range)) fields.push({ k: 'Range', v: ch.range });
-      if (hasText(ch.accuracy)) fields.push({ k: 'Accuracy', v: ch.accuracy });
-      if (hasText(ch.magCapacity)) fields.push({ k: 'Mag Capacity', v: ch.magCapacity });
+      if (hasText(ch.damage)) fields.push({ k: 'Damage', v: ch.damage, status: ss.damage || 'Not yet confirmed' });
+      if (hasText(ch.fireRate)) fields.push({ k: 'Fire Rate', v: ch.fireRate, status: ss.fireRate || 'Not yet confirmed' });
+      if (hasText(ch.range)) fields.push({ k: 'Range', v: ch.range, status: ss.range || 'Not yet confirmed' });
+      if (hasText(ch.accuracy)) fields.push({ k: 'Accuracy', v: ch.accuracy, status: ss.accuracy || 'Not yet confirmed' });
+      if (hasText(ch.magCapacity)) fields.push({ k: 'Mag Capacity', v: ch.magCapacity, status: ss.magCapacity || 'Not yet confirmed' });
+      if (hasText(ch.bonuses)) fields.push({ k: 'Bonuses / Synergy', v: ch.bonuses, status: ss.bonuses || 'Not yet confirmed' });
       return fields;
     },
     getModalExtraHtml: function (it) {
@@ -592,11 +605,12 @@
     },
     compareFields: [
       { k: 'Weapon Class', get: function (it) { return it.weaponClass; } },
-      { k: 'Damage', get: function (it) { return it.characteristics && it.characteristics.damage; } },
-      { k: 'Fire Rate', get: function (it) { return it.characteristics && it.characteristics.fireRate; } },
-      { k: 'Range', get: function (it) { return it.characteristics && it.characteristics.range; } },
-      { k: 'Accuracy', get: function (it) { return it.characteristics && it.characteristics.accuracy; } },
-      { k: 'Mag Capacity', get: function (it) { return it.characteristics && it.characteristics.magCapacity; } },
+      { k: 'Damage', get: function (it) { return it.characteristics && it.characteristics.damage; }, getStatus: function (it) { return it.statStatus && it.statStatus.damage; } },
+      { k: 'Fire Rate', get: function (it) { return it.characteristics && it.characteristics.fireRate; }, getStatus: function (it) { return it.statStatus && it.statStatus.fireRate; } },
+      { k: 'Range', get: function (it) { return it.characteristics && it.characteristics.range; }, getStatus: function (it) { return it.statStatus && it.statStatus.range; } },
+      { k: 'Accuracy', get: function (it) { return it.characteristics && it.characteristics.accuracy; }, getStatus: function (it) { return it.statStatus && it.statStatus.accuracy; } },
+      { k: 'Mag Capacity', get: function (it) { return it.characteristics && it.characteristics.magCapacity; }, getStatus: function (it) { return it.statStatus && it.statStatus.magCapacity; } },
+      { k: 'Bonuses', get: function (it) { return it.characteristics && it.characteristics.bonuses; }, getStatus: function (it) { return it.statStatus && it.statStatus.bonuses; } },
       { k: 'Modifications', get: function (it) { return formatValue(it.modifications); } },
       { k: 'How to Obtain', get: function (it) { return it.howToObtain; }, fallback: 'Availability unverified' },
       { k: 'Price', get: function (it) { return it.price; }, fallback: 'Price not confirmed' },
@@ -644,13 +658,14 @@
       { id: 'updated', label: 'Sort: Recently Updated' }
     ],
     getSubtitle: function (it) {
-      return [it.storeType, it.region].filter(Boolean).join(' · ');
+      return [it.county || it.region, it.inventoryTier ? (it.inventoryTier + ' Tier') : it.storeType].filter(Boolean).join(' · ');
     },
-    getTopLeftBadge: function (it) { return it.storeType || 'Gun Store'; },
-    getBottomRightBadge: function (it) { return it.region ? '📍 ' + it.region : ''; },
+    getTopLeftBadge: function (it) { return it.inventoryTier ? (it.inventoryTier + ' · ' + (it.storeType || 'Gun Store')) : (it.storeType || 'Gun Store'); },
+    getBottomRightBadge: function (it) { return (it.county || it.region) ? '📍 ' + (it.county || it.region) : ''; },
     getCardSpecs: function (it) {
       var rows = [
-        { k: 'Region / Location', v: [it.region, it.locationDetail].filter(Boolean).join(' — ') || 'Location unknown' },
+        { k: 'County / Location', v: [it.county, it.locationDetail].filter(Boolean).join(' — ') || 'Location unknown' },
+        { k: 'Inventory Tier', v: formatValue(it.inventoryTier, 'Standard') },
         { k: 'Available Weapons', v: formatValue(it.availableWeapons, 'Availability unverified'), muted: !isRealVerifiedValue(it.availableWeapons) }
       ];
       if (Array.isArray(it.services) && it.services.length) {
@@ -659,12 +674,15 @@
       return rows;
     },
     getModalFields: function (it) {
-      return [
+      var fields = [
         { k: 'Store Type', v: formatValue(it.storeType, 'Not yet confirmed') },
-        { k: 'Region', v: formatValue(it.region, 'Location unknown') },
+        { k: 'County', v: formatValue(it.county || it.region, 'Location unknown') },
+        { k: 'Inventory Tier', v: formatValue(it.inventoryTier, 'Standard') },
         { k: 'Location Detail', v: formatValue(it.locationDetail, 'Location unknown') },
         { k: 'Services', v: formatValue(it.services, 'Not yet confirmed') }
       ];
+      if (hasText(it.pinCoordinateStatus)) fields.push({ k: 'Map Pin Status', v: it.pinCoordinateStatus });
+      return fields;
     },
     getModalExtraHtml: function (it) {
       if (!Array.isArray(it.availableWeapons) || !it.availableWeapons.length) return '';
@@ -1290,7 +1308,7 @@
             (warn ? '<div class="wdb-warn-banner">⚠️ ' + esc(warn) + '</div>' : '') +
             '<div class="wdb-modal-grid">' +
               fields.map(function (f) {
-                return '<div class="wdb-modal-stat"><div class="wdb-modal-stat-k">' + esc(f.k) + '</div><div class="wdb-modal-stat-v">' + esc(f.v) + '</div></div>';
+                return '<div class="wdb-modal-stat"><div class="wdb-modal-stat-k">' + esc(f.k) + (f.status ? renderStatStatusTag(f.status) : '') + '</div><div class="wdb-modal-stat-v">' + esc(f.v) + '</div></div>';
               }).join('') +
             '</div>' +
             (hasText(item.notes) ? '<p style="color:#cbd5e1; font-size:0.88rem; line-height:1.58; margin:0;">' + esc(item.notes) + '</p>' : '') +
@@ -1335,6 +1353,51 @@
       }
     }
 
+    function buildCompareShareUrl(selected) {
+      var origin = (global.GTA6ShareTools && global.GTA6ShareTools.ORIGIN) || 'https://www.gta6heistguide.com';
+      var pathname = (global.location && global.location.pathname) || ('/' + categoryKey + '.html');
+      return origin + pathname + '?compare=' + selected.map(function (it) { return encodeURIComponent(it.id); }).join(',');
+    }
+
+    function buildCompareReddit(selected, activeRows) {
+      var names = selected.map(function (it) { return it.name; }).join(' vs. ');
+      var header = '| Stat / Field | ' + selected.map(function (it) { return it.name; }).join(' | ') + ' |';
+      var sep = '|---|' + selected.map(function () { return '---|'; }).join('');
+      var body = activeRows.map(function (cf) {
+        return '| **' + cf.k + '** | ' + selected.map(function (it) {
+          var raw = cf.get(it);
+          var verified = isRealVerifiedValue(raw);
+          var st = cf.getStatus ? cf.getStatus(it) : '';
+          var txt = verified ? formatValue(raw) : (cf.fallback || 'Not yet confirmed');
+          return txt + (st && st !== 'Not yet confirmed' ? ' *(' + st + ')*' : '');
+        }).join(' | ') + ' |';
+      });
+      var url = buildCompareShareUrl(selected);
+      if (global.GTA6ShareTools) {
+        return global.GTA6ShareTools.formatReddit('GTA 6 ' + schema.title + ' Comparison: ' + names, [header, sep].concat(body), url);
+      }
+      return '### GTA 6 ' + schema.title + ' Comparison: ' + names + '\n\n' + [header, sep].concat(body).join('\n') + '\n\n' + url + '\n\n*Created with GTA6HeistGuide.com*';
+    }
+
+    function buildCompareDiscord(selected, activeRows) {
+      var names = selected.map(function (it) { return it.name; }).join(' vs. ');
+      var lines = activeRows.slice(0, 8).map(function (cf) {
+        var vals = selected.map(function (it) {
+          var raw = cf.get(it);
+          var verified = isRealVerifiedValue(raw);
+          var st = cf.getStatus ? cf.getStatus(it) : '';
+          var txt = verified ? formatValue(raw) : (cf.fallback || 'Not yet confirmed');
+          return '**' + it.name + ':** ' + txt + (st && st !== 'Not yet confirmed' ? ' (' + st + ')' : '');
+        }).join(' | ');
+        return '• **' + cf.k + '** — ' + vals;
+      });
+      var url = buildCompareShareUrl(selected);
+      if (global.GTA6ShareTools) {
+        return global.GTA6ShareTools.formatDiscord('⚖️ GTA 6 ' + schema.title + ' Comparison: ' + names, lines, url);
+      }
+      return '**⚖️ GTA 6 ' + schema.title + ' Comparison: ' + names + '**\n' + lines.join('\n') + '\n' + url + '\n*Created with GTA6HeistGuide.com*';
+    }
+
     function openCompareModal() {
       var selected = state.compareIds.map(function (id) {
         return state.items.find(function (x) { return x.id === id; });
@@ -1348,12 +1411,25 @@
         });
       });
 
+      var shareBarHtml = global.GTA6ShareTools
+        ? global.GTA6ShareTools.buildShareBarHtml('wdbCmp')
+        : (
+          '<div style="display:flex; flex-wrap:wrap; gap:0.45rem;">' +
+            '<button type="button" class="wdb-mini-btn" data-share-action="reddit">📋 Copy for Reddit</button>' +
+            '<button type="button" class="wdb-mini-btn" data-share-action="discord">💬 Copy for Discord</button>' +
+            '<button type="button" class="wdb-mini-btn" data-share-action="link">🔗 Copy Share Link</button>' +
+          '</div>'
+        );
+
       compareModal.innerHTML =
         '<div class="wdb-modal-card is-wide">' +
           '<button type="button" class="wdb-modal-close" data-cmp-modal-close aria-label="Close comparison">&times;</button>' +
           '<div class="wdb-modal-body">' +
             '<div class="wdb-modal-badges"><span class="wdb-mini-tag">⚖️ SIDE-BY-SIDE COMPARISON (' + selected.length + ' ' + esc(schema.title.toUpperCase()) + ')</span></div>' +
-            '<h2 class="wdb-modal-title">Compare Verified ' + esc(schema.title) + ' Specs</h2>' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.65rem;">' +
+              '<h2 class="wdb-modal-title">Compare Verified ' + esc(schema.title) + ' Specs</h2>' +
+              shareBarHtml +
+            '</div>' +
             '<div class="wdb-cmp-table-wrap">' +
               '<table class="wdb-cmp-table">' +
                 '<thead><tr>' +
@@ -1368,15 +1444,16 @@
                       selected.map(function (it) {
                         var raw = cf.get(it);
                         var verified = isRealVerifiedValue(raw);
+                        var st = cf.getStatus ? cf.getStatus(it) : '';
                         var txt = verified ? formatValue(raw) : (cf.fallback || 'Not yet confirmed');
-                        return '<td style="' + (verified ? 'color:#f1f5f9; font-weight:700;' : 'color:#64748b; font-style:italic;') + '">' + esc(txt) + '</td>';
+                        return '<td style="' + (verified ? 'color:#f1f5f9; font-weight:700;' : 'color:#64748b; font-style:italic;') + '">' + esc(txt) + (st ? renderStatStatusTag(st) : '') + '</td>';
                       }).join('') +
                     '</tr>';
                   }).join('') +
                   '<tr><td>Interactive Map</td>' +
                     selected.map(function (it) {
                       var pin = getItemPinId(it);
-                      return '<td>' + (pin ? '<a href="/map.html?pin=' + encodeURIComponent(pin) + '" class="wdb-map-pill">📍 View on Map</a>' : '<span style="color:#64748b; font-style:italic;">Location unknown</span>') + '</td>';
+                      return '<td>' + (pin ? '<a href="/map?pin=' + encodeURIComponent(pin) + '" class="wdb-map-pill">📍 View on Map</a>' : '<span style="color:#64748b; font-style:italic;">Location unknown</span>') + '</td>';
                     }).join('') +
                   '</tr>' +
                 '</tbody>' +
@@ -1385,6 +1462,8 @@
           '</div>' +
         '</div>';
 
+      compareModal._activeSelected = selected;
+      compareModal._activeRows = activeRows;
       compareModal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
@@ -1504,6 +1583,30 @@
     compareModal.addEventListener('click', function (e) {
       if (e.target === compareModal || e.target.closest('[data-cmp-modal-close]')) {
         closeCompareModal();
+        return;
+      }
+      var shareBtn = e.target.closest('[data-share-action]');
+      if (shareBtn && compareModal._activeSelected && compareModal._activeSelected.length >= 2) {
+        var action = shareBtn.getAttribute('data-share-action');
+        var sel = compareModal._activeSelected;
+        var rows = compareModal._activeRows || [];
+        var txt = '';
+        var toast = '📋 Copied!';
+        if (action === 'reddit') {
+          txt = buildCompareReddit(sel, rows);
+          toast = '📋 Reddit Comparison Table Copied!';
+        } else if (action === 'discord') {
+          txt = buildCompareDiscord(sel, rows);
+          toast = '💬 Discord Comparison Copied!';
+        } else if (action === 'link') {
+          txt = buildCompareShareUrl(sel);
+          toast = '🔗 Comparison Share Link Copied!';
+        }
+        if (global.GTA6ShareTools) {
+          global.GTA6ShareTools.copyText(txt, shareBtn, toast);
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(txt).catch(function () {});
+        }
       }
     });
 
@@ -1574,9 +1677,21 @@
         if (typeof options.onLoaded === 'function') {
           options.onLoaded(data, state.items);
         }
-        // Deep-link ?item=<id>
+        // Deep-link ?item=<id> or ?compare=id1,id2,id3
         try {
           var urlParams = new URLSearchParams(global.location.search);
+          var deepCompare = urlParams.get('compare');
+          if (deepCompare) {
+            var cmpIds = deepCompare.split(',').map(function (s) { return s.trim(); }).filter(function (id) {
+              return state.items.some(function (x) { return x.id === id; });
+            }).slice(0, 3);
+            if (cmpIds.length >= 2) {
+              state.compareIds = cmpIds;
+              renderCompareTray();
+              renderGrid();
+              openCompareModal();
+            }
+          }
           var deepItem = urlParams.get('item');
           if (deepItem) {
             var match = state.items.find(function (x) { return x.id === deepItem; });
@@ -1602,7 +1717,7 @@
   }
 
   global.GTA6WorldDB = {
-    __version: '1.0',
+    __version: '1.1',
     registerCategory: registerCategory,
     getSchema: function (key) { return CATEGORY_SCHEMAS[key] || null; },
     listCategories: function () { return Object.keys(CATEGORY_SCHEMAS); },

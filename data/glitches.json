@@ -1,0 +1,581 @@
+{
+  "feed_title": "GTA 6 Verified Launch Glitches, Money Loops & Walkthrough Videos",
+  "last_synced": "2026-11-21T16:56:49.649Z",
+  "pinned_count": 6,
+  "total_count": 27,
+  "items": [
+    {
+      "id": "glitch-apollo-red-barn",
+      "pinned": true,
+      "type": "glitch",
+      "title": "1. Apollo Aggregates (Red Barn) Infinite Money Loop",
+      "badge": "💰 ~$55,000 / RUN • VERIFIED NOV 20–21",
+      "meta": "South Vice-Dale County → Brian's Lockup (7700)",
+      "summary": "Fastest repeatable launch-week cash glitch in GTA 6 Story Mode — exploits warehouse & parked truck container restocking via manual Save & Reload.",
+      "steps": [
+        "Drive a personal vehicle with 4+ trunk duffel slots to Apollo Aggregates (Red Barn) in South Vice-Dale County.",
+        "Clear the open red-barn warehouse pallets and the parked supply truck next to the loading bay, loading 4/4 loot bags straight into your vehicle trunk.",
+        "Open your Pause Menu and trigger a manual Save (Slot #15) → Reload Save — your trunk retains all 4 bags while the warehouse & truck loot instantly restocks.",
+        "Drive south to Brian's Lockup (Keypad Code: 7700) and fence the full load for ~$55,000 per run. Repeat until topped up, then bank cash at physical ATMs (remember the $20K loose pocket cap!)."
+      ],
+      "url": "/cheats.html#glitches",
+      "pinId": "glitch-apollo-red-barn",
+      "source": "GTA6HeistGuide Verified",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Launch-Week Playtest Verification (Slot #15 Save/Reload)",
+        "url": "https://www.gta6heistguide.com/gta-6-money-guide/",
+        "summary": "Verified repeatable 4-bag trunk restock loop at Apollo Aggregates (South Vice-Dale County) fenced via Brian's Lockup (7700). Note: Keep separate from Lab Fees story objective."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Initial community report of warehouse & parked truck container restocking on reload."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Confirmed reproducible on PS5 and Xbox Series X|S using Manual Save Slot #15."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-apollo-red-barn"
+    },
+    {
+      "id": "glitch-first-person-camera",
+      "pinned": true,
+      "type": "glitch",
+      "title": "2. First-Person Camera Glitch (Missing Native FPS View Workaround)",
+      "badge": "🎥 CAMERA WORKAROUND • VERIFIED NOV 20–21",
+      "meta": "PS5 & Xbox Series X|S",
+      "summary": "GTA 6 launched without a dedicated on-foot First-Person toggle. This cover-aim camera lock lets you explore Vice City interiors and streets in pseudo-first-person.",
+      "steps": [
+        "Switch camera distance to the closest third-person preset (Touchpad / View button) and stand flush against a low exterior corner wall.",
+        "Enter cover (R1 / RB), pull up your smartphone camera (D-Pad Up), then simultaneously tap Aim (L2 / LT) + Exit Cover as the phone lens transitions.",
+        "Your camera anchors tight over Jason or Lucia's eye line until you enter a cutscene, climb a ladder, or enter a vehicle."
+      ],
+      "url": "/cheats.html#glitches",
+      "source": "GTA6HeistGuide Verified",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Console Cover-Camera Transition Verification",
+        "url": "https://www.gta6heistguide.com/gta-6-tips-and-tricks/",
+        "summary": "Confirmed eye-line camera lock via corner cover + smartphone camera + simultaneous aim/exit cover on both PS5 and Xbox Series X|S."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Discovered by players testing photo/phone transitions after launch confirmed no native on-foot FPS toggle."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Verified working on PS5 and Xbox Series X|S until entering vehicles, ladders, or cutscenes."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-first-person-camera"
+    },
+    {
+      "id": "glitch-xsx-120hz",
+      "pinned": true,
+      "type": "glitch",
+      "title": "3. Xbox Series X 120Hz FPS Unlock Glitch (Build 01.002.001)",
+      "badge": "⚡ BUILD 01.002.001 • XBOX SERIES X",
+      "meta": "Requires 120Hz HDMI 2.1 Display + VRR",
+      "summary": "Bypasses the default 30 FPS frame-cap container on Xbox Series X launch build 01.002.001 when paired with a 120Hz VRR TV/monitor, unlocking variable 40–50+ FPS in open-world cruising.",
+      "steps": [
+        "In Xbox System Settings → TV & Display Options, set Refresh Rate to 120Hz and enable Allow Variable Refresh Rate (VRR).",
+        "Launch GTA 6 (build 01.002.001) into free-roam on Save Slot #15, open the Pause Menu → Display, and toggle Motion Blur OFF.",
+        "Tap the Xbox Guide button to suspend briefly into the Dashboard Settings, toggle Allow 4K / VRR refresh handshake, then immediately Quick Resume back into GTA 6.",
+        "Note: Frame pacing fluctuates in dense Vice City traffic — works best on a 120Hz HDMI 2.1 VRR monitor."
+      ],
+      "url": "/cheats.html#glitches",
+      "source": "GTA6HeistGuide Verified",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Testing",
+      "platformSpecific": true,
+      "platform": "Xbox Series X Only (Requires 120Hz HDMI 2.1 + VRR)",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Xbox Series X VRR Refresh Handshake Testing",
+        "url": "https://www.gta6heistguide.com/settings.html",
+        "summary": "Community hardware testers observed unlocked 40–50+ FPS frame pacing after Quick Resume VRR handshake on Xbox Series X. Results vary by display and scene load; tagged Testing."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Unverified",
+          "version": "Build 01.002.001",
+          "note": "Early reports of bypassed 30 FPS container on Xbox Series X with 120Hz VRR enabled."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Reproduced on select HDMI 2.1 120Hz VRR panels; frame pacing remains inconsistent in dense Vice City traffic."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-xsx-120hz"
+    },
+    {
+      "id": "glitch-store-cooldown-reset",
+      "pinned": true,
+      "type": "glitch",
+      "title": "4. Store Cooldown Timer Reset Glitch",
+      "badge": "🏪 INSTANT RESTOCK • CH. 1–3",
+      "meta": "Convenience, Pawn & Jewelry",
+      "summary": "Skips the in-game 48-minute store police-tape lockdown so you can chain high-value Port Gellhorn pawn shops and Vice City boutiques back-to-back.",
+      "steps": [
+        "Rob your target convenience store, pawn shop, or jewelry boutique and escape your 1–3 star wanted level.",
+        "Deliver and sell all duffel loot to your nearest fence (Randy, Brian's Lockup 7700, or Yasmani) and bank pocket cash at an ATM.",
+        "Move at least two blocks away from the shop, create a manual save on Slot #15, and immediately reload that save — the store shutter re-opens with full registers and display cases."
+      ],
+      "url": "/cheats.html#glitches",
+      "pinId": "heist-shops",
+      "source": "GTA6HeistGuide Verified",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Free-Roam Robbery Cooldown Reload Verification",
+        "url": "https://www.gta6heistguide.com/heists/pawn-shops.html",
+        "summary": "Moving two blocks away and reloading a manual save resets police-tape lockdown timers on convenience, pawn, and jewelry stores."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Reported during Chapter 1–3 pawn shop and jewelry robbery chaining."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Verified working across Story Mode free-roam on Build 01.002.001."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-store-cooldown-reset"
+    },
+    {
+      "id": "glitch-prologue-boat-skip",
+      "pinned": true,
+      "type": "glitch",
+      "title": "5. Prologue Boat Chase Skip (Roof Jump → Alley Boat Skip)",
+      "badge": "🚤 SPEEDRUN SKIP • PROLOGUE",
+      "meta": "Saves ~3.5 Minutes on New Runs",
+      "summary": "Verified launch-day speedrun bypass that skips the scripted coastal boat pursuit sequence during the opening chapter.",
+      "steps": [
+        "When fleeing down the marina boardwalk toward the pier, cut hard left up the wooden AC unit crate onto the low boathouse roof instead of sprinting to the main dock trigger.",
+        "Sprint across the rooftop ridge and leap directly into the narrow canal alley behind the boat slip, landing right beside the docked getaway skiff.",
+        "Board immediately to bypass the scripted patrol-boat ambush wave and trigger the escape checkpoint early."
+      ],
+      "url": "/cheats.html#glitches",
+      "pinId": "sh-jasons-house",
+      "source": "GTA6HeistGuide Verified",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Launch Speedrun Route Verification",
+        "url": "https://www.gta6heistguide.com/save-planner/",
+        "summary": "Confirmed rooftop AC crate climb and alley boat jump bypassing the scripted marina patrol boat pursuit wave (~3.5 minutes saved)."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-19",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "First surfaced in launch-day speedrun routing streams."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Confirmed repeatable on both PS5 and Xbox Series X|S."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-prologue-boat-skip"
+    },
+    {
+      "id": "glitch-crab-outpost-keypad-rumor",
+      "pinned": true,
+      "type": "glitch",
+      "title": "6. Crab Outpost Keypad Bypass / Cache Codes (CLEAVES / 0072 / 0212)",
+      "badge": "⚪ UNVERIFIED • COMMUNITY REPORTED",
+      "meta": "Grassrivers Wetlands — Pending 3+ Independent Confirmations",
+      "summary": "Launch-week community reports claim keypad codes CLEAVES, 0072, and 0212 unlock secondary Crab Outpost lockboxes or allow early access. Currently unconfirmed pending independent in-game capture.",
+      "steps": [
+        "Treat circulating Crab Outpost combinations (CLEAVES, 0072, 0212) as Unverified until confirmed with repeatable video capture.",
+        "Always test unverified world interactions on an isolated manual save (Slot #15) rather than your main story save."
+      ],
+      "url": "/cheats.html#glitches",
+      "trackerUrl": "/gta-6-glitches/#glitch-crab-outpost-keypad-rumor",
+      "pinId": "op-fishing-shacks",
+      "source": "Community Reported (Unverified)",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Unverified",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S (Unconfirmed)",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Community Submissions — Pending Independent Verification",
+        "url": "https://www.gta6heistguide.com/gta-6-money-guide/#safe-codes",
+        "summary": "Flagged Unverified in accordance with our strict accuracy guardrail; will only promote to Confirmed Working after 3+ independent verifications."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-21",
+          "status": "Unverified",
+          "version": "Build 01.002.001",
+          "note": "Logged as Unverified while awaiting independent in-game confirmation."
+        }
+      ]
+    },
+    {
+      "id": "yt-Yzg4ODEwakVLTX",
+      "pinned": false,
+      "type": "video",
+      "videoId": "c88810jEKMw",
+      "thumbnail": "https://i.ytimg.com/vi/c88810jEKMw/hqdefault.jpg",
+      "title": "GTA 6 - CHAPTER 3 CONTINUES! Playing GTA 6 for the First Time",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=c88810jEKMw",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T16:17:07.000Z"
+    },
+    {
+      "id": "yt-Y29BS3lfWWtYZj",
+      "pinned": false,
+      "type": "video",
+      "videoId": "coAKy_YkXf0",
+      "thumbnail": "https://i.ytimg.com/vi/coAKy_YkXf0/hqdefault.jpg",
+      "title": "Fix These Settings NOW! | GTA 6 Settings Guide",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=coAKy_YkXf0",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T03:45:35.000Z"
+    },
+    {
+      "id": "yt-c3pJeURPMDA5ME",
+      "pinned": false,
+      "type": "video",
+      "videoId": "szIyDO0090M",
+      "thumbnail": "https://i.ytimg.com/vi/szIyDO0090M/hqdefault.jpg",
+      "title": "GTA 6: Chapter 2 Ending! | Part 5",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=szIyDO0090M",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T02:33:38.000Z"
+    },
+    {
+      "id": "yt-XzRWU05acHVObz",
+      "pinned": false,
+      "type": "video",
+      "videoId": "_4VSNZpuNo0",
+      "thumbnail": "https://i.ytimg.com/vi/_4VSNZpuNo0/hqdefault.jpg",
+      "title": "GTA 6: Infiltrating a Furry Hideout (Legendary Gun)",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=_4VSNZpuNo0",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-20",
+      "timestamp": "2026-11-20T15:51:45.000Z"
+    },
+    {
+      "id": "yt-RUFqTm42OXVlU2",
+      "pinned": false,
+      "type": "video",
+      "videoId": "EAjNn69ueSg",
+      "thumbnail": "https://i.ytimg.com/vi/EAjNn69ueSg/hqdefault.jpg",
+      "title": "GTA 6 - CHAPTER 3! Playing GTA 6 for the First Time",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=EAjNn69ueSg",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-20",
+      "timestamp": "2026-11-20T11:29:09.000Z"
+    },
+    {
+      "id": "yt-UjBHZEVrUFpTdk",
+      "pinned": false,
+      "type": "video",
+      "videoId": "R0GdEkPZSvM",
+      "thumbnail": "https://i.ytimg.com/vi/R0GdEkPZSvM/hqdefault.jpg",
+      "title": "GTA 6 - CHAPTER 2 CONTINUES! Playing GTA 6 for the First Time",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=R0GdEkPZSvM",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-19",
+      "timestamp": "2026-11-19T14:16:31.000Z"
+    },
+    {
+      "id": "yt-eTh6YTlmQ1ZrNH",
+      "pinned": false,
+      "type": "video",
+      "videoId": "y8za9fCVk4w",
+      "thumbnail": "https://i.ytimg.com/vi/y8za9fCVk4w/hqdefault.jpg",
+      "title": "GTA 6: Finishing Chapter 1 - Part 4",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=y8za9fCVk4w",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-19",
+      "timestamp": "2026-11-19T07:37:35.000Z"
+    },
+    {
+      "id": "yt-aGxFb2pFN3cwWn",
+      "pinned": false,
+      "type": "video",
+      "videoId": "hlEojE7w0Zw",
+      "thumbnail": "https://i.ytimg.com/vi/hlEojE7w0Zw/hqdefault.jpg",
+      "title": "GTA 6: How To Break Into The Military Base & Steal a Jet or Tank (EASY GUIDE)",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=hlEojE7w0Zw",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-19",
+      "timestamp": "2026-11-19T04:03:30.000Z"
+    },
+    {
+      "id": "yt-NDVGcVVScE1OQ3",
+      "pinned": false,
+      "type": "video",
+      "videoId": "45FqURpMNCs",
+      "thumbnail": "https://i.ytimg.com/vi/45FqURpMNCs/hqdefault.jpg",
+      "title": "GTA 6 - CHAPTER 2! Playing GTA 6 for the First Time",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=45FqURpMNCs",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-19",
+      "timestamp": "2026-11-19T02:21:23.000Z"
+    },
+    {
+      "id": "yt-SnBITTU0Ukl2YU",
+      "pinned": false,
+      "type": "video",
+      "videoId": "JpHM54RIvaE",
+      "thumbnail": "https://i.ytimg.com/vi/JpHM54RIvaE/hqdefault.jpg",
+      "title": "GTA 6: Part 3 - Lucia",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=JpHM54RIvaE",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-19",
+      "timestamp": "2026-11-19T00:00:25.000Z"
+    },
+    {
+      "id": "yt-eE1YcDgwQ250eH",
+      "pinned": false,
+      "type": "video",
+      "videoId": "xMXp80Cntxw",
+      "thumbnail": "https://i.ytimg.com/vi/xMXp80Cntxw/hqdefault.jpg",
+      "title": "GTA 6 LAUNCH STREAM! Playing GTA 6 for the First Time",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=xMXp80Cntxw",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-18",
+      "timestamp": "2026-11-18T21:25:01.000Z"
+    },
+    {
+      "id": "yt-QS05VGdaTS1VNE",
+      "pinned": false,
+      "type": "video",
+      "videoId": "A-9TgZM-U4I",
+      "thumbnail": "https://i.ytimg.com/vi/A-9TgZM-U4I/hqdefault.jpg",
+      "title": "GTA 6: Part 2 - Fixing Some Leaks",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/watch?v=A-9TgZM-U4I",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-18",
+      "timestamp": "2026-11-18T18:56:54.000Z"
+    },
+    {
+      "id": "yt-Y0poQ1NONnZzR2",
+      "pinned": false,
+      "type": "video",
+      "videoId": "cJhCSN6vsGc",
+      "thumbnail": "https://i.ytimg.com/vi/cJhCSN6vsGc/hqdefault.jpg",
+      "title": "Dog's Can Ride Jetskis In GTA 6?!?!",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/shorts/cJhCSN6vsGc",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-18",
+      "timestamp": "2026-11-18T17:14:37.000Z"
+    },
+    {
+      "id": "yt-T2FRNjVPWVZQQn",
+      "pinned": false,
+      "type": "video",
+      "videoId": "OaQ65OYVPBw",
+      "thumbnail": "https://i.ytimg.com/vi/OaQ65OYVPBw/hqdefault.jpg",
+      "title": "GTA 6 Fight Mechanics!",
+      "badge": "🎬 YOUTUBE GUIDE • TGG",
+      "meta": "YouTube Video • TGG",
+      "summary": "Get 10% off all GamerSupps products with this link - https://gamersupps.gg/tgg Follow me on Twitter/X: https://twitter.com/TGGonYT Twitch: https://www.twitch.tv/tgg_gta Instagram: https://www.instagra…",
+      "url": "https://www.youtube.com/shorts/OaQ65OYVPBw",
+      "source": "YouTube (TGG)",
+      "date": "2026-11-18",
+      "timestamp": "2026-11-18T16:52:57.000Z"
+    },
+    {
+      "id": "yt-VE9uSC1LSldTaW",
+      "pinned": false,
+      "type": "video",
+      "videoId": "TOnH-KJWSio",
+      "thumbnail": "https://i.ytimg.com/vi/TOnH-KJWSio/hqdefault.jpg",
+      "title": "GTA Vice City NextGen Edition | Mission Road Kill",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "GRAND THEFT AUTO VICE CITY NEXTGEN EDITION: Grand Theft Auto: Vice City NextGen Edition - Mission \"Road Kill\" Walkthrough \\ Guide. GTA Vice City NextGen Edition Mission Road Kill, Road Kill Mission GT…",
+      "url": "https://www.youtube.com/watch?v=TOnH-KJWSio",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-08",
+      "timestamp": "2025-03-08T11:00:37.000Z"
+    },
+    {
+      "id": "yt-WnRyTE5JTmtLNk",
+      "pinned": false,
+      "type": "video",
+      "videoId": "ZtrLNINkK6A",
+      "thumbnail": "https://i.ytimg.com/vi/ZtrLNINkK6A/hqdefault.jpg",
+      "title": "GTA Vice City NextGen Edition Lagging Issue, Can Somebody Help Me? | Mission Mall Shootout",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "Meet up with Pierre La Ponce at the North Point Mall, escape French military intelligence operatives, and chase and kill Pierre, retrieving some stolen military technology. GRAND THEFT AUTO VICE CITY …",
+      "url": "https://www.youtube.com/watch?v=ZtrLNINkK6A",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-07",
+      "timestamp": "2025-03-07T11:00:47.000Z"
+    },
+    {
+      "id": "yt-VGNUM3BTZ1RlZD",
+      "pinned": false,
+      "type": "video",
+      "videoId": "TcT3pSgTed4",
+      "thumbnail": "https://i.ytimg.com/vi/TcT3pSgTed4/hqdefault.jpg",
+      "title": "GTA VC NextGen Edition | Mall Shootout Mission",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "Meet up with Pierre La Ponce at the North Point Mall, escape French military intelligence operatives, and chase and kill Pierre, retrieving some stolen military technology. GRAND THEFT AUTO VICE CITY …",
+      "url": "https://www.youtube.com/watch?v=TcT3pSgTed4",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-06",
+      "timestamp": "2025-03-06T11:00:37.000Z"
+    },
+    {
+      "id": "yt-akFCdDFHZEhPcW",
+      "pinned": false,
+      "type": "video",
+      "videoId": "jABt1GdHOqg",
+      "thumbnail": "https://i.ytimg.com/vi/jABt1GdHOqg/hqdefault.jpg",
+      "title": "GTA Vice City NextGen Edition | Mission Riot!",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "Grand Theft Auto: Vice City NextGen Edition - Mission \"Riot\" Walkthrough \\ Guide. Mission:6 Riot (L), Rafaels Clothes Shop, Spand Express Worker Strike, Riot, Avery Mission Opens, Colonel Cortez Phone…",
+      "url": "https://www.youtube.com/watch?v=jABt1GdHOqg",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-05",
+      "timestamp": "2025-03-05T11:00:57.000Z"
+    },
+    {
+      "id": "yt-MjQyTVFGVzA5WF",
+      "pinned": false,
+      "type": "video",
+      "videoId": "242MQFW09XQ",
+      "thumbnail": "https://i.ytimg.com/vi/242MQFW09XQ/hqdefault.jpg",
+      "title": "GTA Vice City NextGen Edition | Mission Jury Fury!",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "Grand Theft Auto: Vice City NextGen Edition - Mission \"Jury Fury\" Walkthrough \\ Guide. Jury Fury (L), Giorgio Forelli's, Smash up the Juror's Car, Sonny Phone Call GTA Vice City NextGen Walkthrough Mi…",
+      "url": "https://www.youtube.com/watch?v=242MQFW09XQ",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-04",
+      "timestamp": "2025-03-04T11:00:06.000Z"
+    },
+    {
+      "id": "yt-MHI4NkoweklKVU",
+      "pinned": false,
+      "type": "video",
+      "videoId": "0r86J0zIJUE",
+      "thumbnail": "https://i.ytimg.com/vi/0r86J0zIJUE/hqdefault.jpg",
+      "title": "GTA Vice City Next Gen Edition | Ken Rosenberg Mission: The Party",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "#vicecitylive #GTAViceCity #ViceCity Grand Theft Auto Vice City Next Gen Edition - Mission \"The Party\" Walkthrough \\ Guide. Mission: The Party, Reach Rafaels, Meet Colonel, Drop Mercedes on The Pole P…",
+      "url": "https://www.youtube.com/watch?v=0r86J0zIJUE",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-02",
+      "timestamp": "2025-03-02T11:00:02.000Z"
+    },
+    {
+      "id": "yt-blpVZmMwellidD",
+      "pinned": false,
+      "type": "video",
+      "videoId": "nZUfc0zYbt4",
+      "thumbnail": "https://i.ytimg.com/vi/nZUfc0zYbt4/hqdefault.jpg",
+      "title": "GTA Vice City Next Gen Edition | Mission: The Party",
+      "badge": "🎬 YOUTUBE GUIDE • PLAY GAME",
+      "meta": "YouTube Video • Play Game",
+      "summary": "#vicecitylive #GTAViceCity #ViceCity Grand Theft Auto Vice City Next Gen Edition - Mission \"The Party\" Walkthrough \\ Guide. Mission: The Party, Reach Rafaels, Meet Colonel, Drop Mercedes on The Pole P…",
+      "url": "https://www.youtube.com/watch?v=nZUfc0zYbt4",
+      "source": "YouTube (Play Game)",
+      "date": "2025-03-01",
+      "timestamp": "2025-03-01T11:01:05.000Z"
+    }
+  ],
+  "tracker_policy": "Color-coded verification ledger: Confirmed Working (GREEN), Confirmed Patched (RED), Testing (YELLOW), Unverified (GRAY). Never marks a glitch patched or working without observed version evidence."
+}

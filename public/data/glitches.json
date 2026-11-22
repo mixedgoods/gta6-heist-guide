@@ -1,8 +1,8 @@
 {
   "feed_title": "GTA 6 Verified Launch Glitches, Money Loops & Walkthrough Videos",
   "last_synced": "2026-11-21T16:56:49.649Z",
-  "pinned_count": 5,
-  "total_count": 26,
+  "pinned_count": 6,
+  "total_count": 27,
   "items": [
     {
       "id": "glitch-apollo-red-barn",
@@ -22,7 +22,32 @@
       "pinId": "glitch-apollo-red-barn",
       "source": "GTA6HeistGuide Verified",
       "date": "2026-11-21",
-      "timestamp": "2026-11-21T00:00:00.000Z"
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Launch-Week Playtest Verification (Slot #15 Save/Reload)",
+        "url": "https://www.gta6heistguide.com/gta-6-money-guide/",
+        "summary": "Verified repeatable 4-bag trunk restock loop at Apollo Aggregates (South Vice-Dale County) fenced via Brian's Lockup (7700). Note: Keep separate from Lab Fees story objective."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Initial community report of warehouse & parked truck container restocking on reload."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Confirmed reproducible on PS5 and Xbox Series X|S using Manual Save Slot #15."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-apollo-red-barn"
     },
     {
       "id": "glitch-first-person-camera",
@@ -40,7 +65,32 @@
       "url": "/cheats.html#glitches",
       "source": "GTA6HeistGuide Verified",
       "date": "2026-11-21",
-      "timestamp": "2026-11-21T00:00:00.000Z"
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Console Cover-Camera Transition Verification",
+        "url": "https://www.gta6heistguide.com/gta-6-tips-and-tricks/",
+        "summary": "Confirmed eye-line camera lock via corner cover + smartphone camera + simultaneous aim/exit cover on both PS5 and Xbox Series X|S."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Discovered by players testing photo/phone transitions after launch confirmed no native on-foot FPS toggle."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Verified working on PS5 and Xbox Series X|S until entering vehicles, ladders, or cutscenes."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-first-person-camera"
     },
     {
       "id": "glitch-xsx-120hz",
@@ -59,7 +109,32 @@
       "url": "/cheats.html#glitches",
       "source": "GTA6HeistGuide Verified",
       "date": "2026-11-21",
-      "timestamp": "2026-11-21T00:00:00.000Z"
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Testing",
+      "platformSpecific": true,
+      "platform": "Xbox Series X Only (Requires 120Hz HDMI 2.1 + VRR)",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Xbox Series X VRR Refresh Handshake Testing",
+        "url": "https://www.gta6heistguide.com/settings.html",
+        "summary": "Community hardware testers observed unlocked 40–50+ FPS frame pacing after Quick Resume VRR handshake on Xbox Series X. Results vary by display and scene load; tagged Testing."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Unverified",
+          "version": "Build 01.002.001",
+          "note": "Early reports of bypassed 30 FPS container on Xbox Series X with 120Hz VRR enabled."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Reproduced on select HDMI 2.1 120Hz VRR panels; frame pacing remains inconsistent in dense Vice City traffic."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-xsx-120hz"
     },
     {
       "id": "glitch-store-cooldown-reset",
@@ -78,7 +153,32 @@
       "pinId": "heist-shops",
       "source": "GTA6HeistGuide Verified",
       "date": "2026-11-21",
-      "timestamp": "2026-11-21T00:00:00.000Z"
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Free-Roam Robbery Cooldown Reload Verification",
+        "url": "https://www.gta6heistguide.com/heists/pawn-shops.html",
+        "summary": "Moving two blocks away and reloading a manual save resets police-tape lockdown timers on convenience, pawn, and jewelry stores."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-20",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "Reported during Chapter 1–3 pawn shop and jewelry robbery chaining."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Verified working across Story Mode free-roam on Build 01.002.001."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-store-cooldown-reset"
     },
     {
       "id": "glitch-prologue-boat-skip",
@@ -97,7 +197,69 @@
       "pinId": "sh-jasons-house",
       "source": "GTA6HeistGuide Verified",
       "date": "2026-11-21",
-      "timestamp": "2026-11-21T00:00:00.000Z"
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Confirmed Working",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Launch Speedrun Route Verification",
+        "url": "https://www.gta6heistguide.com/save-planner/",
+        "summary": "Confirmed rooftop AC crate climb and alley boat jump bypassing the scripted marina patrol boat pursuit wave (~3.5 minutes saved)."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-19",
+          "status": "Testing",
+          "version": "Build 01.002.001",
+          "note": "First surfaced in launch-day speedrun routing streams."
+        },
+        {
+          "date": "2026-11-21",
+          "status": "Confirmed Working",
+          "version": "Build 01.002.001",
+          "note": "Confirmed repeatable on both PS5 and Xbox Series X|S."
+        }
+      ],
+      "trackerUrl": "/gta-6-glitches/#glitch-prologue-boat-skip"
+    },
+    {
+      "id": "glitch-crab-outpost-keypad-rumor",
+      "pinned": true,
+      "type": "glitch",
+      "title": "6. Crab Outpost Keypad Bypass / Cache Codes (CLEAVES / 0072 / 0212)",
+      "badge": "⚪ UNVERIFIED • COMMUNITY REPORTED",
+      "meta": "Grassrivers Wetlands — Pending 3+ Independent Confirmations",
+      "summary": "Launch-week community reports claim keypad codes CLEAVES, 0072, and 0212 unlock secondary Crab Outpost lockboxes or allow early access. Currently unconfirmed pending independent in-game capture.",
+      "steps": [
+        "Treat circulating Crab Outpost combinations (CLEAVES, 0072, 0212) as Unverified until confirmed with repeatable video capture.",
+        "Always test unverified world interactions on an isolated manual save (Slot #15) rather than your main story save."
+      ],
+      "url": "/cheats.html#glitches",
+      "trackerUrl": "/gta-6-glitches/#glitch-crab-outpost-keypad-rumor",
+      "pinId": "op-fishing-shacks",
+      "source": "Community Reported (Unverified)",
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T00:00:00.000Z",
+      "status": "Unverified",
+      "platformSpecific": false,
+      "platform": "PS5 & Xbox Series X|S (Unconfirmed)",
+      "gameVersion": "Build 01.002.001 (Launch)",
+      "lastTestedDate": "2026-11-21",
+      "sourceEvidence": {
+        "label": "Community Submissions — Pending Independent Verification",
+        "url": "https://www.gta6heistguide.com/gta-6-money-guide/#safe-codes",
+        "summary": "Flagged Unverified in accordance with our strict accuracy guardrail; will only promote to Confirmed Working after 3+ independent verifications."
+      },
+      "statusHistory": [
+        {
+          "date": "2026-11-21",
+          "status": "Unverified",
+          "version": "Build 01.002.001",
+          "note": "Logged as Unverified while awaiting independent in-game confirmation."
+        }
+      ]
     },
     {
       "id": "yt-Yzg4ODEwakVLTX",
@@ -414,5 +576,6 @@
       "date": "2025-03-01",
       "timestamp": "2025-03-01T11:01:05.000Z"
     }
-  ]
+  ],
+  "tracker_policy": "Color-coded verification ledger: Confirmed Working (GREEN), Confirmed Patched (RED), Testing (YELLOW), Unverified (GRAY). Never marks a glitch patched or working without observed version evidence."
 }

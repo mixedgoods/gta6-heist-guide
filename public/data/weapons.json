@@ -1,7 +1,7 @@
 {
   "category": "weapons",
   "updated": "2026-11-21",
-  "note": "Verified GTA 6 weapons across Handguns, Rifles, Shotguns, SMGs, Snipers & Hunting (including Bret's SM-69), Heavy, Melee, and Throwables. Only verified characteristics and real in-game GTA 6 screenshots are published.",
+  "note": "Verified GTA 6 weapons across 8 classes. Every stat (damage, fire rate, range, accuracy, mag capacity, bonuses) explicitly distinguishes Confirmed, Reported, Estimated, and Not yet confirmed — zero invented numeric DPS/stat bars.",
   "items": [
     {
       "id": "duval-signature-es9",
@@ -12,9 +12,13 @@
         "fireRate": "Semi-automatic",
         "range": "Close-to-mid range sidearm",
         "accuracy": "Match-grade stability",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Ultimate Edition bonus sidearm (custom J. Duval engraving; stat modifier not yet confirmed)"
       },
-      "modifications": ["Threaded Barrel / Suppressor", "Custom Engraved Grip"],
+      "modifications": [
+        "Threaded Barrel / Suppressor",
+        "Custom Engraved Grip"
+      ],
       "howToObtain": "Ultimate Edition Bonus — Claim from safehouse duffle / vehicle trunk after prologue",
       "price": "Included (Ultimate Edition)",
       "bestUseCase": "Concealable Day-1 sidearm for stealth robberies and stickups",
@@ -24,12 +28,26 @@
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "sh-jasons-house",
       "relatedLinks": [
-        { "label": "Ultimate Edition Claim Walkthrough", "url": "/weapons-bonuses.html#claimGuide" },
-        { "label": "Jason's House (Key Lento)", "url": "/properties.html?item=sh-jasons-house" }
+        {
+          "label": "Ultimate Edition Claim Walkthrough",
+          "url": "/weapons-bonuses.html#claimGuide"
+        },
+        {
+          "label": "Jason's House (Key Lento)",
+          "url": "/properties.html?item=sh-jasons-house"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "kl17g1-polymer-pistol",
@@ -40,9 +58,15 @@
         "fireRate": "Semi-automatic",
         "range": "Close-to-mid range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Standard 9mm box magazine"
+        "magCapacity": "Standard 9mm box magazine",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Suppressor", "Underbarrel Flashlight", "Extended Magazine", "Custom Frame Finish"],
+      "modifications": [
+        "Suppressor",
+        "Underbarrel Flashlight",
+        "Extended Magazine",
+        "Custom Frame Finish"
+      ],
       "howToObtain": "Ammu-Nation & Vice City Gun Stores / Lucia starter sidearm",
       "price": "Price not confirmed",
       "bestUseCase": "Lightweight concealable sidearm for diner & shop stickups",
@@ -52,12 +76,26 @@
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "ammu-vice-beach-promenade",
       "relatedLinks": [
-        { "label": "Shops & Stickups Guide", "url": "/heists/shops-and-stickups.html" },
-        { "label": "24 Gun Stores Directory", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Shops & Stickups Guide",
+          "url": "/heists/shops-and-stickups.html"
+        },
+        {
+          "label": "24 Gun Stores Directory",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Reported",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "capo-tactical-pistol",
@@ -68,9 +106,13 @@
         "fireRate": "Semi-automatic",
         "range": "Close-to-mid range",
         "accuracy": "Optic-assisted precision",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Slide-Mounted Micro Red-Dot Optic", "Underbarrel Rail"],
+      "modifications": [
+        "Slide-Mounted Micro Red-Dot Optic",
+        "Underbarrel Rail"
+      ],
       "howToObtain": "Availability unverified (Carried by Raul Bautista in heist reveals)",
       "price": "Price not confirmed",
       "bestUseCase": "Precision pistol engagements and armored vehicle getaways",
@@ -80,11 +122,22 @@
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "The Cartel Heist Guide", "url": "/heists/the-cartel-heist.html" }
+        {
+          "label": "The Cartel Heist Guide",
+          "url": "/heists/the-cartel-heist.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "scoped-heavy-revolver",
@@ -95,9 +148,14 @@
         "fireRate": "Single/double-action revolver",
         "range": "Extended handgun range with scope",
         "accuracy": "High optic precision",
-        "magCapacity": "6-Round Cylinder"
+        "magCapacity": "6-Round Cylinder",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Long-Eye-Relief Pistol Scope", "Extended Barrel", "Custom Grip"],
+      "modifications": [
+        "Long-Eye-Relief Pistol Scope",
+        "Extended Barrel",
+        "Custom Grip"
+      ],
       "howToObtain": "Ammu-Nation / Gunsmith customization",
       "price": "Price not confirmed",
       "bestUseCase": "High-impact precision sidearm & mid-range armored target takedowns",
@@ -107,11 +165,22 @@
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "ammu-keys-southern-strip",
       "relatedLinks": [
-        { "label": "Key West Sunset Strip Gun Store", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Key West Sunset Strip Gun Store",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "custom-duo-revolvers",
@@ -122,9 +191,14 @@
         "fireRate": "Single/double-action revolver",
         "range": "Mid range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "6-Round Cylinder"
+        "magCapacity": "6-Round Cylinder",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Custom Engraved Palm Grips", "Gold Trigger/Hammer Trim", "Top-Mount Scope Rail"],
+      "modifications": [
+        "Custom Engraved Palm Grips",
+        "Gold Trigger/Hammer Trim",
+        "Top-Mount Scope Rail"
+      ],
       "howToObtain": "Ammu-Nation & Custom Gunsmith engraving",
       "price": "Price not confirmed",
       "bestUseCase": "Hard-hitting backup sidearm with character-specific custom finishes",
@@ -134,11 +208,22 @@
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "ammu-starlet-island-causeway",
       "relatedLinks": [
-        { "label": "Gun Stores Directory", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Gun Stores Directory",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "compact-tactical-smg",
@@ -149,9 +234,15 @@
         "fireRate": "Full-automatic",
         "range": "Close-to-mid range",
         "accuracy": "Folding brace stabilized",
-        "magCapacity": "Extended vertical stick magazine"
+        "magCapacity": "Extended vertical stick magazine",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Folding Brace", "Custom Palm-Leaf Finish", "Flip-Up Iron Sights", "Suppressor Mount"],
+      "modifications": [
+        "Folding Brace",
+        "Custom Palm-Leaf Finish",
+        "Flip-Up Iron Sights",
+        "Suppressor Mount"
+      ],
       "howToObtain": "Ammu-Nation & Leonida Gun Stores",
       "price": "Price not confirmed",
       "bestUseCase": "Close-quarters bank lobbies, narrow hallways, and vehicle drive-bys",
@@ -161,12 +252,26 @@
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "ammu-downtown-vice-financial",
       "relatedLinks": [
-        { "label": "Small Banks & Payday Loans", "url": "/heists/small-banks-payday-loans.html" },
-        { "label": "24 Gun Stores Directory", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Small Banks & Payday Loans",
+          "url": "/heists/small-banks-payday-loans.html"
+        },
+        {
+          "label": "24 Gun Stores Directory",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Reported",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "micro-smg",
@@ -177,9 +282,13 @@
         "fireRate": "High full-auto rate of fire",
         "range": "Close range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Extended Magazine", "Suppressor"],
+      "modifications": [
+        "Extended Magazine",
+        "Suppressor"
+      ],
       "howToObtain": "Ammu-Nation (Little Haiti & Vice City branches) / Pawn shops",
       "price": "Price not confirmed",
       "bestUseCase": "One-handed vehicle drive-by suppression",
@@ -189,11 +298,22 @@
       "imageSource": null,
       "mapPinId": "ammu-little-haiti-express",
       "relatedLinks": [
-        { "label": "Ammu-Nation Little Haiti", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Ammu-Nation Little Haiti",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Reported",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "submachine-gun-mp5",
@@ -204,9 +324,15 @@
         "fireRate": "Full-automatic",
         "range": "Close-to-mid range",
         "accuracy": "Controllable sustained fire",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Suppressor", "Red-Dot Sight", "Flashlight", "Extended Mag"],
+      "modifications": [
+        "Suppressor",
+        "Red-Dot Sight",
+        "Flashlight",
+        "Extended Mag"
+      ],
       "howToObtain": "Ammu-Nation & Vice City Firearms",
       "price": "Price not confirmed",
       "bestUseCase": "Quiet interior room clearing with a suppressor attached",
@@ -216,11 +342,22 @@
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Jewelry Stores Robbery Guide", "url": "/heists/jewelry-stores.html" }
+        {
+          "label": "Jewelry Stores Robbery Guide",
+          "url": "/heists/jewelry-stores.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "service-carbine-rifle",
@@ -231,9 +368,16 @@
         "fireRate": "Full-auto / semi-auto",
         "range": "Mid-to-long range",
         "accuracy": "High rifle precision",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Optic Sight", "Suppressor", "Foregrip", "Flashlight", "Extended Magazine"],
+      "modifications": [
+        "Optic Sight",
+        "Suppressor",
+        "Foregrip",
+        "Flashlight",
+        "Extended Magazine"
+      ],
       "howToObtain": "Ammu-Nation / Vehicle trunk long-gun storage",
       "price": "Price not confirmed",
       "bestUseCase": "All-purpose primary rifle for major bank vaults and highway shootouts",
@@ -243,12 +387,26 @@
       "imageSource": null,
       "mapPinId": "ammu-downtown-vice-financial",
       "relatedLinks": [
-        { "label": "Large Bank Vaults Guide", "url": "/heists/large-bank-vaults.html" },
-        { "label": "GTA 6 Tips & Tricks", "url": "/gta-6-tips-and-tricks/" }
+        {
+          "label": "Large Bank Vaults Guide",
+          "url": "/heists/large-bank-vaults.html"
+        },
+        {
+          "label": "GTA 6 Tips & Tricks",
+          "url": "/gta-6-tips-and-tricks/"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Not yet confirmed",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "assault-rifle-ak",
@@ -259,9 +417,14 @@
         "fireRate": "Full-automatic",
         "range": "Mid range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Extended Magazine", "Muzzle Brake", "Optic Mount"],
+      "modifications": [
+        "Extended Magazine",
+        "Muzzle Brake",
+        "Optic Mount"
+      ],
       "howToObtain": "Ammu-Nation, Pawn & Gun shops, Cartel Airstrip armory",
       "price": "Price not confirmed",
       "bestUseCase": "Sustained firefight suppression against armored trucks and gang hideouts",
@@ -271,11 +434,22 @@
       "imageSource": null,
       "mapPinId": "ammu-grassrivers-south-airstrip",
       "relatedLinks": [
-        { "label": "Armored Trucks & Gang Ops", "url": "/heists/armored-trucks-gang-ops.html" }
+        {
+          "label": "Armored Trucks & Gang Ops",
+          "url": "/heists/armored-trucks-gang-ops.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "heavy-battle-rifle",
@@ -286,9 +460,14 @@
         "fireRate": "Not yet confirmed",
         "range": "Mid-to-long range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Holographic / ACOG Optic", "Foregrip", "Suppressor"],
+      "modifications": [
+        "Holographic / ACOG Optic",
+        "Foregrip",
+        "Suppressor"
+      ],
       "howToObtain": "Black Eagle Surplus & Port Gellhorn Industrial Loop Ammu-Nation",
       "price": "Price not confirmed",
       "bestUseCase": "Punching through heavy police armor during 4–5 star escapes",
@@ -298,11 +477,22 @@
       "imageSource": null,
       "mapPinId": "ammu-port-gellhorn-north",
       "relatedLinks": [
-        { "label": "The Cartel Heist Guide", "url": "/heists/the-cartel-heist.html" }
+        {
+          "label": "The Cartel Heist Guide",
+          "url": "/heists/the-cartel-heist.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Not yet confirmed",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "pump-action-shotgun",
@@ -313,9 +503,14 @@
         "fireRate": "Pump-action",
         "range": "Close range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Flashlight", "Extended Tube", "Choke / Suppressor"],
+      "modifications": [
+        "Flashlight",
+        "Extended Tube",
+        "Choke / Suppressor"
+      ],
       "howToObtain": "Ammu-Nation & Pawn Shops across Leonida",
       "price": "Price not confirmed",
       "bestUseCase": "Doorway breaching, pawn shop defense, and close-quarters vault hallways",
@@ -325,11 +520,22 @@
       "imageSource": null,
       "mapPinId": "ammu-south-vice-intermodal",
       "relatedLinks": [
-        { "label": "Pawn Shops Robbery Guide", "url": "/heists/pawn-shops.html" }
+        {
+          "label": "Pawn Shops Robbery Guide",
+          "url": "/heists/pawn-shops.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "combat-tactical-shotgun",
@@ -340,9 +546,14 @@
         "fireRate": "Semi-automatic",
         "range": "Close range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Tactical Flashlight", "Red-Dot Sight", "Extended Magazine / Drum"],
+      "modifications": [
+        "Tactical Flashlight",
+        "Red-Dot Sight",
+        "Extended Magazine / Drum"
+      ],
       "howToObtain": "Ammu-Nation (Vice Beach Promenade & Port Gellhorn Waterfront)",
       "price": "Price not confirmed",
       "bestUseCase": "Rapid multi-target clearing during loud bank exits",
@@ -352,11 +563,22 @@
       "imageSource": null,
       "mapPinId": "ammu-vice-beach-promenade",
       "relatedLinks": [
-        { "label": "VCIA Takedown Heist Guide", "url": "/heists/vcia-takedown.html" }
+        {
+          "label": "VCIA Takedown Heist Guide",
+          "url": "/heists/vcia-takedown.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "sawed-off-shotgun",
@@ -367,9 +589,12 @@
         "fireRate": "Double-barrel / compact pump",
         "range": "Very close range",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Custom Grip"],
+      "modifications": [
+        "Custom Grip"
+      ],
       "howToObtain": "Pawn shops & Grassrivers swamp outposts",
       "price": "Price not confirmed",
       "bestUseCase": "Motorcycle pursuit defense & close-range ambush",
@@ -381,7 +606,15 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Reported",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "brets-sm69",
@@ -392,9 +625,13 @@
         "fireRate": "Bolt-action",
         "range": "Long range",
         "accuracy": "High precision with Focus Mode (L3 + R3)",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Bret Vogel hunting contract reward (optimized for clean vital shots with Focus Mode L3+R3)"
       },
-      "modifications": ["High-Magnification Hunting Scope", "Suppressor"],
+      "modifications": [
+        "High-Magnification Hunting Scope",
+        "Suppressor"
+      ],
       "howToObtain": "Bret Vogel Hunting Contract Reward — Complete 'Veteran Hunted' at Killtelligence Provisions (Mount Kalaga, Jason only)",
       "price": "Contract Reward (Killtelligence Provisions)",
       "bestUseCase": "Securing Good & Pristine wildlife carcasses for Bret Vogel's 15 Hunting Target Decks and 8 Legendary Hunter animals",
@@ -404,13 +641,30 @@
       "imageSource": null,
       "mapPinId": "ammu-mt-kalaga-ranger-station",
       "relatedLinks": [
-        { "label": "Bret Vogel 15 Target Decks Tracker", "url": "/animals.html" },
-        { "label": "Mount Kalaga Trailhead Garage", "url": "/properties.html?item=gar-purch-8" },
-        { "label": "GTA 6 Tips & Tricks", "url": "/gta-6-tips-and-tricks/" }
+        {
+          "label": "Bret Vogel 15 Target Decks Tracker",
+          "url": "/animals.html"
+        },
+        {
+          "label": "Mount Kalaga Trailhead Garage",
+          "url": "/properties.html?item=gar-purch-8"
+        },
+        {
+          "label": "GTA 6 Tips & Tricks",
+          "url": "/gta-6-tips-and-tricks/"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/animals.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Confirmed"
+      }
     },
     {
       "id": "bolt-action-hunting-rifle",
@@ -421,9 +675,13 @@
         "fireRate": "Bolt-action",
         "range": "Long range",
         "accuracy": "High",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Hunting Scope", "Suppressor"],
+      "modifications": [
+        "Hunting Scope",
+        "Suppressor"
+      ],
       "howToObtain": "Mount Kalaga & Grassrivers West Junction Gun Stores",
       "price": "Price not confirmed",
       "bestUseCase": "Wildlife hunting across Mount Kalaga and long-range overwatch",
@@ -433,11 +691,22 @@
       "imageSource": null,
       "mapPinId": "ammu-grassrivers-west-crossing",
       "relatedLinks": [
-        { "label": "Animals & Wildlife Compendium", "url": "/animals.html" }
+        {
+          "label": "Animals & Wildlife Compendium",
+          "url": "/animals.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "heavy-sniper-rifle",
@@ -448,9 +717,14 @@
         "fireRate": "Bolt-action / slow semi-auto",
         "range": "Extreme long range",
         "accuracy": "High",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
-      "modifications": ["Advanced Zoom Scope", "Thermal / Night Vision Optic", "Muzzle Brake"],
+      "modifications": [
+        "Advanced Zoom Scope",
+        "Thermal / Night Vision Optic",
+        "Muzzle Brake"
+      ],
       "howToObtain": "Mt. Kalaga Summit Outpost & Airport North Perimeter Ammu-Nation",
       "price": "Price not confirmed",
       "bestUseCase": "Disabling pursuit helicopter tail rotors and armored convoy engines from rooftops",
@@ -460,11 +734,22 @@
       "imageSource": null,
       "mapPinId": "ammu-mt-kalaga-summit-lodge",
       "relatedLinks": [
-        { "label": "VCIA Takedown Heist Guide", "url": "/heists/vcia-takedown.html" }
+        {
+          "label": "VCIA Takedown Heist Guide",
+          "url": "/heists/vcia-takedown.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "rpg-launcher",
@@ -475,7 +760,8 @@
         "fireRate": "Single-shot reload",
         "range": "Long line-of-sight",
         "accuracy": "Unguided rocket",
-        "magCapacity": "1 Rocket loaded"
+        "magCapacity": "1 Rocket loaded",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "Port Gellhorn Waterfront Ammu-Nation & Black Eagle Military Surplus",
@@ -487,11 +773,22 @@
       "imageSource": null,
       "mapPinId": "ammu-port-gellhorn-docks",
       "relatedLinks": [
-        { "label": "Port Gellhorn Waterfront Armory", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Port Gellhorn Waterfront Armory",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Reported",
+        "accuracy": "Reported",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "grenade-launcher",
@@ -502,7 +799,8 @@
         "fireRate": "Semi-auto / rotary cylinder",
         "range": "Mid-range arc",
         "accuracy": "Not yet confirmed",
-        "magCapacity": "Not yet confirmed"
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "North Beach Ocean Pier Ammu-Nation & Black Eagle Surplus",
@@ -516,7 +814,15 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Reported",
+        "range": "Reported",
+        "accuracy": "Not yet confirmed",
+        "magCapacity": "Not yet confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "switchblade-combat-knife",
@@ -527,7 +833,8 @@
         "fireRate": "Fast close-quarters strikes",
         "range": "Melee",
         "accuracy": "Melee",
-        "magCapacity": "N/A"
+        "magCapacity": "N/A",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "Ammu-Nation & Pawn Shops",
@@ -541,7 +848,15 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Confirmed",
+        "accuracy": "Confirmed",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "baseball-bat",
@@ -552,7 +867,8 @@
         "fireRate": "Standard melee swing",
         "range": "Melee",
         "accuracy": "Melee",
-        "magCapacity": "N/A"
+        "magCapacity": "N/A",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "World pickup / Street gang encounters",
@@ -564,11 +880,22 @@
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Jewelry Stores Robbery Guide", "url": "/heists/jewelry-stores.html" }
+        {
+          "label": "Jewelry Stores Robbery Guide",
+          "url": "/heists/jewelry-stores.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Confirmed",
+        "accuracy": "Confirmed",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "crowbar",
@@ -579,7 +906,8 @@
         "fireRate": "Standard melee swing",
         "range": "Melee",
         "accuracy": "Melee",
-        "magCapacity": "N/A"
+        "magCapacity": "N/A",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "Hardware locations / Trunk utility gear",
@@ -593,7 +921,15 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Confirmed",
+        "accuracy": "Confirmed",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "frag-grenade",
@@ -604,7 +940,8 @@
         "fireRate": "Thrown",
         "range": "Throwing range",
         "accuracy": "Arc throw",
-        "magCapacity": "Consumable stack"
+        "magCapacity": "Consumable stack",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "Ammu-Nation & Military Surplus",
@@ -618,7 +955,15 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Confirmed",
+        "accuracy": "Reported",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "molotov-cocktail",
@@ -629,7 +974,8 @@
         "fireRate": "Thrown",
         "range": "Throwing range",
         "accuracy": "Arc throw",
-        "magCapacity": "Consumable stack"
+        "magCapacity": "Consumable stack",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "Little Haiti & Grassrivers outlets / Craftable / World pickups",
@@ -643,7 +989,15 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Confirmed",
+        "accuracy": "Reported",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     },
     {
       "id": "flashbang-stun-grenade",
@@ -654,7 +1008,8 @@
         "fireRate": "Thrown",
         "range": "Throwing range",
         "accuracy": "Arc throw",
-        "magCapacity": "Consumable stack"
+        "magCapacity": "Consumable stack",
+        "bonuses": "Not yet confirmed"
       },
       "modifications": [],
       "howToObtain": "Tactical Supply & Ammu-Nation branches",
@@ -666,11 +1021,22 @@
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Small Banks & Payday Loans", "url": "/heists/small-banks-payday-loans.html" }
+        {
+          "label": "Small Banks & Payday Loans",
+          "url": "/heists/small-banks-payday-loans.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "damage": "Reported",
+        "fireRate": "Confirmed",
+        "range": "Confirmed",
+        "accuracy": "Reported",
+        "magCapacity": "Confirmed",
+        "bonuses": "Not yet confirmed"
+      }
     }
   ]
 }

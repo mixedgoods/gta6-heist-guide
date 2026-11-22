@@ -14,8 +14,13 @@
     <meta property="og:description" content="Calculate accurate GTA 6 Net $/Hour and crew split payouts across all 9 Leonida vault targets, factoring setup runtime, cooldowns, and laundering cuts.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/heist-payout-calculator.html">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta property="og:image:width" content="3840">
+    <meta property="og:image:height" content="2160">
+    <meta property="og:image:alt" content="Grand Theft Auto VI Heist Payout Calculator and Crew Cut Splits">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <link rel="stylesheet" href="/assets/style.css?v=20261121_v14">
     
         <script>
@@ -142,11 +147,20 @@
         function restoreCalcState() {
             const params = new URLSearchParams(window.location.search);
             const hasUrlParams = params.has('target') || params.has('approach') || params.has('players');
-            if (!hasUrlParams && window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
+            const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
+            const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
+            if (hasUrlParams) {
+                if (params.get('target') && HEIST_DATABASE[params.get('target')]) setVal('targetSelect', params.get('target'));
+                if (params.get('approach')) setVal('approachSelect', params.get('approach'));
+                if (params.get('players')) setVal('playerCount', params.get('players'));
+                if (params.get('gunner')) setVal('planGunner', params.get('gunner'));
+                if (params.get('hacker')) setVal('planHacker', params.get('hacker'));
+                if (params.get('driver')) setVal('planDriver', params.get('driver'));
+                if (params.get('launder')) setVal('launderFeeSlider', params.get('launder'));
+                if (params.get('jammer') !== null) setChk('jammerToggle', params.get('jammer') !== '0');
+            } else if (window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
                 const saved = window.GTA6Progress.getToolState('payoutCalculator');
                 if (saved && typeof saved === 'object') {
-                    const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
-                    const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
                     if (saved.target && HEIST_DATABASE[saved.target]) setVal('targetSelect', saved.target);
                     if (saved.approach) setVal('approachSelect', saved.approach);
                     if (saved.players) setVal('playerCount', saved.players);
@@ -508,6 +522,11 @@
             Estimated Police Heat Response: <strong id="heatDisplay" style="color: var(--neon-amber);">★☆☆☆☆ (1 Star - Clean Evasion)</strong>
         </div>
 
+        <div style="margin-top: 1rem; padding: 0.85rem 1rem; background: rgba(10, 16, 28, 0.9); border: 1px solid rgba(0, 240, 255, 0.25); border-radius: 10px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.65rem;">
+            <span style="font-size:0.78rem; color:#cbd5e1; font-weight:700;">Share this Heist Split (shares active calculator inputs only — never personal save progress):</span>
+            <div id="payoutCalcShareBar"></div>
+        </div>
+
         <div style="margin-top: 2rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
             <a href="/map.html" class="btn btn-primary">🗺️ Open Interactive Map</a>
             <button type="button" class="btn btn-secondary" onclick="GTA6.Bookmarks.toggleDrawer()">📌 View Saved Builds</button>
@@ -734,6 +753,7 @@
     </div>
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
+<script src="/assets/js/share-tools.js"></script>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
 <script src="/assets/main.js" defer></script>
@@ -745,6 +765,54 @@ document.addEventListener('DOMContentLoaded', function() {
       scopeLabel: 'Payout Calculator',
       onSync: function() {
         if (typeof restoreCalcState === 'function') restoreCalcState();
+      }
+    });
+  }
+  if (window.GTA6ShareTools) {
+    function getCalcShareUrl() {
+      var target = (document.getElementById('targetSelect') && document.getElementById('targetSelect').value) || 'cartel-heist';
+      var approach = (document.getElementById('approachSelect') && document.getElementById('approachSelect').value) || 'stealth';
+      var players = (document.getElementById('playerCount') && document.getElementById('playerCount').value) || '2';
+      var g = (document.getElementById('planGunner') && document.getElementById('planGunner').value) || '15';
+      var h = (document.getElementById('planHacker') && document.getElementById('planHacker').value) || '10';
+      var d = (document.getElementById('planDriver') && document.getElementById('planDriver').value) || '8';
+      var l = (document.getElementById('launderFeeSlider') && document.getElementById('launderFeeSlider').value) || '8';
+      return 'https://www.gta6heistguide.com/heist-payout-calculator.html?target=' + encodeURIComponent(target) + '&approach=' + encodeURIComponent(approach) + '&players=' + encodeURIComponent(players) + '&gunner=' + encodeURIComponent(g) + '&hacker=' + encodeURIComponent(h) + '&driver=' + encodeURIComponent(d) + '&launder=' + encodeURIComponent(l);
+    }
+    function getCalcSummary() {
+      var sel = document.getElementById('targetSelect');
+      var targetName = sel && sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : 'GTA 6 Heist';
+      var players = (document.getElementById('playerCount') && document.getElementById('playerCount').value) || '2';
+      var approach = (document.getElementById('approachSelect') && document.getElementById('approachSelect').value) || 'stealth';
+      return {
+        targetName: targetName,
+        players: players,
+        approach: approach,
+        gross: (document.getElementById('targetPayoutDisplay') || {}).innerText || '$0',
+        spec: (document.getElementById('specialistCostDisplay') || {}).innerText || '$0',
+        pot: (document.getElementById('squadPotDisplay') || {}).innerText || '$0',
+        perP: (document.getElementById('perPlayerDisplay') || {}).innerText || '$0',
+        perHr: (document.getElementById('netPerHourDisplay') || {}).innerText || '$0/hr'
+      };
+    }
+    window.GTA6ShareTools.mountShareBar('#payoutCalcShareBar', {
+      getLink: getCalcShareUrl,
+      getReddit: function() {
+        var s = getCalcSummary();
+        return window.GTA6ShareTools.formatReddit('GTA 6 Heist Payout Split: ' + s.targetName, [
+          '- **Squad / Approach:** ' + s.players + ' Player(s) · ' + s.approach.toUpperCase(),
+          '- **Estimated Gross Loot:** ' + s.gross,
+          '- **Specialist Cut:** ' + s.spec,
+          '- **Total Squad Take:** ' + s.pot,
+          '- **Per-Player Net Take:** ' + s.perP + ' (' + s.perHr + ')'
+        ], getCalcShareUrl());
+      },
+      getDiscord: function() {
+        var s = getCalcSummary();
+        return window.GTA6ShareTools.formatDiscord('💰 GTA 6 Heist Payout: ' + s.targetName, [
+          '• **Squad:** ' + s.players + 'P (' + s.approach.toUpperCase() + ') | **Gross:** ' + s.gross,
+          '• **Per-Player Net:** ' + s.perP + ' | **Net $/Hr:** ' + s.perHr
+        ], getCalcShareUrl());
       }
     });
   }

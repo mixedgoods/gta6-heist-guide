@@ -23,6 +23,31 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const PUBLIC_ANIMALS_PATH = path.join(ROOT_DIR, 'public', 'data', 'animals.json');
 const MIRROR_ANIMALS_PATH = path.join(ROOT_DIR, 'data', 'animals.json');
 const PENDING_IMAGES_PATH = path.join(ROOT_DIR, 'public', 'data', 'animals-pending-images.json');
+const ANIMALS_HTML_PATH = path.join(ROOT_DIR, 'public', 'animals.html');
+const SITEMAP_PATH = path.join(ROOT_DIR, 'public', 'sitemap.xml');
+
+function updateFreshnessOnRealChange(today) {
+  // Update visible Last Updated & JSON-LD dateModified in public/animals.html ONLY when real wildlife content changed
+  if (fs.existsSync(ANIMALS_HTML_PATH)) {
+    let html = fs.readFileSync(ANIMALS_HTML_PATH, 'utf-8');
+    const nextHtml = html
+      .replace(/("dateModified"\s*:\s*")\d{4}-\d{2}-\d{2}(")/g, `$1${today}$2`)
+      .replace(/(Last Updated:\s*<[^>]+>)\d{4}-\d{2}-\d{2}(<\/[^>]+>)/gi, `$1${today}$2`)
+      .replace(/(Last Updated:\s*)\d{4}-\d{2}-\d{2}/gi, `$1${today}`);
+    if (nextHtml !== html) {
+      fs.writeFileSync(ANIMALS_HTML_PATH, nextHtml, 'utf-8');
+    }
+  }
+  // Update ONLY the /animals.html <lastmod> entry in public/sitemap.xml
+  if (fs.existsSync(SITEMAP_PATH)) {
+    const xml = fs.readFileSync(SITEMAP_PATH, 'utf-8');
+    const rx = /(<loc>https:\/\/www\.gta6heistguide\.com\/animals\.html<\/loc>\s*<lastmod>)\d{4}-\d{2}-\d{2}(<\/lastmod>)/;
+    const nextXml = xml.replace(rx, `$1${today}$2`);
+    if (nextXml !== xml) {
+      fs.writeFileSync(SITEMAP_PATH, nextXml, 'utf-8');
+    }
+  }
+}
 
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 GTA6HeistGuideWildlifeSync/1.0';
@@ -473,9 +498,10 @@ export async function runWildlifeSync(opts = {}) {
       nextAnimals.updated = today;
       atomicWriteJson(PUBLIC_ANIMALS_PATH, nextAnimals);
       atomicWriteJson(MIRROR_ANIMALS_PATH, nextAnimals);
-      console.log(`[OK] Updated public/data/animals.json & data/animals.json (+${speciesAdded} species, ${textFieldsUpdated} verified text updates).`);
+      updateFreshnessOnRealChange(today);
+      console.log(`[OK] Updated public/data/animals.json, data/animals.json, animals.html dateModified & sitemap.xml lastmod (+${speciesAdded} species, ${textFieldsUpdated} verified text updates).`);
     } else {
-      console.log('[OK] No new verified wildlife text updates — public/data/animals.json unchanged.');
+      console.log('[OK] No new verified wildlife text updates — animals.json, animals.html dateModified & sitemap.xml lastmod left untouched.');
     }
 
     if (pendingChanged) {

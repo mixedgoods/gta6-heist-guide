@@ -28,6 +28,58 @@ const ANIMALS_JSON_PATH = path.join(PUBLIC_DATA_DIR, 'animals.json');
 const ANIMALS_PENDING_PATH = path.join(PUBLIC_DATA_DIR, 'animals-pending-images.json');
 
 const CATEGORIES = ['vehicles', 'weapons', 'properties', 'gun-stores', 'radio'];
+const CATEGORY_PAGE_MAP = {
+  vehicles: { html: ['vehicles.html', 'vehicles-getaway-cars.html'], loc: 'https://www.gta6heistguide.com/vehicles.html' },
+  weapons: { html: ['weapons.html', 'weapons-gear.html'], loc: 'https://www.gta6heistguide.com/weapons.html' },
+  properties: { html: ['properties.html'], loc: 'https://www.gta6heistguide.com/properties.html' },
+  'gun-stores': { html: ['weapons-bonuses.html'], loc: 'https://www.gta6heistguide.com/weapons-bonuses.html' },
+  radio: { html: ['radio.html'], loc: 'https://www.gta6heistguide.com/radio.html' },
+};
+const SITEMAP_PATH = path.join(ROOT_DIR, 'public', 'sitemap.xml');
+
+function updateCategoryFreshnessOnRealChange(changedCats, today) {
+  if (!changedCats || changedCats.size === 0) return;
+  const pubDir = path.join(ROOT_DIR, 'public');
+  const locsToUpdate = new Set(['https://www.gta6heistguide.com/gta-6-database/']);
+  const htmlFilesToUpdate = new Set(['gta-6-database/index.html']);
+
+  for (const cat of changedCats) {
+    const meta = CATEGORY_PAGE_MAP[cat];
+    if (!meta) continue;
+    locsToUpdate.add(meta.loc);
+    for (const h of meta.html) htmlFilesToUpdate.add(h);
+  }
+
+  for (const relHtml of htmlFilesToUpdate) {
+    const fp = path.join(pubDir, relHtml);
+    if (!fs.existsSync(fp)) continue;
+    const html = fs.readFileSync(fp, 'utf-8');
+    const nextHtml = html
+      .replace(/("dateModified"\s*:\s*")\d{4}-\d{2}-\d{2}(")/g, `$1${today}$2`)
+      .replace(/(Last Updated:\s*<[^>]+>)\d{4}-\d{2}-\d{2}(<\/[^>]+>)/gi, `$1${today}$2`)
+      .replace(/(Last Updated:\s*)\d{4}-\d{2}-\d{2}/gi, `$1${today}`);
+    if (nextHtml !== html) {
+      fs.writeFileSync(fp, nextHtml, 'utf-8');
+    }
+  }
+
+  if (fs.existsSync(SITEMAP_PATH)) {
+    let xml = fs.readFileSync(SITEMAP_PATH, 'utf-8');
+    let xmlChanged = false;
+    for (const loc of locsToUpdate) {
+      const escapedLoc = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const rx = new RegExp(`(<loc>${escapedLoc}<\\/loc>\\s*<lastmod>)\\d{4}-\\d{2}-\\d{2}(<\\/lastmod>)`);
+      const nextXml = xml.replace(rx, `$1${today}$2`);
+      if (nextXml !== xml) {
+        xml = nextXml;
+        xmlChanged = true;
+      }
+    }
+    if (xmlChanged) {
+      fs.writeFileSync(SITEMAP_PATH, xml, 'utf-8');
+    }
+  }
+}
 
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 GTA6HeistGuideWorldDbSync/1.0';
@@ -510,8 +562,11 @@ export async function runWorldDbSync(opts = {}) {
       atomicWriteJson(path.join(MIRROR_DATA_DIR, `${cat}.json`), nextByCat[cat]);
       console.log(`[OK] Updated public/data/${cat}.json & data/${cat}.json.`);
     }
-    if (changedCats.size === 0) {
-      console.log('[OK] No new verified World DB text updates — category JSONs unchanged.');
+    if (changedCats.size > 0) {
+      updateCategoryFreshnessOnRealChange(changedCats, today);
+      console.log(`[OK] Updated JSON-LD dateModified & sitemap.xml lastmod for changed categories only: ${Array.from(changedCats).join(', ')}.`);
+    } else {
+      console.log('[OK] No new verified World DB text updates — category JSONs, HTML dateModified & sitemap.xml lastmod left untouched.');
     }
 
     if (stagedImages > 0) {

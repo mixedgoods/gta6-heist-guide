@@ -1,14 +1,14 @@
 {
   "category": "gun-stores",
   "updated": "2026-11-21",
-  "note": "All 24 verified Leonida Ammu-Nation, Military Surplus, Pawn & Armory, and Hunting Outfitter gun stores mapped directly to verified Interactive Map pins.",
+  "note": "All 24 verified Leonida gun stores across 5 counties (Vice-Dale 14, Mariana 5, Kelly 3, Leonard 1, Lummox 1) categorized by in-game inventory tier (Limited, Standard, Hunting, Expanded). Existing map pin coordinates are preserved without unverified moves.",
   "items": [
     {
       "id": "ammu-vice-beach-promenade",
-      "name": "Ammu-Nation #01 — Vice Beach Promenade",
+      "name": "Phil's Ammu-Nation",
       "storeType": "Ammu-Nation",
       "region": "Vice City",
-      "locationDetail": "Vice Beach Promenade / Ocean Drive",
+      "locationDetail": "Vice-Dale County (Expanded Stock)",
       "availableWeapons": [
         "KL17G1 Polymer 9mm Pistol",
         "Combat Tactical Shotgun",
@@ -37,14 +37,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Expanded",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-downtown-vice-financial",
-      "name": "Vice City Firearms (Ammu-Nation #02 — Downtown)",
+      "name": "Vice City Firearms",
       "storeType": "Ammu-Nation",
       "region": "Vice City",
-      "locationDetail": "Downtown Financial District",
+      "locationDetail": "Downtown Vice City, Vice-Dale County",
       "availableWeapons": [
         "Service Carbine Rifle",
         "Compact Tactical SMG",
@@ -73,14 +76,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-little-haiti-express",
-      "name": "Martez Empenos & Little Haiti Armory (#03)",
+      "name": "Martez Empenos",
       "storeType": "Pawn & Armory",
       "region": "Vice City",
-      "locationDetail": "Little Haiti Avenue",
+      "locationDetail": "Vice-Dale County (Pawn & Firearms)",
       "availableWeapons": [
         "Micro SMG",
         "Pump-Action Shotgun",
@@ -104,14 +110,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-south-vice-intermodal",
-      "name": "Ammu-Nation #04 - South Vice Logistics Park",
-      "storeType": "Ammu-Nation",
+      "name": "Vice City Gun & Pawn",
+      "storeType": "Pawn & Armory",
       "region": "Vice City",
-      "locationDetail": "South Vice Logistics Park",
+      "locationDetail": "South Vice City, Vice-Dale County",
       "availableWeapons": [
         "Heavy Shotguns",
         "Drum Mags"
@@ -137,14 +146,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-vice-airport-concourse",
-      "name": "Ammu-Nation #05 - Airport North Perimeter",
-      "storeType": "Hunting Outfitter",
+      "name": "Quickscope",
+      "storeType": "Ammu-Nation",
       "region": "Vice City",
-      "locationDetail": "Airport North Perimeter",
+      "locationDetail": "Vice-Dale County (Optics & Standard Stock)",
       "availableWeapons": [
         "Sniper Rifles",
         "Night Scopes"
@@ -171,14 +183,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-starlet-island-causeway",
-      "name": "Ammu-Nation #06 - Starlet Island Causeway",
+      "name": "Prestige Firearms",
       "storeType": "Ammu-Nation",
       "region": "Vice City",
-      "locationDetail": "Starlet Island Causeway",
+      "locationDetail": "Vice-Dale County (Expanded Heavy & Luxury Stock)",
       "availableWeapons": [
         "Custom Gold-Plated Pistols",
         "Silencers"
@@ -204,14 +219,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Expanded",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-port-gellhorn-docks",
-      "name": "Port Gellhorn Waterfront Armory (#07)",
-      "storeType": "Military Surplus",
+      "name": "Gellhorn Outfitters",
+      "storeType": "Ammu-Nation",
       "region": "Port Gellhorn",
-      "locationDetail": "Port Gellhorn Waterfront Docks",
+      "locationDetail": "Port Gellhorn, Kelly County",
       "availableWeapons": [
         "RPG Rocket Launcher",
         "Combat Tactical Shotgun",
@@ -236,14 +254,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Kelly County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-port-gellhorn-north",
-      "name": "Jackson Firearms — Port Gellhorn Industrial (#08)",
-      "storeType": "Military Surplus",
+      "name": "Pawn & Gun, Port Gellhorn",
+      "storeType": "Pawn & Armory",
       "region": "Port Gellhorn",
-      "locationDetail": "Port Gellhorn Industrial Loop",
+      "locationDetail": "Port Gellhorn, Kelly County",
       "availableWeapons": [
         "Heavy Battle Rifle",
         "Service Carbine Rifle",
@@ -267,14 +288,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Kelly County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-gellhorn-rail-junction",
-      "name": "Ammu-Nation #09 - Gellhorn Rail Siding",
+      "name": "Biff's Gun Supply",
       "storeType": "Ammu-Nation",
       "region": "Port Gellhorn",
-      "locationDetail": "Gellhorn Rail Siding",
+      "locationDetail": "Kelly County / Ambrosia Corridor",
       "availableWeapons": [
         "Submachine Guns",
         "Flare Guns"
@@ -301,14 +325,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Kelly County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-keys-upper-marathon",
-      "name": "Ammu-Nation #10 - Upper Keys Causeway",
-      "storeType": "Ammu-Nation",
+      "name": "Chuck's Tackle & Shot",
+      "storeType": "Hunting Outfitter",
       "region": "Leonida Keys",
-      "locationDetail": "Upper Keys Causeway",
+      "locationDetail": "Key Lento, Mariana County (First Chapter 1 Gun Store)",
       "availableWeapons": [
         "Harpoon Guns",
         "Flare Pistols",
@@ -335,14 +362,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Mariana County",
+      "inventoryTier": "Limited",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-keys-southern-strip",
-      "name": "Ammu-Nation #11 - Key West Sunset Strip",
+      "name": "Barrage Gun Supply",
       "storeType": "Ammu-Nation",
       "region": "Leonida Keys",
-      "locationDetail": "Key West Sunset Strip",
+      "locationDetail": "Mariana County (Standard Stock + Fishing Gear)",
       "availableWeapons": [
         "Magnum Revolvers",
         "Lever-Action Rifles"
@@ -368,14 +398,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Mariana County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-keys-runway-outpost",
-      "name": "Ammu-Nation #12 - Smuggler Runway Outpost",
+      "name": "Woodhatch",
       "storeType": "Military Surplus",
       "region": "Leonida Keys",
-      "locationDetail": "Smuggler Runway Outpost",
+      "locationDetail": "Capri, Mariana County (Expanded Heavy Ordnance)",
       "availableWeapons": [
         "Military Explosives",
         "Detonators"
@@ -402,14 +435,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Mariana County",
+      "inventoryTier": "Expanded",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-grassrivers-swamp-post",
-      "name": "Ammu-Nation #13 - Grassrivers Airboat Base",
+      "name": "Guns Aplenty!",
       "storeType": "Hunting Outfitter",
       "region": "Grassrivers",
-      "locationDetail": "Grassrivers Airboat Base",
+      "locationDetail": "Mariana County / Grassrivers Border (Hunting Tier)",
       "availableWeapons": [
         "Gator Shotguns",
         "Machetes",
@@ -436,14 +472,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Mariana County",
+      "inventoryTier": "Hunting",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-grassrivers-south-airstrip",
-      "name": "Ammu-Nation #14 - Cartel Airstrip Armory",
-      "storeType": "Military Surplus",
+      "name": "Richardson Hunting Supplies",
+      "storeType": "Hunting Outfitter",
       "region": "Grassrivers",
-      "locationDetail": "Cartel Airstrip Armory",
+      "locationDetail": "Mariana County / Grassrivers Wetlands",
       "availableWeapons": [
         "AK-47s",
         "RPG Launchers"
@@ -469,14 +508,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Mariana County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-grassrivers-west-crossing",
-      "name": "Ammu-Nation #15 - Everglades West Junction",
-      "storeType": "Hunting Outfitter",
+      "name": "Big Shots",
+      "storeType": "Military Surplus",
       "region": "Grassrivers",
-      "locationDetail": "Everglades West Junction",
+      "locationDetail": "Hamlet / Vice-Dale County (Expanded Tier; existing regional map pin preserved)",
       "availableWeapons": [
         "Hunting Rifles",
         "Camo Suits"
@@ -503,14 +545,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Expanded",
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
     },
     {
       "id": "ammu-ambrosia-central",
-      "name": "Black Eagle Military Surplus — Ambrosia (#16)",
+      "name": "Black Eagle",
       "storeType": "Military Surplus",
       "region": "Ambrosia",
-      "locationDetail": "Ambrosia Main Street / Vice-Dale Border",
+      "locationDetail": "Vice-Dale County (Expanded Tier; existing regional map pin preserved)",
       "availableWeapons": [
         "Service Carbine Rifle",
         "Heavy Battle Rifle",
@@ -535,14 +580,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Expanded",
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
     },
     {
       "id": "ammu-ambrosia-refinery-gate",
-      "name": "Ammu-Nation #17 - Ambrosia Chemical Depot",
+      "name": "Tactical Outlet Guns",
       "storeType": "Military Surplus",
       "region": "Ambrosia",
-      "locationDetail": "Ambrosia Chemical Depot",
+      "locationDetail": "Leonard County / Ambrosia Sector",
       "availableWeapons": [
         "Thermite Grenades",
         "Breaching Charges"
@@ -568,14 +616,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Leonard County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-lake-leonida-north-marina",
-      "name": "Ammu-Nation #18 - Lake Leonida North Shore",
-      "storeType": "Ammu-Nation",
+      "name": "Hamlet Traders",
+      "storeType": "Pawn & Armory",
       "region": "Lake Leonida",
-      "locationDetail": "Lake Leonida North Shore",
+      "locationDetail": "Hamlet, Vice-Dale County (existing regional map pin preserved)",
       "availableWeapons": [
         "Tactical SMGs",
         "Marine Flares"
@@ -602,14 +653,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
     },
     {
       "id": "ammu-lake-leonida-south-causeway",
-      "name": "Ammu-Nation #19 - Lake Leonida Causeway",
+      "name": "Tequesta Guns & Ammo",
       "storeType": "Ammu-Nation",
       "region": "Lake Leonida",
-      "locationDetail": "Lake Leonida Causeway",
+      "locationDetail": "Vice-Dale County (existing regional map pin preserved)",
       "availableWeapons": [
         "Sniper Rifles",
         "Extended Mags"
@@ -636,14 +690,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
     },
     {
       "id": "ammu-mt-kalaga-summit-lodge",
-      "name": "Kalaga Summit Outpost Armory (#20)",
+      "name": "Rusty Willis Jr. Hunting Supplies",
       "storeType": "Hunting Outfitter",
       "region": "Mount Kalaga National Park",
-      "locationDetail": "Mount Kalaga Summit",
+      "locationDetail": "Lummox County / Mount Kalaga Region (Hunting Tier)",
       "availableWeapons": [
         "Heavy Anti-Materiel Sniper Rifle",
         "Bolt-Action Hunting Rifle"
@@ -666,14 +723,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Lummox County",
+      "inventoryTier": "Hunting",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-mt-kalaga-ranger-station",
-      "name": "Killtelligence Provisions & Kalaga Trailhead (#21)",
-      "storeType": "Hunting Outfitter",
+      "name": "Jackson Firearms",
+      "storeType": "Ammu-Nation",
       "region": "Mount Kalaga National Park",
-      "locationDetail": "Mount Kalaga South Trailhead (Lummox County)",
+      "locationDetail": "Vice-Dale County (Standard Tier; existing Kalaga regional map pin preserved)",
       "availableWeapons": [
         "Bret's SM-69 (Contract Reward)",
         "Bolt-Action Hunting Rifle"
@@ -700,14 +760,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
     },
     {
       "id": "ammu-mt-kalaga-east-valley",
-      "name": "Ammu-Nation #22 - Kalaga River Valley",
-      "storeType": "Hunting Outfitter",
+      "name": "Pawn & Gun, Crosstown",
+      "storeType": "Pawn & Armory",
       "region": "Mount Kalaga National Park",
-      "locationDetail": "Kalaga River Valley",
+      "locationDetail": "Crosstown, Vice-Dale County (existing regional map pin preserved)",
       "availableWeapons": [
         "Combat Shotguns",
         "Pipe Bombs"
@@ -734,14 +797,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
     },
     {
       "id": "ammu-vice-biscayne-island",
-      "name": "Ammu-Nation #23 - Biscayne Island Bay",
+      "name": "Zenon's Pawn Shop",
       "storeType": "Pawn & Armory",
       "region": "Vice City",
-      "locationDetail": "Biscayne Island Bay",
+      "locationDetail": "Vice-Dale County (Pawn & Standard Firearms)",
       "availableWeapons": [
         "Micro SMGs",
         "Laser Sights"
@@ -767,14 +833,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Standard",
+      "pinCoordinateStatus": "Verified regional pin"
     },
     {
       "id": "ammu-vice-north-beach-pier",
-      "name": "Ammu-Nation #24 - North Beach Ocean Pier",
+      "name": "Iron & Oak",
       "storeType": "Military Surplus",
       "region": "Vice City",
-      "locationDetail": "North Beach Ocean Pier",
+      "locationDetail": "Vice-Dale County (Expanded Heavy Ordnance Tier)",
       "availableWeapons": [
         "Full Auto Carbines",
         "Grenade Launcher Ammo"
@@ -801,7 +870,10 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses.html",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "county": "Vice-Dale County",
+      "inventoryTier": "Expanded",
+      "pinCoordinateStatus": "Verified regional pin"
     }
   ]
 }

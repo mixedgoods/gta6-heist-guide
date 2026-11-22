@@ -1,7 +1,7 @@
 {
   "category": "vehicles",
   "updated": "2026-11-21",
-  "note": "Verified GTA 6 Leonida vehicles across Sports, Super, Muscle, SUVs & Pickups, Motorcycles, Boats & Airboats, and Aircraft. Only individually verified in-game GTA 6 screenshots and confirmed facts are published; unverified stats are omitted or marked Not yet confirmed.",
+  "note": "Verified GTA 6 Leonida vehicles across 7 classes. Every stat explicitly distinguishes Confirmed, Reported, Estimated, and Not yet confirmed — numerical telemetry (MPH, 0-60, armor ratings) is never invented.",
   "items": [
     {
       "id": "grotti-cheetah-classic",
@@ -12,22 +12,40 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Low-slung RWD sports classic",
-        "seatingCargo": "2 Seats · Compact front/rear trunk"
+        "seatingCargo": "2 Seats · Compact front/rear trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City traffic / dealership)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Iconic 1980s Italian wedge coupe featured outside Pegassi Residences South Tower in official GTA 6 media.",
       "image": "/assets/images/vehicles/veh-cheetah-1.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "intel-launch-vc",
       "relatedLinks": [
-        { "label": "Vice City Garages", "url": "/properties.html" },
-        { "label": "Large Bank Vaults Guide", "url": "/heists/large-bank-vaults.html" }
+        {
+          "label": "Vice City Garages",
+          "url": "/properties.html"
+        },
+        {
+          "label": "Large Bank Vaults Guide",
+          "url": "/heists/large-bank-vaults.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vapid-ganado",
@@ -38,22 +56,40 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Rear-wheel drive classic coupe utility",
-        "seatingCargo": "2 Seats · Open pickup bed cargo"
+        "seatingCargo": "2 Seats · Open pickup bed cargo",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Story / Free-roam spawn (seen parked at Jason's House in Key Lento)",
-      "spawnRegions": ["Leonida Keys", "Port Gellhorn"],
+      "spawnRegions": [
+        "Leonida Keys",
+        "Port Gellhorn"
+      ],
       "notes": "Classic 434ci V8 coupe-utility pickup driven by Jason along the Leonida Keys causeway and parked beneath Jason's Key Lento stilt house.",
       "image": "/assets/images/vehicles/veh-vapid-ganado.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "sh-jasons-house",
       "relatedLinks": [
-        { "label": "Jason's House (Key Lento)", "url": "/properties.html?item=sh-jasons-house" },
-        { "label": "GTA 6 Money Guide", "url": "/gta-6-money-guide/" }
+        {
+          "label": "Jason's House (Key Lento)",
+          "url": "/properties.html?item=sh-jasons-house"
+        },
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vapid-stanier-classic",
@@ -64,21 +100,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Heavy vintage rear-wheel drive cruiser",
-        "seatingCargo": "2–4 Seats · Full vintage rear trunk"
+        "seatingCargo": "2–4 Seats · Full vintage rear trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City traffic)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Two-tone 1950s Vapid Stanier classic coupe featured cruising Ocean Drive nightlife districts.",
       "image": "/assets/images/vehicles/veh-vapid-stanier-1.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Vice Beach Strip Garage", "url": "/properties.html?item=gar-purch-1" }
+        {
+          "label": "Vice Beach Strip Garage",
+          "url": "/properties.html?item=gar-purch-1"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "albany-buccaneer-custom",
@@ -89,21 +140,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Lifted custom street cruiser",
-        "seatingCargo": "2 Seats · Standard classic trunk"
+        "seatingCargo": "2 Seats · Standard classic trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Custom shop / Leonida street meets)",
-      "spawnRegions": ["Vice City", "Port Gellhorn"],
+      "spawnRegions": [
+        "Vice City",
+        "Port Gellhorn"
+      ],
       "notes": "Custom flake-painted Albany coupe showcasing deep rim, suspension, and interior customization confirmed in GTA 6.",
       "image": "/assets/images/vehicles/veh-rideout-1.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Moses (Untracked Car Fence)", "url": "/properties.html?item=fence-moses" }
+        {
+          "label": "Moses (Untracked Car Fence)",
+          "url": "/properties.html?item=fence-moses"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "sirius-muscle-coupe",
@@ -114,21 +180,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Rear-wheel drive vintage muscle",
-        "seatingCargo": "2 Seats · Rear trunk"
+        "seatingCargo": "2 Seats · Rear trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Wyman's World / Salvage & street spawns)",
-      "spawnRegions": ["Port Gellhorn", "Ambrosia"],
+      "spawnRegions": [
+        "Port Gellhorn",
+        "Ambrosia"
+      ],
       "notes": "Teal vintage muscle coupe badged 'SIRIUS' with racing stripe and decklid spoiler seen in Wyman's World garage showcase.",
       "image": "/assets/images/vehicles/veh-wyman-2.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Port Gellhorn Garages", "url": "/properties.html" }
+        {
+          "label": "Port Gellhorn Garages",
+          "url": "/properties.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "johansen-gt-classic",
@@ -139,21 +220,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Track-tuned classic grand tourer",
-        "seatingCargo": "2 Seats · Minimal race cabin"
+        "seatingCargo": "2 Seats · Minimal race cabin",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Salvage / Collector build)",
-      "spawnRegions": ["Port Gellhorn", "Vice City"],
+      "spawnRegions": [
+        "Port Gellhorn",
+        "Vice City"
+      ],
       "notes": "Red-and-white #36 classic racing coupe bearing 'JOHANSEN GT' fender badging and side-exit exhausts.",
       "image": "/assets/images/vehicles/veh-wyman-4.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "GTA 6 Tips & Tricks", "url": "/gta-6-tips-and-tricks/" }
+        {
+          "label": "GTA 6 Tips & Tricks",
+          "url": "/gta-6-tips-and-tricks/"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vapid-riata",
@@ -164,22 +260,41 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "4x4 off-road suspension with all-terrain tires",
-        "seatingCargo": "2–4 Seats · Rear utility cargo"
+        "seatingCargo": "2–4 Seats · Rear utility cargo",
+        "trunk": "Pickup bed / full SUV rear trunk (exact slot count reported 4+ on personal haulers)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Rural / Off-road spawns)",
-      "spawnRegions": ["Mount Kalaga National Park", "Grassrivers", "Ambrosia"],
+      "spawnRegions": [
+        "Mount Kalaga National Park",
+        "Grassrivers",
+        "Ambrosia"
+      ],
       "notes": "Boxy retro 4x4 off-road utility truck clearly badged 'Riata' in official GTA 6 mudding screenshots.",
       "image": "/assets/images/vehicles/veh-wyman-3.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "gar-purch-8",
       "relatedLinks": [
-        { "label": "Mount Kalaga Trailhead Garage", "url": "/properties.html?item=gar-purch-8" },
-        { "label": "Animals & Wildlife Compendium", "url": "/animals.html" }
+        {
+          "label": "Mount Kalaga Trailhead Garage",
+          "url": "/properties.html?item=gar-purch-8"
+        },
+        {
+          "label": "Animals & Wildlife Compendium",
+          "url": "/animals.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Reported",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "canis-offroad-4x4",
@@ -190,21 +305,37 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "High-clearance 4x4 heavy pickup",
-        "seatingCargo": "4 Seats · Full pickup cargo bed"
+        "seatingCargo": "4 Seats · Full pickup cargo bed",
+        "trunk": "Pickup bed / full SUV rear trunk (exact slot count reported 4+ on personal haulers)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Custom off-road / Leonida mud clubs)",
-      "spawnRegions": ["Grassrivers", "Mount Kalaga National Park", "Ambrosia"],
+      "spawnRegions": [
+        "Grassrivers",
+        "Mount Kalaga National Park",
+        "Ambrosia"
+      ],
       "notes": "Four-door lifted Canis pickup equipped with winch bumper, skid plate, and oversized Baldur All-Terrain tires.",
       "image": "/assets/images/weapons/weapon-one-eyed.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Grassrivers Smuggler Fence", "url": "/properties.html?item=fence-grassrivers" }
+        {
+          "label": "Grassrivers Smuggler Fence",
+          "url": "/properties.html?item=fence-grassrivers"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Reported",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vapid-mud-buggy",
@@ -215,21 +346,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Lifted mud-bogger chassis with tractor-lug tires",
-        "seatingCargo": "2 Seats · Rear spare tire rack"
+        "seatingCargo": "2 Seats · Rear spare tire rack",
+        "trunk": "Pickup bed / full SUV rear trunk (exact slot count reported 4+ on personal haulers)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Wyman's World custom off-road build)",
-      "spawnRegions": ["Grassrivers", "Port Gellhorn"],
+      "spawnRegions": [
+        "Grassrivers",
+        "Port Gellhorn"
+      ],
       "notes": "Classic muscle body mounted on a lifted 4x4 mud-bogging frame with roof light bar and tubular bullbar.",
       "image": "/assets/images/vehicles/veh-vapid-buggy-1.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "GTA 6 Tips & Tricks", "url": "/gta-6-tips-and-tricks/" }
+        {
+          "label": "GTA 6 Tips & Tricks",
+          "url": "/gta-6-tips-and-tricks/"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Reported",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "declasse-yosemite-1500",
@@ -240,22 +386,41 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Full-size 4x4 / RWD pickup truck",
-        "seatingCargo": "2–4 Seats · Large pickup cargo bed for heist loot & hunting carcasses"
+        "seatingCargo": "2–4 Seats · Large pickup cargo bed for heist loot & hunting carcasses",
+        "trunk": "Pickup bed / full SUV rear trunk (exact slot count reported 4+ on personal haulers)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Rural highways, Port Gellhorn & Mount Kalaga)",
-      "spawnRegions": ["Port Gellhorn", "Ambrosia", "Mount Kalaga National Park"],
+      "spawnRegions": [
+        "Port Gellhorn",
+        "Ambrosia",
+        "Mount Kalaga National Park"
+      ],
       "notes": "Full-size Declasse pickup truck confirmed in Leonida. Practical utility hauler for moving duffel loads and hunting carcasses to Killtelligence Provisions.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": "glitch-apollo-red-barn",
       "relatedLinks": [
-        { "label": "GTA 6 Money Guide", "url": "/gta-6-money-guide/" },
-        { "label": "Animals & Wildlife Hunting", "url": "/animals.html" }
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        },
+        {
+          "label": "Animals & Wildlife Hunting",
+          "url": "/animals.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Reported",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "dinka-enduro",
@@ -266,21 +431,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Lightweight off-road trail & alley scrambler",
-        "seatingCargo": "1–2 Seats · No trunk storage"
+        "seatingCargo": "1–2 Seats · No trunk storage",
+        "trunk": "No car trunk (saddlebags/none depending on bike)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Included at Jason's House (Ultimate Edition spawn) / Leonida Keys & trails",
-      "spawnRegions": ["Leonida Keys", "Mount Kalaga National Park"],
+      "spawnRegions": [
+        "Leonida Keys",
+        "Mount Kalaga National Park"
+      ],
       "notes": "Olive-green Dinka trail bike with knobby off-road tires parked directly outside Jason's stilt house in Key Lento.",
       "image": "/assets/images/vehicles/veh-safehouse-1.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "sh-jasons-house",
       "relatedLinks": [
-        { "label": "Jason's House (Key Lento)", "url": "/properties.html?item=sh-jasons-house" }
+        {
+          "label": "Jason's House (Key Lento)",
+          "url": "/properties.html?item=sh-jasons-house"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "shitzu-squalo",
@@ -291,21 +471,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Agile offshore sport boat",
-        "seatingCargo": "2–4 Seats · Open cockpit deck"
+        "seatingCargo": "2–4 Seats · Open cockpit deck",
+        "trunk": "Open deck / marine stowage (slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City marinas & Leonida Keys docks)",
-      "spawnRegions": ["Vice City", "Leonida Keys"],
+      "spawnRegions": [
+        "Vice City",
+        "Leonida Keys"
+      ],
       "notes": "Signature Vice City Shitzu Squalo speedboat returning with custom palm-leaf hull wraps for coastal exfiltration.",
       "image": "/assets/images/vehicles/veh-squalo-1.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "gar-purch-7",
       "relatedLinks": [
-        { "label": "Leonida Keys Boatyard Garage", "url": "/properties.html?item=gar-purch-7" }
+        {
+          "label": "Leonida Keys Boatyard Garage",
+          "url": "/properties.html?item=gar-purch-7"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "crest-kayak",
@@ -316,22 +511,40 @@
         "topSpeed": "Human-powered paddle speed",
         "acceleration": "Silent water launch",
         "handling": "Shallow-water & mangrove stealth navigation",
-        "seatingCargo": "1 Seat · Bow dry-hatch compartment"
+        "seatingCargo": "1 Seat · Bow dry-hatch compartment",
+        "trunk": "Bow dry-hatch compartment",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Spawns at Jason's House dock (Key Lento) & coastal shorelines",
-      "spawnRegions": ["Leonida Keys", "Grassrivers"],
+      "spawnRegions": [
+        "Leonida Keys",
+        "Grassrivers"
+      ],
       "notes": "Single-seat red Crest sit-on-top kayak for quiet exploration across Leonida Keys coves and shallow wetlands.",
       "image": "/assets/images/vehicles/veh-safehouse-2.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "sh-jasons-house",
       "relatedLinks": [
-        { "label": "Jason's House (Key Lento)", "url": "/properties.html?item=sh-jasons-house" },
-        { "label": "Marine & Aquatic Wildlife", "url": "/animals.html" }
+        {
+          "label": "Jason's House (Key Lento)",
+          "url": "/properties.html?item=sh-jasons-house"
+        },
+        {
+          "label": "Marine & Aquatic Wildlife",
+          "url": "/animals.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Confirmed",
+        "acceleration": "Reported",
+        "handling": "Reported",
+        "trunk": "Confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "grassrivers-airboat",
@@ -342,22 +555,39 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Flat-bottom marsh hull built for shallow sawgrass",
-        "seatingCargo": "2+ Seats · Rear fan-cage deck"
+        "seatingCargo": "2+ Seats · Rear fan-cage deck",
+        "trunk": "Open deck / marine stowage (slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Grassrivers airboat docks & marshes)",
-      "spawnRegions": ["Grassrivers"],
+      "spawnRegions": [
+        "Grassrivers"
+      ],
       "notes": "Fan-driven wetlands airboat engineered to skim across shallow Grassrivers marshes where police cruisers bog down.",
       "image": "/assets/images/vehicles/veh-grassrivers-boat.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "fence-grassrivers",
       "relatedLinks": [
-        { "label": "Grassrivers Smuggler Fence", "url": "/properties.html?item=fence-grassrivers" },
-        { "label": "Grassrivers Alligator Habitat", "url": "/animals.html" }
+        {
+          "label": "Grassrivers Smuggler Fence",
+          "url": "/properties.html?item=fence-grassrivers"
+        },
+        {
+          "label": "Grassrivers Alligator Habitat",
+          "url": "/animals.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "buckingham-shamal-jet",
@@ -368,21 +598,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Twin-engine business jet",
-        "seatingCargo": "Multi-passenger cabin"
+        "seatingCargo": "Multi-passenger cabin",
+        "trunk": "Cabin stowage (slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City International Airport / airstrips)",
-      "spawnRegions": ["Vice City", "Leonida Keys"],
+      "spawnRegions": [
+        "Vice City",
+        "Leonida Keys"
+      ],
       "notes": "Twin-engine executive jet pictured flying low over the iconic Vice City sign on approach to VCIA.",
       "image": "/assets/images/vehicles/veh-vc-cruiser.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": "ammu-vice-airport-concourse",
       "relatedLinks": [
-        { "label": "VCIA Takedown Heist Guide", "url": "/heists/vcia-takedown.html" }
+        {
+          "label": "VCIA Takedown Heist Guide",
+          "url": "/heists/vcia-takedown.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "weazel-news-maverick",
@@ -393,21 +638,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Light twin-skid utility helicopter",
-        "seatingCargo": "4 Seats · Side camera rig mount"
+        "seatingCargo": "4 Seats · Side camera rig mount",
+        "trunk": "Cabin stowage (slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Helipads & Leonida airspace)",
-      "spawnRegions": ["Mount Kalaga National Park", "Vice City"],
+      "spawnRegions": [
+        "Mount Kalaga National Park",
+        "Vice City"
+      ],
       "notes": "Weazel News broadcast helicopter (tail N8889Z, 'Reporting the Right News') seen banking over Mount Kalaga ridgelines.",
       "image": "/assets/images/properties/kalaga-lodge.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar GTA VI Screenshot",
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Interactive Leonida Map", "url": "/map.html" }
+        {
+          "label": "Interactive Leonida Map",
+          "url": "/map.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "declasse-tulip-m100",
@@ -418,21 +678,37 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Classic American RWD muscle sedan/coupe",
-        "seatingCargo": "2–4 Seats · Trunk storage"
+        "seatingCargo": "2–4 Seats · Trunk storage",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Story / Street spawn across Leonida",
-      "spawnRegions": ["Vice City", "Port Gellhorn", "Leonida Keys"],
+      "spawnRegions": [
+        "Vice City",
+        "Port Gellhorn",
+        "Leonida Keys"
+      ],
       "notes": "Classic Declasse muscle platform featured heavily in GTA 6 reveal footage with physical trunk weapon/gear stowage.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Pawn Shops Robbery Guide", "url": "/heists/pawn-shops.html" }
+        {
+          "label": "Pawn Shops Robbery Guide",
+          "url": "/heists/pawn-shops.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "bravado-gauntlet-hellfire",
@@ -443,21 +719,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "High-power modern muscle coupe",
-        "seatingCargo": "2 Seats · Rear trunk"
+        "seatingCargo": "2 Seats · Rear trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Dealership / Vice City traffic)",
-      "spawnRegions": ["Vice City", "Port Gellhorn"],
+      "spawnRegions": [
+        "Vice City",
+        "Port Gellhorn"
+      ],
       "notes": "Returning modern Bravado muscle car favored for straight-line highway pursuits across Leonida.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Heist Planner", "url": "/heist-planner.html" }
+        {
+          "label": "Heist Planner",
+          "url": "/heist-planner.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vapid-dominator-gt",
@@ -468,10 +759,16 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Rear-wheel drive modern muscle",
-        "seatingCargo": "2 Seats · Rear trunk"
+        "seatingCargo": "2 Seats · Rear trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City & Port Gellhorn streets)",
-      "spawnRegions": ["Vice City", "Port Gellhorn", "Ambrosia"],
+      "spawnRegions": [
+        "Vice City",
+        "Port Gellhorn",
+        "Ambrosia"
+      ],
       "notes": "Modern Vapid muscle car spotted across Vice Beach boulevards and highway intersections.",
       "image": null,
       "imageVerified": false,
@@ -480,7 +777,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "bravado-banshee",
@@ -491,21 +795,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Rear-wheel drive lightweight sports coupe",
-        "seatingCargo": "2 Seats · Compact trunk"
+        "seatingCargo": "2 Seats · Compact trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City traffic / dealership)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Series-staple Bravado sports coupe returning for Vice City beachfront cruising and rapid getaways.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Jewelry Stores Robbery Guide", "url": "/heists/jewelry-stores.html" }
+        {
+          "label": "Jewelry Stores Robbery Guide",
+          "url": "/heists/jewelry-stores.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "pfister-comet-s2",
@@ -516,10 +835,15 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Rear-engine precision cornering sports car",
-        "seatingCargo": "2 Seats · Compact front trunk"
+        "seatingCargo": "2 Seats · Compact front trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice Beach / upscale districts)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Returning Pfister sports car spotted along Vice Beach resort districts.",
       "image": null,
       "imageVerified": false,
@@ -528,7 +852,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "invetero-coquette-d10",
@@ -539,10 +870,15 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Mid-engine modern sports coupe",
-        "seatingCargo": "2 Seats · Compact storage"
+        "seatingCargo": "2 Seats · Compact storage",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Ocean Drive & upscale Vice City)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Mid-engine Invetero sports car spotted cruising Vice City's Ocean Drive entertainment strip.",
       "image": null,
       "imageVerified": false,
@@ -551,7 +887,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "grotti-furia",
@@ -562,21 +905,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Mid-engine exotic supercar",
-        "seatingCargo": "2 Seats · Minimal cargo"
+        "seatingCargo": "2 Seats · Minimal cargo",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Luxury dealership / Vice Beach)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "High-end Italian exotic supercar seen parked outside Vice City hotels and luxury beachfront clubs.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Large Bank Vaults Guide", "url": "/heists/large-bank-vaults.html" }
+        {
+          "label": "Large Bank Vaults Guide",
+          "url": "/heists/large-bank-vaults.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "pegassi-zorrusso",
@@ -587,10 +945,15 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "AWD high-downforce supercar",
-        "seatingCargo": "2 Seats · Minimal cargo"
+        "seatingCargo": "2 Seats · Minimal cargo",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Luxury Vice City districts)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Angular Pegassi supercar spotted on Vice City coastal avenues.",
       "image": null,
       "imageVerified": false,
@@ -599,7 +962,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "pegassi-tempesta",
@@ -610,10 +980,14 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Mid-engine exotic coupe",
-        "seatingCargo": "2 Seats · Minimal cargo"
+        "seatingCargo": "2 Seats · Minimal cargo",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City luxury zones)",
-      "spawnRegions": ["Vice City"],
+      "spawnRegions": [
+        "Vice City"
+      ],
       "notes": "Returning Pegassi supercar featured in downtown Vice City exotic traffic.",
       "image": null,
       "imageVerified": false,
@@ -622,7 +996,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vapid-caracara-4x4",
@@ -633,10 +1014,16 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Four-wheel drive off-road pickup",
-        "seatingCargo": "4 Seats · Large truck bed"
+        "seatingCargo": "4 Seats · Large truck bed",
+        "trunk": "Pickup bed / full SUV rear trunk (exact slot count reported 4+ on personal haulers)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Grassrivers, Ambrosia & Mount Kalaga)",
-      "spawnRegions": ["Grassrivers", "Ambrosia", "Mount Kalaga National Park"],
+      "spawnRegions": [
+        "Grassrivers",
+        "Ambrosia",
+        "Mount Kalaga National Park"
+      ],
       "notes": "Four-door modern off-road pickup suited for marsh crossings and northern trail runs.",
       "image": null,
       "imageVerified": false,
@@ -645,7 +1032,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Reported",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "albany-cavalcade-xl",
@@ -656,21 +1050,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Full-size luxury SUV",
-        "seatingCargo": "4 Seats · High-capacity rear cargo area"
+        "seatingCargo": "4 Seats · High-capacity rear cargo area",
+        "trunk": "Pickup bed / full SUV rear trunk (exact slot count reported 4+ on personal haulers)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City & Port Gellhorn traffic)",
-      "spawnRegions": ["Vice City", "Port Gellhorn"],
+      "spawnRegions": [
+        "Vice City",
+        "Port Gellhorn"
+      ],
       "notes": "Full-size luxury SUV practical for multi-duffel heist crew transport.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "The Cartel Heist Guide", "url": "/heists/the-cartel-heist.html" }
+        {
+          "label": "The Cartel Heist Guide",
+          "url": "/heists/the-cartel-heist.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Reported",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vcpd-buffalo-interceptor",
@@ -681,21 +1090,37 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Law-enforcement pursuit-tuned chassis",
-        "seatingCargo": "4 Seats · Police equipment trunk"
+        "seatingCargo": "4 Seats · Police equipment trunk",
+        "trunk": "Physical trunk stowage (exact slot count not yet confirmed)",
+        "armor": "Law-enforcement service chassis (ballistic rating not yet confirmed)"
       },
       "priceOrAcquisition": "Law enforcement vehicle (Vice City & county patrols)",
-      "spawnRegions": ["Vice City", "Port Gellhorn", "Leonida Keys"],
+      "spawnRegions": [
+        "Vice City",
+        "Port Gellhorn",
+        "Leonida Keys"
+      ],
       "notes": "Active Vice City Police Department and Leonida county pursuit vehicles encountered during wanted-level chases.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Armored Trucks & Gang Ops", "url": "/heists/armored-trucks-gang-ops.html" }
+        {
+          "label": "Armored Trucks & Gang Ops",
+          "url": "/heists/armored-trucks-gang-ops.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Reported"
+      }
     },
     {
       "id": "western-cruiser-motorcycle",
@@ -706,21 +1131,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Heavy V-twin highway cruiser",
-        "seatingCargo": "1–2 Seats · Saddlebags"
+        "seatingCargo": "1–2 Seats · Saddlebags",
+        "trunk": "No car trunk (saddlebags/none depending on bike)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Ambrosia biker club zones & highways)",
-      "spawnRegions": ["Ambrosia", "Port Gellhorn"],
+      "spawnRegions": [
+        "Ambrosia",
+        "Port Gellhorn"
+      ],
       "notes": "Heavy custom cruiser motorcycles ridden by the Final Chapter MC biker club through Ambrosia.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": "gar-purch-6",
       "relatedLinks": [
-        { "label": "Ambrosia Freight Yard Garage", "url": "/properties.html?item=gar-purch-6" }
+        {
+          "label": "Ambrosia Freight Yard Garage",
+          "url": "/properties.html?item=gar-purch-6"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "pegassi-bati-sportbike",
@@ -731,21 +1171,36 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "High-agility street sportbike",
-        "seatingCargo": "1–2 Seats · No trunk storage"
+        "seatingCargo": "1–2 Seats · No trunk storage",
+        "trunk": "No car trunk (saddlebags/none depending on bike)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice City traffic & coastal roads)",
-      "spawnRegions": ["Vice City", "Vice Beach"],
+      "spawnRegions": [
+        "Vice City",
+        "Vice Beach"
+      ],
       "notes": "Fast street sportbikes ideal for slipping through tight Vice City alleys after jewelry store hits.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "Jewelry Stores Robbery Guide", "url": "/heists/jewelry-stores.html" }
+        {
+          "label": "Jewelry Stores Robbery Guide",
+          "url": "/heists/jewelry-stores.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "speedophile-seashark",
@@ -756,10 +1211,15 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Nimble jet-ski for coastal channels and reefs",
-        "seatingCargo": "1–2 Seats"
+        "seatingCargo": "1–2 Seats",
+        "trunk": "Open deck / marine stowage (slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Vice Beach & Leonida Keys shorelines)",
-      "spawnRegions": ["Vice Beach", "Leonida Keys"],
+      "spawnRegions": [
+        "Vice Beach",
+        "Leonida Keys"
+      ],
       "notes": "Personal watercraft spotted along Vice Beach surf zones and Leonida Keys marinas.",
       "image": null,
       "imageVerified": false,
@@ -768,7 +1228,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "mammoth-dodo-seaplane",
@@ -779,10 +1246,15 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Amphibious pontoon propeller aircraft",
-        "seatingCargo": "2–4 Seats · Water landing capable"
+        "seatingCargo": "2–4 Seats · Water landing capable",
+        "trunk": "Cabin stowage (slot count not yet confirmed)",
+        "armor": "Not yet confirmed"
       },
       "priceOrAcquisition": "Price not confirmed (Leonida Keys & Lake Leonida docks)",
-      "spawnRegions": ["Leonida Keys", "Lake Leonida"],
+      "spawnRegions": [
+        "Leonida Keys",
+        "Lake Leonida"
+      ],
       "notes": "Amphibious bush seaplane built for water landings across the Keys archipelago and Lake Leonida.",
       "image": null,
       "imageVerified": false,
@@ -791,7 +1263,14 @@
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Not yet confirmed"
+      }
     },
     {
       "id": "vcpd-air-one-helicopter",
@@ -802,21 +1281,37 @@
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Tactical police pursuit helicopter",
-        "seatingCargo": "4 Seats · Searchlight & side-door gunners"
+        "seatingCargo": "4 Seats · Searchlight & side-door gunners",
+        "trunk": "Cabin stowage (slot count not yet confirmed)",
+        "armor": "Law-enforcement service chassis (ballistic rating not yet confirmed)"
       },
       "priceOrAcquisition": "Law enforcement aircraft (3+ Star wanted response)",
-      "spawnRegions": ["Vice City", "Grassrivers", "Port Gellhorn"],
+      "spawnRegions": [
+        "Vice City",
+        "Grassrivers",
+        "Port Gellhorn"
+      ],
       "notes": "Police patrol helicopter deployed during high-star pursuits across Vice City and the Grassrivers wetlands.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": null,
       "relatedLinks": [
-        { "label": "GTA 6 Tips & Tricks", "url": "/gta-6-tips-and-tricks/" }
+        {
+          "label": "GTA 6 Tips & Tricks",
+          "url": "/gta-6-tips-and-tricks/"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-21",
+      "statStatus": {
+        "topSpeed": "Not yet confirmed",
+        "acceleration": "Not yet confirmed",
+        "handling": "Reported",
+        "trunk": "Not yet confirmed",
+        "armor": "Reported"
+      }
     }
   ]
 }
