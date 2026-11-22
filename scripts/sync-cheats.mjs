@@ -130,6 +130,28 @@ function stripVolatile(obj) {
   return clone;
 }
 
+function syncHtmlCheatCounts(cheatsPayload) {
+  const count = Array.isArray(cheatsPayload?.items) ? cheatsPayload.items.length : 0;
+  if (count <= 0) return;
+  const htmlTargets = [
+    path.join(ROOT_DIR, 'public', 'cheats.html'),
+    path.join(ROOT_DIR, 'public', 'index.html'),
+    path.join(ROOT_DIR, 'public', 'gta-6-tools', 'index.html'),
+    path.join(ROOT_DIR, 'public', 'live-intel.html'),
+  ];
+  for (const fp of htmlTargets) {
+    if (!fs.existsSync(fp)) continue;
+    const raw = fs.readFileSync(fp, 'utf-8');
+    let next = raw.replace(
+      /(<span[^>]*\bdata-cheat-count\b[^>]*>)\d+(<\/span>)/gi,
+      `$1${count}$2`
+    );
+    if (next !== raw) {
+      fs.writeFileSync(fp, next, 'utf-8');
+    }
+  }
+}
+
 async function fetchWithTimeout(url, timeoutMs) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -418,8 +440,10 @@ export async function runCheatSync(opts = {}) {
       nextCheats.updated = today;
       atomicWriteJson(PUBLIC_CHEATS_PATH, nextCheats);
       atomicWriteJson(MIRROR_CHEATS_PATH, nextCheats);
+      syncHtmlCheatCounts(nextCheats);
       console.log(`[OK] Updated public/data/cheats.json & data/cheats.json (+${publishedAdded} verified cheat(s), totalPublished=${nextCheats.totalPublished}).`);
     } else {
+      syncHtmlCheatCounts(nextCheats);
       console.log(`[OK] No new verified cheats to publish (totalPublished=${nextCheats.totalPublished}).`);
     }
     if (pendingChanged) {

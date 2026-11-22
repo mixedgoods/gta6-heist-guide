@@ -6,12 +6,12 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA 6 Cheat Codes (Unlock Tracker &amp; Verified Directory) | PS5 &amp; Xbox Series X|S</title>
-    <meta name="description" content="Structured GTA 6 61-cheat tracker and launch directory for PS5 and Xbox Series X|S. All 61 cheats unlock after finishing Story Mode plus individual challenges; cheats disable trophies and saving for the session. Unconfirmed button combos are clearly badged Community Verifying / Unconfirmed.">
+    <meta name="description" content="Structured GTA 6 cheat unlock tracker and verified launch directory for PS5 and Xbox Series X|S. Track every published cheat, Story Mode unlock requirement, and verified button code. Zero fake codes.">
     <meta name="keywords" content="gta 6 cheat codes, gta 6 cheats ps5, gta 6 cheats xbox series x, gta 6 money cheat, gta 6 phone cheats, how to enter cheats gta 6, gta 6 unlock codes, gta 6 car spawn cheats">
     <link rel="canonical" href="https://www.gta6heistguide.com/cheats.html">
     <link rel="manifest" href="/manifest.json">
     <meta property="og:title" content="GTA 6 Cheat Codes (Unlock Tracker &amp; Verified Directory)">
-    <meta property="og:description" content="Track all 61 GTA 6 cheats unlocked after Story Mode + individual challenges. Zero fake codes: unconfirmed entries are clearly labeled Community Verifying / Unconfirmed.">
+    <meta property="og:description" content="Track every published GTA 6 cheat unlocked after Story Mode + individual challenges. Zero fake codes: unconfirmed button inputs are marked Community Verifying.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/cheats.html">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
@@ -35,7 +35,7 @@
         {
           "@type": "SoftwareApplication",
           "name": "GTA 6 Cheat Unlock & Code Tracker",
-          "description": "Interactive Grand Theft Auto VI 61-cheat tracker, button combo decoder, phone dialer codes, and trophy-lock alert system for PS5 and Xbox Series X|S. PC support is not yet available or confirmed.",
+          "description": "Interactive Grand Theft Auto VI cheat tracker, button combo decoder, phone dialer codes, and trophy-lock alert system for PS5 and Xbox Series X|S. PC support is not yet available or confirmed.",
           "applicationCategory": "GameApplication",
           "operatingSystem": "All",
           "url": "https://www.gta6heistguide.com/cheats.html",
@@ -284,7 +284,7 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                   <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
                     <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner.html" class="nav-dropdown-item">🎯 Heist Planner</a>
@@ -325,7 +325,7 @@
                     GTA 6 Cheat Codes &amp; Launch Glitches Hub
                 </h1>
                 <p style="color:var(--text-muted); font-size:0.96rem; line-height:1.55; margin:0;">
-                    Structured 61-cheat tracker &amp; launch directory for Grand Theft Auto VI. GTA 6 includes <strong>61 total cheats unlocked after finishing Story Mode + completing individual challenges</strong>. Activating cheats <strong>disables trophies/achievements and saving for that session</strong>. We never publish fabricated combos—every unconfirmed code is transparently labeled <strong>Community Verifying / Unconfirmed</strong> until 3+ players confirm it.
+                    Structured cheat tracker &amp; launch directory for Grand Theft Auto VI. Currently tracking <strong><span data-cheat-count>61</span> published cheats unlocked after finishing Story Mode plus individual challenges</strong>. Activating cheats <strong>disables trophies/achievements and saving for that session</strong>. We never publish fabricated combos—every unconfirmed code is transparently labeled <strong>Community Verifying / Unconfirmed</strong> until 3+ players confirm it.
                 </p>
             </div>
             <div style="background:rgba(0,0,0,0.6); border:1px solid rgba(0,240,255,0.35); border-radius:10px; padding:1.15rem 1.4rem; min-width:260px; text-align:center;">
@@ -2761,6 +2761,7 @@ function cheatTestedKey(id) {
   return 'cheat-tested:' + String(id).padStart(2, '0');
 }
 
+window.GTA6_CHEAT_COUNT = MASTER_CHEATS.length;
 function getSavedUnlocked() {
   if (window.GTA6Progress) {
     return window.GTA6Progress.getCompletedByPrefix('cheat:').map(n => parseInt(n, 10)).filter(n => !isNaN(n));
@@ -2830,7 +2831,7 @@ function updateProgressBar() {
   const tested = getSavedTested();
   const count = list.length;
   const testedCount = tested.length;
-  const total = MASTER_CHEATS.length;
+  const total = (typeof window.GTA6_CHEAT_COUNT === 'number' && window.GTA6_CHEAT_COUNT > 0) ? window.GTA6_CHEAT_COUNT : MASTER_CHEATS.length;
   const pct = Math.round((count / total) * 100);
   const disp = document.getElementById('cheatProgressDisplay');
   const bar = document.getElementById('cheatProgressBar');
@@ -3101,6 +3102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   renderCheats();
   updateProgressBar();
+  hydratePublishedCheatsFromDb();
   loadCommunityDiscoveries();
   window.addEventListener('gta6-progress-updated', () => {
     renderCheats();

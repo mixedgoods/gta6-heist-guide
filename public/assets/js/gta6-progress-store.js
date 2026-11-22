@@ -1109,7 +1109,7 @@
             '</div>' +
             '<div class="gta-pb-note">' +
               (isMapScope
-                ? '<strong>EXPORT:</strong> Downloads a backup of your saved progress and custom pins.<br><strong>IMPORT:</strong> Restores previously exported map progress &amp; custom pins to another browser or device (personal backup only — not for importing new GTA VI discoveries). Syncs with Save Planner, Heist Planner &amp; Cheats.'
+                ? '<strong>EXPORT (.json):</strong> Downloads a JSON backup of your saved map progress and custom pins.<br><strong>IMPORT (.json):</strong> Restores a previously exported JSON backup and <strong>replaces existing progress</strong> after confirmation (an automatic <strong>pre-import backup</strong> is saved and you can download your current backup before replacing). Personal backup only — not for importing new GTA VI discoveries. Syncs with Save Planner, Heist Planner &amp; Cheats.'
                 : 'Stored locally in this browser/device unless exported. Syncs live with Save Planner, Heist Planner &amp; Cheats.') +
             '</div>' +
           '</div>';
@@ -1139,9 +1139,12 @@
       }
 
       function getDynamicCheatTotal() {
-        return (typeof global.GTA6_CHEAT_COUNT === 'number' && global.GTA6_CHEAT_COUNT > 0)
-          ? global.GTA6_CHEAT_COUNT
-          : 61;
+        if (typeof global.GTA6_CHEAT_COUNT === 'number' && global.GTA6_CHEAT_COUNT > 0) {
+          return global.GTA6_CHEAT_COUNT;
+        }
+        var domNode = typeof document !== 'undefined' ? document.querySelector('[data-cheat-count], [data-pb-cheat-total]') : null;
+        var parsed = domNode ? parseInt(domNode.textContent, 10) : NaN;
+        return (!isNaN(parsed) && parsed > 0) ? parsed : 0;
       }
 
       function refreshStats(flashSaved) {
