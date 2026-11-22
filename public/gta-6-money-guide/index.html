@@ -201,7 +201,7 @@
         <div class="strip-left-items">
             <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
                 <span class="strip-pulse" style="background:var(--neon-green);"></span>
-                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: Expected 2027</span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: No official release date announced</span>
             </span>
         </div>
     </div>
@@ -524,7 +524,7 @@
                         <select id="compModeFilter" class="form-select" style="padding:0.4rem 0.7rem; font-size:0.8rem;">
                             <option value="all">All (Solo &amp; Online)</option>
                             <option value="solo">Solo / Story Mode (LIVE)</option>
-                            <option value="online">GTA 6 Online (Expected 2027)</option>
+                            <option value="online">GTA 6 Online (No Official Date Announced)</option>
                         </select>
                     </div>
                 </div>
@@ -807,8 +807,8 @@
     if (!body) return;
     if (compMode === 'online') {
       body.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:1.25rem; color:#e2e8f0;">' +
-        '<span class="verify-badge verify-unverified" style="margin-bottom:0.45rem;">GTA 6 ONLINE — EXPECTED 2027</span>' +
-        '<div style="margin-top:0.35rem; font-size:0.85rem; color:#cbd5e1;">GTA 6 Online is not live at launch (expected 2027). We do not publish speculative or invented Online payouts. Switch to <strong>Solo / Story Mode (LIVE)</strong> or <strong>All</strong> to compare verified launch cash routes.</div>' +
+        '<span class="verify-badge verify-unverified" style="margin-bottom:0.45rem;">GTA 6 ONLINE — NO OFFICIAL RELEASE DATE ANNOUNCED</span>' +
+        '<div style="margin-top:0.35rem; font-size:0.85rem; color:#cbd5e1;">GTA 6 Online has no official release date announced by Rockstar Games (media speculation has suggested 2027, not an official Rockstar announcement) and is not live at launch. We do not publish speculative or invented Online payouts. Switch to <strong>Solo / Story Mode (LIVE)</strong> or <strong>All</strong> to compare verified launch cash routes.</div>' +
       '</td></tr>';
       return;
     }

@@ -962,6 +962,7 @@
         ops: ['op:'],
         secrets: ['secret:'],
         slots: ['slot:', 'preflight:'],
+        settings: ['settings:'],
         calculator: []
       };
       var prefixes = prefixMap[scope];
@@ -977,6 +978,12 @@
         if (scope === 'pins') st.mapCustomPins = [];
         if (scope === 'slots') st.savePlanner = null;
         if (scope === 'heists' && st.toolStates) delete st.toolStates.heistPlanner;
+        if (scope === 'settings' && st.toolStates) {
+          delete st.toolStates.settingsStorage;
+          delete st.toolStates.settingsCapture;
+          delete st.toolStates.settingsPcSpecs;
+          delete st.toolStates.settingsChecklist;
+        }
         if (scope === 'calculator' && st.toolStates) {
           delete st.toolStates.payoutCalculator;
           delete st.toolStates.freeTools;

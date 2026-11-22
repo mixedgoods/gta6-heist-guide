@@ -63,7 +63,7 @@ window.getGTA6LaunchDay = function() {
 };
 
 window.getGTA6LaunchBannerText = function() {
-  return "Story Mode: LIVE · GTA 6 Online: Expected 2027";
+  return "Story Mode: LIVE · GTA 6 Online: No official release date announced";
 };
 
 (function() {

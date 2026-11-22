@@ -49,7 +49,7 @@ live_feed = {
     "launch_date_utc": "2026-11-19T00:00:00Z",
     "launch_day": launch_day,
     "banner": f"🔥 GTA 6 IS LIVE — DAY-{launch_day} HEISTS, CHEATS, MAPS & DROPS",
-    "online_status": "Expected 2027 — Not Live at Launch",
+    "online_status": "No official release date announced",
     "counts": {
         "heist_walkthroughs": 8,
         "properties_entries": count_items(os.path.join(PUB_DATA_DIR, "properties.json")),

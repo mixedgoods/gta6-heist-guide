@@ -373,7 +373,7 @@ const GTA6 = {
       const now = Date.now();
       const diff = launchTarget - now;
       const launchDay = Math.max(1, Math.floor((now - launchTarget) / 86400000) + 1);
-      const liveBannerText = 'Story Mode: LIVE · GTA 6 Online: Expected 2027';
+      const liveBannerText = 'Story Mode: LIVE · GTA 6 Online: No official release date announced';
       if (launchEl) {
         launchEl.innerText = diff <= 0 ? liveBannerText : this.formatDiff(diff);
       }

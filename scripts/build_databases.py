@@ -134,7 +134,7 @@ NAV_HTML = '''<div class="countdown-strip">
                 <span class="launch-mode-label" data-launch-banner>🔥 GTA 6 IS LIVE — DAY-3 HEISTS, CHEATS, MAPS &amp; DROPS</span>
             </span>
             <span class="strip-divider">|</span>
-            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">Expected 2027 — Not Live at Launch</span></span>
+            <span class="strip-pill" style="color:#94a3b8;">GTA 6 Online: <span style="color:var(--neon-amber); font-weight:700;">No official release date announced</span></span>
         </div>
     </div>
 </div>
