@@ -28,7 +28,7 @@
           "@type": "CollectionPage",
           "name": "GTA 6 Animals & Wildlife Compendium",
           "url": "https://www.gta6heistguide.com/animals.html",
-          "dateModified": "2026-11-21",
+          "dateModified": "2026-11-22",
           "description": "Verified GTA 6 Wildlife Compendium tracking 62 bird species (Rockstar developer figure), 60 Birds-tab entries (in-game Progress tracker), Bret Vogel's 15 Hunting Target Decks, and 8 Legendary Hunter challenge animals."
         },
         {
@@ -958,7 +958,7 @@
   renderVogelTracker();
   renderLegendaryTracker();
 
-  fetch('/data/animals.json?v=20261121_v2')
+  fetch('/data/animals.json?v=20261122_v3')
     .then(function(r) { return r.json(); })
     .then(function(data) {
       items = Array.isArray(data.items) ? data.items : [];

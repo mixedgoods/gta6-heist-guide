@@ -824,6 +824,10 @@ export async function runWorldDbSync(opts = {}) {
         if (n) knownUrls.add(n);
         knownUrls.add(String(item.image).trim().toLowerCase());
       }
+      if (item.sourceImageUrl) {
+        const nSrc = normalizeImageUrl(item.sourceImageUrl);
+        if (nSrc) knownUrls.add(nSrc);
+      }
     }
   }
   try {
@@ -863,9 +867,18 @@ export async function runWorldDbSync(opts = {}) {
       continue;
     }
 
+    // Never stage candidate images for an item that already has a verified GTA VI screenshot
+    const cat = CATEGORIES.includes(cand.category) ? cand.category : inferCategoryFromText(cand.itemName, 'vehicles');
+    if (cand.itemId) {
+      const existingItem = nextByCat[cat]?.items?.find((x) => x.id === cand.itemId);
+      if (existingItem && existingItem.image && existingItem.imageVerified === true) {
+        duplicatesSkipped++;
+        continue;
+      }
+    }
+
     knownUrls.add(evalRes.normalizedUrl);
     const hashId = crypto.createHash('sha1').update(evalRes.normalizedUrl).digest('hex').slice(0, 12);
-    const cat = CATEGORIES.includes(cand.category) ? cand.category : inferCategoryFromText(cand.itemName, 'vehicles');
     nextPending.candidates.push({
       id: `wimg-${hashId}`,
       category: cat,

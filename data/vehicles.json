@@ -1,6 +1,6 @@
 {
   "category": "vehicles",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "note": "Verified GTA 6 Leonida vehicles across 7 classes. Every stat explicitly distinguishes Confirmed, Reported, Estimated, and Not yet confirmed — numerical telemetry (MPH, 0-60, armor ratings) is never invented.",
   "items": [
     {
@@ -689,9 +689,9 @@
         "Leonida Keys"
       ],
       "notes": "Classic Declasse muscle platform featured heavily in GTA 6 reveal footage with physical trunk weapon/gear stowage.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-declasse-tulip.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "mapPinId": null,
       "relatedLinks": [
         {
@@ -699,16 +699,17 @@
           "url": "/heists/pawn-shops.html"
         }
       ],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/ce/Tulip-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "bravado-gauntlet-hellfire",
@@ -729,9 +730,9 @@
         "Port Gellhorn"
       ],
       "notes": "Returning modern Bravado muscle car favored for straight-line highway pursuits across Leonida.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-bravado-gauntlet-hellfire.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "mapPinId": null,
       "relatedLinks": [
         {
@@ -739,16 +740,17 @@
           "url": "/heist-planner.html"
         }
       ],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c4/GauntletHellfire-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "vapid-dominator-gt",
@@ -770,21 +772,22 @@
         "Ambrosia"
       ],
       "notes": "Modern Vapid muscle car spotted across Vice Beach boulevards and highway intersections.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-vapid-dominator.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/98/DominatorASP-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "bravado-banshee",
@@ -805,9 +808,9 @@
         "Vice Beach"
       ],
       "notes": "Series-staple Bravado sports coupe returning for Vice City beachfront cruising and rapid getaways.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-bravado-banshee.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
       "mapPinId": null,
       "relatedLinks": [
         {
@@ -815,16 +818,17 @@
           "url": "/heists/jewelry-stores.html"
         }
       ],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/6/64/Banshee-GTAVI-Trailer2.png/revision/latest"
     },
     {
       "id": "pfister-comet-s2",
@@ -845,21 +849,22 @@
         "Vice Beach"
       ],
       "notes": "Returning Pfister sports car spotted along Vice Beach resort districts.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-pfister-comet-s2.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c2/CometS2Cabrio-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "invetero-coquette-d10",
@@ -880,21 +885,22 @@
         "Vice Beach"
       ],
       "notes": "Mid-engine Invetero sports car spotted cruising Vice City's Ocean Drive entertainment strip.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-invetero-coquette-d10.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/4/40/CoquetteD10-GTAVI-OfficialScreenshot-JasonDuval04.png/revision/latest"
     },
     {
       "id": "grotti-furia",
@@ -915,9 +921,9 @@
         "Vice Beach"
       ],
       "notes": "High-end Italian exotic supercar seen parked outside Vice City hotels and luxury beachfront clubs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-grotti-furia.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "mapPinId": null,
       "relatedLinks": [
         {
@@ -925,16 +931,17 @@
           "url": "/heists/large-bank-vaults.html"
         }
       ],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e8/Furia-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "pegassi-zorrusso",
@@ -955,21 +962,22 @@
         "Vice Beach"
       ],
       "notes": "Angular Pegassi supercar spotted on Vice City coastal avenues.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-pegassi-zorrusso.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/7b/Zorrusso-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "pegassi-tempesta",
@@ -989,21 +997,22 @@
         "Vice City"
       ],
       "notes": "Returning Pegassi supercar featured in downtown Vice City exotic traffic.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-pegassi-tempesta.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0e/Tempesta-GTAVI-Trailer2.png/revision/latest"
     },
     {
       "id": "vapid-caracara-4x4",
@@ -1025,21 +1034,22 @@
         "Mount Kalaga National Park"
       ],
       "notes": "Four-door modern off-road pickup suited for marsh crossings and northern trail runs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-vapid-caracara-4x4.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Reported",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/85/Caracara4x4-GTAVI-Trailer2.png/revision/latest"
     },
     {
       "id": "albany-cavalcade-xl",
@@ -1221,21 +1231,22 @@
         "Leonida Keys"
       ],
       "notes": "Personal watercraft spotted along Vice Beach surf zones and Leonida Keys marinas.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/vehicles/veh-speedophile-seashark.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
       "mapPinId": null,
       "relatedLinks": [],
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "statStatus": {
         "topSpeed": "Not yet confirmed",
         "acceleration": "Not yet confirmed",
         "handling": "Reported",
         "trunk": "Not yet confirmed",
         "armor": "Not yet confirmed"
-      }
+      },
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/82/Seashark2ndGen-GTAVI-Trailer2.png/revision/latest"
     },
     {
       "id": "mammoth-dodo-seaplane",

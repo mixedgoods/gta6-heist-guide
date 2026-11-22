@@ -10,36 +10,6 @@
   ],
   "candidates": [
     {
-      "id": "wimg-086c6cccce51",
-      "category": "vehicles",
-      "itemId": "speedophile-seashark",
-      "itemName": "Speedophile Seashark (Personal Watercraft)",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/82/Seashark2ndGen-GTAVI-Trailer2.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/82/Seashark2ndGen-GTAVI-Trailer2.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
-      "source": "GTA Wiki (GTA VI Trailer 2)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 2005,
-      "height": 1127,
-      "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-6608c3bda543",
-      "category": "vehicles",
-      "itemId": "bravado-banshee",
-      "itemName": "Bravado Banshee",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/6/64/Banshee-GTAVI-Trailer2.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/6/64/Banshee-GTAVI-Trailer2.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
-      "source": "GTA Wiki (GTA VI Trailer 2)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 629,
-      "height": 354,
-      "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
       "id": "wimg-e3783efe3d6a",
       "category": "vehicles",
       "itemId": "pfister-comet-s2",
@@ -52,52 +22,9 @@
       "width": 525,
       "height": 295,
       "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-befebfea3dbd",
-      "category": "vehicles",
-      "itemId": "pfister-comet-s2",
-      "itemName": "Pfister Comet",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c2/CometS2Cabrio-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c2/CometS2Cabrio-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 1545,
-      "height": 869,
-      "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-c34c77bf78fb",
-      "category": "vehicles",
-      "itemId": "invetero-coquette-d10",
-      "itemName": "Invetero Coquette D10",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/4/40/CoquetteD10-GTAVI-OfficialScreenshot-JasonDuval04.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/4/40/CoquetteD10-GTAVI-OfficialScreenshot-JasonDuval04.png/revision/latest",
-      "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
-      "source": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 1530,
-      "height": 861,
-      "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-fd66d930b3cd",
-      "category": "vehicles",
-      "itemId": "vapid-dominator-gt",
-      "itemName": "Vapid Dominator",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/98/DominatorASP-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/98/DominatorASP-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 368,
-      "height": 207,
-      "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_secondary_candidate",
+      "reviewReason": "Lower-resolution Comet Retro Custom trim (525x295); promoted crisp HD Pfister Comet S2 Cabrio (CometS2Cabrio-GTAVI-Trailer1.png, 1545x869) instead.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "wimg-801e5f5ba448",
@@ -112,97 +39,9 @@
       "width": 394,
       "height": 221,
       "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-3eba1ca3b634",
-      "category": "vehicles",
-      "itemId": "bravado-gauntlet-hellfire",
-      "itemName": "Bravado Gauntlet Hellfire",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c4/GauntletHellfire-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c4/GauntletHellfire-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 1264,
-      "height": 711,
-      "discoveredAt": "2026-11-22T02:30:25.918Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-eefdca43c959",
-      "category": "vehicles",
-      "itemId": "declasse-tulip-m100",
-      "itemName": "Declasse Tulip",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/ce/Tulip-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/ce/Tulip-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 2400,
-      "height": 1350,
-      "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-7eb97c2a2eba",
-      "category": "vehicles",
-      "itemId": "grotti-furia",
-      "itemName": "Grotti Furia",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e8/Furia-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e8/Furia-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 913,
-      "height": 514,
-      "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-d28fda36d15f",
-      "category": "vehicles",
-      "itemId": "pegassi-tempesta",
-      "itemName": "Pegassi Tempesta",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0e/Tempesta-GTAVI-Trailer2.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0e/Tempesta-GTAVI-Trailer2.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
-      "source": "GTA Wiki (GTA VI Trailer 2)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 1111,
-      "height": 625,
-      "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-f3b1302ae65d",
-      "category": "vehicles",
-      "itemId": "pegassi-zorrusso",
-      "itemName": "Pegassi Zorrusso",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/7b/Zorrusso-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/7b/Zorrusso-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 2500,
-      "height": 1406,
-      "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "wimg-4ce9e45caf5d",
-      "category": "vehicles",
-      "itemId": "vapid-caracara-4x4",
-      "itemName": "Vapid Caracara 4x4",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/85/Caracara4x4-GTAVI-Trailer2.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/85/Caracara4x4-GTAVI-Trailer2.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
-      "source": "GTA Wiki (GTA VI Trailer 2)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Vehicles_in_GTA_VI/images",
-      "width": 3072,
-      "height": 1728,
-      "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_secondary_candidate",
+      "reviewReason": "Blurry night headlight crop obscured by foreground roof; promoted clearer daylight Vapid Dominator shot (DominatorASP-GTAVI-Trailer1.png) instead.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "wimg-0b877311535d",
@@ -217,7 +56,9 @@
       "width": 517,
       "height": 291,
       "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_subject_obscured",
+      "reviewReason": "Foreground dominated by a bicycle wheel and dog with the Declasse Yosemite 1500 heavily obscured in the background.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "wimg-60fe6468b35e",
@@ -232,7 +73,9 @@
       "width": 1004,
       "height": 565,
       "discoveredAt": "2026-11-22T02:30:25.919Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_wrong_subject",
+      "reviewReason": "Depicts a red Cruiser bicycle and dog in Leonida Keys, NOT a VCPD Police Cruiser / Pursuit Interceptor.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     }
   ]
 }

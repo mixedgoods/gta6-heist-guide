@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "note": "170+ wildlife species across Leonida's 6 regions. Bird figures tracked separately: 62 bird species (Rockstar developer figure) and 60 Birds-tab entries (in-game Progress tracker).",
   "birdStats": {
     "rockstarDeveloperFigure": 62,
@@ -74,14 +74,15 @@
         "legendary-hunter"
       ],
       "notes": "Stalks dense pine trails and ridges in Mount Kalaga National Park, especially at dusk and night. Tracked during Jason's hunting contracts.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-panther.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
       "pinId": "an-panther",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-panther"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Cougars",
+      "mapPinId": "an-panther",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/70/OfficialScreenshots-GTAVI-PromotionalWebsite-MountKalaga-SS5.jpg/revision/latest"
     },
     {
       "id": "an-black-bear",
@@ -253,14 +254,15 @@
         "target-deck"
       ],
       "notes": "Sunbathes on seawalls, docks, and palm trunks throughout the Leonida Keys.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-green-iguana.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Gallery)",
       "pinId": "an-green-iguana",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-green-iguana"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Iguanas",
+      "mapPinId": "an-green-iguana",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/94/Iguana-GTAVI.png/revision/latest"
     },
     {
       "id": "an-cane-toad",
@@ -291,14 +293,15 @@
         "target-deck"
       ],
       "notes": "Nocturnal scavenger around alley dumpsters and motel fringes across Port Gellhorn & Vice City.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-raccoon.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Gallery)",
       "pinId": "an-raccoon",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-raccoon"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Raccoons",
+      "mapPinId": "an-raccoon",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e9/Raccoon-GTAVI.png/revision/latest"
     },
     {
       "id": "an-red-fox",
@@ -369,14 +372,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Common in city parks, palm trees, and wooded trails across Leonida.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-squirrel.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Gallery)",
       "pinId": "an-squirrel",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-squirrel"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Squirrels",
+      "mapPinId": "an-squirrel",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0a/Squirrel-GTAVI.png/revision/latest"
     },
     {
       "id": "an-snake",
@@ -407,14 +411,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Iconic bright-pink wading flocks in Leonida Keys flats and Grassrivers wetlands. Study with binoculars to log in the in-game Birds Progress tab.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-flamingo.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "pinId": "an-flamingo",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-flamingo"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Flamingos",
+      "mapPinId": "an-flamingo",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/8a/GTAVITrailer-GTAVI-SS10.png/revision/latest"
     },
     {
       "id": "an-pelican",
@@ -497,14 +502,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Rare tall white wetland crane spotted in open Grassrivers flats.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-whooping-crane.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Gallery)",
       "pinId": "an-whooping-crane",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-whooping-crane"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Cranes",
+      "mapPinId": "an-whooping-crane",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/83/GTA-VI-Cranes.jpg/revision/latest"
     },
     {
       "id": "an-cormorant",
@@ -515,14 +521,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Diving waterbird frequently seen drying its wings on docks and buoys.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-cormorant.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "pinId": "an-cormorant",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-cormorant"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Double-Crested_Cormorants",
+      "mapPinId": "an-cormorant",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/1e/DoubleCrestedCormorant-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "an-duck",
@@ -535,14 +542,15 @@
         "target-deck"
       ],
       "notes": "Common across ponds, canals, and calm wetland coves.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-duck.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "pinId": "an-duck",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-duck"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Ducks",
+      "mapPinId": "an-duck",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/95/Ducks-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "an-seagull",
@@ -683,14 +691,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Pods leap alongside boats in Vice Bay and the Leonida Keys.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-dolphin.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "pinId": "an-dolphin",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-dolphin"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dolphins",
+      "mapPinId": "an-dolphin",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/11/Dolphins-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "an-sea-turtle",
@@ -701,14 +710,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Swims around coral reefs and shipwreck dive spots in the Keys.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-sea-turtle.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Gallery)",
       "pinId": "an-sea-turtle",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-sea-turtle"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Sea_Turtles",
+      "mapPinId": "an-sea-turtle",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/71/SeaTurtle-GTAVI.png/revision/latest"
     },
     {
       "id": "an-stingray",
@@ -775,14 +785,15 @@
       "danger": "Cautious",
       "tags": [],
       "notes": "Hides inside reef crevices and underwater wrecks.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-eel.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Gallery)",
       "pinId": "an-eel",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-eel"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Eels",
+      "mapPinId": "an-eel",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/02/Eel-GTAVI.png/revision/latest"
     },
     {
       "id": "an-jellyfish",
@@ -847,14 +858,15 @@
       "danger": "Pettable",
       "tags": [],
       "notes": "Common along Ocean Beach walkways and boutique sidewalks.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-chihuahua.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
       "pinId": "an-chihuahua",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-chihuahua"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dogs",
+      "mapPinId": "an-chihuahua",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/d/de/Chihuahua-GTAVI-Trailer1.png/revision/latest"
     },
     {
       "id": "an-doberman",
@@ -955,14 +967,15 @@
       "danger": "Pettable",
       "tags": [],
       "notes": "Lounges on alley steps, porches, and Key Lento docks; can be petted.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-domestic-cat.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
       "pinId": "an-domestic-cat",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
-      "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-domestic-cat"
+      "lastUpdated": "2026-11-22",
+      "sourceUrl": "https://gta.fandom.com/wiki/Cats",
+      "mapPinId": "an-domestic-cat",
+      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/2/25/Cat-GTAVI-Trailer2.png/revision/latest"
     }
   ],
   "category": "animals"

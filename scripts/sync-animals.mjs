@@ -696,6 +696,10 @@ export async function runWildlifeSync(opts = {}) {
       if (n2) knownNormalizedUrls.add(n2);
       knownNormalizedUrls.add(String(item.image).trim().toLowerCase());
     }
+    if (item.sourceImageUrl) {
+      const n3 = normalizeImageUrl(item.sourceImageUrl);
+      if (n3) knownNormalizedUrls.add(n3);
+    }
   }
 
   let stagedImages = 0;
@@ -725,12 +729,18 @@ export async function runWildlifeSync(opts = {}) {
     // Resolve speciesId against existing animals.json if not set
     let resolvedSpeciesId = cand.speciesId || null;
     let resolvedSpeciesName = cleanText(cand.speciesName) || 'Unassigned Species';
-    if (!resolvedSpeciesId) {
-      const matched = matchExistingAnimal(resolvedSpeciesName, byId, byNormName, bySingName);
-      if (matched) {
-        resolvedSpeciesId = matched.id;
-        resolvedSpeciesName = matched.name;
+    let matchedItem = resolvedSpeciesId ? byId.get(resolvedSpeciesId) : null;
+    if (!matchedItem) {
+      matchedItem = matchExistingAnimal(resolvedSpeciesName, byId, byNormName, bySingName);
+      if (matchedItem) {
+        resolvedSpeciesId = matchedItem.id;
+        resolvedSpeciesName = matchedItem.name;
       }
+    }
+    // Never stage candidate images for a species that already has a verified GTA VI screenshot
+    if (matchedItem && matchedItem.image && matchedItem.imageVerified === true) {
+      duplicatesSkipped++;
+      continue;
     }
 
     knownNormalizedUrls.add(evalRes.normalizedUrl);

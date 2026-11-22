@@ -14,7 +14,9 @@
       "width": 1166,
       "height": 656,
       "discoveredAt": "2026-11-22T02:30:23.748Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_already_verified",
+      "reviewReason": "an-alligator already has a verified official Rockstar GTA VI screenshot (/assets/images/animals/grassrivers-gator.jpg); preserving existing verified image.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-fe6424637a7b",
@@ -28,7 +30,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.748Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_already_verified",
+      "reviewReason": "an-alligator already has a verified official Rockstar GTA VI screenshot; preserving existing verified image.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-80c69b2d39e9",
@@ -42,7 +46,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.748Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_already_verified",
+      "reviewReason": "an-alligator already has a verified official Rockstar GTA VI screenshot; preserving existing verified image.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-f1fed7d78e85",
@@ -56,7 +62,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.748Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_already_verified",
+      "reviewReason": "an-alligator already has a verified official Rockstar GTA VI screenshot; preserving existing verified image.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-92bae9d32df1",
@@ -70,119 +78,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.748Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-b0491214f109",
-      "speciesId": "an-domestic-cat",
-      "speciesName": "Domestic Cat",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/2/25/Cat-GTAVI-Trailer2.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/2/25/Cat-GTAVI-Trailer2.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
-      "source": "GTA Wiki (GTA VI Trailer 2)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Cats",
-      "width": 396,
-      "height": 396,
-      "discoveredAt": "2026-11-22T02:30:23.748Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-6080cee658a7",
-      "speciesId": "an-panther",
-      "speciesName": "Florida Panther / Cougar",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/70/OfficialScreenshots-GTAVI-PromotionalWebsite-MountKalaga-SS5.jpg/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/70/OfficialScreenshots-GTAVI-PromotionalWebsite-MountKalaga-SS5.jpg/revision/latest",
-      "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
-      "source": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Cougars",
-      "width": 3840,
-      "height": 2160,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-b67b9cca7f27",
-      "speciesId": "an-whooping-crane",
-      "speciesName": "Whooping Crane",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/83/GTA-VI-Cranes.jpg/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/83/GTA-VI-Cranes.jpg/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
-      "source": "GTA Wiki (GTA VI Gallery)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Cranes",
-      "width": 1000,
-      "height": 1000,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-ed8f579e23bc",
-      "speciesId": "an-chihuahua",
-      "speciesName": "Chihuahua",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/d/de/Chihuahua-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/d/de/Chihuahua-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Dogs",
-      "width": 785,
-      "height": 919,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-bbb68efec4ab",
-      "speciesId": "an-dolphin",
-      "speciesName": "Dolphin",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/11/Dolphins-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/11/Dolphins-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Dolphins",
-      "width": 694,
-      "height": 390,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-abc075f66890",
-      "speciesId": "an-cormorant",
-      "speciesName": "Double-Crested Cormorant",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/1e/DoubleCrestedCormorant-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/1e/DoubleCrestedCormorant-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Double-Crested_Cormorants",
-      "width": 741,
-      "height": 379,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-00423895bf9c",
-      "speciesId": "an-duck",
-      "speciesName": "Duck",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/95/Ducks-GTAVI-Trailer1.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/95/Ducks-GTAVI-Trailer1.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Ducks",
-      "width": 870,
-      "height": 489,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-a7b959aa05e3",
-      "speciesId": "an-eel",
-      "speciesName": "Eel",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/02/Eel-GTAVI.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/02/Eel-GTAVI.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
-      "source": "GTA Wiki (GTA VI Gallery)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Eels",
-      "width": 975,
-      "height": 548,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_already_verified",
+      "reviewReason": "an-alligator already has a verified official Rockstar GTA VI screenshot; preserving existing verified image.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-7c6a7f912a99",
@@ -196,7 +94,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_secondary_candidate",
+      "reviewReason": "Wide Leonida Keys reef shot dominated by divers and sea turtle; promoted dedicated Eel close-up (Eel-GTAVI.png) instead to avoid ambiguity and visual duplication.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-4026e83fe271",
@@ -210,21 +110,9 @@
       "width": 1763,
       "height": 992,
       "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-2c5ffa803a19",
-      "speciesId": "an-flamingo",
-      "speciesName": "American Flamingo",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/8a/GTAVITrailer-GTAVI-SS10.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/8a/GTAVITrailer-GTAVI-SS10.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
-      "source": "GTA Wiki (GTA VI Trailer 1)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Flamingos",
-      "width": 3840,
-      "height": 2160,
-      "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_unmapped_generic_species",
+      "reviewReason": "Generic 'Fish' umbrella page does not map to a specific species record in public/data/animals.json.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-5d80a008751b",
@@ -238,7 +126,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_subject_not_clearly_visible",
+      "reviewReason": "Wide Mount Kalaga kayaking landscape screenshot; Red Fox is not clearly visible as the primary subject.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-3e3902b8e97d",
@@ -252,7 +142,9 @@
       "width": 1318,
       "height": 741,
       "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_secondary_candidate",
+      "reviewReason": "Secondary candidate for an-green-iguana; promoted clearer full-body close-up (Iguana-GTAVI.png) instead.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-7c3136885c9d",
@@ -266,21 +158,9 @@
       "width": 591,
       "height": 461,
       "discoveredAt": "2026-11-22T02:30:23.749Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-bba4accad049",
-      "speciesId": "an-green-iguana",
-      "speciesName": "Green Iguana",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/94/Iguana-GTAVI.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/94/Iguana-GTAVI.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
-      "source": "GTA Wiki (GTA VI Gallery)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Iguanas",
-      "width": 1140,
-      "height": 642,
-      "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_secondary_candidate",
+      "reviewReason": "Secondary cropped candidate for an-green-iguana; promoted clearer full-body close-up (Iguana-GTAVI.png) instead.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-b6e795005231",
@@ -294,7 +174,9 @@
       "width": 2678,
       "height": 1507,
       "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_wrong_subject",
+      "reviewReason": "Depicts Jason's Key Lento stilt house and Vapid Ganado rather than a clearly visible Green Iguana.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-a5849c547981",
@@ -308,7 +190,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_secondary_candidate",
+      "reviewReason": "Wide Leonida Keys street scene where iguana is small in foreground; promoted clearer full-body close-up (Iguana-GTAVI.png) instead.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-466e8430036d",
@@ -322,35 +206,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-957225bda94e",
-      "speciesId": "an-raccoon",
-      "speciesName": "Raccoon",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e9/Raccoon-GTAVI.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e9/Raccoon-GTAVI.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
-      "source": "GTA Wiki (GTA VI Gallery)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Raccoons",
-      "width": 575,
-      "height": 324,
-      "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-babfcd1be9e5",
-      "speciesId": "an-sea-turtle",
-      "speciesName": "Sea Turtle",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/71/SeaTurtle-GTAVI.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/71/SeaTurtle-GTAVI.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
-      "source": "GTA Wiki (GTA VI Gallery)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Sea_Turtles",
-      "width": 1739,
-      "height": 979,
-      "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_subject_not_clearly_visible",
+      "reviewReason": "Wide Mount Kalaga dirt-bike action screenshot; Raccoon is not clearly visible as the primary subject.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-4edd70d7094d",
@@ -364,7 +222,9 @@
       "width": 433,
       "height": 369,
       "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_species_mismatch",
+      "reviewReason": "Blurry overhead shark silhouette with rounded snout does not positively identify a Hammerhead Shark.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-e7265cd760d5",
@@ -378,7 +238,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_subject_not_clearly_visible",
+      "reviewReason": "Trailer 2 kitchen shot of Lucia and Jason; snake is not clearly visible as the primary subject.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     },
     {
       "id": "img-b6eabadb0001",
@@ -392,21 +254,9 @@
       "width": 3840,
       "height": 2160,
       "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
-    },
-    {
-      "id": "img-ce3c4a4c8485",
-      "speciesId": "an-squirrel",
-      "speciesName": "Squirrel",
-      "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0a/Squirrel-GTAVI.png/revision/latest",
-      "normalizedUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0a/Squirrel-GTAVI.png/revision/latest",
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
-      "source": "GTA Wiki (GTA VI Gallery)",
-      "sourceUrl": "https://gta.fandom.com/wiki/Squirrels",
-      "width": 670,
-      "height": 670,
-      "discoveredAt": "2026-11-22T02:30:23.750Z",
-      "status": "pending_manual_approval"
+      "status": "rejected_subject_not_clearly_visible",
+      "reviewReason": "Wide Mount Kalaga forest hikers shot; Squirrel is not clearly visible; promoted dedicated Squirrel-GTAVI.png crop instead.",
+      "reviewedAt": "2026-11-22T02:50:05.190295Z"
     }
   ]
 }
