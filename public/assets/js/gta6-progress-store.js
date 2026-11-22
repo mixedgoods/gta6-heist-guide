@@ -1239,20 +1239,30 @@
   });
 
   // Hydrate dynamic published cheat count from /data/cheats.json (zero hardcoded counts)
+  function applyDynamicCheatCount(count) {
+    if (!count || count <= 0) return;
+    global.GTA6_CHEAT_COUNT = count;
+    var nodes = document.querySelectorAll('[data-cheat-count], [data-pb-cheat-total]');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].textContent = String(count);
+    }
+    try {
+      global.dispatchEvent(new CustomEvent('gta6-progress-updated', { detail: { store: loadStore(), source: 'cheats-count' } }));
+    } catch (err) {}
+  }
+
   if (typeof fetch === 'function') {
     fetch('/data/cheats.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!data || !Array.isArray(data.items)) return;
         var count = data.items.length;
-        global.GTA6_CHEAT_COUNT = count;
-        var nodes = document.querySelectorAll('[data-cheat-count], [data-pb-cheat-total]');
-        for (var i = 0; i < nodes.length; i++) {
-          nodes[i].textContent = String(count);
+        applyDynamicCheatCount(count);
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () {
+            applyDynamicCheatCount(count);
+          });
         }
-        try {
-          global.dispatchEvent(new CustomEvent('gta6-progress-updated', { detail: { store: loadStore(), source: 'cheats-count' } }));
-        } catch (err) {}
       })
       .catch(function () {});
   }

@@ -345,6 +345,31 @@
       } catch (e) {}
     }
 
+    // 8. Legacy Properties & Animals per-page trackers -> non-destructive World DB IDs
+    var rawPropOwned = safeReadLS('gta6_properties_owned_v1');
+    if (rawPropOwned) {
+      try {
+        var po = JSON.parse(rawPropOwned);
+        if (po && typeof po === 'object') {
+          Object.keys(po).forEach(function (pid) {
+            if (po[pid]) store.completed['db:owned:properties:' + pid] = true;
+          });
+        }
+      } catch (e) {}
+    }
+
+    var rawAnimStudied = safeReadLS('gta6_animals_studied_v1');
+    if (rawAnimStudied) {
+      try {
+        var an = JSON.parse(rawAnimStudied);
+        if (an && typeof an === 'object') {
+          Object.keys(an).forEach(function (aid) {
+            if (an[aid]) store.completed['db:owned:animals:' + aid] = true;
+          });
+        }
+      } catch (e) {}
+    }
+
     // Propagate linked peers across migrated entries (non-destructive union)
     Object.keys(store.completed).slice().forEach(function (id) {
       if (store.completed[id]) {
@@ -380,6 +405,8 @@
     var testedCheats = [];
     var ops = [];
     var secrets = {};
+    var propOwned = {};
+    var animStudied = {};
 
     Object.keys(store.completed).forEach(function (id) {
       if (!store.completed[id]) return;
@@ -396,6 +423,10 @@
         if (!isNaN(on)) ops.push(on);
       } else if (id.indexOf('secret:') === 0) {
         secrets[id.slice(7)] = true;
+      } else if (id.indexOf('db:owned:properties:') === 0) {
+        propOwned[id.slice(20)] = true;
+      } else if (id.indexOf('db:owned:animals:') === 0) {
+        animStudied[id.slice(17)] = true;
       }
     });
 
@@ -405,6 +436,8 @@
     safeWriteLS('gta6_tested_cheats', JSON.stringify(testedCheats));
     safeWriteLS('gta6_completed_ops', JSON.stringify(ops));
     safeWriteLS('gta6_secrets_progress', JSON.stringify(secrets));
+    safeWriteLS('gta6_properties_owned_v1', JSON.stringify(propOwned));
+    safeWriteLS('gta6_animals_studied_v1', JSON.stringify(animStudied));
 
     if (store.savePlanner && typeof store.savePlanner === 'object') {
       safeWriteLS(LEGACY_SAVE_PLANNER_PRIMARY, JSON.stringify(store.savePlanner));
@@ -438,6 +471,8 @@
     var heists = keys.filter(function (k) { return k.indexOf('heist:') === 0; }).length;
     var ops = keys.filter(function (k) { return k.indexOf('op:') === 0; }).length;
     var secrets = keys.filter(function (k) { return k.indexOf('secret:') === 0; }).length;
+    var dbOwned = keys.filter(function (k) { return k.indexOf('db:owned:') === 0; }).length;
+    var dbFavs = keys.filter(function (k) { return k.indexOf('db:fav:') === 0; }).length;
     var customPins = Array.isArray(st && st.mapCustomPins) ? st.mapCustomPins.length : 0;
     var heistBuilds = Array.isArray(st && st.heistBuilds) ? st.heistBuilds.length : 0;
     return {
@@ -450,6 +485,8 @@
       heists: heists,
       ops: ops,
       secrets: secrets,
+      dbOwned: dbOwned,
+      dbFavs: dbFavs,
       heistBuilds: heistBuilds,
       total: keys.length,
       updatedAt: (st && st.updatedAt) || null
@@ -617,6 +654,42 @@
 
     toggle: function (id) {
       return this.setDone(id, !this.isDone(id));
+    },
+
+    isDbOwned: function (category, itemId) {
+      if (!category || !itemId) return false;
+      return this.isDone('db:owned:' + category + ':' + itemId);
+    },
+
+    setDbOwned: function (category, itemId, isOwned) {
+      if (!category || !itemId) return loadStore();
+      return this.setDone('db:owned:' + category + ':' + itemId, Boolean(isOwned));
+    },
+
+    toggleDbOwned: function (category, itemId) {
+      return this.setDbOwned(category, itemId, !this.isDbOwned(category, itemId));
+    },
+
+    isDbFavorite: function (category, itemId) {
+      if (!category || !itemId) return false;
+      return this.isDone('db:fav:' + category + ':' + itemId);
+    },
+
+    setDbFavorite: function (category, itemId, isFav) {
+      if (!category || !itemId) return loadStore();
+      return this.setDone('db:fav:' + category + ':' + itemId, Boolean(isFav));
+    },
+
+    toggleDbFavorite: function (category, itemId) {
+      return this.setDbFavorite(category, itemId, !this.isDbFavorite(category, itemId));
+    },
+
+    getDbCategoryCounts: function (category) {
+      if (!category) return { owned: 0, favorites: 0 };
+      return {
+        owned: this.getCompletedByPrefix('db:owned:' + category + ':').length,
+        favorites: this.getCompletedByPrefix('db:fav:' + category + ':').length
+      };
     },
 
     isCheatTested: function (cheatId) {
@@ -802,6 +875,7 @@
               '⚠️ <strong>Overwrite Warning:</strong> Importing this backup will replace your current locally saved progress across connected GTA 6 tools on this browser.' +
             '</p>' +
             '<div class="gta-reset-modal-actions">' +
+              '<button type="button" class="btn btn-secondary" id="gtaImportBackupFirstBtn" style="border-color:var(--neon-cyan,#00f0ff); color:var(--neon-cyan,#00f0ff);">⬇ Download Current Backup First</button>' +
               '<button type="button" class="btn btn-secondary" id="gtaImportCancelBtn">Cancel</button>' +
               '<button type="button" class="btn btn-primary" id="gtaImportConfirmBtn">Confirm Overwrite &amp; Restore</button>' +
             '</div>' +
@@ -835,6 +909,7 @@
           '<div>🗺️ Map Pins: <strong>' + currentSummary.pins + '</strong> (+' + currentSummary.customPins + ' custom)</div>' +
           '<div>🎯 Heists: <strong>' + currentSummary.heists + '</strong>/8</div>' +
           '<div>⚡ Cheats: <strong>' + currentSummary.cheats + '</strong> unlocked / <strong>' + currentSummary.cheatsTested + '</strong> tested</div>' +
+          '<div>📚 Database: <strong>' + currentSummary.dbOwned + '</strong> owned &bull; <strong>' + currentSummary.dbFavs + '</strong> favorites</div>' +
         '</div>' +
         '<div class="gta-import-col is-incoming">' +
           '<div class="gta-import-col-title">Backup File (.json)</div>' +
@@ -842,12 +917,27 @@
           '<div>🗺️ Map Pins: <strong>' + incoming.pins + '</strong> (+' + incoming.customPins + ' custom)</div>' +
           '<div>🎯 Heists: <strong>' + incoming.heists + '</strong>/8</div>' +
           '<div>⚡ Cheats: <strong>' + incoming.cheats + '</strong> unlocked / <strong>' + incoming.cheatsTested + '</strong> tested</div>' +
+          '<div>📚 Database: <strong>' + incoming.dbOwned + '</strong> owned &bull; <strong>' + incoming.dbFavs + '</strong> favorites</div>' +
         '</div>';
 
+      var backupFirstBtn = document.getElementById('gtaImportBackupFirstBtn');
+      if (backupFirstBtn) {
+        backupFirstBtn.onclick = function () {
+          GTA6Progress.exportJSON();
+        };
+      }
       confirmBtn.onclick = function () {
+        // Automatic pre-import safety backup in localStorage before replacing progress
+        try {
+          var snapshot = loadStore();
+          localStorage.setItem('gta6_progress_pre_import_backup_v1', JSON.stringify({
+            backedUpAt: new Date().toISOString(),
+            store: snapshot
+          }));
+        } catch (e) {}
         saveStore(check.data, false);
         backdrop.classList.remove('is-open');
-        showProgressToast('Backup restored & synced across all GTA 6 tools!', false);
+        showProgressToast('Pre-import safety backup saved. Progress restored & synced across all GTA 6 tools!', false);
         if (onSuccess) onSuccess({ ok: true, mode: check.mode, summary: GTA6Progress.getSummary() });
       };
       cancelBtn.onclick = function () { backdrop.classList.remove('is-open'); };
@@ -865,6 +955,21 @@
         showProgressToast('All locally saved GTA 6 progress cleared.', false);
         return st;
       }
+      if (scope.indexOf('db:') === 0) {
+        var dbCat = scope.slice(3);
+        if (dbCat) {
+          var ownedPref = 'db:owned:' + dbCat + ':';
+          var favPref = 'db:fav:' + dbCat + ':';
+          Object.keys(st.completed).forEach(function (k) {
+            if (k.indexOf(ownedPref) === 0 || k.indexOf(favPref) === 0) {
+              delete st.completed[k];
+            }
+          });
+          saveStore(st, false);
+          showProgressToast('Reset ' + dbCat + ' owned & favorites.', false);
+          return st;
+        }
+      }
       var prefixMap = {
         cheats: ['cheat:', 'cheat-tested:'],
         pins: ['pin:'],
@@ -872,6 +977,7 @@
         ops: ['op:'],
         secrets: ['secret:'],
         slots: ['slot:', 'preflight:'],
+        settings: ['settings:'],
         calculator: []
       };
       var prefixes = prefixMap[scope];
@@ -887,6 +993,12 @@
         if (scope === 'pins') st.mapCustomPins = [];
         if (scope === 'slots') st.savePlanner = null;
         if (scope === 'heists' && st.toolStates) delete st.toolStates.heistPlanner;
+        if (scope === 'settings' && st.toolStates) {
+          delete st.toolStates.settingsStorage;
+          delete st.toolStates.settingsCapture;
+          delete st.toolStates.settingsPcSpecs;
+          delete st.toolStates.settingsChecklist;
+        }
         if (scope === 'calculator' && st.toolStates) {
           delete st.toolStates.payoutCalculator;
           delete st.toolStates.freeTools;
@@ -979,20 +1091,26 @@
       var compact = Boolean(options.compact);
 
       if (compact) {
+        var isMapScope = (scope === 'pins');
         el.innerHTML =
           '<div class="gta-progress-bar-widget is-compact">' +
+            (isMapScope
+              ? '<div style="font-size:0.72rem; font-weight:900; letter-spacing:0.05em; color:var(--neon-cyan,#00f0ff); text-transform:uppercase; margin-bottom:0.25rem;">💾 BACK UP OR RESTORE YOUR MAP PROGRESS</div>'
+              : '') +
             '<div class="gta-pb-compact-top">' +
               '<span class="gta-pb-autosave" data-pb-autosave><span class="gta-pb-dot"></span> <span data-pb-autosave-text>Auto-saved</span></span>' +
               '<span class="gta-pb-compact-sync" data-pb-compact-stats>💾 0/15 &bull; 🎯 0/8</span>' +
             '</div>' +
             '<div class="gta-pb-actions gta-pb-compact-actions">' +
-              '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-pb-export>⬇ Export .json</button>' +
-              '<button type="button" class="gta-pb-btn gta-pb-btn-green" data-pb-import>⬆ Import .json</button>' +
+              '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-pb-export>⬇ Export Backup (.json)</button>' +
+              '<button type="button" class="gta-pb-btn gta-pb-btn-green" data-pb-import>⬆ Import Backup (.json)</button>' +
               '<input type="file" accept=".json,application/json" style="display:none;" data-pb-file>' +
               '<button type="button" class="gta-pb-btn gta-pb-btn-danger" data-pb-reset>↺ Reset</button>' +
             '</div>' +
             '<div class="gta-pb-note">' +
-              'Stored locally in this browser/device unless exported. Syncs live with Save Planner, Heist Planner &amp; Cheats.' +
+              (isMapScope
+                ? '<strong>EXPORT (.json):</strong> Downloads a JSON backup of your saved map progress and custom pins.<br><strong>IMPORT (.json):</strong> Restores a previously exported JSON backup and <strong>replaces existing progress</strong> after confirmation (an automatic <strong>pre-import backup</strong> is saved and you can download your current backup before replacing). Personal backup only — not for importing new GTA VI discoveries. Syncs with Save Planner, Heist Planner &amp; Cheats.'
+                : 'Stored locally in this browser/device unless exported. Syncs live with Save Planner, Heist Planner &amp; Cheats.') +
             '</div>' +
           '</div>';
       } else {
@@ -1005,7 +1123,7 @@
                 '<span class="gta-pb-stat">💾 Slots: <strong data-pb-slots>0</strong>/15</span>' +
                 '<span class="gta-pb-stat">🗺️ Map Pins: <strong data-pb-pins>0</strong></span>' +
                 '<span class="gta-pb-stat">🎯 Heists: <strong data-pb-heists>0</strong>/8</span>' +
-                '<span class="gta-pb-stat">⚡ Cheats: <strong data-pb-cheats>0</strong>/61<span data-pb-cheats-tested style="color:var(--neon-cyan); margin-left:3px;"></span></span>' +
+                '<span class="gta-pb-stat">⚡ Cheats: <strong data-pb-cheats>0</strong>/<span data-pb-cheat-total>61</span><span data-pb-cheats-tested style="color:var(--neon-cyan); margin-left:3px;"></span></span>' +
               '</div>' +
               '<div class="gta-pb-actions">' +
                 '<button type="button" class="gta-pb-btn gta-pb-btn-cyan" data-pb-export>⬇ Export Backup (.json)</button>' +
@@ -1020,12 +1138,23 @@
           '</div>';
       }
 
+      function getDynamicCheatTotal() {
+        if (typeof global.GTA6_CHEAT_COUNT === 'number' && global.GTA6_CHEAT_COUNT > 0) {
+          return global.GTA6_CHEAT_COUNT;
+        }
+        var domNode = typeof document !== 'undefined' ? document.querySelector('[data-cheat-count], [data-pb-cheat-total]') : null;
+        var parsed = domNode ? parseInt(domNode.textContent, 10) : NaN;
+        return (!isNaN(parsed) && parsed > 0) ? parsed : 0;
+      }
+
       function refreshStats(flashSaved) {
         var s = GTA6Progress.getSummary();
+        var cheatTotal = getDynamicCheatTotal();
         var sEl = el.querySelector('[data-pb-slots]');
         var pEl = el.querySelector('[data-pb-pins]');
         var hEl = el.querySelector('[data-pb-heists]');
         var cEl = el.querySelector('[data-pb-cheats]');
+        var cTotalEl = el.querySelector('[data-pb-cheat-total]');
         var ctEl = el.querySelector('[data-pb-cheats-tested]');
         var compactStatsEl = el.querySelector('[data-pb-compact-stats]');
         var autoText = el.querySelector('[data-pb-autosave-text]');
@@ -1035,9 +1164,10 @@
         if (pEl) pEl.textContent = String(s.pins);
         if (hEl) hEl.textContent = String(s.heists);
         if (cEl) cEl.textContent = String(s.cheats);
+        if (cTotalEl) cTotalEl.textContent = String(cheatTotal);
         if (ctEl) ctEl.textContent = s.cheatsTested > 0 ? '(' + s.cheatsTested + ' tested)' : '';
         if (compactStatsEl) {
-          compactStatsEl.textContent = '💾 ' + s.slots + '/15 • 🎯 ' + s.heists + '/8 • ⚡ ' + s.cheats + '/61';
+          compactStatsEl.textContent = '💾 ' + s.slots + '/15 • 🎯 ' + s.heists + '/8 • ⚡ ' + s.cheats + '/' + cheatTotal;
         }
         if (autoText) {
           autoText.textContent = 'Auto-saved · ' + formatStamp(s.updatedAt);
@@ -1107,6 +1237,35 @@
       } catch (err) {}
     }
   });
+
+  // Hydrate dynamic published cheat count from /data/cheats.json (zero hardcoded counts)
+  function applyDynamicCheatCount(count) {
+    if (!count || count <= 0) return;
+    global.GTA6_CHEAT_COUNT = count;
+    var nodes = document.querySelectorAll('[data-cheat-count], [data-pb-cheat-total]');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].textContent = String(count);
+    }
+    try {
+      global.dispatchEvent(new CustomEvent('gta6-progress-updated', { detail: { store: loadStore(), source: 'cheats-count' } }));
+    } catch (err) {}
+  }
+
+  if (typeof fetch === 'function') {
+    fetch('/data/cheats.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.items)) return;
+        var count = data.items.length;
+        applyDynamicCheatCount(count);
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () {
+            applyDynamicCheatCount(count);
+          });
+        }
+      })
+      .catch(function () {});
+  }
 
   // Safe initial migration & hydration on first load
   loadStore();
