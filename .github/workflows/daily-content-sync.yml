@@ -1,11 +1,24 @@
-﻿name: GTA 6 Daily Launch Sync, Databases & Sitemap Auto-Update ($0/Month)
+﻿name: GTA 6 Consolidated Content Monitoring & Database Sync ($0/Month)
 
 on:
   schedule:
-    # Runs daily at 06:00 UTC on GitHub's free tier ($0/month)
+    # Runs once daily at 06:00 UTC on GitHub's free tier ($0/month)
+    # Intentionally does NOT trigger on `push` so state-only [CF-Pages-Skip] pushes
+    # (scripts/state/indexnow-state.json) can never trigger a sync loop.
     - cron: '0 6 * * *'
   workflow_dispatch:
-    # 1-click manual trigger anytime
+    inputs:
+      dry_run:
+        description: 'Run discovery and sync checks without committing or deploying'
+        required: false
+        default: false
+        type: boolean
+
+# Shared concurrency group across ALL workflows that push to origin/main
+# Prevents simultaneous synchronization processes from overwriting one another
+concurrency:
+  group: gta6-content-sync-main
+  cancel-in-progress: false
 
 jobs:
   sync-content:
@@ -15,10 +28,13 @@ jobs:
     env:
       CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      DRY_RUN: ${{ inputs.dry_run || false }}
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
@@ -30,39 +46,99 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Daily Launch Feed, Databases & Sitemap Sync
-        run: |
-          python scripts/daily_launch_sync.py
+      - name: Install Image Processing Dependencies
+        run: pip install --quiet pillow
 
-      - name: Run Secrets, Cryptids, Radio & Map Pins Auto-Sync
-        run: |
-          node scripts/sync-secrets-and-radio.mjs
+      - name: Run Daily Launch Counter & Canonical Data Mirror Sync
+        run: python scripts/daily_launch_sync.py
 
-      - name: Run Safe Daily Wildlife Text & Pending-Image Sync
-        run: |
-          node scripts/sync-animals.mjs
+      - name: Run Secrets, Radio & Live Map Pins Sync (Zero-Change Safe)
+        run: node scripts/sync-secrets-and-radio.mjs
 
-      - name: Run Safe Daily World Database Sync (Vehicles, Weapons, Properties, Gun Stores & Radio)
+      - name: Run GTA VI Wildlife Monitoring & Pending-Review Sync
         run: |
-          node scripts/sync-world-db.mjs
-
-      - name: Commit & Push Discoveries
-        id: git_sync
-        run: |
-          git config --global user.name "GTA6 Intel Auto-Sync Bot"
-          git config --global user.email "bot@gta6heistguide.com"
-          git add data/ public/data/ public/sitemap.xml
-          if git diff --staged --quiet; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No new discoveries or sitemap changes detected in this cycle."
+          if [ "$DRY_RUN" = "true" ]; then
+            node scripts/sync-animals.mjs --dry-run
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
-            git commit -m "chore(daily-sync): refresh live-feed, world-db/wildlife text & pending-images JSON + sitemap lastmod"
-            git push
+            node scripts/sync-animals.mjs
           fi
 
-      - name: Deploy to Cloudflare Pages (when configured)
-        if: ${{ (steps.git_sync.outputs.changed == 'true' || github.event_name == 'workflow_dispatch') && env.CF_TOKEN != '' && env.CF_ACCOUNT != '' }}
+      - name: Run GTA VI World Database Monitoring & Pending-Review Sync
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            node scripts/sync-world-db.mjs --dry-run
+          else
+            node scripts/sync-world-db.mjs
+          fi
+
+      - name: Run GTA VI Intel Feed Sync (Zero-Change Safe)
+        run: python sync_gta6_intel.py
+
+      - name: Run GTA VI Master Catalog & Asset Verification Sync (Zero-Change Safe)
+        run: python scripts/auto_sync_gta6_database.py --verify
+
+      - name: Zero-Change & State-Only Commit Gate
+        id: git_sync
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "state_only=false" >> "$GITHUB_OUTPUT"
+            echo "[DRY-RUN] Skipping git commit, push, and deployment."
+            exit 0
+          fi
+
+          git config --global user.name "GTA6 Intel Auto-Sync Bot"
+          git config --global user.email "bot@gta6heistguide.com"
+
+          # Stage only legitimate content-sync targets that exist
+          for target in \
+            data/ \
+            public/data/ \
+            public/assets/ \
+            public/sitemap.xml \
+            public/animals.html \
+            public/vehicles.html \
+            public/vehicles-getaway-cars.html \
+            public/weapons.html \
+            public/weapons-gear.html \
+            public/weapons-bonuses.html \
+            public/properties.html \
+            public/radio.html \
+            public/gta-6-database/index.html; do
+            if [ -e "$target" ]; then
+              git add "$target"
+            fi
+          done
+
+          CHANGED_FILES="$(git diff --staged --name-only)"
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "state_only=false" >> "$GITHUB_OUTPUT"
+            echo "[OK] Zero meaningful content changes detected — skipping commit, push, and Cloudflare Pages deploy."
+            exit 0
+          fi
+
+          if [ "$CHANGED_FILES" = "scripts/state/indexnow-state.json" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "state_only=true" >> "$GITHUB_OUTPUT"
+            git commit -m "[CF-Pages-Skip] chore(indexnow): persist submission state"
+            git pull --rebase origin main
+            git push
+            echo "[OK] State-only IndexNow commit pushed with [CF-Pages-Skip] — skipping Cloudflare Pages deploy."
+            exit 0
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "state_only=false" >> "$GITHUB_OUTPUT"
+          echo "[INFO] Meaningful content changes detected:"
+          echo "$CHANGED_FILES"
+          git commit -m "chore(content-sync): update GTA VI wildlife, world databases, discoveries & verified media"
+          git pull --rebase origin main
+          git push
+
+      - name: Deploy to Cloudflare Pages (Only on Meaningful Content Changes)
+        if: ${{ steps.git_sync.outputs.changed == 'true' && env.CF_TOKEN != '' && env.CF_ACCOUNT != '' }}
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

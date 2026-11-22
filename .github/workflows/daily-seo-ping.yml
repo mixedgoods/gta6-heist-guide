@@ -2,12 +2,19 @@ name: Daily IndexNow Smart Change Ping
 
 on:
   schedule:
-    # Runs at 09:00 UTC daily (submits ONLY created, modified, or deleted canonical URLs)
+    # Runs at 09:00 UTC daily (3 hours after daily-content-sync so production deploys are live)
+    # Submits ONLY created, meaningfully modified, or deleted canonical URLs
     - cron: '0 9 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# Shared concurrency group with daily-content-sync.yml so state commits and content commits
+# never race or overwrite one another on origin/main
+concurrency:
+  group: gta6-content-sync-main
+  cancel-in-progress: false
 
 jobs:
   ping-indexnow:
@@ -16,6 +23,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
@@ -23,17 +32,29 @@ jobs:
           node-version: 20
 
       - name: Run Persistent IndexNow Change Detector & Ping
-        run: |
-          node scripts/indexnow-ping.mjs
+        run: node scripts/indexnow-ping.mjs
 
-      - name: Persist IndexNow State (CF-Pages-Skip)
+      - name: Persist IndexNow State (Strict State-Only CF-Pages-Skip Guard)
         run: |
           git config --global user.name "GTA6 Intel Auto-Sync Bot"
           git config --global user.email "bot@gta6heistguide.com"
+
           git add scripts/state/indexnow-state.json
-          if git diff --staged --quiet; then
-            echo "No IndexNow state updates to commit."
-          else
+          CHANGED_FILES="$(git diff --staged --name-only)"
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "[OK] Zero IndexNow state changes — skipping commit and push."
+            exit 0
+          fi
+
+          if [ "$CHANGED_FILES" = "scripts/state/indexnow-state.json" ]; then
             git commit -m "[CF-Pages-Skip] chore(indexnow): persist submission state"
+            git pull --rebase origin main
+            git push
+            echo "[OK] Persisted IndexNow state with [CF-Pages-Skip] (Cloudflare Pages deploy skipped)."
+          else
+            echo "[WARN] Unexpected non-state files staged alongside IndexNow state; refusing to apply [CF-Pages-Skip]."
+            git commit -m "chore(indexnow): update IndexNow key and submission state"
+            git pull --rebase origin main
             git push
           fi

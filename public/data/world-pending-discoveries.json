@@ -1,0 +1,1205 @@
+{
+  "updated": "2026-11-22",
+  "policy": "Unverified newly discovered GTA VI vehicles and world database entities from external sources (e.g. GTA Wiki Vehicles in GTA VI) are queued here for editorial review before promotion to public/data/*.json. Existing verified records are never overwritten or deleted.",
+  "categories": [
+    "vehicles",
+    "weapons",
+    "properties",
+    "gun-stores",
+    "radio"
+  ],
+  "discoveries": [
+    {
+      "id": "disc-veh-2550fa3513",
+      "category": "vehicles",
+      "name": "PMP 700",
+      "wikiTitle": "PMP 700",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/PMP_700",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/f/f3/PMP700-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:PMP700-GTAVI-Trailer1.png",
+          "width": 1440,
+          "height": 810
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-ca5d3257e2",
+      "category": "vehicles",
+      "name": "Creado",
+      "wikiTitle": "Creado",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Creado",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/b/b0/Creado-GTAVI-Trailer2.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 2)",
+          "fileTitle": "File:Creado-GTAVI-Trailer2.png",
+          "width": 1293,
+          "height": 727
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-71dcbac614",
+      "category": "vehicles",
+      "name": "LomBike",
+      "wikiTitle": "LomBike",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/LomBike",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-7bd0300ac4",
+      "category": "vehicles",
+      "name": "''BTN Delmar''",
+      "wikiTitle": "BTN Delmar",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/BTN_Delmar",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/c/c7/BTNDelmar-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:BTNDelmar-GTAVI-Trailer1.png",
+          "width": 2076,
+          "height": 1168
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-e5a2e087ba",
+      "category": "vehicles",
+      "name": "S23",
+      "wikiTitle": "S23",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/S23",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/5/5e/S23-GTAVI-OfficialScreenshot-LeonidaKeys05.png/revision/latest",
+          "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
+          "fileTitle": "File:S23-GTAVI-OfficialScreenshot-LeonidaKeys05.png",
+          "width": 674,
+          "height": 379
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-3450e28984",
+      "category": "vehicles",
+      "name": "8F Drafter",
+      "wikiTitle": "8F Drafter",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/8F_Drafter",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-7d41a96809",
+      "category": "vehicles",
+      "name": "Blista Compact",
+      "wikiTitle": "Blista Compact (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Blista_Compact_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-96250f03e7",
+      "category": "vehicles",
+      "name": "Buffalo",
+      "wikiTitle": "Buffalo (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Buffalo_(HD_Universe)",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/70/Buffalo-GTAVI-Trailer1-1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Buffalo-GTAVI-Trailer1-1.png",
+          "width": 450,
+          "height": 253
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-29c8710773",
+      "category": "vehicles",
+      "name": "Carbonizzare",
+      "wikiTitle": "Carbonizzare",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Carbonizzare",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/83/Carbonizzare-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Carbonizzare-GTAVI-Trailer1.png",
+          "width": 734,
+          "height": 413
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-c0ebb45b72",
+      "category": "vehicles",
+      "name": "Cypher",
+      "wikiTitle": "Cypher",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Cypher",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/f/ff/Cypher-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Cypher-GTAVI-Trailer1.png",
+          "width": 352,
+          "height": 198
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-8c95e65167",
+      "category": "vehicles",
+      "name": "Elegy Retro Custom",
+      "wikiTitle": "Elegy Retro Custom",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Elegy_Retro_Custom",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/18/ElegyRetroCustom-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:ElegyRetroCustom-GTAVI-Trailer1.png",
+          "width": 320,
+          "height": 180
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-303eda03c5",
+      "category": "vehicles",
+      "name": "Futo",
+      "wikiTitle": "Futo",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Futo",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/9d/Futo-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Futo-GTAVI-Trailer1.png",
+          "width": 376,
+          "height": 211
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-23f96b77fb",
+      "category": "vehicles",
+      "name": "Growler",
+      "wikiTitle": "Growler",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Growler",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0c/Growler-GTAVI-Trailer2.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 2)",
+          "fileTitle": "File:Growler-GTAVI-Trailer2.png",
+          "width": 484,
+          "height": 272
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-3637ee79bf",
+      "category": "vehicles",
+      "name": "Itali GTO",
+      "wikiTitle": "Itali GTO (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Itali_GTO_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-431211336e",
+      "category": "vehicles",
+      "name": "Jugular",
+      "wikiTitle": "Jugular (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Jugular_(HD_Universe)",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e4/Jugular-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Jugular-GTAVI-Trailer1.png",
+          "width": 435,
+          "height": 245
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.908Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-8a70c388da",
+      "category": "vehicles",
+      "name": "Paragon R",
+      "wikiTitle": "Paragon R",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Paragon_R",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/11/ParagonR-GTAVI-WebsiteAnimation.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Gallery)",
+          "fileTitle": "File:ParagonR-GTAVI-WebsiteAnimation.png",
+          "width": 1576,
+          "height": 887
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-b849c96dbc",
+      "category": "vehicles",
+      "name": "Penumbra",
+      "wikiTitle": "Penumbra",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Penumbra",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/b/bb/Penumbra-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Penumbra-GTAVI-Trailer1.png",
+          "width": 425,
+          "height": 239
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-784627da91",
+      "category": "vehicles",
+      "name": "Schafter V12",
+      "wikiTitle": "Schafter V12",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Schafter_V12",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/71/SchafterV12-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:SchafterV12-GTAVI-Trailer1.png",
+          "width": 553,
+          "height": 311
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-cf242b6632",
+      "category": "vehicles",
+      "name": "Sugoi",
+      "wikiTitle": "Sugoi",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Sugoi",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-6c7631c92a",
+      "category": "vehicles",
+      "name": "Sultan",
+      "wikiTitle": "Sultan (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Sultan_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-09846f6ab0",
+      "category": "vehicles",
+      "name": "Vectre",
+      "wikiTitle": "Vectre",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vectre",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/f/f8/Vectre-GTAVI-Trailer2.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 2)",
+          "fileTitle": "File:Vectre-GTAVI-Trailer2.png",
+          "width": 629,
+          "height": 354
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-e5eb8d5ccc",
+      "category": "vehicles",
+      "name": "V-STR",
+      "wikiTitle": "V-STR",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/V-STR",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/6/66/VSTR-GTAVI-OfficialScreenshot-AmbrosiaPostcard.png/revision/latest",
+          "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
+          "fileTitle": "File:VSTR-GTAVI-OfficialScreenshot-AmbrosiaPostcard.png",
+          "width": 1536,
+          "height": 864
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-ba511bcd61",
+      "category": "vehicles",
+      "name": "Buffalo STX",
+      "wikiTitle": "Buffalo STX",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Buffalo_STX",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-36204b8faa",
+      "category": "vehicles",
+      "name": "Chino",
+      "wikiTitle": "Chino",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Chino",
+      "candidateImages": [
+        {
+          "candidateUrl": "https://static.wikia.nocookie.net/gtawiki/images/4/4e/Chino-GTAVI-Trailer1.png/revision/latest",
+          "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+          "fileTitle": "File:Chino-GTAVI-Trailer1.png",
+          "width": 479,
+          "height": 269
+        }
+      ],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-a46a11a088",
+      "category": "vehicles",
+      "name": "Gauntlet Classic Custom",
+      "wikiTitle": "Gauntlet Classic Custom",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Gauntlet_Classic_Custom",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-d6b1d5dfa7",
+      "category": "vehicles",
+      "name": "Impaler SZ",
+      "wikiTitle": "Impaler SZ",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Impaler_SZ",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-39b0c0e8b1",
+      "category": "vehicles",
+      "name": "Phoenix",
+      "wikiTitle": "Phoenix (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Phoenix_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-baa60aefbb",
+      "category": "vehicles",
+      "name": "Ruiner",
+      "wikiTitle": "Ruiner",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Ruiner",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-76435fe343",
+      "category": "vehicles",
+      "name": "Slamvan",
+      "wikiTitle": "Slamvan (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Slamvan_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-59e8bebf2f",
+      "category": "vehicles",
+      "name": "Vigero ZX Convertible",
+      "wikiTitle": "Vigero ZX Convertible",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Vigero_ZX_Convertible",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-c5d9e45eaa",
+      "category": "vehicles",
+      "name": "Infernus Classic",
+      "wikiTitle": "Infernus Classic",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Infernus_Classic",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-547b22d2ad",
+      "category": "vehicles",
+      "name": "Asterope GZ",
+      "wikiTitle": "Asterope GZ",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Asterope_GZ",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-41eeac1bc0",
+      "category": "vehicles",
+      "name": "Emperor",
+      "wikiTitle": "Emperor (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Emperor_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-28ad0ebe7f",
+      "category": "vehicles",
+      "name": "Intruder",
+      "wikiTitle": "Intruder (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Intruder_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.909Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-a592ac9a3b",
+      "category": "vehicles",
+      "name": "Primo",
+      "wikiTitle": "Primo (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Primo_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-761ca02ff3",
+      "category": "vehicles",
+      "name": "Primo Custom",
+      "wikiTitle": "Primo Custom",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Primo_Custom",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-67278b415f",
+      "category": "vehicles",
+      "name": "Stratum",
+      "wikiTitle": "Stratum (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Stratum_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-6de2561467",
+      "category": "vehicles",
+      "name": "Tailgater",
+      "wikiTitle": "Tailgater",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Tailgater",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-8749b6b6d5",
+      "category": "vehicles",
+      "name": "Aleutian",
+      "wikiTitle": "Aleutian",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Aleutian",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-71a942f239",
+      "category": "vehicles",
+      "name": "Astron",
+      "wikiTitle": "Astron",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Astron",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-bb399677ce",
+      "category": "vehicles",
+      "name": "Contender",
+      "wikiTitle": "Contender",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Contender",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-6bc279a72c",
+      "category": "vehicles",
+      "name": "Dorado",
+      "wikiTitle": "Dorado",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dorado",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-da86948811",
+      "category": "vehicles",
+      "name": "Dubsta",
+      "wikiTitle": "Dubsta",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dubsta",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-f19186e9fb",
+      "category": "vehicles",
+      "name": "Granger",
+      "wikiTitle": "Granger",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Granger",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-1432f7d406",
+      "category": "vehicles",
+      "name": "Granger 3600LX",
+      "wikiTitle": "Granger 3600LX",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Granger_3600LX",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-13f9250ad2",
+      "category": "vehicles",
+      "name": "Jubilee",
+      "wikiTitle": "Jubilee",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Jubilee",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-90ab131861",
+      "category": "vehicles",
+      "name": "Landstalker XL",
+      "wikiTitle": "Landstalker XL",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Landstalker_XL",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-695a102d07",
+      "category": "vehicles",
+      "name": "Mesa",
+      "wikiTitle": "Mesa (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Mesa_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-564da80cd7",
+      "category": "vehicles",
+      "name": "Toros",
+      "wikiTitle": "Toros",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Toros",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-63bcb40c61",
+      "category": "vehicles",
+      "name": "Zion",
+      "wikiTitle": "Zion",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Zion",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-cf7c258359",
+      "category": "vehicles",
+      "name": "Avarus",
+      "wikiTitle": "Avarus",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Avarus",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-8c91015174",
+      "category": "vehicles",
+      "name": "Double T",
+      "wikiTitle": "Double T",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Double_T",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-4d59ae2243",
+      "category": "vehicles",
+      "name": "Faggio",
+      "wikiTitle": "Faggio (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Faggio_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-4163a055ca",
+      "category": "vehicles",
+      "name": "Manchez",
+      "wikiTitle": "Manchez",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Manchez",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-d9bbac75e5",
+      "category": "vehicles",
+      "name": "Sanchez",
+      "wikiTitle": "Sanchez",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Sanchez",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-22b3b3249f",
+      "category": "vehicles",
+      "name": "Zombie Chopper",
+      "wikiTitle": "Zombie",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Zombie",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.910Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-07bbf0b59b",
+      "category": "vehicles",
+      "name": "Blazer",
+      "wikiTitle": "Blazer",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Blazer",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-e97c01a186",
+      "category": "vehicles",
+      "name": "Hellion",
+      "wikiTitle": "Hellion",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Hellion",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-d855e0cd66",
+      "category": "vehicles",
+      "name": "Kamacho",
+      "wikiTitle": "Kamacho",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Kamacho",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-50ec2d9838",
+      "category": "vehicles",
+      "name": "Outlaw",
+      "wikiTitle": "Outlaw",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Outlaw",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-22f88a16b9",
+      "category": "vehicles",
+      "name": "Rebel",
+      "wikiTitle": "Rebel",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Rebel",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-305e0562eb",
+      "category": "vehicles",
+      "name": "Sandking XL",
+      "wikiTitle": "Sandking XL",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Sandking_XL",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-8d77f1a356",
+      "category": "vehicles",
+      "name": "Verus",
+      "wikiTitle": "Verus",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Verus",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-e6e7ec584a",
+      "category": "vehicles",
+      "name": "BMX",
+      "wikiTitle": "BMX (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/BMX_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-e137de5eb3",
+      "category": "vehicles",
+      "name": "Scorcher",
+      "wikiTitle": "Scorcher",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Scorcher",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-9f0f286aca",
+      "category": "vehicles",
+      "name": "Bison",
+      "wikiTitle": "Bison",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Bison",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-d88d9b15a3",
+      "category": "vehicles",
+      "name": "Bobcat XL",
+      "wikiTitle": "Bobcat XL",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Bobcat_XL",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-64248f3703",
+      "category": "vehicles",
+      "name": "Boxville",
+      "wikiTitle": "Boxville (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Boxville_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-9f25d0411a",
+      "category": "vehicles",
+      "name": "Burrito",
+      "wikiTitle": "Burrito (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Burrito_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-9b9fe5d69e",
+      "category": "vehicles",
+      "name": "Journey II",
+      "wikiTitle": "Journey II",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Journey_II",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-4c26012e3a",
+      "category": "vehicles",
+      "name": "Speedo",
+      "wikiTitle": "Speedo",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Speedo",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-d207cca65a",
+      "category": "vehicles",
+      "name": "Youga Classic",
+      "wikiTitle": "Youga Classic",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Youga_Classic",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.912Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-1dcac21d85",
+      "category": "vehicles",
+      "name": "Tow Truck",
+      "wikiTitle": "Tow Truck (Yankee-based)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Tow_Truck_(Yankee-based)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-732f9b48df",
+      "category": "vehicles",
+      "name": "Rubble",
+      "wikiTitle": "Rubble",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Rubble",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-39c2f654a7",
+      "category": "vehicles",
+      "name": "Dashound",
+      "wikiTitle": "Dashound",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dashound",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-2717c4a8ea",
+      "category": "vehicles",
+      "name": "Packer",
+      "wikiTitle": "Packer",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Packer",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-9ca0178ed2",
+      "category": "vehicles",
+      "name": "Phantom",
+      "wikiTitle": "Phantom",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Phantom",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-b17d633bb4",
+      "category": "vehicles",
+      "name": "Buffalo STX Pursuit",
+      "wikiTitle": "Buffalo STX Pursuit",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Buffalo_STX_Pursuit",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-69ae4a77f9",
+      "category": "vehicles",
+      "name": "Gauntlet Interceptor",
+      "wikiTitle": "Gauntlet Interceptor",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Gauntlet_Interceptor",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-c996584c4d",
+      "category": "vehicles",
+      "name": "Police Riot",
+      "wikiTitle": "Police Riot",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Police_Riot",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-0406c59cf8",
+      "category": "vehicles",
+      "name": "Dinghy",
+      "wikiTitle": "Dinghy (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dinghy_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-9f9c1c46f5",
+      "category": "vehicles",
+      "name": "Marquis",
+      "wikiTitle": "Marquis",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Marquis",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-90d3c384d5",
+      "category": "vehicles",
+      "name": "Buzzard Attack Chopper",
+      "wikiTitle": "Buzzard Attack Chopper",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Buzzard_Attack_Chopper",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-3cd9d89b0e",
+      "category": "vehicles",
+      "name": "Maverick",
+      "wikiTitle": "Maverick (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Maverick_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-461a78a5ef",
+      "category": "vehicles",
+      "name": "Police Maverick",
+      "wikiTitle": "Police Maverick (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Police_Maverick_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-b80d91f94e",
+      "category": "vehicles",
+      "name": "Sea Sparrow",
+      "wikiTitle": "Sea Sparrow (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Sea_Sparrow_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-a365e0653d",
+      "category": "vehicles",
+      "name": "SuperVolito",
+      "wikiTitle": "SuperVolito",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/SuperVolito",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-5ee9c353b1",
+      "category": "vehicles",
+      "name": "Swift",
+      "wikiTitle": "Swift",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Swift",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-6014c85437",
+      "category": "vehicles",
+      "name": "Dodo",
+      "wikiTitle": "Dodo (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Dodo_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-b98c189239",
+      "category": "vehicles",
+      "name": "Duster",
+      "wikiTitle": "Duster",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Duster",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-c58bb5140a",
+      "category": "vehicles",
+      "name": "Jet",
+      "wikiTitle": "Jet",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Jet",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.913Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-3fb2e09928",
+      "category": "vehicles",
+      "name": "Mammatus",
+      "wikiTitle": "Mammatus",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Mammatus",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.914Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-f40abbaab5",
+      "category": "vehicles",
+      "name": "Nimbus",
+      "wikiTitle": "Nimbus",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Nimbus",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.914Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-ad706ae768",
+      "category": "vehicles",
+      "name": "Shamal",
+      "wikiTitle": "Shamal",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Shamal",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.914Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-d52afcc3bf",
+      "category": "vehicles",
+      "name": "Freight Train",
+      "wikiTitle": "Freight Train",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Freight_Train",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.914Z",
+      "status": "pending_manual_review"
+    },
+    {
+      "id": "disc-veh-b6d1a00a6a",
+      "category": "vehicles",
+      "name": "Rancher",
+      "wikiTitle": "Rancher (HD Universe)",
+      "source": "GTA Wiki (Vehicles in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Rancher_(HD_Universe)",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:25.914Z",
+      "status": "pending_manual_review"
+    }
+  ]
+}

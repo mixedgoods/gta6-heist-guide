@@ -6,9 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
-const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 GTA6HeistGuideSync/1.0';
-const INDEXNOW_KEY = 'df9198ac34c2f27023754589395a56d0';
-const HOST = 'www.gta6heistguide.com';
+const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 GTA6HeistGuideSync/2.0';
 
 function cleanText(text) {
   if (!text) return '';
@@ -148,41 +146,42 @@ function loadExistingJson(relativeFilePath) {
   return [];
 }
 
-function saveJsonBoth(fileName, dataObj) {
+function saveJsonIfChanged(fileName, nextItems, feedTitle, existingItems) {
+  // Never overwrite or shrink existing records if an external feed temporarily returns empty
+  if (nextItems.length < existingItems.length) {
+    console.log(`[OK] Preserved ${fileName} (external feed returned fewer items than existing ${existingItems.length}).`);
+    return false;
+  }
+
+  const normalizeForDiff = (arr) =>
+    arr.map((it) => ({
+      title: (it.title || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60),
+      source: it.source || '',
+      region: it.region || '',
+    }));
+
+  if (JSON.stringify(normalizeForDiff(nextItems)) === JSON.stringify(normalizeForDiff(existingItems))) {
+    console.log(`[OK] No meaningful changes for ${fileName} — left untouched (zero-change protection).`);
+    return false;
+  }
+
+  const dataObj = {
+    feed_title: feedTitle,
+    last_synced: new Date().toISOString(),
+    total_count: nextItems.length,
+    items: nextItems,
+  };
+
   const publicDir = path.join(ROOT_DIR, 'public', 'data');
   const rootDataDir = path.join(ROOT_DIR, 'data');
   fs.mkdirSync(publicDir, { recursive: true });
   fs.mkdirSync(rootDataDir, { recursive: true });
 
-  const content = JSON.stringify(dataObj, null, 2);
+  const content = JSON.stringify(dataObj, null, 2) + '\n';
   fs.writeFileSync(path.join(publicDir, fileName), content, 'utf-8');
   fs.writeFileSync(path.join(rootDataDir, fileName), content, 'utf-8');
-  console.log(`[✓] Successfully saved ${fileName} to public/data/ and data/`);
-}
-
-async function pingIndexNow(urls) {
-  const payload = {
-    host: HOST,
-    key: INDEXNOW_KEY,
-    keyLocation: `https://${HOST}/${INDEXNOW_KEY}.txt`,
-    urlList: urls
-  };
-  const endpoints = [
-    'https://api.indexnow.org/indexnow',
-    'https://www.bing.com/indexnow'
-  ];
-  for (const ep of endpoints) {
-    try {
-      const res = await fetch(ep, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json; charset=utf-8' },
-        body: JSON.stringify(payload)
-      });
-      console.log(`[IndexNow] ${ep} status: ${res.status}`);
-    } catch (e) {
-      console.warn(`[IndexNow] ${ep} error: ${e.message}`);
-    }
-  }
+  console.log(`[✓] Updated ${fileName} in public/data/ and data/ (${nextItems.length} items).`);
+  return true;
 }
 
 // Bounding boxes matching exact leonida-map.jpg coordinates
@@ -273,66 +272,64 @@ async function run() {
   const redditMapNewsItems = redditMapRss ? parseRssItems(redditMapRss, 'Reddit r/GTA6') : [];
   console.log(` -> Found ${mapNewsItems.length} map news items + ${redditMapNewsItems.length} Reddit map items.`);
 
-  // Merge & Deduplicate SECRETS
+  // Merge & Deduplicate SECRETS (existing first to preserve stable IDs/URLs and prevent zero-change churn)
   const existingSecrets = loadExistingJson('public/data/secrets-live.json');
   const allSecrets = [
+    ...existingSecrets,
     ...secretNewsItems,
-    ...redditSecretNewsItems,
-    ...existingSecrets
+    ...redditSecretNewsItems
   ];
   const uniqueSecrets = [];
   const seenSecretTitles = new Set();
 
   for (const item of allSecrets) {
-    const key = item.title.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 45);
-    if (!seenSecretTitles.has(key)) {
+    const key = (item.title || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 45);
+    if (key && !seenSecretTitles.has(key)) {
       seenSecretTitles.add(key);
       uniqueSecrets.push(item);
     }
   }
 
-  uniqueSecrets.sort((a, b) => new Date(b.timestamp || b.date) - new Date(a.timestamp || a.date));
+  uniqueSecrets.sort((a, b) => (new Date(b.timestamp || b.date || 0) - new Date(a.timestamp || a.date || 0)) || String(a.title || '').localeCompare(String(b.title || '')));
   const finalSecrets = uniqueSecrets.slice(0, 25);
 
-  const secretsData = {
-    feed_title: "GTA 6 Verified Easter Eggs, Cryptids & Community Discoveries",
-    last_synced: new Date().toISOString(),
-    total_count: finalSecrets.length,
-    items: finalSecrets
-  };
-  saveJsonBoth('secrets-live.json', secretsData);
+  saveJsonIfChanged(
+    'secrets-live.json',
+    finalSecrets,
+    'GTA 6 Verified Easter Eggs, Cryptids & Community Discoveries',
+    existingSecrets
+  );
 
   // Merge & Deduplicate RADIO
   const existingRadio = loadExistingJson('public/data/radio-live.json');
   const allRadio = [
+    ...existingRadio,
     ...radioNewsItems,
-    ...redditRadioNewsItems,
-    ...existingRadio
+    ...redditRadioNewsItems
   ];
   const uniqueRadio = [];
   const seenRadioTitles = new Set();
 
   for (const item of allRadio) {
-    const key = item.title.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 45);
-    if (!seenRadioTitles.has(key)) {
+    const key = (item.title || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 45);
+    if (key && !seenRadioTitles.has(key)) {
       seenRadioTitles.add(key);
       uniqueRadio.push(item);
     }
   }
 
-  uniqueRadio.sort((a, b) => new Date(b.timestamp || b.date) - new Date(a.timestamp || a.date));
+  uniqueRadio.sort((a, b) => (new Date(b.timestamp || b.date || 0) - new Date(a.timestamp || a.date || 0)) || String(a.title || '').localeCompare(String(b.title || '')));
   const finalRadio = uniqueRadio.slice(0, 25);
 
-  const radioData = {
-    feed_title: "GTA 6 Radio Stations, Leaked Tracks & Music Hub Live Intel",
-    last_synced: new Date().toISOString(),
-    total_count: finalRadio.length,
-    items: finalRadio
-  };
-  saveJsonBoth('radio-live.json', radioData);
+  saveJsonIfChanged(
+    'radio-live.json',
+    finalRadio,
+    'GTA 6 Radio Stations, Leaked Tracks & Music Hub Live Intel',
+    existingRadio
+  );
 
   // 4. Merge & Deduplicate LIVE MAP PINS
-  console.log('[4/5] Processing Live Map Pins with Calibrated Coordinates...');
+  console.log('[4/4] Processing Live Map Pins with Calibrated Coordinates...');
   const existingPins = loadExistingJson('public/data/map-pins-live.json');
   const rawPinCandidates = [
     ...mapNewsItems,
@@ -362,7 +359,7 @@ async function run() {
     };
   });
 
-  const allMapPins = [...processedNewPins, ...existingPins];
+  const allMapPins = [...existingPins, ...processedNewPins];
   const uniquePins = [];
   const seenPinKeys = new Set();
 
@@ -374,27 +371,15 @@ async function run() {
     }
   }
 
-  uniquePins.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
+  uniquePins.sort((a, b) => (new Date(b.timestamp || 0) - new Date(a.timestamp || 0)) || String(a.title || '').localeCompare(String(b.title || '')));
   const finalLivePins = uniquePins.slice(0, 25);
 
-  const livePinsData = {
-    feed_title: "GTA 6 Live Auto-Discovered Hotspots & Community Coordinates",
-    last_synced: new Date().toISOString(),
-    total_count: finalLivePins.length,
-    items: finalLivePins
-  };
-  saveJsonBoth('map-pins-live.json', livePinsData);
-
-  // 5. Ping IndexNow for Secrets, Radio & Interactive Map
-  console.log('[5/5] Pinging IndexNow for /secrets, /radio, and /interactive-map...');
-  await pingIndexNow([
-    `https://${HOST}/interactive-map`,
-    `https://${HOST}/interactive-map.html`,
-    `https://${HOST}/secrets`,
-    `https://${HOST}/secrets.html`,
-    `https://${HOST}/radio`,
-    `https://${HOST}/radio.html`
-  ]);
+  saveJsonIfChanged(
+    'map-pins-live.json',
+    finalLivePins,
+    'GTA 6 Live Auto-Discovered Hotspots & Community Coordinates',
+    existingPins
+  );
 
   console.log('=== AUTO-SYNC COMPLETE (SECRETS, RADIO & LIVE MAP PINS) ===');
 }

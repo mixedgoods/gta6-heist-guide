@@ -1490,6 +1490,11 @@ def sync_database(refresh_static: bool = False, verify: bool = False) -> bool:
         return False
 
     master_data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    before_canonical = json.dumps(
+        {k: v for k, v in master_data.items() if k != "lastSynced"},
+        sort_keys=True,
+        ensure_ascii=False,
+    )
 
     need_static = refresh_static or master_data.get("staticAssetVersion") != "20261119_v3"
     if need_static:
@@ -1513,15 +1518,28 @@ def sync_database(refresh_static: bool = False, verify: bool = False) -> bool:
         "properties": total_props,
     }
     master_data["version"] = "2026.11.19-sync-v4"
-    master_data["lastSynced"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    DATA_FILE.write_text(json.dumps(master_data, indent=2), encoding="utf-8")
-    log(
-        "Sync complete -> "
-        f"Characters: {total_chars}, Weapons/Gear: {total_weapons}, "
-        f"Vehicles: {total_vehicles}, Safehouses: {total_props}, "
-        f"YouTube: {len(master_data.get('youtubeWire', []))}"
+    after_canonical = json.dumps(
+        {k: v for k, v in master_data.items() if k != "lastSynced"},
+        sort_keys=True,
+        ensure_ascii=False,
     )
+
+    if after_canonical != before_canonical:
+        master_data["lastSynced"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        DATA_FILE.write_text(json.dumps(master_data, indent=2) + "\n", encoding="utf-8")
+        log(
+            "Sync UPDATED gta6_master_intel.json -> "
+            f"Characters: {total_chars}, Weapons/Gear: {total_weapons}, "
+            f"Vehicles: {total_vehicles}, Safehouses: {total_props}, "
+            f"YouTube: {len(master_data.get('youtubeWire', []))}"
+        )
+    else:
+        log(
+            "Zero meaningful changes in gta6_master_intel.json — file left untouched "
+            f"(Characters: {total_chars}, Weapons/Gear: {total_weapons}, "
+            f"Vehicles: {total_vehicles}, Safehouses: {total_props})."
+        )
 
     if verify:
         errs = verify_master_data(master_data)

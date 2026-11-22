@@ -1025,7 +1025,7 @@
         '<div class="wdb-placeholder" style="' + (isModal ? 'min-height:200px;' : '') + '">' +
           '<div class="wdb-ph-icon" aria-hidden="true">' + esc(schema.icon || '📦') + '</div>' +
           '<div class="wdb-ph-title">' + esc(item.name) + '</div>' +
-          '<div class="wdb-ph-tag">Screenshot needed</div>' +
+          '<div class="wdb-ph-tag">GTA VI Capture Pending</div>' +
         '</div>'
       );
     }

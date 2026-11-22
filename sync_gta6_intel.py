@@ -52,6 +52,8 @@ GTA6_KEYWORDS = [
     "vice city", "leonida", "lucia", "jason", "rockstar games", "heist"
 ]
 
+STABLE_CURATED_PUBDATE = "Fri, 20 Nov 2026 12:00:00 GMT"
+
 CURATED_INTEL = [
     {
         "id": "intel-curated-1",
@@ -59,7 +61,7 @@ CURATED_INTEL = [
         "source": "Syndicate Editorial Desk",
         "category": "Cheats & Exploits",
         "link": "/cheats.html",
-        "pubDate": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT"),
+        "pubDate": STABLE_CURATED_PUBDATE,
         "summary": "Confirmed: Players can open the in-game smartphone (Up on D-Pad), hold L1/LB + press R1/RB, and enter D-Pad arrow sequences to unlock $250k money, body armor, and vehicle spawns. Note: cheats disable auto-saving and trophies.",
         "badge": "VERIFIED DAY-2 CHEAT"
     },
@@ -69,7 +71,7 @@ CURATED_INTEL = [
         "source": "Syndicate Intel Wire",
         "category": "Money & Economy",
         "link": "/money-guide.html",
-        "pubDate": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT"),
+        "pubDate": STABLE_CURATED_PUBDATE,
         "summary": "Step-by-step breakdown of early cash operations across Fishing Shacks, Exotic Animals fronts, Backroom Weed grows, and motels to hit the BuckMe app savings quota before high-stakes bank heists.",
         "badge": "EARLY CASH META"
     },
@@ -79,7 +81,7 @@ CURATED_INTEL = [
         "source": "Syndicate Hardware Lab",
         "category": "Performance & Settings",
         "link": "/settings.html",
-        "pubDate": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT"),
+        "pubDate": STABLE_CURATED_PUBDATE,
         "summary": "Maximize target 30 FPS smoothness on console: set Aim Sensitivity to 7-8, Deadzones to Lowest Stable, Movement Speed to Jog, and TV to Game Mode with HGiG tone mapping.",
         "badge": "OPTIMIZATION GUIDE"
     },
@@ -89,7 +91,7 @@ CURATED_INTEL = [
         "source": "Leonida Arms Bureau",
         "category": "Weapons & Gear",
         "link": "/weapons-bonuses.html",
-        "pubDate": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT"),
+        "pubDate": STABLE_CURATED_PUBDATE,
         "summary": "Full directory of Vice City Firearms, Martez Empenos, and Black Eagle surplus stores, plus how to claim Ultimate Edition bonus pistols and safehouse duffle weapons.",
         "badge": "ARMORY EXPANSION"
     },
@@ -99,7 +101,7 @@ CURATED_INTEL = [
         "source": "Drops & Community Hub",
         "category": "Giveaways & Drops",
         "link": "/giveaways.html",
-        "pubDate": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT"),
+        "pubDate": STABLE_CURATED_PUBDATE,
         "summary": "Watch 3 hours daily on Kick for Sunset Cases through Dec 7, 2026. Daily Twitch Heist Train drops and $0 Amazon Prime subscription linking tutorial.",
         "badge": "FREE LOOT ACTIVE"
     }
@@ -204,27 +206,48 @@ def main():
         print(f"    -> Found {len(items)} GTA 6 matching articles")
         all_fetched.extend(items)
 
-    # Combine curated Day-2 verified intel with fetched articles
-    combined_feed = CURATED_INTEL + all_fetched
+    # Load existing intelFeed so temporary feed outages never delete existing stories
+    existing_payload = {}
+    existing_feed = []
+    if os.path.exists(OUTPUT_JSON_PATH):
+        try:
+            with open(OUTPUT_JSON_PATH, "r", encoding="utf-8") as f:
+                existing_payload = json.load(f)
+                existing_feed = existing_payload.get("intelFeed", []) or []
+        except Exception:
+            existing_payload = {}
+            existing_feed = []
 
-    # Deduplicate by title
+    # Combine curated verified intel + existing stories + newly fetched stories
+    combined_feed = CURATED_INTEL + existing_feed + all_fetched
+
+    # Deduplicate by normalized title
     seen_titles = set()
     deduped = []
     for item in combined_feed:
-        norm = re.sub(r"\W+", "", item["title"].lower())
-        if norm not in seen_titles:
+        norm = re.sub(r"\W+", "", item.get("title", "").lower())
+        if norm and norm not in seen_titles:
             seen_titles.add(norm)
             deduped.append(item)
+
+    final_feed = deduped[:40]
+
+    def feed_signature(items):
+        return [(re.sub(r"\W+", "", (it.get("title") or "").lower()), it.get("link", "")) for it in items]
+
+    if existing_feed and feed_signature(final_feed) == feed_signature(existing_feed):
+        print(f"[OK] Zero meaningful changes in live_intel.json ({len(existing_feed)} stories) — file left untouched.")
+        return
 
     payload = {
         "ok": True,
         "lastSync": datetime.now(timezone.utc).isoformat(),
-        "totalArticles": len(deduped),
+        "totalArticles": len(final_feed),
         "headline": "🔥 GTA 6 IS LIVE — DAY-2 HEISTS, CHEATS, MAPS & DROPS",
         "weeklyReset": "Thursday 10:00 UTC",
         "verifiedCheatsCount": 61,
         "ammuNationStoresCount": 24,
-        "intelFeed": deduped[:40],
+        "intelFeed": final_feed,
         "activeDrops": {
             "kickGiveaway": {
                 "name": "Kick 10,000 Ultimate Edition Giveaway",
@@ -241,10 +264,11 @@ def main():
         }
     }
 
-    with open(OUTPUT_JSON_PATH, "w", encoding="utf-8") as f:
+    with open(OUTPUT_JSON_PATH, "w", encoding="utf-8", newline="\n") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
-    print(f"[✓] Saved {len(deduped)} intel stories to {OUTPUT_JSON_PATH}")
+    print(f"[✓] Saved {len(final_feed)} intel stories to {OUTPUT_JSON_PATH}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,16 @@
+{
+  "updated": "2026-11-22",
+  "policy": "Unverified newly discovered GTA VI animal species from external sources (e.g. GTA Wiki Category:Animals in GTA VI) are queued here for editorial review before promotion to public/data/animals.json. Existing verified records are never overwritten or deleted.",
+  "discoveries": [
+    {
+      "id": "disc-an-46e3d772a1",
+      "wikiTitle": "Tigers",
+      "suggestedName": "Tigers",
+      "source": "GTA Wiki (Category:Animals in GTA VI)",
+      "sourceUrl": "https://gta.fandom.com/wiki/Tigers",
+      "candidateImages": [],
+      "discoveredAt": "2026-11-22T02:30:23.748Z",
+      "status": "pending_manual_review"
+    }
+  ]
+}
