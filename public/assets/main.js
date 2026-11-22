@@ -5035,7 +5035,7 @@ CharacterModal: {
         const enebaUrl = cfg.enebaUrl || 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide';
         const gumroadBundleUrl = cfg.gumroadBundleUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle';
         return [
-          `🔥 <strong style="color:var(--neon-pink);">LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB ($169)</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">$16.99 Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Amazon]</a>`,
+          `🔥 <strong style="color:var(--neon-pink);">LAUNCH GEAR:</strong> <a href="${amzSsd}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-ssd" style="color:var(--neon-green); font-weight:700;">Samsung 990 PRO 2TB SSD</a> &bull; <a href="${amzSticks}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-thumbsticks" style="color:var(--neon-cyan); font-weight:700;">KontrolFreek Heist Thumbsticks</a> &bull; <a href="${amzPs5}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="ticker-gta6" style="color:#fff; font-weight:700;">GTA 6 PS5 Edition &rarr; [Check Price on Amazon]</a>`,
           `⚡ <strong style="color:var(--neon-cyan);">LOW-PING LOBBY ROUTING:</strong> <a href="${exitUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="exitlag" data-aff-placement="ticker-exitlag" style="color:var(--neon-cyan); font-weight:800;">ExitLag Low-Ping Routing (Free Trial)</a> `,
           `💳 <strong style="color:var(--neon-yellow);">DISCOUNTED KEYS &amp; PSN & XBOX GIFT CARDS:</strong> Up to 20% Off PSN/Xbox Currency &amp; GTA 6 Codes &bull; <a href="${g2aUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="g2a" data-aff-placement="ticker-g2a" style="color:var(--neon-pink); font-weight:700;">[Check G2A Deals]</a> | <a href="${enebaUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="eneba" data-aff-placement="ticker-eneba" style="color:var(--neon-green); font-weight:700;">[Compare Eneba]</a>`,
           `🎬 <strong style="color:var(--neon-green);">CONTENT CREATOR BUNDLE:</strong> Auto-cut dead air &amp; export 9:16 vertical TikTok/Shorts offline ($49) &bull; <a href="${gumroadBundleUrl}" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="gumroad" data-aff-placement="ticker-cutflow" style="color:var(--neon-green); font-weight:800;">[CutFlow Pro &amp; ClipBounty Studio &rarr;]</a>`
@@ -5509,27 +5509,27 @@ DealRotator: {
             rating: "4.9",
             ratingCount: "18,500+ buyers",
             desc: "Official PlayStation 5 & Xbox launch editions and digital keys with Amazon Prime fast shipping or instant key delivery.",
-            priceLabel: "Retail Launch",
-            price: "$69.99",
+            priceLabel: "Amazon Affiliate",
+            price: "Live Pricing",
             pillDiscount: "🔥 LIVE NOW",
             img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "📦 Check on Amazon →", href: bAmz("https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" },
+            ctaPrimary: { text: "📦 Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" },
             ctaSecondary: { text: "⚡ Check G2A Key Deals (-20%) →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
           },
           {
             id: "dualsense-edge",
             title: "DualSense Edge Pro",
             badgeVerified: "✓ SONY OFFICIAL",
-            badgeMerchant: "PRIME DELIVERY",
+            badgeMerchant: "PRIME ELIGIBLE",
             stars: "★★★★★",
             rating: "4.8",
             ratingCount: "6,200+ ratings",
             desc: "Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast heist shootouts.",
-            priceLabel: "Amazon Prime",
-            price: "$199.99",
-            pillDiscount: "FREE 1-DAY",
+            priceLabel: "Amazon Affiliate",
+            price: "Live Pricing",
+            pillDiscount: "PRO GEAR",
             img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "🎮 Check Deal on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            ctaPrimary: { text: "🎮 Check Price on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "samsung-990",
@@ -5540,11 +5540,11 @@ DealRotator: {
             rating: "4.9",
             ratingCount: "21,000+ ratings",
             desc: "Gen4 M.2 NVMe with integrated heatsink. Eliminates open-world texture pop-in during high-speed Vice City chases.",
-            priceLabel: "Sale Price",
-            price: "$169.99",
-            pillDiscount: "SAVE $50",
+            priceLabel: "Amazon Affiliate",
+            price: "Live Pricing",
+            pillDiscount: "PS5 READY",
             img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "⚡ Upgrade Storage on Amazon →", href: bAmz("https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            ctaPrimary: { text: "⚡ Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "eneba-cards",
@@ -5570,11 +5570,11 @@ DealRotator: {
             rating: "4.8",
             ratingCount: "9,800+ ratings",
             desc: "Active noise cancellation and hot-swappable dual battery system. Pinpoint sirens and guard footsteps in 3D audio.",
-            priceLabel: "Amazon Prime",
-            price: "$349.99",
+            priceLabel: "Amazon Affiliate",
+            price: "Live Pricing",
             pillDiscount: "ELITE AUDIO",
             img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "🎧 Check Headset on Amazon →", href: bAmz("https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+Pro+Wireless&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            ctaPrimary: { text: "🎧 Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+Pro+Wireless&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "g2a-gamepass",
