@@ -304,8 +304,20 @@
       '.wdb-modal-card.is-wide { width: min(100%, 980px); }',
       '.wdb-modal-close { position: absolute; top: 12px; right: 12px; z-index: 5; width: 34px; height: 34px; border-radius: 50%; background: rgba(6, 10, 20, 0.9); border: 1px solid rgba(255, 255, 255, 0.22); color: #fff; font-size: 1.25rem; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }',
       '.wdb-modal-close:hover { border-color: var(--neon-pink, #ff2a8d); color: var(--neon-pink, #ff2a8d); }',
-      '.wdb-modal-hero { width: 100%; aspect-ratio: 16/8; max-height: 300px; overflow: hidden; background: #050811; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }',
-      '.wdb-modal-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }',
+      '.wdb-modal-hero { width: 100%; aspect-ratio: 16/8; max-height: 320px; overflow: hidden; background: #050811; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }',
+      '.wdb-modal-hero.is-zoomable { cursor: zoom-in; }',
+      '.wdb-modal-hero img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }',
+      '.wdb-modal-hero.is-zoomable:hover img { transform: scale(1.02); }',
+      '.wdb-zoom-pill { position: absolute; right: 12px; bottom: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 5px; background: rgba(6, 10, 20, 0.88); border: 1px solid rgba(0, 240, 255, 0.5); color: #e2e8f0; font-family: var(--font-mono, monospace); font-size: 0.68rem; font-weight: 800; padding: 4px 9px; border-radius: 999px; pointer-events: none; backdrop-filter: blur(4px); }',
+      '.wdb-lightbox-backdrop { position: fixed; inset: 0; z-index: 15000; background: rgba(2, 4, 10, 0.94); backdrop-filter: blur(10px); display: none; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem; box-sizing: border-box; gap: 0.75rem; }',
+      '.wdb-lightbox-backdrop.is-open { display: flex; }',
+      '.wdb-lightbox-close { position: fixed; top: 16px; right: 18px; z-index: 15002; width: 40px; height: 40px; border-radius: 50%; background: rgba(12, 18, 32, 0.95); border: 1px solid rgba(0, 240, 255, 0.5); color: #fff; font-size: 1.45rem; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }',
+      '.wdb-lightbox-close:hover { border-color: var(--neon-pink, #ff2a8d); color: var(--neon-pink, #ff2a8d); }',
+      '.wdb-lightbox-img { max-width: min(96vw, 1600px); max-height: 80vh; width: auto; height: auto; object-fit: contain; border-radius: 10px; border: 1px solid rgba(0, 240, 255, 0.35); box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85); background: #050811; }',
+      '.wdb-lightbox-caption { max-width: min(94vw, 920px); text-align: center; display: flex; flex-direction: column; gap: 0.25rem; }',
+      '.wdb-lightbox-title { color: #fff; font-size: 1rem; font-weight: 900; }',
+      '.wdb-lightbox-desc { color: #cbd5e1; font-size: 0.8rem; line-height: 1.45; }',
+      '.wdb-lightbox-credit { font-family: var(--font-mono, monospace); font-size: 0.72rem; color: var(--neon-cyan, #00f0ff); }',
       '.wdb-modal-body { padding: 1.2rem 1.35rem 1.35rem; display: flex; flex-direction: column; gap: 0.9rem; }',
       '.wdb-modal-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }',
       '.wdb-modal-title { color: #fff; font-size: clamp(1.25rem, 2.5vw, 1.65rem); margin: 0; line-height: 1.2; }',
@@ -976,6 +988,14 @@
     compareModal.setAttribute('aria-modal', 'true');
     document.body.appendChild(compareModal);
 
+    var lightboxModal = document.createElement('div');
+    lightboxModal.id = uid + '_lightbox';
+    lightboxModal.className = 'wdb-lightbox-backdrop';
+    lightboxModal.setAttribute('role', 'dialog');
+    lightboxModal.setAttribute('aria-modal', 'true');
+    lightboxModal.setAttribute('aria-label', 'Full resolution image viewer');
+    document.body.appendChild(lightboxModal);
+
     function isOwned(id) {
       return global.GTA6Progress ? global.GTA6Progress.isDbOwned(categoryKey, id) : false;
     }
@@ -1035,9 +1055,10 @@
         return renderPlaceholderHtml(item, isModal);
       }
       if (item.image && item.imageVerified === true) {
+        var altText = hasText(item.imageAlt) ? item.imageAlt : (item.name + ' verified GTA VI screenshot');
         return (
-          '<img src="' + esc(item.image) + '" alt="' + esc(item.name + ' verified GTA 6 screenshot') + '" loading="' + (isModal ? 'eager' : 'lazy') + '" onerror="this.parentNode.innerHTML=this.getAttribute(\'data-fallback\')" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">' +
-          (isModal ? '' : '<span class="wdb-badge-tr">✓ Verified Shot</span>')
+          '<img src="' + esc(item.image) + '" alt="' + esc(altText) + '" loading="' + (isModal ? 'eager' : 'lazy') + '" onerror="this.parentNode.innerHTML=this.getAttribute(\'data-fallback\')" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">' +
+          (isModal ? '<span class="wdb-zoom-pill">🔍 View Full Image</span>' : '<span class="wdb-badge-tr">✓ Verified Shot</span>')
         );
       }
       return renderPlaceholderHtml(item, isModal);
@@ -1293,16 +1314,18 @@
         return lnk && hasText(lnk.label) && isValidRelatedUrl(lnk.url);
       });
 
+      var hasVerifiedImg = Boolean(!schema.isRadio && item.image && item.imageVerified === true);
+
       // ZERO affiliate bars inside individual item popup modals!
       detailModal.innerHTML =
         '<div class="wdb-modal-card">' +
           '<button type="button" class="wdb-modal-close" data-modal-close aria-label="Close modal">&times;</button>' +
-          '<div class="wdb-modal-hero">' + renderMediaHtml(item, true) + '</div>' +
+          '<div class="wdb-modal-hero' + (hasVerifiedImg ? ' is-zoomable' : '') + '"' + (hasVerifiedImg ? ' data-wdb-lightbox-open role="button" tabindex="0" title="Click to view full-resolution screenshot"' : '') + '>' + renderMediaHtml(item, true) + '</div>' +
           '<div class="wdb-modal-body">' +
             '<div class="wdb-modal-badges">' +
               (schema.primaryFilter ? '<span class="wdb-mini-tag">' + esc(schema.primaryFilter.getValue(item)) + '</span>' : '') +
               '<span class="wdb-ver-pill ' + verificationBadgeClass(verStatus) + '">' + esc(verStatus) + '</span>' +
-              (item.image && item.imageVerified === true ? '<span class="wdb-mini-tag is-green">✓ Verified In-Game Screenshot</span>' : '') +
+              (hasVerifiedImg ? '<span class="wdb-mini-tag is-green">✓ Verified In-Game Screenshot</span>' : '') +
             '</div>' +
             '<h2 class="wdb-modal-title">' + esc(item.name) + '</h2>' +
             (warn ? '<div class="wdb-warn-banner">⚠️ ' + esc(warn) + '</div>' : '') +
@@ -1325,6 +1348,7 @@
               : '') +
             '<div class="wdb-ver-meta">' +
               '<span>Status: <strong style="color:#e2e8f0;">' + esc(verStatus) + '</strong></span>' +
+              (hasVerifiedImg && hasText(item.imageSource) ? '<span>Image Credit: <strong style="color:var(--neon-cyan,#00f0ff);">' + esc(item.imageSource) + '</strong></span>' : '') +
               (hasText(item.lastUpdated) ? '<span>Last Updated: <strong style="color:#e2e8f0;">' + esc(formatDateStamp(item.lastUpdated)) + '</strong></span>' : '') +
               (hasText(item.sourceUrl) ? '<a href="' + esc(item.sourceUrl) + '" target="_blank" rel="noopener noreferrer">Source Reference ↗</a>' : '') +
             '</div>' +
@@ -1348,7 +1372,30 @@
     function closeDetailModal() {
       detailModal.classList.remove('is-open');
       state.activeModalItem = null;
-      if (!compareModal.classList.contains('is-open')) {
+      if (!compareModal.classList.contains('is-open') && !lightboxModal.classList.contains('is-open')) {
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openLightbox(item) {
+      if (!item || !item.image || item.imageVerified !== true) return;
+      var altText = hasText(item.imageAlt) ? item.imageAlt : (item.name + ' verified GTA VI screenshot');
+      lightboxModal.innerHTML =
+        '<button type="button" class="wdb-lightbox-close" data-wdb-lightbox-close aria-label="Close full-resolution image">&times;</button>' +
+        '<img class="wdb-lightbox-img" src="' + esc(item.image) + '" alt="' + esc(altText) + '">' +
+        '<div class="wdb-lightbox-caption">' +
+          '<div class="wdb-lightbox-title">' + esc(item.name) + '</div>' +
+          '<div class="wdb-lightbox-desc">' + esc(altText) + '</div>' +
+          (hasText(item.imageSource) ? '<div class="wdb-lightbox-credit">📷 Source Attribution: ' + esc(item.imageSource) + '</div>' : '') +
+        '</div>';
+      lightboxModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('is-open');
+      lightboxModal.innerHTML = '';
+      if (!detailModal.classList.contains('is-open') && !compareModal.classList.contains('is-open')) {
         document.body.style.overflow = '';
       }
     }
@@ -1560,6 +1607,10 @@
         closeDetailModal();
         return;
       }
+      if (e.target.closest('[data-wdb-lightbox-open]') && state.activeModalItem) {
+        openLightbox(state.activeModalItem);
+        return;
+      }
       var mFav = e.target.closest('[data-modal-fav]');
       if (mFav) {
         toggleFav(mFav.getAttribute('data-modal-fav'));
@@ -1610,9 +1661,23 @@
       }
     });
 
+    detailModal.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.matches('[data-wdb-lightbox-open]') && state.activeModalItem) {
+        e.preventDefault();
+        openLightbox(state.activeModalItem);
+      }
+    });
+
+    lightboxModal.addEventListener('click', function (e) {
+      if (e.target === lightboxModal || e.target.closest('[data-wdb-lightbox-close]')) {
+        closeLightbox();
+      }
+    });
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        if (compareModal.classList.contains('is-open')) closeCompareModal();
+        if (lightboxModal.classList.contains('is-open')) closeLightbox();
+        else if (compareModal.classList.contains('is-open')) closeCompareModal();
         else if (detailModal.classList.contains('is-open')) closeDetailModal();
       }
     });

@@ -58,9 +58,10 @@
       "imageSource": "Official Rockstar GTA VI Screenshot (Grassrivers)",
       "pinId": "an-alligator",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-alligator"
+      "mapPinId": "an-alligator",
+      "imageAlt": "American Alligator stalking through murky Grassrivers marsh at night in Grand Theft Auto VI"
     },
     {
       "id": "an-panther",
@@ -76,13 +77,13 @@
       "notes": "Stalks dense pine trails and ridges in Mount Kalaga National Park, especially at dusk and night. Tracked during Jason's hunting contracts.",
       "image": "/assets/images/animals/an-panther.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (Official Rockstar GTA VI Screenshot)",
+      "imageSource": "Official Rockstar GTA VI Screenshot (Mount Kalaga)",
       "pinId": "an-panther",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Cougars",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-panther",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/70/OfficialScreenshots-GTAVI-PromotionalWebsite-MountKalaga-SS5.jpg/revision/latest"
+      "imageAlt": "Florida Panther stalking across a sunlit stream in Mount Kalaga National Park in Grand Theft Auto VI"
     },
     {
       "id": "an-black-bear",
@@ -96,14 +97,15 @@
         "legendary-hunter"
       ],
       "notes": "Roams Mount Kalaga forests and riverbanks; charges if provoked or cornered. Bring the Killtelligence SM-69 rifle for Pristine vital kills.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-black-bear.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-black-bear",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-black-bear"
+      "mapPinId": "an-black-bear",
+      "imageAlt": "American Black Bear walking along a sunlit riverbank under concrete bridge pillars in Grand Theft Auto VI"
     },
     {
       "id": "an-bobcat",
@@ -137,14 +139,15 @@
         "legendary-hunter"
       ],
       "notes": "Antlered male deer grazing in Mount Kalaga meadows; flees quickly when spooked. Core big-game target for Pristine venison & pelt contracts.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-whitetail-buck.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-whitetail-buck",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-whitetail-buck"
+      "mapPinId": "an-whitetail-buck",
+      "imageAlt": "Antlered Whitetail Buck foraging in grassy northern Leonida brush in Grand Theft Auto VI"
     },
     {
       "id": "an-whitetail-doe",
@@ -157,14 +160,15 @@
         "target-deck"
       ],
       "notes": "Found in small herds alongside Whitetail Bucks in northern Leonida.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-whitetail-doe.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-whitetail-doe",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-whitetail-doe"
+      "mapPinId": "an-whitetail-doe",
+      "imageAlt": "Whitetail Doe standing alert along a shallow Leonida creek bank in Grand Theft Auto VI"
     },
     {
       "id": "an-wild-boar",
@@ -178,14 +182,15 @@
         "legendary-hunter"
       ],
       "notes": "Spotted across Mount Kalaga National Park & Leonida Keys brush; can charge on foot. Featured in early Bret Vogel hunting mechanics.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-wild-boar.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-wild-boar",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-wild-boar"
+      "mapPinId": "an-wild-boar",
+      "imageAlt": "Wild Boar standing in tall sunlit grass in Mount Kalaga wilderness in Grand Theft Auto VI"
     },
     {
       "id": "an-armadillo",
@@ -198,14 +203,15 @@
         "target-deck"
       ],
       "notes": "Forages along dirt roadsides and rural scrub in Port Gellhorn and Ambrosia.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-armadillo.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-armadillo",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-armadillo"
+      "mapPinId": "an-armadillo",
+      "imageAlt": "Nine-Banded Armadillo foraging across dry rural Leonida dirt in Grand Theft Auto VI"
     },
     {
       "id": "an-river-otter",
@@ -216,14 +222,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Playful wetland mammal found along Grassrivers creeks and clear marsh banks.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-river-otter.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-river-otter",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-river-otter"
+      "mapPinId": "an-river-otter",
+      "imageAlt": "River Otter moving along sunlit mangrove roots and shallow wetlands in Grand Theft Auto VI"
     },
     {
       "id": "an-macaque",
@@ -256,13 +263,13 @@
       "notes": "Sunbathes on seawalls, docks, and palm trunks throughout the Leonida Keys.",
       "image": "/assets/images/animals/an-green-iguana.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
+      "imageSource": "Official Rockstar GTA VI Screenshot (Leonida Keys)",
       "pinId": "an-green-iguana",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Iguanas",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-green-iguana",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/94/Iguana-GTAVI.png/revision/latest"
+      "imageAlt": "Green Iguana sunbathing on coastal rocks overlooking turquoise Leonida Keys water in Grand Theft Auto VI"
     },
     {
       "id": "an-cane-toad",
@@ -295,13 +302,13 @@
       "notes": "Nocturnal scavenger around alley dumpsters and motel fringes across Port Gellhorn & Vice City.",
       "image": "/assets/images/animals/an-raccoon.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-raccoon",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Raccoons",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-raccoon",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/e/e9/Raccoon-GTAVI.png/revision/latest"
+      "imageAlt": "Northern Raccoon scavenging near sunlit Leonida marsh roadside brush in Grand Theft Auto VI"
     },
     {
       "id": "an-red-fox",
@@ -314,14 +321,15 @@
         "target-deck"
       ],
       "notes": "Spotted darting across forest clearings at dawn and dusk.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-red-fox.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-red-fox",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-red-fox"
+      "mapPinId": "an-red-fox",
+      "imageAlt": "Red Fox trotting across a shaded forest clearing in Mount Kalaga in Grand Theft Auto VI"
     },
     {
       "id": "an-beaver",
@@ -372,15 +380,14 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Common in city parks, palm trees, and wooded trails across Leonida.",
-      "image": "/assets/images/animals/an-squirrel.jpg",
-      "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
+      "image": null,
+      "imageVerified": false,
+      "imageSource": null,
       "pinId": "an-squirrel",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Squirrels",
-      "mapPinId": "an-squirrel",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/0a/Squirrel-GTAVI.png/revision/latest"
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-squirrel"
     },
     {
       "id": "an-snake",
@@ -393,14 +400,15 @@
         "target-deck"
       ],
       "notes": "Slithers through tall marsh grass and rocky ledges in Grassrivers and Mount Kalaga. Listen for the warning rattle before stepping off trail.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-snake.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar GTA VI Screenshot (Grassrivers)",
       "pinId": "an-snake",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-snake"
+      "mapPinId": "an-snake",
+      "imageAlt": "Large patterned Leonida marsh snake draped over a Grassrivers hunter's shoulder in Grand Theft Auto VI"
     },
     {
       "id": "an-flamingo",
@@ -413,13 +421,13 @@
       "notes": "Iconic bright-pink wading flocks in Leonida Keys flats and Grassrivers wetlands. Study with binoculars to log in the in-game Birds Progress tab.",
       "image": "/assets/images/animals/an-flamingo.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+      "imageSource": "Official Rockstar GTA VI Trailer 1",
       "pinId": "an-flamingo",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Flamingos",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-flamingo",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/8a/GTAVITrailer-GTAVI-SS10.png/revision/latest"
+      "imageAlt": "Flock of pink American Flamingos wading and taking flight over Leonida Keys wetlands in Grand Theft Auto VI"
     },
     {
       "id": "an-pelican",
@@ -430,14 +438,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Perches on marina pilings and dives for fish along Vice Beach and the Keys.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-pelican.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-pelican",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-pelican"
+      "mapPinId": "an-pelican",
+      "imageAlt": "Brown Pelicans floating along sunlit coastal surf in the Leonida Keys in Grand Theft Auto VI"
     },
     {
       "id": "an-blue-heron",
@@ -448,14 +457,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Tall coastal wading bird stalking shallow marshes and canals.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-blue-heron.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-blue-heron",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-blue-heron"
+      "mapPinId": "an-blue-heron",
+      "imageAlt": "Great Blue Heron wading in shallow reflective Grassrivers marsh water in Grand Theft Auto VI"
     },
     {
       "id": "an-osprey",
@@ -466,14 +476,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Fish-hunting raptor nesting on channel markers and coastal towers.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-osprey.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-osprey",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-osprey"
+      "mapPinId": "an-osprey",
+      "imageAlt": "Western Osprey perched atop a coastal Leonida building roof against blue sky in Grand Theft Auto VI"
     },
     {
       "id": "an-spoonbill",
@@ -484,14 +495,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Distinctive pink marsh bird sweeping shallow Grassrivers lagoons.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-spoonbill.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-spoonbill",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-spoonbill"
+      "mapPinId": "an-spoonbill",
+      "imageAlt": "Bright pink Roseate Spoonbill standing on a sunlit Grassrivers rocky bank in Grand Theft Auto VI"
     },
     {
       "id": "an-whooping-crane",
@@ -504,13 +516,13 @@
       "notes": "Rare tall white wetland crane spotted in open Grassrivers flats.",
       "image": "/assets/images/animals/an-whooping-crane.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-whooping-crane",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Cranes",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-whooping-crane",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/8/83/GTA-VI-Cranes.jpg/revision/latest"
+      "imageAlt": "Whooping Crane with crimson crown resting in shallow blue Grassrivers water in Grand Theft Auto VI"
     },
     {
       "id": "an-cormorant",
@@ -523,13 +535,13 @@
       "notes": "Diving waterbird frequently seen drying its wings on docks and buoys.",
       "image": "/assets/images/animals/an-cormorant.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-cormorant",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Double-Crested_Cormorants",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-cormorant",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/1e/DoubleCrestedCormorant-GTAVI-Trailer1.png/revision/latest"
+      "imageAlt": "Double-Crested Cormorant swimming across calm coastal bay water in Grand Theft Auto VI"
     },
     {
       "id": "an-duck",
@@ -544,13 +556,13 @@
       "notes": "Common across ponds, canals, and calm wetland coves.",
       "image": "/assets/images/animals/an-duck.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-duck",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Ducks",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-duck",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/9/95/Ducks-GTAVI-Trailer1.png/revision/latest"
+      "imageAlt": "Mottled Duck swimming among sunlit lily pads in a Grassrivers wetland pond in Grand Theft Auto VI"
     },
     {
       "id": "an-seagull",
@@ -561,14 +573,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Flocks over Vice Beach boardwalks, piers, and marinas.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-seagull.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-seagull",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-seagull"
+      "mapPinId": "an-seagull",
+      "imageAlt": "Coastal Herring Gull perched on a dock piling against lush Leonida foliage in Grand Theft Auto VI"
     },
     {
       "id": "an-bald-eagle",
@@ -579,14 +592,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Soars high above Mount Kalaga peaks and northern lakes.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-bald-eagle.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-bald-eagle",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-bald-eagle"
+      "mapPinId": "an-bald-eagle",
+      "imageAlt": "Bald Eagle perched atop a rocky Mount Kalaga cliff overlooking pine ridges in Grand Theft Auto VI"
     },
     {
       "id": "an-woodpecker",
@@ -633,14 +647,15 @@
       "danger": "Docile",
       "tags": [],
       "notes": "Gentle marine mammal gliding through warm Keys coves and coastal springs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-manatee.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-manatee",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-manatee"
+      "mapPinId": "an-manatee",
+      "imageAlt": "Gentle Leonida Manatee surfacing in clear turquoise water in Grand Theft Auto VI"
     },
     {
       "id": "an-hammerhead",
@@ -653,14 +668,15 @@
         "legendary-hunter"
       ],
       "notes": "Patrols deeper reefs and offshore channels around the Leonida Keys.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-hammerhead.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-hammerhead",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-hammerhead"
+      "mapPinId": "an-hammerhead",
+      "imageAlt": "Great Hammerhead Shark swimming through deep turquoise reef waters off Leonida Keys in Grand Theft Auto VI"
     },
     {
       "id": "an-great-white",
@@ -693,13 +709,13 @@
       "notes": "Pods leap alongside boats in Vice Bay and the Leonida Keys.",
       "image": "/assets/images/animals/an-dolphin.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+      "imageSource": "Official Rockstar GTA VI Screenshot",
       "pinId": "an-dolphin",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Dolphins",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-dolphin",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/1/11/Dolphins-GTAVI-Trailer1.png/revision/latest"
+      "imageAlt": "Dolphin breaching through crystal-clear turquoise Vice Bay waters in Grand Theft Auto VI"
     },
     {
       "id": "an-sea-turtle",
@@ -712,13 +728,13 @@
       "notes": "Swims around coral reefs and shipwreck dive spots in the Keys.",
       "image": "/assets/images/animals/an-sea-turtle.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
+      "imageSource": "Official Rockstar GTA VI Screenshot (Leonida Keys)",
       "pinId": "an-sea-turtle",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Sea_Turtles",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-sea-turtle",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/7/71/SeaTurtle-GTAVI.png/revision/latest"
+      "imageAlt": "Green Sea Turtle gliding gracefully over a vibrant Leonida Keys coral reef in Grand Theft Auto VI"
     },
     {
       "id": "an-stingray",
@@ -729,14 +745,15 @@
       "danger": "Cautious",
       "tags": [],
       "notes": "Glides over sandy shoals and shallow turquoise reefs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-stingray.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-stingray",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-stingray"
+      "mapPinId": "an-stingray",
+      "imageAlt": "Giant Oceanic Manta Ray gliding across open turquoise Leonida reef waters in Grand Theft Auto VI"
     },
     {
       "id": "an-lionfish",
@@ -747,14 +764,15 @@
       "danger": "Venomous",
       "tags": [],
       "notes": "Striped invasive reef fish hovering near sunken wrecks and coral ledges.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-lionfish.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar GTA VI Screenshot (Leonida Keys)",
       "pinId": "an-lionfish",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-lionfish"
+      "mapPinId": "an-lionfish",
+      "imageAlt": "Striped venomous Red Lionfish hovering over a sunlit Leonida Keys reef ledge in Grand Theft Auto VI"
     },
     {
       "id": "an-killer-whale",
@@ -767,14 +785,15 @@
         "legendary-hunter"
       ],
       "notes": "Rare deep-ocean sighting far offshore beyond the continental drop-off.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-killer-whale.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-killer-whale",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-killer-whale"
+      "mapPinId": "an-killer-whale",
+      "imageAlt": "Killer Whale (Orca) gliding underwater with distinct black-and-white markings in Grand Theft Auto VI"
     },
     {
       "id": "an-eel",
@@ -787,13 +806,13 @@
       "notes": "Hides inside reef crevices and underwater wrecks.",
       "image": "/assets/images/animals/an-eel.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Gallery)",
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-eel",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Eels",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-eel",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/0/02/Eel-GTAVI.png/revision/latest"
+      "imageAlt": "Vivid Green Moray Eel weaving above rocky Leonida Keys seabed in Grand Theft Auto VI"
     },
     {
       "id": "an-jellyfish",
@@ -804,14 +823,15 @@
       "danger": "Stinging",
       "tags": [],
       "notes": "Drifts in coastal currents off Vice Beach and Keys reefs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-jellyfish.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-jellyfish",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-jellyfish"
+      "mapPinId": "an-jellyfish",
+      "imageAlt": "Translucent Moon Jellyfish bloom drifting through blue Leonida coastal currents in Grand Theft Auto VI"
     },
     {
       "id": "an-crayfish",
@@ -858,15 +878,14 @@
       "danger": "Pettable",
       "tags": [],
       "notes": "Common along Ocean Beach walkways and boutique sidewalks.",
-      "image": "/assets/images/animals/an-chihuahua.jpg",
-      "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Trailer 1)",
+      "image": null,
+      "imageVerified": false,
+      "imageSource": null,
       "pinId": "an-chihuahua",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Dogs",
-      "mapPinId": "an-chihuahua",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/d/de/Chihuahua-GTAVI-Trailer1.png/revision/latest"
+      "sourceUrl": "https://www.rockstargames.com/VI",
+      "mapPinId": "an-chihuahua"
     },
     {
       "id": "an-doberman",
@@ -877,14 +896,15 @@
       "danger": "Guard / Pettable",
       "tags": [],
       "notes": "Sleek guard breed spotted near upscale Vice City estates and yards.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-doberman.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-doberman",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-doberman"
+      "mapPinId": "an-doberman",
+      "imageAlt": "Doberman Pinscher standing alert on a sunlit Leonida dirt path in Grand Theft Auto VI"
     },
     {
       "id": "an-german-shepherd",
@@ -895,14 +915,15 @@
       "danger": "Pettable",
       "tags": [],
       "notes": "Loyal working dog seen with locals across Port Gellhorn and Ambrosia.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-german-shepherd.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-german-shepherd",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-german-shepherd"
+      "mapPinId": "an-german-shepherd",
+      "imageAlt": "German Shepherd resting attentively on a wooden Leonida porch in Grand Theft Auto VI"
     },
     {
       "id": "an-labrador",
@@ -913,14 +934,15 @@
       "danger": "Pettable",
       "tags": [],
       "notes": "Friendly retriever frequently spotted on docks and Keys beaches.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-labrador.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-labrador",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-labrador"
+      "mapPinId": "an-labrador",
+      "imageAlt": "Friendly yellow Labrador Retriever sitting on a sunlit Vice City street in Grand Theft Auto VI"
     },
     {
       "id": "an-rottweiler",
@@ -949,14 +971,15 @@
       "danger": "Pettable",
       "tags": [],
       "notes": "Walked along luxury Vice City shopping avenues and resorts.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/animals/an-poodle.jpg",
+      "imageVerified": true,
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-poodle",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-22",
       "sourceUrl": "https://www.rockstargames.com/VI",
-      "mapPinId": "an-poodle"
+      "mapPinId": "an-poodle",
+      "imageAlt": "Black Standard Poodle standing in a sunny Vice City park in Grand Theft Auto VI"
     },
     {
       "id": "an-domestic-cat",
@@ -969,13 +992,13 @@
       "notes": "Lounges on alley steps, porches, and Key Lento docks; can be petted.",
       "image": "/assets/images/animals/an-domestic-cat.jpg",
       "imageVerified": true,
-      "imageSource": "GTA Wiki (GTA VI Trailer 2)",
+      "imageSource": "GTA VI In-Game Capture (PS5 Pro)",
       "pinId": "an-domestic-cat",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-22",
-      "sourceUrl": "https://gta.fandom.com/wiki/Cats",
+      "sourceUrl": "https://www.rockstargames.com/VI",
       "mapPinId": "an-domestic-cat",
-      "sourceImageUrl": "https://static.wikia.nocookie.net/gtawiki/images/2/25/Cat-GTAVI-Trailer2.png/revision/latest"
+      "imageAlt": "Orange Ginger Tabby Domestic Cat strolling across a sunlit Leonida sidewalk in Grand Theft Auto VI"
     }
   ],
   "category": "animals"
