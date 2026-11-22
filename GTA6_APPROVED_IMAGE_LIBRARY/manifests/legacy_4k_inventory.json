@@ -1,0 +1,1409 @@
+{
+  "generated": "2026-11-22",
+  "total_legacy_4k_found": 91,
+  "active_optimized_to_1600x900": 0,
+  "unused_removed_from_public": 32,
+  "all_masters_preserved_in": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k",
+  "bytes_saved_in_public": 42077265,
+  "records": [
+    {
+      "web_path": "/assets/heists/gellhorn.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 446447,
+      "new_bytes": 446447,
+      "original_sha256": "e678b4871b7c3caf683fccecfdbd4412d90d114debe3b746d5941eb312ef35f0",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\heists\\gellhorn.jpg",
+      "reference_count": 4,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "scripts/build_databases.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\heists\\gellhorn.jpg"
+    },
+    {
+      "web_path": "/assets/heists/gold-reserve.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 410792,
+      "new_bytes": 0,
+      "original_sha256": "36fadd8593abde813ec98ed8d15428e4858266d5ce064b0be7b8f4c208442f9b",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\heists\\gold-reserve.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/heists/sinfrontera.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 110458,
+      "new_bytes": 0,
+      "original_sha256": "cb690f8460b0b9cdee3c82977c399993216b1d6187b3edc78c3c0c18a531d272",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\heists\\sinfrontera.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/heists/superyacht.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 434512,
+      "new_bytes": 0,
+      "original_sha256": "41b10674ab144f947e8abd8fb9621e83f77396bd4ec8fff5ad6635469d661fa9",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\heists\\superyacht.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/animals/ambrosia-fields.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 633337,
+      "new_bytes": 633337,
+      "original_sha256": "0231137253b248160422658b6e51dfe7d6610544f336033ec8580cc72e66915c",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\ambrosia-fields.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\ambrosia-fields.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/gellhorn-scrub.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 650414,
+      "new_bytes": 650414,
+      "original_sha256": "eb417596cf53c6a13b89fc3e0845a08b25d6997530a0774b43beebf287208561",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\gellhorn-scrub.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\gellhorn-scrub.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/grassrivers-birds.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 884187,
+      "new_bytes": 884187,
+      "original_sha256": "8120c16f300f27500fca1360d561c69c9185bd8a3611d9258bf7b7e90517b79d",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\grassrivers-birds.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\grassrivers-birds.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/grassrivers-marsh.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 859665,
+      "new_bytes": 859665,
+      "original_sha256": "89574ed17bfc0c6aaae59c25813644c2bcfad2b777739ecb855b23692b841858",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\grassrivers-marsh.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\grassrivers-marsh.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/kalaga-forest.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1274178,
+      "new_bytes": 1274178,
+      "original_sha256": "2b973cf17237cec6f6729ea939f15bc9b8f056eab12598be79b0bd5201187679",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\kalaga-forest.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\kalaga-forest.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/kalaga-predators.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 961160,
+      "new_bytes": 961160,
+      "original_sha256": "6f06847e2173385df416ef162e1dfbb9f6270bfcc7bf0e080f02a4803d7473b3",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\kalaga-predators.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\kalaga-predators.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/kalaga-river.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1291623,
+      "new_bytes": 1291623,
+      "original_sha256": "290b5eb17a45ab4c8c318fb173e6c400bf0e80a74b529591da554d214fddd32a",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\kalaga-river.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\kalaga-river.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/keys-marine.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1118929,
+      "new_bytes": 1118929,
+      "original_sha256": "f5cdaa8ccf1d74ba3011ac82aac2cb63dda342d6c5caabeedd54f18f84ac55d1",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\keys-marine.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\keys-marine.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/keys-reef.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 891284,
+      "new_bytes": 891284,
+      "original_sha256": "5f2226e90602403ac0b8feea520a501c2872015627456448c0be85768d5ef7ae",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\keys-reef.jpg",
+      "reference_count": 5,
+      "sample_references": [
+        "data/animals.json",
+        "public/animals.html",
+        "public/image-sitemap.xml",
+        "public/data/animals.json",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\keys-reef.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/vice-coast.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 528149,
+      "new_bytes": 528149,
+      "original_sha256": "3f12452834bb07a0a13dabdf019881f372151d4740cdcf0937ac5fe03554d8eb",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\vice-coast.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\vice-coast.jpg"
+    },
+    {
+      "web_path": "/assets/images/animals/vice-domestic.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 649067,
+      "new_bytes": 649067,
+      "original_sha256": "0e4e13aced093e699f7998afb560e8056e8808963a05eaeea706d0cf949479b0",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\animals\\vice-domestic.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\animals\\vice-domestic.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/armored-trucks.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 480912,
+      "new_bytes": 480912,
+      "original_sha256": "b1804c192c61277e083b57677fe9b7520e59dc30aaf86c3b77305e3bdde872c7",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\armored-trucks.jpg",
+      "reference_count": 9,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\armored-trucks.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/cartel-heist.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 266164,
+      "new_bytes": 266164,
+      "original_sha256": "505abf2c0b83f157e014daea311d433aee4651e32658ae767da1675cb1adb5a4",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\cartel-heist.jpg",
+      "reference_count": 10,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\cartel-heist.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/jewelry-stores.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 528149,
+      "new_bytes": 528149,
+      "original_sha256": "3f12452834bb07a0a13dabdf019881f372151d4740cdcf0937ac5fe03554d8eb",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\jewelry-stores.jpg",
+      "reference_count": 9,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\jewelry-stores.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/large-bank-vaults.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 394705,
+      "new_bytes": 394705,
+      "original_sha256": "30b7c1f8627aad57ed4206a8ef816d9c3b2a53d5548d0b71d30d0afa0c7acfd3",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\large-bank-vaults.jpg",
+      "reference_count": 10,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\large-bank-vaults.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/pawn-shops.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 357766,
+      "new_bytes": 357766,
+      "original_sha256": "d089452a5a3e0de069daf8191351be45d5407c64fd894dd9570f2cc5fb607a75",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\pawn-shops.jpg",
+      "reference_count": 8,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\pawn-shops.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/shops.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 829686,
+      "new_bytes": 829686,
+      "original_sha256": "7775f041a852069d43e357d112d1715f471adc4c4346337e79aa33a7940a8425",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\shops.jpg",
+      "reference_count": 10,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\shops.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/small-banks.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 500262,
+      "new_bytes": 500262,
+      "original_sha256": "31182051e675c87c2ae61b0894604f00d882ad145c0a95aa486de1d821446061",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\small-banks.jpg",
+      "reference_count": 9,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\small-banks.jpg"
+    },
+    {
+      "web_path": "/assets/images/heists/vcia-takedown.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 528847,
+      "new_bytes": 528847,
+      "original_sha256": "c1def452d9259e1414d5b7abd36a1e30276bde93d14bf96ea2bf111715b09c63",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\heists\\vcia-takedown.jpg",
+      "reference_count": 10,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "scripts/build_heist_pages.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\heists\\vcia-takedown.jpg"
+    },
+    {
+      "web_path": "/assets/images/intel/intel-duo-heist.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1111201,
+      "new_bytes": 1111201,
+      "original_sha256": "216e630c93410353f726a40dd96e2fa86974572b1e5b484eef9425d5451f0624",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\intel\\intel-duo-heist.jpg",
+      "reference_count": 6,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/data/live-feed.json",
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html",
+        "public/gta-6-tools/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\intel\\intel-duo-heist.jpg"
+    },
+    {
+      "web_path": "/assets/images/intel/intel-gellhorn-ops.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 829686,
+      "new_bytes": 829686,
+      "original_sha256": "7775f041a852069d43e357d112d1715f471adc4c4346337e79aa33a7940a8425",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\intel\\intel-gellhorn-ops.jpg",
+      "reference_count": 5,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/data/live-feed.json",
+        "public/gta-6-glitches/index.html",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\intel\\intel-gellhorn-ops.jpg"
+    },
+    {
+      "web_path": "/assets/images/intel/intel-grassrivers.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 861338,
+      "new_bytes": 861338,
+      "original_sha256": "a4744831327d33068ea688e02503219e29a80ea35cb7b82ab39ce957f9cd2cfa",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\intel\\intel-grassrivers.jpg",
+      "reference_count": 2,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/data/live-feed.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\intel\\intel-grassrivers.jpg"
+    },
+    {
+      "web_path": "/assets/images/intel/intel-kalaga.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 961160,
+      "new_bytes": 961160,
+      "original_sha256": "6f06847e2173385df416ef162e1dfbb9f6270bfcc7bf0e080f02a4803d7473b3",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\intel\\intel-kalaga.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/live-feed.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\intel\\intel-kalaga.jpg"
+    },
+    {
+      "web_path": "/assets/images/intel/intel-keys-coast.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 846989,
+      "new_bytes": 846989,
+      "original_sha256": "90bb51136148ee7c4c44750e54fb77cf1cb9790c584e904e0c5839094769e2e1",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\intel\\intel-keys-coast.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/live-feed.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\intel\\intel-keys-coast.jpg"
+    },
+    {
+      "web_path": "/assets/images/intel/intel-vc-launch.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 492097,
+      "new_bytes": 492097,
+      "original_sha256": "6cf14b23ae2c205799067464904f8c9dc99f87935632ef6924b87f59af7a6225",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\intel\\intel-vc-launch.jpg",
+      "reference_count": 113,
+      "sample_references": [
+        "public/about.html",
+        "public/acquisitions.html",
+        "public/affiliates-gear.html",
+        "public/calculator.html",
+        "public/cheats.html",
+        "public/contact.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\intel\\intel-vc-launch.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/ambrosia-freight.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 715141,
+      "new_bytes": 715141,
+      "original_sha256": "a5b0d185aa5de42d7492220119254b136efb05ea75212cac46730a9fbd862769",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\ambrosia-freight.jpg",
+      "reference_count": 2,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\ambrosia-freight.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/ambrosia-refinery.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1056429,
+      "new_bytes": 1056429,
+      "original_sha256": "b261c794035d85579ac85c769c8e8aeecaa1b6190a70dcb572dbe7184663c429",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\ambrosia-refinery.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\ambrosia-refinery.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/boobie-club.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1535353,
+      "new_bytes": 1535353,
+      "original_sha256": "dffd1367ec1358c247a9cff824c99530cd7379cbf44480698252c3a09ebffb04",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\boobie-club.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\boobie-club.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/brians-lockup.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 352917,
+      "new_bytes": 352917,
+      "original_sha256": "f38e956240503c1ffe220b78d4814a1d95e6a453cc53f99a09f5a689bafacd1a",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\brians-lockup.jpg",
+      "reference_count": 4,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\brians-lockup.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/brians-marina.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 458032,
+      "new_bytes": 458032,
+      "original_sha256": "9c27c7cc9d7c204e15001cd761dceb65460b5d563683e746c5d9985d11375e62",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\brians-marina.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\brians-marina.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/downtown-bay.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 737058,
+      "new_bytes": 737058,
+      "original_sha256": "2d3dd75b275af520eaff8c479184c6a02f45edaf5fda94a082b587901dcc3e18",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\downtown-bay.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\downtown-bay.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/drequan-studio.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 752480,
+      "new_bytes": 752480,
+      "original_sha256": "dfc18f843c8d36a90a5329ab8715340db317083e94f6809a0aac32a39ee388f1",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\drequan-studio.jpg",
+      "reference_count": 4,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "public/data/map-pins.json",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\drequan-studio.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/gellhorn-garage.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1082200,
+      "new_bytes": 1082200,
+      "original_sha256": "47f3dbb0631c6072665b67f9d035e3bd4693b320a76dd6fe801102d1ef2e0050",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\gellhorn-garage.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\gellhorn-garage.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/gellhorn-industrial.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 650414,
+      "new_bytes": 650414,
+      "original_sha256": "eb417596cf53c6a13b89fc3e0845a08b25d6997530a0774b43beebf287208561",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\gellhorn-industrial.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\gellhorn-industrial.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/grassrivers-stash.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 859665,
+      "new_bytes": 859665,
+      "original_sha256": "89574ed17bfc0c6aaae59c25813644c2bcfad2b777739ecb855b23692b841858",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\grassrivers-stash.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\grassrivers-stash.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/kalaga-lodge.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 333806,
+      "new_bytes": 333806,
+      "original_sha256": "828ad45819b4121f3a341b25cbc93cd6595099eb2d53068d1cef4f1853ab38d4",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\kalaga-lodge.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\kalaga-lodge.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/keys-safehouse.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1156644,
+      "new_bytes": 1156644,
+      "original_sha256": "4f61dab070c93acc86c1d9bb576d676bac67c6e5602ba8ac5495b46737b5993b",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\keys-safehouse.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\keys-safehouse.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/little-cuba-garage.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 528847,
+      "new_bytes": 528847,
+      "original_sha256": "c1def452d9259e1414d5b7abd36a1e30276bde93d14bf96ea2bf111715b09c63",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\little-cuba-garage.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/data/map-pins.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\little-cuba-garage.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/paradise-garage.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1924231,
+      "new_bytes": 1924231,
+      "original_sha256": "4999851a6bbfebc0ace0281480c1f81ae600e2c17e5539de5f5f61043484b8d6",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\paradise-garage.jpg",
+      "reference_count": 6,
+      "sample_references": [
+        "data/properties.json",
+        "public/image-sitemap.xml",
+        "public/properties.html",
+        "public/data/map-pins.json",
+        "public/data/properties.json",
+        "public/gta-6-database/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\paradise-garage.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/port-gellhorn-motel.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 572219,
+      "new_bytes": 572219,
+      "original_sha256": "a4d4d56a5fa127fcf6afdc8fedd2f6ef190799ca9275e5c5b0fcb0e127238cee",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\port-gellhorn-motel.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\port-gellhorn-motel.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/vice-beach-garage.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 561227,
+      "new_bytes": 561227,
+      "original_sha256": "8fd0b3af06d6a2b9242f4775f0e979d55f43e16d0f450d7faedfdec877d15f46",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\vice-beach-garage.jpg",
+      "reference_count": 2,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\vice-beach-garage.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/vice-city-penthouse.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 753970,
+      "new_bytes": 753970,
+      "original_sha256": "41c707910e15c7d2ffc50c5977bacce83c5f04f795c895cc039c16cb5c7cb7b8",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\vice-city-penthouse.jpg",
+      "reference_count": 4,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "public/data/map-pins.json",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\vice-city-penthouse.jpg"
+    },
+    {
+      "web_path": "/assets/images/properties/vice-city-safehouse.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1247197,
+      "new_bytes": 1247197,
+      "original_sha256": "d6a56aadc2823cb97a33db087de1700f6a0fd5528b140107ec20823f23aac918",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\properties\\vice-city-safehouse.jpg",
+      "reference_count": 4,
+      "sample_references": [
+        "public/data/map-pins.json",
+        "public/gta-6-money-guide/index.html",
+        "public/gta-6-tips-and-tricks/index.html",
+        "public/gta-6-tools/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\properties\\vice-city-safehouse.jpg"
+    },
+    {
+      "web_path": "/assets/images/regions/grassrivers.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 861338,
+      "new_bytes": 861338,
+      "original_sha256": "a4744831327d33068ea688e02503219e29a80ea35cb7b82ab39ce957f9cd2cfa",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\regions\\grassrivers.jpg",
+      "reference_count": 11,
+      "sample_references": [
+        "data/vehicles.json",
+        "public/image-sitemap.xml",
+        "public/vehicles-getaway-cars.html",
+        "public/vehicles.html",
+        "scripts/build_databases.py",
+        "scripts/fetch_rockstar_screenshots.py"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\regions\\grassrivers.jpg"
+    },
+    {
+      "web_path": "/assets/images/regions/leonida-keys.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 846989,
+      "new_bytes": 846989,
+      "original_sha256": "90bb51136148ee7c4c44750e54fb77cf1cb9790c584e904e0c5839094769e2e1",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\regions\\leonida-keys.jpg",
+      "reference_count": 10,
+      "sample_references": [
+        "data/vehicles.json",
+        "public/image-sitemap.xml",
+        "public/vehicles-getaway-cars.html",
+        "public/vehicles.html",
+        "scripts/build_databases.py",
+        "scripts/fetch_rockstar_screenshots.py"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\regions\\leonida-keys.jpg"
+    },
+    {
+      "web_path": "/assets/images/regions/mount-kalaga.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 961160,
+      "new_bytes": 961160,
+      "original_sha256": "6f06847e2173385df416ef162e1dfbb9f6270bfcc7bf0e080f02a4803d7473b3",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\regions\\mount-kalaga.jpg",
+      "reference_count": 5,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "scripts/build_databases.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py",
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\regions\\mount-kalaga.jpg"
+    },
+    {
+      "web_path": "/assets/images/regions/port-gellhorn.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 650414,
+      "new_bytes": 650414,
+      "original_sha256": "eb417596cf53c6a13b89fc3e0845a08b25d6997530a0774b43beebf287208561",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\regions\\port-gellhorn.jpg",
+      "reference_count": 4,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "scripts/build_databases.py",
+        "scripts/fetch_rockstar_screenshots.py",
+        "scripts/verify_launch_upgrade.py"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\regions\\port-gellhorn.jpg"
+    },
+    {
+      "web_path": "/assets/images/regions/vice-city.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 492097,
+      "new_bytes": 492097,
+      "original_sha256": "6cf14b23ae2c205799067464904f8c9dc99f87935632ef6924b87f59af7a6225",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\regions\\vice-city.jpg",
+      "reference_count": 14,
+      "sample_references": [
+        "data/vehicles.json",
+        "public/image-sitemap.xml",
+        "public/index.html",
+        "public/map.html",
+        "public/radio.html",
+        "public/vehicles-getaway-cars.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\regions\\vice-city.jpg"
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-ambrosia-truck.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 480912,
+      "new_bytes": 0,
+      "original_sha256": "b1804c192c61277e083b57677fe9b7520e59dc30aaf86c3b77305e3bdde872c7",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-ambrosia-truck.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-cheetah-1.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1864182,
+      "new_bytes": 1864182,
+      "original_sha256": "1a4f55bea72fb2c1e7c3247ace46c10a49b73dc4b21f179c3c0d898d34d41469",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-cheetah-1.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\vehicles\\veh-cheetah-1.jpg"
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-cheetah-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1894166,
+      "new_bytes": 0,
+      "original_sha256": "a8556e6eb6a368824d9818ca6c4562297fd042cf748efadf3cb7031270922af6",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-cheetah-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-kalaga-offroad.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 975635,
+      "new_bytes": 0,
+      "original_sha256": "55fbe316ad65dac4ef95a6f4572bfdae756ca343899ab6bfdf84609b6c4bf3da",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-kalaga-offroad.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-keys-yacht.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 592956,
+      "new_bytes": 0,
+      "original_sha256": "800b091c1c69e2885c71d7278aac0fae9f1284c6bdedf6e08a5dbab298c9e0c3",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-keys-yacht.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-rideout-1.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1851292,
+      "new_bytes": 0,
+      "original_sha256": "a599fb6a498fc15a4ac13926bbdefd19bb2d20bc45c442d623d3a130d176ca44",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-rideout-1.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-rideout-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1931947,
+      "new_bytes": 0,
+      "original_sha256": "6f4ef2b56aa80864b3780a45e04f1c429dd61a5f8f705443c008555708d01adc",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-rideout-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-safehouse-1.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1946683,
+      "new_bytes": 0,
+      "original_sha256": "b51017c4fd8cb6045f91472aea10d73ae776dfcf3b0368db2369ea5b4fd16701",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-safehouse-1.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-safehouse-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1521899,
+      "new_bytes": 0,
+      "original_sha256": "757f16540da983d22da4093b7a7207c8678a47a1e582a767fc5ab568be7471e5",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-safehouse-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-squalo-1.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1949273,
+      "new_bytes": 0,
+      "original_sha256": "26eb04acf6d23a1f1067555ca350b4f3935095cca48e520feb8da19d609fe51e",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-squalo-1.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-squalo-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1271117,
+      "new_bytes": 0,
+      "original_sha256": "4722ade301b012976fd028b8769a5387f9e453cf04196e51213eb95ee51f7337",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-squalo-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vapid-buggy-1.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 2040495,
+      "new_bytes": 0,
+      "original_sha256": "922b73fa87411ed0e0c4bafc8043c6edf2f9bbe3c32ccc4b1143462296373d32",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vapid-buggy-1.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vapid-buggy-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1799910,
+      "new_bytes": 0,
+      "original_sha256": "a48c13d7fd8a7968b8ca75388231dc75d275eb4f91665c562bf5833f26b49d99",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vapid-buggy-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vapid-ganado.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1844104,
+      "new_bytes": 0,
+      "original_sha256": "00af6e58787bb545029fa5c69c287e59a60e67789f26aaba68acb79ec837db78",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vapid-ganado.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vapid-stanier-1.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 2017811,
+      "new_bytes": 0,
+      "original_sha256": "94487c22cc9c08236290566a165b532e9a96ef9143d87cb87cf6248fe07d999c",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vapid-stanier-1.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vapid-stanier-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1477057,
+      "new_bytes": 0,
+      "original_sha256": "b256349a9ce5888613ee3ecd16c0e1c55077a258a7a05bffbd21380078229075",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vapid-stanier-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vc-bike.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1247197,
+      "new_bytes": 0,
+      "original_sha256": "d6a56aadc2823cb97a33db087de1700f6a0fd5528b140107ec20823f23aac918",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vc-bike.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vc-cruiser.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 492097,
+      "new_bytes": 0,
+      "original_sha256": "6cf14b23ae2c205799067464904f8c9dc99f87935632ef6924b87f59af7a6225",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vc-cruiser.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-vc-supercar.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 528149,
+      "new_bytes": 0,
+      "original_sha256": "3f12452834bb07a0a13dabdf019881f372151d4740cdcf0937ac5fe03554d8eb",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-vc-supercar.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-wyman-1.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1972072,
+      "new_bytes": 0,
+      "original_sha256": "ddf2d341d489c7bedbe780333e25518f72411ea0b46b59a62a0ac37ecd3f1d8e",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-wyman-1.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-wyman-2.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1824996,
+      "new_bytes": 0,
+      "original_sha256": "a4d092758e2da4e95ef9508d904257c648d20f49b3ad9c088414d7375395789c",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-wyman-2.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-wyman-3.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1651511,
+      "new_bytes": 0,
+      "original_sha256": "dc4fc4dd9d041d8ce426f918afe871144fab464f65167f50be04ba855b75ecd8",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-wyman-3.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/vehicles/veh-wyman-4.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1862468,
+      "new_bytes": 0,
+      "original_sha256": "e25367246ca5d2957173e209543e5de51f8283cbdbf20c014af0631e50731f8a",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\vehicles\\veh-wyman-4.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-cal-gear.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 536588,
+      "new_bytes": 0,
+      "original_sha256": "9fef7a2537ed1d54d489adbe5959c139c0df1b72b4fc8f32f7ac908fc14818df",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-cal-gear.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-duo-heist.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1017759,
+      "new_bytes": 1017759,
+      "original_sha256": "1214224b9e6c20e1abcb459b57448356f3715f93ba561f5c2a59dfb952ba6c57",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-duo-heist.jpg",
+      "reference_count": 1,
+      "sample_references": [
+        "public/gta-6-tips-and-tricks/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-duo-heist.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-electric-fang.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1914049,
+      "new_bytes": 0,
+      "original_sha256": "e8b418e73972905830aab76ca0c02b14c881797c7c8d2d5c91332e63cc1b438c",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-electric-fang.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-goodtime-gear.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1655134,
+      "new_bytes": 1655134,
+      "original_sha256": "c4e8856ce3677bb99cc130ab795a8033a57f70b3d4cfceae40b0c2ac99ffd8ad",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-goodtime-gear.jpg",
+      "reference_count": 2,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-goodtime-gear.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-jason-heavy.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 491345,
+      "new_bytes": 0,
+      "original_sha256": "574868fd7e51c80dd111cef250a1f2e1c98b353fe1f156d42862e3b1c7e31970",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-jason-heavy.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-jason-pistol.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 521404,
+      "new_bytes": 0,
+      "original_sha256": "6263b9720a280588bb34cdbe959d02978ae984f1b541b19b276667f8b3a6943f",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-jason-pistol.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-jason-rifle.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 384771,
+      "new_bytes": 384771,
+      "original_sha256": "5b18fb3967fb2d1a68adbeb041f5110b06dd65b5102fc8fdc17bb00478234ffa",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-jason-rifle.jpg",
+      "reference_count": 2,
+      "sample_references": [
+        "public/image-sitemap.xml",
+        "public/index.html"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-jason-rifle.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-lucia-combat.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 637178,
+      "new_bytes": 0,
+      "original_sha256": "d0874cfff96846166a32b72ce40e6d44685e9880815bd13dbfe687330bfcd534",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-lucia-combat.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-lucia-tactical.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 280220,
+      "new_bytes": 280220,
+      "original_sha256": "78017fdc67b17c832ad9fd8bca3703fe4bb04f1fcd9ee941c9069fc2d80b2921",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-lucia-tactical.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "data/weapons.json",
+        "public/image-sitemap.xml",
+        "public/data/weapons.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-lucia-tactical.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-one-eyed.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1950783,
+      "new_bytes": 0,
+      "original_sha256": "2edd9131a9bd38f67db94c54a70be6c86899671f0edd6e30217ada53cf5363e6",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-one-eyed.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-raul-breach.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 500262,
+      "new_bytes": 500262,
+      "original_sha256": "31182051e675c87c2ae61b0894604f00d882ad145c0a95aa486de1d821446061",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-raul-breach.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "data/weapons.json",
+        "public/image-sitemap.xml",
+        "public/data/weapons.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-raul-breach.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-revolver-2.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1072183,
+      "new_bytes": 1072183,
+      "original_sha256": "7527e2e576849c80d2e18168e2ac178e55d75ce82f77f1a157e647de53ec9b3d",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-revolver-2.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "data/weapons.json",
+        "public/image-sitemap.xml",
+        "public/data/weapons.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-revolver-2.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-revolver.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 927577,
+      "new_bytes": 927577,
+      "original_sha256": "30aa1dba4354d27a6987d2e0880a66486cdbf6811d12bd6d42d4769516083e1f",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-revolver.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "data/weapons.json",
+        "public/image-sitemap.xml",
+        "public/data/weapons.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-revolver.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-stock-305.jpg",
+      "status": "UNUSED_REMOVED_FROM_PUBLIC_MASTER_PRESERVED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": null,
+      "original_bytes": 1896409,
+      "new_bytes": 0,
+      "original_sha256": "1bf310c07a74be74553040b3ce853dea56f89459ecd12159320416934794d84b",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-stock-305.jpg",
+      "reference_count": 0,
+      "sample_references": []
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-variants.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1601673,
+      "new_bytes": 1601673,
+      "original_sha256": "e46d7ed748d2f445bf288b37ab44d7aed94bbc540abc50e9cb720db645f1cb8e",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-variants.jpg",
+      "reference_count": 7,
+      "sample_references": [
+        "data/weapons.json",
+        "public/image-sitemap.xml",
+        "public/weapons-bonuses.html",
+        "public/weapons-gear.html",
+        "public/weapons.html",
+        "public/data/weapons.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-variants.jpg"
+    },
+    {
+      "web_path": "/assets/images/weapons/weapon-vintage-pattern.jpg",
+      "status": "GROUP_B_HELD_FROM_NEW_PUBLICATION_ORIGINAL_RETAINED",
+      "original_dimensions": "3840x2160",
+      "new_dimensions": "3840x2160",
+      "original_bytes": 1814720,
+      "new_bytes": 1814720,
+      "original_sha256": "fe131583898c695dc7f4f56f8fe4abe193896a3512afdc073f9d40d77d1bd72b",
+      "preserved_master_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\originals\\legacy_4k\\images\\weapons\\weapon-vintage-pattern.jpg",
+      "reference_count": 3,
+      "sample_references": [
+        "data/weapons.json",
+        "public/image-sitemap.xml",
+        "public/data/weapons.json"
+      ],
+      "held_derivative_path": "C:\\Users\\Shawn\\Desktop\\gta6heistguide\\GTA6_APPROVED_IMAGE_LIBRARY\\web\\held_legacy_4k\\images\\weapons\\weapon-vintage-pattern.jpg"
+    }
+  ],
+  "group_b_held_from_new_publication": 59,
+  "release_policy": "GROUP A ONLY deployed: 32 proven-unused legacy 4K files removed from public/assets (masters preserved). 59 active legacy 4K files retained unchanged in public/assets; their 1600x900 derivatives are held in gitignored web/held_legacy_4k/ pending licensing review."
+}
