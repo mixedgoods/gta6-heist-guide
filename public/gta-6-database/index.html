@@ -264,7 +264,7 @@
             <a href="/animals.html" class="db-cat-card">
                 <div class="db-cat-img">
                     <picture><source type="image/avif" srcset="/assets/images/animals/gtavi-american-alligator-grassrivers-dock-800.avif 800w, /assets/images/animals/gtavi-american-alligator-grassrivers-dock-1600.avif 1600w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><source type="image/webp" srcset="/assets/images/animals/gtavi-american-alligator-grassrivers-dock-800.webp 800w, /assets/images/animals/gtavi-american-alligator-grassrivers-dock-1200.webp 1200w, /assets/images/animals/gtavi-american-alligator-grassrivers-dock-1600.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><img src="/assets/images/animals/gtavi-american-alligator-grassrivers-dock.jpg" alt="Large American Alligator resting across a sunlit wooden Grassrivers dock beside a swamp airboat in Grand Theft Auto VI" width="1600" height="900" loading="eager" decoding="async"></picture>
-                    <span class="db-cat-count" id="count-animals">49 INDEXED · 255 IN-GAME</span>
+                    <span class="db-cat-count" id="count-animals">49 CATALOGUED · 255 IN-GAME</span>
                 </div>
                 <div class="db-cat-body">
                     <h2 style="color:#fff; font-size:1.18rem; margin:0 0 0.35rem;">🐊 Animals &amp; Wildlife</h2>
@@ -424,7 +424,7 @@
 (function() {
   var DATASETS = [
     { key: 'properties', cat: 'Properties', url: '/data/properties.json?v=20261121_p4', page: '/properties.html', countId: 'count-properties', suffix: 'PROPERTIES' },
-    { key: 'animals', cat: 'Animals', url: '/data/animals.json?v=20261122_v24', page: '/animals.html', countId: 'count-animals', suffix: 'INDEXED · 255 IN-GAME' },
+    { key: 'animals', cat: 'Animals', url: '/data/animals.json?v=20261122_v24', page: '/animals.html', countId: 'count-animals', suffix: 'CATALOGUED · 255 IN-GAME' },
     { key: 'vehicles', cat: 'Vehicles', url: '/data/vehicles.json?v=20261121_p4', page: '/vehicles.html', countId: 'count-vehicles', suffix: 'VEHICLES' },
     { key: 'weapons', cat: 'Weapons', url: '/data/weapons.json?v=20261121_p4', page: '/weapons.html', countId: 'count-weapons', suffix: 'WEAPONS' },
     { key: 'gun-stores', cat: 'Gun Stores', url: '/data/gun-stores.json?v=20261121_p4', page: '/weapons-bonuses.html', countId: 'count-gun-stores', suffix: 'STORES' },
@@ -507,7 +507,7 @@
       }
       return true;
     });
-    if (cnt) cnt.textContent = filtered.length + ' of ' + allEntries.length + ' indexed entries';
+    if (cnt) cnt.textContent = filtered.length + ' of ' + allEntries.length + ' catalogued entries';
     var slice = filtered.slice(0, 18);
     if (!slice.length) {
       grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:1.5rem; color:#94a3b8;">No matching database entries. Try another keyword.</div>';
@@ -565,7 +565,7 @@
     });
 
     var totalBadge = document.getElementById('hubTotalIndexedBadge');
-    if (totalBadge) totalBadge.textContent = allEntries.length + ' LIVE INDEXED ENTRIES';
+    if (totalBadge) totalBadge.textContent = allEntries.length + ' LIVE CATALOGUED ENTRIES';
 
     renderRecentStrip();
     renderIndex();

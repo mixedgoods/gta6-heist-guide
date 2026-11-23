@@ -6,11 +6,11 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>GTA 6 Interactive Leonida Map — Vaults, Properties, Animals &amp; Safe Codes | GTA6HeistGuide.com</title>
-    <meta name="description" content="Explore the free GTA 6 Interactive Leonida Map with 160+ verified pins: Story Heists, Big Banks, 25 Properties &amp; Fences (Brian's Lockup 7700), 49+ Wildlife Habitats, 24 Ammu-Nation stores, and launch glitches.">
+    <meta name="description" content="Explore the free GTA 6 Interactive Leonida Map with 174 verified pins: Story Heists, Big Banks, 25 Properties &amp; Fences (Brian's Lockup 7700), 49 Wildlife Habitats, 24 Ammu-Nation stores, and launch glitches.">
     <meta name="keywords" content="GTA 6 interactive map, Leonida map, Vice City vaults, GTA 6 properties map, GTA 6 animals map, Brian's lockup 7700 location, Apollo Aggregates Red Barn location, Ammu-Nation locations">
     <link rel="canonical" href="https://www.gta6heistguide.com/map">
     <link rel="manifest" href="/manifest.json">
-    <meta property="og:title" content="GTA 6 Interactive Leonida Map — 160+ Verified Pins">
+    <meta property="og:title" content="GTA 6 Interactive Leonida Map — 174 Verified Pins">
     <meta property="og:description" content="Interactive GTA 6 Leonida Map with Story Heists, Properties, Garages, Fences, Wildlife Habitats, Ammu-Nation, and launch glitches.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/map">
@@ -1065,7 +1065,7 @@
                 <div class="progress-bar-fill" id="checklistProgressBar"></div>
             </div>
             <div class="stats-control-row">
-                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 162 (0%)</span>
+                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 174 (0%)</span>
                 <div class="stats-btn-group">
                     <button type="button" class="btn-mini-action btn-next-unfound" onclick="flyToNextUnfound()">Next Unfound &rarr;</button>
                     <button type="button" class="btn-mini-action" onclick="toggleAllCategories(true)">All</button>
@@ -1125,7 +1125,7 @@
 
         <main id="leafletMap">
             <button type="button" class="mobile-toggle-btn" onclick="toggleMobileDrawer()">
-                ☰ Pins &amp; Filters (<span id="mobileCountBadge">162</span>)
+                ☰ Pins &amp; Filters (<span id="mobileCountBadge">174</span>)
             </button>
         </main>
     </div>
@@ -1462,7 +1462,7 @@ async function loadAllPinsData() {
     const seen = new Set();
 
     try {
-        const res = await fetch('/data/map-pins.json?v=46');
+        const res = await fetch('/data/map-pins.json?v=47');
         if (res.ok) {
             const data = await res.json();
             if (Array.isArray(data.pins)) {
@@ -1472,18 +1472,6 @@ async function loadAllPinsData() {
             }
         }
     } catch(err) { console.warn('Could not load /data/map-pins.json:', err); }
-
-    try {
-        const resLive = await fetch('/data/map-pins-live.json?v=46');
-        if (resLive.ok) {
-            const dataLive = await resLive.json();
-            if (Array.isArray(dataLive.items)) {
-                dataLive.items.forEach(p => {
-                    if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
-                });
-            }
-        }
-    } catch(err) { console.warn('Could not load /data/map-pins-live.json:', err); }
 
     if (customUserPins && customUserPins.length) {
         customUserPins.forEach(p => {
@@ -1795,7 +1783,7 @@ function togglePinFound(pinId) {
 }
 
 function updateChecklistStats() {
-    const total = allPins.length || 162;
+    const total = allPins.length || 174;
     const found = [...foundPinIds].filter(id => allPins.some(p => p.id === id)).length;
     const pct = Math.round((found / total) * 100);
     const progressBar = document.getElementById('checklistProgressBar');

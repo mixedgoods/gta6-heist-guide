@@ -1,7 +1,9 @@
 // GTA 6 Heist Guide & Companion HUD - Service Worker
-const CACHE_NAME = 'gta6-heist-cache-v28';
+const CACHE_NAME = 'gta6-heist-cache-v29';
 const PRECACHE_URLS = [
   '/',
+  '/map',
+  '/map.html',
   '/gta-6-money-guide/',
   '/gta-6-tips-and-tricks/',
   '/gta-6-endings-guide/',
@@ -12,11 +14,17 @@ const PRECACHE_URLS = [
   '/gta-6-discoveries/',
   '/gta-6-glitches/',
   '/gta-6-settings/',
+  '/animals',
   '/animals.html',
+  '/properties',
   '/properties.html',
+  '/vehicles',
   '/vehicles.html',
+  '/weapons',
   '/weapons.html',
+  '/weapons-bonuses',
   '/weapons-bonuses.html',
+  '/radio',
   '/radio.html',
   '/data/discoveries.json',
   '/data/glitches.json',
@@ -79,9 +87,11 @@ self.addEventListener('fetch', (event) => {
     url.pathname === '/';
 
   // Network-first for HTML pages so new deploys show up immediately
+  // Note: pass event.request.url (string) rather than event.request when setting cache:'no-cache'
+  // to avoid Chromium TypeError on mode:'navigate' requests.
   if (isHtmlRequest) {
     event.respondWith(
-      fetch(event.request, { cache: 'no-cache' })
+      fetch(event.request.url, { cache: 'no-cache', credentials: 'same-origin' })
         .then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             const clone = networkResponse.clone();
@@ -93,7 +103,11 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           return caches.match(event.request).then((cachedResponse) => {
-            return cachedResponse || caches.match('/');
+            if (cachedResponse) return cachedResponse;
+            if (url.pathname === '/' || url.pathname === '/index.html') {
+              return caches.match('/');
+            }
+            return caches.match(url.pathname + '.html');
           });
         })
     );
