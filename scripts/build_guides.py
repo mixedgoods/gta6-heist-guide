@@ -338,7 +338,7 @@ def controls():
     <button type="button" class="g-pill" data-plat-btn="ps5" aria-pressed="true">PS5 (DualSense)</button>
     <button type="button" class="g-pill" data-plat-btn="xbox" aria-pressed="false">Xbox Series X|S</button>
     <input class="g-input" type="search" data-g-filter="ctlList" placeholder="Search a button or action (sprint, phone, rest…)" aria-label="Search controls">
-    <span style="color:#94a3b8;font-size:.8rem"><span data-g-count="ctlList">0</span> bindings shown</span>
+    <span style="color:#94a3b8;font-size:.8rem"><span data-g-count="ctlList">{sum(len(r) for _, r in CTRL)}</span> bindings shown</span>
   </div>
   <div id="ctlList">{''.join(secs)}</div>
   <p style="margin-top:.6rem;font-size:.82rem;color:#94a3b8">Status labels: {badge('ind')} corroborated across more than one attributed guide · {badge('com')} reported by a single or lower-quality source · {badge('site')} from this site's existing cheat guide. None are in-game verified by this site.</p>
@@ -693,7 +693,7 @@ def vehicles():
         tables.append(f'<div data-g-group><h3 id="{slugify(cls)}">{e(cls)} ({n_classes[cls]})</h3><div class="g-tablewrap"><table class="g-table"><thead><tr><th scope="col">Vehicle</th><th scope="col">Maker</th><th scope="col">Reported regions</th><th scope="col">Acquisition</th><th scope="col">Top speed</th></tr></thead><tbody>{vrows(cls)}</tbody></table></div></div>')
     opts = ''.join(f'<option value="{e(c)}">{e(c)}</option>' for c in VCLASS_ORDER if c in n_classes)
     body = f'''
-{evidence('Every one of the {len(VEH["items"])} vehicles in the database still lists top speed, acceleration and handling as "Not yet confirmed". <strong>This page therefore publishes no speed numbers and no "fastest" ranking.</strong>')}
+{evidence(f'Every one of the {len(VEH["items"])} vehicles in the database still lists top speed, acceleration and handling as "Not yet confirmed". <strong>This page therefore publishes no speed numbers and no "fastest" ranking.</strong>')}
 <div class="g-evidence g-warn"><strong>Why there is no top-10 list.</strong> A fair ranking needs repeatable in-game runs: the same route, game build, upgrade state and several repetitions. None have been run by this site, so ranking cars would be guessing. When testing happens, the method, build number and results will be recorded here before any ranking is shown.</div>
 
 <section class="g-section" aria-labelledby="fast">
