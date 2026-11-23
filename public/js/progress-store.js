@@ -33,8 +33,8 @@
   // Verified bidirectional cross-tool sync groups:
   // Checking off ANY ID in a group syncs every linked peer across tools.
   var LINK_GROUPS = [
-    ['heist:the-cartel-heist', 'pin:heist-cartel', 'pin:vault-sinfrontera-downtown', 'slot:09'],
-    ['heist:vcia-takedown', 'pin:heist-vcia', 'slot:11'],
+    ['heist:the-cartel-heist', 'pin:heist-cartel', 'pin:vault-sinfrontera-downtown', 'slot:09', 'trophy:09'],
+    ['heist:vcia-takedown', 'pin:heist-vcia', 'slot:11', 'trophy:12'],
     ['heist:large-bank-vaults', 'pin:heist-large-vaults', 'slot:12'],
     ['heist:jewelry-stores', 'pin:heist-jewelry'],
     ['heist:small-banks-payday-loans', 'pin:heist-small-banks'],
@@ -54,7 +54,7 @@
     ['op:6', 'pin:op-sunrise-rv'],
     ['op:7', 'pin:op-brooks-boatworks'],
     ['op:8', 'pin:op-june-warehouse'],
-    ['op:9', 'pin:op-kingpin-bowling'],
+    ['op:9', 'pin:op-kingpin-bowling', 'trophy:46'],
     ['op:10', 'pin:op-la-cascara-motel'],
     ['op:11', 'pin:op-downtown-stash'],
     ['op:12', 'pin:op-nova-auto-junkyard'],
@@ -473,6 +473,8 @@
     var secrets = keys.filter(function (k) { return k.indexOf('secret:') === 0; }).length;
     var dbOwned = keys.filter(function (k) { return k.indexOf('db:owned:') === 0; }).length;
     var dbFavs = keys.filter(function (k) { return k.indexOf('db:fav:') === 0; }).length;
+    var trophies = keys.filter(function (k) { return k.indexOf('trophy:') === 0; }).length;
+    var completion100 = keys.filter(function (k) { return k.indexOf('comp:') === 0; }).length;
     var customPins = Array.isArray(st && st.mapCustomPins) ? st.mapCustomPins.length : 0;
     var heistBuilds = Array.isArray(st && st.heistBuilds) ? st.heistBuilds.length : 0;
     return {
@@ -487,6 +489,8 @@
       secrets: secrets,
       dbOwned: dbOwned,
       dbFavs: dbFavs,
+      trophies: trophies,
+      completion100: completion100,
       heistBuilds: heistBuilds,
       total: keys.length,
       updatedAt: (st && st.updatedAt) || null
@@ -978,6 +982,9 @@
         secrets: ['secret:'],
         slots: ['slot:', 'preflight:'],
         settings: ['settings:'],
+        trophies: ['trophy:'],
+        completion100: ['comp:'],
+        tracker100: ['trophy:', 'comp:'],
         calculator: []
       };
       var prefixes = prefixMap[scope];
@@ -993,6 +1000,9 @@
         if (scope === 'pins') st.mapCustomPins = [];
         if (scope === 'slots') st.savePlanner = null;
         if (scope === 'heists' && st.toolStates) delete st.toolStates.heistPlanner;
+        if ((scope === 'completion100' || scope === 'tracker100') && st.toolStates) {
+          delete st.toolStates.completionTracker;
+        }
         if (scope === 'settings' && st.toolStates) {
           delete st.toolStates.settingsStorage;
           delete st.toolStates.settingsCapture;
