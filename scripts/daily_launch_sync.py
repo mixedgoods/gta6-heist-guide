@@ -82,8 +82,7 @@ if os.path.exists(pub_live_path):
 next_pub_live = json.loads(json.dumps(existing_pub_live)) if isinstance(existing_pub_live, dict) else {}
 next_pub_live["site"] = next_pub_live.get("site") or "GTA6HeistGuide.com"
 next_pub_live["launch_date_utc"] = next_pub_live.get("launch_date_utc") or "2026-11-19T00:00:00Z"
-next_pub_live["launch_day"] = launch_day
-next_pub_live["banner"] = f"🔥 GTA 6 Story Mode: LIVE (Day-{launch_day}) · GTA 6 Online: No official release date announced"
+next_pub_live["banner"] = "🔥 GTA 6 Story Mode: LIVE · GTA 6 Online: No official release date announced (see data/site-status.json for last-verified date)"
 next_pub_live["online_status"] = next_pub_live.get("online_status") or "No official release date announced"
 
 counts = dict(next_pub_live.get("counts") or {})
@@ -115,9 +114,8 @@ if os.path.exists(root_live_path):
 next_root_live = {
     "site": next_pub_live["site"],
     "updated_utc": existing_root_live.get("updated_utc") or now_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
-    "launch_date_utc": next_pub_live["launch_date_utc"],
-    "launch_day": launch_day,
-    "banner": f"🔥 GTA 6 IS LIVE — DAY-{launch_day} HEISTS, CHEATS, MAPS & DROPS",
+    "launch_date_utc": next_pub_live["launch_date_utc"],
+    "banner": "🔥 GTA 6 IS LIVE — HEISTS, CHEATS, MAPS & DROPS",
     "online_status": next_pub_live["online_status"],
     "counts": {
         "heist_walkthroughs": counts["heist_walkthroughs"],
@@ -141,6 +139,6 @@ if os.path.exists(sitemap_path):
         sm_xml = f.read()
     url_count = len(re.findall(r"<loc>", sm_xml))
     status = "UPDATED" if (live_changed or root_live_changed or mirrored) else "NO CHANGES"
-    print(f"[OK] Daily launch sync complete ({status}; DAY-{launch_day}, mirrored={len(mirrored)}, {url_count} sitemap URLs preserved)")
+    print(f"[OK] Daily launch sync complete ({status}; mirrored={len(mirrored)}, {url_count} sitemap URLs preserved)")
 else:
     print(f"[WARN] public/sitemap.xml not found at {sitemap_path}")

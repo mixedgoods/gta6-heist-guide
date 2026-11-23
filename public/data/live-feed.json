@@ -1,20 +1,19 @@
 {
   "site": "GTA6HeistGuide.com",
-  "updated_utc": "2026-11-22T02:30:16Z",
+  "updated_utc": "2026-11-23T14:18:19Z",
   "launch_date_utc": "2026-11-19T00:00:00Z",
-  "launch_day": 4,
-  "build_version": "01.002.001 (PS5 & Xbox Series X|S)",
-  "banner": "🔥 GTA 6 Story Mode: LIVE (Day-4) · GTA 6 Online: No official release date announced",
+  "build_version": "01.002.001 (PS5 & Xbox Series X|S) — newer build 01.002.002 / 1.0.2.2 reported, no official notes",
+  "banner": "🔥 GTA 6 Story Mode: LIVE · GTA 6 Online: No official release date announced (see data/site-status.json for last-verified date)",
   "online_status": "No official release date announced",
   "counts": {
     "heist_walkthroughs": 8,
-    "properties_entries": 25,
+    "properties_entries": 27,
     "animals_entries": 49,
-    "map_pins_total": 174,
     "cheats_verified": 61,
     "glitches_verified": 5,
     "radio_stations": 23,
-    "wildlife_total_species": "170+ (including 62 bird species)"
+    "wildlife_total_species": "170+ (including 62 bird species)",
+    "map_pins_total_source": "derived from /data/map-pins.json"
   },
   "dispatches": [
     {
@@ -849,5 +848,6 @@
       "summary": "Reported by Mezha.net: Sony confirms PS5 update is required to play GTA 6.",
       "details": "Reported by Mezha.net: Sony confirms PS5 update is required to play GTA 6. Source: Mezha.net."
     }
-  ]
+  ],
+  "last_verified": "2026-11-23"
 }

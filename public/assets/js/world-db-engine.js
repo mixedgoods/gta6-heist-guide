@@ -464,7 +464,7 @@
     primaryFilter: {
       label: 'Property Type',
       getValue: function (it) { return it.propertyType || it.category || 'Property'; },
-      order: ['Story Safehouse', 'Purchasable Garage', 'Story Garage', 'Bonus Garage', 'Fence', 'Family Savings Safe']
+      order: ['Story Safehouse', 'Purchasable Garage', 'Story Garage', 'Bonus Garage', 'Fence', 'Vehicle Buyer', 'Family Savings Safe']
     },
     secondaryFilters: [
       {

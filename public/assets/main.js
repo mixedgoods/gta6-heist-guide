@@ -381,9 +381,7 @@ const GTA6 = {
         document.querySelectorAll('.launch-mode-label, [data-launch-banner], #launchDayBanner').forEach((el) => {
           el.innerText = liveBannerText;
         });
-        document.querySelectorAll('[data-launch-day-num]').forEach((el) => {
-          el.innerText = `DAY-${launchDay}`;
-        });
+        // Launch-day counter removed: pages show a real last-verified date via assets/js/site-status.js
       }
       if (weeklyEl) {
         const nextReset = this.getNextThursdayUTC(new Date(now));

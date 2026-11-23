@@ -1,14 +1,21 @@
 {
   "category": "properties",
-  "updated": "2026-11-21",
-  "note": "Accurately separated GTA 6 Story Mode properties: 4 Story Safehouses (houses cannot be purchased in Story Mode), 8 Purchasable Garages + 4 Story Garages (+ 1 Ultimate Edition Bonus Garage), 7 Fences, and BuckMe Family Savings.",
+  "updated": "2026-11-23",
+  "note": "Story Mode properties: 4 Story Safehouses (houses cannot be purchased), 8 Purchasable Garages + 4 Story Garages (+1 Ultimate Edition Bonus Garage), 7 fence contacts in total (5 stolen-goods fences: Brian, Donnie, Dunk, Tyrone, Yasmani; 2 vehicle buyers: Moses, Randy), BuckMe Family Savings, and 2 legacy unverified regional leads (Ambrosia, Grassrivers) that are NOT fence contacts. 27 unique records; 25 have verified map pins.",
   "counts": {
     "storySafehouses": 4,
     "purchasableHouses": 0,
     "purchasableGarages": 8,
     "storyGarages": 4,
     "bonusGarages": 1,
-    "fences": 7
+    "fences": 7,
+    "fenceContacts": 7,
+    "stolenGoodsFences": 5,
+    "vehicleBuyers": 2,
+    "familySavings": 1,
+    "unverifiedLeads": 2,
+    "totalRecords": 27,
+    "recordsWithMapPin": 25
   },
   "items": [
     {
@@ -28,9 +35,18 @@
       "imageSource": "Official Rockstar GTA VI Screenshot (Jason's Key Lento House)",
       "mapPinId": "sh-jasons-house",
       "relatedLinks": [
-        { "label": "15-Slot Save Planner (Slot 01)", "url": "/save-planner/" },
-        { "label": "Dinka Enduro & Crest Kayak", "url": "/vehicles.html?item=dinka-enduro" },
-        { "label": "Duval Signature ES9 Claim", "url": "/weapons.html?item=duval-signature-es9" }
+        {
+          "label": "15-Slot Save Planner (Slot 01)",
+          "url": "/save-planner/"
+        },
+        {
+          "label": "Dinka Enduro & Crest Kayak",
+          "url": "/vehicles.html?item=dinka-enduro"
+        },
+        {
+          "label": "Duval Signature ES9 Claim",
+          "url": "/weapons.html?item=duval-signature-es9"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
@@ -53,8 +69,14 @@
       "imageSource": null,
       "mapPinId": "sh-ch2-motel",
       "relatedLinks": [
-        { "label": "Save Progress Planner (Slot 06)", "url": "/save-planner/" },
-        { "label": "Pawn Shops Robbery Guide", "url": "/heists/pawn-shops.html" }
+        {
+          "label": "Save Progress Planner (Slot 06)",
+          "url": "/save-planner/"
+        },
+        {
+          "label": "Pawn Shops Robbery Guide",
+          "url": "/heists/pawn-shops.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/save-planner/",
       "verificationStatus": "Confirmed",
@@ -77,7 +99,10 @@
       "imageSource": null,
       "mapPinId": "sh-vc-safehouse-3",
       "relatedLinks": [
-        { "label": "Jewelry Stores Robbery Guide", "url": "/heists/jewelry-stores.html" }
+        {
+          "label": "Jewelry Stores Robbery Guide",
+          "url": "/heists/jewelry-stores.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -100,8 +125,14 @@
       "imageSource": null,
       "mapPinId": "sh-vc-safehouse-4",
       "relatedLinks": [
-        { "label": "Save Progress Planner (Slot 10)", "url": "/save-planner/" },
-        { "label": "Large Bank Vaults Guide", "url": "/heists/large-bank-vaults.html" }
+        {
+          "label": "Save Progress Planner (Slot 10)",
+          "url": "/save-planner/"
+        },
+        {
+          "label": "Large Bank Vaults Guide",
+          "url": "/heists/large-bank-vaults.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/save-planner/",
       "verificationStatus": "Confirmed",
@@ -124,7 +155,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-1",
       "relatedLinks": [
-        { "label": "Vehicles Database", "url": "/vehicles.html" }
+        {
+          "label": "Vehicles Database",
+          "url": "/vehicles.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -147,7 +181,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-2",
       "relatedLinks": [
-        { "label": "Yasmani's Jewelry Fence", "url": "/properties.html?item=fence-yasmani" }
+        {
+          "label": "Yasmani's Jewelry Fence",
+          "url": "/properties.html?item=fence-yasmani"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -170,7 +207,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-3",
       "relatedLinks": [
-        { "label": "Large Bank Vaults Guide", "url": "/heists/large-bank-vaults.html" }
+        {
+          "label": "Large Bank Vaults Guide",
+          "url": "/heists/large-bank-vaults.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -193,7 +233,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-4",
       "relatedLinks": [
-        { "label": "Moses (Car Fence)", "url": "/properties.html?item=fence-moses" }
+        {
+          "label": "Moses (Car Fence)",
+          "url": "/properties.html?item=fence-moses"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -216,7 +259,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-5",
       "relatedLinks": [
-        { "label": "Declasse Yosemite 1500", "url": "/vehicles.html?item=declasse-yosemite-1500" }
+        {
+          "label": "Declasse Yosemite 1500",
+          "url": "/vehicles.html?item=declasse-yosemite-1500"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -239,7 +285,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-6",
       "relatedLinks": [
-        { "label": "Armored Trucks & Gang Ops", "url": "/heists/armored-trucks-gang-ops.html" }
+        {
+          "label": "Armored Trucks & Gang Ops",
+          "url": "/heists/armored-trucks-gang-ops.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -262,7 +311,10 @@
       "imageSource": null,
       "mapPinId": "gar-purch-7",
       "relatedLinks": [
-        { "label": "Shitzu Squalo Speedboat", "url": "/vehicles.html?item=shitzu-squalo" }
+        {
+          "label": "Shitzu Squalo Speedboat",
+          "url": "/vehicles.html?item=shitzu-squalo"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -285,8 +337,14 @@
       "imageSource": null,
       "mapPinId": "gar-purch-8",
       "relatedLinks": [
-        { "label": "Vapid Riata 4x4", "url": "/vehicles.html?item=vapid-riata" },
-        { "label": "Bret Vogel Hunting Compendium", "url": "/animals.html" }
+        {
+          "label": "Vapid Riata 4x4",
+          "url": "/vehicles.html?item=vapid-riata"
+        },
+        {
+          "label": "Bret Vogel Hunting Compendium",
+          "url": "/animals.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -309,7 +367,10 @@
       "imageSource": null,
       "mapPinId": "gar-story-1",
       "relatedLinks": [
-        { "label": "Jason's House (Key Lento)", "url": "/properties.html?item=sh-jasons-house" }
+        {
+          "label": "Jason's House (Key Lento)",
+          "url": "/properties.html?item=sh-jasons-house"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -332,7 +393,10 @@
       "imageSource": null,
       "mapPinId": "gar-story-2",
       "relatedLinks": [
-        { "label": "Chapter 2 Motel Base", "url": "/properties.html?item=sh-ch2-motel" }
+        {
+          "label": "Chapter 2 Motel Base",
+          "url": "/properties.html?item=sh-ch2-motel"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -355,7 +419,10 @@
       "imageSource": null,
       "mapPinId": "gar-story-3",
       "relatedLinks": [
-        { "label": "Vice City Safehouse #3", "url": "/properties.html?item=sh-vc-safehouse-3" }
+        {
+          "label": "Vice City Safehouse #3",
+          "url": "/properties.html?item=sh-vc-safehouse-3"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -378,7 +445,10 @@
       "imageSource": null,
       "mapPinId": "gar-story-4",
       "relatedLinks": [
-        { "label": "Vice City Safehouse #4", "url": "/properties.html?item=sh-vc-safehouse-4" }
+        {
+          "label": "Vice City Safehouse #4",
+          "url": "/properties.html?item=sh-vc-safehouse-4"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -401,7 +471,10 @@
       "imageSource": null,
       "mapPinId": "gar-paradise",
       "relatedLinks": [
-        { "label": "Gun Stores & Ultimate Edition Guide", "url": "/weapons-bonuses.html" }
+        {
+          "label": "Gun Stores & Ultimate Edition Guide",
+          "url": "/weapons-bonuses.html"
+        }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
@@ -409,22 +482,25 @@
     },
     {
       "id": "fence-moses",
-      "name": "Moses (Untracked Car Fence)",
-      "propertyType": "Fence",
+      "name": "Moses (Untracked Vehicle Buyer)",
+      "propertyType": "Vehicle Buyer",
       "category": "Fences & Money Safes",
       "region": "Port Gellhorn",
-      "purchaseAvailability": "Story Contact / Fence #1 of 7",
+      "purchaseAvailability": "Story Contact / Fence contact (vehicle buyer)",
       "unlockRequirement": "Chapter 2 story progression",
-      "interiorFeatures": "Buys untracked stolen cars for $1,000–$2,000 each",
-      "capacity": "Vehicle fence drop-off",
+      "interiorFeatures": "Buys untracked stolen cars (existing site figure: $1,000–$2,000 each, community-reported)",
+      "capacity": "Vehicle buyer drop-off (untracked cars only)",
       "missableWarning": null,
-      "notes": "Reliable early-to-mid-game untracked car fencing loop in Port Gellhorn.",
+      "notes": "One of 2 vehicle buyers among the 7 fence contacts. Accepts untracked vehicles only (scan with the WAiNK app). Not a stolen-goods fence.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": "fence-moses",
       "relatedLinks": [
-        { "label": "GTA 6 Money Guide", "url": "/gta-6-money-guide/" }
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -432,22 +508,25 @@
     },
     {
       "id": "fence-randy",
-      "name": "Randy (Valuables & Pawn Fence)",
-      "propertyType": "Fence",
+      "name": "Randy (High-End Vehicle Buyer)",
+      "propertyType": "Vehicle Buyer",
       "category": "Fences & Money Safes",
-      "region": "Port Gellhorn",
-      "purchaseAvailability": "Story Contact / Fence #2 of 7",
-      "unlockRequirement": "Chapter 2 (after 'Coffee Break' unlocks Pawn Shops)",
-      "interiorFeatures": "Buys stolen watches, electronics, and pawn shop duffel loot",
-      "capacity": "Valuables & stolen electronics buyer",
+      "region": "Vice City (reported) — map pin unchanged",
+      "purchaseAvailability": "Story Contact / Fence contact (vehicle buyer)",
+      "unlockRequirement": "Chapter 3 (reported; exact unlock mission not yet verified in-game by this site)",
+      "interiorFeatures": "Buys high-end vehicles from a rotating wish list (independently reported)",
+      "capacity": "Vehicle buyer (wish-list vehicles)",
       "missableWarning": null,
-      "notes": "Primary valuables buyer once Pawn Shops unlock after 'Coffee Break'.",
+      "notes": "One of 2 vehicle buyers among the 7 fence contacts. Earlier site text describing Randy as a pawn/valuables fence was corrected to match the accepted classification. NOTE: the existing map pin 'fence-randy' keeps its previous coordinates (Port Gellhorn area); reports place Randy in Balsero, Vice City — pin location pending in-game verification.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": "fence-randy",
       "relatedLinks": [
-        { "label": "Pawn Shops Robbery Guide", "url": "/heists/pawn-shops.html" }
+        {
+          "label": "Pawn Shops Robbery Guide",
+          "url": "/heists/pawn-shops.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -459,7 +538,7 @@
       "propertyType": "Fence",
       "category": "Fences & Money Safes",
       "region": "Leonida Keys",
-      "purchaseAvailability": "Story Contact / Fence #3 of 7",
+      "purchaseAvailability": "Story Contact / Fence contact (stolen-goods fence)",
       "unlockRequirement": "Chapter 1",
       "interiorFeatures": "Early Chapter 1 stolen goods & contraband buyer",
       "capacity": "Stolen goods buyer (Chapter 1)",
@@ -470,7 +549,10 @@
       "imageSource": null,
       "mapPinId": "fence-donnie",
       "relatedLinks": [
-        { "label": "Save Progress Planner", "url": "/save-planner/" }
+        {
+          "label": "Save Progress Planner",
+          "url": "/save-planner/"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/save-planner/",
       "verificationStatus": "Confirmed",
@@ -482,7 +564,7 @@
       "propertyType": "Fence",
       "category": "Fences & Money Safes",
       "region": "Leonida Keys",
-      "purchaseAvailability": "Keypad Lockup / Fence #4 of 7",
+      "purchaseAvailability": "Keypad Lockup / Fence contact (stolen-goods fence: Brian)",
       "unlockRequirement": "Chapter 1+ (Keypad Code: 7700)",
       "interiorFeatures": "Keypad lockup (code 7700) to stash & fence stolen goods including acid in 'Lab Fees', marked bills, and jewelry",
       "capacity": "Contraband stash & fence lockup",
@@ -493,12 +575,78 @@
       "imageSource": null,
       "mapPinId": "fence-brians-lockup",
       "relatedLinks": [
-        { "label": "GTA 6 Money Guide", "url": "/gta-6-money-guide/" },
-        { "label": "GTA 6 Tips & Tricks", "url": "/gta-6-tips-and-tricks/" }
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        },
+        {
+          "label": "GTA 6 Tips & Tricks",
+          "url": "/gta-6-tips-and-tricks/"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
       "lastUpdated": "2026-11-21"
+    },
+    {
+      "propertyType": "Fence",
+      "category": "Fences & Money Safes",
+      "image": null,
+      "imageVerified": false,
+      "imageSource": null,
+      "mapPinId": null,
+      "missableWarning": null,
+      "verificationStatus": "Independently Reported",
+      "lastUpdated": "2026-11-23",
+      "sourceUrl": null,
+      "relatedLinks": [
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        },
+        {
+          "label": "Property Ownership & Spending Guide",
+          "url": "/gta-6-property-ownership/"
+        }
+      ],
+      "id": "fence-dunk",
+      "name": "Dunk (Stolen-Goods Fence)",
+      "region": "Port Gellhorn",
+      "purchaseAvailability": "Story Contact / Fence contact (stolen-goods fence)",
+      "unlockRequirement": "Chapter 2 (mission 'Slam Dunk', reported)",
+      "interiorFeatures": "Stolen-goods buyer (reported: low payout for narcotics and jewelry, very low for marked bills)",
+      "capacity": "Stolen goods buyer",
+      "notes": "No map pin is assigned yet: coordinates have not been verified, so none were invented."
+    },
+    {
+      "propertyType": "Fence",
+      "category": "Fences & Money Safes",
+      "image": null,
+      "imageVerified": false,
+      "imageSource": null,
+      "mapPinId": null,
+      "missableWarning": null,
+      "verificationStatus": "Independently Reported",
+      "lastUpdated": "2026-11-23",
+      "sourceUrl": null,
+      "relatedLinks": [
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        },
+        {
+          "label": "Property Ownership & Spending Guide",
+          "url": "/gta-6-property-ownership/"
+        }
+      ],
+      "id": "fence-tyrone",
+      "name": "Tyrone (Stolen-Goods Fence)",
+      "region": "Vice City",
+      "purchaseAvailability": "Story Contact / Fence contact (stolen-goods fence)",
+      "unlockRequirement": "Chapter 3 (mission 'Here, Kitty Kitty', reported)",
+      "interiorFeatures": "Stolen-goods buyer, La Perle (reported: high payout for narcotics; medium for jewelry and marked bills)",
+      "capacity": "Stolen goods buyer",
+      "notes": "No map pin is assigned yet: coordinates have not been verified, so none were invented."
     },
     {
       "id": "fence-yasmani",
@@ -506,7 +654,7 @@
       "propertyType": "Fence",
       "category": "Fences & Money Safes",
       "region": "Vice City",
-      "purchaseAvailability": "Story Contact / Fence #5 of 7",
+      "purchaseAvailability": "Story Contact / Fence contact (stolen-goods fence)",
       "unlockRequirement": "Chapter 3 (after 'Yasmani's Jewelry Jobs')",
       "interiorFeatures": "Top payout buyer for stolen diamonds & luxury boutique jewelry loot (low cut)",
       "capacity": "High-value jewelry & diamond fence",
@@ -517,7 +665,10 @@
       "imageSource": null,
       "mapPinId": "fence-yasmani",
       "relatedLinks": [
-        { "label": "Jewelry Stores Robbery Guide", "url": "/heists/jewelry-stores.html" }
+        {
+          "label": "Jewelry Stores Robbery Guide",
+          "url": "/heists/jewelry-stores.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
@@ -525,48 +676,54 @@
     },
     {
       "id": "fence-ambrosia",
-      "name": "Ambrosia Industrial Contraband Fence",
-      "propertyType": "Fence",
-      "category": "Fences & Money Safes",
+      "name": "Ambrosia Industrial Drop-Off (Unverified Lead)",
+      "propertyType": "Unverified Regional Lead",
+      "category": "Unverified Regional Leads",
       "region": "Ambrosia",
-      "purchaseAvailability": "Regional Fence / Fence #6 of 7",
-      "unlockRequirement": "Chapter 3–4",
+      "purchaseAvailability": "Not classified as a fence contact (no direct supporting gameplay evidence)",
+      "unlockRequirement": "Not verified",
       "interiorFeatures": "Liquidates gang hideout crates & heavy contraband",
       "capacity": "Heavy contraband buyer",
       "missableWarning": null,
-      "notes": "Convenient drop-off after clearing Ambrosia gang hideouts and armored trucks.",
+      "notes": "Legacy site entry retained so existing map pins/links keep working. Ambrosia is NOT one of the 7 fence contacts (5 stolen-goods fences + 2 vehicle buyers) per the accepted classification. Treat the description as an unverified regional lead.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": "fence-ambrosia",
       "relatedLinks": [
-        { "label": "Armored Trucks & Gang Ops", "url": "/heists/armored-trucks-gang-ops.html" }
+        {
+          "label": "Armored Trucks & Gang Ops",
+          "url": "/heists/armored-trucks-gang-ops.html"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
-      "verificationStatus": "Confirmed",
+      "verificationStatus": "Unverified",
       "lastUpdated": "2026-11-21"
     },
     {
       "id": "fence-grassrivers",
-      "name": "Grassrivers Wetlands Smuggler Fence",
-      "propertyType": "Fence",
-      "category": "Fences & Money Safes",
+      "name": "Grassrivers Wetlands Dock (Unverified Lead)",
+      "propertyType": "Unverified Regional Lead",
+      "category": "Unverified Regional Leads",
       "region": "Grassrivers",
-      "purchaseAvailability": "Regional Fence / Fence #7 of 7",
-      "unlockRequirement": "Chapter 3–4",
+      "purchaseAvailability": "Not classified as a fence contact (no direct supporting gameplay evidence)",
+      "unlockRequirement": "Not verified",
       "interiorFeatures": "Off-grid airboat dock buyer for illicit cargo & cartel goods",
       "capacity": "Wetlands smuggler fence",
       "missableWarning": null,
-      "notes": "Low police presence along the Grassrivers channels — pair with a swamp airboat.",
+      "notes": "Legacy site entry retained so existing map pins/links keep working. Grassrivers is NOT one of the 7 fence contacts (5 stolen-goods fences + 2 vehicle buyers) per the accepted classification. Treat the description as an unverified regional lead.",
       "image": null,
       "imageVerified": false,
       "imageSource": null,
       "mapPinId": "fence-grassrivers",
       "relatedLinks": [
-        { "label": "Grassrivers Swamp Airboat", "url": "/vehicles.html?item=grassrivers-airboat" }
+        {
+          "label": "Grassrivers Swamp Airboat",
+          "url": "/vehicles.html?item=grassrivers-airboat"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
-      "verificationStatus": "Confirmed",
+      "verificationStatus": "Unverified",
       "lastUpdated": "2026-11-21"
     },
     {
@@ -586,8 +743,14 @@
       "imageSource": null,
       "mapPinId": "safe-buckme",
       "relatedLinks": [
-        { "label": "Save Progress Planner", "url": "/save-planner/" },
-        { "label": "GTA 6 Money Guide", "url": "/gta-6-money-guide/" }
+        {
+          "label": "Save Progress Planner",
+          "url": "/save-planner/"
+        },
+        {
+          "label": "GTA 6 Money Guide",
+          "url": "/gta-6-money-guide/"
+        }
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",

@@ -664,7 +664,7 @@
       "image": "/assets/images/vehicles/gtavi-grassrivers-swamp-airboat-wetlands.jpg",
       "imageVerified": true,
       "imageSource": "Official Rockstar Games GTA VI Press Kit (Grassrivers)",
-      "mapPinId": "fence-grassrivers",
+      "mapPinId": null,
       "relatedLinks": [
         {
           "label": "Grassrivers Smuggler Fence",
@@ -692,7 +692,8 @@
       "imageWidth": 1600,
       "imageHeight": 900,
       "manualHqLocked": true,
-      "imageCaption": "Overhead view of a Grassrivers Swamp Airboat skimming across lily-pad marshland (Rockstar Games GTA VI Press Kit)."
+      "imageCaption": "Overhead view of a Grassrivers Swamp Airboat skimming across lily-pad marshland (Rockstar Games GTA VI Press Kit).",
+      "mapPinNote": "Map pin unlinked (fence-grassrivers reclassified as unverified regional lead on 2026-11-23)"
     },
     {
       "id": "buckingham-shamal-jet",
@@ -865,7 +866,7 @@
       "relatedLinks": [
         {
           "label": "Heist Planner",
-          "url": "/heist-planner.html"
+          "url": "/heist-planner"
         }
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
