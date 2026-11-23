@@ -79,7 +79,7 @@ const GTA6 = {
       `➕ **Add:** ${s.contactTag}`,
     ];
     if (s.notes) lines.push(`📝 ${s.notes}`);
-    lines.push('🔗 Open Leonida Map: https://www.gta6heistguide.com/map.html');
+    lines.push('🔗 Open Leonida Map: https://www.gta6heistguide.com/map');
     return lines.join('\n');
   },
 
@@ -452,7 +452,7 @@ const GTA6 = {
           title: 'Interactive Leonida Radar Calibrated: 6 Vault Pins, Sewer Conduits & Canal Exits',
           date: now.toISOString().slice(0, 10),
           summary: 'Live GPS pins across Vice City Downtown, Pelican Valley, Port Gellhorn, and Grassrivers channels.',
-          link: 'interactive-map.html',
+          link: '/map',
         },
       ],
     };
@@ -892,7 +892,7 @@ const GTA6 = {
     const g = document.getElementById('planGunner')?.value || '15';
     const h = document.getElementById('planHacker')?.value || '10';
     const d = document.getElementById('planDriver')?.value || '8';
-    return `heist-planner.html?target=${encodeURIComponent(t)}&approach=${encodeURIComponent(a)}&players=${encodeURIComponent(p)}&g=${g}&h=${h}&d=${d}`;
+    return `/heist-planner?target=${encodeURIComponent(t)}&approach=${encodeURIComponent(a)}&players=${encodeURIComponent(p)}&g=${g}&h=${h}&d=${d}`;
   },
 
   saveCurrentBuild() {
@@ -2122,7 +2122,7 @@ const GTA6 = {
         bio: "The first female protagonist in the GTA HD era. A fierce Latina criminal seen inside the Leonida Department of Corrections wearing a state-issued GPS ankle monitor. Partners with Jason Duval in high-stakes Bonnie & Clyde bank heists, armored truck ambushes, and neon diner hold-ups across Leonida.",
         specialty: "Biometric security bypass, Crowd Intimidation, and Dual SMG room clearing.",
         weapon: "Heckler & Koch MP5 & Ballistic Heist Duffel",
-        weaponLink: "weapons-gear.html#item-mp5",
+        weaponLink: "/weapons#item-mp5",
         perk: "Adrenaline Reaction: +22% keypad decryption speed and bullet-time recovery when escaping guard line-of-sight.",
         stats: { decryption: 96, intimidation: 94, combat: 92, wheelman: 85 }
       },
@@ -2138,7 +2138,7 @@ const GTA6 = {
         bio: "Ex-military tactical operator with deep underworld ties in South Florida. Pairs cool-headed long-range overwatch with aggressive precision driving in tuned muscle sedans. Co-leads the Duval-Caminos syndicate.",
         specialty: "Eagle-Eye guard/CCTV scanning, wet-weather causeway driving, and thermal lance breeching.",
         weapon: "Duke Assault Carbine & Thermal Lance",
-        weaponLink: "weapons-gear.html#item-carbine",
+        weaponLink: "/weapons#item-carbine",
         perk: "Eagle-Eye Recon: Permanently marks patrol vectors and security camera dead-zones on your radar.",
         stats: { decryption: 88, intimidation: 90, combat: 96, wheelman: 98 }
       },
@@ -2154,7 +2154,7 @@ const GTA6 = {
         bio: "Lucia's prison counselor at the Leonida Department of Corrections. Questions Lucia on how she ended up incarcerated. Serves as the primary contact for legal paroles, county travel permits, and bail bond escorts.",
         specialty: "State legal intelligence, parole officer clearance, and restricted municipal permits.",
         weapon: "Department of Corrections Security Dossier",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Probation Immunity: Reduces initial 1-Star and 2-Star search radius by 30% in metropolitan districts.",
         stats: { decryption: 75, intimidation: 82, combat: 45, wheelman: 60 }
       },
@@ -2170,7 +2170,7 @@ const GTA6 = {
         bio: "A deeply paranoid surveillance fanatic and ham-radio enthusiast living out of a rural trailer park. Intercepts VCPD tactical frequencies, jams cell towers, and warns crews of highway roadblocks.",
         specialty: "Police frequency interception, radio jamming, and camera loops.",
         weapon: "Tactical Signal Scanner & Frequency Jammer",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Scanner Intercept: Adds a +30 second delay to SWAT and Tactical Response arrival times during alarms.",
         stats: { decryption: 94, intimidation: 50, combat: 62, wheelman: 65 }
       },
@@ -2186,7 +2186,7 @@ const GTA6 = {
         bio: "High-profile Vice City nightclub impresario and underground loan broker. Fences luxury watches, gold chains, and high-value heist diamonds through VIP bottle-service revenue.",
         specialty: "Cash laundering, luxury jewelry fencing, and private penthouse safehouse access.",
         weapon: "Diamond Cuban Link & Custom 1911",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Clean Cut: Reduces laundering transaction fees by 4%, banking cleaner profits faster.",
         stats: { decryption: 70, intimidation: 88, combat: 78, wheelman: 80 }
       },
@@ -2202,7 +2202,7 @@ const GTA6 = {
         bio: "Master mechanic and industrial chop-shop fabricator in Port Gellhorn. Strips VINs, retrofits bullet-resistant glass, and builds hidden contraband cargo boxes into getaway sedans.",
         specialty: "Heavy vehicle armor, hydraulic cutters, and chassis reinforcement.",
         weapon: "Heavy Acetylene Torch & Spanner",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Bulletproof Rig: Grants +35% durability to getaway vehicle tires and engine blocks.",
         stats: { decryption: 60, intimidation: 84, combat: 85, wheelman: 92 }
       },
@@ -2218,7 +2218,7 @@ const GTA6 = {
         bio: "Brian's partner managing maritime mechanics, high-speed offshore cigarette boats, and heavy winches for naval bullion recovery.",
         specialty: "Marine engines, reinforced hulls, and swamp propellers.",
         weapon: "Industrial Marine Welder",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Sea Spray: Increases getaway boat top speed by +18% in shallow swamp waters.",
         stats: { decryption: 65, intimidation: 78, combat: 80, wheelman: 94 }
       },
@@ -2234,7 +2234,7 @@ const GTA6 = {
         bio: "Elite pilot and smuggler running fast-moving maritime and airborne contraband routes across the Florida Straits and Gator Keys.",
         specialty: "Helicopter rooftop extractions, sea plane landings, and low-radar exfiltration.",
         weapon: "Compact Tactical SMG & Aviator Comms",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Radar Ghost: Escapes coastal air space without triggering Coast Guard missile lock.",
         stats: { decryption: 72, intimidation: 76, combat: 82, wheelman: 98 }
       },
@@ -2250,7 +2250,7 @@ const GTA6 = {
         bio: "Ex-military munitions expert specializing in high-grade shaped charges, thermite powder recipes, and sub-surface bank vault breaches.",
         specialty: "Heavy vault door melting, seismic charges, and silent cutting.",
         weapon: "Military Thermite Lance & Det Cords",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Flash Burn: Melts bank vault reinforced hinges in under 45 seconds.",
         stats: { decryption: 85, intimidation: 88, combat: 94, wheelman: 70 }
       },
@@ -2266,7 +2266,7 @@ const GTA6 = {
         bio: "A prominent Vice City social media creator and thrillchaser seen dancing atop convertibles on Ocean Drive. Her scheduled high-energy public live streams draw enormous civilian crowds that divert VCPD patrols away from robbery blocks.",
         specialty: "Flash crowds, viral media distractions, and public sector police decoys.",
         weapon: "4K Mobile Streaming Rig & Custom Phone",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Crowd Surge: Disables exterior bank perimeter surveillance during the team's initial entry phase.",
         stats: { decryption: 50, intimidation: 72, combat: 40, wheelman: 75 }
       },
@@ -2282,7 +2282,7 @@ const GTA6 = {
         bio: "Vice City off-road stunt enthusiast deeply entrenched in the Everglades Mud Club culture. Provides custom swamp monster trucks and off-grid exfiltration corridors across treacherous marsh terrain.",
         specialty: "Swamp buggy drifting, mud-run escape paths, and unmapped trail navigation.",
         weapon: "Off-Road Flare Gun & Stunt Harness",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Mud Slick: Squad pursuit vehicles gain +30% traction and zero handling penalty in heavy mud and swamps.",
         stats: { decryption: 45, intimidation: 75, combat: 65, wheelman: 92 }
       },
@@ -2298,7 +2298,7 @@ const GTA6 = {
         bio: "Prominent Vice City cultural curator and elite art broker who connects high-stakes thieves with overseas billionaire collectors.",
         specialty: "High-value oil paintings, royal gems, and museum artifact valuation.",
         weapon: "Ultraviolet Gem Spectrometer",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Art Appraisal: Grants a +15% cash bonus on all stolen museum masterpieces.",
         stats: { decryption: 92, intimidation: 68, combat: 55, wheelman: 65 }
       },
@@ -2314,7 +2314,7 @@ const GTA6 = {
         bio: "Eccentric Everglades military surplus hoarder running heavily fortified marsh compounds packed with heavy artillery and explosives.",
         specialty: "Heavy weapons distribution, RPG overwatch, and swamp airboats.",
         weapon: "Heavy Rocket Launcher & Combat Rig",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Heavy Ordnance: Crew spawns with +2 extra ballistic body armors on loud heists.",
         stats: { decryption: 55, intimidation: 92, combat: 96, wheelman: 85 }
       },
@@ -2330,7 +2330,7 @@ const GTA6 = {
         bio: "The infamous tattooed street personality whose viral public escapades draw police cruisers and media helicopters away from actual robbery scenes.",
         specialty: "Street distractions, flash crowds, and media decoys.",
         weapon: "Smoke Canisters & Flashbangs",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Public Mayhem: Reduces initial police pursuit stars by 1 level upon bank exit.",
         stats: { decryption: 60, intimidation: 88, combat: 72, wheelman: 70 }
       },
@@ -2346,7 +2346,7 @@ const GTA6 = {
         bio: "Ruthless cartel lieutenant managing fortified safehouses and covert black-market triage for wounded crew members escaping federal manhunts.",
         specialty: "Underground safehouses, rapid extraction, and covert medical triage.",
         weapon: "Gold-Plated .50 Heavy Pistol",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Triage Recovery: Revives fallen crew members with 100% health upon safehouse exfiltration.",
         stats: { decryption: 60, intimidation: 95, combat: 90, wheelman: 75 }
       },
@@ -2362,7 +2362,7 @@ const GTA6 = {
         bio: "Veteran southern fence operating discreet stash houses, contraband lockers, and untraceable burner vehicle swaps away from city surveillance.",
         specialty: "Stash house caches, burner cell networks, and low-heat storage.",
         weapon: "Double-Barrel Sawed-Off Shotgun",
-        weaponLink: "weapons-gear.html",
+        weaponLink: "/weapons",
         perk: "Cold Storage: Stashed heist loot does not depreciate or attract police search interest.",
         stats: { decryption: 50, intimidation: 90, combat: 70, wheelman: 60 }
       }
@@ -4624,7 +4624,7 @@ const GTA6 = {
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                   <button type="button" class="btn btn-primary" onclick="GTA6.toggleBookmark('veh-${data.id}', '${data.name}'); GTA6.showToast('Vehicle bookmarked to Syndicate HUD!');" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem;">⭐ Bookmark</button>
-                  <a href="/heist-planner.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan);">📲 Second-Screen HUD</a>
+                  <a href="/heist-planner" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(0,240,255,0.15); border-color:var(--neon-cyan); color:var(--neon-cyan);">📲 Second-Screen HUD</a>
                 </div>
               </div>
             </div>
@@ -4724,7 +4724,7 @@ const GTA6 = {
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                   <button type="button" class="btn btn-primary" onclick="GTA6.toggleBookmark('wpn-${data.id}', '${data.name}'); GTA6.showToast('Weapon added to Loadout Locker!');" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:linear-gradient(135deg,#ffb800,#ff8800); border-color:var(--neon-yellow); color:#000; font-weight:800;">⭐ Equip in Loadout</button>
-                  <a href="crew-database.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);">👥 Crew Synergy</a>
+                  <a href="/crew-database" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(255,184,0,0.15); border-color:var(--neon-yellow); color:var(--neon-yellow);">👥 Crew Synergy</a>
                 </div>
               </div>
             </div>
@@ -4820,7 +4820,7 @@ const GTA6 = {
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                   <button type="button" class="btn btn-primary" onclick="GTA6.toggleBookmark('gear-${data.id}', '${data.name}'); GTA6.showToast('Gear equipped to Infiltration Plan!');" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:linear-gradient(135deg,#ff2a8d,#ff0066); border-color:var(--neon-pink); color:#fff; font-weight:800;">⭐ Equip Infiltration Gear</button>
-                  <a href="/heist-planner.html" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);">📲 HUD Companion</a>
+                  <a href="/heist-planner" class="btn" style="flex:1; text-align:center; padding:0.45rem; font-size:0.78rem; background:rgba(255,42,141,0.15); border-color:var(--neon-pink); color:var(--neon-pink);">📲 HUD Companion</a>
                 </div>
               </div>
             </div>
@@ -4951,7 +4951,7 @@ CharacterModal: {
                   </div>
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                  <a href="crew-database.html#character-${key}" class="btn btn-primary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.8rem;">Open in Crew Database &rarr;</a>
+                  <a href="/crew-database#character-${key}" class="btn btn-primary" style="flex:1; text-align:center; padding:0.45rem; font-size:0.8rem;">Open in Crew Database &rarr;</a>
                   <button type="button" class="btn btn-secondary" onclick="GTA6.CharacterModal.close()" style="padding:0.45rem 1rem; font-size:0.8rem;">Close (ESC)</button>
                 </div>
               </div>
@@ -5756,7 +5756,7 @@ DealRotator: {
               <div style="font-size:0.85rem; color:#fff;">
                 ⭐ <strong style="color:var(--neon-green);">${synergy}% ELITE SYNDICATE SYNERGY</strong> &bull; Estimated Payout Bonus: <strong style="color:var(--neon-yellow);">+$${bonusTake}M Cash</strong>
               </div>
-              <a href="heist-planner.html" class="btn btn-primary" style="padding:0.3rem 0.75rem; font-size:0.75rem;">Load Into Squad Planner &rarr;</a>
+              <a href="/heist-planner" class="btn btn-primary" style="padding:0.3rem 0.75rem; font-size:0.75rem;">Load Into Squad Planner &rarr;</a>
             `;
             container.appendChild(synergyBanner);
 
@@ -6097,7 +6097,7 @@ DealRotator: {
                 actor: 'Official Rockstar Reveal',
                 source: c.source || 'GTA Wiki & Official Reveals',
                 weapon: 'Compact Sidearm / Concealed Carry',
-                weaponLink: 'weapons-gear.html',
+                weaponLink: '/weapons',
                 perk: c.specialty || 'Leonida Underground Connection',
                 image: imgSrc,
                 bio: `${c.role}. ${c.specialty}. Active across ${c.district}.`,

@@ -43,7 +43,7 @@
     '/secrets.html',
     '/drops.html',
     '/settings.html',
-    '/heist-planner.html',
+    '/heist-planner',
     '/heist-payout-calculator.html',
     '/gta-6-database/',
     '/gta-6-money-guide/',
