@@ -1,13 +1,21 @@
 {
-  "version": "1.0",
-  "updated": "2026-11-22",
+  "version": "2.0",
+  "updated": "2026-11-23",
   "totalPublished": 61,
-  "verifiedCodesCount": 1,
-  "classifications": [
-    "OFFICIALLY CONFIRMED",
-    "VERIFIED IN-GAME",
-    "COMMUNITY VERIFYING",
-    "UNCONFIRMED"
+  "verifiedCodesCount": 6,
+  "counts": {
+    "total": 61,
+    "CONFIRMED": 6,
+    "UNCONFIRMED": 53,
+    "CONFLICTING": 2,
+    "PATCHED": 0
+  },
+  "inGameTestingDisclosure": "GTA6HeistGuide.com has not independently playtested these codes in-house. CONFIRMED denotes multi-publisher reporting across distinct parent companies; single-source reports remain UNCONFIRMED.",
+  "evidenceStates": [
+    "CONFIRMED",
+    "UNCONFIRMED",
+    "CONFLICTING",
+    "PATCHED"
   ],
   "items": [
     {
@@ -17,6 +25,51 @@
       "name": "$250,000 Instant Cash",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "CONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode campaign",
+        "competingReport": null,
+        "note": "Unlocks automatically upon completing the main story."
+      },
+      "activationEvidence": {
+        "status": "CONFIRMED",
+        "sequence": [
+          "↑",
+          "→",
+          "↓",
+          "←",
+          "↑",
+          "←",
+          "↓",
+          "→"
+        ],
+        "buttonCombo": "↑ → ↓ ← ↑ ← ↓ →",
+        "note": "Corroborated across independent publishers (PC Gamer, PowerPyx, Vice)."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Unlock & D-Pad code"
+        },
+        {
+          "name": "PowerPyx",
+          "publisher": "PowerPyx (Independent)",
+          "url": "https://www.powerpyx.com/",
+          "role": "Independent corroboration"
+        },
+        {
+          "name": "Vice",
+          "publisher": "Vice Media",
+          "url": "https://www.vice.com/",
+          "role": "Independent corroboration"
+        }
+      ],
       "code": [
         "↑",
         "→",
@@ -33,12 +86,12 @@
       "effect": "Adds $250,000 clean funds to the active protagonist's BuckMe bank account. Disables trophies and saving for the active session.",
       "unlock": "Finish Story Mode campaign",
       "unlockRequirements": "Finish Story Mode campaign",
-      "source": "GTA 6 Heist Guide Launch Verification",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "source": "PC Gamer (Future plc), PowerPyx (PowerPyx (Independent)), Vice (Vice Media)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
       "verified": true,
-      "status": "Launch Verified",
-      "verificationStatus": "VERIFIED IN-GAME"
+      "status": "Confirmed (Multi-Source · Not Playtested In-House)",
+      "verificationStatus": "CONFIRMED"
     },
     {
       "id": 2,
@@ -47,82 +100,282 @@
       "name": "Raise Wanted Level (+1 Star)",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Lose a 3-star wanted level 50 times",
+        "competingReport": null,
+        "note": "Separated from Raise Heat Level (#7, which requires 25 three-star escapes). Do not conflate the 50-escape requirement with the 25-escape requirement."
+      },
+      "activationEvidence": {
+        "status": "SINGLE_SOURCE",
+        "sequence": [
+          "←",
+          "↓",
+          "→",
+          "↓",
+          "↑",
+          "→",
+          "↑"
+        ],
+        "buttonCombo": "← ↓ → ↓ ↑ → ↑",
+        "note": "Single-source reported by PC Gamer (Nov 23, 2026); awaiting independent second-publisher confirmation."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Single-source reported code & 50-escape unlock"
+        }
+      ],
+      "code": [
+        "←",
+        "↓",
+        "→",
+        "↓",
+        "↑",
+        "→",
+        "↑"
+      ],
+      "buttonCombo": "← ↓ → ↓ ↑ → ↑",
       "phoneCode": null,
-      "desc": "Adds 1 VCPD wanted star to test getaway handling and police response.",
-      "effect": "Adds 1 VCPD wanted star to test getaway handling and police response.",
-      "unlock": "Finish Story Mode + Lose 3-star wanted level 50 times",
-      "unlockRequirements": "Finish Story Mode + Lose 3-star wanted level 50 times",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Raises your VCPD wanted level by 1 star. Distinct from Raise Heat Level (#7, 25 escapes).",
+      "effect": "Raises your VCPD wanted level by 1 star. Distinct from Raise Heat Level (#7, 25 escapes).",
+      "unlock": "Finish Story Mode + Lose a 3-star wanted level 50 times",
+      "unlockRequirements": "Finish Story Mode + Lose a 3-star wanted level 50 times",
+      "source": "PC Gamer (Future plc)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Single-Source Reported)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 3,
       "slug": "cheat-max-body-armor-refill",
-      "title": "Max Body Armor Refill",
-      "name": "Max Body Armor Refill",
+      "title": "Body Armor (Max Body Armor Refill)",
+      "name": "Body Armor (Max Body Armor Refill)",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "CONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Complete 100 workouts",
+        "competingReport": null,
+        "note": "Corroborated across independent publishers."
+      },
+      "activationEvidence": {
+        "status": "CONFIRMED",
+        "sequence": [
+          "↓",
+          "↑",
+          "←",
+          "↑",
+          "↑",
+          "↑",
+          "↑",
+          "↑",
+          "↓",
+          "↓"
+        ],
+        "buttonCombo": "↓ ↑ ← ↑ ↑ ↑ ↑ ↑ ↓ ↓",
+        "note": "Corroborated by PC Gamer (Future plc) and independent community/Tracker.gg reports."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Unlock & D-Pad code"
+        },
+        {
+          "name": "PureXbox / Community Ledger",
+          "publisher": "Hookshot Media / Independent",
+          "url": "https://www.purexbox.com/",
+          "role": "Independent corroboration"
+        }
+      ],
+      "code": [
+        "↓",
+        "↑",
+        "←",
+        "↑",
+        "↑",
+        "↑",
+        "↑",
+        "↑",
+        "↓",
+        "↓"
+      ],
+      "buttonCombo": "↓ ↑ ← ↑ ↑ ↑ ↑ ↑ ↓ ↓",
       "phoneCode": null,
-      "desc": "Instantly equips Level 3 heavy composite kevlar vest.",
-      "effect": "Instantly equips Level 3 heavy composite kevlar vest.",
-      "unlock": "Finish Story Mode + Complete 100 workouts at Vice City Muscle Gym",
-      "unlockRequirements": "Finish Story Mode + Complete 100 workouts at Vice City Muscle Gym",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Instantly refills full body armor protection for the active protagonist.",
+      "effect": "Instantly refills full body armor protection for the active protagonist.",
+      "unlock": "Finish Story Mode + Complete 100 workouts",
+      "unlockRequirements": "Finish Story Mode + Complete 100 workouts",
+      "source": "PC Gamer (Future plc), PureXbox / Community Ledger (Hookshot Media / Independent)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
-      "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "verified": true,
+      "status": "Confirmed (Multi-Source · Not Playtested In-House)",
+      "verificationStatus": "CONFIRMED"
     },
     {
       "id": 4,
       "slug": "cheat-vehicle-force-ram-multiplier",
-      "title": "Vehicle Force Ram Multiplier",
-      "name": "Vehicle Force Ram Multiplier",
-      "cat": "vehicle",
+      "title": "Attack Force",
+      "name": "Attack Force",
+      "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode campaign",
+        "competingReport": null,
+        "note": "Unlocks automatically upon finishing the main story."
+      },
+      "activationEvidence": {
+        "status": "SINGLE_SOURCE",
+        "sequence": [
+          "↓",
+          "↑",
+          "←",
+          "←",
+          "→",
+          "↓",
+          "↓",
+          "↑",
+          "↓"
+        ],
+        "buttonCombo": "↓ ↑ ← ← → ↓ ↓ ↑ ↓",
+        "note": "Single-source reported (YouTube gameplay showcase / community report); GameSpot and Shacknews still list Attack Force code as pending."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "Community Gameplay Showcase",
+          "publisher": "Independent Video Report",
+          "url": "https://www.youtube.com/",
+          "role": "Single-source reported D-Pad code"
+        },
+        {
+          "name": "GameSpot",
+          "publisher": "Fandom",
+          "url": "https://www.gamespot.com/",
+          "role": "Confirms cheat existence in 61-slot list (code pending)"
+        }
+      ],
+      "code": [
+        "↓",
+        "↑",
+        "←",
+        "←",
+        "→",
+        "↓",
+        "↓",
+        "↑",
+        "↓"
+      ],
+      "buttonCombo": "↓ ↑ ← ← → ↓ ↓ ↑ ↓",
       "phoneCode": null,
-      "desc": "Increases vehicle collision mass by 5x to clear police roadblocks.",
-      "effect": "Increases vehicle collision mass by 5x to clear police roadblocks.",
-      "unlock": "Finish Story Mode + Eliminate 25 cartel enemies with vehicles",
-      "unlockRequirements": "Finish Story Mode + Eliminate 25 cartel enemies with vehicles",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Causes bullets and melee hits to launch targets violently on impact. (Reconciled from prior pre-launch Vehicle Force Ram slot.)",
+      "effect": "Causes bullets and melee hits to launch targets violently on impact. (Reconciled from prior pre-launch Vehicle Force Ram slot.)",
+      "unlock": "Finish Story Mode campaign",
+      "unlockRequirements": "Finish Story Mode campaign",
+      "source": "Community Gameplay Showcase (Independent Video Report), GameSpot (Fandom)",
+      "sourceUrl": "https://www.youtube.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Single-Source Reported)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 5,
       "slug": "cheat-1986-retro-vice-crt-filter",
-      "title": "1986 Retro Vice CRT Filter",
-      "name": "1986 Retro Vice CRT Filter",
+      "title": "Screen Filter: Videotape (1986 Retro VHS / CRT)",
+      "name": "Screen Filter: Videotape (1986 Retro VHS / CRT)",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "CONFLICTING",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFLICTING",
+        "requirement": "Finish Story Mode + Complete 50 activities with your partner (PC Gamer / TimeSaver.gg)",
+        "competingReport": "Prior pre-launch slot listed: Rob 50 convenience stores with partner (unconfirmed).",
+        "note": "Preserve competing reports until in-game Progress menu text is independently verified."
+      },
+      "activationEvidence": {
+        "status": "CONFLICTING",
+        "sequence": [
+          "↓",
+          "↓",
+          "↑",
+          "→",
+          "→",
+          "↑",
+          "←",
+          "←",
+          "→",
+          "↓"
+        ],
+        "buttonCombo": "↓ ↓ ↑ → → ↑ ← ← → ↓",
+        "note": "CONFLICTING: PC Gamer lists this sequence for Videotape, while other guides associate the same prefix with Cataclysm/Dollhouse environment filters."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Videotape unlock (50 partner activities) & D-Pad code"
+        },
+        {
+          "name": "TimeSaver.gg",
+          "publisher": "TimeSaver.gg (Independent)",
+          "url": "https://timesaver.gg/",
+          "role": "Corroborates 50 partner activities unlock"
+        },
+        {
+          "name": "TrueAchievements / Community",
+          "publisher": "TrueGaming Network",
+          "url": "https://www.trueachievements.com/",
+          "role": "Flags screen-filter sequence mapping disagreement"
+        }
+      ],
+      "code": [
+        "↓",
+        "↓",
+        "↑",
+        "→",
+        "→",
+        "↑",
+        "←",
+        "←",
+        "→",
+        "↓"
+      ],
+      "buttonCombo": "↓ ↓ ↑ → → ↑ ← ← → ↓",
       "phoneCode": null,
-      "desc": "Applies authentic 1986 neon scanlines, chromatic aberration, and synth glow.",
-      "effect": "Applies authentic 1986 neon scanlines, chromatic aberration, and synth glow.",
-      "unlock": "Finish Story Mode + Rob 50 convenience stores with partner",
-      "unlockRequirements": "Finish Story Mode + Rob 50 convenience stores with partner",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Applies a VHS videotape-style visual screen filter over gameplay.",
+      "effect": "Applies a VHS videotape-style visual screen filter over gameplay.",
+      "unlock": "Finish Story Mode + Complete 50 activities with your partner (PC Gamer / TimeSaver.gg)",
+      "unlockRequirements": "Finish Story Mode + Complete 50 activities with your partner (PC Gamer / TimeSaver.gg)",
+      "source": "PC Gamer (Future plc), TimeSaver.gg (TimeSaver.gg (Independent)), TrueAchievements / Community (TrueGaming Network)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Conflicting (Competing Reports Preserved)",
+      "verificationStatus": "CONFLICTING"
     },
     {
       "id": 6,
@@ -131,40 +384,116 @@
       "name": "Spawn HVY Bulldozer",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Spawns heavy industrial earthmover capable of breaching barricades.",
       "effect": "Spawns heavy industrial earthmover capable of breaching barricades.",
-      "unlock": "Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
-      "unlockRequirements": "Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 7,
       "slug": "cheat-lower-wanted-level-1-star",
-      "title": "Lower Wanted Level (-1 Star)",
-      "name": "Lower Wanted Level (-1 Star)",
-      "cat": "combat",
+      "title": "Raise Heat Level",
+      "name": "Raise Heat Level",
+      "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "CONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Lose a 3-star wanted level 25 times",
+        "competingReport": null,
+        "note": "Independently corroborated as the 25-escape tier, separate from Raise Wanted Level (#2, 50 escapes)."
+      },
+      "activationEvidence": {
+        "status": "CONFIRMED",
+        "sequence": [
+          "←",
+          "↓",
+          "→",
+          "↓",
+          "↑",
+          "↓",
+          "↑"
+        ],
+        "buttonCombo": "← ↓ → ↓ ↑ ↓ ↑",
+        "note": "Corroborated across independent publishers (PC Gamer, Tracker.gg, PureXbox)."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "D-Pad code & Raise Heat vs Raise Wanted distinction"
+        },
+        {
+          "name": "Tracker.gg",
+          "publisher": "Tracker Network (Independent)",
+          "url": "https://tracker.gg/",
+          "role": "Independent corroboration (25 escapes + code)"
+        },
+        {
+          "name": "PureXbox",
+          "publisher": "Hookshot Media",
+          "url": "https://www.purexbox.com/",
+          "role": "Independent corroboration"
+        }
+      ],
+      "code": [
+        "←",
+        "↓",
+        "→",
+        "↓",
+        "↑",
+        "↓",
+        "↑"
+      ],
+      "buttonCombo": "← ↓ → ↓ ↑ ↓ ↑",
       "phoneCode": null,
-      "desc": "Drops immediate police pursuit heat by 1 star.",
-      "effect": "Drops immediate police pursuit heat by 1 star.",
-      "unlock": "Finish Story Mode + Survive 5-star wanted level for 10 mins",
-      "unlockRequirements": "Finish Story Mode + Survive 5-star wanted level for 10 mins",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Raises your regional heat/wanted level. Distinct from Raise Wanted Level (#2, 50 escapes).",
+      "effect": "Raises your regional heat/wanted level. Distinct from Raise Wanted Level (#2, 50 escapes).",
+      "unlock": "Finish Story Mode + Lose a 3-star wanted level 25 times",
+      "unlockRequirements": "Finish Story Mode + Lose a 3-star wanted level 25 times",
+      "source": "PC Gamer (Future plc), Tracker.gg (Tracker Network (Independent)), PureXbox (Hookshot Media)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
-      "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "verified": true,
+      "status": "Confirmed (Multi-Source · Not Playtested In-House)",
+      "verificationStatus": "CONFIRMED"
     },
     {
       "id": 8,
@@ -173,19 +502,43 @@
       "name": "Invincibility (5 Minutes)",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Zero damage taken from bullets, explosions, or drowning for 300 seconds.",
       "effect": "Zero damage taken from bullets, explosions, or drowning for 300 seconds.",
-      "unlock": "Achieve 100% campaign completion",
-      "unlockRequirements": "Achieve 100% campaign completion",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 9,
@@ -194,19 +547,43 @@
       "name": "Max Health & Full Armor",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Instantly heals all wounds and restores full tactical armor.",
       "effect": "Instantly heals all wounds and restores full tactical armor.",
-      "unlock": "Finish Story Mode + Eat at 25 diners across Leonida",
-      "unlockRequirements": "Finish Story Mode + Eat at 25 diners across Leonida",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 10,
@@ -215,19 +592,43 @@
       "name": "Fast Sprint & Infinite Stamina",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Sprint speed boosted by 30% with zero stamina drain.",
       "effect": "Sprint speed boosted by 30% with zero stamina drain.",
-      "unlock": "Finish Story Mode + Win marathon race in Vice Beach",
-      "unlockRequirements": "Finish Story Mode + Win marathon race in Vice Beach",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 11,
@@ -236,19 +637,43 @@
       "name": "Super Jump (High Vault)",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Hold jump button to leap 4x normal vertical height.",
       "effect": "Hold jump button to leap 4x normal vertical height.",
-      "unlock": "Finish Story Mode + Skydive from Vice City Sky Tower",
-      "unlockRequirements": "Finish Story Mode + Skydive from Vice City Sky Tower",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 12,
@@ -257,40 +682,122 @@
       "name": "Explosive Melee Attacks",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Punches and kicks detonate with concussive shockwaves.",
       "effect": "Punches and kicks detonate with concussive shockwaves.",
-      "unlock": "Finish Story Mode + Win 15 underground fight club bouts",
-      "unlockRequirements": "Finish Story Mode + Win 15 underground fight club bouts",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 13,
       "slug": "cheat-slow-motion-aim-dead-eye",
-      "title": "Slow Motion Aim (Dead Eye)",
-      "name": "Slow Motion Aim (Dead Eye)",
+      "title": "Unlimited Focus",
+      "name": "Unlimited Focus",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "CONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode campaign",
+        "competingReport": null,
+        "note": "Unlocks automatically upon completing the main story."
+      },
+      "activationEvidence": {
+        "status": "CONFIRMED",
+        "sequence": [
+          "↓",
+          "↑",
+          "↑",
+          "↓",
+          "↑",
+          "↓",
+          "↑",
+          "↓",
+          "↑",
+          "→"
+        ],
+        "buttonCombo": "↓ ↑ ↑ ↓ ↑ ↓ ↑ ↓ ↑ →",
+        "note": "Corroborated across independent publishers (PC Gamer, PowerPyx, Tracker.gg)."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "D-Pad code"
+        },
+        {
+          "name": "PowerPyx",
+          "publisher": "PowerPyx (Independent)",
+          "url": "https://www.powerpyx.com/",
+          "role": "Independent corroboration"
+        },
+        {
+          "name": "Tracker.gg",
+          "publisher": "Tracker Network (Independent)",
+          "url": "https://tracker.gg/",
+          "role": "Independent corroboration"
+        }
+      ],
+      "code": [
+        "↓",
+        "↑",
+        "↑",
+        "↓",
+        "↑",
+        "↓",
+        "↑",
+        "↓",
+        "↑",
+        "→"
+      ],
+      "buttonCombo": "↓ ↑ ↑ ↓ ↑ ↓ ↑ ↓ ↑ →",
       "phoneCode": null,
-      "desc": "Slows world speed to 25% while aiming down sights.",
-      "effect": "Slows world speed to 25% while aiming down sights.",
-      "unlock": "Finish Story Mode + Score 100 revolver headshots",
-      "unlockRequirements": "Finish Story Mode + Score 100 revolver headshots",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Prevents Jason or Lucia's Focus ability meter from depleting during combat.",
+      "effect": "Prevents Jason or Lucia's Focus ability meter from depleting during combat.",
+      "unlock": "Finish Story Mode campaign",
+      "unlockRequirements": "Finish Story Mode campaign",
+      "source": "PC Gamer (Future plc), PowerPyx (PowerPyx (Independent)), Tracker.gg (Tracker Network (Independent))",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
-      "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "verified": true,
+      "status": "Confirmed (Multi-Source · Not Playtested In-House)",
+      "verificationStatus": "CONFIRMED"
     },
     {
       "id": 14,
@@ -299,19 +806,43 @@
       "name": "Flaming Ammunition Rounds",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "All firearm bullets ignite targets and vehicle engines on impact.",
       "effect": "All firearm bullets ignite targets and vehicle engines on impact.",
-      "unlock": "Finish Story Mode + Ignite 30 fuel barrels in free-roam",
-      "unlockRequirements": "Finish Story Mode + Ignite 30 fuel barrels in free-roam",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 15,
@@ -320,19 +851,43 @@
       "name": "Explosive Sniper Bullets",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Heavy sniper rifle fires 20mm high-explosive ordnance.",
       "effect": "Heavy sniper rifle fires 20mm high-explosive ordnance.",
-      "unlock": "Finish Story Mode + Neutralize a target from 500m+",
-      "unlockRequirements": "Finish Story Mode + Neutralize a target from 500m+",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 16,
@@ -341,19 +896,43 @@
       "name": "All Weapons Pack (Tier 1)",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Equips Service Carbine, Micro SMG, Heavy Pistol, Knife, and Grenades.",
       "effect": "Equips Service Carbine, Micro SMG, Heavy Pistol, Knife, and Grenades.",
-      "unlock": "Finish Story Mode + Visit 5 Ammu-Nation gun stores",
-      "unlockRequirements": "Finish Story Mode + Visit 5 Ammu-Nation gun stores",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 17,
@@ -362,61 +941,151 @@
       "name": "Military Heavy Ordnance Pack",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Equips RPG-7, Combat Shotgun, Minigun, and Sticky Bombs.",
       "effect": "Equips RPG-7, Combat Shotgun, Minigun, and Sticky Bombs.",
-      "unlock": "Finish Story Mode + Intercept an armored military convoy",
-      "unlockRequirements": "Finish Story Mode + Intercept an armored military convoy",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 18,
       "slug": "cheat-infinite-parachutes",
-      "title": "Infinite Parachutes",
-      "name": "Infinite Parachutes",
+      "title": "Parachute (Infinite Parachutes)",
+      "name": "Parachute (Infinite Parachutes)",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "CONFLICTING",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFLICTING",
+        "requirement": "Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)",
+        "competingReport": "Competing prior report: BASE jump from 10 Leonida radio towers.",
+        "note": "Both competing unlock reports are preserved until direct in-game Progress menu verification resolves the discrepancy."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable D-Pad sequence has been published yet."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Reports 50 skydives/BASE jumps from 300ft+ (code TBC)"
+        },
+        {
+          "name": "Vice",
+          "publisher": "Vice Media",
+          "url": "https://www.vice.com/",
+          "role": "Corroborates 50 skydives/BASE jumps from 300ft+"
+        },
+        {
+          "name": "Prior Site Research",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Competing report: 10 Leonida radio towers"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Automatically re-equips parachute pack after every landing.",
-      "effect": "Automatically re-equips parachute pack after every landing.",
-      "unlock": "Finish Story Mode + BASE jump from 10 Leonida radio towers",
-      "unlockRequirements": "Finish Story Mode + BASE jump from 10 Leonida radio towers",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Equips a parachute to your character's loadout for skydiving and BASE jumps.",
+      "effect": "Equips a parachute to your character's loadout for skydiving and BASE jumps.",
+      "unlock": "Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)",
+      "unlockRequirements": "Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)",
+      "source": "PC Gamer (Future plc), Vice (Vice Media), Prior Site Research (Internal Tracker)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Conflicting (Competing Reports Preserved)",
+      "verificationStatus": "CONFLICTING"
     },
     {
       "id": 19,
       "slug": "cheat-skyfall-high-altitude-drop",
-      "title": "Skyfall High-Altitude Drop",
-      "name": "Skyfall High-Altitude Drop",
+      "title": "No Fall Damage",
+      "name": "No Fall Damage",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Survive a freefall from 40 feet (40ft) 20 times",
+        "competingReport": null,
+        "note": "Cheat existence and unlock requirement corroborated by Red Bull and LeonidaVerse."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "Activation sequence is TBC / not yet reliably published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "Red Bull",
+          "publisher": "Red Bull Media House",
+          "url": "https://www.redbull.com/",
+          "role": "Confirms existence & 40ft x20 unlock"
+        },
+        {
+          "name": "Shacknews",
+          "publisher": "Gamerhub",
+          "url": "https://www.shacknews.com/",
+          "role": "Confirms code pending"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Launches operative into upper sky for high-speed wingsuit glide.",
-      "effect": "Launches operative into upper sky for high-speed wingsuit glide.",
-      "unlock": "Finish Story Mode + Fly aircraft to Leonida ceiling altitude",
-      "unlockRequirements": "Finish Story Mode + Fly aircraft to Leonida ceiling altitude",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Grants immunity to fall damage from high drops. (Reconciled from prior speculative Skyfall slot.)",
+      "effect": "Grants immunity to fall damage from high drops. (Reconciled from prior speculative Skyfall slot.)",
+      "unlock": "Finish Story Mode + Survive a freefall from 40 feet (40ft) 20 times",
+      "unlockRequirements": "Finish Story Mode + Survive a freefall from 40 feet (40ft) 20 times",
+      "source": "Red Bull (Red Bull Media House), Shacknews (Gamerhub)",
+      "sourceUrl": "https://www.redbull.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 20,
@@ -425,19 +1094,43 @@
       "name": "Moon Gravity (Low Gravity)",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Drops world gravity by 70% for floating vehicle stunts.",
       "effect": "Drops world gravity by 70% for floating vehicle stunts.",
-      "unlock": "Finish Story Mode + Explore Grassrivers sinkhole anomaly",
-      "unlockRequirements": "Finish Story Mode + Explore Grassrivers sinkhole anomaly",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 21,
@@ -446,19 +1139,43 @@
       "name": "Slippery Drift Tires Mode",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Lowers tire grip for continuous tandem drifting.",
       "effect": "Lowers tire grip for continuous tandem drifting.",
-      "unlock": "Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
-      "unlockRequirements": "Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 22,
@@ -467,19 +1184,43 @@
       "name": "Super Concussive Knockback",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Melee strikes send enemies flying 20 feet backward.",
       "effect": "Melee strikes send enemies flying 20 feet backward.",
-      "unlock": "Finish Story Mode + Knock out 50 nightclub bouncers",
-      "unlockRequirements": "Finish Story Mode + Knock out 50 nightclub bouncers",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 23,
@@ -488,19 +1229,43 @@
       "name": "Spawn Comet Retro Classic",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Spawns tuned turbo air-cooled German sports coupe.",
       "effect": "Spawns tuned turbo air-cooled German sports coupe.",
-      "unlock": "Finish Story Mode + Win 5 underground street drag races",
-      "unlockRequirements": "Finish Story Mode + Win 5 underground street drag races",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 24,
@@ -509,19 +1274,43 @@
       "name": "Spawn Annihilator Gunship Chopper",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Spawns twin-minigun tactical attack helicopter.",
       "effect": "Spawns twin-minigun tactical attack helicopter.",
-      "unlock": "Finish Story Mode + Infiltrate Leonida naval air base",
-      "unlockRequirements": "Finish Story Mode + Infiltrate Leonida naval air base",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 25,
@@ -530,19 +1319,43 @@
       "name": "Spawn Sea Sparrow Seaplane",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Light amphibious chopper equipped with flotation pontoons.",
       "effect": "Light amphibious chopper equipped with flotation pontoons.",
-      "unlock": "Finish Story Mode + Land watercraft on Keys sandbar",
-      "unlockRequirements": "Finish Story Mode + Land watercraft on Keys sandbar",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 26,
@@ -551,19 +1364,43 @@
       "name": "Spawn Bravado Banshee GTS",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Spawns 8.4L V10 American roadster with racing stripe.",
       "effect": "Spawns 8.4L V10 American roadster with racing stripe.",
-      "unlock": "Finish Story Mode + Evade VCPD in a sports car 10 times",
-      "unlockRequirements": "Finish Story Mode + Evade VCPD in a sports car 10 times",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 27,
@@ -572,19 +1409,43 @@
       "name": "Spawn Sanchez Dirt Bike",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Agile 250cc motocross bike tuned for off-road trails.",
       "effect": "Agile 250cc motocross bike tuned for off-road trails.",
-      "unlock": "Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
-      "unlockRequirements": "Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 28,
@@ -593,19 +1454,43 @@
       "name": "Spawn Vapid Dominator GT",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Supercharged modern muscle car delivering 700+ HP.",
       "effect": "Supercharged modern muscle car delivering 700+ HP.",
-      "unlock": "Finish Story Mode + Deliver 10 untracked cars to Moses",
-      "unlockRequirements": "Finish Story Mode + Deliver 10 untracked cars to Moses",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 29,
@@ -614,19 +1499,43 @@
       "name": "Spawn Everglades Swamp Airboat",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Flat-bottomed prop-driven swamp airboat for shallow marshes.",
       "effect": "Flat-bottomed prop-driven swamp airboat for shallow marshes.",
-      "unlock": "Finish Story Mode + Cross Grassrivers entirely off-road",
-      "unlockRequirements": "Finish Story Mode + Cross Grassrivers entirely off-road",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 30,
@@ -635,19 +1544,43 @@
       "name": "Spawn Submersible Kraken 2",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Two-seat submersible with floodlights and shipwreck sonar.",
       "effect": "Two-seat submersible with floodlights and shipwreck sonar.",
-      "unlock": "Finish Story Mode + Dive deep-sea trench off Leonida Keys",
-      "unlockRequirements": "Finish Story Mode + Dive deep-sea trench off Leonida Keys",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 31,
@@ -656,19 +1589,43 @@
       "name": "Spawn Police Cruiser Interceptor",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "VCPD tactical highway patrol sedan with siren & lightbar.",
       "effect": "VCPD tactical highway patrol sedan with siren & lightbar.",
-      "unlock": "Finish Story Mode + Steal 5 VCPD patrol cruisers",
-      "unlockRequirements": "Finish Story Mode + Steal 5 VCPD patrol cruisers",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 32,
@@ -677,19 +1634,43 @@
       "name": "Spawn Coast Guard Rescue Cutter",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "High-speed offshore patrol boat with twin outboards.",
       "effect": "High-speed offshore patrol boat with twin outboards.",
-      "unlock": "Finish Story Mode + Complete Coast Guard offshore mission",
-      "unlockRequirements": "Finish Story Mode + Complete Coast Guard offshore mission",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 33,
@@ -698,19 +1679,43 @@
       "name": "Spawn Heavy Trashmaster Truck",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Heavily armored garbage compactor truck.",
       "effect": "Heavily armored garbage compactor truck.",
-      "unlock": "Finish Story Mode + Complete 3 sanitation haul jobs",
-      "unlockRequirements": "Finish Story Mode + Complete 3 sanitation haul jobs",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 34,
@@ -719,19 +1724,43 @@
       "name": "Spawn Caddy Electric Golf Cart",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Compact electric golf cart for tight boardwalk alleys.",
       "effect": "Compact electric golf cart for tight boardwalk alleys.",
-      "unlock": "Finish Story Mode + Score birdie at Vice Links Golf Club",
-      "unlockRequirements": "Finish Story Mode + Score birdie at Vice Links Golf Club",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 35,
@@ -740,19 +1769,43 @@
       "name": "Spawn Mallard Stunt Biplane",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Aerobatic prop stunt plane capable of knife-edge flight.",
       "effect": "Aerobatic prop stunt plane capable of knife-edge flight.",
-      "unlock": "Finish Story Mode + Fly under 15 Vice City bridges",
-      "unlockRequirements": "Finish Story Mode + Fly under 15 Vice City bridges",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 36,
@@ -761,19 +1814,43 @@
       "name": "Spawn Thruster Jetpack",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Personal VTOL rocket pack for vertical rooftop infiltration.",
       "effect": "Personal VTOL rocket pack for vertical rooftop infiltration.",
-      "unlock": "Finish Story Mode + Solve Mount Kalaga mural puzzle",
-      "unlockRequirements": "Finish Story Mode + Solve Mount Kalaga mural puzzle",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 37,
@@ -782,19 +1859,43 @@
       "name": "Spawn Grotti Cheetah Classic",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Iconic 1980s mid-engine Italian supercar.",
       "effect": "Iconic 1980s mid-engine Italian supercar.",
-      "unlock": "Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
-      "unlockRequirements": "Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 38,
@@ -803,19 +1904,43 @@
       "name": "Spawn Pegassi Torero XO",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Modern AWD hypercar with scissor doors.",
       "effect": "Modern AWD hypercar with scissor doors.",
-      "unlock": "Finish Story Mode + Win high-roller Vice Beach street circuit",
-      "unlockRequirements": "Finish Story Mode + Win high-roller Vice Beach street circuit",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 39,
@@ -824,19 +1949,43 @@
       "name": "Spawn Armored Insurgent APC",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Bulletproof tactical carrier with roof turret mount.",
       "effect": "Bulletproof tactical carrier with roof turret mount.",
-      "unlock": "Finish Story Mode + Survive 5 armored cash truck ambushes",
-      "unlockRequirements": "Finish Story Mode + Survive 5 armored cash truck ambushes",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 40,
@@ -845,19 +1994,43 @@
       "name": "Spawn Hovercraft Gator",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Amphibious hovercraft gliding over swamp and highway.",
       "effect": "Amphibious hovercraft gliding over swamp and highway.",
-      "unlock": "Finish Story Mode + Catch 10 trophy fish in Grassrivers",
-      "unlockRequirements": "Finish Story Mode + Catch 10 trophy fish in Grassrivers",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 41,
@@ -866,124 +2039,292 @@
       "name": "Spawn Pro Stunt BMX Bike",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Lightweight 20-inch trick BMX for urban rooftops.",
       "effect": "Lightweight 20-inch trick BMX for urban rooftops.",
-      "unlock": "Finish Story Mode + Land 50 bunny hops at Vice skate park",
-      "unlockRequirements": "Finish Story Mode + Land 50 bunny hops at Vice skate park",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 42,
       "slug": "cheat-weather-neon-vice-sunset",
-      "title": "Weather: Neon Vice Sunset",
-      "name": "Weather: Neon Vice Sunset",
+      "title": "Screen Filter: Pixel Art",
+      "name": "Screen Filter: Pixel Art",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "Finish Story Mode + Make $250,000 selling collectibles (Single-source reported: GamingBolt)",
+        "competingReport": null,
+        "note": "Single-source reported unlock; awaiting second independent publisher."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "Activation sequence not yet reliably published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GamingBolt",
+          "publisher": "GamingBolt (Independent)",
+          "url": "https://gamingbolt.com/",
+          "role": "Single-source unlock report"
+        },
+        {
+          "name": "Vice",
+          "publisher": "Vice Media",
+          "url": "https://www.vice.com/",
+          "role": "Confirms screen filter category"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Locks vivid magenta, violet, and gold Vice dusk lighting.",
-      "effect": "Locks vivid magenta, violet, and gold Vice dusk lighting.",
-      "unlock": "Finish Story Mode + Watch sunset from Ocean Drive rooftop",
-      "unlockRequirements": "Finish Story Mode + Watch sunset from Ocean Drive rooftop",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Applies a retro pixelated screen filter across gameplay.",
+      "effect": "Applies a retro pixelated screen filter across gameplay.",
+      "unlock": "Finish Story Mode + Make $250,000 selling collectibles (Single-source reported: GamingBolt)",
+      "unlockRequirements": "Finish Story Mode + Make $250,000 selling collectibles (Single-source reported: GamingBolt)",
+      "source": "GamingBolt (GamingBolt (Independent)), Vice (Vice Media)",
+      "sourceUrl": "https://gamingbolt.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 43,
       "slug": "cheat-weather-category-5-hurricane",
-      "title": "Weather: Category 5 Hurricane",
-      "name": "Weather: Category 5 Hurricane",
+      "title": "Screen Filter: Neon Jungle",
+      "name": "Screen Filter: Neon Jungle",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Discover all 16 Girlypop vehicles",
+        "competingReport": null,
+        "note": "Existence and unlock requirement reported by PowerPyx and Red Bull."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "Activation sequence not yet reliably published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PowerPyx",
+          "publisher": "PowerPyx (Independent)",
+          "url": "https://www.powerpyx.com/",
+          "role": "Confirms Neon Jungle filter"
+        },
+        {
+          "name": "Red Bull",
+          "publisher": "Red Bull Media House",
+          "url": "https://www.redbull.com/",
+          "role": "Reports 16 Girlypop vehicles unlock"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Triggers gale-force winds, driving rain, and coastal surges.",
-      "effect": "Triggers gale-force winds, driving rain, and coastal surges.",
-      "unlock": "Finish Story Mode + Survive tropical storm in Grassrivers",
-      "unlockRequirements": "Finish Story Mode + Survive tropical storm in Grassrivers",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Applies vibrant neon highlights across the Leonida environment.",
+      "effect": "Applies vibrant neon highlights across the Leonida environment.",
+      "unlock": "Finish Story Mode + Discover all 16 Girlypop vehicles",
+      "unlockRequirements": "Finish Story Mode + Discover all 16 Girlypop vehicles",
+      "source": "PowerPyx (PowerPyx (Independent)), Red Bull (Red Bull Media House)",
+      "sourceUrl": "https://www.powerpyx.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 44,
       "slug": "cheat-weather-dense-everglades-fog",
-      "title": "Weather: Dense Everglades Fog",
-      "name": "Weather: Dense Everglades Fog",
+      "title": "Screen Filter: Pinhole",
+      "name": "Screen Filter: Pinhole",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "Finish Story Mode + Clear 25 gang operations with your partner (Single-source reported: Red Bull)",
+        "competingReport": null,
+        "note": "Single-source reported unlock; awaiting independent corroboration."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "Activation sequence not yet reliably published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "Red Bull",
+          "publisher": "Red Bull Media House",
+          "url": "https://www.redbull.com/",
+          "role": "Single-source unlock report"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Blankets Leonida in dense fog cutting visibility to 30m.",
-      "effect": "Blankets Leonida in dense fog cutting visibility to 30m.",
-      "unlock": "Finish Story Mode + Drive Grassrivers marsh road at 03:00",
-      "unlockRequirements": "Finish Story Mode + Drive Grassrivers marsh road at 03:00",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Applies a pinhole camera vignette distortion filter to the display.",
+      "effect": "Applies a pinhole camera vignette distortion filter to the display.",
+      "unlock": "Finish Story Mode + Clear 25 gang operations with your partner (Single-source reported: Red Bull)",
+      "unlockRequirements": "Finish Story Mode + Clear 25 gang operations with your partner (Single-source reported: Red Bull)",
+      "source": "Red Bull (Red Bull Media House)",
+      "sourceUrl": "https://www.redbull.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 45,
       "slug": "cheat-weather-thunderstorm-lightning",
-      "title": "Weather: Thunderstorm & Lightning",
-      "name": "Weather: Thunderstorm & Lightning",
+      "title": "Screen Filter: Fisheye",
+      "name": "Screen Filter: Fisheye",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Catch 100 fish",
+        "competingReport": null,
+        "note": "Corroborated by PC Gamer and SVG."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "Activation sequence not yet reliably published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Reports 100 fish unlock"
+        },
+        {
+          "name": "SVG",
+          "publisher": "Static Media",
+          "url": "https://www.svg.com/",
+          "role": "Independent corroboration"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Active lightning storm with heavy tropical downpour.",
-      "effect": "Active lightning storm with heavy tropical downpour.",
-      "unlock": "Finish Story Mode + Witness lightning strike during night rain",
-      "unlockRequirements": "Finish Story Mode + Witness lightning strike during night rain",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Applies a wide-angle fisheye camera lens distortion filter.",
+      "effect": "Applies a wide-angle fisheye camera lens distortion filter.",
+      "unlock": "Finish Story Mode + Catch 100 fish",
+      "unlockRequirements": "Finish Story Mode + Catch 100 fish",
+      "source": "PC Gamer (Future plc), SVG (Static Media)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 46,
       "slug": "cheat-weather-clear-blue-skies",
-      "title": "Weather: Clear Blue Skies",
-      "name": "Weather: Clear Blue Skies",
+      "title": "Screen Filter: Yesteryear (CRT)",
+      "name": "Screen Filter: Yesteryear (CRT)",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Discover the Ridgeway vehicle",
+        "competingReport": null,
+        "note": "Corroborated by TrueAchievements and TimeSaver.gg."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "Activation sequence not yet reliably published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "TrueAchievements",
+          "publisher": "TrueGaming Network",
+          "url": "https://www.trueachievements.com/",
+          "role": "Confirms Yesteryear filter"
+        },
+        {
+          "name": "TimeSaver.gg",
+          "publisher": "TimeSaver.gg (Independent)",
+          "url": "https://timesaver.gg/",
+          "role": "Reports Ridgeway vehicle unlock"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
-      "desc": "Clears all clouds and haze for maximum draw distance.",
-      "effect": "Clears all clouds and haze for maximum draw distance.",
-      "unlock": "Finish Story Mode + Complete daytime flight over Biscayne Bay",
-      "unlockRequirements": "Finish Story Mode + Complete daytime flight over Biscayne Bay",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Applies a vintage CRT television screen filter across gameplay.",
+      "effect": "Applies a vintage CRT television screen filter across gameplay.",
+      "unlock": "Finish Story Mode + Discover the Ridgeway vehicle",
+      "unlockRequirements": "Finish Story Mode + Discover the Ridgeway vehicle",
+      "source": "TrueAchievements (TrueGaming Network), TimeSaver.gg (TimeSaver.gg (Independent))",
+      "sourceUrl": "https://www.trueachievements.com/",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 47,
@@ -992,19 +2333,43 @@
       "name": "Time Advance (+6 Hours)",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Advances the Leonida world clock forward by 6 in-game hours.",
       "effect": "Advances the Leonida world clock forward by 6 in-game hours.",
-      "unlock": "Finish Story Mode + Rest at story safehouses 20 times",
-      "unlockRequirements": "Finish Story Mode + Rest at story safehouses 20 times",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 48,
@@ -1013,40 +2378,116 @@
       "name": "Slow Motion World (3 Levels)",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Cycles global simulation speed through 75%, 50%, and 25%.",
       "effect": "Cycles global simulation speed through 75%, 50%, and 25%.",
-      "unlock": "Finish Story Mode + Finish any shootout with 90%+ accuracy",
-      "unlockRequirements": "Finish Story Mode + Finish any shootout with 90%+ accuracy",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 49,
       "slug": "cheat-drunk-ragdoll-stumble-mode",
-      "title": "Drunk Ragdoll Stumble Mode",
-      "name": "Drunk Ragdoll Stumble Mode",
+      "title": "Drunk (Drunk Mode)",
+      "name": "Drunk (Drunk Mode)",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "CONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Spend $2,500 on alcohol",
+        "competingReport": null,
+        "note": "Reconciled from prior speculative 'Order 10 drinks' slot; corroborated by PC Gamer and SVG."
+      },
+      "activationEvidence": {
+        "status": "CONFIRMED",
+        "sequence": [
+          "↑",
+          "←",
+          "→",
+          "↑",
+          "↑",
+          "←",
+          "→",
+          "↑",
+          "←",
+          "→"
+        ],
+        "buttonCombo": "↑ ← → ↑ ↑ ← → ↑ ← →",
+        "note": "Corroborated across independent publishers (PC Gamer, SVG)."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "PC Gamer",
+          "publisher": "Future plc",
+          "url": "https://www.pcgamer.com/",
+          "role": "Unlock ($2,500 on alcohol) & D-Pad code"
+        },
+        {
+          "name": "SVG",
+          "publisher": "Static Media",
+          "url": "https://www.svg.com/",
+          "role": "Independent corroboration"
+        }
+      ],
+      "code": [
+        "↑",
+        "←",
+        "→",
+        "↑",
+        "↑",
+        "←",
+        "→",
+        "↑",
+        "←",
+        "→"
+      ],
+      "buttonCombo": "↑ ← → ↑ ↑ ← → ↑ ← →",
       "phoneCode": null,
-      "desc": "Wobbly camera sway, muffled audio, and ragdoll stumble.",
-      "effect": "Wobbly camera sway, muffled audio, and ragdoll stumble.",
-      "unlock": "Finish Story Mode + Order 10 drinks at Vice Beach clubs",
-      "unlockRequirements": "Finish Story Mode + Order 10 drinks at Vice Beach clubs",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Instantly makes the active protagonist and partner drunk with wobbly camera sway and ragdoll stumble.",
+      "effect": "Instantly makes the active protagonist and partner drunk with wobbly camera sway and ragdoll stumble.",
+      "unlock": "Finish Story Mode + Spend $2,500 on alcohol",
+      "unlockRequirements": "Finish Story Mode + Spend $2,500 on alcohol",
+      "source": "PC Gamer (Future plc), SVG (Static Media)",
+      "sourceUrl": "https://www.pcgamer.com/",
       "discoveryDate": "2026-11-19",
-      "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "verified": true,
+      "status": "Confirmed (Multi-Source · Not Playtested In-House)",
+      "verificationStatus": "CONFIRMED"
     },
     {
       "id": 50,
@@ -1055,19 +2496,43 @@
       "name": "Fast Swimming Speed",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Increases surface and underwater swim speed by 2.5x.",
       "effect": "Increases surface and underwater swim speed by 2.5x.",
-      "unlock": "Finish Story Mode + Swim across Biscayne Bay channel",
-      "unlockRequirements": "Finish Story Mode + Swim across Biscayne Bay channel",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 51,
@@ -1076,19 +2541,43 @@
       "name": "Civilian Chaos (Pedestrians Riot)",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "NPCs loot storefronts and clash with VCPD across Vice City.",
       "effect": "NPCs loot storefronts and clash with VCPD across Vice City.",
-      "unlock": "Finish Story Mode + Trigger 5-star standoff in Little Haiti",
-      "unlockRequirements": "Finish Story Mode + Trigger 5-star standoff in Little Haiti",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 52,
@@ -1097,19 +2586,43 @@
       "name": "Armed Pedestrians",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Equips random sidearms and melee weapons to Leonida NPCs.",
       "effect": "Equips random sidearms and melee weapons to Leonida NPCs.",
-      "unlock": "Finish Story Mode + Confiscate 10 gang weapons in hideouts",
-      "unlockRequirements": "Finish Story Mode + Confiscate 10 gang weapons in hideouts",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 53,
@@ -1118,19 +2631,43 @@
       "name": "Hostile Pedestrians (Attack Player)",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Nearby pedestrians aggressively rush Jason and Lucia.",
       "effect": "Nearby pedestrians aggressively rush Jason and Lucia.",
-      "unlock": "Finish Story Mode + Survive 10 minutes surrounded by hostiles",
-      "unlockRequirements": "Finish Story Mode + Survive 10 minutes surrounded by hostiles",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 54,
@@ -1139,19 +2676,43 @@
       "name": "Aggressive Drivers Mode",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Traffic drivers speed wildly and ram police cruisers.",
       "effect": "Traffic drivers speed wildly and ram police cruisers.",
-      "unlock": "Finish Story Mode + Cause 50 highway multi-car pileups",
-      "unlockRequirements": "Finish Story Mode + Cause 50 highway multi-car pileups",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 55,
@@ -1160,19 +2721,43 @@
       "name": "Always Green Traffic Lights",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Forces green signals on every approaching city intersection.",
       "effect": "Forces green signals on every approaching city intersection.",
-      "unlock": "Finish Story Mode + Complete 10 Leonida cab dispatch fares",
-      "unlockRequirements": "Finish Story Mode + Complete 10 Leonida cab dispatch fares",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 56,
@@ -1181,19 +2766,43 @@
       "name": "Blackout Leonida Power Grid",
       "cat": "environment",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Shuts down Vice City streetlights and neon signage.",
       "effect": "Shuts down Vice City streetlights and neon signage.",
-      "unlock": "Finish Story Mode + Hack 5 regional power substations",
-      "unlockRequirements": "Finish Story Mode + Hack 5 regional power substations",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 57,
@@ -1202,19 +2811,43 @@
       "name": "Infinite Vehicle Nitro Boost",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Press horn (L3/LS) for unlimited KERS nitrous boost.",
       "effect": "Press horn (L3/LS) for unlimited KERS nitrous boost.",
-      "unlock": "Finish Story Mode + Win 10 Leonida street circuit races",
-      "unlockRequirements": "Finish Story Mode + Win 10 Leonida street circuit races",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 58,
@@ -1223,19 +2856,43 @@
       "name": "Underwater Night Vision",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Brightens reefs, shipwrecks, and deep ocean trenches.",
       "effect": "Brightens reefs, shipwrecks, and deep ocean trenches.",
-      "unlock": "Finish Story Mode + Salvage 20 Kenton shipwreck dives",
-      "unlockRequirements": "Finish Story Mode + Salvage 20 Kenton shipwreck dives",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 59,
@@ -1244,40 +2901,114 @@
       "name": "Zero Tire Friction (Ice Physics)",
       "cat": "vehicle",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Applies near-zero friction ice physics to Leonida asphalt.",
       "effect": "Applies near-zero friction ice physics to Leonida asphalt.",
-      "unlock": "Finish Story Mode + Spin out 25 times during heavy rain",
-      "unlockRequirements": "Finish Story Mode + Spin out 25 times during heavy rain",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     },
     {
       "id": 60,
       "slug": "cheat-exploding-rounds-bang-bang",
-      "title": "Exploding Rounds (Bang Bang)",
-      "name": "Exploding Rounds (Bang Bang)",
+      "title": "Exploding Balls",
+      "name": "Exploding Balls",
       "cat": "combat",
       "platform": "PS5 / Xbox Series X|S",
-      "code": [],
-      "buttonCombo": null,
+      "evidenceStatus": "CONFIRMED",
+      "cheatExistence": "CONFIRMED",
+      "unlockEvidence": {
+        "status": "CONFIRMED",
+        "requirement": "Finish Story Mode + Deal explosive damage to 20 enemies",
+        "competingReport": null,
+        "note": "Corroborated by Vice and Tracker.gg."
+      },
+      "activationEvidence": {
+        "status": "CONFIRMED",
+        "sequence": [
+          "↓",
+          "↑",
+          "←",
+          "←",
+          "→",
+          "↓",
+          "↓",
+          "↑",
+          "→"
+        ],
+        "buttonCombo": "↓ ↑ ← ← → ↓ ↓ ↑ →",
+        "note": "Corroborated across independent publishers (Tracker.gg, PureXbox/Community)."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "Tracker.gg",
+          "publisher": "Tracker Network (Independent)",
+          "url": "https://tracker.gg/",
+          "role": "D-Pad code & effect"
+        },
+        {
+          "name": "Vice",
+          "publisher": "Vice Media",
+          "url": "https://www.vice.com/",
+          "role": "Corroborates 20 explosive-damage enemies unlock"
+        }
+      ],
+      "code": [
+        "↓",
+        "↑",
+        "←",
+        "←",
+        "→",
+        "↓",
+        "↓",
+        "↑",
+        "→"
+      ],
+      "buttonCombo": "↓ ↑ ← ← → ↓ ↓ ↑ →",
       "phoneCode": null,
-      "desc": "Every bullet fired explodes on impact like C4.",
-      "effect": "Every bullet fired explodes on impact like C4.",
-      "unlock": "Finish Story Mode + Detonate 50 fuel tanks or gas pumps",
-      "unlockRequirements": "Finish Story Mode + Detonate 50 fuel tanks or gas pumps",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
-      "sourceUrl": "https://www.rockstargames.com/VI",
+      "desc": "Causes sports balls and thrown projectiles to explode on impact. (Reconciled from prior speculative Exploding Rounds slot.)",
+      "effect": "Causes sports balls and thrown projectiles to explode on impact. (Reconciled from prior speculative Exploding Rounds slot.)",
+      "unlock": "Finish Story Mode + Deal explosive damage to 20 enemies",
+      "unlockRequirements": "Finish Story Mode + Deal explosive damage to 20 enemies",
+      "source": "Tracker.gg (Tracker Network (Independent)), Vice (Vice Media)",
+      "sourceUrl": "https://tracker.gg/",
       "discoveryDate": "2026-11-19",
-      "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "verified": true,
+      "status": "Confirmed (Multi-Source · Not Playtested In-House)",
+      "verificationStatus": "CONFIRMED"
     },
     {
       "id": 61,
@@ -1286,19 +3017,43 @@
       "name": "Infinite Scuba Breath",
       "cat": "player",
       "platform": "PS5 / Xbox Series X|S",
+      "evidenceStatus": "UNCONFIRMED",
+      "cheatExistence": "UNCONFIRMED",
+      "unlockEvidence": {
+        "status": "UNCONFIRMED",
+        "requirement": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes",
+        "competingReport": null,
+        "note": "Pre-launch speculative research slot; unlock requirement not yet verified in-game or corroborated post-launch."
+      },
+      "activationEvidence": {
+        "status": "NOT_PUBLISHED",
+        "sequence": [],
+        "buttonCombo": "NOT PUBLISHED",
+        "note": "No reliable activation code published."
+      },
+      "inGameTestingStatus": "NOT VERIFIED (Not playtested in-house)",
+      "lastVerifiedDate": "2026-11-23",
+      "supportingSources": [
+        {
+          "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
+          "publisher": "Internal Tracker",
+          "url": null,
+          "role": "Speculative placeholder preserved pending post-launch verification"
+        }
+      ],
       "code": [],
-      "buttonCombo": null,
+      "buttonCombo": "NOT PUBLISHED",
       "phoneCode": null,
       "desc": "Unlimited lung capacity for free-diving shipwrecks without scuba gear.",
       "effect": "Unlimited lung capacity for free-diving shipwrecks without scuba gear.",
-      "unlock": "Finish Story Mode + Stay submerged underwater for 3 minutes",
-      "unlockRequirements": "Finish Story Mode + Stay submerged underwater for 3 minutes",
-      "source": "GTA 6 Launch Directory (In-Game Slot)",
+      "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes",
+      "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes",
+      "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
       "sourceUrl": "https://www.rockstargames.com/VI",
       "discoveryDate": "2026-11-19",
       "verified": false,
-      "status": "Community Verifying / Unconfirmed",
-      "verificationStatus": "COMMUNITY VERIFYING"
+      "status": "Unconfirmed (Code Not Published)",
+      "verificationStatus": "UNCONFIRMED"
     }
   ]
 }

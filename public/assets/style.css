@@ -3490,7 +3490,6 @@ body.has-ticker .bookmarks-fab {
   border-bottom-color: var(--neon-pink);
 }
 .syndicate-aff-bar a[data-aff-partner="g2a"] { color: var(--neon-yellow); }
-.syndicate-aff-bar a[data-aff-partner="eneba"] { color: #f472b6; }
 .syndicate-aff-bar a[data-aff-partner="exitlag"] { color: var(--neon-green); }
 .syndicate-aff-bar a[data-aff-partner="gumroad"] { color: var(--neon-cyan); }
 .syndicate-aff-bar a[data-aff-partner="amazon"] { color: #fbbf24; }
@@ -4811,7 +4810,7 @@ footer .footer-disclaimer code {
   color: #fde68a;
 }
 
-/* Official-Palette Branded Text-and-Logo Panels (G2A & Eneba) */
+/* Official-Palette Branded Text-and-Logo Panels (G2A) */
 .aff-brand-panel {
   display: flex;
   flex-direction: column;
@@ -4826,12 +4825,6 @@ footer .footer-disclaimer code {
     radial-gradient(circle at 22% 24%, rgba(240, 95, 0, 0.34), transparent 56%),
     radial-gradient(circle at 82% 78%, rgba(59, 130, 246, 0.26), transparent 54%),
     linear-gradient(145deg, #131722 0%, #090d16 100%);
-}
-.aff-brand-panel--eneba {
-  background:
-    radial-gradient(circle at 20% 25%, rgba(225, 29, 140, 0.34), transparent 54%),
-    radial-gradient(circle at 82% 75%, rgba(0, 229, 255, 0.24), transparent 54%),
-    linear-gradient(145deg, #2b1068 0%, #140a32 100%);
 }
 .aff-brand-wordmark-wrap {
   display: flex;
@@ -4850,14 +4843,6 @@ footer .footer-disclaimer code {
   text-shadow: 0 0 18px rgba(240, 95, 0, 0.55);
   border-bottom: 3px solid #f05f00;
   padding-bottom: 0.14rem;
-}
-.aff-brand-mark--eneba {
-  font-size: 2rem;
-  letter-spacing: -0.02em;
-  background: linear-gradient(90deg, #ff7b00, #ff2a8d 52%, #00e5ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .aff-brand-sub {
   font-family: var(--font-mono);
@@ -6170,7 +6155,6 @@ footer .footer-brand-logo:hover .footer-brand-logo-img {
   border-color: rgba(0, 240, 255, 0.45);
 }
 .squad-partner-tile.is-g2a { border-color: rgba(240, 95, 0, 0.34); }
-.squad-partner-tile.is-eneba { border-color: rgba(168, 85, 247, 0.34); }
 .squad-partner-tile.is-exitlag { border-color: rgba(225, 29, 72, 0.34); }
 
 /* 5. HEIST GUIDE PAGES — UNIFIED POLISHED LAYOUT */

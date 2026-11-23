@@ -125,7 +125,6 @@ const GTA6 = {
       amazonTag: 'gta6heistguid-20',
       exitLagUrl: 'https://www.exitlag.com/refer/10386953',
       g2aUrl: 'https://www.g2a.com/n/reflink-4094b9aab5',
-      enebaUrl: 'https://www.eneba.com', // Non-affiliate fallback
       
       gumroadUrl: 'https://apexlocallabs.gumroad.com/l/cutflow-pro',
       gumroadBundleUrl: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle',
@@ -155,24 +154,11 @@ const GTA6 = {
       return rawUrl;
     },
 
-    buildEnebaUrl(rawUrl) {
-      // Eneba affiliate program declined: strip any tracking IDs and preserve clean URL
-      try {
-        const u = new URL(rawUrl);
-        if (/(^|\.)eneba\.com$/i.test(u.hostname)) {
-          u.searchParams.delete('af_id');
-          return u.toString();
-        }
-      } catch (e) {}
-      return 'https://www.eneba.com';
-    },
-
     detectPartnerFromHref(href) {
       if (!href) return null;
       const low = String(href).toLowerCase();
       if (low.includes('amazon.com') || low.includes('amzn.to')) return 'amazon';
       if (low.includes('g2a.com')) return 'g2a';
-      if (low.includes('eneba.com')) return 'eneba';
       if (low.includes('exitlag.com')) return 'exitlag';
       if (low.includes('gumroad.com')) return 'gumroad';
       if (low.includes('getapexlocal.com')) return 'getapexlocal';
@@ -194,9 +180,6 @@ const GTA6 = {
         } else if (low.includes('g2a.com')) {
           a.href = cfg.g2aUrl;
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'g2a');
-        } else if (low.includes('eneba.com')) {
-          a.href = this.buildEnebaUrl(rawHref);
-          if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'eneba');
         } else if (low.includes('gumroad.com')) {
           a.href = low.includes('cutflow-pro')
             ? (cfg.gumroadCutFlowUrl || cfg.gumroadUrl || 'https://apexlocallabs.gumroad.com/l/cutflow-pro')
@@ -6266,7 +6249,7 @@ DealRotator: {
         } catch (e) {}
       },
       getLocalClickCounts() {
-        const counts = { amazon: 0, g2a: 0, eneba: 0, exitlag: 0, gumroad: 0, getapexlocal: 0 };
+        const counts = { amazon: 0, g2a: 0, exitlag: 0, gumroad: 0, getapexlocal: 0 };
         try {
           const arr = JSON.parse(localStorage.getItem('gta6_aff_clicks') || '[]');
           arr.forEach((item) => {
@@ -6361,7 +6344,6 @@ DealRotator: {
         const labels = [
           ['amazon', 'Amazon'],
           ['g2a', 'G2A'],
-          ['eneba', 'Eneba'],
           ['exitlag', 'ExitLag'],
           ['gumroad', 'Gumroad'],
           ['getapexlocal', 'GetApexLocal'],
@@ -6395,7 +6377,6 @@ DealRotator: {
           const labels = [
             ['amazon', 'Amazon'],
             ['g2a', 'G2A'],
-            ['eneba', 'Eneba'],
             ['exitlag', 'ExitLag'],
             ['gumroad', 'Gumroad'],
             ['getapexlocal', 'GetApexLocal'],

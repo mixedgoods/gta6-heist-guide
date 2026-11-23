@@ -145,6 +145,56 @@
 
     <div id="worldDbRoot"></div>
 
+    <!-- INTERACTIVE SONG, ARTIST & STATION SOUNDTRACK SEARCH INDEX (PHASE 6) -->
+    <section class="tool-box" id="soundtrack-search-index" style="margin-top:1.75rem; border-color:rgba(56,189,248,0.42);" aria-labelledby="soundtrackSearchHeading">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.85rem;">
+            <div>
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+                    <span class="verify-badge verify-confirmed">🎵 SONG &amp; ARTIST SEARCH</span>
+                    <span class="verify-badge verify-community">LAST CHECKED: NOV 23, 2026</span>
+                </div>
+                <h2 id="soundtrackSearchHeading" style="color:#fff; font-size:1.3rem; margin:0 0 0.25rem;">GTA 6 Soundtrack &amp; Song Search Database</h2>
+                <p style="color:#94a3b8; font-size:0.84rem; margin:0; max-width:820px; line-height:1.5;">
+                    Search verified GTA VI songs by <strong style="color:#fff;">song title</strong>, <strong style="color:#fff;">artist</strong>, <strong style="color:#fff;">radio station</strong>, <strong style="color:#fff;">DJ host</strong>, or <strong style="color:#fff;">unlockable status</strong>. Zero copyrighted audio or lyrics are hosted here; use the authorized Spotify, Apple Music, or Rockstar links to listen. <em>Note: Credible sources disagree on the final total licensed song count across all stations, so only verified catalogued entries are counted below.</em>
+                </p>
+            </div>
+            <span id="trackIndexCount" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--neon-cyan); font-weight:800;">Loading verified tracks...</span>
+        </div>
+
+        <div style="display:flex; gap:0.55rem; flex-wrap:wrap; margin-bottom:0.9rem;">
+            <input type="search" id="trackTitleInput" placeholder="Search by song title..." aria-label="Search by song title" class="form-input" style="flex:1 1 200px; padding:0.5rem 0.75rem; font-size:0.84rem;">
+            <input type="search" id="trackArtistInput" placeholder="Search by artist or DJ..." aria-label="Search by artist or DJ" class="form-input" style="flex:1 1 200px; padding:0.5rem 0.75rem; font-size:0.84rem;">
+            <select id="trackStationSelect" aria-label="Filter by radio station" class="form-select" style="flex:1 1 190px; padding:0.5rem 0.7rem; font-size:0.84rem;">
+                <option value="ALL">All Stations &amp; Official Album</option>
+            </select>
+            <select id="trackUnlockSelect" aria-label="Filter by unlockable status" class="form-select" style="flex:0 1 180px; padding:0.5rem 0.7rem; font-size:0.84rem;">
+                <option value="ALL">All Unlock Statuses</option>
+                <option value="standard">Standard Radio Dial</option>
+                <option value="unlockable">Secret / Unlockable Only</option>
+                <option value="album">Official 34-Track Album</option>
+            </select>
+        </div>
+
+        <div style="overflow-x:auto; border:1px solid rgba(255,255,255,0.08); border-radius:8px;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.82rem; text-align:left;" id="soundtrackTable">
+                <thead>
+                    <tr style="background:rgba(15,23,42,0.92); color:var(--neon-cyan); border-bottom:1px solid rgba(56,189,248,0.35);">
+                        <th scope="col" style="padding:0.65rem 0.75rem;">Song Title</th>
+                        <th scope="col" style="padding:0.65rem 0.75rem;">Artist</th>
+                        <th scope="col" style="padding:0.65rem 0.75rem;">Station / Release</th>
+                        <th scope="col" style="padding:0.65rem 0.75rem;">DJ / Host &amp; Genre</th>
+                        <th scope="col" style="padding:0.65rem 0.75rem;">Unlock Status</th>
+                        <th scope="col" style="padding:0.65rem 0.75rem;">Source &amp; Checked</th>
+                        <th scope="col" style="padding:0.65rem 0.75rem;">Listen</th>
+                    </tr>
+                </thead>
+                <tbody id="soundtrackTableBody">
+                    <tr><td colspan="7" style="padding:1rem; color:#94a3b8; text-align:center;">Loading verified soundtrack index...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <!-- CONTEXTUAL AUDIO HARDWARE RECOMMENDATION (HEADSETS, EARBUDS & MICS ONLY) -->
     <div id="radioAudioAffSlot"
          style="margin:1.75rem 0 0.5rem;"
@@ -285,11 +335,140 @@ document.addEventListener('DOMContentLoaded', function () {
     window.GTA6WorldDB.mount({
       container: '#worldDbRoot',
       category: 'radio',
-      dataUrl: '/data/radio.json?v=20261121_p4',
+      dataUrl: '/data/radio.json?v=20261123_p6',
       showAffiliateBar: false,
       progressPosition: 'after-grid'
     });
   }
+
+  // Phase 6: Searchable Song, Artist & Station Soundtrack Index
+  (function initSoundtrackIndex() {
+    var tbody = document.getElementById('soundtrackTableBody');
+    var countEl = document.getElementById('trackIndexCount');
+    var titleIn = document.getElementById('trackTitleInput');
+    var artistIn = document.getElementById('trackArtistInput');
+    var stationSel = document.getElementById('trackStationSelect');
+    var unlockSel = document.getElementById('trackUnlockSelect');
+    if (!tbody) return;
+
+    var rows = [];
+
+    function esc(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function splitTrack(raw) {
+      var parts = String(raw || '').split(/\s+[–—-]\s+/);
+      if (parts.length >= 2) {
+        return { artist: parts[0].trim(), title: parts.slice(1).join(' - ').trim().replace(/^["“]|["”]$/g, '') };
+      }
+      return { artist: 'Various / See Credits', title: String(raw || '').trim() };
+    }
+
+    function render() {
+      var tq = (titleIn ? titleIn.value : '').trim().toLowerCase();
+      var aq = (artistIn ? artistIn.value : '').trim().toLowerCase();
+      var sq = stationSel ? stationSel.value : 'ALL';
+      var uq = unlockSel ? unlockSel.value : 'ALL';
+
+      var filtered = rows.filter(function (r) {
+        if (sq !== 'ALL' && r.stationKey !== sq) return false;
+        if (uq !== 'ALL' && r.unlockType !== uq) return false;
+        if (tq && r.title.toLowerCase().indexOf(tq) === -1) return false;
+        if (aq && (r.artist.toLowerCase() + ' ' + r.dj.toLowerCase()).indexOf(aq) === -1) return false;
+        return true;
+      });
+
+      if (countEl) countEl.textContent = 'Showing ' + filtered.length + ' of ' + rows.length + ' verified catalogued tracks';
+      if (!filtered.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="padding:1rem; color:#94a3b8; text-align:center;">No verified tracks match your current filter.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(function (r) {
+        var q = encodeURIComponent(r.artist + ' ' + r.title);
+        var unlockBadge = r.unlockType === 'unlockable'
+          ? '<span style="color:#fbbf24; font-weight:700;">🔒 Secret Unlock</span>'
+          : (r.unlockType === 'album'
+            ? '<span style="color:#34d399; font-weight:700;">💿 Official Album</span>'
+            : '<span style="color:#38bdf8;">Standard Dial</span>');
+        return '<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">' +
+          '<td style="padding:0.55rem 0.75rem; color:#fff; font-weight:700;">' + esc(r.title) + '</td>' +
+          '<td style="padding:0.55rem 0.75rem; color:#e2e8f0;">' + esc(r.artist) + '</td>' +
+          '<td style="padding:0.55rem 0.75rem; color:#38bdf8; font-weight:700;">' + esc(r.station) + '</td>' +
+          '<td style="padding:0.55rem 0.75rem; color:#94a3b8;">' + esc(r.dj) + '<br><span style="font-size:0.74rem; color:#64748b;">' + esc(r.genre) + '</span></td>' +
+          '<td style="padding:0.55rem 0.75rem;">' + unlockBadge + '</td>' +
+          '<td style="padding:0.55rem 0.75rem; font-size:0.74rem; color:#94a3b8;"><a href="' + esc(r.sourceUrl) + '" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan);">' + esc(r.sourceLabel) + '</a><br>' + esc(r.lastChecked) + '</td>' +
+          '<td style="padding:0.55rem 0.75rem; white-space:nowrap;"><a href="https://open.spotify.com/search/' + q + '" target="_blank" rel="noopener noreferrer" style="color:#1db954; font-weight:700; margin-right:0.45rem;">Spotify ↗</a><a href="https://music.apple.com/us/search?term=' + q + '" target="_blank" rel="noopener noreferrer" style="color:#f472b6; font-weight:700;">Apple ↗</a></td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    fetch('/data/radio.json?v=20261123_p6')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var stations = Array.isArray(data) ? data : (data.items || data.stations || []);
+        var stationOpts = [];
+        stations.forEach(function (st) {
+          var key = st.id || st.name;
+          stationOpts.push({ key: key, label: st.name + (st.frequency ? ' (' + st.frequency + ')' : '') });
+          var list = st.verifiedTracklist || [];
+          list.forEach(function (raw) {
+            var sp = splitTrack(raw);
+            rows.push({
+              title: sp.title,
+              artist: sp.artist,
+              stationKey: key,
+              station: st.name + (st.frequency ? ' (' + st.frequency + ')' : ''),
+              dj: st.dj || 'See Rockstar Credits',
+              genre: st.genre || st.genreGroup || 'Radio',
+              unlockType: st.secretUnlock ? 'unlockable' : 'standard',
+              sourceUrl: st.sourceUrl || 'https://www.rockstargames.com/VI/credits',
+              sourceLabel: 'Rockstar Credits / Verified',
+              lastChecked: st.lastUpdated || '2026-11-23'
+            });
+          });
+        });
+
+        // Append Official 34-Track Companion Album entries from the page's verified list
+        var albumLis = document.querySelectorAll('#gta6-the-album ol li');
+        if (albumLis.length) {
+          stationOpts.push({ key: 'official-album', label: 'Grand Theft Auto VI: The Album (34 Tracks)' });
+          albumLis.forEach(function (li) {
+            var sp = splitTrack(li.textContent);
+            rows.push({
+              title: sp.title,
+              artist: sp.artist,
+              stationKey: 'official-album',
+              station: 'Grand Theft Auto VI: The Album',
+              dj: 'Rockstar Games / Atlantic Records',
+              genre: 'Official Companion Album',
+              unlockType: 'album',
+              sourceUrl: 'https://www.rockstargames.com/VI/music',
+              sourceLabel: 'Rockstar Music Portal',
+              lastChecked: '2026-11-23'
+            });
+          });
+        }
+
+        if (stationSel) {
+          stationOpts.forEach(function (o) {
+            var opt = document.createElement('option');
+            opt.value = o.key;
+            opt.textContent = o.label;
+            stationSel.appendChild(opt);
+          });
+        }
+
+        render();
+      })
+      .catch(function () {
+        tbody.innerHTML = '<tr><td colspan="7" style="padding:1rem; color:#f87171; text-align:center;">Unable to load radio.json soundtrack data.</td></tr>';
+      });
+
+    [titleIn, artistIn].forEach(function (el) { if (el) el.addEventListener('input', render); });
+    [stationSel, unlockSel].forEach(function (el) { if (el) el.addEventListener('change', render); });
+  })();
 });
 </script>
 </body>

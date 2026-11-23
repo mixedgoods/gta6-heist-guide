@@ -6,7 +6,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>GTA 6 Interactive Leonida Map — Vaults, Properties, Animals &amp; Safe Codes | GTA6HeistGuide.com</title>
-    <meta name="description" content="Explore the free GTA 6 Interactive Leonida Map with 174 verified pins: Story Heists, Big Banks, 25 Properties &amp; Fences (Brian's Lockup 7700), 49 Wildlife Habitats, 24 Ammu-Nation stores, and launch glitches.">
+    <meta name="description" content="Explore the free GTA 6 Interactive Leonida Map with verified Story Heists, Big Banks, 25 Properties &amp; Fences (Brian's Lockup 7700), 7 Verified GTA VI Wildlife Habitats, 12 Vice City Portal LPL Substations, 24 Ammu-Nation stores, and launch glitches.">
     <meta name="keywords" content="GTA 6 interactive map, Leonida map, Vice City vaults, GTA 6 properties map, GTA 6 animals map, Brian's lockup 7700 location, Apollo Aggregates Red Barn location, Ammu-Nation locations">
     <link rel="canonical" href="https://www.gta6heistguide.com/map">
     <link rel="manifest" href="/manifest.json">
@@ -1231,21 +1231,22 @@ let markersById = {};
 let markerLayersByCategory = {};
 
 const CATEGORIES = {
-    'vault':          { name: 'Big Banks & Story Heists', color: '#fbbf24', icon: '🏦' },
-    'property':       { name: 'Properties, Garages & Fences', color: '#00f0ff', icon: '🏠' },
-    'animal':         { name: 'Animals & Wildlife Habitats', color: '#22c55e', icon: '🐊' },
-    'bank':           { name: 'Regular Banks & Shops', color: '#10b981', icon: '🏧' },
-    'jewelry':        { name: 'Jewelry & Pawn Shops', color: '#06b6d4', icon: '💎' },
-    'ammunation':     { name: '24 Ammu-Nation Stores', color: '#ef4444', icon: '🔫' },
-    'illegal-op':     { name: 'Illegal Ops & Gang Camps', color: '#a855f7', icon: '🧪' },
-    'easter-egg':     { name: 'Easter Eggs & Secrets', color: '#f43f5e', icon: '🥚' },
-    'safehouse':      { name: 'Escape Canals & Docks', color: '#3b82f6', icon: '🚤' },
-    'live-discovery': { name: 'Launch Glitches & Live Hotspots', color: '#ffb800', icon: '📡' },
-    'user-custom':    { name: 'Custom User Pins', color: '#10b981', icon: '📍' }
+    'vault':            { name: 'Big Banks & Story Heists', color: '#fbbf24', icon: '🏦' },
+    'property':         { name: 'Properties, Garages & Fences', color: '#00f0ff', icon: '🏠' },
+    'animal':           { name: 'Verified GTA VI Wildlife (7)', color: '#22c55e', icon: '🐊' },
+    'animal-reference': { name: 'Real-World Species References (Unconfirmed)', color: '#64748b', icon: '📷' },
+    'bank':             { name: 'Regular Banks & Shops', color: '#10b981', icon: '🏧' },
+    'jewelry':          { name: 'Jewelry & Pawn Shops', color: '#06b6d4', icon: '💎' },
+    'ammunation':       { name: '24 Ammu-Nation Stores', color: '#ef4444', icon: '🔫' },
+    'illegal-op':       { name: 'Illegal Ops & Gang Camps', color: '#a855f7', icon: '🧪' },
+    'easter-egg':       { name: 'Easter Eggs & Secrets (LPL Portal)', color: '#f43f5e', icon: '🥚' },
+    'safehouse':        { name: 'Escape Canals & Docks', color: '#3b82f6', icon: '🚤' },
+    'live-discovery':   { name: 'Launch Glitches & Live Hotspots', color: '#ffb800', icon: '📡' },
+    'user-custom':      { name: 'Custom User Pins', color: '#10b981', icon: '📍' }
 };
 
 let categoryVisibility = {};
-Object.keys(CATEGORIES).forEach(k => { categoryVisibility[k] = true; });
+Object.keys(CATEGORIES).forEach(k => { categoryVisibility[k] = (k !== 'animal-reference'); });
 
 let foundPinIds = new Set();
 function loadFoundPinsFromStore() {

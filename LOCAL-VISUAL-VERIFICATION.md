@@ -113,6 +113,12 @@
 
 ---
 
-## 9. Deployment Hold
+## 9. Production Deployment & Live Verification Results (Updated 2026-11-23)
 
-Per instructions, **no git commit or production deployment has been performed**. Commit `f7cbebc` remains untouched as HEAD, and the local preview server remains available on `http://localhost:8788` for owner review.
+- **Rollback Commit Preserved:** `f7cbebc4dd4599537c8fe1fa40f678697fd77744` (`f7cbebc`, Cloudflare Deployment ID `3e4e15f6-876e-4941-943b-db7ae64adbfa`)
+- **Feature Commit:** `fac473bf115c1d2d8d6633d950758bff7e042452` (`feat(content): launch post-release editorial expansion, wildlife accuracy improvements and homepage optimization`)
+- **Deployed `origin/main` Commit SHA:** `7ea74268fc3dcb33d4baeab8d225e68512db6bc9` (`7ea7426`, clean merge with remote IndexNow state `017dd83`)
+- **Cloudflare Pages Deployment ID:** `6ecaa609-50b5-4471-8fac-fb3398becbb4`
+- **Cloudflare Deployment URL:** `https://6ecaa609.gta6heistguide.pages.dev`
+- **Live Production Domain:** `https://www.gta6heistguide.com`
+- **Production Deployment Status:** **LIVE — PASS** (0 critical JS console errors, 0 failed network requests across all tested routes; rollback not required). See `FINAL-POST-LAUNCH-DEPLOYMENT.md` for the full production verification matrix.

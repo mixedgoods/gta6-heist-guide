@@ -542,7 +542,7 @@ def render_page(h):
             </div>
         </div>
         <div class="footer-disclaimer">
-            <p style="margin:0;">GTA6HeistGuide.com is an independent fan guide. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, Eneba, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you.</p>
+            <p style="margin:0;">GTA6HeistGuide.com is an independent fan guide. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you.</p>
         </div>
     </div>
 </footer>

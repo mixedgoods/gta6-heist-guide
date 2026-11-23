@@ -163,7 +163,7 @@ FOOTER_HTML = '''<footer style="border-top:1px solid rgba(255,255,255,0.08); pad
         <a href="/settings" style="color:#94a3b8; text-decoration:none;">Settings</a>
         <a href="/cash-guide" style="color:#94a3b8; text-decoration:none;">Cash Guide</a>
     </div>
-    <p style="margin:0;">GTA6HeistGuide.com — Independent GTA VI database &amp; tactical companion. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G FUEL (ID: 3162838), ExitLag, Gumroad, G2A, and Eneba partner, this site earns commissions on qualifying purchases.</p>
+    <p style="margin:0;">GTA6HeistGuide.com — Independent GTA VI database &amp; tactical companion. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G FUEL (ID: 3162838), ExitLag, Gumroad, and G2A partner, this site earns commissions on qualifying purchases.</p>
 </footer>
 <script src="/js/affiliates.js"></script>
 <script src="/site-config.js"></script>
