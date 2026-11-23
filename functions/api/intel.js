@@ -161,7 +161,7 @@ function buildAffiliateBarHtml() {
       <div style="color:#10b981; font-weight:900; font-size:0.85rem; letter-spacing:1px; margin-bottom:0.5rem;">VERIFIED SYNDICATE PREP &amp; PARTNER DEALS</div>
       <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
         <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary" style="padding:0.45rem 0.9rem; font-size:0.78rem;">G2A Key Deals</a>
-        <a href="https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.78rem;">Eneba PSN / Xbox Cards</a>
+        <a href="https://www.eneba.com/store/all?q=gta" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.78rem;">Eneba PSN / Xbox Cards</a>
         <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.78rem;">ExitLag Lobby Shield</a>
         <a href="https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20" target="_blank" rel="nofollow noopener" class="btn btn-amber" style="padding:0.45rem 0.9rem; font-size:0.78rem;">Amazon 990 PRO SSD</a>
         <a href="https://getapexlocal.com/partners" target="_blank" rel="noopener" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.78rem; border-color:#10b981; color:#10b981;">CutFlow Pro (50% Partner)</a>

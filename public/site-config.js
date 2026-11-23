@@ -1,42 +1,38 @@
-﻿// ==========================================================================
-// GTA6HEISTGUIDE.COM — 1-FILE MASTER REVENUE & OWNER CONFIGURATION (v3.2)
-// Swap 100% of affiliate IDs, contact email, AdSense & GA4 in 60 seconds.
+// ==========================================================================
+// GTA6HEISTGUIDE.COM — 1-FILE MASTER REVENUE & OWNER CONFIGURATION (v4.0)
+// Verified Amazon Associates Direct Product Links (Tag: gta6heistguid-20)
 // ==========================================================================
 window.SITE_CONFIG = Object.freeze({
   siteName: "GTA6HeistGuide.com",
   domain: "https://www.gta6heistguide.com",
   ownerContactEmail: "inquiries@gta6heistguide.com",
 
-  // Centralized Amazon Associates Links (Tag: gta6heistguid-20)
+  // Centralized Amazon Associates Direct Links (Tag: gta6heistguid-20)
   amazonLinks: {
-    kontrolfreek: "https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20",
-    dualsenseDock: "https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20",
-    controllerStand: "https://www.amazon.com/s?k=PS5+Xbox+Controller+Headset+Stand+Desk&tag=gta6heistguid-20",
-    controllerCase: "https://www.amazon.com/s?k=PS5+DualSense+Protective+Travel+Case&tag=gta6heistguid-20",
-    replacementSticks: "https://www.amazon.com/s?k=PS5+Xbox+Controller+Thumb+Grips+Silicone+Caps&tag=gta6heistguid-20",
-    dualsenseEdge: "https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20",
-    xboxElite2: "https://www.amazon.com/s?k=Xbox+Elite+Wireless+Controller+Series+2&tag=gta6heistguid-20",
-    pulseElite: "https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20",
-    pulseExplore: "https://www.amazon.com/s?k=PlayStation+PULSE+Explore+Wireless+Earbuds&tag=gta6heistguid-20",
-    usbGamingMic: "https://www.amazon.com/s?k=USB+Gaming+Microphone+Streaming+PS5+PC&tag=gta6heistguid-20",
-    headsetStand: "https://www.amazon.com/s?k=Aluminum+Gaming+Headset+Stand+Desk+Mount&tag=gta6heistguid-20",
-    samsung990pro: "https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20",
-    ssdHeatsink: "https://www.amazon.com/s?k=PS5+M.2+NVMe+SSD+Heatsink&tag=gta6heistguid-20",
-    wdBlackSn850p: "https://www.amazon.com/s?k=WD_BLACK+SN850P+NVMe+SSD+for+PS5&tag=gta6heistguid-20",
-    elgatoHd60x: "https://www.amazon.com/s?k=Elgato+HD60+X+Capture+Card&tag=gta6heistguid-20",
-    streamLight: "https://www.amazon.com/s?k=LED+Streaming+Key+Light+Desk+Mount+Gaming&tag=gta6heistguid-20",
-    cableKit: "https://www.amazon.com/s?k=Desk+Cable+Management+Kit+Gaming+Setup&tag=gta6heistguid-20",
-    prime: "https://www.amazon.com/prime?tag=gta6heistguid-20",
-    amazonMusic: "https://www.amazon.com/music/unlimited?tag=gta6heistguid-20",
-    gamingMonitor: "https://www.amazon.com/s?k=4K+120Hz+HDMI+2.1+Gaming+Monitor+PS5&tag=gta6heistguid-20"
+    dualsenseEdge: "https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20",
+    dualsense: "https://www.amazon.com/dp/B08FC6C75B?tag=gta6heistguid-20",
+    dualsenseDock: "https://www.amazon.com/dp/B08FC6Y4VG?tag=gta6heistguid-20",
+    kontrolfreek: "https://www.amazon.com/dp/B08DP7Z725?tag=gta6heistguid-20",
+    nova7p: "https://www.amazon.com/dp/B0B1647BD7?tag=gta6heistguid-20",
+    xboxController: "https://www.amazon.com/dp/B08DF248HZ?tag=gta6heistguid-20",
+    poweraXboxDock: "https://www.amazon.com/dp/B08J845875?tag=gta6heistguid-20",
+    seagateXboxCard: "https://www.amazon.com/dp/B08K3S6WJM?tag=gta6heistguid-20",
+    nova7x: "https://www.amazon.com/dp/B0B161B1YQ?tag=gta6heistguid-20",
+    samsung990pro: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20",
+    wdBlackSn850p: "https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20",
+    crucialT500: "https://www.amazon.com/dp/B0CK39YR41?tag=gta6heistguid-20",
+    elgatoHd60x: "https://www.amazon.com/dp/B09V1KJ3J4?tag=gta6heistguid-20",
+    elgato4kx: "https://www.amazon.com/dp/B0CPKDFF2D?tag=gta6heistguid-20",
+    elgatoWave3: "https://www.amazon.com/dp/B0888746SZ?tag=gta6heistguid-20",
+    headsetStand: "https://www.amazon.com/dp/B01GJQ7N94?tag=gta6heistguid-20",
+    cableKit: "https://www.amazon.com/dp/B071FXZBMV?tag=gta6heistguid-20",
+    prime: "https://www.amazon.com/tryprimefree?tag=gta6heistguid-20"
   },
 
   // Affiliate & Store Monetization IDs
   amazonTag: "gta6heistguid-20",
   exitLagUrl: "https://www.exitlag.com/refer/10386953",
   g2aUrl: "https://www.g2a.com/n/reflink-4094b9aab5",
-  enebaUrl: "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide",
-  enebaAffiliateId: "gta6heistguide",
   gumroadCutFlowUrl: "https://apexlocallabs.gumroad.com/l/cutflow-pro",
   gumroadBundleUrl: "https://apexlocallabs.gumroad.com/l/apex-pro-bundle",
   getApexLocalUrl: "https://getapexlocal.com",
@@ -67,12 +63,16 @@ window.SITE_CONFIG = Object.freeze({
         a.href = cfg.amazonLinks.samsung990pro;
       } else if (/kontrolfreek/i.test(h)) {
         a.href = cfg.amazonLinks.kontrolfreek;
-      } else if (/pulse.*elite/i.test(h)) {
-        a.href = cfg.amazonLinks.pulseElite;
       } else if (/dualsense.*charging|charging.*station/i.test(h)) {
         a.href = cfg.amazonLinks.dualsenseDock;
       } else if (/dualsense.*edge|B0BS5V7T65/i.test(h)) {
         a.href = cfg.amazonLinks.dualsenseEdge;
+      } else if (/nova.*7p/i.test(h)) {
+        a.href = cfg.amazonLinks.nova7p;
+      } else if (/sn850p|wd_black/i.test(h)) {
+        a.href = cfg.amazonLinks.wdBlackSn850p;
+      } else if (/hd60.*x/i.test(h)) {
+        a.href = cfg.amazonLinks.elgatoHd60x;
       }
     });
 

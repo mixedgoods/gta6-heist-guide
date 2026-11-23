@@ -125,8 +125,8 @@ const GTA6 = {
       amazonTag: 'gta6heistguid-20',
       exitLagUrl: 'https://www.exitlag.com/refer/10386953',
       g2aUrl: 'https://www.g2a.com/n/reflink-4094b9aab5',
-      enebaUrl: 'https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide',
-      enebaAffiliateId: 'gta6heistguide',
+      enebaUrl: 'https://www.eneba.com', // Non-affiliate fallback
+      
       gumroadUrl: 'https://apexlocallabs.gumroad.com/l/cutflow-pro',
       gumroadBundleUrl: 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle',
       getApexLocalUrl: 'https://getapexlocal.com',
@@ -156,18 +156,15 @@ const GTA6 = {
     },
 
     buildEnebaUrl(rawUrl) {
-      const cfg = this.get();
+      // Eneba affiliate program declined: strip any tracking IDs and preserve clean URL
       try {
         const u = new URL(rawUrl);
         if (/(^|\.)eneba\.com$/i.test(u.hostname)) {
-          if (cfg.enebaAffiliateId) {
-            u.searchParams.set('af_id', cfg.enebaAffiliateId);
-            return u.toString();
-          }
-          return cfg.enebaUrl || rawUrl;
+          u.searchParams.delete('af_id');
+          return u.toString();
         }
       } catch (e) {}
-      return cfg.enebaUrl || rawUrl;
+      return 'https://www.eneba.com';
     },
 
     detectPartnerFromHref(href) {
@@ -5529,19 +5526,19 @@ DealRotator: {
             ctaPrimary: { text: "⚡ Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
-            id: "eneba-cards",
-            title: "PSN & Xbox Gift Cards",
-            badgeVerified: "✓ INSTANT CODE",
-            badgeMerchant: "ENEBA GLOBAL",
+            id: "wd-black-sn850p",
+            title: "WD_BLACK 2TB SN850P NVMe SSD",
+            badgeVerified: "✓ OFFICIAL PS5 LICENSED",
+            badgeMerchant: "WESTERN DIGITAL",
             stars: "★★★★★",
-            rating: "4.9",
-            ratingCount: "45,000+ verified",
-            desc: "Instant digital delivery for PlayStation Store, Xbox Live currency & PSN & Xbox Gift Cards with zero service markups.",
-            priceLabel: "Digital Storefront",
-            price: "Live Listings",
-            pillDiscount: "INSTANT",
-            img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "💳 Compare Eneba Deals →", href: cfg.enebaUrl || "https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide", partner: "eneba", cls: "btn-deal-g2a", style: "background:linear-gradient(135deg, #10b981, #059669); border-color:var(--neon-green);" }
+            rating: "4.8",
+            ratingCount: "14,500+ ratings",
+            desc: "Officially licensed PlayStation 5 M.2 expansion drive with pre-installed custom heatsink. Ready for GTA 6 install.",
+            priceLabel: "Amazon Affiliate",
+            price: "Live Pricing",
+            pillDiscount: "PS5 LICENSED",
+            img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
+            ctaPrimary: { text: "⚡ Check Price on Amazon →", href: bAmz("https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "steelseries-nova",
@@ -5570,7 +5567,7 @@ DealRotator: {
             priceLabel: "G2A Marketplace",
             price: "Live Listings",
             pillDiscount: "DIGITAL KEYS",
-            img: "assets/eneba-gift-cards.jpg?v=20261118_clean_v1",
+            img: "assets/gear/dualsense-edge-cutout.webp",
             ctaPrimary: { text: "⚡ Browse G2A Marketplace →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
           }
         ];

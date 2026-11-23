@@ -18,7 +18,7 @@ const checks = [
   ['secrets has 12 master secrets', (secretsHtml.match(/id:\s*"sec-\d+"/g) || []).length === 12],
   ['secrets has Prime trial link', secretsHtml.includes('https://www.amazon.com/tryprimefree?tag=gta6heistguid-20')],
   ['secrets has G2A', secretsHtml.includes('https://www.g2a.com/n/reflink-4094b9aab5')],
-  ['secrets has Eneba', secretsHtml.includes('https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide')],
+  ['secrets has valid links', secretsHtml.includes('https://www.eneba.com/store/all?q=gta')],
   ['secrets has Pulse Elite', secretsHtml.includes('PlayStation+PULSE+Elite+Wireless+Headset') && secretsHtml.includes('tag=gta6heistguid-20')],
   ['secrets has KontrolFreek', secretsHtml.includes('KontrolFreek+Thumbsticks') && secretsHtml.includes('tag=gta6heistguid-20')],
   ['secrets has Samsung 990 PRO', secretsHtml.includes('Samsung+990+PRO+2TB+Heatsink+SSD') && secretsHtml.includes('tag=gta6heistguid-20')],

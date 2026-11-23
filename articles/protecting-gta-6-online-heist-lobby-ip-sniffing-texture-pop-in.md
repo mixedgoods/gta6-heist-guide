@@ -22,4 +22,4 @@ Dense Vice City neon reflections, dynamic weather squalls, and subterranean sewe
 
 ### 3. Lock In Verified Digital Keys Under Retail
 Avoid launch-night physical stockouts by comparing verified digital keys and console wallet top-ups early:
-- 🔑 **[Compare G2A Verified Keys](https://www.g2a.com/n/reflink-4094b9aab5)** | **[Check Eneba Global Deals](https://www.eneba.com/store/all?q=gta&af_id=gta6heistguide)**
+- 🔑 **[Compare G2A Verified Keys](https://www.g2a.com/n/reflink-4094b9aab5)** | **[Check Eneba Global Deals](https://www.eneba.com/store/all?q=gta)**

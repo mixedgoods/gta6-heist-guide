@@ -223,6 +223,7 @@ def missions():
   <div id="missionList">
     {''.join(chapters_html)}
   </div>
+  <div data-aff-slot="missions-audio" data-aff-context="missions" data-aff-variant="horizontal-featured"></div>
 </section>
 
 <section class="g-section" aria-labelledby="optional">
@@ -244,7 +245,7 @@ def missions():
   <p>Already documented on this site: the <a href="/heists/the-cartel-heist">Cartel Heist</a> and <a href="/heists/vcia-takedown">VCIA Takedown</a> heist guides, the <a href="/gta-6-endings-guide/">endings guide</a>, and the <a href="/gta-6-relationship-guide/">relationship guide</a>.</p>
   <h3>Related locations and tools</h3>
   <div class="g-grid">
-    <a class="g-card" href="/map.html"><strong>Interactive Leonida Map</strong><span>{PIN_COUNT} pins including safehouses, fences and heists.</span></a>
+    <a class="g-card" href="/map.html"><strong>Interactive Leonida Map</strong><span>{PIN_COUNT} pins including safehouses, fences, and heist exfil coordinates.</span></a>
     <a class="g-card" href="/properties.html"><strong>Properties database</strong><span>Safehouses, garages and the 7 fence contacts.</span></a>
     <a class="g-card" href="/gta-6-collectibles/"><strong>Collectibles &amp; 100%</strong><span>Counters for flamingos, cards, WAiNK scans and more.</span></a>
     <a class="g-card" href="/gta-6-troubleshooting/"><strong>Mission won't start?</strong><span>Troubleshooting center with safe checks.</span></a>
@@ -341,7 +342,9 @@ def controls():
     <span style="color:#94a3b8;font-size:.8rem"><span data-g-count="ctlList">{sum(len(r) for _, r in CTRL)}</span> bindings shown</span>
   </div>
   <div id="ctlList">{''.join(secs)}</div>
+  <div data-aff-slot="controls-gear" data-aff-context="controls" data-aff-variant="horizontal-featured"></div>
   <p style="margin-top:.6rem;font-size:.82rem;color:#94a3b8">Status labels: {badge('ind')} corroborated across more than one attributed guide · {badge('com')} reported by a single or lower-quality source · {badge('site')} from this site's existing cheat guide. None are in-game verified by this site.</p>
+  <p style="margin-top:.6rem;font-size:.88rem;color:#cbd5e1;">Experiencing stick drift, input delay, or button unresponsiveness? See our <a href="/gta-6-troubleshooting/" style="color:var(--neon-amber);font-weight:700;">Controller &amp; Input Troubleshooting Guide</a> for deadzone recalibration.</p>
 </section>
 
 <section class="g-section" aria-labelledby="presets">
@@ -576,6 +579,8 @@ def troubleshoot():
   </div>
   <p id="tsEmpty" class="g-hidden g-evidence g-warn">No entry matches. Try fewer words, or contact <a href="{RS}" rel="noopener">Rockstar Games Support</a>.</p>
   {''.join(groups)}
+  <div data-aff-slot="troubleshoot-storage" data-aff-context="troubleshooting" data-aff-variant="horizontal-featured"></div>
+  <p style="margin-top:.6rem;font-size:.88rem;color:#cbd5e1;">Need to expand internal console capacity for 200GB+ launch installs and title updates? Review verified NVMe specs in the <a href="/gta-6-settings/" style="color:var(--neon-cyan);font-weight:700;">Settings &amp; Hardware Hub</a>.</p>
 </section>
 
 <section class="g-section" aria-labelledby="levels">
@@ -639,6 +644,8 @@ def collectibles():
   <p>In-game, the official 100% checklist is reported to appear under <strong>Progress › Stats › 100% Completion</strong> after Chapter 5 (existing tracker text). Guides also point to <strong>Map › Progress</strong> for collection counts. Nothing in the 35-requirement checklist is described as missable on the tracker.</p>
   <div class="g-toolbar"><a class="btn btn-primary" href="/gta-6-100-completion-tracker/">Open 100% Completion Tracker →</a><a class="btn btn-secondary" href="/map.html">Open Interactive Map →</a></div>
   {''.join(cards)}
+  <div data-aff-slot="collectibles-gear" data-aff-context="collectibles" data-aff-variant="compact-inline"></div>
+  <p style="margin-top:.6rem;font-size:.88rem;color:#cbd5e1;">Hunting complete 100% progress? Sync your collected items, stunt jumps, and secret milestones in the <a href="/gta-6-100-completion-tracker/" style="color:var(--neon-green);font-weight:700;">GTA 6 100% Completion Tracker</a>.</p>
 </section>
 
 <section class="g-section" aria-labelledby="notyet">
@@ -725,6 +732,7 @@ def vehicles():
   <div id="vehTables">{''.join(tables)}</div>
 </section>
 
+<div data-aff-slot="vehicles-gear" data-aff-context="vehicles" data-aff-variant="horizontal-featured"></div>
 <section class="g-section" id="storage" aria-labelledby="stor">
   <h2 id="stor">How to store and keep vehicles in GTA 6</h2>
   <p>{badge('com')} {badge('unv','REPORTS CONFLICT')} Reports disagree on the details, so treat this as a summary of what is reported, not a how-to.</p>
@@ -740,6 +748,7 @@ def vehicles():
   <h2 id="cust">Vehicle customization</h2>
   <p>{badge('com')} Guides name the customization shops Rideout Customs and One-Eyed Willie's and describe paint, rims, spoilers and performance parts. No prices, part lists or performance effects are confirmed here, so none are listed.</p>
   <p>Plan your collection with the <a href="/map.html">map</a>, the <a href="/vehicles.html">vehicle database</a> and the <a href="/gta-6-100-completion-tracker/">100% tracker</a> (200 of 277 base models must be scanned).</p>
+  <p style="margin-top:.6rem;font-size:.88rem;color:#cbd5e1;">Compare full trunk storage capacities, weapon racks, and verified vehicle stats in the <a href="/vehicles.html" style="color:var(--neon-cyan);font-weight:700;">Interactive Vehicles Database</a>.</p>
 </section>'''
     faqs = [
         ('What is the fastest car in GTA 6?', 'This site has not measured top speeds, so it does not name one. Every vehicle in the database lists top speed as "Not yet confirmed". Rankings will be added only after repeatable in-game tests with a recorded build number.'),
@@ -820,6 +829,7 @@ def properties():
       ['Fence contacts (5 goods fences + 2 vehicle buyers)', '7'], ['BuckMe Family Savings (money safe)', '1'], ['Unverified regional leads (Ambrosia, Grassrivers)', '2'],
       ['<strong>Total unique records</strong>', f'<strong>{n}</strong>']])}
   <p>"13 garages" on other pages means 8 + 4 + 1. The two unverified leads are excluded from the fence count of 7.</p>
+  <p style="margin-top:.6rem;font-size:.88rem;color:#cbd5e1;">Looking to finance high-end properties, luxury safehouses, and 8 purchasable garages? Explore fence payout rates in our <a href="/gta-6-money-guide/" style="color:var(--neon-amber);font-weight:700;">GTA 6 Money Making Guide</a>.</p>
   <h3>Money and spending related tools</h3>
   <div class="g-grid">
     <a class="g-card" href="/properties.html"><strong>Properties database</strong><span>Every record, compare and owned/favorite tracking.</span></a>
