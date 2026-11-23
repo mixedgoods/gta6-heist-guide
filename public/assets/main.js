@@ -2112,259 +2112,259 @@ const GTA6 = {
     CharacterData: {
       "lucia-caminos": {
         name: "Lucia Caminos",
-        alias: "The Mastermind",
-        category: "Playable Protagonist",
-        role: "Infiltration Lead & Dual-Wield Gunslinger",
-        source: "Rockstar Official Key Art & Trailer 1",
-        actor: "Manni Perez (Confirmed / SAG-AFTRA)",
-        district: "Vice-Dale County / Port Gellhorn",
+        alias: "Confirmed Co-Lead",
+        category: "Playable Protagonist (Rockstar Confirmed)",
+        role: "Co-Lead Protagonist • Simulated Infiltration Role",
+        source: "Rockstar Games Official Website Bio & Trailers 1–2",
+        actor: "Undisclosed by Rockstar Games (Community-Reported Cast)",
+        district: "Vice City / Leonida",
         image: "assets/character-lucia.jpg?v=20261118_v5",
-        bio: "The first female protagonist in the GTA HD era. A fierce Latina criminal seen inside the Leonida Department of Corrections wearing a state-issued GPS ankle monitor. Partners with Jason Duval in high-stakes Bonnie & Clyde bank heists, armored truck ambushes, and neon diner hold-ups across Leonida.",
-        specialty: "Biometric security bypass, Crowd Intimidation, and Dual SMG room clearing.",
-        weapon: "Heckler & Koch MP5 & Ballistic Heist Duffel",
+        bio: "Official Rockstar Bio: Taught to fight by her father as soon as she could walk, Lucia landed in the Leonida Penitentiary fighting for her family and got out by sheer luck. Determined to reach the smart life her mom dreamed of since their days in Liberty City, she partners with Jason Duval across Leonida.",
+        specialty: "Confirmed: Close-quarters combat & hold-ups. Simulated Planner Role: Interior vault & crowd control.",
+        weapon: "Compact SMG / Pistol & Heist Cash Duffel (Trailer / Sim Loadout)",
         weaponLink: "/weapons#item-mp5",
-        perk: "Adrenaline Reaction: +22% keypad decryption speed and bullet-time recovery when escaping guard line-of-sight.",
-        stats: { decryption: 96, intimidation: 94, combat: 92, wheelman: 85 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Lucia as the primary interior vault and crowd-control operative in squad simulations.",
+        stats: { decryption: 90, intimidation: 88, combat: 85, wheelman: 80 }
       },
       "jason-duval": {
         name: "Jason Duval",
-        alias: "The Wheelman",
-        category: "Playable Protagonist",
-        role: "Tactical Marksman & Precision Wheelman",
-        source: "Trailer 1 & 2022 Leaks",
-        actor: "Gregory Connors / Dylan Rourke (Reported)",
-        district: "Vice City / Grassrivers",
+        alias: "Confirmed Co-Lead",
+        category: "Playable Protagonist (Rockstar Confirmed)",
+        role: "Co-Lead Protagonist • Simulated Wheelman / Overwatch Role",
+        source: "Rockstar Games Official Website Bio & Trailers 1–2",
+        actor: "Undisclosed by Rockstar Games (Community-Reported Cast)",
+        district: "Leonida Keys / Vice City",
         image: "assets/character-jason.jpg?v=20261118_v5",
-        bio: "Ex-military tactical operator with deep underworld ties in South Florida. Pairs cool-headed long-range overwatch with aggressive precision driving in tuned muscle sedans. Co-leads the Duval-Caminos syndicate.",
-        specialty: "Eagle-Eye guard/CCTV scanning, wet-weather causeway driving, and thermal lance breeching.",
-        weapon: "Duke Assault Carbine & Thermal Lance",
+        bio: "Official Rockstar Bio: Jason grew up around grifters and crooks. After a stint in the Army trying to shake off his troubled teenage years, he found himself in the Keys doing what he knows best—working for local drug runners like Brian Heder before partnering with Lucia Caminos.",
+        specialty: "Confirmed: Ex-Army background & Keys smuggling work. Simulated Planner Role: Getaway driving & marksman overwatch.",
+        weapon: "Marksman Carbine & Tactical Sidearm (Trailer / Sim Loadout)",
         weaponLink: "/weapons#item-carbine",
-        perk: "Eagle-Eye Recon: Permanently marks patrol vectors and security camera dead-zones on your radar.",
-        stats: { decryption: 88, intimidation: 90, combat: 96, wheelman: 98 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Jason as the primary getaway driver and perimeter marksman in squad simulations.",
+        stats: { decryption: 80, intimidation: 85, combat: 90, wheelman: 92 }
       },
       "stefanie": {
         name: "Stefanie",
-        alias: "The Counselor",
-        category: "Story Associate",
-        role: "Correctional Counselor & Legal Gatekeeper",
-        source: "Trailer 1 Opening Cinematic",
-        actor: "Undisclosed SAG-AFTRA Cast",
-        district: "Leonida State Penitentiary",
+        alias: "Prison Counselor",
+        category: "Confirmed Story NPC (Trailer 1)",
+        role: "Leonida Dept. of Corrections Counselor (Non-Crew NPC)",
+        source: "Rockstar Games Trailer 1 Opening Scene",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Leonida Penitentiary",
         image: "assets/character-stefanie.jpg?v=20261118_v4",
-        bio: "Lucia's prison counselor at the Leonida Department of Corrections. Questions Lucia on how she ended up incarcerated. Serves as the primary contact for legal paroles, county travel permits, and bail bond escorts.",
-        specialty: "State legal intelligence, parole officer clearance, and restricted municipal permits.",
-        weapon: "Department of Corrections Security Dossier",
+        bio: "Official Trailer 1 Appearance: Featured in the opening sequence of Trailer 1 at the Leonida Department of Corrections asking Lucia, 'Do you know why you're here?' She is a story NPC and not a hireable heist crew member.",
+        specialty: "Correctional intake & parole narrative context.",
+        weapon: "None (Correctional Staff NPC)",
         weaponLink: "/weapons",
-        perk: "Probation Immunity: Reduces initial 1-Star and 2-Star search radius by 30% in metropolitan districts.",
-        stats: { decryption: 75, intimidation: 82, combat: 45, wheelman: 60 }
+        perk: "No Official Gameplay Perk: Stefanie is a narrative NPC in Lucia's prison storyline, not a heist crew operative.",
+        stats: { decryption: 50, intimidation: 60, combat: 30, wheelman: 40 }
       },
       "cal-hampton": {
         name: "Cal Hampton",
-        alias: "Signals",
-        category: "Underworld Specialist",
-        role: "Signals Intel & Wiretap Contact",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Ambrosia / Rural North",
+        alias: "Coast Guard Comms",
+        category: "Story Associate (Rockstar Confirmed)",
+        role: "Jason's Friend & Brian Heder Associate • Simulated Comms Role",
+        source: "Rockstar Games Official Website Bio & Trailer 2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Leonida Keys / Mainland",
         image: "assets/character-cal-hampton.jpg?v=20261118_v4",
-        bio: "A deeply paranoid surveillance fanatic and ham-radio enthusiast living out of a rural trailer park. Intercepts VCPD tactical frequencies, jams cell towers, and warns crews of highway roadblocks.",
-        specialty: "Police frequency interception, radio jamming, and camera loops.",
-        weapon: "Tactical Signal Scanner & Frequency Jammer",
+        bio: "Official Rockstar Bio: Jason's friend and a fellow associate of Brian Heder. Cal feels safest hanging at home, snooping on Coast Guard comms with a few beers and some private browser tabs open.",
+        specialty: "Confirmed: Snooping on Coast Guard comms. Simulated Planner Role: Radio scanner monitoring.",
+        weapon: "Communications Scanner (Bio Reference)",
         weaponLink: "/weapons",
-        perk: "Scanner Intercept: Adds a +30 second delay to SWAT and Tactical Response arrival times during alarms.",
-        stats: { decryption: 94, intimidation: 50, combat: 62, wheelman: 65 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Based on his official bio noting he monitors Coast Guard comms, our Heist Planner models Cal as a hypothetical radio-intel support option.",
+        stats: { decryption: 85, intimidation: 45, combat: 55, wheelman: 60 }
       },
       "boobie-ike": {
         name: "Boobie Ike",
-        alias: "Club Kingpin",
-        category: "Story Associate",
-        role: "High-Roller Luxury Fence & Club Operator",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Ocean Drive / Vice Beach",
+        alias: "Vice City Legend",
+        category: "Story Associate (Rockstar Confirmed)",
+        role: "Club, Strip Club & Studio Mogul • Simulated Fence Role",
+        source: "Rockstar Games Official Website Bio & Trailer 2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Vice City",
         image: "assets/character-boobie-ike.jpg?v=20261118_v4",
-        bio: "High-profile Vice City nightclub impresario and underground loan broker. Fences luxury watches, gold chains, and high-value heist diamonds through VIP bottle-service revenue.",
-        specialty: "Cash laundering, luxury jewelry fencing, and private penthouse safehouse access.",
-        weapon: "Diamond Cuban Link & Custom 1911",
+        bio: "Official Rockstar Bio: A local Vice City legend who transformed his time in the streets into a legitimate empire spanning real estate, a strip club (Jack of Hearts), and a recording studio (Only Raw Records) in partnership with Dre'Quan Priest.",
+        specialty: "Confirmed: Vice City real estate, Jack of Hearts club, and Only Raw Records mogul.",
+        weapon: "Custom Sidearm (Simulated Loadout)",
         weaponLink: "/weapons",
-        perk: "Clean Cut: Reduces laundering transaction fees by 4%, banking cleaner profits faster.",
-        stats: { decryption: 70, intimidation: 88, combat: 78, wheelman: 80 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Boobie's Vice City nightclub empire as a high-roller laundering/fence contact in our simulator.",
+        stats: { decryption: 65, intimidation: 85, combat: 75, wheelman: 75 }
       },
       "brian-heder": {
         name: "Brian Heder",
-        alias: "Heavy Metal",
-        category: "Underworld Specialist",
-        role: "Chop Shop Fabricator & Armor Specialist",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Port Gellhorn Industrial",
+        alias: "Keys Smuggler",
+        category: "Story Associate (Rockstar Confirmed)",
+        role: "Leonida Keys Drug Runner & Boatyard Owner",
+        source: "Rockstar Games Official Website Bio & Trailer 2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Leonida Keys (Mariana County)",
         image: "assets/character-brian-heder.jpg?v=20261118_v4",
-        bio: "Master mechanic and industrial chop-shop fabricator in Port Gellhorn. Strips VINs, retrofits bullet-resistant glass, and builds hidden contraband cargo boxes into getaway sedans.",
-        specialty: "Heavy vehicle armor, hydraulic cutters, and chassis reinforcement.",
-        weapon: "Heavy Acetylene Torch & Spanner",
-        weaponLink: "/weapons",
-        perk: "Bulletproof Rig: Grants +35% durability to getaway vehicle tires and engine blocks.",
-        stats: { decryption: 60, intimidation: 84, combat: 85, wheelman: 92 }
+        bio: "Official Rockstar Bio: A classic drug runner from the golden age of smuggling in the Keys. Still moving product through his boatyard with his third wife, Lori, Brian lets Jason live rent-free at one of his properties—provided he helps with local shakedowns.",
+        specialty: "Confirmed: Keys boatyard smuggling & Jason's landlord. Verified In-Game Lockup: Brian's Lockup (Keypad 7700).",
+        weapon: "Boatyard Logistics & Lockup 7700",
+        weaponLink: "/properties",
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Brian's boatyard as a vehicle/marine staging contact in our Heist Planner.",
+        stats: { decryption: 60, intimidation: 82, combat: 80, wheelman: 88 }
       },
       "lori-heder": {
         name: "Lori Heder",
-        alias: "The Machinist",
-        category: "Underworld Specialist",
-        role: "Boatyard Armorer & Heavy Machinery",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Keys Marina / Everglades Edge",
+        alias: "Keys Boatyard Partner",
+        category: "Story Associate (Named in Rockstar Bio)",
+        role: "Brian Heder's Third Wife • Simulated Marine Mechanic Role",
+        source: "Rockstar Games Official Brian Heder Bio",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Leonida Keys Boatyard",
         image: "assets/character-lori-heder.jpg?v=20261118_v4",
-        bio: "Brian's partner managing maritime mechanics, high-speed offshore cigarette boats, and heavy winches for naval bullion recovery.",
-        specialty: "Marine engines, reinforced hulls, and swamp propellers.",
-        weapon: "Industrial Marine Welder",
+        bio: "Official Rockstar Bio Mention: Named in Rockstar's official character profile for Brian Heder as his third wife, Lori, with whom he continues moving product through his Leonida Keys boatyard.",
+        specialty: "Confirmed: Co-runs Brian Heder's Keys boatyard. Simulated Planner Role: Marine rigging & boat prep.",
+        weapon: "Marine Rigging Tools (Simulated)",
         weaponLink: "/weapons",
-        perk: "Sea Spray: Increases getaway boat top speed by +18% in shallow swamp waters.",
-        stats: { decryption: 65, intimidation: 78, combat: 80, wheelman: 94 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Lori as a 5%-cut marine fleet specialist in our Heist Planner.",
+        stats: { decryption: 60, intimidation: 72, combat: 70, wheelman: 85 }
       },
       "drequan-priest": {
         name: "Dre'Quan Priest",
-        alias: "Altitude",
-        category: "Underworld Specialist",
-        role: "Offshore Pilot & Maritime Wheelman",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Gator Keys Archipelago",
+        alias: "Only Raw Mogul",
+        category: "Story Associate (Rockstar Confirmed)",
+        role: "Founder of Only Raw Records • Simulated Logistics Role",
+        source: "Rockstar Games Official Website Bio & Trailer 2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Vice City",
         image: "assets/character-drequan-priest.jpg?v=20261118_v4",
-        bio: "Elite pilot and smuggler running fast-moving maritime and airborne contraband routes across the Florida Straits and Gator Keys.",
-        specialty: "Helicopter rooftop extractions, sea plane landings, and low-radar exfiltration.",
-        weapon: "Compact Tactical SMG & Aviator Comms",
+        bio: "Official Rockstar Bio: Always more of a hustler than a gangster, Dre'Quan broke into the music industry as the founder of Only Raw Records, partnering with Boobie Ike and signing viral rap duo Real Dimez.",
+        specialty: "Confirmed: Only Raw Records music mogul & Boobie Ike partner.",
+        weapon: "Compact Sidearm (Simulated)",
         weaponLink: "/weapons",
-        perk: "Radar Ghost: Escapes coastal air space without triggering Coast Guard missile lock.",
-        stats: { decryption: 72, intimidation: 76, combat: 82, wheelman: 98 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Dre'Quan as a high-profile nightlife and charter extraction contact in squad simulations.",
+        stats: { decryption: 70, intimidation: 75, combat: 75, wheelman: 85 }
       },
       "raul-bautista": {
         name: "Raul Bautista",
-        alias: "Thermite",
-        category: "Underworld Specialist",
-        role: "Demolitions Expert & Thermal Breacher",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Grassrivers Outpost",
+        alias: "Veteran Bank Robber",
+        category: "Heist Specialist (Rockstar Confirmed)",
+        role: "Seasoned Bank Robber • Simulated 8% Cut Breacher Role",
+        source: "Rockstar Games Official Website Bio & Trailer 2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Vice City / State of Leonida",
         image: "assets/character-raul-bautista.jpg?v=20261118_v4",
-        bio: "Ex-military munitions expert specializing in high-grade shaped charges, thermite powder recipes, and sub-surface bank vault breaches.",
-        specialty: "Heavy vault door melting, seismic charges, and silent cutting.",
-        weapon: "Military Thermite Lance & Det Cords",
-        weaponLink: "/weapons",
-        perk: "Flash Burn: Melts bank vault reinforced hinges in under 45 seconds.",
-        stats: { decryption: 85, intimidation: 88, combat: 94, wheelman: 70 }
+        bio: "Official Rockstar Bio: With confidence, charm, and cunning, Raul is a seasoned bank robber always on the hunt for talent ready to take the risks that bring the biggest rewards—raising the stakes with every score.",
+        specialty: "Confirmed: Veteran bank robber & crew recruiter (featured in Chapter 3's Cartel Heist).",
+        weapon: "Tactical Carbine & Ornate Sidearm",
+        weaponLink: "/weapons#item-carbine",
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): While Raul is an officially confirmed bank robber, the 8% hireable crew cut and numeric breaching percentages are fan-made Heist Planner simulator estimates.",
+        stats: { decryption: 85, intimidation: 88, combat: 94, wheelman: 75 }
       },
       "baeluxe": {
         name: "Bae-Luxe (Real Dimez)",
-        alias: "Live Streamer",
-        category: "Story Associate",
-        role: "Vice City Influencer & Crowd Distraction",
-        source: "Trailer 1 Viral Social Media Feed",
-        actor: "Miami Street Viral Cast",
-        district: "Ocean Drive / South Beach",
+        alias: "Real Dimez Duo",
+        category: "Story Associate (Rockstar Confirmed)",
+        role: "Viral Rap Duo & Social Media Star (Only Raw Records)",
+        source: "Rockstar Games Official Website Bio & Trailers 1–2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Vice City",
         image: "assets/character-bae-luxe.jpg",
-        bio: "A prominent Vice City social media creator and thrillchaser seen dancing atop convertibles on Ocean Drive. Her scheduled high-energy public live streams draw enormous civilian crowds that divert VCPD patrols away from robbery blocks.",
-        specialty: "Flash crowds, viral media distractions, and public sector police decoys.",
-        weapon: "4K Mobile Streaming Rig & Custom Phone",
+        bio: "Official Rockstar Bio: Half of the viral Vice City rap duo Real Dimez alongside her high-school friend Roxy. Turning their time shaking down local dealers into spicy rap tracks and a relentless social media presence, they are signed to Dre'Quan Priest's Only Raw Records.",
+        specialty: "Confirmed: Real Dimez rap duo & viral social media presence.",
+        weapon: "Mobile Streaming Rig (Story Context)",
         weaponLink: "/weapons",
-        perk: "Crowd Surge: Disables exterior bank perimeter surveillance during the team's initial entry phase.",
-        stats: { decryption: 50, intimidation: 72, combat: 40, wheelman: 75 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Real Dimez's viral street gatherings as a hypothetical crowd-distraction concept in our planner.",
+        stats: { decryption: 50, intimidation: 72, combat: 45, wheelman: 70 }
       },
       "roxy": {
         name: "Roxy (Real Dimez)",
-        alias: "Mud Clubber",
-        category: "Story Associate",
-        role: "Thrillchaser & Off-Road Exfiltration",
-        source: "Trailer 1 Thrillchaser Footage",
-        actor: "Miami Stunt Community",
-        district: "Leonida Swamps / Mud Club",
+        alias: "Real Dimez Duo",
+        category: "Story Associate (Rockstar Confirmed)",
+        role: "Viral Rap Duo & Social Media Star (Only Raw Records)",
+        source: "Rockstar Games Official Website Bio & Trailers 1–2",
+        actor: "Undisclosed by Rockstar Games",
+        district: "Vice City",
         image: "assets/character-roxy.jpg",
-        bio: "Vice City off-road stunt enthusiast deeply entrenched in the Everglades Mud Club culture. Provides custom swamp monster trucks and off-grid exfiltration corridors across treacherous marsh terrain.",
-        specialty: "Swamp buggy drifting, mud-run escape paths, and unmapped trail navigation.",
-        weapon: "Off-Road Flare Gun & Stunt Harness",
+        bio: "Official Rockstar Bio: The other half of Real Dimez with Bae-Luxe. Friends since high school, the duo parlayed an early hit single with local rapper DWNPLY into viral fame and a deal with Dre'Quan Priest at Only Raw Records.",
+        specialty: "Confirmed: Real Dimez rap duo & Vice City nightlife presence.",
+        weapon: "Nightlife & Street Contacts (Story Context)",
         weaponLink: "/weapons",
-        perk: "Mud Slick: Squad pursuit vehicles gain +30% traction and zero handling penalty in heavy mud and swamps.",
-        stats: { decryption: 45, intimidation: 75, combat: 65, wheelman: 92 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Models Roxy's Vice City club and street-meet connections for roleplay theorycrafting.",
+        stats: { decryption: 50, intimidation: 75, combat: 55, wheelman: 80 }
       },
       "petra-navarro": {
         name: "Petra Navarro",
-        alias: "The Appraiser",
-        category: "Underworld Contact",
-        role: "High Society Socialite & Museum Art Fence",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Starlet Island / Downtown",
+        alias: "Fan-Created Concept",
+        category: "Fan-Created Simulator Dossier (Unconfirmed)",
+        role: "Simulated High-Society Art Fence & Corporate Insider",
+        source: "Fan-Created Heist Simulator Archetype (Not Confirmed by Rockstar)",
+        actor: "N/A (Fan-Created Concept)",
+        district: "Vice City Downtown (Simulated)",
         image: "assets/character-petra.jpg",
-        bio: "Prominent Vice City cultural curator and elite art broker who connects high-stakes thieves with overseas billionaire collectors.",
-        specialty: "High-value oil paintings, royal gems, and museum artifact valuation.",
-        weapon: "Ultraviolet Gem Spectrometer",
+        bio: "Fan-Created Syndicate Concept (Not Confirmed by Rockstar Games): A hypothetical high-society corporate insider and fine-art appraiser archetype created for our Heist Planner simulator.",
+        specialty: "Simulated Roleplay Concept: Art appraisal & corporate schedule theorycrafting.",
+        weapon: "None (Fan-Created Simulator Archetype)",
         weaponLink: "/weapons",
-        perk: "Art Appraisal: Grants a +15% cash bonus on all stolen museum masterpieces.",
-        stats: { decryption: 92, intimidation: 68, combat: 55, wheelman: 65 }
+        perk: "Fan-Made Heist Simulator Role (Unconfirmed): Represents a theoretical high-society fence/insider role in squad planning simulations.",
+        stats: { decryption: 80, intimidation: 65, combat: 50, wheelman: 60 }
       },
       "phil": {
         name: "Phil",
-        alias: "Gator Phil",
-        category: "Underworld Specialist",
-        role: "Gator Keys Gunrunner & Pilot",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Gator Keys",
+        alias: "Community / Fan Concept",
+        category: "Community / Fan Simulator Dossier (Unconfirmed)",
+        role: "Simulated Keys Bush-Pilot & Military Surplus Contact",
+        source: "Community Vice City Lore Reference + Fan Simulator Archetype",
+        actor: "N/A (Unconfirmed by Rockstar)",
+        district: "Leonida Keys / Grassrivers (Simulated)",
         image: "assets/character-phil.jpg",
-        bio: "Eccentric Everglades military surplus hoarder running heavily fortified marsh compounds packed with heavy artillery and explosives.",
-        specialty: "Heavy weapons distribution, RPG overwatch, and swamp airboats.",
-        weapon: "Heavy Rocket Launcher & Combat Rig",
+        bio: "Community Reference + Fan-Simulated Role: Inspired by GTA Vice City arms lore (Phil's Ammu-Nation / military surplus references spotted by community analysts). Not officially confirmed by Rockstar Games as a hireable GTA 6 heist pilot.",
+        specialty: "Simulated Roleplay Concept: 5%-cut bush-pilot & heavy ordnance support.",
+        weapon: "Heavy Surplus Ordnance (Simulated)",
         weaponLink: "/weapons",
-        perk: "Heavy Ordnance: Crew spawns with +2 extra ballistic body armors on loud heists.",
-        stats: { decryption: 55, intimidation: 92, combat: 96, wheelman: 85 }
+        perk: "Fan-Made Heist Simulator Role (Unconfirmed): Models a 5%-cut bush-pilot and heavy-ordnance support specialist in our Heist Planner.",
+        stats: { decryption: 55, intimidation: 85, combat: 90, wheelman: 82 }
       },
       "leonida-joker": {
         name: "Leonida Joker",
-        alias: "The Viral Decoy",
-        category: "Underworld Contact",
-        role: "Street Decoy & Diversion Specialist",
-        source: "Trailer 1 Viral Stills",
-        actor: "Florida Street Viral Cast",
-        district: "Vice City Downtown",
+        alias: "Trailer 1 Parody Cameo",
+        category: "Trailer 1 Viral Cameo • Simulated Crew Role",
+        role: "Viral News Broadcast Prisoner • Simulated 6% Cut Decoy",
+        source: "Rockstar Trailer 1 News Clip (Cameo) + Fan Simulator Role",
+        actor: "Undisclosed (Trailer 1 Parody Cameo)",
+        district: "Leonida Courtroom Broadcast",
         image: "assets/character-leonida-joker.jpg?v=20261118_v4",
-        bio: "The infamous tattooed street personality whose viral public escapades draw police cruisers and media helicopters away from actual robbery scenes.",
-        specialty: "Street distractions, flash crowds, and media decoys.",
-        weapon: "Smoke Canisters & Flashbangs",
+        bio: "Trailer 1 Viral Cameo + Fan-Simulated Role: The tattooed prisoner shown in a brief news broadcast clip in Rockstar's Trailer 1. While the visual cameo is in Trailer 1, his role as a hireable 6%-cut heist diversion specialist is a fan-made simulator concept.",
+        specialty: "Confirmed: Trailer 1 viral prisoner cameo. Simulated Planner Role: Street decoy distraction.",
+        weapon: "Smoke Canisters (Simulated Decoy Loadout)",
         weaponLink: "/weapons",
-        perk: "Public Mayhem: Reduces initial police pursuit stars by 1 level upon bank exit.",
-        stats: { decryption: 60, intimidation: 88, combat: 72, wheelman: 70 }
+        perk: "Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): Included in our Heist Planner as a humorous 6%-cut street distraction archetype.",
+        stats: { decryption: 55, intimidation: 80, combat: 68, wheelman: 65 }
       },
       "valentina": {
         name: "Valentina",
-        alias: "La Jefa",
-        category: "Underworld Contact",
-        role: "Latin Syndicate Enforcer & Safehouse Quartermaster",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Little Haiti / Vice-Dale",
+        alias: "Fan-Created Concept",
+        category: "Fan-Created Simulator Dossier (Unconfirmed)",
+        role: "Simulated Little Cuba Informant (4% Sim Cut)",
+        source: "Fan-Created Heist Simulator Archetype (Not Confirmed by Rockstar)",
+        actor: "N/A (Fan-Created Concept)",
+        district: "Little Cuba, Vice City (Simulated)",
         image: "assets/character-valentina.jpg",
-        bio: "Ruthless cartel lieutenant managing fortified safehouses and covert black-market triage for wounded crew members escaping federal manhunts.",
-        specialty: "Underground safehouses, rapid extraction, and covert medical triage.",
-        weapon: "Gold-Plated .50 Heavy Pistol",
+        bio: "Fan-Created Syndicate Concept (Not Confirmed by Rockstar Games): A hypothetical Little Cuba syndicate informant archetype created for heist route planning and squad cut simulations.",
+        specialty: "Simulated Roleplay Concept: Convoy schedule scouting & 4% informant cut.",
+        weapon: "Compact Sidearm (Simulated)",
         weaponLink: "/weapons",
-        perk: "Triage Recovery: Revives fallen crew members with 100% health upon safehouse exfiltration.",
-        stats: { decryption: 60, intimidation: 95, combat: 90, wheelman: 75 }
+        perk: "Fan-Made Heist Simulator Role (Unconfirmed): Represents a 4%-cut recon informant option in our Heist Planner.",
+        stats: { decryption: 60, intimidation: 82, combat: 78, wheelman: 70 }
       },
       "aunt-tee": {
         name: "Aunt Tee",
-        alias: "The Matriarch",
-        category: "Underworld Contact",
-        role: "Underground Matriarch & Stash House Operator",
-        source: "Confirmed 2022 Leaks",
-        actor: "Undisclosed",
-        district: "Port Gellhorn Outskirts",
+        alias: "Community / Fan Concept",
+        category: "Community / Fan Simulator Dossier (Unconfirmed)",
+        role: "Simulated South Vice Stash Operator (5% Sim Cut)",
+        source: "Community File Reference + Fan Simulator Archetype",
+        actor: "N/A (Unconfirmed by Rockstar)",
+        district: "South Vice City (Simulated)",
         image: "assets/character-aunt-tee.jpg",
-        bio: "Veteran southern fence operating discreet stash houses, contraband lockers, and untraceable burner vehicle swaps away from city surveillance.",
-        specialty: "Stash house caches, burner cell networks, and low-heat storage.",
-        weapon: "Double-Barrel Sawed-Off Shotgun",
+        bio: "Community Reference + Fan-Simulated Role: While the name 'Aunt Tee' surfaced in early community analyses, her depiction here as a South Vice stash house operator and 5%-fee cash launderer is a fan-made simulator concept, not a confirmed Rockstar mechanic.",
+        specialty: "Simulated Roleplay Concept: Stash house storage & 5% laundering fee model.",
+        weapon: "Sawed-Off Shotgun (Simulated)",
         weaponLink: "/weapons",
-        perk: "Cold Storage: Stashed heist loot does not depreciate or attract police search interest.",
-        stats: { decryption: 50, intimidation: 90, combat: 70, wheelman: 60 }
+        perk: "Fan-Made Heist Simulator Role (Unconfirmed): Models a theoretical 5% fence fee tier in our Cash Laundering Simulator (for verified in-game fences like Yasmani and Brian's Lockup 7700, see /properties).",
+        stats: { decryption: 50, intimidation: 80, combat: 65, wheelman: 55 }
       }
     },
 
@@ -4958,27 +4958,27 @@ CharacterModal: {
             </div>
             
             <div style="padding:1.5rem;">
-              <h4 style="color:var(--neon-cyan); font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; margin:0 0 0.5rem; font-family:var(--font-mono);">📁 Intel Briefing &amp; Background</h4>
+              <h4 style="color:var(--neon-cyan); font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; margin:0 0 0.5rem; font-family:var(--font-mono);">📁 Character Bio &amp; Verification Context</h4>
               <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.6; margin:0 0 1.25rem;">${data.bio}</p>
 
               <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
                 <div style="background:rgba(255,184,0,0.08); border:1px solid rgba(255,184,0,0.3); border-radius:8px; padding:0.85rem;">
-                  <strong style="color:var(--neon-yellow); font-size:0.8rem; display:block; margin-bottom:0.35rem;">🎒 SIGNATURE WEAPONS &amp; RIG</strong>
+                  <strong style="color:var(--neon-yellow); font-size:0.8rem; display:block; margin-bottom:0.35rem;">🎒 TRAILER &amp; SIMULATOR LOADOUT</strong>
                   <span style="color:#fff; font-size:0.84rem; display:block; margin-bottom:0.45rem;">${data.weapon}</span>
-                  <a href="${data.weaponLink}" style="color:var(--neon-cyan); font-size:0.75rem; text-decoration:none; font-weight:700;">Inspect Weapon in Arsenal Database &rarr;</a>
+                  <a href="${data.weaponLink}" style="color:var(--neon-cyan); font-size:0.75rem; text-decoration:none; font-weight:700;">Inspect Loadout in Arsenal Database &rarr;</a>
                 </div>
                 <div style="background:rgba(255,42,141,0.08); border:1px solid rgba(255,42,141,0.3); border-radius:8px; padding:0.85rem;">
-                  <strong style="color:var(--neon-pink); font-size:0.8rem; display:block; margin-bottom:0.35rem;">⚡ SIGNATURE SYNDICATE PERK</strong>
+                  <strong style="color:var(--neon-pink); font-size:0.8rem; display:block; margin-bottom:0.35rem;">⚡ FAN-MADE HEIST SIMULATOR ROLE (UNCONFIRMED BY ROCKSTAR)</strong>
                   <span style="color:#cbd5e1; font-size:0.82rem; line-height:1.4; display:block;">${data.perk}</span>
                 </div>
               </div>
 
-              <h4 style="color:var(--neon-cyan); font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; margin:0 0 0.65rem; font-family:var(--font-mono);">📊 Syndicate Combat &amp; Heist Ratings</h4>
+              <h4 style="color:var(--neon-amber); font-size:0.82rem; letter-spacing:0.5px; text-transform:uppercase; margin:0 0 0.65rem; font-family:var(--font-mono);">📊 Fan-Made Heist Planner Role Profile (Simulated Estimates — Not Official Rockstar Stats)</h4>
               <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; font-size:0.78rem; font-family:var(--font-mono);">
                 <div>
                   <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
-                    <span>Keypad / Safe Decryption</span>
-                    <span style="color:var(--neon-green);">${data.stats.decryption}%</span>
+                    <span>Infiltration / Tech (Sim)</span>
+                    <span style="color:var(--neon-green);">${data.stats.decryption}/100 Est.</span>
                   </div>
                   <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
                     <div style="width:${data.stats.decryption}%; height:100%; background:var(--neon-green);"></div>
@@ -4986,8 +4986,8 @@ CharacterModal: {
                 </div>
                 <div>
                   <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
-                    <span>Crowd / Guard Intimidation</span>
-                    <span style="color:var(--neon-pink);">${data.stats.intimidation}%</span>
+                    <span>Crowd / Street Presence (Sim)</span>
+                    <span style="color:var(--neon-pink);">${data.stats.intimidation}/100 Est.</span>
                   </div>
                   <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
                     <div style="width:${data.stats.intimidation}%; height:100%; background:var(--neon-pink);"></div>
@@ -4995,8 +4995,8 @@ CharacterModal: {
                 </div>
                 <div>
                   <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
-                    <span>Combat / Ballistics</span>
-                    <span style="color:var(--neon-yellow);">${data.stats.combat}%</span>
+                    <span>Combat / Overwatch (Sim)</span>
+                    <span style="color:var(--neon-yellow);">${data.stats.combat}/100 Est.</span>
                   </div>
                   <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
                     <div style="width:${data.stats.combat}%; height:100%; background:var(--neon-yellow);"></div>
@@ -5004,8 +5004,8 @@ CharacterModal: {
                 </div>
                 <div>
                   <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
-                    <span>Wheelman / Evade Agility</span>
-                    <span style="color:var(--neon-cyan);">${data.stats.wheelman}%</span>
+                    <span>Getaway / Mobility (Sim)</span>
+                    <span style="color:var(--neon-cyan);">${data.stats.wheelman}/100 Est.</span>
                   </div>
                   <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
                     <div style="width:${data.stats.wheelman}%; height:100%; background:var(--neon-cyan);"></div>
@@ -6088,19 +6088,19 @@ DealRotator: {
               GTA6.CharacterData[c.id] = {
                 id: c.id,
                 name: c.name,
-                alias: c.cut || 'SYNDICATE INTEL',
-                category: charCat,
-                role: c.role || 'Leonida Contact',
-                specialty: c.specialty || 'Underworld Ops',
-                cut: c.cut || 'Story / Contact',
+                alias: c.cut || 'COMMUNITY / WIKI DOSSIER',
+                category: charCat + ' (Community / Fan Dossier)',
+                role: c.role || 'Community-Catalogued Contact',
+                specialty: c.specialty || 'Simulated Underworld Role',
+                cut: c.cut || 'Story / Contact (Sim)',
                 district: c.district || 'State of Leonida',
-                actor: 'Official Rockstar Reveal',
-                source: c.source || 'GTA Wiki & Official Reveals',
-                weapon: 'Compact Sidearm / Concealed Carry',
+                actor: 'Undisclosed / Community Wiki Reference',
+                source: c.source || 'Community GTA Wiki & Fan Simulator Dossier (Not Confirmed by Rockstar)',
+                weapon: 'Compact Sidearm (Simulated Loadout)',
                 weaponLink: '/weapons',
-                perk: c.specialty || 'Leonida Underground Connection',
+                perk: `Fan-Made Heist Simulator Role (Not an Official Rockstar Perk): ${c.specialty || 'Simulated regional contact in squad planning.'}`,
                 image: imgSrc,
-                bio: `${c.role}. ${c.specialty}. Active across ${c.district}.`,
+                bio: `Community / Wiki Dossier & Fan Simulator Profile: ${c.role}. ${c.specialty}. Active across ${c.district}. Note: This entry is a community-tracked / fan-simulator dossier and is not an officially featured Rockstar Games main cast bio.`,
                 stats: { decryption: 78, intimidation: 80, combat: 82, wheelman: 76 }
               };
             }
@@ -6117,14 +6117,14 @@ DealRotator: {
               card.innerHTML = `
                 <div style="height:230px; overflow:hidden; position:relative; background:#080e18;">
                   <img src="${imgSrc}" alt="${this.esc(c.name)}" width="320" height="230" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center 20%;">
-                  <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-cyan); color:var(--neon-cyan); font-size:0.72rem; font-weight:800;">${this.esc(c.badge || 'CONFIRMED OPERATIVE')}</span>
+                  <span class="user-badge" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.85); border-color:var(--neon-amber); color:var(--neon-amber); font-size:0.72rem; font-weight:800;">${this.esc(c.badge || 'COMMUNITY / WIKI DOSSIER')}</span>
                 </div>
                 <div style="padding:1.25rem;">
                   <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
                     <h2 style="color:#fff; font-size:1.35rem; margin:0;">${this.esc(c.name)}</h2>
-                    <span style="color:var(--neon-cyan); font-size:0.8rem; font-weight:800; font-family:var(--font-mono);">${this.esc((c.cut || 'CONTACT').toUpperCase())}</span>
+                    <span style="color:var(--neon-amber); font-size:0.78rem; font-weight:800; font-family:var(--font-mono);">${this.esc((c.cut || 'CONTACT').toUpperCase())} (SIM)</span>
                   </div>
-                  <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;">${this.esc(c.role)} &bull; ${this.esc(c.specialty)} (${this.esc(c.district)})</p>
+                  <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.5; margin-bottom:0.85rem;"><strong>Community / Fan Simulator Profile:</strong> ${this.esc(c.role)} &bull; ${this.esc(c.specialty)} (${this.esc(c.district)})</p>
                 </div>
               `;
               charGrid.appendChild(card);
@@ -6170,18 +6170,18 @@ DealRotator: {
                     <span class="card-tag tag-intermediate" style="position:absolute; top:10px; left:10px; margin:0; background:rgba(6,11,20,0.88);">${this.esc((p.tier || cat).toUpperCase())}</span>
                   </div>
                   <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem; margin-bottom:0.5rem;">
-                    <span style="font-size:0.74rem; color:var(--neon-cyan); font-family:var(--font-mono);">${this.esc(p.type || 'Syndicate Front')}</span>
-                    <span style="font-family:var(--font-mono); font-size:1.1rem; font-weight:900; color:var(--neon-green);">${this.esc(p.price || '$1,500,000')}</span>
+                    <span style="font-size:0.74rem; color:var(--neon-cyan); font-family:var(--font-mono);">${this.esc(p.type || 'Syndicate Front Concept')}</span>
+                    <span style="font-family:var(--font-mono); font-size:1.05rem; font-weight:900; color:var(--neon-amber);" title="Fan-Made Simulator Estimate">${this.esc(p.price || '$1,500,000 (Sim)')}</span>
                   </div>
                   <h3 class="card-title" style="margin-bottom:0.35rem;">${this.esc(p.name)}</h3>
                   <div style="font-size:0.76rem; color:var(--neon-cyan); font-family:var(--font-mono); margin-bottom:0.85rem;">📍 ${this.esc(p.district || 'State of Leonida')}</div>
                   <div style="background:rgba(0,0,0,0.4); border-radius:6px; padding:0.65rem 0.85rem; margin-bottom:0.85rem; font-size:0.8rem; font-family:var(--font-mono);">
-                    <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage:</strong> ${this.esc(p.garage || 'Secure Vehicle Staging')}</div>
-                    <div style="color:var(--neon-amber);">💼 <strong>Laundering:</strong> ${this.esc(p.laundering || 'Front Escrow Pipeline')}</div>
+                    <div style="color:#fff; margin-bottom:0.25rem;">🚗 <strong>Garage / Staging:</strong> ${this.esc(p.garage || 'Secure Vehicle Staging (Sim)')}</div>
+                    <div style="color:var(--neon-amber);">💼 <strong>Simulated Laundering:</strong> ${this.esc(p.laundering || 'Front Escrow Model (Sim)')}</div>
                   </div>
-                  <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">${this.esc(p.features || p.bio || '')}</p>
+                  <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.45; margin-bottom:0.85rem;">${this.esc(Array.isArray(p.features) ? p.features.join(' • ') : (p.features || p.bio || ''))}</p>
                   <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:1rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:0.65rem;">
-                    <strong style="color:#fff;">🎯 Heist Synergy:</strong> ${this.esc(p.heistSynergy || 'Strategic regional getaway & wash hub.')}
+                    <strong style="color:#fff;">🎯 Lore &amp; Simulator Note:</strong> ${this.esc(p.heistSynergy || 'Strategic regional getaway & wash hub.')}
                   </div>
                 </div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
