@@ -1,5 +1,5 @@
 // GTA 6 Heist Guide & Companion HUD - Service Worker
-const CACHE_NAME = 'gta6-heist-cache-v32';
+const CACHE_NAME = 'gta6-heist-cache-v33';
 const PRECACHE_URLS = [
   '/',
   '/map',
@@ -94,6 +94,9 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request.url, { cache: 'no-cache', credentials: 'same-origin' })
         .then((networkResponse) => {
+          if (networkResponse && networkResponse.redirected && networkResponse.url) {
+            return Response.redirect(networkResponse.url, 302);
+          }
           if (networkResponse && networkResponse.status === 200) {
             const clone = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {

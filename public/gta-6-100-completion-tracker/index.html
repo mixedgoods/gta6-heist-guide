@@ -531,10 +531,10 @@
                     <img src="/assets/images/intel/intel-vc-launch.jpg" alt="A jet flies low over the Vice City sign at sunset in GTA 6" class="visual-banner-bg" width="3840" height="2160" loading="eager" fetchpriority="high" decoding="async">
         <div class="visual-banner-inner">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
-                <div style="flex:1 1 580px;">
+                <div style="flex:1 1 300px; min-width:0; max-width:100%;">
                     <div style="display:flex; gap:0.45rem; flex-wrap:wrap; margin-bottom:0.5rem;">
-                        <span class="verify-badge verify-confirmed">🏆 55 VERIFIED TROPHIES (1 PLATINUM • 2 GOLD • 6 SILVER • 46 BRONZE)</span>
-                        <span class="verify-badge verify-community">✅ 35 IN-GAME 100% CHECKLIST ITEMS &bull; SYNCED WITH gta6hg_progress_v1</span>
+                        <span class="verify-badge verify-confirmed" style="white-space:normal; max-width:100%;">🏆 55 VERIFIED TROPHIES (1 PLATINUM • 2 GOLD • 6 SILVER • 46 BRONZE)</span>
+                        <span class="verify-badge verify-community" style="white-space:normal; max-width:100%;">✅ 35 IN-GAME 100% CHECKLIST ITEMS &bull; SYNCED WITH gta6hg_progress_v1</span>
                     </div>
                     <h1 style="color:#fff; font-size:clamp(1.55rem, 3.1vw, 2.25rem); margin:0 0 0.5rem; line-height:1.18;">
                         GTA 6 100% Completion Tracker &amp; Checklist
@@ -591,7 +591,7 @@
         <h3 class="ct-intro-subhead">How to use the 250-stunt trophy threshold vs. 300-stunt 100% requirement &amp; connected tools</h3>
         <ul class="ct-intro-features">
             <li><strong>Separate 250 vs. 300 stunt thresholds:</strong> Leonida contains 397 stunts (130 Stunt Jumps, 202 Under the Bridges, 40 Knife Flights, and 25 Base Jumps). Completing <strong>250 stunts</strong> unlocks the <em>Cunning Stunts</em> Silver trophy (#15), whereas the 100% checklist (#30) requires <strong>300 stunts</strong>. Our <a href="#stunt-threshold-calculator">dual stunt threshold calculator</a> tracks both bars separately from the same category inputs so you don&rsquo;t stop 50 stunts short of <em>A Long Road</em>.</li>
-            <li><strong>Live Animal &amp; Vehicle Database synchronization:</strong> Marking species as studied in our <a href="/animals.html">GTA 6 Animals Database</a> (49 verified species) or marking rides as scanned in our <a href="/vehicles.html">GTA 6 Vehicles Database</a> (33 verified vehicles) updates your counts in the <a href="#database-reconciliation">Database Reconciliation</a> panel below—and vice versa—while letting you add unindexed in-game counts toward the 100/255 animal and 200/277 vehicle thresholds.</li>
+            <li><strong>Live Animal &amp; Vehicle Database synchronization:</strong> Marking verified species as studied in our <a href="/animals.html">GTA 6 Animals Database</a> (7 verified GTA VI species; 42 real-world reference-only species excluded) or marking rides as scanned in our <a href="/vehicles.html">GTA 6 Vehicles Database</a> (33 verified vehicles) updates your counts in the <a href="#database-reconciliation">Database Reconciliation</a> panel below—and vice versa—while letting you add unindexed in-game counts toward the 100/255 animal and 200/277 vehicle thresholds.</li>
             <li><strong>Interactive Map, Weapons &amp; Money Guide integration:</strong> Each of the 35 completion cards and 55 trophy cards links directly to the relevant pins on the <a href="/map.html">Interactive Leonida Map</a>, the 50-weapon requirement in the <a href="/weapons.html">GTA 6 Weapons Database</a>, or safe codes and fence payouts in the <a href="/gta-6-money-guide/">GTA 6 Money Guide</a>.</li>
             <li><strong>Save Planner, Endings &amp; Relationship protection:</strong> Trophy cards cross-reference specific manual save slots in the <a href="/save-planner/">15-Slot Save Planner</a> (such as Slot 03 in Chapter 1 for <em>Positive Mental Attitude</em> and Slot 14 in Chapter 5 before <em>The End of the Road</em>), plus our <a href="/gta-6-endings-guide/">GTA 6 Endings Guide</a> and <a href="/gta-6-relationship-guide/">Jason &amp; Lucia Relationship Guide</a>.</li>
         </ul>
@@ -867,7 +867,7 @@
             </button>
             <div class="ct-accordion-body">
                 <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.55; margin:0 0 1rem;">
-                    <strong>How Database Reconciliation Works:</strong> Rather than fabricating unverified placeholder names for all 255 in-game animals or 277 base-model vehicles, this tracker syncs live with the <strong>49 verified wildlife species</strong> in our <a href="/animals.html" style="color:var(--neon-cyan);">Animals Database</a> and the <strong>33 verified vehicles</strong> in our <a href="/vehicles.html" style="color:var(--neon-cyan);">Vehicles Database</a>. Checking off an animal or vehicle below (or on <code>/animals.html</code> and <code>/vehicles.html</code>) updates both pages immediately, and you can add your additional in-game binocular/WAiNK scans from the remaining unindexed pool to track your true progress toward <strong>100/255 Animals</strong> and <strong>200/277 Base Model Vehicles</strong>.
+                    <strong>How Database Reconciliation Works:</strong> Rather than fabricating unverified placeholder names for all 255 in-game animals or 277 base-model vehicles, this tracker syncs live with the <strong>7 verified GTA VI wildlife species</strong> in our <a href="/animals.html" style="color:var(--neon-cyan);">Animals Database</a> (the 42 real-world reference-only entries are excluded until independently verified in-game) and the <strong>33 verified vehicles</strong> in our <a href="/vehicles.html" style="color:var(--neon-cyan);">Vehicles Database</a>. Checking off a verified animal or vehicle below (or on <code>/animals.html</code> and <code>/vehicles.html</code>) updates both pages immediately, and you can add your additional in-game binocular/WAiNK scans from the remaining unindexed pool to track your true progress toward <strong>100/255 Animals</strong> and <strong>200/277 Base Model Vehicles</strong>.
                 </p>
 
                 <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap:1.1rem;">
@@ -894,7 +894,7 @@
                                 <div style="color:#fff; font-size:0.95rem; font-weight:900;" id="recAnimCombinedCount">0 / 100 <span style="font-size:0.68rem; color:#94a3b8;">(255)</span></div>
                             </div>
                         </div>
-                        <div class="ct-db-mini-grid" id="recAnimalsList" aria-label="49 Verified Website Animal Species"></div>
+                        <div class="ct-db-mini-grid" id="recAnimalsList" aria-label="7 Verified GTA VI Animal Species"></div>
                     </div>
 
                     <!-- VEHICLES RECONCILIATION -->
@@ -1042,9 +1042,36 @@
             <p>Yes. All checked requirements, trophy cards, stunt totals, and database items save immediately to your browser&rsquo;s <code>localStorage</code> (key: <code>gta6hg_progress_v1</code>). Your progress stays intact after refreshing or closing the browser and syncs across open tabs on the same device. To back up your data or move it to another device, click <strong>Export Backup</strong> and <strong>Import Backup</strong> in the progress toolbar.</p>
         </div>
 
+        <!-- ARTICLE 2: COMPLETE 100% COMPLETION STRATEGY GUIDE -->
+        <div id="completion-guide" style="background:linear-gradient(155deg, rgba(12,18,34,0.96), rgba(8,11,22,0.99)); border:1px solid rgba(0,255,136,0.32); border-radius:12px; padding:1.15rem 1.25rem; margin-top:1.15rem;">
+            <span class="verify-badge verify-confirmed" style="margin-bottom:0.35rem;">📘 COMPLETE 100% ROADMAP &bull; UPDATED NOV 23, 2026</span>
+            <h2 style="color:#fff; font-size:1.3rem; margin:0.25rem 0 0.4rem;">GTA VI Complete 100% Completion Strategy Guide</h2>
+            <p style="color:#cbd5e1; font-size:0.84rem; line-height:1.55; margin:0 0 0.85rem;">
+                Reaching 100% Completion unlocks the <strong>&ldquo;A Long Road&rdquo;</strong> Gold trophy (#14) and requires finishing all <strong>35 in-game requirements</strong> under <code>Progress &gt; Stats &gt; 100% Completion</code>. Use this editorial roadmap alongside the interactive checklist above to avoid wasted hours and missed trophies.
+            </p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.85rem;">
+                <div style="background:rgba(7,11,22,0.85); border:1px solid rgba(0,240,255,0.22); border-radius:9px; padding:0.85rem;">
+                    <h3 style="color:var(--neon-cyan); font-size:0.95rem; margin:0 0 0.35rem;">1. Missions &amp; Side Activities</h3>
+                    <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.5; margin:0;">Complete all story missions (reported as 91 main story missions / 93 Story Recap entries across 5 chapters — see our <a href="/missions/" style="color:var(--neon-cyan);">Mission Walkthrough Library</a>) plus Jason's <strong>Bret Vogel 15 Hunting Target Decks</strong> (separate from the 8 Legendary Hunter survival challenge).</p>
+                </div>
+                <div style="background:rgba(7,11,22,0.85); border:1px solid rgba(0,255,136,0.22); border-radius:9px; padding:0.85rem;">
+                    <h3 style="color:var(--neon-green); font-size:0.95rem; margin:0 0 0.35rem;">2. Collectibles &amp; Stunt Thresholds</h3>
+                    <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.5; margin:0;">Track <strong>100/125 Cocaine Flamingos</strong>, <strong>15/18 Collectible Card Sets</strong>, <strong>100/112 WAiNK Scans</strong>, <strong>33/33 Underwater Discoveries</strong>, and <strong>5/7 Kenton Shipwrecks</strong> in our <a href="/gta-6-collectibles/" style="color:var(--neon-green);">Collectibles Guide</a>. For stunts, do not stop at 250 (<em>Cunning Stunts</em> trophy) — 100% requires <strong>300 of 397</strong>.</p>
+                </div>
+                <div style="background:rgba(7,11,22,0.85); border:1px solid rgba(255,184,0,0.25); border-radius:9px; padding:0.85rem;">
+                    <h3 style="color:var(--neon-amber); font-size:0.95rem; margin:0 0 0.35rem;">3. Animal Research &amp; Vehicle Scanning</h3>
+                    <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.5; margin:0;">100% requires studying <strong>100 of 255 animals</strong> and scanning <strong>200 of 277 base vehicles</strong>. On our <a href="/animals.html" style="color:var(--neon-amber);">Animals Database</a>, only independently verified GTA VI species count toward this tracker; real-world reference-only entries are excluded so your progress stays accurate. Also check the <a href="/vehicles.html" style="color:var(--neon-cyan);">Vehicles Database</a> and <a href="/weapons.html" style="color:var(--neon-cyan);">Weapons Database</a>.</p>
+                </div>
+                <div style="background:rgba(7,11,22,0.85); border:1px solid rgba(255,42,133,0.28); border-radius:9px; padding:0.85rem;">
+                    <h3 style="color:var(--neon-pink); font-size:0.95rem; margin:0 0 0.35rem;">4. Missable Warnings &amp; Common Mistakes</h3>
+                    <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.5; margin:0;">None of the 35 core 100% checklist items are flagged as permanently missable, but <strong>cheats disable trophies and saving</strong>, and certain trophy-related activities or fences (Donnie before <em>Swamped</em>, Chapter 2 motel before <em>Checking Out</em>) are time-limited. Protect your run with the <a href="/save-planner/" style="color:var(--neon-pink);">15-Slot Save Planner</a>.</p>
+                </div>
+            </div>
+        </div>
+
         <div style="background:rgba(11,15,28,0.92); border:1px solid rgba(148,163,184,0.22); border-radius:10px; padding:1rem 1.15rem; font-size:0.84rem; color:#cbd5e1; margin-top:1rem;">
             <div style="font-family:var(--font-mono); font-size:0.73rem; color:var(--neon-cyan); font-weight:900; text-transform:uppercase; margin-bottom:0.35rem;">
-                📋 Sources &amp; data notes (last updated: November 22, 2026)
+                📋 Sources &amp; data notes (last updated: November 23, 2026)
             </div>
             <p style="margin:0; line-height:1.55;">
                 The 55 trophies (1 Platinum, 2 Gold, 6 Silver, 46 Bronze) and the 35 requirements follow the in-game <code>Progress &gt; Stats &gt; 100% Completion</code> menu structure. They were cross-referenced with public trophy listings and community completion guides. The website tracker percentages shown on this page are unweighted checklist estimates (averaging the 35 requirements on Card 1 and 55 trophies on Card 2) and do not represent Rockstar&rsquo;s verified internal in-game completion calculation. Items still being confirmed by the community are marked on the relevant entries, including whether the unmarked Chapter 1 balcony meditation with Lucia is strictly required for <em>Positive Mental Attitude</em> and which animal first triggers <em>Fair Game</em>. Spotted an error? <a href="/contact.html" style="color:var(--neon-cyan);">Send a correction</a>.
@@ -1981,9 +2008,34 @@
     window.GTA6Progress.setToolState(TOOL_STATE_KEY, ts, Boolean(silent));
   }
 
+  var VERIFIED_ANIMAL_FALLBACK_IDS = {
+    'an-alligator': true,
+    'an-panther': true,
+    'an-green-iguana': true,
+    'an-snake': true,
+    'an-dolphin': true,
+    'an-sea-turtle': true,
+    'an-lionfish': true
+  };
+
+  function getVerifiedIndexedAnimals() {
+    return indexedAnimals.filter(function (a) {
+      return Boolean(a && a.gta6PresenceConfirmed === true && a.countsTowardCompletion === true);
+    });
+  }
+
   function getIndexedAnimalsStudiedCount() {
     if (!window.GTA6Progress) return 0;
-    return window.GTA6Progress.getCompletedByPrefix('db:owned:animals:').length;
+    var verifiedList = getVerifiedIndexedAnimals();
+    if (verifiedList.length) {
+      return verifiedList.filter(function (a) {
+        return window.GTA6Progress.isDbOwned('animals', a.id);
+      }).length;
+    }
+    return window.GTA6Progress.getCompletedByPrefix('db:owned:animals:').filter(function (key) {
+      var id = key.slice('db:owned:animals:'.length);
+      return Boolean(VERIFIED_ANIMAL_FALLBACK_IDS[id]);
+    }).length;
   }
 
   function getIndexedVehiclesScannedCount() {
@@ -2230,10 +2282,15 @@
     var vExtEl = document.getElementById('recVehExtraInput');
     var vCombEl = document.getElementById('recVehCombinedCount');
 
-    if (aIdxEl) aIdxEl.textContent = animIndexed + ' / ' + (indexedAnimals.length || 49);
-    if (aExtEl && document.activeElement !== aExtEl) aExtEl.value = extraAnim;
+    var verifiedAnims = getVerifiedIndexedAnimals();
+    var verifiedTotal = verifiedAnims.length || 7;
+    if (aIdxEl) aIdxEl.textContent = animIndexed + ' / ' + verifiedTotal + ' Verified';
+    if (aExtEl && document.activeElement !== aExtEl) {
+      aExtEl.max = String(255 - verifiedTotal);
+      aExtEl.value = extraAnim;
+    }
     if (aCombEl) {
-      aCombEl.innerHTML = animCombined + ' / 100 <span style="font-size:0.68rem; color:' + (animCombined >= 100 ? 'var(--neon-green)' : '#94a3b8') + ';">(' + (animCombined >= 100 ? '✓ 100% REQ MET' : 'of 255 in-game') + ')</span>';
+      aCombEl.innerHTML = animCombined + ' / 100 <span style="font-size:0.68rem; color:' + (animCombined >= 100 ? 'var(--neon-green)' : '#94a3b8') + ';">(' + (animCombined >= 100 ? '✓ 100% REQ MET' : 'of 255 in-game · ref-only excluded') + ')</span>';
     }
 
     if (vIdxEl) vIdxEl.textContent = vehIndexed + ' / ' + (indexedVehicles.length || 33);
@@ -2243,13 +2300,13 @@
     }
 
     var animListEl = document.getElementById('recAnimalsList');
-    if (animListEl && indexedAnimals.length) {
-      animListEl.innerHTML = indexedAnimals.map(function (a) {
+    if (animListEl && verifiedAnims.length) {
+      animListEl.innerHTML = verifiedAnims.map(function (a) {
         var owned = window.GTA6Progress && window.GTA6Progress.isDbOwned('animals', a.id);
         return (
           '<label class="ct-db-mini-item ' + (owned ? 'is-owned' : '') + '">' +
             '<input type="checkbox" data-db-toggle="animals" data-db-id="' + escapeHtml(a.id) + '"' + (owned ? ' checked' : '') + ' style="accent-color:#00ff88;">' +
-            '<span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="' + escapeHtml(a.name + ' (' + a.region + ')') + '">' + escapeHtml(a.name) + '</span>' +
+            '<span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="' + escapeHtml(a.name + ' (' + a.region + ') — Verified GTA VI Gameplay') + '">' + escapeHtml(a.name) + '</span>' +
           '</label>'
         );
       }).join('');
@@ -2646,7 +2703,8 @@
     // Database reconciliation inputs & checkboxes
     document.getElementById('recAnimExtraInput').addEventListener('input', function (e) {
       var ts = loadTrackerState();
-      ts.extraAnimals = Math.max(0, Math.min(206, parseInt(e.target.value, 10) || 0));
+      var maxExtraAnim = Math.max(0, 255 - (getVerifiedIndexedAnimals().length || 7));
+      ts.extraAnimals = Math.max(0, Math.min(maxExtraAnim, parseInt(e.target.value, 10) || 0));
       saveTrackerState(ts, true);
       renderAll(true);
     });

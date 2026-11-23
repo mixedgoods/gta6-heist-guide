@@ -5209,7 +5209,7 @@ footer .footer-disclaimer code {
 }
 .home-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.48fr) minmax(295px, 0.85fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-items: stretch;
 }

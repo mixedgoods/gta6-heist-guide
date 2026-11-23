@@ -269,10 +269,10 @@ window.getGTA6LaunchBannerText = function() {
       title: 'Samsung 990 PRO with Heatsink 2TB M.2 SSD',
       asin: 'B0BHJJ9Y77',
       compat: 'PlayStation 5 Internal M.2 Slot \u00b7 PC',
-      specs: ['7,450 MB/s Read Speed', 'Built-in Low-Profile Heatsink'],
-      desc: 'High-speed PCIe 4.0 internal NVMe SSD delivering up to 7,450 MB/s sequential reads with a factory-fitted heatsink.',
-      advantage: 'Exceeds Sony 5,500 MB/s requirements with ample room for massive 200GB+ open-world installations.',
-      drawback: 'Requires opening the PS5 cover and metal expansion shield with a Phillips screwdriver to install.',
+      specs: ['PCIe 4.0 x4 NVMe', 'Factory Low-Profile Heatsink'],
+      desc: 'Fast internal PCIe 4.0 NVMe SSD with a pre-installed heatsink for PS5 storage expansion.',
+      advantage: 'Meets Sony PS5 M.2 speed requirements with generous room for large open-world libraries.',
+      drawback: 'Requires opening the PS5 cover and expansion bay with a Phillips screwdriver.',
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.samsung990pro,
       amazonKey: 'samsung990pro',
@@ -740,7 +740,6 @@ window.getGTA6LaunchBannerText = function() {
             compatHtml +
             advantageHtml +
             drawbackHtml +
-            '<div class="aff-disclosure-inline">' + esc(offer.disclosure) + '</div>' +
           '</div>' +
           '<div class="aff-compact-action">' +
             '<a ' + linkAttrs + ' class="' + ctaClass + ' aff-cta--sm">' + ctaText + '</a>' +
@@ -765,7 +764,6 @@ window.getGTA6LaunchBannerText = function() {
             compatHtml +
             advantageHtml +
             drawbackHtml +
-            '<div class="aff-disclosure-note">' + esc(offer.disclosure) + '</div>' +
           '</div>' +
           '<div class="aff-horizontal-cta">' +
             '<a ' + linkAttrs + ' class="' + ctaClass + '">' + ctaText + '</a>' +
@@ -792,7 +790,7 @@ window.getGTA6LaunchBannerText = function() {
           advantageHtml +
           '<div class="aff-sidebar-foot">' +
             '<a ' + linkAttrs + ' class="' + ctaClass + ' aff-cta--sm">' + ctaText + '</a>' +
-            '<span class="aff-disclosure-micro">Paid link</span>' +
+            '<span class="aff-disclosure-micro">Sponsored \u00b7 Paid link</span>' +
           '</div>' +
         '</aside>'
       );
@@ -816,7 +814,6 @@ window.getGTA6LaunchBannerText = function() {
         '</div>' +
         '<div class="aff-card-foot">' +
           '<a ' + linkAttrs + ' class="' + ctaClass + '">' + ctaText + '</a>' +
-          '<div class="aff-disclosure-note">' + esc(offer.disclosure) + '</div>' +
         '</div>' +
       '</article>'
     );
@@ -836,24 +833,24 @@ window.getGTA6LaunchBannerText = function() {
     if (variant === 'setup-picks-3') {
       var picks = selectOffers('homepage-setup', 3, slotId, config);
       if (!picks.length) return '';
-      var headHtml = (heading || eyebrow)
-        ? '<div class="aff-module-head">' +
-            '<div>' +
-              (eyebrow ? '<span class="aff-module-eyebrow">' + esc(eyebrow) + '</span>' : '') +
-              '<h2 class="aff-module-title">' + esc(heading || 'Gaming Setup Picks') + '</h2>' +
-              (subheading ? '<p class="aff-module-sub">' + esc(subheading) + '</p>' : '') +
-            '</div>' +
-            '<span class="aff-disclosure-tag aff-disclosure-tag--sponsored">Sponsored Recommendations</span>' +
-          '</div>'
-        : '';
+      var cardsHtml = picks.map(function(o, idx) {
+        return renderCardHtml(o, 'standard', slotId + '-' + (idx + 1));
+      }).join('');
+      if (!heading && !eyebrow) {
+        return '<div class="aff-grid-3">' + cardsHtml + '</div>';
+      }
+      var headHtml = '<div class="aff-module-head">' +
+          '<div>' +
+            (eyebrow ? '<span class="aff-module-eyebrow">' + esc(eyebrow) + '</span>' : '') +
+            '<h2 class="aff-module-title">' + esc(heading || 'Gaming Setup Picks') + '</h2>' +
+            (subheading ? '<p class="aff-module-sub">' + esc(subheading) + '</p>' : '') +
+          '</div>' +
+          '<span class="aff-disclosure-tag aff-disclosure-tag--sponsored">Sponsored Recommendations</span>' +
+        '</div>';
       return (
         '<section class="aff-card-module aff-setup-picks" aria-label="' + esc(heading || 'Gaming Setup Picks') + '">' +
           headHtml +
-          '<div class="aff-grid-3">' +
-            picks.map(function(o, idx) {
-              return renderCardHtml(o, 'standard', slotId + '-' + (idx + 1));
-            }).join('') +
-          '</div>' +
+          '<div class="aff-grid-3">' + cardsHtml + '</div>' +
         '</section>'
       );
     }
@@ -891,6 +888,12 @@ window.getGTA6LaunchBannerText = function() {
   // 5. DOM MOUNTING & HYDRATION
   function mountAllSlots() {
     resetPageRegistry();
+
+    // Never advertise unrelated hardware products on the Animals & Wildlife database page
+    var pathLow = (global.location && global.location.pathname || '').toLowerCase();
+    if (pathLow.indexOf('animals') !== -1) {
+      return;
+    }
 
     document.querySelectorAll('[data-aff-slot]').forEach(function(el) {
       if (el.getAttribute('data-aff-mounted') === '1') return;
