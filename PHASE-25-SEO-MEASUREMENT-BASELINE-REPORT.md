@@ -8,7 +8,8 @@
 - **Verified Production Deployment Commit (Cloudflare Pages):** `f7e949fc335458a7e14be6d2a8e0f281e350dee5` (`f7e949f`, deployment ID `3ec0e6e9-e4aa-40c1-9cc1-9e4d85906fc3`, preview URL `https://3ec0e6e9.gta6heistguide.pages.dev`)
 - **Phase 24 Final Report Commit (Docs Only, Not Deployed):** `88172f45c37a73de25154e2418380f4b35e0940f` (`88172f4`)
 - **Phase 22 Rollback Reference Deployment:** `2c5f52de-8315-4bbf-b652-1627851f563c` (`https://2c5f52de.gta6heistguide.pages.dev`, commit `cf8bb5a`) — preserved intact
-- **Raw & Derived CSV Exports:** `seo_reports/phase25/` (`9` CSV files: `7` raw Google Search Console exports + `2` reproducible Phase 25 verification exports)
+- **Raw & Derived Exports:** `seo_reports/phase25/` (`9` CSV files: `7` unchanged raw Google Search Console exports + `2` reproducible Phase 25 verification exports, plus `validate_phase25_baseline.py` Phase 25.1 reconciliation script)
+- **Phase 25.1 Reconciliation Audit:** Completed November 24, 2026 — all headline, canonical/legacy, cohort, and internal-link figures independently verified against raw exports (see Section 15: *Data Reconciliation & Metric Integrity*)
 
 ---
 
@@ -21,7 +22,7 @@
    - Live Community Discoveries endpoints confirm `total: 0` (`/api/community-discoveries/list`) and `total_pins: 0` (`/api/community-discoveries/map-pins`); Community Verified Pins and related-guide callouts remain gated and disabled.
 2. **Pre-Phase-24 Search Console Baseline (`2026-10-27` – `2026-11-23`; Active Data `2026-11-17` – `2026-11-23`):**
    - Authenticated read-only access to Google Search Console (`https://www.gta6heistguide.com/`, `Last update: 4 hours ago`) confirmed that **`2026-11-23`** is now available as a complete day (`53` clicks, `6,230` impressions, `0.85%` CTR, `7.6` avg position).
-   - Across the 28 complete calendar days preceding the November 24 deployment (`2026-10-27` – `2026-11-23`), the site recorded **`200` clicks**, **`22,117` impressions**, **`0.90%` average CTR**, and **`7.7` average position** across `7` active days (`2026-11-17` – `2026-11-23`; GSC property tracking began `2026-11-16`).
+   - Within the requested 28-day baseline window (`2026-10-27` – `2026-11-23`), actual observed Search Console performance spans only **`7` active reporting days** (`2026-11-17` – `2026-11-23`; GSC property tracking began `2026-11-16` with `0` impressions, and `0` historical data exists before property tracking began). Across those `7` active reporting days, the site recorded **`200` clicks**, **`22,117` impressions**, **`0.90%` average CTR**, and **`7.7` average position**. These figures represent `7` active days of observed search performance — not `28` days of observed search performance.
    - The preceding 28-day comparison window (`2026-09-29` – `2026-10-26`) contains **`0` clicks and `0` impressions** because no Search Console data exists before `2026-11-17`.
    - **Zero (`0`) complete post-deployment days exist** as of `2026-11-24`. No causal SEO conclusions can be attributed to Phase 24 yet.
 3. **Cohort Coverage & Deduplication:**
@@ -390,14 +391,77 @@ Adding crawlable internal links establishes **structural link presence and disco
 
 ---
 
-## Appendix: Exported CSV Inventory (`seo_reports/phase25/`)
+## 15. Data Reconciliation & Metric Integrity
 
-1. `seo_reports/phase25/Chart.csv` — Raw GSC daily performance (`2026-11-16` – `2026-11-23`)
-2. `seo_reports/phase25/Pages.csv` — Raw GSC page performance (`117` URLs)
-3. `seo_reports/phase25/Queries.csv` — Raw GSC query performance (`588` queries)
-4. `seo_reports/phase25/Countries.csv` — Raw GSC country breakdown (`151` countries)
-5. `seo_reports/phase25/Devices.csv` — Raw GSC device breakdown (`3` devices)
-6. `seo_reports/phase25/Search appearance.csv` — Raw GSC search appearance (`Product snippets`)
-7. `seo_reports/phase25/Filters.csv` — Raw GSC export filter metadata (`Web (text-based)`, `Oct 27, 2026-Nov 23, 2026`)
+*Phase 25.1 Read-Only Reconciliation Audit — independently reproducible via `python seo_reports/phase25/validate_phase25_baseline.py`. All original raw GSC CSV exports in `seo_reports/phase25/` remain completely unchanged.*
+
+### 15.1 Original Discrepancy Investigated
+
+The Phase 25 baseline report surfaced a discrepancy between sitewide headline/device totals and the summed canonical + legacy page breakdown:
+
+- **Headline (`Chart.csv`) & Device (`Devices.csv`) Totals:** `200` clicks / `22,117` impressions (Mobile `170`/`19,711` + Desktop `28`/`2,267` + Tablet `2`/`139` = exact `200`/`22,117`).
+- **Canonical + Legacy Page Breakdown (`Pages.csv`):** Canonical `83` clicks / `13,457` impressions + Legacy `118` clicks / `8,600` impressions = **`201` clicks / `22,057` impressions** (delta: **`+1` click** and **`-60` impressions** vs. headline).
+
+### 15.2 Investigation Performed
+
+Every raw export in `seo_reports/phase25/` and `public/sitemap.xml` was audited programmatically:
+
+1. **Export Filters & Date Window (`Filters.csv`, `Chart.csv`):**
+   - Confirmed identical export scope across all GSC files: `Search type = Web (text-based)`, `Date = Oct 27, 2026-Nov 23, 2026` (requested 28-day window).
+   - Confirmed `Chart.csv` contains `8` rows: `1` zero-data start row (`2026-11-16`: `0` clicks / `0` impressions) and **`7` active reporting days** (`2026-11-17` – `2026-11-23`). Zero historical data exists prior to `2026-11-16`, and zero complete post-Phase-24 reporting days existed at collection time (`2026-11-24`).
+2. **Cross-Dimension Reconciliation Across All Raw GSC Exports:**
+
+| Raw GSC Export | Row Count | Clicks | Impressions | Delta vs. Headline (`200` / `22,117`) | GSC Export Cap (`1,000` rows) |
+|---|---:|---:|---:|---|---|
+| `Chart.csv` | `8` (`7` active) | **`200`** | **`22,117`** | `0` / `0` (exact) | Not hit |
+| `Devices.csv` | `3` | **`200`** | **`22,117`** | `0` / `0` (exact) | Not hit |
+| `Countries.csv` | `151` | **`200`** | **`22,117`** | `0` / `0` (exact) | Not hit |
+| `Pages.csv` | `117` | **`201`** | **`22,057`** | **`+1` / `-60`** | Not hit (`117 < 1,000`) |
+| `Queries.csv` | `588` | **`29`** | **`3,521`** | `-171` / `-18,596` *(anonymized long-tail)* | Not hit (`588 < 1,000`) |
+| `Search appearance.csv` | `1` | **`17`** | **`612`** | Subset *(Product snippets only)* | Not hit |
+
+3. **`Pages.csv` URL Hygiene & Normalization Checks:**
+   - **Duplicate rows:** `0` (`117` unique exact URLs across `117` rows).
+   - **Scheme & host uniformity:** `117/117` `https://` and `117/117` `www.gta6heistguide.com` (`0` HTTP, `0` non-www, `0` URL fragments).
+   - **Truncation:** `0` row-limit truncation (`117` rows is well below GSC's `1,000`-row export cap).
+   - **Exact-match canonical classification vs. `public/sitemap.xml` (`500` unique canonicals):**
+     - **Canonical (`43` rows):** `83` clicks / `13,457` impressions (`0.62%` CTR).
+     - **Legacy / Non-Canonical (`74` rows):** `118` clicks / `8,600` impressions (`1.37%` CTR), composed of `41` `.html` aliases, `21` retired/other slugs, `5` noindexed `/compare/*` URLs, `5` query-parameterized `/map` or `/map.html` URLs (`0` clicks / `14` impr), and `2` trailing-slash non-canonical variants of sitemap canonicals (`/save-planner`: `0` cl / `21` im vs. `/save-planner/`; `/free`: `0` cl / `3` im vs. `/free/`).
+     - All `5` trailing-slash or query-parameter variants of canonical paths carry `0` clicks and `31` combined impressions (`24` trailing-slash + `7` query-param on `/map`); keeping strict exact-URL matching against `sitemap.xml` is methodologically correct for canonical consolidation tracking.
+4. **Derived Cohort & Internal-Link Reproducibility Check:**
+   - Recalculated all `55` unique canonical URLs in `phase25_cohort_performance.csv` directly against `Pages.csv`, `public/sitemap.xml`, and `git diff --name-only 60e90d4..f7e949f` (`31` modified canonical HTML pages + `1` JS module `public/assets/community/cd-submit.js`; `24` `/animals/*` profiles added in Cohort D; `55/55` in `sitemap.xml`; `0` row-level mismatches vs. `Pages.csv`).
+   - Verified `6` overlapping URLs (`/port-gellhorn` in A|C|E; `/weapons`, `/escape-routes`, `/heists/vcia-takedown`, `/heists/jewelry-stores` in A|C; `/radio` in C|D) and deduplicated total: **`14` active / `41` zero-impression URLs, `64` clicks, `11,698` impressions, `0.55%` aggregate CTR**.
+   - Verified all Cohort A–E subtotals exactly: **A** (`7` URLs, `6` active, `40` cl / `8,971` im, `0.45%` CTR), **B** (`4` URLs, `3` active, `2` cl / `901` im, `0.22%` CTR), **C** (`8` URLs, `8` active, `55` cl / `10,432` im, `0.53%` CTR), **D** (`39` URLs, `2` active, `13` cl / `435` im, `2.99%` CTR), **E** (`4` URLs, `2` active, `21` cl / `6,412` im, `0.33%` CTR).
+   - Verified internal-link totals: `29/29` hub-matrix links present in live HTML with HTTP `200` and `100%` sitemap parity (`25` unique destinations), `23/23` `/radio/*` links in `public/radio.html`, and `24/24` `/animals/*` links in `public/animals.html`.
+
+### 15.3 Verified Corrected Figures & Unresolved Upstream Limitations
+
+- **Verified Figures (No Arbitrary Adjustments Required):** All reported headline (`200` / `22,117`), device (`200` / `22,117`), country (`200` / `22,117`), canonical (`83` / `13,457`), legacy (`118` / `8,600`), cohort (`64` / `11,698` deduplicated across `55` URLs), and internal-link totals (`29/29`, `23/23`, `24/24`) are **100% reproducible** from the raw exports with zero calculation errors.
+- **Unresolved Upstream GSC Limitation #1 (Property vs. Page Aggregation Delta: `+1` Click / `-60` Impressions):** `Chart.csv`, `Devices.csv`, and `Countries.csv` use Google Search Console's **property-level aggregation** (`200` clicks / `22,117` impressions), whereas `Pages.csv` uses **page-level aggregation** (`201` clicks / `22,057` impressions). Under GSC's documented aggregation semantics, page-level tables can drop low-frequency/anonymized impressions (`-60`) while multi-URL SERP appearances (e.g., sitelinks or legacy+canonical URL pairs) can cause summed page-row clicks to slightly exceed deduplicated property-level clicks (`+1`). This upstream GSC variance is preserved faithfully without forced reconciliation.
+- **Unresolved Upstream GSC Limitation #2 (Query Anonymization in `Queries.csv`):** Exported `Queries.csv` rows account for only `29` of `200` clicks (`14.5%`) and `3,521` of `22,117` impressions (`15.9%`); the remaining `85.5%` of clicks and `84.1%` of impressions belong to anonymized rare/long-tail queries omitted by Google Search Console.
+
+### 15.4 Authoritative Source Matrix
+
+| Metric Domain | Authoritative Source File(s) | Authoritative Baseline Value (`Oct 27 – Nov 23`, `7` Active Days) | Usage Rule |
+|---|---|---|---|
+| **Sitewide Headline Clicks, Impressions, CTR, Avg Position** | `Chart.csv` (corroborated by `Devices.csv` & `Countries.csv`) | `200` clicks / `22,117` impressions / `0.90%` CTR / `7.7` avg pos | Always use for sitewide totals and checkpoint comparisons. |
+| **Daily Trajectory & Active-Day Count** | `Chart.csv` | `7` active days (`2026-11-17` – `2026-11-23`) + `1` zero start day (`2026-11-16`) | Always distinguish requested 28-day window from `7` active days. |
+| **Device & Country Breakdowns** | `Devices.csv`, `Countries.csv` | Mobile `170`/`19,711`; Desktop `28`/`2,267`; Tablet `2`/`139` (`151` countries) | Reconciles `100%` to sitewide headline totals. |
+| **Page-Level, Canonical/Legacy & Cohort Baselines** | `Pages.csv` + `phase25_cohort_performance.csv` | `43` canonical (`83`/`13,457`) + `74` legacy (`118`/`8,600`) = `201`/`22,057`; `55`-URL cohorts = `64`/`11,698` | Use for URL-level, canonical consolidation, and Cohort A–E tracking; do not force sum to `200`/`22,117`. |
+| **Search Query Insights** | `Queries.csv` | `588` visible queries (`29` clicks / `3,521` impressions) | Treat as directional non-anonymized sample only — never as sitewide query sum. |
+| **Rich Result Performance** | `Search appearance.csv` | `Product snippets`: `17` clicks / `612` impressions (`2.78%` CTR) | Subset of total performance; do not add to device or page totals. |
+
+---
+
+## Appendix: Exported CSV & Validation Script Inventory (`seo_reports/phase25/`)
+
+1. `seo_reports/phase25/Chart.csv` — Raw GSC daily performance (`2026-11-16` – `2026-11-23`, unchanged)
+2. `seo_reports/phase25/Pages.csv` — Raw GSC page performance (`117` URLs, unchanged)
+3. `seo_reports/phase25/Queries.csv` — Raw GSC query performance (`588` queries, unchanged)
+4. `seo_reports/phase25/Countries.csv` — Raw GSC country breakdown (`151` countries, unchanged)
+5. `seo_reports/phase25/Devices.csv` — Raw GSC device breakdown (`3` devices, unchanged)
+6. `seo_reports/phase25/Search appearance.csv` — Raw GSC search appearance (`Product snippets`, unchanged)
+7. `seo_reports/phase25/Filters.csv` — Raw GSC export filter metadata (`Web (text-based)`, `Oct 27, 2026-Nov 23, 2026`, unchanged)
 8. `seo_reports/phase25/phase25_cohort_performance.csv` — Reproducible deduplicated `55`-URL cohort performance & live metadata table
 9. `seo_reports/phase25/phase25_internal_link_verification.csv` — Reproducible live production HTML verification of all `29` hub-matrix links
+10. `seo_reports/phase25/validate_phase25_baseline.py` — Phase 25.1 read-only reproducible reconciliation & integrity validation script
