@@ -978,6 +978,52 @@
             .leaflet-popup-content { width: 270px !important; }
         }
     </style>
+<script type="application/ld+json" id="p22-ld-map">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.gta6heistguide.com/map#app",
+      "name": "GTA 6 Interactive Leonida Map",
+      "url": "https://www.gta6heistguide.com/map",
+      "description": "Free interactive map of Leonida for Grand Theft Auto VI with searchable pins for heists, banks, safes, fences, properties, Ammu-Nation stores, wildlife and Easter eggs, plus a local progress tracker.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "GTA6HeistGuide.com",
+        "url": "https://www.gta6heistguide.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gta6heistguide.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Interactive Leonida Map",
+          "item": "https://www.gta6heistguide.com/map"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1057,7 +1103,7 @@
     <aside class="map-sidebar" id="mapSidebar">
         <div class="sidebar-header-box">
             <div class="sidebar-title-row">
-                <span class="sidebar-title-badge">🗺️ LEONIDA MAP v4.5</span>
+                <h1 class="sidebar-title-badge" style="margin:0; font-size:inherit; font-weight:inherit; line-height:inherit; letter-spacing:inherit;">🗺️ GTA 6 Interactive Leonida Map <span style="opacity:0.7;">v4.5</span></h1>
                 <div style="display:flex; align-items:center; gap:0.45rem;">
                     <span style="font-size:0.68rem; color:#94a3b8; font-family:var(--font-mono, monospace);" id="activePinCountLabel">Loading pins...</span>
                     <button type="button" class="sidebar-close-mobile" onclick="toggleMobileDrawer()" aria-label="Close map sidebar">✕</button>
@@ -1143,6 +1189,18 @@
     </div>
 </div>
 
+<!--p22:map-guide-->
+<section class="tool-box" id="map-guide" style="max-width:1100px; margin:2rem auto; padding:1.5rem;">
+<h2 style="color:#fff; font-size:1.35rem; margin:0 0 0.7rem;">About the GTA 6 Interactive Leonida Map</h2>
+<p style="color:#cbd5e1; line-height:1.65; margin:0 0 0.85rem;">This is a free interactive map of Leonida, the state in Grand Theft Auto VI, with 174 pins across heist targets, banks and vaults, jewelry and pawn shops, Ammu-Nation stores, properties and fences, wildlife habitats and Easter eggs. Pins link to the full guide for each location, and your progress is saved in your own browser.</p>
+<h3 style="color:var(--neon-cyan); font-size:1.05rem; margin:1.1rem 0 0.45rem;">How to use the map</h3>
+<ul style="color:#cbd5e1; line-height:1.7; padding-left:1.2rem; margin:0 0 0.85rem;"><li>Search by name or code (for example a safe code, a fence or an animal) in the sidebar search box.</li><li>Use the category rows to show or hide pin types; &ldquo;All&rdquo; and &ldquo;None&rdquo; toggle every category at once.</li><li>Jump to a region with the region buttons above the map, or press &ldquo;Full Map&rdquo; to reset the view.</li><li>Click a pin for its payout, difficulty, security notes, tips and escape route where known, then mark it as found. &ldquo;Next Unfound&rdquo; flies to the nearest pin you have not ticked and &ldquo;Hide Found&rdquo; clears completed pins.</li><li>Drop your own custom pins and export or import a JSON backup from the Backup button. Personal pins and progress never leave your browser.</li></ul>
+<h3 style="color:var(--neon-cyan); font-size:1.05rem; margin:1.1rem 0 0.45rem;">Map regions and their guides</h3>
+<ul style="color:#cbd5e1; line-height:1.7; padding-left:1.2rem; margin:0 0 0.85rem;"><li><a href="/locations/vice-city" style="color:var(--neon-cyan); font-weight:700;">Vice City</a> and <a href="/locations/vice-beach" style="color:var(--neon-cyan); font-weight:700;">Vice Beach</a> &mdash; the main city and its beachfront.</li><li><a href="/port-gellhorn" style="color:var(--neon-cyan); font-weight:700;">Port Gellhorn</a> &mdash; docks, ATMs, fences and the shipyard.</li><li><a href="/locations/leonida-keys" style="color:var(--neon-cyan); font-weight:700;">Leonida Keys</a> &mdash; the island chain, including Key Lento.</li><li><a href="/locations/grassrivers" style="color:var(--neon-cyan); font-weight:700;">Grassrivers</a> &mdash; swamp wetlands and airboat routes.</li><li><a href="/locations/mount-kalaga" style="color:var(--neon-cyan); font-weight:700;">Mount Kalaga</a> &mdash; mountain and national park hunting grounds.</li><li><a href="/locations/lake-leonida" style="color:var(--neon-cyan); font-weight:700;">Lake Leonida</a> and <a href="/locations/ambrosia" style="color:var(--neon-cyan); font-weight:700;">Ambrosia</a> &mdash; the inland lake and industrial district.</li></ul>
+<h3 style="color:var(--neon-cyan); font-size:1.05rem; margin:1.1rem 0 0.45rem;">Related tools and guides</h3>
+<ul style="color:#cbd5e1; line-height:1.7; padding-left:1.2rem; margin:0 0 0.85rem;"><li><a href="/gta-6-100-completion-tracker/" style="color:var(--neon-cyan); font-weight:700;">100% completion tracker</a> &mdash; track collectibles and milestones alongside map pins.</li><li><a href="/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates" style="color:var(--neon-cyan); font-weight:700;">Every Leonida region mapped</a> &mdash; coordinates and escape routes by region.</li><li><a href="/guides/gta-6-safe-codes" style="color:var(--neon-cyan); font-weight:700;">Safe codes guide</a> &mdash; codes referenced by safe pins.</li><li><a href="/guides/random-world-events" style="color:var(--neon-cyan); font-weight:700;">Random world events</a> &mdash; dynamic encounters across the map.</li><li><a href="/locations/apollo-aggregates-red-barn" style="color:var(--neon-cyan); font-weight:700;">Apollo Aggregates Red Barn</a> &mdash; a popular pin with a repeatable cash loop.</li></ul>
+</section>
+<!--/p22:map-guide-->
 <div id="hudToast">Notification</div>
 
 <!-- Custom User Pin Drop Modal -->

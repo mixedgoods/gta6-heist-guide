@@ -1059,8 +1059,8 @@
     { id: 'jewelry', name: '20 Jewelry Stores (Yasmani 5% Fence)', chapter: 3, chLabel: 'Ch. 3+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 2, diffLabel: 'Easy-Med (Stealth)', prepMins: 11, payout: 25000, isBank: false, link: '/heists/jewelry-stores.html' },
     { id: 'armored', name: 'Armored Cash Trucks & 40 Gang Ops', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 3, diffLabel: 'Medium', prepMins: 12, payout: 24000, isBank: false, link: '/heists/armored-trucks-gang-ops.html' },
     { id: 'pawn', name: 'Pawn Shops (Randy / 7700 Fence)', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 2, diffLabel: 'Easy-Med', prepMins: 8, payout: 8500, isBank: false, link: '/heists/pawn-shops.html' },
-    { id: 'moses', name: 'Moses Untracked Car Deliveries', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy', prepMins: 5, payout: 1800, isBank: false, link: '/map.html?pin=fence-moses' },
-    { id: 'kenton', name: "Kenton's Shipwreck Dives", chapter: 1, chLabel: 'Ch. 1+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy', prepMins: 6, payout: 1400, isBank: false, link: '/map.html?pin=op-fishing-shacks' },
+    { id: 'moses', name: 'Moses Untracked Car Deliveries', chapter: 2, chLabel: 'Ch. 2+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy', prepMins: 5, payout: 1800, isBank: false, link: '/map?pin=fence-moses' },
+    { id: 'kenton', name: "Kenton's Shipwreck Dives", chapter: 1, chLabel: 'Ch. 1+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy', prepMins: 6, payout: 1400, isBank: false, link: '/map?pin=op-fishing-shacks' },
     { id: 'shops', name: '72 Shops & Convenience Stick-ups', chapter: 1, chLabel: 'Ch. 1+', mode: 'solo', modeLabel: 'Solo / Story', diffRank: 1, diffLabel: 'Very Easy (1–2★)', prepMins: 4, payout: 1200, isBank: false, link: '/heists/shops-and-stickups.html' }
   ];
 
@@ -1134,7 +1134,7 @@
             '<input type="checkbox" data-op-id="' + op.id + '"' + (done ? ' checked' : '') + ' style="accent-color:var(--neon-green);">' +
             '<span>Looted &amp; Banked</span>' +
           '</label>' +
-          '<a href="/map.html?pin=' + encodeURIComponent(op.pin) + '" style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; text-decoration:none;">📍 Map Pin</a>' +
+          '<a href="/map?pin=' + encodeURIComponent(op.pin) + '" style="color:var(--neon-cyan); font-size:0.76rem; font-weight:800; text-decoration:none;">📍 Map Pin</a>' +
         '</div>' +
       '</article>';
     }).join('');

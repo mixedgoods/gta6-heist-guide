@@ -1,0 +1,1958 @@
+[
+ {
+  "target": "/vehicles/vapid-dominator",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/vehicles",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   },
+   {
+    "source": "/vehicles/bravado-gauntlet-hellfire",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/sinfrontera-national-bank",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/missions/raul-setup-vault-blueprints",
+    "score": 8.7,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/heists/large-bank-vaults",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/properties/key-lento-safehouse-drive-shed",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/locations/leonida-keys",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 5
+   },
+   {
+    "source": "/properties/jasons-house",
+    "score": 10.5,
+    "recip": 0,
+    "overlap": 4
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/properties/port-gellhorn-motel-parking-lot",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/properties/chapter-2-motel-base",
+    "score": 8.1,
+    "recip": 0,
+    "overlap": 3
+   },
+   {
+    "source": "/missions/girls-trip",
+    "score": 7.2,
+    "recip": 0,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/weapons/compact-grenade-launcher",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/weapons/rpg-rocket-launcher",
+    "score": 6.1,
+    "recip": 0,
+    "overlap": 2
+   },
+   {
+    "source": "/weapons/flashbang-stun-grenade",
+    "score": 6.1,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/cocoteo-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/radio-on-u",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/afrobank-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/vapid-stanier-classic",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/best-getaway-vehicles-and-trunk-storage",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/vehicles",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/sirius-classic-muscle-coupe",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/vehicles",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   },
+   {
+    "source": "/port-gellhorn",
+    "score": 4.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/johansen-gt-classic",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/vehicles",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   },
+   {
+    "source": "/port-gellhorn",
+    "score": 4.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/declasse-tulip",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/best-getaway-vehicles-and-trunk-storage",
+    "score": 9,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/vehicles",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/locations/apollo-aggregates-red-barn",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/apollo-aggregates-red-barn-money-loop",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 4
+   },
+   {
+    "source": "/guides/vice-city-portal-easter-egg",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/osprey",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/birds-compendium-60-vs-62",
+    "score": 6.5,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/gta-6-100-completion-tracker/",
+    "score": 4.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/feng-shui",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/cal-hampton-character-guide",
+    "score": 8.8,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/missions/tourist-trap",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/gear-up",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/weapons",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/missions/swamped",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/wyman-character-guide",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/thrillbilly-mud-club",
+    "score": 12.3,
+    "recip": 1,
+    "overlap": 3
+   },
+   {
+    "source": "/locations/starlet-motel",
+    "score": 9,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/hunting-money-guide",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/bret-vogel-hunting-target-decks",
+    "score": 14.8,
+    "recip": 1,
+    "overlap": 5
+   },
+   {
+    "source": "/locations/mount-kalaga",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 4
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/armored-truck-farming-guide",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/heists/armored-trucks-gang-ops",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/guides/apollo-aggregates-red-barn-money-loop",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/small-bank-speed-run-money",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/dye-pack-jammer-guide",
+    "score": 14.8,
+    "recip": 1,
+    "overlap": 4
+   },
+   {
+    "source": "/heists/small-banks-payday-loans",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/protect-your-money-gta-6",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/buckme-family-savings-guide",
+    "score": 10.4,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/guides/busted-vs-wasted-penalties",
+    "score": 10.2,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/pettable-animals-gta-6",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/100-animals-100-percent",
+    "score": 7.9,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/gta-6-discoveries/",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/bank-vault-hacking-guide",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/dye-pack-jammer-guide",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/missions/credit-check",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/in-game-websites-and-apps",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/secret-radio-stations-poster-scans",
+    "score": 10.4,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/guides/smartphone-apps-guide",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/back-country-radio",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/v-rock",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/the-chamber-106-6",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/the-chamber-106-6",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/the-wipe-99-9",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/wktt",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/afrobank-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/radio-la-ola",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/cocoteo-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/honey-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/worldwide-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/leonida-jazz-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/radio-la-ola",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/cocoteo-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/radio-on-u",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/gloriana-blues-radio",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/honey-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/worldwide-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/stockyard-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/circoloco-records-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/vice-city-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/circoloco-records-radio",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/vice-city-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/flash-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/leonida-jazz-radio",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/symphony-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/emotion-98-3",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/worldwide-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/leonida-jazz-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/symphony-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/kaleidoscope-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/stockyard-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/circoloco-records-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/radio-on-u",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/afrobank-fm",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/radio-la-ola",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/symphony-fm",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/radio/emotion-98-3",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   },
+   {
+    "source": "/radio/gloriana-blues-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/meet-the-heders",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/port-gellhorn-shipyard-containers",
+    "score": 8.8,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/missions/girls-trip",
+    "score": 6.4,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/ammu-nation-shooting-range",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/hidden-weapon-stashes",
+    "score": 7.9,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/gta-6-100-completion-tracker/",
+    "score": 4.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/terminator-2-easter-egg",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/mario-and-luigi-easter-egg",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/guides/rdr2-easter-eggs-in-gta-6",
+    "score": 7.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/prologue",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/missions/coming-home",
+    "score": 10.4,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/missions/chapter-1-just-like-paradise",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/whats-in-the-bag",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/missions/just-moved-in",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/locations/starlet-motel",
+    "score": 9,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/south-leonida-real-estate",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/missions/mami-knows-best",
+    "score": 7.7,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/missions/daily-driver",
+    "score": 6,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/leonida-fishing-and-boating",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/leonida-keys-salvage-jobs",
+    "score": 10.2,
+    "recip": 1,
+    "overlap": 2
+   },
+   {
+    "source": "/guides/leonida-boats-and-airboats",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/the-missing-link",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/missions/optional-objectives-guide",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   },
+   {
+    "source": "/missions/safe-word",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/bricked-up",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/missions/chapter-3-tits-ass-drug-money",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   },
+   {
+    "source": "/missions/boobie-time",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/cocaine-flamingos-locations",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/gta-6-100-completion-tracker/",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/cheats",
+    "score": 6.7,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/photo-studio-and-camera-guide",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/secret-radio-stations-poster-scans",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/guides/pseudo-first-person-camera-trick",
+    "score": 7.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/ultimate-edition-bonuses-guide",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/all-gta-6-garages",
+    "score": 6.4,
+    "recip": 0,
+    "overlap": 2
+   },
+   {
+    "source": "/guides/free-weapons-and-cars-guide",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/story-choices-and-consequences",
+  "before": 1,
+  "need": 2,
+  "picks": [
+   {
+    "source": "/guides/all-relationship-heart-triggers",
+    "score": 7.9,
+    "recip": 1,
+    "overlap": 1
+   },
+   {
+    "source": "/guides/keys-safehouse-errands",
+    "score": 5.7,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/green-iguana",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/sea-turtle",
+    "score": 14.7,
+    "recip": 1,
+    "overlap": 6
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/weapons/heavy-revolver",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/weapons/scoped-heavy-revolver",
+    "score": 12.2,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/western-final-chapter-cruiser",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/vehicles",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/whitetail-buck",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/mount-kalaga",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/wild-boar",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/mount-kalaga",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/killer-whale",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/dolphin",
+    "score": 14.5,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/manatee",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/sea-turtle",
+    "score": 14.7,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/pfister-comet",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/vehicles/invetero-coquette-d10",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/pegassi-tempesta",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/vehicles/pegassi-zorrusso",
+    "score": 7.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/weapons/combat-tactical-shotgun",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/weapons/pump-action-shotgun",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/properties/leonida-keys-boatyard-garage",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/properties/jasons-house",
+    "score": 10.1,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/properties/chapter-2-motel-base",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/starlet-motel",
+    "score": 11.2,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/emotion-98-3",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/radio/gloriana-blues-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/atm-theft-guide",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/kolt-and-associates-gang-ops",
+    "score": 10.4,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/properties/vice-city-story-safehouse-3",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/properties/vice-city-story-safehouse-4",
+    "score": 10.4,
+    "recip": 0,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/weapons/sawed-off-shotgun",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/weapons/pump-action-shotgun",
+    "score": 6,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/albany-cavalcade-xl",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/best-getaway-vehicles-and-trunk-storage",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/bobcat",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/mount-kalaga",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 4
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/bald-eagle",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/black-bear",
+    "score": 14.5,
+    "recip": 1,
+    "overlap": 6
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/american-flamingo",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/stingray-manta-ray",
+    "score": 14.4,
+    "recip": 1,
+    "overlap": 4
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/raccoon",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/port-gellhorn",
+    "score": 9,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/radio/wktt",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/radio/back-country-radio",
+    "score": 20,
+    "recip": 0,
+    "overlap": 0,
+    "ring": "radio-genre"
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/weapons/molotov-cocktail",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/how-to-escape-police-wanted-levels",
+    "score": 9,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/vehicles/vapid-6-off-road-mud-coupe",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/vehicles/canis-lifted-4x4-pickup",
+    "score": 6.1,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/gang-safe-clearing-route",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/kolt-and-associates-gang-ops",
+    "score": 14.8,
+    "recip": 1,
+    "overlap": 6
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/leonida-law-enforcement-agencies",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/kelly-county",
+    "score": 6.6,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/red-fox",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/mount-kalaga-mysteries",
+    "score": 6.8,
+    "recip": 0,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/beaver",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/white-river-otter",
+    "score": 5.9,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/animals/white-river-otter",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/animals/beaver",
+    "score": 5.9,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/clean-up-after-donnie",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/swamped",
+    "score": 10.4,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/pipework",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/hey-arnold",
+    "score": 7.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/random-world-events",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/hidden-weapon-stashes",
+    "score": 6.1,
+    "recip": 0,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/kingpin-bowling-activities",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/kolt-and-associates-gang-ops",
+    "score": 12.6,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/ps5-pro-vs-xbox-graphics-settings",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/xbox-series-x-120hz-vrr-guide",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/locations/delights-strip-club",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/girls-trip",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/locations/gellhorn-haunted-hotel",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/gellhorn-haunted-hotel-puzzle",
+    "score": 13,
+    "recip": 1,
+    "overlap": 6
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/locations/paradise-garage",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/watson-bay",
+    "score": 14.6,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/real-dimez-character-guide",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/boobie-ike-character-guide",
+    "score": 10.1,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/vicki-character-guide",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/girls-trip",
+    "score": 13.4,
+    "recip": 1,
+    "overlap": 5
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/mattia-and-kat-guide",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/day-release",
+    "score": 9,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/gta-6-stock-market-status",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/post-game-money-methods",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/port-gellhorn-escape-routes",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/port-gellhorn-shipyard-containers",
+    "score": 12.4,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/grassrivers-swamp-evasion",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/vehicles/grassrivers-swamp-airboat",
+    "score": 11.2,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/mount-kalaga-evasion-routes",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/properties/mount-kalaga-trailhead-garage",
+    "score": 8.8,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/hostage-control-and-intimidation",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/dye-pack-jammer-guide",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/crab-outpost-keypad-mystery",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/locations/crab-outpost",
+    "score": 10.8,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/underwater-secrets-leonida-keys",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/leonida-keys-salvage-jobs",
+    "score": 12.4,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/6-star-wanted-survival",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/how-to-escape-police-wanted-levels",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/ambulance-chaser",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/missable-missions-and-cutoffs",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/dubious-provenance",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/yasmanis-jewelry-jobs",
+    "score": 5.7,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/mami-knows-best",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/gta-6-relationship-guide/",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/vice-city-sports-activities",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/hidden-weapon-stashes",
+    "score": 7.9,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/first-impressions",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/credit-check",
+    "score": 10.4,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/ride-or-die",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/boobie-time",
+    "score": 7.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/company-property",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/clear-skies",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/pool-day",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/lawyer-up",
+    "score": 5.8,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/leonida-fight-clubs",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/collectible-card-sets",
+    "score": 5.6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/underwater-discoveries-locations",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/kenton-shipwreck-sets",
+    "score": 10,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/knife-flights-locations",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/stunt-jumps-locations",
+    "score": 12.3,
+    "recip": 1,
+    "overlap": 3
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/base-jumps-locations",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/stunt-jumps-locations",
+    "score": 10.1,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/vice-beach-murals-secrets",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/secret-radio-stations-poster-scans",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/robbery-cooldown-timers",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/heists/pawn-shops",
+    "score": 6.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/delivery-and-rideshare-jobs",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/randy-vehicle-wishlist-jobs",
+    "score": 7.9,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/vice-beach-encounters",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/vice-beach-murals-secrets",
+    "score": 9.9,
+    "recip": 1,
+    "overlap": 2
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/shirley-side-missions",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/missable-missions-and-cutoffs",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/missions/kyle-mckittrick-side-missions",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/missions/papa-audacity-side-missions",
+    "score": 7.8,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/impound-and-lost-vehicles-recovery",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/best-getaway-vehicles-and-trunk-storage",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/guides/leonida-gangs-and-factions-guide",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/guides/kolt-and-associates-gang-ops",
+    "score": 6,
+    "recip": 1,
+    "overlap": 0
+   }
+  ],
+  "unmet": 0
+ },
+ {
+  "target": "/weapons/black-eagle-kalinga-50",
+  "before": 2,
+  "need": 1,
+  "picks": [
+   {
+    "source": "/weapons",
+    "score": 8.2,
+    "recip": 1,
+    "overlap": 1
+   }
+  ],
+  "unmet": 0
+ }
+]
