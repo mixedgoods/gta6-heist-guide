@@ -19,34 +19,35 @@
 | Phase 11 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 12 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 13 Live Published Pages (Added 2026-11-24) | 35 |
-| **Current Live Canonical Indexable Total (Post-Phase 13)** | **325** |
-| Planned — Evidence Ready (Core 500-Page Target Remaining) | 90 |
+| Phase 14 Live Published Pages (Added 2026-11-24) | 35 |
+| **Current Live Canonical Indexable Total (Post-Phase 14)** | **360** |
+| Planned — Evidence Ready (Core 500-Page Target Remaining) | 55 |
 | Reserve Candidates (4-Page Buffer: 504 Inventory vs. 500 Target) | 4 |
 | Planned — Awaiting Additional In-Game / Source Verification | 84 |
 | Planned — Future Post-Launch Expansion (GTA 6 Online) | 1 |
 
-## Category Breakdown (Reconciled Post-Phase 13)
+## Category Breakdown (Reconciled Post-Phase 14)
 
 | # | Category | Total | Live Published | Core Evidence-Ready | Reserve (504→500) | Needs Verification | Future Online |
 |---|---|---:|---:|---:|---:|---:|---:|
 | 1 | Main Story Missions | 12 | 10 | 0 | 0 | 2 | 0 |
 | 2 | Individual Mission Walkthroughs | 91 | 37 | 0 | 0 | 54 | 0 |
 | 3 | Side Missions and Stranger Encounters | 24 | 12 | 0 | 0 | 12 | 0 |
-| 4 | Heists and Robberies | 16 | 14 | 1 | 0 | 1 | 0 |
-| 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 10 | 4 | 0 | 0 | 0 |
-| 6 | Leonida Regions and Districts | 22 | 21 | 1 | 0 | 0 | 0 |
-| 7 | Landmarks and Locations | 30 | 17 | 13 | 0 | 0 | 0 |
-| 8 | Collectibles and Completion Guides | 20 | 7 | 5 | 0 | 8 | 0 |
+| 4 | Heists and Robberies | 16 | 15 | 0 | 0 | 1 | 0 |
+| 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 11 | 3 | 0 | 0 | 0 |
+| 6 | Leonida Regions and Districts | 22 | 22 | 0 | 0 | 0 | 0 |
+| 7 | Landmarks and Locations | 30 | 30 | 0 | 0 | 0 | 0 |
+| 8 | Collectibles and Completion Guides | 20 | 10 | 2 | 0 | 8 | 0 |
 | 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 10 | 7 | 0 | 5 | 0 |
 | 10 | Weapons and Unique Weapon Variants | 30 | 30 | 0 | 0 | 0 | 0 |
 | 11 | Vehicles and Vehicle Locations | 40 | 40 | 0 | 0 | 0 | 0 |
 | 12 | Animals and Wildlife | 55 | 29 | 26 | 0 | 0 | 0 |
-| 13 | Characters and Relationships | 22 | 15 | 7 | 0 | 0 | 0 |
+| 13 | Characters and Relationships | 22 | 22 | 0 | 0 | 0 | 0 |
 | 14 | Properties and Businesses | 24 | 24 | 0 | 0 | 0 | 0 |
-| 15 | Police, Wanted Levels and Escape Mechanics | 16 | 7 | 8 | 0 | 1 | 0 |
-| 16 | Money-Making Methods | 18 | 8 | 8 | 0 | 1 | 1 |
+| 15 | Police, Wanted Levels and Escape Mechanics | 16 | 8 | 7 | 0 | 1 | 0 |
+| 16 | Money-Making Methods | 18 | 16 | 0 | 0 | 1 | 1 |
 | 17 | Activities, Exploration and Game Mechanics | 48 | 34 | 10 | 4 | 0 | 0 |
-| — | **TOTAL** | **504** | **325** | **90** | **4** | **84** | **1** |
+| — | **TOTAL** | **504** | **360** | **55** | **4** | **84** | **1** |
 
 ## Editorial & Verification Policy
 
@@ -222,7 +223,7 @@
 | How to Use the Dye Pack Jammer in GTA 6 Bank Robberies | `/guides/dye-pack-jammer-guide` | Mechanic / Robbery | How do you unlock and use the Dye Pack Jammer on bank cash stacks? | `/missions/credit-check` | missions/index.html (Credit Check) + small-banks-payday-loans | P1 | Published (Phase 8) |
 | ATM Theft & Tow Truck Rip-Out Guide in GTA 6 | `/guides/atm-theft-guide` | Robbery Guide | Can you rob or rip out ATMs in GTA 6 and how much cash do they drop? | `/port-gellhorn` | port-gellhorn.html + secrets-live.json | P1 | Published (Phase 11) |
 | Port Gellhorn Shipyard & SCOOP Container Loot Guide | `/guides/port-gellhorn-shipyard-containers` | Robbery Guide | What loot and containers can you crack at the Port Gellhorn Shipyard? | `/port-gellhorn` | Phase 5 commit 1bb4074 (port-gellhorn.html) | P1 | Published (Phase 10) |
-| Stealth vs Loud Heist Tactics & Alarm Bypass Guide | `/guides/stealth-vs-loud-heist-tactics` | Strategy | When should you run stealth versus loud assaults in GTA 6 robberies? | `/heist-planner` | heists/* + leonida-wanted-system.html | P2 | Planned — Batch 4 |
+| Stealth vs Loud Heist Tactics & Alarm Bypass Guide | `/guides/stealth-vs-loud-heist-tactics` | Strategy | When should you run stealth versus loud assaults in GTA 6 robberies? | `/heist-planner` | heists/* + leonida-wanted-system.html | P2 | Published (Phase 14) |
 | Free-Roam Robbery Respawn Timers & Cooldown Guide | `/guides/robbery-cooldown-timers` | Mechanics | How long do banks, pawn shops, and jewelry stores take to reset after a robbery? | `/gta-6-money-guide/` | Awaiting verified cooldown testing | P2 | Planned — Needs Verification |
 
 ---
@@ -240,7 +241,7 @@
 | Vice City Jewelry District Heist Route (Fastest Loop) | `/guides/vice-city-jewelry-route` | Farming Route | What is the fastest route to hit multiple Vice City jewelry stores? | `/heists/jewelry-stores` | map-pins.json (Vice City jewelry pins) | P1 | Published (Phase 11) |
 | Port Gellhorn Pawn Shops & Payday Loan Targets | `/guides/port-gellhorn-pawn-and-payday` | Locations | Which pawn shops and payday loan counters are in Port Gellhorn? | `/port-gellhorn` | port-gellhorn.html + map-pins.json | P2 | Published (Phase 11) |
 | Fast Cash Payday Loans Safe & Counter Robbery Guide | `/guides/fast-cash-payday-loans` | Robbery Guide | Is there a Fast Cash safe code and how do you rob Fast Cash branches? | `/guides/gta-6-safe-codes` | Phase 5 commit 1bb4074 (gta-6-safe-codes.html) | P1 | Published (Phase 10) |
-| The Siren's Chest Jewelry Store Guide (Key Lento) | `/guides/sirens-chest-key-lento` | Location / Shop | Where is The Siren's Chest in Key Lento and how much is Lucia's necklace? | `/missions/coming-home` | missions/index.html ($475 necklace) + map-pins.json | P1 | Planned — Batch 4 |
+| The Siren's Chest Jewelry Store Guide (Key Lento) | `/guides/sirens-chest-key-lento` | Location / Shop | Where is The Siren's Chest in Key Lento and how much is Lucia's necklace? | `/missions/coming-home` | missions/index.html ($475 necklace) + map-pins.json | P1 | Published (Phase 14) |
 | Ambrosia Regional Bank & Depository Targets | `/guides/ambrosia-banks-and-vaults` | Locations | What banks and vaults can you hit in Ambrosia? | `/locations/ambrosia` | map-pins.json (Ambrosia bank/vault pins) | P2 | Planned — Batch 4 |
 | Leonida Keys Banks & Small Store Stickups | `/guides/leonida-keys-banks-and-shops` | Locations | Which banks and shops can you rob in Chapter 1 in the Leonida Keys? | `/locations/leonida-keys` | map-pins.json (Leonida Keys pins) | P2 | Planned — Batch 4 |
 | How to Crack Bank Vault Keypads & Biometric Locks | `/guides/bank-vault-hacking-guide` | Mechanics | How do vault keypad and safe-cracking mechanics work in GTA 6? | `/heists/large-bank-vaults` | heists/large-bank-vaults.html | P2 | Planned — Batch 4 |
@@ -272,7 +273,7 @@
 | Pelican Valley & Gullet Marsh Guide (Mariana County) | `/locations/pelican-valley` | District Guide | Where is Pelican Valley and Sunrise RV Park in Grassrivers? | `/locations/grassrivers` | port-gellhorn.html (Sunrise RV Park, code 6769) | P1 | Published (Phase 11) |
 | Kelly County Overview & Highway Routes Guide | `/locations/kelly-county` | County Guide | What towns and landmarks are inside Kelly County around Port Gellhorn? | `/port-gellhorn` | missions/index.html (Port Gellhorn, Kelly County) | P2 | Published (Phase 12) |
 | Lummox County Overview & Hunting Territories | `/locations/lummox-county` | County Guide | Where is Lummox County and Killtelligence Provisions? | `/locations/mount-kalaga` | animals.json (Mount Kalaga, Lummox County) | P2 | Published (Phase 12) |
-| Draper Island & Wild Hog Point Guide (Port Gellhorn) | `/locations/draper-island-wild-hog-point` | Sub-Region Guide | Where are Brooks Boatworks (6823) and Wild Hog Airfield? | `/port-gellhorn` | port-gellhorn.html + Slam Dunk walkthrough | P2 | Planned — Batch 4 |
+| Draper Island & Wild Hog Point Guide (Port Gellhorn) | `/locations/draper-island-wild-hog-point` | Sub-Region Guide | Where are Brooks Boatworks (6823) and Wild Hog Airfield? | `/port-gellhorn` | port-gellhorn.html + Slam Dunk walkthrough | P2 | Published (Phase 14) |
 | Vice City International Airport (VCIA) Zone Guide | `/locations/vice-city-international-airport` | Landmark / Zone | How do you access VCIA runways, hangars, and aircraft spawns? | `/heists/vcia-takedown` | heists/vcia-takedown.html + vehicles.json | P1 | Published (Phase 7) |
 
 ---
@@ -294,23 +295,23 @@
 | Apollo Aggregates Red Barn (Trunk Loot Location) | `/locations/apollo-aggregates-red-barn` | Location / Landmark | Where is Apollo Aggregates Red Barn in GTA 6 and what can you find there? | `/map` | discoveries.json (~$55K/run 4-bag loop) | P1 | Published (Phase 12) |
 | Hamlet Prison (Lucia's Release Location) | `/locations/hamlet-prison` | Location / Landmark | Where is Hamlet Prison in GTA 6 and what can you find there? | `/map` | missions/coming-home | P1 | Published (Phase 12) |
 | The Rusty Anchor Bar (Key Lento) | `/locations/the-rusty-anchor` | Location / Landmark | Where is The Rusty Anchor Bar in GTA 6 and what can you find there? | `/map` | missions/day-release + missions/swamped | P1 | Published (Phase 12) |
-| The Jack of Hearts Club (Dre'Quan's Club) | `/locations/the-jack-of-hearts-club` | Location / Landmark | Where is The Jack of Hearts Club in GTA 6 and what can you find there? | `/map` | missions/checking-out (Ch.3 opener) | P1 | Planned — Batch 3 |
-| Vice Vinyl Mod Stockyard (Raul Bautista Meetup) | `/locations/vice-vinyl` | Location / Landmark | Where is Vice Vinyl Mod Stockyard in GTA 6 and what can you find there? | `/map` | missions/credit-check | P1 | Planned — Batch 3 |
-| Delights Strip Club (Port Gellhorn) | `/locations/delights-strip-club` | Location / Landmark | Where is Delights Strip Club in GTA 6 and what can you find there? | `/map` | missions/girls-trip | P2 | Planned — Batch 4 |
-| Nine1Nine Nightclub (Vice City) | `/locations/nine1nine-nightclub` | Location / Landmark | Where is Nine1Nine Nightclub in GTA 6 and what can you find there? | `/map` | missions/day-release | P2 | Planned — Batch 4 |
-| Huxley Motel (Vice City) | `/locations/huxley-motel` | Location / Landmark | Where is Huxley Motel in GTA 6 and what can you find there? | `/map` | missions/day-release | P2 | Planned — Batch 4 |
-| Gellhorn Foggy Haunted Hotel & Neon Billboard | `/locations/gellhorn-haunted-hotel` | Location / Landmark | Where is Gellhorn Foggy Haunted Hotel & Neon Billboard in GTA 6 and what can you find there? | `/map` | discoveries.json | P1 | Planned — Batch 3 |
-| Crab Outpost (Rumored Keypad Location) | `/locations/crab-outpost` | Location / Landmark | Where is Crab Outpost in GTA 6 and what can you find there? | `/map` | discoveries.json (CLEAVES / 0072 / 0212 unverified) | P2 | Planned — Batch 4 |
-| Rideout Customs (Vehicle Customization Shop) | `/locations/rideout-customs` | Location / Landmark | Where is Rideout Customs in GTA 6 and what can you find there? | `/map` | Source register V4 + vehicles.json | P2 | Planned — Batch 4 |
-| One-Eyed Willie's (Vehicle Mod Shop) | `/locations/one-eyed-willies` | Location / Landmark | Where is One-Eyed Willie's in GTA 6 and what can you find there? | `/map` | Source register V4 | P2 | Planned — Batch 4 |
+| The Jack of Hearts Club (Dre'Quan's Club) | `/locations/the-jack-of-hearts-club` | Location / Landmark | Where is The Jack of Hearts Club in GTA 6 and what can you find there? | `/map` | missions/checking-out (Ch.3 opener) | P1 | Published (Phase 14) |
+| Vice Vinyl Mod Stockyard (Raul Bautista Meetup) | `/locations/vice-vinyl` | Location / Landmark | Where is Vice Vinyl Mod Stockyard in GTA 6 and what can you find there? | `/map` | missions/credit-check | P1 | Published (Phase 14) |
+| Delights Strip Club (Port Gellhorn) | `/locations/delights-strip-club` | Location / Landmark | Where is Delights Strip Club in GTA 6 and what can you find there? | `/map` | missions/girls-trip | P2 | Published (Phase 14) |
+| Nine1Nine Nightclub (Vice City) | `/locations/nine1nine-nightclub` | Location / Landmark | Where is Nine1Nine Nightclub in GTA 6 and what can you find there? | `/map` | missions/day-release | P2 | Published (Phase 14) |
+| Huxley Motel (Vice City) | `/locations/huxley-motel` | Location / Landmark | Where is Huxley Motel in GTA 6 and what can you find there? | `/map` | missions/day-release | P2 | Published (Phase 14) |
+| Gellhorn Foggy Haunted Hotel & Neon Billboard | `/locations/gellhorn-haunted-hotel` | Location / Landmark | Where is Gellhorn Foggy Haunted Hotel & Neon Billboard in GTA 6 and what can you find there? | `/map` | discoveries.json | P1 | Published (Phase 14) |
+| Crab Outpost (Rumored Keypad Location) | `/locations/crab-outpost` | Location / Landmark | Where is Crab Outpost in GTA 6 and what can you find there? | `/map` | discoveries.json (CLEAVES / 0072 / 0212 unverified) | P2 | Published (Phase 14) |
+| Rideout Customs (Vehicle Customization Shop) | `/locations/rideout-customs` | Location / Landmark | Where is Rideout Customs in GTA 6 and what can you find there? | `/map` | Source register V4 + vehicles.json | P2 | Published (Phase 14) |
+| One-Eyed Willie's (Vehicle Mod Shop) | `/locations/one-eyed-willies` | Location / Landmark | Where is One-Eyed Willie's in GTA 6 and what can you find there? | `/map` | Source register V4 | P2 | Published (Phase 14) |
 | All 24 Ammu-Nation & Gun Store Locations in Leonida | `/weapons-bonuses` | Location / Landmark | Where is All 24 Ammu-Nation & Gun Store Locations in Leonida in GTA 6 and what can you find there? | `/map` | Existing published page + data/gun-stores.json (24) | P0 | Published |
 | Vice City Storm Drains & Underground Sewer Network | `/locations/vice-city-sewer-network` | Location / Landmark | Where is Vice City Storm Drains & Underground Sewer Network in GTA 6 and what can you find there? | `/map` | Phase 5 commit 1bb4074 (escape-routes.html) | P1 | Published (Phase 11) |
-| Ambrosia Freight Yard & Sugar Refinery | `/locations/ambrosia-freight-yard` | Location / Landmark | Where is Ambrosia Freight Yard & Sugar Refinery in GTA 6 and what can you find there? | `/map` | properties.json + assets/images/properties | P2 | Planned — Batch 4 |
+| Ambrosia Freight Yard & Sugar Refinery | `/locations/ambrosia-freight-yard` | Location / Landmark | Where is Ambrosia Freight Yard & Sugar Refinery in GTA 6 and what can you find there? | `/map` | properties.json + assets/images/properties | P2 | Published (Phase 14) |
 | Wild Hog Airfield (Port Gellhorn) | `/locations/wild-hog-airfield` | Location / Landmark | Where is Wild Hog Airfield in GTA 6 and what can you find there? | `/map` | missions/slam-dunk | P2 | Published (Phase 11) |
 | Dunk's Trailer (Tanglewood Lane, Port Gellhorn) | `/locations/dunks-trailer` | Location / Landmark | Where is Dunk's Trailer in GTA 6 and what can you find there? | `/map` | properties.json + missions/slam-dunk | P2 | Published (Phase 11) |
-| Donnie's Trailer Fence (Leonida Keys) | `/locations/donnies-trailer` | Location / Landmark | Where is Donnie's Trailer Fence in GTA 6 and what can you find there? | `/map` | properties.json + missions/swamped | P2 | Planned — Batch 4 |
-| Paradise Garage (Watson Bay Ultimate Edition Garage) | `/locations/paradise-garage` | Location / Landmark | Where is Paradise Garage in GTA 6 and what can you find there? | `/map` | properties.json | P2 | Planned — Batch 4 |
-| Cottonmouth Lake & Marshland Outposts | `/locations/cottonmouth-lake` | Location / Landmark | Where is Cottonmouth Lake & Marshland Outposts in GTA 6 and what can you find there? | `/map` | port-gellhorn.html (near Pelican Valley) | P2 | Planned — Batch 4 |
+| Donnie's Trailer Fence (Leonida Keys) | `/locations/donnies-trailer` | Location / Landmark | Where is Donnie's Trailer Fence in GTA 6 and what can you find there? | `/map` | properties.json + missions/swamped | P2 | Published (Phase 14) |
+| Paradise Garage (Watson Bay Ultimate Edition Garage) | `/locations/paradise-garage` | Location / Landmark | Where is Paradise Garage in GTA 6 and what can you find there? | `/map` | properties.json | P2 | Published (Phase 14) |
+| Cottonmouth Lake & Marshland Outposts | `/locations/cottonmouth-lake` | Location / Landmark | Where is Cottonmouth Lake & Marshland Outposts in GTA 6 and what can you find there? | `/map` | port-gellhorn.html (near Pelican Valley) | P2 | Published (Phase 14) |
 
 ---
 
@@ -333,9 +334,9 @@
 | All 25 Base Jumps Locations Guide | `/guides/base-jumps-locations` | Collectibles / Stunts | Where are the 25 base jump launch points in GTA 6? | `/gta-6-collectibles/` | 100% tracker (25 base jumps); awaiting verified coordinates | P2 | Planned — Needs Verification |
 | Why the Birds Tab Lists 60 vs 62 Bird Species Explained | `/guides/birds-compendium-60-vs-62` | Completionist / Q&A | Why does the GTA 6 Birds compendium show 60 entries instead of 62? | `/animals` | discoveries.json + animals.json (birdStats) | P1 | Published (Phase 7) |
 | GTA 6 Trophy & Achievement Guide (Platinum Roadmap) | `/guides/gta-6-trophy-and-achievement-guide` | Completionist | How do you unlock Break the Bank, Hi-Jacked, Hot Together, and Platinum? | `/gta-6-100-completion-tracker/` | Site trophy records + endings/relationship guides | P1 | Published (Phase 10) |
-| 200 of 277 Vehicle Models Tracker Strategy for 100% | `/guides/200-vehicle-models-100-percent` | Completionist | What is the fastest way to log 200 distinct vehicle models in GTA 6? | `/vehicles` | 100% tracker + vehicles.json | P2 | Planned — Batch 4 |
-| 50 of 66 Weapons Compendium Strategy for 100% | `/guides/50-weapons-100-percent` | Completionist | How do you log 50 distinct weapons for GTA 6 100% completion? | `/weapons` | 100% tracker + weapons.json | P2 | Planned — Batch 4 |
-| 100 of 255 Animals Compendium Strategy for 100% | `/guides/100-animals-100-percent` | Completionist | Which regions have the densest animal spawns to reach 100 species fast? | `/animals` | 100% tracker + animals.json (49 verified species) | P2 | Planned — Batch 4 |
+| 200 of 277 Vehicle Models Tracker Strategy for 100% | `/guides/200-vehicle-models-100-percent` | Completionist | What is the fastest way to log 200 distinct vehicle models in GTA 6? | `/vehicles` | 100% tracker + vehicles.json | P2 | Published (Phase 14) |
+| 50 of 66 Weapons Compendium Strategy for 100% | `/guides/50-weapons-100-percent` | Completionist | How do you log 50 distinct weapons for GTA 6 100% completion? | `/weapons` | 100% tracker + weapons.json | P2 | Published (Phase 14) |
+| 100 of 255 Animals Compendium Strategy for 100% | `/guides/100-animals-100-percent` | Completionist | Which regions have the densest animal spawns to reach 100 species fast? | `/animals` | 100% tracker + animals.json (49 verified species) | P2 | Published (Phase 14) |
 | Unique Missable Clothing & Accessories Checklist (Sunglasses, Outfits) | `/guides/missable-outfits-and-accessories` | Collectibles | Which unique outfits and accessories (like Day Release sunglasses) can be missed? | `/missions/day-release` | Day Release sunglasses + Tommy Vercetti shirt reports | P2 | Planned — Batch 4 |
 | 100% Completion Post-Game Checklist (After Chapter 5) | `/guides/post-game-100-percent-checklist` | Completionist | What can you still finish after completing Chapter 5 in GTA 6? | `/gta-6-100-completion-tracker/` | 100% tracker + Save Planner | P2 | Planned — Batch 4 |
 
@@ -530,17 +531,17 @@
 | Brian Heder Character Guide: Keys Landlord & Lockup (7700) | `/guides/brian-heder-character-guide` | Character Guide | Who is Brian in the Leonida Keys and how does Brian's Lockup work? | `/missions/lab-fees` | properties.json + missions/lab-fees + source register F3 | P1 | Published (Phase 7) |
 | Boobie Ike Character Guide: Vice City Clubs & Real Estate | `/guides/boobie-ike-character-guide` | Character Guide | Who is Boobie Ike and what role does he play in Vice City? | `/crew-database` | crew-database + Rockstar official character bio | P1 | Published (Phase 12) |
 | Dre'Quan Priest Character Guide: The Jack of Hearts & Real Dimez | `/guides/drequan-priest-character-guide` | Character Guide | Who is Dre'Quan Priest and how do Jason and Lucia meet him in Chapter 3? | `/missions/checking-out` | missions/checking-out + crew-database + Rockstar bio | P1 | Published (Phase 12) |
-| Real Dimez (Bae-Luxe & Roxy) Character Guide | `/guides/real-dimez-character-guide` | Character Guide | Who are Real Dimez in GTA 6 and where do they appear? | `/crew-database` | Rockstar official character bio + crew-database | P2 | Planned — Batch 4 |
+| Real Dimez (Bae-Luxe & Roxy) Character Guide | `/guides/real-dimez-character-guide` | Character Guide | Who are Real Dimez in GTA 6 and where do they appear? | `/crew-database` | Rockstar official character bio + crew-database | P2 | Published (Phase 14) |
 | Bret Vogel Character Guide: Killtelligence Provisions & Hunting | `/guides/bret-vogel-character-guide` | Character Guide | Who is Bret Vogel and how do you complete his 15 Target Decks? | `/guides/bret-vogel-hunting-target-decks` | animals.json + discoveries.json | P1 | Published (Phase 7) |
 | Moses Character Guide: Watkins Auto Parts & Vehicle Fencing | `/guides/moses-character-guide` | Character Guide | Where is Moses and what services unlock at Watkins Auto Parts? | `/missions/moses` | missions/moses + properties.json | P1 | Published (Phase 12) |
 | Dunk Character Guide: Slam Dunk & Port Gellhorn Fence | `/guides/dunk-character-guide` | Character Guide | Who is Dunk and how do you unlock Dunk's Trailer fence? | `/missions/slam-dunk` | missions/girls-trip + missions/slam-dunk + properties.json | P1 | Published (Phase 12) |
 | Donnie Character Guide: Keys Fence & Swamped Cutoff | `/guides/donnie-character-guide` | Character Guide | Where is Donnie's Trailer and why does it close after Swamped? | `/missions/swamped` | missions/swamped + properties.json | P1 | Published (Phase 12) |
-| Tyrone Character Guide: La Perle Fence (Chapter 3) | `/guides/tyrone-character-guide` | Character Guide | How do you unlock Tyrone's fence in La Perle, Vice City? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P2 | Planned — Batch 4 |
-| Randy Character Guide: Balsero High-End Vehicle Buyer | `/guides/randy-character-guide` | Character Guide | How do you unlock Randy and sell high-end wish-list vehicles? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P2 | Planned — Batch 4 |
-| Yasmani Character Guide: Vice City Jewelry Fence | `/guides/yasmani-character-guide` | Character Guide | How do you unlock Yasmani's jewelry fence in Vice City? | `/heists/jewelry-stores` | properties.json + heists/jewelry-stores | P2 | Planned — Batch 4 |
-| Vicki Character Guide: Port Gellhorn & Girls' Trip | `/guides/vicki-character-guide` | Character Guide | Who is Vicki in Chapter 2 and what missions involve her? | `/missions/girls-trip` | missions/girls-trip + missions/moses | P2 | Planned — Batch 4 |
-| Mattia Tauro & Katerina Rosselli Guide (Day Release) | `/guides/mattia-and-kat-guide` | Character Guide | Who are Mattia and Kat on the Vice City superyacht in Day Release? | `/missions/day-release` | missions/day-release | P2 | Planned — Batch 4 |
-| Wyman Character Guide: Starlet Motel & Thrillbilly Mud Club | `/guides/wyman-character-guide` | Character Guide | Who is Wyman in Port Gellhorn and what does he unlock? | `/missions/coffee-break` | missions/coffee-break | P2 | Planned — Batch 4 |
+| Tyrone Character Guide: La Perle Fence (Chapter 3) | `/guides/tyrone-character-guide` | Character Guide | How do you unlock Tyrone's fence in La Perle, Vice City? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P2 | Published (Phase 14) |
+| Randy Character Guide: Balsero High-End Vehicle Buyer | `/guides/randy-character-guide` | Character Guide | How do you unlock Randy and sell high-end wish-list vehicles? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P2 | Published (Phase 14) |
+| Yasmani Character Guide: Vice City Jewelry Fence | `/guides/yasmani-character-guide` | Character Guide | How do you unlock Yasmani's jewelry fence in Vice City? | `/heists/jewelry-stores` | properties.json + heists/jewelry-stores | P2 | Published (Phase 14) |
+| Vicki Character Guide: Port Gellhorn & Girls' Trip | `/guides/vicki-character-guide` | Character Guide | Who is Vicki in Chapter 2 and what missions involve her? | `/missions/girls-trip` | missions/girls-trip + missions/moses | P2 | Published (Phase 14) |
+| Mattia Tauro & Katerina Rosselli Guide (Day Release) | `/guides/mattia-and-kat-guide` | Character Guide | Who are Mattia and Kat on the Vice City superyacht in Day Release? | `/missions/day-release` | missions/day-release | P2 | Published (Phase 14) |
+| Wyman Character Guide: Starlet Motel & Thrillbilly Mud Club | `/guides/wyman-character-guide` | Character Guide | Who is Wyman in Port Gellhorn and what does he unlock? | `/missions/coffee-break` | missions/coffee-break | P2 | Published (Phase 14) |
 | All Relationship Heart Triggers & Dialogue Choices in GTA 6 | `/guides/all-relationship-heart-triggers` | Guide / Choices | Every mission choice and errand that raises Jason and Lucia's relationship meter | `/gta-6-relationship-guide/` | Coming Home + Day Release + relationship guide | P1 | Published (Phase 7) |
 
 ---
@@ -585,7 +586,7 @@
 | How to Escape Police & 6-Star Wanted Levels in GTA 6 (ANPR, CCTV & Routes) | `/guides/how-to-escape-police-wanted-levels` | Guide / Strategy | How do you lose a high wanted level, evade helicopters, and break line of sight? | `/leonida-wanted-system` | leonida-wanted-system.html + escape-routes.html | P0 | Published (Phase 6) |
 | VCPD, Kelly County Sheriff & Federal Response Units Explained | `/guides/leonida-law-enforcement-agencies` | Mechanics | Which police agencies patrol Vice City, Port Gellhorn, Keys, and Grassrivers? | `/leonida-wanted-system` | leonida-wanted-system.html + vehicles.json (VCPD) | P1 | Published (Phase 12) |
 | Witness System, Masks & License Plate Heat Mechanics | `/guides/witnesses-masks-and-heat-system` | Mechanics | Do masks and switching vehicles actually reduce police recognition in GTA 6? | `/leonida-wanted-system` | leonida-wanted-system.html + Credit Check | P1 | Published (Phase 12) |
-| How to Evade Police Helicopters & Thermal Searchlights | `/guides/evade-police-helicopters` | Tactics | How do you shake VCPD Air Support helicopters in urban and rural Leonida? | `/escape-routes` | escape-routes.html + vehicles.json (VCPD Air Support) | P1 | Planned — Batch 4 |
+| How to Evade Police Helicopters & Thermal Searchlights | `/guides/evade-police-helicopters` | Tactics | How do you shake VCPD Air Support helicopters in urban and rural Leonida? | `/escape-routes` | escape-routes.html + vehicles.json (VCPD Air Support) | P1 | Published (Phase 14) |
 | Vice City Underground Storm Drains & Canal Escape Map | `/guides/vice-city-storm-drains-escape` | Tactics / Map | Where are the Vice City storm drain entrances for shaking 4–5 star chases? | `/escape-routes` | Phase 5 commit 1bb4074 (escape-routes.html) | P1 | Planned — Batch 3 |
 | Port Gellhorn Dockside & Highway Escape Routes | `/guides/port-gellhorn-escape-routes` | Tactics / Map | What are the safest escape paths out of Port Gellhorn after a robbery? | `/port-gellhorn` | port-gellhorn.html + Slam Dunk | P2 | Planned — Batch 4 |
 | Grassrivers Airboat & Swamp Police Evasion Guide | `/guides/grassrivers-swamp-evasion` | Tactics / Map | How do you use Grassrivers waterways and airboats to lose pursuing cops? | `/locations/grassrivers` | locations/grassrivers + vehicles.json | P2 | Planned — Batch 4 |
@@ -609,16 +610,16 @@
 | How to Make $15,000 Fast in Chapter 2 (Before Checking Out) | `/guides/chapter-2-15000-money-guide` | Money Method | How do you earn $15,000 in Port Gellhorn to unlock Checking Out? | `/missions/checking-out` | missions/checking-out + Port Gellhorn safes (0300, 6823, 6969) | P1 | Published (Phase 11) |
 | Stolen Car Fencing Profit Guide (Moses vs Randy Payouts) | `/guides/stolen-car-fencing-profits` | Money Method | How much money can you make selling untracked cars to Moses and wish-list cars to Randy? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + missions/moses + source register F2 | P1 | Published (Phase 12) |
 | Jewelry Store & Pawn Shop Farming Loop (Chapter 3+) | `/guides/jewelry-and-pawn-farming-loop` | Money Method | What is the highest-paying repeatable robbery loop in Vice City? | `/heists/jewelry-stores` | heists/jewelry-stores + heists/pawn-shops | P1 | Published (Phase 12) |
-| Bret Vogel Hunting Target Decks Cash Farming Guide | `/guides/hunting-money-guide` | Money Method | How much cash do Pristine carcasses and Bret Vogel Target Decks pay? | `/guides/bret-vogel-hunting-target-decks` | animals.json (Deck Cash Payouts) | P2 | Planned — Batch 4 |
-| Armored Truck Ambush Farming Guide (Spawns & Loot) | `/guides/armored-truck-farming-guide` | Money Method | Where do armored trucks spawn in Leonida and how much do they drop? | `/heists/armored-trucks-gang-ops` | heists/armored-trucks-gang-ops.html | P2 | Planned — Batch 4 |
-| Small Bank & Payday Loan Speed-Run Farming Guide | `/guides/small-bank-speed-run-money` | Money Method | How much can you make per hour chaining Fleeca banks with the Dye Pack Jammer? | `/heists/small-banks-payday-loans` | missions/credit-check + heists/small-banks-payday-loans | P1 | Planned — Batch 3 |
+| Bret Vogel Hunting Target Decks Cash Farming Guide | `/guides/hunting-money-guide` | Money Method | How much cash do Pristine carcasses and Bret Vogel Target Decks pay? | `/guides/bret-vogel-hunting-target-decks` | animals.json (Deck Cash Payouts) | P2 | Published (Phase 14) |
+| Armored Truck Ambush Farming Guide (Spawns & Loot) | `/guides/armored-truck-farming-guide` | Money Method | Where do armored trucks spawn in Leonida and how much do they drop? | `/heists/armored-trucks-gang-ops` | heists/armored-trucks-gang-ops.html | P2 | Published (Phase 14) |
+| Small Bank & Payday Loan Speed-Run Farming Guide | `/guides/small-bank-speed-run-money` | Money Method | How much can you make per hour chaining Fleeca banks with the Dye Pack Jammer? | `/heists/small-banks-payday-loans` | missions/credit-check + heists/small-banks-payday-loans | P1 | Published (Phase 14) |
 | Gang Safe Clearing Route (All Verified Fixed Safe Codes) | `/guides/gang-safe-clearing-route` | Money Method | How much total cash do you get from clearing all verified gang safes? | `/guides/gta-6-safe-codes` | gta-6-safe-codes.html (0300, 6823, 6969, 6769, 0420, 7700) | P1 | Published (Phase 12) |
-| Best Post-Game Money Methods After Story Mode | `/guides/post-game-money-methods` | Money Method | What are the best repeatable cash methods after beating Chapter 5? | `/gta-6-money-guide/` | heists/* + money guide | P2 | Planned — Batch 4 |
-| Does GTA 6 Have a Stock Market (BAWSAQ / LCN) in Story Mode? | `/guides/gta-6-stock-market-status` | Q&A / Economy | Can you invest in stocks in GTA 6 Story Mode like GTA V? | `/gta-6-money-guide/` | Awaiting confirmed Story Mode status | P1 | Planned — Batch 3 |
+| Best Post-Game Money Methods After Story Mode | `/guides/post-game-money-methods` | Money Method | What are the best repeatable cash methods after beating Chapter 5? | `/gta-6-money-guide/` | heists/* + money guide | P2 | Published (Phase 14) |
+| Does GTA 6 Have a Stock Market (BAWSAQ / LCN) in Story Mode? | `/guides/gta-6-stock-market-status` | Q&A / Economy | Can you invest in stocks in GTA 6 Story Mode like GTA V? | `/gta-6-money-guide/` | Awaiting confirmed Story Mode status | P1 | Published (Phase 14) |
 | Underwater Salvage & Shipwreck Treasure Profit Guide | `/guides/underwater-treasure-money` | Money Method | How much money do underwater discoveries and Kenton shipwrecks pay? | `/gta-6-collectibles/` | 100% tracker (33 underwater + 7 Kenton sets) | P2 | Planned — Needs Verification |
-| GTA 6 Early-Game Spending Guide: What to Buy First | `/guides/what-to-buy-first-gta-6` | Strategy / Economy | Should you buy garages, weapons, or upgrades first in GTA 6? | `/gta-6-property-ownership/` | weapons.json + properties.json + gun-stores.json | P1 | Planned — Batch 3 |
-| How to Avoid Losing Money in GTA 6 (Savings, Laundering & Cutoffs) | `/guides/protect-your-money-gta-6` | Strategy / Economy | How do you protect cash from Wasted/Busted and avoid missable fence losses? | `/missions/buck-me` | BuckMe + Donnie cutoff + Starlet Motel cutoff | P2 | Planned — Batch 4 |
-| Free Weapons, Free Cars & Zero-Cost Upgrades in Leonida | `/guides/free-weapons-and-cars-guide` | Money Saving | Which weapons, cars, and accessories can you get completely free? | `/weapons` | Moses free registration + Moreland 850 + SM-69 + Day Release | P1 | Planned — Batch 3 |
+| GTA 6 Early-Game Spending Guide: What to Buy First | `/guides/what-to-buy-first-gta-6` | Strategy / Economy | Should you buy garages, weapons, or upgrades first in GTA 6? | `/gta-6-property-ownership/` | weapons.json + properties.json + gun-stores.json | P1 | Published (Phase 14) |
+| How to Avoid Losing Money in GTA 6 (Savings, Laundering & Cutoffs) | `/guides/protect-your-money-gta-6` | Strategy / Economy | How do you protect cash from Wasted/Busted and avoid missable fence losses? | `/missions/buck-me` | BuckMe + Donnie cutoff + Starlet Motel cutoff | P2 | Published (Phase 14) |
+| Free Weapons, Free Cars & Zero-Cost Upgrades in Leonida | `/guides/free-weapons-and-cars-guide` | Money Saving | Which weapons, cars, and accessories can you get completely free? | `/weapons` | Moses free registration + Moreland 850 + SM-69 + Day Release | P1 | Published (Phase 14) |
 | GTA 6 Online Economy Prep (When GTA 6 Online Launches) | `/guides/gta-6-online-prep-guide` | Future / Prep | When does GTA 6 Online release and what Story Mode skills carry over? | `/live-intel` | live-feed.json (No official release date announced) | P3 | Planned — Post-Launch Expansion |
 | Free Tools Suite & Payout Calculators Hub | `/free/` | Hub / Tools | What free interactive calculators and planners are on GTA6HeistGuide? | `/gta-6-tools/` | Existing published hub | P0 | Published |
 
