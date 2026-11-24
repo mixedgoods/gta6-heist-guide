@@ -432,6 +432,13 @@ const CANONICAL_REDIRECTS = new Map([
   ["/radio/radio-on-u.html", "/radio/radio-on-u"],
   ["/radio/symphony-fm.html", "/radio/symphony-fm"],
   ["/radio/the-wipe-99-9.html", "/radio/the-wipe-99-9"],
+  // Phase 16 extensionless canonical redirects (6)
+  ["/missions/daily-driver.html", "/missions/daily-driver"],
+  ["/missions/here-kitty-kitty.html", "/missions/here-kitty-kitty"],
+  ["/missions/yasmanis-jewelry-jobs.html", "/missions/yasmanis-jewelry-jobs"],
+  ["/guides/mario-and-luigi-easter-egg.html", "/guides/mario-and-luigi-easter-egg"],
+  ["/guides/rdr2-easter-eggs-in-gta-6.html", "/guides/rdr2-easter-eggs-in-gta-6"],
+  ["/guides/6-star-wanted-survival.html", "/guides/6-star-wanted-survival"],
 ]);
 
 export async function onRequest(context) {

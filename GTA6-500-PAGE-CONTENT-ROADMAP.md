@@ -21,34 +21,35 @@
 | Phase 13 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 14 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 15 Live Published Pages (Added 2026-11-24) | 34 |
-| **Current Live Canonical Indexable Total (Post-Phase 15)** | **394** |
+| Phase 16 Live Published Pages (Added 2026-11-24) | 6 |
+| **Current Live Canonical Indexable Total (Post-Phase 16)** | **400** |
 | Planned — Evidence Ready (Core 500-Page Target Remaining) | 0 |
-| Reserve Candidates (4-Page Buffer: 504 Inventory vs. 500 Target) | 0 |
-| Planned — Awaiting Additional In-Game / Source Verification | 109 |
+| Consolidated — Duplicate Intent (Merged into Existing Guide) | 1 |
+| Planned — Awaiting Additional In-Game / Source Verification | 102 |
 | Planned — Future Post-Launch Expansion (GTA 6 Online) | 1 |
 
-## Category Breakdown (Reconciled Post-Phase 15)
+## Category Breakdown (Reconciled Post-Phase 16)
 
 | # | Category | Total | Live Published | Core Evidence-Ready | Reserve (504→500) | Needs Verification | Future Online |
 |---|---|---:|---:|---:|---:|---:|---:|
 | 1 | Main Story Missions | 12 | 10 | 0 | 0 | 2 | 0 |
-| 2 | Individual Mission Walkthroughs | 91 | 37 | 0 | 0 | 54 | 0 |
-| 3 | Side Missions and Stranger Encounters | 24 | 12 | 0 | 0 | 12 | 0 |
+| 2 | Individual Mission Walkthroughs | 91 | 40 | 0 | 0 | 51 | 0 |
+| 3 | Side Missions and Stranger Encounters | 24 | 12 | 0 | 1 (Dup) | 11 | 0 |
 | 4 | Heists and Robberies | 16 | 15 | 0 | 0 | 1 | 0 |
 | 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 14 | 0 | 0 | 0 | 0 |
 | 6 | Leonida Regions and Districts | 22 | 22 | 0 | 0 | 0 | 0 |
 | 7 | Landmarks and Locations | 30 | 30 | 0 | 0 | 0 | 0 |
 | 8 | Collectibles and Completion Guides | 20 | 12 | 0 | 0 | 8 | 0 |
-| 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 17 | 0 | 0 | 5 | 0 |
+| 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 19 | 0 | 0 | 3 | 0 |
 | 10 | Weapons and Unique Weapon Variants | 30 | 30 | 0 | 0 | 0 | 0 |
 | 11 | Vehicles and Vehicle Locations | 40 | 40 | 0 | 0 | 0 | 0 |
 | 12 | Animals and Wildlife | 55 | 30 | 0 | 0 | 25 | 0 |
 | 13 | Characters and Relationships | 22 | 22 | 0 | 0 | 0 | 0 |
 | 14 | Properties and Businesses | 24 | 24 | 0 | 0 | 0 | 0 |
-| 15 | Police, Wanted Levels and Escape Mechanics | 16 | 15 | 0 | 0 | 1 | 0 |
+| 15 | Police, Wanted Levels and Escape Mechanics | 16 | 16 | 0 | 0 | 0 | 0 |
 | 16 | Money-Making Methods | 18 | 16 | 0 | 0 | 1 | 1 |
 | 17 | Activities, Exploration and Game Mechanics | 48 | 48 | 0 | 0 | 0 | 0 |
-| — | **TOTAL** | **504** | **394** | **0** | **0** | **109** | **1** |
+| — | **TOTAL** | **504** | **400** | **0** | **1 (Dup)** | **102** | **1** |
 
 ## Editorial & Verification Policy
 
@@ -107,11 +108,11 @@
 | Just Moved In Mission Walkthrough (Ch. 2) | `/missions/just-moved-in` | Walkthrough | How do you complete Just Moved In in GTA 6 (Ch. 2)? | `/missions/` | Site mission hub (precedes Girls' Trip) | P1 | Published (Phase 13)|
 | Breakfast Run Mission Walkthrough (Ch. 2) | `/missions/breakfast-run` | Walkthrough | How do you complete Breakfast Run in GTA 6 (Ch. 2)? | `/missions/` | Site mission hub (precedes Coffee Break) | P1 | Published (Phase 13)|
 | Afternoon Delight Mission Walkthrough (Ch. 2) | `/missions/afternoon-delight` | Walkthrough | How do you complete Afternoon Delight in GTA 6 (Ch. 2)? | `/missions/` | Site mission tracker (c2-afternoon-delight) | P1 | Published (Phase 13)|
-| Daily Driver Mission Walkthrough (Ch. 2) | `/missions/daily-driver` | Walkthrough | How do you complete Daily Driver in GTA 6 (Ch. 2)? | `/missions/` | Source register P2 (garage real-estate app unlock) | P2 | Planned — Needs Verification |
+| Daily Driver Mission Walkthrough (Ch. 2) | `/missions/daily-driver` | Walkthrough | How do you complete Daily Driver in GTA 6 (Ch. 2)? | `/missions/` | Corroborated IGN/PowerPyx/GTABase/GameSpot/RPS | P1 | Published (Phase 16) |
 | Welcome to Vice City Mission Walkthrough (Ch. 3) | `/missions/welcome-to-vice-city` | Walkthrough | How do you complete Welcome to Vice City in GTA 6 (Ch. 3)? | `/missions/` | Site mission hub (Ch.3 opener with Dre'Quan) | P1 | Published (Phase 13)|
-| Here, Kitty Kitty Mission Walkthrough (Ch. 3) | `/missions/here-kitty-kitty` | Walkthrough | How do you complete Here, Kitty Kitty in GTA 6 (Ch. 3)? | `/missions/` | Source register F2 (unlocks Tyrone fence in La Perle) | P2 | Planned — Needs Verification |
+| Here, Kitty Kitty Mission Walkthrough (Ch. 3) | `/missions/here-kitty-kitty` | Walkthrough | How do you complete Here, Kitty Kitty in GTA 6 (Ch. 3)? | `/missions/` | Corroborated PowerPyx/MetaForge/IGN/Sportskeeda | P1 | Published (Phase 16) |
 | The Jack of Hearts Mission Walkthrough (Ch. 3) | `/missions/the-jack-of-hearts` | Walkthrough | How do you complete The Jack of Hearts in GTA 6 (Ch. 3)? | `/missions/` | Site mission hub (Dre'Quan club introduction) | P1 | Published (Phase 13)|
-| Yasmani's Jewelry Jobs Mission Walkthrough (Ch. 3) | `/missions/yasmanis-jewelry-jobs` | Walkthrough | How do you complete Yasmani's Jewelry Jobs in GTA 6 (Ch. 3)? | `/missions/` | Source register M4 + properties.json (Yasmani fence) | P2 | Planned — Needs Verification |
+| Yasmani's Jewelry Jobs Mission Walkthrough (Ch. 3) | `/missions/yasmanis-jewelry-jobs` | Walkthrough | How do you complete Yasmani's Jewelry Jobs in GTA 6 (Ch. 3)? | `/missions/` | Corroborated PowerPyx/IGN/GamesRadar/MetaForge | P1 | Published (Phase 16) |
 | Bounty on the Bay Mission Walkthrough (Ch. 1) | `/missions/bounty-on-the-bay` | Walkthrough | How do you complete Bounty on the Bay in GTA 6 (Ch. 1)? | `/missions/` | Reported Ch.1 Keys mission; awaiting full step verification | P2 | Planned — Needs Verification |
 | Key Lento Hustle Mission Walkthrough (Ch. 1) | `/missions/key-lento-hustle` | Walkthrough | How do you complete Key Lento Hustle in GTA 6 (Ch. 1)? | `/missions/` | Reported Ch.1 Keys mission; awaiting full step verification | P2 | Planned — Needs Verification |
 | Parole Check Mission Walkthrough (Ch. 1) | `/missions/parole-check` | Walkthrough | How do you complete Parole Check in GTA 6 (Ch. 1)? | `/missions/` | Reported Ch.1 Lucia parole sequence; awaiting verification | P2 | Planned — Needs Verification |
@@ -181,7 +182,7 @@
 |---|---|---|---|---|---|---|---|
 | Veteran Hunted Side Mission Walkthrough (Bret Vogel) | `/missions/veteran-hunted` | Side Mission | How do you start Veteran Hunted and unlock Bret Vogel's 15 Hunting Target Decks? | `/guides/bret-vogel-hunting-target-decks` | animals.json (Ch.2 after Coffee Break, Killtelligence Provisions) | P1 | Published (Phase 7) |
 | Thrillbillies and Twist Wrist Optional Mission Guide | `/missions/thrillbillies-and-twist-wrist` | Side Mission | How do you find and complete Thrillbillies and Twist Wrist in Chapter 2? | `/missions/` | Source register M5 + Coffee Break Mud Club intro | P1 | Published (Phase 13)|
-| Smash, Grab Optional Mission Guide | `/missions/smash-grab` | Side Mission | How do you trigger and complete Smash, Grab in GTA 6? | `/missions/` | Source register M5 (PC Gamer attributed) | P2 | Planned — Needs Verification |
+| Smash, Grab Optional Mission Guide | `/missions/smash-grab` | Side Mission | How do you trigger and complete Smash, Grab in GTA 6? | `/missions/` | Duplicate of Twist Wrist, Smash, Grab (covered by /missions/thrillbillies-and-twist-wrist) | P2 | Consolidated — Duplicate Intent |
 | Randy's High-End Vehicle Wish-List Jobs Guide | `/guides/randy-vehicle-wishlist-jobs` | Side Activity | How do Randy's stolen vehicle wish-list deliveries work in Balsero? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P1 | Published (Phase 13)|
 | Moses Untracked Car Theft Jobs Guide | `/guides/moses-vehicle-jobs` | Side Activity | What follow-up car theft jobs unlock after the Moses mission? | `/missions/moses` | missions/index.html + properties.json | P1 | Published (Phase 13)|
 | Jason's Key Lento Safehouse Repairs & Errands Guide | `/guides/keys-safehouse-errands` | Side Activity / Missable | How do you complete all pre-Coming Home errands (roof, steps, groceries, necklace)? | `/missions/coming-home` | missions/index.html (Coming Home walkthrough) | P1 | Published (Phase 13)|
@@ -353,14 +354,14 @@
 | All 4 Playable Retro Arcade & Console Mini-Games in GTA 6 | `/guides/playable-arcade-retro-minigames` | Secret / Activity | Where do you play the 4 hidden retro arcade and console mini-games in GTA 6? | `/gta-6-discoveries/` | discoveries.json | P0 | Published (Phase 6) |
 | How to Unlock Tommy Vercetti's Shirt & Bike Easter Egg | `/guides/tommy-vercetti-easter-egg` | Easter Egg | How do you find Tommy Vercetti's outfit and bike in GTA 6? | `/guides/vice-city-portal-easter-egg` | secrets-live.json (multiple corroborating outlets) | P1 | Published (Phase 7) |
 | Gellhorn Foggy Haunted Hotel & Neon Billboard Puzzle Guide | `/guides/gellhorn-haunted-hotel-puzzle` | Easter Egg / Mystery | How do you trigger the Gellhorn Foggy Haunted Hotel and Neon Billboard secret? | `/port-gellhorn` | discoveries.json | P1 | Published (Phase 7) |
-| Mario & Luigi Easter Egg Location in GTA 6 | `/guides/mario-and-luigi-easter-egg` | Easter Egg | Where is the Mario & Luigi Easter egg hidden in Leonida? | `/secrets` | secrets-live.json; awaiting exact pin verification | P2 | Planned — Needs Verification |
+| Mario & Luigi Easter Egg Location in GTA 6 | `/guides/mario-and-luigi-easter-egg` | Easter Egg | Where is the Mario & Luigi Easter egg hidden in Leonida? | `/secrets` | Corroborated RPS/Sportskeeda/Mobalytics/Games.gg | P1 | Published (Phase 16) |
 | GTA 6 Horror Easter Eggs: Bigfoot, Cryptids & Creepy Locations | `/guides/horror-and-cryptid-easter-eggs` | Easter Eggs | Are Bigfoot, Skunk Ape, or other horror Easter eggs in GTA 6? | `/secrets` | secrets-live.json + Mount Kalaga / Grassrivers reports | P1 | Published (Phase 15) |
 | Terminator 2 Easter Egg Location in GTA 6 | `/guides/terminator-2-easter-egg` | Easter Egg | Where is the Terminator 2 homage in GTA 6? | `/secrets` | secrets-live.json; awaiting exact location verification | P2 | Planned — Needs Verification |
 | Crab Outpost Keypad Mystery (CLEAVES / 0072 / 0212 Status) | `/guides/crab-outpost-keypad-mystery` | Mystery / Codes | Do the rumored Crab Outpost keypad codes (0072, 0212) actually work? | `/guides/gta-6-safe-codes` | discoveries.json (explicitly unverified status) | P2 | Published (Phase 15) |
 | GTA 6 Cheats Database (61 Entries & Verification Ledger) | `/cheats` | Cheats / Reference | What are all the verified cheat codes in GTA 6 and how do you enter them? | `/gta-6-glitches/` | Existing published page + cheats.json | P0 | Published |
 | GTA 6 Glitches & Launch Bugs Tracker | `/gta-6-glitches/` | Glitches / Live | What GTA 6 glitches are active or patched in the current build? | `/gta-6-troubleshooting/` | Existing published page + glitches.json | P0 | Published |
 | Pseudo First-Person On-Foot Camera Trick in GTA 6 | `/guides/pseudo-first-person-camera-trick` | Hidden Feature | Does GTA 6 have a first-person mode on foot and what is the workaround? | `/gta-6-controls/` | discoveries.json | P1 | Published (Phase 7) |
-| Red Dead Redemption 2 Easter Eggs & References in GTA 6 | `/guides/rdr2-easter-eggs-in-gta-6` | Easter Eggs | What Red Dead Redemption 2 nods are hidden in Leonida? | `/secrets` | Awaiting verified locations | P2 | Planned — Needs Verification |
+| Red Dead Redemption 2 Easter Eggs & References in GTA 6 | `/guides/rdr2-easter-eggs-in-gta-6` | Easter Eggs | What Red Dead Redemption 2 nods are hidden in Leonida? | `/secrets` | Corroborated IGN/Vice/BroBible | P1 | Published (Phase 16) |
 | GTA V & San Andreas Callbacks in Vice City | `/guides/gta-5-callbacks-in-gta-6` | Easter Eggs | What GTA V and San Andreas references appear in GTA 6? | `/secrets` | Awaiting verified locations | P2 | Planned — Needs Verification |
 | Underwater UFO & Sunken Secrets in Leonida Keys | `/guides/underwater-secrets-leonida-keys` | Secrets | What hidden wrecks and anomalies can you dive to in the Leonida Keys? | `/locations/leonida-keys` | map-pins.json (easter-egg pins) | P2 | Published (Phase 15) |
 | Grassrivers Skunk Ape & Swamp Mystery Investigation | `/guides/grassrivers-skunk-ape-mystery` | Mystery | Can you find the Skunk Ape or swamp cryptid in Grassrivers? | `/locations/grassrivers` | map-pins.json + secrets-live.json | P2 | Published (Phase 15) |
@@ -597,7 +598,7 @@
 | Surrendering, Hostage Control & Intimidation During Robberies | `/guides/hostage-control-and-intimidation` | Mechanics | How do you keep store clerks and bank hostages compliant without tripping alarms? | `/heists/small-banks-payday-loans` | heists/* + Credit Check | P2 | Published (Phase 15) |
 | Paying Off Bounties & Cooling Down Hot Vehicles | `/guides/cooling-down-hot-vehicles` | Mechanics | How do you clear heat on a stolen vehicle before visiting a fence or garage? | `/guides/wank-app-slim-jim-vehicle-theft` | missions/moses + gta-6-vehicles-guide | P2 | Published (Phase 15) |
 | Stealth Takedowns, Suppressors & Silent Entry Mechanics | `/guides/stealth-takedowns-and-silent-entry` | Mechanics | How does stealth detection work during robberies and camp infiltrations? | `/gameplay-mechanics` | gameplay-mechanics.html + weapons.json | P2 | Published (Phase 13)|
-| 6-Star Military / Federal Response Survival Guide | `/guides/6-star-wanted-survival` | Tactics | Is there a 6-star wanted level in GTA 6 and how long can you survive it? | `/leonida-wanted-system` | leonida-wanted-system.html | P2 | Planned — Needs Verification |
+| 6-Star Military / Federal Response Survival Guide | `/guides/6-star-wanted-survival` | Tactics | Is there a 6-star wanted level in GTA 6 and how long can you survive it? | `/leonida-wanted-system` | Corroborated IGN/LADbible/ComicBook/Insider Gaming | P1 | Published (Phase 16) |
 
 ---
 
