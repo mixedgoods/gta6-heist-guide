@@ -5,38 +5,235 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Every Leonida Region in GTA 6 Mapped: Vice | GTA 6 Guide</title>
-    <meta name="description" content="In-depth GTA 6 analysis covering Every Leonida Region in. Includes verified Leonida math formulas, optimal route timings, and tactical steps for zero-loss runs.">
+    <title>GTA 6 Leonida Regions Map Guide: All 6 Confirmed Regions</title>
+    <meta name="description" content="Complete GTA 6 State of Leonida regions guide: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, and Mount Kalaga—geography, landmarks &amp; pins.">
     <link rel="canonical" href="https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates">
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "Every Leonida Region in GTA 6 Mapped: Vice City, Grassrivers, Leonida Keys & Escape Canal Coordinates",
-      "description": "Complete geographical breakdown of all 6 confirmed State of Leonida regions in GTA 6, including subterranean storm drains, smuggler canals, and 100% free Interactive Map tracking.",
-      "author": {"@type": "Organization", "name": "GTA 6 Heist Guide Editorial Desk"},
-      "publisher": {"@type": "Organization", "name": "gta6heistguide.com"},
-      "datePublished": "2026-11-17",
-      "mainEntityOfPage": "https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates"
-    }
-    </script>
-    <meta property="og:title" content="Every Leonida Region in GTA 6 Mapped: Vice | GTA 6 Guide">
-    <meta property="og:description" content="In-depth GTA 6 analysis covering Every Leonida Region in. Includes verified Leonida math formulas, optimal route timings, and tactical steps for zero-loss runs.">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="GTA 6 Leonida Regions Map Guide: All 6 Confirmed Regions">
+    <meta property="og:description" content="Complete GTA 6 State of Leonida regions guide: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, and Mount Kalaga—geography, landmarks &amp; pins.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Every Leonida Region in GTA 6 Mapped: Vice | GTA 6 Guide">
-    <meta name="twitter:description" content="In-depth GTA 6 analysis covering Every Leonida Region in. Includes verified Leonida math formulas, optimal route timings, and tactical steps for zero-loss runs.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta name="twitter:title" content="GTA 6 Leonida Regions Map Guide: All 6 Confirmed Regions">
+    <meta name="twitter:description" content="Complete GTA 6 State of Leonida regions guide: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, and Mount Kalaga—geography, landmarks &amp; pins.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
+    <link rel="stylesheet" href="/assets/style.css?v=20261123_v24">
+    <link rel="stylesheet" href="/assets/guides.css?v=20261123_g1">
+    <style>
+        .lr-toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 0;
+        }
+        .lr-toc a {
+            display: inline-block;
+            padding: 0.35rem 0.72rem;
+            border-radius: 999px;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.28);
+            color: #67e8f9;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .lr-toc a:hover { background: rgba(0, 240, 255, 0.18); }
+        .lr-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1rem;
+            margin-top: 0.9rem;
+        }
+        .lr-region-card {
+            background: rgba(10, 18, 32, 0.86);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .lr-region-media {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: #060b16;
+        }
+        .lr-region-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .lr-region-pill {
+            position: absolute;
+            top: 0.65rem;
+            left: 0.65rem;
+            background: rgba(5, 10, 20, 0.86);
+            border: 1px solid rgba(0, 240, 255, 0.45);
+            color: #67e8f9;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.2rem 0.55rem;
+            border-radius: 999px;
+            font-family: var(--font-mono, monospace);
+        }
+        .lr-region-body {
+            padding: 1.05rem 1.15rem 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            flex: 1;
+        }
+        .lr-region-body h3 {
+            margin: 0;
+            font-size: 1.12rem;
+            color: #fff;
+        }
+        .lr-region-body p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .lr-region-meta {
+            list-style: none;
+            padding: 0;
+            margin: 0.2rem 0 0;
+            display: grid;
+            gap: 0.35rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+        .lr-region-meta strong { color: #f8fafc; }
+        .lr-region-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
+        }
+        .lr-region-links a {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            padding: 0.26rem 0.6rem;
+            border-radius: 6px;
+        }
+        .lr-region-links a:hover { background: rgba(0, 240, 255, 0.18); }
+        .lr-callout {
+            background: rgba(255, 184, 0, 0.08);
+            border-left: 3px solid #fbbf24;
+            border-radius: 0 8px 8px 0;
+            padding: 0.9rem 1.05rem;
+            margin: 1rem 0;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .lr-callout.is-cyan {
+            background: rgba(0, 240, 255, 0.07);
+            border-left-color: var(--neon-cyan);
+        }
+        .lr-faq-item {
+            background: rgba(10, 16, 28, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 8px;
+            padding: 0.95rem 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .lr-faq-item h3 {
+            margin: 0 0 0.4rem;
+            font-size: 0.98rem;
+            color: #fff;
+        }
+        .lr-faq-item p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .g-evidence a, .lr-callout a, .lr-region-body a, .lr-faq-item a { color: var(--neon-cyan); }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "GTA 6 Leonida Regions Guide: Every Confirmed Region, County, Landmark & Map Connection",
+          "description": "Complete GTA 6 State of Leonida regions reference covering all 6 confirmed regions (Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park), counties, geographic connections, verified map pins, and unverified community reports.",
+          "url": "https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates",
+          "mainEntityOfPage": "https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates",
+          "image": "https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg",
+          "datePublished": "2026-11-17",
+          "dateModified": "2026-11-23",
+          "inLanguage": "en",
+          "author": { "@type": "Organization", "name": "GTA6HeistGuide.com", "url": "https://www.gta6heistguide.com/" },
+          "publisher": { "@type": "Organization", "name": "GTA6HeistGuide.com", "url": "https://www.gta6heistguide.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gta6heistguide.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Interactive Leonida Map", "item": "https://www.gta6heistguide.com/map" },
+            { "@type": "ListItem", "position": 3, "name": "Leonida Regions Guide", "item": "https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are all 6 confirmed regions in GTA 6's State of Leonida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The six confirmed primary regions of Leonida are Vice City (east coast metro), the Leonida Keys (southern tropical island chain), Grassrivers (southern interior wetlands), Port Gellhorn (western Gulf-facing coastal city), Ambrosia (central inland agricultural and industrial heartland), and Mount Kalaga National Park (northern wilderness and highlands)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which counties make up the State of Leonida in GTA 6?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Corroborated launch-game counties include Vice-Dale County (Vice City and Vice Beach), Kelly County (Port Gellhorn and western coastal bays), Mariana County (southern wetlands and coastal settlements), Lummox County (Mount Kalaga National Park and northern industrial towns like Millport), and Leonard County (central rural territory)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How are the 6 Leonida regions connected geographically?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Vice City anchors the eastern Atlantic coast and connects south via coastal highway bridges to the Leonida Keys archipelago. Immediately west and southwest of Vice City lie the Grassrivers wetlands, which separate the eastern metro from Port Gellhorn on the western Gulf coast. Inland central Leonida is anchored by Ambrosia and Lake Leonida, while Mount Kalaga National Park forms the rugged northern frontier."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are the pre-launch 'escape canal coordinates' and 'Pelican Valley military radar' real in GTA 6?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Pre-launch rumors about fixed escape conduit coordinates such as 'Ocean Blvd Sewer Tube 01', 'Pier 4 RFID gantry cranes', or '<100 ft Pelican Valley military radar' were speculative and are not confirmed launch-game mechanics. This guide only documents verified regions, landmarks, safe codes, and map pins."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where can I filter verified Leonida map pins by region?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Open the Interactive Leonida Map at /map to filter 188 catalogued map markers—including 21 verified wildlife and Vice City Portal LPL substation pins, 24 Ammu-Nation gun stores, properties, fences, banks, and gang operations—by region or keyword."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-
-
-
-
 <div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
@@ -52,18 +249,21 @@
         <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">HEISTS</a></li>
-            <li><a href="/map" class="nav-pill">MAP</a></li>
+            <li><a href="/map" class="nav-pill active">MAP</a></li>
             <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                        <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
-                        <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
-                        <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
-                        <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
-                        <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
-                        <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
-                        <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                    <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/guides/gta-6-safe-codes" class="nav-dropdown-item">🔐 Complete Safe Codes Database</a>
+                    <a href="/guides/vice-city-portal-easter-egg" class="nav-dropdown-item">🌀 Vice City Portal Easter Egg</a>
+                    <a href="/port-gellhorn" class="nav-dropdown-item">⚓ Port Gellhorn District Guide</a>
+                    <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                    <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                    <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                    <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                    <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                    <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
                 </div>
             </li>
             <li class="nav-dropdown">
@@ -81,12 +281,10 @@
                 <div class="nav-dropdown-menu">
                     <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
-                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
                     <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
-                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheat Tracker</a>
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
@@ -105,46 +303,392 @@
         </ul>
     </div>
 </nav>
-<header class="hero">
-    <div class="hero-tagline">&bull; Syndicate Technical Deep-Dive &amp; Heist Math &bull;</div>
-    <h1>Every Leonida Region in GTA 6 Mapped: Vice City, Grassrivers, Leonida Keys & Escape Canal Coordinates</h1>
-    <p>Complete geographical breakdown of all 6 confirmed State of Leonida regions in GTA 6, including subterranean storm drains, smuggler canals, and 100% free Interactive Map tracking.</p>
-    <div class="hero-cta-group">
-        <a href="/free" class="btn btn-primary">⚡ Open Free $/Hour Calculator &amp; 15-Slot Save Planner</a>
-        <a href="/map" class="btn btn-secondary">🗺️ Open 6-Region Leonida Map</a>
-    </div>
-</header>
-<main class="container">
-    <article class="tool-box pink-glow">
-        <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.96rem;">Unlike competitor maps that lock custom pins or collectible tracking behind a VIP paywall, the <strong><a href="https://www.gta6heistguide.com/leonida-interactive-map" style="color:var(--neon-cyan); font-weight:700;">Interactive Leonida Map at GTA6HeistGuide.com</a></strong> is <strong>100% free with unlimited custom personal markers</strong> and Real-Time Database crowdsourced pin verification.</p>
-<h2 style="color:var(--neon-cyan); margin:1.5rem 0 0.6rem; font-size:1.3rem;">Breakdown of All 6 Confirmed State of Leonida Regions</h2>
-<div style="overflow-x:auto; margin:1.25rem 0;"><table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-<tr style="border-bottom:2px solid var(--neon-cyan); color:var(--neon-cyan);"><th style="padding:0.7rem; text-align:left;">Leonida Region</th><th style="padding:0.7rem; text-align:left;">Primary Heist Target</th><th style="padding:0.7rem; text-align:left;">Signature Escape Conduit</th><th style="padding:0.7rem; text-align:left;">Recommended Getaway Vehicle</th></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;">**1. Vice City Metro**</td><td style="padding:0.7rem;">[Sinfrontera Bank](https://www.gta6heistguide.com/sinfrontera-bank) & [Ocean Drive Convoy](https://www.gta6heistguide.com/ocean-drive-armored-convoy)</td><td style="padding:0.7rem;">Ocean Blvd Sewer Tube 01 & Transit Subway</td><td style="padding:0.7rem;">4-Door Tuner Sedan (152 MPH)</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;">**2. Leonida Keys**</td><td style="padding:0.7rem;">[Starlet Superyacht Offshore](https://www.gta6heistguide.com/heist-planner)</td><td style="padding:0.7rem;">Coral Reef Scuba Dropoff -> Keys Marina</td><td style="padding:0.7rem;">Sub-Aquatic Rebreathers + Speedboat</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;">**3. Grassrivers**</td><td style="padding:0.7rem;">[Grassrivers Cartel Airstrip](https://www.gta6heistguide.com/everglades-smuggler-run)</td><td style="padding:0.7rem;">Mangrove Airboat Backchannels (<120ft Flight)</td><td style="padding:0.7rem;">Flat-Bottom Swamp Airboat / Twin-Prop</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;">**4. Port Gellhorn**</td><td style="padding:0.7rem;">[Port Gellhorn Container Terminal](https://www.gta6heistguide.com/port-gellhorn)</td><td style="padding:0.7rem;">Pier 4 Industrial Freight Canal</td><td style="padding:0.7rem;">High-Clearance Off-Road Buggy</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;">**5. Ambrosia**</td><td style="padding:0.7rem;">[The Cartel Heist (Sinfrontera Bank)](https://www.gta6heistguide.com/leonida-reserve)</td><td style="padding:0.7rem;">Pelican Valley Northern Storm Intake</td><td style="padding:0.7rem;">Armored 4x4 Utility SUV (6 Trunk Slots)</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;">**6. Mount Kalaga National Park**</td><td style="padding:0.7rem;">Wilderness Relay & Stash Caches</td><td style="padding:0.7rem;">Backcountry Pine Canopy Dirt Trails</td><td style="padding:0.7rem;">Custom Motocross Dirt Bike</td></tr>
-</table></div>
-<h3 style="color:var(--neon-cyan); margin:1.5rem 0 0.6rem; font-size:1.3rem;">Second-Screen Play-Along Controls</h3>
-<p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.96rem;">When you keep <strong><a href="https://www.gta6heistguide.com/leonida-interactive-map" style="color:var(--neon-cyan); font-weight:700;">gta6heistguide.com/leonida-interactive-map</a></strong> open on your phone or second monitor while playing on PS5 Pro or PC:</p>
-<div style="margin:0.45rem 0 0.45rem 1rem; color:var(--text-main);">&bull; Toggle <strong>Hide Found / Completed Pins</strong> to declutter your radar.</div>
-<div style="margin:0.45rem 0 0.45rem 1rem; color:var(--text-main);">&bull; Click <strong>Jump to Next Unfound Pin</strong> to sweep Megamundo Signal Jammers and 1715 Fleet Treasures in record time.</div>
-<div style="margin:0.45rem 0 0.45rem 1rem; color:var(--text-main);">&bull; Submit new Day-1 discoveries to our D1 database—when 3 operatives confirm a coordinate, it auto-promotes to <strong>Verified</strong> and awards <strong>+500 Syndicate Rep</strong>.</div>
-        <div class="multi-option-cta" style="margin-top:1.5rem; padding:0.9rem 1.1rem; background:rgba(0,240,255,0.06); border-left:3px solid var(--neon-cyan); border-radius:8px; font-size:0.85rem; color:var(--text-muted); display:grid; gap:0.45rem;">
-            <div>🛡️ <strong style="color:#fff;">Verified Heist Gear:</strong> <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">ExitLag Multi-Path Gaming Routing</a> &bull; <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" style="color:var(--neon-amber); font-weight:800;">Samsung 990 PRO Gen4 SSD</a> &bull; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--neon-green); font-weight:800;">G2A Keys</a></div>
-            
+
+<main class="g-wrap">
+    <nav class="g-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/map">Interactive Map</a><span aria-hidden="true">/</span>
+        <span style="color:#e2e8f0;font-weight:700;">Leonida Regions Guide</span>
+    </nav>
+
+    <header class="g-hero">
+        <div>
+            <span class="g-badge g-b-ind">6 CONFIRMED REGIONS</span>
+            <span class="g-badge g-b-com">LAUNCH GEOGRAPHY REFERENCE</span>
         </div>
-    </article>
+        <h1>GTA 6 Leonida Regions Guide: Every Confirmed Region, County, Landmark &amp; Map Connection</h1>
+        <p class="g-lead">A verified regional reference to the State of Leonida in Grand Theft Auto VI—covering all six confirmed regions, county boundaries, major cities, towns, landmarks, map connections, and our existing verified Interactive Map pins.</p>
+        <div class="lr-toc" aria-label="Jump to section">
+            <a href="#overview-table">6-Region Overview</a>
+            <a href="#geography-connections">Geography &amp; Counties</a>
+            <a href="#region-profiles">Regional Profiles</a>
+            <a href="#verified-pins">Verified Map Pins</a>
+            <a href="#confirmed-vs-unverified">Confirmed vs. Unverified</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </header>
+
+    <div class="g-evidence">
+        <strong>Verification &amp; Editorial Update (November 23, 2026):</strong> This guide replaces an earlier pre-launch draft that contained speculative "escape canal coordinates." Every region, county, landmark, safe code, and verified map pin below is cross-checked against Rockstar's official Leonida reveal, corroborated launch-week reporting (<em>IGN, GTA Base, PowerPyx, PC Gamer, Mobalytics</em>), and our live site datasets (<a href="/map">Interactive Leonida Map</a>, <a href="/properties">Properties &amp; Fences</a>, <a href="/animals">Animals Compendium</a>, and <a href="/guides/gta-6-safe-codes">Safe Codes Database</a>). Unconfirmed community leads are explicitly separated in <a href="#confirmed-vs-unverified">Section 5</a>.
+    </div>
+
+    <!-- 1. QUICK-REFERENCE TABLE -->
+    <section class="g-section" id="overview-table" aria-labelledby="h-overview">
+        <h2 id="h-overview">1. All 6 Confirmed State of Leonida Regions at a Glance</h2>
+        <p>Rockstar Games divides the State of Leonida into six primary regions spanning dense Atlantic-coast urban districts, tropical islands, interior wetlands, a working-class western coast, central farmland, and rugged northern highlands.</p>
+        <div class="g-tablewrap">
+            <table class="g-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Confirmed Region</th>
+                        <th scope="col">County / Position</th>
+                        <th scope="col">Confirmed Cities, Districts &amp; Landmarks</th>
+                        <th scope="col">Key Gameplay &amp; Site Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Vice City</strong></td>
+                        <td>Vice-Dale County<br><span style="color:#94a3b8;font-size:0.8rem;">East / Atlantic Coast</span></td>
+                        <td>Ocean Beach, Vice Beach, Washington Beach, Downtown, Little Cuba, Balsero, Watson Bay, Port Vice City (VC Port), Vice City International Airport (VCIA), Sinfrontera National Bank, Hamlet edge</td>
+                        <td><a href="/heists/the-cartel-heist">Cartel Heist</a> · <a href="/heists/vcia-takedown">VCIA Takedown</a> · <a href="/map?q=Vice+City">Map Pins</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Leonida Keys</strong></td>
+                        <td>Southern Archipelago<br><span style="color:#94a3b8;font-size:0.8rem;">South / Southwest Bridges</span></td>
+                        <td>Key Lento (Jason's House, Brian's Lockup, Moonstone Boutique), Gloriana Key, Goose Key, Permit Keys, Badger R&amp;D Radio Tower, coastal marinas &amp; reefs</td>
+                        <td><a href="/missions/">Ch. 1 Missions</a> · <a href="/gta-6-collectibles/">Kenton's Treasures</a> · <a href="/map?q=Leonida+Keys">Map Pins</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Grassrivers</strong></td>
+                        <td>Mariana County<br><span style="color:#94a3b8;font-size:0.8rem;">Southern Interior Wetlands</span></td>
+                        <td>Pelican Valley, Gullet Marsh, Cottonmouth Lake, Sunrise RV Park, Hamlet swamp border, mangrove airboat waterways</td>
+                        <td><a href="/animals">Alligator &amp; Wildlife</a> · <a href="/guides/gta-6-safe-codes">Safe Code 6769</a> · <a href="/map?q=Grassrivers">Map Pins</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Port Gellhorn</strong></td>
+                        <td>Kelly County<br><span style="color:#94a3b8;font-size:0.8rem;">West / Gulf Coast</span></td>
+                        <td>Draper Island docks, Brooks Boatworks, Kingpin Bowling, La Cascara Motel, Watkins Auto Parts (Moses), Dunk's Trailer, Gellhorn International Raceway, Starlet Motel outskirts</td>
+                        <td><a href="/port-gellhorn">Full Port Gellhorn Guide</a> · <a href="/guides/gta-6-safe-codes">Codes 0300/6823/6969</a> · <a href="/map?q=Port+Gellhorn">Map Pins</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Ambrosia</strong></td>
+                        <td>Central Heartland<br><span style="color:#94a3b8;font-size:0.8rem;">Inland / Lake Leonida Basin</span></td>
+                        <td>Lake Leonida &amp; Lake Tallaloko, sugar refineries, agricultural grid roads, Thrillbilly Mud Club, Farm Fix / McKittrick Farm area, Endurance Raceway</td>
+                        <td><a href="/guides/gta-6-safe-codes">Safe Code 2121</a> · <a href="/properties">Freight Yard Garage</a> · <a href="/map?q=Ambrosia">Map Pins</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Mount Kalaga National Park</strong></td>
+                        <td>Lummox County<br><span style="color:#94a3b8;font-size:0.8rem;">Northern Border Wilderness</span></td>
+                        <td>Mount Kalaga peaks &amp; canyons, Kalaga Reservoir, Millport industrial town, backcountry hunting trails, Bret Vogel's hunting grounds</td>
+                        <td><a href="/animals">Bret's 15 Decks &amp; Panther</a> · <a href="/gta-6-collectibles/">Meteorites</a> · <a href="/map?q=Kalaga">Map Pins</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 2. GEOGRAPHIC RELATIONSHIPS & COUNTIES -->
+    <section class="g-section" id="geography-connections" aria-labelledby="h-geo">
+        <h2 id="h-geo">2. Geographic Relationships, Counties &amp; Map Connections</h2>
+        <p>Understanding how Leonida's regions border one another makes story routing, robbery chains, and collectible sweeps much faster—especially because GTA 6 has no mission replay menu and requires physical travel to ATMs, fences, and gun stores.</p>
+
+        <h3>How the 6 Regions Connect</h3>
+        <ul>
+            <li><strong>East-to-South Coastal Spine (Vice City &harr; Leonida Keys):</strong> Vice City sits along the eastern Atlantic shoreline in <strong>Vice-Dale County</strong>. Heading south out of the southern metro and Mariana coast puts you onto the long causeways and coastal bridges linking the <strong>Leonida Keys</strong> archipelago (Key Lento, Gloriana Key, Goose Key, and Permit Keys).</li>
+            <li><strong>East-to-West Wetland Corridor (Vice City &harr; Grassrivers &harr; Port Gellhorn):</strong> Directly west and southwest of Vice City's outskirts, dense urban strips give way to the <strong>Grassrivers</strong> wetlands in <strong>Mariana County</strong> (including Hamlet, Pelican Valley, Gullet Marsh, and Cottonmouth Lake). Crossing west through or north around the marshland brings you into <strong>Kelly County</strong> and the Gulf-facing coastal city of <strong>Port Gellhorn</strong>.</li>
+            <li><strong>Central Inland Hub (Ambrosia &amp; Lake Leonida):</strong> Positioned in the agricultural heartland north of the wetlands and between the eastern and western coasts, <strong>Ambrosia</strong> surrounds the <strong>Lake Leonida</strong> and <strong>Lake Tallaloko</strong> waterways. Its flat rural highway grid connects Port Gellhorn's industrial outskirts to northern Vice-Dale and <strong>Leonard County</strong>.</li>
+            <li><strong>Northern Frontier (Ambrosia &amp; Kelly County &harr; Mount Kalaga National Park):</strong> Continuing north into <strong>Lummox County</strong> transitions from flat farmland and industrial towns (such as Millport) into the elevated forested ridges, rivers, and canyons of <strong>Mount Kalaga National Park</strong> and Kalaga Reservoir.</li>
+        </ul>
+
+        <h3>Confirmed Counties of Leonida</h3>
+        <div class="lr-grid-2">
+            <div class="lr-callout is-cyan" style="margin:0;">
+                <strong>Vice-Dale County &amp; Mariana County:</strong> Vice-Dale covers Vice City, Vice Beach, VCIA, and surrounding urban/suburban areas (including the South Vice-Dale County radio tower easter egg). Mariana County spans the southern wetlands, Grassrivers marshland, and southern coastal settlements.
+            </div>
+            <div class="lr-callout is-cyan" style="margin:0;">
+                <strong>Kelly, Leonard &amp; Lummox Counties:</strong> Kelly County encompasses Port Gellhorn, its surrounding bays, and western outskirts (including the Starlet Motel area). Leonard County bridges central rural territory, while Lummox County holds Mount Kalaga National Park and northern industrial outposts like Millport.
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DEEP-DIVE REGIONAL PROFILES -->
+    <section class="g-section" id="region-profiles" aria-labelledby="h-profiles">
+        <h2 id="h-profiles">3. Detailed Breakdown of All 6 Confirmed Leonida Regions</h2>
+        <p>Each profile below combines confirmed launch geography with the verified safehouses, fences, missions, collectibles, and wildlife tracked across our site.</p>
+
+        <div class="lr-grid-2">
+            <!-- Vice City -->
+            <article class="lr-region-card">
+                <div class="lr-region-media">
+                    <img src="/assets/images/regions/vice-city.jpg" alt="Vice City skyline and coastal districts in GTA 6" width="1280" height="720" loading="lazy">
+                    <span class="lr-region-pill">EAST COAST METRO · 71 MAP PINS</span>
+                </div>
+                <div class="lr-region-body">
+                    <h3>1. Vice City (Vice-Dale County)</h3>
+                    <p>Leonida's primary urban center and economic heart, balancing pastel Art Deco beachfronts with dense commercial towers, docks, and tight-knit residential districts.</p>
+                    <ul class="lr-region-meta">
+                        <li><strong>Confirmed Districts &amp; Landmarks:</strong> Ocean Beach, Vice Beach, Washington Beach, Downtown Vice City, Little Cuba, Balsero, Watson Bay (Paradise Garage), Port Vice City, Vice City International Airport (VCIA), Sinfrontera National Bank, Penmarch Isle, Breakwater Quarry, and Turtle Head Power Station.</li>
+                        <li><strong>Story Heists &amp; Robberies:</strong> Anchors both major Story Heists—<a href="/heists/the-cartel-heist">The Cartel Heist</a> ($120,000, Ch. 3) and <a href="/heists/vcia-takedown">VCIA Takedown</a> ($250,000, Ch. 4)—plus endgame <a href="/heists/large-bank-vaults">Large Bank Vaults</a> (Lombank Downtown &amp; Ocean Beach).</li>
+                        <li><strong>Fences &amp; Properties:</strong> Yasmani's Jewelry Fence (Little Cuba), Randy's high-end Wish List vehicle drops (Balsero, $30k–$35k/car), Tyrone (stolen goods), plus Chapter 3–4 safehouses and garages.</li>
+                        <li><strong>Verified Map Pins:</strong> 9 verified <a href="/guides/vice-city-portal-easter-egg">Vice City Portal</a> LPL locations (Substations #1, #2, #4, #5, #7, #9, #11, #12 + Reactor 2) and 1 verified coastal Dolphin pin (10 verified pins total).</li>
+                    </ul>
+                    <div class="lr-region-links">
+                        <a href="/map?q=Vice+City">Filter on Map &rarr;</a>
+                        <a href="/heists/the-cartel-heist">Cartel Heist</a>
+                        <a href="/heists/vcia-takedown">VCIA Takedown</a>
+                        <a href="/guides/vice-city-portal-easter-egg">Portal Easter Egg</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Leonida Keys -->
+            <article class="lr-region-card">
+                <div class="lr-region-media">
+                    <img src="/assets/images/regions/leonida-keys.jpg" alt="Leonida Keys tropical island chain and bridges in GTA 6" width="1280" height="720" loading="lazy">
+                    <span class="lr-region-pill">SOUTHERN ARCHIPELAGO · 33 MAP PINS</span>
+                </div>
+                <div class="lr-region-body">
+                    <h3>2. Leonida Keys</h3>
+                    <p>A sun-bleached chain of tropical islands linked by long over-water bridges south of the mainland, serving as the primary setting for Chapter 1 and underwater salvage.</p>
+                    <ul class="lr-region-meta">
+                        <li><strong>Confirmed Islands &amp; Landmarks:</strong> Key Lento (Jason's House, Brian's Lockup <code>7700</code>, Moonstone Boutique <code>0420</code>, Fleeca Bank for <em>Buck Me</em>), Gloriana Key, Goose Key, Permit Keys (shipwreck &amp; Assassin Nipper .38), and Badger R&amp;D Radio Tower.</li>
+                        <li><strong>Missions &amp; Progression:</strong> Chapter 1 storyline including <em>Lab Fees</em>, <em>Buck Me</em> (BuckMe Family Savings), <em>Island Dreams</em> (unlocks Scuba Gear, Metal Detector &amp; Kenton's Treasures), and the Chapter 1 cutoff at <em>Tourist Trap</em>.</li>
+                        <li><strong>Collectibles &amp; Wildlife:</strong> Primary launchpad for <strong>Kenton's Treasures</strong> (33 underwater discoveries / 41 named relics, ~$1,400/dive). Verified wildlife pins: Green Iguana, Sea Turtle, and Lionfish.</li>
+                        <li><strong>Verified Map Pins:</strong> Badger R&amp;D Radio Tower, LPL Substation #3 (Key Lento), LPL Substation #8 (Gloriana Key), plus 3 verified marine/island animal pins.</li>
+                    </ul>
+                    <div class="lr-region-links">
+                        <a href="/map?q=Leonida+Keys">Filter on Map &rarr;</a>
+                        <a href="/missions/">Ch. 1 Walkthroughs</a>
+                        <a href="/gta-6-collectibles/">Kenton's Treasures</a>
+                        <a href="/guides/gta-6-safe-codes">Codes 7700 &amp; 0420</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Grassrivers -->
+            <article class="lr-region-card">
+                <div class="lr-region-media">
+                    <img src="/assets/images/regions/grassrivers.jpg" alt="Grassrivers wetlands and mangrove waterways in GTA 6" width="1280" height="720" loading="lazy">
+                    <span class="lr-region-pill">SOUTHERN WETLANDS · 20 MAP PINS</span>
+                </div>
+                <div class="lr-region-body">
+                    <h3>3. Grassrivers (Mariana County)</h3>
+                    <p>Leonida's untamed sawgrass marshes and mangrove backwaters between Vice City and the western coast—best navigated by airboat or high-clearance off-road vehicles.</p>
+                    <ul class="lr-region-meta">
+                        <li><strong>Confirmed Areas &amp; Landmarks:</strong> Pelican Valley, Gullet Marsh, Cottonmouth Lake, Sunrise RV Park (Kingfishers gang safe code <code>6769</code>), Crab Lab boathouse (door code <code>0212</code>, Crabshack VF5), Wetman Bay, and the backwoods Hamlet border.</li>
+                        <li><strong>Wildlife &amp; Secrets:</strong> Verified predator pins for <strong>Alligator</strong> and <strong>Snake</strong> in our <a href="/animals">Animals Compendium</a>. Also home to the confirmed <strong>Skunk Ape</strong> encounter around Cottonmouth Lake / Gullet Marsh (<a href="/secrets">Secrets Guide</a>).</li>
+                        <li><strong>Robberies &amp; Gear:</strong> Rural convenience stores, gang-operation hideouts, 3 catalogued Ammu-Nation stops, and hidden Unique Weapon Variants (Swamp Bait Akulus &amp; Cruel Huntsman's SM-69 in Wetman Bay).</li>
+                    </ul>
+                    <div class="lr-region-links">
+                        <a href="/map?q=Grassrivers">Filter on Map &rarr;</a>
+                        <a href="/animals">Wetlands Wildlife</a>
+                        <a href="/secrets">Skunk Ape Secret</a>
+                        <a href="/weapons">Unique Weapons</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Port Gellhorn -->
+            <article class="lr-region-card">
+                <div class="lr-region-media">
+                    <img src="/assets/images/regions/port-gellhorn.jpg" alt="Port Gellhorn coastal docks and motels in GTA 6" width="1280" height="720" loading="lazy">
+                    <span class="lr-region-pill">WEST COAST · 23 MAP PINS</span>
+                </div>
+                <div class="lr-region-body">
+                    <h3>4. Port Gellhorn (Kelly County)</h3>
+                    <p>A gritty, working-class Gulf Coast city of motels, strip malls, pawn shops, and industrial docks that serves as Jason and Lucia's primary Chapter 2 base of operations.</p>
+                    <ul class="lr-region-meta">
+                        <li><strong>Confirmed Locations &amp; Fixed Safe Codes:</strong> Three corroborated Kolt &amp; Associates gang-op safes—Kingpin Bowling (<code>0300</code>), Brooks Boatworks near Draper Island docks (<code>6823</code>), and La Cascara Motel (<code>6969</code>)—plus Gellhorn International Raceway and the Starlet Motel outskirts.</li>
+                        <li><strong>Fences &amp; Early Cash:</strong> <strong>Moses</strong> at Watkins Auto Parts (buys WAiNK-scanned untracked stolen cars for $1,000–$2,000 after <em>Moses</em>) and <strong>Dunk</strong> at Dunk's Trailer on Tanglewood Lane (stolen goods fence after <em>Slam Dunk</em>).</li>
+                        <li><strong>Verified Map Pins:</strong> LPL Substation #6 (Port Gellhorn) and LPL Substation #10 (East Port Gellhorn), plus 6 catalogued properties/fences and 3 Ammu-Nation stores.</li>
+                    </ul>
+                    <div class="lr-region-links">
+                        <a href="/port-gellhorn">Full Port Gellhorn Guide &rarr;</a>
+                        <a href="/map?q=Port+Gellhorn">Filter on Map</a>
+                        <a href="/guides/gta-6-safe-codes">Safe Codes</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Ambrosia -->
+            <article class="lr-region-card">
+                <div class="lr-region-media">
+                    <img src="/assets/images/intel/intel-grassrivers.jpg" alt="Ambrosia rural heartland and industrial corridors in GTA 6" width="1280" height="720" loading="lazy">
+                    <span class="lr-region-pill">CENTRAL HEARTLAND · 22 PINS (W/ LAKE LEONIDA)</span>
+                </div>
+                <div class="lr-region-body">
+                    <h3>5. Ambrosia &amp; Lake Leonida Basin</h3>
+                    <p>Leonida's flat agricultural and industrial interior, characterized by sugar refineries, smokestacks, rural highway grids, and expansive inland lakes.</p>
+                    <ul class="lr-region-meta">
+                        <li><strong>Confirmed Landmarks &amp; Waterways:</strong> Lake Leonida, Lake Tallaloko, sugar-refining industrial facilities, Thrillbilly Mud Club (off-road mud racing), Endurance Raceway, Emerald Springs, and Farm Fix / McKittrick Farm (gang-op safe code <code>2121</code>).</li>
+                        <li><strong>Map Dataset Coverage:</strong> 15 catalogued Ambrosia markers plus 7 Lake Leonida basin markers (total 22 across banks, jewelry stores, 4 combined Ammu-Nation locations, illegal ops, and the Ambrosia Freight Yard Garage).</li>
+                        <li><strong>Activities &amp; Robberies:</strong> Mid-game small banks, gang-operation hideouts, rural highway armored truck ambushes, and grassroots motorsport/mud-club events.</li>
+                    </ul>
+                    <div class="lr-region-links">
+                        <a href="/map?q=Ambrosia">Filter on Map &rarr;</a>
+                        <a href="/heists/armored-trucks-gang-ops">Armored Trucks &amp; Gang Ops</a>
+                        <a href="/properties">Properties &amp; Garages</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Mount Kalaga -->
+            <article class="lr-region-card">
+                <div class="lr-region-media">
+                    <img src="/assets/images/regions/mount-kalaga.jpg" alt="Mount Kalaga National Park wilderness and highlands in GTA 6" width="1280" height="720" loading="lazy">
+                    <span class="lr-region-pill">NORTHERN WILDERNESS · 19 MAP PINS</span>
+                </div>
+                <div class="lr-region-body">
+                    <h3>6. Mount Kalaga National Park (Lummox County)</h3>
+                    <p>Breaking up Leonida's coastal lowlands, Mount Kalaga anchors the northern border with forested mountains, steep dirt trails, rivers, and backcountry hunting grounds.</p>
+                    <ul class="lr-region-meta">
+                        <li><strong>Confirmed Landmarks:</strong> Mount Kalaga peaks and canyons, Kalaga Reservoir, Millport (industrial town in Lummox County), and the Mount Kalaga Trailhead Garage.</li>
+                        <li><strong>Wildlife &amp; Hunting:</strong> Unlock location for <strong>Bret Vogel's 15 Hunting Target Decks</strong> (Jason-only Stranger mission <em>Veteran Hunted</em> after Ch. 2's <em>Coffee Break</em>). Verified wildlife pin: <strong>Florida Panther / Cougar</strong>.</li>
+                        <li><strong>Collectibles &amp; Exploration:</strong> Key region for night-glowing <strong>Meteorites</strong> (sellable at pawn shops), off-road trails, kayaking, base jumping, and 3 catalogued northern Ammu-Nation outposts.</li>
+                    </ul>
+                    <div class="lr-region-links">
+                        <a href="/map?q=Kalaga">Filter on Map &rarr;</a>
+                        <a href="/animals">Bret's 15 Decks &amp; Wildlife</a>
+                        <a href="/gta-6-collectibles/">Meteorites &amp; 100%</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 4. VERIFIED MAP PINS SUMMARY -->
+    <section class="g-section" id="verified-pins" aria-labelledby="h-pins">
+        <h2 id="h-pins">4. Verified Interactive Map Pins &amp; Regional Dataset Breakdown</h2>
+        <p>Our <a href="/map">Interactive Leonida Map</a> currently tracks <strong>188 catalogued markers</strong> across Leonida's regions. Within that dataset, <strong>21 pins carry strict <code>verified: true</code> status</strong> (7 Rockstar-confirmed GTA VI wildlife species and all 14 <a href="/guides/vice-city-portal-easter-egg">Vice City Portal Easter Egg</a> locations), while the remaining markers catalog regional banks, 24 Ammu-Nation gun stores, properties, fences, illegal operations, and reference wildlife habitats.</p>
+
+        <div class="g-tablewrap">
+            <table class="g-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Map Region Filter</th>
+                        <th scope="col">Total Catalogued Pins</th>
+                        <th scope="col">Verified (<code>verified: true</code>) Pins</th>
+                        <th scope="col">Catalogued Gun Stores</th>
+                        <th scope="col">Direct Map Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Vice City</strong></td>
+                        <td>71</td>
+                        <td>10 (9 Vice City Portal LPL pins + Dolphin)</td>
+                        <td>8</td>
+                        <td><a href="/map?q=Vice+City">Open Vice City &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leonida Keys</strong></td>
+                        <td>33</td>
+                        <td>6 (Badger R&amp;D Tower, LPL #3 &amp; #8 + 3 marine/island species)</td>
+                        <td>3</td>
+                        <td><a href="/map?q=Leonida+Keys">Open Keys &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Port Gellhorn</strong></td>
+                        <td>23</td>
+                        <td>2 (LPL Substations #6 &amp; #10)</td>
+                        <td>3</td>
+                        <td><a href="/map?q=Port+Gellhorn">Open Port Gellhorn &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grassrivers</strong></td>
+                        <td>20</td>
+                        <td>2 (Alligator &amp; Snake)</td>
+                        <td>3</td>
+                        <td><a href="/map?q=Grassrivers">Open Grassrivers &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ambrosia &amp; Lake Leonida</strong></td>
+                        <td>22 (15 + 7)</td>
+                        <td>0 (catalogued banks, ops, properties &amp; gun stores)</td>
+                        <td>4 (2 + 2)</td>
+                        <td><a href="/map?q=Ambrosia">Open Ambrosia &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mount Kalaga National Park</strong></td>
+                        <td>19 (8 + 11)</td>
+                        <td>1 (Florida Panther / Cougar)</td>
+                        <td>3</td>
+                        <td><a href="/map?q=Kalaga">Open Mt. Kalaga &rarr;</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:0.86rem; color:#94a3b8; margin-top:0.65rem;">Note: The 42 real-world species reference photos in our <a href="/animals">Animals Compendium</a> are kept on a separate <code>animal-reference</code> layer from the 7 verified in-game GTA VI animal pins. You can also check our <a href="/weapons-bonuses">24 Ammu-Nation Gun Stores directory</a> for full store-by-region coverage.</p>
+    </section>
+
+    <!-- 5. CONFIRMED VS UNVERIFIED -->
+    <section class="g-section" id="confirmed-vs-unverified" aria-labelledby="h-verify">
+        <h2 id="h-verify">5. Confirmed Locations vs. Unverified Community Reports</h2>
+        <p>Because GTA 6 launched on November 19, 2026, many pre-launch rumors and early community sightings are still circulating online. We keep confirmed facts strictly separate from unverified reports:</p>
+
+        <div class="lr-callout">
+            <strong>Community-Reported / Unverified Leads (Not Yet Independently Verified):</strong>
+            <ul style="margin:0.45rem 0 0; padding-left:1.2rem;">
+                <li><strong>Manifest Canyon Abandoned Airstrip Keypad Puzzle:</strong> Community sleuths report a night-time flashing-headlights car trigger on the northwest Manifest Canyon road; exact trigger requirements and rewards remain unverified.</li>
+                <li><strong>Unverified Property Leads in Site Dataset:</strong> <em>Ambrosia Industrial Drop-Off</em> and <em>Grassrivers Wetlands Dock</em> are explicitly flagged as <code>Unverified Lead</code> in our <a href="/properties">Properties Database</a>.</li>
+                <li><strong>Port Gellhorn Yard Sale (Arthur Morgan's Hat) &amp; Starlet Motel UFO:</strong> Widely reported by players and launch outlets in Kelly County / Port Gellhorn, though exact street-level coordinates are still being independently verified in-house.</li>
+                <li><strong>Exact Sewers &amp; Escape Conduits:</strong> Players searching for GTA 6 sewers should note that while urban drainage and underground passages exist in Vice City, pre-launch tables claiming named coordinates like "Ocean Blvd Sewer Tube 01," "Pelican Valley Northern Storm Intake," "Pier 4 RFID cranes," or "&lt;100 ft Pelican Valley military radar" are <strong>unverified pre-launch speculation</strong> and have been removed from this guide.</li>
+            </ul>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8;">Have a screenshot-backed location correction or new regional find? <a href="/community-discoveries/submit/">Submit it to our moderated Community Discoveries queue &rarr;</a></p>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="g-section" id="faq" aria-labelledby="h-faq">
+        <h2 id="h-faq">Leonida Regions Frequently Asked Questions</h2>
+        <div class="lr-faq-item">
+            <h3>What are all 6 confirmed regions in GTA 6's State of Leonida?</h3>
+            <p>The six confirmed primary regions are <strong>Vice City</strong> (east coast metro), the <strong>Leonida Keys</strong> (southern tropical archipelago), <strong>Grassrivers</strong> (southern interior wetlands), <strong>Port Gellhorn</strong> (western Gulf Coast city), <strong>Ambrosia</strong> (central agricultural and industrial heartland), and <strong>Mount Kalaga National Park</strong> (northern wilderness and highlands).</p>
+        </div>
+        <div class="lr-faq-item">
+            <h3>Which counties make up the State of Leonida?</h3>
+            <p>Corroborated launch-game counties include <strong>Vice-Dale County</strong> (Vice City &amp; Vice Beach), <strong>Kelly County</strong> (Port Gellhorn &amp; western bays), <strong>Mariana County</strong> (Grassrivers &amp; southern wetlands), <strong>Lummox County</strong> (Mount Kalaga National Park &amp; Millport), and <strong>Leonard County</strong> (central rural territory).</p>
+        </div>
+        <div class="lr-faq-item">
+            <h3>How are the 6 Leonida regions connected on the map?</h3>
+            <p>Vice City runs along the east coast and connects south via coastal highway bridges to the Leonida Keys. Grassrivers sits directly west and southwest of Vice City, separating the eastern metro from Port Gellhorn on the western coast. Ambrosia and Lake Leonida occupy the central inland basin, and Mount Kalaga National Park forms the elevated northern border.</p>
+        </div>
+        <div class="lr-faq-item">
+            <h3>Which region has the best early-game and endgame money routes?</h3>
+            <p>Chapter 1 starts in the <strong>Leonida Keys</strong> (<em>Lab Fees</em>, <em>Buck Me</em> savings, and Kenton's underwater dives). Chapter 2 shifts to <strong>Port Gellhorn</strong> (Moses car drops, Dunk's fence, and 3 fixed Kolt &amp; Associates gang safes). Endgame cash centers on <strong>Vice City</strong> via The Cartel Heist ($120,000), VCIA Takedown ($250,000), and Large Bank Vaults (up to ~$205,000). See our <a href="/articles/gta-6-heist-payout-math-true-net-dollar-per-hour">GTA 6 Heist Payouts &amp; Money Guide</a> for full figures.</p>
+        </div>
+        <div class="lr-faq-item">
+            <h3>Why were the old "escape canal coordinates" removed from this article?</h3>
+            <p>Those entries came from pre-launch speculation before GTA 6's November 19, 2026 release. We removed unverified coordinate claims and fictional heist targets so this guide reflects only confirmed regions, landmarks, and verified map data.</p>
+        </div>
+    </section>
+
+    <!-- RELATED GUIDES -->
+    <section class="g-section" aria-labelledby="h-related">
+        <h2 id="h-related">Connected Leonida Guides &amp; Interactive Tools</h2>
+        <ul>
+            <li><a href="/map">Interactive Leonida Map</a> — Filter all 188 catalogued markers, 21 verified wildlife &amp; portal pins, and 24 gun stores by region.</li>
+            <li><a href="/port-gellhorn">Port Gellhorn District Guide</a> — Deep dive on Kelly County safe codes (<code>0300</code>, <code>6823</code>, <code>6969</code>), Moses &amp; Dunk fences, docks, and Chapter 2 missions.</li>
+            <li><a href="/articles/gta-6-heist-payout-math-true-net-dollar-per-hour">GTA 6 Heist Payouts &amp; Story Mode Money Guide</a> — Verified Story Heist rewards, robbery payout tiers, and fence rules across Leonida.</li>
+            <li><a href="/gta-6-money-guide/">GTA 6 Money Guide Hub</a> — Interactive early-ops checklist, ATM banking rules, and robbery walkthrough cards.</li>
+            <li><a href="/missions/">Mission Walkthrough Hub</a> — Chapter-by-chapter story progression from the Leonida Keys to Vice City.</li>
+            <li><a href="/gta-6-collectibles/">Collectibles &amp; 100% Guide</a> — Kenton's Treasures, WAiNK App scans, Cocaine Flamingos, Collectible Cards, and Meteorites.</li>
+            <li><a href="/animals">Animals &amp; Wildlife Compendium</a> — Bret Vogel's 15 Hunting Target Decks, 62 bird species, and regional wildlife habitats.</li>
+            <li><a href="/properties">Properties, Garages &amp; Fences Database</a> — Safehouses, garages, and buyer contacts organized by region.</li>
+            <li><a href="/guides/gta-6-safe-codes">Complete Safe Codes Database</a> — All 17 confirmed fixed story, gang-operation, and locked-door codes.</li>
+            <li><a href="/guides/vice-city-portal-easter-egg">Vice City Portal Easter Egg Guide</a> — Step-by-step route across all 12 LPL Substations in Vice City, Leonida Keys, and Port Gellhorn.</li>
+        </ul>
+    </section>
 </main>
+
 <footer>
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
                 <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
                 <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
-                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                    Verified tactical guides, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
@@ -169,22 +713,23 @@
                 <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
                     <li><a href="/map" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/port-gellhorn">⚓ Port Gellhorn Guide</a></li>
                     <li><a href="/properties">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/animals">🐊 Animals Compendium</a></li>
                     <li><a href="/gta-6-money-guide/">💰 Cash Guide &amp; Safe Codes</a></li>
-                    <li><a href="/live-intel">📡 Live Launch Intel</a></li>
+                    <li><a href="/guides/gta-6-safe-codes">🔐 Safe Codes Database</a></li>
                 </ul>
             </div>
             <div>
                 <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
                 <ul class="footer-col-links">
-                    <li><a href="/weapons">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/weapons">⚔️ Weapons &amp; Tactical Gear</a></li>
                     <li><a href="/vehicles">🏎️ Vehicles &amp; Trunk Specs</a></li>
                     <li><a href="/weapons-bonuses">🔫 24 Ammu-Nation Stores</a></li>
                     <li><a href="/secrets">🥚 Secrets &amp; Easter Eggs</a></li>
                 </ul>
             </div>
-                        <div>
+            <div>
                 <span class="footer-col-title" style="color:#a855f7;">📋 Site &amp; Legal</span>
                 <ul class="footer-col-links">
                     <li><a href="/about">About GTA6HeistGuide</a></li>
@@ -197,34 +742,14 @@
             </div>
         </div>
 
-        <div class="footer-secondary-strip">
-            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
-                <a href="/map" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
-                <a href="/properties" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
-                <a href="/animals" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
-                <a href="/cheats" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
-                <a href="/radio" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
-                <a href="/drops" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
-                <a href="/about" style="color:#94a3b8; text-decoration:none;">About</a>
-                <a href="/contact" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                <a href="/privacy-policy" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                <a href="/terms" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
-            </div>
-            <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
-            </div>
-        </div>
-
         <div class="footer-disclaimer">
             <p style="margin:0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate I earn from qualifying purchases. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
-
-<script src="/js/affiliates.js?v=20261122_v23"></script>
-<script src="/site-config.js"></script>
-<script src="/assets/main.js" defer></script>
+<script src="/site-config.js" defer></script>
+<script src="/assets/main.js?v=20261123_v24" defer></script>
 </body>
 </html>

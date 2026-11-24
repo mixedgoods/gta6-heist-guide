@@ -5,38 +5,188 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 Heist Payout Math: Calculating True Net | GTA 6 Guide</title>
-    <meta name="description" content="In-depth GTA 6 analysis covering GTA 6 Heist Payout. Includes verified Leonida math formulas, optimal route timings, and tactical steps for zero-loss runs.">
+    <title>GTA 6 Heist Payouts &amp; Robbery Money Guide (Story Mode)</title>
+    <meta name="description" content="Evidence-based GTA 6 Story Mode heist and robbery payouts: The Cartel Heist ($120K), VCIA Takedown ($250K), 8 Large Bank Vaults (up to ~$205K), and fences.">
     <link rel="canonical" href="https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour">
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "GTA 6 Heist Payout Math: Calculating True Net $/Hour After Setup Time, Cooldowns & Fence Laundering Fees",
-      "description": "Why headline gross payouts mislead heist crews\u2014and how to calculate realistic Net $/Hour across all 6 Leonida vaults after setup grind, 48-minute cooldowns, hired NPC cuts, and fence laundering fees.",
-      "author": {"@type": "Organization", "name": "GTA 6 Heist Guide Editorial Desk"},
-      "publisher": {"@type": "Organization", "name": "gta6heistguide.com"},
-      "datePublished": "2026-11-17",
-      "mainEntityOfPage": "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour"
-    }
-    </script>
-    <meta property="og:title" content="GTA 6 Heist Payout Math: Calculating True Net | GTA 6 Guide">
-    <meta property="og:description" content="In-depth GTA 6 analysis covering GTA 6 Heist Payout. Includes verified Leonida math formulas, optimal route timings, and tactical steps for zero-loss runs.">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="GTA 6 Heist Payouts &amp; Robbery Money Guide (Story Mode)">
+    <meta property="og:description" content="Evidence-based GTA 6 Story Mode heist and robbery payouts: The Cartel Heist ($120K), VCIA Takedown ($250K), 8 Large Bank Vaults (up to ~$205K), and fences.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour">
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/heists/cartel-heist.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GTA 6 Heist Payout Math: Calculating True Net | GTA 6 Guide">
-    <meta name="twitter:description" content="In-depth GTA 6 analysis covering GTA 6 Heist Payout. Includes verified Leonida math formulas, optimal route timings, and tactical steps for zero-loss runs.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
+    <meta name="twitter:title" content="GTA 6 Heist Payouts &amp; Robbery Money Guide (Story Mode)">
+    <meta name="twitter:description" content="Evidence-based GTA 6 Story Mode heist and robbery payouts: The Cartel Heist ($120K), VCIA Takedown ($250K), 8 Large Bank Vaults (up to ~$205K), and fences.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/heists/cartel-heist.jpg">
+    <link rel="stylesheet" href="/assets/style.css?v=20261123_v24">
+    <link rel="stylesheet" href="/assets/guides.css?v=20261123_g1">
+    <style>
+        .hp-toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 0;
+        }
+        .hp-toc a {
+            display: inline-block;
+            padding: 0.35rem 0.72rem;
+            border-radius: 999px;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #6ee7b7;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .hp-toc a:hover { background: rgba(0, 255, 136, 0.18); }
+        .hp-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1rem;
+            margin-top: 0.9rem;
+        }
+        .hp-card {
+            background: rgba(10, 18, 32, 0.86);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+        .hp-card h3 {
+            margin: 0;
+            font-size: 1.08rem;
+            color: #fff;
+        }
+        .hp-card p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .hp-payout-pill {
+            display: inline-block;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.92rem;
+            font-weight: 900;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.12);
+            border: 1px solid rgba(0, 255, 136, 0.4);
+            border-radius: 6px;
+            padding: 0.22rem 0.6rem;
+            width: fit-content;
+        }
+        .hp-callout {
+            background: rgba(255, 184, 0, 0.08);
+            border-left: 3px solid #fbbf24;
+            border-radius: 0 8px 8px 0;
+            padding: 0.9rem 1.05rem;
+            margin: 1rem 0;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .hp-callout.is-cyan {
+            background: rgba(0, 240, 255, 0.07);
+            border-left-color: var(--neon-cyan);
+        }
+        .hp-faq-item {
+            background: rgba(10, 16, 28, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 8px;
+            padding: 0.95rem 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .hp-faq-item h3 {
+            margin: 0 0 0.4rem;
+            font-size: 0.98rem;
+            color: #fff;
+        }
+        .hp-faq-item p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .g-evidence a, .hp-callout a, .hp-card a, .hp-faq-item a { color: var(--neon-cyan); }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "GTA 6 Heist Payouts & Story Mode Robbery Money Guide",
+          "description": "Evidence-based guide to GTA 6 Story Mode heist payouts, free-roam robbery ranges, crew cut and fence rules, Dye Pack Jammer deductions, and verified money-making activities.",
+          "url": "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour",
+          "mainEntityOfPage": "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour",
+          "image": "https://www.gta6heistguide.com/assets/images/heists/cartel-heist.jpg",
+          "datePublished": "2026-11-17",
+          "dateModified": "2026-11-23",
+          "inLanguage": "en",
+          "author": { "@type": "Organization", "name": "GTA6HeistGuide.com", "url": "https://www.gta6heistguide.com/" },
+          "publisher": { "@type": "Organization", "name": "GTA6HeistGuide.com", "url": "https://www.gta6heistguide.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gta6heistguide.com/" },
+            { "@type": "ListItem", "position": 2, "name": "GTA 6 Money Guide", "item": "https://www.gta6heistguide.com/gta-6-money-guide/" },
+            { "@type": "ListItem", "position": 3, "name": "Heist Payouts & Money Guide", "item": "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much does The Cartel Heist pay in GTA 6?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Cartel Heist (Chapter 3 finale at Sinfrontera National Bank) has a confirmed baseline payout of $120,000, with some launch guides reporting up to $150,000 depending on secondary vault stacks and performance objectives."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the highest-paying Story Heist in GTA 6?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "VCIA Takedown (Chapter 4 Story Heist #2 at Vice City International Airport) is the highest-paying Story Heist with a confirmed baseline payout of $250,000."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the highest repeatable robbery payout in GTA 6 Story Mode?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The 8 Large Bank Vaults—unlocked near the end of Chapter 4 after That's Where The Money Is...—pay $65,000 to roughly $205,000 per vault when executed cleanly with the Dye Pack Jammer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does GTA 6 Story Mode have GTA V-style selectable crew cuts or $/hour heist grinds?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Both Story Heists use narrative-driven crews rather than hireable percentage-cut NPCs, and GTA 6 launched without a mission replay menu. Because Story Heists cannot be replayed on a cooldown loop and GTA 6 Online has no official release date announced, verified dollars-per-hour heist grind rates do not exist."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do the $20,000 pocket cash cap and Dye Pack Jammer affect robbery payouts?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Free-roam pocket cash caps at $20,000, so you must deposit earnings at physical ATMs or BuckMe terminals between jobs. For Small Banks and Large Bank Vaults, equipping the Dye Pack Jammer unlocked in Chapter 3's Credit Check prevents dye-pack deductions on stolen cash stacks."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-
-
-
-
 <div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
@@ -53,17 +203,20 @@
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">HEISTS</a></li>
             <li><a href="/map" class="nav-pill">MAP</a></li>
-            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill active">MONEY</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                        <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
-                        <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
-                        <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
-                        <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
-                        <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
-                        <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
-                        <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                    <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/guides/gta-6-safe-codes" class="nav-dropdown-item">🔐 Complete Safe Codes Database</a>
+                    <a href="/guides/vice-city-portal-easter-egg" class="nav-dropdown-item">🌀 Vice City Portal Easter Egg</a>
+                    <a href="/port-gellhorn" class="nav-dropdown-item">⚓ Port Gellhorn District Guide</a>
+                    <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                    <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                    <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                    <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                    <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                    <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
                 </div>
             </li>
             <li class="nav-dropdown">
@@ -81,12 +234,10 @@
                 <div class="nav-dropdown-menu">
                     <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
-                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
                     <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
-                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheat Tracker</a>
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
@@ -105,55 +256,248 @@
         </ul>
     </div>
 </nav>
-<header class="hero">
-    <div class="hero-tagline">&bull; Syndicate Technical Deep-Dive &amp; Heist Math &bull;</div>
-    <h1>GTA 6 Heist Payout Math: Calculating True Net $/Hour After Setup Time, Cooldowns & Fence Laundering Fees</h1>
-    <p>Why headline gross payouts mislead heist crews—and how to calculate realistic Net $/Hour across all 6 Leonida vaults after setup grind, 48-minute cooldowns, hired NPC cuts, and fence laundering fees.</p>
-    <div class="hero-cta-group">
-        <a href="/free" class="btn btn-primary">⚡ Open Free $/Hour Calculator &amp; 15-Slot Save Planner</a>
-        <a href="/map" class="btn btn-secondary">🗺️ Open 6-Region Leonida Map</a>
-    </div>
-</header>
-<main class="container">
-    <article class="tool-box pink-glow">
-        <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.96rem;">Every time a new heist target is revealed, guides focus on the headline gross take—like <strong>$25,000,000</strong> for the <strong>The Cartel Heist (Sinfrontera Bank)</strong> or <strong>$14,500,000</strong> for <strong>Sinfrontera National Bank</strong>. But experienced heist leaders know that gross take is a vanity metric. What actually determines how fast you build your criminal empire in Leonida is <strong>True Net $/Hour</strong>.</p>
-<p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.96rem;">You can run the interactive math right now in our <strong><a href="https://www.gta6heistguide.com/free/" style="color:var(--neon-cyan); font-weight:700;">Free GTA 6 Heist True $/Hour Calculator & 15s 15-Slot Save Planner</a></strong>.</p>
-<h2 style="color:var(--neon-cyan); margin:1.5rem 0 0.6rem; font-size:1.3rem;">The Complete True Net $/Hour Formula</h2>
-<p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.96rem;">To model realistic take-home pay per hour across 1 to 4 players, our calculator at <strong><a href="https://www.gta6heistguide.com/" style="color:var(--neon-cyan); font-weight:700;">gta6heistguide.com</a></strong> uses:</p>
-<pre style="background:#05040a; border:1px solid var(--neon-cyan); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); color:var(--neon-green); margin:1rem 0;"><code>
-Gross_Adjusted = Base_Payout * (1 + Stealth_Bonus_0.05) * (Weekly_Bonus_1.5_if_active)
-After_NPC_Cut  = Gross_Adjusted * (1 - (Gunner% + Hacker% + Driver%) / 100)
-Clean_Squad_Pot = After_NPC_Cut * (1 - Fence_Laundering_Fee% / 100) * (1 - Public_Lobby_Fail_Penalty% / 100)
-Player_Net_Take = Clean_Squad_Pot * (Player_Share% / 100)
-True_Net_Per_Hour = Player_Net_Take / ((Setup_Minutes + Finale_Minutes + Cooldown_Minutes) / 60)
-</code></pre>
-<h3 style="color:var(--neon-cyan); margin:1.5rem 0 0.6rem; font-size:1.3rem;">Benchmark Net $/Hour Table Across All 6 Leonida Vaults</h3>
-<div style="overflow-x:auto; margin:1.25rem 0;"><table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-<tr style="border-bottom:2px solid var(--neon-cyan); color:var(--neon-cyan);"><th style="padding:0.7rem; text-align:left;">Vault Target</th><th style="padding:0.7rem; text-align:left;">Gross Base</th><th style="padding:0.7rem; text-align:left;">Setup + Run</th><th style="padding:0.7rem; text-align:left;">Cooldown</th><th style="padding:0.7rem; text-align:left;">NPC + Fence Fee</th><th style="padding:0.7rem; text-align:left;">2P Duo Net $/Hr (50/50)</th><th style="padding:0.7rem; text-align:left;">4P Equal Net $/Hr (25%)</th></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;"><strong>The Cartel Heist (Sinfrontera Bank)</strong></td><td style="padding:0.7rem;">$25,000,000</td><td style="padding:0.7rem;">77m</td><td style="padding:0.7rem;">48m</td><td style="padding:0.7rem;">28%</td><td style="padding:0.7rem;"><strong>$4,320,000/hr</strong></td><td style="padding:0.7rem;">$2,160,000/hr</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;"><strong>Sinfrontera National Bank</strong></td><td style="padding:0.7rem;">$14,500,000</td><td style="padding:0.7rem;">54m</td><td style="padding:0.7rem;">45m</td><td style="padding:0.7rem;">26%</td><td style="padding:0.7rem;"><strong>$3,251,000/hr</strong></td><td style="padding:0.7rem;">$1,625,500/hr</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;"><strong>Grassrivers Airstrip (1.5X Week)</strong></td><td style="padding:0.7rem;">$9,750,000</td><td style="padding:0.7rem;">38m</td><td style="padding:0.7rem;">30m</td><td style="padding:0.7rem;">22%</td><td style="padding:0.7rem;"><strong>$3,355,000/hr</strong></td><td style="padding:0.7rem;">$1,677,500/hr</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;"><strong>Ocean Drive Armored Convoy</strong></td><td style="padding:0.7rem;">$9,400,000</td><td style="padding:0.7rem;">35m</td><td style="padding:0.7rem;">30m</td><td style="padding:0.7rem;">24%</td><td style="padding:0.7rem;"><strong>$3,297,000/hr</strong></td><td style="padding:0.7rem;">$1,648,500/hr</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;"><strong>Starlet Superyacht Offshore</strong></td><td style="padding:0.7rem;">$11,800,000</td><td style="padding:0.7rem;">56m</td><td style="padding:0.7rem;">45m</td><td style="padding:0.7rem;">25%</td><td style="padding:0.7rem;"><strong>$2,628,000/hr</strong></td><td style="padding:0.7rem;">$1,314,000/hr</td></tr>
-<tr style="border-bottom:1px solid var(--border-card);"><td style="padding:0.7rem;"><strong>Port Gellhorn Container Heist</strong></td><td style="padding:0.7rem;">$8,200,000</td><td style="padding:0.7rem;">45m</td><td style="padding:0.7rem;">35m</td><td style="padding:0.7rem;">24%</td><td style="padding:0.7rem;"><strong>$2,337,000/hr</strong></td><td style="padding:0.7rem;">$1,168,500/hr</td></tr>
-</table></div>
-<h3 style="color:var(--neon-cyan); margin:1.5rem 0 0.6rem; font-size:1.3rem;">3 High-Impact Optimizations</h3>
-<div style="margin:0.45rem 0 0.45rem 1rem; color:var(--text-main);">&bull; <strong>Drop Hired NPC Drivers for a Human Wheelman:</strong> Hiring an AI getaway driver deducts 8%–12% off the top. Recruiting a human Wheelman on our <strong><a href="/map" style="color:var(--neon-cyan); font-weight:700;">Verified Day-1 LFG Squad Board</a></strong> keeps 100% of that cut inside your squad.</div>
-<div style="margin:0.45rem 0 0.45rem 1rem; color:var(--text-main);">&bull; <strong>Route Through a 6% Vice City Nightclub Shell:</strong> Instant dock fences charge 12%–15% laundering fees. Routing through Boobie Ike's Vice City nightclub fronts drops the fee to 6% (<a href="https://www.gta6heistguide.com/safehouses-laundering" style="color:var(--neon-cyan); font-weight:700;">Safehouses & Laundering Guide</a>).</div>
-<div style="margin:0.45rem 0 0.45rem 1rem; color:var(--text-main);">&bull; <strong>Protect Your Finale Host IP & Clip Runs Offline:</strong> Never lose a $25M finale to a peer-to-peer DDoS drop—use <strong><a href="https://www.exitlag.com/refer/10386953" style="color:var(--neon-cyan); font-weight:700;">ExitLag's Low-Ping Tunnel</a></strong>, stream Vice City on a <strong><a target="_blank" rel="sponsored nofollow noopener" href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" style="color:var(--neon-cyan); font-weight:700;">Samsung 990 PRO Gen4 SSD</a></strong>, and auto-cut your heist VODs into 9:16 shorts offline with <strong><a href="https://getapexlocal.com" style="color:var(--neon-cyan); font-weight:700;">CutFlow Pro & ClipBounty Studio</a></strong> (<a href="https://apexlocallabs.gumroad.com/l/apex-pro-bundle" style="color:var(--neon-cyan); font-weight:700;">Gumroad Store</a>).</div>
-        <div class="multi-option-cta" style="margin-top:1.5rem; padding:0.9rem 1.1rem; background:rgba(0,240,255,0.06); border-left:3px solid var(--neon-cyan); border-radius:8px; font-size:0.85rem; color:var(--text-muted); display:grid; gap:0.45rem;">
-            <div>🛡️ <strong style="color:#fff;">Verified Heist Gear:</strong> <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">ExitLag Multi-Path Gaming Routing</a> &bull; <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" style="color:var(--neon-amber); font-weight:800;">Samsung 990 PRO Gen4 SSD</a> &bull; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--neon-green); font-weight:800;">G2A Keys</a></div>
-            
+
+<main class="g-wrap">
+    <nav class="g-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/gta-6-money-guide/">GTA 6 Money Guide</a><span aria-hidden="true">/</span>
+        <span style="color:#e2e8f0;font-weight:700;">Heist Payouts &amp; Money Guide</span>
+    </nav>
+
+    <header class="g-hero">
+        <div>
+            <span class="g-badge g-b-ind">STORY MODE VERIFIED</span>
+            <span class="g-badge g-b-com">ZERO FABRICATED $/HR MATH</span>
         </div>
-    </article>
+        <h1>GTA 6 Heist Payouts &amp; Story Mode Robbery Money Guide</h1>
+        <p class="g-lead">An evidence-based breakdown of every confirmed Story Mode heist payout, free-roam robbery tier, fence cut, financial cap, and repeatable money-making activity across Leonida—clearly separating confirmed figures from community-reported ranges.</p>
+        <div class="hp-toc" aria-label="Jump to section">
+            <a href="#story-heists">Story Heist Payouts</a>
+            <a href="#robbery-tiers">Robbery Tiers</a>
+            <a href="#cuts-deductions">Crew Cuts &amp; Deductions</a>
+            <a href="#money-activities">Other Money Activities</a>
+            <a href="#no-dollar-per-hour">Why No $/Hour Table</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </header>
+
+    <div class="g-evidence">
+        <strong>Verification &amp; Editorial Update (November 23, 2026):</strong> This guide replaces an earlier pre-launch article that projected speculative "$25M vault / 48-minute cooldown / $/hour" formulas. All figures below reflect launched <em>Grand Theft Auto VI</em> Story Mode (PS5 &amp; Xbox Series X|S), cross-checked against our verified <a href="/gta-6-money-guide/">Money Guide</a>, <a href="/heists/the-cartel-heist">Cartel Heist</a> and <a href="/heists/vcia-takedown">VCIA Takedown</a> walkthroughs, and corroborated launch coverage (<em>PowerPyx, MetaForge, TimeSaver, Eurogamer, GTA Base</em>). Where upper bounds or exploits remain community-reported rather than fixed, they are explicitly labeled.
+    </div>
+
+    <!-- 1. STORY HEIST PAYOUTS -->
+    <section class="g-section" id="story-heists" aria-labelledby="h-story-heists">
+        <h2 id="h-story-heists">1. Confirmed Story Mode Heist Payouts</h2>
+        <p>GTA 6 Story Mode features two major multi-stage Story Heists. Because Story Mode launched <strong>without a mission replay menu</strong>, you should lock a dedicated manual backup in our <a href="/save-planner/">15-Slot Manual Save Planner</a> before launching either finale if you want to test alternate routes or protect a clean run.</p>
+
+        <div class="hp-grid-2">
+            <article class="hp-card">
+                <span class="g-badge g-b-ind" style="width:fit-content;">CHAPTER 3 FINALE · MISSION #71</span>
+                <h3>The Cartel Heist (Sinfrontera National Bank)</h3>
+                <div class="hp-payout-pill">Baseline: $120,000 <span style="font-size:0.76rem;color:#cbd5e1;font-weight:600;">(Reported up to $150,000)</span></div>
+                <p>Led by <strong>Raul Bautista</strong> in <a href="/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates">Vice City</a>, The Cartel Heist requires 5 mandatory setup missions: <em>Security Expert</em>, <em>Heist Planning</em>, <em>Ride or Die</em>, <em>Safe Word</em>, and <em>Hidden Charges</em>.</p>
+                <p><strong>Baseline vs. Max Payout:</strong> Clearing the main vault stacks before the ~11-minute cell-tower blackout timer expires pays a confirmed <strong>$120,000</strong> baseline cut. Several launch walkthroughs report takes up to <strong>$150,000</strong> when hitting secondary vault stacks and bonus objectives cleanly—treat the $120,000 figure as the confirmed baseline.</p>
+                <p><strong>Crew Cut Rule:</strong> Fixed narrative split managed by Raul Bautista—there are no <em>GTA V</em>-style selectable NPC gunman/driver percentage sliders.</p>
+                <p style="margin-top:auto;"><a href="/heists/the-cartel-heist"><strong>Read Full Cartel Heist Walkthrough &rarr;</strong></a></p>
+            </article>
+
+            <article class="hp-card">
+                <span class="g-badge g-b-ind" style="width:fit-content;">CHAPTER 4 · STORY HEIST #2</span>
+                <h3>VCIA Takedown (Vice City International Airport)</h3>
+                <div class="hp-payout-pill">Confirmed Baseline: $250,000</div>
+                <p>The highest single Story Heist reward in GTA 6, targeting the high-security cargo and currency vault at Vice City International Airport after 4 mandatory setups: <em>Close Surveillance</em>, <em>Delivery Method</em>, <em>Team Building</em>, and <em>Heist Plans in Place</em>.</p>
+                <p><strong>Baseline vs. Max Payout:</strong> Executing the stealth approach, terminal timing sequence, and loading-bay bag swap cleanly delivers the full <strong>$250,000</strong> score. Completing Chapter 4's airport arc also progresses you toward <em>That's Where The Money Is...</em>, which unlocks the 8 repeatable Large Bank Vaults.</p>
+                <p><strong>Crew Cut Rule:</strong> Scripted crew operation alongside Kordell and Raul's team; no customizable percentage-cut hiring screen.</p>
+                <p style="margin-top:auto;"><a href="/heists/vcia-takedown"><strong>Read Full VCIA Takedown Walkthrough &rarr;</strong></a></p>
+            </article>
+        </div>
+    </section>
+
+    <!-- 2. FREE-ROAM ROBBERY PAYOUTS -->
+    <section class="g-section" id="robbery-tiers" aria-labelledby="h-robberies">
+        <h2 id="h-robberies">2. Free-Roam Robbery Payouts (Baseline vs. Maximum Supported)</h2>
+        <p>Unlike the two one-time Story Heists, free-roam robberies are tracked in the in-game Map's <strong>Robberies</strong> tab (showing each target's Security Level and estimated Take Value) and scale progressively from Chapter 1 through the Chapter 4 endgame.</p>
+
+        <div class="g-tablewrap">
+            <table class="g-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Robbery Tier</th>
+                        <th scope="col">Locations &amp; Unlock</th>
+                        <th scope="col">Baseline / Typical Take</th>
+                        <th scope="col">Reported Max / Notes</th>
+                        <th scope="col">Walkthrough</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Shops &amp; Stick-Ups</strong></td>
+                        <td>72 locations<br><span style="color:#94a3b8;font-size:0.8rem;">Ch. 1 Start</span></td>
+                        <td>$50 – $500 <span style="color:#94a3b8;font-size:0.8rem;">(register)</span></td>
+                        <td>$400 – $2,000 when cracking randomized back-office safes</td>
+                        <td><a href="/heists/shops-and-stickups">Guide &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pawn Shops</strong></td>
+                        <td>Regional strip malls<br><span style="color:#94a3b8;font-size:0.8rem;">Ch. 2 (<em>Coffee Break</em>)</span></td>
+                        <td>$2,500 – $6,500</td>
+                        <td>Up to ~$12,000 reported when fencing display-case luxury watches</td>
+                        <td><a href="/heists/pawn-shops">Guide &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Armored Trucks &amp; Gang Ops</strong></td>
+                        <td>Roaming + 40 hideouts<br><span style="color:#94a3b8;font-size:0.8rem;">Free-Roam Progressive</span></td>
+                        <td>$8,000 – $30,000</td>
+                        <td>Up to ~$38,000 with fenced contraband; includes 10 fixed gang-op safes</td>
+                        <td><a href="/heists/armored-trucks-gang-ops">Guide &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jewelry Stores</strong></td>
+                        <td>20 stores<br><span style="color:#94a3b8;font-size:0.8rem;">Ch. 3 (<em>Yasmani's Jewelry Jobs</em>)</span></td>
+                        <td>$15,000 – $35,000</td>
+                        <td>Fenced through Yasmani in Little Cuba; stealth avoids early alarm</td>
+                        <td><a href="/heists/jewelry-stores">Guide &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Small Banks &amp; Payday Loans</strong></td>
+                        <td>14 branches<br><span style="color:#94a3b8;font-size:0.8rem;">Ch. 3 (<em>Credit Check</em>)</span></td>
+                        <td>$5,000 – $45,000</td>
+                        <td>Site guide notes up to $55,000 with safe + Dye Pack Jammer</td>
+                        <td><a href="/heists/small-banks-payday-loans">Guide &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Large Bank Vaults</strong></td>
+                        <td>8 major vaults<br><span style="color:#94a3b8;font-size:0.8rem;">End Ch. 4 (<em>That's Where The Money Is...</em>)</span></td>
+                        <td><strong>$65,000 – ~$205,000</strong></td>
+                        <td>Highest repeatable Story Mode payout; requires Dye Pack Jammer &amp; CCTV wipe</td>
+                        <td><a href="/heists/large-bank-vaults">Guide &rarr;</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:0.86rem; color:#94a3b8; margin-top:0.65rem;">Need to plan vault loadouts or model custom split scenarios? Open our <a href="/heist-planner">Squad Heist Planner</a> or <a href="/heist-payout-calculator">Heist Payout Calculator</a>, and keep the <a href="/gta-6-money-guide/">GTA 6 Money Guide</a> open for the full 12-operation checklist.</p>
+    </section>
+
+    <!-- 3. CREW CUTS, DEDUCTIONS & MISSION FINANCIAL RULES -->
+    <section class="g-section" id="cuts-deductions" aria-labelledby="h-cuts">
+        <h2 id="h-cuts">3. Crew Cuts, Fence Deductions &amp; Mission-Specific Financial Rules</h2>
+        <p>Maximizing your net cash in GTA 6 depends less on crew-hire spreadsheets and more on avoiding five verified Story Mode deductions and lockouts:</p>
+
+        <ul>
+            <li><strong>No Selectable NPC Heist Crew Cuts:</strong> Unlike <em>GTA V</em>, you do not hire 5%–15% gunmen, drivers, or hackers before Story Heists. Both <em>The Cartel Heist</em> and <em>VCIA Takedown</em> use scripted narrative crews with fixed reward structures.</li>
+            <li><strong>Fence Cuts &amp; Regional Buyers:</strong> Stolen jewelry, watches, and contraband must be converted to cash through specific contacts rather than sold at regular stores:
+                <ul>
+                    <li><strong>Yasmani (Little Cuba, Vice City — Ch. 3):</strong> Primary jewelry and marked-bill fence (our site guide notes a 5% cut on jewelry fence turn-ins; marked-bill/jewelry batches commonly return $10,000–$25,000).</li>
+                    <li><strong>Dunk (Tanglewood Lane, <a href="/port-gellhorn">Port Gellhorn</a> — Ch. 2):</strong> Unlocks after <em>Slam Dunk</em>; buys stolen goods and mid-tier contraband.</li>
+                    <li><strong>Donnie's Trailer (Key Lento — Ch. 1) &amp; Tyrone (Vice City):</strong> Early and mid-game stolen-goods fences listed in our <a href="/properties">Properties &amp; Fences Database</a>.</li>
+                </ul>
+            </li>
+            <li><strong>Dye Pack Jammer (Mandatory for Banks):</strong> Unlocked during Chapter 3's <em>Credit Check</em>. Always equip the Dye Pack Jammer before robbing any of the 14 Small Banks or 8 Large Bank Vaults to prevent dye-pack value loss on stolen cash stacks.</li>
+            <li><strong>$20,000 Free-Roam Pocket Cash Cap:</strong> Jason and Lucia cannot hold more than <strong>$20,000</strong> in pocket cash during free roam. Always deposit earnings at physical ATMs or BuckMe terminals right after a robbery or heist payout.</li>
+            <li><strong>Chapter 1 Lockout &amp; Chapter 2 Cash Milestone:</strong> During Chapter 1's <em>Buck Me</em> (Fleeca Bank, Key Lento), install the BuckMe app and transfer cash into <strong>Family Savings</strong> ($5,000 Ch. 1 goal)—Family Savings is protected against Wasted/Busted losses and carries past Chapter 1's lockout (<em>Tourist Trap</em> / <em>Just Like Paradise</em>), whereas unspent liquid pocket cash is lost. In Chapter 2, bank <strong>$15,000</strong> before launching the finale, <em>Checking Out</em>.</li>
+        </ul>
+    </section>
+
+    <!-- 4. OTHER VERIFIED MONEY-MAKING ACTIVITIES -->
+    <section class="g-section" id="money-activities" aria-labelledby="h-activities">
+        <h2 id="h-activities">4. Verified Money-Making Activities Beyond Bank Vaults</h2>
+        <p>Between major robbery unlocks, four corroborated Story Mode activities generate reliable cash with lower police escalation:</p>
+        <div class="hp-grid-2">
+            <div class="hp-card">
+                <h3>Randy's Wish List (Ch. 3 — Vice City / Balsero)</h3>
+                <div class="hp-payout-pill">$30,000 – $35,000 / Car</div>
+                <p>Unlocks in Chapter 3 after <em>Steal a Zorrusso for Randy</em>. Delivering all 16 high-end vehicles (including the Pegassi Infernus, Piccia Furia, Bravado Banshee, and Declasse Mamba GT) pays $30k–$35k per vehicle and unlocks the Advanced Tracker Immobilizer + <em>Supply &amp; Demand</em> trophy. <a href="/gta-6-vehicles-guide/">View Vehicle Guide &rarr;</a></p>
+            </div>
+            <div class="hp-card">
+                <h3>Moses Untracked Car Boosting (Ch. 2 — Port Gellhorn)</h3>
+                <div class="hp-payout-pill">$1,000 – $2,000 / Car</div>
+                <p>Unlocks during Chapter 2's <em>Moses</em> mission at Watkins Auto Parts in <a href="/port-gellhorn">Port Gellhorn</a>. Scan parked cars with the WAiNK app to find untracked models and deliver them to Moses with zero police heat.</p>
+            </div>
+            <div class="hp-card">
+                <h3>Kenton's Underwater Salvage (Ch. 1 — Leonida Keys)</h3>
+                <div class="hp-payout-pill">~$1,400 / Shipwreck Dive</div>
+                <p>Unlocks after Chapter 1's <em>Island Dreams</em> with Scuba Gear and the Metal Detector. Covers 33 underwater discoveries and 41 named treasures across 7 sets with zero wanted-level risk. <a href="/gta-6-collectibles/">View Collectibles Guide &rarr;</a></p>
+            </div>
+            <div class="hp-card">
+                <h3>Fixed Gang-Op Safes &amp; Meteorites</h3>
+                <div class="hp-payout-pill">17 Confirmed Fixed Codes</div>
+                <p>Clear the 10 fixed gang-operation safes—including Port Gellhorn's <code>0300</code>, <code>6823</code>, and <code>6969</code> and Grassrivers' <code>6769</code>—plus sell night-glowing Meteorites found around Mount Kalaga at pawn shops. <a href="/guides/gta-6-safe-codes">View Safe Codes Database &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WHY NO $/HR TABLE + UNVERIFIED SEPARATION -->
+    <section class="g-section" id="no-dollar-per-hour" aria-labelledby="h-no-dph">
+        <h2 id="h-no-dph">5. Why We Do Not Publish Fabricated "$/Hour" Heist Tables</h2>
+        <div class="hp-callout is-cyan">
+            <strong>Evidence-First Policy:</strong> You will not find a "True Net $/Hour" leaderboard on this page. Here is why:
+            <ul style="margin:0.45rem 0 0; padding-left:1.2rem;">
+                <li><strong>Story Heists Are Not Repeatable on Cooldowns:</strong> GTA 6 launched without a mission replay menu, so <em>The Cartel Heist</em> and <em>VCIA Takedown</em> are one-time story payouts, not hourly farm loops.</li>
+                <li><strong>GTA 6 Online Has No Official Release Date:</strong> Pre-launch formulas using 48-minute Online cooldowns, 1.5x weekly event bonuses, and 4-player lobby splits do not apply to Story Mode.</li>
+                <li><strong>Free-Roam Robbery Times Vary Widely:</strong> Completion times for Large Bank Vaults, Jewelry Stores, and Armored Trucks depend heavily on travel distance, wanted-level evasion, and fence routing—without verified, standardized respawn timers, inventing exact $/hour numbers would be misleading.</li>
+            </ul>
+        </div>
+
+        <div class="hp-callout">
+            <strong>Community-Reported / Unverified Payouts &amp; Exploits (Keep Separate):</strong>
+            <ul style="margin:0.45rem 0 0; padding-left:1.2rem;">
+                <li><strong>Apollo Aggregates Red Barn Save-Reload Loop (Exploit):</strong> Widely circulated community glitch east of Hamlet involving contraband bags and manual save reloading (reported between ~$8k–$11k per quick loop and up to ~$55k for a full 4-bag trunk fenced via Brian's Lockup). This is an <strong>unpatched exploit with high patch risk</strong>, not a standard game mechanic—check live status on our <a href="/gta-6-glitches/">Glitches Tracker</a>.</li>
+                <li><strong>Exotic Animals Front (Key Lento) Parrot Stash:</strong> Reported by players and outlets as a hidden early cash tip; exact repeatable yield is not yet independently verified in-house.</li>
+                <li><strong>Pre-Launch Speculative Payouts Retired:</strong> Claims of a "$25,000,000 Cartel Heist," "$14,500,000 Sinfrontera Bank," "$11,800,000 Starlet Superyacht," or "$8,200,000 Port Gellhorn Container Heist" were pre-launch fiction and do not exist in GTA 6 Story Mode.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="g-section" id="faq" aria-labelledby="h-faq">
+        <h2 id="h-faq">GTA 6 Heist Payouts Frequently Asked Questions</h2>
+        <div class="hp-faq-item">
+            <h3>How much does The Cartel Heist pay in GTA 6?</h3>
+            <p>The Cartel Heist (Chapter 3 finale at Sinfrontera National Bank) has a confirmed baseline reward of <strong>$120,000</strong>. Some launch walkthroughs report up to <strong>$150,000</strong> when securing secondary vault stacks and bonus objectives cleanly.</p>
+        </div>
+        <div class="hp-faq-item">
+            <h3>How much does VCIA Takedown pay in GTA 6?</h3>
+            <p>VCIA Takedown (Chapter 4 Story Heist #2 at Vice City International Airport) pays a confirmed baseline reward of <strong>$250,000</strong>, making it the largest single Story Heist payout in the campaign.</p>
+        </div>
+        <div class="hp-faq-item">
+            <h3>What is the best repeatable money-making method in Story Mode?</h3>
+            <p>In the endgame (after Chapter 4's <em>That's Where The Money Is...</em>), the <strong>8 Large Bank Vaults</strong> pay the highest legitimate repeatable take at <strong>$65,000 to ~$205,000</strong> per vault. Earlier in the campaign, combine <strong>Randy's Wish List</strong> ($30k–$35k/car), <strong>Small Banks</strong> ($5k–$45k), <strong>Jewelry Stores</strong> ($15k–$35k), and <strong>Moses car drops</strong> ($1k–$2k).</p>
+        </div>
+        <div class="hp-faq-item">
+            <h3>Can you replay Story Heists in GTA 6 to farm cash?</h3>
+            <p>No. GTA 6 launched without a mission replay menu. Use our <a href="/save-planner/">15-Slot Manual Save Planner</a> to keep a backup save before launching <em>The Cartel Heist</em> or <em>VCIA Takedown</em> if you want to retry a run.</p>
+        </div>
+        <div class="hp-faq-item">
+            <h3>Why did I lose money after Chapter 1 or hit a $20,000 cash limit?</h3>
+            <p>Free-roam pocket cash caps at <strong>$20,000</strong>—deposit excess cash at physical ATMs or BuckMe terminals. Additionally, unspent liquid pocket cash is lost at the end of Chapter 1, so move funds into <strong>BuckMe Family Savings</strong> during <em>Buck Me</em> or buy permanent gear before finishing Chapter 1.</p>
+        </div>
+    </section>
+
+    <!-- RELATED GUIDES -->
+    <section class="g-section" aria-labelledby="h-related">
+        <h2 id="h-related">Connected Heist, Money &amp; Map Guides</h2>
+        <ul>
+            <li><a href="/gta-6-money-guide/">GTA 6 Money Guide Hub</a> — Interactive 12-operation early-cash checklist, robbery cards, and ATM banking tips.</li>
+            <li><a href="/heist-planner">Squad Heist Planner</a> &amp; <a href="/heist-payout-calculator">Heist Payout Calculator</a> — Interactive cut-split and approach planning tools.</li>
+            <li><a href="/heists/the-cartel-heist">The Cartel Heist Walkthrough ($120,000)</a> — All 5 Raul Bautista setups and 10-step Sinfrontera Bank guide.</li>
+            <li><a href="/heists/vcia-takedown">VCIA Takedown Walkthrough ($250,000)</a> — All 4 airport setups and stealth vs. loud tarmac extraction.</li>
+            <li><a href="/heists/large-bank-vaults">8 Large Bank Vaults Guide (Up to ~$205,000)</a> — Endgame repeatable vault locations and Dye Pack Jammer tactics.</li>
+            <li><a href="/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates">All 6 Confirmed Leonida Regions Guide</a> — Regional geography, counties, landmarks, and verified map pins.</li>
+            <li><a href="/port-gellhorn">Port Gellhorn District Guide</a> — Chapter 2 fences (Moses &amp; Dunk), fixed safe codes (<code>0300</code>, <code>6823</code>, <code>6969</code>), and local robberies.</li>
+            <li><a href="/map">Interactive Leonida Map</a> — Locate banks, jewelry stores, fences, gun stores, and gang operations across all 6 regions.</li>
+            <li><a href="/missions/">Mission Walkthrough Hub</a> — Track chapter unlocks, missables, and robbery prerequisites.</li>
+            <li><a href="/guides/gta-6-safe-codes">Complete Safe Codes Database</a> — All 17 confirmed fixed story, gang-op, and locked-door combinations.</li>
+        </ul>
+    </section>
 </main>
+
 <footer>
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
                 <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
                 <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
-                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                    Verified tactical guides, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
@@ -178,22 +522,23 @@ True_Net_Per_Hour = Player_Net_Take / ((Setup_Minutes + Finale_Minutes + Cooldow
                 <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
                     <li><a href="/map" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/port-gellhorn">⚓ Port Gellhorn Guide</a></li>
                     <li><a href="/properties">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals">🐊 Animals Compendium (170+)</a></li>
+                    <li><a href="/animals">🐊 Animals Compendium</a></li>
                     <li><a href="/gta-6-money-guide/">💰 Cash Guide &amp; Safe Codes</a></li>
-                    <li><a href="/live-intel">📡 Live Launch Intel</a></li>
+                    <li><a href="/guides/gta-6-safe-codes">🔐 Safe Codes Database</a></li>
                 </ul>
             </div>
             <div>
                 <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
                 <ul class="footer-col-links">
-                    <li><a href="/weapons">⚔️ Weapons &amp; Heist Loadouts</a></li>
+                    <li><a href="/weapons">⚔️ Weapons &amp; Tactical Gear</a></li>
                     <li><a href="/vehicles">🏎️ Vehicles &amp; Trunk Specs</a></li>
                     <li><a href="/weapons-bonuses">🔫 24 Ammu-Nation Stores</a></li>
                     <li><a href="/secrets">🥚 Secrets &amp; Easter Eggs</a></li>
                 </ul>
             </div>
-                        <div>
+            <div>
                 <span class="footer-col-title" style="color:#a855f7;">📋 Site &amp; Legal</span>
                 <ul class="footer-col-links">
                     <li><a href="/about">About GTA6HeistGuide</a></li>
@@ -206,34 +551,14 @@ True_Net_Per_Hour = Player_Net_Take / ((Setup_Minutes + Finale_Minutes + Cooldow
             </div>
         </div>
 
-        <div class="footer-secondary-strip">
-            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
-                <a href="/map" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
-                <a href="/properties" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
-                <a href="/animals" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
-                <a href="/cheats" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
-                <a href="/radio" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
-                <a href="/drops" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
-                <a href="/about" style="color:#94a3b8; text-decoration:none;">About</a>
-                <a href="/contact" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                <a href="/privacy-policy" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                <a href="/terms" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
-            </div>
-            <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
-            </div>
-        </div>
-
         <div class="footer-disclaimer">
             <p style="margin:0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate I earn from qualifying purchases. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
-
-<script src="/js/affiliates.js?v=20261122_v23"></script>
-<script src="/site-config.js"></script>
-<script src="/assets/main.js" defer></script>
+<script src="/site-config.js" defer></script>
+<script src="/assets/main.js?v=20261123_v24" defer></script>
 </body>
 </html>
