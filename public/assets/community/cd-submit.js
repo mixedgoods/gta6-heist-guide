@@ -11,6 +11,36 @@
   var d = form.elements.discovered_on;
   if (d) d.max = new Date().toISOString().slice(0, 10);
 
+  // Allowlisted query-parameter prefill (?category=...&region=...) — frontend convenience only.
+  // Values are strictly validated against the existing <select> option allowlists; invalid values are ignored.
+  (function applyAllowlistedPrefill() {
+    if (typeof URLSearchParams === 'undefined') return;
+    var ALLOWED_CATEGORIES = new Set([
+      'hidden_location', 'easter_egg', 'collectible', 'rare_vehicle', 'wildlife',
+      'weapons_equipment', 'mission_tip', 'side_activity', 'money_method',
+      'map_correction', 'general'
+    ]);
+    var ALLOWED_REGIONS = new Set([
+      'Vice City', 'Vice Beach', 'Grassrivers', 'Leonida Keys', 'Mt. Kalaga',
+      'Port Gellhorn', 'Lake Leonida', 'Ambrosia', 'Other / not sure'
+    ]);
+    try {
+      var params = new URLSearchParams(window.location.search || '');
+      var cat = (params.get('category') || '').trim();
+      var catEl = form.elements.category;
+      if (cat && ALLOWED_CATEGORIES.has(cat) && catEl) {
+        catEl.value = cat;
+      }
+      var reg = (params.get('region') || '').trim();
+      var regEl = form.elements.region;
+      if (reg && ALLOWED_REGIONS.has(reg) && regEl) {
+        regEl.value = reg;
+        var moreEl = document.getElementById('cdMore');
+        if (moreEl) moreEl.open = true;
+      }
+    } catch (e) { /* ignore malformed query strings */ }
+  })();
+
   function clearErrors() {
     errBox.style.display = 'none';
     errBox.textContent = '';
