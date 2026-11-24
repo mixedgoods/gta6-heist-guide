@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 Community Discoveries | GTA6HeistGuide</title>
+    <meta name="description" content="Reviewed community-reported GTA VI discoveries with clear evidence labels.">
+    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
+    <style>
+      .disc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0 2rem;
+      }
+      .disc-card {
+        background: linear-gradient(155deg, rgba(16, 18, 34, 0.96), rgba(9, 12, 24, 0.98));
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 1.15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .disc-card:hover {
+        border-color: var(--neon-cyan);
+        transform: translateY(-2px);
+      }
+      .disc-meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-bottom: 0.55rem;
+      }
+      .disc-filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.15rem;
+        background: rgba(12, 16, 30, 0.94);
+        border: 1px solid rgba(0, 240, 255, 0.25);
+        border-radius: 12px;
+        padding: 0.95rem 1rem;
+      }
+      .disc-pill {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: #cbd5e1;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .disc-pill.active {
+        background: rgba(0, 240, 255, 0.18);
+        border-color: var(--neon-cyan);
+        color: #fff;
+      }
+    </style>
+</head>
+<body>
+<div class="countdown-strip" id="siteTopStrip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: No official release date announced</span>
+            </span>
+        </div>
+    </div>
+</div>
+<nav class="navbar" id="siteNavbar">
+    <div class="nav-container">
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
+        <ul class="nav-links">
+            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                        <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                        <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                        <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                        <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                        <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                        <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                        <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
+                    <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
+                    <a href="/map.html" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
+                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
+                </div>
+            </li>
+            <li class="nav-dropdown nav-dropdown-right">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
+                    <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
+                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio Stations</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container" style="max-width:1140px; margin:0 auto; padding:1.15rem 1rem 3.5rem;">
+  <nav aria-label="Breadcrumb" style="font-size:0.78rem; color:#94a3b8; margin-bottom:0.85rem;">
+    <a href="/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Home</a> /
+    <a href="/gta-6-discoveries/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">New Discoveries</a> /
+    <span style="color:#e2e8f0; font-weight:700;">Community Discoveries</span>
+  </nav>
+  <header class="tool-box pink-glow" style="margin-bottom:1.15rem;">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; align-items:flex-start;">
+      <div style="flex:1 1 560px;">
+        <h1 style="color:#fff; font-size:clamp(1.5rem,3vw,2.2rem); margin:0 0 .5rem;">Community <span style="color:var(--neon-pink);">Discoveries</span></h1>
+        <p style="color:#94a3b8; font-size:.92rem; line-height:1.55; margin:0;">
+          Reports from GTA VI players, reviewed by us before publication. Every entry shows its evidence level.
+          <strong>Community Reported</strong> means accepted for publication but <strong>not independently verified by GTA6HeistGuide</strong>.
+          Community entries never count toward the 100% completion tracker.
+        </p>
+      </div>
+      <a href="/community-discoveries/submit/" class="btn btn-primary" style="padding:.6rem 1.15rem; font-size:.84rem;">Submit a Discovery &rarr;</a>
+    </div>
+  </header>
+
+  <section aria-label="Filter community discoveries">
+    <div class="disc-filter-bar">
+      <input type="search" id="cdSearch" class="form-input" placeholder="Search community discoveries…" aria-label="Search" maxlength="80" style="flex:1 1 240px; padding:.5rem .8rem; font-size:.84rem;">
+      <select id="cdCat" class="form-select" aria-label="Category">
+        <option value="">All categories</option>
+        <option value="hidden_location">Hidden locations</option><option value="easter_egg">Easter eggs</option>
+        <option value="collectible">Collectibles</option><option value="rare_vehicle">Rare vehicles</option>
+        <option value="wildlife">Wildlife sightings</option><option value="weapons_equipment">Weapons and equipment</option>
+        <option value="mission_tip">Mission tips</option><option value="side_activity">Side activities</option>
+        <option value="money_method">Money-making methods</option><option value="map_correction">Map corrections</option>
+        <option value="general">General gameplay</option>
+      </select>
+      <select id="cdReg" class="form-select" aria-label="Region">
+        <option value="">All regions</option>
+        <option>Vice City</option><option>Vice Beach</option><option>Grassrivers</option><option>Leonida Keys</option>
+        <option>Mt. Kalaga</option><option>Port Gellhorn</option><option>Lake Leonida</option><option>Ambrosia</option><option>Other / not sure</option>
+      </select>
+      <select id="cdStatus" class="form-select" aria-label="Evidence status">
+        <option value="">All evidence levels</option>
+        <option value="COMMUNITY_REPORTED">Community Reported</option>
+        <option value="CORROBORATED">Corroborated</option>
+        <option value="INDEPENDENTLY_VERIFIED">Independently Verified</option>
+      </select>
+      <select id="cdSort" class="form-select" aria-label="Sort">
+        <option value="newest">Newest discoveries</option><option value="updated">Recently updated</option>
+      </select>
+      <span id="cdCount" style="font-family:var(--font-mono); font-size:.76rem; color:var(--neon-cyan); font-weight:800;">Loading…</span>
+    </div>
+    <div id="cdEmpty" style="display:none; text-align:center; padding:1.75rem; color:#94a3b8;"></div>
+    <div class="disc-grid" id="cdGrid"></div>
+  </section>
+
+  <section class="tool-box" style="margin-top:1.5rem;">
+    <h2 style="color:#fff; font-size:1.1rem; margin:0 0 .4rem;">How evidence levels work</h2>
+    <ul style="color:#cbd5e1; font-size:.84rem; line-height:1.6; margin:0; padding-left:1.2rem;">
+      <li><strong>Community Reported</strong> — accepted for publication; not independently corroborated or verified.</li>
+      <li><strong>Corroborated</strong> — multiple genuinely independent observations or credible evidence. Several sites repeating one original find do not count.</li>
+      <li><strong>Independently Verified</strong> — reproduced by an authorized GTA6HeistGuide reviewer.</li>
+    </ul>
+  </section>
+</main>
+<style>
+  .cd-title{color:#fff; font-size:1.08rem; margin:0 0 .4rem; line-height:1.3;}
+  .cd-text{color:#cbd5e1; font-size:.85rem; line-height:1.5; margin:0 0 .6rem;}
+  .cd-how{color:#e2e8f0; font-size:.82rem; line-height:1.5; margin:0 0 .6rem; white-space:pre-line;}
+  .cd-meta{font-family:var(--font-mono); font-size:.7rem; color:#94a3b8;}
+  .cd-notice{font-size:.75rem; color:var(--neon-yellow); border-left:3px solid var(--neon-yellow); padding-left:.55rem; margin-top:.4rem;}
+  .cd-foot{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem; margin-top:.85rem; padding-top:.65rem; border-top:1px solid rgba(255,255,255,.08);}
+  .cd-links{display:flex; gap:.7rem; flex-wrap:wrap;}
+  .cd-links a{color:var(--neon-cyan); font-size:.78rem; font-weight:800; text-decoration:none;}
+  .disc-filter-bar select{padding:.46rem .75rem; font-size:.8rem; max-width:100%;}
+</style>
+
+
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.</p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/gta-6-tips-and-tricks/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">Tips &amp; Tricks</a>
+                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
+                <div class="footer-secondary-strip">
+            <div style="display:flex; gap:1.15rem; flex-wrap:wrap;">
+                <a href="/" style="color:var(--neon-pink); text-decoration:none; font-weight:700;">Heists</a>
+                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Map</a>
+                <a href="/gta-6-money-guide/" style="color:var(--neon-green); text-decoration:none; font-weight:700;">Money</a>
+                <a href="/gta-6-tips-and-tricks/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">Tips &amp; Tricks</a>
+                <a href="/gta-6-tools/" style="color:#38bdf8; text-decoration:none; font-weight:700;">Tools</a>
+                <a href="/gta-6-database/" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">Database</a>
+                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
+                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p style="margin:0;"><strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary and interactive utility portal. Grand Theft Auto, GTA VI, and Rockstar Games are registered trademarks of Take-Two Interactive Software, Inc. As an Amazon Associate I earn from qualifying purchases. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com.</p>
+        </div>
+    </div>
+</footer>
+<script src="/assets/js/gta6-progress-store.js"></script>
+<script src="/js/affiliates.js?v=20261122_v23"></script>
+<script src="/site-config.js"></script>
+<script src="/assets/main.js" defer></script>
+<script src="/assets/community/cd-list.js"></script>
+</body>
+</html>

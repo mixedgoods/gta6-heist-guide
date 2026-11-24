@@ -29,3 +29,9 @@
 /sw.js
   ! Cache-Control
   Cache-Control: no-cache, no-store, must-revalidate
+
+/cd-admin/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/community-discoveries/submit/*
+  X-Robots-Tag: noindex, nofollow
