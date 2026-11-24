@@ -22,25 +22,26 @@
 | Phase 14 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 15 Live Published Pages (Added 2026-11-24) | 34 |
 | Phase 16 Live Published Pages (Added 2026-11-24) | 6 |
-| **Current Live Canonical Indexable Total (Post-Phase 16)** | **400** |
+| Phase 17 Live Published Pages (Added 2026-11-24) | 25 |
+| **Current Live Canonical Indexable Total (Post-Phase 17)** | **425** |
 | Planned — Evidence Ready (Core 500-Page Target Remaining) | 0 |
 | Consolidated — Duplicate Intent (Merged into Existing Guide) | 1 |
-| Planned — Awaiting Additional In-Game / Source Verification | 102 |
+| Planned — Awaiting Additional In-Game / Source Verification | 77 |
 | Planned — Future Post-Launch Expansion (GTA 6 Online) | 1 |
 
-## Category Breakdown (Reconciled Post-Phase 16)
+## Category Breakdown (Reconciled Post-Phase 17)
 
 | # | Category | Total | Live Published | Core Evidence-Ready | Reserve (504→500) | Needs Verification | Future Online |
 |---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Main Story Missions | 12 | 10 | 0 | 0 | 2 | 0 |
-| 2 | Individual Mission Walkthroughs | 91 | 40 | 0 | 0 | 51 | 0 |
-| 3 | Side Missions and Stranger Encounters | 24 | 12 | 0 | 1 (Dup) | 11 | 0 |
+| 1 | Main Story Missions | 12 | 11 | 0 | 0 | 1 | 0 |
+| 2 | Individual Mission Walkthroughs | 91 | 54 | 0 | 0 | 37 | 0 |
+| 3 | Side Missions and Stranger Encounters | 24 | 18 | 0 | 1 (Dup) | 5 | 0 |
 | 4 | Heists and Robberies | 16 | 15 | 0 | 0 | 1 | 0 |
 | 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 14 | 0 | 0 | 0 | 0 |
 | 6 | Leonida Regions and Districts | 22 | 22 | 0 | 0 | 0 | 0 |
 | 7 | Landmarks and Locations | 30 | 30 | 0 | 0 | 0 | 0 |
-| 8 | Collectibles and Completion Guides | 20 | 12 | 0 | 0 | 8 | 0 |
-| 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 19 | 0 | 0 | 3 | 0 |
+| 8 | Collectibles and Completion Guides | 20 | 14 | 0 | 0 | 6 | 0 |
+| 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 21 | 0 | 0 | 1 | 0 |
 | 10 | Weapons and Unique Weapon Variants | 30 | 30 | 0 | 0 | 0 | 0 |
 | 11 | Vehicles and Vehicle Locations | 40 | 40 | 0 | 0 | 0 | 0 |
 | 12 | Animals and Wildlife | 55 | 30 | 0 | 0 | 25 | 0 |
@@ -49,7 +50,7 @@
 | 15 | Police, Wanted Levels and Escape Mechanics | 16 | 16 | 0 | 0 | 0 | 0 |
 | 16 | Money-Making Methods | 18 | 16 | 0 | 0 | 1 | 1 |
 | 17 | Activities, Exploration and Game Mechanics | 48 | 48 | 0 | 0 | 0 | 0 |
-| — | **TOTAL** | **504** | **400** | **0** | **1 (Dup)** | **102** | **1** |
+| — | **TOTAL** | **504** | **425** | **0** | **1 (Dup)** | **77** | **1** |
 
 ## Editorial & Verification Policy
 
