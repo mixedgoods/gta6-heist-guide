@@ -81,6 +81,7 @@ export async function onRequestPost(context) {
       break;
     }
     case "reject": {
+      if (sub.evidence_status === "REJECTED") return fail("Submission is already rejected.", 409);
       if (!note) return fail("A reason is required to reject.");
       setStatus("REJECTED", "reject");
       break;

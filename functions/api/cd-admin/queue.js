@@ -13,6 +13,8 @@ export async function onRequestGet({ request, env }) {
   let where = "1=1";
   const args = [];
   if (status === "NEW") where = "s.reviewer_status = 'new'";
+  else if (status === "PENDING") where = "s.evidence_status IN ('PENDING_REVIEW','NEEDS_MORE_EVIDENCE')";
+  else if (status === "APPROVED") where = "s.evidence_status IN ('COMMUNITY_REPORTED','CORROBORATED','INDEPENDENTLY_VERIFIED')";
   else if (status === "PUBLISHED") where = "p.is_published = 1";
   else if (status !== "ALL") {
     if (!Object.hasOwn(STATUSES, status)) return json({ ok: false, error: "Unknown status." }, 400);
@@ -27,5 +29,7 @@ export async function onRequestGet({ request, env }) {
   ).bind(...args, limit, offset).all();
   const byStatus = Object.fromEntries(Object.keys(STATUSES).map((k) => [k, 0]));
   for (const c of counts || []) byStatus[c.s] = c.n;
-  return json({ ok: true, now: nowIso(), counts: { ...byStatus, NEW: newCount }, items: results || [] });
+  const pendingCount = (byStatus.PENDING_REVIEW || 0) + (byStatus.NEEDS_MORE_EVIDENCE || 0);
+  const approvedCount = (byStatus.COMMUNITY_REPORTED || 0) + (byStatus.CORROBORATED || 0) + (byStatus.INDEPENDENTLY_VERIFIED || 0);
+  return json({ ok: true, now: nowIso(), counts: { ...byStatus, NEW: newCount, PENDING: pendingCount, APPROVED: approvedCount }, items: results || [] });
 }
