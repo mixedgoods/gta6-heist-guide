@@ -18,6 +18,7 @@
     form.querySelectorAll('.invalid').forEach(function (n) { n.classList.remove('invalid'); });
   }
   function showFieldErrors(fields) {
+    var more = document.getElementById('cdMore');
     Object.keys(fields || {}).forEach(function (k) {
       var el = form.elements[k] || form.elements[k === 'coords' ? 'coord_xpct' : k];
       var msg = document.createElement('div');
@@ -25,8 +26,10 @@
       msg.textContent = fields[k];
       if (el && el instanceof Element) {
         el.classList.add('invalid');
+        if (more && more.contains(el)) more.open = true;
         (el.closest('label') || el.parentNode).appendChild(msg);
       } else if (el && el.length && el[0] instanceof Element) {
+        if (more && more.contains(el[0])) more.open = true;
         (el[0].closest('div') || el[0].parentNode).appendChild(msg);
       } else { errBox.textContent += ' ' + fields[k]; errBox.style.display = 'block'; }
     });
@@ -35,20 +38,33 @@
   function val(n) { var e = form.elements[n]; return e ? String(e.value || '').trim() : ''; }
 
   function collect() {
-    var wit = form.querySelector('input[name=witnessed]:checked');
     var urls = val('source_urls').split(/\n+/).map(function (s) { return s.trim(); }).filter(Boolean);
-    var named = form.elements.credit_named.checked;
+    var named = form.elements.credit_named && form.elements.credit_named.checked;
+    var perm = !!(form.elements.permission_ack && form.elements.permission_ack.checked);
     return {
-      title: val('title'), category: val('category'), short_description: val('short_description'),
-      detailed_explanation: val('detailed_explanation'), region: val('region'),
-      location_description: val('location_description'), directions: val('directions'),
-      coord_xpct: val('coord_xpct'), coord_ypct: val('coord_ypct'),
-      platform: val('platform'), game_version: val('game_version'), discovered_on: val('discovered_on'),
-      witnessed: wit ? wit.value : '', evidence_description: val('evidence_description'),
-      sources_text: val('sources_text'), source_urls: urls, screenshot_url: val('screenshot_url'), video_url: val('video_url'),
-      display_name: val('display_name'), credit_pref: named ? 'named' : 'anonymous', contact_email: val('contact_email'),
-      originality_ack: form.elements.originality_ack.checked, license_ack: form.elements.license_ack.checked,
-      image_rights_ack: form.elements.image_rights_ack.checked, website: val('website'),
+      title: val('title'),
+      category: val('category'),
+      description: val('description'),
+      region: val('region') || undefined,
+      location_description: val('location_description') || undefined,
+      directions: val('directions') || undefined,
+      coord_xpct: val('coord_xpct') || undefined,
+      coord_ypct: val('coord_ypct') || undefined,
+      platform: val('platform') || undefined,
+      game_version: val('game_version') || undefined,
+      discovered_on: val('discovered_on') || undefined,
+      witnessed: val('witnessed') || undefined,
+      evidence_description: val('evidence_description') || undefined,
+      sources_text: val('sources_text') || undefined,
+      source_urls: urls.length ? urls : undefined,
+      screenshot_url: val('screenshot_url') || undefined,
+      video_url: val('video_url') || undefined,
+      display_name: val('display_name') || undefined,
+      credit_pref: named ? 'named' : 'anonymous',
+      contact_email: val('contact_email') || undefined,
+      permission_ack: perm,
+      image_rights_ack: !!(form.elements.image_rights_ack && form.elements.image_rights_ack.checked),
+      website: val('website'),
       turnstile_token: tsToken || undefined
     };
   }
@@ -58,17 +74,14 @@
     var f = {};
     if (b.title.length < 5) f.title = 'Enter a title (at least 5 characters).';
     if (!b.category) f.category = 'Choose a category.';
-    if (b.short_description.length < 20) f.short_description = 'At least 20 characters.';
-    if (b.detailed_explanation.length < 50) f.detailed_explanation = 'At least 50 characters.';
-    if (!b.region) f.region = 'Choose a region.';
-    if (b.location_description.length < 10) f.location_description = 'At least 10 characters.';
-    if (b.directions.length < 20) f.directions = 'At least 20 characters.';
-    if (!b.platform) f.platform = 'Choose a platform.';
-    if (!b.discovered_on) f.discovered_on = 'Enter the date.';
-    if (!b.witnessed) f.witnessed = 'Please answer this question.';
-    if (b.evidence_description.length < 20) f.evidence_description = 'At least 20 characters.';
-    if (!b.originality_ack) f.originality_ack = 'This confirmation is required.';
-    if (!b.license_ack) f.license_ack = 'This confirmation is required.';
+    if (b.description.length < 20) f.description = 'Describe what you found and where to find it (at least 20 characters).';
+    if (!b.permission_ack) f.permission_ack = 'Please confirm originality and display permission.';
+    if ((b.screenshot_url || b.video_url) && !b.image_rights_ack) {
+      f.image_rights_ack = 'Confirm you captured the linked media or have permission to share it.';
+    }
+    if (b.witnessed === 'no' && !b.sources_text && (!b.source_urls || !b.source_urls.length)) {
+      f.sources_text = 'If you did not witness this yourself, tell us where the information came from.';
+    }
     return f;
   }
 

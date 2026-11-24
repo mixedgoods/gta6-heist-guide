@@ -157,9 +157,42 @@ await t("SUB-01", "Valid submission accepted, returns reference, persisted as PE
   const s = row(env, r.json.ref); eq(s.evidence_status, "PENDING_REVIEW"); eq(s.reviewer_status, "new");
   assert(s.created_at && s.updated_at, "timestamps");
 });
-await t("SUB-02", "Missing required fields rejected server-side (400 + field errors)", async () => {
+await t("SUB-01B", "Minimal 4-field quick submission accepted with no fabricated data and moderatable", async () => {
+  const env = adminEnv();
+  const r = await J(await call(env, "POST", "/api/community-discoveries/submit", {
+    body: {
+      title: "Quick rooftop crate near Vice Beach",
+      category: "hidden_location",
+      description: "Behind the pink motel on Vice Beach, climb the alley ladder to find a hidden crate.",
+      permission_ack: true,
+      turnstile_token: "disposable-test-turnstile-token",
+    },
+    ip: nextIp(),
+  }));
+  eq(r.status, 201);
+  const s = row(env, r.json.ref);
+  eq(s.evidence_status, "PENDING_REVIEW");
+  eq(s.region, ""); eq(s.location_description, ""); eq(s.directions, ""); eq(s.platform, "");
+  eq(s.discovered_on, ""); eq(s.evidence_description, ""); eq(s.witnessed, -1);
+  eq(s.game_version, null); eq(s.sources_text, null); eq(s.coord_xpct, null); eq(s.display_name, null); eq(s.contact_email, null);
+  eq(s.originality_ack, 1); eq(s.license_ack, 1); eq(s.image_rights_ack, 0);
+  const aud = env.DB.sqlite.prepare("SELECT after_json FROM cd_audit WHERE submission_id = ? AND action = 'submission_received'").get(s.id);
+  assert(JSON.parse(aud.after_json).evidence_needs_review === true, "should flag evidence_needs_review");
+  // Public list stays empty while pending
+  eq((await J(await call(env, "GET", "/api/community-discoveries/list"))).json.total, 0);
+  // Moderator can approve draft and then reject without error
+  eq((await act(env, r.json.ref, "approve_report")).status, 200);
+  eq((await act(env, r.json.ref, "reject", { note: "Disposable quick-submit test." })).status, 200);
+  eq(row(env, r.json.ref).evidence_status, "REJECTED");
+  eq((await J(await call(env, "GET", "/api/community-discoveries/list"))).json.total, 0);
+});
+await t("SUB-02", "Missing 4 required fields rejected server-side (400 + field errors); optional fields not required", async () => {
   const env = newEnv(); const r = await J(await call(env, "POST", "/api/community-discoveries/submit", { body: { turnstile_token: "disposable-test-turnstile-token" }, ip: nextIp() }));
-  eq(r.status, 400); for (const k of ["title", "category", "short_description", "detailed_explanation", "region", "location_description", "directions", "platform", "discovered_on", "witnessed", "evidence_description", "originality_ack", "license_ack"]) assert(r.json.fields[k], "missing error for " + k);
+  eq(r.status, 400);
+  for (const k of ["title", "category", "description", "permission_ack"]) assert(r.json.fields[k], "missing error for " + k);
+  for (const opt of ["region", "location_description", "directions", "platform", "discovered_on", "witnessed", "evidence_description", "short_description"]) {
+    assert(!r.json.fields[opt], "optional field should not error: " + opt);
+  }
   eq(env.DB.sqlite.prepare("SELECT COUNT(*) c FROM cd_submissions").get().c, 0);
 });
 await t("SUB-03", "Invalid category / region / platform rejected", async () => {
@@ -173,8 +206,12 @@ await t("SUB-05", "Not personally witnessed requires a source", async () => {
   const env = newEnv(); const r = await submit(env, { witnessed: "no" }); eq(r.status, 400); assert(r.json.fields.sources_text);
   const ok = await submit(env, { witnessed: "no", sources_text: "Seen on a public forum post by user X" }); eq(ok.status, 201);
 });
-await t("SUB-06", "Originality and license declarations required", async () => {
-  const env = newEnv(); const r = await submit(env, { originality_ack: false, license_ack: false }); eq(r.status, 400); assert(r.json.fields.originality_ack && r.json.fields.license_ack);
+await t("SUB-06", "Originality and license permission acknowledgment required", async () => {
+  const env = newEnv();
+  const r = await submit(env, { permission_ack: false, originality_ack: false, license_ack: false });
+  eq(r.status, 400); assert(r.json.fields.permission_ack);
+  const half = await submit(env, { permission_ack: undefined, originality_ack: true, license_ack: false });
+  eq(half.status, 400); assert(half.json.fields.permission_ack);
 });
 await t("SUB-07", "Media links require rights confirmation", async () => {
   const env = newEnv(); const r = await submit(env, { screenshot_url: "https://example.com/a.png" }); eq(r.status, 400); assert(r.json.fields.image_rights_ack);
@@ -523,10 +560,18 @@ await t("MOD-23", "Reviewer notes stay private (not in any public response)", as
 });
 
 group("Repo integrity");
-await t("INT-01", "Production files unchanged except intended edits (git diff of tracked files)", async () => {
+await t("INT-01", "Unrelated production files unchanged (git diff touches only Community Discoveries files)", async () => {
   const { execSync } = await import("node:child_process");
   const out = execSync("git diff --name-only", { cwd: root }).toString().trim().split(/\r?\n/).filter(Boolean).sort();
-  assert(out.join() === ["public/_headers", "public/gta-6-discoveries/index.html"].join(), out.join());
+  const allowed = (p) =>
+    p === "public/_headers" ||
+    p === "public/gta-6-discoveries/index.html" ||
+    /^functions\/(_lib\/cd|api\/community-discoveries\/|api\/cd-admin\/|cd-admin\/)/.test(p) ||
+    /^public\/(community-discoveries\/|cd-admin\/|assets\/community\/)/.test(p) ||
+    /^tests\/(community-discoveries\.test\.mjs|http-smoke\.mjs)$/.test(p) ||
+    /^migrations\/000\d_community_discoveries/.test(p);
+  const bad = out.filter((p) => !allowed(p));
+  assert(bad.length === 0, "unexpected modified files: " + bad.join(", "));
 });
 await t("INT-02", "Migration is additive: only cd_* objects created, no DROP/ALTER/DELETE of existing tables", async () => {
   const sql = fs.readFileSync(path.join(root, "migrations/0001_community_discoveries.sql"), "utf8").replace(/--.*$/gm, "");

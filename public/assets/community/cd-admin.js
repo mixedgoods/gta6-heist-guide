@@ -36,8 +36,8 @@
         var r = el('div', 'row' + (it.ref === curRef ? ' on' : ''));
         r.tabIndex = 0;
         r.appendChild(el('div', null, it.title));
-        r.appendChild(el('small', null, it.ref + ' â€¢ ' + it.category + ' â€¢ ' + it.region));
-        r.appendChild(el('small', null, it.evidence_status + ' â€¢ ' + it.reviewer_status + (it.is_published ? ' â€¢ PUBLISHED' : '') + (it.witnessed ? '' : ' â€¢ second-hand')));
+        r.appendChild(el('small', null, it.ref + ' • ' + it.category + ' • ' + (it.region || 'Region not specified')));
+        r.appendChild(el('small', null, it.evidence_status + ' • ' + it.reviewer_status + (it.is_published ? ' • PUBLISHED' : '') + (it.witnessed === 1 ? '' : (it.witnessed === 0 ? ' • second-hand' : ' • evidence unconfirmed'))));
         if (it.warnings) r.appendChild(el('small', 'warn', 'âš  ' + it.warnings + ' duplicate/provenance warning(s)'));
         var open = function () { curRef = it.ref; loadDetail(it.ref); };
         r.onclick = open; r.onkeydown = function (e) { if (e.key === 'Enter') open(); };
@@ -80,9 +80,13 @@
         ['Published', p ? (p.is_published ? 'YES (' + p.published_at + ')' : 'no (draft)') : 'no'], ['On map', p && p.map_approved ? 'YES' : 'no']]);
 
       var o = sec(box, 'Original submission (immutable)');
-      kv(o, [['Category', s.category], ['Region', s.region], ['Short', s.short_description], ['Detail', s.detailed_explanation],
+      var witLabel = s.witnessed === 1 ? 'Yes' : (s.witnessed === 0 ? 'NO (second-hand)' : 'Not specified — review evidence');
+      if (s.witnessed !== 1 && !s.sources_text && !d.sources.length && !d.evidence.length) {
+        o.appendChild(el('div', 'warn', '⚠ No firsthand observation or external source provided — review evidence carefully before approval.'));
+      }
+      kv(o, [['Category', s.category], ['Region', s.region], ['Short', s.short_description], ['Description / Detail', s.detailed_explanation],
         ['Location', s.location_description], ['Directions', s.directions], ['Platform', s.platform], ['Game version', s.game_version],
-        ['Discovered', s.discovered_on], ['Personally witnessed', s.witnessed ? 'Yes' : 'NO (second-hand)'], ['Evidence', s.evidence_description],
+        ['Discovered', s.discovered_on], ['Personally witnessed', witLabel], ['Evidence', s.evidence_description],
         ['Sources text', s.sources_text], ['Coords (x,y)', s.coord_xpct === null ? null : s.coord_xpct + ', ' + s.coord_ypct],
         ['Display name', s.display_name], ['Credit pref', s.credit_pref], ['PRIVATE email', s.contact_email],
         ['Received', s.created_at], ['Rights ack', 'originality=' + s.originality_ack + ' license=' + s.license_ack + ' media=' + s.image_rights_ack]]);

@@ -144,14 +144,13 @@
   </nav>
 
   <header class="tool-box pink-glow" style="margin-bottom:1.15rem;">
-    <h1 style="color:#fff; font-size:clamp(1.5rem,3vw,2.1rem); margin:0 0 .5rem;">Submit a <span style="color:var(--neon-pink);">Community Discovery</span></h1>
-    <p style="color:#cbd5e1; font-size:.92rem; line-height:1.55; margin:0 0 .5rem;">
-      Found something in Leonida? Tell us how to find it. Every submission is <strong>reviewed by a person before anything is published</strong>.
-      Approved entries are labelled with their evidence level, for example <em>Community Reported — Not independently verified by GTA6HeistGuide.</em>
+    <h1 style="color:#fff; font-size:clamp(1.5rem,3vw,2.1rem); margin:0 0 .45rem;">Submit a <span style="color:var(--neon-pink);">Community Discovery</span></h1>
+    <p style="color:#cbd5e1; font-size:.92rem; line-height:1.5; margin:0 0 .4rem;">
+      Found something in Leonida? Share it in under 30 seconds — just four quick fields below.
+      Every submission is <strong>reviewed by a person before publication</strong> and labelled with its evidence level.
     </p>
-    <p style="color:#94a3b8; font-size:.8rem; line-height:1.5; margin:0;">
-      No account needed. We do not ask for passwords, console account details, your real-world location, or anything beyond what is below.
-      Email is optional and is never shown publicly. Submitting does not guarantee publication, attribution or any reward.
+    <p style="color:#94a3b8; font-size:.8rem; line-height:1.45; margin:0;">
+      No account needed. Optional details (region, platform, coordinates, links, credit, private email) are available below if you want to add them.
     </p>
   </header>
 
@@ -164,9 +163,8 @@
     <h2 style="color:var(--neon-green); font-size:1.2rem; margin:0 0 .5rem;">Submission received</h2>
     <p style="color:#e2e8f0; margin:0 0 .5rem;">Your reference number: <code id="cdRef" style="font-size:1.1rem; color:var(--neon-cyan);"></code> — please keep it.</p>
     <ul style="color:#cbd5e1; font-size:.85rem; line-height:1.6; margin:0; padding-left:1.2rem;">
-      <li>Your submission has been received but <strong>has not been approved</strong>.</li>
-      <li>We will review the evidence. We may not be able to publish every submission.</li>
-      <li>Even if approved, a community report is <strong>not</strong> independently verified by GTA6HeistGuide.</li>
+      <li>Your submission has been received and is <strong>pending human review</strong>.</li>
+      <li>Approved entries are labelled with their evidence level (e.g. <em>Community Reported</em> — not automatically verified).</li>
       <li>To ask for removal or a correction, <a href="/contact.html" style="color:var(--neon-cyan);">contact us</a> and quote this reference.</li>
     </ul>
   </div>
@@ -174,8 +172,11 @@
   <form id="cdForm" class="tool-box" novalidate autocomplete="off" style="display:grid; gap:1rem;">
     <div id="cdFormError" role="alert" style="display:none; color:#f87171; font-size:.85rem;"></div>
 
-    <fieldset class="cd-fs"><legend>The discovery</legend>
-      <label>Discovery title *<input class="form-input" name="title" maxlength="120" required></label>
+    <fieldset class="cd-fs"><legend>Quick submission (4 required fields)</legend>
+      <label>Discovery title *
+        <input class="form-input" name="title" maxlength="120" required placeholder="e.g. Hidden rooftop stash behind the Ocean Beach neon hotel">
+      </label>
+
       <label>Category *
         <select class="form-select" name="category" required>
           <option value="">Select a category…</option>
@@ -190,80 +191,131 @@
           <option value="money_method">Money-making methods</option>
           <option value="map_correction">Map corrections</option>
           <option value="general">General gameplay discoveries</option>
-        </select></label>
-      <label>Short description * <small>(20–280 characters)</small><textarea class="form-input" name="short_description" rows="2" maxlength="280" required></textarea></label>
-      <label>Detailed explanation * <small>(50–4000 characters)</small><textarea class="form-input" name="detailed_explanation" rows="6" maxlength="4000" required></textarea></label>
+        </select>
+      </label>
+
+      <label>What did you find, where did you find it, and how can someone else find it? * <small>(20–4,000 characters)</small>
+        <textarea class="form-input" name="description" rows="5" maxlength="4000" required placeholder="Example: On the north side of Vice Beach near the pink motel, climb the alley ladder to the second roof. A hidden weapon case spawns next to the AC unit at night."></textarea>
+      </label>
+
+      <label class="cd-inline"><input type="checkbox" name="permission_ack" required>
+        <span>I confirm this is my own original observation (or material I am authorized to submit). I understand submitting does <strong>not</strong> transfer ownership to GTA6HeistGuide.com — I retain ownership and grant GTA6HeistGuide.com a limited, non-exclusive permission to review, store, and display approved material on this site (with credit only if I choose). I can request removal anytime via the <a href="/contact.html" style="color:var(--neon-cyan);">contact page</a>. *</span>
+      </label>
     </fieldset>
 
-    <fieldset class="cd-fs"><legend>Where to find it</legend>
-      <label>Leonida region / neighborhood *
-        <select class="form-select" name="region" required>
-          <option value="">Select a region…</option>
-          <option>Vice City</option><option>Vice Beach</option><option>Grassrivers</option><option>Leonida Keys</option>
-          <option>Mt. Kalaga</option><option>Port Gellhorn</option><option>Lake Leonida</option><option>Ambrosia</option>
-          <option>Other / not sure</option>
-        </select></label>
-      <label>Location description * <textarea class="form-input" name="location_description" rows="2" maxlength="600" required></textarea></label>
-      <label>Directions for finding it * <textarea class="form-input" name="directions" rows="4" maxlength="2000" required></textarea></label>
-      <div class="cd-row">
-        <label>Map X (0–1, optional)<input class="form-input" name="coord_xpct" inputmode="decimal" placeholder="e.g. 0.712"></label>
-        <label>Map Y (0–1, optional)<input class="form-input" name="coord_ypct" inputmode="decimal" placeholder="e.g. 0.509"></label>
+    <details id="cdMore" class="cd-more">
+      <summary>Add More Details (Optional)</summary>
+      <div class="cd-more-body">
+        <div class="cd-row">
+          <label>Region
+            <select class="form-select" name="region">
+              <option value="">Not specified</option>
+              <option>Vice City</option><option>Vice Beach</option><option>Grassrivers</option><option>Leonida Keys</option>
+              <option>Mt. Kalaga</option><option>Port Gellhorn</option><option>Lake Leonida</option><option>Ambrosia</option>
+              <option>Other / not sure</option>
+            </select>
+          </label>
+          <label>Platform
+            <select class="form-select" name="platform">
+              <option value="">Not specified</option><option value="PS5">PS5</option><option value="XBOX_SERIES">Xbox Series X|S</option>
+            </select>
+          </label>
+          <label>Game version
+            <input class="form-input" name="game_version" maxlength="40" placeholder="e.g. 1.02">
+          </label>
+          <label>Date discovered
+            <input class="form-input" type="date" name="discovered_on">
+          </label>
+        </div>
+
+        <label>Exact location
+          <textarea class="form-input" name="location_description" rows="2" maxlength="600" placeholder="Street, landmark, interior, or nearby POI"></textarea>
+        </label>
+
+        <label>Directions
+          <textarea class="form-input" name="directions" rows="3" maxlength="2000" placeholder="Step-by-step path, time of day, or trigger conditions"></textarea>
+        </label>
+
+        <div class="cd-row">
+          <label>Map X (0–1)
+            <input class="form-input" name="coord_xpct" inputmode="decimal" placeholder="e.g. 0.712">
+          </label>
+          <label>Map Y (0–1)
+            <input class="form-input" name="coord_ypct" inputmode="decimal" placeholder="e.g. 0.509">
+          </label>
+        </div>
+        <small style="color:#94a3b8;">Optional map coordinates use the 0–1 scale from the <a href="/map.html" style="color:var(--neon-cyan);">interactive map</a>.</small>
+
+        <label>Personally witnessed?
+          <select class="form-select" name="witnessed">
+            <option value="">Not specified</option>
+            <option value="yes">Yes, I saw it myself</option>
+            <option value="no">No, I heard or read about it</option>
+          </select>
+        </label>
+
+        <label>Supporting evidence
+          <textarea class="form-input" name="evidence_description" rows="2" maxlength="2000" placeholder="Extra notes on what you saw, tested, or captured"></textarea>
+        </label>
+
+        <label>Relevant sources <small>(required only if you selected "No" above)</small>
+          <textarea class="form-input" name="sources_text" rows="2" maxlength="1000" placeholder="Credit whoever found it first or where you saw it"></textarea>
+        </label>
+
+        <label>Source URLs <small>(one per line, https:// only, max 5)</small>
+          <textarea class="form-input" name="source_urls" rows="2" placeholder="https://..."></textarea>
+        </label>
+
+        <div class="cd-note" id="cdUploadNote">
+          <strong>Screenshots &amp; clips:</strong> direct file upload is disabled. You can paste an external <code>https://</code> screenshot or video link (reviewed privately; never auto-embedded).
+        </div>
+
+        <div class="cd-row">
+          <label>Screenshot URL <small>(https://)</small>
+            <input class="form-input" name="screenshot_url" type="url" maxlength="500" placeholder="https://...">
+          </label>
+          <label>Video URL <small>(https://)</small>
+            <input class="form-input" name="video_url" type="url" maxlength="500" placeholder="https://...">
+          </label>
+        </div>
+
+        <label class="cd-inline"><input type="checkbox" name="image_rights_ack">
+          <span>If I included a screenshot or video link above, I confirm I captured it or have permission to share it. <small>(Required when linking media.)</small></span>
+        </label>
+
+        <div class="cd-row">
+          <label>Public contributor name
+            <input class="form-input" name="display_name" maxlength="30" placeholder="Optional handle (leave blank to stay anonymous)">
+          </label>
+          <label>Private contact email <small>(never shown publicly)</small>
+            <input class="form-input" name="contact_email" type="email" maxlength="120" placeholder="Optional — follow-up only">
+          </label>
+        </div>
+
+        <label class="cd-inline"><input type="checkbox" name="credit_named">
+          <span>Credit me by my public contributor name if published</span>
+        </label>
       </div>
-      <small style="color:#94a3b8;">These use the same 0–1 position scale as the <a href="/map.html" style="color:var(--neon-cyan);">interactive map</a>. Leave blank if unsure.</small>
-    </fieldset>
-
-    <fieldset class="cd-fs"><legend>Your game</legend>
-      <div class="cd-row">
-        <label>Platform *
-          <select class="form-select" name="platform" required>
-            <option value="">Select…</option><option value="PS5">PS5</option><option value="XBOX_SERIES">Xbox Series X|S</option>
-          </select></label>
-        <label>Game version <small>(if known)</small><input class="form-input" name="game_version" maxlength="40"></label>
-        <label>Date discovered *<input class="form-input" type="date" name="discovered_on" required></label>
-      </div>
-      <div>
-        <span style="font-size:.85rem; color:#e2e8f0;">Did you personally witness this? *</span>
-        <label class="cd-inline"><input type="radio" name="witnessed" value="yes"> Yes, I saw it myself</label>
-        <label class="cd-inline"><input type="radio" name="witnessed" value="no"> No, I heard or read about it</label>
-      </div>
-    </fieldset>
-
-    <fieldset class="cd-fs"><legend>Evidence</legend>
-      <label>Supporting evidence * <small>(describe what you saw or captured)</small><textarea class="form-input" name="evidence_description" rows="3" maxlength="2000" required></textarea></label>
-      <label>Relevant sources <small>(where applicable; required if you did not witness it. Say if someone else found it first.)</small><textarea class="form-input" name="sources_text" rows="2" maxlength="1000"></textarea></label>
-      <label>Source links <small>(optional, one per line, https:// only, max 5)</small><textarea class="form-input" name="source_urls" rows="2"></textarea></label>
-      <div class="cd-note" id="cdUploadNote">
-        <strong>Screenshots:</strong> direct file upload is not available yet. Instead, you may add a link to a screenshot or clip you host elsewhere (e.g. a console share link or YouTube).
-        Linked media is only seen by our reviewers and is never embedded on the site automatically.
-      </div>
-      <label>Screenshot link <small>(optional, https://)</small><input class="form-input" name="screenshot_url" type="url" maxlength="500"></label>
-      <label>Video link <small>(optional, https://)</small><input class="form-input" name="video_url" type="url" maxlength="500"></label>
-    </fieldset>
-
-    <fieldset class="cd-fs"><legend>Credit &amp; contact (optional)</legend>
-      <label>Public display name<input class="form-input" name="display_name" maxlength="30" placeholder="Not a real name; leave blank to stay anonymous"></label>
-      <label class="cd-inline"><input type="checkbox" name="credit_named"> Credit me by this name if my submission is published</label>
-      <label>Private contact email <small>(optional; only used if we need follow-up; never shown publicly)</small><input class="form-input" name="contact_email" type="email" maxlength="120"></label>
-    </fieldset>
-
-    <fieldset class="cd-fs"><legend>Declarations</legend>
-      <label class="cd-inline"><input type="checkbox" name="originality_ack"><span>I confirm this is my own original observation, or material I am authorized to submit. *</span></label>
-      <label class="cd-inline"><input type="checkbox" name="image_rights_ack"><span>If I included a screenshot or video link, I captured it or have permission to share it.</span></label>
-      <label class="cd-inline"><input type="checkbox" name="license_ack"><span>I understand that submitting does <strong>not</strong> transfer ownership to GTA6HeistGuide.com. I grant a limited, non-exclusive permission to review, store and display approved material on this site, with attribution according to my choice above. I can ask for removal at any time via the <a href="/contact.html" style="color:var(--neon-cyan);">contact page</a>. *</span></label>
-    </fieldset>
+    </details>
 
     <div style="position:absolute; left:-9999px; height:0; overflow:hidden;" aria-hidden="true">
       <label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
     </div>
     <div id="cdTurnstile"></div>
 
-    <button type="submit" class="btn btn-primary" id="cdSubmit" style="padding:.7rem 1.4rem;">Submit for review</button>
+    <button type="submit" class="btn btn-primary" id="cdSubmit" style="padding:.75rem 1.4rem;">Submit for review</button>
     <small style="color:#64748b;">GTA6HeistGuide.com is an independent fan site, not affiliated with Rockstar Games or Take-Two. See our <a href="/privacy-policy.html" style="color:#94a3b8;">privacy policy</a>.</small>
   </form>
 </main>
 <style>
-  .cd-fs{border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:.9rem 1rem; display:grid; gap:.8rem; margin:0; min-width:0;}
+  .cd-fs{border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:.95rem 1rem; display:grid; gap:.85rem; margin:0; min-width:0;}
   .cd-fs legend{color:var(--neon-cyan); font-weight:800; font-size:.85rem; padding:0 .4rem;}
+  .cd-more{border:1px solid rgba(0,240,255,.22); border-radius:10px; background:rgba(15,23,42,.55); padding:.75rem 1rem;}
+  .cd-more > summary{cursor:pointer; color:var(--neon-cyan); font-weight:800; font-size:.9rem; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:.5rem;}
+  .cd-more > summary::-webkit-details-marker{display:none;}
+  .cd-more > summary::after{content:'+'; font-size:1.15rem; line-height:1; color:var(--neon-pink);}
+  .cd-more[open] > summary::after{content:'−';}
+  .cd-more-body{display:grid; gap:.8rem; margin-top:.85rem; padding-top:.85rem; border-top:1px solid rgba(255,255,255,.08);}
   #cdForm label{display:grid; gap:.3rem; color:#e2e8f0; font-size:.85rem;}
   #cdForm label small{color:#94a3b8; font-weight:400;}
   #cdForm textarea, #cdForm input.form-input, #cdForm select{width:100%; box-sizing:border-box;}

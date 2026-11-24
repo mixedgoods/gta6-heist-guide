@@ -24,36 +24,73 @@ function len(s, min, max, label, errors) {
 export function validateSubmission(b, today = new Date()) {
   const errors = {};
   const v = {};
+
+  // 1. Required: Discovery title (5-120 chars)
   v.title = cleanText(b.title);
   len(v.title, 5, 120, "title", errors);
+
+  // 2. Required: Category (allowlisted enum)
   v.category = typeof b.category === "string" ? b.category : "";
   if (!Object.hasOwn(CATEGORIES, v.category)) errors.category = "Choose a valid category.";
-  v.short_description = cleanText(b.short_description);
-  len(v.short_description, 20, 280, "short_description", errors);
-  v.detailed_explanation = cleanText(b.detailed_explanation, { multiline: true });
-  len(v.detailed_explanation, 50, 4000, "detailed_explanation", errors);
-  v.region = typeof b.region === "string" ? b.region : "";
-  if (!REGIONS.includes(v.region)) errors.region = "Choose a valid region.";
-  v.location_description = cleanText(b.location_description, { multiline: true });
-  len(v.location_description, 10, 600, "location_description", errors);
-  v.directions = cleanText(b.directions, { multiline: true });
-  len(v.directions, 20, 2000, "directions", errors);
-  v.platform = typeof b.platform === "string" ? b.platform : "";
-  if (!Object.hasOwn(PLATFORMS, v.platform)) errors.platform = "Choose PS5 or Xbox Series X|S.";
+
+  // 3. Required: Combined discovery description (20-4000 chars)
+  // Accepts `description` (new quick form) or `detailed_explanation` (legacy/API clients).
+  const rawDesc = b.description !== undefined && b.description !== null && String(b.description).trim() !== ""
+    ? b.description
+    : b.detailed_explanation;
+  v.detailed_explanation = cleanText(rawDesc, { multiline: true });
+  len(v.detailed_explanation, 20, 4000, "description", errors);
+
+  // Optional: short_description (never fabricated; stored as "" when omitted)
+  v.short_description = cleanText(b.short_description || "");
+  if (v.short_description.length > 280) errors.short_description = "Must be at most 280 characters.";
+
+  // Optional: region (never fabricated; stored as "" when omitted)
+  v.region = typeof b.region === "string" ? b.region.trim() : "";
+  if (v.region && !REGIONS.includes(v.region)) errors.region = "Choose a valid region.";
+
+  // Optional: location_description & directions (never fabricated; stored as "" when omitted)
+  v.location_description = cleanText(b.location_description || "", { multiline: true });
+  if (v.location_description.length > 600) errors.location_description = "Must be at most 600 characters.";
+  v.directions = cleanText(b.directions || "", { multiline: true });
+  if (v.directions.length > 2000) errors.directions = "Must be at most 2000 characters.";
+
+  // Optional: platform (never fabricated; stored as "" when omitted)
+  v.platform = typeof b.platform === "string" ? b.platform.trim() : "";
+  if (v.platform && !Object.hasOwn(PLATFORMS, v.platform)) errors.platform = "Choose PS5 or Xbox Series X|S.";
+
+  // Optional: game_version (nullable in D1)
   v.game_version = cleanText(b.game_version || "");
   if (v.game_version.length > 40) errors.game_version = "Must be at most 40 characters.";
+
+  // Optional: discovered_on (never fabricated; stored as "" when omitted)
   v.discovered_on = typeof b.discovered_on === "string" ? b.discovered_on.trim() : "";
-  if (!DATE_RE.test(v.discovered_on) || Number.isNaN(Date.parse(v.discovered_on))) {
-    errors.discovered_on = "Enter a valid date.";
-  } else {
-    const t = Date.parse(v.discovered_on);
-    if (t > today.getTime() + 86400000) errors.discovered_on = "Date cannot be in the future.";
-    if (t < Date.parse("2024-01-01")) errors.discovered_on = "Date is too far in the past.";
+  if (v.discovered_on) {
+    if (!DATE_RE.test(v.discovered_on) || Number.isNaN(Date.parse(v.discovered_on))) {
+      errors.discovered_on = "Enter a valid date.";
+    } else {
+      const t = Date.parse(v.discovered_on);
+      if (t > today.getTime() + 86400000) errors.discovered_on = "Date cannot be in the future.";
+      if (t < Date.parse("2024-01-01")) errors.discovered_on = "Date is too far in the past.";
+    }
   }
-  if (b.witnessed !== "yes" && b.witnessed !== "no") errors.witnessed = "Tell us whether you personally witnessed it.";
-  v.witnessed = b.witnessed === "yes" ? 1 : 0;
-  v.evidence_description = cleanText(b.evidence_description, { multiline: true });
-  len(v.evidence_description, 20, 2000, "evidence_description", errors);
+
+  // Optional: personally witnessed (-1 = not specified, 1 = yes, 0 = no)
+  const rawWit = typeof b.witnessed === "string" ? b.witnessed.trim() : "";
+  if (rawWit === "") {
+    v.witnessed = -1;
+  } else if (rawWit === "yes") {
+    v.witnessed = 1;
+  } else if (rawWit === "no") {
+    v.witnessed = 0;
+  } else {
+    errors.witnessed = "Choose yes, no, or leave blank.";
+    v.witnessed = -1;
+  }
+
+  // Optional: supporting evidence & sources text (never fabricated)
+  v.evidence_description = cleanText(b.evidence_description || "", { multiline: true });
+  if (v.evidence_description.length > 2000) errors.evidence_description = "Must be at most 2000 characters.";
   v.sources_text = cleanText(b.sources_text || "", { multiline: true });
   if (v.sources_text.length > 1000) errors.sources_text = "Must be at most 1000 characters.";
 
@@ -79,6 +116,7 @@ export function validateSubmission(b, today = new Date()) {
       }
     }
   }
+  // Conditional evidence rule: if contributor explicitly says they did NOT witness it, require a source.
   if (v.witnessed === 0 && !v.sources_text && v.source_urls.length === 0) {
     errors.sources_text = "If you did not witness this yourself, tell us where the information came from.";
   }
@@ -102,11 +140,16 @@ export function validateSubmission(b, today = new Date()) {
   v.contact_email = cleanText(b.contact_email || "").toLowerCase();
   if (v.contact_email && (v.contact_email.length > 120 || !EMAIL_RE.test(v.contact_email))) errors.contact_email = "Enter a valid email or leave blank.";
 
-  // Declarations
-  if (b.originality_ack !== true) errors.originality_ack = "You must confirm this is your original observation or authorized material.";
-  if (b.license_ack !== true) errors.license_ack = "You must accept the limited review/display permission.";
-  v.originality_ack = 1;
-  v.license_ack = 1;
+  // 4. Required: Combined originality + limited review/display permission acknowledgment
+  // Accepts `permission_ack === true` (quick form) or both `originality_ack === true && license_ack === true` (legacy).
+  const permOk = b.permission_ack === true || (b.originality_ack === true && b.license_ack === true);
+  if (!permOk) {
+    errors.permission_ack = "Please confirm originality/authorization and grant limited review and display permission.";
+  }
+  v.originality_ack = permOk ? 1 : 0;
+  v.license_ack = permOk ? 1 : 0;
+
+  // Conditional rights rule: external screenshot/video links require media rights confirmation.
   v.image_rights_ack = b.image_rights_ack === true ? 1 : 0;
   if ((v.screenshot_url || v.video_url) && !v.image_rights_ack) {
     errors.image_rights_ack = "Confirm you captured the referenced media or have permission to share it.";
@@ -114,7 +157,10 @@ export function validateSubmission(b, today = new Date()) {
 
   // Link-spam heuristic on free text
   const free = [v.title, v.short_description, v.detailed_explanation, v.location_description, v.directions, v.evidence_description].join("\n");
-  if ((free.match(/https?:\/\/|www\./gi) || []).length > 3) errors.detailed_explanation = errors.detailed_explanation || "Too many links in the text; put links in the reference fields.";
+  if ((free.match(/https?:\/\/|www\./gi) || []).length > 3) errors.description = errors.description || "Too many links in the text; put links in the reference fields.";
+
+  // Flag for moderator review when firsthand observation and corroborating sources/media are absent.
+  v.evidence_needs_review = v.witnessed !== 1 && !v.sources_text && v.source_urls.length === 0 && !v.screenshot_url && !v.video_url;
 
   return { errors, value: v };
 }
@@ -187,12 +233,12 @@ export async function onRequestPost({ request, env }) {
     }
 
     // Duplicate / provenance WARNINGS (never treated as corroboration)
-    const mine = tokens(`${v.title} ${v.short_description}`);
+    const mine = tokens(`${v.title} ${v.short_description || v.detailed_explanation.slice(0, 280)}`);
     const { results: cands } = await env.DB.prepare(
-      "SELECT id, title, short_description, region, coord_xpct, coord_ypct FROM cd_submissions WHERE category = ?1 AND id != ?2 ORDER BY id DESC LIMIT 400"
+      "SELECT id, title, short_description, detailed_explanation, region, coord_xpct, coord_ypct FROM cd_submissions WHERE category = ?1 AND id != ?2 ORDER BY id DESC LIMIT 400"
     ).bind(v.category, id).all();
     for (const c of cands || []) {
-      const score = jaccard(mine, tokens(`${c.title} ${c.short_description}`));
+      const score = jaccard(mine, tokens(`${c.title} ${c.short_description || String(c.detailed_explanation || "").slice(0, 280)}`));
       if (score >= 0.5) {
         stmts.push(env.DB.prepare("INSERT INTO cd_relations (submission_id, related_id, kind, score, created_by, created_at) VALUES (?1,?2,'possible_duplicate',?3,'system',?4)").bind(id, c.id, Math.round(score * 100) / 100, now));
       } else if (v.coord_xpct !== null && c.coord_xpct !== null && Math.hypot(v.coord_xpct - c.coord_xpct, v.coord_ypct - c.coord_ypct) < 0.01) {
@@ -205,7 +251,7 @@ export async function onRequestPost({ request, env }) {
         stmts.push(env.DB.prepare("INSERT INTO cd_relations (submission_id, related_id, kind, score, created_by, created_at) VALUES (?1,?2,'shared_source',NULL,'system',?3)").bind(id, s.submission_id, now));
       }
     }
-    stmts.push(env.DB.prepare("INSERT INTO cd_audit (at, actor, action, submission_id, after_json) VALUES (?1,'public','submission_received',?2,?3)").bind(now, id, JSON.stringify({ ref, category: v.category })));
+    stmts.push(env.DB.prepare("INSERT INTO cd_audit (at, actor, action, submission_id, after_json) VALUES (?1,'public','submission_received',?2,?3)").bind(now, id, JSON.stringify({ ref, category: v.category, evidence_needs_review: v.evidence_needs_review })));
     await env.DB.batch(stmts);
 
     await rlHit(env.DB, `ok:${hash}`, 3600);

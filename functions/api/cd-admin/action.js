@@ -50,10 +50,13 @@ export async function onRequestPost(context) {
   };
 
   const createDraft = (st) => {
+    const shortExp = (sub.short_description && sub.short_description.trim()) || String(sub.detailed_explanation || "").slice(0, 280);
+    const findInst = (sub.directions && sub.directions.trim()) || String(sub.detailed_explanation || "").slice(0, 2000);
+    const pubRegion = (sub.region && REGIONS.includes(sub.region)) ? sub.region : "Other / not sure";
     stmts.push(db.prepare(
       `INSERT INTO cd_published (submission_id, ref, title, category, short_explanation, finding_instructions, region, evidence_status, credit_name, updated_at)
        VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10)`
-    ).bind(sub.id, sub.ref, sub.title, sub.category, sub.short_description, sub.directions, sub.region, st,
+    ).bind(sub.id, sub.ref, sub.title, sub.category, shortExp, findInst, pubRegion, st,
       sub.credit_pref === "named" ? sub.display_name : null, now));
   };
 
