@@ -3,128 +3,193 @@
 <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta charset="UTF-8">
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Port Gellhorn Container Terminal Guide | GTA 6 Guide</title>
-    <meta name="description" content="Infiltrate the $8.2M Port Gellhorn docks: hijack Pier 4 gantry cranes, scan RFID contraband containers, and extract west across the basin by boat.">
-        <meta name="keywords" content="GTA 6 strategy walkthrough, Leonida vaults, heist checklist, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
-<link rel="canonical" href="https://www.gta6heistguide.com/port-gellhorn">
+    <title>Port Gellhorn Guide: Safe Codes, Fences, Banks &amp; Map | GTA 6</title>
+    <meta name="description" content="Verified GTA 6 Port Gellhorn guide: fixed safe codes (0300, 6823, 6969), Moses &amp; Dunk fences, shipyard, banks, ATMs, gun stores, and Chapter 2 missions.">
+    <link rel="canonical" href="https://www.gta6heistguide.com/port-gellhorn">
     <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="Port Gellhorn Container Terminal Guide | GTA 6 Guide">
-    <meta property="og:description" content="Infiltrate the $8.2M Port Gellhorn docks: hijack Pier 4 gantry cranes, scan RFID contraband containers, and extract west across the basin by boat.">
+    <meta property="og:title" content="Port Gellhorn Guide: Safe Codes, Fences, Banks &amp; Map | GTA 6">
+    <meta property="og:description" content="Verified GTA 6 Port Gellhorn guide: fixed safe codes (0300, 6823, 6969), Moses &amp; Dunk fences, shipyard, banks, ATMs, gun stores, and Chapter 2 missions.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/port-gellhorn">
-    <meta property="og:image" content="https://www.gta6heistguide.com/assets/heist-port-gellhorn.png">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-gellhorn-ops.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/assets/style.css?v=20261122_v23">
-    
-    <script>
-        function updateCalc() {
-            const base = 8200000;
-            const gunner = parseInt(document.getElementById('gCut').value);
-            const hacker = parseInt(document.getElementById('hCut').value);
-            const driver = parseInt(document.getElementById('dCut').value);
-            
-            document.getElementById('gVal').innerText = gunner + '%';
-            document.getElementById('hVal').innerText = hacker + '%';
-            document.getElementById('dVal').innerText = driver + '%';
-            
-            const totalCrew = gunner + hacker + driver;
-            const playerPct = Math.max(0, 100 - totalCrew);
-            document.getElementById('playerPct').innerText = playerPct + '%';
-            
-            const netTake = base * (playerPct / 100);
-            document.getElementById('netTake').innerText = '$' + Math.round(netTake).toLocaleString();
-            document.getElementById('crewCost').innerText = '$' + Math.round(base * (totalCrew / 100)).toLocaleString();
+    <meta name="twitter:title" content="Port Gellhorn Guide: Safe Codes, Fences, Banks &amp; Map | GTA 6">
+    <meta name="twitter:description" content="Verified GTA 6 Port Gellhorn guide: fixed safe codes (0300, 6823, 6969), Moses &amp; Dunk fences, shipyard, banks, ATMs, gun stores, and Chapter 2 missions.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-gellhorn-ops.jpg">
+    <link rel="stylesheet" href="/assets/style.css?v=20261123_v24">
+    <link rel="stylesheet" href="/assets/guides.css?v=20261123_g1">
+    <style>
+        .pg-code-badge {
+            display: inline-block;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.96rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.12);
+            border: 1px solid rgba(0, 255, 136, 0.42);
+            border-radius: 6px;
+            padding: 0.2rem 0.55rem;
+            cursor: pointer;
         }
-    </script>
+        .pg-code-badge:hover { background: rgba(0, 255, 136, 0.22); }
+        .pg-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 0.85rem;
+        }
+        .pg-card {
+            background: rgba(10, 18, 32, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem 1.15rem;
+        }
+        .pg-card h3 {
+            margin: 0 0 0.45rem;
+            font-size: 1.02rem;
+            color: #fff;
+        }
+        .pg-card p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .pg-toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 0;
+        }
+        .pg-toc a {
+            display: inline-block;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.28);
+            color: #67e8f9;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .pg-toc a:hover { background: rgba(0, 240, 255, 0.18); }
+        .pg-callout {
+            background: rgba(255, 184, 0, 0.08);
+            border-left: 3px solid #fbbf24;
+            border-radius: 0 8px 8px 0;
+            padding: 0.85rem 1rem;
+            margin: 1rem 0;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .pg-faq-item {
+            background: rgba(10, 16, 28, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 8px;
+            padding: 0.95rem 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .pg-faq-item h3 {
+            margin: 0 0 0.4rem;
+            font-size: 0.98rem;
+            color: #fff;
+        }
+        .pg-faq-item p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+        .g-evidence a, .pg-callout a, .pg-card a { color: var(--neon-cyan); }
+    </style>
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
     {
-      "@type": "WebSite",
-      "name": "GTA 6 Heist Guide & Leonida Syndicate Database",
-      "url": "https://www.gta6heistguide.com/"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Port Gellhorn Container Terminal Heist Calculator",
-      "description": "Plan container manifest cuts and stealth canal escapes for the $8,200,000 Port Gellhorn heist.",
-      "url": "https://www.gta6heistguide.com/port-gellhorn",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "gta6heistguide.com"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "How do you maximize payouts during GTA 6 solo heists at Port Gellhorn?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Use focus from the Pier 4 overhead gantry crane cab to scan RFID manifest crates before cutting locks, prioritizing light electronics bearer shares over slow scrap cargo."
-          }
+          "@type": "Article",
+          "headline": "Port Gellhorn District Guide: Safe Codes, Fences, Banks, Shipyard & Map",
+          "description": "Verified GTA 6 Port Gellhorn guide covering fixed safe codes (0300, 6823, 6969), Moses and Dunk fences, shipyard and industrial areas, banks, ATMs, gun stores, and Chapter 2 missions.",
+          "url": "https://www.gta6heistguide.com/port-gellhorn",
+          "mainEntityOfPage": "https://www.gta6heistguide.com/port-gellhorn",
+          "image": "https://www.gta6heistguide.com/assets/images/intel/intel-gellhorn-ops.jpg",
+          "datePublished": "2026-11-23",
+          "dateModified": "2026-11-23",
+          "inLanguage": "en",
+          "author": { "@type": "Organization", "name": "GTA6HeistGuide.com", "url": "https://www.gta6heistguide.com/" },
+          "publisher": { "@type": "Organization", "name": "GTA6HeistGuide.com", "url": "https://www.gta6heistguide.com/" }
         },
         {
-          "@type": "Question",
-          "name": "How do focus, stealth, and outfit swaps help escape Port Gellhorn canals?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Silently neutralizing dock patrollers preserves the +5% stealth bonus; dive into the industrial water canals to break chopper sightcones and swap outfits at a safe dockside garage."
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gta6heistguide.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Interactive Map", "item": "https://www.gta6heistguide.com/map" },
+            { "@type": "ListItem", "position": 3, "name": "Port Gellhorn District Guide", "item": "https://www.gta6heistguide.com/port-gellhorn" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "What fence locations buy Port Gellhorn contraband and souvenir crates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Offload contraband electronics through Ambrosia or Leonida Keys maritime brokers mapped on our Interactive Leonida Map before spending on safehouse upgrades."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.gta6heistguide.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Port Gellhorn Container Terminal Heist Calculator",
-          "item": "https://www.gta6heistguide.com/port-gellhorn"
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are the verified safe codes in Port Gellhorn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are three corroborated fixed gang-operation safe codes in Port Gellhorn (all belonging to Kolt & Associates): 0300 for Kingpin Bowling in southern Port Gellhorn, 6823 for Brooks Boatworks near Draper Island docks, and 6969 for La Cascara Motel in western Port Gellhorn. You can log all three in-game by inspecting the wall map upstairs inside the gray building at Brooks Boatworks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is safe code 6769 in Port Gellhorn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Safe code 6769 belongs to the Sunrise RV Park dock building safe run by the Kingfishers gang, which is located in the Grassrivers / Mariana County area (Pelican Valley near Gullet Marsh and Cottonmouth Lake), not Port Gellhorn."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where are the fences and stolen vehicle drop-offs in Port Gellhorn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Port Gellhorn has two Chapter 2 contacts: Moses at Watkins Auto Parts (MW map icon), who unlocks during the Moses mission and buys untracked stolen cars scanned with the WAiNK app, and Dunk at Dunk's Trailer on Tanglewood Lane, who unlocks after Slam Dunk and buys stolen goods."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there fixed safe codes for Port Gellhorn convenience stores, pawn shops, or small banks?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Free-roam convenience stores, pawn shops, and local small bank safes use randomized codes per playthrough. Check back-office monitors, desk sticky notes, or intimidate store staff to reveal the active combination."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there an $8.2M Pier 4 gantry crane heist at the Port Gellhorn shipyard?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The $8.2M Pier 4 gantry crane heist was pre-launch speculation and does not exist in the launched game. In-game Port Gellhorn dock and industrial activity centers on Brooks Boatworks (safe code 6823), the Kolts Gang dock compound in Slam Dunk, local robberies, and Chapter 2 missions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do ATMs and cash limits work in Port Gellhorn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Free-roam pocket cash is capped at $20,000 in GTA 6. Use physical ATMs around commercial strips, gas stations, and motels—or BuckMe terminals—to bank cash from robberies, Kolt & Associates safes, and Moses vehicle deliveries, especially while building the $15,000 needed before Chapter 2's finale, Checking Out."
+              }
+            }
+          ]
         }
       ]
     }
-  ]
-}
     </script>
-    <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta name="twitter:title" content="Port Gellhorn Container Terminal Guide | GTA 6 Guide">
-    <meta name="twitter:description" content="Infiltrate the $8.2M Port Gellhorn docks: hijack Pier 4 gantry cranes, scan RFID contraband containers, and extract west across the basin by boat.">
-    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
 </head>
-<body onload="updateCalc()">
-    
-
-
-
-
-
+<body>
 <div class="countdown-strip" id="siteTopStrip">
     <div class="countdown-strip-inner">
         <div class="strip-left-items">
@@ -140,18 +205,20 @@
         <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
         <ul class="nav-links">
             <li><a href="/" class="nav-pill">HEISTS</a></li>
-            <li><a href="/map.html" class="nav-pill">MAP</a></li>
+            <li><a href="/map" class="nav-pill">MAP</a></li>
             <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                        <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
-                        <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
-                        <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
-                        <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
-                        <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
-                        <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
-                        <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                    <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/guides/gta-6-safe-codes.html" class="nav-dropdown-item">🔐 Complete Safe Codes Database</a>
+                    <a href="/guides/vice-city-portal-easter-egg.html" class="nav-dropdown-item">🌀 Vice City Portal Easter Egg</a>
+                    <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                    <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                    <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                    <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                    <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                    <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
                 </div>
             </li>
             <li class="nav-dropdown">
@@ -159,8 +226,8 @@
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
                     <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
-                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheats</a>
-                    <a href="/secrets.html" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets" class="nav-dropdown-item">🥚 Secrets</a>
                     <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
                 </div>
             </li>
@@ -169,12 +236,10 @@
                 <div class="nav-dropdown-menu">
                     <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
-                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
-                    <a href="/heist-payout-calculator.html" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
                     <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
-                    <a href="/map.html" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
-                    <a href="/cheats.html" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
@@ -182,196 +247,291 @@
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
-                    <a href="/properties.html" class="nav-dropdown-item">🏠 Properties</a>
-                    <a href="/animals.html" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
-                    <a href="/vehicles.html" class="nav-dropdown-item">🏎️ Vehicles</a>
-                    <a href="/weapons.html" class="nav-dropdown-item">⚔️ Weapons</a>
-                    <a href="/weapons-bonuses.html" class="nav-dropdown-item">🔫 Gun Stores</a>
-                    <a href="/radio.html" class="nav-dropdown-item">📻 Radio Stations</a>
+                    <a href="/properties" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
+                    <a href="/vehicles" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/radio" class="nav-dropdown-item">📻 Radio Stations</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
 
+<main class="g-wrap">
+    <nav class="g-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/map">Interactive Map</a><span aria-hidden="true">/</span>
+        <span style="color:#e2e8f0;font-weight:700;">Port Gellhorn District Guide</span>
+    </nav>
 
-    <header class="hero">
-        <div class="hero-tagline">&bull; Target Infiltration File: Port Gellhorn Industrial Zone &bull;</div>
-        <h1>PORT GELLHORN CONTAINER TERMINAL HEIST</h1>
-        <p>A sprawling maritime shipping hub holding sealed shipping containers of international contraband, gold bullion, and high-end automotive exotics.</p>
-        <div class="hero-cta-group">
-            <span class="btn btn-secondary" style="cursor: default;">Target Payout: $8,200,000</span>
-            <span class="btn btn-secondary" style="cursor: default;">Risk: Intermediate</span>
-            <a href="/heist-planner" class="btn btn-primary">Compare in Planner</a>
-            <button type="button" class="btn btn-secondary" onclick="GTA6.bookmarkCurrentPage()">⭐ Bookmark Guide</button>
+    <header class="g-hero">
+        <div>
+            <span class="g-badge g-b-site">KELLY COUNTY · CHAPTER 2 HUB</span>
+            <span class="g-badge g-b-ind">POST-LAUNCH VERIFIED</span>
         </div>
-    
-    <div class="heist-hero-banner"><img src="/assets/heist-port-gellhorn.png" alt="Port Gellhorn Container Terminal Night Raid Visual" width="1024" height="571"></div>
-</header>
+        <h1>Port Gellhorn District Guide — Safe Codes, Fences, Banks, Shipyard &amp; Map</h1>
+        <p class="g-lead">A factual, launch-verified field guide to Port Gellhorn in Grand Theft Auto VI: the three fixed Kolt &amp; Associates safe codes (<code>0300</code>, <code>6823</code>, <code>6969</code>), Moses and Dunk fence contacts, shipyard and industrial zones, robbery and ATM mechanics, gun stores, and Chapter 2 story missions.</p>
+        <div class="pg-toc" aria-label="Jump to section">
+            <a href="#overview">District Overview</a>
+            <a href="#safe-codes">Safe Codes (0300 / 6823 / 6969)</a>
+            <a href="#banks-atms">Banks, ATMs &amp; Robberies</a>
+            <a href="#fences">Fences &amp; Car Drop-Offs</a>
+            <a href="#shipyard">Shipyard &amp; Industrial</a>
+            <a href="#map-locations">Gun Stores &amp; Map Pins</a>
+            <a href="#missions-secrets">Missions, Collectibles &amp; Secrets</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </header>
 
-    <main class="container">
-        <!-- TACTICAL INFILTRATION INTEL -->
-        <section class="tool-box" style="margin-bottom: 2.5rem;">
-            <h2 style="color: #fff; margin-bottom: 1.25rem;">Tactical Approach Comparison</h2>
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                <div style="background: rgba(0, 240, 255, 0.04); border: 1px solid var(--neon-cyan); border-radius: 8px; padding: 1.5rem;">
-                    <h3 style="color: var(--neon-cyan); margin-bottom: 0.75rem;">Approach A: Silent Infiltration (Recommended)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Disguise squad members as harbor terminal technicians. Hack the automated gantry crane software from the harbormaster tower to silently reposition target containers directly onto your flatbed trailer.</p>
-                </div>
-                <div style="background: rgba(255, 42, 141, 0.04); border: 1px solid var(--neon-pink); border-radius: 8px; padding: 1.5rem;">
-                    <h3 style="color: var(--neon-pink); margin-bottom: 0.75rem;">Approach B: Heavy Aggressive Breach</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Assault the main gate using heavy suppressive fire, utilize RPGs on security patrol vehicles, and detonate C4 on container locks while fighting off private harbor security forces.</p>
-                </div>
-            </div>
-        </section>
+    <div class="g-evidence">
+        <strong>Editorial Correction &amp; Verification Standard (Updated Nov 23, 2026):</strong> This page previously hosted a pre-launch speculative "$8.2M Pier 4 Gantry Crane Heist" calculator. That fictional scenario has been removed. Everything below distinguishes <strong>verified site datasets &amp; corroborated post-launch reporting</strong> from <strong>community-reported / unverified details</strong>. We never invent map coordinates, fixed store safe codes, or unverified payouts.
+    </div>
 
-        <!-- INTERACTIVE CREW CUT & NET PAYOUT CALCULATOR -->
-        <section class="tool-box pink-glow">
-            <h2 style="color: var(--neon-pink); margin-bottom: 0.5rem;">Interactive Crew Cut & Net Take-Home Calculator</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1.8rem; font-size: 0.95rem;">Fine-tune your specialist cuts to determine your exact net revenue after support personnel deductions.</p>
-            
-            <div class="slider-row">
-                <div class="slider-label-row">
-                    <span>Gunner / Heavy Assault Specialist:</span>
-                    <strong id="gVal" style="color: var(--neon-cyan);">15%</strong>
-                </div>
-                <input type="range" class="slider-input" id="gCut" min="5" max="30" value="15" oninput="updateCalc(); GTA6.playBeep(400, 'sine', 0.03);">
+    <!-- 1. DISTRICT OVERVIEW -->
+    <section class="g-section" id="overview" aria-labelledby="h-overview">
+        <h2 id="h-overview">Port Gellhorn Overview &amp; Surrounding Areas</h2>
+        <p><strong>Port Gellhorn</strong> is a working-class Gulf Coast port town and industrial hub in <strong>Kelly County</strong> on the western side of Leonida. After the Chapter 1 transition out of the Leonida Keys, Port Gellhorn becomes Jason and Lucia's primary base of operations throughout <strong>Chapter 2</strong>, anchored by the <strong>Starlet Motel</strong> safehouse.</p>
+        <div class="pg-grid-2">
+            <div class="pg-card">
+                <h3>Key Sub-Areas &amp; Landmarks</h3>
+                <p>Port Gellhorn blends highway motel strips, pawn shops, working docks, and scrap corridors: <strong>Draper Island / Brooks Boatworks</strong> to the north, the <strong>US-9 commercial strip</strong> (Kingpin Bowling) to the south, the <strong>western motel corridor</strong> south of the railroad bridge (La Cascara Motel), <strong>Tanglewood Lane</strong> (Dunk's Trailer), <strong>Watkins Auto Parts</strong> (Moses), and the <strong>Gellhorn International Raceway</strong> area.</p>
             </div>
+            <div class="pg-card">
+                <h3>Surrounding Regions &amp; Corridors</h3>
+                <p>From Port Gellhorn, highway and rail routes connect northeast toward <strong>Ambrosia</strong> (via the Kelly County / Ambrosia rail corridor) and north into <strong>Mount Kalaga National Park</strong>, southeast toward the <strong>Grassrivers</strong> wetlands, and east across the state toward <strong>Vice City</strong>—where the story relocates after the Chapter 2 finale, <em>Checking Out</em>.</p>
+            </div>
+        </div>
+        <div class="pg-callout">
+            <strong>Chapter 2 Cutoff Warning:</strong> Completing Chapter 2's final mission (<em>Checking Out</em>, which requires building <strong>$15,000</strong>) permanently closes the <strong>Starlet Motel</strong> safehouse as an active Chapter 2 base. Lock a dedicated manual save in our <a href="/save-planner/">15-Slot Save Planner</a> (Slot 06) before finishing Chapter 2 if you want an easy return point.
+        </div>
+    </section>
 
-            <div class="slider-row">
-                <div class="slider-label-row">
-                    <span>Master Hacker / Security Decryptor:</span>
-                    <strong id="hVal" style="color: var(--neon-cyan);">10%</strong>
-                </div>
-                <input type="range" class="slider-input" id="hCut" min="5" max="25" value="10" oninput="updateCalc(); GTA6.playBeep(450, 'sine', 0.03);">
-            </div>
+    <!-- 2. SAFE CODES -->
+    <section class="g-section" id="safe-codes" aria-labelledby="h-safes">
+        <h2 id="h-safes">Verified Port Gellhorn Safe Codes (Kolt &amp; Associates)</h2>
+        <p>Three fixed Illegal Operation safe codes are corroborated for Port Gellhorn—all tied to <strong>Kolt &amp; Associates</strong> gang hideouts. Click any green code badge below to copy it.</p>
+        <div class="g-tablewrap">
+            <table class="g-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">District Area &amp; Gang</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Notes &amp; Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button type="button" class="pg-code-badge" data-copy="0300" title="Copy 0300">0300</button></td>
+                        <td><strong>Kingpin Bowling Safe</strong></td>
+                        <td>Southern Port Gellhorn (along US-9) · Kolt &amp; Associates</td>
+                        <td><span class="g-badge g-b-ind">CORROBORATED</span></td>
+                        <td>One-time gang-op safe. <a href="/map?q=Kingpin">Map &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="pg-code-badge" data-copy="6823" title="Copy 6823">6823</button></td>
+                        <td><strong>Brooks Boatworks Safe</strong></td>
+                        <td>Northern Port Gellhorn (near Draper Island docks) · Kolt &amp; Associates</td>
+                        <td><span class="g-badge g-b-ind">CORROBORATED</span></td>
+                        <td>One-time gang-op safe; wall map upstairs logs all 3 codes. <a href="/map?q=Port+Gellhorn">Map &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="pg-code-badge" data-copy="6969" title="Copy 6969">6969</button></td>
+                        <td><strong>La Cascara Motel Safe</strong></td>
+                        <td>Western Port Gellhorn (south of railroad bridge) · Kolt &amp; Associates</td>
+                        <td><span class="g-badge g-b-ind">CORROBORATED</span></td>
+                        <td>One-time gang-op safe. <a href="/map?q=Port+Gellhorn">Map &rarr;</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>How to Unlock All Three Codes In-Game at Once</h3>
+        <p>Reported across post-launch guides (<em>Vice, Space4Games, GamesRadar</em>): enter <strong>Brooks Boatworks</strong> in northern Port Gellhorn through the gap in the east-side fence, climb the exterior stairs of the gray building, go inside, and study the <strong>wall map</strong> to automatically log <code>0300</code>, <code>6823</code>, and <code>6969</code>.</p>
+        <div class="pg-callout">
+            <strong>District Verification Note — Why <code>6769</code> Is Not Listed Above:</strong> Players often search for <code>6769</code> alongside Port Gellhorn safe codes, but <strong>Sunrise RV Park (<code>6769</code>)</strong> is a Kingfishers gang operation in <strong>Grassrivers / Mariana County</strong> (Pelican Valley near Gullet Marsh and Cottonmouth Lake), not Port Gellhorn. For all 17 fixed combinations statewide, see the <a href="/guides/gta-6-safe-codes.html">Complete GTA 6 Safe Codes Database</a>.
+        </div>
+    </section>
 
-            <div class="slider-row">
-                <div class="slider-label-row">
-                    <span>Getaway Driver / Wheelman:</span>
-                    <strong id="dVal" style="color: var(--neon-cyan);">8%</strong>
-                </div>
-                <input type="range" class="slider-input" id="dCut" min="5" max="20" value="8" oninput="updateCalc(); GTA6.playBeep(500, 'sine', 0.03);">
+    <!-- 3. BANKS, ATMS & ROBBERIES -->
+    <section class="g-section" id="banks-atms" aria-labelledby="h-banks">
+        <h2 id="h-banks">Banks, ATMs &amp; Money-Making Opportunities</h2>
+        <p>Port Gellhorn is designed around early-to-mid-game street hustles rather than late-game multi-million-dollar vaults. Use these verified cash loops during Chapter 2:</p>
+        <div class="pg-grid-2">
+            <div class="pg-card">
+                <h3>ATMs &amp; the $20,000 Pocket-Cash Cap</h3>
+                <p>Free-roam pocket cash caps at <strong>$20,000</strong>. Bank your robbery and vehicle-boosting earnings at physical <strong>ATMs</strong> located outside commercial strips, gas stations, and motels—or at BuckMe terminals—so you do not lose overflow or carry unbanked cash into firefights. Exact standalone ATM pin coordinates in Port Gellhorn are not yet individually mapped on our interactive map.</p>
             </div>
+            <div class="pg-card">
+                <h3>Local Banks, Pawn Shops &amp; Convenience Stores</h3>
+                <p>Port Gellhorn's commercial corridors include rob-able convenience stores, pawn shops, and local small bank/payday-loan branches. Unlike the three Kolt &amp; Associates safes above, <strong>free-roam store and small bank safes use randomized codes per playthrough</strong>—check back-office monitors, sticky notes, or intimidate clerks/managers to open them.</p>
+            </div>
+            <div class="pg-card">
+                <h3>Kolt &amp; Associates Illegal Operations</h3>
+                <p>Clearing Kingpin Bowling (<code>0300</code>), Brooks Boatworks (<code>6823</code>), and La Cascara Motel (<code>6969</code>) delivers fast Chapter 2 cash and contraband toward the <strong>$15,000</strong> needed for <em>Checking Out</em>. See our <a href="/heists/armored-trucks-gang-ops">Armored Trucks &amp; Gang Ops Guide</a> for tactics.</p>
+            </div>
+            <div class="pg-card">
+                <h3>Low-Heat Vehicle Boosting (Moses)</h3>
+                <p>After completing <em>Moses</em>, scan everyday sedans, coupes, and trucks with the <strong>WAiNK app</strong> to confirm they have no tracker, then deliver them to Watkins Auto Parts for steady, low-heat cash (community-reported ~$1,000–$2,000 per untracked car).</p>
+            </div>
+        </div>
+        <p style="margin-top:0.9rem;">Related robbery walkthroughs: <a href="/heists/shops-and-stickups">Shops &amp; Stick-Ups</a> · <a href="/heists/pawn-shops">Pawn Shops</a> · <a href="/heists/small-banks-payday-loans">Small Banks &amp; Payday Loans</a> · <a href="/gta-6-money-guide/">Full GTA 6 Money Guide</a>.</p>
+    </section>
 
-            <div class="payout-display">
-                <div>
-                    <div class="payout-item-title">Max Vault Payout</div>
-                    <div class="payout-item-val" style="color: #fff;">$8,200,000</div>
-                </div>
-                <div>
-                    <div class="payout-item-title">Total Hired Cut Cost</div>
-                    <div class="payout-item-val" id="crewCost" style="color: var(--neon-pink);">$0</div>
-                </div>
-                <div>
-                    <div class="payout-item-title">Your Net Take (<span id="playerPct">67%</span>)</div>
-                    <div class="payout-item-val" id="netTake">$0</div>
-                </div>
-            </div>
-            <div class="multi-option-cta" style="margin-top:0.85rem; padding:0.75rem 1rem; background:rgba(0,240,255,0.05); border-left:3px solid var(--neon-cyan); border-radius:8px; font-size:0.82rem; color:var(--text-muted); display:grid; gap:0.4rem;">
-                <div>🛡️ <strong style="color:#fff;">Lobby Security &amp; Fast Streaming:</strong> <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" style="color:var(--neon-cyan); font-weight:800;">ExitLag Multi-Path Gaming Routing</a> &bull; <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" style="color:var(--neon-amber); font-weight:800;">Samsung 990 PRO Gen4 SSD</a> &bull; <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" style="color:var(--neon-green); font-weight:800;">G2A Keys</a></div>
-                
-            </div>
-        </section>
+    <!-- 4. FENCES & STOLEN VEHICLE DROP-OFFS -->
+    <section class="g-section" id="fences" aria-labelledby="h-fences">
+        <h2 id="h-fences">Fences &amp; Stolen Vehicle Drop-Offs in Port Gellhorn</h2>
+        <p>Port Gellhorn introduces two distinct Chapter 2 contacts—one for <strong>untracked vehicles</strong> and one for <strong>stolen goods</strong>. Do not confuse their roles:</p>
+        <div class="g-tablewrap">
+            <table class="g-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Location &amp; Unlock</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Moses</strong></td>
+                        <td>Untracked Vehicle Buyer</td>
+                        <td>Watkins Auto Parts (<code>MW</code> icon), Port Gellhorn · Unlocks in Ch. 2 mission <em>Moses</em></td>
+                        <td><span class="g-badge g-b-site">CONFIRMED</span></td>
+                        <td>Grants the <strong>Slim Jim</strong> tool, teaches WAiNK tracker scanning, registers an untracked personal car, and buys untracked stolen cars (not stolen goods). <a href="/map?pin=fence-moses">Map &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dunk</strong></td>
+                        <td>Stolen-Goods Fence</td>
+                        <td>Dunk's Trailer, Tanglewood Lane, Port Gellhorn · Unlocks in Ch. 2 mission <em>Slam Dunk</em></td>
+                        <td><span class="g-badge g-b-ind">REPORTED</span></td>
+                        <td>Buys stolen goods (reportedly lower payouts for narcotics/jewelry and very low for marked bills). Exact map pin coordinates pending in-game verification.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="margin-top:0.75rem;"><strong>Note on Randy (High-End Wish List Buyer):</strong> Earlier site notes placed Randy in Port Gellhorn, but post-launch reporting places Randy's Chapter 3 Wish List drop-off in <strong>Balsero, Vice City</strong> (our legacy map pin awaits in-game verification). See the <a href="/properties">Properties &amp; Fences Database</a> and <a href="/gta-6-vehicles-guide/">Vehicles Guide</a> for full buyer breakdowns.</p>
+    </section>
 
-        <!-- STEP-BY-STEP INTERACTIVE CHECKLIST -->
-        <section class="tool-box">
-            <h2 style="color: #fff; margin-bottom: 0.5rem;">Live Infiltration Checklist</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Mark checkpoints while playing on console or PC. Progress is saved in real-time.</p>
-            <div class="checklist-group">
-                
-        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
-            <input type="checkbox">
-            <div>
-                <strong>Phase 1: Manifest Decryption</strong> &mdash; 
-                <span style="color: var(--text-muted);">Infiltrate customs office server to uncover target container barcodes holding high-value loot.</span>
-            </div>
-        </label>
-        
-        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
-            <input type="checkbox">
-            <div>
-                <strong>Phase 2: Crane Hijacking</strong> &mdash; 
-                <span style="color: var(--text-muted);">Climb overhead gantry crane 04 and upload malicious firmware to override manual safety limiters.</span>
-            </div>
-        </label>
-        
-        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
-            <input type="checkbox">
-            <div>
-                <strong>Phase 3: Loot Transfer</strong> &mdash; 
-                <span style="color: var(--text-muted);">Lower target container onto getaway trailer while maintaining cover against dock patrols.</span>
-            </div>
-        </label>
-        
-        <label class="check-item" onclick="this.classList.toggle('done'); GTA6.playBeep(587.33, 'triangle', 0.05);">
-            <input type="checkbox">
-            <div>
-                <strong>Phase 4: Waterway Evacuation</strong> &mdash; 
-                <span style="color: var(--text-muted);">Escort container barge or speedboats along Port Gellhorn channel under coastguard evasion.</span>
-            </div>
-        </label>
-        
-            </div>
-        </section>
+    <!-- 5. SHIPYARD & INDUSTRIAL LOCATIONS -->
+    <section class="g-section" id="shipyard" aria-labelledby="h-shipyard">
+        <h2 id="h-shipyard">Shipyard, Docks &amp; Industrial Locations</h2>
+        <p>Port Gellhorn's waterfront and industrial corridors are heavily searched by players looking for loot, gang compounds, and mission objectives:</p>
+        <ul>
+            <li><strong>Brooks Boatworks (Northern Docks / Draper Island):</strong> Verified Kolt &amp; Associates Illegal Operation with fixed safe code <code>6823</code> and the upstairs wall map that records all three Port Gellhorn gang-op codes.</li>
+            <li><strong>Kolts Gang Dock Compound:</strong> Industrial waterfront yard visited during Chapter 2's <em>Slam Dunk</em> mission (delivering Dr. Bill Kolts before the Wild Hog Point ambush).</li>
+            <li><strong>Port Gellhorn Industrial Bay &amp; Strip-Mall Garage:</strong> Confirmed purchasable garages in Port Gellhorn suited for staging untracked cars and duffel-bag haulers (<a href="/properties">view in Properties Database</a>).</li>
+            <li><strong>Western Freight &amp; Rail Corridors:</strong> Industrial highway links connecting Port Gellhorn toward Ambrosia and the Gellhorn International Raceway area.</li>
+            <li><strong>No "Pier 4 Gantry Crane Heist":</strong> Confirmed pre-launch rumor only. For real major story heists, see <a href="/heists/the-cartel-heist">The Cartel Heist (Chapter 3)</a> and <a href="/heists/vcia-takedown">VCIA Takedown (Chapter 4)</a>.</li>
+        </ul>
+    </section>
 
-        <!-- GEAR & AFFILIATE CALLOUT -->
-        <section class="affiliate-banner" style="margin-top: 3rem;">
-            <div>
-                <span class="affiliate-badge">Tactical Readiness</span>
-                <div class="affiliate-title">Ensure Maximum Framerates for Port Gellhorn Container Terminal Heist</div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Intense heist sequences with smoke grenades, flashing cop lights, and physics debris require top-tier hardware and zero-lag connection.</p>
-                <div style="margin-top: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.g2a.com/n/reflink-4094b9aab5" target="_blank" rel="nofollow noopener" class="btn btn-primary">Order Game Key (Instant Delivery)</a>
-                    <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" class="btn btn-amber">Get Pro Controller</a>
-                    <a href="https://www.exitlag.com/refer/10386953" target="_blank" rel="nofollow noopener" class="btn btn-secondary">Get Gaming VPN</a>
-                </div>
+    <!-- 6. GUN STORES, SAFEHOUSES & MAP LOCATIONS -->
+    <section class="g-section" id="map-locations" aria-labelledby="h-map">
+        <h2 id="h-map">Verified Gun Stores, Safehouses &amp; Map Layers</h2>
+        <p>These Port Gellhorn / Kelly County records are pulled directly from our verified site datasets (<a href="/weapons-bonuses">Gun Stores</a>, <a href="/properties">Properties</a>, and <a href="/map?q=Port+Gellhorn">Interactive Leonida Map</a>):</p>
+        <div class="pg-grid-2">
+            <div class="pg-card">
+                <h3>Armories &amp; Gun Stores (Kelly County)</h3>
+                <ul style="margin:0.35rem 0 0; padding-left:1.1rem; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">
+                    <li><strong>Gellhorn Outfitters</strong> (Port Gellhorn — Ammu-Nation): Shotguns, RPG ordnance, ammo, attachments, armor. <a href="/map?pin=ammu-port-gellhorn-docks">Pin &rarr;</a></li>
+                    <li><strong>Pawn &amp; Gun, Port Gellhorn</strong> (Pawn &amp; Armory): Heavy Battle Rifle, Service Carbine, shotgun, armor. <a href="/map?pin=ammu-port-gellhorn-north">Pin &rarr;</a></li>
+                    <li><strong>Biff's Gun Supply</strong> (Kelly County / Ambrosia Corridor): SMGs, flare guns, ammo, armor. <a href="/map?pin=ammu-gellhorn-rail-junction">Pin &rarr;</a></li>
+                </ul>
             </div>
-        </section>
-        
-        
-        <!-- VAULT FAQ SECTION (SYNCED WITH JSON-LD) -->
-        <section style="margin-top: 2.75rem;">
-            <div class="section-header">
-                <div>
-                    <h2>Tactical FAQ &amp; Payout Notes</h2>
-                    <p>Answers covering solo vs. online splits, fence laundering routes, stealth focus tactics, and launch readiness.</p>
-                </div>
+            <div class="pg-card">
+                <h3>Safehouses &amp; Garages</h3>
+                <ul style="margin:0.35rem 0 0; padding-left:1.1rem; color:#cbd5e1; font-size:0.88rem; line-height:1.55;">
+                    <li><strong>Starlet Motel (Chapter 2 Base)</strong> &amp; <strong>Motel Parking Lot</strong>: Story-unlocked base (closes after <em>Checking Out</em>). <a href="/map?pin=sh-ch2-motel">Pin &rarr;</a></li>
+                    <li><strong>Port Gellhorn Strip-Mall Garage</strong>: Purchasable storage for untracked cars and haulers.</li>
+                    <li><strong>Port Gellhorn Industrial Bay</strong>: Purchasable garage near western highway corridors.</li>
+                </ul>
             </div>
-            <div class="faq-accordion">
-            <div class="faq-item open">
-                <div class="faq-question">How do you maximize payouts during GTA 6 solo heists at Port Gellhorn? <span>+</span></div>
-                <div class="faq-answer">Use focus from the Pier 4 overhead gantry crane cab to scan RFID manifest crates before cutting locks, prioritizing light electronics bearer shares over slow scrap cargo.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How do focus, stealth, and outfit swaps help escape Port Gellhorn canals? <span>+</span></div>
-                <div class="faq-answer">Silently neutralizing dock patrollers preserves the +5% stealth bonus; dive into the industrial water canals to break chopper sightcones and swap outfits at a safe dockside garage.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What fence locations buy Port Gellhorn contraband and souvenir crates? <span>+</span></div>
-                <div class="faq-answer">Offload contraband electronics through Ambrosia or Leonida Keys maritime brokers mapped on our Interactive Leonida Map before spending on safehouse upgrades.</div>
-            </div>
-            </div>
-        </section>
+        </div>
+        <p style="margin-top:0.9rem;"><a href="/map?q=Port+Gellhorn" class="btn btn-primary" style="display:inline-block;">🗺️ Open Port Gellhorn on Interactive Map &rarr;</a></p>
+    </section>
 
-        <p style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" style="color: var(--neon-cyan); text-decoration: none; font-weight: 700;">&larr; Return to Master Vault Database</a>
-        </p>
-    </main>
+    <!-- 7. MISSIONS, COLLECTIBLES, SECRETS & ACTIVITIES -->
+    <section class="g-section" id="missions-secrets" aria-labelledby="h-missions">
+        <h2 id="h-missions">Related Missions, Collectibles, Easter Eggs &amp; Activities</h2>
+        <h3>Key Chapter 2 Story Missions in Port Gellhorn</h3>
+        <ul>
+            <li><strong>Girls' Trip:</strong> Ride to Port Gellhorn with Vicki, visit Delights strip club, and track Dunk to the Port Gellhorn Car Wash.</li>
+            <li><strong>Moses:</strong> Visit Watkins Auto Parts (<code>MW</code>) in an untracked vehicle to unlock the Slim Jim, WAiNK tracker scan, and Moses's vehicle-buying service.</li>
+            <li><strong>Slam Dunk:</strong> Meet Dunk on Tanglewood Lane, tail Dr. Bill Kolts to the Kolts Gang dock compound, survive the Wild Hog Point shootout, and unlock Dunk's stolen-goods fence.</li>
+            <li><strong>Breakfast Run &amp; Coffee Break:</strong> Start at the Starlet Motel communal kitchen (introducing Wyman and the Thrillbilly Mud Club).</li>
+            <li><strong>Checking Out (Chapter 2 Finale):</strong> Requires <strong>$15,000</strong> and Cal's alert; triggers the Starlet Motel raid and moves the story to Vice City.</li>
+        </ul>
+        <p>Full spoiler-shielded walkthroughs are in the <a href="/missions/">Mission Walkthrough Hub</a>.</p>
 
-    
+        <h3>Collectibles, Easter Eggs &amp; Local Activities</h3>
+        <ul>
+            <li><strong>Starlet Motel Kitchen Collectible Card</strong> <span class="g-badge g-b-ind">REPORTED</span>: Pinned to the communal kitchen fridge during <em>Coffee Break</em>. Track progress in our <a href="/gta-6-collectibles/">Collectibles Guide</a> and <a href="/gta-6-100-completion-tracker/">100% Completion Tracker</a>.</li>
+            <li><strong>UFO Abduction ("The Truth Is Out There" Trophy)</strong> <span class="g-badge g-b-ind">REPORTED</span>: Multiple launch guides report triggering this encounter in Kelly County near the Starlet Motel east of Port Gellhorn after 02:00 past Chapter 1.</li>
+            <li><strong>Arthur Morgan's Hat (Yard Sale)</strong> <span class="g-badge g-b-com">THIRD-PARTY REPORT</span>: Reported by players and outlets at a Port Gellhorn yard sale; exact street coordinates not yet independently verified in-house.</li>
+            <li><strong>Gellhorn Foggy Haunted Hotel</strong> <span class="g-badge g-b-site">SITE SECRETS DB</span>: Abandoned art-deco resort on the Port Gellhorn outskirts triggering dense fog between 00:00 and 05:00 (<a href="/secrets">view in Secrets &amp; Easter Eggs</a>).</li>
+            <li><strong>Local Side Activities:</strong> Grassroots racing around Gellhorn International Raceway, Thrillbilly Mud Club introduction, and WAiNK vehicle scanning.</li>
+        </ul>
+        <p style="font-size:0.86rem; color:#94a3b8;">Spotted a verified ATM cluster, stash, or map correction in Port Gellhorn? <a href="/community-discoveries/submit/">Submit a moderated Community Discovery &rarr;</a></p>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="g-section" id="faq" aria-labelledby="h-faq">
+        <h2 id="h-faq">Port Gellhorn Frequently Asked Questions</h2>
+        <div class="pg-faq-item">
+            <h3>What are the verified safe codes in Port Gellhorn?</h3>
+            <p>There are three corroborated fixed gang-operation safe codes in Port Gellhorn (all Kolt &amp; Associates): <code>0300</code> (Kingpin Bowling), <code>6823</code> (Brooks Boatworks), and <code>6969</code> (La Cascara Motel). Inspect the wall map upstairs inside the gray building at Brooks Boatworks to log all three automatically.</p>
+        </div>
+        <div class="pg-faq-item">
+            <h3>Is safe code 6769 in Port Gellhorn?</h3>
+            <p>No. Code <code>6769</code> belongs to the Sunrise RV Park dock building safe (Kingfishers gang) in the Grassrivers / Mariana County area (Pelican Valley near Gullet Marsh and Cottonmouth Lake), not Port Gellhorn.</p>
+        </div>
+        <div class="pg-faq-item">
+            <h3>Where are the fences and stolen vehicle drop-offs in Port Gellhorn?</h3>
+            <p><strong>Moses</strong> (Watkins Auto Parts, <code>MW</code> icon) buys untracked stolen cars after Chapter 2's <em>Moses</em> mission. <strong>Dunk</strong> (Dunk's Trailer on Tanglewood Lane) buys stolen goods after Chapter 2's <em>Slam Dunk</em> mission.</p>
+        </div>
+        <div class="pg-faq-item">
+            <h3>Are there fixed safe codes for Port Gellhorn convenience stores, pawn shops, or small banks?</h3>
+            <p>No. Free-roam convenience stores, pawn shops, and local small bank safes use randomized codes per playthrough. Look at manager monitors, desk sticky notes, or intimidate store clerks to get the active code.</p>
+        </div>
+        <div class="pg-faq-item">
+            <h3>Is there an $8.2M Pier 4 gantry crane heist at the Port Gellhorn shipyard?</h3>
+            <p>No. That was pre-launch speculation and is not part of the launched game. In-game Port Gellhorn dock activity centers on Brooks Boatworks (<code>6823</code>), the Kolts Gang dock compound in <em>Slam Dunk</em>, and local Chapter 2 robberies.</p>
+        </div>
+        <div class="pg-faq-item">
+            <h3>How do ATMs and cash limits work in Port Gellhorn?</h3>
+            <p>Free-roam pocket cash caps at $20,000. Deposit cash from robberies, gang safes, and Moses car drops at physical ATMs around commercial strips, gas stations, and motels (or BuckMe terminals) while building the $15,000 needed before Chapter 2's finale, <em>Checking Out</em>.</p>
+        </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="h-related">
+        <h2 id="h-related">Related GTA 6 Guides &amp; Tools</h2>
+        <ul>
+            <li><a href="/guides/gta-6-safe-codes.html">Complete GTA 6 Safe Codes Database</a> — All 17 fixed story, gang-op, and door/garage combinations.</li>
+            <li><a href="/gta-6-money-guide/">GTA 6 Money &amp; Robbery Guide</a> — Cash loops, ATM banking, and fence payout rules.</li>
+            <li><a href="/missions/">Mission Walkthrough Hub</a> — Full Chapter 2 walkthroughs including <em>Moses</em>, <em>Slam Dunk</em>, and <em>Checking Out</em>.</li>
+            <li><a href="/weapons">Weapons, Tactical Gear &amp; Unique Variants</a> — Loadouts, body armor, and gun store links.</li>
+            <li><a href="/properties">Properties, Garages &amp; Fences Database</a> — Safehouses, garages, and buyer contacts.</li>
+            <li><a href="/map?q=Port+Gellhorn">Interactive Leonida Map (Port Gellhorn Filter)</a> — Explore Kelly County pins and layers.</li>
+        </ul>
+    </section>
+</main>
+
 <footer>
     <div class="footer-spread-wrap">
         <div class="footer-top-brand">
             <div>
                 <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
                 <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
-                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
+                    Verified tactical guides, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
                 </p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
-                <a href="/save-planner" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
-                <a href="/map.html" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+                <a href="/save-planner/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/map" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
 
@@ -379,74 +539,69 @@
             <div>
                 <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
                 <ul class="footer-col-links">
-                    <li><a href="/save-planner" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
-                    <li><a href="/cheats.html">⚡ Cheats &amp; Glitches</a></li>
-                    <li><a href="/heist-payout-calculator.html">Heist Payout Calculator</a></li>
+                    <li><a href="/save-planner/" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/cheats">⚡ Cheats &amp; Glitches</a></li>
+                    <li><a href="/heist-payout-calculator">Heist Payout Calculator</a></li>
                     <li><a href="/heist-planner">Squad Heist Planner</a></li>
-                    <li><a href="/settings.html">30 FPS Console Settings</a></li>
+                    <li><a href="/gta-6-settings/">30 FPS Console Settings</a></li>
                     <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
                 </ul>
             </div>
             <div>
                 <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
-                    <li><a href="/map.html" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
-                    <li><a href="/properties.html">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals.html">🐊 Animals Compendium (170+)</a></li>
-                    <li><a href="/money-guide.html">💰 Cash Guide &amp; Safe Codes</a></li>
-                    <li><a href="/live-intel.html">📡 Live Launch Intel</a></li>
+                    <li><a href="/map" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
+                    <li><a href="/properties">🏠 Properties, Garages &amp; Fences</a></li>
+                    <li><a href="/animals">🐊 Animals Compendium</a></li>
+                    <li><a href="/gta-6-money-guide/">💰 Cash Guide &amp; Safe Codes</a></li>
+                    <li><a href="/guides/gta-6-safe-codes.html">🔐 Safe Codes Database</a></li>
                 </ul>
             </div>
             <div>
                 <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
                 <ul class="footer-col-links">
-                    <li><a href="/weapons.html">⚔️ Weapons &amp; Heist Loadouts</a></li>
-                    <li><a href="/vehicles.html">🏎️ Vehicles &amp; Trunk Specs</a></li>
-                    <li><a href="/weapons-bonuses.html">🔫 24 Ammu-Nation Stores</a></li>
-                    <li><a href="/secrets.html">🥚 Secrets &amp; Easter Eggs</a></li>
+                    <li><a href="/weapons">⚔️ Weapons &amp; Tactical Gear</a></li>
+                    <li><a href="/vehicles">🏎️ Vehicles &amp; Trunk Specs</a></li>
+                    <li><a href="/weapons-bonuses">🔫 24 Ammu-Nation Stores</a></li>
+                    <li><a href="/secrets">🥚 Secrets &amp; Easter Eggs</a></li>
                 </ul>
-            </div>
-                        <div>
-                <span class="footer-col-title" style="color:#a855f7;">📋 Site &amp; Legal</span>
-                <ul class="footer-col-links">
-                    <li><a href="/about.html">About GTA6HeistGuide</a></li>
-                    <li><a href="/contact.html">Contact &amp; Corrections</a></li>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms of Service &amp; DMCA</a></li>
-                    <li><a href="/drops.html">🎁 Launch Rewards &amp; Drops</a></li>
-                    <li><a href="/live.html">📺 Live Companion HUD</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-secondary-strip">
-            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
-                <a href="/map.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
-                <a href="/properties.html" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
-                <a href="/animals.html" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
-                <a href="/cheats.html" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
-                <a href="/radio.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
-                <a href="/drops.html" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
-                <a href="/about.html" style="color:#94a3b8; text-decoration:none;">About</a>
-                <a href="/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                <a href="/terms.html" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
             </div>
             <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
+                <span class="footer-col-title" style="color:#a855f7;">📋 Site &amp; Legal</span>
+                <ul class="footer-col-links">
+                    <li><a href="/about">About GTA6HeistGuide</a></li>
+                    <li><a href="/contact">Contact &amp; Corrections</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service &amp; DMCA</a></li>
+                    <li><a href="/drops">🎁 Launch Rewards &amp; Drops</a></li>
+                    <li><a href="/live">📺 Live Companion HUD</a></li>
+                </ul>
             </div>
         </div>
 
         <div class="footer-disclaimer">
             <p style="margin:0;">
-                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. As an Amazon Associate I earn from qualifying purchases. As an Amazon Associate (tag: <code>gta6heistguid-20</code>), G2A, ExitLag, and Gumroad (CutFlow Pro) partner, this site earns commissions on qualifying purchases at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+                <strong>LEGAL &amp; FTC DISCLOSURE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. &copy; 2026 gta6heistguide.com. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
-<script src="/js/affiliates.js?v=20261122_v23"></script>
-<script src="/site-config.js"></script>
-<script src="/assets/main.js" defer></script>
-
+<script src="/site-config.js" defer></script>
+<script src="/assets/main.js?v=20261123_v24" defer></script>
+<script>
+(function() {
+    document.querySelectorAll('.pg-code-badge[data-copy]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var code = btn.getAttribute('data-copy');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).catch(function() {});
+            }
+            var orig = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = orig; }, 1100);
+        });
+    });
+})();
+</script>
 </body>
 </html>

@@ -37,6 +37,7 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/weapons-bonuses", changefreq: "weekly", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/radio", changefreq: "daily", priority: "0.92" },
   // Guides & Feeds
+  { loc: "https://www.gta6heistguide.com/port-gellhorn", lastmod: "2026-11-23", changefreq: "daily", priority: "0.95" },
   { loc: "https://www.gta6heistguide.com/secrets", changefreq: "daily", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/live-intel", changefreq: "daily", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/drops", changefreq: "daily", priority: "0.88" },
