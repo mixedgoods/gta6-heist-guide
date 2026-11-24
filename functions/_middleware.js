@@ -1,8 +1,14 @@
-// Canonical URL permanent redirect middleware for extensionless canonical pages.
-// Explicitly allowlists only canonical extensionless routes so legacy .html pages,
-// /guides/*.html, /compare/*.html, /google*.html, /api/*, and /cd-admin/* are never altered.
+// Canonical URL permanent redirect (301) and retired-page (410 Gone) middleware.
+// Explicitly allowlists only canonical redirects and retired URLs so /api/*,
+// /cd-admin/*, /google*.html, and active static assets are never altered.
+
+const GONE_ROUTES = new Set([
+  "/compare/g2a-verified-keys-vs-eneba-store-gta6-deals",
+  "/compare/g2a-verified-keys-vs-eneba-store-gta6-deals.html",
+]);
 
 const CANONICAL_REDIRECTS = new Map([
+  // Extensionless canonicalization for active pages
   ["/port-gellhorn.html", "/port-gellhorn"],
   ["/weapons.html", "/weapons"],
   ["/weapons-gear", "/weapons"],
@@ -24,6 +30,7 @@ const CANONICAL_REDIRECTS = new Map([
   ["/crew-database.html", "/crew-database"],
   ["/safehouses-laundering.html", "/safehouses-laundering"],
   ["/live-intel.html", "/live-intel"],
+  ["/live.html", "/live"],
   ["/drops.html", "/drops"],
   ["/giveaways.html", "/giveaways"],
   ["/about.html", "/about"],
@@ -42,11 +49,42 @@ const CANONICAL_REDIRECTS = new Map([
   ["/heists/armored-trucks-gang-ops.html", "/heists/armored-trucks-gang-ops"],
   ["/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates.html", "/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates"],
   ["/articles/gta-6-heist-payout-math-true-net-dollar-per-hour.html", "/articles/gta-6-heist-payout-math-true-net-dollar-per-hour"],
-  ["/articles/how-to-beat-15-second-biometric-vault-keypad-hack-gta-6.html", "/articles/how-to-beat-15-second-biometric-vault-keypad-hack-gta-6"],
-  ["/articles/how-to-clip-auto-edit-916-vertical-gta-6-heist-highlights-offline.html", "/articles/how-to-clip-auto-edit-916-vertical-gta-6-heist-highlights-offline"],
-  ["/articles/leaked-leonida-collectors-map-lummox-pelican-valley-key-lento.html", "/articles/leaked-leonida-collectors-map-lummox-pelican-valley-key-lento"],
-  ["/articles/protecting-gta-6-online-heist-lobby-ip-sniffing-texture-pop-in.html", "/articles/protecting-gta-6-online-heist-lobby-ip-sniffing-texture-pop-in"],
-  ["/articles/solo-vs-4-player-co-op-heist-splits-gta-6-loot-weight.html", "/articles/solo-vs-4-player-co-op-heist-splits-gta-6-loot-weight"],
+  // Phase 2 consolidated legacy guides (5)
+  ["/guides/port-gellhorn-container-terminal-crane-heist", "/port-gellhorn"],
+  ["/guides/port-gellhorn-container-terminal-crane-heist.html", "/port-gellhorn"],
+  ["/guides/fast-cash-laundering-fences-safehouses-guide", "/gta-6-money-guide/"],
+  ["/guides/fast-cash-laundering-fences-safehouses-guide.html", "/gta-6-money-guide/"],
+  ["/guides/vehicle-trunk-weapon-storage-armory-guide", "/gta-6-vehicles-guide/"],
+  ["/guides/vehicle-trunk-weapon-storage-armory-guide.html", "/gta-6-vehicles-guide/"],
+  ["/guides/best-2-player-lucia-jason-co-op-heist-loadouts", "/lucia-jason-skills"],
+  ["/guides/best-2-player-lucia-jason-co-op-heist-loadouts.html", "/lucia-jason-skills"],
+  ["/guides/raul-bautista-bank-robbery-mastermind-playbooks", "/heists/the-cartel-heist"],
+  ["/guides/raul-bautista-bank-robbery-mastermind-playbooks.html", "/heists/the-cartel-heist"],
+  // Phase 2 consolidated duplicate/merged root pages
+  ["/settings", "/gta-6-settings/"],
+  ["/settings.html", "/gta-6-settings/"],
+  ["/settings-picker", "/gta-6-settings/"],
+  ["/settings-picker.html", "/gta-6-settings/"],
+  ["/vice-city-yacht-heist", "/missions/#walk-day-release"],
+  ["/vice-city-yacht-heist.html", "/missions/#walk-day-release"],
+  ["/sinfrontera-bank", "/heists/the-cartel-heist"],
+  ["/sinfrontera-bank.html", "/heists/the-cartel-heist"],
+  ["/leonida-reserve", "/"],
+  ["/leonida-reserve.html", "/"],
+  ["/everglades-smuggler-run", "/gta-6-money-guide/"],
+  ["/everglades-smuggler-run.html", "/gta-6-money-guide/"],
+  ["/ocean-drive-armored-convoy", "/gta-6-money-guide/"],
+  ["/ocean-drive-armored-convoy.html", "/gta-6-money-guide/"],
+  ["/interactive-map", "/map"],
+  ["/interactive-map.html", "/map"],
+  ["/leonida-interactive-map", "/map"],
+  ["/leonida-interactive-map.html", "/map"],
+  ["/vehicles-getaway-cars", "/vehicles"],
+  ["/vehicles-getaway-cars.html", "/vehicles"],
+  ["/money-guide", "/gta-6-money-guide/"],
+  ["/money-guide.html", "/gta-6-money-guide/"],
+  ["/save-planner.html", "/save-planner/"],
+  ["/free.html", "/free/"],
 ]);
 
 export async function onRequest(context) {
@@ -60,9 +98,26 @@ export async function onRequest(context) {
     return context.next();
   }
 
+  if (GONE_ROUTES.has(url.pathname)) {
+    return new Response("410 Gone — This obsolete comparison page has been permanently retired.", {
+      status: 410,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "X-Robots-Tag": "noindex, nofollow",
+        "Cache-Control": "public, max-age=3600",
+      },
+    });
+  }
+
   const target = CANONICAL_REDIRECTS.get(url.pathname);
   if (target) {
-    url.pathname = target;
+    const hashIdx = target.indexOf("#");
+    if (hashIdx !== -1) {
+      url.pathname = target.slice(0, hashIdx);
+      url.hash = target.slice(hashIdx);
+    } else {
+      url.pathname = target;
+    }
     return Response.redirect(url.toString(), 301);
   }
 

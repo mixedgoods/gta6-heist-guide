@@ -28,7 +28,6 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/heist-payout-calculator", changefreq: "daily", priority: "0.93" },
   { loc: "https://www.gta6heistguide.com/free/", changefreq: "weekly", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/leonida-wanted-system", changefreq: "weekly", priority: "0.88" },
-  { loc: "https://www.gta6heistguide.com/settings", changefreq: "daily", priority: "0.92" },
   // World Database Pages
   { loc: "https://www.gta6heistguide.com/properties", changefreq: "daily", priority: "0.95" },
   { loc: "https://www.gta6heistguide.com/animals", lastmod: "2026-11-22", changefreq: "daily", priority: "0.95" },
@@ -42,6 +41,7 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/guides/gta-6-safe-codes", lastmod: "2026-11-23", changefreq: "daily", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/secrets", changefreq: "daily", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/live-intel", changefreq: "daily", priority: "0.90" },
+  { loc: "https://www.gta6heistguide.com/live", lastmod: "2026-11-23", changefreq: "daily", priority: "0.88" },
   { loc: "https://www.gta6heistguide.com/drops", changefreq: "daily", priority: "0.88" },
   { loc: "https://www.gta6heistguide.com/giveaways", changefreq: "daily", priority: "0.86" },
   { loc: "https://www.gta6heistguide.com/lucia-jason-skills", changefreq: "weekly", priority: "0.85" },
@@ -52,11 +52,6 @@ const STATIC_ROUTES = [
   // Editorial Articles
   { loc: "https://www.gta6heistguide.com/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates", changefreq: "weekly", priority: "0.84" },
   { loc: "https://www.gta6heistguide.com/articles/gta-6-heist-payout-math-true-net-dollar-per-hour", changefreq: "weekly", priority: "0.84" },
-  { loc: "https://www.gta6heistguide.com/articles/how-to-beat-15-second-biometric-vault-keypad-hack-gta-6", changefreq: "weekly", priority: "0.84" },
-  { loc: "https://www.gta6heistguide.com/articles/how-to-clip-auto-edit-916-vertical-gta-6-heist-highlights-offline", changefreq: "weekly", priority: "0.84" },
-  { loc: "https://www.gta6heistguide.com/articles/leaked-leonida-collectors-map-lummox-pelican-valley-key-lento", changefreq: "weekly", priority: "0.84" },
-  { loc: "https://www.gta6heistguide.com/articles/protecting-gta-6-online-heist-lobby-ip-sniffing-texture-pop-in", changefreq: "weekly", priority: "0.84" },
-  { loc: "https://www.gta6heistguide.com/articles/solo-vs-4-player-co-op-heist-splits-gta-6-loot-weight", changefreq: "weekly", priority: "0.84" },
   // Legal & Info
   { loc: "https://www.gta6heistguide.com/about", lastmod: "2026-11-22", changefreq: "monthly", priority: "0.50" },
   { loc: "https://www.gta6heistguide.com/contact", changefreq: "monthly", priority: "0.50" },
