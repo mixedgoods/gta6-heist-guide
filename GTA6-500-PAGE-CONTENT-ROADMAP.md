@@ -9,7 +9,7 @@
 
 | Metric | Count |
 |---|---:|
-| **Total Master Inventory Pages** | **504** |
+| **Total Master Inventory Pages** | **527** |
 | Existing Published Indexable Canonical Pages (Baseline) | 57 |
 | Phase 6 Live Published Pages | 32 |
 | Phase 7 Live Published Pages (Added 2026-11-24) | 32 |
@@ -25,34 +25,35 @@
 | Phase 17 Live Published Pages (Added 2026-11-24) | 25 |
 | Phase 18 Live Published Pages (Added 2026-11-24) | 25 |
 | Phase 19 Live Published Pages (Added 2026-11-24) | 25 |
-| **Current Live Canonical Indexable Total (Post-Phase 19)** | **475** |
+| Phase 20 Live Published Pages (Added 2026-11-24) | 25 |
+| **Current Live Canonical Indexable Total (Post-Phase 20)** | **500 (100% MILESTONE REACHED)** |
 | Planned — Evidence Ready (Core 500-Page Target Remaining) | 0 |
 | Consolidated — Duplicate Intent (Merged into Existing Guide) | 1 |
-| Planned — Awaiting Additional In-Game / Source Verification | 27 |
+| Planned — Awaiting Additional In-Game / Source Verification | 25 (Unconfirmed Wildlife Only) |
 | Planned — Future Post-Launch Expansion (GTA 6 Online) | 1 |
 
-## Category Breakdown (Reconciled Post-Phase 19)
+## Category Breakdown (Reconciled Post-Phase 20)
 
-| # | Category | Total | Live Published | Core Evidence-Ready | Reserve (504→500) | Needs Verification | Future Online |
+| # | Category | Total | Live Published | Core Evidence-Ready | Reserve (Dup) | Needs Verification | Future Online |
 |---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Main Story Missions | 12 | 12 | 0 | 0 | 0 | 0 |
+| 1 | Main Story Missions | 13 | 13 | 0 | 0 | 0 | 0 |
 | 2 | Individual Mission Walkthroughs | 91 | 91 | 0 | 0 | 0 | 0 |
-| 3 | Side Missions and Stranger Encounters | 24 | 21 | 0 | 1 (Dup) | 2 | 0 |
-| 4 | Heists and Robberies | 16 | 16 | 0 | 0 | 0 | 0 |
+| 3 | Side Missions and Stranger Encounters | 31 | 30 | 0 | 1 (Dup) | 0 | 0 |
+| 4 | Heists and Robberies | 19 | 19 | 0 | 0 | 0 | 0 |
 | 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 14 | 0 | 0 | 0 | 0 |
 | 6 | Leonida Regions and Districts | 22 | 22 | 0 | 0 | 0 | 0 |
 | 7 | Landmarks and Locations | 30 | 30 | 0 | 0 | 0 | 0 |
-| 8 | Collectibles and Completion Guides | 20 | 20 | 0 | 0 | 0 | 0 |
+| 8 | Collectibles and Completion Guides | 23 | 23 | 0 | 0 | 0 | 0 |
 | 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 22 | 0 | 0 | 0 | 0 |
-| 10 | Weapons and Unique Weapon Variants | 30 | 30 | 0 | 0 | 0 | 0 |
-| 11 | Vehicles and Vehicle Locations | 40 | 40 | 0 | 0 | 0 | 0 |
+| 10 | Weapons and Unique Weapon Variants | 32 | 32 | 0 | 0 | 0 | 0 |
+| 11 | Vehicles and Vehicle Locations | 44 | 44 | 0 | 0 | 0 | 0 |
 | 12 | Animals and Wildlife | 55 | 30 | 0 | 0 | 25 | 0 |
 | 13 | Characters and Relationships | 22 | 22 | 0 | 0 | 0 | 0 |
 | 14 | Properties and Businesses | 24 | 24 | 0 | 0 | 0 | 0 |
 | 15 | Police, Wanted Levels and Escape Mechanics | 16 | 16 | 0 | 0 | 0 | 0 |
 | 16 | Money-Making Methods | 18 | 17 | 0 | 0 | 0 | 1 |
-| 17 | Activities, Exploration and Game Mechanics | 48 | 48 | 0 | 0 | 0 | 0 |
-| — | **TOTAL** | **504** | **475** | **0** | **1 (Dup)** | **27** | **1** |
+| 17 | Activities, Exploration and Game Mechanics | 51 | 51 | 0 | 0 | 0 | 0 |
+| — | **TOTAL** | **527** | **500** | **0** | **1 (Dup)** | **25** | **1** |
 
 ## Editorial & Verification Policy
 
@@ -199,8 +200,8 @@
 | Skunk Apeology 101 Side Mission Guide (Kirk & Mr. Mangrove) | `/missions/skunk-apeology-101` | Side Mission | How do you complete Skunk Apeology 101 for $10,000 & Laird 350? | `/missions/` | Corroborated IGN/PowerPyx side strand | P1 | Published (Phase 17) |
 | Pilot Pete Airdrop Deliveries Side Mission Guide (Ch. 4) | `/missions/pilot-pete-airdrop-deliveries` | Side Mission | How do you finish all 5 Sundown Airfield drops & safe code 3718? | `/missions/` | Corroborated PowerPyx/GTABase side strand | P1 | Published (Phase 17) |
 | Leonida Keys Diving & Salvage Side Jobs | `/guides/leonida-keys-salvage-jobs` | Side Activity | How do underwater salvage and shipwreck jobs work in the Leonida Keys? | `/locations/leonida-keys` | 100% tracker (33 underwater discoveries, 7 Kenton sets) | P2 | Published (Phase 13)|
-| Ambrosia Biker & Industrial Side Jobs | `/guides/ambrosia-side-jobs` | Side Encounters | What biker gang encounters and side jobs happen in Ambrosia? | `/locations/ambrosia` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
-| Vice Beach Boardwalk & Tourist Encounters | `/guides/vice-beach-encounters` | Side Encounters | What stranger encounters spawn along Vice Beach and Ocean Beach? | `/locations/vice-city` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
+| Ambrosia Biker & Industrial Side Jobs | `/guides/ambrosia-side-jobs` | Side Encounters | What biker gang encounters and side jobs happen in Ambrosia? | `/locations/ambrosia` | Corroborated IGN/GTABase/Detonated/Mobalytics/Sportskeeda | P2 | Published (Phase 20) |
+| Vice Beach Boardwalk & Tourist Encounters | `/guides/vice-beach-encounters` | Side Encounters | What stranger encounters spawn along Vice Beach and Ocean Beach? | `/locations/vice-city` | Corroborated KeenGamer/GTABase/PowerPyx | P2 | Published (Phase 20) |
 | Tow Truck & Repo Side Activity Guide | `/guides/tow-truck-atm-and-repo-guide` | Side Activity | How do tow trucks work for ATM theft and repo jobs in GTA 6? | `/secrets` | secrets-live.json (tow truck ATM theft) | P2 | Published (Phase 13)|
 | Taxi, Rideshare & Delivery Side Hustles in GTA 6 | `/guides/delivery-and-rideshare-jobs` | Side Activity | What legal and gray-market delivery side jobs earn cash in Story Mode? | `/gta-6-money-guide/` | Awaiting verified payout rates | P3 | Published (Phase 19) |
 | Fishing & Boating Side Activities in Leonida | `/guides/leonida-fishing-and-boating` | Side Activity | Can you fish and run boat challenges in the Leonida Keys and Lake Leonida? | `/locations/lake-leonida` | Awaiting verified mechanics | P3 | Published (Phase 18) |
@@ -684,3 +685,33 @@
 | The Wipe 99.9 Radio Station Tracklist & DJ Guide (Satirical Talk & Therapy (DMCA-Safe)) | `/radio/the-wipe-99-9` | Radio / Music | What songs play on The Wipe 99.9 in GTA 6 and who hosts the station? | `/radio` | data/radio.json (the-wipe) | P3 | Published (Phase 15) |
 | GTA 6 Complete Controls Guide (PS5 & Xbox Series X/S) | `/gta-6-controls/` | Reference / Controls | What are the complete PS5 and Xbox controls for GTA 6? | `/gta-6-settings/` | Existing live canonical controls hub | P0 | Published |
 | PS5 Pro vs Xbox Series X Graphics & Performance Settings Guide | `/guides/ps5-pro-vs-xbox-graphics-settings` | Settings / Hardware | What are the best graphics and 120Hz VRR settings on PS5 Pro vs Xbox? | `/gta-6-settings/` | Existing live canonical hardware guide | P1 | Published (Phase 13) |
+
+---
+
+## Phase 20 High-Value Expansion (23 New Corroborated Guides — Reaching 500 Live Canonical URLs)
+
+| Working Title | Proposed Canonical URL | Main Search Intent | Question Answered | Existing Related Page | Evidence & Sources | Priority | Status |
+|---|---|---|---|---|---|---|---|
+| Shirley Side Missions Walkthrough (Ch. 1 Missable) | `/missions/shirley-side-missions` | Side Mission | How do you complete Shirley's missable Chapter 1 errands in Key Lento? | `/missions/` | Corroborated IGN/PushSquare/AlcastHQ/OutputLag | P1 | Published (Phase 20) |
+| Kyle McKittrick Side Missions Walkthrough (Ch. 2) | `/missions/kyle-mckittrick-side-missions` | Side Mission | How do you trigger McKittrick Farm and advance the 8-strand S&F trophy? | `/missions/` | Corroborated GTABase/PowerPyx/KeenGamer/PushSquare | P1 | Published (Phase 20) |
+| Papa Audacity Side Missions Walkthrough (All 5 Quests) | `/missions/papa-audacity-side-missions` | Side Mission | How do you complete all 5 Papa Audacity quests & earn the AudaCity Sandking? | `/missions/` | Corroborated PowerPyx/LeonidaHub/KeenGamer/Sportskeeda | P1 | Published (Phase 20) |
+| Tyrone Side Missions Walkthrough ("Spin On This!") | `/missions/tyrone-side-missions` | Side Mission / Trophy | How do you beat Take Out Kitty Litter and unlock Spin On This!? | `/guides/tyrone-character-guide` | Corroborated GTABase/PowerPyx/PushSquare | P1 | Published (Phase 20) |
+| Andy & Cellerica Side Missions ("Road to Rehabilitation") | `/missions/andy-cellerica-side-missions` | Side Mission / Trophy | How do you finish all 5 Lucia Cellerica quests for Road to Rehabilitation? | `/guides/lucia-caminos-character-guide` | Corroborated GTABase/PushSquare/MetaForge/PowerPyx | P1 | Published (Phase 20) |
+| Billy Side Missions: Hometown Heroes & Ambrosia Raceway | `/missions/billy-hometown-heroes-side-missions` | Side Mission | How do you survive Billy's Ambrosia Raceway robbery & dirt-bike escape? | `/guides/ambrosia-side-jobs` | Corroborated Sportskeeda/PowerPyx/AlcastHQ | P1 | Published (Phase 20) |
+| Strangers & Freaks Complete Guide (8 Qualifying Strands) | `/guides/strangers-and-freaks-trophy-guide` | Trophy / Hub | Which 8 stranger strands count for the Silver trophy vs standalone trophies? | `/guides/gta-6-trophy-and-achievement-guide` | Corroborated PowerPyx/IGN/GTABase/AlcastHQ | P1 | Published (Phase 20) |
+| All 80 Challenges Guide (70 for 100% & 50 for Trophy) | `/guides/all-80-challenges-guide` | Completionist | What are all 8 challenge categories and which 10 can you skip for 100%? | `/gta-6-100-completion-tracker/` | Corroborated PowerPyx/IGN/PushSquare/GamesRadar | P1 | Published (Phase 20) |
+| Top Fun Drone Races Guide (All 14 Vans & 42 Trials) | `/guides/top-fun-drone-races-locations` | Collectibles / Trophy | Where are all 14 Top Fun vans, payouts ($750–$3,000) & 100% par rules? | `/gta-6-100-completion-tracker/` | Corroborated PowerPyx/IGN/GTABase/PlayStationTrophies | P1 | Published (Phase 20) |
+| Gyms & Fitness Stats Guide (All 9 Gyms & Fees) | `/guides/gyms-and-fitness-stats-guide` | Mechanics / Stats | Where are all 9 gyms (Free Muscle Sands to $1,800 Ajax) & how do stats work? | `/gameplay-mechanics` | Corroborated GameSpot/GTABase/Beebom/TheLeonida | P1 | Published (Phase 20) |
+| Meditation Spots Guide (18 Locations & Ch. 1 Warning) | `/guides/meditation-spots-locations` | Collectibles / Trophy | Where are Leonida's 18 Meditation Spots & what is the Ch. 1 balcony missable? | `/gta-6-collectibles/` | Corroborated PowerPyx/Beebom/Duuro | P1 | Published (Phase 20) |
+| Vehicle Impound & Lost Car Recovery Guide | `/guides/impound-and-lost-vehicles-recovery` | Mechanics / Vehicles | How do you recover impounded, destroyed, or lost cars via Scooter Bros & Joey? | `/gta-6-vehicles-guide/` | Corroborated GTABase/IGN/Space4Games/GamesRadar | P1 | Published (Phase 20) |
+| How to Buy & Register Stolen Cars (Moses & Pay 'n' Spray) | `/guides/how-to-buy-and-register-stolen-cars` | Mechanics / Vehicles | Are there car dealerships and how do you register stolen cars as Personal Vehicles? | `/gta-6-vehicles-guide/` | Corroborated MetaForge/PowerPyx/GamesRadar/OutputLag | P1 | Published (Phase 20) |
+| Pay 'n' Spray Guide (All 19 Locations & Heat Clearing) | `/guides/pay-n-spray-locations-and-heat-guide` | Mechanics / Wanted | Where are all 19 Pay 'n' Sprays and how do they clear Vehicle Heat? | `/leonida-wanted-system` | Corroborated GamesRadar/GTABase/MetaForge/PowerPyx | P1 | Published (Phase 20) |
+| Standout Vehicles Guide (280 Unique Variants) | `/guides/standout-vehicles-guide` | Vehicles / 100% | How do all 280 yellow-icon Standout Vehicles across 25 categories work? | `/gta-6-vehicles-guide/` | Corroborated PowerPyx/IGN/GTABase/AlcastHQ | P1 | Published (Phase 20) |
+| Illegal Operations Guide (All 39 Gang Hideouts) | `/guides/illegal-operations-gang-hideouts` | Robberies / Trophy | How do all 39 Illegal Operations work for 100% and the Pest Control trophy? | `/heists/armored-trucks-gang-ops` | Corroborated GTABase/PowerPyx/IGN/Insider Gaming | P1 | Published (Phase 20) |
+| Final Chapter Biker Hideout Walkthrough (Safe 1982) | `/guides/final-chapter-biker-hideout` | Robbery / Walkthrough | How do you loot The Thirsty Wolf (Safe 1982, Revolver & LCC Monarch Avarus)? | `/guides/gta-6-safe-codes` | Corroborated Mobalytics/NoobFeed/AlcastHQ/Dexerto | P1 | Published (Phase 20) |
+| Gangs & Criminal Factions of Leonida Guide | `/guides/leonida-gangs-and-factions-guide` | Lore / Territories | Which criminal factions control each Leonida county and Illegal Operation? | `/guides/illegal-operations-gang-hideouts` | Corroborated GTABase/Gfinity/PowerPyx/MeowDB | P2 | Published (Phase 20) |
+| Ride Free H&L .38 Revolver Unique Weapon Guide | `/weapons/ride-free-revolver` | Weapons / Unique | Where do you find the Ride Free H&L .38 Revolver and recover it at Ammu-Nation? | `/weapons` | Corroborated IGN/GTABase/NoobFeed/Mobalytics | P1 | Published (Phase 20) |
+| Black Eagle Import Kalinga .50 Unique Pistol Guide | `/weapons/black-eagle-kalinga-50` | Weapons / Unique | How do you unlock the Black Eagle warehouse in Balsero for the Kalinga .50? | `/weapons` | Corroborated IGN/GTABase/MeowDB/Sportskeeda | P1 | Published (Phase 20) |
+| Photo Studio (Photo Mode) & Camera Guide | `/guides/photo-studio-and-camera-guide` | Features / Controls | How do you open Photo Studio, use filters, hide HUD & find saved photos? | `/gta-6-controls/` | Corroborated GameSpot/Insider Gaming/Mobalytics | P2 | Published (Phase 20) |
+| Ultimate Edition & Pre-Order Bonuses Unlock Guide | `/guides/ultimate-edition-bonuses-guide` | Editions / Unlocks | How do you claim Ultimate Edition bonuses via Pause → Store across Ch. 1–5? | `/gta-6-tips-and-tricks/` | Corroborated PC Gamer/GameSpot/Red Bull/GamesRadar | P1 | Published (Phase 20) |
+| Story Choices & Consequences Guide | `/guides/story-choices-and-consequences` | Story / Mechanics | Which GTA 6 choices are flavor-only vs which affect relationships & endings? | `/gta-6-endings-guide/` | Corroborated Beebom/GTABase/GamesRadar/PowerPyx | P1 | Published (Phase 20) |
