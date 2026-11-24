@@ -24,34 +24,35 @@
 | Phase 16 Live Published Pages (Added 2026-11-24) | 6 |
 | Phase 17 Live Published Pages (Added 2026-11-24) | 25 |
 | Phase 18 Live Published Pages (Added 2026-11-24) | 25 |
-| **Current Live Canonical Indexable Total (Post-Phase 18)** | **450** |
+| Phase 19 Live Published Pages (Added 2026-11-24) | 25 |
+| **Current Live Canonical Indexable Total (Post-Phase 19)** | **475** |
 | Planned — Evidence Ready (Core 500-Page Target Remaining) | 0 |
 | Consolidated — Duplicate Intent (Merged into Existing Guide) | 1 |
-| Planned — Awaiting Additional In-Game / Source Verification | 52 |
+| Planned — Awaiting Additional In-Game / Source Verification | 27 |
 | Planned — Future Post-Launch Expansion (GTA 6 Online) | 1 |
 
-## Category Breakdown (Reconciled Post-Phase 18)
+## Category Breakdown (Reconciled Post-Phase 19)
 
 | # | Category | Total | Live Published | Core Evidence-Ready | Reserve (504→500) | Needs Verification | Future Online |
 |---|---|---:|---:|---:|---:|---:|---:|
 | 1 | Main Story Missions | 12 | 12 | 0 | 0 | 0 | 0 |
-| 2 | Individual Mission Walkthroughs | 91 | 74 | 0 | 0 | 17 | 0 |
-| 3 | Side Missions and Stranger Encounters | 24 | 20 | 0 | 1 (Dup) | 3 | 0 |
-| 4 | Heists and Robberies | 16 | 15 | 0 | 0 | 1 | 0 |
+| 2 | Individual Mission Walkthroughs | 91 | 91 | 0 | 0 | 0 | 0 |
+| 3 | Side Missions and Stranger Encounters | 24 | 21 | 0 | 1 (Dup) | 2 | 0 |
+| 4 | Heists and Robberies | 16 | 16 | 0 | 0 | 0 | 0 |
 | 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 14 | 0 | 0 | 0 | 0 |
 | 6 | Leonida Regions and Districts | 22 | 22 | 0 | 0 | 0 | 0 |
 | 7 | Landmarks and Locations | 30 | 30 | 0 | 0 | 0 | 0 |
-| 8 | Collectibles and Completion Guides | 20 | 16 | 0 | 0 | 4 | 0 |
-| 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 21 | 0 | 0 | 1 | 0 |
+| 8 | Collectibles and Completion Guides | 20 | 20 | 0 | 0 | 0 | 0 |
+| 9 | Secrets, Easter Eggs and Hidden Discoveries | 22 | 22 | 0 | 0 | 0 | 0 |
 | 10 | Weapons and Unique Weapon Variants | 30 | 30 | 0 | 0 | 0 | 0 |
 | 11 | Vehicles and Vehicle Locations | 40 | 40 | 0 | 0 | 0 | 0 |
 | 12 | Animals and Wildlife | 55 | 30 | 0 | 0 | 25 | 0 |
 | 13 | Characters and Relationships | 22 | 22 | 0 | 0 | 0 | 0 |
 | 14 | Properties and Businesses | 24 | 24 | 0 | 0 | 0 | 0 |
 | 15 | Police, Wanted Levels and Escape Mechanics | 16 | 16 | 0 | 0 | 0 | 0 |
-| 16 | Money-Making Methods | 18 | 16 | 0 | 0 | 1 | 1 |
+| 16 | Money-Making Methods | 18 | 17 | 0 | 0 | 0 | 1 |
 | 17 | Activities, Exploration and Game Mechanics | 48 | 48 | 0 | 0 | 0 | 0 |
-| — | **TOTAL** | **504** | **450** | **0** | **1 (Dup)** | **52** | **1** |
+| — | **TOTAL** | **504** | **475** | **0** | **1 (Dup)** | **27** | **1** |
 
 ## Editorial & Verification Policy
 
@@ -158,23 +159,23 @@
 | VC Baby Mission Walkthrough (Ch. 5) | `/missions/vc-baby` | Walkthrough | Should you help or refuse Mattia and how do you steal Dardan's fob? | `/missions/` | Corroborated PowerPyx/OutputLag guide | P1 | Published (Phase 18) |
 | Operation Savage Glory Mission Walkthrough (Ch. 5) | `/missions/operation-savage-glory` | Walkthrough | How do you beat Operation Savage Glory for $50K & Snow Storm? | `/missions/` | Corroborated PowerPyx/GTABase guide | P1 | Published (Phase 18) |
 | The End of the Road Mission Walkthrough (Ch. 5 Finale) | `/missions/the-end-of-the-road` | Walkthrough | How do you beat GTA 6's Final Mission #117 & Abe's $150K fee? | `/missions/` | Corroborated PowerPyx/GTABase/OutputLag | P1 | Published (Phase 18) |
-| Vice City Night Shift Mission Walkthrough (Ch. 3) | `/missions/vice-city-night-shift` | Walkthrough | How do you complete Vice City Night Shift in GTA 6 (Ch. 3)? | `/missions/` | Reported Ch.3 nightlife mission; awaiting verification | P2 | Planned — Needs Verification |
-| Ocean Drive Escort Mission Walkthrough (Ch. 3) | `/missions/ocean-drive-escort` | Walkthrough | How do you complete Ocean Drive Escort in GTA 6 (Ch. 3)? | `/missions/` | Reported Ch.3 Vice Beach mission; awaiting verification | P2 | Planned — Needs Verification |
-| Canal Smugglers Mission Walkthrough (Ch. 3) | `/missions/canal-smugglers` | Walkthrough | How do you complete Canal Smugglers in GTA 6 (Ch. 3)? | `/missions/` | Reported Ch.3 waterway mission; awaiting verification | P2 | Planned — Needs Verification |
-| Cartel Counterstrike Mission Walkthrough (Ch. 3) | `/missions/cartel-counterstrike` | Walkthrough | How do you complete Cartel Counterstrike in GTA 6 (Ch. 3)? | `/missions/` | Reported Ch.3 post-heist mission; awaiting verification | P2 | Planned — Needs Verification |
-| Penthouse Negotiation Mission Walkthrough (Ch. 4) | `/missions/penthouse-negotiation` | Walkthrough | How do you complete Penthouse Negotiation in GTA 6 (Ch. 4)? | `/missions/` | Reported Ch.4 Vice City mission; awaiting verification | P2 | Planned — Needs Verification |
-| Harbor Lockdown Mission Walkthrough (Ch. 4) | `/missions/harbor-lockdown` | Walkthrough | How do you complete Harbor Lockdown in GTA 6 (Ch. 4)? | `/missions/` | Reported Ch.4 port mission; awaiting verification | P2 | Planned — Needs Verification |
-| Ambrosia Convoy Ambush Mission Walkthrough (Ch. 4) | `/missions/ambrosia-convoy-ambush` | Walkthrough | How do you complete Ambrosia Convoy Ambush in GTA 6 (Ch. 4)? | `/missions/` | Reported Ch.4 highway mission; awaiting verification | P2 | Planned — Needs Verification |
-| Lake Leonida Escape Mission Walkthrough (Ch. 4) | `/missions/lake-leonida-escape` | Walkthrough | How do you complete Lake Leonida Escape in GTA 6 (Ch. 4)? | `/missions/` | Reported Ch.4 shoreline mission; awaiting verification | P2 | Planned — Needs Verification |
-| Kalaga Ridge Sniper Mission Walkthrough (Ch. 4) | `/missions/kalaga-ridge-sniper` | Walkthrough | How do you complete Kalaga Ridge Sniper in GTA 6 (Ch. 4)? | `/missions/` | Reported Ch.4 mountain mission; awaiting verification | P2 | Planned — Needs Verification |
-| Double Cross in Vice Mission Walkthrough (Ch. 4) | `/missions/double-cross-in-vice` | Walkthrough | How do you complete Double Cross in Vice in GTA 6 (Ch. 4)? | `/missions/` | Reported Ch.4 betrayal mission; awaiting verification | P2 | Planned — Needs Verification |
-| The Final Score Setup Mission Walkthrough (Ch. 5) | `/missions/the-final-score-setup` | Walkthrough | How do you complete The Final Score Setup in GTA 6 (Ch. 5)? | `/missions/` | Reported Ch.5 prep mission; awaiting verification | P2 | Planned — Needs Verification |
-| Leonida Manhunt Mission Walkthrough (Ch. 5) | `/missions/leonida-manhunt` | Walkthrough | How do you complete Leonida Manhunt in GTA 6 (Ch. 5)? | `/missions/` | Reported Ch.5 pursuit mission; awaiting verification | P2 | Planned — Needs Verification |
-| Point of Departure Mission Walkthrough (Ch. 5) | `/missions/point-of-departure` | Walkthrough | How do you complete Point of Departure in GTA 6 (Ch. 5)? | `/missions/` | Reported Ch.5 epilogue mission; awaiting verification | P2 | Planned — Needs Verification |
-| Aftermath in Vice City Mission Walkthrough (Ch. 5) | `/missions/aftermath-in-vice-city` | Walkthrough | How do you complete Aftermath in Vice City in GTA 6 (Ch. 5)? | `/missions/` | Reported Ch.5 post-finale mission; awaiting verification | P2 | Planned — Needs Verification |
-| New Horizons Mission Walkthrough (Ch. 5) | `/missions/new-horizons` | Walkthrough | How do you complete New Horizons in GTA 6 (Ch. 5)? | `/missions/` | Reported Ch.5 closing mission; awaiting verification | P2 | Planned — Needs Verification |
-| Keys Lighthouse Signal Mission Walkthrough (Ch. 1) | `/missions/keys-lighthouse-signal` | Walkthrough | How do you complete Keys Lighthouse Signal in GTA 6 (Ch. 1)? | `/missions/` | Reported Ch.1 Keys mission; awaiting verification | P2 | Planned — Needs Verification |
-| Bayou Border Crossing Mission Walkthrough (Ch. 2) | `/missions/bayou-border-crossing` | Walkthrough | How do you complete Bayou Border Crossing in GTA 6 (Ch. 2)? | `/missions/` | Reported Ch.2 Grassrivers border mission; awaiting verification | P2 | Planned — Needs Verification |
+| Safe Word Mission Walkthrough (Ch. 3) | `/missions/safe-word` | Walkthrough | How do you winch the practice safe and unlock Gil's Kalinga .50 Pistol? | `/missions/` | Corroborated PowerPyx/IGN/GTABase/GTA6Box ($1,500) | P1 | Published (Phase 19) |
+| The Missing Link Mission Walkthrough (Ch. 3) | `/missions/the-missing-link` | Walkthrough | How do you grab missable Monty's 1992 Pistol and interrogate Monty? | `/missions/` | Corroborated PowerPyx/IGN/GTA6Box Ch.3 guide | P1 | Published (Phase 19) |
+| Bricked Up Mission Walkthrough (Ch. 3) | `/missions/bricked-up` | Walkthrough | How do you survive Captain Mendez's Venture Apartments raid for $3,500? | `/missions/` | Corroborated PowerPyx/IGN/GTABase/Sportskeeda | P1 | Published (Phase 19) |
+| Party Hard Mission Walkthrough (Ch. 4) | `/missions/party-hard` | Walkthrough | How do you rescue Andrés de León & César Navarro at Megamundo HQ? | `/missions/` | Corroborated PowerPyx/Red Bull/DualShockers Ch.4 | P1 | Published (Phase 19) |
+| Photo/Shoot Mission Walkthrough (Ch. 4) | `/missions/photo-shoot` | Walkthrough | How do you complete The Dimez promo shoot and rescue Dre'Quan? | `/missions/` | Corroborated GTABase/PowerPyx/DualShockers Ch.4 | P1 | Published (Phase 19) |
+| Watch It Mission Walkthrough (Ch. 4) | `/missions/watch-it` | Walkthrough | How do you beat Cruda parking lot ambush, Nola outfit & Royce Jones? | `/missions/` | Corroborated PowerPyx/GTABase/PC Gamer/ViceMissions | P1 | Published (Phase 19) |
+| Cash Injections Mission Walkthrough (Ch. 4) | `/missions/cash-injections` | Walkthrough | How do you help Nate at Muscle Beach and recover his stolen car? | `/missions/` | Corroborated GTABase/PowerPyx Ch.4 guide | P1 | Published (Phase 19) |
+| Amateur Hour Mission Walkthrough (Ch. 4) | `/missions/amateur-hour` | Walkthrough | How do you complete Cisco's Washington Beach job for $1,000? | `/missions/` | Corroborated PowerPyx/DualShockers Ch.4 guide | P1 | Published (Phase 19) |
+| Dirty Work Mission Walkthrough (Ch. 4) | `/missions/dirty-work` | Walkthrough | How do you photograph Raina at the Velvet Palm Motel? | `/missions/` | Corroborated PowerPyx/DualShockers Ch.4 guide | P1 | Published (Phase 19) |
+| Too Much Baggage Mission Walkthrough (Ch. 4) | `/missions/too-much-baggage` | Walkthrough | How do you plant Karim's bugs undercover as a VCIA baggage handler? | `/missions/` | Corroborated PowerPyx/GTABase/PC Gamer/GamesRadar | P1 | Published (Phase 19) |
+| Adventures in Babysitting Mission Walkthrough (Ch. 4) | `/missions/adventures-in-babysitting` | Walkthrough | How do you defend Andrés at The Vault and escort him to Starfish Island? | `/missions/` | Corroborated PowerPyx/GTABase Ch.4 guide | P1 | Published (Phase 19) |
+| Fresh Evidence Mission Walkthrough (Ch. 4) | `/missions/fresh-evidence` | Walkthrough | How do you infiltrate Dante Fresh's mansion for $10,000? | `/missions/` | Corroborated PowerPyx/GTABase/Clarin Ch.4 guide | P1 | Published (Phase 19) |
+| Power Play Mission Walkthrough (Ch. 4) | `/missions/power-play` | Walkthrough | How do you infiltrate Kordell's Salton base and earn $40,000? | `/missions/` | Corroborated PowerPyx/DualShockers Ch.4 guide | P1 | Published (Phase 19) |
+| Child's Play Mission Walkthrough (Ch. 4) | `/missions/childs-play` | Walkthrough | How do you stealth-rescue Rafa at the VCIA quarry for $30,000? | `/missions/` | Corroborated GTABase/DualShockers Ch.4 guide | P1 | Published (Phase 19) |
+| Headliners Mission Walkthrough (Ch. 4) | `/missions/headliners` | Walkthrough | How do you beat Club VYB ambush for Brass Knuckles & DWNFALL trophy? | `/missions/` | Corroborated PowerPyx/GTABase/Promptowy Ch.4 | P1 | Published (Phase 19) |
+| Delivery Method Mission Walkthrough (Ch. 4) | `/missions/delivery-method` | Walkthrough | How do you hack the VCIA TSS office & pull the fire alarm? | `/missions/` | Corroborated PowerPyx/GTABase/OutputLag Ch.4 | P1 | Published (Phase 19) |
+| Team Building Mission Walkthrough (Ch. 4) | `/missions/team-building` | Walkthrough | How do you win Lucia's warehouse cage match & Riverbank standoff? | `/missions/` | Corroborated PowerPyx/GTABase Ch.4 guide | P1 | Published (Phase 19) |
 
 ---
 
@@ -201,7 +202,7 @@
 | Ambrosia Biker & Industrial Side Jobs | `/guides/ambrosia-side-jobs` | Side Encounters | What biker gang encounters and side jobs happen in Ambrosia? | `/locations/ambrosia` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
 | Vice Beach Boardwalk & Tourist Encounters | `/guides/vice-beach-encounters` | Side Encounters | What stranger encounters spawn along Vice Beach and Ocean Beach? | `/locations/vice-city` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
 | Tow Truck & Repo Side Activity Guide | `/guides/tow-truck-atm-and-repo-guide` | Side Activity | How do tow trucks work for ATM theft and repo jobs in GTA 6? | `/secrets` | secrets-live.json (tow truck ATM theft) | P2 | Published (Phase 13)|
-| Taxi, Rideshare & Delivery Side Hustles in GTA 6 | `/guides/delivery-and-rideshare-jobs` | Side Activity | What legal and gray-market delivery side jobs earn cash in Story Mode? | `/gta-6-money-guide/` | Awaiting verified payout rates | P3 | Planned — Needs Verification |
+| Taxi, Rideshare & Delivery Side Hustles in GTA 6 | `/guides/delivery-and-rideshare-jobs` | Side Activity | What legal and gray-market delivery side jobs earn cash in Story Mode? | `/gta-6-money-guide/` | Awaiting verified payout rates | P3 | Published (Phase 19) |
 | Fishing & Boating Side Activities in Leonida | `/guides/leonida-fishing-and-boating` | Side Activity | Can you fish and run boat challenges in the Leonida Keys and Lake Leonida? | `/locations/lake-leonida` | Awaiting verified mechanics | P3 | Published (Phase 18) |
 | Cage Fighting & Backyard Brawl Encounters | `/guides/leonida-fight-clubs` | Side Activity | Where are melee combat and underground fight encounters located? | `/gameplay-mechanics` | Awaiting verified locations | P3 | Published (Phase 18) |
 | Shooting Range Challenges at Ammu-Nation Stores | `/guides/ammu-nation-shooting-range` | Side Activity | Do Leonida Ammu-Nation stores have shooting range challenges and rewards? | `/weapons-bonuses` | gun-stores.json (24 stores); awaiting range verification | P2 | Published (Phase 17) |
@@ -228,7 +229,7 @@
 | ATM Theft & Tow Truck Rip-Out Guide in GTA 6 | `/guides/atm-theft-guide` | Robbery Guide | Can you rob or rip out ATMs in GTA 6 and how much cash do they drop? | `/port-gellhorn` | port-gellhorn.html + secrets-live.json | P1 | Published (Phase 11) |
 | Port Gellhorn Shipyard & SCOOP Container Loot Guide | `/guides/port-gellhorn-shipyard-containers` | Robbery Guide | What loot and containers can you crack at the Port Gellhorn Shipyard? | `/port-gellhorn` | Phase 5 commit 1bb4074 (port-gellhorn.html) | P1 | Published (Phase 10) |
 | Stealth vs Loud Heist Tactics & Alarm Bypass Guide | `/guides/stealth-vs-loud-heist-tactics` | Strategy | When should you run stealth versus loud assaults in GTA 6 robberies? | `/heist-planner` | heists/* + leonida-wanted-system.html | P2 | Published (Phase 14) |
-| Free-Roam Robbery Respawn Timers & Cooldown Guide | `/guides/robbery-cooldown-timers` | Mechanics | How long do banks, pawn shops, and jewelry stores take to reset after a robbery? | `/gta-6-money-guide/` | Awaiting verified cooldown testing | P2 | Planned — Needs Verification |
+| Free-Roam Robbery Respawn Timers & Cooldown Guide | `/guides/robbery-cooldown-timers` | Mechanics | How long do banks, pawn shops, and jewelry stores take to reset after a robbery? | `/gta-6-money-guide/` | Awaiting verified cooldown testing | P2 | Published (Phase 19) |
 
 ---
 
@@ -327,15 +328,15 @@
 | GTA 6 Collectibles Hub & Category Counters | `/gta-6-collectibles/` | Hub / Collectibles | What are all the collectible types and totals in GTA 6? | `/gta-6-100-completion-tracker/` | Existing published hub | P0 | Published |
 | Bret Vogel's 15 Hunting Target Decks Guide (Killtelligence SM-69) | `/guides/bret-vogel-hunting-target-decks` | Collectibles / Unlock | How do you unlock and complete all 15 Bret Vogel Hunting Target Decks? | `/animals` | animals.json + discoveries.json + Coffee Break | P0 | Published (Phase 6) |
 | GTA 6 100% Collectibles Guide: Cocaine Flamingos, Card Sets, WAiNK & Stunts | `/guides/cocaine-flamingos-cards-collectibles` | Collectibles / 100% | How many Cocaine Flamingos, cards, WAiNK scans, and stunts do you need for 100%? | `/gta-6-100-completion-tracker/` | Source register K1 + 100% completion tracker | P0 | Published (Phase 6) |
-| All 125 Cocaine Flamingos Locations Guide (100 Needed for 100%) | `/guides/cocaine-flamingos-locations` | Collectibles | Where are the Cocaine Flamingos located across Leonida? | `/guides/cocaine-flamingos-cards-collectibles` | 100% tracker (100 of 125); awaiting verified per-pin coordinates | P1 | Planned — Needs Verification |
+| All 125 Cocaine Flamingos Locations Guide (100 Needed for 100%) | `/guides/cocaine-flamingos-locations` | Collectibles | Where are the Cocaine Flamingos located across Leonida? | `/guides/cocaine-flamingos-cards-collectibles` | 100% tracker (100 of 125); awaiting verified per-pin coordinates | P1 | Published (Phase 19) |
 | All 18 Collectible Card Sets Guide (480 Cards Total) | `/guides/collectible-card-sets` | Collectibles | How do collectible card sets work and where is the Starlet Motel fridge card? | `/guides/cocaine-flamingos-cards-collectibles` | 100% tracker (15 of 18 sets) + Coffee Break fridge card | P1 | Published (Phase 18) |
-| All 33 Underwater Discoveries Locations Guide | `/guides/underwater-discoveries-locations` | Collectibles | Where are all 33 underwater discoveries required for 100% completion? | `/gta-6-collectibles/` | 100% tracker (33 of 33); awaiting verified coordinates | P1 | Planned — Needs Verification |
+| All 33 Underwater Discoveries Locations Guide | `/guides/underwater-discoveries-locations` | Collectibles | Where are all 33 underwater discoveries required for 100% completion? | `/gta-6-collectibles/` | 100% tracker (33 of 33); awaiting verified coordinates | P1 | Published (Phase 19) |
 | All 7 Kenton Shipwreck Sets Guide (5 Needed for 100%) | `/guides/kenton-shipwreck-sets` | Collectibles | Where do you find the Kenton shipwreck sets around Leonida? | `/locations/leonida-keys` | 100% tracker (5 of 7 sets); awaiting verified coordinates | P1 | Published (Phase 17) |
 | 100 WAiNK App Vehicle Scans Guide (Fastest Locations) | `/guides/wank-app-100-scans-guide` | Collectibles / 100% | How do you quickly reach 100 WAiNK vehicle scans for 100% completion? | `/guides/wank-app-slim-jim-vehicle-theft` | 100% tracker (100 scans) + Moses mission | P1 | Published (Phase 7) |
 | All 130 Stunt Jumps Locations Guide | `/guides/stunt-jumps-locations` | Collectibles / Stunts | Where are the stunt jumps across Vice City and Leonida? | `/gta-6-collectibles/` | 100% tracker (130 jumps); awaiting verified coordinates | P2 | Published (Phase 17) |
 | All 202 Under-the-Bridge Flight Locations Guide | `/guides/under-the-bridge-locations` | Collectibles / Stunts | Where are the under-the-bridge flight challenges in Leonida? | `/gta-6-collectibles/` | 100% tracker (202 bridges); awaiting verified coordinates | P2 | Published (Phase 18) |
-| All 40 Knife Flights Locations Guide | `/guides/knife-flights-locations` | Collectibles / Stunts | What aircraft is best for the 40 Knife Flights in Vice City? | `/gta-6-collectibles/` | 100% tracker (40 knife flights); awaiting verified coordinates | P2 | Planned — Needs Verification |
-| All 25 Base Jumps Locations Guide | `/guides/base-jumps-locations` | Collectibles / Stunts | Where are the 25 base jump launch points in GTA 6? | `/gta-6-collectibles/` | 100% tracker (25 base jumps); awaiting verified coordinates | P2 | Planned — Needs Verification |
+| All 40 Knife Flights Locations Guide | `/guides/knife-flights-locations` | Collectibles / Stunts | What aircraft is best for the 40 Knife Flights in Vice City? | `/gta-6-collectibles/` | 100% tracker (40 knife flights); awaiting verified coordinates | P2 | Published (Phase 19) |
+| All 25 Base Jumps Locations Guide | `/guides/base-jumps-locations` | Collectibles / Stunts | Where are the 25 base jump launch points in GTA 6? | `/gta-6-collectibles/` | 100% tracker (25 base jumps); awaiting verified coordinates | P2 | Published (Phase 19) |
 | Why the Birds Tab Lists 60 vs 62 Bird Species Explained | `/guides/birds-compendium-60-vs-62` | Completionist / Q&A | Why does the GTA 6 Birds compendium show 60 entries instead of 62? | `/animals` | discoveries.json + animals.json (birdStats) | P1 | Published (Phase 7) |
 | GTA 6 Trophy & Achievement Guide (Platinum Roadmap) | `/guides/gta-6-trophy-and-achievement-guide` | Completionist | How do you unlock Break the Bank, Hi-Jacked, Hot Together, and Platinum? | `/gta-6-100-completion-tracker/` | Site trophy records + endings/relationship guides | P1 | Published (Phase 10) |
 | 200 of 277 Vehicle Models Tracker Strategy for 100% | `/guides/200-vehicle-models-100-percent` | Completionist | What is the fastest way to log 200 distinct vehicle models in GTA 6? | `/vehicles` | 100% tracker + vehicles.json | P2 | Published (Phase 14) |
@@ -368,7 +369,7 @@
 | Underwater UFO & Sunken Secrets in Leonida Keys | `/guides/underwater-secrets-leonida-keys` | Secrets | What hidden wrecks and anomalies can you dive to in the Leonida Keys? | `/locations/leonida-keys` | map-pins.json (easter-egg pins) | P2 | Published (Phase 15) |
 | Grassrivers Skunk Ape & Swamp Mystery Investigation | `/guides/grassrivers-skunk-ape-mystery` | Mystery | Can you find the Skunk Ape or swamp cryptid in Grassrivers? | `/locations/grassrivers` | map-pins.json + secrets-live.json | P2 | Published (Phase 15) |
 | Mount Kalaga UFO & Nighttime Anomaly Leads | `/guides/mount-kalaga-mysteries` | Mystery | What nighttime secrets or Easter eggs appear on Mount Kalaga? | `/locations/mount-kalaga` | map-pins.json (Mount Kalaga easter-egg pins) | P2 | Published (Phase 15) |
-| Vice Beach Hidden Mural & Graffiti Secrets | `/guides/vice-beach-murals-secrets` | Easter Eggs | What secret murals and pop-culture references are in Vice Beach? | `/locations/vice-city` | Awaiting verified locations | P3 | Planned — Needs Verification |
+| Vice Beach Hidden Mural & Graffiti Secrets | `/guides/vice-beach-murals-secrets` | Easter Eggs | What secret murals and pop-culture references are in Vice Beach? | `/locations/vice-city` | Awaiting verified locations | P3 | Published (Phase 19) |
 | Hidden In-Game Websites & Social Media Parodies | `/guides/in-game-websites-and-apps` | Secrets / Lore | What hidden websites and smartphone apps exist in GTA 6? | `/gameplay-mechanics` | BuckMe, WAiNK, Scooter Bros + in-game phone apps | P2 | Published (Phase 15) |
 | Secret Weapon Blueprints & Hidden Stash Locations | `/guides/hidden-weapon-stashes` | Secrets / Loot | Where can you find free hidden weapons without buying them at Ammu-Nation? | `/weapons` | weapons.json + map-pins.json | P1 | Published (Phase 15) |
 | GTA 6 Live Launch Intel & Verified Discoveries Feed | `/live-intel` | Live Feed | What is the latest verified GTA 6 launch intel and patch status? | `/live` | Existing published page | P0 | Published |
@@ -620,7 +621,7 @@
 | Gang Safe Clearing Route (All Verified Fixed Safe Codes) | `/guides/gang-safe-clearing-route` | Money Method | How much total cash do you get from clearing all verified gang safes? | `/guides/gta-6-safe-codes` | gta-6-safe-codes.html (0300, 6823, 6969, 6769, 0420, 7700) | P1 | Published (Phase 12) |
 | Best Post-Game Money Methods After Story Mode | `/guides/post-game-money-methods` | Money Method | What are the best repeatable cash methods after beating Chapter 5? | `/gta-6-money-guide/` | heists/* + money guide | P2 | Published (Phase 14) |
 | Does GTA 6 Have a Stock Market (BAWSAQ / LCN) in Story Mode? | `/guides/gta-6-stock-market-status` | Q&A / Economy | Can you invest in stocks in GTA 6 Story Mode like GTA V? | `/gta-6-money-guide/` | Awaiting confirmed Story Mode status | P1 | Published (Phase 14) |
-| Underwater Salvage & Shipwreck Treasure Profit Guide | `/guides/underwater-treasure-money` | Money Method | How much money do underwater discoveries and Kenton shipwrecks pay? | `/gta-6-collectibles/` | 100% tracker (33 underwater + 7 Kenton sets) | P2 | Planned — Needs Verification |
+| Underwater Salvage & Shipwreck Treasure Profit Guide | `/guides/underwater-treasure-money` | Money Method | How much money do underwater discoveries and Kenton shipwrecks pay? | `/gta-6-collectibles/` | 100% tracker (33 underwater + 7 Kenton sets) | P2 | Published (Phase 19) |
 | GTA 6 Early-Game Spending Guide: What to Buy First | `/guides/what-to-buy-first-gta-6` | Strategy / Economy | Should you buy garages, weapons, or upgrades first in GTA 6? | `/gta-6-property-ownership/` | weapons.json + properties.json + gun-stores.json | P1 | Published (Phase 14) |
 | How to Avoid Losing Money in GTA 6 (Savings, Laundering & Cutoffs) | `/guides/protect-your-money-gta-6` | Strategy / Economy | How do you protect cash from Wasted/Busted and avoid missable fence losses? | `/missions/buck-me` | BuckMe + Donnie cutoff + Starlet Motel cutoff | P2 | Published (Phase 14) |
 | Free Weapons, Free Cars & Zero-Cost Upgrades in Leonida | `/guides/free-weapons-and-cars-guide` | Money Saving | Which weapons, cars, and accessories can you get completely free? | `/weapons` | Moses free registration + Moreland 850 + SM-69 + Day Release | P1 | Published (Phase 14) |
