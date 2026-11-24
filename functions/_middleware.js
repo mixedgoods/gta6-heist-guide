@@ -30,6 +30,8 @@ const CANONICAL_REDIRECTS = new Map([
   ["/contact.html", "/contact"],
   ["/privacy-policy.html", "/privacy-policy"],
   ["/terms.html", "/terms"],
+  ["/guides/gta-6-safe-codes.html", "/guides/gta-6-safe-codes"],
+  ["/guides/vice-city-portal-easter-egg.html", "/guides/vice-city-portal-easter-egg"],
   ["/heists/the-cartel-heist.html", "/heists/the-cartel-heist"],
   ["/heists/vcia-takedown.html", "/heists/vcia-takedown"],
   ["/heists/shops-and-stickups.html", "/heists/shops-and-stickups"],

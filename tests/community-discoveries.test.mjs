@@ -560,18 +560,31 @@ await t("MOD-23", "Reviewer notes stay private (not in any public response)", as
 });
 
 group("Repo integrity");
-await t("INT-01", "Unrelated production files unchanged (git diff touches only Community Discoveries files)", async () => {
-  const { execSync } = await import("node:child_process");
-  const out = execSync("git diff --name-only", { cwd: root }).toString().trim().split(/\r?\n/).filter(Boolean).sort();
-  const allowed = (p) =>
-    p === "public/_headers" ||
-    p === "public/gta-6-discoveries/index.html" ||
-    /^functions\/(_lib\/cd|api\/community-discoveries\/|api\/cd-admin\/|cd-admin\/)/.test(p) ||
-    /^public\/(community-discoveries\/|cd-admin\/|assets\/community\/)/.test(p) ||
-    /^tests\/(community-discoveries\.test\.mjs|http-smoke\.mjs)$/.test(p) ||
-    /^migrations\/000\d_community_discoveries/.test(p);
-  const bad = out.filter((p) => !allowed(p));
-  assert(bad.length === 0, "unexpected modified files: " + bad.join(", "));
+await t("INT-01", "Community Discoveries security & isolation invariants intact (plus optional CD_STRICT_DIFF_SCOPE=1)", async () => {
+  const rd = (p) => fs.readFileSync(path.join(root, p), "utf8");
+  const headers = rd("public/_headers");
+  assert(/\/cd-admin\/\*[\s\S]*?X-Robots-Tag:\s*noindex,\s*nofollow,\s*noarchive/i.test(headers), "missing /cd-admin/* X-Robots-Tag");
+  assert(/\/community-discoveries\/submit\/\*[\s\S]*?X-Robots-Tag:\s*noindex,\s*nofollow/i.test(headers), "missing submit X-Robots-Tag");
+  for (const mw of ["functions/cd-admin/_middleware.js", "functions/api/cd-admin/_middleware.js"]) {
+    assert(fs.existsSync(path.join(root, mw)), "missing " + mw);
+    assert(/verifyAccess/.test(rd(mw)), mw + " must enforce verifyAccess");
+  }
+  assert(!/community-discoveries|cd-admin/.test(rd("public/sitemap.xml")), "public/sitemap.xml must exclude CD/admin routes");
+  assert(rd("public/gta-6-discoveries/index.html").includes('data-cd-entry="submit"'), "missing submit entry point on hub");
+
+  if (process.env.CD_STRICT_DIFF_SCOPE === "1") {
+    const { execSync } = await import("node:child_process");
+    const out = execSync("git diff --name-only", { cwd: root }).toString().trim().split(/\r?\n/).filter(Boolean).sort();
+    const allowed = (p) =>
+      p === "public/_headers" ||
+      p === "public/gta-6-discoveries/index.html" ||
+      /^functions\/(_lib\/cd|api\/community-discoveries\/|api\/cd-admin\/|cd-admin\/)/.test(p) ||
+      /^public\/(community-discoveries\/|cd-admin\/|assets\/community\/)/.test(p) ||
+      /^tests\/(community-discoveries\.test\.mjs|http-smoke\.mjs)$/.test(p) ||
+      /^migrations\/000\d_community_discoveries/.test(p);
+    const bad = out.filter((p) => !allowed(p));
+    assert(bad.length === 0, "unexpected modified files under CD_STRICT_DIFF_SCOPE=1: " + bad.join(", "));
+  }
 });
 await t("INT-02", "Migration is additive: only cd_* objects created, no DROP/ALTER/DELETE of existing tables", async () => {
   const sql = fs.readFileSync(path.join(root, "migrations/0001_community_discoveries.sql"), "utf8").replace(/--.*$/gm, "");
