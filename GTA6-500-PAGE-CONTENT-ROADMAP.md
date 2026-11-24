@@ -18,19 +18,20 @@
 | Phase 10 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 11 Live Published Pages (Added 2026-11-24) | 35 |
 | Phase 12 Live Published Pages (Added 2026-11-24) | 35 |
-| **Current Live Canonical Indexable Total (Post-Phase 12)** | **290** |
-| Planned — Evidence Ready (Core 500-Page Target Remaining) | 125 |
+| Phase 13 Live Published Pages (Added 2026-11-24) | 35 |
+| **Current Live Canonical Indexable Total (Post-Phase 13)** | **325** |
+| Planned — Evidence Ready (Core 500-Page Target Remaining) | 90 |
 | Reserve Candidates (4-Page Buffer: 504 Inventory vs. 500 Target) | 4 |
 | Planned — Awaiting Additional In-Game / Source Verification | 84 |
 | Planned — Future Post-Launch Expansion (GTA 6 Online) | 1 |
 
-## Category Breakdown (Reconciled Post-Phase 12)
+## Category Breakdown (Reconciled Post-Phase 13)
 
 | # | Category | Total | Live Published | Core Evidence-Ready | Reserve (504→500) | Needs Verification | Future Online |
 |---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Main Story Missions | 12 | 8 | 2 | 0 | 2 | 0 |
-| 2 | Individual Mission Walkthroughs | 91 | 23 | 14 | 0 | 54 | 0 |
-| 3 | Side Missions and Stranger Encounters | 24 | 1 | 11 | 0 | 12 | 0 |
+| 1 | Main Story Missions | 12 | 10 | 0 | 0 | 2 | 0 |
+| 2 | Individual Mission Walkthroughs | 91 | 37 | 0 | 0 | 54 | 0 |
+| 3 | Side Missions and Stranger Encounters | 24 | 12 | 0 | 0 | 12 | 0 |
 | 4 | Heists and Robberies | 16 | 14 | 1 | 0 | 1 | 0 |
 | 5 | Banks, Pawn Shops and Jewelry Stores | 14 | 10 | 4 | 0 | 0 | 0 |
 | 6 | Leonida Regions and Districts | 22 | 21 | 1 | 0 | 0 | 0 |
@@ -42,10 +43,10 @@
 | 12 | Animals and Wildlife | 55 | 29 | 26 | 0 | 0 | 0 |
 | 13 | Characters and Relationships | 22 | 15 | 7 | 0 | 0 | 0 |
 | 14 | Properties and Businesses | 24 | 24 | 0 | 0 | 0 | 0 |
-| 15 | Police, Wanted Levels and Escape Mechanics | 16 | 5 | 10 | 0 | 1 | 0 |
+| 15 | Police, Wanted Levels and Escape Mechanics | 16 | 7 | 8 | 0 | 1 | 0 |
 | 16 | Money-Making Methods | 18 | 8 | 8 | 0 | 1 | 1 |
-| 17 | Activities, Exploration and Game Mechanics | 48 | 28 | 16 | 4 | 0 | 0 |
-| — | **TOTAL** | **504** | **290** | **125** | **4** | **84** | **1** |
+| 17 | Activities, Exploration and Game Mechanics | 48 | 34 | 10 | 4 | 0 | 0 |
+| — | **TOTAL** | **504** | **325** | **90** | **4** | **84** | **1** |
 
 ## Editorial & Verification Policy
 
@@ -68,8 +69,8 @@
 | Chapter 4: Vice City, Baby Complete Chapter Guide | `/missions/chapter-4-vice-city-baby` | Walkthrough / Hub | What are all the Chapter 4 missions leading up to VCIA Takedown? | `/heists/vcia-takedown` | Site mission hub + VCIA Takedown walkthrough | P1 | Published (Phase 11) |
 | Chapter 5: Top of the World, Ma Finale Chapter Guide | `/missions/chapter-5-top-of-the-world-ma` | Walkthrough / Hub | What missions are in Chapter 5 and how does the GTA 6 finale play out? | `/gta-6-endings-guide/` | Reported 7-mission finale; awaiting full step verification | P1 | Planned — Needs Verification |
 | All GTA 6 Points of No Return & Missable Content Checklist | `/missions/missable-missions-and-cutoffs` | Informational / Checklist | Which GTA 6 missions, fences, and errands are permanently missable? | `/save-planner/` | Site data (Donnie cutoff, Starlet Motel, Coming Home errands) | P1 | Published (Phase 7) |
-| GTA 6 Story Length: How Long to Beat Main Story vs 100% | `/missions/how-long-to-beat-gta-6` | Informational | How many hours does it take to beat GTA 6 story mode and 100% completion? | `/gta-6-100-completion-tracker/` | Community/outlet completion timing reports | P2 | Planned — Batch 4 |
-| Can You Replay Missions in GTA 6? Save & Recap Guide | `/missions/mission-replay-and-story-recap` | Informational / Q&A | Does GTA 6 have a mission replay menu and how does Story Recap work? | `/save-planner/` | Existing site data + launch build reporting | P2 | Planned — Batch 4 |
+| GTA 6 Story Length: How Long to Beat Main Story vs 100% | `/missions/how-long-to-beat-gta-6` | Informational | How many hours does it take to beat GTA 6 story mode and 100% completion? | `/gta-6-100-completion-tracker/` | Community/outlet completion timing reports | P2 | Published (Phase 13)|
+| Can You Replay Missions in GTA 6? Save & Recap Guide | `/missions/mission-replay-and-story-recap` | Informational / Q&A | Does GTA 6 have a mission replay menu and how does Story Recap work? | `/save-planner/` | Existing site data + launch build reporting | P2 | Published (Phase 13)|
 | GTA 6 Gold Medal & Optional Mission Objectives Guide | `/missions/optional-objectives-guide` | Completionist | How do optional mission objectives and choices work across GTA 6 chapters? | `/missions/` | Awaiting full in-game objective verification | P2 | Planned — Needs Verification |
 
 ---
@@ -92,22 +93,22 @@
 | Credit Check Mission Walkthrough: Raul Bautista 3-Bank Fleeca Run & Dye Pack Jammer | `/missions/credit-check` | Walkthrough / Heist | How do you rob all 3 Fleeca branches in Credit Check and unlock the Dye Pack Jammer? | `/heists/small-banks-payday-loans` | Site mission data + corroborated reporting ($31,860 gross) | P0 | Published (Phase 6) |
 | Gone Fishing Mission Walkthrough (Ch. 1) | `/missions/gone-fishing` | Walkthrough | How do you complete Gone Fishing in GTA 6 (Ch. 1)? | `/missions/` | Site mission hub (walk-gone-fishing) | P1 | Published (Phase 7) |
 | Island Dreams Mission Walkthrough (Ch. 1) | `/missions/island-dreams` | Walkthrough | How do you complete Island Dreams in GTA 6 (Ch. 1)? | `/missions/` | Site mission hub (walk-island-dreams) | P1 | Published (Phase 7) |
-| Clean Up After Donnie Mission Walkthrough (Ch. 1) | `/missions/clean-up-after-donnie` | Walkthrough | How do you complete Clean Up After Donnie in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-clean-up-after-donnie) | P1 | Planned — Batch 3 |
-| Feng Shui Mission Walkthrough (Ch. 1) | `/missions/feng-shui` | Walkthrough | How do you complete Feng Shui in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-feng-shui) | P1 | Planned — Batch 3 |
-| Gear Up Mission Walkthrough (Ch. 1) | `/missions/gear-up` | Walkthrough | How do you complete Gear Up in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-gear-up) | P1 | Planned — Batch 3 |
-| Hey Arnold Mission Walkthrough (Ch. 1) | `/missions/hey-arnold` | Walkthrough | How do you complete Hey Arnold in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-hey-arnold) | P1 | Planned — Batch 3 |
-| Just a Scratch Mission Walkthrough (Ch. 1) | `/missions/just-a-scratch` | Walkthrough | How do you complete Just a Scratch in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-just-a-scratch) | P1 | Planned — Batch 3 |
-| Pipework Mission Walkthrough (Ch. 1) | `/missions/pipework` | Walkthrough | How do you complete Pipework in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-pipework) | P1 | Planned — Batch 3 |
-| Unwanted Attention Mission Walkthrough (Ch. 1) | `/missions/unwanted-attention` | Walkthrough | How do you complete Unwanted Attention in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-unwanted-attention) | P1 | Planned — Batch 3 |
-| Home Sweet Home Mission Walkthrough (Ch. 1) | `/missions/home-sweet-home` | Walkthrough | How do you complete Home Sweet Home in GTA 6 (Ch. 1)? | `/missions/` | Site mission hub (Ch.1 finale gauntlet) | P1 | Planned — Batch 3 |
-| Discharge Time Mission Walkthrough (Ch. 1) | `/missions/discharge-time` | Walkthrough | How do you complete Discharge Time in GTA 6 (Ch. 1)? | `/missions/` | Site mission hub (Ch.1 finale gauntlet) | P1 | Planned — Batch 3 |
-| Just Moved In Mission Walkthrough (Ch. 2) | `/missions/just-moved-in` | Walkthrough | How do you complete Just Moved In in GTA 6 (Ch. 2)? | `/missions/` | Site mission hub (precedes Girls' Trip) | P1 | Planned — Batch 3 |
-| Breakfast Run Mission Walkthrough (Ch. 2) | `/missions/breakfast-run` | Walkthrough | How do you complete Breakfast Run in GTA 6 (Ch. 2)? | `/missions/` | Site mission hub (precedes Coffee Break) | P1 | Planned — Batch 3 |
-| Afternoon Delight Mission Walkthrough (Ch. 2) | `/missions/afternoon-delight` | Walkthrough | How do you complete Afternoon Delight in GTA 6 (Ch. 2)? | `/missions/` | Site mission tracker (c2-afternoon-delight) | P1 | Planned — Batch 3 |
+| Clean Up After Donnie Mission Walkthrough (Ch. 1) | `/missions/clean-up-after-donnie` | Walkthrough | How do you complete Clean Up After Donnie in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-clean-up-after-donnie) | P1 | Published (Phase 13)|
+| Feng Shui Mission Walkthrough (Ch. 1) | `/missions/feng-shui` | Walkthrough | How do you complete Feng Shui in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-feng-shui) | P1 | Published (Phase 13)|
+| Gear Up Mission Walkthrough (Ch. 1) | `/missions/gear-up` | Walkthrough | How do you complete Gear Up in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-gear-up) | P1 | Published (Phase 13)|
+| Hey Arnold Mission Walkthrough (Ch. 1) | `/missions/hey-arnold` | Walkthrough | How do you complete Hey Arnold in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-hey-arnold) | P1 | Published (Phase 13)|
+| Just a Scratch Mission Walkthrough (Ch. 1) | `/missions/just-a-scratch` | Walkthrough | How do you complete Just a Scratch in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-just-a-scratch) | P1 | Published (Phase 13)|
+| Pipework Mission Walkthrough (Ch. 1) | `/missions/pipework` | Walkthrough | How do you complete Pipework in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-pipework) | P1 | Published (Phase 13)|
+| Unwanted Attention Mission Walkthrough (Ch. 1) | `/missions/unwanted-attention` | Walkthrough | How do you complete Unwanted Attention in GTA 6 (Ch. 1)? | `/missions/` | Site mission tracker (c1-unwanted-attention) | P1 | Published (Phase 13)|
+| Home Sweet Home Mission Walkthrough (Ch. 1) | `/missions/home-sweet-home` | Walkthrough | How do you complete Home Sweet Home in GTA 6 (Ch. 1)? | `/missions/` | Site mission hub (Ch.1 finale gauntlet) | P1 | Published (Phase 13)|
+| Discharge Time Mission Walkthrough (Ch. 1) | `/missions/discharge-time` | Walkthrough | How do you complete Discharge Time in GTA 6 (Ch. 1)? | `/missions/` | Site mission hub (Ch.1 finale gauntlet) | P1 | Published (Phase 13)|
+| Just Moved In Mission Walkthrough (Ch. 2) | `/missions/just-moved-in` | Walkthrough | How do you complete Just Moved In in GTA 6 (Ch. 2)? | `/missions/` | Site mission hub (precedes Girls' Trip) | P1 | Published (Phase 13)|
+| Breakfast Run Mission Walkthrough (Ch. 2) | `/missions/breakfast-run` | Walkthrough | How do you complete Breakfast Run in GTA 6 (Ch. 2)? | `/missions/` | Site mission hub (precedes Coffee Break) | P1 | Published (Phase 13)|
+| Afternoon Delight Mission Walkthrough (Ch. 2) | `/missions/afternoon-delight` | Walkthrough | How do you complete Afternoon Delight in GTA 6 (Ch. 2)? | `/missions/` | Site mission tracker (c2-afternoon-delight) | P1 | Published (Phase 13)|
 | Daily Driver Mission Walkthrough (Ch. 2) | `/missions/daily-driver` | Walkthrough | How do you complete Daily Driver in GTA 6 (Ch. 2)? | `/missions/` | Source register P2 (garage real-estate app unlock) | P2 | Planned — Needs Verification |
-| Welcome to Vice City Mission Walkthrough (Ch. 3) | `/missions/welcome-to-vice-city` | Walkthrough | How do you complete Welcome to Vice City in GTA 6 (Ch. 3)? | `/missions/` | Site mission hub (Ch.3 opener with Dre'Quan) | P1 | Planned — Batch 3 |
+| Welcome to Vice City Mission Walkthrough (Ch. 3) | `/missions/welcome-to-vice-city` | Walkthrough | How do you complete Welcome to Vice City in GTA 6 (Ch. 3)? | `/missions/` | Site mission hub (Ch.3 opener with Dre'Quan) | P1 | Published (Phase 13)|
 | Here, Kitty Kitty Mission Walkthrough (Ch. 3) | `/missions/here-kitty-kitty` | Walkthrough | How do you complete Here, Kitty Kitty in GTA 6 (Ch. 3)? | `/missions/` | Source register F2 (unlocks Tyrone fence in La Perle) | P2 | Planned — Needs Verification |
-| The Jack of Hearts Mission Walkthrough (Ch. 3) | `/missions/the-jack-of-hearts` | Walkthrough | How do you complete The Jack of Hearts in GTA 6 (Ch. 3)? | `/missions/` | Site mission hub (Dre'Quan club introduction) | P1 | Planned — Batch 3 |
+| The Jack of Hearts Mission Walkthrough (Ch. 3) | `/missions/the-jack-of-hearts` | Walkthrough | How do you complete The Jack of Hearts in GTA 6 (Ch. 3)? | `/missions/` | Site mission hub (Dre'Quan club introduction) | P1 | Published (Phase 13)|
 | Yasmani's Jewelry Jobs Mission Walkthrough (Ch. 3) | `/missions/yasmanis-jewelry-jobs` | Walkthrough | How do you complete Yasmani's Jewelry Jobs in GTA 6 (Ch. 3)? | `/missions/` | Source register M4 + properties.json (Yasmani fence) | P2 | Planned — Needs Verification |
 | Bounty on the Bay Mission Walkthrough (Ch. 1) | `/missions/bounty-on-the-bay` | Walkthrough | How do you complete Bounty on the Bay in GTA 6 (Ch. 1)? | `/missions/` | Reported Ch.1 Keys mission; awaiting full step verification | P2 | Planned — Needs Verification |
 | Key Lento Hustle Mission Walkthrough (Ch. 1) | `/missions/key-lento-hustle` | Walkthrough | How do you complete Key Lento Hustle in GTA 6 (Ch. 1)? | `/missions/` | Reported Ch.1 Keys mission; awaiting full step verification | P2 | Planned — Needs Verification |
@@ -177,24 +178,24 @@
 | Working Title | Proposed Canonical URL | Main Search Intent | Question Answered | Existing Related Page | Evidence & Sources | Priority | Status |
 |---|---|---|---|---|---|---|---|
 | Veteran Hunted Side Mission Walkthrough (Bret Vogel) | `/missions/veteran-hunted` | Side Mission | How do you start Veteran Hunted and unlock Bret Vogel's 15 Hunting Target Decks? | `/guides/bret-vogel-hunting-target-decks` | animals.json (Ch.2 after Coffee Break, Killtelligence Provisions) | P1 | Published (Phase 7) |
-| Thrillbillies and Twist Wrist Optional Mission Guide | `/missions/thrillbillies-and-twist-wrist` | Side Mission | How do you find and complete Thrillbillies and Twist Wrist in Chapter 2? | `/missions/` | Source register M5 + Coffee Break Mud Club intro | P1 | Planned — Batch 3 |
+| Thrillbillies and Twist Wrist Optional Mission Guide | `/missions/thrillbillies-and-twist-wrist` | Side Mission | How do you find and complete Thrillbillies and Twist Wrist in Chapter 2? | `/missions/` | Source register M5 + Coffee Break Mud Club intro | P1 | Published (Phase 13)|
 | Smash, Grab Optional Mission Guide | `/missions/smash-grab` | Side Mission | How do you trigger and complete Smash, Grab in GTA 6? | `/missions/` | Source register M5 (PC Gamer attributed) | P2 | Planned — Needs Verification |
-| Randy's High-End Vehicle Wish-List Jobs Guide | `/guides/randy-vehicle-wishlist-jobs` | Side Activity | How do Randy's stolen vehicle wish-list deliveries work in Balsero? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P1 | Planned — Batch 3 |
-| Moses Untracked Car Theft Jobs Guide | `/guides/moses-vehicle-jobs` | Side Activity | What follow-up car theft jobs unlock after the Moses mission? | `/missions/moses` | missions/index.html + properties.json | P1 | Planned — Batch 3 |
-| Jason's Key Lento Safehouse Repairs & Errands Guide | `/guides/keys-safehouse-errands` | Side Activity / Missable | How do you complete all pre-Coming Home errands (roof, steps, groceries, necklace)? | `/missions/coming-home` | missions/index.html (Coming Home walkthrough) | P1 | Planned — Batch 3 |
-| Rusty Anchor Bar Optional Encounters & Cal Texts | `/guides/rusty-anchor-encounters` | Side Encounter | What optional encounters and clothing interactions happen at The Rusty Anchor? | `/missions/swamped` | missions/index.html (Swamped & Day Release) | P2 | Planned — Batch 4 |
-| Thrillbilly Mud Club Events & Off-Road Races Guide | `/guides/thrillbilly-mud-club` | Side Activity | Where is the Thrillbilly Mud Club and what events can you enter? | `/port-gellhorn` | missions/index.html (Coffee Break) + Wyman | P1 | Planned — Batch 3 |
+| Randy's High-End Vehicle Wish-List Jobs Guide | `/guides/randy-vehicle-wishlist-jobs` | Side Activity | How do Randy's stolen vehicle wish-list deliveries work in Balsero? | `/guides/all-7-fences-and-vehicle-buyers` | properties.json + source register F2 | P1 | Published (Phase 13)|
+| Moses Untracked Car Theft Jobs Guide | `/guides/moses-vehicle-jobs` | Side Activity | What follow-up car theft jobs unlock after the Moses mission? | `/missions/moses` | missions/index.html + properties.json | P1 | Published (Phase 13)|
+| Jason's Key Lento Safehouse Repairs & Errands Guide | `/guides/keys-safehouse-errands` | Side Activity / Missable | How do you complete all pre-Coming Home errands (roof, steps, groceries, necklace)? | `/missions/coming-home` | missions/index.html (Coming Home walkthrough) | P1 | Published (Phase 13)|
+| Rusty Anchor Bar Optional Encounters & Cal Texts | `/guides/rusty-anchor-encounters` | Side Encounter | What optional encounters and clothing interactions happen at The Rusty Anchor? | `/missions/swamped` | missions/index.html (Swamped & Day Release) | P2 | Published (Phase 13)|
+| Thrillbilly Mud Club Events & Off-Road Races Guide | `/guides/thrillbilly-mud-club` | Side Activity | Where is the Thrillbilly Mud Club and what events can you enter? | `/port-gellhorn` | missions/index.html (Coffee Break) + Wyman | P1 | Published (Phase 13)|
 | Street Racing & Underground Drift Encounters in Leonida | `/guides/leonida-street-racing` | Side Activity | Where do street races spawn across Vice City and Port Gellhorn? | `/gta-6-vehicles-guide/` | Awaiting verified race spawn coordinates | P2 | Planned — Needs Verification |
-| Random World Events & Dynamic Encounters in Leonida | `/guides/random-world-events` | Side Encounters | What dynamic roadside and urban random events happen in GTA 6 free roam? | `/map` | map-pins.json + community reports | P2 | Planned — Batch 4 |
-| Port Gellhorn Bowling Alley & Mini-Activities Guide | `/guides/kingpin-bowling-activities` | Side Activity | Where is Kingpin Bowling in Port Gellhorn and what can you do there? | `/port-gellhorn` | port-gellhorn.html (Kingpin Bowling, code 0300) | P2 | Planned — Batch 4 |
-| Vice City Nightclub & Nine1Nine Side Encounters | `/guides/vice-city-nightlife-encounters` | Side Activity | Which nightclubs can you enter in Vice City and what unlocks inside? | `/guides/secret-radio-stations-poster-scans` | discoveries.json + Day Release (Nine1Nine) | P2 | Planned — Batch 4 |
+| Random World Events & Dynamic Encounters in Leonida | `/guides/random-world-events` | Side Encounters | What dynamic roadside and urban random events happen in GTA 6 free roam? | `/map` | map-pins.json + community reports | P2 | Published (Phase 13)|
+| Port Gellhorn Bowling Alley & Mini-Activities Guide | `/guides/kingpin-bowling-activities` | Side Activity | Where is Kingpin Bowling in Port Gellhorn and what can you do there? | `/port-gellhorn` | port-gellhorn.html (Kingpin Bowling, code 0300) | P2 | Published (Phase 13)|
+| Vice City Nightclub & Nine1Nine Side Encounters | `/guides/vice-city-nightlife-encounters` | Side Activity | Which nightclubs can you enter in Vice City and what unlocks inside? | `/guides/secret-radio-stations-poster-scans` | discoveries.json + Day Release (Nine1Nine) | P2 | Published (Phase 13)|
 | Bounty Hunting & Vigilante Encounters in Leonida | `/guides/leonida-bounty-hunting` | Side Activity | Are there bounty hunting or vigilante side missions in GTA 6? | `/missions/` | Awaiting post-launch confirmation | P3 | Planned — Needs Verification |
 | Grassrivers Airboat Rescue & Swamp Stranger Encounters | `/guides/grassrivers-stranger-encounters` | Side Encounters | What stranger encounters happen in the Grassrivers wetlands? | `/locations/grassrivers` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
 | Mount Kalaga Hiker & Survivalist Encounters | `/guides/mount-kalaga-encounters` | Side Encounters | What side encounters take place in Mount Kalaga National Park? | `/locations/mount-kalaga` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
-| Leonida Keys Diving & Salvage Side Jobs | `/guides/leonida-keys-salvage-jobs` | Side Activity | How do underwater salvage and shipwreck jobs work in the Leonida Keys? | `/locations/leonida-keys` | 100% tracker (33 underwater discoveries, 7 Kenton sets) | P2 | Planned — Batch 4 |
+| Leonida Keys Diving & Salvage Side Jobs | `/guides/leonida-keys-salvage-jobs` | Side Activity | How do underwater salvage and shipwreck jobs work in the Leonida Keys? | `/locations/leonida-keys` | 100% tracker (33 underwater discoveries, 7 Kenton sets) | P2 | Published (Phase 13)|
 | Ambrosia Biker & Industrial Side Jobs | `/guides/ambrosia-side-jobs` | Side Encounters | What biker gang encounters and side jobs happen in Ambrosia? | `/locations/ambrosia` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
 | Vice Beach Boardwalk & Tourist Encounters | `/guides/vice-beach-encounters` | Side Encounters | What stranger encounters spawn along Vice Beach and Ocean Beach? | `/locations/vice-city` | Awaiting verified encounter steps | P3 | Planned — Needs Verification |
-| Tow Truck & Repo Side Activity Guide | `/guides/tow-truck-atm-and-repo-guide` | Side Activity | How do tow trucks work for ATM theft and repo jobs in GTA 6? | `/secrets` | secrets-live.json (tow truck ATM theft) | P2 | Planned — Batch 4 |
+| Tow Truck & Repo Side Activity Guide | `/guides/tow-truck-atm-and-repo-guide` | Side Activity | How do tow trucks work for ATM theft and repo jobs in GTA 6? | `/secrets` | secrets-live.json (tow truck ATM theft) | P2 | Published (Phase 13)|
 | Taxi, Rideshare & Delivery Side Hustles in GTA 6 | `/guides/delivery-and-rideshare-jobs` | Side Activity | What legal and gray-market delivery side jobs earn cash in Story Mode? | `/gta-6-money-guide/` | Awaiting verified payout rates | P3 | Planned — Needs Verification |
 | Fishing & Boating Side Activities in Leonida | `/guides/leonida-fishing-and-boating` | Side Activity | Can you fish and run boat challenges in the Leonida Keys and Lake Leonida? | `/locations/lake-leonida` | Awaiting verified mechanics | P3 | Planned — Needs Verification |
 | Cage Fighting & Backyard Brawl Encounters | `/guides/leonida-fight-clubs` | Side Activity | Where are melee combat and underground fight encounters located? | `/gameplay-mechanics` | Awaiting verified locations | P3 | Planned — Needs Verification |
@@ -590,10 +591,10 @@
 | Grassrivers Airboat & Swamp Police Evasion Guide | `/guides/grassrivers-swamp-evasion` | Tactics / Map | How do you use Grassrivers waterways and airboats to lose pursuing cops? | `/locations/grassrivers` | locations/grassrivers + vehicles.json | P2 | Planned — Batch 4 |
 | Leonida Keys Causeway & Boat Escape Guide | `/guides/leonida-keys-causeway-escapes` | Tactics / Map | How do you avoid getting trapped on the Leonida Keys causeway bridges? | `/locations/leonida-keys` | locations/leonida-keys + map-pins.json | P2 | Planned — Batch 4 |
 | Mount Kalaga Off-Road & Forest Evasion Routes | `/guides/mount-kalaga-evasion-routes` | Tactics / Map | How do you escape police patrols in Mount Kalaga National Park? | `/locations/mount-kalaga` | locations/mount-kalaga + vehicles.json | P2 | Planned — Batch 4 |
-| Busted vs Wasted Penalties: How Much Cash & Gear Do You Lose? | `/guides/busted-vs-wasted-penalties` | Mechanics | What do you lose when Busted or Wasted and how does BuckMe protect you? | `/missions/buck-me` | missions/buck-me + properties.json | P1 | Planned — Batch 3 |
+| Busted vs Wasted Penalties: How Much Cash & Gear Do You Lose? | `/guides/busted-vs-wasted-penalties` | Mechanics | What do you lose when Busted or Wasted and how does BuckMe protect you? | `/missions/buck-me` | missions/buck-me + properties.json | P1 | Published (Phase 13)|
 | Surrendering, Hostage Control & Intimidation During Robberies | `/guides/hostage-control-and-intimidation` | Mechanics | How do you keep store clerks and bank hostages compliant without tripping alarms? | `/heists/small-banks-payday-loans` | heists/* + Credit Check | P2 | Planned — Batch 4 |
 | Paying Off Bounties & Cooling Down Hot Vehicles | `/guides/cooling-down-hot-vehicles` | Mechanics | How do you clear heat on a stolen vehicle before visiting a fence or garage? | `/guides/wank-app-slim-jim-vehicle-theft` | missions/moses + gta-6-vehicles-guide | P2 | Planned — Batch 4 |
-| Stealth Takedowns, Suppressors & Silent Entry Mechanics | `/guides/stealth-takedowns-and-silent-entry` | Mechanics | How does stealth detection work during robberies and camp infiltrations? | `/gameplay-mechanics` | gameplay-mechanics.html + weapons.json | P2 | Planned — Batch 4 |
+| Stealth Takedowns, Suppressors & Silent Entry Mechanics | `/guides/stealth-takedowns-and-silent-entry` | Mechanics | How does stealth detection work during robberies and camp infiltrations? | `/gameplay-mechanics` | gameplay-mechanics.html + weapons.json | P2 | Published (Phase 13)|
 | 6-Star Military / Federal Response Survival Guide | `/guides/6-star-wanted-survival` | Tactics | Is there a 6-star wanted level in GTA 6 and how long can you survive it? | `/leonida-wanted-system` | leonida-wanted-system.html | P2 | Planned — Needs Verification |
 
 ---
@@ -643,15 +644,15 @@
 | Privacy Policy | `/privacy-policy` | Legal | How does GTA6HeistGuide handle privacy and cookies? | `/terms` | Existing published page | P0 | Published |
 | Terms of Service & DMCA | `/terms` | Legal | What are the terms of use for GTA6HeistGuide? | `/privacy-policy` | Existing published page | P0 | Published |
 | Xbox Series X 120Hz VRR Refresh Handshake Guide (40–50 FPS Window) | `/guides/xbox-series-x-120hz-vrr-guide` | Performance / Tech | How does the Xbox Series X 120Hz VRR setting improve GTA 6 smoothness? | `/gta-6-settings/` | discoveries.json + gta-6-settings | P1 | Published (Phase 7) |
-| PS5 Pro vs Base PS5 vs Xbox Series X\|S GTA 6 Settings Guide | `/guides/ps5-pro-vs-xbox-graphics-settings` | Performance / Tech | What are the best display and performance settings on each console? | `/gta-6-settings/` | gta-6-settings + source register S1 | P1 | Planned — Batch 3 |
+| PS5 Pro vs Base PS5 vs Xbox Series X\|S GTA 6 Settings Guide | `/guides/ps5-pro-vs-xbox-graphics-settings` | Performance / Tech | What are the best display and performance settings on each console? | `/gta-6-settings/` | gta-6-settings + source register S1 | P1 | Published (Phase 13)|
 | How to Switch Characters (Jason & Lucia) & Co-Op Tactics | `/guides/character-switching-guide` | Mechanics | When does free character switching unlock and how does it work in combat? | `/missions/coffee-break` | missions/coffee-break + lucia-jason-skills | P1 | Published (Phase 12) |
 | Focus Mode (L3 + R3) Combat & Hunting Mastery Guide | `/guides/focus-mode-guide` | Mechanics | How does Focus Mode highlight enemy weak spots and animal vital organs? | `/animals` | animals.json + missions/slam-dunk | P1 | Published (Phase 7) |
 | Smartphone Apps Guide: BuckMe, WAiNK, Scooter Bros & Real Estate | `/guides/smartphone-apps-guide` | Mechanics | What does every app on Jason and Lucia's smartphone do? | `/gameplay-mechanics` | missions/buck-me + missions/moses + source register P2 | P1 | Published (Phase 12) |
-| Health, Armor, Painkillers & Healing Mechanics Guide | `/guides/health-armor-and-healing` | Mechanics | How do healing items, body armor, and recovery work in GTA 6? | `/gameplay-mechanics` | gameplay-mechanics + gun-stores.json | P2 | Planned — Batch 4 |
-| Stamina, Swimming, Scuba Diving & Underwater Exploration Guide | `/guides/diving-and-underwater-exploration` | Exploration | How do you dive safely for the 33 underwater discoveries without drowning or shark attacks? | `/locations/leonida-keys` | 100% tracker + animals.json (marine predators) | P2 | Planned — Batch 4 |
-| Fast Travel, Taxis, Rideshares & Getting Around Leonida | `/guides/fast-travel-in-gta-6` | Exploration | Does GTA 6 have fast travel and what is the fastest way across Leonida? | `/map` | Awaiting verified fast-travel mechanics | P1 | Planned — Batch 3 |
-| Haircuts, Clothing Stores, Tattoos & Character Customization Guide | `/guides/character-customization-guide` | Activities | Where can you get haircuts, outfits, and accessories for Jason and Lucia? | `/missions/coming-home` | Coming Home (haircut, necklace) + Day Release | P2 | Planned — Batch 4 |
-| Food, Drinks, Bars & Stat Buffs in Leonida | `/guides/food-bars-and-stat-buffs` | Activities | What do coffee, bars, and food items do in GTA 6? | `/missions/coffee-break` | Coffee Break ($2 coffee) + Rusty Anchor | P2 | Planned — Batch 4 |
+| Health, Armor, Painkillers & Healing Mechanics Guide | `/guides/health-armor-and-healing` | Mechanics | How do healing items, body armor, and recovery work in GTA 6? | `/gameplay-mechanics` | gameplay-mechanics + gun-stores.json | P2 | Published (Phase 13)|
+| Stamina, Swimming, Scuba Diving & Underwater Exploration Guide | `/guides/diving-and-underwater-exploration` | Exploration | How do you dive safely for the 33 underwater discoveries without drowning or shark attacks? | `/locations/leonida-keys` | 100% tracker + animals.json (marine predators) | P2 | Published (Phase 13)|
+| Fast Travel, Taxis, Rideshares & Getting Around Leonida | `/guides/fast-travel-in-gta-6` | Exploration | Does GTA 6 have fast travel and what is the fastest way across Leonida? | `/map` | Awaiting verified fast-travel mechanics | P1 | Published (Phase 13)|
+| Haircuts, Clothing Stores, Tattoos & Character Customization Guide | `/guides/character-customization-guide` | Activities | Where can you get haircuts, outfits, and accessories for Jason and Lucia? | `/missions/coming-home` | Coming Home (haircut, necklace) + Day Release | P2 | Published (Phase 13)|
+| Food, Drinks, Bars & Stat Buffs in Leonida | `/guides/food-bars-and-stat-buffs` | Activities | What do coffee, bars, and food items do in GTA 6? | `/missions/coffee-break` | Coffee Break ($2 coffee) + Rusty Anchor | P2 | Published (Phase 13)|
 | VCRR (Vice City Rap Radio) Radio Station Tracklist & DJ Guide (Current Rap & Trap) | `/radio/vcrr` | Radio / Music | What songs play on VCRR (Vice City Rap Radio) in GTA 6 and who hosts the station? | `/radio` | data/radio.json (vcrr) | P3 | Published (Phase 9) |
 | Dirty South Classics Radio Station Tracklist & DJ Guide (Southern Rap & Miami Bass) | `/radio/dirty-south-classics` | Radio / Music | What songs play on Dirty South Classics in GTA 6 and who hosts the station? | `/radio` | data/radio.json (dirty-south) | P3 | Published (Phase 10) |
 | Cocoteo FM Radio Station Tracklist & DJ Guide (Modern Latin & Reggaeton) | `/radio/cocoteo-fm` | Radio / Music | What songs play on Cocoteo FM in GTA 6 and who hosts the station? | `/radio` | data/radio.json (cocoteo) | P3 | Published (Phase 11) |
