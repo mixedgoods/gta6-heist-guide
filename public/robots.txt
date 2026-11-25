@@ -9,6 +9,11 @@ Allow: /*.jpg*
 Allow: /*.webp*
 Allow: /*.avif*
 Allow: /llms.txt
+Disallow: /syndicate-command.html
+Disallow: /syndicate-command
+Disallow: /api/subscribe
+Disallow: /api/clicks
+Disallow: /api/contact
 
 User-agent: Googlebot-Image
 Allow: /assets/
@@ -19,12 +24,22 @@ Allow: /*.avif*
 
 User-agent: Googlebot-Mobile
 Allow: /
+Disallow: /syndicate-command.html
+Disallow: /syndicate-command
+Disallow: /api/subscribe
+Disallow: /api/clicks
+Disallow: /api/contact
 
 User-agent: Bingbot
 Allow: /
 Allow: /*.js*
 Allow: /*.css*
 Allow: /llms.txt
+Disallow: /syndicate-command.html
+Disallow: /syndicate-command
+Disallow: /api/subscribe
+Disallow: /api/clicks
+Disallow: /api/contact
 
 User-agent: OAI-SearchBot
 Allow: /

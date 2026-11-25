@@ -5,7 +5,6 @@
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="noindex, nofollow" name="robots"/>
 <title>Syndicate Owner Email &amp; Marketing Command Center | GTA 6 Heist Guide</title>
 <link href="/assets/style.css?v=20261125_p33" rel="stylesheet"/>
 <script>
@@ -137,7 +136,7 @@
                     st.innerHTML = '<span style="color:var(--neon-pink);">Sync error: ' + (data.error || res.status) + '</span>';
                     return;
                 }
-                st.innerHTML = '<span style="color:var(--neon-green);">✅ Live News &amp; Daily Playbooks Synced! Active D1 Guides: <strong>' + data.totalDynamicGuides + '</strong>. <a href="live-intel.html" style="color:var(--neon-cyan);">View Live on Site &rarr;</a></span>';
+                st.innerHTML = '<span style="color:var(--neon-green);">✅ Live News &amp; Daily Playbooks Synced! Active D1 Guides: <strong>' + data.totalDynamicGuides + '</strong>. <a href="/live-intel" style="color:var(--neon-cyan);">View Live on Site &rarr;</a></span>';
                 if (typeof GTA6 !== 'undefined') GTA6.playSuccess();
             } catch (e) {
                 st.innerHTML = '<span style="color:var(--neon-pink);">Error: ' + e.message + '</span>';
@@ -327,7 +326,7 @@
         </p>
 <div style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
 <button class="btn btn-primary" onclick="forceSyncLiveIntel()" type="button">🔄 Pull Live GTA 6 News &amp; Auto-Generate Today's Guide</button>
-<a class="btn btn-secondary" href="live-intel.html">👁️ Preview Live Intel Page</a>
+<a class="btn btn-secondary" href="/live-intel">👁️ Preview Live Intel Page</a>
 </div>
 <form id="customGuideForm" onsubmit="publishCustomGuide(event)" style="background:rgba(7,5,13,0.65); padding:1.25rem; border-radius:10px; border:1px solid var(--border-card);">
 <h3 style="color:var(--neon-cyan); margin-bottom:0.85rem; font-size:1.1rem;">Publish an Instant Custom Strategy Guide to D1</h3>

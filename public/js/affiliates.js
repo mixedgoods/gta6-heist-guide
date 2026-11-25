@@ -1033,23 +1033,52 @@ window.getGTA6LaunchBannerText = function() {
   }
 
   // 5. DOM MOUNTING & ANALYTICS CLICK TRACKING
+  function sendAnonymousClickBeacon(payload) {
+    try {
+      var cfg = global.SITE_CONFIG || {};
+      if (!cfg.enableAffiliateClickTracking) return;
+      var body = JSON.stringify(payload);
+      if (global.navigator && typeof global.navigator.sendBeacon === 'function') {
+        var blob = new Blob([body], { type: 'application/json' });
+        global.navigator.sendBeacon('/api/clicks', blob);
+      } else if (typeof global.fetch === 'function') {
+        global.fetch('/api/clicks', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: body,
+          keepalive: true
+        }).catch(function() {});
+      }
+    } catch (err) {}
+  }
+
   function bindAffiliateAnalytics() {
     if (global._gta6AffClickBound) return;
     global._gta6AffClickBound = true;
     document.addEventListener('click', function(e) {
       try {
-        var link = e.target && e.target.closest ? e.target.closest('a[data-aff-partner]') : null;
+        var link = e.target && e.target.closest ? e.target.closest('a[data-aff-partner], a[href*="amazon.com"]') : null;
         if (!link) return;
+        var partner = link.getAttribute('data-aff-partner') || 'amazon';
+        var productKey = link.getAttribute('data-aff-product') || link.getAttribute('data-amazon-link') || 'inline';
+        var placement = link.getAttribute('data-aff-placement') || 'card';
+        var targetUrl = link.getAttribute('href') || '';
         if (typeof global.GTA6Track === 'function') {
           global.GTA6Track('affiliate_click', {
-            partner: link.getAttribute('data-aff-partner') || 'amazon',
-            product_key: link.getAttribute('data-aff-product') || link.getAttribute('data-amazon-link') || 'unknown',
+            partner: partner,
+            product_key: productKey,
             asin: link.getAttribute('data-aff-asin') || '',
             category: link.getAttribute('data-aff-category') || '',
-            placement: link.getAttribute('data-aff-placement') || 'card',
+            placement: placement,
             click_area: link.getAttribute('data-aff-area') || 'cta'
           });
         }
+        sendAnonymousClickBeacon({
+          partner: partner,
+          placement: placement + ':' + productKey,
+          page_path: (global.location && global.location.pathname) ? global.location.pathname : '/',
+          target_url: targetUrl
+        });
       } catch (err) {}
     }, { passive: true });
   }

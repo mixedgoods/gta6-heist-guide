@@ -1,0 +1,572 @@
+{
+  "at": "2026-11-25T21:20:12.607Z",
+  "results": [
+    {
+      "id": "SUB-01",
+      "group": "Submission",
+      "name": "Valid submission accepted, returns reference, persisted as PENDING_REVIEW",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-01B",
+      "group": "Submission",
+      "name": "Minimal 4-field quick submission accepted with no fabricated data and moderatable",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-02",
+      "group": "Submission",
+      "name": "Missing 4 required fields rejected server-side (400 + field errors); optional fields not required",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-03",
+      "group": "Submission",
+      "name": "Invalid category / region / platform rejected",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-04",
+      "group": "Submission",
+      "name": "Future discovery date rejected",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-05",
+      "group": "Submission",
+      "name": "Not personally witnessed requires a source",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-06",
+      "group": "Submission",
+      "name": "Originality and license permission acknowledgment required",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-07",
+      "group": "Submission",
+      "name": "Media links require rights confirmation",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-08",
+      "group": "Submission",
+      "name": "Malicious/unsafe URLs rejected (javascript:, data:, http:, IP literal, localhost, credentials, exe)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-09",
+      "group": "Submission",
+      "name": "XSS/script payloads rejected server-side (400); benign text stored inert; zero innerHTML sinks in cd-*.js",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-10",
+      "group": "Submission",
+      "name": "Invalid display name (markup) rejected",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-11",
+      "group": "Submission",
+      "name": "SQL injection strings stored literally; schema intact",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-12",
+      "group": "Submission",
+      "name": "Oversized request rejected (413) with Content-Length and with streamed body",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-13",
+      "group": "Submission",
+      "name": "Over-length individual fields rejected (title 121 chars)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-14",
+      "group": "Submission",
+      "name": "Cross-origin, origin-less and non-JSON POSTs rejected (CSRF/same-origin)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-15",
+      "group": "Submission",
+      "name": "Non-POST methods refused with 405 and no CORS headers",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-16",
+      "group": "Submission",
+      "name": "Honeypot submissions are silently discarded (nothing stored)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-17",
+      "group": "Submission",
+      "name": "Private email never echoed in submission response; stored only when provided",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-18",
+      "group": "Submission",
+      "name": "Named credit only honored when a display name is supplied",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SUB-19",
+      "group": "Submission",
+      "name": "Coordinates validated (both required, 0..1)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RL-01",
+      "group": "Rate limiting & duplicates",
+      "name": "Per-IP successful submissions limited (4th within an hour => 429)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RL-02",
+      "group": "Rate limiting & duplicates",
+      "name": "Per-IP attempt limit (16th attempt in an hour => 429), invalid attempts count",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RL-03",
+      "group": "Rate limiting & duplicates",
+      "name": "Different IPs have independent limits",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "DUP-01",
+      "group": "Rate limiting & duplicates",
+      "name": "Exact repeat content => 409",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "DUP-02",
+      "group": "Rate limiting & duplicates",
+      "name": "Near-duplicate titles recorded as possible_duplicate WARNING (not corroboration)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "DUP-03",
+      "group": "Rate limiting & duplicates",
+      "name": "Shared source URL recorded as shared_source relation; status never auto-changes",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "DUP-04",
+      "group": "Rate limiting & duplicates",
+      "name": "Many similar submissions never auto-promote any status (no auto-verification)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TS-01",
+      "group": "Turnstile & fail-closed config",
+      "name": "Not configured: submissions fail closed (503) and config reports submissionsOpen=false",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TS-02",
+      "group": "Turnstile & fail-closed config",
+      "name": "Configured: missing/invalid token rejected, valid token accepted (Turnstile API STUBBED)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "TS-03",
+      "group": "Turnstile & fail-closed config",
+      "name": "Partial Turnstile or missing/short CD_HASH_SALT => submissions fail closed (503 + submissionsOpen=false)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-01",
+      "group": "Admin authentication",
+      "name": "No Access token => 401 on every admin endpoint",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-02",
+      "group": "Admin authentication",
+      "name": "Access not configured => 503 fail-closed (even with a token)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-03",
+      "group": "Admin authentication",
+      "name": "Token signed by an unknown key => 401",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-04",
+      "group": "Admin authentication",
+      "name": "Wrong audience / wrong issuer / expired / future nbf / malformed token => 401",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-04B",
+      "group": "Admin authentication",
+      "name": "Multi-AUD allowlist accepts explicitly configured AUDs and rejects all others",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-04C",
+      "group": "Admin authentication",
+      "name": "Missing CD_ADMIN_EMAILS fails closed (503)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-04D",
+      "group": "Admin authentication",
+      "name": "Admin dashboard page (/cd-admin/) independently enforces Access JWT (503/401/403/200)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-05",
+      "group": "Admin authentication",
+      "name": "alg=none / header-only forged token => 401",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-06",
+      "group": "Admin authentication",
+      "name": "Valid token accepted (200); legacy ADMIN_KEY query param is NOT accepted",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-07",
+      "group": "Admin authentication",
+      "name": "CD_ADMIN_EMAILS allowlist enforced (403 for other identities)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-08",
+      "group": "Admin authentication",
+      "name": "Admin POST requires same-origin JSON even with valid token (CSRF)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "AUTH-09",
+      "group": "Admin authentication",
+      "name": "Unauthenticated error bodies do not leak the failure reason or data",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "PUB-01",
+      "group": "Moderation workflow",
+      "name": "Pending submission is absent from public list, map feed and has no published row",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-01",
+      "group": "Moderation workflow",
+      "name": "Queue lists new submission with counts",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-02",
+      "group": "Moderation workflow",
+      "name": "Detail exposes private data only to admin (email present), hides ip_hash / internal id",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-03",
+      "group": "Moderation workflow",
+      "name": "Invalid ref handled safely (400); unknown ref 404",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-04",
+      "group": "Moderation workflow",
+      "name": "Reject requires a reason; request_evidence requires a note",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-05",
+      "group": "Moderation workflow",
+      "name": "Request more evidence => NEEDS_MORE_EVIDENCE, decision + audit recorded with actor",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-06",
+      "group": "Moderation workflow",
+      "name": "Needs-evidence submission cannot be published (no draft exists)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-07",
+      "group": "Moderation workflow",
+      "name": "Approve as community report => COMMUNITY_REPORTED, unpublished draft created, credit follows contributor choice",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-08",
+      "group": "Moderation workflow",
+      "name": "Edit published copy (spelling) preserves original submission; credit can't be set to arbitrary name",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-09",
+      "group": "Moderation workflow",
+      "name": "DB trigger blocks tampering with original submission content",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-10",
+      "group": "Moderation workflow",
+      "name": "Audit tables are append-only (UPDATE/DELETE blocked)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-11",
+      "group": "Moderation workflow",
+      "name": "Publish => appears publicly with evidence label; no email / internal id / ip / reviewer note leaks",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "PUB-02",
+      "group": "Moderation workflow",
+      "name": "Public filters/search/sort work; injection in params is safe",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "PUB-03",
+      "group": "Moderation workflow",
+      "name": "Public list cannot be coaxed into returning non-public statuses",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-12",
+      "group": "Moderation workflow",
+      "name": "CORROBORATED requires basis + independent evidence; INDEPENDENTLY_VERIFIED requires explicit confirm + note",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-13",
+      "group": "Moderation workflow",
+      "name": "Reviewer links independent confirmation, then CORROBORATED allowed; label updates publicly",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-14",
+      "group": "Moderation workflow",
+      "name": "INDEPENDENTLY_VERIFIED only with explicit owner confirmation",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-15",
+      "group": "Moderation workflow",
+      "name": "Map pin: requires published, all checks, valid category/region/coords",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-16",
+      "group": "Moderation workflow",
+      "name": "Map pin on top of an existing production pin is blocked (409) unless explicitly overridden",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-17",
+      "group": "Moderation workflow",
+      "name": "Valid map pin approved => separate community feed, flagged counts_toward_completion:false, schema fields present; map-pins.json untouched",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-18",
+      "group": "Moderation workflow",
+      "name": "Wildlife can't be pinned unless independently verified",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-19",
+      "group": "Moderation workflow",
+      "name": "Unpublish removes from public list AND map feed; status downgrade auto-unpublishes",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-20",
+      "group": "Moderation workflow",
+      "name": "Flag duplicate links records and rejects",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-21",
+      "group": "Moderation workflow",
+      "name": "Unknown action / bad input rejected",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-22",
+      "group": "Moderation workflow",
+      "name": "Every admin action recorded in audit with actor and timestamp",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "MOD-23",
+      "group": "Moderation workflow",
+      "name": "Reviewer notes stay private (not in any public response)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "INT-01",
+      "group": "Repo integrity",
+      "name": "Community Discoveries security & isolation invariants intact (plus optional CD_STRICT_DIFF_SCOPE=1)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "INT-02",
+      "group": "Repo integrity",
+      "name": "Migration is additive: only cd_* objects created, no DROP/ALTER/DELETE of existing tables",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "INT-03",
+      "group": "Repo integrity",
+      "name": "Migration is idempotent (applies twice without error)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "INT-04",
+      "group": "Repo integrity",
+      "name": "Public pages carry correct robots directives; submit/admin never indexable; none in static sitemap",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "INT-05",
+      "group": "Repo integrity",
+      "name": "No secrets / credentials hardcoded in new frontend or function code",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-01",
+      "group": "Phase 29 Community Intelligence",
+      "name": "New Phase 29 categories (secret_area, safe_code, glitch) accepted; unknown category rejected",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-02",
+      "group": "Phase 29 Community Intelligence",
+      "name": "OFFICIALLY_CONFIRMED requires authoritative https URL, label, confirm_official and note; records moderation timestamp",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-03",
+      "group": "Phase 29 Community Intelligence",
+      "name": "Detail page (/community-discoveries/d/:ref) blocks pending/rejected (404), noindex for thin, index+canonical+JSON-LD for substantive, leaks zero private data",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-04",
+      "group": "Phase 29 Community Intelligence",
+      "name": "Map pins feed emits map_classification, links to detail page, and enforces counts_toward_completion:false",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-05",
+      "group": "Phase 29 Community Intelligence",
+      "name": "Dynamic /sitemap.xml excludes pending/rejected/thin discoveries and includes only substantive published discoveries",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-06",
+      "group": "Phase 29 Community Intelligence",
+      "name": "Community report endpoint validates same-origin, allowlisted reasons, rejects scripts & unpublished refs, rate-limits",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-07",
+      "group": "Phase 29 Community Intelligence",
+      "name": "Featured flag & related_db_records editable by moderator and filterable in public list",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "P29-08",
+      "group": "Phase 29 Community Intelligence",
+      "name": "Migration 0002 is strictly additive and idempotent",
+      "result": "PASS",
+      "detail": ""
+    }
+  ]
+}

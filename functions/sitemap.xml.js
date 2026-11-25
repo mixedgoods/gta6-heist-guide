@@ -22,8 +22,11 @@ const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/heists/small-banks-payday-loans", changefreq: "daily", priority: "0.96" },
   { loc: "https://www.gta6heistguide.com/heists/large-bank-vaults", changefreq: "daily", priority: "0.98" },
   { loc: "https://www.gta6heistguide.com/heists/armored-trucks-gang-ops", changefreq: "daily", priority: "0.95" },
-  // Interactive Tools
+  // Interactive Tools & Flagship Hubs
   { loc: "https://www.gta6heistguide.com/map", changefreq: "daily", priority: "0.98" },
+  { loc: "https://www.gta6heistguide.com/heist-command-center/", lastmod: "2026-11-25", changefreq: "daily", priority: "0.96" },
+  { loc: "https://www.gta6heistguide.com/my-leonida/", lastmod: "2026-11-25", changefreq: "daily", priority: "0.94" },
+  { loc: "https://www.gta6heistguide.com/gaming-gear/", lastmod: "2026-11-25", changefreq: "weekly", priority: "0.90" },
   { loc: "https://www.gta6heistguide.com/save-planner/", changefreq: "daily", priority: "0.98" },
   { loc: "https://www.gta6heistguide.com/cheats", changefreq: "daily", priority: "0.98" },
   { loc: "https://www.gta6heistguide.com/heist-planner", changefreq: "daily", priority: "0.95" },
