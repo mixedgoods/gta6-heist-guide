@@ -3018,16 +3018,20 @@ body.has-ticker .bookmarks-fab {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
   margin-bottom: 8px;
+  min-width: 0;
 }
 .targets-grid .card-tag {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 7px;
   border-radius: 4px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .targets-grid .sec-lvl-badge {
   font-size: 11px !important;
@@ -3036,13 +3040,44 @@ body.has-ticker .bookmarks-fab {
   border-radius: 4px;
   white-space: nowrap !important;
   line-height: 1.2 !important;
+  flex-shrink: 0;
 }
-.targets-grid .card-title {
-  font-size: 1.05rem;
+.targets-grid .card-title,
+.vault-card-redesign .card-title,
+.heist-extra-target h3,
+.heist-modal-header h2,
+.heist-modal-header h3 {
+  font-size: clamp(0.98rem, 1.35vw, 1.08rem);
   font-weight: 800;
   color: #fff;
   margin: 0 0 6px 0;
-  line-height: 1.25;
+  line-height: 1.28;
+  min-width: 0;
+  flex: 1 1 auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+.heist-extra-target .heist-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+  padding-bottom: 0.75rem;
+}
+.heist-extra-target .heist-drawer-header > div {
+  min-width: 0;
+  flex: 1 1 280px;
+}
+.heist-extra-target h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  margin: 0.35rem 0 0;
+  padding-right: 0.5rem;
 }
 .targets-grid .card-desc {
   font-size: 0.8rem;
@@ -4091,17 +4126,32 @@ body.has-ticker .bookmarks-fab {
 .navbar .nav-dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   left: 0;
-  min-width: 230px;
+  min-width: 236px;
   background: rgba(10, 12, 24, 0.98);
   border: 1px solid rgba(0, 240, 255, 0.35);
   border-radius: 10px;
   padding: 6px;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.78), 0 0 22px rgba(0, 240, 255, 0.15);
-  z-index: 1250;
+  z-index: 1350;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  animation: p26DropdownFadeIn 0.14s ease-out;
+}
+/* Invisible hover bridge across the 6px gap between parent tab and dropdown panel */
+.navbar .nav-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+@keyframes p26DropdownFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .navbar .nav-dropdown.nav-dropdown-right .nav-dropdown-menu {
   left: auto;
@@ -4111,6 +4161,30 @@ body.has-ticker .bookmarks-fab {
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .navbar .nav-dropdown:hover > .nav-dropdown-menu,
+  .navbar .nav-dropdown:focus-within > .nav-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .navbar .nav-dropdown:hover > .nav-dropdown-btn,
+  .navbar .nav-dropdown:focus-within > .nav-dropdown-btn {
+    color: #fff;
+    background: rgba(0, 240, 255, 0.14);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+  }
+  .navbar .nav-dropdown:hover .nav-arrow,
+  .navbar .nav-dropdown:focus-within .nav-arrow {
+    transform: rotate(180deg);
+  }
+}
+.navbar .nav-dropdown-btn:focus-visible,
+.navbar .nav-dropdown-item:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
 }
 .navbar .nav-dropdown-item {
   display: flex !important;

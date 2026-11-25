@@ -493,40 +493,39 @@ window.getGTA6LaunchBannerText = function() {
     }
   });
 
-  // 2. CURATED CONTEXTUAL PRODUCT POOLS
+  // 2. CURATED CONTEXTUAL PRODUCT POOLS (VALUE-FIRST ESSENTIALS)
   var CONTEXT_POOLS = {
     'homepage-setup': [
-      'dualsenseEdge', 'samsung990pro', 'nova7p', 'wdBlackSn850p',
-      'xboxController', 'seagateXboxCard', 'elgatoHd60x', 'dualsenseDock'
+      'dualsenseDock', 'crucialT500', 'kontrolfreek', 'headsetStand',
+      'dualsense', 'xboxController', 'poweraXboxDock', 'cableKit'
     ],
     'controls': [
-      'dualsense', 'dualsenseEdge', 'dualsenseDock', 'kontrolfreek',
-      'xboxController', 'poweraXboxDock'
+      'kontrolfreek', 'dualsenseDock', 'dualsense', 'xboxController',
+      'poweraXboxDock', 'dualsenseEdge'
     ],
     'troubleshooting': [
-      'samsung990pro', 'wdBlackSn850p', 'crucialT500',
-      'seagateXboxCard', 'cableKit'
+      'crucialT500', 'cableKit', 'wdBlackSn850p', 'seagateXboxCard'
     ],
     'missions': [
-      'nova7p', 'nova7x', 'headsetStand', 'elgatoWave3'
+      'headsetStand', 'kontrolfreek', 'dualsenseDock', 'nova7p', 'nova7x'
     ],
     'collectibles': [
       'kontrolfreek', 'dualsenseDock', 'poweraXboxDock', 'dualsense'
     ],
     'vehicles': [
-      'dualsenseEdge', 'kontrolfreek', 'elgatoHd60x', 'elgato4kx'
+      'kontrolfreek', 'dualsense', 'xboxController', 'dualsenseDock'
     ],
     'interactive-map': [
-      'samsung990pro', 'headsetStand', 'kontrolfreek', 'dualsenseDock'
+      'headsetStand', 'kontrolfreek', 'dualsenseDock', 'cableKit'
     ],
     'creator': [
-      'elgatoHd60x', 'elgato4kx', 'elgatoWave3', 'cutflow'
+      'elgatoHd60x', 'elgatoWave3', 'headsetStand', 'cutflow'
     ],
     'money': [
-      'g2a', 'samsung990pro', 'dualsenseEdge', 'exitlag'
+      'dualsenseDock', 'kontrolfreek', 'crucialT500', 'g2a'
     ],
     'default': [
-      'samsung990pro', 'dualsenseEdge', 'nova7p', 'wdBlackSn850p', 'g2a', 'exitlag'
+      'dualsenseDock', 'kontrolfreek', 'crucialT500', 'headsetStand', 'cableKit', 'dualsense'
     ]
   };
 

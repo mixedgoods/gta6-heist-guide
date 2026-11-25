@@ -1,6 +1,6 @@
 {
   "category": "weapons",
-  "updated": "2026-11-21",
+  "updated": "2026-11-24",
   "note": "Verified GTA 6 weapons across 8 classes. Every stat (damage, fire rate, range, accuracy, mag capacity, bonuses) explicitly distinguishes Confirmed, Reported, Estimated, and Not yet confirmed — zero invented numeric DPS/stat bars.",
   "items": [
     {
@@ -71,9 +71,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Lightweight concealable sidearm for diner & shop stickups",
       "notes": "Striker-fired 9mm polymer pistol stamped 'KL17G1 / 9mm' wielded by Lucia in official GTA 6 close-quarters ambush screenshots.",
-      "image": "/assets/images/weapons/weapon-lucia-tactical.jpg",
+      "image": "/assets/images/weapons/gtavi-jason-pistol-firing.jpg",
       "imageVerified": true,
-      "imageSource": "Official Rockstar GTA VI Screenshot",
+      "imageSource": "Official Rockstar Games Screenshot (Jason_Duval_09.jpg)",
       "mapPinId": "ammu-vice-beach-promenade",
       "relatedLinks": [
         {
@@ -87,7 +87,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Not yet confirmed",
         "fireRate": "Confirmed",
@@ -95,7 +95,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Reported",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-jason-pistol-firing-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-jason-pistol-firing-800.webp 800w, /assets/images/weapons/gtavi-jason-pistol-firing-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "KL17G1 Polymer 9mm Pistol — Jason Duval firing a polymer semi-automatic handgun with ejecting brass",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_Duval_09.jpg)",
+      "focalPosition": "35% 45%"
     },
     {
       "id": "capo-tactical-pistol",
@@ -117,9 +124,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Precision pistol engagements and armored vehicle getaways",
       "notes": "Two-tone tactical handgun stamped 'CAPO' with slide-mounted green/red-dot sight carried by heist veteran Raul Bautista.",
-      "image": "/assets/images/weapons/weapon-raul-breach.jpg",
+      "image": "/assets/images/weapons/gtavi-lucia-tactical-handgun.jpg",
       "imageVerified": true,
-      "imageSource": "Official Rockstar GTA VI Screenshot",
+      "imageSource": "Official Rockstar Games Screenshot (Lucia_Caminos_13.jpg)",
       "mapPinId": null,
       "relatedLinks": [
         {
@@ -129,7 +136,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Not yet confirmed",
         "fireRate": "Confirmed",
@@ -137,7 +144,14 @@
         "accuracy": "Reported",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-lucia-tactical-handgun-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-lucia-tactical-handgun-800.webp 800w, /assets/images/weapons/gtavi-lucia-tactical-handgun-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Capo Tactical Pistol — Lucia Caminos aiming a compact tactical pistol",
+      "imageCaption": "Official Rockstar Games Screenshot (Lucia_Caminos_13.jpg)",
+      "focalPosition": "55% 45%"
     },
     {
       "id": "scoped-heavy-revolver",
@@ -293,9 +307,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "One-handed vehicle drive-by suppression",
       "notes": "Compact rapid-fire SMG suited for firing from getaway cars and motorcycles.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-duo-robbery-smg.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_and_Lucia_15.jpg)",
       "mapPinId": "ammu-little-haiti-express",
       "relatedLinks": [
         {
@@ -305,7 +319,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Not yet confirmed",
         "fireRate": "Reported",
@@ -313,7 +327,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-duo-robbery-smg-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-duo-robbery-smg-800.webp 800w, /assets/images/weapons/gtavi-duo-robbery-smg-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Micro SMG — Masked Jason and Lucia armed with compact automatic weapons during a robbery",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_and_Lucia_15.jpg)",
+      "focalPosition": "50% 40%"
     },
     {
       "id": "submachine-gun-mp5",
@@ -337,9 +358,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Quiet interior room clearing with a suppressor attached",
       "notes": "Balanced mid-size SMG for stealth approaches inside jewelry stores and small bank branches.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-tactical-smg-jason.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_Duval_10.jpg)",
       "mapPinId": null,
       "relatedLinks": [
         {
@@ -349,7 +370,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Not yet confirmed",
         "fireRate": "Confirmed",
@@ -357,7 +378,14 @@
         "accuracy": "Reported",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-tactical-smg-jason-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-tactical-smg-jason-800.webp 800w, /assets/images/weapons/gtavi-tactical-smg-jason-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Tactical 9mm SMG — Jason Duval holding a compact tactical submachine gun",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_Duval_10.jpg)",
+      "focalPosition": "40% 45%"
     },
     {
       "id": "service-carbine-rifle",
@@ -382,9 +410,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "All-purpose primary rifle for major bank vaults and highway shootouts",
       "notes": "Modular 5.56-class carbine stowed on a sling or inside your getaway car trunk under GTA 6's realistic carry system.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-service-carbine-night.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_Duval_05.jpg)",
       "mapPinId": "ammu-downtown-vice-financial",
       "relatedLinks": [
         {
@@ -398,7 +426,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Not yet confirmed",
         "fireRate": "Confirmed",
@@ -406,7 +434,14 @@
         "accuracy": "Reported",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-service-carbine-night-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-service-carbine-night-800.webp 800w, /assets/images/weapons/gtavi-service-carbine-night-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Service Carbine Rifle — Jason Duval aiming a scoped carbine rifle over Vice City at night",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_Duval_05.jpg)",
+      "focalPosition": "45% 55%"
     },
     {
       "id": "assault-rifle-ak",
@@ -429,9 +464,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Sustained firefight suppression against armored trucks and gang hideouts",
       "notes": "Rugged high-caliber assault rifle common across cartel operations in Grassrivers and Ambrosia.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-gold-assault-rifle.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_12.jpg)",
       "mapPinId": "ammu-grassrivers-south-airstrip",
       "relatedLinks": [
         {
@@ -441,7 +476,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -449,7 +484,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-gold-assault-rifle-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-gold-assault-rifle-800.webp 800w, /assets/images/weapons/gtavi-gold-assault-rifle-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Classic Assault Rifle (AK Platform) — Gold-plated assault rifle held in Vice City",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_12.jpg)",
+      "focalPosition": "35% 45%"
     },
     {
       "id": "heavy-battle-rifle",
@@ -472,9 +514,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Punching through heavy police armor during 4–5 star escapes",
       "notes": "High-impact tactical rifle stocked at expanded-inventory military surplus outlets.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-heavy-battle-rifle.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_Duval_17.jpg)",
       "mapPinId": "ammu-port-gellhorn-north",
       "relatedLinks": [
         {
@@ -484,7 +526,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Not yet confirmed",
@@ -492,7 +534,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-heavy-battle-rifle-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-heavy-battle-rifle-800.webp 800w, /assets/images/weapons/gtavi-heavy-battle-rifle-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Heavy Battle Rifle — Jason Duval aiming a tactical long-barrel rifle with optic",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_Duval_17.jpg)",
+      "focalPosition": "55% 45%"
     },
     {
       "id": "pump-action-shotgun",
@@ -515,9 +564,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Doorway breaching, pawn shop defense, and close-quarters vault hallways",
       "notes": "Reliable 12-gauge pump shotgun available early at standard Ammu-Nation branches.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-duo-shotgun-heist.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_and_Lucia_08.jpg)",
       "mapPinId": "ammu-south-vice-intermodal",
       "relatedLinks": [
         {
@@ -527,7 +576,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -535,7 +584,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-duo-shotgun-heist-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-duo-shotgun-heist-800.webp 800w, /assets/images/weapons/gtavi-duo-shotgun-heist-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Pump-Action Shotgun — Jason and Lucia armed with a long shotgun and heist duffel bags",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_and_Lucia_08.jpg)",
+      "focalPosition": "45% 45%"
     },
     {
       "id": "combat-tactical-shotgun",
@@ -558,9 +614,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Rapid multi-target clearing during loud bank exits",
       "notes": "Semi-automatic tactical 12-gauge built for aggressive close-quarters breaching.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-combat-firefight-rifle.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_Duval_16.jpg)",
       "mapPinId": "ammu-vice-beach-promenade",
       "relatedLinks": [
         {
@@ -570,7 +626,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -578,7 +634,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-combat-firefight-rifle-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-combat-firefight-rifle-800.webp 800w, /assets/images/weapons/gtavi-combat-firefight-rifle-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Combat Tactical Shotgun — Jason Duval firing a tactical weapon amid sparks in close quarters",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_Duval_16.jpg)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "sawed-off-shotgun",
@@ -599,14 +662,14 @@
       "price": "Price not confirmed",
       "bestUseCase": "Motorcycle pursuit defense & close-range ambush",
       "notes": "Short-barrel shotgun easy to carry on bikes or in tight interiors.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-bank-breach-loadout.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_and_Lucia_04.jpg)",
       "mapPinId": "ammu-grassrivers-swamp-post",
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Reported",
@@ -614,7 +677,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-bank-breach-loadout-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-bank-breach-loadout-800.webp 800w, /assets/images/weapons/gtavi-bank-breach-loadout-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Sawed-Off Shotgun — Jason and Lucia engaging security with tactical firearms inside a bank",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_and_Lucia_04.jpg)",
+      "focalPosition": "45% 40%"
     },
     {
       "id": "brets-sm69",
@@ -636,9 +706,9 @@
       "price": "Contract Reward (Killtelligence Provisions)",
       "bestUseCase": "Securing Good & Pristine wildlife carcasses for Bret Vogel's 15 Hunting Target Decks and 8 Legendary Hunter animals",
       "notes": "Signature hunting rifle rewarded via Bret Vogel's Strangers & Freaks questline ('Veteran Hunted') in Chapter 2 after 'Coffee Break'. Pair with Focus Mode (L3 + R3) for vital shots.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-grassrivers-hunting-rifle.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Grassrivers_01.jpg)",
       "mapPinId": "ammu-mt-kalaga-ranger-station",
       "relatedLinks": [
         {
@@ -656,7 +726,7 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/animals",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -664,7 +734,14 @@
         "accuracy": "Reported",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-grassrivers-hunting-rifle-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-grassrivers-hunting-rifle-800.webp 800w, /assets/images/weapons/gtavi-grassrivers-hunting-rifle-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Bret's SM-69 (Killtelligence SM-69 Hunting Rifle) — Scoped hunting rifle and tactical rifle on a Grassrivers airboat",
+      "imageCaption": "Official Rockstar Games Screenshot (Grassrivers_01.jpg)",
+      "focalPosition": "65% 35%"
     },
     {
       "id": "bolt-action-hunting-rifle",
@@ -686,9 +763,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Wildlife hunting across Mount Kalaga and long-range overwatch",
       "notes": "Standard scoped wood-stock hunting rifle used across northern Leonida pine forests.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-scoped-hunting-rifle.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Ambrosia_03.jpg)",
       "mapPinId": "ammu-grassrivers-west-crossing",
       "relatedLinks": [
         {
@@ -698,7 +775,7 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -706,7 +783,14 @@
         "accuracy": "Reported",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-scoped-hunting-rifle-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-scoped-hunting-rifle-800.webp 800w, /assets/images/weapons/gtavi-scoped-hunting-rifle-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Bolt-Action Hunting Rifle — Scoped bolt-action hunting rifle held by an Ambrosia resident",
+      "imageCaption": "Official Rockstar Games Screenshot (Ambrosia_03.jpg)",
+      "focalPosition": "55% 60%"
     },
     {
       "id": "heavy-sniper-rifle",
@@ -729,9 +813,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Disabling pursuit helicopter tail rotors and armored convoy engines from rooftops",
       "notes": "Long-range precision rifle stocked at specialist sniper gun stores.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-heavy-battle-rifle.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_Duval_17.jpg)",
       "mapPinId": "ammu-mt-kalaga-summit-lodge",
       "relatedLinks": [
         {
@@ -741,7 +825,7 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -749,7 +833,14 @@
         "accuracy": "Reported",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-heavy-battle-rifle-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-heavy-battle-rifle-800.webp 800w, /assets/images/weapons/gtavi-heavy-battle-rifle-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Heavy Anti-Materiel Sniper Rifle — Jason Duval aiming a tactical long-barrel rifle with optic",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_Duval_17.jpg)",
+      "focalPosition": "55% 45%"
     },
     {
       "id": "rpg-launcher",
@@ -768,9 +859,9 @@
       "price": "Price not confirmed",
       "bestUseCase": "Clearing police roadblocks and downing law-enforcement choppers",
       "notes": "Heavy anti-vehicle ordnance restricted to expanded-stock military surplus dealers.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-vault-breach-loadout.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_and_Lucia_02.jpg — Illustrative Heist Loadout)",
       "mapPinId": "ammu-port-gellhorn-docks",
       "relatedLinks": [
         {
@@ -780,7 +871,7 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -788,7 +879,14 @@
         "accuracy": "Reported",
         "magCapacity": "Confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-vault-breach-loadout-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-vault-breach-loadout-800.webp 800w, /assets/images/weapons/gtavi-vault-breach-loadout-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "RPG Rocket Launcher — Jason and Lucia in tactical heist gear outside a bank vault (Illustrative Heist Loadout)",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_and_Lucia_02.jpg — Illustrative Heist Loadout)",
+      "focalPosition": "50% 40%"
     },
     {
       "id": "grenade-launcher",
@@ -807,14 +905,14 @@
       "price": "Price not confirmed",
       "bestUseCase": "Indirect explosive fire over barricades and armored convoy escorts",
       "notes": "Versatile explosive launcher useful when pinned behind cover during heavy vault escapes.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-lucia-grenade-launcher.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Jason_and_Lucia_19.jpg)",
       "mapPinId": "ammu-vice-north-beach-pier",
       "relatedLinks": [],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Community Discovered",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Reported",
@@ -822,7 +920,14 @@
         "accuracy": "Not yet confirmed",
         "magCapacity": "Not yet confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-lucia-grenade-launcher-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-lucia-grenade-launcher-800.webp 800w, /assets/images/weapons/gtavi-lucia-grenade-launcher-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Compact Grenade Launcher — Lucia Caminos firing a compact grenade launcher from a convertible",
+      "imageCaption": "Official Rockstar Games Screenshot (Jason_and_Lucia_19.jpg)",
+      "focalPosition": "55% 45%"
     },
     {
       "id": "switchblade-combat-knife",
@@ -841,14 +946,14 @@
       "price": "Price not confirmed",
       "bestUseCase": "Silent stealth takedowns without alerting nearby patrols",
       "notes": "Stiletto switchblade featured on the table alongside Jason and Lucia's custom revolvers in official weapon artwork.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/weapons/gtavi-combat-knife-grassrivers.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Grassrivers_07.jpg)",
       "mapPinId": null,
       "relatedLinks": [],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "statStatus": {
         "damage": "Reported",
         "fireRate": "Confirmed",
@@ -856,7 +961,14 @@
         "accuracy": "Confirmed",
         "magCapacity": "Confirmed",
         "bonuses": "Not yet confirmed"
-      }
+      },
+      "imageWebp": "/assets/images/weapons/gtavi-combat-knife-grassrivers-1200.webp",
+      "imageWebpSrcset": "/assets/images/weapons/gtavi-combat-knife-grassrivers-800.webp 800w, /assets/images/weapons/gtavi-combat-knife-grassrivers-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Switchblade / Combat Knife — Serrated combat knife held at a Grassrivers wetlands camp",
+      "imageCaption": "Official Rockstar Games Screenshot (Grassrivers_07.jpg)",
+      "focalPosition": "48% 82%"
     },
     {
       "id": "baseball-bat",

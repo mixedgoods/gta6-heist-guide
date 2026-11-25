@@ -76,47 +76,114 @@ window.SITE_CONFIG = Object.freeze({
       }
     });
 
-    // Setup click support for .nav-dropdown (supports multiple dropdowns: Tools, Database)
+    // Setup desktop hover (fine-pointer), keyboard, and mobile tap support for .nav-dropdown
+    var supportsFineHover = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+    function closeAllDropdowns(exceptDd) {
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(function(other) {
+        if (other !== exceptDd) {
+          other.classList.remove('is-open');
+          var ob = other.querySelector('.nav-dropdown-btn');
+          if (ob) ob.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    function openDropdown(dd) {
+      closeAllDropdowns(dd);
+      dd.classList.add('is-open');
+      var btn = dd.querySelector('.nav-dropdown-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
+    function closeDropdown(dd) {
+      dd.classList.remove('is-open');
+      var btn = dd.querySelector('.nav-dropdown-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+
     document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
       var btn = dd.querySelector('.nav-dropdown-btn');
-      if (btn && !btn.dataset.bound) {
-        btn.dataset.bound = 'true';
-        btn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          var wasOpen = dd.classList.contains('is-open');
-          document.querySelectorAll('.nav-dropdown.is-open').forEach(function(other) {
-            if (other !== dd) {
-              other.classList.remove('is-open');
-              var ob = other.querySelector('.nav-dropdown-btn');
-              if (ob) ob.setAttribute('aria-expanded', 'false');
-            }
-          });
-          var isOpen = !wasOpen;
-          dd.classList.toggle('is-open', isOpen);
-          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      var menu = dd.querySelector('.nav-dropdown-menu');
+      if (!btn || btn.dataset.bound) return;
+      btn.dataset.bound = 'true';
+      var closeTimer = null;
+
+      // Tap / click toggle (works on mobile touchscreens & desktop click)
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var wasOpen = dd.classList.contains('is-open');
+        if (wasOpen) closeDropdown(dd);
+        else openDropdown(dd);
+      });
+
+      // Desktop fine-pointer hover with intent delay so moving pointer from trigger to menu never drops
+      if (supportsFineHover) {
+        dd.addEventListener('mouseenter', function() {
+          if (window.innerWidth < 1024) return;
+          if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+          openDropdown(dd);
+        });
+        dd.addEventListener('mouseleave', function() {
+          if (window.innerWidth < 1024) return;
+          if (closeTimer) clearTimeout(closeTimer);
+          closeTimer = setTimeout(function() {
+            closeDropdown(dd);
+          }, 160);
         });
       }
+
+      // Keyboard accessibility: focus opens on desktop, ArrowDown/Up navigates items, Escape closes
+      dd.addEventListener('focusin', function() {
+        if (window.innerWidth >= 1024) openDropdown(dd);
+      });
+      dd.addEventListener('focusout', function(e) {
+        if (!dd.contains(e.relatedTarget)) {
+          closeDropdown(dd);
+        }
+      });
+      dd.addEventListener('keydown', function(e) {
+        var items = menu ? Array.from(menu.querySelectorAll('a.nav-dropdown-item')) : [];
+        if (e.key === 'Escape') {
+          closeDropdown(dd);
+          btn.focus();
+          return;
+        }
+        if (e.key === 'ArrowDown' && items.length) {
+          e.preventDefault();
+          openDropdown(dd);
+          var idx = items.indexOf(document.activeElement);
+          items[(idx + 1) % items.length].focus();
+        } else if (e.key === 'ArrowUp' && items.length) {
+          e.preventDefault();
+          openDropdown(dd);
+          var idxUp = items.indexOf(document.activeElement);
+          items[(idxUp <= 0 ? items.length - 1 : idxUp - 1)].focus();
+        }
+      });
     });
     if (!window._gta6DropdownGlobalBound) {
       window._gta6DropdownGlobalBound = true;
       document.addEventListener('click', function(e) {
-        if (e.target && e.target.closest && e.target.closest('.nav-dropdown-menu')) return;
-        document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dd) {
-          dd.classList.remove('is-open');
-          var btn = dd.querySelector('.nav-dropdown-btn');
-          if (btn) btn.setAttribute('aria-expanded', 'false');
-        });
+        if (e.target && e.target.closest && e.target.closest('.nav-dropdown')) return;
+        closeAllDropdowns(null);
       });
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dd) {
-            dd.classList.remove('is-open');
-            var btn = dd.querySelector('.nav-dropdown-btn');
-            if (btn) btn.setAttribute('aria-expanded', 'false');
-          });
-        }
+        if (e.key === 'Escape') closeAllDropdowns(null);
       });
     }
+
+    // Browser-local recently viewed guide/database tracker for "Continue Where You Left Off"
+    try {
+      var curPath = window.location.pathname || '/';
+      if (curPath !== '/' && curPath !== '/index.html' && curPath.indexOf('/cd-admin') !== 0 && curPath.indexOf('/404') !== 0) {
+        var rawTitle = (document.title || curPath).split('|')[0].split(':')[0].trim();
+        if (rawTitle.length > 48) rawTitle = rawTitle.slice(0, 45) + '...';
+        var recRaw = localStorage.getItem('gta6_recent_pages_v1');
+        var recList = recRaw ? JSON.parse(recRaw) : [];
+        if (!Array.isArray(recList)) recList = [];
+        recList = recList.filter(function(x) { return x && x.path !== curPath; });
+        recList.unshift({ path: curPath, title: rawTitle, ts: Date.now() });
+        localStorage.setItem('gta6_recent_pages_v1', JSON.stringify(recList.slice(0, 6)));
+      }
+    } catch (e) {}
 
     // Rotating Drops Tab label cycler in header
     var dropsTab = document.getElementById('rotatingDropsTab');

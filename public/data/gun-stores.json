@@ -1,6 +1,6 @@
 {
   "category": "gun-stores",
-  "updated": "2026-11-21",
+  "updated": "2026-11-24",
   "note": "All 24 verified Leonida gun stores across 5 counties (Vice-Dale 14, Mariana 5, Kelly 3, Leonard 1, Lummox 1) categorized by in-game inventory tier (Limited, Standard, Hunting, Expanded). Existing map pin coordinates are preserved without unverified moves.",
   "items": [
     {
@@ -21,9 +21,9 @@
         "Indoor Shooting Range"
       ],
       "notes": "Flagship 2-story gun store with indoor shooting range, heavy combat shotgun inventory, and military ballistic vests.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-vice-beach-outlet-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_10.jpg — Regional Visual)",
       "mapPinId": "ammu-vice-beach-promenade",
       "relatedLinks": [
         {
@@ -37,10 +37,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Expanded",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-vice-beach-outlet-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-vice-beach-outlet-area-800.webp 800w, /assets/images/gun-stores/gtavi-vice-beach-outlet-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Phil's Ammu-Nation (Vice City) — Vice Beach commercial district (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_10.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-downtown-vice-financial",
@@ -60,9 +67,9 @@
         "Suppressors & Optics"
       ],
       "notes": "Caters to private corporate security details. Stocks high-end combat carbines, sound suppressors, and red-dot optics.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-downtown-vice-outlet-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_27.jpg — Regional Visual)",
       "mapPinId": "ammu-downtown-vice-financial",
       "relatedLinks": [
         {
@@ -76,10 +83,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-downtown-vice-outlet-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-downtown-vice-outlet-area-800.webp 800w, /assets/images/gun-stores/gtavi-downtown-vice-outlet-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice City Firearms (Vice City) — Downtown Vice City commercial corridor (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_27.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-little-haiti-express",
@@ -98,9 +112,9 @@
         "Pawn & Secondhand Firearms"
       ],
       "notes": "Gritty urban franchise carrying high-rate-of-fire compact submachine guns and street-level sidearms.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-little-haiti-outlet-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_09.jpg — Regional Visual)",
       "mapPinId": "ammu-little-haiti-express",
       "relatedLinks": [
         {
@@ -110,10 +124,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-little-haiti-outlet-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-little-haiti-outlet-area-800.webp 800w, /assets/images/gun-stores/gtavi-little-haiti-outlet-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Martez Empenos (Vice City) — Vice City Little Haiti / neighborhood strip (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_09.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-south-vice-intermodal",
@@ -130,9 +151,9 @@
         "Ammo"
       ],
       "notes": "Industrial depot gun store supplying truckers and warehouse security. Huge stock of 12-gauge slug shells and extended magazines.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Lucia_Caminos_08.jpg — Store Visual)",
       "mapPinId": "ammu-south-vice-intermodal",
       "relatedLinks": [
         {
@@ -146,10 +167,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-800.webp 800w, /assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice City Gun & Pawn (Vice City) — Port Gellhorn Pawn & Cash storefront exterior (Regional Store Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Lucia_Caminos_08.jpg — Store Visual)",
+      "focalPosition": "50% 40%"
     },
     {
       "id": "ammu-vice-airport-concourse",
@@ -167,9 +195,9 @@
         "Shooting Range"
       ],
       "notes": "Perimeter shop authorized for long-range hunting rifles, sniper scopes, and thermal optics packages.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-vice-retail-interior.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_PTT_STORE_01.jpg — Store Visual)",
       "mapPinId": "ammu-vice-airport-concourse",
       "relatedLinks": [
         {
@@ -183,10 +211,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-vice-retail-interior-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-vice-retail-interior-800.webp 800w, /assets/images/gun-stores/gtavi-vice-retail-interior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Quickscope (Vice City) — Leonida tactical & gear retail interior (Regional Store Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_PTT_STORE_01.jpg — Store Visual)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "ammu-starlet-island-causeway",
@@ -203,9 +238,9 @@
         "Ammo"
       ],
       "notes": "Ultra-exclusive boutique offering engraved sidearms, luxury handguns, and discreet concealed carry holsters.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-vice-island-outlet-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_17.jpg — Regional Visual)",
       "mapPinId": "ammu-starlet-island-causeway",
       "relatedLinks": [
         {
@@ -219,10 +254,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Expanded",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-vice-island-outlet-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-vice-island-outlet-area-800.webp 800w, /assets/images/gun-stores/gtavi-vice-island-outlet-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Prestige Firearms (Vice City) — Vice City island causeway and marina (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_17.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-port-gellhorn-docks",
@@ -242,9 +284,9 @@
         "Heavy Ordnance"
       ],
       "notes": "Hard-hitting portside store with explosive ordnance license. Sells RPG launchers, rocket canisters, and breaching charges.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-gellhorn-docks-outlets.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Port_Gellhorn_06.jpg — Regional Visual)",
       "mapPinId": "ammu-port-gellhorn-docks",
       "relatedLinks": [
         {
@@ -254,10 +296,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Kelly County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-gellhorn-docks-outlets-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-gellhorn-docks-outlets-800.webp 800w, /assets/images/gun-stores/gtavi-gellhorn-docks-outlets-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Gellhorn Outfitters (Port Gellhorn) — Port Gellhorn industrial & docks area (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Port_Gellhorn_06.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-port-gellhorn-north",
@@ -276,9 +325,9 @@
         "Armor"
       ],
       "notes": "Sprawling warehouse retailer supplying the western industrial sector with heavy caliber battle rifles and level IV body armor.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Lucia_Caminos_08.jpg — Store Visual)",
       "mapPinId": "ammu-port-gellhorn-north",
       "relatedLinks": [
         {
@@ -288,10 +337,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Kelly County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-800.webp 800w, /assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Pawn & Gun, Port Gellhorn (Port Gellhorn) — Port Gellhorn Pawn & Cash storefront exterior (Regional Store Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Lucia_Caminos_08.jpg — Store Visual)",
+      "focalPosition": "50% 40%"
     },
     {
       "id": "ammu-gellhorn-rail-junction",
@@ -309,9 +365,9 @@
         "Armor"
       ],
       "notes": "Rail depot armory stocked with high-volume 9mm ammo cases and flare signaling gear.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-gellhorn-strip-outlets.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Port_Gellhorn_04.jpg — Regional Visual)",
       "mapPinId": "ammu-gellhorn-rail-junction",
       "relatedLinks": [
         {
@@ -325,10 +381,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Kelly County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-gellhorn-strip-outlets-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-gellhorn-strip-outlets-800.webp 800w, /assets/images/gun-stores/gtavi-gellhorn-strip-outlets-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Biff's Gun Supply (Port Gellhorn) — Port Gellhorn roadside commercial strip (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Port_Gellhorn_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-keys-upper-marathon",
@@ -346,9 +409,9 @@
         "Ammo"
       ],
       "notes": "Specializes in marine firearms, underwater spearguns, distress flares, and waterproof ammo cases.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-keys-outfitter-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Leonida_Keys_03.jpg — Regional Visual)",
       "mapPinId": "ammu-keys-upper-marathon",
       "relatedLinks": [
         {
@@ -362,10 +425,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Mariana County",
       "inventoryTier": "Limited",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-keys-outfitter-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-keys-outfitter-area-800.webp 800w, /assets/images/gun-stores/gtavi-keys-outfitter-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Chuck's Tackle & Shot (Leonida Keys) — Leonida Keys waterfront outfitter district (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Leonida_Keys_03.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-keys-southern-strip",
@@ -382,9 +452,9 @@
         "Ammo"
       ],
       "notes": "The southernmost gun shop in the continental United States. Packed with classic revolvers, .44 Magnum rounds, and survival gear.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-keys-highway-outlets.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Leonida_Keys_01.jpg — Regional Visual)",
       "mapPinId": "ammu-keys-southern-strip",
       "relatedLinks": [
         {
@@ -398,10 +468,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Mariana County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-keys-highway-outlets-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-keys-highway-outlets-800.webp 800w, /assets/images/gun-stores/gtavi-keys-highway-outlets-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Barrage Gun Supply (Leonida Keys) — Leonida Keys overseas highway corridor (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Leonida_Keys_01.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-keys-runway-outpost",
@@ -419,9 +496,9 @@
         "Armor"
       ],
       "notes": "Unregistered armory beside the southwest airstrip. Sells covert combat gear, thermite grenades, and flashbangs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-keys-outfitter-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Leonida_Keys_03.jpg — Regional Visual)",
       "mapPinId": "ammu-keys-runway-outpost",
       "relatedLinks": [
         {
@@ -435,10 +512,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Mariana County",
       "inventoryTier": "Expanded",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-keys-outfitter-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-keys-outfitter-area-800.webp 800w, /assets/images/gun-stores/gtavi-keys-outfitter-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Woodhatch (Leonida Keys) — Leonida Keys waterfront outfitter district (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Leonida_Keys_03.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-grassrivers-swamp-post",
@@ -456,9 +540,9 @@
         "Ammo"
       ],
       "notes": "Rugged wetland supplier featuring heavy-gauge swamp shotguns, high-carbon machetes, and alligator hunting gear.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-grassrivers-outpost-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Grassrivers_02.jpg — Regional Visual)",
       "mapPinId": "ammu-grassrivers-swamp-post",
       "relatedLinks": [
         {
@@ -472,10 +556,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Mariana County",
       "inventoryTier": "Hunting",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-grassrivers-outpost-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-grassrivers-outpost-area-800.webp 800w, /assets/images/gun-stores/gtavi-grassrivers-outpost-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Guns Aplenty! (Grassrivers) — Grassrivers wetlands dock & supply post (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Grassrivers_02.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-grassrivers-south-airstrip",
@@ -492,9 +583,9 @@
         "Ammo"
       ],
       "notes": "Deep swamp distribution node housing crates of surplus AK-47 assault rifles and drum magazines.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-grassrivers-marsh-outlets.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Grassrivers_05.jpg — Regional Visual)",
       "mapPinId": "ammu-grassrivers-south-airstrip",
       "relatedLinks": [
         {
@@ -508,10 +599,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Mariana County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-grassrivers-marsh-outlets-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-grassrivers-marsh-outlets-800.webp 800w, /assets/images/gun-stores/gtavi-grassrivers-marsh-outlets-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Richardson Hunting Supplies (Grassrivers) — Grassrivers marshlands overview (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Grassrivers_05.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-grassrivers-west-crossing",
@@ -529,9 +627,9 @@
         "Armor"
       ],
       "notes": "Isolated roadside armory providing ghillie suits, scoped hunting rifles, and night vision goggles for swamp trackers.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-grassrivers-outpost-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Grassrivers_02.jpg — Regional Visual)",
       "mapPinId": "ammu-grassrivers-west-crossing",
       "relatedLinks": [
         {
@@ -545,10 +643,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Expanded",
-      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed",
+      "imageWebp": "/assets/images/gun-stores/gtavi-grassrivers-outpost-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-grassrivers-outpost-area-800.webp 800w, /assets/images/gun-stores/gtavi-grassrivers-outpost-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Big Shots (Grassrivers) — Grassrivers wetlands dock & supply post (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Grassrivers_02.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-ambrosia-central",
@@ -568,9 +673,9 @@
         "Expanded Heavy Stock"
       ],
       "notes": "Major suburban supplier with heavy stocks of military carbines, tactical helmets, and ballistic combat gear.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-ambrosia-central-outlets.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Ambrosia_01.jpg — Regional Visual)",
       "mapPinId": "ammu-ambrosia-central",
       "relatedLinks": [
         {
@@ -580,10 +685,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Expanded",
-      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed",
+      "imageWebp": "/assets/images/gun-stores/gtavi-ambrosia-central-outlets-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-ambrosia-central-outlets-800.webp 800w, /assets/images/gun-stores/gtavi-ambrosia-central-outlets-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Black Eagle (Ambrosia) — Ambrosia central commercial strip (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Ambrosia_01.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-ambrosia-refinery-gate",
@@ -600,9 +712,9 @@
         "Ammo"
       ],
       "notes": "Commercial demolition supplier stocking thermite canisters, explosive cutting tape, and industrial drills.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-ambrosia-refinery-outlets.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Ambrosia_04.jpg — Regional Visual)",
       "mapPinId": "ammu-ambrosia-refinery-gate",
       "relatedLinks": [
         {
@@ -616,10 +728,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Leonard County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-ambrosia-refinery-outlets-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-ambrosia-refinery-outlets-800.webp 800w, /assets/images/gun-stores/gtavi-ambrosia-refinery-outlets-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Tactical Outlet Guns (Ambrosia) — Ambrosia refinery gate corridor (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Ambrosia_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-lake-leonida-north-marina",
@@ -637,9 +756,9 @@
         "Armor"
       ],
       "notes": "Lakeside sporting armory with pontoon dock. Stocks amphibious tactical gear and sub-compact firearms.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-lake-leonida-waterway.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_06.jpg — Regional Visual)",
       "mapPinId": "ammu-lake-leonida-north-marina",
       "relatedLinks": [
         {
@@ -653,10 +772,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed",
+      "imageWebp": "/assets/images/gun-stores/gtavi-lake-leonida-waterway-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-lake-leonida-waterway-800.webp 800w, /assets/images/gun-stores/gtavi-lake-leonida-waterway-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Hamlet Traders (Lake Leonida) — Northern Leonida waterway & bridge crossing (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_06.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-lake-leonida-south-causeway",
@@ -674,9 +800,9 @@
         "Shooting Range"
       ],
       "notes": "Causeway bridge shop popular with long-range marksmen and hunters. Features high-caliber bolt rifles.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-lake-leonida-waterway.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_06.jpg — Regional Visual)",
       "mapPinId": "ammu-lake-leonida-south-causeway",
       "relatedLinks": [
         {
@@ -690,10 +816,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed",
+      "imageWebp": "/assets/images/gun-stores/gtavi-lake-leonida-waterway-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-lake-leonida-waterway-800.webp 800w, /assets/images/gun-stores/gtavi-lake-leonida-waterway-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Tequesta Guns & Ammo (Lake Leonida) — Northern Leonida waterway & bridge crossing (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_06.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-mt-kalaga-summit-lodge",
@@ -711,9 +844,9 @@
         "Optics"
       ],
       "notes": "The highest altitude gun shop in Leonida. Features .50 BMG heavy sniper rifles, high-altitude parachutes, and cold-weather gear.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-kalaga-hunting-outpost.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_04.jpg — Regional Visual)",
       "mapPinId": "ammu-mt-kalaga-summit-lodge",
       "relatedLinks": [
         {
@@ -723,10 +856,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Lummox County",
       "inventoryTier": "Hunting",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-kalaga-hunting-outpost-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-kalaga-hunting-outpost-800.webp 800w, /assets/images/gun-stores/gtavi-kalaga-hunting-outpost-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Rusty Willis Jr. Hunting Supplies (Mount Kalaga National Park) — Mount Kalaga National Park hunting corridor (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-mt-kalaga-ranger-station",
@@ -744,9 +884,9 @@
         "Hunting Optics & Contracts"
       ],
       "notes": "Wooded trailhead store supplying mountain hikers and survivalists with silent crossbows and tactical backpacks.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-kalaga-ranger-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_03.jpg — Regional Visual)",
       "mapPinId": "ammu-mt-kalaga-ranger-station",
       "relatedLinks": [
         {
@@ -760,10 +900,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed",
+      "imageWebp": "/assets/images/gun-stores/gtavi-kalaga-ranger-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-kalaga-ranger-area-800.webp 800w, /assets/images/gun-stores/gtavi-kalaga-ranger-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Jackson Firearms (Mount Kalaga National Park) — Mount Kalaga forested wilderness trail (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_03.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-mt-kalaga-east-valley",
@@ -781,9 +928,9 @@
         "Armor"
       ],
       "notes": "Mountain river armory with heavy stock of explosive powder, shotgun shells, and tactical axes.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-kalaga-hunting-outpost.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_04.jpg — Regional Visual)",
       "mapPinId": "ammu-mt-kalaga-east-valley",
       "relatedLinks": [
         {
@@ -797,10 +944,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed"
+      "pinCoordinateStatus": "Regional marker preserved — exact map coordinates not yet confirmed",
+      "imageWebp": "/assets/images/gun-stores/gtavi-kalaga-hunting-outpost-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-kalaga-hunting-outpost-800.webp 800w, /assets/images/gun-stores/gtavi-kalaga-hunting-outpost-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Pawn & Gun, Crosstown (Mount Kalaga National Park) — Mount Kalaga National Park hunting corridor (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-vice-biscayne-island",
@@ -817,9 +971,9 @@
         "Ammo"
       ],
       "notes": "Island gun store catering to marina residents. Specializes in laser sights, flashlights, and subcompact pistols.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-vice-island-outlet-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_17.jpg — Regional Visual)",
       "mapPinId": "ammu-vice-biscayne-island",
       "relatedLinks": [
         {
@@ -833,10 +987,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Standard",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-vice-island-outlet-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-vice-island-outlet-area-800.webp 800w, /assets/images/gun-stores/gtavi-vice-island-outlet-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Zenon's Pawn Shop (Vice City) — Vice City island causeway and marina (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_17.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "ammu-vice-north-beach-pier",
@@ -854,9 +1015,9 @@
         "Armor"
       ],
       "notes": "Northernmost Vice Beach armory. Stocks grenade launcher rounds, military smoke canisters, and high-velocity ammo.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/gun-stores/gtavi-vice-beach-outlet-area.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_10.jpg — Regional Visual)",
       "mapPinId": "ammu-vice-north-beach-pier",
       "relatedLinks": [
         {
@@ -870,10 +1031,17 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/weapons-bonuses",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-24",
       "county": "Vice-Dale County",
       "inventoryTier": "Expanded",
-      "pinCoordinateStatus": "Verified regional pin"
+      "pinCoordinateStatus": "Verified regional pin",
+      "imageWebp": "/assets/images/gun-stores/gtavi-vice-beach-outlet-area-1200.webp",
+      "imageWebpSrcset": "/assets/images/gun-stores/gtavi-vice-beach-outlet-area-800.webp 800w, /assets/images/gun-stores/gtavi-vice-beach-outlet-area-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Iron & Oak (Vice City) — Vice Beach commercial district (Regional Location Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_10.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     }
   ]
 }

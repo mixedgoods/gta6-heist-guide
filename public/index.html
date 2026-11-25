@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Free GTA 6 walkthroughs, interactive Leonida Map, safe codes, money guides, weapons &amp; vehicles databases, 15-slot Save Planner, and 100% completion tracker.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
 
-    <link rel="stylesheet" href="/assets/style.css?v=20261123_v24">
+    <link rel="stylesheet" href="/assets/style.css?v=20261124_p26">
 
     <script type="application/ld+json">
     {
@@ -261,19 +261,19 @@
             <div class="home-hero-content">
                 <div class="home-hero-kicker">
                     <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--neon-green); box-shadow:0 0 8px var(--neon-green); flex-shrink:0;"></span>
-                    FREE GTA VI RESOURCE &bull; <span data-launch-day-num style="color:#fff;">VERIFIED NOV 23, 2026</span> &bull; NO LOGIN REQUIRED
+                    FREE GTA VI RESOURCE &bull; <span id="homeDataUpdatedBadge" style="color:#fff;">DATA VERIFIED NOV 2026</span> &bull; NO LOGIN REQUIRED
                 </div>
                 <h1 class="home-hero-title">
-                    VERIFIED HEISTS. <span class="hero-accent-pink">MISSION WALKTHROUGHS.</span> <span class="hero-accent-cyan">TACTICAL TOOLS.</span>
+                    VERIFIED HEISTS. <span class="hero-accent-pink">LEONIDA MAP.</span> <span class="hero-accent-cyan">WORLD DATABASE.</span>
                 </h1>
                 <p class="home-hero-desc">
-                    A free Grand Theft Auto VI resource for story heists, mission walkthroughs, Leonida exploration, money guides, world databases, and 100% completion tracking. Explore <span data-pin-count-plus>174+</span> interactive map pins, 15 manual save slots, verified safe codes (<code>7700</code>, <code>0420</code>), and real robbery payouts.
+                    Your visual Grand Theft Auto VI companion for story heists, interactive Leonida Map (<span data-pin-count-plus>174+</span> pins), verified safe codes (<code>7700</code>, <code>0420</code>), 15-slot Save Planner, and complete Vehicles, Weapons, Properties &amp; Wildlife databases.
                 </p>
                 <div class="home-hero-actions">
-                    <a href="#all-heists" class="btn btn-primary">🏦 Story Heist Walkthroughs &rarr;</a>
-                    <a href="/map" class="btn btn-secondary">🗺️ Interactive Leonida Map</a>
-                    <a href="/gta-6-money-guide/" class="btn btn-hero-green">💰 Money &amp; Payout Guide</a>
-                    <a href="/missions/" class="btn btn-secondary">🎯 Mission Walkthroughs</a>
+                    <a href="/map" class="btn btn-primary">🗺️ Interactive Leonida Map &rarr;</a>
+                    <a href="#all-heists" class="btn btn-secondary">🏦 Heist Walkthroughs</a>
+                    <a href="#world-database" class="btn btn-hero-green">📚 World Database</a>
+                    <a href="/gta-6-money-guide/" class="btn btn-secondary">💰 Money Guide</a>
                 </div>
                 <div class="home-hero-quicklinks" aria-label="Quick Tool Shortcuts">
                     <a href="/guides/vice-city-portal-easter-egg" class="home-hero-chip">🌀 Vice City Portal (12 LPL)</a>
@@ -291,6 +291,15 @@
 </header>
 
 <main class="container" style="max-width:1140px; margin:0 auto; padding:0.35rem 1rem 2rem; box-sizing:border-box;">
+
+    <!-- RETENTION BAR: CONTINUE WHERE YOU LEFT OFF (BROWSER-LOCAL, ZERO LOGIN) -->
+    <section id="p26ContinueBar" aria-label="Continue where you left off" style="display:none; margin:0.45rem 0 1.05rem; background:linear-gradient(145deg, rgba(12,20,38,0.95), rgba(8,12,24,0.98)); border:1px solid rgba(0,240,255,0.28); border-radius:11px; padding:0.75rem 0.95rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+            <span style="font-family:var(--font-mono); font-size:0.74rem; font-weight:900; color:var(--neon-cyan); letter-spacing:0.04em;">&#9654; CONTINUE WHERE YOU LEFT OFF</span>
+            <button type="button" id="p26ClearRecentBtn" style="background:transparent; border:1px solid rgba(255,255,255,0.14); color:#94a3b8; font-size:0.68rem; padding:0.18rem 0.5rem; border-radius:5px; cursor:pointer;">Clear History</button>
+        </div>
+        <div id="p26ContinueLinks" style="display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
+    </section>
 
     <!-- 3. STORY HEIST & FREE-ROAM ROBBERY WALKTHROUGHS (COMPACT 4x2 GRID) -->
     <section id="all-heists" style="margin:0.6rem 0 1.45rem;">
@@ -459,12 +468,12 @@
         <!-- EXPANDABLE DRAWER: ALL 10 STORY HEISTS & PLANNED JOBS -->
         <div id="allStoryJobsDrawer" class="heist-extra-target" style="display:none; width:100%; margin-top:1rem;">
             <div style="background:rgba(12,20,32,0.95); border:1.5px solid var(--neon-cyan); border-radius:12px; padding:1.25rem; box-shadow:0 0 25px rgba(0,240,255,0.15); overflow-x:auto;">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.25); padding-bottom:0.75rem;">
+                <div class="heist-drawer-header">
                     <div>
                         <span class="user-badge badge-mastermind" style="font-size:0.68rem; padding:0.15rem 0.5rem;">VERIFIED STORY MODE PROGRESSION</span>
-                        <h3 style="color:#fff; margin:0.35rem 0 0; font-size:1.15rem;">All 10 Real GTA 6 Story Heists &amp; Planned Jobs</h3>
+                        <h3>All 10 Real GTA 6 Story Heists &amp; Planned Jobs</h3>
                     </div>
-                    <span style="color:var(--neon-green); font-family:var(--font-mono); font-size:0.84rem; font-weight:800;">Total Story Score: $531,420 Verified Payout</span>
+                    <span style="color:var(--neon-green); font-family:var(--font-mono); font-size:0.84rem; font-weight:800; white-space:nowrap;">Total Story Score: $531,420 Verified Payout</span>
                 </div>
                 <table class="table-compact-jobs" style="width:100%; border-collapse:collapse; font-size:0.85rem; color:#e2e8f0; text-align:left;">
                     <thead>
@@ -513,7 +522,7 @@
         <div class="home-db-6grid">
             <a href="/properties" class="home-db-card">
                 <div class="home-db-thumb">
-                    <img src="/assets/images/properties/vice-city-penthouse.jpg" alt="GTA 6 Properties, Garages and Fences" loading="lazy" width="3840" height="2160">
+                    <picture><source type="image/webp" srcset="/assets/images/properties/gtavi-keys-safehouse-exterior-800.webp 800w, /assets/images/properties/gtavi-keys-safehouse-exterior-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><img src="/assets/images/properties/gtavi-keys-safehouse-exterior.jpg" alt="Key Lento stilted safehouse exterior with vehicles in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async"></picture>
                     <span class="home-db-count-pill" id="homeDbCountProperties">27 ENTRIES</span>
                 </div>
                 <div style="padding:0.8rem 0.9rem;">
@@ -523,8 +532,8 @@
             </a>
             <a href="/animals" class="home-db-card">
                 <div class="home-db-thumb">
-                    <picture><source type="image/avif" srcset="/assets/images/animals/gtavi-american-alligator-grassrivers-dock-800.avif 800w, /assets/images/animals/gtavi-american-alligator-grassrivers-dock-1600.avif 1600w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><source type="image/webp" srcset="/assets/images/animals/gtavi-american-alligator-grassrivers-dock-800.webp 800w, /assets/images/animals/gtavi-american-alligator-grassrivers-dock-1200.webp 1200w, /assets/images/animals/gtavi-american-alligator-grassrivers-dock-1600.webp 1600w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><img src="/assets/images/animals/gtavi-american-alligator-grassrivers-dock.jpg" alt="Large American Alligator resting across a sunlit wooden Grassrivers dock beside a swamp airboat in Grand Theft Auto VI" width="1600" height="900" loading="lazy" decoding="async"></picture>
-                    <span class="home-db-count-pill" id="homeDbCountAnimals">49 CATALOGUED &middot; 255 IN-GAME</span>
+                    <picture><source type="image/webp" srcset="/assets/images/animals/gtavi-american-alligator-grassrivers-closeup-800.webp 800w, /assets/images/animals/gtavi-american-alligator-grassrivers-closeup-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><img src="/assets/images/animals/gtavi-american-alligator-grassrivers-closeup.jpg" alt="Close-up of an American Alligator on a Grassrivers airboat deck in Grand Theft Auto VI" width="1600" height="900" loading="lazy" decoding="async" style="object-position:50% 60%;"></picture>
+                    <span class="home-db-count-pill" id="homeDbCountAnimals">49 CATALOGUED &middot; 7 VERIFIED GTA VI</span>
                 </div>
                 <div style="padding:0.8rem 0.9rem;">
                     <strong style="color:#fff; font-size:0.96rem; display:block; margin-bottom:0.2rem;">🐊 Animals &amp; Wildlife</strong>
@@ -543,7 +552,7 @@
             </a>
             <a href="/weapons" class="home-db-card">
                 <div class="home-db-thumb">
-                    <img src="/assets/images/weapons/weapon-jason-rifle.jpg" alt="GTA 6 Weapons and Heist Loadouts" loading="lazy" width="3840" height="2160">
+                    <picture><source type="image/webp" srcset="/assets/images/weapons/gtavi-service-carbine-night-800.webp 800w, /assets/images/weapons/gtavi-service-carbine-night-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><img src="/assets/images/weapons/gtavi-service-carbine-night.jpg" alt="Jason Duval aiming a scoped carbine rifle over Vice City at night in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async" style="object-position:45% 55%;"></picture>
                     <span class="home-db-count-pill" id="homeDbCountWeapons">25 WEAPONS</span>
                 </div>
                 <div style="padding:0.8rem 0.9rem;">
@@ -553,7 +562,7 @@
             </a>
             <a href="/weapons-bonuses" class="home-db-card">
                 <div class="home-db-thumb">
-                    <img src="/assets/images/weapons/weapon-goodtime-gear.jpg" alt="GTA 6 Gun Stores and Ammu-Nation" loading="lazy" width="3840" height="2160">
+                    <picture><source type="image/webp" srcset="/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-800.webp 800w, /assets/images/gun-stores/gtavi-gellhorn-pawn-exterior-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px"><img src="/assets/images/gun-stores/gtavi-gellhorn-pawn-exterior.jpg" alt="Port Gellhorn Pawn and Cash storefront exterior in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async" style="object-position:50% 40%;"></picture>
                     <span class="home-db-count-pill" id="homeDbCountGunStores">24 GUN STORES</span>
                 </div>
                 <div style="padding:0.8rem 0.9rem;">
@@ -664,15 +673,15 @@
         </a>
     </section>
 
-    <!-- 7. NEW DISCOVERIES TODAY (POWERED BY /data/discoveries.json) -->
+    <!-- 7. LATEST VERIFIED DISCOVERIES (POWERED BY /data/discoveries.json) -->
     <section id="new-discoveries-today" style="margin:1.35rem 0 1.6rem;">
         <div class="section-header" style="margin-bottom:0.75rem;">
             <div>
                 <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem;">
-                    <span class="verify-badge verify-confirmed">📡 UPDATED DAILY</span>
-                    <span id="homeDiscoveriesDate" style="font-family:var(--font-mono); font-size:0.74rem; color:#94a3b8;">2026-11-22</span>
+                    <span class="verify-badge verify-confirmed" id="homeDiscoveriesBadge">📡 VERIFIED DISCOVERIES</span>
+                    <span id="homeDiscoveriesDate" style="font-family:var(--font-mono); font-size:0.74rem; color:#94a3b8;">Latest: 2026-11-21</span>
                 </div>
-                <h2 style="font-size:1.3rem; margin:0;">New Discoveries Today</h2>
+                <h2 id="homeDiscoveriesHeading" style="font-size:1.3rem; margin:0;">Latest Verified Discoveries</h2>
             </div>
             <a href="/gta-6-discoveries/" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">View All Discoveries &rarr;</a>
         </div>
@@ -728,6 +737,80 @@
         </div>
     </section>
 
+    <!-- 7B. FEATURED LEONIDA REGIONS VISUAL EXPLORER -->
+    <section id="featured-regions" style="margin:1.35rem 0 1.65rem;">
+        <div class="section-header" style="margin-bottom:0.75rem;">
+            <div>
+                <span class="verify-badge verify-confirmed" style="margin-bottom:0.2rem;">🗺️ EXPLORE THE STATE OF LEONIDA</span>
+                <h2 style="font-size:1.3rem; margin:0 0 0.15rem;">Featured Leonida Regions &amp; Location Guides</h2>
+                <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">Jump into regional heist routes, safehouses, gun stores, and interactive map zones across all 6 areas of Leonida.</p>
+            </div>
+            <a href="/map" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.78rem;">Open Interactive Map &rarr;</a>
+        </div>
+        <div class="home-db-6grid">
+            <a href="/locations/vice-city" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/regions/vice-city.jpg" alt="Vice City skyline and coastal avenue in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async">
+                    <span class="home-db-count-pill">VICE CITY</span>
+                </div>
+                <div style="padding:0.7rem 0.85rem;">
+                    <strong style="color:#fff; font-size:0.92rem; display:block; margin-bottom:0.15rem;">Vice City &amp; Vice Beach</strong>
+                    <span style="color:#94a3b8; font-size:0.75rem; line-height:1.4; display:block;">VCIA Airport Heist, Big Banks, Jewelry Stores, Nightclubs &amp; High-Rise Garages.</span>
+                </div>
+            </a>
+            <a href="/locations/leonida-keys" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/regions/leonida-keys.jpg" alt="Leonida Keys tropical islands and overseas highway in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async">
+                    <span class="home-db-count-pill">LEONIDA KEYS</span>
+                </div>
+                <div style="padding:0.7rem 0.85rem;">
+                    <strong style="color:#fff; font-size:0.92rem; display:block; margin-bottom:0.15rem;">Leonida Keys &amp; Key Lento</strong>
+                    <span style="color:#94a3b8; font-size:0.75rem; line-height:1.4; display:block;">Jason's Ch. 1 Safehouse, Brian's Lockup (7700), Reef Wildlife &amp; Seaplane routes.</span>
+                </div>
+            </a>
+            <a href="/port-gellhorn" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/regions/port-gellhorn.jpg" alt="Port Gellhorn waterfront and commercial strip in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async">
+                    <span class="home-db-count-pill">PORT GELLHORN</span>
+                </div>
+                <div style="padding:0.7rem 0.85rem;">
+                    <strong style="color:#fff; font-size:0.92rem; display:block; margin-bottom:0.15rem;">Port Gellhorn</strong>
+                    <span style="color:#94a3b8; font-size:0.75rem; line-height:1.4; display:block;">Ch. 2 Motel Base, Pawn Shops, Moses Vehicle Buyer &amp; Gellhorn Dragway.</span>
+                </div>
+            </a>
+            <a href="/locations/grassrivers" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/regions/grassrivers.jpg" alt="Grassrivers wetlands and airboat waterways in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async">
+                    <span class="home-db-count-pill">GRASSRIVERS</span>
+                </div>
+                <div style="padding:0.7rem 0.85rem;">
+                    <strong style="color:#fff; font-size:0.92rem; display:block; margin-bottom:0.15rem;">Grassrivers Wetlands</strong>
+                    <span style="color:#94a3b8; font-size:0.75rem; line-height:1.4; display:block;">Airboat smuggling routes, American Alligators, swamp hunting &amp; hidden docks.</span>
+                </div>
+            </a>
+            <a href="/locations/ambrosia" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/properties/gtavi-ambrosia-refinery-dusk.jpg" alt="Ambrosia industrial refinery and highway in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async">
+                    <span class="home-db-count-pill">AMBROSIA</span>
+                </div>
+                <div style="padding:0.7rem 0.85rem;">
+                    <strong style="color:#fff; font-size:0.92rem; display:block; margin-bottom:0.15rem;">Ambrosia Industrial</strong>
+                    <span style="color:#94a3b8; font-size:0.75rem; line-height:1.4; display:block;">Freight Yard Garage, Biker territory, refinery ops &amp; industrial drop-offs.</span>
+                </div>
+            </a>
+            <a href="/locations/mount-kalaga" class="home-db-card">
+                <div class="home-db-thumb">
+                    <img src="/assets/images/regions/mount-kalaga.jpg" alt="Mount Kalaga National Park wilderness and ridges in Grand Theft Auto VI" loading="lazy" width="1600" height="900" decoding="async">
+                    <span class="home-db-count-pill">MOUNT KALAGA</span>
+                </div>
+                <div style="padding:0.7rem 0.85rem;">
+                    <strong style="color:#fff; font-size:0.92rem; display:block; margin-bottom:0.15rem;">Mount Kalaga National Park</strong>
+                    <span style="color:#94a3b8; font-size:0.75rem; line-height:1.4; display:block;">Florida Panther habitat, Bret Vogel's 15 Hunting Target Decks &amp; Trailhead Garage.</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <!-- 7. DEDICATED GAMING SETUP PICKS (MAXIMUM THREE DISTINCT RECOMMENDATIONS) -->
     <section id="officialDealsBox" class="aff-card-module aff-setup-picks-section" style="margin:1.65rem auto 1.95rem; max-width:1140px; box-sizing:border-box;">
         <div class="aff-module-head">
@@ -745,45 +828,45 @@
              data-aff-variant="setup-picks-3"
              data-aff-count="3">
             <div class="aff-grid-3">
-                <!-- Initial Pick 1: PS5 DualSense Edge -->
-                <article class="aff-card aff-card--standard aff-accent-cyan" aria-label="PlayStation DualSense Edge Wireless Controller">
+                <!-- Initial Pick 1: PS5 DualSense Charging Station (Value-First Pick) -->
+                <article class="aff-card aff-card--standard aff-accent-cyan" aria-label="PlayStation 5 DualSense Charging Station">
                     <div class="aff-info-header aff-info-accent-cyan">
                         <div class="aff-info-header-top">
-                            <span class="aff-info-cat">PS5 Equipment</span>
+                            <span class="aff-info-cat">PS5 Value Essential</span>
                             <span class="aff-info-retailer">Amazon</span>
                         </div>
                         <ul class="aff-info-specs">
-                            <li>Remappable Back Paddles</li>
-                            <li>Replaceable Stick Modules</li>
+                            <li>Charges 2 Controllers</li>
+                            <li>Click-In Cradle Design</li>
                         </ul>
                     </div>
                     <div class="aff-card-body">
                         <div class="aff-meta-row">
                             <span class="aff-partner-pill">Amazon</span>
-                            <span class="aff-badge-pill">Pro Controller</span>
+                            <span class="aff-badge-pill">Charging Station</span>
                             <span class="aff-disclosure-tag aff-disclosure-tag--sponsored">Sponsored · Paid link</span>
                         </div>
-                        <h3 class="aff-card-title">PlayStation DualSense Edge Wireless Controller</h3>
-                        <p class="aff-card-desc">Official Sony pro controller with remappable back paddles, trigger stops, and swappable stick modules.</p>
-                        <div class="aff-card-compat"><span class="aff-compat-label">Compatibility:</span> <span class="aff-compat-val">PlayStation 5 · Windows PC</span></div>
-                        <div class="aff-card-advantage"><span class="aff-adv-badge">✓ Advantage:</span> Rear levers let you swap weapons or sprint without lifting thumbs off the sticks.</div>
-                        <div class="aff-card-drawback"><span class="aff-draw-badge">⚠ Note:</span> Battery lasts roughly 5–6 hours; shorter than the standard DualSense.</div>
+                        <h3 class="aff-card-title">PlayStation 5 DualSense Charging Station</h3>
+                        <p class="aff-card-desc">Official click-in dual charging dock that powers two controllers simultaneously without using console USB ports.</p>
+                        <div class="aff-card-compat"><span class="aff-compat-label">Compatibility:</span> <span class="aff-compat-val">PS5 DualSense &amp; DualSense Edge</span></div>
+                        <div class="aff-card-advantage"><span class="aff-adv-badge">✓ Advantage:</span> Keeps a backup controller charged for long GTA VI story and exploration runs.</div>
+                        <div class="aff-card-drawback"><span class="aff-draw-badge">⚠ Note:</span> Uses an external AC wall adapter rather than USB-C passthrough.</div>
                     </div>
                     <div class="aff-card-foot">
-                        <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" data-amazon-link="dualsenseEdge" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="home-setup-picks-1" class="aff-cta aff-cta--amazon">View on Amazon &rarr;</a>
+                        <a href="https://www.amazon.com/dp/B08FC6Y4VG?tag=gta6heistguid-20" data-amazon-link="dualsenseDock" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="home-setup-picks-1" class="aff-cta aff-cta--amazon">View on Amazon &rarr;</a>
                     </div>
                 </article>
 
-                <!-- Initial Pick 2: Samsung 990 PRO with Heatsink 2TB -->
-                <article class="aff-card aff-card--standard aff-accent-green" aria-label="Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD with Heatsink">
+                <!-- Initial Pick 2: Crucial T500 PCIe 4.0 M.2 SSD with Heatsink (Value-First Storage) -->
+                <article class="aff-card aff-card--standard aff-accent-green" aria-label="Crucial T500 PCIe 4.0 M.2 NVMe SSD with Heatsink">
                     <div class="aff-info-header aff-info-accent-green">
                         <div class="aff-info-header-top">
-                            <span class="aff-info-cat">Gaming Storage</span>
+                            <span class="aff-info-cat">Value Gaming Storage</span>
                             <span class="aff-info-retailer">Amazon</span>
                         </div>
                         <ul class="aff-info-specs">
                             <li>PCIe 4.0 x4 NVMe</li>
-                            <li>Factory Low-Profile Heatsink</li>
+                            <li>PS5-Ready Heatsink</li>
                         </ul>
                     </div>
                     <div class="aff-card-body">
@@ -792,43 +875,43 @@
                             <span class="aff-badge-pill">Gen4 NVMe SSD</span>
                             <span class="aff-disclosure-tag aff-disclosure-tag--sponsored">Sponsored · Paid link</span>
                         </div>
-                        <h3 class="aff-card-title">Samsung 990 PRO with Heatsink 2TB M.2 SSD</h3>
-                        <p class="aff-card-desc">Fast internal PCIe 4.0 NVMe SSD with a pre-installed heatsink for PS5 storage expansion.</p>
+                        <h3 class="aff-card-title">Crucial T500 PCIe 4.0 M.2 SSD with Heatsink</h3>
+                        <p class="aff-card-desc">Value-focused PS5-compatible Gen4 NVMe SSD with a pre-installed heatsink for large open-world game installs.</p>
                         <div class="aff-card-compat"><span class="aff-compat-label">Compatibility:</span> <span class="aff-compat-val">PlayStation 5 Internal M.2 Slot · PC</span></div>
-                        <div class="aff-card-advantage"><span class="aff-adv-badge">✓ Advantage:</span> Meets Sony PS5 M.2 speed requirements with generous room for large open-world libraries.</div>
-                        <div class="aff-card-drawback"><span class="aff-draw-badge">⚠ Note:</span> Requires opening the PS5 cover and expansion bay with a Phillips screwdriver.</div>
+                        <div class="aff-card-advantage"><span class="aff-adv-badge">✓ Advantage:</span> Meets Sony PS5 M.2 speed specs at a more approachable price than flagship drives.</div>
+                        <div class="aff-card-drawback"><span class="aff-draw-badge">⚠ Note:</span> Requires opening the PS5 cover and M.2 bay with a Phillips screwdriver.</div>
                     </div>
                     <div class="aff-card-foot">
-                        <a href="https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" data-amazon-link="samsung990pro" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="home-setup-picks-2" class="aff-cta aff-cta--amazon">View on Amazon &rarr;</a>
+                        <a href="https://www.amazon.com/dp/B0CK39YR41?tag=gta6heistguid-20" data-amazon-link="crucialT500" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="home-setup-picks-2" class="aff-cta aff-cta--amazon">View on Amazon &rarr;</a>
                     </div>
                 </article>
 
-                <!-- Initial Pick 3: SteelSeries Arctis Nova 7P Wireless -->
-                <article class="aff-card aff-card--standard aff-accent-amber" aria-label="SteelSeries Arctis Nova 7P Wireless Gaming Headset">
-                    <div class="aff-info-header aff-info-accent-amber">
+                <!-- Initial Pick 3: KontrolFreek Galaxy Performance Thumbsticks (Affordable Aim & Driving) -->
+                <article class="aff-card aff-card--standard aff-accent-pink" aria-label="KontrolFreek Galaxy Performance Thumbsticks">
+                    <div class="aff-info-header aff-info-accent-pink">
                         <div class="aff-info-header-top">
-                            <span class="aff-info-cat">PS5 Equipment</span>
+                            <span class="aff-info-cat">Budget Aim &amp; Driving</span>
                             <span class="aff-info-retailer">Amazon</span>
                         </div>
                         <ul class="aff-info-specs">
-                            <li>Simultaneous 2.4GHz + BT</li>
-                            <li>38-Hour Fast-Charge Battery</li>
+                            <li>High-Rise Right Stick</li>
+                            <li>Mid-Rise Left Grip</li>
                         </ul>
                     </div>
                     <div class="aff-card-body">
                         <div class="aff-meta-row">
                             <span class="aff-partner-pill">Amazon</span>
-                            <span class="aff-badge-pill">Wireless Headset</span>
+                            <span class="aff-badge-pill">Aim Grips</span>
                             <span class="aff-disclosure-tag aff-disclosure-tag--sponsored">Sponsored · Paid link</span>
                         </div>
-                        <h3 class="aff-card-title">SteelSeries Arctis Nova 7P Wireless Headset</h3>
-                        <p class="aff-card-desc">Multi-platform wireless headset with simultaneous 2.4GHz game audio and phone Bluetooth.</p>
-                        <div class="aff-card-compat"><span class="aff-compat-label">Compatibility:</span> <span class="aff-compat-val">PlayStation 5 · PS4 · PC · Switch · Mobile</span></div>
-                        <div class="aff-card-advantage"><span class="aff-adv-badge">✓ Advantage:</span> Dual wireless audio lets you follow guides or Discord on your phone while hearing game audio.</div>
-                        <div class="aff-card-drawback"><span class="aff-draw-badge">⚠ Note:</span> Passive noise isolation only (no ANC); EQ customization requires a PC app.</div>
+                        <h3 class="aff-card-title">KontrolFreek Galaxy Performance Thumbsticks</h3>
+                        <p class="aff-card-desc">Affordable slip-on thumbstick grips that improve fine aiming in gunfights and steering precision in getaway chases.</p>
+                        <div class="aff-card-compat"><span class="aff-compat-label">Compatibility:</span> <span class="aff-compat-val">PlayStation 5 &amp; PS4 Controllers</span></div>
+                        <div class="aff-card-advantage"><span class="aff-adv-badge">✓ Advantage:</span> Low-cost upgrade that adds leverage without buying a $200 pro controller.</div>
+                        <div class="aff-card-drawback"><span class="aff-draw-badge">⚠ Note:</span> Clamping prongs can leave slight marks on soft factory rubber if swapped often.</div>
                     </div>
                     <div class="aff-card-foot">
-                        <a href="https://www.amazon.com/dp/B0B1647BD7?tag=gta6heistguid-20" data-amazon-link="nova7p" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="home-setup-picks-3" class="aff-cta aff-cta--amazon">View on Amazon &rarr;</a>
+                        <a href="https://www.amazon.com/dp/B08DP7Z725?tag=gta6heistguid-20" data-amazon-link="kontrolfreek" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="home-setup-picks-3" class="aff-cta aff-cta--amazon">View on Amazon &rarr;</a>
                     </div>
                 </article>
             </div>
@@ -985,7 +1068,7 @@
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
 <script src="/js/affiliates.js?v=20261123_v24"></script>
-<script src="/site-config.js"></script>
+<script src="/site-config.js?v=20261124_p26"></script>
 <script src="/assets/main.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -1007,12 +1090,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Hydrate exact live World Database counts from /data/*.json (never invented)
   var dbFeeds = [
-    { id: 'homeDbCountProperties', url: '/data/properties.json', suffix: 'ENTRIES' },
-    { id: 'homeDbCountAnimals', url: '/data/animals.json', suffix: 'CATALOGUED \u00b7 255 IN-GAME' },
-    { id: 'homeDbCountVehicles', url: '/data/vehicles.json', suffix: 'VEHICLES' },
-    { id: 'homeDbCountWeapons', url: '/data/weapons.json', suffix: 'WEAPONS' },
-    { id: 'homeDbCountGunStores', url: '/data/gun-stores.json', suffix: 'GUN STORES' },
-    { id: 'homeDbCountRadio', url: '/data/radio.json', suffix: 'STATIONS' }
+    { id: 'homeDbCountProperties', url: '/data/properties.json?v=20261124_p26', suffix: 'ENTRIES' },
+    { id: 'homeDbCountAnimals', url: '/data/animals.json?v=20261124_p26', suffix: 'CATALOGUED \u00b7 255 IN-GAME' },
+    { id: 'homeDbCountVehicles', url: '/data/vehicles.json?v=20261124_p26', suffix: 'VEHICLES' },
+    { id: 'homeDbCountWeapons', url: '/data/weapons.json?v=20261124_p26', suffix: 'WEAPONS' },
+    { id: 'homeDbCountGunStores', url: '/data/gun-stores.json?v=20261124_p26', suffix: 'GUN STORES' },
+    { id: 'homeDbCountRadio', url: '/data/radio.json?v=20261124_p26', suffix: 'STATIONS' }
   ];
   dbFeeds.forEach(function(feed) {
     var el = document.getElementById(feed.id);
@@ -1027,7 +1110,30 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(function() {});
   });
 
-  // Hydrate NEW DISCOVERIES TODAY cleanly from /data/discoveries.json
+  // Hydrate browser-local "Continue Where You Left Off" bar (zero cookies, zero login)
+  (function() {
+    try {
+      var raw = localStorage.getItem('gta6_recent_pages_v1');
+      var list = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(list) && list.length) {
+        var bar = document.getElementById('p26ContinueBar');
+        var wrap = document.getElementById('p26ContinueLinks');
+        if (bar && wrap) {
+          wrap.innerHTML = list.slice(0, 4).map(function(item) {
+            return '<a href="' + String(item.path || '/').replace(/"/g, '&quot;') + '" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.35rem 0.72rem; background:rgba(0,240,255,0.09); border:1px solid rgba(0,240,255,0.28); border-radius:7px; color:#e2e8f0; text-decoration:none; font-size:0.76rem; font-weight:700;">' + String(item.title || item.path).replace(/</g, '&lt;') + ' &rarr;</a>';
+          }).join('');
+          bar.style.display = 'block';
+          var clr = document.getElementById('p26ClearRecentBtn');
+          if (clr) clr.addEventListener('click', function() {
+            localStorage.removeItem('gta6_recent_pages_v1');
+            bar.style.display = 'none';
+          });
+        }
+      }
+    } catch (e) {}
+  })();
+
+  // Hydrate LATEST VERIFIED DISCOVERIES cleanly from /data/discoveries.json (data-driven date, never fabricated)
   var discGrid = document.getElementById('homeDiscoveriesGrid');
   if (discGrid) {
     function escH(s) {
@@ -1041,12 +1147,19 @@ document.addEventListener('DOMContentLoaded', function() {
       return 'verify-unverified';
     }
     var catColors = ['var(--neon-cyan)', 'var(--neon-green)', 'var(--neon-yellow)', 'var(--neon-pink)'];
-    fetch('/data/discoveries.json?v=20261121')
+    fetch('/data/discoveries.json?v=20261124')
       .then(function(r) { return r.ok ? r.json() : null; })
       .then(function(data) {
         if (!data || !Array.isArray(data.items) || !data.items.length) return;
+        var dates = data.items.map(function(i) { return String(i.date || ''); }).filter(Boolean).sort();
+        var latestItemDate = dates.length ? dates[dates.length - 1] : (data.updated || '');
+        var todayIso = new Date().toISOString().slice(0, 10);
         var dateEl = document.getElementById('homeDiscoveriesDate');
-        if (dateEl && data.updated) dateEl.textContent = data.updated;
+        var headingEl = document.getElementById('homeDiscoveriesHeading');
+        var heroUpdated = document.getElementById('homeDataUpdatedBadge');
+        if (dateEl && latestItemDate) dateEl.textContent = 'Latest: ' + latestItemDate;
+        if (headingEl) headingEl.textContent = (latestItemDate === todayIso) ? 'New Discoveries Today' : 'Latest Verified Discoveries';
+        if (heroUpdated && latestItemDate) heroUpdated.textContent = 'UPDATED ' + latestItemDate;
         var featured = data.items.filter(function(i) { return i.featuredToday; });
         var topItems = (featured.length >= 4 ? featured : data.items).slice(0, 4);
         discGrid.innerHTML = topItems.map(function(item, idx) {

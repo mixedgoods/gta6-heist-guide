@@ -1,6 +1,6 @@
 {
   "category": "properties",
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "note": "Story Mode properties: 4 Story Safehouses (houses cannot be purchased), 8 Purchasable Garages + 4 Story Garages (+1 Ultimate Edition Bonus Garage), 7 fence contacts in total (5 stolen-goods fences: Brian, Donnie, Dunk, Tyrone, Yasmani; 2 vehicle buyers: Moses, Randy), BuckMe Family Savings, and 2 legacy unverified regional leads (Ambrosia, Grassrivers) that are NOT fence contacts. 27 unique records; 25 have verified map pins.",
   "counts": {
     "storySafehouses": 4,
@@ -30,9 +30,9 @@
       "capacity": "Starter stilt-house safehouse + exterior parking under stilts",
       "missableWarning": null,
       "notes": "Mariana County starter stilt-house safehouse overlooking the Keys water. Story Mode has 4 story safehouses total — no purchasable story houses.",
-      "image": "/assets/images/properties/paradise-garage.jpg",
+      "image": "/assets/images/properties/gtavi-keys-safehouse-exterior.jpg",
       "imageVerified": true,
-      "imageSource": "Official Rockstar GTA VI Screenshot (Jason's Key Lento House)",
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_01.jpg)",
       "mapPinId": "sh-jasons-house",
       "relatedLinks": [
         {
@@ -50,7 +50,14 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-keys-safehouse-exterior-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-keys-safehouse-exterior-800.webp 800w, /assets/images/properties/gtavi-keys-safehouse-exterior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Jason's House (Key Lento) — Key Lento stilted safehouse exterior with vehicles",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_01.jpg)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "sh-ch2-motel",
@@ -64,9 +71,9 @@
       "capacity": "Motel room safehouse + exterior parking bay",
       "missableWarning": "Permanently closes after completing the mission 'Checking Out'. Clear your stash first.",
       "notes": "Temporary Chapter 2 operational base in Port Gellhorn. Synced with Save Planner Slot 06.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-port-gellhorn-motel-exterior.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Port_Gellhorn_01.jpg)",
       "mapPinId": "sh-ch2-motel",
       "relatedLinks": [
         {
@@ -80,7 +87,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/save-planner/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-port-gellhorn-motel-exterior-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-port-gellhorn-motel-exterior-800.webp 800w, /assets/images/properties/gtavi-port-gellhorn-motel-exterior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Chapter 2 Motel Base — Port Gellhorn roadside motel exterior at dusk",
+      "imageCaption": "Official Rockstar Games Screenshot (Port_Gellhorn_01.jpg)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "sh-vc-safehouse-3",
@@ -94,9 +108,9 @@
       "capacity": "Mid-game Vice City story safehouse",
       "missableWarning": null,
       "notes": "Unlocks automatically through Chapter 3 progression. Houses cannot be purchased independently in Story Mode.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-waterfront-towers.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_03.jpg — Regional Visual)",
       "mapPinId": "sh-vc-safehouse-3",
       "relatedLinks": [
         {
@@ -106,7 +120,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-waterfront-towers-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-waterfront-towers-800.webp 800w, /assets/images/properties/gtavi-vice-city-waterfront-towers-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice City Story Safehouse #3 — Vice City residential towers and bayfront (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_03.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "sh-vc-safehouse-4",
@@ -120,9 +141,9 @@
       "capacity": "Endgame Vice City story safehouse",
       "missableWarning": null,
       "notes": "Final story-unlocked safehouse in Vice City chapters (4 of 4 Story Safehouses). Synced with Save Planner Slot 10.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-highrise-penthouse.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_11.jpg — Regional Visual)",
       "mapPinId": "sh-vc-safehouse-4",
       "relatedLinks": [
         {
@@ -136,7 +157,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/save-planner/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-highrise-penthouse-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-highrise-penthouse-800.webp 800w, /assets/images/properties/gtavi-vice-city-highrise-penthouse-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice City Story Safehouse #4 — Vice City luxury high-rise apartment tower (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_11.jpg — Regional Visual)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "gar-purch-1",
@@ -150,9 +178,9 @@
       "capacity": "Multi-vehicle garage bay (exact slot count not yet confirmed)",
       "missableWarning": null,
       "notes": "One of 8 purchasable garages across Leonida for storing getaway vehicles near Vice Beach.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-beach-skyline.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_10.jpg — Regional Visual)",
       "mapPinId": "gar-purch-1",
       "relatedLinks": [
         {
@@ -162,7 +190,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-beach-skyline-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-beach-skyline-800.webp 800w, /assets/images/properties/gtavi-vice-beach-skyline-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice Beach Strip Garage — Vice Beach coastal towers and causeway (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_10.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-2",
@@ -176,9 +211,9 @@
       "capacity": "Multi-vehicle garage bay",
       "missableWarning": null,
       "notes": "Convenient staging garage for Chapter 3 jewelry & bank heist runs.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-mural-avenue.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_09.jpg — Regional Visual)",
       "mapPinId": "gar-purch-2",
       "relatedLinks": [
         {
@@ -188,7 +223,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-mural-avenue-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-mural-avenue-800.webp 800w, /assets/images/properties/gtavi-vice-city-mural-avenue-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Little Cuba Lockup Garage — Vice City mural corridor and neighborhood street (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_09.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-3",
@@ -202,9 +244,9 @@
       "capacity": "Multi-vehicle underground bay",
       "missableWarning": null,
       "notes": "Ideal disguise and trunk swap staging bay for Large Bank Vaults.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-downtown-vice-dusk.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_27.jpg — Regional Visual)",
       "mapPinId": "gar-purch-3",
       "relatedLinks": [
         {
@@ -214,7 +256,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-downtown-vice-dusk-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-downtown-vice-dusk-800.webp 800w, /assets/images/properties/gtavi-downtown-vice-dusk-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Downtown Vice Parking Bay — Downtown Vice City skyline at dusk (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_27.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-4",
@@ -228,9 +277,9 @@
       "capacity": "Multi-vehicle garage bay",
       "missableWarning": null,
       "notes": "Useful for staging untracked cars and duffel-bag haulers in Port Gellhorn.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-port-gellhorn-strip-night.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Port_Gellhorn_04.jpg — Regional Visual)",
       "mapPinId": "gar-purch-4",
       "relatedLinks": [
         {
@@ -240,7 +289,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-port-gellhorn-strip-night-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-port-gellhorn-strip-night-800.webp 800w, /assets/images/properties/gtavi-port-gellhorn-strip-night-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Port Gellhorn Strip-Mall Garage — Port Gellhorn commercial strip at night (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Port_Gellhorn_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-5",
@@ -254,9 +310,9 @@
       "capacity": "Industrial vehicle bay",
       "missableWarning": null,
       "notes": "Positioned near western Port Gellhorn highway corridors.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-port-gellhorn-industrial-view.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Port_Gellhorn_06.jpg — Regional Visual)",
       "mapPinId": "gar-purch-5",
       "relatedLinks": [
         {
@@ -266,7 +322,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-port-gellhorn-industrial-view-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-port-gellhorn-industrial-view-800.webp 800w, /assets/images/properties/gtavi-port-gellhorn-industrial-view-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Port Gellhorn Industrial Bay — Port Gellhorn industrial skyline at sunset (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Port_Gellhorn_06.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-6",
@@ -280,9 +343,9 @@
       "capacity": "Industrial freight garage bay",
       "missableWarning": null,
       "notes": "Purchasable garage in Leonida's industrial heartland.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-ambrosia-highway-freight.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Ambrosia_01.jpg — Regional Visual)",
       "mapPinId": "gar-purch-6",
       "relatedLinks": [
         {
@@ -292,7 +355,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-ambrosia-highway-freight-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-ambrosia-highway-freight-800.webp 800w, /assets/images/properties/gtavi-ambrosia-highway-freight-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Ambrosia Freight Yard Garage — Ambrosia highway and commercial corridor (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Ambrosia_01.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-7",
@@ -306,9 +376,9 @@
       "capacity": "Coastal garage bay",
       "missableWarning": null,
       "notes": "Quick escape access along the Leonida Keys causeway.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-leonida-keys-rusty-anchor.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Leonida_Keys_03.jpg — Regional Visual)",
       "mapPinId": "gar-purch-7",
       "relatedLinks": [
         {
@@ -318,7 +388,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-leonida-keys-rusty-anchor-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-leonida-keys-rusty-anchor-800.webp 800w, /assets/images/properties/gtavi-leonida-keys-rusty-anchor-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Leonida Keys Boatyard Garage — Leonida Keys Rusty Anchor bar and boatyard (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Leonida_Keys_03.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-purch-8",
@@ -332,9 +409,9 @@
       "capacity": "Trailhead garage bay",
       "missableWarning": null,
       "notes": "Northern Leonida staging point for Bret Vogel hunting contracts and cooling wanted heat.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-mount-kalaga-valley-road.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_04.jpg — Regional Visual)",
       "mapPinId": "gar-purch-8",
       "relatedLinks": [
         {
@@ -348,7 +425,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-mount-kalaga-valley-road-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-mount-kalaga-valley-road-800.webp 800w, /assets/images/properties/gtavi-mount-kalaga-valley-road-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Mount Kalaga Trailhead Garage — Mount Kalaga National Park valley road and trailhead (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Mount_Kalaga_National_Park_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-story-1",
@@ -362,9 +446,9 @@
       "capacity": "Story parking bay",
       "missableWarning": null,
       "notes": "1 of 4 story-unlocked garages tied to Jason's starter safehouse.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-keys-safehouse-exterior.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_01.jpg)",
       "mapPinId": "gar-story-1",
       "relatedLinks": [
         {
@@ -374,7 +458,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-keys-safehouse-exterior-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-keys-safehouse-exterior-800.webp 800w, /assets/images/properties/gtavi-keys-safehouse-exterior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Key Lento Safehouse Drive & Shed — Key Lento stilted safehouse exterior with vehicles",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_SAFEHOUSE_VEHICLES_01.jpg)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-story-2",
@@ -388,9 +479,9 @@
       "capacity": "Story parking bay",
       "missableWarning": "Linked to Chapter 2 Motel Base — moves out after 'Checking Out'.",
       "notes": "2 of 4 story-unlocked garages.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-port-gellhorn-motel-exterior.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Port_Gellhorn_01.jpg)",
       "mapPinId": "gar-story-2",
       "relatedLinks": [
         {
@@ -400,7 +491,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-port-gellhorn-motel-exterior-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-port-gellhorn-motel-exterior-800.webp 800w, /assets/images/properties/gtavi-port-gellhorn-motel-exterior-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Port Gellhorn Motel Parking Lot — Port Gellhorn roadside motel exterior at dusk",
+      "imageCaption": "Official Rockstar Games Screenshot (Port_Gellhorn_01.jpg)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "gar-story-3",
@@ -414,9 +512,9 @@
       "capacity": "Story garage bay",
       "missableWarning": null,
       "notes": "3 of 4 story-unlocked garages.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-waterfront-towers.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_03.jpg — Regional Visual)",
       "mapPinId": "gar-story-3",
       "relatedLinks": [
         {
@@ -426,7 +524,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-waterfront-towers-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-waterfront-towers-800.webp 800w, /assets/images/properties/gtavi-vice-city-waterfront-towers-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice City Chapter 3 Safehouse Garage — Vice City residential towers and bayfront (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_03.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "gar-story-4",
@@ -440,9 +545,9 @@
       "capacity": "Multi-slot endgame story garage",
       "missableWarning": null,
       "notes": "4 of 4 story-unlocked garages.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-highrise-penthouse.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_11.jpg — Regional Visual)",
       "mapPinId": "gar-story-4",
       "relatedLinks": [
         {
@@ -452,7 +557,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-highrise-penthouse-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-highrise-penthouse-800.webp 800w, /assets/images/properties/gtavi-vice-city-highrise-penthouse-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Vice City Chapter 4 Endgame Garage — Vice City luxury high-rise apartment tower (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_11.jpg — Regional Visual)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "gar-paradise",
@@ -466,9 +578,9 @@
       "capacity": "Bonus multi-vehicle garage + gun cabinet",
       "missableWarning": null,
       "notes": "Bonus Watson Bay garage unlocked immediately for Ultimate Edition owners (separate from the 8 purchasable + 4 story garages).",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-rideout-customs-garage-bay.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_RIDEOUT_CUSTOMS_03.jpg)",
       "mapPinId": "gar-paradise",
       "relatedLinks": [
         {
@@ -478,7 +590,14 @@
       ],
       "sourceUrl": "https://www.rockstargames.com/VI",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-rideout-customs-garage-bay-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-rideout-customs-garage-bay-800.webp 800w, /assets/images/properties/gtavi-rideout-customs-garage-bay-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Paradise Garage (Watson Bay) — Rideout Customs garage interior with vehicle on hydraulic lift",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_RIDEOUT_CUSTOMS_03.jpg)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "fence-moses",
@@ -492,9 +611,9 @@
       "capacity": "Vehicle buyer drop-off (untracked cars only)",
       "missableWarning": null,
       "notes": "One of 2 vehicle buyers among the 7 fence contacts. Accepts untracked vehicles only (scan with the WAiNK app). Not a stolen-goods fence.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-wyman-vehicle-yard.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_WYMAN_CAR_COLLECTION_01.jpg)",
       "mapPinId": "fence-moses",
       "relatedLinks": [
         {
@@ -504,7 +623,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-wyman-vehicle-yard-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-wyman-vehicle-yard-800.webp 800w, /assets/images/properties/gtavi-wyman-vehicle-yard-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Moses (Untracked Vehicle Buyer) — Vehicle collection lot and garage area in Leonida",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_WYMAN_CAR_COLLECTION_01.jpg)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "fence-randy",
@@ -518,9 +644,9 @@
       "capacity": "Vehicle buyer (wish-list vehicles)",
       "missableWarning": null,
       "notes": "One of 2 vehicle buyers among the 7 fence contacts. Earlier site text describing Randy as a pawn/valuables fence was corrected to match the accepted classification. NOTE: the existing map pin 'fence-randy' keeps its previous coordinates (Port Gellhorn area); reports place Randy in Balsero, Vice City — pin location pending in-game verification.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-custom-garage-bay.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_ONE_EYED_WILLIE_03.jpg)",
       "mapPinId": "fence-randy",
       "relatedLinks": [
         {
@@ -530,7 +656,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-custom-garage-bay-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-custom-garage-bay-800.webp 800w, /assets/images/properties/gtavi-custom-garage-bay-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Randy (High-End Vehicle Buyer) — Leonida vehicle customization garage bay",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_ONE_EYED_WILLIE_03.jpg)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "fence-donnie",
@@ -544,9 +677,9 @@
       "capacity": "Stolen goods buyer (Chapter 1)",
       "missableWarning": "Closes permanently after completing the mission 'Swamped'.",
       "notes": "Use Donnie to fence Chapter 1 goods before 'Swamped'. Synced with Save Planner Pre-Flight #3.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-leonida-keys-aerial.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Leonida_Keys_01.jpg — Regional Visual)",
       "mapPinId": "fence-donnie",
       "relatedLinks": [
         {
@@ -556,7 +689,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/save-planner/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-leonida-keys-aerial-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-leonida-keys-aerial-800.webp 800w, /assets/images/properties/gtavi-leonida-keys-aerial-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Donnie's Trailer Fence — Leonida Keys archipelago and highway aerial (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Leonida_Keys_01.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "fence-brians-lockup",
@@ -570,9 +710,9 @@
       "capacity": "Contraband stash & fence lockup",
       "missableWarning": null,
       "notes": "Verified keypad code 7700 is used to stash and fence stolen goods (including acid in 'Lab Fees') — it does not spawn free cash or weapons.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-brian-heder-boatyard.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Brian_Heder_04.jpg)",
       "mapPinId": "fence-brians-lockup",
       "relatedLinks": [
         {
@@ -586,18 +726,25 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-brian-heder-boatyard-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-brian-heder-boatyard-800.webp 800w, /assets/images/properties/gtavi-brian-heder-boatyard-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Brian's Lockup (Keypad Code: 7700) — Brian Heder at his Leonida Keys boatyard compound",
+      "imageCaption": "Official Rockstar Games Screenshot (Brian_Heder_04.jpg)",
+      "focalPosition": "50% 35%"
     },
     {
       "propertyType": "Fence",
       "category": "Fences & Money Safes",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-gellhorn-pawn-cash-store.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Lucia_Caminos_08.jpg)",
       "mapPinId": null,
       "missableWarning": null,
       "verificationStatus": "Independently Reported",
-      "lastUpdated": "2026-11-23",
+      "lastUpdated": "2026-11-24",
       "sourceUrl": null,
       "relatedLinks": [
         {
@@ -616,18 +763,25 @@
       "unlockRequirement": "Chapter 2 (mission 'Slam Dunk', reported)",
       "interiorFeatures": "Stolen-goods buyer (reported: low payout for narcotics and jewelry, very low for marked bills)",
       "capacity": "Stolen goods buyer",
-      "notes": "No map pin is assigned yet: coordinates have not been verified, so none were invented."
+      "notes": "No map pin is assigned yet: coordinates have not been verified, so none were invented.",
+      "imageWebp": "/assets/images/properties/gtavi-gellhorn-pawn-cash-store-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-gellhorn-pawn-cash-store-800.webp 800w, /assets/images/properties/gtavi-gellhorn-pawn-cash-store-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Dunk (Stolen-Goods Fence) — Port Gellhorn Checks Cashed & Cash Now storefront",
+      "imageCaption": "Official Rockstar Games Screenshot (Lucia_Caminos_08.jpg)",
+      "focalPosition": "50% 40%"
     },
     {
       "propertyType": "Fence",
       "category": "Fences & Money Safes",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-stock-305.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_STOCK_305_01.jpg)",
       "mapPinId": null,
       "missableWarning": null,
       "verificationStatus": "Independently Reported",
-      "lastUpdated": "2026-11-23",
+      "lastUpdated": "2026-11-24",
       "sourceUrl": null,
       "relatedLinks": [
         {
@@ -646,7 +800,14 @@
       "unlockRequirement": "Chapter 3 (mission 'Here, Kitty Kitty', reported)",
       "interiorFeatures": "Stolen-goods buyer, La Perle (reported: high payout for narcotics; medium for jewelry and marked bills)",
       "capacity": "Stolen goods buyer",
-      "notes": "No map pin is assigned yet: coordinates have not been verified, so none were invented."
+      "notes": "No map pin is assigned yet: coordinates have not been verified, so none were invented.",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-stock-305-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-stock-305-800.webp 800w, /assets/images/properties/gtavi-vice-city-stock-305-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Tyrone (Stolen-Goods Fence) — Stock 305 Vice City storefront exterior",
+      "imageCaption": "Official Rockstar Games Screenshot (ULTIMATE_EDITION_STOCK_305_01.jpg)",
+      "focalPosition": "50% 45%"
     },
     {
       "id": "fence-yasmani",
@@ -660,9 +821,9 @@
       "capacity": "High-value jewelry & diamond fence",
       "missableWarning": null,
       "notes": "Best liquidation fence for Vice City jewelry store hits.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-canal-district.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_17.jpg — Regional Visual)",
       "mapPinId": "fence-yasmani",
       "relatedLinks": [
         {
@@ -672,7 +833,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-canal-district-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-canal-district-800.webp 800w, /assets/images/properties/gtavi-vice-city-canal-district-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Yasmani's Jewelry Fence — Vice City marina canal and commercial district (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_17.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "fence-ambrosia",
@@ -686,9 +854,9 @@
       "capacity": "Heavy contraband buyer",
       "missableWarning": null,
       "notes": "Legacy site entry retained so existing map pins/links keep working. Ambrosia is NOT one of the 7 fence contacts (5 stolen-goods fences + 2 vehicle buyers) per the accepted classification. Treat the description as an unverified regional lead.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-ambrosia-refinery-dusk.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Ambrosia_04.jpg — Regional Visual)",
       "mapPinId": "fence-ambrosia",
       "relatedLinks": [
         {
@@ -698,7 +866,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Unverified",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-ambrosia-refinery-dusk-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-ambrosia-refinery-dusk-800.webp 800w, /assets/images/properties/gtavi-ambrosia-refinery-dusk-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Ambrosia Industrial Drop-Off (Unverified Lead) — Ambrosia industrial refinery skyline (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Ambrosia_04.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "fence-grassrivers",
@@ -712,9 +887,9 @@
       "capacity": "Wetlands smuggler fence",
       "missableWarning": null,
       "notes": "Legacy site entry retained so existing map pins/links keep working. Grassrivers is NOT one of the 7 fence contacts (5 stolen-goods fences + 2 vehicle buyers) per the accepted classification. Treat the description as an unverified regional lead.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-grassrivers-waterfront-dock.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Grassrivers_02.jpg — Regional Visual)",
       "mapPinId": "fence-grassrivers",
       "relatedLinks": [
         {
@@ -724,7 +899,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Unverified",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-grassrivers-waterfront-dock-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-grassrivers-waterfront-dock-800.webp 800w, /assets/images/properties/gtavi-grassrivers-waterfront-dock-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "Grassrivers Wetlands Dock (Unverified Lead) — Grassrivers waterfront docks and wetlands (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Grassrivers_02.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     },
     {
       "id": "safe-buckme",
@@ -738,9 +920,9 @@
       "capacity": "Savings protection account",
       "missableWarning": "Deposit your $5,000 Family Savings into BuckMe before triggering 'Tourist Trap' or loose pocket cash is wiped.",
       "notes": "Critical Chapter 1 money-preservation step. Synced with Save Planner Pre-Flight #1.",
-      "image": null,
-      "imageVerified": false,
-      "imageSource": null,
+      "image": "/assets/images/properties/gtavi-vice-city-night-corner.jpg",
+      "imageVerified": true,
+      "imageSource": "Official Rockstar Games Screenshot (Vice_City_22.jpg — Regional Visual)",
       "mapPinId": "safe-buckme",
       "relatedLinks": [
         {
@@ -754,7 +936,14 @@
       ],
       "sourceUrl": "https://www.gta6heistguide.com/gta-6-money-guide/",
       "verificationStatus": "Confirmed",
-      "lastUpdated": "2026-11-21"
+      "lastUpdated": "2026-11-24",
+      "imageWebp": "/assets/images/properties/gtavi-vice-city-night-corner-1200.webp",
+      "imageWebpSrcset": "/assets/images/properties/gtavi-vice-city-night-corner-800.webp 800w, /assets/images/properties/gtavi-vice-city-night-corner-1200.webp 1200w",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "imageAlt": "BuckMe Family Savings ($5,000 Ch. 1 Goal) — Vice City illuminated commercial corner at night (Regional Visual)",
+      "imageCaption": "Official Rockstar Games Screenshot (Vice_City_22.jpg — Regional Visual)",
+      "focalPosition": "50% 50%"
     }
   ]
 }

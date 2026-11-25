@@ -1093,9 +1093,10 @@
         var altText = hasText(item.imageAlt) ? item.imageAlt : (item.name + ' verified GTA VI screenshot');
         var w = item.imageWidth || 1600;
         var h = item.imageHeight || 900;
+        var focalPos = hasText(item.focalPosition) ? item.focalPosition : '50% 50%';
         var sizes = isModal ? '(max-width: 820px) 96vw, 780px' : '(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 360px';
         var fallbackHandler = "var p=this.closest('.wdb-card-media,.wdb-modal-hero')||this.parentNode;p.innerHTML=this.getAttribute('data-fallback');";
-        var imgTag = '<img src="' + esc(item.image) + '" alt="' + esc(altText) + '" width="' + esc(w) + '" height="' + esc(h) + '" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + fallbackHandler + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">';
+        var imgTag = '<img src="' + esc(item.image) + '" alt="' + esc(altText) + '" width="' + esc(w) + '" height="' + esc(h) + '" style="object-position:' + esc(focalPos) + ';" loading="' + (isModal ? 'eager' : 'lazy') + '" decoding="async" onerror="' + fallbackHandler + '" data-fallback="' + esc(renderPlaceholderHtml(item, isModal)) + '">';
         var pictureHtml = imgTag;
         if (hasText(item.imageAvifSrcset) || hasText(item.imageWebpSrcset)) {
           pictureHtml =
@@ -1105,9 +1106,11 @@
               imgTag +
             '</picture>';
         }
+        var isRegional = /regional visual|store visual|illustrative/i.test(String(item.imageCaption || item.imageSource || ''));
+        var badgeLabel = isRegional ? '📍 Regional GTA VI Visual' : '✓ Verified GTA VI Shot';
         return (
           pictureHtml +
-          (isModal ? '<span class="wdb-zoom-pill">🔍 View Full Image</span>' : '<span class="wdb-badge-tr">✓ Verified Shot</span>')
+          (isModal ? '<span class="wdb-zoom-pill">🔍 View Full Image</span>' : '<span class="wdb-badge-tr"' + (isRegional ? ' style="background:rgba(15,23,42,0.88); border-color:rgba(0,240,255,0.45); color:#67e8f9;"' : '') + '>' + badgeLabel + '</span>')
         );
       }
       if (schema.isGunStore) {
@@ -1279,7 +1282,7 @@
         return;
       }
 
-      gridEl.innerHTML = displayList.map(function (it) {
+      function renderCardHtml(it) {
         var owned = isOwned(it.id);
         var fav = isFav(it.id);
         var compared = state.compareIds.indexOf(it.id) >= 0;
@@ -1297,6 +1300,10 @@
             .replace(/Reference tracklist only\s*[—–-]\s*zero hosted MP3 files or audio players\.?/gi, '')
             .trim();
         }
+        var isRegionalCap = /regional visual|store visual|illustrative/i.test(String(it.imageCaption || it.imageSource || ''));
+        var capBar = (it.image && it.imageVerified === true && isRegionalCap && hasText(it.imageCaption))
+          ? '<div style="font-size:0.66rem; color:#94a3b8; padding:0.26rem 0.72rem; background:rgba(6,10,20,0.82); border-bottom:1px solid rgba(255,255,255,0.06); line-height:1.3;">' + esc(it.imageCaption) + '</div>'
+          : '';
         return (
           '<article class="wdb-card' + (owned ? ' is-owned' : '') + (compared ? ' is-compared' : '') + '" data-wdb-open="' + esc(it.id) + '" tabindex="0">' +
             '<div class="wdb-card-media' + (schema.isRadio ? ' is-radio' : '') + '">' +
@@ -1304,6 +1311,7 @@
               (topLeft ? '<span class="wdb-badge-tl">' + esc(topLeft) + '</span>' : '') +
               (botRight ? '<span class="wdb-badge-br">' + esc(botRight) + '</span>' : '') +
             '</div>' +
+            capBar +
             '<div class="wdb-card-body">' +
               '<div class="wdb-card-head">' +
                 '<div>' +
@@ -1328,7 +1336,7 @@
                   '<button type="button" class="wdb-act-btn' + (compared ? ' is-cmp' : '') + '" data-wdb-cmp="' + esc(it.id) + '" aria-pressed="' + (compared ? 'true' : 'false') + '" title="Compare up to 3">⚖️ ' + (compared ? 'Added' : 'Compare') + '</button>' +
                 '</div>' +
                 (pinId
-                  ? '<a href="/map.html?pin=' + encodeURIComponent(pinId) + '" class="wdb-map-pill" data-wdb-map-link>📍 Map Pin</a>'
+                  ? '<a href="/map?pin=' + encodeURIComponent(pinId) + '" class="wdb-map-pill" data-wdb-map-link>📍 Map Pin</a>'
                   : (schema.isRadio
                     ? '<span class="wdb-card-cta-pill">View Station &rarr;</span>'
                     : '<span class="wdb-card-cta-pill">Details &rarr;</span>')) +
@@ -1336,7 +1344,34 @@
             '</div>' +
           '</article>'
         );
-      }).join('');
+      }
+
+      if (categoryKey === 'vehicles' && state.primaryVal === 'ALL' && !state.search.trim() && maxInitialItems === 0) {
+        var classOrder = ['Super', 'Sports', 'Sports Classics', 'Muscle', 'Off-Road', 'SUVs & Pickups', 'Motorcycles', 'Boats & Watercraft', 'Helicopters & Planes', 'Emergency'];
+        var grouped = Object.create(null);
+        displayList.forEach(function (it) {
+          var cls = it.vehicleClass || 'Other';
+          if (!grouped[cls]) grouped[cls] = [];
+          grouped[cls].push(it);
+        });
+        var orderedKeys = classOrder.filter(function (k) { return grouped[k] && grouped[k].length; });
+        Object.keys(grouped).forEach(function (k) {
+          if (orderedKeys.indexOf(k) === -1) orderedKeys.push(k);
+        });
+        gridEl.innerHTML = orderedKeys.map(function (cls) {
+          var arr = grouped[cls];
+          return (
+            '<div style="grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:0.55rem 0.85rem; margin-top:0.5rem; background:linear-gradient(90deg, rgba(0,240,255,0.12), rgba(15,23,42,0.5)); border-left:3px solid var(--neon-cyan,#00f0ff); border-radius:6px;">' +
+              '<h2 style="margin:0; font-size:1.05rem; color:#fff; font-weight:900; letter-spacing:0.02em;">' + esc(cls) + '</h2>' +
+              '<span style="font-family:var(--font-mono,monospace); font-size:0.74rem; color:var(--neon-cyan,#00f0ff); font-weight:800;">' + arr.length + ' verified ' + (arr.length === 1 ? 'vehicle' : 'vehicles') + '</span>' +
+            '</div>' +
+            arr.map(renderCardHtml).join('')
+          );
+        }).join('');
+        return;
+      }
+
+      gridEl.innerHTML = displayList.map(renderCardHtml).join('');
     }
 
     function renderCompareTray() {
@@ -1557,7 +1592,10 @@
                 '<thead><tr>' +
                   '<th>Verified Field</th>' +
                   selected.map(function (it) {
-                    return '<th>' + esc(it.name) + '<div style="font-size:0.68rem; font-weight:700; color:var(--neon-cyan,#00f0ff); margin-top:2px;">' + esc(it.verificationStatus || 'Confirmed') + '</div></th>';
+                    var thumbHtml = (it.image && it.imageVerified === true)
+                      ? '<div style="width:100%; max-width:210px; aspect-ratio:16/9; overflow:hidden; border-radius:7px; margin:0 0 0.45rem; background:#070b14; border:1px solid rgba(0,240,255,0.22);"><img src="' + esc(it.image) + '" alt="' + esc(it.imageAlt || it.name) + '" width="400" height="225" style="width:100%; height:100%; object-fit:cover; object-position:' + esc(it.focalPosition || '50% 50%') + '; display:block;" loading="lazy" decoding="async"></div>'
+                      : '';
+                    return '<th style="vertical-align:bottom;">' + thumbHtml + '<div>' + esc(it.name) + '</div><div style="font-size:0.68rem; font-weight:700; color:var(--neon-cyan,#00f0ff); margin-top:2px;">' + esc(it.verificationStatus || 'Confirmed') + '</div></th>';
                   }).join('') +
                 '</tr></thead>' +
                 '<tbody>' +
