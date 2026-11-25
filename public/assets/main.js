@@ -254,7 +254,11 @@ const GTA6 = {
         window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag() { window.dataLayer.push(arguments); };
         window.gtag('js', new Date());
-        window.gtag('config', gaId);
+        window.gtag('config', gaId, {
+          anonymize_ip: true,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false,
+        });
       }
     },
 
@@ -292,6 +296,28 @@ const GTA6 = {
       } catch (err) {}
 
       if (cfg.enableAffiliateClickTracking === false) return;
+      try {
+        if (typeof window.GTA6Track === 'function') {
+          const asinMatch = String(targetUrl).match(/\/dp\/([A-Z0-9]{10})/i);
+          const pNorm = payload.partner;
+          const productCategory = pNorm === 'amazon'
+            ? 'amazon_hardware'
+            : pNorm === 'gumroad'
+              ? 'creator_tool'
+              : pNorm === 'exitlag'
+                ? 'network_tool'
+                : pNorm === 'g2a'
+                  ? 'gaming_store'
+                  : 'affiliate_partner';
+          window.GTA6Track('affiliate_click', {
+            destination_category: pNorm,
+            product_category: productCategory,
+            product_id: asinMatch ? asinMatch[1].toUpperCase() : pNorm,
+            placement: String(placement || 'sitewide').slice(0, 48),
+            interaction_type: 'outbound_click',
+          });
+        }
+      } catch (err) {}
       try {
         const json = JSON.stringify(payload);
         if (navigator.sendBeacon) {
@@ -1654,6 +1680,11 @@ const GTA6 = {
 
     const closeDrawer = () => {
       navLinks.classList.remove('open');
+      navLinks.querySelectorAll('.nav-dropdown.is-open').forEach((dd) => {
+        dd.classList.remove('is-open');
+        const ddBtn = dd.querySelector('.nav-dropdown-btn');
+        if (ddBtn) ddBtn.setAttribute('aria-expanded', 'false');
+      });
       const b = document.getElementById('mobileMenuBtn');
       if (b) {
         b.innerHTML = `${this.Icons.menu(18)}<span>Menu</span>`;

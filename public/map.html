@@ -757,7 +757,7 @@
             margin: 0 !important;
             line-height: 1.4;
             width: 310px !important;
-            max-height: 52vh;
+            max-height: min(44vh, 330px);
             overflow-y: auto;
         }
         /* Keep selected marker clearly visible with high contrast ring */
@@ -768,6 +768,8 @@
         }
         /* When a pin is near the top edge, flip popup cleanly below the marker */
         .leaflet-popup.p26-popup-below {
+            top: 26px !important;
+            bottom: auto !important;
             margin-bottom: 0 !important;
         }
         .leaflet-popup.p26-popup-below .leaflet-popup-tip-container {
@@ -1699,11 +1701,10 @@ function renderAllMarkers() {
         });
         marker.bindPopup(() => createPopupContent(pin), {
             maxWidth: 320,
-            autoPan: true,
-            autoPanPaddingTopLeft: L.point(28, 86),
-            autoPanPaddingBottomRight: L.point(28, 56),
+            autoPan: false,
             offset: L.point(0, -6)
         });
+        marker._gta6Pin = pin;
 
         marker.on('click', () => {
             selectPinMarker(pin, marker);
@@ -1747,6 +1748,81 @@ function closeMobilePinSheet() {
     clearSelectedPinRing();
 }
 
+function getUnobstructedMapBounds() {
+    const mapRect = map.getContainer().getBoundingClientRect();
+    const toolbar = document.querySelector('.map-top-toolbar');
+    const navbar = document.querySelector('.navbar');
+    let safeTop = mapRect.top;
+    if (toolbar) {
+        const tbRect = toolbar.getBoundingClientRect();
+        if (tbRect.height > 0) safeTop = Math.max(safeTop, tbRect.bottom);
+    }
+    if (navbar) {
+        const navRect = navbar.getBoundingClientRect();
+        if (navRect.height > 0) safeTop = Math.max(safeTop, navRect.bottom);
+    }
+    return {
+        mapRect,
+        safeTop: safeTop + 12,
+        safeBottom: Math.min(mapRect.bottom, window.innerHeight) - 12,
+        safeLeft: Math.max(mapRect.left, 0) + 12,
+        safeRight: Math.min(mapRect.right, window.innerWidth) - 12
+    };
+}
+
+function positionDesktopPopup(marker) {
+    if (!map || !marker || window.innerWidth <= 768 || !marker.isPopupOpen()) return;
+    const popup = marker.getPopup();
+    const popupEl = popup && popup.getElement ? popup.getElement() : null;
+    if (!popupEl) return;
+
+    // Reset to default above-marker placement before measuring
+    popupEl.classList.remove('p26-popup-below');
+    const bounds = getUnobstructedMapBounds();
+    const markerPt = map.latLngToContainerPoint(marker.getLatLng());
+    const markerViewportY = bounds.mapRect.top + markerPt.y;
+    const initialRect = popupEl.getBoundingClientRect();
+    const popupH = Math.max(initialRect.height, 140);
+
+    const topOverflowAbove = bounds.safeTop - initialRect.top;
+    const spaceAbove = initialRect.bottom - bounds.safeTop;
+    const spaceBelow = bounds.safeBottom - (markerViewportY + 26);
+
+    // Compute how far north (down on screen) the map can still pan within maxBounds
+    const northEdgeY = map.latLngToContainerPoint([naturalHeight, 0]).y;
+    const northPanHeadroom = Math.max(0, -northEdgeY);
+
+    // Flip below whenever the measured above-marker popup clips safeTop and either below has enough room
+    // or panning north cannot fully clear the fixed toolbar / top edge
+    if (topOverflowAbove > 0 && (spaceBelow >= popupH || northPanHeadroom < topOverflowAbove || spaceBelow > spaceAbove)) {
+        popupEl.classList.add('p26-popup-below');
+    }
+
+    // Measure final popup rect after placement decision and smoothly pan if any edge still needs clearance
+    const finalRect = popupEl.getBoundingClientRect();
+    let panX = 0;
+    let panY = 0;
+
+    if (finalRect.top < bounds.safeTop) {
+        panY = -Math.ceil(bounds.safeTop - finalRect.top);
+    } else if (finalRect.bottom > bounds.safeBottom) {
+        const overflowBottom = Math.ceil(finalRect.bottom - bounds.safeBottom);
+        // Never pan so far down that the selected pin or popup top gets pushed above safeTop
+        const maxSafePanDown = Math.max(0, Math.floor(Math.min(finalRect.top, markerViewportY - 20) - bounds.safeTop));
+        panY = Math.min(overflowBottom, maxSafePanDown);
+    }
+
+    if (finalRect.left < bounds.safeLeft) {
+        panX = -Math.ceil(bounds.safeLeft - finalRect.left);
+    } else if (finalRect.right > bounds.safeRight) {
+        panX = Math.ceil(finalRect.right - bounds.safeRight);
+    }
+
+    if (panX !== 0 || panY !== 0) {
+        map.panBy([panX, panY], { animate: true, duration: 0.25 });
+    }
+}
+
 function selectPinMarker(pin, marker) {
     clearSelectedPinRing();
     activeSelectedMarker = marker;
@@ -1755,6 +1831,15 @@ function selectPinMarker(pin, marker) {
     if (el) {
         const inner = el.querySelector('.custom-pin-marker');
         if (inner) inner.classList.add('is-selected-pin');
+    }
+
+    if (window.GTA6Track && pin) {
+        window.GTA6Track('map_pin_open', {
+            page_category: 'map',
+            map_pin_category: pin.category || 'unknown',
+            region: pin.region || 'Leonida',
+            interaction_type: window.innerWidth <= 768 ? 'mobile_sheet' : 'desktop_popup'
+        });
     }
 
     // Mobile compact bottom sheet: keep selected marker visible in upper 55% of map
@@ -1778,34 +1863,32 @@ function selectPinMarker(pin, marker) {
         return;
     }
 
-    // Desktop: ensure popup does not cover the selected pin or clip outside top edge
-    setTimeout(() => {
-        if (!map || !marker.isPopupOpen()) return;
-        const popup = marker.getPopup();
-        const popupEl = popup && popup.getElement ? popup.getElement() : null;
-        if (!popupEl) return;
-        popupEl.classList.remove('p26-popup-below');
-        const mapRect = map.getContainer().getBoundingClientRect();
-        const popupRect = popupEl.getBoundingClientRect();
-        const markerPt = map.latLngToContainerPoint(marker.getLatLng());
-        // If popup clipped top edge OR overlapped marker center, pan smoothly to give breathing room
-        const topClearance = popupRect.top - mapRect.top;
-        if (topClearance < 18) {
-            const neededPanY = Math.ceil(18 - topClearance);
-            map.panBy([0, -neededPanY], { animate: true, duration: 0.25 });
-        } else if (popupRect.bottom > (mapRect.top + markerPt.y - 16)) {
-            // Ensure minimum 18px gap above marker center
-            const overlap = popupRect.bottom - (mapRect.top + markerPt.y - 16);
-            map.panBy([0, -Math.ceil(overlap + 12)], { animate: true, duration: 0.25 });
-        }
-    }, 60);
+    // Desktop: position popup unobstructed below toolbar and inside viewport
+    requestAnimationFrame(() => positionDesktopPopup(marker));
 }
 
-// Keep map popup state synchronized when closing or clicking empty map
+// Keep map popup state synchronized when opening, closing, or clicking empty map
 document.addEventListener('DOMContentLoaded', () => {
     const waitMap = setInterval(() => {
         if (typeof map !== 'undefined' && map) {
             clearInterval(waitMap);
+            map.on('popupopen', (ev) => {
+                if (window.innerWidth <= 768) return;
+                const src = ev && ev.popup && ev.popup._source;
+                if (src) {
+                    if (activeSelectedMarker !== src) {
+                        clearSelectedPinRing();
+                        activeSelectedMarker = src;
+                        src.setZIndexOffset(1000);
+                        const el = src.getElement();
+                        if (el) {
+                            const inner = el.querySelector('.custom-pin-marker');
+                            if (inner) inner.classList.add('is-selected-pin');
+                        }
+                    }
+                    requestAnimationFrame(() => positionDesktopPopup(src));
+                }
+            });
             map.on('popupclose', () => {
                 if (window.innerWidth > 768) clearSelectedPinRing();
             });
@@ -1877,7 +1960,11 @@ function flyToPin(pinId, openPopup = true, highlightPulse = false) {
         setTimeout(() => {
             const marker = markersById[pin.id];
             if (marker) {
-                marker.openPopup();
+                if (window.innerWidth <= 768) {
+                    selectPinMarker(pin, marker);
+                } else {
+                    marker.openPopup();
+                }
             }
         }, 760);
     }
@@ -1996,6 +2083,14 @@ function togglePinFound(pinId) {
     if (nextFound) {
         foundPinIds.add(pinId);
         showToast('✓ Pin Marked Found (Synced Across Tools)');
+        const completedPin = allPins.find(p => p.id === pinId);
+        if (window.GTA6Track) {
+            window.GTA6Track('map_pin_complete', {
+                page_category: 'map',
+                map_pin_category: (completedPin && completedPin.category) || 'unknown',
+                interaction_type: 'mark_complete'
+            });
+        }
     } else {
         foundPinIds.delete(pinId);
         showToast('↺ Pin Marked Unfound');
@@ -2175,9 +2270,16 @@ function escapeMapHtml(str) {
         .replace(/"/g, '&quot;');
 }
 
-function selectSearchResult(pinId) {
+function selectSearchResult(pinId, fromEnterSubmit) {
     const pin = allPins.find(p => p.id === pinId);
     if (!pin) return;
+    if (!fromEnterSubmit && window.GTA6Track) {
+        window.GTA6Track('map_search', {
+            page_category: 'map',
+            map_pin_category: pin.category || 'unknown',
+            interaction_type: 'select_result'
+        });
+    }
     const cat = pin.category || 'vault';
     if (!categoryVisibility[cat]) {
         categoryVisibility[cat] = true;
@@ -2240,8 +2342,15 @@ function handleSearchKeydown(event) {
     if (event.key === 'Enter' && currentSearchQuery) {
         event.preventDefault();
         const matches = getSearchMatches(currentSearchQuery);
+        if (window.GTA6Track) {
+            window.GTA6Track('map_search', {
+                page_category: 'map',
+                interaction_type: 'submit',
+                result_count: matches.length
+            });
+        }
         if (matches.length > 0) {
-            selectSearchResult(matches[0].id);
+            selectSearchResult(matches[0].id, true);
         }
     }
 }

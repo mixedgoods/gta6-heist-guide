@@ -44,6 +44,113 @@ window.SITE_CONFIG = Object.freeze({
   enableAffiliateClickTracking: true
 });
 
+// Privacy-first single reusable analytics adapter (GA4-ready when authorized ID is supplied)
+(function() {
+  var BLOCKED_KEY_RE = /email|mail|pass|pwd|secret|token|auth|phone|address|query|text|input|body|message|cookie|session|user_?name|full_?name/i;
+  var ALLOWED_EVENTS = {
+    map_pin_open: true,
+    map_search: true,
+    map_pin_complete: true,
+    affiliate_click: true,
+    vehicle_compare: true,
+    guide_related_click: true,
+    continue_read: true
+  };
+
+  function classifyPathCategory(pathname) {
+    var p = String(pathname || '/').toLowerCase();
+    if (p === '/' || p === '/index.html') return 'home';
+    if (p.indexOf('/map') === 0) return 'map';
+    if (/^\/(properties|animals|vehicles|weapons|weapons-bonuses|radio|gta-6-database)/.test(p)) return 'database';
+    if (/^\/(heist-planner|heist-payout-calculator|save-planner|gta-6-tools|free|live)/.test(p)) return 'tools';
+    if (/^\/(cheats|secrets|gta-6-tips-and-tricks|gta-6-settings|gta-6-discoveries)/.test(p)) return 'tips';
+    if (/^\/(missions|gta-6-|heist)/.test(p)) return 'guides';
+    return 'page';
+  }
+
+  function sanitizeParams(rawParams) {
+    var clean = { page_category: classifyPathCategory(window.location.pathname) };
+    if (!rawParams || typeof rawParams !== 'object') return clean;
+    Object.keys(rawParams).forEach(function(k) {
+      if (!k || BLOCKED_KEY_RE.test(k)) return;
+      var v = rawParams[k];
+      if (v === null || v === undefined) return;
+      if (typeof v === 'number' && isFinite(v)) {
+        clean[k] = v;
+      } else if (typeof v === 'boolean') {
+        clean[k] = v;
+      } else if (typeof v === 'string') {
+        var s = v.trim();
+        if (!s || s.indexOf('@') !== -1) return;
+        clean[k] = s.length > 80 ? s.slice(0, 80) : s;
+      }
+    });
+    return clean;
+  }
+
+  var eventHistory = [];
+  function GTA6Track(eventName, params) {
+    try {
+      var name = String(eventName || '').trim();
+      if (!ALLOWED_EVENTS[name]) return false;
+      var clean = sanitizeParams(params);
+      var cfg = window.SITE_CONFIG || {};
+      var gaId = String(cfg.ga4MeasurementId || '').trim();
+      var gaActive = /^G-[A-Z0-9]+$/i.test(gaId) && typeof window.gtag === 'function';
+      if (gaActive) {
+        window.gtag('event', name, clean);
+      }
+      var record = { event: name, params: clean, dispatchedToGa4: gaActive, ts: Date.now() };
+      eventHistory.push(record);
+      if (eventHistory.length > 50) eventHistory.shift();
+      if (typeof window.CustomEvent === 'function') {
+        window.dispatchEvent(new CustomEvent('gta6:track', { detail: record }));
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  GTA6Track.classifyPath = classifyPathCategory;
+  GTA6Track.getEvents = function() { return eventHistory.slice(); };
+  GTA6Track.isGa4Active = function() {
+    var cfg = window.SITE_CONFIG || {};
+    var gaId = String(cfg.ga4MeasurementId || '').trim();
+    return /^G-[A-Z0-9]+$/i.test(gaId) && typeof window.gtag === 'function';
+  };
+  window.GTA6Track = GTA6Track;
+
+  if (!window._gta6TrackDelegatedBound) {
+    window._gta6TrackDelegatedBound = true;
+    document.addEventListener('click', function(e) {
+      try {
+        var target = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!target) return;
+        var href = target.getAttribute('href') || '';
+        if (!href || href.charAt(0) === '#') return;
+        var destPath = '';
+        try { destPath = new URL(target.href, window.location.origin).pathname; } catch (err) { destPath = href; }
+        var destCat = classifyPathCategory(destPath);
+
+        if (target.closest('#p26ContinueLinks')) {
+          GTA6Track('continue_read', {
+            destination_category: destCat,
+            interaction_type: 'continue_reading'
+          });
+          return;
+        }
+        if (target.matches('.wdb-related-link, [data-related-guide], .guide-related-card') ||
+            target.closest('.related-guides, .related-links, .next-guides, .cross-links, .wdb-related-links')) {
+          GTA6Track('guide_related_click', {
+            destination_category: destCat,
+            interaction_type: 'related_guide_click'
+          });
+        }
+      } catch (err) {}
+    }, { passive: true });
+  }
+})();
+
 // Auto-hydrate centralized Amazon product links & nav dropdowns sitewide
 (function() {
   function hydrateLinks() {
@@ -99,16 +206,27 @@ window.SITE_CONFIG = Object.freeze({
       if (btn) btn.setAttribute('aria-expanded', 'false');
     }
 
-    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    document.querySelectorAll('.nav-dropdown').forEach(function(dd, ddIdx) {
       var btn = dd.querySelector('.nav-dropdown-btn');
       var menu = dd.querySelector('.nav-dropdown-menu');
       if (!btn || btn.dataset.bound) return;
       btn.dataset.bound = 'true';
+      dd.setAttribute('data-nav-ready', 'true');
+      if (menu) {
+        if (!menu.id) {
+          var slug = (btn.textContent || ('group-' + ddIdx)).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || ('group-' + ddIdx);
+          menu.id = 'nav-dropdown-menu-' + slug;
+        }
+        btn.setAttribute('aria-controls', menu.id);
+      }
+      btn.setAttribute('aria-expanded', dd.classList.contains('is-open') ? 'true' : 'false');
       var closeTimer = null;
+      var suppressFocusOpen = false;
 
       // Tap / click toggle (works on mobile touchscreens & desktop click)
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
+        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
         var wasOpen = dd.classList.contains('is-open');
         if (wasOpen) closeDropdown(dd);
         else openDropdown(dd);
@@ -130,11 +248,20 @@ window.SITE_CONFIG = Object.freeze({
         });
       }
 
-      // Keyboard accessibility: focus opens on desktop, ArrowDown/Up navigates items, Escape closes
+      // Keyboard accessibility: focus opens on desktop (unless explicitly dismissed via Escape),
+      // ArrowDown/Up navigates items, Escape closes cleanly without reopening via :focus-within.
+      // On mobile (<1024px), focusin/focusout do not auto-open or collapse accordions so tapping
+      // another dropdown group never shifts layout during pointerdown and closes the drawer.
       dd.addEventListener('focusin', function() {
-        if (window.innerWidth >= 1024) openDropdown(dd);
+        if (window.innerWidth < 1024) return;
+        if (suppressFocusOpen) {
+          suppressFocusOpen = false;
+          return;
+        }
+        openDropdown(dd);
       });
       dd.addEventListener('focusout', function(e) {
+        if (window.innerWidth < 1024) return;
         if (!dd.contains(e.relatedTarget)) {
           closeDropdown(dd);
         }
@@ -142,8 +269,18 @@ window.SITE_CONFIG = Object.freeze({
       dd.addEventListener('keydown', function(e) {
         var items = menu ? Array.from(menu.querySelectorAll('a.nav-dropdown-item')) : [];
         if (e.key === 'Escape') {
+          var wasOpen = dd.classList.contains('is-open');
+          if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
           closeDropdown(dd);
-          btn.focus();
+          if (wasOpen) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          if (document.activeElement !== btn) {
+            suppressFocusOpen = true;
+            btn.focus();
+            suppressFocusOpen = false;
+          }
           return;
         }
         if (e.key === 'ArrowDown' && items.length) {

@@ -1560,6 +1560,14 @@
         return state.items.find(function (x) { return x.id === id; });
       }).filter(Boolean);
       if (selected.length < 2) return;
+      if (typeof window.GTA6Track === 'function') {
+        window.GTA6Track('vehicle_compare', {
+          page_category: 'database',
+          database_type: categoryKey || 'vehicles',
+          interaction_type: 'compare_modal',
+          item_count: selected.length
+        });
+      }
 
       // Only show rows where at least one selected item has a verified value
       var activeRows = (schema.compareFields || []).filter(function (cf) {
