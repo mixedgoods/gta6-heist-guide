@@ -308,20 +308,20 @@
     var savedEl = document.getElementById('mlCommunitySavedList');
     var recentEl = document.getElementById('mlCommunityRecentList');
     if (!savedEl || !recentEl || !window.GTA6Progress) return;
-    var store = window.GTA6Progress.getStore ? window.GTA6Progress.getStore() : null;
-    var ts = (store && store.toolStates) || {};
-    var savedBag = (ts.savedDiscoveries && typeof ts.savedDiscoveries === 'object') ? ts.savedDiscoveries : {};
+    var rawSaved = window.GTA6Progress.getToolState('savedDiscoveries');
+    var savedBag = (rawSaved && typeof rawSaved === 'object' && !Array.isArray(rawSaved)) ? rawSaved : {};
     var savedItems = Object.keys(savedBag).map(function (k) { return savedBag[k]; }).filter(function (x) {
-      return x && x.ref && window.GTA6Progress.isCompleted('cd-saved:' + x.ref);
+      return x && x.ref && window.GTA6Progress.isDone('cd-saved:' + x.ref);
     });
-    var recentItems = Array.isArray(ts.recentDiscoveries) ? ts.recentDiscoveries.slice(0, 6) : [];
+    var rawRecent = window.GTA6Progress.getToolState('recentDiscoveries');
+    var recentItems = Array.isArray(rawRecent) ? rawRecent.slice(0, 6) : [];
 
     if (!savedItems.length) {
       savedEl.innerHTML = '<div class="ml-empty-box">No saved community discoveries yet. Save any approved discovery from the <a href="/community-discoveries/" style="color:var(--neon-cyan);">Community Intelligence Network</a> to track it here.</div>';
     } else {
       savedEl.innerHTML = savedItems.map(function (it) {
         var foundKey = 'cd-verified-found:' + it.ref;
-        var isFound = Boolean(it.is_verified && window.GTA6Progress.isCompleted(foundKey));
+        var isFound = Boolean(it.is_verified && window.GTA6Progress.isDone(foundKey));
         var mapBtn = it.map_pin_id
           ? '<a href="/map?pin=' + encodeURIComponent(it.map_pin_id) + '" class="ml-btn ml-btn-secondary ml-btn-sm">Map →</a>'
           : '';
@@ -344,8 +344,8 @@
           var r = btn.getAttribute('data-cd-found');
           if (!r) return;
           var key = 'cd-verified-found:' + r;
-          var next = !window.GTA6Progress.isCompleted(key);
-          window.GTA6Progress.setCompleted(key, next);
+          var next = !window.GTA6Progress.isDone(key);
+          window.GTA6Progress.setDone(key, next);
           track('progress_category_update', { category: 'community_discovery', completed: next });
           renderCommunityDiscoveries();
         });
@@ -354,9 +354,9 @@
         btn.addEventListener('click', function () {
           var r = btn.getAttribute('data-cd-unsave');
           if (!r) return;
-          window.GTA6Progress.setCompleted('cd-saved:' + r, false);
-          var st = window.GTA6Progress.getStore();
-          var bag = Object.assign({}, (st.toolStates && st.toolStates.savedDiscoveries) || {});
+          window.GTA6Progress.setDone('cd-saved:' + r, false);
+          var existing = window.GTA6Progress.getToolState('savedDiscoveries');
+          var bag = Object.assign({}, (existing && typeof existing === 'object' && !Array.isArray(existing)) ? existing : {});
           delete bag[r];
           window.GTA6Progress.setToolState('savedDiscoveries', bag);
           track('discovery_bookmark', { saved: false });

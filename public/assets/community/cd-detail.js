@@ -29,11 +29,10 @@
   function recordRecentDiscovery() {
     try {
       if (!window.GTA6Progress || !ref) return;
-      var store = window.GTA6Progress.getStore ? window.GTA6Progress.getStore() : null;
-      if (!store) return;
-      var list = (store.toolStates && Array.isArray(store.toolStates.recentDiscoveries))
-        ? store.toolStates.recentDiscoveries.slice()
-        : [];
+      var cur = typeof window.GTA6Progress.getToolState === 'function'
+        ? window.GTA6Progress.getToolState('recentDiscoveries')
+        : null;
+      var list = Array.isArray(cur) ? cur.slice() : [];
       list = list.filter(function (item) { return item && item.ref !== ref; });
       list.unshift({
         ref: ref,
@@ -69,18 +68,18 @@
 
   function refreshButtons() {
     if (!window.GTA6Progress) return;
-    var isSaved = window.GTA6Progress.isCompleted(saveKey);
+    var isSaved = window.GTA6Progress.isDone(saveKey);
     if (saveBtn) {
       saveBtn.classList.toggle('is-active', isSaved);
       saveBtn.textContent = isSaved ? '★ Saved in My Leonida' : '☆ Save to My Leonida';
     }
     if (pinBtn && pinFavKey) {
-      var isPinSaved = window.GTA6Progress.isCompleted(pinFavKey);
+      var isPinSaved = window.GTA6Progress.isDone(pinFavKey);
       pinBtn.classList.toggle('is-active', isPinSaved);
       pinBtn.textContent = isPinSaved ? '📌 Map Location Bookmarked' : '📌 Bookmark Map Location';
     }
     if (foundBtn && isVerified) {
-      var isFound = window.GTA6Progress.isCompleted(foundKey);
+      var isFound = window.GTA6Progress.isDone(foundKey);
       foundBtn.classList.toggle('is-verified-found', isFound);
       foundBtn.textContent = isFound ? '✓ Verified Discovery Found' : '✓ Mark Verified Discovery Found';
     }
@@ -89,13 +88,13 @@
   if (saveBtn) {
     saveBtn.addEventListener('click', function () {
       if (!window.GTA6Progress) return;
-      var next = !window.GTA6Progress.isCompleted(saveKey);
-      window.GTA6Progress.setCompleted(saveKey, next);
+      var next = !window.GTA6Progress.isDone(saveKey);
+      window.GTA6Progress.setDone(saveKey, next);
       // Save lightweight metadata in toolStates.savedDiscoveries for My Leonida display
       try {
-        var store = window.GTA6Progress.getStore();
-        var bag = (store.toolStates && store.toolStates.savedDiscoveries && typeof store.toolStates.savedDiscoveries === 'object')
-          ? Object.assign({}, store.toolStates.savedDiscoveries)
+        var existing = window.GTA6Progress.getToolState('savedDiscoveries');
+        var bag = (existing && typeof existing === 'object' && !Array.isArray(existing))
+          ? Object.assign({}, existing)
           : {};
         if (next) {
           bag[ref] = {
@@ -123,8 +122,8 @@
   if (pinBtn && pinFavKey) {
     pinBtn.addEventListener('click', function () {
       if (!window.GTA6Progress) return;
-      var next = !window.GTA6Progress.isCompleted(pinFavKey);
-      window.GTA6Progress.setCompleted(pinFavKey, next);
+      var next = !window.GTA6Progress.isDone(pinFavKey);
+      window.GTA6Progress.setDone(pinFavKey, next);
       refreshButtons();
       setStatusText(next ? 'Map location bookmarked in My Leonida.' : 'Map location bookmark removed.');
       track('discovery_bookmark', { category: category, region: region, saved: next, interaction_type: 'map_location_bookmark' });
@@ -134,8 +133,8 @@
   if (foundBtn && isVerified) {
     foundBtn.addEventListener('click', function () {
       if (!window.GTA6Progress) return;
-      var next = !window.GTA6Progress.isCompleted(foundKey);
-      window.GTA6Progress.setCompleted(foundKey, next);
+      var next = !window.GTA6Progress.isDone(foundKey);
+      window.GTA6Progress.setDone(foundKey, next);
       refreshButtons();
       setStatusText(next ? 'Marked verified discovery as found in My Leonida.' : 'Unmarked verified discovery.');
       track('progress_category_update', { category: 'community_discovery', completed: next });

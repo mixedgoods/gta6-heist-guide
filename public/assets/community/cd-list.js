@@ -24,12 +24,12 @@
   function toggleBookmark(it, btn) {
     if (!window.GTA6Progress) return;
     var key = 'cd-saved:' + it.ref;
-    var next = !window.GTA6Progress.isCompleted(key);
-    window.GTA6Progress.setCompleted(key, next);
+    var next = !window.GTA6Progress.isDone(key);
+    window.GTA6Progress.setDone(key, next);
     try {
-      var store = window.GTA6Progress.getStore();
-      var bag = (store.toolStates && store.toolStates.savedDiscoveries && typeof store.toolStates.savedDiscoveries === 'object')
-        ? Object.assign({}, store.toolStates.savedDiscoveries)
+      var existing = window.GTA6Progress.getToolState('savedDiscoveries');
+      var bag = (existing && typeof existing === 'object' && !Array.isArray(existing))
+        ? Object.assign({}, existing)
         : {};
       if (next) {
         bag[it.ref] = {
@@ -105,9 +105,9 @@
       links.appendChild(m);
     }
 
-    var saveBtn = el('button', 'disc-pill', (window.GTA6Progress && window.GTA6Progress.isCompleted('cd-saved:' + it.ref)) ? '★ Saved' : '☆ Save');
+    var saveBtn = el('button', 'disc-pill', (window.GTA6Progress && window.GTA6Progress.isDone('cd-saved:' + it.ref)) ? '★ Saved' : '☆ Save');
     saveBtn.type = 'button';
-    saveBtn.setAttribute('aria-pressed', (window.GTA6Progress && window.GTA6Progress.isCompleted('cd-saved:' + it.ref)) ? 'true' : 'false');
+    saveBtn.setAttribute('aria-pressed', (window.GTA6Progress && window.GTA6Progress.isDone('cd-saved:' + it.ref)) ? 'true' : 'false');
     saveBtn.addEventListener('click', function () { toggleBookmark(it, saveBtn); });
     links.appendChild(saveBtn);
 
