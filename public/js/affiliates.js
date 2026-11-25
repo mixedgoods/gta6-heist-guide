@@ -1033,10 +1033,32 @@ window.getGTA6LaunchBannerText = function() {
   }
 
   // 5. DOM MOUNTING & ANALYTICS CLICK TRACKING
+  function isAffiliateClickTrackingEnabled() {
+    var cfg = global.SITE_CONFIG;
+    return !(cfg && cfg.enableAffiliateClickTracking === false);
+  }
+
+  function wrapMainAffiliateTracking() {
+    var g = global.GTA6;
+    if (!g || typeof g.initAffiliateTracking !== 'function') return false;
+    if (g.initAffiliateTracking._gta6Wrapped) return true;
+    var origInit = g.initAffiliateTracking;
+    var wrapped = function() {
+      if (global._gta6MainAffTrackingBound) return;
+      global._gta6MainAffTrackingBound = true;
+      return origInit.apply(this, arguments);
+    };
+    wrapped._gta6Wrapped = true;
+    g.initAffiliateTracking = wrapped;
+    return true;
+  }
+
+  // Wrap main.js initAffiliateTracking early if main.js executed before affiliates.js
+  wrapMainAffiliateTracking();
+
   function sendAnonymousClickBeacon(payload) {
     try {
-      var cfg = global.SITE_CONFIG || {};
-      if (!cfg.enableAffiliateClickTracking) return;
+      if (!isAffiliateClickTrackingEnabled()) return;
       var body = JSON.stringify(payload);
       if (global.navigator && typeof global.navigator.sendBeacon === 'function') {
         var blob = new Blob([body], { type: 'application/json' });
@@ -1052,12 +1074,16 @@ window.getGTA6LaunchBannerText = function() {
     } catch (err) {}
   }
 
-  function bindAffiliateAnalytics() {
-    if (global._gta6AffClickBound) return;
+  function bindAffiliateAnalyticsNow() {
+    wrapMainAffiliateTracking();
+    if (global._gta6MainAffTrackingBound || global._gta6AffClickBound) return;
+    if (!isAffiliateClickTrackingEnabled()) return;
     global._gta6AffClickBound = true;
     document.addEventListener('click', function(e) {
       try {
-        var link = e.target && e.target.closest ? e.target.closest('a[data-aff-partner], a[href*="amazon.com"]') : null;
+        if (global._gta6MainAffTrackingBound) return;
+        if (!isAffiliateClickTrackingEnabled()) return;
+        var link = e.target && e.target.closest ? e.target.closest('a[data-aff-partner], a[href*="amazon.com"], a[href*="amzn.to"]') : null;
         if (!link) return;
         var partner = link.getAttribute('data-aff-partner') || 'amazon';
         var productKey = link.getAttribute('data-aff-product') || link.getAttribute('data-amazon-link') || 'inline';
@@ -1081,6 +1107,22 @@ window.getGTA6LaunchBannerText = function() {
         });
       } catch (err) {}
     }, { passive: true });
+  }
+
+  function bindAffiliateAnalytics() {
+    var hasMainTracker = wrapMainAffiliateTracking();
+    if (global._gta6MainAffTrackingBound || global._gta6AffClickBound) return;
+    if (!isAffiliateClickTrackingEnabled()) return;
+    if (hasMainTracker) {
+      if (global._gta6AffClickDeferScheduled) return;
+      global._gta6AffClickDeferScheduled = true;
+      setTimeout(function() {
+        global._gta6AffClickDeferScheduled = false;
+        bindAffiliateAnalyticsNow();
+      }, 0);
+      return;
+    }
+    bindAffiliateAnalyticsNow();
   }
 
   function mountAllSlots() {
