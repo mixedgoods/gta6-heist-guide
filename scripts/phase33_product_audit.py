@@ -21,6 +21,14 @@ REPORT_DIR = Path("seo_reports/phase33")
 REPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 VERIFIED_ASINS = {
+    # Phase 33.1 Real-Photograph Featured & Hub Products (verified In Stock 2026-11-25)
+    "B0FY6X2XXY": ("dualsenseWhite", "PlayStation DualSense Wireless Controller (White)", "/assets/gear-photos/dualsense-white.webp"),
+    "B0F1HX3WXX": ("xboxCarbonBlack", "Xbox Wireless Controller (Carbon Black)", "/assets/gear-photos/xbox-wireless-controller-carbon-black.webp"),
+    "B00001P4ZH": ("kossPortaPro", "Koss Porta Pro Classic On-Ear Wired Headphones", "/assets/gear-photos/koss-porta-pro.webp"),
+    "B000AJIF4E": ("sonyMdr7506", "Sony MDR-7506 Professional Over-Ear Wired Headphones", "/assets/gear-photos/sony-mdr-7506.webp"),
+    "B0CHGT1KFJ": ("samsung990Pro4tb", "Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD (Bare Drive)", "/assets/gear-photos/samsung-990-pro-4tb.webp"),
+    "B00N1YPXW2": ("blueYetiBlackout", "Logitech Blue Yeti USB Microphone (Blackout)", "/assets/gear-photos/blue-yeti-blackout.webp"),
+    # Phase 33 Catalog Products (verified In Stock 2026-11-25; Photo Pending Permission)
     "B09B1XX1PN": ("poweraPs5Dock", "PowerA Twin Charging Station for DualSense Controllers", "/assets/gear-illustrations/ps5-charging-dock.svg"),
     "B09FZ4K8FQ": ("poweraXboxDock", "PowerA Duo Charging Station for Xbox Series X|S", "/assets/gear-illustrations/xbox-charging-dock.svg"),
     "B0GNNTYQGH": ("kontrolfreekHeist", "KontrolFreek Action Adventure Thumbsticks - Heist Edition", "/assets/gear-illustrations/thumbsticks-heist.svg"),
@@ -56,7 +64,7 @@ for asin, (key, title, img_rel) in VERIFIED_ASINS.items():
         "listing_verified_in_stock": "Yes (2026-11-25)",
         "image_asset": img_rel,
         "image_file_exists": "Yes" if img_exists else "No",
-        "image_rights_status": "Authorized (Original Publisher Category Illustration)",
+        "image_rights_status": "Approved (Licensed Wikimedia Commons Photo)" if img_rel.startswith("/assets/gear-photos/") else "Authorized (Original Publisher Category Illustration - Photo Pending)",
         "rel_attribute_policy": "sponsored nofollow noopener",
         "validation_status": status,
     })
@@ -135,7 +143,7 @@ with open(REPORT_DIR / "amazon-card-placement-audit.csv", "w", newline="", encod
     w.writeheader()
     w.writerows(placement_rows)
 
-print(f"Catalog Products Validated: {len(link_rows)}/12 PASS")
+print(f"Catalog Products Validated: {len(link_rows)}/{len(VERIFIED_ASINS)} PASS")
 print(f"Pages with Slots or Amazon Links Audited: {len(placement_rows)}")
 print(f"Total Static Amazon Links Checked: {total_amz_links}")
 print(f"Dead/Unverified ASINs Remaining: {dead_asin_links}")

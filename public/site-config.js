@@ -7,9 +7,16 @@ window.SITE_CONFIG = Object.freeze({
   domain: "https://www.gta6heistguide.com",
   ownerContactEmail: "inquiries@gta6heistguide.com",
 
-  // Centralized Amazon Associates Direct Links — Phase 33 Verified In-Stock ASINs (Tag: gta6heistguid-20)
+  // Centralized Amazon Associates Direct Links — Phase 33.1 Verified In-Stock ASINs (Tag: gta6heistguid-20)
   amazonLinks: {
-    // 12 Phase 33 Verified Finalist Products (verified In Stock 2026-11-25)
+    // 6 Phase 33.1 Real-Photograph Featured & Hub Products (verified In Stock 2026-11-25)
+    dualsenseWhite: "https://www.amazon.com/dp/B0FY6X2XXY?tag=gta6heistguid-20",
+    xboxCarbonBlack: "https://www.amazon.com/dp/B0F1HX3WXX?tag=gta6heistguid-20",
+    kossPortaPro: "https://www.amazon.com/dp/B00001P4ZH?tag=gta6heistguid-20",
+    sonyMdr7506: "https://www.amazon.com/dp/B000AJIF4E?tag=gta6heistguid-20",
+    samsung990Pro4tb: "https://www.amazon.com/dp/B0CHGT1KFJ?tag=gta6heistguid-20",
+    blueYetiBlackout: "https://www.amazon.com/dp/B00N1YPXW2?tag=gta6heistguid-20",
+    // 12 Phase 33 Verified Catalog Products (verified In Stock 2026-11-25; Photo Pending Permission)
     poweraPs5Dock: "https://www.amazon.com/dp/B09B1XX1PN?tag=gta6heistguid-20",
     poweraXboxDock: "https://www.amazon.com/dp/B09FZ4K8FQ?tag=gta6heistguid-20",
     kontrolfreekHeist: "https://www.amazon.com/dp/B0GNNTYQGH?tag=gta6heistguid-20",

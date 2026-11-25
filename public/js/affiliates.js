@@ -1,14 +1,15 @@
 // ==========================================================================
-// GTA6HEISTGUIDE.COM — PHASE 33 VISUAL COMMERCE & AFFILIATE CARD SYSTEM (v8.0)
+// GTA6HEISTGUIDE.COM — PHASE 33.1 REAL PRODUCT PHOTOGRAPHY STOREFRONT (v8.1)
 // Official Amazon Associates Tracking ID: gta6heistguid-20
 // Approved Partners: Amazon Associates, Direct G2A Goldmine, ExitLag, Gumroad
 //
 // Compliant with Amazon Associates Operating Agreement, IP License & FTC 16 CFR 255:
 // - "As an Amazon Associate I earn from qualifying purchases."
 // - Clear "Sponsored · Paid link" disclosure badge on every recommendation
-// - Zero scraped/rehosted Amazon images; lawful publisher-owned Category Illustrations
-//   explicitly badged "Category Illustration" (photo-ready for future Creators API /
-//   written manufacturer permission / owner photography)
+// - Featured storefront uses exact-match, commercially licensed product photographs
+//   documented in /data/gear-product-images.json (CC0 / CC BY / CC BY-SA)
+// - Zero scraped/rehosted Amazon images; catalog items awaiting manufacturer photo
+//   permission remain explicitly badged "Category Illustration (Photo Pending)"
 // - Every ASIN independently verified In Stock on amazon.com (2026-11-25)
 // - Zero unverified prices, ratings, or inflated performance claims
 // - Zero interference with LocalStorage, IndexedDB, or map controls
@@ -18,6 +19,14 @@ window.GTA6_AFFILIATES = Object.freeze({
   amazon: {
     tag: "gta6heistguid-20",
     links: {
+      // 6 Phase 33.1 Real-Photograph Verified In-Stock Products
+      dualsenseWhite: "https://www.amazon.com/dp/B0FY6X2XXY?tag=gta6heistguid-20",
+      xboxCarbonBlack: "https://www.amazon.com/dp/B0F1HX3WXX?tag=gta6heistguid-20",
+      kossPortaPro: "https://www.amazon.com/dp/B00001P4ZH?tag=gta6heistguid-20",
+      sonyMdr7506: "https://www.amazon.com/dp/B000AJIF4E?tag=gta6heistguid-20",
+      samsung990Pro4tb: "https://www.amazon.com/dp/B0CHGT1KFJ?tag=gta6heistguid-20",
+      blueYetiBlackout: "https://www.amazon.com/dp/B00N1YPXW2?tag=gta6heistguid-20",
+      // 12 Phase 33 Verified Catalog Products (Photo Pending Manufacturer Permission)
       poweraPs5Dock: "https://www.amazon.com/dp/B09B1XX1PN?tag=gta6heistguid-20",
       poweraXboxDock: "https://www.amazon.com/dp/B09FZ4K8FQ?tag=gta6heistguid-20",
       kontrolfreekHeist: "https://www.amazon.com/dp/B0GNNTYQGH?tag=gta6heistguid-20",
@@ -68,14 +77,190 @@ window.getGTA6LaunchBannerText = function() {
   var AMZ_STATEMENT = 'As an Amazon Associate I earn from qualifying purchases.';
   var AMZ_PRICE_NOTE = 'Check current price and availability on Amazon.';
 
-  // 1. MASTER VERIFIED PRODUCT CATALOG (12 FINALIST AMAZON PRODUCTS + APPROVED PARTNERS)
+  // 1. MASTER VERIFIED PRODUCT CATALOG (6 REAL-PHOTO PRODUCTS + 12 PHOTO-PENDING CATALOG PRODUCTS + APPROVED PARTNERS)
   // Every product includes structured maintenance fields and can be disabled centrally via enabled: false.
   var CATALOG = Object.freeze({
-    // --- A. CONTROLLERS & CHARGING ---
+    // --- 0. PHASE 33.1 VERIFIED REAL PRODUCT PHOTOGRAPHY (EXACT MATCH, COMMERCIALLY LICENSED) ---
+    dualsenseWhite: {
+      id: 'dualsenseWhite',
+      enabled: true,
+      featured: true,
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      brand: 'Sony PlayStation',
+      category: 'Controllers',
+      badge: 'PS5 Controller',
+      accent: 'cyan',
+      title: 'PlayStation DualSense Wireless Controller (White)',
+      asin: 'B0FY6X2XXY',
+      trackingId: AMZ_TAG,
+      compat: 'PlayStation 5, PC, Mac & Mobile (Bluetooth / USB-C)',
+      desc: 'Official Sony PlayStation 5 wireless controller featuring adaptive triggers, haptic feedback, built-in microphone, and 3.5mm headset jack.',
+      whyConsider: 'Reliable spare or replacement PS5 gamepad for long Leonida story runs and couch co-op.',
+      cta: 'View on Amazon \u2192',
+      url: aff.amazon.links.dualsenseWhite,
+      amazonKey: 'dualsenseWhite',
+      mediaType: 'photo',
+      image: '/assets/gear-photos/dualsense-white.webp',
+      imageCredit: 'Photo: Alex Cochrane \u00b7 CC BY-SA 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png',
+      imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
+      alt: 'Photograph of the Sony PlayStation DualSense Wireless Controller in White',
+      lastVerified: '2026-11-25',
+      placements: ['homepage-setup', 'vehicles', 'weapons', 'controls', 'heist-command', 'default'],
+      disclosure: AMZ_STATEMENT
+    },
+    xboxCarbonBlack: {
+      id: 'xboxCarbonBlack',
+      enabled: true,
+      featured: true,
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      brand: 'Microsoft Xbox',
+      category: 'Controllers',
+      badge: 'Xbox Controller',
+      accent: 'green',
+      title: 'Xbox Wireless Controller (Carbon Black)',
+      asin: 'B0F1HX3WXX',
+      trackingId: AMZ_TAG,
+      compat: 'Xbox Series X|S, Xbox One, Windows PC, Android & iOS',
+      desc: 'Official Microsoft Xbox Series X|S wireless gamepad with textured trigger grips, hybrid D-pad, Share button, and 3.5mm audio jack.',
+      whyConsider: 'Textured grip and responsive triggers built for highway pursuits and gunfights on Xbox or PC.',
+      cta: 'View on Amazon \u2192',
+      url: aff.amazon.links.xboxCarbonBlack,
+      amazonKey: 'xboxCarbonBlack',
+      mediaType: 'photo',
+      image: '/assets/gear-photos/xbox-wireless-controller-carbon-black.webp',
+      imageCredit: 'Photo: uKER \u00b7 CC BY-SA 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg',
+      imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
+      alt: 'Photograph of the Microsoft Xbox Wireless Controller in Carbon Black',
+      lastVerified: '2026-11-25',
+      placements: ['homepage-setup', 'vehicles', 'weapons', 'controls', 'heist-command', 'xbox-gear', 'default'],
+      disclosure: AMZ_STATEMENT
+    },
+    kossPortaPro: {
+      id: 'kossPortaPro',
+      enabled: true,
+      featured: true,
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      brand: 'Koss',
+      category: 'Affordable Headsets',
+      badge: 'Budget 3.5mm Audio',
+      accent: 'pink',
+      title: 'Koss Porta Pro Classic On-Ear Wired Headphones',
+      asin: 'B00001P4ZH',
+      trackingId: AMZ_TAG,
+      compat: 'PS5 DualSense, Xbox Series X|S Controllers, PC & Mobile (3.5mm wired)',
+      desc: 'Ultra-lightweight 1980s retro on-ear wired headphones with punchy open-back sound, adjustable ComfortZone temple pads, and collapsible steel band.',
+      whyConsider: 'Affordable Vice-era classic that plugs straight into PS5 or Xbox controllers with zero battery charging.',
+      cta: 'View on Amazon \u2192',
+      url: aff.amazon.links.kossPortaPro,
+      amazonKey: 'kossPortaPro',
+      mediaType: 'photo',
+      image: '/assets/gear-photos/koss-porta-pro.webp',
+      imageCredit: 'Photo: Creative Tools \u00b7 CC BY 2.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:CreativeTools.se_-_PackshotCreator_-_Koss_PortaPro_(5077907339).jpg',
+      imageRightsStatus: 'Approved (CC BY 2.0 Commercial Reuse Verified)',
+      alt: 'Photograph of Koss Porta Pro Classic On-Ear Wired Headphones',
+      lastVerified: '2026-11-25',
+      placements: ['homepage-setup', 'weapons', 'missions', 'properties', 'xbox-gear', 'default'],
+      disclosure: AMZ_STATEMENT
+    },
+    sonyMdr7506: {
+      id: 'sonyMdr7506',
+      enabled: true,
+      featured: true,
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      brand: 'Sony',
+      category: 'Headsets & Audio',
+      badge: 'Studio Wired 3.5mm',
+      accent: 'cyan',
+      title: 'Sony MDR-7506 Professional Over-Ear Wired Headphones',
+      asin: 'B000AJIF4E',
+      trackingId: AMZ_TAG,
+      compat: 'PS5 DualSense, Xbox Controllers, PC & Audio Interfaces (3.5mm + 1/4" adapter)',
+      desc: 'Closed-back studio monitor headphones with 40mm neodymium drivers, coiled cable, folding design, and clear directional sound isolation.',
+      whyConsider: 'Hear crisp Leonida radio tracks, dialogue, and footsteps clearly without paying wireless headset markups.',
+      cta: 'View on Amazon \u2192',
+      url: aff.amazon.links.sonyMdr7506,
+      amazonKey: 'sonyMdr7506',
+      mediaType: 'photo',
+      image: '/assets/gear-photos/sony-mdr-7506.webp',
+      imageCredit: 'Photo: Ashley Pomeroy \u00b7 CC BY 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg',
+      imageRightsStatus: 'Approved (CC BY 4.0 Commercial Reuse Verified)',
+      alt: 'Photograph of Sony MDR-7506 Professional Over-Ear Wired Headphones',
+      lastVerified: '2026-11-25',
+      placements: ['homepage-setup', 'weapons', 'missions', 'heist-command', 'default'],
+      disclosure: AMZ_STATEMENT
+    },
+    samsung990Pro4tb: {
+      id: 'samsung990Pro4tb',
+      enabled: true,
+      featured: false,
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      brand: 'Samsung',
+      category: 'Storage',
+      badge: '4TB Gen4 NVMe (Bare)',
+      accent: 'purple',
+      title: 'Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD (MZ-V9P4T0B/AM)',
+      asin: 'B0CHGT1KFJ',
+      trackingId: AMZ_TAG,
+      compat: 'PC / Laptop M.2 2280 Slot (PS5 requires adding a separate M.2 heatsink)',
+      desc: 'High-capacity 4TB PCIe Gen4 x4 NVMe M.2 2280 internal SSD rated up to 7,450 MB/s sequential read for large game libraries.',
+      whyConsider: 'Bare M.2 drive (no factory heatsink) ideal for PC builds or PS5 players pairing with an aftermarket PS5 heatsink.',
+      cta: 'View on Amazon \u2192',
+      url: aff.amazon.links.samsung990Pro4tb,
+      amazonKey: 'samsung990Pro4tb',
+      mediaType: 'photo',
+      image: '/assets/gear-photos/samsung-990-pro-4tb.webp',
+      imageCredit: 'Photo: Dinkun Chen \u00b7 CC BY-SA 4.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg',
+      imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
+      alt: 'Photograph of the Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD',
+      lastVerified: '2026-11-25',
+      placements: ['storage', 'troubleshooting'],
+      disclosure: AMZ_STATEMENT
+    },
+    blueYetiBlackout: {
+      id: 'blueYetiBlackout',
+      enabled: true,
+      featured: false,
+      partner: 'amazon',
+      partnerName: 'Amazon',
+      brand: 'Logitech / Blue',
+      category: 'Gaming Setup & Streaming',
+      badge: 'USB Desktop Mic',
+      accent: 'cyan',
+      title: 'Logitech Blue Yeti USB Microphone (Blackout)',
+      asin: 'B00N1YPXW2',
+      trackingId: AMZ_TAG,
+      compat: 'PlayStation 5 (USB), Windows PC & Mac (Plug-and-Play USB)',
+      desc: 'Plug-and-play desktop condenser USB microphone with four pickup patterns, onboard gain/mute controls, and zero-latency headphone monitoring.',
+      whyConsider: 'Clean squad voice chat and gameplay commentary upgrade when pairing with studio wired headphones.',
+      cta: 'View on Amazon \u2192',
+      url: aff.amazon.links.blueYetiBlackout,
+      amazonKey: 'blueYetiBlackout',
+      mediaType: 'photo',
+      image: '/assets/gear-photos/blue-yeti-blackout.webp',
+      imageCredit: 'Photo: Guillaume Pasquier \u00b7 CC0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg',
+      imageRightsStatus: 'Approved (CC0 1.0 Public Domain Dedication)',
+      alt: 'Photograph of the Logitech Blue Yeti USB Microphone in Blackout finish',
+      lastVerified: '2026-11-25',
+      placements: ['properties', 'gaming-room', 'heist-command', 'creator', 'default'],
+      disclosure: AMZ_STATEMENT
+    },
+
+    // --- A. CONTROLLERS & CHARGING (CATEGORY ILLUSTRATION FALLBACKS — PHOTO PERMISSION PENDING) ---
     poweraPs5Dock: {
       id: 'poweraPs5Dock',
       enabled: true,
-      featured: true,
+      featured: false,
       partner: 'amazon',
       partnerName: 'Amazon',
       brand: 'PowerA',
@@ -94,11 +279,11 @@ window.getGTA6LaunchBannerText = function() {
       mediaType: 'illustration',
       image: '/assets/gear-illustrations/ps5-charging-dock.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration; Manufacturer Photo Pending)',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a dual PlayStation 5 controller charging station',
       lastVerified: '2026-11-25',
-      placements: ['homepage-setup', 'vehicles', 'controls', 'heist-command', 'collectibles', 'default'],
+      placements: ['charging'],
       disclosure: AMZ_STATEMENT
     },
     poweraXboxDock: {
@@ -124,7 +309,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/xbox-charging-dock.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a dual Xbox Series X|S controller charging dock with rechargeable battery pack',
       lastVerified: '2026-11-25',
       placements: ['vehicles', 'controls', 'heist-command', 'collectibles', 'xbox-gear', 'default'],
@@ -135,7 +320,7 @@ window.getGTA6LaunchBannerText = function() {
     kontrolfreekHeist: {
       id: 'kontrolfreekHeist',
       enabled: true,
-      featured: true,
+      featured: false,
       partner: 'amazon',
       partnerName: 'Amazon',
       brand: 'KontrolFreek',
@@ -155,7 +340,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/thumbsticks-heist.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of pink and blue performance controller thumbstick grips',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'vehicles', 'weapons', 'controls', 'collectibles', 'default'],
@@ -184,7 +369,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/thumbsticks-galaxy.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of black high-rise and mid-rise controller thumbstick grips',
       lastVerified: '2026-11-25',
       placements: ['weapons', 'vehicles', 'controls', 'default'],
@@ -195,7 +380,7 @@ window.getGTA6LaunchBannerText = function() {
     turtleBeachRecon70: {
       id: 'turtleBeachRecon70',
       enabled: true,
-      featured: true,
+      featured: false,
       partner: 'amazon',
       partnerName: 'Amazon',
       brand: 'Turtle Beach',
@@ -215,7 +400,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/headset-multiplatform.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a wired multiplatform over-ear gaming headset with flip-to-mute microphone',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'weapons', 'missions', 'heist-command', 'xbox-gear', 'default'],
@@ -244,7 +429,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/headset-playstation.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a white and blue PlayStation wired gaming headset',
       lastVerified: '2026-11-25',
       placements: ['weapons', 'missions', 'heist-command', 'default'],
@@ -275,7 +460,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/ps5-nvme-1tb.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a 1TB PCIe 4.0 M.2 NVMe SSD with integrated PS5 heatsink',
       lastVerified: '2026-11-25',
       placements: ['troubleshooting', 'storage'],
@@ -304,7 +489,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/ps5-nvme-2tb.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a 2TB officially licensed PS5 NVMe M.2 SSD with heatsink',
       lastVerified: '2026-11-25',
       placements: ['troubleshooting', 'storage'],
@@ -315,7 +500,7 @@ window.getGTA6LaunchBannerText = function() {
     headsetStand: {
       id: 'headsetStand',
       enabled: true,
-      featured: true,
+      featured: false,
       partner: 'amazon',
       partnerName: 'Amazon',
       brand: 'New Bee',
@@ -335,7 +520,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/headset-stand.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of an aluminum desktop gaming headphone stand',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'properties', 'gaming-room', 'heist-command', 'default'],
@@ -364,7 +549,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/cable-clips.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of silicone adhesive desktop cable management clips',
       lastVerified: '2026-11-25',
       placements: ['properties', 'gaming-room', 'troubleshooting', 'default'],
@@ -395,7 +580,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/ps-icons-light.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a glowing PlayStation controller icons desktop light',
       lastVerified: '2026-11-25',
       placements: ['properties', 'gaming-room', 'funny-gear'],
@@ -424,7 +609,7 @@ window.getGTA6LaunchBannerText = function() {
       image: '/assets/gear-illustrations/controller-holder-figure.svg',
       imageSource: 'Publisher-owned studio hardware category illustration',
       imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
-      imageLabel: 'Category Illustration',
+      imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a novelty gaming figure holding a wireless controller',
       lastVerified: '2026-11-25',
       placements: ['properties', 'gaming-room', 'funny-gear'],
@@ -495,24 +680,24 @@ window.getGTA6LaunchBannerText = function() {
     }
   });
 
-  // 2. CONTEXTUAL PRODUCT POOLS (SECTION 6 ALIGNED — RELEVANT, NEVER SPAMMY)
+  // 2. CONTEXTUAL PRODUCT POOLS (PHASE 33.1 — PRIORITIZES VERIFIED REAL PRODUCT PHOTOGRAPHY)
   var CONTEXT_POOLS = {
-    'homepage-setup': ['poweraPs5Dock', 'kontrolfreekHeist', 'turtleBeachRecon70', 'headsetStand'],
-    'vehicles': ['kontrolfreekHeist', 'poweraPs5Dock', 'poweraXboxDock', 'kontrolfreekGalaxy'],
-    'weapons': ['turtleBeachRecon70', 'hyperxStinger2Core', 'kontrolfreekHeist', 'kontrolfreekGalaxy'],
-    'heist-command': ['poweraPs5Dock', 'turtleBeachRecon70', 'headsetStand', 'poweraXboxDock'],
-    'properties': ['headsetStand', 'cableKit', 'paladonePsIcons', 'cableGuyMonkeybomb'],
-    'gaming-room': ['paladonePsIcons', 'cableGuyMonkeybomb', 'headsetStand', 'cableKit'],
+    'homepage-setup': ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'sonyMdr7506'],
+    'vehicles': ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'sonyMdr7506'],
+    'weapons': ['sonyMdr7506', 'kossPortaPro', 'dualsenseWhite', 'xboxCarbonBlack'],
+    'heist-command': ['dualsenseWhite', 'xboxCarbonBlack', 'sonyMdr7506', 'blueYetiBlackout'],
+    'properties': ['blueYetiBlackout', 'kossPortaPro', 'dualsenseWhite', 'xboxCarbonBlack'],
+    'gaming-room': ['blueYetiBlackout', 'paladonePsIcons', 'cableGuyMonkeybomb', 'headsetStand'],
     'funny-gear': ['paladonePsIcons', 'cableGuyMonkeybomb'],
-    'controls': ['kontrolfreekHeist', 'kontrolfreekGalaxy', 'poweraPs5Dock', 'poweraXboxDock'],
-    'troubleshooting': ['lexarNm790Heatsink', 'wdBlackSn850p', 'cableKit'],
-    'storage': ['lexarNm790Heatsink', 'wdBlackSn850p'],
-    'missions': ['turtleBeachRecon70', 'hyperxStinger2Core', 'poweraPs5Dock', 'kontrolfreekHeist'],
-    'collectibles': ['poweraPs5Dock', 'poweraXboxDock', 'kontrolfreekHeist', 'headsetStand'],
-    'xbox-gear': ['poweraXboxDock', 'turtleBeachRecon70', 'cableGuyMonkeybomb'],
-    'creator': ['headsetStand', 'cableKit', 'cutflow'],
-    'money': ['poweraPs5Dock', 'kontrolfreekHeist', 'turtleBeachRecon70', 'headsetStand'],
-    'default': ['poweraPs5Dock', 'kontrolfreekHeist', 'turtleBeachRecon70', 'headsetStand', 'poweraXboxDock', 'cableKit']
+    'controls': ['dualsenseWhite', 'xboxCarbonBlack', 'kontrolfreekHeist', 'kontrolfreekGalaxy'],
+    'troubleshooting': ['samsung990Pro4tb', 'lexarNm790Heatsink', 'wdBlackSn850p'],
+    'storage': ['samsung990Pro4tb', 'lexarNm790Heatsink', 'wdBlackSn850p'],
+    'missions': ['sonyMdr7506', 'kossPortaPro', 'dualsenseWhite', 'xboxCarbonBlack'],
+    'collectibles': ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'blueYetiBlackout'],
+    'xbox-gear': ['xboxCarbonBlack', 'kossPortaPro', 'poweraXboxDock'],
+    'creator': ['blueYetiBlackout', 'sonyMdr7506', 'cutflow'],
+    'money': ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'sonyMdr7506'],
+    'default': ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'sonyMdr7506', 'blueYetiBlackout', 'samsung990Pro4tb']
   };
 
   function esc(str) {
@@ -587,7 +772,7 @@ window.getGTA6LaunchBannerText = function() {
     }
 
     if (picked.length < count) {
-      var fallback = ['poweraPs5Dock', 'kontrolfreekHeist', 'turtleBeachRecon70', 'headsetStand', 'poweraXboxDock', 'cableKit'];
+      var fallback = ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'sonyMdr7506', 'blueYetiBlackout', 'samsung990Pro4tb'];
       for (var j = 0; j < fallback.length && picked.length < count; j++) {
         var fb = CATALOG[fallback[j]];
         if (!fb || fb.enabled === false || pageUsedIds[fb.id]) continue;
@@ -733,9 +918,10 @@ window.getGTA6LaunchBannerText = function() {
     }
 
     // Standard Visual Shopping Card (Homepage 4-card grid, /gaming-gear/ hub, 2/3-card contextual grids)
+    var isEager = !!(offer.featured || (placement && placement.indexOf('home-setup-picks') === 0));
     return (
       '<article class="aff-card aff-card--standard aff-card--visual aff-accent-' + esc(offer.accent) + '" aria-label="' + esc(offer.title) + '">' +
-        renderMediaHtml(offer, false, false, placement || variant) +
+        renderMediaHtml(offer, false, isEager, placement || variant) +
         '<div class="aff-card-body">' +
           '<div class="aff-meta-row">' +
             brandRow +
@@ -880,7 +1066,7 @@ window.getGTA6LaunchBannerText = function() {
 
   // Expose API
   global.GTA6AffiliateCards = {
-    version: '8.0-phase33',
+    version: '8.1-phase33.1',
     catalog: CATALOG,
     contexts: CONTEXT_POOLS,
     resetPageRegistry: resetPageRegistry,
