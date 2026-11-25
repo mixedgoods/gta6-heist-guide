@@ -6531,3 +6531,221 @@ footer .footer-brand-logo:hover .footer-brand-logo-img {
   border-color: rgba(255, 153, 0, 0.35);
   color: #ffb84d;
 }
+
+
+/* ==========================================================================
+   PHASE 33 — VISUAL COMMERCE PRODUCT CARD SYSTEM (STUDIO SHOWCASE STAGE)
+   ========================================================================== */
+.aff-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.aff-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 1120px) {
+  .aff-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .aff-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .aff-grid-4,
+  .aff-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aff-card--visual {
+  background: linear-gradient(165deg, rgba(17, 24, 39, 0.98), rgba(9, 13, 24, 0.99));
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.34);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.aff-card--visual:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 240, 255, 0.58);
+  box-shadow: 0 18px 36px rgba(0, 240, 255, 0.14);
+}
+
+/* Prominent Neutral Studio Showcase Stage (180-240px target visual focus) */
+.aff-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 175px;
+  max-height: 220px;
+  padding: 0;
+  background: #f1f5f9;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+  overflow: hidden;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.aff-stage--compact {
+  width: 170px;
+  min-width: 170px;
+  min-height: 128px;
+  max-height: 144px;
+  aspect-ratio: 4 / 3;
+  border-bottom: none;
+  border-right: 1px solid rgba(148, 163, 184, 0.2);
+}
+.aff-stage-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.22s ease;
+}
+.aff-card--visual:hover .aff-stage-img {
+  transform: scale(1.04);
+}
+.aff-stage-badge {
+  position: absolute;
+  bottom: 7px;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.44rem;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.82);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.aff-brand-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f8fafc;
+  background: rgba(56, 189, 248, 0.16);
+  border: 1px solid rgba(56, 189, 248, 0.34);
+  padding: 0.14rem 0.46rem;
+  border-radius: 4px;
+}
+
+.aff-card--visual .aff-card-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0.15rem 0 0;
+}
+.aff-card--visual .aff-card-desc {
+  font-size: 0.79rem;
+  line-height: 1.46;
+  color: #cbd5e1;
+  margin: 0.1rem 0 0;
+}
+.aff-card--visual .aff-card-compat {
+  font-size: 0.73rem;
+  line-height: 1.38;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 0.32rem 0.52rem;
+  margin-top: 0.25rem;
+}
+.aff-card--visual .aff-compat-label {
+  font-weight: 800;
+  color: #e2e8f0;
+}
+.aff-card-why {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #d1fae5;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.26);
+  border-radius: 6px;
+  padding: 0.34rem 0.52rem;
+  margin-top: 0.22rem;
+}
+.aff-why-dot {
+  color: #34d399;
+  font-weight: 900;
+  margin-right: 0.2rem;
+}
+.aff-price-note {
+  font-size: 0.69rem;
+  line-height: 1.35;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 0.12rem;
+}
+.aff-cta--amazon {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: #0b0f19 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.28);
+}
+.aff-cta--amazon:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.42);
+}
+.aff-hub-inline-link {
+  color: var(--neon-cyan);
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.aff-hub-inline-link:hover {
+  text-decoration: underline;
+}
+.aff-module-disclosure {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* Horizontal & Compact responsive adjustments */
+.aff-card--horizontal.aff-card--visual {
+  flex-direction: row;
+  align-items: stretch;
+}
+.aff-card--horizontal.aff-card--visual .aff-stage {
+  width: 240px;
+  min-width: 220px;
+  max-height: none;
+  border-bottom: none;
+  border-right: 1px solid rgba(148, 163, 184, 0.2);
+}
+@media (max-width: 720px) {
+  .aff-card--horizontal.aff-card--visual,
+  .aff-card--compact.aff-card--visual {
+    flex-direction: column;
+  }
+  .aff-card--horizontal.aff-card--visual .aff-stage,
+  .aff-stage--compact {
+    width: 100%;
+    min-width: 0;
+    max-height: 190px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  }
+}

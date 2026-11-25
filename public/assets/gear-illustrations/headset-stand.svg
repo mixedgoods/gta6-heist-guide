@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Aluminum Desktop Headphone Stand Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- Weighted Base -->
+    <ellipse cx="200" cy="236" rx="74" ry="16" fill="url(#metalDark)" stroke="#475569" stroke-width="2"/>
+    <ellipse cx="200" cy="232" rx="64" ry="11" fill="#334155"/>
+    <!-- Anodized Aluminum Pole -->
+    <rect x="192" y="74" width="16" height="158" rx="4" fill="url(#shellWhite)" stroke="#64748b" stroke-width="1.5"/>
+    <!-- Curved TPU Headband Rest -->
+    <path d="M150 82 Q200 48 250 82 L242 96 Q200 68 158 96 Z" fill="url(#metalDark)" stroke="#0284c7" stroke-width="2"/>
+    <!-- Resting Headset Outline -->
+    <path d="M148 128 C148 74 170 62 200 62 C230 62 252 74 252 128" fill="none" stroke="#38bdf8" stroke-width="5" stroke-dasharray="6 4" opacity="0.8"/>
+    <rect x="134" y="122" width="24" height="52" rx="12" fill="#1e293b" opacity="0.32"/>
+    <rect x="242" y="122" width="24" height="52" rx="12" fill="#1e293b" opacity="0.32"/>
+    <rect x="274" y="34" width="98" height="26" rx="13" fill="#334155"/>
+    <text x="323" y="51" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#f8fafc">DESK STAND</text>
+  </g>
+
+</svg>

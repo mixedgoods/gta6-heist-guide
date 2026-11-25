@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Novelty Gaming Controller and Phone Holder Stand Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- Circular Display Pedestal -->
+    <ellipse cx="200" cy="236" rx="76" ry="18" fill="url(#metalDark)" stroke="#f59e0b" stroke-width="2.5"/>
+    <ellipse cx="200" cy="230" rx="62" ry="12" fill="#334155"/>
+    <!-- Stylized Figure Silhouette -->
+    <rect x="166" y="122" width="68" height="106" rx="20" fill="url(#metalDark)" stroke="#475569" stroke-width="2"/>
+    <circle cx="200" cy="92" r="32" fill="#334155" stroke="#f59e0b" stroke-width="2.5"/>
+    <circle cx="189" cy="88" r="5" fill="#fbbf24"/>
+    <circle cx="211" cy="88" r="5" fill="#fbbf24"/>
+    <!-- Outstretched Arms Holding Gamepad -->
+    <path d="M166 150 L132 162 L144 176 L172 168 Z" fill="#475569"/>
+    <path d="M234 150 L268 162 L256 176 L228 168 Z" fill="#475569"/>
+    <!-- Cradle Gamepad -->
+    <rect x="148" y="148" width="104" height="40" rx="18" fill="url(#shellWhite)" stroke="#0f172a" stroke-width="2.5"/>
+    <circle cx="176" cy="168" r="7" fill="#0f172a"/>
+    <circle cx="224" cy="168" r="7" fill="#0f172a"/>
+    <rect x="126" y="28" width="148" height="26" rx="13" fill="#d97706"/>
+    <text x="200" y="45" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#ffffff">CONTROLLER STAND</text>
+  </g>
+
+</svg>

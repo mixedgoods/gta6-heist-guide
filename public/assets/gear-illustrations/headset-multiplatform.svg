@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Multiplatform Wired Gaming Headset Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- Headband -->
+    <path d="M116 154 C116 74 148 48 200 48 C252 48 284 74 284 154" fill="none" stroke="url(#metalDark)" stroke-width="20" stroke-linecap="round"/>
+    <path d="M132 104 C146 66 170 54 200 54 C230 54 254 66 268 104" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+    <!-- Left Earcup -->
+    <rect x="92" y="136" width="44" height="84" rx="22" fill="url(#metalDark)" stroke="#475569" stroke-width="2.5"/>
+    <rect x="122" y="144" width="16" height="68" rx="8" fill="#0f172a"/>
+    <ellipse cx="109" cy="178" rx="9" ry="22" fill="#0284c7" opacity="0.85"/>
+    <!-- Right Earcup -->
+    <rect x="264" y="136" width="44" height="84" rx="22" fill="url(#metalDark)" stroke="#475569" stroke-width="2.5"/>
+    <rect x="262" y="144" width="16" height="68" rx="8" fill="#0f172a"/>
+    <ellipse cx="291" cy="178" rx="9" ry="22" fill="#0284c7" opacity="0.85"/>
+    <!-- Flip-to-Mute Boom Mic -->
+    <path d="M108 204 Q118 242 178 240" fill="none" stroke="#334155" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="182" cy="240" rx="12" ry="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <!-- 3.5mm Badge -->
+    <rect x="278" y="34" width="94" height="26" rx="13" fill="#0f172a"/>
+    <text x="325" y="51" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#38bdf8">3.5MM MULTI</text>
+  </g>
+
+</svg>

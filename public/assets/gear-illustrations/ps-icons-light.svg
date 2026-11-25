@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="PlayStation Controller Icons Desk Light Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- Dark Ambient Glow Halo Behind Light -->
+    <rect x="52" y="96" width="296" height="124" rx="18" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <!-- Light Bar Base -->
+    <rect x="74" y="182" width="252" height="22" rx="6" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <!-- Glowing Controller Icons -->
+    <!-- Triangle (Green) -->
+    <polygon points="116,120 96,158 136,158" fill="none" stroke="#22c55e" stroke-width="7" stroke-linejoin="round"/>
+    <!-- Circle (Red/Pink) -->
+    <circle cx="172" cy="140" r="19" fill="none" stroke="#f43f5e" stroke-width="7"/>
+    <!-- Cross (Blue) -->
+    <path d="M214 123 L244 157 M244 123 L214 157" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+    <!-- Square (Pink/Violet) -->
+    <rect x="268" y="122" width="34" height="34" rx="3" fill="none" stroke="#e879f9" stroke-width="7"/>
+    <rect x="122" y="38" width="156" height="26" rx="13" fill="#4f46e5"/>
+    <text x="200" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#ffffff">3-MODE DESK LIGHT</text>
+  </g>
+
+</svg>

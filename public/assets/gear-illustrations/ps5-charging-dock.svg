@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="PS5 Twin Controller Charging Dock Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- Charging Dock Base -->
+    <path d="M96 196 L304 196 L288 236 L112 236 Z" fill="url(#metalDark)" stroke="#475569" stroke-width="2"/>
+    <rect x="108" y="182" width="184" height="22" rx="10" fill="url(#shellWhite)" stroke="#94a3b8" stroke-width="2"/>
+    <!-- LED Charging Strip -->
+    <rect x="165" y="212" width="70" height="5" rx="2.5" fill="url(#cyanGlow)"/>
+    <!-- Left Cradle Controller Silhouette -->
+    <g transform="translate(115, 78)">
+      <path d="M22 40 C8 40 2 70 8 98 C12 114 26 112 34 94 L46 76 L92 76 L104 94 C112 112 126 114 130 98 C136 70 130 40 116 40 L94 34 L44 34 Z" fill="url(#shellWhite)" stroke="#64748b" stroke-width="2"/>
+      <rect x="48" y="37" width="42" height="20" rx="4" fill="#1e293b"/>
+      <circle cx="52" cy="68" r="9" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="86" cy="68" r="9" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+      <rect x="24" y="48" width="14" height="5" rx="2" fill="#475569"/>
+      <rect x="28.5" y="43.5" width="5" height="14" rx="2" fill="#475569"/>
+      <circle cx="107" cy="46" r="3" fill="#38bdf8"/>
+      <circle cx="115" cy="52" r="3" fill="#ff2a8d"/>
+      <circle cx="107" cy="58" r="3" fill="#22c55e"/>
+      <circle cx="99" cy="52" r="3" fill="#a855f7"/>
+    </g>
+    <!-- Second Docked Controller Outline Behind -->
+    <g transform="translate(148, 42)" opacity="0.92">
+      <path d="M22 36 C10 36 6 60 11 82 C15 95 27 93 33 78 L44 64 L84 64 L95 78 C101 93 113 95 117 82 C122 60 118 36 106 36 L86 30 L42 30 Z" fill="url(#shellWhite)" stroke="#94a3b8" stroke-width="2"/>
+      <rect x="46" y="34" width="36" height="16" rx="3" fill="#334155"/>
+      <circle cx="50" cy="58" r="7" fill="#1e293b"/>
+      <circle cx="78" cy="58" r="7" fill="#1e293b"/>
+    </g>
+    <!-- Dual Charge Badge -->
+    <rect x="292" y="44" width="76" height="26" rx="13" fill="#0284c7"/>
+    <text x="330" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#ffffff">2x DOCK</text>
+  </g>
+
+</svg>

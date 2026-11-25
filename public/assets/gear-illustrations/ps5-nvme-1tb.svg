@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="1TB PS5 NVMe M.2 SSD with Integrated Heatsink Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- M.2 Heatsink Body -->
+    <g transform="translate(48, 100)">
+      <!-- Gold M.2 Connector Pins -->
+      <rect x="0" y="22" width="24" height="56" rx="3" fill="#15803d"/>
+      <rect x="2" y="26" width="16" height="6" fill="#facc15"/>
+      <rect x="2" y="36" width="16" height="6" fill="#facc15"/>
+      <rect x="2" y="46" width="16" height="6" fill="#facc15"/>
+      <rect x="2" y="60" width="16" height="6" fill="#facc15"/>
+      <rect x="2" y="70" width="16" height="6" fill="#facc15"/>
+      <!-- Heatsink Finned Chassis -->
+      <rect x="22" y="10" width="282" height="80" rx="8" fill="url(#metalDark)" stroke="#475569" stroke-width="2.5"/>
+      <line x1="36" y1="24" x2="290" y2="24" stroke="#475569" stroke-width="3"/>
+      <line x1="36" y1="36" x2="290" y2="36" stroke="#475569" stroke-width="3"/>
+      <line x1="36" y1="64" x2="290" y2="64" stroke="#475569" stroke-width="3"/>
+      <line x1="36" y1="76" x2="290" y2="76" stroke="#475569" stroke-width="3"/>
+      <rect x="52" y="38" width="222" height="24" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="163" y="54" text-anchor="middle" font-family="monospace" font-size="13" font-weight="800" fill="#4ade80">PCIe 4.0 NVMe · 1TB + HEATSINK</text>
+      <!-- Mounting Notch -->
+      <circle cx="304" cy="50" r="7" fill="#f1f5f9"/>
+    </g>
+    <rect x="130" y="42" width="140" height="26" rx="13" fill="#15803d"/>
+    <text x="200" y="59" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#ffffff">PS5 M.2 2280 READY</text>
+  </g>
+
+</svg>

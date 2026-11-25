@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Xbox Series X|S Duo Controller Charging Station Category Illustration">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="68%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </radialGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shellWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pinkGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a8d"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="xboxGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#studioBg)"/>
+  <ellipse cx="200" cy="252" rx="128" ry="16" fill="#0f172a" opacity="0.10"/>
+  
+  <g filter="url(#dropShadow)">
+    <!-- White Matte Base -->
+    <rect x="92" y="186" width="216" height="44" rx="12" fill="url(#shellWhite)" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="112" y="218" width="176" height="8" rx="4" fill="#1e293b"/>
+    <circle cx="150" cy="204" r="5" fill="#22c55e"/>
+    <circle cx="250" cy="204" r="5" fill="#22c55e"/>
+    <!-- Left Xbox Controller -->
+    <g transform="translate(96, 68)">
+      <path d="M24 38 C8 42 4 74 10 100 C15 114 28 112 36 94 L48 78 L92 78 L104 94 C112 112 125 114 130 100 C136 74 132 42 116 38 L94 32 L46 32 Z" fill="url(#metalDark)" stroke="#475569" stroke-width="2"/>
+      <circle cx="70" cy="46" r="8" fill="#f8fafc"/>
+      <path d="M66 42 L74 50 M74 42 L66 50" stroke="#15803d" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="38" cy="54" r="9" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+      <circle cx="88" cy="68" r="9" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+      <circle cx="52" cy="70" r="7" fill="#334155"/>
+      <circle cx="106" cy="48" r="3" fill="#eab308"/>
+      <circle cx="114" cy="55" r="3" fill="#ef4444"/>
+      <circle cx="106" cy="62" r="3" fill="#22c55e"/>
+      <circle cx="98" cy="55" r="3" fill="#3b82f6"/>
+    </g>
+    <!-- Right Rechargeable Battery Pack Icon -->
+    <g transform="translate(242, 84)">
+      <rect x="0" y="10" width="54" height="82" rx="10" fill="url(#metalDark)" stroke="#22c55e" stroke-width="2.5"/>
+      <rect x="16" y="2" width="22" height="10" rx="3" fill="#22c55e"/>
+      <path d="M30 30 L18 54 L28 54 L24 76 L38 48 L28 48 Z" fill="#22c55e"/>
+    </g>
+    <rect x="274" y="40" width="96" height="26" rx="13" fill="url(#xboxGreen)"/>
+    <text x="322" y="57" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#ffffff">XBOX DUO</text>
+  </g>
+
+</svg>
