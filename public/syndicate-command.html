@@ -9,15 +9,14 @@
 <link href="/assets/style.css?v=20261125_p33" rel="stylesheet"/>
 <script>
         async function loadSubscribers() {
-            const key = document.getElementById('adminKeyInput').value.trim();
             const status = document.getElementById('cmdStatus');
             const tbody = document.getElementById('subscribersTbody');
-            status.innerText = 'Querying Real-Time Database database...';
+            status.innerText = 'Querying Real-Time Database (Cloudflare Access)...';
             try {
-                const res = await fetch('/api/subscribe?list=1&key=' + encodeURIComponent(key));
-                const data = await res.json();
+                const res = await fetch('/api/cd-admin/subscribers', { credentials: 'same-origin' });
+                const data = await res.json().catch(() => ({}));
                 if (!res.ok || !data.ok) {
-                    status.innerHTML = '<span style="color:var(--neon-pink);">Failed or unauthorized: ' + (data.error || res.status) + '</span>';
+                    status.innerHTML = '<span style="color:var(--neon-pink);">Cloudflare Access required (' + res.status + '): ' + (data.error || 'Unauthorized.') + '</span>';
                     return;
                 }
                 document.getElementById('rawSubCount').innerText = data.rawCount;
@@ -41,8 +40,7 @@
         }
 
         function downloadCsv() {
-            const key = document.getElementById('adminKeyInput').value.trim();
-            window.location.href = '/api/subscribe?export=csv&key=' + encodeURIComponent(key);
+            window.location.href = '/api/cd-admin/subscribers?export=csv';
         }
 
         async function loadAffiliateClicks() {
@@ -95,12 +93,11 @@
         }
 
         async function loadContactInquiries() {
-            const key = document.getElementById('adminKeyInput').value.trim();
             const tbody = document.getElementById('cmdInquiriesTbody');
             if (!tbody) return;
             try {
-                const res = await fetch('/api/contact?key=' + encodeURIComponent(key));
-                const data = await res.json();
+                const res = await fetch('/api/cd-admin/contact-inquiries', { credentials: 'same-origin' });
+                const data = await res.json().catch(() => ({}));
                 if (!res.ok || !data.ok) return;
                 tbody.innerHTML = (data.inquiries || []).map(q => `
                     <tr>
@@ -248,14 +245,11 @@
 <p style="color:var(--text-muted); margin-bottom:1.5rem;">
             Every player who unlocks the free VIP Blueprint Pack or Mastermind badge saves straight to your Real-Time Database database. Export CSV anytime for Brevo, Mailchimp, Beehiiv, or Resend email blasts!
         </p>
-<div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-end; margin-bottom:1.5rem;">
-<div class="form-group" style="margin-bottom:0; flex:1 1 240px;">
-<label for="adminKeyInput">Owner Admin Key (for Subscriber / Contact Endpoints)</label>
-<input autocomplete="off" class="form-input" id="adminKeyInput" placeholder="Enter configured ADMIN_KEY..." type="password" value=""/>
-</div>
+<div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-bottom:1.5rem;">
+<span class="user-badge badge-hacker" style="margin:0;">🔒 Protected by Cloudflare Access (/api/cd-admin/*)</span>
 <button class="btn btn-secondary" onclick="loadAllOwnerData()" type="button">🔄 Load All D1 Records</button>
 <button class="btn btn-primary" onclick="downloadCsv()" type="button">📥 Export VIP Email Subscribers (.CSV)</button>
-<button class="btn btn-amber" onclick="GTA6.OwnerDrawer.openDrawer(document.getElementById('adminKeyInput').value.trim())" type="button">🎛️ Open Owner Command Drawer</button>
+<button class="btn btn-amber" onclick="GTA6.OwnerDrawer.openDrawer()" type="button">🎛️ Open Owner Command Drawer</button>
 </div>
 <div id="cmdStatus" style="margin-bottom:1rem; font-size:0.9rem; color:var(--neon-cyan);"></div>
 <div class="profile-stats-row" style="margin-bottom:1.5rem;">

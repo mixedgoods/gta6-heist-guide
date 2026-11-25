@@ -6285,14 +6285,6 @@ DealRotator: {
 
     OwnerDrawer: {
       isOpen: false,
-      getSavedKey() {
-        try { return sessionStorage.getItem('gta6_owner_key') || ''; } catch (e) { return ''; }
-      },
-      saveKey(key) {
-        try {
-          if (key) sessionStorage.setItem('gta6_owner_key', key);
-        } catch (e) {}
-      },
       getLocalClickCounts() {
         const counts = { amazon: 0, g2a: 0, exitlag: 0, gumroad: 0, getapexlocal: 0 };
         try {
@@ -6307,7 +6299,6 @@ DealRotator: {
       ensureDom() {
         if (document.getElementById('ownerCommandDrawer')) return;
         const wrap = document.createElement('div');
-        const saved = this.getSavedKey();
         wrap.innerHTML = `
           <aside class="bookmarks-drawer" id="ownerCommandDrawer" aria-label="Protected Owner Command Drawer" style="border-left-color:var(--neon-yellow);">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid var(--border-card); padding-bottom:0.75rem;">
@@ -6317,14 +6308,11 @@ DealRotator: {
               </div>
               <button type="button" class="modal-close-btn" style="position:static;" onclick="GTA6.OwnerDrawer.closeDrawer()" aria-label="Close Owner Drawer">${GTA6.Icons.close(15)}</button>
             </div>
-            <div class="form-group" style="margin-bottom:0.85rem;">
-              <label for="ownerDrawerKeyInput" style="font-size:0.78rem;">Owner Admin Key (Cloudflare D1 Protected)</label>
-              <div style="display:flex; gap:0.45rem;">
-                <input type="password" id="ownerDrawerKeyInput" class="form-input" placeholder="Enter admin key..." value="${saved.replace(/"/g, '&quot;')}" style="flex:1; padding:0.45rem 0.65rem; font-size:0.82rem;">
-                <button type="button" class="btn btn-secondary" onclick="GTA6.OwnerDrawer.refreshAll()" style="padding:0.45rem 0.8rem; font-size:0.78rem; white-space:nowrap;">🔄 Load</button>
-              </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.85rem;">
+              <span style="font-size:0.76rem; color:var(--neon-cyan);">🔒 Cloudflare Access Protected</span>
+              <button type="button" class="btn btn-secondary" onclick="GTA6.OwnerDrawer.refreshAll()" style="padding:0.4rem 0.75rem; font-size:0.76rem; white-space:nowrap;">🔄 Refresh All</button>
             </div>
-            <div id="ownerDrawerStatus" style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.85rem;">Enter admin key &amp; click Load to sync live Cloudflare D1 proof.</div>
+            <div id="ownerDrawerStatus" style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.85rem;">Syncing live Cloudflare D1 proof via Cloudflare Access...</div>
 
             <div class="bookmark-item" style="border-color:rgba(0,240,255,0.35);">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem;">
@@ -6352,20 +6340,14 @@ DealRotator: {
         `;
         document.body.appendChild(wrap);
       },
-      openDrawer(presetKey) {
+      openDrawer() {
         this.ensureDom();
-        if (presetKey) {
-          const inp = document.getElementById('ownerDrawerKeyInput');
-          if (inp) inp.value = presetKey;
-          this.saveKey(presetKey);
-        }
         const drawer = document.getElementById('ownerCommandDrawer');
         if (drawer) {
           drawer.classList.add('open');
           this.isOpen = true;
           this.renderLocalFallback();
-          this.refreshClicks();
-          if (this.activeKey()) this.refreshSubscribers();
+          this.refreshAll();
         }
       },
       closeDrawer() {
@@ -6376,12 +6358,6 @@ DealRotator: {
       toggleDrawer() {
         if (this.isOpen) this.closeDrawer();
         else this.openDrawer();
-      },
-      activeKey() {
-        const inp = document.getElementById('ownerDrawerKeyInput');
-        const val = (inp ? inp.value : this.getSavedKey()).trim();
-        if (val) this.saveKey(val);
-        return val;
       },
       renderLocalFallback() {
         const grid = document.getElementById('ownerPartnerClickGrid');
@@ -6446,11 +6422,9 @@ DealRotator: {
         }
       },
       async refreshSubscribers() {
-        const key = this.activeKey();
-        if (!key) return;
         try {
-          const res = await fetch('/api/subscribe?list=1&key=' + encodeURIComponent(key));
-          const data = await res.json();
+          const res = await fetch('/api/cd-admin/subscribers', { credentials: 'same-origin' });
+          const data = await res.json().catch(() => ({}));
           const el = document.getElementById('ownerD1SubCount');
           if (el && res.ok && data.ok) {
             el.textContent = `${Number(data.rawCount || 0).toLocaleString()} subscribers`;
@@ -6461,12 +6435,7 @@ DealRotator: {
         await Promise.all([this.refreshClicks(), this.refreshSubscribers()]);
       },
       exportSubscribersCsv() {
-        const key = this.activeKey();
-        if (!key) {
-          GTA6.showToast('⚠️ Enter your Owner Admin Key first.');
-          return;
-        }
-        window.location.href = '/api/subscribe?export=csv&key=' + encodeURIComponent(key);
+        window.location.href = '/api/cd-admin/subscribers?export=csv';
       },
       init() {
         document.addEventListener('keydown', (e) => {

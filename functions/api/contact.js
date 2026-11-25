@@ -1,16 +1,19 @@
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-function jsonResponse(data, status = 200) {
+function jsonResponse(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
+      "X-Robots-Tag": "noindex, nofollow",
       ...CORS_HEADERS,
+      ...extraHeaders,
     },
   });
 }
@@ -36,15 +39,23 @@ export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
 
+// Public /api/contact is strictly inquiry submission (POST only).
+// Owner inquiry listing is served exclusively behind Cloudflare Access at /api/cd-admin/contact-inquiries.
+export async function onRequestGet() {
+  return jsonResponse({ ok: false, error: "Method not allowed." }, 405, {
+    Allow: "POST, OPTIONS",
+  });
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     if (!env || !env.DB) {
-      return jsonResponse({ ok: false, error: "D1 database unavailable." }, 500);
+      return jsonResponse({ ok: false, error: "Database unavailable." }, 500);
     }
     await ensureContactTable(env.DB);
 
     const body = await request.json().catch(() => null);
-    if (!body) {
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
       return jsonResponse({ ok: false, error: "Invalid JSON body." }, 400);
     }
 
@@ -73,47 +84,13 @@ export async function onRequestPost({ request, env }) {
       ok: true,
       message: "Inquiry received and logged.",
     });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.message }, 500);
-  }
-}
-
-function constantTimeEqual(a, b) {
-  const enc = new TextEncoder();
-  const ab = enc.encode(String(a || ""));
-  const bb = enc.encode(String(b || ""));
-  if (ab.length !== bb.length || ab.length === 0) return false;
-  let diff = 0;
-  for (let i = 0; i < ab.length; i++) diff |= ab[i] ^ bb[i];
-  return diff === 0;
-}
-
-export async function onRequestGet({ request, env }) {
-  try {
-    const adminKey = String(env?.ADMIN_KEY || "").trim();
-    if (!adminKey) {
-      return jsonResponse({ ok: false, error: "Admin access is not configured." }, 503);
-    }
-    const url = new URL(request.url);
-    const key = url.searchParams.get("key") || "";
-    if (!constantTimeEqual(key, adminKey)) {
-      return jsonResponse({ ok: false, error: "Unauthorized." }, 401);
-    }
-    if (!env || !env.DB) {
-      return jsonResponse({ ok: false, error: "Database unavailable." }, 500);
-    }
-    await ensureContactTable(env.DB);
-
-    const { results } = await env.DB.prepare(
-      "SELECT id, name, email, inquiry_type, budget, message, source_page, created_at FROM contact_inquiries ORDER BY id DESC LIMIT 100"
-    ).all();
-
-    return jsonResponse({
-      ok: true,
-      totalInquiries: (results || []).length,
-      inquiries: results || [],
-    });
   } catch {
-    return jsonResponse({ ok: false, error: "Unable to load inquiries." }, 500);
+    return jsonResponse({ ok: false, error: "Unable to submit inquiry." }, 500);
   }
+}
+
+export async function onRequest() {
+  return jsonResponse({ ok: false, error: "Method not allowed." }, 405, {
+    Allow: "POST, OPTIONS",
+  });
 }

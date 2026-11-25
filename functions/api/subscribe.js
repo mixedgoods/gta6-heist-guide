@@ -10,98 +10,29 @@ function jsonResponse(data, status = 200) {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
+      "X-Robots-Tag": "noindex, nofollow",
       ...CORS_HEADERS,
     },
   });
-}
-
-function escapeCsvCell(val) {
-  const str = String(val ?? "");
-  if (/[",\r\n]/.test(str)) {
-    return `"${str.replace(/"/g, '""')}"`;
-  }
-  return str;
 }
 
 export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
 
-function constantTimeEqual(a, b) {
-  const enc = new TextEncoder();
-  const ab = enc.encode(String(a || ""));
-  const bb = enc.encode(String(b || ""));
-  if (ab.length !== bb.length || ab.length === 0) return false;
-  let diff = 0;
-  for (let i = 0; i < ab.length; i++) diff |= ab[i] ^ bb[i];
-  return diff === 0;
-}
-
+// Public GET /api/subscribe returns aggregate non-PII subscriber counts only.
+// Owner subscriber listing and CSV export are served exclusively behind Cloudflare Access at /api/cd-admin/subscribers.
 export async function onRequestGet({ request, env }) {
   try {
     const url = new URL(request.url);
-    const key = url.searchParams.get("key") || "";
-    const adminKey = String(env?.ADMIN_KEY || "").trim();
-    const exportType = url.searchParams.get("export");
-    const listMode = url.searchParams.get("list");
-
-    const wantsPrivileged = exportType === "csv" || listMode === "1";
-    if (wantsPrivileged) {
-      if (!adminKey) {
-        return jsonResponse({ ok: false, error: "Admin access is not configured." }, 503);
-      }
-      if (!constantTimeEqual(key, adminKey)) {
-        return jsonResponse({ ok: false, error: "Unauthorized." }, 401);
-      }
+    if (url.searchParams.has("list") || url.searchParams.has("export")) {
+      return jsonResponse({ ok: false, error: "Forbidden." }, 403);
     }
 
     const countRow = await env.DB.prepare("SELECT COUNT(*) AS count FROM subscribers").first();
     const rawCount = countRow?.count || 0;
     const totalSubscribers = rawCount;
-
-    if (exportType === "csv") {
-      const { results } = await env.DB.prepare(
-        "SELECT id, email, callsign, platform, role, discord_tag, marketing_opt_in, created_at FROM subscribers ORDER BY id DESC"
-      ).all();
-
-      const header = "id,email,callsign,platform,role,discord_tag,marketing_opt_in,created_at";
-      const rows = (results || []).map((r) =>
-        [
-          r.id,
-          escapeCsvCell(r.email),
-          escapeCsvCell(r.callsign),
-          escapeCsvCell(r.platform),
-          escapeCsvCell(r.role),
-          escapeCsvCell(r.discord_tag),
-          r.marketing_opt_in,
-          escapeCsvCell(r.created_at),
-        ].join(",")
-      );
-
-      const csv = [header, ...rows].join("\r\n");
-      return new Response(csv, {
-        status: 200,
-        headers: {
-          "Content-Type": "text/csv; charset=utf-8",
-          "Content-Disposition": 'attachment; filename="gta6heistguide-subscribers.csv"',
-          "Cache-Control": "no-store",
-          ...CORS_HEADERS,
-        },
-      });
-    }
-
-    if (listMode === "1") {
-      const { results } = await env.DB.prepare(
-        "SELECT id, email, callsign, platform, role, discord_tag, marketing_opt_in, created_at FROM subscribers ORDER BY id DESC LIMIT 200"
-      ).all();
-      return jsonResponse({
-        ok: true,
-        rawCount,
-        totalSubscribers,
-        regionsMapped: 6,
-        subscribers: results || [],
-      });
-    }
 
     return jsonResponse({
       ok: true,
@@ -110,13 +41,17 @@ export async function onRequestGet({ request, env }) {
       regionsMapped: 6,
     });
   } catch {
-    return jsonResponse({ ok: false, error: "Unable to load subscriber data.", totalSubscribers: 0, regionsMapped: 6 }, 500);
+    return jsonResponse({ ok: false, error: "Unable to load subscriber count.", totalSubscribers: 0, regionsMapped: 6 }, 500);
   }
 }
 
 export async function onRequestPost({ request, env }) {
   try {
-    const body = await request.json();
+    const body = await request.json().catch(() => null);
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return jsonResponse({ ok: false, error: "Invalid JSON body." }, 400);
+    }
+
     const email = String(body.email || "").trim().toLowerCase();
     const callsign = String(body.callsign || "").trim() || "ViceOperative";
     const platform = String(body.platform || "PS5 Pro & PC").trim().slice(0, 60);
@@ -152,7 +87,7 @@ export async function onRequestPost({ request, env }) {
       totalSubscribers,
       regionsMapped: 6,
     });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.message }, 500);
+  } catch {
+    return jsonResponse({ ok: false, error: "Unable to process subscription." }, 500);
   }
 }

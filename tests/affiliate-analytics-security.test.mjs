@@ -7,6 +7,8 @@ import { fileURLToPath } from "node:url";
 import * as clicksRoute from "../functions/api/clicks.js";
 import * as adminMiddleware from "../functions/api/cd-admin/_middleware.js";
 import * as affiliateReportRoute from "../functions/api/cd-admin/affiliate-report.js";
+import * as contactInquiriesRoute from "../functions/api/cd-admin/contact-inquiries.js";
+import * as subscribersAdminRoute from "../functions/api/cd-admin/subscribers.js";
 import * as contactRoute from "../functions/api/contact.js";
 import * as subscribeRoute from "../functions/api/subscribe.js";
 import { resetJwksCache } from "../functions/_lib/cd-access.js";
@@ -69,11 +71,17 @@ globalThis.fetch = async (url, init) => {
 
 function createMockD1() {
   const clicks = [];
-  const subscribers = [{ id: 1, email: "vip@example.com", callsign: "Lucia", platform: "PS5", role: "Mastermind", discord_tag: "", marketing_opt_in: 1, created_at: "2026-11-25 12:00:00" }];
-  const inquiries = [{ id: 1, name: "Sponsor", email: "sponsor@example.com", inquiry_type: "sponsor", budget: "$5k", message: "Hello", source_page: "/contact.html", created_at: "2026-11-25 12:00:00" }];
+  const subscribers = [
+    { id: 1, email: "vip@example.com", callsign: "Lucia", platform: "PS5", role: "Mastermind", discord_tag: "lucia#0001", marketing_opt_in: 1, created_at: "2026-11-25 12:00:00" },
+  ];
+  const inquiries = [
+    { id: 1, name: "Sponsor", email: "sponsor@example.com", inquiry_type: "sponsor", budget: "$5k", message: "Hello", source_page: "/contact.html", created_at: "2026-11-25 12:00:00" },
+  ];
 
   return {
     clicks,
+    subscribers,
+    inquiries,
     prepare(sql) {
       let bound = [];
       return {
@@ -89,6 +97,28 @@ function createMockD1() {
               placement: bound[1],
               page_path: bound[2],
               target_url: bound[3],
+              created_at: new Date().toISOString().slice(0, 19).replace("T", " "),
+            });
+          } else if (/INSERT INTO contact_inquiries/i.test(sql)) {
+            inquiries.push({
+              id: inquiries.length + 1,
+              name: bound[0],
+              email: bound[1],
+              inquiry_type: bound[2],
+              budget: bound[3],
+              message: bound[4],
+              source_page: bound[5],
+              created_at: new Date().toISOString().slice(0, 19).replace("T", " "),
+            });
+          } else if (/INSERT INTO subscribers/i.test(sql)) {
+            subscribers.push({
+              id: subscribers.length + 1,
+              email: bound[0],
+              callsign: bound[1],
+              platform: bound[2],
+              role: bound[3],
+              discord_tag: bound[4],
+              marketing_opt_in: bound[5],
               created_at: new Date().toISOString().slice(0, 19).replace("T", " "),
             });
           }
@@ -115,10 +145,10 @@ function createMockD1() {
             return { results: [...clicks].reverse().slice(0, 20) };
           }
           if (/FROM contact_inquiries/i.test(sql)) {
-            return { results: inquiries };
+            return { results: [...inquiries].reverse() };
           }
           if (/FROM subscribers ORDER BY id DESC/i.test(sql)) {
-            return { results: subscribers };
+            return { results: [...subscribers].reverse() };
           }
           return { results: [] };
         },
@@ -127,12 +157,10 @@ function createMockD1() {
   };
 }
 
-async function callAdminAffiliateReport(request, env) {
+async function callProtectedAdmin(routeMod, request, env) {
   const data = {};
   const handler =
-    request.method === "GET"
-      ? affiliateReportRoute.onRequestGet
-      : affiliateReportRoute.onRequest;
+    request.method === "GET" ? routeMod.onRequestGet : routeMod.onRequest;
   return adminMiddleware.onRequest({
     request,
     env,
@@ -174,62 +202,63 @@ test("SEC-C: GET /api/clicks with arbitrary query-string credentials cannot acce
   }
 });
 
-test("SEC-D: Missing ADMIN_KEY never grants access on /api/clicks, /api/contact, or /api/subscribe privileged modes", async () => {
+test("SEC-D: Public /api/contact GET (405) and /api/subscribe privileged query modes (403) are permanently blocked", async () => {
   const db = createMockD1();
-  const envNoKey = { DB: db }; // ADMIN_KEY intentionally undefined
+  const env = { DB: db, ADMIN_KEY: "even-if-set" };
 
-  const rClicks = await clicksRoute.onRequestGet({
-    request: new Request("https://www.gta6heistguide.com/api/clicks?key=syndicateadmin"),
-    env: envNoKey,
+  // Public GET /api/contact blocked (405)
+  const rContactNoKey = await contactRoute.onRequestGet({
+    request: new Request("https://www.gta6heistguide.com/api/contact"),
+    env,
   });
-  assert.equal(rClicks.status, 405);
+  assert.equal(rContactNoKey.status, 405);
 
-  const rContactFallback = await contactRoute.onRequestGet({
+  const rContactLegacy = await contactRoute.onRequestGet({
     request: new Request("https://www.gta6heistguide.com/api/contact?key=syndicateadmin"),
-    env: envNoKey,
+    env,
   });
-  assert.equal(rContactFallback.status, 503);
-  const contactBody = await rContactFallback.json();
+  assert.equal(rContactLegacy.status, 405);
+  const contactBody = await rContactLegacy.json();
   assert.equal(contactBody.ok, false);
   assert.equal("inquiries" in contactBody, false);
 
+  // Public GET /api/subscribe?list=1 and ?export=csv blocked (403)
   const rSubList = await subscribeRoute.onRequestGet({
     request: new Request("https://www.gta6heistguide.com/api/subscribe?list=1&key=syndicateadmin"),
-    env: envNoKey,
+    env,
   });
-  assert.equal(rSubList.status, 503);
+  assert.equal(rSubList.status, 403);
   const subListBody = await rSubList.json();
   assert.equal(subListBody.ok, false);
   assert.equal("subscribers" in subListBody, false);
 
   const rSubCsv = await subscribeRoute.onRequestGet({
-    request: new Request("https://www.gta6heistguide.com/api/subscribe?export=csv&key=syndicateadmin"),
-    env: envNoKey,
+    request: new Request("https://www.gta6heistguide.com/api/subscribe?export=csv&key=even-if-set"),
+    env,
   });
-  assert.equal(rSubCsv.status, 503);
+  assert.equal(rSubCsv.status, 403);
 
-  // Public count on /api/subscribe (no list/export) still works safely without exposing emails
+  // Public count on GET /api/subscribe (no list/export) still works safely without exposing emails
   const rSubPublic = await subscribeRoute.onRequestGet({
     request: new Request("https://www.gta6heistguide.com/api/subscribe"),
-    env: envNoKey,
+    env,
   });
   assert.equal(rSubPublic.status, 200);
   const subPubBody = await rSubPublic.json();
   assert.equal(subPubBody.ok, true);
+  assert.equal(subPubBody.totalSubscribers, 1);
   assert.equal("subscribers" in subPubBody, false);
 });
 
-test("SEC-E: /api/cd-admin/affiliate-report rejects unauthenticated, misconfigured, forged, and non-allowlisted requests", async () => {
+test("SEC-E: All /api/cd-admin/* reporting endpoints reject unconfigured, unauthenticated, forged, and non-allowlisted callers", async () => {
   resetJwksCache();
   const db = createMockD1();
-
-  // Unconfigured Access -> 503 fail closed
-  const r503 = await callAdminAffiliateReport(
-    new Request("https://www.gta6heistguide.com/api/cd-admin/affiliate-report"),
-    { DB: db }
-  );
-  assert.equal(r503.status, 503);
-  assert.equal(r503.headers.get("Cache-Control"), "no-store");
+  const endpoints = [
+    ["/api/cd-admin/affiliate-report", affiliateReportRoute],
+    ["/api/cd-admin/contact-inquiries", contactInquiriesRoute],
+    ["/api/cd-admin/subscribers", subscribersAdminRoute],
+    ["/api/cd-admin/subscribers?export=csv", subscribersAdminRoute],
+  ];
 
   const configuredEnv = {
     DB: db,
@@ -237,47 +266,54 @@ test("SEC-E: /api/cd-admin/affiliate-report rejects unauthenticated, misconfigur
     CF_ACCESS_AUD: AUD,
     CD_ADMIN_EMAILS: ADMIN_EMAIL,
   };
-
-  // No token -> 401
-  const rNoTok = await callAdminAffiliateReport(
-    new Request("https://www.gta6heistguide.com/api/cd-admin/affiliate-report"),
-    configuredEnv
-  );
-  assert.equal(rNoTok.status, 401);
-
-  // Legacy query key without Access JWT -> 401
-  const rLegacyKey = await callAdminAffiliateReport(
-    new Request("https://www.gta6heistguide.com/api/cd-admin/affiliate-report?key=syndicateadmin"),
-    configuredEnv
-  );
-  assert.equal(rLegacyKey.status, 401);
-
-  // Forged unsigned / alg=none token -> 401
   const fakeHeader = b64u(JSON.stringify({ alg: "none", kid: "test-kid-1" }));
   const fakePayload = b64u(JSON.stringify({ aud: [AUD], iss: `https://${TEAM}`, email: ADMIN_EMAIL, exp: 9999999999 }));
-  const rForged = await callAdminAffiliateReport(
-    new Request("https://www.gta6heistguide.com/api/cd-admin/affiliate-report", {
-      headers: { "Cf-Access-Jwt-Assertion": `${fakeHeader}.${fakePayload}.` },
-    }),
-    configuredEnv
-  );
-  assert.equal(rForged.status, 401);
-
-  // Valid signature but non-allowlisted email -> 403
   const intruderJwt = await mintAccessJwt({ email: "intruder@example.com" });
-  const rForbidden = await callAdminAffiliateReport(
-    new Request("https://www.gta6heistguide.com/api/cd-admin/affiliate-report", {
-      headers: { "Cf-Access-Jwt-Assertion": intruderJwt },
-    }),
-    configuredEnv
-  );
-  assert.equal(rForbidden.status, 403);
-  const bodyForbidden = await rForbidden.json();
-  assert.equal(bodyForbidden.ok, false);
-  assert.equal("totalClicks" in bodyForbidden, false);
+
+  for (const [ep, mod] of endpoints) {
+    // Unconfigured Access -> 503 fail closed
+    const r503 = await callProtectedAdmin(mod, new Request(`https://www.gta6heistguide.com${ep}`), { DB: db });
+    assert.equal(r503.status, 503, `${ep} should fail closed 503`);
+    assert.equal(r503.headers.get("Cache-Control"), "no-store");
+
+    // No token -> 401
+    const rNoTok = await callProtectedAdmin(mod, new Request(`https://www.gta6heistguide.com${ep}`), configuredEnv);
+    assert.equal(rNoTok.status, 401, `${ep} should reject missing JWT`);
+
+    // Legacy query key without Access JWT -> 401
+    const sep = ep.includes("?") ? "&" : "?";
+    const rLegacy = await callProtectedAdmin(
+      mod,
+      new Request(`https://www.gta6heistguide.com${ep}${sep}key=syndicateadmin`),
+      configuredEnv
+    );
+    assert.equal(rLegacy.status, 401, `${ep} should reject legacy key`);
+
+    // Forged unsigned / alg=none token -> 401
+    const rForged = await callProtectedAdmin(
+      mod,
+      new Request(`https://www.gta6heistguide.com${ep}`, {
+        headers: { "Cf-Access-Jwt-Assertion": `${fakeHeader}.${fakePayload}.` },
+      }),
+      configuredEnv
+    );
+    assert.equal(rForged.status, 401, `${ep} should reject forged JWT`);
+
+    // Valid signature but non-allowlisted email -> 403
+    const rForbidden = await callProtectedAdmin(
+      mod,
+      new Request(`https://www.gta6heistguide.com${ep}`, {
+        headers: { "Cf-Access-Jwt-Assertion": intruderJwt },
+      }),
+      configuredEnv
+    );
+    assert.equal(rForbidden.status, 403, `${ep} should reject non-allowlisted email`);
+    const bodyForbidden = await rForbidden.json();
+    assert.equal(bodyForbidden.ok, false);
+  }
 });
 
-test("SEC-F: Cloudflare Access-authorized owner retrieves affiliate report with no-store headers and no PII", async () => {
+test("SEC-F: Cloudflare Access-authorized owner retrieves affiliate report, contact inquiries, and subscriber list/CSV", async () => {
   resetJwksCache();
   const db = createMockD1();
   const env = {
@@ -289,7 +325,7 @@ test("SEC-F: Cloudflare Access-authorized owner retrieves affiliate report with 
 
   // Seed two anonymous clicks via POST /api/clicks
   for (const payload of [
-    { partner: "amazon", placement: "hero_card", page_path: "/gaming-gear/", target_url: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heist-20" },
+    { partner: "amazon", placement: "hero_card", page_path: "/gaming-gear/", target_url: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20" },
     { partner: "g2a", placement: "sidebar", page_path: "/", target_url: "https://www.g2a.com/n/reflink-4094b9aab5" },
   ]) {
     const postRes = await clicksRoute.onRequestPost({
@@ -304,29 +340,75 @@ test("SEC-F: Cloudflare Access-authorized owner retrieves affiliate report with 
   }
 
   const ownerJwt = await mintAccessJwt();
-  const res = await callAdminAffiliateReport(
+
+  // 1. Affiliate report
+  const affRes = await callProtectedAdmin(
+    affiliateReportRoute,
     new Request("https://www.gta6heistguide.com/api/cd-admin/affiliate-report", {
       headers: { "Cf-Access-Jwt-Assertion": ownerJwt },
     }),
     env
   );
-  assert.equal(res.status, 200);
-  assert.equal(res.headers.get("Cache-Control"), "no-store");
-  assert.match(res.headers.get("X-Robots-Tag") || "", /noindex/);
+  assert.equal(affRes.status, 200);
+  assert.equal(affRes.headers.get("Cache-Control"), "no-store");
+  assert.match(affRes.headers.get("X-Robots-Tag") || "", /noindex/);
+  const affData = await affRes.json();
+  assert.equal(affData.ok, true);
+  assert.equal(affData.totalClicks, 2);
+  assert.equal(affData.byPartner.amazon, 1);
+  assert.equal(affData.byPartner.g2a, 1);
+  assert.equal(/syndicateadmin|ADMIN_KEY|email|ip_hash/i.test(JSON.stringify(affData)), false);
 
-  const data = await res.json();
-  assert.equal(data.ok, true);
-  assert.equal(data.totalClicks, 2);
-  assert.equal(data.totalClicks7d, 2);
-  assert.equal(data.byPartner.amazon, 1);
-  assert.equal(data.byPartner.g2a, 1);
-  assert.equal(data.recent.length, 2);
+  // 2. Contact inquiries
+  const conRes = await callProtectedAdmin(
+    contactInquiriesRoute,
+    new Request("https://www.gta6heistguide.com/api/cd-admin/contact-inquiries", {
+      headers: { "Cf-Access-Jwt-Assertion": ownerJwt },
+    }),
+    env
+  );
+  assert.equal(conRes.status, 200);
+  assert.equal(conRes.headers.get("Cache-Control"), "no-store");
+  assert.match(conRes.headers.get("X-Robots-Tag") || "", /noindex/);
+  const conData = await conRes.json();
+  assert.equal(conData.ok, true);
+  assert.equal(conData.totalInquiries, 1);
+  assert.equal(conData.inquiries[0].email, "sponsor@example.com");
 
-  const serialized = JSON.stringify(data);
-  assert.equal(/syndicateadmin|ADMIN_KEY|email|ip_hash/i.test(serialized), false);
+  // 3. Subscribers JSON list
+  const subRes = await callProtectedAdmin(
+    subscribersAdminRoute,
+    new Request("https://www.gta6heistguide.com/api/cd-admin/subscribers", {
+      headers: { "Cf-Access-Jwt-Assertion": ownerJwt },
+    }),
+    env
+  );
+  assert.equal(subRes.status, 200);
+  assert.equal(subRes.headers.get("Cache-Control"), "no-store");
+  assert.match(subRes.headers.get("X-Robots-Tag") || "", /noindex/);
+  const subData = await subRes.json();
+  assert.equal(subData.ok, true);
+  assert.equal(subData.subscribers.length, 1);
+  assert.equal(subData.subscribers[0].email, "vip@example.com");
+
+  // 4. Subscribers CSV export
+  const csvRes = await callProtectedAdmin(
+    subscribersAdminRoute,
+    new Request("https://www.gta6heistguide.com/api/cd-admin/subscribers?export=csv", {
+      headers: { "Cf-Access-Jwt-Assertion": ownerJwt },
+    }),
+    env
+  );
+  assert.equal(csvRes.status, 200);
+  assert.equal(csvRes.headers.get("Cache-Control"), "no-store");
+  assert.match(csvRes.headers.get("Content-Type") || "", /text\/csv/);
+  assert.match(csvRes.headers.get("Content-Disposition") || "", /gta6heistguide-subscribers\.csv/);
+  const csvText = await csvRes.text();
+  assert.match(csvText, /id,email,callsign/);
+  assert.match(csvText, /vip@example\.com/);
 });
 
-test("SEC-G & SEC-H: Anonymous POST /api/clicks works and enforces payload/validation restrictions", async () => {
+test("SEC-G & SEC-H: Anonymous POST /api/clicks, /api/contact, and /api/subscribe continue working with validation", async () => {
   const db = createMockD1();
   const env = { DB: db };
 
@@ -339,14 +421,13 @@ test("SEC-G & SEC-H: Anonymous POST /api/clicks works and enforces payload/valid
         partner: "amazon",
         placement: "gear_card",
         page_path: "/gaming-gear/",
-        target_url: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heist-20",
+        target_url: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heistguid-20",
       }),
     }),
     env,
   });
   assert.equal(okRes.status, 200);
-  const okBody = await okRes.json();
-  assert.deepEqual(okBody, { ok: true, partner: "amazon", placement: "gear_card" });
+  assert.deepEqual(await okRes.json(), { ok: true, partner: "amazon", placement: "gear_card" });
   assert.equal(db.clicks.length, 1);
 
   // Invalid JSON -> 400
@@ -392,15 +473,40 @@ test("SEC-G & SEC-H: Anonymous POST /api/clicks works and enforces payload/valid
   assert.equal(lastRow.placement.length, 80);
   assert.equal(lastRow.page_path.length, 200);
 
+  // Anonymous POST /api/contact works
+  const cPost = await contactRoute.onRequestPost({
+    request: new Request("https://www.gta6heistguide.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: "Jason", email: "jason@example.com", message: "Question about guides" }),
+    }),
+    env,
+  });
+  assert.equal(cPost.status, 200);
+  assert.equal(db.inquiries.length, 2);
+
+  // Anonymous POST /api/subscribe works
+  const sPost = await subscribeRoute.onRequestPost({
+    request: new Request("https://www.gta6heistguide.com/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "newplayer@example.com", callsign: "VicePlayer" }),
+    }),
+    env,
+  });
+  assert.equal(sPost.status, 200);
+  assert.equal(db.subscribers.length, 2);
+
   // OPTIONS -> 204
-  const optRes = await clicksRoute.onRequestOptions();
-  assert.equal(optRes.status, 204);
+  assert.equal((await clicksRoute.onRequestOptions()).status, 204);
 });
 
-test("SEC-J: No hardcoded syndicateadmin secret exists in functions/ or public/ reporting files", () => {
+test("SEC-J: Zero hardcoded syndicateadmin or ADMIN_KEY references exist in functions/ or public/ reporting files", () => {
   const checkedFiles = [
     "functions/api/clicks.js",
     "functions/api/cd-admin/affiliate-report.js",
+    "functions/api/cd-admin/contact-inquiries.js",
+    "functions/api/cd-admin/subscribers.js",
     "functions/_lib/affiliate-clicks.js",
     "functions/api/contact.js",
     "functions/api/subscribe.js",
@@ -410,6 +516,6 @@ test("SEC-J: No hardcoded syndicateadmin secret exists in functions/ or public/ 
   ];
   for (const rel of checkedFiles) {
     const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
-    assert.equal(/syndicateadmin/i.test(src), false, `Found hardcoded fallback in ${rel}`);
+    assert.equal(/syndicateadmin|ADMIN_KEY/i.test(src), false, `Found legacy credential reference in ${rel}`);
   }
 });

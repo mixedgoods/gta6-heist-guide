@@ -99,17 +99,29 @@ if (expectClosed) {
   });
 }
 
-for (const [m, p] of [["GET", "/api/cd-admin/queue"], ["GET", "/api/cd-admin/detail?ref=CD-AAAAA-BBBBB"], ["GET", "/api/cd-admin/affiliate-report"], ["POST", "/api/cd-admin/action"]]) {
-  await t("HTTP-ADM-" + p.split("/").pop().split("?")[0], `Unauthenticated ${m} ${p.split("?")[0]} denied (503 or 401), no data`, async () => {
+for (const [m, p] of [
+  ["GET", "/api/cd-admin/queue"],
+  ["GET", "/api/cd-admin/detail?ref=CD-AAAAA-BBBBB"],
+  ["GET", "/api/cd-admin/affiliate-report"],
+  ["GET", "/api/cd-admin/contact-inquiries"],
+  ["GET", "/api/cd-admin/subscribers"],
+  ["GET", "/api/cd-admin/subscribers?export=csv"],
+  ["POST", "/api/cd-admin/action"],
+]) {
+  const tag = p.split("/").pop().replace(/[^a-z0-9]/gi, "-");
+  await t("HTTP-ADM-" + tag, `Unauthenticated ${m} ${p} denied (503 or 401), no data`, async () => {
     const r = await fetch(base + p, { method: m, headers: m === "POST" ? { "Content-Type": "application/json", Origin: base } : {}, body: m === "POST" ? "{}" : undefined });
-    const tx = await r.text(); ok([401, 503].includes(r.status) && !tx.includes("CD-") && !tx.includes("totalClicks"), r.status + " " + tx);
+    const tx = await r.text(); ok([401, 503].includes(r.status) && !tx.includes("CD-") && !tx.includes("totalClicks") && !tx.includes("inquiries") && !tx.includes("subscribers"), r.status + " " + tx);
   });
 }
-await t("HTTP-13", "Legacy admin-key style access to admin APIs & /api/clicks is denied", async () => {
+await t("HTTP-13", "Legacy admin-key style access to admin APIs & public endpoints is denied", async () => {
   const r = await fetch(base + "/api/cd-admin/queue?key=syndicateadmin"); ok([401, 503].includes(r.status));
   const r2 = await fetch(base + "/api/cd-admin/affiliate-report?key=syndicateadmin"); ok([401, 503].includes(r2.status));
   const r3 = await fetch(base + "/api/clicks?key=syndicateadmin"); ok(r3.status === 405, "clicks?key status " + r3.status);
   const r4 = await fetch(base + "/api/clicks"); ok(r4.status === 405, "clicks GET status " + r4.status);
+  const r5 = await fetch(base + "/api/contact?key=syndicateadmin"); ok(r5.status === 405, "contact?key status " + r5.status);
+  const r6 = await fetch(base + "/api/subscribe?list=1&key=syndicateadmin"); ok(r6.status === 403, "subscribe?list status " + r6.status);
+  const r7 = await fetch(base + "/api/subscribe?export=csv&key=syndicateadmin"); ok(r7.status === 403, "subscribe?export status " + r7.status);
 });
 await t("HTTP-13B", "Anonymous POST /api/clicks still records click cleanly (200)", async () => {
   const r = await fetch(base + "/api/clicks", {
