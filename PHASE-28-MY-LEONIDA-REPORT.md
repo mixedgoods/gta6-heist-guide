@@ -59,16 +59,16 @@ Created 4 modular Phase 28 assets:
 
 ## 4. Analytics Instrumentation Status
 
-- **Cloudflare Web Analytics:** Not yet activated by account owner.
-- **GA4 Measurement ID:** Intentionally blank (`ga4MeasurementId: ""` in `public/site-config.js`; `window.GTA6Track.isGa4Active()` returns `false`).
-- **Events Instrumented (`public/site-config.js`):** All 6 Phase 28 events added to `window.GTA6Track` allowlist with strictly non-personal parameters and PII stripping verified in QA:
+- **Cloudflare Web Analytics:** **ENABLED & VERIFIED LIVE** (see Section 8 below for full activation, beacon injection, RUM network transmission, and dashboard reporting verification).
+- **GA4 Measurement ID:** Intentionally blank (`ga4MeasurementId: ""` in `public/site-config.js`; `window.GTA6Track.isGa4Active()` returns `false`). No GA4 ID was invented or published.
+- **Custom Interaction Events (`window.GTA6Track` in `public/site-config.js`):** Preserved all Phase 26.2 and Phase 27 events and added all 6 Phase 28 events with strictly non-personal parameters and PII stripping verified in QA:
   - `my_leonida_open`
   - `my_leonida_category_open`
   - `progress_category_update`
   - `progress_backup_export`
   - `progress_backup_import`
   - `my_next_activity_click`
-- **Status Note:** Events are instrumented and verified locally/live, but **not actively collected** until an authorized analytics destination is configured by the account owner.
+- **Status Note:** Cloudflare Web Analytics provides live page-view and Core Web Vitals performance telemetry. Custom `window.GTA6Track` interaction events remain separate and are instrumented (not collected by GA4) until an authorized GA4 Measurement ID is configured.
 
 ---
 
@@ -111,7 +111,24 @@ Created 4 modular Phase 28 assets:
 | Environment | Deployment UUID | URL | Source Commit | Status |
 |---|---|---|---|---|
 | **Cloudflare Preview** | `af0628d8-5746-416e-b5df-17343f422533` | `https://af0628d8.gta6heistguide.pages.dev` (alias: `https://phase-28-my-leonida.gta6heistguide.pages.dev`) | `2894649` (`phase-28-my-leonida`) | **VERIFIED (19/19 PASS)** |
-| **Live Production** | `f13c8b71-02f3-434b-b066-0f9cb0b909e5` | `https://www.gta6heistguide.com/my-leonida/` (`https://f13c8b71.gta6heistguide.pages.dev`) | `2894649` (Direct Upload `--branch=main` from verified `phase-28-my-leonida`; stale git `main` NOT used) | **LIVE & VERIFIED (19/19 PASS)** |
+| **Live Production (Initial Phase 28)** | `f13c8b71-02f3-434b-b066-0f9cb0b909e5` | `https://f13c8b71.gta6heistguide.pages.dev` | `2894649` (Direct Upload `--branch=main` from verified `phase-28-my-leonida`; stale git `main` NOT used) | **VERIFIED (19/19 PASS)** |
+| **Live Production (Beacon-Enabled)** | `f1245183-51c5-4d79-bfe2-6afe972e2d95` | `https://www.gta6heistguide.com/my-leonida/` (`https://f1245183.gta6heistguide.pages.dev`) | `13913a4` (Exact verified `phase-28-my-leonida` build re-deployed to inject official Cloudflare Web Analytics beacon) | **LIVE & VERIFIED (19/19 PASS + BEACON & RUM VERIFIED)** |
 
 ### Immediate Rollback Target
 - **Phase 27 Production Deployment:** `350835ef-c0d8-4e36-8157-41d1f9f09d18` (`https://350835ef.gta6heistguide.pages.dev`, source commit `9ec95e3`) — preserved intact in Cloudflare Pages for immediate one-click rollback if ever needed.
+
+---
+
+## 8. Cloudflare Web Analytics Activation
+
+| Verification Dimension | Status & Verified Details |
+|---|---|
+| **1. Dashboard Activation Status** | **Enabled** via official Cloudflare Pages integration (`Workers & Pages → gta6heistguide → Metrics → Web Analytics`). Transitioned from `Web analytics is disabled` to `Web analytics is enabled` (`siteTag: e8d79595f57b43cbb2a8fd92d84cf5ad`). |
+| **Activation Date** | `2026-11-24` |
+| **Cloudflare Pages Project & Hostnames** | Project `gta6heistguide` · Configured hostnames verified in Cloudflare Web Analytics Manage Site: `gta6heistguide.pages.dev`, `www.gta6heistguide.com`. |
+| **Deployment Containing the Beacon** | `f1245183-51c5-4d79-bfe2-6afe972e2d95` (`https://f1245183.gta6heistguide.pages.dev`, live at `https://www.gta6heistguide.com`). Re-deployed from verified `phase-28-my-leonida` (`13913a4`); stale git `main` was never used. |
+| **2. Beacon Installation Status** | **Verified in Production HTML** across `/`, `/my-leonida/`, and `/heist-command-center/`: official Cloudflare Pages script `<script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6e5d7f641c0d45a3b5f6c3601aeb5d0e"}'>` injected automatically by Cloudflare. |
+| **3. Successful Network Transmission** | **Verified via Live Browser Network Capture** on all 3 tested routes (`/`, `/my-leonida/`, `/heist-command-center/`): `GET 200 https://static.cloudflareinsights.com/beacon.min.js` followed by `POST 204 https://cloudflareinsights.com/cdn-cgi/rum`. Production 19-check Playwright QA re-run passed **19/19 (0 console errors)**. |
+| **4. Dashboard Data Availability** | **Live Data Confirmed** in Cloudflare Web Analytics (`Web Analytics for gta6heistguide.pages.dev +1`): **8 Visits**, **8 Page views**, **1,027ms** average page load time, and active Core Web Vitals (`LCP`, `INP`, `CLS`) telemetry observed from `www.gta6heistguide.com/my-leonida/`. |
+| **Existing Instrumentation Preserved** | `window.GTA6Track` (Phase 26.2, Phase 27, and Phase 28 custom events) remains 100% intact and verified (`isGa4Active() === false`, zero fabricated GA4 Measurement ID). |
+| **Remaining Limitations** | Cloudflare Web Analytics measures page views, visits, and Core Web Vitals performance only—it does not collect custom `window.GTA6Track` interaction events. Custom event collection in GA4 remains inactive until an authorized `ga4MeasurementId` is supplied in `public/site-config.js`. |
