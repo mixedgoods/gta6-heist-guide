@@ -213,7 +213,7 @@
     if (rawPrevUnified) {
       try {
         var prev = JSON.parse(rawPrevUnified);
-        if (prev && typeof prev === 'object') {
+        if (prev && typeof prev === 'object' && !Array.isArray(prev)) {
           var norm = normalizeStoreShape(prev);
           Object.keys(norm.completed).forEach(function (k) {
             store.completed[k] = true;
@@ -223,8 +223,12 @@
           if (norm.heistBuilds.length) store.heistBuilds = norm.heistBuilds;
           if (Object.keys(norm.toolStates).length) store.toolStates = norm.toolStates;
           if (Object.keys(norm.notes).length) store.notes = norm.notes;
+        } else {
+          preserveCorruptCopy(LEGACY_UNIFIED_KEY, rawPrevUnified);
         }
-      } catch (e) {}
+      } catch (e) {
+        preserveCorruptCopy(LEGACY_UNIFIED_KEY, rawPrevUnified);
+      }
     }
 
     // 1. Legacy 15-slot Save Progress Planner (primary + alternate key)
@@ -380,6 +384,22 @@
     return store;
   }
 
+  var CORRUPT_RECOVERY_KEY = 'gta6_progress_corrupt_recovery_v1';
+
+  function preserveCorruptCopy(sourceKey, rawValue) {
+    if (typeof rawValue !== 'string' || !rawValue.length) return;
+    try {
+      var existing = safeReadLS(CORRUPT_RECOVERY_KEY);
+      var bag = existing ? JSON.parse(existing) : {};
+      if (!bag || typeof bag !== 'object' || Array.isArray(bag)) bag = {};
+      bag[sourceKey] = {
+        capturedAt: new Date().toISOString(),
+        raw: rawValue.slice(0, 65536)
+      };
+      safeWriteLS(CORRUPT_RECOVERY_KEY, JSON.stringify(bag));
+    } catch (e) {}
+  }
+
   function loadStore() {
     var raw = safeReadLS(STORAGE_KEY);
     if (!raw) {
@@ -392,7 +412,10 @@
       if (parsed && typeof parsed === 'object' && parsed.completed && typeof parsed.completed === 'object') {
         return normalizeStoreShape(parsed);
       }
-    } catch (e) {}
+      preserveCorruptCopy(STORAGE_KEY, raw);
+    } catch (e) {
+      preserveCorruptCopy(STORAGE_KEY, raw);
+    }
     var fresh = hydrateFromLegacy(createEmptyStore());
     saveStore(fresh, true);
     return fresh;
@@ -976,7 +999,7 @@
       }
       var prefixMap = {
         cheats: ['cheat:', 'cheat-tested:'],
-        pins: ['pin:'],
+        pins: ['pin:', 'pin-fav:'],
         heists: ['heist:'],
         ops: ['op:'],
         secrets: ['secret:'],

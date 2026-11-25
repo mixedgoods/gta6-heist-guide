@@ -60,12 +60,19 @@ window.SITE_CONFIG = Object.freeze({
     heist_checklist_toggle: true,
     heist_map_open: true,
     heist_resource_click: true,
-    heist_progress_export: true
+    heist_progress_export: true,
+    my_leonida_open: true,
+    my_leonida_category_open: true,
+    progress_category_update: true,
+    progress_backup_export: true,
+    progress_backup_import: true,
+    my_next_activity_click: true
   };
 
   function classifyPathCategory(pathname) {
     var p = String(pathname || '/').toLowerCase();
     if (p === '/' || p === '/index.html') return 'home';
+    if (p.indexOf('/my-leonida') === 0) return 'my_leonida';
     if (p.indexOf('/heist-command-center') === 0) return 'heist_command';
     if (p.indexOf('/map') === 0) return 'map';
     if (/^\/(properties|animals|vehicles|weapons|weapons-bonuses|radio|gta-6-database)/.test(p)) return 'database';
@@ -317,7 +324,7 @@ window.SITE_CONFIG = Object.freeze({
     // Browser-local recently viewed guide/database tracker for "Continue Where You Left Off"
     try {
       var curPath = window.location.pathname || '/';
-      if (curPath !== '/' && curPath !== '/index.html' && curPath.indexOf('/cd-admin') !== 0 && curPath.indexOf('/404') !== 0) {
+      if (curPath !== '/' && curPath !== '/index.html' && curPath.indexOf('/my-leonida') !== 0 && curPath.indexOf('/cd-admin') !== 0 && curPath.indexOf('/404') !== 0) {
         var rawTitle = (document.title || curPath).split('|')[0].split(':')[0].trim();
         if (rawTitle.length > 48) rawTitle = rawTitle.slice(0, 45) + '...';
         var recRaw = localStorage.getItem('gta6_recent_pages_v1');

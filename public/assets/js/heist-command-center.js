@@ -889,6 +889,14 @@
         bindEvents();
         renderAll();
 
+        // Cross-tab live sync with My Leonida dashboard
+        window.addEventListener('storage', function (e) {
+          if (e.key === STORAGE_KEY) {
+            loadState();
+            renderAll();
+          }
+        });
+
         trackEvent('heist_command_open', {
           active_job_id: state.activeJobId,
           total_jobs: jobs.length,

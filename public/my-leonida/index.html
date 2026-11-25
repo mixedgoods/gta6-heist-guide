@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Leonida — Personal GTA 6 Companion &amp; Unified Progress Dashboard</title>
+    <meta name="description" content="Track your GTA 6 exploration, map pins, heist checklists, vehicles, weapons, properties, wildlife, and save planner in one personal browser-local dashboard. No login required.">
+    <link rel="canonical" href="https://www.gta6heistguide.com/my-leonida/">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:site_name" content="GTA6HeistGuide.com">
+    <meta property="og:title" content="My Leonida — Personal GTA 6 Companion &amp; Unified Progress Dashboard">
+    <meta property="og:description" content="Connect your GTA 6 map pins, Heist Command Center checklists, garage, armory, properties, wildlife discoveries, and save planner in one private browser dashboard.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gta6heistguide.com/my-leonida/">
+    <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Leonida — Personal GTA 6 Companion &amp; Progress Dashboard">
+    <meta name="twitter:description" content="Track verified GTA 6 map pins, heist preparation checklists, favorite vehicles, weapons, properties, and wildlife locally with zero login.">
+    <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
+    <link rel="stylesheet" href="/assets/style.css?v=20261124_p26">
+    <link rel="stylesheet" href="/assets/css/my-leonida.css?v=20261124_p28">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://www.gta6heistguide.com/my-leonida/#webapp",
+          "url": "https://www.gta6heistguide.com/my-leonida/",
+          "name": "My Leonida — Personal GTA 6 Companion Dashboard",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Web Browser",
+          "description": "Browser-local personal GTA 6 companion connecting interactive map exploration, Heist Command Center checklists, vehicle garage, weapon armory, properties, wildlife, and save planner with JSON backup and restore.",
+          "isAccessibleForFree": true,
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "GTA6HeistGuide.com",
+            "url": "https://www.gta6heistguide.com/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.gta6heistguide.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "My Leonida",
+              "item": "https://www.gta6heistguide.com/my-leonida/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<div class="countdown-strip" id="siteTopStrip">
+    <div class="countdown-strip-inner">
+        <div class="strip-left-items">
+            <span class="strip-pill" style="background:rgba(0,255,136,0.15); border:1px solid var(--neon-green); color:var(--neon-green); font-weight:900;">
+                <span class="strip-pulse" style="background:var(--neon-green);"></span>
+                <span class="launch-mode-label" id="launchDayBanner" data-launch-banner>Story Mode: LIVE · GTA 6 Online: No official release date announced</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar" id="siteNavbar">
+    <div class="nav-container">
+        <a href="/" class="brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="brand-logo-img" width="688" height="110" decoding="async" fetchpriority="high"></a>
+        <ul class="nav-links">
+            <li><a href="/" class="nav-pill">HEISTS</a></li>
+            <li><a href="/map" class="nav-pill">MAP</a></li>
+            <li><a href="/gta-6-money-guide/" class="nav-pill">MONEY</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                    <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                    <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                    <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                    <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                    <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">TIPS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
+                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheats</a>
+                    <a href="/secrets" class="nav-dropdown-item">🥚 Secrets</a>
+                    <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/my-leonida/" class="nav-dropdown-item" style="color:var(--neon-green); font-weight:800;">🌴 My Leonida Dashboard</a>
+                    <a href="/heist-command-center/" class="nav-dropdown-item" style="color:var(--neon-cyan); font-weight:800;">🛰️ Heist Command Center</a>
+                    <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
+                    <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
+                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
+                    <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
+                    <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
+                    <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
+                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
+                </div>
+            </li>
+            <li class="nav-dropdown nav-dropdown-right">
+                <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">DATABASE <span class="nav-arrow">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="/gta-6-database/" class="nav-dropdown-item nav-dropdown-hub">📚 World Database Hub</a>
+                    <a href="/properties" class="nav-dropdown-item">🏠 Properties</a>
+                    <a href="/animals" class="nav-dropdown-item">🐊 Animals &amp; Wildlife</a>
+                    <a href="/vehicles" class="nav-dropdown-item">🏎️ Vehicles</a>
+                    <a href="/weapons" class="nav-dropdown-item">⚔️ Weapons</a>
+                    <a href="/weapons-bonuses" class="nav-dropdown-item">🔫 Gun Stores</a>
+                    <a href="/radio" class="nav-dropdown-item">📻 Radio Stations</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="ml-page" id="myLeonidaApp">
+    <nav class="ml-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">My Leonida</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="ml-hero" aria-labelledby="mlMainTitle">
+        <img src="/assets/images/regions/vice-city.jpg" alt="Vice City skyline across Leonida" class="ml-hero-bg" width="1600" height="900" decoding="async" fetchpriority="high">
+        <div class="ml-hero-overlay">
+            <div class="ml-hero-top">
+                <div>
+                    <span class="ml-eyebrow">🌴 Personal GTA VI Companion · Zero Login · Browser-Local Sync</span>
+                    <h1 id="mlMainTitle">MY LEONIDA</h1>
+                    <p class="ml-hero-sub">Your personal operations dashboard across Vice City, Port Gellhorn, Leonida Keys, Grassrivers, Ambrosia, and Mount Kalaga. Track verified map pins, heist checklists, vehicles, weapons, properties, wildlife, and save slots in one place.</p>
+                </div>
+                <div class="ml-local-badge" id="mlSyncBadge">
+                    <span class="ml-local-dot" aria-hidden="true"></span>
+                    <span id="mlSyncText">Synced Locally · No Account Needed</span>
+                </div>
+            </div>
+
+            <div class="ml-hero-actions">
+                <a href="/map" class="ml-btn ml-btn-primary" id="mlResumeMapHeroBtn">🗺️ Resume Map Exploration</a>
+                <a href="/heist-command-center/" class="ml-btn ml-btn-pink" id="mlResumeHeistHeroBtn">🛰️ Open Heist Command Center</a>
+                <a href="/save-planner/" class="ml-btn ml-btn-secondary">💾 15-Slot Save Planner</a>
+                <button type="button" class="ml-btn ml-btn-green" id="mlQuickExportBtn">⬇ Export Backup (.json)</button>
+            </div>
+
+            <div class="ml-kpi-grid" aria-label="Personal Progress Summary">
+                <div class="ml-kpi-card">
+                    <span class="ml-kpi-label">Overall Verified Progress</span>
+                    <span class="ml-kpi-val" id="mlKpiOverallPct">0%</span>
+                    <span class="ml-kpi-sub" id="mlKpiOverallSub">0 / 0 verified items</span>
+                    <div class="ml-bar-track"><div class="ml-bar-fill" id="mlKpiOverallBar" style="width:0%"></div></div>
+                </div>
+                <div class="ml-kpi-card">
+                    <span class="ml-kpi-label">Map Exploration</span>
+                    <span class="ml-kpi-val" id="mlKpiMapVal">0 / 188</span>
+                    <span class="ml-kpi-sub" id="mlKpiMapSub">0% · 188 unvisited</span>
+                    <div class="ml-bar-track"><div class="ml-bar-fill" id="mlKpiMapBar" style="width:0%"></div></div>
+                </div>
+                <div class="ml-kpi-card">
+                    <span class="ml-kpi-label">Heist Preparation</span>
+                    <span class="ml-kpi-val" id="mlKpiHeistVal">0%</span>
+                    <span class="ml-kpi-sub" id="mlKpiHeistSub">0 active · 0 completed</span>
+                    <div class="ml-bar-track"><div class="ml-bar-fill is-pink" id="mlKpiHeistBar" style="width:0%"></div></div>
+                </div>
+                <div class="ml-kpi-card">
+                    <span class="ml-kpi-label">Garage &amp; Armory</span>
+                    <span class="ml-kpi-val" id="mlKpiGearVal">0 / 0</span>
+                    <span class="ml-kpi-sub" id="mlKpiGearSub">0 owned vehicles · 0 fav weapons</span>
+                </div>
+                <div class="ml-kpi-card">
+                    <span class="ml-kpi-label">Properties &amp; Wildlife</span>
+                    <span class="ml-kpi-val" id="mlKpiWorldVal">0 / 0</span>
+                    <span class="ml-kpi-sub" id="mlKpiWorldSub">0 properties · 0/7 verified animals</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ml-disclaimer" role="note">
+        <span>🔒 <strong>Website-Side Progress Only:</strong> My Leonida stores your personal checklists, map pins, favorites, and bookmarks locally in this browser. It does <strong>not</strong> read or modify GTA VI game save files, and no personal data is sent to a server.</span>
+        <span id="mlRecoveryNotice" style="display:none; color:#fde68a; font-weight:700;"></span>
+    </div>
+
+    <div id="mlStatusBanner" class="ml-status-banner" role="status" aria-live="polite"></div>
+
+    <!-- REGION VISUAL STRIP -->
+    <section class="ml-region-strip" aria-label="Leonida Regions">
+        <a href="/map" class="ml-region-tile">
+            <img src="/assets/images/regions/vice-city.jpg" alt="Vice City region" loading="lazy" width="600" height="375">
+            <span class="ml-region-cap"><span>Vice City</span><span>Map →</span></span>
+        </a>
+        <a href="/map" class="ml-region-tile">
+            <img src="/assets/images/regions/port-gellhorn.jpg" alt="Port Gellhorn region" loading="lazy" width="600" height="375">
+            <span class="ml-region-cap"><span>Port Gellhorn</span><span>Map →</span></span>
+        </a>
+        <a href="/map" class="ml-region-tile">
+            <img src="/assets/images/regions/leonida-keys.jpg" alt="Leonida Keys region" loading="lazy" width="600" height="375">
+            <span class="ml-region-cap"><span>Leonida Keys</span><span>Map →</span></span>
+        </a>
+        <a href="/map" class="ml-region-tile">
+            <img src="/assets/images/regions/grassrivers.jpg" alt="Grassrivers region" loading="lazy" width="600" height="375">
+            <span class="ml-region-cap"><span>Grassrivers</span><span>Map →</span></span>
+        </a>
+        <a href="/map" class="ml-region-tile">
+            <img src="/assets/images/properties/gtavi-ambrosia-highway-freight.jpg" alt="Ambrosia region" loading="lazy" width="600" height="375">
+            <span class="ml-region-cap"><span>Ambrosia</span><span>Map →</span></span>
+        </a>
+        <a href="/map" class="ml-region-tile">
+            <img src="/assets/images/regions/mount-kalaga.jpg" alt="Mount Kalaga region" loading="lazy" width="600" height="375">
+            <span class="ml-region-cap"><span>Mount Kalaga</span><span>Map →</span></span>
+        </a>
+    </section>
+
+    <!-- DASHBOARD TABS -->
+    <div class="ml-tabs-wrap">
+        <div class="ml-tabs" role="tablist" aria-label="My Leonida Sections">
+            <button type="button" class="ml-tab is-active" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview" data-ml-tab="overview">📊 Overview</button>
+            <button type="button" class="ml-tab" role="tab" aria-selected="false" aria-controls="panel-exploration" id="tab-exploration" data-ml-tab="exploration">🗺️ My Exploration <span class="ml-tab-badge" id="badge-exploration">0</span></button>
+            <button type="button" class="ml-tab" role="tab" aria-selected="false" aria-controls="panel-heists" id="tab-heists" data-ml-tab="heists">🎯 My Heists <span class="ml-tab-badge" id="badge-heists">0</span></button>
+            <button type="button" class="ml-tab" role="tab" aria-selected="false" aria-controls="panel-garage" id="tab-garage" data-ml-tab="garage">🏎️ My Garage <span class="ml-tab-badge" id="badge-garage">0</span></button>
+            <button type="button" class="ml-tab" role="tab" aria-selected="false" aria-controls="panel-armory" id="tab-armory" data-ml-tab="armory">⚔️ My Armory <span class="ml-tab-badge" id="badge-armory">0</span></button>
+            <button type="button" class="ml-tab" role="tab" aria-selected="false" aria-controls="panel-world" id="tab-world" data-ml-tab="world">🏠 Properties &amp; Wildlife <span class="ml-tab-badge" id="badge-world">0</span></button>
+            <button type="button" class="ml-tab" role="tab" aria-selected="false" aria-controls="panel-backup" id="tab-backup" data-ml-tab="backup">💾 Backup &amp; Reset</button>
+        </div>
+    </div>
+
+    <!-- PANEL 1: OVERVIEW -->
+    <section class="ml-panel is-active" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <div id="mlEmptyWelcome" class="ml-empty-welcome" style="display:none;">
+            <h2>Welcome to My Leonida — Ready for Your First Session</h2>
+            <p>You have no saved progress in this browser yet. Everything you mark on the Interactive Map, Heist Command Center, Vehicles, Weapons, Properties, Wildlife, or Save Planner syncs here automatically with zero login.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.55rem;">
+                <a href="/map" class="ml-btn ml-btn-primary ml-btn-sm">🗺️ Start Exploring Map Pins</a>
+                <a href="/heist-command-center/" class="ml-btn ml-btn-pink ml-btn-sm">🛰️ Start a Heist Checklist</a>
+                <a href="/vehicles" class="ml-btn ml-btn-secondary ml-btn-sm">🏎️ Browse 33 Vehicles</a>
+                <a href="/weapons" class="ml-btn ml-btn-secondary ml-btn-sm">⚔️ Browse 25 Weapons</a>
+            </div>
+        </div>
+
+        <div class="ml-card" style="margin-bottom:1rem;">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">🧭 My Next Activity</h2>
+                    <p class="ml-card-sub">Contextual suggestions built strictly from your incomplete checklists, unvisited map pins, and unexplored databases.</p>
+                </div>
+            </div>
+            <div id="mlNextActivityList" class="ml-next-list">
+                <div class="ml-empty-box">Loading verified recommendations...</div>
+            </div>
+        </div>
+
+        <div class="ml-grid-2">
+            <div class="ml-card">
+                <div class="ml-card-head">
+                    <div>
+                        <h2 class="ml-card-title">📖 Recently Viewed Guides &amp; Pages</h2>
+                        <p class="ml-card-sub">Synced from your browser history (Phase 26 Continue Reading).</p>
+                    </div>
+                </div>
+                <div id="mlRecentPagesList" class="ml-row-list">
+                    <div class="ml-empty-box">Visit any heist walkthrough, guide, or database page to see quick resume links here.</div>
+                </div>
+            </div>
+
+            <div class="ml-card">
+                <div class="ml-card-head">
+                    <div>
+                        <h2 class="ml-card-title">💾 Save Planner &amp; Saved Locations</h2>
+                        <p class="ml-card-sub">Connected to your 15-Slot Save Planner and favorited map pins.</p>
+                    </div>
+                    <a href="/save-planner/" class="ml-btn ml-btn-secondary ml-btn-sm">Open Save Planner →</a>
+                </div>
+                <div id="mlOverviewSavedSummary" class="ml-row-list"></div>
+            </div>
+        </div>
+
+        <div class="ml-grid-2">
+            <div class="ml-card">
+                <div class="ml-card-head">
+                    <h2 class="ml-card-title">🎯 Active Heist Jobs</h2>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-jump="heists">Manage Heists →</button>
+                </div>
+                <div id="mlOverviewHeists" class="ml-row-list"></div>
+            </div>
+
+            <div class="ml-card">
+                <div class="ml-card-head">
+                    <h2 class="ml-card-title">⭐ Saved Favorites Snapshot</h2>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-jump="garage">Open Garage →</button>
+                </div>
+                <div id="mlOverviewFavorites" class="ml-row-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL 2: MY EXPLORATION -->
+    <section class="ml-panel" id="panel-exploration" role="tabpanel" aria-labelledby="tab-exploration">
+        <div class="ml-card" style="margin-bottom:1rem;">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">🗺️ My Exploration — Leonida Interactive Map</h2>
+                    <p class="ml-card-sub" id="mlMapSummaryLine">Connecting 188 verified map pins...</p>
+                </div>
+                <a href="/map" class="ml-btn ml-btn-primary">🗺️ Resume Map Exploration</a>
+            </div>
+            <div id="mlMapCategoriesGrid" class="ml-grid-3" style="margin-bottom:1rem;"></div>
+
+            <div class="ml-controls">
+                <input type="search" id="mlPinSearch" class="ml-input" placeholder="Search 188 verified pins by title, region, or category..." aria-label="Search verified map pins">
+                <select id="mlPinFilterStatus" class="ml-select" aria-label="Filter map pins by status">
+                    <option value="all">All Verified Pins</option>
+                    <option value="unvisited">Unvisited Only</option>
+                    <option value="completed">Completed Only</option>
+                    <option value="favorites">Favorite Pins Only</option>
+                </select>
+                <select id="mlPinFilterRegion" class="ml-select" aria-label="Filter map pins by region">
+                    <option value="all">All Regions</option>
+                </select>
+            </div>
+            <div id="mlPinsList" class="ml-row-list"></div>
+        </div>
+    </section>
+
+    <!-- PANEL 3: MY HEISTS -->
+    <section class="ml-panel" id="panel-heists" role="tabpanel" aria-labelledby="tab-heists">
+        <div class="ml-card" style="margin-bottom:1rem;">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">🎯 My Heists — Connected to Heist Command Center</h2>
+                    <p class="ml-card-sub" id="mlHeistSummaryLine">Website-side preparation checklists synced with Phase 27.</p>
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <a href="/heist-command-center/" class="ml-btn ml-btn-pink ml-btn-sm">🛰️ Open Command Center</a>
+                    <a href="/heist-planner" class="ml-btn ml-btn-secondary ml-btn-sm">🎯 Heist Planner</a>
+                </div>
+            </div>
+            <div class="ml-controls">
+                <select id="mlHeistFilter" class="ml-select" aria-label="Filter heist jobs">
+                    <option value="all">All 16 Canonical Jobs &amp; Guides</option>
+                    <option value="active">Active / In-Progress</option>
+                    <option value="completed">Completed Checklists</option>
+                    <option value="not-started">Not Started</option>
+                </select>
+            </div>
+            <div id="mlHeistsList"></div>
+        </div>
+    </section>
+
+    <!-- PANEL 4: MY GARAGE -->
+    <section class="ml-panel" id="panel-garage" role="tabpanel" aria-labelledby="tab-garage">
+        <div class="ml-card">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">🏎️ My Garage — 33 Verified GTA VI Vehicles</h2>
+                    <p class="ml-card-sub" id="mlGarageSummaryLine">Mark owned vehicles, save favorites, and compare specs side-by-side.</p>
+                </div>
+                <a href="/vehicles" class="ml-btn ml-btn-secondary ml-btn-sm">Open Full Vehicles DB →</a>
+            </div>
+            <div id="mlVehicleCompareBar" class="ml-compare-bar" aria-live="polite">
+                <span id="mlVehicleCompareText" style="font-size:0.83rem; font-weight:800; color:#fbcfe8;"></span>
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                    <a href="/vehicles" id="mlVehicleCompareGo" class="ml-btn ml-btn-pink ml-btn-sm">⚖️ Compare Selected</a>
+                    <button type="button" id="mlVehicleCompareClear" class="ml-btn ml-btn-secondary ml-btn-sm">Clear</button>
+                </div>
+            </div>
+            <div class="ml-controls">
+                <input type="search" id="mlVehicleSearch" class="ml-input" placeholder="Search 33 vehicles by name, class, or manufacturer..." aria-label="Search vehicles">
+                <select id="mlVehicleFilter" class="ml-select" aria-label="Filter vehicles">
+                    <option value="all">All 33 Vehicles</option>
+                    <option value="owned">Owned Only</option>
+                    <option value="favorites">Favorites Only</option>
+                    <option value="unowned">Not Yet Owned</option>
+                </select>
+            </div>
+            <div id="mlVehiclesGrid" class="ml-item-grid"></div>
+        </div>
+    </section>
+
+    <!-- PANEL 5: MY ARMORY -->
+    <section class="ml-panel" id="panel-armory" role="tabpanel" aria-labelledby="tab-armory">
+        <div class="ml-card" style="margin-bottom:1rem;">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">🎒 Preferred Heist Loadout</h2>
+                    <p class="ml-card-sub">Save your preferred weapon picks locally using verified entries from the 25-weapon database.</p>
+                </div>
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                    <a href="/weapons" class="ml-btn ml-btn-secondary ml-btn-sm">Full Weapons DB →</a>
+                    <a href="/weapons-bonuses" class="ml-btn ml-btn-secondary ml-btn-sm">🔫 24 Gun Outlets →</a>
+                </div>
+            </div>
+            <div class="ml-loadout-grid">
+                <div class="ml-loadout-slot">
+                    <label for="mlLoadoutSidearm">Sidearm Slot</label>
+                    <select id="mlLoadoutSidearm" class="ml-select" data-loadout-slot="sidearm"></select>
+                </div>
+                <div class="ml-loadout-slot">
+                    <label for="mlLoadoutPrimary">Primary Rifle / SMG</label>
+                    <select id="mlLoadoutPrimary" class="ml-select" data-loadout-slot="primary"></select>
+                </div>
+                <div class="ml-loadout-slot">
+                    <label for="mlLoadoutHeavy">Heavy / Shotgun / Sniper</label>
+                    <select id="mlLoadoutHeavy" class="ml-select" data-loadout-slot="heavy"></select>
+                </div>
+                <div class="ml-loadout-slot">
+                    <label for="mlLoadoutUtility">Throwable / Melee</label>
+                    <select id="mlLoadoutUtility" class="ml-select" data-loadout-slot="utility"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="ml-card">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">⚔️ My Armory — 25 Verified GTA VI Weapons</h2>
+                    <p class="ml-card-sub" id="mlArmorySummaryLine">Track favorites, owned weapons, comparisons, related heists, and gun stores.</p>
+                </div>
+            </div>
+            <div id="mlWeaponCompareBar" class="ml-compare-bar" aria-live="polite">
+                <span id="mlWeaponCompareText" style="font-size:0.83rem; font-weight:800; color:#fbcfe8;"></span>
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                    <a href="/weapons" id="mlWeaponCompareGo" class="ml-btn ml-btn-pink ml-btn-sm">⚖️ Compare Selected</a>
+                    <button type="button" id="mlWeaponCompareClear" class="ml-btn ml-btn-secondary ml-btn-sm">Clear</button>
+                </div>
+            </div>
+            <div class="ml-controls">
+                <input type="search" id="mlWeaponSearch" class="ml-input" placeholder="Search 25 weapons by name or class..." aria-label="Search weapons">
+                <select id="mlWeaponFilter" class="ml-select" aria-label="Filter weapons">
+                    <option value="all">All 25 Weapons</option>
+                    <option value="favorites">Favorites Only</option>
+                    <option value="owned">Owned Only</option>
+                </select>
+            </div>
+            <div id="mlWeaponsGrid" class="ml-item-grid"></div>
+        </div>
+    </section>
+
+    <!-- PANEL 6: PROPERTIES, WILDLIFE & GUN OUTLETS -->
+    <section class="ml-panel" id="panel-world" role="tabpanel" aria-labelledby="tab-world">
+        <div class="ml-card">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">🏠 My Properties, Wildlife &amp; Gun Outlets</h2>
+                    <p class="ml-card-sub" id="mlWorldSummaryLine">27 properties · 49 wildlife records (7 verified GTA VI + 42 real-world references) · 24 gun outlets.</p>
+                </div>
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                    <a href="/properties" class="ml-btn ml-btn-secondary ml-btn-sm">Properties DB</a>
+                    <a href="/animals" class="ml-btn ml-btn-secondary ml-btn-sm">Animals DB</a>
+                    <a href="/weapons-bonuses" class="ml-btn ml-btn-secondary ml-btn-sm">Gun Stores DB</a>
+                </div>
+            </div>
+
+            <div class="ml-controls">
+                <select id="mlWorldSection" class="ml-select" aria-label="Choose world database category">
+                    <option value="properties">🏠 Properties (27)</option>
+                    <option value="animals-verified">🐊 Verified GTA VI Wildlife (7 — Counts Toward Discovery)</option>
+                    <option value="animals-reference">📷 Real-World Species References (42 — Reference Only)</option>
+                    <option value="gun-stores">🔫 Gun Outlets (24)</option>
+                </select>
+                <input type="search" id="mlWorldSearch" class="ml-input" placeholder="Search entries by name or region..." aria-label="Search properties, wildlife, or gun outlets">
+                <select id="mlWorldStatusFilter" class="ml-select" aria-label="Filter world entries">
+                    <option value="all">All Entries</option>
+                    <option value="explored">Explored / Discovered</option>
+                    <option value="bookmarked">Bookmarked Only</option>
+                </select>
+            </div>
+            <div id="mlWildlifeNotice" class="ml-disclaimer" style="display:none; margin-bottom:0.85rem;"></div>
+            <div id="mlWorldGrid" class="ml-item-grid"></div>
+        </div>
+    </section>
+
+    <!-- PANEL 7: BACKUP, RESTORE & RESET -->
+    <section class="ml-panel" id="panel-backup" role="tabpanel" aria-labelledby="tab-backup">
+        <div class="ml-grid-2">
+            <div class="ml-card">
+                <div class="ml-card-head">
+                    <div>
+                        <h2 class="ml-card-title">⬇ Export My Leonida Backup</h2>
+                        <p class="ml-card-sub">Downloads a schema-versioned JSON file (`schemaVersion: 2`) containing your map pins, heist checklists, garage, armory, properties, wildlife, save planner, and recent pages.</p>
+                    </div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:0.55rem; margin-bottom:0.85rem;">
+                    <button type="button" class="ml-btn ml-btn-primary" id="mlExportDownloadBtn">⬇ Download Full Backup (.json)</button>
+                    <button type="button" class="ml-btn ml-btn-secondary" id="mlExportCopyBtn">📋 Copy Backup JSON</button>
+                </div>
+                <label for="mlExportPreview" style="display:block; font-size:0.76rem; color:#94a3b8; margin-bottom:0.35rem;">Current Local Backup Preview (Read-Only):</label>
+                <textarea id="mlExportPreview" class="ml-textarea" readonly aria-label="Exported JSON preview"></textarea>
+            </div>
+
+            <div class="ml-card">
+                <div class="ml-card-head">
+                    <div>
+                        <h2 class="ml-card-title">⬆ Restore Backup (.json)</h2>
+                        <p class="ml-card-sub">Strictly validates schema version, file size (&le; 512 KB), and rejects malformed JSON or HTML/script payloads. Automatically preserves a safety snapshot before restoring.</p>
+                    </div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:0.55rem; margin-bottom:0.75rem;">
+                    <button type="button" class="ml-btn ml-btn-green" id="mlImportFileBtn">📂 Choose .json File</button>
+                    <input type="file" id="mlImportFileInput" accept=".json,application/json" style="display:none;">
+                    <button type="button" class="ml-btn ml-btn-secondary" id="mlImportPasteBtn">✅ Validate &amp; Restore Pasted JSON</button>
+                </div>
+                <label for="mlImportTextarea" style="display:block; font-size:0.76rem; color:#94a3b8; margin-bottom:0.35rem;">Or paste a previously exported backup JSON below:</label>
+                <textarea id="mlImportTextarea" class="ml-textarea" placeholder='{"schemaVersion": 2, "app": "gta6heistguide_my_leonida_v2", ...}' aria-label="Paste backup JSON to restore"></textarea>
+                <div id="mlImportFeedback" style="margin-top:0.55rem; font-size:0.82rem; font-weight:700;"></div>
+            </div>
+        </div>
+
+        <div class="ml-card">
+            <div class="ml-card-head">
+                <div>
+                    <h2 class="ml-card-title">↺ Reset Selected Categories or All Website Progress</h2>
+                    <p class="ml-card-sub">Clear individual categories without touching the rest, or wipe all browser-local GTA6HeistGuide progress with explicit confirmation.</p>
+                </div>
+                <button type="button" class="ml-btn ml-btn-danger" id="mlResetAllTriggerBtn">⚠️ Reset All Website Progress</button>
+            </div>
+            <div class="ml-reset-grid">
+                <div class="ml-reset-tile">
+                    <div><strong>🗺️ Map Exploration</strong><div class="ml-row-sub">Completed pins, favorite pins &amp; custom pins</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="pins">Reset Map Progress</button>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>🎯 Heist Checklists</strong><div class="ml-row-sub">Phase 27 checklists &amp; heist completion flags</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="heists">Reset Heists</button>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>🏎️ My Garage</strong><div class="ml-row-sub">Owned &amp; favorited vehicles</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="vehicles">Reset Garage</button>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>⚔️ My Armory</strong><div class="ml-row-sub">Weapon favorites, owned &amp; loadout slots</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="weapons">Reset Armory</button>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>🏠 Properties</strong><div class="ml-row-sub">Explored &amp; bookmarked properties</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="properties">Reset Properties</button>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>🐊 Wildlife &amp; Gun Stores</strong><div class="ml-row-sub">Wildlife discoveries, references &amp; gun outlets</div></div>
+                    <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+                        <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="animals">Reset Wildlife</button>
+                        <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="gun-stores">Reset Gun Stores</button>
+                    </div>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>💾 Save Planner</strong><div class="ml-row-sub">15-slot checklist &amp; preflight steps</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="slots">Reset Save Planner</button>
+                </div>
+                <div class="ml-reset-tile">
+                    <div><strong>📖 Recently Viewed</strong><div class="ml-row-sub">Continue Reading page history</div></div>
+                    <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="recent">Clear Recent History</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRAWLABLE PUBLIC SEO HUB DIRECTORY -->
+    <section class="ml-seo-directory" aria-labelledby="mlDirectoryTitle">
+        <h2 id="mlDirectoryTitle">Connected GTA 6 Tools, Walkthroughs &amp; World Databases</h2>
+        <p>My Leonida links every major GTA6HeistGuide.com tool into a single personal companion. Explore the full interactive map, plan Story Mode heists, compare vehicles and weapons, or track properties and wildlife across Vice City, Port Gellhorn, Ambrosia, Grassrivers, Leonida Keys, and Mount Kalaga.</p>
+        <div class="ml-seo-links">
+            <a href="/map">🗺️ Interactive Leonida Map (188 Pins)</a>
+            <a href="/heist-command-center/">🛰️ Heist Command Center (16 Jobs)</a>
+            <a href="/heist-planner">🎯 Heist Planner</a>
+            <a href="/heist-payout-calculator">💰 Payout Calculator</a>
+            <a href="/save-planner/">💾 15-Slot Save Planner</a>
+            <a href="/vehicles">🏎️ Vehicle Database (33)</a>
+            <a href="/weapons">⚔️ Weapon Database (25)</a>
+            <a href="/properties">🏠 Properties Database (27)</a>
+            <a href="/animals">🐊 Wildlife Database (49)</a>
+            <a href="/weapons-bonuses">🔫 Gun Outlets (24)</a>
+            <a href="/heists/the-cartel-heist">🏦 The Cartel Heist Walkthrough</a>
+            <a href="/heists/vcia-takedown">✈️ VCIA Takedown Walkthrough</a>
+            <a href="/escape-routes">🚨 Escape Routes</a>
+            <a href="/gta-6-money-guide/">💵 GTA 6 Money Guide</a>
+            <a href="/gta-6-100-completion-tracker/">✅ 100% Completion Tracker</a>
+        </div>
+    </section>
+</main>
+
+<!-- CONFIRMATION MODAL (Import Restore & Reset All) -->
+<div class="ml-modal-backdrop" id="mlConfirmModal" role="dialog" aria-modal="true" aria-labelledby="mlConfirmModalTitle">
+    <div class="ml-modal">
+        <h3 id="mlConfirmModalTitle">Confirm Action</h3>
+        <p id="mlConfirmModalDesc"></p>
+        <div class="ml-modal-actions">
+            <button type="button" class="ml-btn ml-btn-secondary" id="mlConfirmCancelBtn">Cancel</button>
+            <button type="button" class="ml-btn ml-btn-primary" id="mlConfirmOkBtn">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-inner" style="max-width:1280px; margin:0 auto; padding:2rem 1.25rem; text-align:center; color:#94a3b8; font-size:0.84rem;">
+        <p style="margin:0 0 0.5rem;">&copy; 2026 GTA6HeistGuide.com &middot; Independent GTA VI companion. Not affiliated with Rockstar Games or Take-Two Interactive.</p>
+        <p style="margin:0;">
+            <a href="/" style="color:var(--neon-cyan,#00f0ff); margin:0 0.5rem;">Home</a>
+            <a href="/my-leonida/" style="color:var(--neon-green,#00ff88); margin:0 0.5rem;">My Leonida</a>
+            <a href="/heist-command-center/" style="color:var(--neon-cyan,#00f0ff); margin:0 0.5rem;">Heist Command Center</a>
+            <a href="/map" style="color:var(--neon-cyan,#00f0ff); margin:0 0.5rem;">Interactive Map</a>
+            <a href="/privacy-policy" style="color:#94a3b8; margin:0 0.5rem;">Privacy Policy</a>
+            <a href="/terms" style="color:#94a3b8; margin:0 0.5rem;">Terms</a>
+        </p>
+    </div>
+</footer>
+
+<script src="/site-config.js?v=20261124_p28"></script>
+<script src="/assets/js/gta6-progress-store.js?v=20261124_p28"></script>
+<script src="/assets/js/my-leonida-adapter.js?v=20261124_p28"></script>
+<script src="/assets/js/my-leonida.js?v=20261124_p28"></script>
+</body>
+</html>
