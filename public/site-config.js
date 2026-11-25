@@ -54,12 +54,19 @@ window.SITE_CONFIG = Object.freeze({
     affiliate_click: true,
     vehicle_compare: true,
     guide_related_click: true,
-    continue_read: true
+    continue_read: true,
+    heist_command_open: true,
+    heist_selected: true,
+    heist_checklist_toggle: true,
+    heist_map_open: true,
+    heist_resource_click: true,
+    heist_progress_export: true
   };
 
   function classifyPathCategory(pathname) {
     var p = String(pathname || '/').toLowerCase();
     if (p === '/' || p === '/index.html') return 'home';
+    if (p.indexOf('/heist-command-center') === 0) return 'heist_command';
     if (p.indexOf('/map') === 0) return 'map';
     if (/^\/(properties|animals|vehicles|weapons|weapons-bonuses|radio|gta-6-database)/.test(p)) return 'database';
     if (/^\/(heist-planner|heist-payout-calculator|save-planner|gta-6-tools|free|live)/.test(p)) return 'tools';

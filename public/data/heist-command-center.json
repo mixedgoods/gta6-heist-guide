@@ -1,0 +1,1316 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-11-24",
+  "jobs": [
+    {
+      "id": "the-cartel-heist",
+      "title": "The Cartel Heist",
+      "subtitle": "Chapter 3 — Story Heist #1 (Sinfrontera National Bank)",
+      "classification": "Heist",
+      "region": "Vice City",
+      "chapter": "Chapter 3",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": true,
+      "image": "/assets/images/heists/cartel-heist.jpg",
+      "imageAlt": "The Cartel Heist at Sinfrontera National Bank in Vice City",
+      "summary": "Jason and Lucia's first major story heist with Raul Bautista targeting Sinfrontera National Bank during an ~11-minute cell-tower blackout window.",
+      "canonicalUrl": "/heists/the-cartel-heist",
+      "prepUrl": "/missions/raul-setup-vault-blueprints",
+      "prepLabel": "Raul Setup 2: Vault Blueprints",
+      "locationGuideUrl": "/guides/sinfrontera-national-bank",
+      "locationGuideLabel": "Sinfrontera National Bank Layout Guide",
+      "escapeUrl": "/guides/vice-city-storm-drains-escape",
+      "escapeLabel": "Vice City Storm Drains & Escape Routes",
+      "plannerUrl": "/heist-planner?target=cartel-heist",
+      "mapPinId": "heist-cartel",
+      "mapPinLabel": "Sinfrontera Bank Heist Pin",
+      "secondaryPinId": "vault-sinfrontera-downtown",
+      "secondaryPinLabel": "Sinfrontera Financial District Vault",
+      "payoutConfirmed": "$120,000 base story payout",
+      "payoutReported": "Up to $150,000 reported with clean vault sweep & bonus bags",
+      "overview": {
+        "objective": "Trigger the pre-planted cell-tower blackout charges, breach the Sinfrontera National Bank basement vault, clear the center-table stacks and side bundles, and extract via the staged bus and freeway corridor.",
+        "location": "Sinfrontera National Bank, Vice City Financial District.",
+        "approaches": [
+          "Professional / Non-Lethal Guard Disarm (preserves Professional rating and limits civilian escalation)",
+          "Aggressive Breach (faster lobby push with higher VCPD perimeter pressure once blackout expires)"
+        ],
+        "requirements": [
+          "Complete all 5 Raul Bautista setups: Security Expert, Heist Planning, Ride or Die, Safe Word, and Hidden Charges.",
+          "Create a manual save slot before launching the finale (no mission replay menu at launch)."
+        ]
+      },
+      "walkthroughStages": [
+        "Trigger the pre-planted Hidden Charges on surrounding cell towers to start the ~11-minute VCPD comms blackout.",
+        "Enter Sinfrontera National Bank rapidly; shoot weapons out of guard hands to preserve Professional rating.",
+        "Move Jason and Lucia down the basement stairwell, clear tight corner sightlines, and neutralize the armored vault guard.",
+        "Breach the basement vault door, sweep center-table cash pallets before side bundles, and extract along Raul's staged getaway route."
+      ],
+      "commonMistakes": [
+        "Executing security guards or panicking lobby civilians instead of disarming guards, which degrades the Professional rating.",
+        "Lingering inside the basement vault after the ~11-minute blackout window closes and VCPD seals the front steps."
+      ],
+      "setupLinks": [
+        { "label": "Raul Setup 2: Vault Blueprints (Security Expert)", "url": "/missions/raul-setup-vault-blueprints" },
+        { "label": "Sinfrontera National Bank Floorplan & Security", "url": "/guides/sinfrontera-national-bank" },
+        { "label": "Stealth vs. Loud Heist Tactics", "url": "/guides/stealth-vs-loud-heist-tactics" }
+      ],
+      "checklist": [
+        { "id": "read-walkthrough", "label": "Read The Cartel Heist walkthrough and manual save warning" },
+        { "id": "verify-setups", "label": "Confirm all 5 Raul Bautista setups (Security Expert through Hidden Charges)" },
+        { "id": "check-loadout", "label": "Equip precision sidearm for guard disarms + primary carbine for vault corridor" },
+        { "id": "review-layout", "label": "Review Sinfrontera National Bank interior zones and vault stairwell" },
+        { "id": "review-escape", "label": "Review Vice City extraction corridor and blackout timer (~11 minutes)" },
+        { "id": "complete-job", "label": "Complete The Cartel Heist and verify net cut in Heist Planner" }
+      ],
+      "weapons": [
+        {
+          "id": "capo-tactical-pistol",
+          "name": "Capo Tactical Pistol",
+          "image": "/assets/images/weapons/gtavi-lucia-tactical-handgun.jpg",
+          "url": "/weapons/capo-tactical-pistol",
+          "reason": "High-control sidearm suited for shooting weapons out of bank guards' hands during the lobby entry."
+        },
+        {
+          "id": "service-carbine-rifle",
+          "name": "Service Carbine Rifle",
+          "image": "/assets/images/weapons/gtavi-service-carbine-night.jpg",
+          "url": "/weapons/service-carbine-rifle",
+          "reason": "Reliable mid-range rifle for clearing the basement stairwell armored guard and street extraction."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "vapid-stanier-classic",
+          "name": "Vapid Stanier Classic",
+          "image": "/assets/images/vehicles/gtavi-vapid-stanier-classic-vice-city-night.jpg",
+          "url": "/vehicles/vapid-stanier-classic",
+          "reason": "Four-door Vice City getaway sedan with trunk storage for clean backup staging."
+        },
+        {
+          "id": "albany-cavalcade-xl",
+          "name": "Albany Cavalcade XL",
+          "image": "/assets/images/vehicles/veh-albany-cavalcade-xl.jpg",
+          "url": "/vehicles/albany-cavalcade-xl",
+          "reason": "Heavy SUV option for absorbing VCPD perimeter fire during freeway extraction."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Sinfrontera National Bank Building Guide", "url": "/guides/sinfrontera-national-bank", "type": "Location Guide" },
+        { "label": "VCIA Takedown (Chapter 4 Story Heist #2)", "jobId": "vcia-takedown", "type": "Next Heist" },
+        { "label": "Heist Planner — Cartel Cut Calculator", "url": "/heist-planner?target=cartel-heist", "type": "Tool" }
+      ]
+    },
+    {
+      "id": "vcia-takedown",
+      "title": "VCIA Takedown",
+      "subtitle": "Chapter 4 — Story Heist #2 (Vice City International Airport)",
+      "classification": "Heist",
+      "region": "Vice City",
+      "chapter": "Chapter 4",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": true,
+      "image": "/assets/images/heists/vcia-takedown.jpg",
+      "imageAlt": "VCIA Takedown airport heist at Vice City International Airport",
+      "summary": "Chapter 4's high-stakes airport operation at Vice City International Airport targeting international currency pallets with stealth or loud tarmac approaches.",
+      "canonicalUrl": "/heists/vcia-takedown",
+      "prepUrl": "/missions/vcia-setup-hangar-access",
+      "prepLabel": "VCIA Setup 1: Hangar & Terminal Recon",
+      "locationGuideUrl": "/locations/vice-city-international-airport",
+      "locationGuideLabel": "VCIA Airport Zone & Hangar Guide",
+      "escapeUrl": "/guides/how-to-escape-police-wanted-levels",
+      "escapeLabel": "High Wanted Level & Airspace Evasion Guide",
+      "plannerUrl": "/heist-planner?target=vcia-takedown",
+      "mapPinId": "heist-vcia",
+      "mapPinLabel": "VCIA Takedown Heist Pin",
+      "secondaryPinId": "bank-airport-currency-exchange",
+      "secondaryPinLabel": "Vice International Terminal 2 FX Vault",
+      "payoutConfirmed": "$250,000 story heist payout",
+      "payoutReported": "Single verified $250,000 finale target across stealth and loud approaches",
+      "overview": {
+        "objective": "Infiltrate VCIA cargo terminals using Close Surveillance blind spots, bypass the terminal keypad, secure the international currency pallets, and escape across tarmac or coastal airspace.",
+        "location": "Vice City International Airport (VCIA), South Vice City.",
+        "approaches": [
+          "Stealth Infiltration (suppress exterior cameras and cross the apron via Close Surveillance blind spots)",
+          "Loud Tarmac Assault (heavy containment with tarmac suppression and runway breakout)"
+        ],
+        "requirements": [
+          "Complete all 4 VCIA setups: Close Surveillance, Heist Plans in Place, Delivery Method, and Team Building.",
+          "Save manually in Slot 8–10 before launch to replay both stealth and loud variants."
+        ]
+      },
+      "walkthroughStages": [
+        "Use Close Surveillance camera blind spots to slip past the outer airport gate and suppress exterior cameras.",
+        "Coordinate Jason and Lucia to bypass the cargo terminal keypad and secure the international currency pallets.",
+        "Hold tarmac sightlines against airport security and VCPD response units during pallet extraction.",
+        "Break out via the staged runway/coastal escape corridor out over Vice Bay to outclimb patrol choppers."
+      ],
+      "commonMistakes": [
+        "Crossing the airport apron before suppressing exterior cameras, which immediately triggers tarmac lockdown.",
+        "Launching without a manual backup save in Slot 8–10 when wanting to test both stealth and loud routes."
+      ],
+      "setupLinks": [
+        { "label": "VCIA Setup 1: Hangar & Terminal Recon (Close Surveillance)", "url": "/missions/vcia-setup-hangar-access" },
+        { "label": "VCIA Setup 2: Heist Plans in Place", "url": "/missions/vcia-setup-flight-manifest" },
+        { "label": "VCIA Setup 3: Airside Vehicles (Delivery Method)", "url": "/missions/vcia-setup-airside-vehicles" },
+        { "label": "VCIA Setup 4: Crew Roles & Tarmac Containment", "url": "/missions/vcia-setup-radar-comms" }
+      ],
+      "checklist": [
+        { "id": "manual-save", "label": "Create dedicated manual save (Slot 8–10) before starting VCIA Takedown" },
+        { "id": "verify-4-setups", "label": "Complete all 4 VCIA setups (Close Surveillance, Plans, Delivery, Team Building)" },
+        { "id": "check-loadout", "label": "Equip long-range sniper / tactical SMG for tarmac and camera suppression" },
+        { "id": "inspect-vcia-map", "label": "Inspect VCIA pin and Terminal 2 layout on the interactive map" },
+        { "id": "review-airspace", "label": "Review coastal Vice Bay airspace & wanted-level evasion tactics" },
+        { "id": "complete-job", "label": "Complete VCIA Takedown ($250,000) and log progress" }
+      ],
+      "weapons": [
+        {
+          "id": "heavy-sniper-rifle",
+          "name": "Heavy Anti-Materiel Sniper Rifle",
+          "image": "/assets/images/weapons/gtavi-heavy-battle-rifle.jpg",
+          "url": "/weapons/heavy-anti-materiel-sniper-rifle",
+          "reason": "Referenced directly in the VCIA Takedown walkthrough for long tarmac sightlines and vehicle disabling."
+        },
+        {
+          "id": "submachine-gun-mp5",
+          "name": "Tactical 9mm SMG",
+          "image": "/assets/images/weapons/gtavi-tactical-smg-jason.jpg",
+          "url": "/weapons/tactical-9mm-smg",
+          "reason": "Compact, controllable automatic suited for close-quarters cargo terminal sweeps."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "buckingham-shamal-jet",
+          "name": "Buckingham Private Jet",
+          "image": "/assets/images/vehicles/gtavi-buckingham-shamal-private-jet-vice-city.jpg",
+          "url": "/vehicles/buckingham-private-jet",
+          "reason": "Documented VCIA tarmac aircraft spawn linked directly from the VCIA Airport location guide."
+        },
+        {
+          "id": "vcpd-air-one-helicopter",
+          "name": "VCPD Air Support Helicopter",
+          "image": "/assets/images/vehicles/gtavi-vcpd-air-support-helicopter-grassrivers.jpg",
+          "url": "/vehicles/vcpd-air-support-helicopter",
+          "reason": "Primary aerial pursuit threat to counter during runway breakout and Vice Bay climb-out."
+        }
+      ],
+      "nextActivities": [
+        { "label": "VCIA Airport Zone & Hangar Guide", "url": "/locations/vice-city-international-airport", "type": "Location Guide" },
+        { "label": "Large Bank Vaults (8 Major Free-Roam Vaults)", "jobId": "large-bank-vaults", "type": "Next Tier" },
+        { "label": "Heist Planner — VCIA Cut Calculator", "url": "/heist-planner?target=vcia-takedown", "type": "Tool" }
+      ]
+    },
+    {
+      "id": "large-bank-vaults",
+      "title": "Large Bank Vaults (8 Major Vaults)",
+      "subtitle": "Repeatable High-Security Free-Roam Vaults (Chapter 4+)",
+      "classification": "Robbery",
+      "region": "Vice City",
+      "chapter": "Chapter 4+",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": true,
+      "image": "/assets/images/heists/large-bank-vaults.jpg",
+      "imageAlt": "Large Bank Vaults high-security robbery across Leonida",
+      "summary": "Eight major free-roam bank vaults across Vice City, Port Gellhorn, and Ambrosia requiring thermal drills, CCTV wipes, and a Dye Pack Jammer.",
+      "canonicalUrl": "/heists/large-bank-vaults",
+      "prepUrl": "/guides/bank-vault-hacking-guide",
+      "prepLabel": "Bank Vault Breaching & CCTV Wipe Guide",
+      "locationGuideUrl": "/guides/ambrosia-banks-and-vaults",
+      "locationGuideLabel": "Ambrosia Banks & Vaults Guide",
+      "escapeUrl": "/guides/vice-city-storm-drains-escape",
+      "escapeLabel": "Vice City Storm Drains Escape Guide",
+      "plannerUrl": "/heist-planner?target=large-banks",
+      "mapPinId": "heist-large-vaults",
+      "mapPinLabel": "Large Bank Vaults Cluster Pin",
+      "secondaryPinId": "vault-state-gold-reserve",
+      "secondaryPinLabel": "Ambrosia Federal Bullion Vault",
+      "payoutConfirmed": "Repeatable high-tier free-roam vault payouts",
+      "payoutReported": "Up to ~$205,000 reported cap per clean vault haul with Dye Pack Jammer",
+      "overview": {
+        "objective": "Disable rear security office CCTV, breach the main vault via silent thermal drilling or explosives, trigger the Dye Pack Jammer, and prioritize gold/bearer-bond trays before swapping into a staged getaway car.",
+        "location": "8 verified major vault locations across Vice City, Port Gellhorn, Ambrosia, and Leonida Keys.",
+        "approaches": [
+          "Silent Thermal Drilling (longer breach time, delays SWAT perimeter lockdown)",
+          "Explosive Vault Breach (instant door open, immediate 4–5 star VCPD/SWAT response)"
+        ],
+        "requirements": [
+          "Complete 'That's Where The Money Is...' to unlock all 8 repeatable Large Bank Vault targets.",
+          "Carry Dye Pack Jammer + Thermal/Drill Kit in your primary vehicle trunk.",
+          "Stage a clean swap vehicle with disguises 2–3 blocks away."
+        ]
+      },
+      "walkthroughStages": [
+        "Locate and clear the rear security office first to wipe CCTV and prevent getaway plate/vehicle tagging.",
+        "Choose silent thermal drilling for longer quiet windows or explosives for speed if ready for a 4–5 star breakout.",
+        "Activate the Dye Pack Jammer inside the vault and prioritize gold/bearer-bond trays and high-denomination stacks.",
+        "Break line-of-sight into a garage or alley 2–3 blocks away and swap into your clean staged vehicle."
+      ],
+      "commonMistakes": [
+        "Skipping the rear security office CCTV wipe, which lets VCPD lock onto your getaway vehicle description.",
+        "Bagging cash stacks without activating the Dye Pack Jammer first."
+      ],
+      "setupLinks": [
+        { "label": "Bank Vault Breaching, Keypads & CCTV Wipe Guide", "url": "/guides/bank-vault-hacking-guide" },
+        { "label": "Ambrosia Banks & Vault Targets", "url": "/guides/ambrosia-banks-and-vaults" },
+        { "label": "Robbery Cooldown Timers", "url": "/guides/robbery-cooldown-timers" }
+      ],
+      "checklist": [
+        { "id": "unlock-check", "label": "Confirm 'That's Where The Money Is...' unlock is completed" },
+        { "id": "pack-trunk", "label": "Verify Dye Pack Jammer and Thermal/Drill Kit are stowed in vehicle trunk" },
+        { "id": "stage-swap", "label": "Stage clean swap vehicle with disguises 2–3 blocks from target vault" },
+        { "id": "check-vault-pins", "label": "Locate target vault pin and rear security exit on Interactive Map" },
+        { "id": "review-escape", "label": "Review Vice City / regional 4–5 star escape corridor" },
+        { "id": "complete-job", "label": "Complete vault run and track earnings in Payout Calculator" }
+      ],
+      "weapons": [
+        {
+          "id": "heavy-battle-rifle",
+          "name": "Heavy Battle Rifle",
+          "image": "/assets/images/weapons/gtavi-heavy-battle-rifle.jpg",
+          "url": "/weapons/heavy-battle-rifle",
+          "reason": "High stopping power against armored SWAT units if a 4–5 star vault perimeter forms."
+        },
+        {
+          "id": "combat-tactical-shotgun",
+          "name": "Combat Tactical Shotgun",
+          "image": "/assets/images/weapons/gtavi-combat-firefight-rifle.jpg",
+          "url": "/weapons/combat-tactical-shotgun",
+          "reason": "Fast indoor breach weapon for narrow vault corridors and rear security offices."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "grotti-cheetah-classic",
+          "name": "Grotti Cheetah Classic",
+          "image": "/assets/images/vehicles/gtavi-grotti-cheetah-classic-vice-city.jpg",
+          "url": "/vehicles/grotti-cheetah-classic",
+          "reason": "High-speed Vice City getaway coupe for rapid highway separation after swapping vehicles."
+        },
+        {
+          "id": "albany-cavalcade-xl",
+          "name": "Albany Cavalcade XL",
+          "image": "/assets/images/vehicles/veh-albany-cavalcade-xl.jpg",
+          "url": "/vehicles/albany-cavalcade-xl",
+          "reason": "Spacious trunk storage for thermal kit, jammer, and multiple duffel bags."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Bank Vault Breaching & CCTV Guide", "url": "/guides/bank-vault-hacking-guide", "type": "Preparation" },
+        { "label": "Small Banks & Payday Loans (14 Locations)", "jobId": "small-banks-payday-loans", "type": "Related Robbery" },
+        { "label": "Heist Payout Calculator", "url": "/heist-payout-calculator", "type": "Tool" }
+      ]
+    },
+    {
+      "id": "small-banks-payday-loans",
+      "title": "Small Banks & Payday Loans (14 Locations)",
+      "subtitle": "Fast Repeatable Regional Branches (Chapter 3+)",
+      "classification": "Robbery",
+      "region": "Ambrosia",
+      "chapter": "Chapter 3+",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": true,
+      "image": "/assets/images/heists/small-banks.jpg",
+      "imageAlt": "Small Banks and Payday Loans robbery guide across Leonida",
+      "summary": "Fourteen Fleeca, credit union, and payday loan branches unlocked after Credit Check in Chapter 3. Fast 3-star smash-and-grab runs with Dye Pack Jammer protection.",
+      "canonicalUrl": "/heists/small-banks-payday-loans",
+      "prepUrl": "/guides/fleeca-bank-locations",
+      "prepLabel": "Fleeca Bank Locations Directory",
+      "locationGuideUrl": "/guides/small-bank-speed-run-money",
+      "locationGuideLabel": "Small Bank Speed-Run Money Guide",
+      "escapeUrl": "/guides/port-gellhorn-escape-routes",
+      "escapeLabel": "Port Gellhorn Escape Routes",
+      "plannerUrl": "/heist-planner?target=small-banks",
+      "mapPinId": "heist-small-banks",
+      "mapPinLabel": "Small Banks Cluster Pin",
+      "secondaryPinId": "bank-escambia-trust-gellhorn",
+      "secondaryPinLabel": "Escambia Trust Branch — Port Gellhorn",
+      "payoutConfirmed": "Confirmed Chapter 3 repeatable branch tier",
+      "payoutReported": "$25,000 – $55,000 reported range (up to ~$31,860 documented single-branch speed run)",
+      "overview": {
+        "objective": "Neutralize the lone branch guard, keep tellers off the under-desk silent alarm, activate your Dye Pack Jammer before bagging teller stacks and mini-vault bundles, and escape a 3-star VCPD response.",
+        "location": "14 regional branches across Vice City, Port Gellhorn, Ambrosia, Grassrivers, and Leonida Keys.",
+        "approaches": [
+          "Fast 4-Step Smash-and-Grab (under 90 seconds inside branch before 3-star perimeter closes)"
+        ],
+        "requirements": [
+          "Complete Chapter 3 mission 'Credit Check' to unlock all 14 branches and the Dye Pack Jammer.",
+          "Equip the Dye Pack Jammer before bagging teller cash."
+        ]
+      },
+      "walkthroughStages": [
+        "Park your getaway car facing the nearest highway on-ramp or alleyway before entering.",
+        "Neutralize the lone branch guard immediately and control tellers away from under-desk silent alarms.",
+        "Activate the Dye Pack Jammer before grabbing teller stacks and mini-vault bundles.",
+        "Exit rapidly and break 3-star VCPD sightlines using regional highway or canal routes."
+      ],
+      "commonMistakes": [
+        "Forgetting to activate the Dye Pack Jammer, which ruins stolen teller cash mid-escape.",
+        "Parking nose-in inside a tight strip-mall lot instead of facing the highway exit."
+      ],
+      "setupLinks": [
+        { "label": "Fleeca Bank Locations Directory", "url": "/guides/fleeca-bank-locations" },
+        { "label": "Small Bank Speed-Run Money Guide", "url": "/guides/small-bank-speed-run-money" },
+        { "label": "Robbery Cooldown Timers", "url": "/guides/robbery-cooldown-timers" }
+      ],
+      "checklist": [
+        { "id": "credit-check", "label": "Confirm 'Credit Check' (Chapter 3) is complete" },
+        { "id": "equip-jammer", "label": "Equip Dye Pack Jammer before approaching the branch" },
+        { "id": "pick-branch", "label": "Select target branch pin on Interactive Map (Fleeca / Escambia / Credit Union)" },
+        { "id": "stage-car", "label": "Park getaway car facing the highway on-ramp or alley exit" },
+        { "id": "complete-job", "label": "Clear teller stacks + mini-vault and evade 3-star VCPD response" }
+      ],
+      "weapons": [
+        {
+          "id": "compact-tactical-smg",
+          "name": "Compact Tactical SMG",
+          "image": "/assets/images/weapons/weapon-vintage-pattern.jpg",
+          "url": "/weapons/compact-tactical-smg",
+          "reason": "Fast draw and high mobility for controlling small branch lobbies and rapid exits."
+        },
+        {
+          "id": "kl17g1-polymer-pistol",
+          "name": "KL17G1 Polymer 9mm Pistol",
+          "image": "/assets/images/weapons/gtavi-jason-pistol-firing.jpg",
+          "url": "/weapons/kl17g1-polymer-9mm-pistol",
+          "reason": "Concealable sidearm ideal for quick guard neutralization and intimidation."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "vapid-dominator-gt",
+          "name": "Vapid Dominator",
+          "image": "/assets/images/vehicles/veh-vapid-dominator.jpg",
+          "url": "/vehicles/vapid-dominator",
+          "reason": "Strong highway acceleration for outrunning 3-star VCPD cruisers from suburban branches."
+        },
+        {
+          "id": "pfister-comet-s2",
+          "name": "Pfister Comet",
+          "image": "/assets/images/vehicles/veh-pfister-comet-s2.jpg",
+          "url": "/vehicles/pfister-comet",
+          "reason": "Agile cornering for weaving through Vice City and Port Gellhorn alleyways."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Fleeca Bank Locations Directory", "url": "/guides/fleeca-bank-locations", "type": "Location Guide" },
+        { "label": "Jewelry Stores Robbery Guide (20 Locations)", "jobId": "jewelry-stores", "type": "Related Robbery" },
+        { "label": "Large Bank Vaults (8 Major Vaults)", "jobId": "large-bank-vaults", "type": "Next Tier" }
+      ]
+    },
+    {
+      "id": "jewelry-stores",
+      "title": "Jewelry Stores (20 Locations)",
+      "subtitle": "Chapter 3 Boutique Farming & Yasmani Fencing Loop",
+      "classification": "Robbery",
+      "region": "Vice City",
+      "chapter": "Chapter 3+",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": true,
+      "image": "/assets/images/heists/jewelry-stores.jpg",
+      "imageAlt": "Vice City luxury jewelry store robbery guide",
+      "summary": "Twenty luxury jewelry boutiques across Leonida unlocked in Chapter 3 via Yasmani's Jewelry Jobs, pairing fast glass-case sweeps with Yasmani's gem fencing.",
+      "canonicalUrl": "/heists/jewelry-stores",
+      "prepUrl": "/missions/yasmanis-jewelry-jobs",
+      "prepLabel": "Yasmani's Jewelry Jobs Unlock Walkthrough",
+      "locationGuideUrl": "/guides/vice-city-jewelry-route",
+      "locationGuideLabel": "Vice City Jewelry District Loop",
+      "escapeUrl": "/guides/vice-city-storm-drains-escape",
+      "escapeLabel": "Vice City Storm Drains Escape Guide",
+      "plannerUrl": "/heist-planner?target=jewelry-stores",
+      "mapPinId": "heist-jewelry",
+      "mapPinLabel": "Vice City Jewelry Boutiques Pin",
+      "secondaryPinId": "jewelry-vangelico-vice-beach",
+      "secondaryPinLabel": "Vangelico Fine Jewelers — Vice Beach",
+      "payoutConfirmed": "Confirmed Chapter 3 repeatable boutique tier",
+      "payoutReported": "$10,000 – $25,000 reported per boutique after Yasmani gem fencing",
+      "overview": {
+        "objective": "Unlock the Snap Gun and gem fencing via Yasmani's Jewelry Jobs, chain high-density Vice City boutiques, stash loot in your vehicle trunk between stops, and fence gems cleanly.",
+        "location": "20 jewelry boutiques concentrated in Vice Beach, Downtown Vice City, Little Haiti, and regional hubs.",
+        "approaches": [
+          "Duo Speed Sweep (one protagonist sweeps display cases while partner controls entrance & trunk transfer)"
+        ],
+        "requirements": [
+          "Complete Chapter 3 mission 'Yasmani's Jewelry Jobs' to unlock the Snap Gun and Yasmani's fence.",
+          "Bring a trunk-equipped vehicle or fast alley escape bike."
+        ]
+      },
+      "walkthroughStages": [
+        "Unlock the Snap Gun and Yasmani fencing network via Yasmani's Jewelry Jobs in Chapter 3.",
+        "Follow the Vice City Jewelry District loop starting at Vice Beach Promenade and Downtown boutiques.",
+        "Transfer stolen jewelry bags to your vehicle trunk between stops so loot stays protected.",
+        "Evade VCPD patrols using alleys or storm drains before fencing gems with Yasmani."
+      ],
+      "commonMistakes": [
+        "Attempting high-security boutiques before unlocking the Snap Gun via Yasmani's Jewelry Jobs.",
+        "Chaining too many adjacent Vice Beach stores without dropping wanted heat first."
+      ],
+      "setupLinks": [
+        { "label": "Yasmani's Jewelry Jobs Walkthrough (Ch. 3 Unlock)", "url": "/missions/yasmanis-jewelry-jobs" },
+        { "label": "Vice City Jewelry District Route", "url": "/guides/vice-city-jewelry-route" },
+        { "label": "Jewelry & Pawn Farming Loop", "url": "/guides/jewelry-and-pawn-farming-loop" }
+      ],
+      "checklist": [
+        { "id": "unlock-yasmani", "label": "Complete Yasmani's Jewelry Jobs to unlock Snap Gun & fencing" },
+        { "id": "plan-route", "label": "Review Vice City Jewelry Route & Vangelico map pins" },
+        { "id": "prep-vehicle", "label": "Stage agile getaway car or bike with clear alley exit" },
+        { "id": "complete-job", "label": "Sweep target boutique cases and fence gems with Yasmani" }
+      ],
+      "weapons": [
+        {
+          "id": "micro-smg",
+          "name": "Micro SMG",
+          "image": "/assets/images/weapons/gtavi-duo-robbery-smg.jpg",
+          "url": "/weapons/micro-smg",
+          "reason": "Compact one-handed automatic for rapid intimidation and quick vehicle getaway defense."
+        },
+        {
+          "id": "duval-signature-es9",
+          "name": "Duval Signature ES9",
+          "image": "/assets/images/weapons/weapon-variants.jpg",
+          "url": "/weapons/duval-signature-es9",
+          "reason": "Clean sidearm for quiet boutique control without escalating civilian panic."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "bravado-banshee",
+          "name": "Bravado Banshee",
+          "image": "/assets/images/vehicles/veh-bravado-banshee.jpg",
+          "url": "/vehicles/bravado-banshee",
+          "reason": "Fast Vice Beach sports car for quick getaway down Ocean Drive corridors."
+        },
+        {
+          "id": "dinka-enduro",
+          "name": "Dinka Enduro",
+          "image": "/assets/images/vehicles/gtavi-dinka-enduro-trail-motorcycle.jpg",
+          "url": "/vehicles/dinka-enduro",
+          "reason": "Narrow off-road bike able to slip through tight Vice City alleys and drainage exits."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Yasmani's Jewelry Jobs Walkthrough", "jobId": "yasmanis-jewelry-jobs", "type": "Story Mission" },
+        { "label": "Vice City Jewelry District Route", "url": "/guides/vice-city-jewelry-route", "type": "Route Guide" },
+        { "label": "Small Banks & Payday Loans (14 Locations)", "jobId": "small-banks-payday-loans", "type": "Next Tier" }
+      ]
+    },
+    {
+      "id": "pawn-shops",
+      "title": "Pawn Shops (Unlocks Ch. 2)",
+      "subtitle": "Early-Game Commercial Robberies & Fixed Safe Codes",
+      "classification": "Robbery",
+      "region": "Port Gellhorn",
+      "chapter": "Chapter 2+",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": false,
+      "image": "/assets/images/heists/pawn-shops.jpg",
+      "imageAlt": "Port Gellhorn pawn shop robbery guide",
+      "summary": "Unlocks in Chapter 2 after Coffee Break. Ideal early-to-mid-game loop combining register cash, display contraband, and backroom safes in Port Gellhorn.",
+      "canonicalUrl": "/heists/pawn-shops",
+      "prepUrl": "/guides/port-gellhorn-pawn-and-payday",
+      "prepLabel": "Port Gellhorn Pawn & Payday Guide",
+      "locationGuideUrl": "/guides/jewelry-and-pawn-farming-loop",
+      "locationGuideLabel": "Jewelry & Pawn Farming Loop",
+      "escapeUrl": "/guides/port-gellhorn-escape-routes",
+      "escapeLabel": "Port Gellhorn Escape Routes",
+      "plannerUrl": "/heist-planner",
+      "mapPinId": "heist-pawn",
+      "mapPinLabel": "Port Gellhorn Pawn Shops Pin",
+      "secondaryPinId": "jewelry-port-gellhorn-pawn",
+      "secondaryPinLabel": "Gellhorn Maritime Pawn & Gold Buyers",
+      "payoutConfirmed": "Confirmed Chapter 2 repeatable robbery tier",
+      "payoutReported": "$2,500 – $6,500 per shop ($10,000 – $12,000 reported across chained circuit)",
+      "overview": {
+        "objective": "Hit pawn shops unlocked after Coffee Break in Chapter 2, empty registers plus display cases and backroom safes, and fence stolen items while using trunk storage.",
+        "location": "Port Gellhorn commercial strip, South Vice City, and Grassrivers trading posts.",
+        "approaches": [
+          "Trunk-Supported Circuit (4-door sedan/SUV with trunk storage for extra duffel bags)"
+        ],
+        "requirements": [
+          "Complete Chapter 2 mission 'Coffee Break' to unlock pawn shop robberies.",
+          "Bring a 4-door sedan or SUV with trunk storage for extra duffel bags and weapon swaps."
+        ]
+      },
+      "walkthroughStages": [
+        "Complete Coffee Break in Chapter 2 to unlock pawn shop targets.",
+        "Check Port Gellhorn's documented fixed safe codes before entering backrooms.",
+        "Clear register cash, display cases, and backroom safes quickly before VCPD arrives.",
+        "Stash bags in your trunk and escape via Port Gellhorn shipyard or canal corridors."
+      ],
+      "commonMistakes": [
+        "Arriving in a 2-seater without trunk space for extra contraband bags."
+      ],
+      "setupLinks": [
+        { "label": "Port Gellhorn Pawn & Payday Guide (Fixed Safe Codes)", "url": "/guides/port-gellhorn-pawn-and-payday" },
+        { "label": "Port Gellhorn Escape Routes", "url": "/guides/port-gellhorn-escape-routes" }
+      ],
+      "checklist": [
+        { "id": "coffee-break", "label": "Confirm Chapter 2 'Coffee Break' unlock is complete" },
+        { "id": "trunk-car", "label": "Bring a 4-door sedan or SUV with trunk storage" },
+        { "id": "check-codes", "label": "Review Port Gellhorn fixed safe codes and pawn pins" },
+        { "id": "complete-job", "label": "Clear target pawn shop and escape via shipyard/canal route" }
+      ],
+      "weapons": [
+        {
+          "id": "kl17g1-polymer-pistol",
+          "name": "KL17G1 Polymer 9mm Pistol",
+          "image": "/assets/images/weapons/gtavi-jason-pistol-firing.jpg",
+          "url": "/weapons/kl17g1-polymer-9mm-pistol",
+          "reason": "Early-chapter sidearm accessible right when Pawn Shops unlock in Chapter 2."
+        },
+        {
+          "id": "pump-action-shotgun",
+          "name": "Pump-Action Shotgun",
+          "image": "/assets/images/weapons/gtavi-duo-shotgun-heist.jpg",
+          "url": "/weapons/pump-action-shotgun",
+          "reason": "High-intimidation close-range backup against armed pawn shop owners."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "declasse-tulip-m100",
+          "name": "Declasse Tulip",
+          "image": "/assets/images/vehicles/gtavi-declasse-tulip-m100-vice-city-mural.jpg",
+          "url": "/vehicles/declasse-tulip",
+          "reason": "Classic 4-door muscle sedan with trunk storage for Port Gellhorn pawn circuits."
+        },
+        {
+          "id": "vapid-ganado",
+          "name": "Vapid Ganado (434ci)",
+          "image": "/assets/images/vehicles/gtavi-vapid-ganado-434ci-leonida-keys.jpg",
+          "url": "/vehicles/vapid-ganado",
+          "reason": "Reliable early-game getaway car for chaining commercial strip hits."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Port Gellhorn Pawn & Payday Guide", "url": "/guides/port-gellhorn-pawn-and-payday", "type": "Regional Guide" },
+        { "label": "Jewelry Stores (20 Locations)", "jobId": "jewelry-stores", "type": "Next Tier" }
+      ]
+    },
+    {
+      "id": "shops-and-stickups",
+      "title": "Shops & Stick-Ups (72 Locations)",
+      "subtitle": "Chapter 1 Entry-Level Cash Loop Across Leonida",
+      "classification": "Robbery",
+      "region": "Port Gellhorn",
+      "chapter": "Chapter 1+",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": false,
+      "image": "/assets/images/heists/shops.jpg",
+      "imageAlt": "GTA 6 Shops and Stick-Ups robbery guide",
+      "summary": "Seventy-two convenience stores, gas stations, and liquor shops available from Chapter 1 for fast early-game bankroll building.",
+      "canonicalUrl": "/heists/shops-and-stickups",
+      "prepUrl": "/guides/leonida-keys-banks-and-shops",
+      "prepLabel": "Leonida Keys Banks & Shops (Ch. 1)",
+      "locationGuideUrl": "/guides/robbery-cooldown-timers",
+      "locationGuideLabel": "Robbery Cooldown Timers",
+      "escapeUrl": "/guides/leonida-keys-causeway-escapes",
+      "escapeLabel": "Leonida Keys Causeway Escape Guide",
+      "plannerUrl": "/heist-planner",
+      "mapPinId": "heist-shops",
+      "mapPinLabel": "Shops & Stick-Ups Cluster Pin",
+      "secondaryPinId": "bank-keys-sunshine-credit",
+      "secondaryPinLabel": "Leonida Keys Commercial Corridor",
+      "payoutConfirmed": "Confirmed Chapter 1 entry robbery tier",
+      "payoutReported": "$400 – $1,800 per register + optional back-office safe box",
+      "overview": {
+        "objective": "Check for CCTV domes and witness phones, intimidate the clerk without firing shots to stay at 1-star heat, sweep the register and back-office safe box, and exit cleanly.",
+        "location": "72 stores across Leonida Keys, Port Gellhorn, Vice City, and rural highways.",
+        "approaches": [
+          "Zero-Shot Intimidation (keeps wanted level at 1 star instead of escalating to 2 stars)"
+        ],
+        "requirements": [
+          "Equip a mask or bandana before entering to prevent witness identity tagging.",
+          "Park getaway car facing the road with driver door clear — never trap yourself in a gas pump bay."
+        ]
+      },
+      "walkthroughStages": [
+        "Park facing the road with a clear exit lane and equip a mask/bandana before stepping inside.",
+        "Scan above the counter for a CCTV dome and watch for customers holding phones.",
+        "Aim at the clerk and use intimidation commands (avoid firing shots) while partner watches the door.",
+        "Grab register cash plus any back-office safe box and break 1-star line-of-sight."
+      ],
+      "commonMistakes": [
+        "Firing shots inside the store, which immediately escalates 1-star VCPD response to 2 stars.",
+        "Parking nose-in between gas station pumps and getting boxed in on exit."
+      ],
+      "setupLinks": [
+        { "label": "Leonida Keys Banks & Small Store Stickups (Ch. 1)", "url": "/guides/leonida-keys-banks-and-shops" },
+        { "label": "Leonida Keys Causeway & Bridge Escapes", "url": "/guides/leonida-keys-causeway-escapes" }
+      ],
+      "checklist": [
+        { "id": "equip-mask", "label": "Equip bandana or mask before entering target store" },
+        { "id": "stage-exit", "label": "Park getaway car facing the road outside gas pump bays" },
+        { "id": "scan-cctv", "label": "Scan counter CCTV dome and customer phones before drawing weapon" },
+        { "id": "complete-job", "label": "Empty register + back-office safe and drop 1-star heat" }
+      ],
+      "weapons": [
+        {
+          "id": "kl17g1-polymer-pistol",
+          "name": "KL17G1 Polymer 9mm Pistol",
+          "image": "/assets/images/weapons/gtavi-jason-pistol-firing.jpg",
+          "url": "/weapons/kl17g1-polymer-9mm-pistol",
+          "reason": "Default Chapter 1 intimidation sidearm for quick, zero-shot stick-ups."
+        },
+        {
+          "id": "sawed-off-shotgun",
+          "name": "Sawed-Off Shotgun",
+          "image": "/assets/images/weapons/gtavi-bank-breach-loadout.jpg",
+          "url": "/weapons/sawed-off-shotgun",
+          "reason": "Fast-intimidation close-range backup if an armed clerk resists."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "vapid-ganado",
+          "name": "Vapid Ganado (434ci)",
+          "image": "/assets/images/vehicles/gtavi-vapid-ganado-434ci-leonida-keys.jpg",
+          "url": "/vehicles/vapid-ganado",
+          "reason": "Chapter 1 Leonida Keys muscle car ideal for highway escapes."
+        },
+        {
+          "id": "dinka-enduro",
+          "name": "Dinka Enduro",
+          "image": "/assets/images/vehicles/gtavi-dinka-enduro-trail-motorcycle.jpg",
+          "url": "/vehicles/dinka-enduro",
+          "reason": "Nimble off-road escape option for rural highway stick-ups."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Pawn Shops (Unlocks Chapter 2)", "jobId": "pawn-shops", "type": "Next Tier" },
+        { "label": "Leonida Keys Causeway Escapes", "url": "/guides/leonida-keys-causeway-escapes", "type": "Escape Guide" }
+      ]
+    },
+    {
+      "id": "armored-trucks-gang-ops",
+      "title": "Armored Trucks & 40 Gang Ops",
+      "subtitle": "Mobile Cash Intercepts & Compound Stash Raids",
+      "classification": "Robbery",
+      "region": "Ambrosia",
+      "chapter": "Free-Roam",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": false,
+      "image": "/assets/images/heists/armored-trucks.jpg",
+      "imageAlt": "Armored Trucks and 40 Gang Ops robbery guide",
+      "summary": "Mobile armored cash trucks plus 40 gang hideouts and illegal operations across Ambrosia, Port Gellhorn, Grassrivers, and Vice City.",
+      "canonicalUrl": "/heists/armored-trucks-gang-ops",
+      "prepUrl": "/guides/robbery-cooldown-timers",
+      "prepLabel": "Robbery & Hideout Cooldown Timers",
+      "locationGuideUrl": "/guides/port-gellhorn-escape-routes",
+      "locationGuideLabel": "Port Gellhorn Escape Corridors",
+      "escapeUrl": "/guides/how-to-escape-police-wanted-levels",
+      "escapeLabel": "Police Evasion & Wanted System Guide",
+      "plannerUrl": "/heist-planner?target=convoy",
+      "mapPinId": "heist-armored-trucks",
+      "mapPinLabel": "Armored Trucks & Gang Ops Pin",
+      "secondaryPinId": "op-port-gellhorn-dock-smuggling",
+      "secondaryPinLabel": "Pier 14 Shipping Container Depot",
+      "payoutConfirmed": "Confirmed repeatable free-roam combat tier",
+      "payoutReported": "$8,000 – $30,000 reported per armored truck or gang hideout sweep",
+      "overview": {
+        "objective": "Box in roaming cash trucks on highway shoulders or industrial backroads, blow the rear lock seam without detonating the cab, or flank gang hideout lookouts to loot stash rooms.",
+        "location": "Highway corridors plus 40 gang hideouts across Ambrosia, Port Gellhorn, Grassrivers, and Vice City.",
+        "approaches": [
+          "Highway Shoulder Ambush (single sticky bomb on rear lock seam)",
+          "High-Ground Gang Compound Flank (clear lookouts first to block reinforcements)"
+        ],
+        "requirements": [
+          "Carry Sticky Bombs or Heavy Shotgun to pop armored rear doors cleanly.",
+          "Use an Armored SUV or off-road 4x4 for cover and Grassrivers/Port Gellhorn escapes."
+        ]
+      },
+      "walkthroughStages": [
+        "Wait until a roaming armored truck enters a highway shoulder, industrial zone, or Port Gellhorn backroad.",
+        "Box the truck in and place a single sticky bomb on the rear lock seam (never on the cab or fuel tank).",
+        "For gang compounds, clear outer lookouts from flanking cover before pushing the stash room.",
+        "Collect spilled cash cases or stash boxes and break pursuit off-road."
+      ],
+      "commonMistakes": [
+        "Placing explosives on the armored truck cab or fuel tank, which destroys the cash payload.",
+        "Rushing gang hideout entrances without clearing perimeter lookouts first."
+      ],
+      "setupLinks": [
+        { "label": "Robbery & Gang Hideout Cooldown Timers", "url": "/guides/robbery-cooldown-timers" },
+        { "label": "How to Escape Police & High Wanted Levels", "url": "/guides/how-to-escape-police-wanted-levels" }
+      ],
+      "checklist": [
+        { "id": "pack-breach", "label": "Equip Sticky Bombs or Heavy Shotgun for armored rear doors" },
+        { "id": "stage-4x4", "label": "Stage an Armored SUV or 4x4 pickup for firefight cover" },
+        { "id": "pick-op", "label": "Select target highway corridor or gang op pin on Interactive Map" },
+        { "id": "complete-job", "label": "Pop rear doors / clear stash room and escape off-road" }
+      ],
+      "weapons": [
+        {
+          "id": "pump-action-shotgun",
+          "name": "Pump-Action Shotgun",
+          "image": "/assets/images/weapons/gtavi-duo-shotgun-heist.jpg",
+          "url": "/weapons/pump-action-shotgun",
+          "reason": "Effective close-range breach tool for armored doors and tight compound rooms."
+        },
+        {
+          "id": "assault-rifle-ak",
+          "name": "Classic Assault Rifle (AK Platform)",
+          "image": "/assets/images/weapons/gtavi-gold-assault-rifle.jpg",
+          "url": "/weapons/classic-assault-rifle",
+          "reason": "Sustained rifle fire for clearing multi-enemy gang hideout perimeters."
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "vapid-riata",
+          "name": "Vapid Riata",
+          "image": "/assets/images/vehicles/gtavi-vapid-riata-4x4-offroad-pickup.jpg",
+          "url": "/vehicles/vapid-riata",
+          "reason": "Rugged 4x4 pickup for off-road breakouts across Ambrosia and Grassrivers."
+        },
+        {
+          "id": "canis-offroad-4x4",
+          "name": "Canis Lifted 4x4 Pickup",
+          "image": "/assets/images/vehicles/gtavi-canis-lifted-4x4-pickup-garage.jpg",
+          "url": "/vehicles/canis-lifted-4x4-pickup",
+          "reason": "High-clearance truck for boxing in convoys and escaping over rough terrain."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Large Bank Vaults (8 Major Vaults)", "jobId": "large-bank-vaults", "type": "Next Tier" },
+        { "label": "Heist Planner — Convoy Payouts", "url": "/heist-planner?target=convoy", "type": "Tool" }
+      ]
+    },
+    {
+      "id": "sinfrontera-national-bank",
+      "title": "Sinfrontera National Bank",
+      "subtitle": "Physical Location Guide — Layout, Vault Security & Free-Roam Status",
+      "classification": "Location Guide",
+      "region": "Vice City",
+      "chapter": "Chapter 3 (Story Heist Target)",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": false,
+      "featured": false,
+      "image": "/assets/images/heists/cartel-heist.jpg",
+      "imageAlt": "Sinfrontera National Bank interior and exterior security guide",
+      "summary": "Dedicated physical building profile for Sinfrontera National Bank: lobby choke points, overlook snipers, basement vault stairwell, and free-roam access rules.",
+      "canonicalUrl": "/guides/sinfrontera-national-bank",
+      "prepUrl": "/heists/the-cartel-heist",
+      "prepLabel": "The Cartel Heist Story Walkthrough",
+      "locationGuideUrl": "/guides/sinfrontera-national-bank",
+      "locationGuideLabel": "Full Sinfrontera Building Profile",
+      "escapeUrl": "/guides/vice-city-storm-drains-escape",
+      "escapeLabel": "Vice City Storm Drains Escape Guide",
+      "plannerUrl": "/heist-planner?target=cartel-heist",
+      "mapPinId": "vault-sinfrontera-downtown",
+      "mapPinLabel": "Sinfrontera Bank Financial District Pin",
+      "secondaryPinId": "heist-cartel",
+      "secondaryPinLabel": "The Cartel Heist Mission Pin",
+      "payoutConfirmed": "Location guide — story heist payout ($120,000) tied to The Cartel Heist",
+      "payoutReported": "Not a standard repeatable free-roam vault; use Large Bank Vaults for repeatable runs",
+      "overview": {
+        "objective": "Understand Sinfrontera National Bank's three vertical zones (street lobby, elevated overlook, basement vault corridor) and its free-roam vs. story-mission boundaries.",
+        "location": "Downtown Vice City Financial District.",
+        "approaches": [
+          "Location intelligence reference paired with The Cartel Heist walkthrough."
+        ],
+        "requirements": [
+          "Full vault interior access occurs during Chapter 3's The Cartel Heist."
+        ]
+      },
+      "walkthroughStages": [
+        "Front Lobby: Wide street-facing entry with tellers, hostages, and armed guards; front steps become a choke point once VCPD arrives.",
+        "Elevated Overlook & Roof: Security spotters and snipers monitor the street perimeter and call aerial support if unchecked.",
+        "Basement Vault Corridor: Tight stairwell sightlines guarding the main thermal-breach vault door."
+      ],
+      "commonMistakes": [
+        "Confusing Sinfrontera's story-mission vault with repeatable free-roam Large Bank Vaults."
+      ],
+      "setupLinks": [
+        { "label": "The Cartel Heist Complete Walkthrough", "url": "/heists/the-cartel-heist" },
+        { "label": "Large Bank Vaults (Repeatable Free-Roam)", "url": "/heists/large-bank-vaults" }
+      ],
+      "checklist": [
+        { "id": "study-zones", "label": "Review Sinfrontera's 3 interior zones (Lobby, Overlook, Basement Vault)" },
+        { "id": "pin-bank", "label": "Inspect Sinfrontera Financial District pin on Interactive Map" },
+        { "id": "open-heist", "label": "Continue to The Cartel Heist walkthrough for full mission steps" }
+      ],
+      "weapons": [],
+      "vehicles": [],
+      "nextActivities": [
+        { "label": "The Cartel Heist Walkthrough", "jobId": "the-cartel-heist", "type": "Story Heist" },
+        { "label": "Large Bank Vaults Guide", "jobId": "large-bank-vaults", "type": "Free-Roam Alternative" }
+      ]
+    },
+    {
+      "id": "vice-city-international-airport",
+      "title": "Vice City International Airport (VCIA)",
+      "subtitle": "Physical Location Guide — Hangars, Aircraft Spawns & FX Vault",
+      "classification": "Location Guide",
+      "region": "Vice City",
+      "chapter": "Chapter 4 / Free-Roam",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": false,
+      "featured": false,
+      "image": "/assets/images/intel/intel-vc-launch.jpg",
+      "imageAlt": "Vice City International Airport zone and hangar overview",
+      "summary": "Location guide for Leonida's largest aviation complex: restricted runway gates, Buckingham Private Jet tarmac spawns, and Terminal 2 FX Vault.",
+      "canonicalUrl": "/locations/vice-city-international-airport",
+      "prepUrl": "/heists/vcia-takedown",
+      "prepLabel": "VCIA Takedown Walkthrough",
+      "locationGuideUrl": "/locations/vice-city-international-airport",
+      "locationGuideLabel": "Full VCIA Location Guide",
+      "escapeUrl": "/guides/how-to-escape-police-wanted-levels",
+      "escapeLabel": "Airspace & Wanted Evasion Guide",
+      "plannerUrl": "/heist-planner?target=vcia-takedown",
+      "mapPinId": "bank-airport-currency-exchange",
+      "mapPinLabel": "Terminal 2 FX Vault Pin",
+      "secondaryPinId": "heist-vcia",
+      "secondaryPinLabel": "VCIA Takedown Pin",
+      "payoutConfirmed": "Location guide — hosts VCIA Takedown ($250,000) and Terminal 2 FX Vault",
+      "payoutReported": "Free-roam aircraft spawns & WAiNK terminal parking deck scans",
+      "overview": {
+        "objective": "Scout VCIA runway access, aircraft spawns, and Terminal 2 currency exchange targets before launching VCIA Takedown or free-roam runs.",
+        "location": "South Vice City coastal aviation complex.",
+        "approaches": [
+          "Coastal Vice Bay climb-out for aircraft escapes; South Vice Interchange for ground exits."
+        ],
+        "requirements": [
+          "Breaching restricted runway gates triggers immediate VCPD response."
+        ]
+      },
+      "walkthroughStages": [
+        "Scout Terminal 2 FX Vault (bank-airport-currency-exchange) and South Vice interchange exit.",
+        "Locate Buckingham Private Jet tarmac spawns and plan coastal airspace climb-out over Vice Bay.",
+        "Pair location recon with the 4 VCIA Takedown setup missions."
+      ],
+      "commonMistakes": [
+        "Flying inland over Downtown Vice City instead of climbing out over Vice Bay coastal airspace."
+      ],
+      "setupLinks": [
+        { "label": "VCIA Takedown Complete Walkthrough ($250,000)", "url": "/heists/vcia-takedown" },
+        { "label": "VCIA Setup 1: Hangar & Terminal Recon", "url": "/missions/vcia-setup-hangar-access" }
+      ],
+      "checklist": [
+        { "id": "scout-fx", "label": "Locate Terminal 2 FX Vault pin on Interactive Map" },
+        { "id": "check-jet", "label": "Review Buckingham Private Jet tarmac spawn profile" },
+        { "id": "open-vcia", "label": "Proceed to VCIA Takedown heist walkthrough" }
+      ],
+      "weapons": [],
+      "vehicles": [
+        {
+          "id": "buckingham-shamal-jet",
+          "name": "Buckingham Private Jet",
+          "image": "/assets/images/vehicles/gtavi-buckingham-shamal-private-jet-vice-city.jpg",
+          "url": "/vehicles/buckingham-private-jet",
+          "reason": "Confirmed tarmac spawn inside Vice City International Airport."
+        }
+      ],
+      "nextActivities": [
+        { "label": "VCIA Takedown Walkthrough", "jobId": "vcia-takedown", "type": "Story Heist" },
+        { "label": "How to Escape Police & High Wanted Levels", "jobId": "how-to-escape-police-wanted-levels", "type": "Escape Guide" }
+      ]
+    },
+    {
+      "id": "yasmanis-jewelry-jobs",
+      "title": "Yasmani's Jewelry Jobs",
+      "subtitle": "Chapter 3 Story Mission — Unlocks Snap Gun & Gem Fencing",
+      "classification": "Story Mission",
+      "region": "Vice City",
+      "chapter": "Chapter 3",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": false,
+      "image": "/assets/images/heists/jewelry-stores.jpg",
+      "imageAlt": "Yasmani's Jewelry Jobs Chapter 3 story mission walkthrough",
+      "summary": "Key Chapter 3 unlock mission covering 3 jewelry targets, unlocking the Snap Gun and Yasmani's gem fencing network for all 20 free-roam jewelry stores.",
+      "canonicalUrl": "/missions/yasmanis-jewelry-jobs",
+      "prepUrl": "/heists/jewelry-stores",
+      "prepLabel": "Jewelry Stores Robbery Guide (20 Locations)",
+      "locationGuideUrl": "/guides/vice-city-jewelry-route",
+      "locationGuideLabel": "Vice City Jewelry District Route",
+      "escapeUrl": "/guides/vice-city-storm-drains-escape",
+      "escapeLabel": "Vice City Storm Drains Escape",
+      "plannerUrl": "/heist-planner?target=jewelry-stores",
+      "mapPinId": "jewelry-vangelico-vice-beach",
+      "mapPinLabel": "Vangelico Fine Jewelers Pin",
+      "secondaryPinId": "heist-jewelry",
+      "secondaryPinLabel": "Jewelry Boutiques Cluster Pin",
+      "payoutConfirmed": "Unlocks Snap Gun tool & Yasmani gem fencing",
+      "payoutReported": "Enables $10,000 – $25,000 repeatable boutique runs",
+      "overview": {
+        "objective": "Complete all 3 target locations in Yasmani's Jewelry Jobs in optimal order to unlock the Snap Gun and trunk-transfer gem fencing.",
+        "location": "Vice City Jewelry District.",
+        "approaches": [
+          "Follow optimal 3-target completion order and transfer loot to vehicle trunk between stops."
+        ],
+        "requirements": [
+          "Reach Chapter 3 progression in Vice City."
+        ]
+      },
+      "walkthroughStages": [
+        "Review all 3 target locations in Yasmani's Jewelry Jobs before starting.",
+        "Execute the optimal completion order to unlock the Snap Gun cleanly.",
+        "Transfer stolen gems to your trunk and follow Yasmani's fencing rules."
+      ],
+      "commonMistakes": [
+        "Carrying un-stashed loot across multiple stops without using trunk transfer."
+      ],
+      "setupLinks": [
+        { "label": "Jewelry Stores Robbery Guide (20 Locations)", "url": "/heists/jewelry-stores" },
+        { "label": "Vice City Jewelry District Route", "url": "/guides/vice-city-jewelry-route" }
+      ],
+      "checklist": [
+        { "id": "read-targets", "label": "Review all 3 target locations in Yasmani's Jewelry Jobs" },
+        { "id": "trunk-rule", "label": "Confirm trunk transfer & fencing rules" },
+        { "id": "complete-job", "label": "Complete Yasmani's Jewelry Jobs and unlock the Snap Gun" }
+      ],
+      "weapons": [],
+      "vehicles": [],
+      "nextActivities": [
+        { "label": "Jewelry Stores Robbery Guide (20 Locations)", "jobId": "jewelry-stores", "type": "Unlocked Tier" }
+      ]
+    },
+    {
+      "id": "raul-setup-vault-blueprints",
+      "title": "Raul Setup 2: Vault Blueprints (Security Expert)",
+      "subtitle": "Chapter 3 Story Setup Mission for The Cartel Heist",
+      "classification": "Story Mission",
+      "region": "Vice City",
+      "chapter": "Chapter 3",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": true,
+      "featured": false,
+      "image": "/assets/images/heists/small-banks.jpg",
+      "imageAlt": "Raul Setup 2 Vault Blueprints walkthrough for The Cartel Heist",
+      "summary": "Dedicated setup walkthrough for recruiting and briefing the bank security insider so Jason and Lucia secure Sinfrontera floor layouts and silent alarm bypass timings.",
+      "canonicalUrl": "/missions/raul-setup-vault-blueprints",
+      "prepUrl": "/heists/the-cartel-heist",
+      "prepLabel": "The Cartel Heist Finale Walkthrough",
+      "locationGuideUrl": "/guides/sinfrontera-national-bank",
+      "locationGuideLabel": "Sinfrontera National Bank Layout",
+      "escapeUrl": "/guides/vice-city-storm-drains-escape",
+      "escapeLabel": "Vice City Escape Routes",
+      "plannerUrl": "/heist-planner?target=cartel-heist",
+      "mapPinId": "heist-cartel",
+      "mapPinLabel": "Sinfrontera Cartel Heist Pin",
+      "secondaryPinId": "vault-sinfrontera-downtown",
+      "secondaryPinLabel": "Sinfrontera Financial District Pin",
+      "payoutConfirmed": "Mandatory setup for The Cartel Heist ($120,000 base)",
+      "payoutReported": "Unlocks vault floor layouts and silent alarm bypass timings",
+      "overview": {
+        "objective": "Complete Raul Bautista's Security Expert setup to acquire Sinfrontera National Bank vault blueprints and silent alarm timing intelligence.",
+        "location": "Vice City.",
+        "approaches": [
+          "Follow the dedicated Security Expert setup walkthrough to maximize finale stealth window."
+        ],
+        "requirements": [
+          "Active Chapter 3 progression with Raul Bautista."
+        ]
+      },
+      "walkthroughStages": [
+        "Review setup overview and verified requirements before initiating Security Expert.",
+        "Execute the step-by-step blueprint acquisition without alerting bank security.",
+        "Deliver vault schematics to Raul to unlock finale planning options."
+      ],
+      "commonMistakes": [
+        "Skipping blueprint intel review before launching The Cartel Heist finale."
+      ],
+      "setupLinks": [
+        { "label": "The Cartel Heist Finale Walkthrough", "url": "/heists/the-cartel-heist" },
+        { "label": "Sinfrontera National Bank Building Profile", "url": "/guides/sinfrontera-national-bank" }
+      ],
+      "checklist": [
+        { "id": "read-setup", "label": "Read Raul Setup 2: Vault Blueprints walkthrough" },
+        { "id": "complete-setup", "label": "Complete Security Expert setup and verify blueprint delivery" },
+        { "id": "prep-finale", "label": "Return to The Cartel Heist Command View for finale checklist" }
+      ],
+      "weapons": [],
+      "vehicles": [],
+      "nextActivities": [
+        { "label": "The Cartel Heist Finale", "jobId": "the-cartel-heist", "type": "Story Heist" }
+      ]
+    },
+    {
+      "id": "bank-vault-hacking-guide",
+      "title": "Bank Vault Breaching, Keypads & CCTV Wipe",
+      "subtitle": "Preparation Guide — 7 Verified Safe Codes & Entry Mechanics",
+      "classification": "Preparation",
+      "region": "Leonida-Wide",
+      "chapter": "All Chapters",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": false,
+      "featured": false,
+      "image": "/assets/images/weapons/gtavi-vault-breach-loadout.jpg",
+      "imageAlt": "Bank vault breaching, keypad hacking, and CCTV wipe preparation guide",
+      "summary": "Confirmed vault entry mechanics, CCTV wipe priority, thermal drill vs. explosive trade-offs, and all 7 independently verified keypad and safe codes.",
+      "canonicalUrl": "/guides/bank-vault-hacking-guide",
+      "prepUrl": "/heists/large-bank-vaults",
+      "prepLabel": "Large Bank Vaults Guide",
+      "locationGuideUrl": "/guides/fleeca-bank-locations",
+      "locationGuideLabel": "Fleeca Bank Locations",
+      "escapeUrl": "/escape-routes",
+      "escapeLabel": "Leonida Escape Routes Hub",
+      "plannerUrl": "/heist-planner?target=large-banks",
+      "mapPinId": "heist-large-vaults",
+      "mapPinLabel": "Large Bank Vaults Pin",
+      "secondaryPinId": "vault-sinfrontera-downtown",
+      "secondaryPinLabel": "Sinfrontera Vault Pin",
+      "payoutConfirmed": "Preparation reference for up to ~$205,000 vault runs",
+      "payoutReported": "Includes 7 independently verified keypad & safe codes",
+      "overview": {
+        "objective": "Master CCTV wipes, keypad codes, thermal drills, and Dye Pack Jammer timing before hitting small or large Leonida bank vaults.",
+        "location": "Applicable across Vice City, Port Gellhorn, Ambrosia, and Leonida Keys.",
+        "approaches": [
+          "CCTV-First Quiet Breach vs. Fast Explosive Entry"
+        ],
+        "requirements": [
+          "Dye Pack Jammer unlocked via Credit Check (Ch. 3); thermal kit for Large Bank Vaults (Ch. 4+)."
+        ]
+      },
+      "walkthroughStages": [
+        "Identify and clear the rear security office to wipe CCTV before breaching the vault.",
+        "Reference the 7 independently verified keypad and safe codes documented in the guide.",
+        "Trigger Dye Pack Jammer before bagging cash stacks."
+      ],
+      "commonMistakes": [
+        "Triggering vault alarms before wiping CCTV or activating the Dye Pack Jammer."
+      ],
+      "setupLinks": [
+        { "label": "Large Bank Vaults Guide (8 Major Vaults)", "url": "/heists/large-bank-vaults" },
+        { "label": "Small Banks & Payday Loans Guide", "url": "/heists/small-banks-payday-loans" }
+      ],
+      "checklist": [
+        { "id": "study-cctv", "label": "Review CCTV wipe priority and rear office entry mechanics" },
+        { "id": "note-codes", "label": "Review the 7 independently verified keypad & safe codes" },
+        { "id": "apply-run", "label": "Apply breach checklist on Large Bank Vaults or Small Banks" }
+      ],
+      "weapons": [],
+      "vehicles": [],
+      "nextActivities": [
+        { "label": "Large Bank Vaults (8 Major Vaults)", "jobId": "large-bank-vaults", "type": "Apply Now" },
+        { "label": "Stealth vs. Loud Heist Tactics", "jobId": "stealth-vs-loud-heist-tactics", "type": "Preparation" }
+      ]
+    },
+    {
+      "id": "stealth-vs-loud-heist-tactics",
+      "title": "Stealth vs. Loud Heist Tactics",
+      "subtitle": "Preparation Guide — Approach Comparison & Execution Rules",
+      "classification": "Preparation",
+      "region": "Leonida-Wide",
+      "chapter": "All Chapters",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": false,
+      "featured": false,
+      "image": "/assets/images/intel/intel-duo-heist.jpg",
+      "imageAlt": "Stealth versus loud heist tactics comparison guide",
+      "summary": "Side-by-side comparison of stealth vs. loud approaches across Leonida robbery tiers, including guard disarms, camera suppression, and wanted-level impact.",
+      "canonicalUrl": "/guides/stealth-vs-loud-heist-tactics",
+      "prepUrl": "/heist-planner",
+      "prepLabel": "Compare Approaches in Heist Planner",
+      "locationGuideUrl": "/leonida-wanted-system",
+      "locationGuideLabel": "Leonida Wanted System Matrix",
+      "escapeUrl": "/escape-routes",
+      "escapeLabel": "Leonida Escape Routes Hub",
+      "plannerUrl": "/heist-planner",
+      "mapPinId": "heist-cartel",
+      "mapPinLabel": "Cartel Heist Pin",
+      "secondaryPinId": "heist-vcia",
+      "secondaryPinLabel": "VCIA Takedown Pin",
+      "payoutConfirmed": "Preparation reference — impacts heat escalation and crew survivability",
+      "payoutReported": "Compare stealth vs. loud net cuts interactively in Heist Planner",
+      "overview": {
+        "objective": "Choose the right approach for each story heist and free-roam tier based on setup completion, crew loadout, and police escalation risk.",
+        "location": "Leonida-Wide.",
+        "approaches": [
+          "Stealth / Disarm Approach (lower heat, preserves Professional rating where applicable)",
+          "Loud / Explosive Approach (faster vault open, immediate high-star VCPD/NOOSE response)"
+        ],
+        "requirements": [
+          "No special unlock — useful before any Chapter 1–4 robbery or heist."
+        ]
+      },
+      "walkthroughStages": [
+        "Compare Stealth vs. Loud heat escalation across Shops, Pawn Shops, Small Banks, Large Vaults, and Story Heists.",
+        "Verify factual boundaries on silent alarms, disguises, and manual save slots.",
+        "Model approach impact inside the Heist Planner before locking in your crew."
+      ],
+      "commonMistakes": [
+        "Committing to a loud explosive breach without a staged swap vehicle or armored getaway car."
+      ],
+      "setupLinks": [
+        { "label": "Leonida Wanted System & Evasion Matrix", "url": "/leonida-wanted-system" },
+        { "label": "Heist Planner & Cut Calculator", "url": "/heist-planner" }
+      ],
+      "checklist": [
+        { "id": "compare-tiers", "label": "Compare Stealth vs. Loud mechanics for your target robbery tier" },
+        { "id": "test-planner", "label": "Test approach & specialist cuts in Heist Planner" },
+        { "id": "pick-job", "label": "Select your active heist in the Command Center directory" }
+      ],
+      "weapons": [],
+      "vehicles": [],
+      "nextActivities": [
+        { "label": "The Cartel Heist Walkthrough", "jobId": "the-cartel-heist", "type": "Story Heist" },
+        { "label": "VCIA Takedown Walkthrough", "jobId": "vcia-takedown", "type": "Story Heist" }
+      ]
+    },
+    {
+      "id": "escape-routes-hub",
+      "title": "Leonida Sewers, Storm Drains & Escape Routes",
+      "subtitle": "Escape Intelligence — Verified Conduits vs. Unverified Myths",
+      "classification": "Preparation",
+      "region": "Vice City",
+      "chapter": "All Chapters",
+      "evidenceStatus": "Verified vs. Unverified Audit",
+      "evidenceTier": "mixed",
+      "hasWalkthrough": false,
+      "featured": false,
+      "image": "/assets/images/regions/vice-city.jpg",
+      "imageAlt": "Vice City canals, storm drains, and Leonida escape routes guide",
+      "summary": "Evidence-audited escape hub separating confirmed Vice City drainage conduits, Port Gellhorn canals, and Keys causeways from unverified underground sewer myths.",
+      "canonicalUrl": "/escape-routes",
+      "prepUrl": "/guides/vice-city-storm-drains-escape",
+      "prepLabel": "Vice City Storm Drains Verification",
+      "locationGuideUrl": "/guides/port-gellhorn-escape-routes",
+      "locationGuideLabel": "Port Gellhorn Escape Routes",
+      "escapeUrl": "/escape-routes",
+      "escapeLabel": "Open Full Escape Routes Hub",
+      "plannerUrl": "/leonida-wanted-system",
+      "mapPinId": "vault-sinfrontera-downtown",
+      "mapPinLabel": "Downtown Vice City Extraction Area",
+      "secondaryPinId": "vault-port-gellhorn-terminal",
+      "secondaryPinLabel": "Port Gellhorn Shipyard Corridor",
+      "payoutConfirmed": "Escape & survival reference — protects stolen cash from arrest/death loss",
+      "payoutReported": "Clearly labels confirmed conduits vs. unverified underground sewer claims",
+      "overview": {
+        "objective": "Plan reliable post-heist extraction routes across Vice City, Port Gellhorn, and the Leonida Keys without relying on unverified underground tunnel myths.",
+        "location": "Vice City, Port Gellhorn, Leonida Keys, and Grassrivers.",
+        "approaches": [
+          "Confirmed surface drainage, canal, shipyard, causeway, and multi-level parking deck breakouts."
+        ],
+        "requirements": [
+          "Know your exit corridor before starting any 3–5 star job."
+        ]
+      },
+      "walkthroughStages": [
+        "Review Confirmed vs. Unverified sewer & storm-drain boundaries.",
+        "Pick the matching regional corridor: Vice City storm drains/garages, Port Gellhorn shipyard/canals, or Keys boat drop-offs.",
+        "Combine escape routing with a clean staged swap vehicle."
+      ],
+      "commonMistakes": [
+        "Driving into dead-end Keys causeway bottlenecks during 3+ star pursuits instead of using boat escapes."
+      ],
+      "setupLinks": [
+        { "label": "Vice City Storm Drains & Canals Verification", "url": "/guides/vice-city-storm-drains-escape" },
+        { "label": "Port Gellhorn Shipyard & Canal Escapes", "url": "/guides/port-gellhorn-escape-routes" },
+        { "label": "Leonida Keys Causeway & Boat Escapes", "url": "/guides/leonida-keys-causeway-escapes" }
+      ],
+      "checklist": [
+        { "id": "verify-conduits", "label": "Review confirmed escape conduits vs. unverified sewer claims" },
+        { "id": "pick-region-route", "label": "Select your regional extraction corridor (Vice City / Gellhorn / Keys)" },
+        { "id": "check-map", "label": "Verify nearest swap garage & exit highway on Interactive Map" }
+      ],
+      "weapons": [],
+      "vehicles": [
+        {
+          "id": "shitzu-squalo",
+          "name": "Shitzu Squalo",
+          "image": "/assets/images/vehicles/gtavi-shitzu-squalo-speedboat-vice-bay.jpg",
+          "url": "/vehicles/shitzu-squalo",
+          "reason": "High-speed Vice Bay and Leonida Keys marine escape boat."
+        }
+      ],
+      "nextActivities": [
+        { "label": "How to Escape Police & High Wanted Levels", "jobId": "how-to-escape-police-wanted-levels", "type": "Escape Guide" },
+        { "label": "Leonida Wanted System Matrix", "url": "/leonida-wanted-system", "type": "Reference" }
+      ]
+    },
+    {
+      "id": "how-to-escape-police-wanted-levels",
+      "title": "How to Escape Police & High Wanted Levels",
+      "subtitle": "Preparation Guide — 5 Proven Heat-Drop Tactics & Regional Corridors",
+      "classification": "Preparation",
+      "region": "Leonida-Wide",
+      "chapter": "All Chapters",
+      "evidenceStatus": "Confirmed · Launch Verified",
+      "evidenceTier": "confirmed",
+      "hasWalkthrough": false,
+      "featured": false,
+      "image": "/assets/images/vehicles/gtavi-vcpd-pursuit-interceptor-cruiser-vice-city.jpg",
+      "imageAlt": "VCPD pursuit interceptor cruiser and Leonida police evasion guide",
+      "summary": "Practical 1-star to 5-star VCPD and NOOSE evasion playbook covering witness memory, clean swap vehicles, regional corridors, and pre-robbery escape prep.",
+      "canonicalUrl": "/guides/how-to-escape-police-wanted-levels",
+      "prepUrl": "/leonida-wanted-system",
+      "prepLabel": "Leonida Wanted System & Radar Calculator",
+      "locationGuideUrl": "/escape-routes",
+      "locationGuideLabel": "Leonida Escape Routes Hub",
+      "escapeUrl": "/guides/how-to-escape-police-wanted-levels",
+      "escapeLabel": "Open Police Evasion Guide",
+      "plannerUrl": "/leonida-wanted-system",
+      "mapPinId": "heist-vcia",
+      "mapPinLabel": "VCIA Coastal Airspace Corridor",
+      "secondaryPinId": "heist-cartel",
+      "secondaryPinLabel": "Downtown Vice City Pursuit Zone",
+      "payoutConfirmed": "Core survival guide — prevents bust/death cash penalties",
+      "payoutReported": "Covers 1-star to 5-star VCPD & NOOSE escalation",
+      "overview": {
+        "objective": "Drop 1-star to 5-star wanted levels reliably after any heist or robbery using counter-forensics, disguise swaps, and regional line-of-sight breaks.",
+        "location": "All Leonida regions.",
+        "approaches": [
+          "Pre-staged clean swap vehicle + CCTV wipe + regional corridor exit."
+        ],
+        "requirements": [
+          "Recommended before running any Chapter 3+ bank or story heist."
+        ]
+      },
+      "walkthroughStages": [
+        "Apply the 5 proven heat-drop tactics: break line-of-sight, swap into an untagged car, avoid main causeways, use elevation/water, and keep disguises in the trunk.",
+        "Match your getaway vehicle to the region (boats for Keys, 4x4 for Grassrivers/Ambrosia, agile coupes/bikes for Vice City).",
+        "Use the Leonida Wanted System heat calculator to plan cooldown windows."
+      ],
+      "commonMistakes": [
+        "Staying in a CCTV-tagged getaway car during a 3+ star pursuit."
+      ],
+      "setupLinks": [
+        { "label": "Leonida Wanted System & Cooldown Calculator", "url": "/leonida-wanted-system" },
+        { "label": "Leonida Escape Routes Hub", "url": "/escape-routes" }
+      ],
+      "checklist": [
+        { "id": "learn-5-tactics", "label": "Review the 5 proven tactics to drop VCPD heat fast" },
+        { "id": "prep-swap", "label": "Habit-check: always stage a clean swap car with trunk disguises" },
+        { "id": "open-wanted", "label": "Check 1-star to 5-star escalation rules in Wanted System guide" }
+      ],
+      "weapons": [],
+      "vehicles": [
+        {
+          "id": "vcpd-buffalo-interceptor",
+          "name": "VCPD Cruiser / Pursuit Interceptor",
+          "image": "/assets/images/vehicles/gtavi-vcpd-pursuit-interceptor-cruiser-vice-city.jpg",
+          "url": "/vehicles/vcpd-cruiser-pursuit-interceptor",
+          "reason": "Primary high-speed VCPD patrol threat to out-corner or evade after bank jobs."
+        }
+      ],
+      "nextActivities": [
+        { "label": "Leonida Wanted System Matrix", "url": "/leonida-wanted-system", "type": "Reference" },
+        { "label": "VCIA Takedown Walkthrough", "jobId": "vcia-takedown", "type": "Story Heist" }
+      ]
+    }
+  ]
+}
