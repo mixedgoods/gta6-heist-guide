@@ -492,6 +492,108 @@
             cursor: pointer;
         }
 
+        /* Community Discoveries Sidebar Entry Point */
+        .map-community-box {
+            padding: 0.52rem 0.85rem;
+            background: linear-gradient(145deg, rgba(255, 42, 133, 0.08), rgba(12, 16, 30, 0.96));
+            border-bottom: 1px solid rgba(255, 42, 133, 0.28);
+            display: flex;
+            flex-direction: column;
+            gap: 0.34rem;
+            flex-shrink: 0;
+            transition: box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .map-community-box.is-highlighted {
+            box-shadow: inset 0 0 0 1px rgba(255, 42, 133, 0.85), 0 0 14px rgba(255, 42, 133, 0.28);
+        }
+        .map-community-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+        }
+        .map-community-title {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #f9a8d4;
+            letter-spacing: 0.02em;
+        }
+        .map-community-badge {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.62rem;
+            font-weight: 800;
+            padding: 0.1rem 0.42rem;
+            border-radius: 999px;
+            background: rgba(255, 42, 133, 0.14);
+            border: 1px solid rgba(255, 42, 133, 0.35);
+            color: #fbcfe8;
+            white-space: nowrap;
+        }
+        .map-community-desc {
+            margin: 0;
+            font-size: 0.68rem;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+        .map-community-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .map-community-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.22rem 0.55rem;
+            border-radius: 5px;
+            background: rgba(255, 42, 133, 0.22);
+            border: 1px solid rgba(255, 42, 133, 0.55);
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: background 0.18s ease, border-color 0.18s ease;
+        }
+        .map-community-cta:hover {
+            background: rgba(255, 42, 133, 0.38);
+            border-color: var(--neon-pink, #ff2a85);
+            color: #fff;
+        }
+        .map-community-hub-link {
+            font-size: 0.67rem;
+            font-weight: 700;
+            color: var(--neon-cyan, #00f0ff);
+            text-decoration: none;
+        }
+        .map-community-hub-link:hover {
+            text-decoration: underline;
+        }
+        .map-community-filter-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+            padding: 0.22rem 0.42rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 42, 133, 0.25);
+        }
+        .map-community-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #f8fafc;
+            cursor: pointer;
+            user-select: none;
+        }
+        .map-community-toggle input[type="checkbox"] {
+            accent-color: var(--neon-pink, #ff2a85);
+            cursor: pointer;
+        }
+
         /* Category Filter Accordion / Rows */
         .category-rows-container {
             padding: 0.42rem 0.85rem;
@@ -1220,6 +1322,18 @@
             <p style="margin:0.4rem 0 0; font-size:0.7rem; color:#94a3b8; line-height:1.4;">Explore all <a href="/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates" style="color:var(--neon-cyan,#00f0ff); font-weight:700;">6 Leonida Regions</a> &middot; <a href="/port-gellhorn" style="color:var(--neon-cyan,#00f0ff); font-weight:700;">Port Gellhorn</a> &middot; <a href="/my-leonida/" style="color:var(--neon-green,#00ff88); font-weight:700;">My Leonida</a> &middot; <a href="/community-discoveries/submit/" style="color:var(--neon-pink,#ff2a85); font-weight:700;">Missing a Pin? Submit</a> &middot; <a href="/gta-6-100-completion-tracker/" style="color:var(--neon-green,#00ff88); font-weight:700;">100% Tracker</a>.</p>
         </div>
 
+        <div class="map-community-box" id="mapCommunityBox" role="region" aria-label="Community Discoveries">
+            <div class="map-community-head">
+                <span class="map-community-title">📡 Community Discoveries</span>
+                <span class="map-community-badge" id="mapCommunityBadge">0 APPROVED PINS</span>
+            </div>
+            <p class="map-community-desc" id="mapCommunityDesc">No approved community map pins yet. Share a location with coordinates or directions — reviewed discoveries appear here separately from the 188 verified pins.</p>
+            <div class="map-community-actions" id="mapCommunityActions">
+                <a href="/community-discoveries/submit/" class="map-community-cta">Submit a Discovery &rarr;</a>
+                <a href="/community-discoveries/" class="map-community-hub-link">Browse Hub</a>
+            </div>
+        </div>
+
         <div class="category-rows-container" id="categoryRowsContainer"></div>
 
         <div class="sidebar-locations-list" id="sidebarLocationsList"></div>
@@ -1239,6 +1353,9 @@
                 <button type="button" class="region-jump-pill" data-region="Ambrosia" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
             </div>
             <div class="map-toolbar-utils">
+                <button type="button" class="hud-btn" id="mapCommunityJumpBtn" onclick="focusCommunityDiscoveriesPanel()" style="padding:0.28rem 0.58rem; font-size:0.7rem; border-color:rgba(255,42,133,0.45); color:#f9a8d4;" title="View Community Discoveries status and submission link">
+                    📡 Community
+                </button>
                 <button type="button" class="hud-btn" id="mapStyleToggleBtn" onclick="toggleMapStyle()" style="padding:0.28rem 0.58rem; font-size:0.7rem;">
                     <span id="styleIcon">🗺️</span> <span id="styleLabel">Atlas Day</span>
                 </button>
@@ -1376,6 +1493,19 @@ const CATEGORIES = {
 
 let categoryVisibility = {};
 Object.keys(CATEGORIES).forEach(k => { categoryVisibility[k] = (k !== 'animal-reference'); });
+let communityPinsVisible = true;
+let communityOnlyMode = false;
+
+function isPinVisibleByFilters(pin) {
+    const cat = pin.category || 'vault';
+    if (pin.is_community) {
+        if (!communityPinsVisible) return false;
+        if (communityOnlyMode) return true;
+        return categoryVisibility[cat] !== false;
+    }
+    if (communityOnlyMode) return false;
+    return categoryVisibility[cat] !== false;
+}
 
 let foundPinIds = new Set();
 function loadFoundPinsFromStore() {
@@ -1641,6 +1771,7 @@ async function loadAllPinsData() {
 
     renderAllMarkers();
     renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
     updateChecklistStats();
     renderFilteredList();
 }
@@ -1764,7 +1895,7 @@ function renderAllMarkers() {
         if (!markerLayersByCategory[cat]) {
             markerLayersByCategory[cat] = L.layerGroup().addTo(map);
         }
-        if (categoryVisibility[cat] !== false && !(hideFoundActive && foundPinIds.has(pin.id))) {
+        if (isPinVisibleByFilters(pin) && !(hideFoundActive && foundPinIds.has(pin.id))) {
             markerLayersByCategory[cat].addLayer(marker);
         }
     });
@@ -1998,6 +2129,7 @@ function flyToPin(pinId, openPopup = true, highlightPulse = false) {
     if (layersChanged) {
         updateCategoryLayers();
         renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
     }
 
     const [y, x] = getPinLatLng(pin);
@@ -2182,6 +2314,80 @@ function toggleHideFound(checked) {
     renderFilteredList();
 }
 
+function renderCommunityDiscoveriesPanel() {
+    const box = document.getElementById('mapCommunityBox');
+    if (!box) return;
+    const communityPins = allPins.filter(p => p.is_community);
+    const count = communityPins.length;
+    if (count === 0) {
+        communityOnlyMode = false;
+        box.innerHTML = `
+            <div class="map-community-head">
+                <span class="map-community-title">📡 Community Discoveries</span>
+                <span class="map-community-badge" id="mapCommunityBadge">0 APPROVED PINS</span>
+            </div>
+            <p class="map-community-desc" id="mapCommunityDesc">No approved community map pins yet. Share a location with coordinates or directions — reviewed discoveries appear here separately from the 188 verified pins.</p>
+            <div class="map-community-actions" id="mapCommunityActions">
+                <a href="/community-discoveries/submit/" class="map-community-cta">Submit a Discovery &rarr;</a>
+                <a href="/community-discoveries/" class="map-community-hub-link">Browse Hub</a>
+            </div>
+        `;
+        return;
+    }
+    const plural = count === 1 ? 'PIN' : 'PINS';
+    box.innerHTML = `
+        <div class="map-community-head">
+            <span class="map-community-title">📡 Community Discoveries</span>
+            <span class="map-community-badge" id="mapCommunityBadge">${count} ${plural} LIVE</span>
+        </div>
+        <div class="map-community-filter-row">
+            <label class="map-community-toggle">
+                <input type="checkbox" id="communityPinsCheckbox" ${communityPinsVisible ? 'checked' : ''} onchange="setCommunityPinsVisible(this.checked)">
+                <span>Show community pins</span>
+            </label>
+            <button type="button" class="btn-cat-only" onclick="toggleCommunityOnlyMode()" style="${communityOnlyMode ? 'background:rgba(255,42,133,0.3); border-color:var(--neon-pink); color:#fff;' : ''}">${communityOnlyMode ? 'All' : 'Only'}</button>
+        </div>
+        <p class="map-community-desc" id="mapCommunityDesc">Reviewed community pins appear with dashed rings and never inflate the 188 verified completion tracker.</p>
+        <div class="map-community-actions" id="mapCommunityActions">
+            <a href="/community-discoveries/submit/" class="map-community-cta">Submit a Discovery &rarr;</a>
+            <a href="/community-discoveries/" class="map-community-hub-link">Browse Hub</a>
+        </div>
+    `;
+}
+
+function setCommunityPinsVisible(visible) {
+    communityPinsVisible = Boolean(visible);
+    if (!communityPinsVisible && communityOnlyMode) communityOnlyMode = false;
+    updateCategoryLayers();
+    renderFilteredList();
+    renderCommunityDiscoveriesPanel();
+}
+
+function toggleCommunityOnlyMode() {
+    const hasCommunity = allPins.some(p => p.is_community);
+    if (!hasCommunity) return;
+    communityOnlyMode = !communityOnlyMode;
+    if (communityOnlyMode) communityPinsVisible = true;
+    updateCategoryLayers();
+    renderFilteredList();
+    renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
+    showToast(communityOnlyMode ? '📡 Showing Only: Community Discoveries' : '🗺️ Showing All Enabled Pin Categories');
+}
+
+function focusCommunityDiscoveriesPanel() {
+    const sidebar = document.getElementById('mapSidebar');
+    if (sidebar && window.innerWidth <= 900 && !sidebar.classList.contains('open')) {
+        sidebar.classList.add('open');
+    }
+    const box = document.getElementById('mapCommunityBox');
+    if (!box) return;
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    box.classList.add('is-highlighted');
+    clearTimeout(window._cdBoxHighlightTimer);
+    window._cdBoxHighlightTimer = setTimeout(() => box.classList.remove('is-highlighted'), 1600);
+}
+
 function renderCategoryRows() {
     const container = document.getElementById('categoryRowsContainer');
     if (!container) return;
@@ -2214,25 +2420,32 @@ function handleCategoryRowClick(catKey) {
 }
 
 function setCategoryVisible(catKey, visible) {
+    communityOnlyMode = false;
     categoryVisibility[catKey] = visible;
     updateCategoryLayers();
     renderFilteredList();
     renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
 }
 
 function isolateCategory(catKey) {
+    communityOnlyMode = false;
     Object.keys(categoryVisibility).forEach(k => { categoryVisibility[k] = (k === catKey); });
     updateCategoryLayers();
     renderFilteredList();
     renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
     showToast(`🎯 Showing Only: ${CATEGORIES[catKey].name}`);
 }
 
 function toggleAllCategories(show) {
+    communityOnlyMode = false;
+    communityPinsVisible = show;
     Object.keys(categoryVisibility).forEach(k => { categoryVisibility[k] = show; });
     updateCategoryLayers();
     renderFilteredList();
     renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
 }
 
 function updateCategoryLayers() {
@@ -2241,8 +2454,9 @@ function updateCategoryLayers() {
         const layer = markerLayersByCategory[cat];
         if (!layer) return;
         layer.clearLayers();
-        if (hasSearch || categoryVisibility[cat]) {
-            allPins.filter(p => p.category === cat).forEach(pin => {
+        if (hasSearch || categoryVisibility[cat] || communityOnlyMode) {
+            allPins.filter(p => (p.category || 'vault') === cat).forEach(pin => {
+                if (!hasSearch && !isPinVisibleByFilters(pin)) return;
                 if (hideFoundActive && foundPinIds.has(pin.id)) return;
                 if (hasSearch && !matchesPinSearch(pin, currentSearchQuery)) return;
                 const m = markersById[pin.id];
@@ -2334,6 +2548,7 @@ function selectSearchResult(pinId, fromEnterSubmit) {
     if (!categoryVisibility[cat]) {
         categoryVisibility[cat] = true;
         renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
     }
     updateCategoryLayers();
     flyToPin(pin.id, true, true);
@@ -2429,7 +2644,7 @@ function renderFilteredList() {
     const hasSearch = Boolean(currentSearchQuery);
     const filtered = allPins.filter(pin => {
         const cat = pin.category || 'vault';
-        if (!hasSearch && !categoryVisibility[cat]) return false;
+        if (!hasSearch && !isPinVisibleByFilters(pin)) return false;
         if (hideFoundActive && foundPinIds.has(pin.id)) return false;
         if (!hasSearch) return true;
         return matchesPinSearch(pin, currentSearchQuery);
@@ -2502,6 +2717,7 @@ function saveUserPin() {
     allPins.push(newPin);
     renderAllMarkers();
     renderCategoryRows();
+    renderCommunityDiscoveriesPanel();
     renderFilteredList();
     closeUserPinModal();
     flyToPin(newPin.id, true, true);
@@ -2586,6 +2802,7 @@ function refreshMapFromStore() {
     loadCustomPinsFromStore();
     if (typeof renderAllMarkers === 'function' && typeof allPins !== 'undefined' && allPins.length) {
         renderAllMarkers();
+    renderCommunityDiscoveriesPanel();
         if (typeof renderCategoryRows === 'function') renderCategoryRows();
         if (typeof updateChecklistStats === 'function') updateChecklistStats();
         if (typeof renderFilteredList === 'function') renderFilteredList();
