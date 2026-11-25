@@ -102,6 +102,9 @@ window.getGTA6LaunchBannerText = function() {
       amazonKey: 'dualsenseWhite',
       mediaType: 'photo',
       image: '/assets/gear-photos/dualsense-white.webp',
+      imageCreator: 'Alex Cochrane',
+      imageLicense: 'CC BY-SA 4.0',
+      imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
       imageCredit: 'Photo: Alex Cochrane \u00b7 CC BY-SA 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png',
       imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
@@ -131,6 +134,9 @@ window.getGTA6LaunchBannerText = function() {
       amazonKey: 'xboxCarbonBlack',
       mediaType: 'photo',
       image: '/assets/gear-photos/xbox-wireless-controller-carbon-black.webp',
+      imageCreator: 'uKER',
+      imageLicense: 'CC BY-SA 4.0',
+      imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
       imageCredit: 'Photo: uKER \u00b7 CC BY-SA 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg',
       imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
@@ -146,24 +152,27 @@ window.getGTA6LaunchBannerText = function() {
       partner: 'amazon',
       partnerName: 'Amazon',
       brand: 'Koss',
-      category: 'Affordable Headsets',
-      badge: 'Budget 3.5mm Audio',
+      category: 'Wired Headphones',
+      badge: 'Wired 3.5mm Headphones',
       accent: 'pink',
       title: 'Koss Porta Pro Classic On-Ear Wired Headphones',
       asin: 'B00001P4ZH',
       trackingId: AMZ_TAG,
       compat: 'PS5 DualSense, Xbox Series X|S Controllers, PC & Mobile (3.5mm wired)',
-      desc: 'Ultra-lightweight 1980s retro on-ear wired headphones with punchy open-back sound, adjustable ComfortZone temple pads, and collapsible steel band.',
-      whyConsider: 'Affordable Vice-era classic that plugs straight into PS5 or Xbox controllers with zero battery charging.',
+      desc: 'Ultra-lightweight 1980s retro on-ear wired headphones (no built-in mic) with open-back stereo sound, adjustable ComfortZone temple pads, and collapsible steel band.',
+      whyConsider: 'Affordable Vice-era classic wired headphones that plug straight into PS5 or Xbox controllers with zero battery charging.',
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.kossPortaPro,
       amazonKey: 'kossPortaPro',
       mediaType: 'photo',
       image: '/assets/gear-photos/koss-porta-pro.webp',
-      imageCredit: 'Photo: Creative Tools \u00b7 CC BY 2.0',
-      imageSource: 'https://commons.wikimedia.org/wiki/File:CreativeTools.se_-_PackshotCreator_-_Koss_PortaPro_(5077907339).jpg',
-      imageRightsStatus: 'Approved (CC BY 2.0 Commercial Reuse Verified)',
-      alt: 'Photograph of Koss Porta Pro Classic On-Ear Wired Headphones',
+      imageCreator: 'Malcolm Tyrrell',
+      imageLicense: 'CC BY-SA 3.0',
+      imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/',
+      imageCredit: 'Photo: Malcolm Tyrrell \u00b7 CC BY-SA 3.0',
+      imageSource: 'https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg',
+      imageRightsStatus: 'Approved (CC BY-SA 3.0 Commercial Reuse Verified)',
+      alt: 'Photograph of Koss Porta Pro Classic On-Ear Wired Headphones (Silver & Blue)',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'weapons', 'missions', 'properties', 'xbox-gear', 'default'],
       disclosure: AMZ_STATEMENT
@@ -175,20 +184,23 @@ window.getGTA6LaunchBannerText = function() {
       partner: 'amazon',
       partnerName: 'Amazon',
       brand: 'Sony',
-      category: 'Headsets & Audio',
+      category: 'Studio Headphones',
       badge: 'Studio Wired 3.5mm',
       accent: 'cyan',
       title: 'Sony MDR-7506 Professional Over-Ear Wired Headphones',
       asin: 'B000AJIF4E',
       trackingId: AMZ_TAG,
       compat: 'PS5 DualSense, Xbox Controllers, PC & Audio Interfaces (3.5mm + 1/4" adapter)',
-      desc: 'Closed-back studio monitor headphones with 40mm neodymium drivers, coiled cable, folding design, and clear directional sound isolation.',
+      desc: 'Closed-back wired studio monitor headphones (no built-in mic) with 40mm neodymium drivers, coiled cable, folding design, and clear directional sound isolation.',
       whyConsider: 'Hear crisp Leonida radio tracks, dialogue, and footsteps clearly without paying wireless headset markups.',
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.sonyMdr7506,
       amazonKey: 'sonyMdr7506',
       mediaType: 'photo',
       image: '/assets/gear-photos/sony-mdr-7506.webp',
+      imageCreator: 'Ashley Pomeroy',
+      imageLicense: 'CC BY 4.0',
+      imageLicenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
       imageCredit: 'Photo: Ashley Pomeroy \u00b7 CC BY 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg',
       imageRightsStatus: 'Approved (CC BY 4.0 Commercial Reuse Verified)',
@@ -218,6 +230,9 @@ window.getGTA6LaunchBannerText = function() {
       amazonKey: 'samsung990Pro4tb',
       mediaType: 'photo',
       image: '/assets/gear-photos/samsung-990-pro-4tb.webp',
+      imageCreator: 'Dinkun Chen',
+      imageLicense: 'CC BY-SA 4.0',
+      imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
       imageCredit: 'Photo: Dinkun Chen \u00b7 CC BY-SA 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg',
       imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
@@ -247,7 +262,10 @@ window.getGTA6LaunchBannerText = function() {
       amazonKey: 'blueYetiBlackout',
       mediaType: 'photo',
       image: '/assets/gear-photos/blue-yeti-blackout.webp',
-      imageCredit: 'Photo: Guillaume Pasquier \u00b7 CC0',
+      imageCreator: 'Guillaume Pasquier',
+      imageLicense: 'CC0 1.0',
+      imageLicenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
+      imageCredit: 'Photo: Guillaume Pasquier \u00b7 CC0 1.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg',
       imageRightsStatus: 'Approved (CC0 1.0 Public Domain Dedication)',
       alt: 'Photograph of the Logitech Blue Yeti USB Microphone in Blackout finish',
@@ -833,15 +851,33 @@ window.getGTA6LaunchBannerText = function() {
     // Studio-stage product showcase (supports both authorized 'photo' and clearly-badged 'illustration')
     if (offer.image) {
       var isPhoto = offer.mediaType === 'photo';
+      var decodeAttr = eager ? 'sync' : 'async';
       var stageLabel = isPhoto
-        ? (offer.imageCredit ? '<span class="aff-stage-badge aff-stage-badge--photo">' + esc(offer.imageCredit) + '</span>' : '')
+        ? ''
         : '<span class="aff-stage-badge aff-stage-badge--illus">' + esc(offer.imageLabel || 'Category Illustration') + '</span>';
 
+      var photoCreditHtml = '';
+      if (isPhoto && offer.imageCreator && offer.imageSource && offer.imageLicense && offer.imageLicenseUrl) {
+        photoCreditHtml =
+          '<div class="aff-photo-credit">' +
+            'Photo: <a href="' + esc(offer.imageSource) + '" target="_blank" rel="noopener noreferrer">' + esc(offer.imageCreator) + '</a>' +
+            ' &middot; <a href="' + esc(offer.imageLicenseUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(offer.imageLicense) + '</a>' +
+          '</div>';
+      } else if (isPhoto && offer.imageCredit && offer.imageSource) {
+        photoCreditHtml =
+          '<div class="aff-photo-credit">' +
+            '<a href="' + esc(offer.imageSource) + '" target="_blank" rel="noopener noreferrer">' + esc(offer.imageCredit) + '</a>' +
+          '</div>';
+      }
+
       return (
-        '<a ' + linkAttrs + ' class="aff-stage' + (compact ? ' aff-stage--compact' : '') + (isPhoto ? ' aff-stage--photo' : ' aff-stage--illus') + '" aria-label="View ' + esc(offer.title) + ' on Amazon">' +
-          '<img class="aff-stage-img" src="' + esc(offer.image) + '" alt="' + esc(offer.alt || offer.title) + '" width="400" height="300" loading="' + loadAttr + '" decoding="async">' +
-          stageLabel +
-        '</a>'
+        '<div class="aff-stage-wrap' + (compact ? ' aff-stage-wrap--compact' : '') + '">' +
+          '<a ' + linkAttrs + ' class="aff-stage' + (compact ? ' aff-stage--compact' : '') + (isPhoto ? ' aff-stage--photo' : ' aff-stage--illus') + '" aria-label="View ' + esc(offer.title) + ' on Amazon">' +
+            '<img class="aff-stage-img" src="' + esc(offer.image) + '" alt="' + esc(offer.alt || offer.title) + '" width="400" height="300" loading="' + loadAttr + '" decoding="' + decodeAttr + '">' +
+            stageLabel +
+          '</a>' +
+          photoCreditHtml +
+        '</div>'
       );
     }
 
