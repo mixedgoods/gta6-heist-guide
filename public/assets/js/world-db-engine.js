@@ -187,7 +187,7 @@
           '<div class="aff-compact-benefit">7,450 MB/s read speeds &middot; Ample room for 212 GB+ GTA VI installs</div>' +
           '<div class="aff-disclosure-inline">' + esc(contextLabel || 'Affiliate link · As an Amazon Associate we earn from qualifying purchases. Prices vary on Amazon.') + '</div>' +
         '</div>' +
-        '<div class="aff-compact-action"><a href="' + esc(url) + '" target="_blank" rel="sponsored noopener noreferrer" data-aff-partner="amazon" data-aff-placement="wdb-hardware-fallback" class="aff-cta aff-cta--green">Check Price on Amazon &rarr;</a></div>' +
+        '<div class="aff-compact-action"><a href="' + esc(url) + '" target="_blank" rel="sponsored nofollow noopener noreferrer" data-aff-partner="amazon" data-aff-placement="wdb-hardware-fallback" class="aff-cta aff-cta--green">Check Price on Amazon &rarr;</a></div>' +
       '</aside>'
     );
   }

@@ -165,6 +165,14 @@ const GTA6 = {
       return null;
     },
 
+    ensureSponsoredRel(a) {
+      const existing = String(a.getAttribute('rel') || '').split(/\s+/).filter(Boolean).map((t) => t.toLowerCase());
+      const out = ['sponsored', 'nofollow', 'noopener'];
+      if (existing.includes('noreferrer')) out.push('noreferrer');
+      existing.forEach((t) => { if (!out.includes(t)) out.push(t); });
+      a.setAttribute('rel', out.join(' '));
+    },
+
     applyToDom() {
       const cfg = this.get();
       document.querySelectorAll('a[href]').forEach((a) => {
@@ -174,17 +182,21 @@ const GTA6 = {
         if (low.includes('amazon.com') || low.includes('amzn.to')) {
           a.href = this.buildAmazonUrl(rawHref);
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'amazon');
+          this.ensureSponsoredRel(a);
         } else if (low.includes('exitlag.com')) {
           a.href = cfg.exitLagUrl;
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'exitlag');
+          this.ensureSponsoredRel(a);
         } else if (low.includes('g2a.com')) {
           a.href = cfg.g2aUrl;
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'g2a');
+          this.ensureSponsoredRel(a);
         } else if (low.includes('gumroad.com')) {
           a.href = low.includes('cutflow-pro')
             ? (cfg.gumroadCutFlowUrl || cfg.gumroadUrl || 'https://apexlocallabs.gumroad.com/l/cutflow-pro')
             : (cfg.gumroadBundleUrl || 'https://apexlocallabs.gumroad.com/l/apex-pro-bundle');
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'gumroad');
+          this.ensureSponsoredRel(a);
         } else if (low.includes('getapexlocal.com/partners')) {
           a.href = cfg.getApexLocalPartnersUrl;
           if (!a.getAttribute('data-aff-partner')) a.setAttribute('data-aff-partner', 'getapexlocal');
@@ -5648,8 +5660,8 @@ DealRotator: {
                 </div>
               </div>
               <div style="padding:0 1.15rem 1.15rem; display:grid; gap:0.4rem;">
-                <a href="${d.ctaPrimary.href}" target="_blank" rel="noopener sponsored" data-aff-partner="${d.ctaPrimary.partner}" data-aff-placement="deal-rotator-${d.id}" class="${d.ctaPrimary.cls}" ${d.ctaPrimary.style ? 'style="' + d.ctaPrimary.style + '"' : ''}>${d.ctaPrimary.text}</a>
-                ${d.ctaSecondary ? `<a href="${d.ctaSecondary.href}" target="_blank" rel="noopener sponsored" data-aff-partner="${d.ctaSecondary.partner}" data-aff-placement="deal-rotator-${d.id}-sec" class="${d.ctaSecondary.cls}">${d.ctaSecondary.text}</a>` : ''}
+                <a href="${d.ctaPrimary.href}" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="${d.ctaPrimary.partner}" data-aff-placement="deal-rotator-${d.id}" class="${d.ctaPrimary.cls}" ${d.ctaPrimary.style ? 'style="' + d.ctaPrimary.style + '"' : ''}>${d.ctaPrimary.text}</a>
+                ${d.ctaSecondary ? `<a href="${d.ctaSecondary.href}" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="${d.ctaSecondary.partner}" data-aff-placement="deal-rotator-${d.id}-sec" class="${d.ctaSecondary.cls}">${d.ctaSecondary.text}</a>` : ''}
               </div>
             </div>
           `).join('');
