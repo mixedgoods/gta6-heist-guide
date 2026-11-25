@@ -1,0 +1,90 @@
+{
+  "phase": "35.1A",
+  "timestamp": "2026-11-25T21:50:15Z",
+  "branch": "phase-35-organic-growth-readiness",
+  "commit": "e07b5c1",
+  "previewUrl": "https://a795b523.gta6heistguide.pages.dev",
+  "previewAliasUrl": "https://phase-35-organic-growth-read.gta6heistguide.pages.dev",
+  "previewDeploymentId": "a795b523-1d24-44e4-b146-db6d882f51ca",
+  "productionBaseline": {
+    "commit": "8634d5e",
+    "deploymentId": "702b4f50-66a5-40c7-90a5-ce3c84c48481",
+    "untouched": true
+  },
+  "httpChecks": {
+    "hubLinksToGamingGear": { "passed": 13, "total": 13 },
+    "adsTxtAuthorized": true,
+    "adsenseScriptPresent": true,
+    "impactSiteVerificationPresent": true,
+    "affiliatesJsHasWrapMainAffiliateTracking": true,
+    "affiliatesJsHasMainTrackingMarker": true,
+    "httpSmokeSuite": {
+      "passed": 13,
+      "failed": 6,
+      "total": 19,
+      "failedIds": ["HTTP-06", "HTTP-06B", "HTTP-07", "HTTP-10", "HTTP-11", "HTTP-12"],
+      "reason": "Preview lacks production Turnstile/CD_HASH_SALT secrets (fail-closed submissionsOpen=false) and Cloudflare edge returns 403 on test-spoofed CF-Connecting-IP POSTs to *.pages.dev"
+    }
+  },
+  "unitAndAuditSuites": {
+    "affiliateClickDeduplication": { "passed": 8, "failed": 0 },
+    "communityDiscoveries": { "passed": 81, "failed": 0 },
+    "phase33ProductAudit": { "catalogValidated": "18/18", "pagesAudited": 98, "staticAmazonLinks": 122, "deadAsins": 0, "missingTags": 0, "missingRelSponsored": 0 },
+    "adsenseVerificationAudit": { "eligiblePassed": "571/571", "excluded": 8, "duplicates": 0, "impactIntact": true, "errors": 0 },
+    "jsSyntaxChecks": { "filesChecked": 46, "errors": 0 },
+    "pagesFunctionsBuild": "PASS (exit 0)"
+  },
+  "securityReview": {
+    "productionSecretsConfigured": [
+      "CD_ADMIN_EMAILS",
+      "CD_HASH_SALT",
+      "CF_ACCESS_AUD",
+      "CF_ACCESS_TEAM_DOMAIN",
+      "TURNSTILE_SECRET_KEY",
+      "TURNSTILE_SITE_KEY"
+    ],
+    "productionAdminKeyConfigured": false,
+    "getApiClicksWithFallbackKeyStatus": 200,
+    "getApiClicksWithoutKeyStatus": 401,
+    "piiTransmitted": false,
+    "payloadFields": ["partner", "placement", "page_path", "target_url"]
+  },
+  "browserQa": {
+    "hostVerifiedOrigins": ["https://a795b523.gta6heistguide.pages.dev"],
+    "hostBlockedOrigins": [],
+    "homepage": {
+      "httpStatus": 200,
+      "desktop": { "imgCount": 27, "brokenImages": 0, "horizontalOverflow": false, "firstPartyConsoleErrors": 0, "amazonLinks": 8, "allTagged": true, "allSponsored": true, "disclosuresVisible": true },
+      "mobile": { "imgCount": 27, "brokenImages": 0, "horizontalOverflow": false }
+    },
+    "gamingGear": {
+      "httpStatus": 200,
+      "mainJsLoaded": false,
+      "desktop": { "imgCount": 19, "brokenImages": 0, "horizontalOverflow": false, "firstPartyConsoleErrors": 0, "amazonLinks": 36, "allTagged": true, "allSponsored": true, "disclosuresVisible": true, "ccAttributionLinks": 12 },
+      "mobile": { "imgCount": 19, "brokenImages": 0, "horizontalOverflow": false }
+    },
+    "portGellhorn": {
+      "httpStatus": 200,
+      "title": "GTA 6 Port Gellhorn: Shipyard, Docks, Bank, ATMs & Safe Codes",
+      "imgCount": 4,
+      "brokenImages": 0,
+      "horizontalOverflow": false
+    },
+    "gta6Settings": {
+      "httpStatus": 200,
+      "imgCount": 3,
+      "brokenImages": 0,
+      "horizontalOverflow": false,
+      "tipsDropdownGamingGearLinkNavigated": true
+    },
+    "sandboxNote": "webview_browser disables page.evaluate()/page.route(); live deduplication behavior is verified via real-script VM + D1 execution in tests/affiliate-click-deduplication.test.mjs (8/8 pass) plus deployed JS inspection on Preview.",
+    "screenshots": [
+      "seo_reports/phase35-1a/screenshots/step_2_shot_1_homepage_desktop.png",
+      "seo_reports/phase35-1a/screenshots/step_8_shot_1_homepage_mobile.png",
+      "seo_reports/phase35-1a/screenshots/step_10_shot_1_gaming_gear_desktop.png",
+      "seo_reports/phase35-1a/screenshots/step_12_shot_1_gaming_gear_mobile.png",
+      "seo_reports/phase35-1a/screenshots/step_14_shot_1_port_gellhorn_desktop.png",
+      "seo_reports/phase35-1a/screenshots/final_step_28.png"
+    ]
+  }
+}
