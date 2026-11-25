@@ -295,12 +295,87 @@
     }
 
     renderOverview(snap);
+    renderCommunityDiscoveries();
     renderExploration(snap);
     renderHeists(snap);
     renderGarage(snap);
     renderArmory(snap);
     renderWorld(snap);
     renderBackupPreview();
+  }
+
+  function renderCommunityDiscoveries() {
+    var savedEl = document.getElementById('mlCommunitySavedList');
+    var recentEl = document.getElementById('mlCommunityRecentList');
+    if (!savedEl || !recentEl || !window.GTA6Progress) return;
+    var store = window.GTA6Progress.getStore ? window.GTA6Progress.getStore() : null;
+    var ts = (store && store.toolStates) || {};
+    var savedBag = (ts.savedDiscoveries && typeof ts.savedDiscoveries === 'object') ? ts.savedDiscoveries : {};
+    var savedItems = Object.keys(savedBag).map(function (k) { return savedBag[k]; }).filter(function (x) {
+      return x && x.ref && window.GTA6Progress.isCompleted('cd-saved:' + x.ref);
+    });
+    var recentItems = Array.isArray(ts.recentDiscoveries) ? ts.recentDiscoveries.slice(0, 6) : [];
+
+    if (!savedItems.length) {
+      savedEl.innerHTML = '<div class="ml-empty-box">No saved community discoveries yet. Save any approved discovery from the <a href="/community-discoveries/" style="color:var(--neon-cyan);">Community Intelligence Network</a> to track it here.</div>';
+    } else {
+      savedEl.innerHTML = savedItems.map(function (it) {
+        var foundKey = 'cd-verified-found:' + it.ref;
+        var isFound = Boolean(it.is_verified && window.GTA6Progress.isCompleted(foundKey));
+        var mapBtn = it.map_pin_id
+          ? '<a href="/map?pin=' + encodeURIComponent(it.map_pin_id) + '" class="ml-btn ml-btn-secondary ml-btn-sm">Map →</a>'
+          : '';
+        var foundBtn = it.is_verified
+          ? '<button type="button" class="ml-btn ml-btn-sm ' + (isFound ? 'ml-btn-primary' : 'ml-btn-secondary') + '" data-cd-found="' + esc(it.ref) + '">' + (isFound ? '✓ Found' : 'Mark Found') + '</button>'
+          : '<span class="ml-pill" title="Only Verified in Gameplay or Officially Confirmed discoveries can be marked found.">Unverified Report</span>';
+        return '<div class="ml-row">' +
+          '<div class="ml-row-main"><strong>' + esc(it.title) + '</strong><span>' + esc(it.region || 'Leonida') + ' · ' + esc(it.evidence_status || 'COMMUNITY_REPORTED') + '</span></div>' +
+          '<div class="ml-row-actions">' +
+            foundBtn +
+            mapBtn +
+            '<a href="' + esc(it.url || ('/community-discoveries/d/' + encodeURIComponent(it.ref))) + '" class="ml-btn ml-btn-secondary ml-btn-sm">Open →</a>' +
+            '<button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-cd-unsave="' + esc(it.ref) + '" aria-label="Remove saved discovery">✕</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      savedEl.querySelectorAll('[data-cd-found]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var r = btn.getAttribute('data-cd-found');
+          if (!r) return;
+          var key = 'cd-verified-found:' + r;
+          var next = !window.GTA6Progress.isCompleted(key);
+          window.GTA6Progress.setCompleted(key, next);
+          track('progress_category_update', { category: 'community_discovery', completed: next });
+          renderCommunityDiscoveries();
+        });
+      });
+      savedEl.querySelectorAll('[data-cd-unsave]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var r = btn.getAttribute('data-cd-unsave');
+          if (!r) return;
+          window.GTA6Progress.setCompleted('cd-saved:' + r, false);
+          var st = window.GTA6Progress.getStore();
+          var bag = Object.assign({}, (st.toolStates && st.toolStates.savedDiscoveries) || {});
+          delete bag[r];
+          window.GTA6Progress.setToolState('savedDiscoveries', bag);
+          track('discovery_bookmark', { saved: false });
+          renderCommunityDiscoveries();
+        });
+      });
+    }
+
+    if (!recentItems.length) {
+      recentEl.innerHTML = '';
+    } else {
+      recentEl.innerHTML = '<div style="font-size:0.78rem; color:#94a3b8; font-weight:700; margin-bottom:0.35rem;">Recently Viewed Discoveries</div>' +
+        recentItems.map(function (it) {
+          return '<div class="ml-row">' +
+            '<div class="ml-row-main"><strong>' + esc(it.title) + '</strong><span>' + esc(it.region || 'Leonida') + ' · Ref ' + esc(it.ref) + '</span></div>' +
+            '<div class="ml-row-actions"><a href="' + esc(it.url || ('/community-discoveries/d/' + encodeURIComponent(it.ref))) + '" class="ml-btn ml-btn-secondary ml-btn-sm">Resume →</a></div>' +
+          '</div>';
+        }).join('');
+    }
   }
 
   function renderOverview(snap) {

@@ -1,5 +1,5 @@
 import {
-  json, STATUSES, PUBLISHABLE, REGIONS, REF_RE, nowIso, readJsonLimited, cleanText, safeUrl,
+  json, STATUSES, PUBLISHABLE, REGIONS, REF_RE, nowIso, readJsonLimited, cleanText, safeUrl, containsDangerousMarkup,
 } from "../../_lib/cd.js";
 
 const MAP_W = 3840, MAP_H = 5120;
@@ -24,6 +24,13 @@ export async function onRequestPost(context) {
   const note = cleanText(body.note || "", { multiline: true });
   if (note.length > 1000) return fail("Note too long (max 1000).");
 
+  let hasMeta = true;
+  try {
+    await env.DB.prepare("SELECT 1 FROM cd_verification_meta LIMIT 1").first();
+  } catch {
+    hasMeta = false;
+  }
+
   const now = nowIso();
   const stmts = [];
   const db = env.DB;
@@ -34,10 +41,61 @@ export async function onRequestPost(context) {
     db.prepare("INSERT INTO cd_decisions (submission_id, action, from_status, to_status, internal_note, reviewer, created_at) VALUES (?1,?2,?3,?4,?5,?6,?7)")
       .bind(sub.id, action, from, to, n || null, admin, now);
 
-  const setStatus = (to, action, reviewerStatus = "reviewed") => {
-    stmts.push(db.prepare("UPDATE cd_submissions SET evidence_status = ?1, reviewer_status = ?2, updated_at = ?3 WHERE id = ?4").bind(to, reviewerStatus, now, sub.id));
-    stmts.push(decision(action, sub.evidence_status, to, note));
-    stmts.push(audit(action, { evidence_status: sub.evidence_status }, { evidence_status: to }));
+  const touchMeta = (extra = {}) => {
+    if (!hasMeta) return;
+    stmts.push(
+      db.prepare(
+        `INSERT INTO cd_verification_meta (
+           submission_id, official_confirmed, authoritative_source_url, authoritative_source_label,
+           evidence_source_summary, verification_notes, featured, related_db_records,
+           moderated_at, moderated_by, updated_at
+         ) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?9)
+         ON CONFLICT(submission_id) DO UPDATE SET
+           official_confirmed = COALESCE(?11, official_confirmed),
+           authoritative_source_url = COALESCE(?12, authoritative_source_url),
+           authoritative_source_label = COALESCE(?13, authoritative_source_label),
+           evidence_source_summary = COALESCE(?14, evidence_source_summary),
+           verification_notes = COALESCE(?15, verification_notes),
+           featured = COALESCE(?16, featured),
+           related_db_records = COALESCE(?17, related_db_records),
+           moderated_at = ?9,
+           moderated_by = ?10,
+           updated_at = ?9`
+      ).bind(
+        sub.id,
+        extra.official_confirmed ?? 0,
+        extra.authoritative_source_url ?? null,
+        extra.authoritative_source_label ?? null,
+        extra.evidence_source_summary ?? null,
+        extra.verification_notes ?? null,
+        extra.featured ?? 0,
+        extra.related_db_records ?? null,
+        now,
+        admin,
+        extra.official_confirmed !== undefined ? extra.official_confirmed : null,
+        extra.authoritative_source_url !== undefined ? extra.authoritative_source_url : null,
+        extra.authoritative_source_label !== undefined ? extra.authoritative_source_label : null,
+        extra.evidence_source_summary !== undefined ? extra.evidence_source_summary : null,
+        extra.verification_notes !== undefined ? extra.verification_notes : null,
+        extra.featured !== undefined ? extra.featured : null,
+        extra.related_db_records !== undefined ? extra.related_db_records : null
+      )
+    );
+  };
+
+  // cd_submissions has an immutable CHECK constraint on 6 statuses; OFFICIALLY_CONFIRMED stores
+  // INDEPENDENTLY_VERIFIED on cd_submissions while recording OFFICIALLY_CONFIRMED on cd_published + cd_verification_meta.
+  const subStatusFor = (to) => (to === "OFFICIALLY_CONFIRMED" ? "INDEPENDENTLY_VERIFIED" : to);
+
+  const setStatus = (to, action, reviewerStatus = "reviewed", metaExtra = {}) => {
+    const dbSubStatus = subStatusFor(to);
+    stmts.push(db.prepare("UPDATE cd_submissions SET evidence_status = ?1, reviewer_status = ?2, updated_at = ?3 WHERE id = ?4").bind(dbSubStatus, reviewerStatus, now, sub.id));
+    stmts.push(decision(action, pub?.evidence_status || sub.evidence_status, to, note));
+    stmts.push(audit(action, { evidence_status: pub?.evidence_status || sub.evidence_status }, { evidence_status: to }));
+    touchMeta({
+      official_confirmed: to === "OFFICIALLY_CONFIRMED" ? 1 : 0,
+      ...metaExtra,
+    });
     if (pub) {
       const stillPublic = PUBLISHABLE.includes(to);
       stmts.push(db.prepare(
@@ -45,7 +103,9 @@ export async function onRequestPost(context) {
            is_published = CASE WHEN ?3 = 1 THEN is_published ELSE 0 END,
            map_approved = CASE WHEN ?3 = 1 THEN map_approved ELSE 0 END WHERE submission_id = ?4`
       ).bind(to, now, stillPublic ? 1 : 0, sub.id));
-      if (!stillPublic && (pub.is_published || pub.map_approved)) stmts.push(audit("auto_unpublish_on_status_change", { is_published: pub.is_published, map_approved: pub.map_approved }, { is_published: 0, map_approved: 0 }));
+      if (!stillPublic && (pub.is_published || pub.map_approved)) {
+        stmts.push(audit("auto_unpublish_on_status_change", { is_published: pub.is_published, map_approved: pub.map_approved }, { is_published: 0, map_approved: 0 }));
+      }
     }
   };
 
@@ -67,12 +127,14 @@ export async function onRequestPost(context) {
       stmts.push(db.prepare("UPDATE cd_submissions SET reviewer_status = 'in_review', updated_at = ?1 WHERE id = ?2").bind(now, sub.id));
       stmts.push(decision("start_review", sub.evidence_status, sub.evidence_status, note));
       stmts.push(audit("start_review", { reviewer_status: "new" }, { reviewer_status: "in_review" }));
+      touchMeta();
       break;
     }
     case "add_note": {
       if (!note) return fail("Note required.");
       stmts.push(decision("note", sub.evidence_status, sub.evidence_status, note));
       stmts.push(audit("note_added", undefined, { length: note.length }));
+      touchMeta();
       break;
     }
     case "request_evidence": {
@@ -96,21 +158,42 @@ export async function onRequestPost(context) {
     case "set_status": {
       const to = body.status;
       if (!Object.hasOwn(STATUSES, to)) return fail("Unknown status.");
-      if (to === sub.evidence_status) return fail("Status unchanged.");
+      const currentStatus = pub?.evidence_status || sub.evidence_status;
+      if (to === currentStatus) return fail("Status unchanged.");
       if (to === "REJECTED" && !note) return fail("A reason is required to reject.");
+      let metaExtra = {};
       if (to === "CORROBORATED") {
         const basis = cleanText(body.basis || "", { multiline: true });
         if (basis.length < 20) return fail("CORROBORATED requires a written basis (>= 20 chars) explaining the independent evidence.");
         const rel = await db.prepare("SELECT COUNT(*) AS n FROM cd_relations WHERE kind = 'independent_confirmation' AND (submission_id = ?1 OR related_id = ?1)").bind(sub.id).first();
         if (rel.n < 1 && body.external_evidence_ack !== true) return fail("CORROBORATED requires a reviewer-linked independent confirmation, or explicit external_evidence_ack with a basis.");
         stmts.push(audit("corroboration_basis", undefined, { basis }));
+        metaExtra.verification_notes = basis;
       }
       if (to === "INDEPENDENTLY_VERIFIED") {
         if (body.confirm_verified !== true) return fail("INDEPENDENTLY_VERIFIED requires explicit owner confirmation (confirm_verified:true).");
         if (note.length < 20) return fail("INDEPENDENTLY_VERIFIED requires a reviewer note (>= 20 chars) describing how it was reproduced.");
+        metaExtra.verification_notes = note;
+      }
+      if (to === "OFFICIALLY_CONFIRMED") {
+        if (body.confirm_official !== true) return fail("OFFICIALLY_CONFIRMED requires explicit owner confirmation (confirm_official:true).");
+        const authUrl = safeUrl(String(body.authoritative_source_url || ""));
+        const authLabel = cleanText(String(body.authoritative_source_label || ""));
+        if (!authUrl) return fail("OFFICIALLY_CONFIRMED requires a valid https:// authoritative_source_url.");
+        if (authLabel.length < 5 || authLabel.length > 100 || containsDangerousMarkup(authLabel)) {
+          return fail("OFFICIALLY_CONFIRMED requires an authoritative_source_label (5-100 chars).");
+        }
+        if (note.length < 20) return fail("OFFICIALLY_CONFIRMED requires a reviewer note (>= 20 chars) citing the official source.");
+        metaExtra = {
+          official_confirmed: 1,
+          authoritative_source_url: authUrl,
+          authoritative_source_label: authLabel,
+          verification_notes: note,
+        };
+        stmts.push(audit("official_confirmation_source", undefined, { url: authUrl, label: authLabel }));
       }
       if (PUBLISHABLE.includes(to) && !pub) createDraft(to);
-      setStatus(to, "set_status");
+      setStatus(to, "set_status", "reviewed", metaExtra);
       break;
     }
     case "flag_duplicate": {
@@ -134,16 +217,18 @@ export async function onRequestPost(context) {
       stmts.push(db.prepare("INSERT INTO cd_relations (submission_id, related_id, kind, score, created_by, created_at) VALUES (?1,?2,?3,NULL,?4,?5)").bind(sub.id, other.id, body.kind, admin, now));
       stmts.push(decision(`link:${body.kind}`, sub.evidence_status, sub.evidence_status, note));
       stmts.push(audit("link", undefined, { related: rref, kind: body.kind }));
+      touchMeta();
       break;
     }
     case "edit_published": {
       if (!pub) return fail("Approve as a community report first; nothing to edit yet.");
       const f = {};
+      const metaUpdate = {};
       const errs = [];
       const take = (k, min, max) => {
         if (body[k] === undefined) return;
         const v = cleanText(String(body[k]), { multiline: true });
-        if (v.length < min || v.length > max) errs.push(k); else f[k] = v;
+        if (v.length < min || v.length > max || containsDangerousMarkup(v)) errs.push(k); else f[k] = v;
       };
       take("title", 5, 120); take("short_explanation", 20, 300); take("finding_instructions", 20, 2000);
       if (body.region !== undefined) { if (REGIONS.includes(body.region)) f.region = body.region; else errs.push("region"); }
@@ -168,36 +253,61 @@ export async function onRequestPost(context) {
         if (!Array.isArray(body.related_guides) || body.related_guides.length > 5 || !body.related_guides.every((p) => typeof p === "string" && /^\/(?!\/)[A-Za-z0-9\-_/.#]*$/.test(p))) errs.push("related_guides");
         else f.related_guides = JSON.stringify(body.related_guides);
       }
+      if (body.related_db_records !== undefined) {
+        if (!Array.isArray(body.related_db_records) || body.related_db_records.length > 5 || !body.related_db_records.every((p) => typeof p === "string" && /^\/(?!\/)[A-Za-z0-9\-_/.#]*$/.test(p))) errs.push("related_db_records");
+        else metaUpdate.related_db_records = JSON.stringify(body.related_db_records);
+      }
+      if (body.featured !== undefined) {
+        if (typeof body.featured !== "boolean") errs.push("featured");
+        else metaUpdate.featured = body.featured ? 1 : 0;
+      }
+      if (body.evidence_source_summary !== undefined) {
+        const es = cleanText(String(body.evidence_source_summary || ""), { multiline: true });
+        if (es.length > 400 || containsDangerousMarkup(es)) errs.push("evidence_source_summary");
+        else metaUpdate.evidence_source_summary = es;
+      }
       if (errs.length) return fail(`Invalid: ${[...new Set(errs)].join(", ")}`);
-      if (!Object.keys(f).length) return fail("Nothing to change.");
-      const cols = Object.keys(f);
-      const before = Object.fromEntries(cols.map((c) => [c, pub[c]]));
-      stmts.push(db.prepare(`UPDATE cd_published SET ${cols.map((c, i) => `${c} = ?${i + 1}`).join(", ")}, updated_at = ?${cols.length + 1} WHERE submission_id = ?${cols.length + 2}`)
-        .bind(...cols.map((c) => f[c]), now, sub.id));
-      stmts.push(audit("edit_published", before, f));
-      stmts.push(decision("edit_published", sub.evidence_status, sub.evidence_status, note));
+      if (!Object.keys(f).length && !Object.keys(metaUpdate).length) return fail("Nothing to change.");
+      if (Object.keys(f).length) {
+        const cols = Object.keys(f);
+        const before = Object.fromEntries(cols.map((c) => [c, pub[c]]));
+        stmts.push(db.prepare(`UPDATE cd_published SET ${cols.map((c, i) => `${c} = ?${i + 1}`).join(", ")}, updated_at = ?${cols.length + 1} WHERE submission_id = ?${cols.length + 2}`)
+          .bind(...cols.map((c) => f[c]), now, sub.id));
+        stmts.push(audit("edit_published", before, { ...f, ...metaUpdate }));
+      } else {
+        stmts.push(audit("edit_published", undefined, metaUpdate));
+      }
+      if (Object.keys(metaUpdate).length) touchMeta(metaUpdate);
+      else touchMeta();
+      stmts.push(decision("edit_published", pub.evidence_status || sub.evidence_status, pub.evidence_status || sub.evidence_status, note));
       break;
     }
     case "publish": {
       if (!pub) return fail("No publication draft. Approve as a community report first.");
-      if (!PUBLISHABLE.includes(sub.evidence_status)) return fail("Only community-reported, corroborated or verified submissions can be published.");
+      const effStatus = pub.evidence_status || sub.evidence_status;
+      if (!PUBLISHABLE.includes(effStatus)) return fail("Only community-reported, corroborated, verified, or officially confirmed submissions can be published.");
       if (sub.duplicate_of) return fail("Submission is flagged as a duplicate.");
       stmts.push(db.prepare("UPDATE cd_published SET is_published = 1, published_at = COALESCE(published_at, ?1), updated_at = ?1 WHERE submission_id = ?2").bind(now, sub.id));
-      stmts.push(decision("publish", sub.evidence_status, sub.evidence_status, note));
+      stmts.push(decision("publish", effStatus, effStatus, note));
       stmts.push(audit("publish", { is_published: pub.is_published }, { is_published: 1 }));
+      touchMeta();
       break;
     }
     case "unpublish": {
       if (!pub) return fail("Not published.");
       stmts.push(db.prepare("UPDATE cd_published SET is_published = 0, map_approved = 0, updated_at = ?1 WHERE submission_id = ?2").bind(now, sub.id));
-      stmts.push(decision("unpublish", sub.evidence_status, sub.evidence_status, note));
+      stmts.push(decision("unpublish", pub.evidence_status || sub.evidence_status, pub.evidence_status || sub.evidence_status, note));
       stmts.push(audit("unpublish", { is_published: pub.is_published, map_approved: pub.map_approved }, { is_published: 0, map_approved: 0 }));
+      touchMeta();
       break;
     }
     case "approve_map_pin": {
       if (!pub || !pub.is_published) return fail("Publish the discovery before approving a map pin.");
-      if (!PUBLISHABLE.includes(sub.evidence_status)) return fail("Evidence status does not allow a map pin.");
-      if (sub.category === "wildlife" && sub.evidence_status !== "INDEPENDENTLY_VERIFIED") return fail("Wildlife sightings cannot become map locations unless independently verified.");
+      const effStatus = pub.evidence_status || sub.evidence_status;
+      if (!PUBLISHABLE.includes(effStatus)) return fail("Evidence status does not allow a map pin.");
+      if (sub.category === "wildlife" && !["INDEPENDENTLY_VERIFIED", "OFFICIALLY_CONFIRMED"].includes(effStatus)) {
+        return fail("Wildlife sightings cannot become map locations unless verified in gameplay or officially confirmed.");
+      }
       const p = body.pin || {};
       const checks = body.checks || {};
       for (const k of ["no_duplicate", "category_ok", "coordinates_ok", "description_ok", "evidence_ok", "specific_enough"]) {
@@ -209,7 +319,9 @@ export async function onRequestPost(context) {
       if (!REGIONS.slice(0, 8).includes(p.region)) return fail("Pin region must be a map region.");
       const title = cleanText(String(p.title || ""));
       const desc = cleanText(String(p.description || ""), { multiline: true });
-      if (title.length < 5 || title.length > 100 || desc.length < 20 || desc.length > 500) return fail("Pin title (5-100) and description (20-500) required.");
+      if (title.length < 5 || title.length > 100 || desc.length < 20 || desc.length > 500 || containsDangerousMarkup(title) || containsDangerousMarkup(desc)) {
+        return fail("Pin title (5-100) and description (20-500) required without HTML/scripts.");
+      }
 
       // Duplicate-location check against existing production pins (read-only).
       let nearest = null;
@@ -229,18 +341,20 @@ export async function onRequestPost(context) {
         title, category: p.category, categoryName: PIN_CATEGORIES[p.category], region: p.region,
         xPct: Math.round(x * 1000) / 1000, yPct: Math.round(y * 1000) / 1000,
         x: Math.round(x * MAP_W), y: Math.round(y * MAP_H),
-        description: desc, tips: pub.finding_instructions, link: "/community-discoveries/",
+        description: desc, tips: pub.finding_instructions, link: `/community-discoveries/d/${encodeURIComponent(sub.ref)}`,
       };
       stmts.push(db.prepare("UPDATE cd_published SET map_approved = 1, map_pin = ?1, updated_at = ?2 WHERE submission_id = ?3").bind(JSON.stringify(pin), now, sub.id));
-      stmts.push(decision("approve_map_pin", sub.evidence_status, sub.evidence_status, note));
+      stmts.push(decision("approve_map_pin", effStatus, effStatus, note));
       stmts.push(audit("approve_map_pin", { map_approved: pub.map_approved }, { map_approved: 1, pin, override_nearby: body.override_nearby === true }));
+      touchMeta();
       break;
     }
     case "remove_map_pin": {
       if (!pub || !pub.map_approved) return fail("No approved map pin.");
       stmts.push(db.prepare("UPDATE cd_published SET map_approved = 0, updated_at = ?1 WHERE submission_id = ?2").bind(now, sub.id));
-      stmts.push(decision("remove_map_pin", sub.evidence_status, sub.evidence_status, note));
+      stmts.push(decision("remove_map_pin", pub.evidence_status || sub.evidence_status, pub.evidence_status || sub.evidence_status, note));
       stmts.push(audit("remove_map_pin", { map_approved: 1 }, { map_approved: 0 }));
+      touchMeta();
       break;
     }
     default:

@@ -14,6 +14,9 @@ const submitMod = await imp("functions/api/community-discoveries/submit.js");
 const listMod = await imp("functions/api/community-discoveries/list.js");
 const pinsMod = await imp("functions/api/community-discoveries/map-pins.js");
 const cfgMod = await imp("functions/api/community-discoveries/config.js");
+const reportMod = await imp("functions/api/community-discoveries/report.js");
+const detailPageMod = await imp("functions/community-discoveries/d/[ref].js");
+const sitemapMod = await imp("functions/sitemap.xml.js");
 const mw = await imp("functions/api/cd-admin/_middleware.js");
 const adminPageMw = await imp("functions/cd-admin/_middleware.js");
 const queueMod = await imp("functions/api/cd-admin/queue.js");
@@ -26,6 +29,7 @@ const cd = await imp("functions/_lib/cd.js");
 function makeDb() {
   const sqlite = new DatabaseSync(":memory:");
   sqlite.exec(fs.readFileSync(path.join(root, "migrations/0001_community_discoveries.sql"), "utf8"));
+  sqlite.exec(fs.readFileSync(path.join(root, "migrations/0002_community_intelligence_phase29.sql"), "utf8"));
   const wrap = (sql, args = []) => ({
     bind: (...a) => wrap(sql, a),
     run: async () => { const r = sqlite.prepare(sql).run(...args); return { meta: { last_row_id: Number(r.lastInsertRowid) } }; },
@@ -67,7 +71,14 @@ globalThis.fetch = async (url, init) => {
 };
 
 const pinsJson = fs.readFileSync(path.join(root, "public/data/map-pins.json"), "utf8");
-const ASSETS = { fetch: async () => new Response(pinsJson, { headers: { "Content-Type": "application/json" } }) };
+const sitemapXmlStatic = fs.readFileSync(path.join(root, "public/sitemap.xml"), "utf8");
+const ASSETS = {
+  fetch: async (req) => {
+    const u = typeof req === "string" ? req : req.url;
+    if (String(u).includes("/sitemap.xml")) return new Response(sitemapXmlStatic, { headers: { "Content-Type": "application/xml" } });
+    return new Response(pinsJson, { headers: { "Content-Type": "application/json" } });
+  },
+};
 
 // ---------- router ----------
 const ORIGIN = "https://www.gta6heistguide.com";
@@ -82,11 +93,16 @@ async function call(env, method, p, { body, headers = {}, ip = "198.51.100.1", o
   const map = {
     "/api/community-discoveries/submit": submitMod, "/api/community-discoveries/list": listMod,
     "/api/community-discoveries/map-pins": pinsMod, "/api/community-discoveries/config": cfgMod,
+    "/api/community-discoveries/report": reportMod, "/sitemap.xml": sitemapMod,
     "/api/cd-admin/queue": queueMod, "/api/cd-admin/detail": detailMod, "/api/cd-admin/action": actionMod,
   };
-  const ctx = { request: req, env, data: {}, next: undefined };
+  const ctx = { request: req, env, data: {}, next: undefined, params: {} };
   if (route === "/cd-admin" || route.startsWith("/cd-admin/")) {
     return adminPageMw.onRequest({ ...ctx, next: async () => new Response("<html>admin-shell</html>", { status: 200, headers: { "Content-Type": "text/html" } }) });
+  }
+  if (route.startsWith("/community-discoveries/d/")) {
+    ctx.params = { ref: decodeURIComponent(route.slice("/community-discoveries/d/".length).replace(/\/$/, "")) };
+    return detailPageMod.onRequestGet(ctx);
   }
   const m = map[route];
   if (!m) throw new Error("no route " + route);
@@ -224,12 +240,13 @@ await t("SUB-08", "Malicious/unsafe URLs rejected (javascript:, data:, http:, IP
   }
   const src = await submit(env, { source_urls: ["https://example.com/ok", "javascript:alert(1)"] }); eq(src.status, 400);
 });
-await t("SUB-09", "XSS payloads stored as inert text (no HTML rendering path); response is JSON + nosniff", async () => {
+await t("SUB-09", "XSS/script payloads rejected server-side (400); benign text stored inert; zero innerHTML sinks in cd-*.js", async () => {
   const env = newEnv(); const xss = `<img src=x onerror=alert(1)><script>alert('x')</script>`;
-  const r = await submit(env, { title: "Title " + xss, detailed_explanation: "Detail " + xss + " padding padding padding padding padding", display_name: "ok name" });
-  eq(r.status, 201); eq(r.headers.get("X-Content-Type-Options"), "nosniff"); assert(r.headers.get("Content-Type").startsWith("application/json"));
-  const s = row(env, r.json.ref); assert(s.title.includes("<img"), "stored verbatim (escaped at render)");
-  for (const f of ["cd-list.js", "cd-submit.js", "cd-admin.js"]) { const src = fs.readFileSync(path.join(root, "public/assets/community", f), "utf8"); assert(!/innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval\(/.test(src), f + " uses unsafe sink"); }
+  const bad = await submit(env, { title: "Title " + xss, detailed_explanation: "Detail " + xss + " padding padding padding padding padding", display_name: "ok name" });
+  eq(bad.status, 400); assert(bad.json.fields.title && bad.json.fields.description, "script/img XSS must be rejected");
+  const safe = await submit(env, { title: "Safe math comparison 10 < 20 in Vice City", detailed_explanation: "When speed < 20 mph near the dock, the hidden gate opens smoothly.", display_name: "ok name" });
+  eq(safe.status, 201); eq(safe.headers.get("X-Content-Type-Options"), "nosniff"); assert(safe.headers.get("Content-Type").startsWith("application/json"));
+  for (const f of ["cd-list.js", "cd-submit.js", "cd-admin.js", "cd-detail.js"]) { const src = fs.readFileSync(path.join(root, "public/assets/community", f), "utf8"); assert(!/innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval\(/.test(src), f + " uses unsafe sink"); }
 });
 await t("SUB-10", "Invalid display name (markup) rejected", async () => {
   const env = newEnv(); const r = await submit(env, { display_name: "<b>bob</b>" }); eq(r.status, 400); assert(r.json.fields.display_name);
@@ -595,17 +612,148 @@ await t("INT-02", "Migration is additive: only cd_* objects created, no DROP/ALT
 await t("INT-03", "Migration is idempotent (applies twice without error)", async () => {
   const db = makeDb(); db.sqlite.exec(fs.readFileSync(path.join(root, "migrations/0001_community_discoveries.sql"), "utf8"));
 });
-await t("INT-04", "Public pages carry correct robots directives; submit/admin never indexable; none in sitemap", async () => {
+await t("INT-04", "Public pages carry correct robots directives; submit/admin never indexable; none in static sitemap", async () => {
   const rd = (p) => fs.readFileSync(path.join(root, p), "utf8");
   assert(/name="robots" content="noindex, nofollow"/.test(rd("public/community-discoveries/submit/index.html")));
   assert(/name="robots" content="noindex, follow"/.test(rd("public/community-discoveries/index.html")));
   assert(/noindex, nofollow, noarchive/.test(rd("public/cd-admin/index.html")));
-  assert(!/community-discoveries|cd-admin/.test(rd("functions/sitemap.xml.js")));
+  assert(!/cd-admin|\/community-discoveries\/submit/.test(rd("functions/sitemap.xml.js")));
   assert(!/canonical/.test(rd("public/community-discoveries/submit/index.html")) || true);
 });
 await t("INT-05", "No secrets / credentials hardcoded in new frontend or function code", async () => {
-  const files = ["public/assets/community/cd-admin.js", "public/assets/community/cd-list.js", "public/assets/community/cd-submit.js", "public/cd-admin/index.html", "functions/_lib/cd.js", "functions/_lib/cd-access.js", "functions/api/cd-admin/action.js", "functions/api/cd-admin/_middleware.js"];
+  const files = ["public/assets/community/cd-admin.js", "public/assets/community/cd-list.js", "public/assets/community/cd-submit.js", "public/assets/community/cd-detail.js", "public/cd-admin/index.html", "functions/_lib/cd.js", "functions/_lib/cd-access.js", "functions/api/cd-admin/action.js", "functions/api/cd-admin/_middleware.js", "functions/api/community-discoveries/report.js", "functions/community-discoveries/d/[ref].js"];
   for (const f of files) { const s = fs.readFileSync(path.join(root, f), "utf8"); assert(!/syndicateadmin|ADMIN_KEY|password\s*[:=]|secret\s*[:=]\s*["'][^"']/i.test(s), f); }
+});
+
+// =============== PHASE 29 COMMUNITY INTELLIGENCE ===============
+group("Phase 29 Community Intelligence");
+await t("P29-01", "New Phase 29 categories (secret_area, safe_code, glitch) accepted; unknown category rejected", async () => {
+  const env = newEnv();
+  for (const cat of ["secret_area", "safe_code", "glitch"]) {
+    const r = await submit(env, { category: cat, title: `Phase 29 ${cat} test finding in Leonida` });
+    eq(r.status, 201, `category ${cat} should succeed`);
+  }
+  const bad = await submit(env, { category: "not_a_real_cat" });
+  eq(bad.status, 400);
+});
+await t("P29-02", "OFFICIALLY_CONFIRMED requires authoritative https URL, label, confirm_official and note; records moderation timestamp", async () => {
+  const env = adminEnv();
+  const s = await submit(env, { title: "Official Rockstar Vice Beach pier landmark detail", category: "secret_area" });
+  const r = s.json.ref;
+  await act(env, r, "approve_report");
+  eq((await act(env, r, "set_status", { status: "OFFICIALLY_CONFIRMED", note: "Short" })).status, 400);
+  eq((await act(env, r, "set_status", { status: "OFFICIALLY_CONFIRMED", confirm_official: true, authoritative_source_url: "http://insecure.example", authoritative_source_label: "Rockstar Newswire", note: "Confirmed directly in official Rockstar Games Newswire post." })).status, 400);
+  const ok = await act(env, r, "set_status", {
+    status: "OFFICIALLY_CONFIRMED",
+    confirm_official: true,
+    authoritative_source_url: "https://www.rockstargames.com/VI",
+    authoritative_source_label: "Rockstar Games Official Site",
+    note: "Confirmed directly via official Rockstar Games VI feature page.",
+  });
+  eq(ok.status, 200);
+  const det = (await admin(env, "GET", `/api/cd-admin/detail?ref=${r}`)).json;
+  eq(det.published.evidence_status, "OFFICIALLY_CONFIRMED");
+  eq(det.verification_meta.official_confirmed, 1);
+  assert(det.verification_meta.moderated_at && det.verification_meta.moderated_by === "owner@example.com");
+});
+await t("P29-03", "Detail page (/community-discoveries/d/:ref) blocks pending/rejected (404), noindex for thin, index+canonical+JSON-LD for substantive, leaks zero private data", async () => {
+  const env = adminEnv();
+  const s = await submit(env, {
+    title: "Hidden subterranean vault entrance beneath Port Gellhorn docks",
+    short_description: "A recessed industrial hatch beneath Pier 4 opens into a dry smuggling tunnel leading toward the container yard.",
+    directions: "Walk along the lower concrete ledge under Pier 4 at low tide, then crouch through the rusted grate.",
+    contact_email: "secret-user@example.com",
+  });
+  const r = s.json.ref;
+  // Pending -> 404
+  eq((await call(env, "GET", `/community-discoveries/d/${r}`)).status, 404);
+  eq((await call(env, "GET", `/community-discoveries/d/INVALID-REF`)).status, 404);
+  // Approve + publish substantive record -> 200 indexable
+  await act(env, r, "approve_report");
+  await act(env, r, "publish", { note: "Internal secret moderator comment 9988" });
+  const res = await call(env, "GET", `/community-discoveries/d/${r}`);
+  eq(res.status, 200);
+  const html = await res.text();
+  assert(html.includes('content="index, follow, max-image-preview:large"'), "substantive page should be indexable");
+  assert(html.includes(`rel="canonical" href="https://www.gta6heistguide.com/community-discoveries/d/${r}"`), "canonical URL missing");
+  assert(html.includes('"@type":"Article"'), "Article JSON-LD missing");
+  assert(!html.includes("secret-user@example.com"), "private email leaked on detail page");
+  assert(!html.includes("Internal secret moderator comment 9988"), "reviewer note leaked on detail page");
+  // Thin record -> 200 but noindex
+  await act(env, r, "edit_published", { short_explanation: "Short 25 char summary ok.", finding_instructions: "Short 22 char steps ok." });
+  const thinRes = await call(env, "GET", `/community-discoveries/d/${r}`);
+  eq(thinRes.status, 200);
+  const thinHtml = await thinRes.text();
+  assert(thinHtml.includes('content="noindex, follow"'), "thin page must be noindex");
+  assert(!thinHtml.includes('rel="canonical"'), "thin page must not emit indexable canonical");
+});
+await t("P29-04", "Map pins feed emits map_classification, links to detail page, and enforces counts_toward_completion:false", async () => {
+  const env = adminEnv();
+  const s = await submit(env, { title: "Verified Vice Beach pier secret hatch" });
+  const r = s.json.ref;
+  await act(env, r, "approve_report");
+  await act(env, r, "publish");
+  const chk = { no_duplicate: true, category_ok: true, coordinates_ok: true, description_ok: true, evidence_ok: true, specific_enough: true };
+  eq((await act(env, r, "approve_map_pin", { checks: chk, pin: { title: "Pier secret hatch", category: "easter-egg", region: "Vice Beach", xPct: 0.41, yPct: 0.31, description: "Hidden hatch under the Vice Beach pier walkway." } })).status, 200);
+  const m1 = (await J(await call(env, "GET", "/api/community-discoveries/map-pins"))).json;
+  eq(m1.pins[0].map_classification, "Community Reported");
+  eq(m1.pins[0].link, `/community-discoveries/d/${r}`);
+  eq(m1.pins[0].counts_toward_completion, false);
+  await act(env, r, "set_status", { status: "INDEPENDENTLY_VERIFIED", confirm_verified: true, note: "Verified in PS5 gameplay session on build 1.03." });
+  const m2 = (await J(await call(env, "GET", "/api/community-discoveries/map-pins"))).json;
+  eq(m2.pins[0].map_classification, "Verified Discovery");
+  eq(m2.pins[0].is_verified, true);
+  eq(m2.pins[0].counts_toward_completion, false);
+});
+await t("P29-05", "Dynamic /sitemap.xml excludes pending/rejected/thin discoveries and includes only substantive published discoveries", async () => {
+  const env = adminEnv();
+  const s1 = await submit(env, {
+    title: "Substantive Grassrivers airboat smuggling dock",
+    short_description: "A hidden wooden airboat dock tucked behind dense cypress trees in southern Grassrivers with an unlocked loot crate.",
+    directions: "Take an airboat south from the main Grassrivers bridge and hug the western reed bank for 200 meters.",
+  });
+  const s2 = await submit(env, { title: "Pending unpublished discovery item" });
+  const smBefore = await (await call(env, "GET", "/sitemap.xml")).text();
+  assert(!smBefore.includes(s1.json.ref) && !smBefore.includes(s2.json.ref), "pending items must not be in sitemap");
+  await act(env, s1.json.ref, "approve_report");
+  await act(env, s1.json.ref, "publish");
+  const smAfter = await (await call(env, "GET", "/sitemap.xml")).text();
+  assert(smAfter.includes(`/community-discoveries/d/${s1.json.ref}`), "substantive published discovery should appear in sitemap");
+  assert(!smAfter.includes(s2.json.ref), "pending discovery must never appear in sitemap");
+});
+await t("P29-06", "Community report endpoint validates same-origin, allowlisted reasons, rejects scripts & unpublished refs, rate-limits", async () => {
+  const env = adminEnv();
+  const s = await submit(env, { title: "Published Ambrosia safe code location" });
+  const r = s.json.ref;
+  // Unpublished -> 404
+  eq((await J(await call(env, "POST", "/api/community-discoveries/report", { body: { ref: r, reason: "inaccurate" }, ip: nextIp() }))).status, 404);
+  await act(env, r, "approve_report"); await act(env, r, "publish");
+  // Bad reason -> 400
+  eq((await J(await call(env, "POST", "/api/community-discoveries/report", { body: { ref: r, reason: "bogus" }, ip: nextIp() }))).status, 400);
+  // Script injection -> 400
+  eq((await J(await call(env, "POST", "/api/community-discoveries/report", { body: { ref: r, reason: "inaccurate", details: "<script>alert(1)</script>" }, ip: nextIp() }))).status, 400);
+  // Cross-origin -> 403
+  eq((await J(await call(env, "POST", "/api/community-discoveries/report", { body: { ref: r, reason: "outdated_patch" }, origin: "https://evil.example", ip: nextIp() }))).status, 403);
+  // Valid -> 201 and visible in admin detail
+  const ip = nextIp();
+  eq((await J(await call(env, "POST", "/api/community-discoveries/report", { body: { ref: r, reason: "outdated_patch", details: "Patched in 1.04 update." }, ip }))).status, 201);
+  const det = (await admin(env, "GET", `/api/cd-admin/detail?ref=${r}`)).json;
+  eq(det.reports.length, 1); eq(det.reports[0].reason, "outdated_patch");
+});
+await t("P29-07", "Featured flag & related_db_records editable by moderator and filterable in public list", async () => {
+  const env = adminEnv();
+  const s = await submit(env, { title: "Featured Leonida Keys sunken boat cache" });
+  const r = s.json.ref;
+  await act(env, r, "approve_report"); await act(env, r, "publish");
+  eq((await act(env, r, "edit_published", { featured: true, related_db_records: ["/vehicles", "/weapons"], evidence_source_summary: "Verified with 2 gameplay captures" })).status, 200);
+  const feat = (await J(await call(env, "GET", "/api/community-discoveries/list?featured=1"))).json;
+  eq(feat.total, 1); eq(feat.items[0].featured, true); eq(feat.items[0].related_db_records.length, 2);
+});
+await t("P29-08", "Migration 0002 is strictly additive and idempotent", async () => {
+  const sql = fs.readFileSync(path.join(root, "migrations/0002_community_intelligence_phase29.sql"), "utf8").replace(/--.*$/gm, "");
+  assert(!/\b(DROP\s+TABLE|ALTER\s+TABLE|DELETE\s+FROM|INSERT\s+INTO)\b/i.test(sql), "destructive statement in 0002");
+  const db = makeDb();
+  db.sqlite.exec(fs.readFileSync(path.join(root, "migrations/0002_community_intelligence_phase29.sql"), "utf8"));
 });
 
 // ---------- report ----------

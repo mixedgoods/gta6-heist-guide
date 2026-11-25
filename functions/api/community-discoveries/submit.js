@@ -1,7 +1,7 @@
 import {
   CATEGORIES, REGIONS, PLATFORMS, json, nowIso, guardSameOriginJson, readJsonLimited, cleanText, safeUrl,
-  normalizeUrlForHash, domainOf, sha256Hex, newRef, ipHash, hashSaltConfigured, tokens, jaccard, rlCount, rlHit, rlPrune,
-  turnstileConfigured, verifyTurnstile,
+  containsDangerousMarkup, normalizeUrlForHash, domainOf, sha256Hex, newRef, ipHash, hashSaltConfigured,
+  tokens, jaccard, rlCount, rlHit, rlPrune, turnstileConfigured, verifyTurnstile,
 } from "../../_lib/cd.js";
 
 const LIMITS = {
@@ -153,6 +153,23 @@ export function validateSubmission(b, today = new Date()) {
   v.image_rights_ack = b.image_rights_ack === true ? 1 : 0;
   if ((v.screenshot_url || v.video_url) && !v.image_rights_ack) {
     errors.image_rights_ack = "Confirm you captured the referenced media or have permission to share it.";
+  }
+
+  // Script / dangerous HTML rejection across all free-text fields
+  const markupChecks = [
+    ["title", v.title],
+    ["short_description", v.short_description],
+    ["description", v.detailed_explanation],
+    ["location_description", v.location_description],
+    ["directions", v.directions],
+    ["game_version", v.game_version],
+    ["evidence_description", v.evidence_description],
+    ["sources_text", v.sources_text],
+  ];
+  for (const [fieldName, fieldVal] of markupChecks) {
+    if (containsDangerousMarkup(fieldVal)) {
+      errors[fieldName] = "HTML tags, scripts, and executable markup are not allowed.";
+    }
   }
 
   // Link-spam heuristic on free text

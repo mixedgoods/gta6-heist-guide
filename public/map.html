@@ -1615,6 +1615,24 @@ async function loadAllPinsData() {
         }
     } catch(err) { console.warn('Could not load /data/map-pins.json:', err); }
 
+    // Approved community map pins (separate feed; never modify map-pins.json or 188-pin verified totals)
+    try {
+        const cdRes = await fetch('/api/community-discoveries/map-pins');
+        if (cdRes.ok) {
+            const cdData = await cdRes.json();
+            if (cdData && cdData.ok && Array.isArray(cdData.pins)) {
+                cdData.pins.forEach(p => {
+                    if (!p || !p.id || seen.has(p.id)) return;
+                    seen.add(p.id);
+                    allPins.push(Object.assign({}, p, {
+                        is_community: true,
+                        counts_toward_completion: false
+                    }));
+                });
+            }
+        }
+    } catch(err) { /* non-blocking: community feed unavailable */ }
+
     if (customUserPins && customUserPins.length) {
         customUserPins.forEach(p => {
             if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
@@ -1627,17 +1645,28 @@ async function loadAllPinsData() {
     renderFilteredList();
 }
 
+function escapeMapHtml(s) {
+    return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 function createMarkerIcon(pin) {
     const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
-    const color = cat.color;
-    const iconChar = pin.icon || cat.icon || '📍';
-    const isFound = foundPinIds.has(pin.id);
+    const isCommunity = pin.is_community === true || pin.status === 'community';
+    const color = isCommunity ? (pin.is_verified ? '#00ff88' : '#38bdf8') : cat.color;
+    const iconChar = isCommunity ? (pin.is_verified ? '✓' : '🧭') : (pin.icon || cat.icon || '📍');
+    const isFound = !isCommunity && foundPinIds.has(pin.id);
     const isLive = pin.category === 'live-discovery';
     const isHighlighted = highlightedPinId === pin.id;
 
-    const extraClass = (isFound ? 'is-found ' : '') + (isLive ? 'live-pulse-marker ' : '') + (isHighlighted ? 'deep-link-pulse' : '');
+    const extraClass = (isFound ? 'is-found ' : '') + (isLive ? 'live-pulse-marker ' : '') + (isHighlighted ? 'deep-link-pulse ' : '') + (isCommunity ? 'is-community-pin ' : '');
+    const borderStyle = isCommunity ? `border:2px dashed ${color}; box-shadow:0 0 10px ${color}88;` : `border-color:${color};`;
     const html = `
-        <div class="custom-pin-marker ${extraClass}" data-marker-id="${pin.id}" style="width:28px; height:28px; color:${color}; border-color:${color};">
+        <div class="custom-pin-marker ${extraClass}" data-marker-id="${escapeMapHtml(pin.id)}" style="width:28px; height:28px; color:${color}; ${borderStyle}">
             <span style="font-size:14px; line-height:1;">${iconChar}</span>
         </div>
     `;
@@ -1652,35 +1681,46 @@ function createMarkerIcon(pin) {
 
 function createPopupContent(pin) {
     const cat = CATEGORIES[pin.category] || CATEGORIES['vault'];
+    const isCommunity = pin.is_community === true || pin.status === 'community';
     const isFound = foundPinIds.has(pin.id);
-    const imgHtml = pin.image ? `<div class="popup-img-wrap"><img src="${pin.image}" alt="${pin.title}" loading="lazy"></div>` : '';
-    const blueprintBtn = pin.link ? `<a href="${pin.link}" class="btn-popup-link">Guide &rarr;</a>` : '';
+    const safeTitle = escapeMapHtml(pin.title);
+    const safeRegion = escapeMapHtml(pin.region || 'Leonida');
+    const safeDesc = escapeMapHtml(pin.description || '');
+    const safeTips = pin.tips ? escapeMapHtml(pin.tips) : '';
+    const safeLink = pin.link ? escapeMapHtml(pin.link) : '';
+    const imgHtml = (!isCommunity && pin.image) ? `<div class="popup-img-wrap"><img src="${escapeMapHtml(pin.image)}" alt="${safeTitle}" loading="lazy"></div>` : '';
+    const blueprintBtn = safeLink ? `<a href="${safeLink}" class="btn-popup-link">${isCommunity ? 'Discovery Detail &rarr;' : 'Guide &rarr;'}</a>` : '';
+    const badgeColor = isCommunity ? (pin.is_verified ? '#00ff88' : '#38bdf8') : cat.color;
+    const badgeLabel = isCommunity ? escapeMapHtml(pin.map_classification || 'Community Reported') : escapeMapHtml(pin.badge || cat.name);
+    const noticeHtml = isCommunity && pin.evidence_notice ? `<div style="font-size:0.7rem; color:#fde047; border-left:2px solid #fde047; padding-left:0.45rem; margin:0.35rem 0;">${escapeMapHtml(pin.evidence_notice)}</div>` : '';
+    const foundBtnHtml = isCommunity ? '' : `<button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${escapeMapHtml(pin.id)}')">
+                    ${isFound ? '↺ Unfound' : '✓ Found'}
+                </button>`;
 
     return `
         ${imgHtml}
         <div class="popup-card">
             <div class="popup-header">
-                <span class="popup-tag-badge" style="background:${cat.color}22; color:${cat.color}; border:1px solid ${cat.color}66;">
-                    ${pin.badge || cat.name}
+                <span class="popup-tag-badge" style="background:${badgeColor}22; color:${badgeColor}; border:1px solid ${badgeColor}66;">
+                    ${badgeLabel}
                 </span>
-                <span class="popup-region">📍 ${pin.region || 'Leonida'}</span>
+                <span class="popup-region">📍 ${safeRegion}</span>
             </div>
-            <h4 class="popup-title">${pin.title}</h4>
-            ${pin.payout ? `<div class="popup-payout-row"><span style="color:#94a3b8;">Info / Payout:</span><strong style="color:var(--neon-green,#00ff88);">${pin.payout}</strong></div>` : ''}
-            ${pin.security ? `<div style="font-size:0.68rem; color:#f87171;">🔒 <strong>Security:</strong> ${pin.security}</div>` : ''}
-            <p class="popup-desc">${pin.description || ''}</p>
-            ${pin.tips ? `<div class="popup-tip-box">💡 <strong>Tactical Note:</strong> ${pin.tips}</div>` : ''}
+            <h4 class="popup-title">${safeTitle}</h4>
+            ${noticeHtml}
+            ${!isCommunity && pin.payout ? `<div class="popup-payout-row"><span style="color:#94a3b8;">Info / Payout:</span><strong style="color:var(--neon-green,#00ff88);">${escapeMapHtml(pin.payout)}</strong></div>` : ''}
+            ${!isCommunity && pin.security ? `<div style="font-size:0.68rem; color:#f87171;">🔒 <strong>Security:</strong> ${escapeMapHtml(pin.security)}</div>` : ''}
+            <p class="popup-desc">${safeDesc}</p>
+            ${safeTips ? `<div class="popup-tip-box">💡 <strong>${isCommunity ? 'How to Find It:' : 'Tactical Note:'}</strong> ${safeTips}</div>` : ''}
             <div class="popup-actions-row">
-                <button type="button" class="btn-popup-found ${isFound ? 'is-marked' : ''}" onclick="togglePinFound('${pin.id}')">
-                    ${isFound ? '↺ Unfound' : '✓ Found'}
-                </button>
-                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${pin.id}')" title="Copy Clean Shareable Map Pin Link">
+                ${foundBtnHtml}
+                <button type="button" class="btn-popup-found" onclick="copyPinDeepLink('${escapeMapHtml(pin.id)}')" title="Copy Clean Shareable Map Pin Link">
                     🔗 Share Link
                 </button>
-                <button type="button" class="btn-popup-found" onclick="copyPinReddit('${pin.id}')" title="Copy Pin Formatted for Reddit">
+                <button type="button" class="btn-popup-found" onclick="copyPinReddit('${escapeMapHtml(pin.id)}')" title="Copy Pin Formatted for Reddit">
                     📋 Reddit
                 </button>
-                <button type="button" class="btn-popup-found" onclick="copyPinDiscord('${pin.id}')" title="Copy Pin Formatted for Discord">
+                <button type="button" class="btn-popup-found" onclick="copyPinDiscord('${escapeMapHtml(pin.id)}')" title="Copy Pin Formatted for Discord">
                     💬 Discord
                 </button>
                 ${blueprintBtn}
@@ -1709,6 +1749,13 @@ function renderAllMarkers() {
         marker._gta6Pin = pin;
 
         marker.on('click', () => {
+            if (pin.is_community && typeof window.GTA6Track === 'function') {
+                window.GTA6Track('discovery_map_open', {
+                    category: pin.category || 'community',
+                    region: pin.region || 'Leonida',
+                    evidence_status: pin.evidence_status || 'COMMUNITY_REPORTED'
+                });
+            }
             selectPinMarker(pin, marker);
         });
 
@@ -2119,8 +2166,9 @@ function togglePinFound(pinId) {
 }
 
 function updateChecklistStats() {
-    const total = allPins.length || 174;
-    const found = [...foundPinIds].filter(id => allPins.some(p => p.id === id)).length;
+    const verifiedPins = allPins.filter(p => p.counts_toward_completion !== false && !p.is_community);
+    const total = verifiedPins.length || 188;
+    const found = [...foundPinIds].filter(id => verifiedPins.some(p => p.id === id)).length;
     const pct = Math.round((found / total) * 100);
     const progressBar = document.getElementById('checklistProgressBar');
     const countLabel = document.getElementById('foundCountLabel');

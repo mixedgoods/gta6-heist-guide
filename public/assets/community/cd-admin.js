@@ -15,11 +15,12 @@
     'Inaccurate or misleading claim'
   ];
   var STATUS_LABELS = {
-    PENDING_REVIEW: 'Pending review',
-    NEEDS_MORE_EVIDENCE: 'Needs more evidence',
-    COMMUNITY_REPORTED: 'Community reported',
+    PENDING_REVIEW: 'Awaiting Review',
+    NEEDS_MORE_EVIDENCE: 'Needs More Evidence',
+    COMMUNITY_REPORTED: 'Community Reported',
     CORROBORATED: 'Corroborated',
-    INDEPENDENTLY_VERIFIED: 'Independently verified',
+    INDEPENDENTLY_VERIFIED: 'Verified in Gameplay',
+    OFFICIALLY_CONFIRMED: 'Officially Confirmed',
     REJECTED: 'Rejected'
   };
   var REGIONS = [
@@ -246,11 +247,11 @@
       }
       if (!keepMsg) msg('', true);
       counts = d.counts || {};
-      var totalAll = ['PENDING_REVIEW', 'NEEDS_MORE_EVIDENCE', 'COMMUNITY_REPORTED', 'CORROBORATED', 'INDEPENDENTLY_VERIFIED', 'REJECTED']
+      var totalAll = ['PENDING_REVIEW', 'NEEDS_MORE_EVIDENCE', 'COMMUNITY_REPORTED', 'CORROBORATED', 'INDEPENDENTLY_VERIFIED', 'OFFICIALLY_CONFIRMED', 'REJECTED']
         .reduce(function (sum, k) { return sum + (counts[k] || 0); }, 0);
       counts.ALL = totalAll;
       if (counts.PENDING === undefined) counts.PENDING = (counts.PENDING_REVIEW || 0) + (counts.NEEDS_MORE_EVIDENCE || 0);
-      if (counts.APPROVED === undefined) counts.APPROVED = (counts.COMMUNITY_REPORTED || 0) + (counts.CORROBORATED || 0) + (counts.INDEPENDENTLY_VERIFIED || 0);
+      if (counts.APPROVED === undefined) counts.APPROVED = (counts.COMMUNITY_REPORTED || 0) + (counts.CORROBORATED || 0) + (counts.INDEPENDENTLY_VERIFIED || 0) + (counts.OFFICIALLY_CONFIRMED || 0);
       currentItems = d.items || [];
       renderTabs();
       renderListItems();
@@ -506,16 +507,19 @@
       confirmClass: 'btn-approve',
       buildBody: function (wrap) {
         var st = field(wrap, 'Evidence status', 'status', 'select', [
-          ['COMMUNITY_REPORTED', 'Community reported'],
+          ['COMMUNITY_REPORTED', 'Community Reported'],
           ['CORROBORATED', 'Corroborated'],
-          ['INDEPENDENTLY_VERIFIED', 'Independently verified'],
-          ['NEEDS_MORE_EVIDENCE', 'Needs more evidence']
+          ['INDEPENDENTLY_VERIFIED', 'Verified in Gameplay'],
+          ['OFFICIALLY_CONFIRMED', 'Officially Confirmed'],
+          ['NEEDS_MORE_EVIDENCE', 'Needs More Evidence']
         ]);
         st.value = s.evidence_status;
         var basis = field(wrap, 'Corroboration basis (required for Corroborated, >= 20 chars)', 'basis', 'textarea');
         basis.rows = 2;
-        var note = field(wrap, 'Reviewer note (required >= 20 chars for Independently verified)', 'note', 'textarea');
+        var note = field(wrap, 'Reviewer note (required >= 20 chars for Verified in Gameplay or Officially Confirmed)', 'note', 'textarea');
         note.rows = 2;
+        var authUrl = field(wrap, 'Authoritative source URL (required for Officially Confirmed, https://)', 'authUrl', 'url');
+        var authLabel = field(wrap, 'Authoritative source label (5-100 chars, for Officially Confirmed)', 'authLabel', 'text');
         var ext = el('label', 'chk');
         var extc = el('input'); extc.type = 'checkbox';
         ext.appendChild(extc);
@@ -524,9 +528,14 @@
         var ver = el('label', 'chk');
         var verc = el('input'); verc.type = 'checkbox';
         ver.appendChild(verc);
-        ver.appendChild(document.createTextNode('I reproduced this myself (Independently verified)'));
+        ver.appendChild(document.createTextNode('I reproduced this myself (Verified in Gameplay)'));
         wrap.appendChild(ver);
-        return { st: st, basis: basis, note: note, extc: extc, verc: verc };
+        var off = el('label', 'chk');
+        var offc = el('input'); offc.type = 'checkbox';
+        off.appendChild(offc);
+        off.appendChild(document.createTextNode('Confirmed by authoritative official source (Officially Confirmed)'));
+        wrap.appendChild(off);
+        return { st: st, basis: basis, note: note, authUrl: authUrl, authLabel: authLabel, extc: extc, verc: verc, offc: offc };
       },
       getPayload: function (c) {
         return {
@@ -536,7 +545,10 @@
           note: c.note.value.trim(),
           basis: c.basis.value.trim(),
           external_evidence_ack: c.extc.checked,
-          confirm_verified: c.verc.checked
+          confirm_verified: c.verc.checked,
+          confirm_official: c.offc.checked,
+          authoritative_source_url: c.authUrl.value.trim() || undefined,
+          authoritative_source_label: c.authLabel.value.trim() || undefined
         };
       },
       onSuccess: function () {
@@ -832,6 +844,28 @@
             r.kind + ' -> ' + r.related_ref + ' "' + r.related_title + '" [' + r.related_status + ']' + (r.score ? ' (score ' + r.score + ')' : '') + ' by ' + r.created_by));
         });
         box.appendChild(rel);
+      }
+
+      if (d.verification_meta) {
+        var vm = el('div', 'sec');
+        vm.appendChild(el('h3', null, 'Verification metadata'));
+        kv(vm, [
+          ['Moderated at', d.verification_meta.moderated_at],
+          ['Moderated by', d.verification_meta.moderated_by],
+          ['Featured', d.verification_meta.featured ? 'Yes' : 'No'],
+          ['Official source', d.verification_meta.authoritative_source_url ? (d.verification_meta.authoritative_source_label + ' — ' + d.verification_meta.authoritative_source_url) : 'None'],
+          ['Verification notes', d.verification_meta.verification_notes]
+        ]);
+        box.appendChild(vm);
+      }
+
+      if (d.reports && d.reports.length) {
+        var rpt = el('div', 'sec');
+        rpt.appendChild(el('h3', null, 'Community correction reports (' + d.reports.length + ')'));
+        d.reports.forEach(function (r) {
+          rpt.appendChild(el('div', 'warn', r.created_at + ' | ' + r.reason + (r.details ? ' — ' + r.details : '')));
+        });
+        box.appendChild(rpt);
       }
 
       // Collapsible audit & decision history

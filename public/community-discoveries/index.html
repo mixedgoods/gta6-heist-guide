@@ -145,28 +145,52 @@
   <header class="tool-box pink-glow" style="margin-bottom:1.15rem;">
     <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; align-items:flex-start;">
       <div style="flex:1 1 560px;">
-        <h1 style="color:#fff; font-size:clamp(1.5rem,3vw,2.2rem); margin:0 0 .5rem;">Community <span style="color:var(--neon-pink);">Discoveries</span></h1>
-        <p style="color:#94a3b8; font-size:.92rem; line-height:1.55; margin:0;">
-          Reports from GTA VI players, reviewed by us before publication. Every entry shows its evidence level.
-          <strong>Community Reported</strong> means accepted for publication but <strong>not independently verified by GTA6HeistGuide</strong>.
-          Community entries never count toward the 100% completion tracker.
+        <h1 style="color:#fff; font-size:clamp(1.5rem,3vw,2.2rem); margin:0 0 .5rem;">Leonida Community <span style="color:var(--neon-pink);">Intelligence Network</span></h1>
+        <p style="color:#94a3b8; font-size:.92rem; line-height:1.55; margin:0 0 .65rem;">
+          Player-contributed GTA VI discoveries reviewed before publication. Every published record carries an explicit evidence classification —
+          <strong>Community Reported</strong> entries are never presented as confirmed facts, and unverified reports never count toward the 188-pin verified completion tracker.
         </p>
+        <div style="display:flex; flex-wrap:wrap; gap:.6rem; font-size:.78rem;">
+          <a href="/map" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Interactive Map</a>
+          <span style="color:#475569;">·</span>
+          <a href="/my-leonida/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🌴 My Leonida</a>
+          <span style="color:#475569;">·</span>
+          <a href="/heist-command-center/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🎯 Heist Command Center</a>
+          <span style="color:#475569;">·</span>
+          <a href="/gta-6-database/" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">📚 World Database</a>
+        </div>
       </div>
-      <a href="/community-discoveries/submit/" class="btn btn-primary" style="padding:.6rem 1.15rem; font-size:.84rem;">Submit a Discovery &rarr;</a>
+      <a href="/community-discoveries/submit/" class="btn btn-primary" style="padding:.65rem 1.2rem; font-size:.85rem;">Submit a Discovery &rarr;</a>
     </div>
   </header>
 
+  <section id="cdFeaturedSection" aria-label="Featured discoveries" style="display:none; margin-bottom:1.15rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:.5rem;">
+      <h2 style="color:var(--neon-yellow); font-size:1.05rem; margin:0;">★ Featured Verified Discoveries</h2>
+      <span style="font-size:.76rem; color:#94a3b8;">Editorially highlighted approved records</span>
+    </div>
+    <div class="disc-grid" id="cdFeaturedGrid"></div>
+  </section>
+
   <section aria-label="Filter community discoveries">
     <div class="disc-filter-bar">
-      <input type="search" id="cdSearch" class="form-input" placeholder="Search community discoveries…" aria-label="Search" maxlength="80" style="flex:1 1 240px; padding:.5rem .8rem; font-size:.84rem;">
+      <input type="search" id="cdSearch" class="form-input" placeholder="Search approved discoveries…" aria-label="Search" maxlength="80" style="flex:1 1 220px; padding:.5rem .8rem; font-size:.84rem;">
       <select id="cdCat" class="form-select" aria-label="Category">
         <option value="">All categories</option>
-        <option value="hidden_location">Hidden locations</option><option value="easter_egg">Easter eggs</option>
-        <option value="collectible">Collectibles</option><option value="rare_vehicle">Rare vehicles</option>
-        <option value="wildlife">Wildlife sightings</option><option value="weapons_equipment">Weapons and equipment</option>
-        <option value="mission_tip">Mission tips</option><option value="side_activity">Side activities</option>
-        <option value="money_method">Money-making methods</option><option value="map_correction">Map corrections</option>
-        <option value="general">General gameplay</option>
+        <option value="hidden_location">Hidden locations</option>
+        <option value="secret_area">Secret areas</option>
+        <option value="rare_vehicle">Rare vehicles</option>
+        <option value="wildlife">Wildlife sightings</option>
+        <option value="weapons_equipment">Weapons and equipment</option>
+        <option value="collectible">Collectibles</option>
+        <option value="safe_code">Safe codes</option>
+        <option value="mission_tip">Mission discoveries &amp; tips</option>
+        <option value="glitch">Glitches</option>
+        <option value="easter_egg">Easter eggs</option>
+        <option value="side_activity">Side activities</option>
+        <option value="money_method">Money-making methods</option>
+        <option value="map_correction">Map corrections</option>
+        <option value="general">Other useful findings</option>
       </select>
       <select id="cdReg" class="form-select" aria-label="Region">
         <option value="">All regions</option>
@@ -177,23 +201,32 @@
         <option value="">All evidence levels</option>
         <option value="COMMUNITY_REPORTED">Community Reported</option>
         <option value="CORROBORATED">Corroborated</option>
-        <option value="INDEPENDENTLY_VERIFIED">Independently Verified</option>
+        <option value="INDEPENDENTLY_VERIFIED">Verified in Gameplay</option>
+        <option value="OFFICIALLY_CONFIRMED">Officially Confirmed</option>
       </select>
       <select id="cdSort" class="form-select" aria-label="Sort">
-        <option value="newest">Newest discoveries</option><option value="updated">Recently updated</option>
+        <option value="newest">Recently approved</option>
+        <option value="featured">Featured first</option>
+        <option value="updated">Recently updated</option>
       </select>
       <span id="cdCount" style="font-family:var(--font-mono); font-size:.76rem; color:var(--neon-cyan); font-weight:800;">Loading…</span>
     </div>
-    <div id="cdEmpty" style="display:none; text-align:center; padding:1.75rem; color:#94a3b8;"></div>
+    <div id="cdEmpty" class="tool-box" style="display:none; text-align:center; padding:2rem 1.25rem; color:#94a3b8;"></div>
     <div class="disc-grid" id="cdGrid"></div>
   </section>
 
   <section class="tool-box" style="margin-top:1.5rem;">
-    <h2 style="color:#fff; font-size:1.1rem; margin:0 0 .4rem;">How evidence levels work</h2>
-    <ul style="color:#cbd5e1; font-size:.84rem; line-height:1.6; margin:0; padding-left:1.2rem;">
-      <li><strong>Community Reported</strong> — accepted for publication; not independently corroborated or verified.</li>
-      <li><strong>Corroborated</strong> — multiple genuinely independent observations or credible evidence. Several sites repeating one original find do not count.</li>
-      <li><strong>Independently Verified</strong> — reproduced by an authorized GTA6HeistGuide reviewer.</li>
+    <h2 style="color:#fff; font-size:1.1rem; margin:0 0 .5rem;">Evidence &amp; Verification Standards</h2>
+    <p style="color:#94a3b8; font-size:.82rem; margin:0 0 .65rem;">
+      A screenshot alone never automatically proves every claim in a submission. Every report follows a strict editorial review path:
+    </p>
+    <ul style="color:#cbd5e1; font-size:.84rem; line-height:1.65; margin:0; padding-left:1.2rem;">
+      <li><strong>Awaiting Review</strong> — newly submitted; private in the moderation queue and never shown publicly.</li>
+      <li><strong>Needs More Evidence</strong> — held in review until clearer instructions, coordinates, or corroborating proof are provided.</li>
+      <li><strong>Community Reported</strong> — approved for publication as a player report; not yet reproduced by GTA6HeistGuide.</li>
+      <li><strong>Verified in Gameplay</strong> — independently reproduced and verified in gameplay by an authorized reviewer.</li>
+      <li><strong>Officially Confirmed</strong> — backed by an authoritative official Rockstar Games or platform source.</li>
+      <li><strong>Rejected</strong> — inaccurate, duplicate, unverified spam, or outside editorial standards (never published).</li>
     </ul>
   </section>
 </main>

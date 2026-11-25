@@ -66,12 +66,19 @@ window.SITE_CONFIG = Object.freeze({
     progress_category_update: true,
     progress_backup_export: true,
     progress_backup_import: true,
-    my_next_activity_click: true
+    my_next_activity_click: true,
+    discovery_submit_start: true,
+    discovery_submit_success: true,
+    discovery_detail_open: true,
+    discovery_map_open: true,
+    discovery_bookmark: true,
+    discovery_report: true
   };
 
   function classifyPathCategory(pathname) {
     var p = String(pathname || '/').toLowerCase();
     if (p === '/' || p === '/index.html') return 'home';
+    if (p.indexOf('/community-discoveries') === 0) return 'community_discoveries';
     if (p.indexOf('/my-leonida') === 0) return 'my_leonida';
     if (p.indexOf('/heist-command-center') === 0) return 'heist_command';
     if (p.indexOf('/map') === 0) return 'map';

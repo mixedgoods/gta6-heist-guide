@@ -16,8 +16,9 @@
   (function applyAllowlistedPrefill() {
     if (typeof URLSearchParams === 'undefined') return;
     var ALLOWED_CATEGORIES = new Set([
-      'hidden_location', 'easter_egg', 'collectible', 'rare_vehicle', 'wildlife',
-      'weapons_equipment', 'mission_tip', 'side_activity', 'money_method',
+      'hidden_location', 'secret_area', 'rare_vehicle', 'wildlife',
+      'weapons_equipment', 'collectible', 'safe_code', 'mission_tip',
+      'glitch', 'easter_egg', 'side_activity', 'money_method',
       'map_correction', 'general'
     ]);
     var ALLOWED_REGIONS = new Set([
@@ -129,8 +130,22 @@
     }
   }).catch(function () { /* form still usable; server decides */ });
 
+  var submitStarted = false;
+  function track(ev, params) {
+    try { if (typeof window.GTA6Track === 'function') window.GTA6Track(ev, params || {}); } catch (e) {}
+  }
+  form.addEventListener('input', function () {
+    if (submitStarted) return;
+    submitStarted = true;
+    track('discovery_submit_start', { category: val('category') || 'unspecified' });
+  }, { passive: true });
+
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    if (!submitStarted) {
+      submitStarted = true;
+      track('discovery_submit_start', { category: val('category') || 'unspecified' });
+    }
     clearErrors();
     var b = collect();
     var f = quickCheck(b);
@@ -142,6 +157,7 @@
     }).then(function (r) { return r.json().catch(function () { return { ok: false, error: 'Unexpected response.' }; }); })
       .then(function (res) {
         if (res.ok) {
+          track('discovery_submit_success', { category: b.category || 'unspecified', region: b.region || 'unspecified' });
           document.getElementById('cdRef').textContent = res.ref;
           form.style.display = 'none';
           var s = document.getElementById('cdSuccess');

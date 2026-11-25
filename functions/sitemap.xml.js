@@ -1,3 +1,5 @@
+import { PUBLISHABLE, isSubstantiveForIndex } from "./_lib/cd.js";
+
 const STATIC_ROUTES = [
   { loc: "https://www.gta6heistguide.com/", changefreq: "daily", priority: "1.0" },
   // Destination Hubs
@@ -532,7 +534,31 @@ function escapeXml(unsafe) {
     .replace(/'/g, "&apos;");
 }
 
+async function buildApprovedDiscoveryXml(env) {
+  if (!env || !env.DB) return "";
+  try {
+    const { results } = await env.DB.prepare(
+      `SELECT ref, title, short_explanation, finding_instructions, region, evidence_status, is_published, published_at, updated_at
+       FROM cd_published
+       WHERE is_published = 1 AND evidence_status IN (${PUBLISHABLE.map(() => "?").join(",")})
+       ORDER BY published_at DESC LIMIT 200`
+    ).bind(...PUBLISHABLE).all();
+    const eligible = (results || []).filter((r) => isSubstantiveForIndex(r));
+    if (!eligible.length) return "";
+    return eligible
+      .map((r) => {
+        const loc = `https://www.gta6heistguide.com/community-discoveries/d/${encodeURIComponent(r.ref)}`;
+        const lastmod = String(r.updated_at || r.published_at || "2026-11-24").slice(0, 10);
+        return `  <url>\n    <loc>${escapeXml(loc)}</loc>\n    <lastmod>${escapeXml(lastmod)}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.72</priority>\n  </url>`;
+      })
+      .join("\n");
+  } catch (_) {
+    return "";
+  }
+}
+
 export async function onRequestGet(context) {
+  const discoveryXml = await buildApprovedDiscoveryXml(context && context.env);
   // Prefer the static public/sitemap.xml so accurate per-URL <lastmod> dates
   // are never overwritten with fake "today" timestamps on every crawler fetch.
   try {
@@ -540,7 +566,10 @@ export async function onRequestGet(context) {
       const assetUrl = new URL("/sitemap.xml", context.request.url);
       const staticRes = await context.env.ASSETS.fetch(new Request(assetUrl));
       if (staticRes && staticRes.ok) {
-        const xmlBody = await staticRes.text();
+        let xmlBody = await staticRes.text();
+        if (discoveryXml && xmlBody.includes("</urlset>")) {
+          xmlBody = xmlBody.replace("</urlset>", `${discoveryXml}\n</urlset>`);
+        }
         return new Response(xmlBody, {
           status: 200,
           headers: {
@@ -564,7 +593,7 @@ export async function onRequestGet(context) {
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${staticXml}
+${staticXml}${discoveryXml ? `\n${discoveryXml}` : ""}
 </urlset>`;
 
   return new Response(xml, {

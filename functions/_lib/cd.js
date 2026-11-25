@@ -2,16 +2,19 @@
 
 export const CATEGORIES = {
   hidden_location: "Hidden locations",
-  easter_egg: "Easter eggs",
-  collectible: "Collectibles",
+  secret_area: "Secret areas",
   rare_vehicle: "Rare vehicles",
   wildlife: "Wildlife sightings",
   weapons_equipment: "Weapons and equipment",
-  mission_tip: "Mission tips",
+  collectible: "Collectibles",
+  safe_code: "Safe codes",
+  mission_tip: "Mission discoveries & tips",
+  glitch: "Glitches",
+  easter_egg: "Easter eggs",
   side_activity: "Side activities",
   money_method: "Money-making methods",
   map_correction: "Map corrections",
-  general: "General gameplay discoveries",
+  general: "Other useful findings",
 };
 
 export const REGIONS = [
@@ -22,21 +25,50 @@ export const REGIONS = [
 export const PLATFORMS = { PS5: "PS5", XBOX_SERIES: "Xbox Series X|S" };
 
 export const STATUSES = {
-  PENDING_REVIEW: "Pending Review",
+  PENDING_REVIEW: "Awaiting Review",
   NEEDS_MORE_EVIDENCE: "Needs More Evidence",
   COMMUNITY_REPORTED: "Community Reported",
   CORROBORATED: "Corroborated",
-  INDEPENDENTLY_VERIFIED: "Independently Verified",
+  INDEPENDENTLY_VERIFIED: "Verified in Gameplay",
+  OFFICIALLY_CONFIRMED: "Officially Confirmed",
   REJECTED: "Rejected",
 };
 
 // Statuses that may ever be public.
-export const PUBLISHABLE = ["COMMUNITY_REPORTED", "CORROBORATED", "INDEPENDENTLY_VERIFIED"];
+export const PUBLISHABLE = [
+  "COMMUNITY_REPORTED",
+  "CORROBORATED",
+  "INDEPENDENTLY_VERIFIED",
+  "OFFICIALLY_CONFIRMED",
+];
+
+// Statuses that count as gameplay/officially verified (not merely community reported).
+export const VERIFIED_STATUSES = [
+  "INDEPENDENTLY_VERIFIED",
+  "OFFICIALLY_CONFIRMED",
+];
 
 export const PUBLIC_LABELS = {
-  COMMUNITY_REPORTED: "Community Reported â€” Not independently verified by GTA6HeistGuide.",
-  CORROBORATED: "Corroborated â€” Supported by multiple independent observations or credible evidence. Not yet reproduced by GTA6HeistGuide.",
-  INDEPENDENTLY_VERIFIED: "Independently Verified â€” Reproduced by an authorized GTA6HeistGuide reviewer.",
+  COMMUNITY_REPORTED: "Community Reported — Not independently verified by GTA6HeistGuide.",
+  CORROBORATED: "Corroborated — Supported by multiple independent observations or credible evidence. Verification in gameplay still pending.",
+  INDEPENDENTLY_VERIFIED: "Verified in Gameplay — Reproduced and verified in gameplay by an authorized GTA6HeistGuide reviewer.",
+  OFFICIALLY_CONFIRMED: "Officially Confirmed — Supported by an authoritative official source.",
+};
+
+export const MAP_CLASSIFICATIONS = {
+  COMMUNITY_REPORTED: "Community Reported",
+  CORROBORATED: "Verification Pending",
+  INDEPENDENTLY_VERIFIED: "Verified Discovery",
+  OFFICIALLY_CONFIRMED: "Verified Discovery",
+};
+
+export const REPORT_REASONS = {
+  inaccurate: "Inaccurate or misleading claim",
+  outdated_patch: "Patched or outdated in newer game version",
+  wrong_location: "Incorrect map location or directions",
+  duplicate: "Duplicate of an existing discovery or guide",
+  broken_evidence: "Broken or unverified evidence link",
+  other: "Other editorial correction",
 };
 
 export const MAX_BODY_BYTES = 24 * 1024;
@@ -53,6 +85,36 @@ export function json(data, status = 200, extra = {}) {
 }
 
 export const nowIso = () => new Date().toISOString().replace(/\.\d+Z$/, "Z");
+
+// ---------- HTML escaping & script/markup rejection ----------
+
+export function escapeHtml(str) {
+  return String(str == null ? "" : str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+const SCRIPT_OR_HTML_RE = /<\s*\/?\s*(script|iframe|object|embed|svg|math|style|link|meta|form|input|button|textarea|select|img|video|audio|source|body|html|head|base|applet|frame|frameset)\b|javascript\s*:|vbscript\s*:|data\s*:\s*text\/html|\bon(?:error|load|click|dblclick|mousedown|mouseup|mouseover|mouseout|mousemove|focus|blur|input|change|submit|keydown|keyup|keypress|animationstart|toggle|pointerover)\s*=/i;
+
+/** Returns true if text contains executable HTML tags, script tags, event handlers, or dangerous URI schemes. */
+export function containsDangerousMarkup(v) {
+  if (typeof v !== "string" || !v) return false;
+  return SCRIPT_OR_HTML_RE.test(v);
+}
+
+/** Substantive quality gate for indexing a published discovery detail page and including it in sitemap.xml. */
+export function isSubstantiveForIndex(pub) {
+  if (!pub || pub.is_published !== 1) return false;
+  if (!PUBLISHABLE.includes(pub.evidence_status)) return false;
+  const title = String(pub.title || "").trim();
+  const shortExp = String(pub.short_explanation || "").trim();
+  const instructions = String(pub.finding_instructions || "").trim();
+  const region = String(pub.region || "").trim();
+  return title.length >= 10 && shortExp.length >= 60 && instructions.length >= 40 && region.length >= 3;
+}
 
 // ---------- request guards ----------
 
