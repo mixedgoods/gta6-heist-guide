@@ -1,0 +1,21 @@
+captured_at_utc,database_name,database_id,metric_group,metric_name,count,notes
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,total_submissions,2,Read-only aggregate from cd_submissions
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,awaiting_review_PENDING_REVIEW,0,cd_submissions WHERE evidence_status='PENDING_REVIEW'
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,needs_more_evidence_NEEDS_MORE_EVIDENCE,0,cd_submissions WHERE evidence_status='NEEDS_MORE_EVIDENCE'
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,community_reported_COMMUNITY_REPORTED,0,cd_submissions WHERE evidence_status='COMMUNITY_REPORTED'
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,corroborated_CORROBORATED,0,cd_submissions WHERE evidence_status='CORROBORATED'
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,verified_in_gameplay_INDEPENDENTLY_VERIFIED,0,cd_submissions WHERE evidence_status='INDEPENDENTLY_VERIFIED'
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,officially_confirmed_official_confirmed_1,0,cd_verification_meta WHERE official_confirmed=1
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,rejected_REJECTED,2,cd_submissions WHERE evidence_status='REJECTED'
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,approved_and_published,0,cd_published WHERE is_published=1
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,approved_community_map_pins,0,cd_published WHERE is_published=1 AND map_approved=1
+2026-11-25T02:38:58Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,community_discoveries,correction_reports,0,cd_reports total rows
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,total_outbound_clicks,36,"Range 2026-11-20 18:03:30 UTC to 2026-11-25 01:05:35 UTC; clicks != revenue"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_amazon,23,"Pages: / (12), /radio (4), /secrets (4), /heists/small-banks-payday-loans (1), /lucia-jason-skills (1), other (1)"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_gumroad,5,"Pages: /save-planner (2), /drops (1), /heists/vcia-takedown (1), /live (1)"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_whop,2,"Page: /live (2)"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_getapexlocal,2,"Page: /free (1), other (1)"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_exitlag,2,"Pages: /drops (1), /radio (1)"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_gfuel,1,"Page: /heists/small-banks-payday-loans (1)"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_eneba,1,"Historical click on /cheats; 0 static Eneba links remain in public/"
+2026-11-25T02:52:08Z,gta6heistguide-db,31866186-7d51-4c36-a749-3822ac05bad7,affiliate_clicks,partner_g2a,0,"95 static links in public/, 0 recorded clicks"
