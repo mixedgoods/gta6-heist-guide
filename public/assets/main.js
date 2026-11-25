@@ -5605,7 +5605,15 @@ DealRotator: {
       init() {
         const container = document.getElementById('dealSpotlightGrid');
         if (!container) return;
-        this.deals = this.buildDeals();
+        const cfg = GTA6.SiteConfig ? GTA6.SiteConfig.get() : (window.SITE_CONFIG || {});
+        const allowAmazon = cfg.enableAmazonProductPlacements === true;
+        this.deals = this.buildDeals().filter((d) => allowAmazon || (d.ctaPrimary && d.ctaPrimary.partner !== 'amazon'));
+        if (!allowAmazon || !this.deals.length) {
+          container.innerHTML = '';
+          container.hidden = true;
+          container.style.display = 'none';
+          return;
+        }
 
         // Stable session-based selection (no random jump on refresh)
         const seed = (window.GTA6AffiliateCards && window.GTA6AffiliateCards.getSessionSeed)

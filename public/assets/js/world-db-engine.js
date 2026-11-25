@@ -162,6 +162,10 @@
   }
 
   function getAffiliateStripHtml(contextLabel, categoryKey) {
+    var cfg = global.SITE_CONFIG;
+    if (!(cfg && cfg.enableAmazonProductPlacements === true)) {
+      return '';
+    }
     if (global.GTA6AffiliateCards && typeof global.GTA6AffiliateCards.getDatabaseHardwareCardHtml === 'function') {
       var affCtx = categoryKey === 'radio'
         ? 'radio-audio'

@@ -757,6 +757,11 @@ window.getGTA6LaunchBannerText = function() {
     return 'default';
   }
 
+  function isAmazonProductPlacementsEnabled() {
+    var cfg = global.SITE_CONFIG;
+    return !!(cfg && cfg.enableAmazonProductPlacements === true);
+  }
+
   function isBlockedPath() {
     var p = (global.location && global.location.pathname || '').toLowerCase();
     if (p.indexOf('/animals') !== -1) return true;
@@ -768,6 +773,7 @@ window.getGTA6LaunchBannerText = function() {
 
   function selectOffers(contextKey, count, slotId, options) {
     options = options || {};
+    var allowAmazon = isAmazonProductPlacementsEnabled();
     var poolIds = Array.isArray(contextKey)
       ? contextKey.slice()
       : (CONTEXT_POOLS[contextKey] || CONTEXT_POOLS['default']).slice();
@@ -784,12 +790,13 @@ window.getGTA6LaunchBannerText = function() {
     for (var i = 0; i < ordered.length && picked.length < count; i++) {
       var offer = CATALOG[ordered[i]];
       if (!offer || offer.enabled === false) continue;
+      if (!allowAmazon && offer.partner === 'amazon') continue;
       if (pageUsedIds[offer.id]) continue;
       picked.push(offer);
       pageUsedIds[offer.id] = true;
     }
 
-    if (picked.length < count) {
+    if (allowAmazon && picked.length < count) {
       var fallback = ['dualsenseWhite', 'xboxCarbonBlack', 'kossPortaPro', 'sonyMdr7506', 'blueYetiBlackout', 'samsung990Pro4tb'];
       for (var j = 0; j < fallback.length && picked.length < count; j++) {
         var fb = CATALOG[fallback[j]];
@@ -886,7 +893,9 @@ window.getGTA6LaunchBannerText = function() {
 
   // 3. VISUAL SHOPPING CARD RENDERER
   function renderCardHtml(offer, variant, placement) {
+    if (!offer) return '';
     var isAmazon = offer.partner === 'amazon';
+    if (isAmazon && !isAmazonProductPlacementsEnabled()) return '';
     var ctaClass = isAmazon ? 'aff-cta aff-cta--amazon' : ('aff-cta aff-cta--' + esc(offer.accent || 'cyan'));
     var ctaText = isAmazon ? (offer.cta || 'View on Amazon \u2192') : esc(offer.cta);
     var ctaAttrs = buildLinkAttrs(offer, placement || variant, 'cta');
@@ -1127,6 +1136,19 @@ window.getGTA6LaunchBannerText = function() {
 
   function mountAllSlots() {
     resetPageRegistry();
+    var allowAmazon = isAmazonProductPlacementsEnabled();
+
+    // Sync any static Amazon placement modules marked with data-amazon-placement-module="1"
+    document.querySelectorAll('[data-amazon-placement-module="1"]').forEach(function(mod) {
+      if (!allowAmazon) {
+        mod.hidden = true;
+        mod.style.display = 'none';
+      } else {
+        mod.hidden = false;
+        mod.style.display = '';
+      }
+    });
+
     if (isBlockedPath()) return;
 
     document.querySelectorAll('[data-aff-slot]').forEach(function(el) {
@@ -1144,14 +1166,27 @@ window.getGTA6LaunchBannerText = function() {
         hubLink: el.getAttribute('data-aff-hub-link') || '1'
       };
       var html = renderSlotHtml(cfg);
-      if (html) el.innerHTML = html;
+      if (html) {
+        el.innerHTML = html;
+        el.hidden = false;
+        el.style.display = '';
+      } else {
+        el.innerHTML = '';
+        el.hidden = true;
+        el.style.display = 'none';
+      }
     });
 
-    // Upgrade any legacy syndicate affiliate bars cleanly
+    // Upgrade any legacy syndicate affiliate bars cleanly (or suppress when Amazon placements are paused)
     var legacyBars = document.querySelectorAll('.syndicate-aff-bar');
     legacyBars.forEach(function(bar, idx) {
       if (bar.getAttribute('data-aff-upgraded') === '1') return;
       bar.setAttribute('data-aff-upgraded', '1');
+      if (!allowAmazon) {
+        bar.hidden = true;
+        bar.style.display = 'none';
+        return;
+      }
       if (idx > 0) {
         bar.style.display = 'none';
         return;
@@ -1167,22 +1202,26 @@ window.getGTA6LaunchBannerText = function() {
         wrapper.className = 'aff-legacy-upgrade';
         wrapper.innerHTML = html;
         bar.parentNode.replaceChild(wrapper, bar);
+      } else {
+        bar.hidden = true;
+        bar.style.display = 'none';
       }
     });
   }
 
   // Expose API
   global.GTA6AffiliateCards = {
-    version: '8.1-phase33.1',
+    version: '8.2-phase35.1c',
     catalog: CATALOG,
     contexts: CONTEXT_POOLS,
+    isAmazonProductPlacementsEnabled: isAmazonProductPlacementsEnabled,
     resetPageRegistry: resetPageRegistry,
     selectOffers: selectOffers,
     renderCardHtml: renderCardHtml,
     renderSlotHtml: renderSlotHtml,
     mountAll: mountAllSlots,
     getDatabaseHardwareCardHtml: function(slotId, contextOverride) {
-      if (isBlockedPath()) return '';
+      if (isBlockedPath() || !isAmazonProductPlacementsEnabled()) return '';
       return renderSlotHtml({
         slotId: slotId || 'db-hardware-card',
         context: contextOverride || detectDefaultContext(),
@@ -1193,7 +1232,7 @@ window.getGTA6LaunchBannerText = function() {
   };
 
   global.getSyndicateAffBarHtml = function() {
-    if (isBlockedPath()) return '';
+    if (isBlockedPath() || !isAmazonProductPlacementsEnabled()) return '';
     return global.GTA6AffiliateCards.renderSlotHtml({
       slotId: 'inline-helper-card',
       context: detectDefaultContext(),

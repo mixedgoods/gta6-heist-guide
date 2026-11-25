@@ -51,7 +51,11 @@ window.SITE_CONFIG = Object.freeze({
   // Optional Buyer Activations (leave blank "" to keep disabled)
   adsensePublisherId: "ca-pub-9556158063903839",
   ga4MeasurementId: "",
-  enableAffiliateClickTracking: true
+  enableAffiliateClickTracking: true,
+
+  // Phase 35.1C — Centralized Amazon Product Placement Pause Switch (disabled by default)
+  // Underlying Amazon ASIN catalog, tracking tag, licensed photo manifest, and click deduplication remain intact.
+  enableAmazonProductPlacements: false
 });
 
 // Privacy-first single reusable analytics adapter (GA4-ready when authorized ID is supplied)
