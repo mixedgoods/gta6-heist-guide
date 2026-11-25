@@ -99,14 +99,26 @@ if (expectClosed) {
   });
 }
 
-for (const [m, p] of [["GET", "/api/cd-admin/queue"], ["GET", "/api/cd-admin/detail?ref=CD-AAAAA-BBBBB"], ["POST", "/api/cd-admin/action"]]) {
+for (const [m, p] of [["GET", "/api/cd-admin/queue"], ["GET", "/api/cd-admin/detail?ref=CD-AAAAA-BBBBB"], ["GET", "/api/cd-admin/affiliate-report"], ["POST", "/api/cd-admin/action"]]) {
   await t("HTTP-ADM-" + p.split("/").pop().split("?")[0], `Unauthenticated ${m} ${p.split("?")[0]} denied (503 or 401), no data`, async () => {
     const r = await fetch(base + p, { method: m, headers: m === "POST" ? { "Content-Type": "application/json", Origin: base } : {}, body: m === "POST" ? "{}" : undefined });
-    const tx = await r.text(); ok([401, 503].includes(r.status) && !tx.includes("CD-"), r.status + " " + tx);
+    const tx = await r.text(); ok([401, 503].includes(r.status) && !tx.includes("CD-") && !tx.includes("totalClicks"), r.status + " " + tx);
   });
 }
-await t("HTTP-13", "Legacy admin-key style access to new admin API is denied", async () => {
+await t("HTTP-13", "Legacy admin-key style access to admin APIs & /api/clicks is denied", async () => {
   const r = await fetch(base + "/api/cd-admin/queue?key=syndicateadmin"); ok([401, 503].includes(r.status));
+  const r2 = await fetch(base + "/api/cd-admin/affiliate-report?key=syndicateadmin"); ok([401, 503].includes(r2.status));
+  const r3 = await fetch(base + "/api/clicks?key=syndicateadmin"); ok(r3.status === 405, "clicks?key status " + r3.status);
+  const r4 = await fetch(base + "/api/clicks"); ok(r4.status === 405, "clicks GET status " + r4.status);
+});
+await t("HTTP-13B", "Anonymous POST /api/clicks still records click cleanly (200)", async () => {
+  const r = await fetch(base + "/api/clicks", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ partner: "amazon", placement: "http_smoke", page_path: "/gaming-gear/", target_url: "https://www.amazon.com/dp/B0BHJJ9Y77?tag=gta6heist-20" }),
+  });
+  const j = await r.json();
+  ok(r.status === 200 && j.ok === true && j.partner === "amazon", r.status + " " + JSON.stringify(j));
 });
 await t("HTTP-14", "Submit GET => 405", async () => { ok((await fetch(base + "/api/community-discoveries/submit")).status === 405); });
 await t("HTTP-15", "SQLi in list query params => 400/empty, no 500", async () => {

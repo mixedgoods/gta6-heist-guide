@@ -27,19 +27,39 @@ export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
 
+function constantTimeEqual(a, b) {
+  const enc = new TextEncoder();
+  const ab = enc.encode(String(a || ""));
+  const bb = enc.encode(String(b || ""));
+  if (ab.length !== bb.length || ab.length === 0) return false;
+  let diff = 0;
+  for (let i = 0; i < ab.length; i++) diff |= ab[i] ^ bb[i];
+  return diff === 0;
+}
+
 export async function onRequestGet({ request, env }) {
   try {
     const url = new URL(request.url);
-    const key = url.searchParams.get("key");
-    const adminKey = env?.ADMIN_KEY || "syndicateadmin";
+    const key = url.searchParams.get("key") || "";
+    const adminKey = String(env?.ADMIN_KEY || "").trim();
     const exportType = url.searchParams.get("export");
     const listMode = url.searchParams.get("list");
+
+    const wantsPrivileged = exportType === "csv" || listMode === "1";
+    if (wantsPrivileged) {
+      if (!adminKey) {
+        return jsonResponse({ ok: false, error: "Admin access is not configured." }, 503);
+      }
+      if (!constantTimeEqual(key, adminKey)) {
+        return jsonResponse({ ok: false, error: "Unauthorized." }, 401);
+      }
+    }
 
     const countRow = await env.DB.prepare("SELECT COUNT(*) AS count FROM subscribers").first();
     const rawCount = countRow?.count || 0;
     const totalSubscribers = rawCount;
 
-    if (exportType === "csv" && key === adminKey) {
+    if (exportType === "csv") {
       const { results } = await env.DB.prepare(
         "SELECT id, email, callsign, platform, role, discord_tag, marketing_opt_in, created_at FROM subscribers ORDER BY id DESC"
       ).all();
@@ -70,7 +90,7 @@ export async function onRequestGet({ request, env }) {
       });
     }
 
-    if (listMode === "1" && key === adminKey) {
+    if (listMode === "1") {
       const { results } = await env.DB.prepare(
         "SELECT id, email, callsign, platform, role, discord_tag, marketing_opt_in, created_at FROM subscribers ORDER BY id DESC LIMIT 200"
       ).all();
@@ -89,8 +109,8 @@ export async function onRequestGet({ request, env }) {
       totalSubscribers,
       regionsMapped: 6,
     });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.message, totalSubscribers: 0, regionsMapped: 6 }, 500);
+  } catch {
+    return jsonResponse({ ok: false, error: "Unable to load subscriber data.", totalSubscribers: 0, regionsMapped: 6 }, 500);
   }
 }
 

@@ -6364,7 +6364,8 @@ DealRotator: {
           drawer.classList.add('open');
           this.isOpen = true;
           this.renderLocalFallback();
-          if (this.activeKey()) this.refreshAll();
+          this.refreshClicks();
+          if (this.activeKey()) this.refreshSubscribers();
         }
       },
       closeDrawer() {
@@ -6401,18 +6402,13 @@ DealRotator: {
         `).join('');
       },
       async refreshClicks() {
-        const key = this.activeKey();
         const statusEl = document.getElementById('ownerDrawerStatus');
-        if (!key) {
-          if (statusEl) statusEl.innerHTML = '<span style="color:var(--neon-yellow);">Enter your Owner Key above to load Cloudflare D1 click counts.</span>';
-          this.renderLocalFallback();
-          return;
-        }
         try {
-          const res = await fetch('/api/clicks?key=' + encodeURIComponent(key));
-          const data = await res.json();
+          const res = await fetch('/api/cd-admin/affiliate-report', { credentials: 'same-origin' });
+          const data = await res.json().catch(() => ({}));
           if (!res.ok || !data.ok) {
-            if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">Auth error: ${data.error || res.status}</span>`;
+            if (statusEl) statusEl.innerHTML = `<span style="color:var(--neon-pink);">Cloudflare Access required (${res.status}): ${data.error || 'Unauthorized.'}</span>`;
+            this.renderLocalFallback();
             return;
           }
           const byP = data.byPartner || {};

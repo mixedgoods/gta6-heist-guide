@@ -1,73 +1,76 @@
+import {
+  MAX_CLICK_BODY_BYTES,
+  ensureClicksTable,
+  normalizePartner,
+  sanitizeTargetUrl,
+} from "../_lib/affiliate-clicks.js";
+
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-const KNOWN_PARTNERS = ["amazon", "g2a", "exitlag", "gfuel", "gumroad", "getapexlocal", "other"];
-
-function jsonResponse(data, status = 200) {
+function jsonResponse(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
+      "X-Robots-Tag": "noindex, nofollow",
       ...CORS_HEADERS,
+      ...extraHeaders,
     },
   });
-}
-
-async function ensureClicksTable(db) {
-  await db
-    .prepare(
-      `CREATE TABLE IF NOT EXISTS affiliate_clicks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        partner TEXT NOT NULL,
-        placement TEXT DEFAULT 'general',
-        page_path TEXT DEFAULT '/',
-        target_url TEXT,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP
-      )`
-    )
-    .run();
-}
-
-function normalizePartner(rawPartner, targetUrl = "") {
-  const token = String(rawPartner || "").trim().toLowerCase();
-  if (KNOWN_PARTNERS.includes(token)) return token;
-  const u = String(targetUrl || "").toLowerCase();
-  if (u.includes("amazon.com") || u.includes("amzn.to")) return "amazon";
-  if (u.includes("g2a.com")) return "g2a";
-  if (u.includes("exitlag.com")) return "exitlag";
-  if (u.includes("gfuel.com") || u.includes("gfuel")) return "gfuel";
-  if (u.includes("gumroad.com")) return "gumroad";
-  if (u.includes("getapexlocal.com")) return "getapexlocal";
-  return "other";
 }
 
 export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
 
+// Public /api/clicks is strictly anonymous click ingestion (POST only).
+// Privileged affiliate analytics reporting is served exclusively behind Cloudflare Access at /api/cd-admin/affiliate-report.
+export async function onRequestGet() {
+  return jsonResponse({ ok: false, error: "Method not allowed." }, 405, {
+    Allow: "POST, OPTIONS",
+  });
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     if (!env || !env.DB) {
-      return jsonResponse({ ok: false, error: "D1 database unavailable." }, 500);
+      return jsonResponse({ ok: false, error: "Database unavailable." }, 500);
     }
-    await ensureClicksTable(env.DB);
+
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (Number.isFinite(contentLength) && contentLength > MAX_CLICK_BODY_BYTES) {
+      return jsonResponse({ ok: false, error: "Payload too large." }, 413);
+    }
 
     const rawText = await request.text();
-    let body = {};
-    try {
-      body = rawText ? JSON.parse(rawText) : {};
-    } catch (e) {
-      return jsonResponse({ ok: false, error: "Invalid JSON payload." }, 400);
+    if (new TextEncoder().encode(rawText).byteLength > MAX_CLICK_BODY_BYTES) {
+      return jsonResponse({ ok: false, error: "Payload too large." }, 413);
     }
 
-    const targetUrl = String(body.target_url || "").trim().slice(0, 500);
+    let body = {};
+    if (rawText) {
+      try {
+        body = JSON.parse(rawText);
+      } catch {
+        return jsonResponse({ ok: false, error: "Invalid JSON payload." }, 400);
+      }
+      if (!body || typeof body !== "object" || Array.isArray(body)) {
+        return jsonResponse({ ok: false, error: "Invalid JSON payload." }, 400);
+      }
+    }
+
+    await ensureClicksTable(env.DB);
+
+    const targetUrl = sanitizeTargetUrl(body.target_url);
     const partner = normalizePartner(body.partner, targetUrl);
-    const placement = String(body.placement || "general").trim().slice(0, 80);
-    const pagePath = String(body.page_path || "/").trim().slice(0, 200);
+    const placement = String(body.placement || "general").trim().slice(0, 80) || "general";
+    const pagePath = String(body.page_path || "/").trim().slice(0, 200) || "/";
 
     await env.DB.prepare(
       `INSERT INTO affiliate_clicks (partner, placement, page_path, target_url)
@@ -77,68 +80,13 @@ export async function onRequestPost({ request, env }) {
       .run();
 
     return jsonResponse({ ok: true, partner, placement });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.message }, 500);
+  } catch {
+    return jsonResponse({ ok: false, error: "Unable to record click." }, 500);
   }
 }
 
-export async function onRequestGet({ request, env }) {
-  try {
-    const url = new URL(request.url);
-    const key = url.searchParams.get("key") || "";
-    const adminKey = env?.ADMIN_KEY || "syndicateadmin";
-    if (key !== adminKey) {
-      return jsonResponse({ ok: false, error: "Unauthorized" }, 401);
-    }
-    if (!env || !env.DB) {
-      return jsonResponse({ ok: false, error: "D1 database unavailable." }, 500);
-    }
-    await ensureClicksTable(env.DB);
-
-    const [allTimeRes, sevenDayRes, recentRes] = await Promise.all([
-      env.DB.prepare(
-        "SELECT partner, COUNT(*) AS clicks FROM affiliate_clicks GROUP BY partner ORDER BY clicks DESC"
-      ).all(),
-      env.DB.prepare(
-        "SELECT partner, COUNT(*) AS clicks_7d FROM affiliate_clicks WHERE created_at >= datetime('now', '-7 days') GROUP BY partner"
-      ).all(),
-      env.DB.prepare(
-        "SELECT id, partner, placement, page_path, target_url, created_at FROM affiliate_clicks ORDER BY id DESC LIMIT 20"
-      ).all(),
-    ]);
-
-    const byPartner = {};
-    const last7DaysByPartner = {};
-    for (const p of KNOWN_PARTNERS) {
-      byPartner[p] = 0;
-      last7DaysByPartner[p] = 0;
-    }
-
-    let totalClicks = 0;
-    for (const row of allTimeRes.results || []) {
-      const k = KNOWN_PARTNERS.includes(row.partner) ? row.partner : "other";
-      const c = Number(row.clicks || 0);
-      byPartner[k] = (byPartner[k] || 0) + c;
-      totalClicks += c;
-    }
-
-    let totalClicks7d = 0;
-    for (const row of sevenDayRes.results || []) {
-      const k = KNOWN_PARTNERS.includes(row.partner) ? row.partner : "other";
-      const c = Number(row.clicks_7d || 0);
-      last7DaysByPartner[k] = (last7DaysByPartner[k] || 0) + c;
-      totalClicks7d += c;
-    }
-
-    return jsonResponse({
-      ok: true,
-      totalClicks,
-      totalClicks7d,
-      byPartner,
-      last7DaysByPartner,
-      recent: recentRes.results || [],
-    });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.message }, 500);
-  }
+export async function onRequest() {
+  return jsonResponse({ ok: false, error: "Method not allowed." }, 405, {
+    Allow: "POST, OPTIONS",
+  });
 }

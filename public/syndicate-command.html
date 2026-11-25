@@ -46,16 +46,15 @@
         }
 
         async function loadAffiliateClicks() {
-            const key = document.getElementById('adminKeyInput').value.trim();
             const status = document.getElementById('clickProofStatus');
             const grid = document.getElementById('cmdPartnerClicksGrid');
             const tbody = document.getElementById('cmdRecentClicksTbody');
-            if (status) status.innerText = 'Loading D1 affiliate click proof...';
+            if (status) status.innerText = 'Loading D1 affiliate click proof (Cloudflare Access)...';
             try {
-                const res = await fetch('/api/clicks?key=' + encodeURIComponent(key));
-                const data = await res.json();
+                const res = await fetch('/api/cd-admin/affiliate-report', { credentials: 'same-origin' });
+                const data = await res.json().catch(() => ({}));
                 if (!res.ok || !data.ok) {
-                    if (status) status.innerHTML = '<span style="color:var(--neon-pink);">Failed or unauthorized: ' + (data.error || res.status) + '</span>';
+                    if (status) status.innerHTML = '<span style="color:var(--neon-pink);">Cloudflare Access required (' + res.status + '): ' + (data.error || 'Unauthorized.') + '</span>';
                     return;
                 }
                 const byP = data.byPartner || {};
@@ -251,8 +250,8 @@
         </p>
 <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-end; margin-bottom:1.5rem;">
 <div class="form-group" style="margin-bottom:0; flex:1 1 240px;">
-<label>Admin Access Key (Default: syndicateadmin)</label>
-<input class="form-input" id="adminKeyInput" type="text" value="syndicateadmin"/>
+<label for="adminKeyInput">Owner Admin Key (for Subscriber / Contact Endpoints)</label>
+<input autocomplete="off" class="form-input" id="adminKeyInput" placeholder="Enter configured ADMIN_KEY..." type="password" value=""/>
 </div>
 <button class="btn btn-secondary" onclick="loadAllOwnerData()" type="button">🔄 Load All D1 Records</button>
 <button class="btn btn-primary" onclick="downloadCsv()" type="button">📥 Export VIP Email Subscribers (.CSV)</button>

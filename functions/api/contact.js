@@ -78,16 +78,29 @@ export async function onRequestPost({ request, env }) {
   }
 }
 
+function constantTimeEqual(a, b) {
+  const enc = new TextEncoder();
+  const ab = enc.encode(String(a || ""));
+  const bb = enc.encode(String(b || ""));
+  if (ab.length !== bb.length || ab.length === 0) return false;
+  let diff = 0;
+  for (let i = 0; i < ab.length; i++) diff |= ab[i] ^ bb[i];
+  return diff === 0;
+}
+
 export async function onRequestGet({ request, env }) {
   try {
+    const adminKey = String(env?.ADMIN_KEY || "").trim();
+    if (!adminKey) {
+      return jsonResponse({ ok: false, error: "Admin access is not configured." }, 503);
+    }
     const url = new URL(request.url);
     const key = url.searchParams.get("key") || "";
-    const adminKey = env?.ADMIN_KEY || "syndicateadmin";
-    if (key !== adminKey) {
-      return jsonResponse({ ok: false, error: "Unauthorized" }, 401);
+    if (!constantTimeEqual(key, adminKey)) {
+      return jsonResponse({ ok: false, error: "Unauthorized." }, 401);
     }
     if (!env || !env.DB) {
-      return jsonResponse({ ok: false, error: "D1 database unavailable." }, 500);
+      return jsonResponse({ ok: false, error: "Database unavailable." }, 500);
     }
     await ensureContactTable(env.DB);
 
@@ -100,7 +113,7 @@ export async function onRequestGet({ request, env }) {
       totalInquiries: (results || []).length,
       inquiries: results || [],
     });
-  } catch (err) {
-    return jsonResponse({ ok: false, error: err.message }, 500);
+  } catch {
+    return jsonResponse({ ok: false, error: "Unable to load inquiries." }, 500);
   }
 }
