@@ -232,7 +232,7 @@ const GTA6 = {
       const cfg = this.get();
       const pubId = String(cfg.adsensePublisherId || '').trim();
       if (/^ca-pub-\d{8,}$/i.test(pubId)) {
-        if (!document.querySelector('script[data-gta6-adsense]')) {
+        if (!document.querySelector('script[data-gta6-adsense], script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
           const s = document.createElement('script');
           s.async = true;
           s.crossOrigin = 'anonymous';
@@ -241,13 +241,15 @@ const GTA6 = {
           document.head.appendChild(s);
         }
         document.querySelectorAll('.adsense-slot, .gta-ad-slot').forEach((slot) => {
+          const slotId = String(slot.getAttribute('data-ad-slot') || '').trim();
+          if (!/^\d{6,}$/.test(slotId)) return;
           slot.style.display = 'block';
           if (!slot.querySelector('ins.adsbygoogle')) {
             const ins = document.createElement('ins');
             ins.className = 'adsbygoogle';
             ins.style.display = 'block';
             ins.setAttribute('data-ad-client', pubId);
-            if (slot.getAttribute('data-ad-slot')) ins.setAttribute('data-ad-slot', slot.getAttribute('data-ad-slot'));
+            ins.setAttribute('data-ad-slot', slotId);
             ins.setAttribute('data-ad-format', 'auto');
             ins.setAttribute('data-full-width-responsive', 'true');
             slot.appendChild(ins);

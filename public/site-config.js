@@ -49,7 +49,7 @@ window.SITE_CONFIG = Object.freeze({
   getApexLocalPartnersUrl: "https://getapexlocal.com/partners",
 
   // Optional Buyer Activations (leave blank "" to keep disabled)
-  adsensePublisherId: "",
+  adsensePublisherId: "ca-pub-9556158063903839",
   ga4MeasurementId: "",
   enableAffiliateClickTracking: true
 });
