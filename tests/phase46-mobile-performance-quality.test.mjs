@@ -108,9 +108,17 @@ test('P46-3: My Leonida computeSnapshot derives exact denominators, handles zero
   assert.equal(snap0.overall.completed, 0);
   assert.equal(snap0.overall.remaining, 306);
 
-  // 2. Progress updates & persistence
-  sandbox.GTA6Progress.setDone('pin:' + datasets.pins[0].id, true);
-  sandbox.GTA6Progress.setDone('pin:' + datasets.pins[1].id, true);
+  // 2. Progress updates & persistence using genuinely independent (non-linked) pins
+  const linkedIds = new Set(
+    (sandbox.GTA6Progress.LINK_GROUPS || []).flat()
+  );
+  const independentPins = datasets.pins.filter(
+    (p) => p && p.id && p.enabled !== false && !linkedIds.has('pin:' + p.id)
+  );
+  assert.ok(independentPins.length >= 2, 'Expected at least two unlinked enabled pins');
+
+  sandbox.GTA6Progress.setDone('pin:' + independentPins[0].id, true);
+  sandbox.GTA6Progress.setDone('pin:' + independentPins[1].id, true);
   sandbox.GTA6Progress.setDone('db:owned:vehicles:' + datasets.vehicles[0].id, true);
   sandbox.GTA6Progress.setDone('db:owned:weapons:' + datasets.weapons[0].id, true);
   sandbox.GTA6Progress.setDone('db:owned:properties:' + datasets.properties[0].id, true);
@@ -138,9 +146,21 @@ test('P46-3: My Leonida computeSnapshot derives exact denominators, handles zero
   assert.equal(snap1.world.completed + snap1.world.remaining, snap1.world.total);
   assert.equal(snap1.world.pct, Math.round((2 / 34) * 100));
 
-  assert.equal(snap1.overall.completed, 4); // 2 pins + 1 property + 1 verified animal
+  assert.equal(snap1.overall.completed, 4); // 2 independent pins + 1 property + 1 verified animal
   assert.equal(snap1.overall.remaining, 302);
   assert.equal(snap1.overall.completed + snap1.overall.remaining, snap1.overall.total);
+
+  // 2b. Verify intentional LINK_GROUPS cross-sync behavior (vault-sinfrontera-downtown <-> heist-cartel <-> heist:the-cartel-heist)
+  reloaded.GTA6Progress.setDone('pin:vault-sinfrontera-downtown', true);
+  assert.equal(reloaded.GTA6Progress.isDone('pin:heist-cartel'), true);
+  assert.equal(reloaded.GTA6Progress.isDone('heist:the-cartel-heist'), true);
+  const snapLinked = reloaded.GTA6MyLeonida.computeSnapshot(datasets);
+  const cartelJob = datasets.jobs.find((j) => j.id === 'the-cartel-heist');
+  const cartelSteps = cartelJob && Array.isArray(cartelJob.checklist) ? cartelJob.checklist.length : 0;
+  assert.equal(snapLinked.map.completed, 4); // 2 independent pins + vault-sinfrontera-downtown + linked pin:heist-cartel
+  assert.equal(snapLinked.map.unvisited, 181);
+  assert.equal(snapLinked.overall.completed, 6 + cartelSteps); // +2 linked pins + linked Cartel Heist checklist steps
+  assert.equal(snapLinked.overall.completed + snapLinked.overall.remaining, snapLinked.overall.total);
 
   // 3. Zero-item edge case
   const snapEmpty = reloaded.GTA6MyLeonida.computeSnapshot({
