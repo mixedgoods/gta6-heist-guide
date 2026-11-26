@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { onRequest as middlewareOnRequest } from '../functions/_middleware.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
@@ -205,4 +206,72 @@ test('P1-6: All 502 canonical pages share 1 unified <nav>, 1 unified <footer>, 0
 
   assert.equal(navSigs.size, 1, `Expected 1 unified nav signature, found ${navSigs.size}`);
   assert.equal(footerSigs.size, 1, `Expected 1 unified footer signature, found ${footerSigs.size}`);
+});
+
+test('Phase 43.2-1: Middleware redirects /giveaways and /giveaways.html directly to /drops in 1 hop, preserves query strings, and has no loops', async () => {
+  const passthrough = async () => new Response('OK', { status: 200 });
+
+  const cases = [
+    ['https://www.gta6heistguide.com/giveaways', 'https://www.gta6heistguide.com/drops'],
+    ['https://www.gta6heistguide.com/giveaways.html', 'https://www.gta6heistguide.com/drops'],
+    ['https://www.gta6heistguide.com/giveaways?source=test', 'https://www.gta6heistguide.com/drops?source=test'],
+    ['https://www.gta6heistguide.com/giveaways.html?source=test', 'https://www.gta6heistguide.com/drops?source=test'],
+  ];
+
+  for (const [reqUrl, expectedLocation] of cases) {
+    const res = await middlewareOnRequest({
+      request: new Request(reqUrl, { method: 'GET' }),
+      next: passthrough,
+    });
+    assert.equal(res.status, 301, `Expected 301 for ${reqUrl}`);
+    assert.equal(res.headers.get('location'), expectedLocation, `Expected single-hop redirect for ${reqUrl}`);
+
+    // Follow destination through middleware to confirm zero redirect chains or loops
+    const destRes = await middlewareOnRequest({
+      request: new Request(expectedLocation, { method: 'GET' }),
+      next: passthrough,
+    });
+    assert.equal(destRes.status, 200, `Expected destination ${expectedLocation} to resolve without redirect loop`);
+  }
+
+  // Static check: middleware must never map /giveaways.html -> /giveaways
+  const mwSrc = readText('functions/_middleware.js');
+  assert.ok(!mwSrc.includes('["/giveaways.html", "/giveaways"]'), 'Two-hop /giveaways.html -> /giveaways rule must not exist');
+  assert.ok(mwSrc.includes('["/giveaways", "/drops"]'), 'Direct /giveaways -> /drops rule missing');
+  assert.ok(mwSrc.includes('["/giveaways.html", "/drops"]'), 'Direct /giveaways.html -> /drops rule missing');
+});
+
+test('Phase 43.2-2: Mobile /map region jump pills do not shrink, preserve >=44px touch height, and retain all 6 region handlers', () => {
+  const mapHtml = readText('public/map.html');
+  const mobileBlockMatch = mapHtml.match(/\/\* Phase 43: Mobile touch-target accessibility[\s\S]*?@media\s*\(max-width:\s*768px\)\s*\{([\s\S]*?)\n\}/);
+  assert.ok(mobileBlockMatch, 'Missing Phase 43 mobile touch-target @media (max-width: 768px) block in public/map.html');
+  const mobileCss = mobileBlockMatch[1];
+
+  // Ensure .region-jump-pill is NOT in any rule that sets min-width: 44px
+  const ruleBlocks = [...mobileCss.matchAll(/([^{]+)\{([^}]+)\}/g)];
+  const pillRules = ruleBlocks.filter((m) => m[1].includes('.region-jump-pill'));
+  assert.ok(pillRules.length >= 1, 'Expected dedicated .region-jump-pill mobile rule');
+  for (const [, selector, body] of pillRules) {
+    assert.ok(!/min-width\s*:\s*44px/i.test(body), `Fixed min-width: 44px must not apply to .region-jump-pill (selector: ${selector.trim()})`);
+  }
+
+  const combinedPillCss = pillRules.map((m) => m[2]).join('\n');
+  assert.match(combinedPillCss, /min-height\s*:\s*44px\s*!important/i, 'Missing min-height: 44px !important on .region-jump-pill');
+  assert.match(combinedPillCss, /flex\s*:\s*0\s+0\s+auto\s*!important/i, 'Missing flex: 0 0 auto !important on .region-jump-pill');
+  assert.match(combinedPillCss, /white-space\s*:\s*nowrap\s*!important/i, 'Missing white-space: nowrap !important on .region-jump-pill');
+
+  // Verify all 6 region jump pills remain wired to jumpToRegion
+  for (const region of [
+    'Vice City',
+    'Grassrivers',
+    'Leonida Keys',
+    'Mount Kalaga National Park',
+    'Port Gellhorn',
+    'Ambrosia',
+  ]) {
+    assert.ok(
+      mapHtml.includes(`data-region="${region}"`) && mapHtml.includes(`jumpToRegion('${region}')`),
+      `Missing region jump pill or handler for ${region}`,
+    );
+  }
 });
