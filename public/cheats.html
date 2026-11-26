@@ -323,13 +323,14 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                        <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
-                        <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
-                        <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
-                        <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
-                        <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
-                        <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
-                        <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                    <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/guides/gta-6-safe-codes" class="nav-dropdown-item">🔐 All 19 Safe Codes</a>
+                    <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                    <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                    <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                    <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                    <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                    <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
                 </div>
             </li>
             <li class="nav-dropdown">
@@ -337,6 +338,7 @@
                 <div class="nav-dropdown-menu">
                     <a href="/gta-6-tips-and-tricks/" class="nav-dropdown-item">💡 Tips &amp; Tricks</a>
                     <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings &amp; Hardware Hub</a>
+                    <a href="/gaming-gear/" class="nav-dropdown-item">🎮 Gaming Gear Buying Guide</a>
                     <a href="/cheats" class="nav-dropdown-item">⚡ Cheats</a>
                     <a href="/secrets" class="nav-dropdown-item">🥚 Secrets</a>
                     <a href="/gta-6-discoveries/" class="nav-dropdown-item">📡 Discoveries</a>
@@ -347,12 +349,11 @@
                 <div class="nav-dropdown-menu">
                     <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
-                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
+                    <a href="/my-leonida/" class="nav-dropdown-item" style="color:var(--neon-green); font-weight:800;">🌴 My Leonida Dashboard</a>
+                    <a href="/heist-command-center/" class="nav-dropdown-item" style="color:var(--neon-cyan); font-weight:800;">🛰️ Heist Command Center</a>
                     <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
-                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
-                    <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
-                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 15-Slot Save Planner</a>
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
@@ -595,19 +596,19 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem; margin-bottom:0.75rem;">
                 <div>
                     <label style="display:block; font-size:0.76rem; color:var(--text-muted); margin-bottom:0.25rem;">Cheat Title / Effect *</label>
-                    <input type="text" id="newCheatTitle" class="form-input" placeholder="e.g. Spawn Cheetah GT" style="width:100%; padding:0.5rem; font-size:0.85rem;">
+                    <input type="text" id="newCheatTitle" aria-label="Cheat name or title" class="form-input" placeholder="e.g. Spawn Cheetah GT" style="width:100%; padding:0.5rem; font-size:0.85rem;">
                 </div>
                 <div>
                     <label style="display:block; font-size:0.76rem; color:var(--text-muted); margin-bottom:0.25rem;">D-Pad Sequence / Phone Code *</label>
-                    <input type="text" id="newCheatCode" class="form-input" placeholder="e.g. ↑ → ↓ ← ↑ → ↓ ←" style="width:100%; padding:0.5rem; font-size:0.85rem;">
+                    <input type="text" id="newCheatCode" aria-label="Cheat button sequence or code" class="form-input" placeholder="e.g. ↑ → ↓ ← ↑ → ↓ ←" style="width:100%; padding:0.5rem; font-size:0.85rem;">
                 </div>
                 <div>
                     <label style="display:block; font-size:0.76rem; color:var(--text-muted); margin-bottom:0.25rem;">Unlock Milestone / Condition</label>
-                    <input type="text" id="newCheatUnlock" class="form-input" placeholder="e.g. Complete 5 street races" style="width:100%; padding:0.5rem; font-size:0.85rem;">
+                    <input type="text" id="newCheatUnlock" aria-label="Cheat unlock requirement" class="form-input" placeholder="e.g. Complete 5 street races" style="width:100%; padding:0.5rem; font-size:0.85rem;">
                 </div>
                 <div>
                     <label style="display:block; font-size:0.76rem; color:var(--text-muted); margin-bottom:0.25rem;">Your Callsign / Alias</label>
-                    <input type="text" id="newCheatAuthor" class="form-input" placeholder="ViceOperative" style="width:100%; padding:0.5rem; font-size:0.85rem;">
+                    <input type="text" id="newCheatAuthor" aria-label="Your display name or handle" class="form-input" placeholder="ViceOperative" style="width:100%; padding:0.5rem; font-size:0.85rem;">
                 </div>
             </div>
             <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
@@ -641,7 +642,7 @@
                 <button type="button" class="tab-btn" data-tab="environment" onclick="filterCheats('environment', this)">Environment &amp; World</button>
             </div>
             <div style="position:relative; min-width:240px; flex:1 1 240px; max-width:320px;">
-                <input type="text" id="cheatSearchInput" oninput="searchCheats(this.value)" placeholder="Search cheat name, challenge, or status..." class="form-input" style="width:100%; padding:0.45rem 0.75rem; font-size:0.82rem;">
+                <input type="text" id="cheatSearchInput" aria-label="Search GTA 6 cheat codes" oninput="searchCheats(this.value)" placeholder="Search cheat name, challenge, or status..." class="form-input" style="width:100%; padding:0.45rem 0.75rem; font-size:0.82rem;">
             </div>
         </div>
         <div style="display:flex; gap:0.45rem; flex-wrap:wrap; align-items:center;">
@@ -738,7 +739,7 @@
     </div>
     <div style="margin-bottom:0.35rem;"><span class="verify-badge verify-testing">⏳ UNCONFIRMED · Single-Source Reported</span></div>
     <h3 style="color:#fff; font-size:1.1rem; margin:0.2rem 0 0.35rem;">Attack Force</h3>
-    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.5rem;">Causes bullets and melee hits to launch targets violently on impact. (Reconciled from prior pre-launch Vehicle Force Ram slot.)</p>
+    <p style="color:var(--text-muted); font-size:0.82rem; line-height:1.45; margin:0 0 0.5rem;">Causes bullets and melee hits to launch targets violently on impact.</p>
     <div style="font-size:0.74rem; color:var(--neon-cyan); background:rgba(0,240,255,0.06); padding:0.35rem 0.55rem; border-radius:4px; margin-bottom:0.5rem;">
       🎯 <strong>Unlock Requirement (CONFIRMED):</strong> Finish Story Mode campaign
     </div>
@@ -789,7 +790,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn HVY Bulldozer', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -835,7 +836,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Invincibility (5 Minutes)', '[UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -858,7 +859,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Max Health & Full Armor', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -881,7 +882,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Fast Sprint & Infinite Stamina', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -904,7 +905,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Super Jump (High Vault)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -927,7 +928,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Explosive Melee Attacks', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -973,7 +974,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Flaming Ammunition Rounds', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -996,7 +997,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Explosive Sniper Bullets', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1019,7 +1020,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('All Weapons Pack (Tier 1)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1042,7 +1043,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Military Heavy Ordnance Pack', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1065,7 +1066,7 @@
       🎯 <strong>Unlock Requirement (CONFLICTING):</strong> Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)<div style="font-size:0.72rem; color:#fbbf24; margin-top:0.25rem;">⚠ <strong>Competing Report:</strong> Competing prior report: BASE jump from 10 Leonida radio towers.</div>
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>CONFIRMED</strong></div><div><span>Unlock:</span> <strong>CONFLICTING</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> PC Gamer (Future plc), Vice (Vice Media), Prior Site Research (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>CONFIRMED</strong></div><div><span>Unlock:</span> <strong>CONFLICTING</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> PC Gamer (Future plc), Vice (Vice Media), Prior Site Research</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Parachute (Infinite Parachutes)', 'Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1111,7 +1112,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Moon Gravity (Low Gravity)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1134,7 +1135,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Slippery Drift Tires Mode', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1157,7 +1158,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Super Concussive Knockback', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1180,7 +1181,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Comet Retro Classic', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1203,7 +1204,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Annihilator Gunship Chopper', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1226,7 +1227,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Sea Sparrow Seaplane', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1249,7 +1250,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Bravado Banshee GTS', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1272,7 +1273,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Sanchez Dirt Bike', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1295,7 +1296,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Vapid Dominator GT', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1318,7 +1319,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Everglades Swamp Airboat', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1341,7 +1342,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Submersible Kraken 2', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1364,7 +1365,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Police Cruiser Interceptor', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1387,7 +1388,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Coast Guard Rescue Cutter', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1410,7 +1411,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Heavy Trashmaster Truck', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1433,7 +1434,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Caddy Electric Golf Cart', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1456,7 +1457,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Mallard Stunt Biplane', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1479,7 +1480,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Thruster Jetpack', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1502,7 +1503,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Grotti Cheetah Classic', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1525,7 +1526,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Pegassi Torero XO', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1548,7 +1549,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Armored Insurgent APC', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1571,7 +1572,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Hovercraft Gator', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1594,7 +1595,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Spawn Pro Stunt BMX Bike', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1732,7 +1733,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Time Advance (+6 Hours)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1755,7 +1756,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Slow Motion World (3 Levels)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1801,7 +1802,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Fast Swimming Speed', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1824,7 +1825,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Civilian Chaos (Pedestrians Riot)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1847,7 +1848,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Armed Pedestrians', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1870,7 +1871,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Hostile Pedestrians (Attack Player)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1893,7 +1894,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Aggressive Drivers Mode', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1916,7 +1917,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Always Green Traffic Lights', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1939,7 +1940,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Blackout Leonida Power Grid', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1962,7 +1963,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Infinite Vehicle Nitro Boost', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -1985,7 +1986,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Underwater Night Vision', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -2008,7 +2009,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Zero Tire Friction (Ice Physics)', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -2054,7 +2055,7 @@
       🎯 <strong>Unlock Requirement (UNCONFIRMED):</strong> [UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes
     </div>
     <div class="code-display" style="border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); justify-content:space-between; flex-wrap:wrap; gap:0.35rem;"><span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:800; color:var(--neon-yellow);">Activation Sequence: NOT PUBLISHED</span></div>
-    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)</div></div>
+    <div class="cheat-evidence-grid"><div><span>Existence:</span> <strong>UNCONFIRMED</strong></div><div><span>Unlock:</span> <strong>UNCONFIRMED</strong></div><div><span>Code:</span> <strong>NOT PUBLISHED</strong></div><div><span>In-Game Test:</span> <strong>NOT VERIFIED</strong></div><div style="grid-column:1/-1;"><span>Verified:</span> 2026-11-23 &bull; <span>Sources:</span> Unconfirmed community report — awaiting in-game verification</div></div>
   </div>
   <div style="display:flex; gap:0.45rem; margin-top:0.65rem;">
     <button type="button" class="btn btn-secondary" onclick="prefillCheatSubmission('Infinite Scuba Breath', '[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes')" style="flex:1; padding:0.4rem; font-size:0.76rem; text-align:center; border-color:rgba(255,184,0,0.45); color:var(--neon-yellow);">📡 Submit Code Report</button>
@@ -2158,12 +2159,10 @@
         <div class="footer-top-brand">
             <div>
                 <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
-                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">
-                    The definitive verified tactical intelligence, interactive Leonida Map, 15-slot Save Planner, and heist database for Grand Theft Auto VI.
-                </p>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical guides, interactive Leonida Map, 15-slot Save Planner, and World Database for Grand Theft Auto VI.</p>
             </div>
             <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
-                <a href="/save-planner/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">💾 15-Slot Save Planner</a>
+                <a href="/heist-command-center/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">🛰️ Heist Command Center</a>
                 <a href="/map" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
             </div>
         </div>
@@ -2172,61 +2171,51 @@
             <div>
                 <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
                 <ul class="footer-col-links">
+                    <li><a href="/gta-6-tools/" style="color:var(--neon-cyan); font-weight:700;">🧰 All GTA 6 Tools Hub</a></li>
                     <li><a href="/save-planner/" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/heist-payout-calculator">💰 Heist Payout Calculator</a></li>
+                    <li><a href="/heist-planner">🎯 Squad Heist Planner</a></li>
                     <li><a href="/cheats">⚡ Cheats &amp; Glitches</a></li>
-                    <li><a href="/heist-payout-calculator">Heist Payout Calculator</a></li>
-                    <li><a href="/heist-planner">Squad Heist Planner</a></li>
-                    <li><a href="/gta-6-settings/">30 FPS Console Settings</a></li>
-                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">⚡ Free Tools Suite</a></li>
+                    <li><a href="/gta-6-settings/">⚙️ 30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">🚀 Free Tools Suite</a></li>
                 </ul>
             </div>
             <div>
                 <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
                 <ul class="footer-col-links">
-                    <li><a href="/map" style="color:var(--neon-cyan); font-weight:700;">🗺️ Interactive Leonida Map</a></li>
-                    <li><a href="/properties">🏠 Properties, Garages &amp; Fences</a></li>
-                    <li><a href="/animals">🐊 Animals Compendium (170+)</a></li>
-                    <li><a href="/gta-6-money-guide/">💰 Cash Guide &amp; Safe Codes</a></li>
-                    <li><a href="/live-intel">📡 Live Launch Intel</a></li>
+                    <li><a href="/gta-6-database/" style="color:var(--neon-yellow); font-weight:700;">📚 World Database Hub</a></li>
+                    <li><a href="/properties">🏠 Properties &amp; Garages</a></li>
+                    <li><a href="/animals">🐊 Animals &amp; Wildlife</a></li>
+                    <li><a href="/vehicles">🏎️ Vehicles Catalog</a></li>
+                    <li><a href="/weapons">⚔️ Weapons Arsenal</a></li>
+                    <li><a href="/weapons-bonuses">🔫 24 Gun Stores</a></li>
+                    <li><a href="/radio">📻 Radio Stations</a></li>
                 </ul>
             </div>
             <div>
-                <span class="footer-col-title" style="color:var(--neon-yellow);">🏎️ Arsenal &amp; Sound</span>
+                <span class="footer-col-title" style="color:var(--neon-green);">📖 Guides &amp; Story</span>
                 <ul class="footer-col-links">
-                    <li><a href="/weapons">⚔️ Weapons &amp; Heist Loadouts</a></li>
-                    <li><a href="/vehicles">🏎️ Vehicles &amp; Trunk Specs</a></li>
-                    <li><a href="/weapons-bonuses">🔫 24 Ammu-Nation Stores</a></li>
-                    <li><a href="/secrets">🥚 Secrets &amp; Easter Eggs</a></li>
+                    <li><a href="/missions/">🎯 Mission Walkthroughs</a></li>
+                    <li><a href="/gta-6-money-guide/">💵 GTA 6 Money Guide</a></li>
+                    <li><a href="/guides/gta-6-safe-codes">🔐 All 19 Safe Codes</a></li>
+                    <li><a href="/gta-6-100-completion-tracker/">✅ 100% Completion Tracker</a></li>
+                    <li><a href="/gta-6-tips-and-tricks/">💡 Tips &amp; Tricks</a></li>
+                    <li><a href="/secrets">🥚 Secrets &amp; Cryptids</a></li>
+                    <li><a href="/gaming-gear/">🎮 Gaming Gear Guide</a></li>
                 </ul>
             </div>
-                        <div>
-                <span class="footer-col-title" style="color:#a855f7;">📋 Site &amp; Legal</span>
+            <div>
+                <span class="footer-col-title" style="color:#94a3b8;">📡 Live &amp; Trust</span>
                 <ul class="footer-col-links">
-                    <li><a href="/about">About GTA6HeistGuide</a></li>
-                    <li><a href="/contact">Contact &amp; Corrections</a></li>
+                    <li><a href="/my-leonida/" style="color:var(--neon-green); font-weight:700;">🌴 My Leonida Dashboard</a></li>
+                    <li><a href="/live" style="color:var(--neon-pink); font-weight:700;">🔴 LIVE Companion</a></li>
+                    <li><a href="/drops">🎁 Twitch Drops &amp; Rewards</a></li>
+                    <li><a href="/gta-6-discoveries/">📡 Community Discoveries</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                     <li><a href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service &amp; DMCA</a></li>
-                    <li><a href="/drops">🎁 Launch Rewards &amp; Drops</a></li>
-                    <li><a href="/live">📺 Live Companion HUD</a></li>
+                    <li><a href="/terms">Terms &amp; DMCA</a></li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="footer-secondary-strip">
-            <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
-                <a href="/map" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🗺️ Map</a>
-                <a href="/properties" style="color:var(--neon-cyan); text-decoration:none; font-weight:700;">🏠 Properties</a>
-                <a href="/animals" style="color:var(--neon-green); text-decoration:none; font-weight:700;">🐊 Animals</a>
-                <a href="/cheats" style="color:var(--neon-yellow); text-decoration:none; font-weight:700;">⚡ Cheats &amp; Glitches</a>
-                <a href="/radio" style="color:#38bdf8; text-decoration:none; font-weight:700;">📻 Radio</a>
-                <a href="/drops" style="color:#c084fc; text-decoration:none; font-weight:700;">🎁 Drops</a>
-                <a href="/about" style="color:#94a3b8; text-decoration:none;">About</a>
-                <a href="/contact" style="color:#94a3b8; text-decoration:none;">Contact</a>
-                <a href="/privacy-policy" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
-                <a href="/terms" style="color:#94a3b8; text-decoration:none;">Terms &amp; DMCA</a>
-            </div>
-            <div>
-                <span>Network Status: <strong style="color:var(--neon-green);">ALL SYSTEMS ONLINE</strong> (Syndicate v3.2)</span>
             </div>
         </div>
 
@@ -2514,8 +2503,8 @@ let MASTER_CHEATS = [
     ],
     "buttonCombo": "↓ ↑ ← ← → ↓ ↓ ↑ ↓",
     "phoneCode": null,
-    "desc": "Causes bullets and melee hits to launch targets violently on impact. (Reconciled from prior pre-launch Vehicle Force Ram slot.)",
-    "effect": "Causes bullets and melee hits to launch targets violently on impact. (Reconciled from prior pre-launch Vehicle Force Ram slot.)",
+    "desc": "Causes bullets and melee hits to launch targets violently on impact.",
+    "effect": "Causes bullets and melee hits to launch targets violently on impact.",
     "unlock": "Finish Story Mode campaign",
     "unlockRequirements": "Finish Story Mode campaign",
     "source": "Community Gameplay Showcase (Independent Video Report), GameSpot (Fandom)",
@@ -2630,7 +2619,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -2642,7 +2631,7 @@ let MASTER_CHEATS = [
     "effect": "Spawns heavy industrial earthmover capable of breaching barricades.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Discover in Progress menu (Port Gellhorn yard)",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -2748,7 +2737,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -2760,7 +2749,7 @@ let MASTER_CHEATS = [
     "effect": "Zero damage taken from bullets, explosions, or drowning for 300 seconds.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Achieve 100% campaign completion",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -2793,7 +2782,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -2805,7 +2794,7 @@ let MASTER_CHEATS = [
     "effect": "Instantly heals all wounds and restores full tactical armor.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Eat at 25 diners across Leonida",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -2838,7 +2827,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -2850,7 +2839,7 @@ let MASTER_CHEATS = [
     "effect": "Sprint speed boosted by 30% with zero stamina drain.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win marathon race in Vice Beach",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -2883,7 +2872,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -2895,7 +2884,7 @@ let MASTER_CHEATS = [
     "effect": "Hold jump button to leap 4x normal vertical height.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Skydive from Vice City Sky Tower",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -2928,7 +2917,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -2940,7 +2929,7 @@ let MASTER_CHEATS = [
     "effect": "Punches and kicks detonate with concussive shockwaves.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 15 underground fight club bouts",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3052,7 +3041,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3064,7 +3053,7 @@ let MASTER_CHEATS = [
     "effect": "All firearm bullets ignite targets and vehicle engines on impact.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Ignite 30 fuel barrels in free-roam",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3097,7 +3086,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3109,7 +3098,7 @@ let MASTER_CHEATS = [
     "effect": "Heavy sniper rifle fires 20mm high-explosive ordnance.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Neutralize a target from 500m+",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3142,7 +3131,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3154,7 +3143,7 @@ let MASTER_CHEATS = [
     "effect": "Equips Service Carbine, Micro SMG, Heavy Pistol, Knife, and Grenades.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Visit 5 Ammu-Nation gun stores",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3187,7 +3176,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3199,7 +3188,7 @@ let MASTER_CHEATS = [
     "effect": "Equips RPG-7, Combat Shotgun, Minigun, and Sticky Bombs.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Intercept an armored military convoy",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3244,7 +3233,7 @@ let MASTER_CHEATS = [
       },
       {
         "name": "Prior Site Research",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Competing report: 10 Leonida radio towers"
       }
@@ -3256,7 +3245,7 @@ let MASTER_CHEATS = [
     "effect": "Equips a parachute to your character's loadout for skydiving and BASE jumps.",
     "unlock": "Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)",
     "unlockRequirements": "Finish Story Mode + Complete 50 skydives or BASE jumps from 300ft+ (PC Gamer, Vice)",
-    "source": "PC Gamer (Future plc), Vice (Vice Media), Prior Site Research (Internal Tracker)",
+    "source": "PC Gamer (Future plc), Vice (Vice Media), Prior Site Research",
     "sourceUrl": "https://www.pcgamer.com/",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3340,7 +3329,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3352,7 +3341,7 @@ let MASTER_CHEATS = [
     "effect": "Drops world gravity by 70% for floating vehicle stunts.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Explore Grassrivers sinkhole anomaly",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3385,7 +3374,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3397,7 +3386,7 @@ let MASTER_CHEATS = [
     "effect": "Lowers tire grip for continuous tandem drifting.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Chain a 2,000m drift on Ocean Blvd",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3430,7 +3419,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3442,7 +3431,7 @@ let MASTER_CHEATS = [
     "effect": "Melee strikes send enemies flying 20 feet backward.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Knock out 50 nightclub bouncers",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3475,7 +3464,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3487,7 +3476,7 @@ let MASTER_CHEATS = [
     "effect": "Spawns tuned turbo air-cooled German sports coupe.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 5 underground street drag races",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3520,7 +3509,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3532,7 +3521,7 @@ let MASTER_CHEATS = [
     "effect": "Spawns twin-minigun tactical attack helicopter.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Infiltrate Leonida naval air base",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3565,7 +3554,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3577,7 +3566,7 @@ let MASTER_CHEATS = [
     "effect": "Light amphibious chopper equipped with flotation pontoons.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land watercraft on Keys sandbar",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3610,7 +3599,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3622,7 +3611,7 @@ let MASTER_CHEATS = [
     "effect": "Spawns 8.4L V10 American roadster with racing stripe.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Evade VCPD in a sports car 10 times",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3655,7 +3644,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3667,7 +3656,7 @@ let MASTER_CHEATS = [
     "effect": "Agile 250cc motocross bike tuned for off-road trails.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Clear 25 dirt ramps in Mount Kalaga",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3700,7 +3689,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3712,7 +3701,7 @@ let MASTER_CHEATS = [
     "effect": "Supercharged modern muscle car delivering 700+ HP.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Deliver 10 untracked cars to Moses",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3745,7 +3734,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3757,7 +3746,7 @@ let MASTER_CHEATS = [
     "effect": "Flat-bottomed prop-driven swamp airboat for shallow marshes.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cross Grassrivers entirely off-road",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3790,7 +3779,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3802,7 +3791,7 @@ let MASTER_CHEATS = [
     "effect": "Two-seat submersible with floodlights and shipwreck sonar.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Dive deep-sea trench off Leonida Keys",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3835,7 +3824,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3847,7 +3836,7 @@ let MASTER_CHEATS = [
     "effect": "VCPD tactical highway patrol sedan with siren & lightbar.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Steal 5 VCPD patrol cruisers",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3880,7 +3869,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3892,7 +3881,7 @@ let MASTER_CHEATS = [
     "effect": "High-speed offshore patrol boat with twin outboards.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete Coast Guard offshore mission",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3925,7 +3914,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3937,7 +3926,7 @@ let MASTER_CHEATS = [
     "effect": "Heavily armored garbage compactor truck.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 3 sanitation haul jobs",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -3970,7 +3959,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -3982,7 +3971,7 @@ let MASTER_CHEATS = [
     "effect": "Compact electric golf cart for tight boardwalk alleys.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Score birdie at Vice Links Golf Club",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4015,7 +4004,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4027,7 +4016,7 @@ let MASTER_CHEATS = [
     "effect": "Aerobatic prop stunt plane capable of knife-edge flight.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Fly under 15 Vice City bridges",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4060,7 +4049,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4072,7 +4061,7 @@ let MASTER_CHEATS = [
     "effect": "Personal VTOL rocket pack for vertical rooftop infiltration.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Solve Mount Kalaga mural puzzle",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4105,7 +4094,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4117,7 +4106,7 @@ let MASTER_CHEATS = [
     "effect": "Iconic 1980s mid-engine Italian supercar.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Unlock Vice City Chapter 4 safehouse",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4150,7 +4139,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4162,7 +4151,7 @@ let MASTER_CHEATS = [
     "effect": "Modern AWD hypercar with scissor doors.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win high-roller Vice Beach street circuit",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4195,7 +4184,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4207,7 +4196,7 @@ let MASTER_CHEATS = [
     "effect": "Bulletproof tactical carrier with roof turret mount.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 5 armored cash truck ambushes",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4240,7 +4229,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4252,7 +4241,7 @@ let MASTER_CHEATS = [
     "effect": "Amphibious hovercraft gliding over swamp and highway.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Catch 10 trophy fish in Grassrivers",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4285,7 +4274,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4297,7 +4286,7 @@ let MASTER_CHEATS = [
     "effect": "Lightweight 20-inch trick BMX for urban rooftops.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Land 50 bunny hops at Vice skate park",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4579,7 +4568,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4591,7 +4580,7 @@ let MASTER_CHEATS = [
     "effect": "Advances the Leonida world clock forward by 6 in-game hours.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Rest at story safehouses 20 times",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4624,7 +4613,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4636,7 +4625,7 @@ let MASTER_CHEATS = [
     "effect": "Cycles global simulation speed through 75%, 50%, and 25%.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Finish any shootout with 90%+ accuracy",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4742,7 +4731,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4754,7 +4743,7 @@ let MASTER_CHEATS = [
     "effect": "Increases surface and underwater swim speed by 2.5x.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Swim across Biscayne Bay channel",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4787,7 +4776,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4799,7 +4788,7 @@ let MASTER_CHEATS = [
     "effect": "NPCs loot storefronts and clash with VCPD across Vice City.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Trigger 5-star standoff in Little Haiti",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4832,7 +4821,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4844,7 +4833,7 @@ let MASTER_CHEATS = [
     "effect": "Equips random sidearms and melee weapons to Leonida NPCs.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Confiscate 10 gang weapons in hideouts",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4877,7 +4866,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4889,7 +4878,7 @@ let MASTER_CHEATS = [
     "effect": "Nearby pedestrians aggressively rush Jason and Lucia.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Survive 10 minutes surrounded by hostiles",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4922,7 +4911,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4934,7 +4923,7 @@ let MASTER_CHEATS = [
     "effect": "Traffic drivers speed wildly and ram police cruisers.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Cause 50 highway multi-car pileups",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -4967,7 +4956,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -4979,7 +4968,7 @@ let MASTER_CHEATS = [
     "effect": "Forces green signals on every approaching city intersection.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Complete 10 Leonida cab dispatch fares",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -5012,7 +5001,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -5024,7 +5013,7 @@ let MASTER_CHEATS = [
     "effect": "Shuts down Vice City streetlights and neon signage.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Hack 5 regional power substations",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -5057,7 +5046,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -5069,7 +5058,7 @@ let MASTER_CHEATS = [
     "effect": "Press horn (L3/LS) for unlimited KERS nitrous boost.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Win 10 Leonida street circuit races",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -5102,7 +5091,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -5114,7 +5103,7 @@ let MASTER_CHEATS = [
     "effect": "Brightens reefs, shipwrecks, and deep ocean trenches.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Salvage 20 Kenton shipwreck dives",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -5147,7 +5136,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -5159,7 +5148,7 @@ let MASTER_CHEATS = [
     "effect": "Applies near-zero friction ice physics to Leonida asphalt.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Spin out 25 times during heavy rain",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -5263,7 +5252,7 @@ let MASTER_CHEATS = [
     "supportingSources": [
       {
         "name": "GTA 6 Heist Guide Pre-Launch Research Slot",
-        "publisher": "Internal Tracker",
+        "publisher": "Community Report",
         "url": null,
         "role": "Speculative placeholder preserved pending post-launch verification"
       }
@@ -5275,7 +5264,7 @@ let MASTER_CHEATS = [
     "effect": "Unlimited lung capacity for free-diving shipwrecks without scuba gear.",
     "unlock": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes",
     "unlockRequirements": "[UNCONFIRMED / SPECULATIVE] Finish Story Mode + Stay submerged underwater for 3 minutes",
-    "source": "GTA 6 Heist Guide Pre-Launch Research Slot (Internal Tracker)",
+    "source": "Unconfirmed community report — awaiting in-game verification",
     "sourceUrl": "https://www.rockstargames.com/VI",
     "discoveryDate": "2026-11-19",
     "verified": false,
@@ -5490,7 +5479,7 @@ function renderCheats() {
     const lastDate = item.lastVerifiedDate || '2026-11-23';
     const sourcesStr = Array.isArray(item.supportingSources)
       ? item.supportingSources.map(s => s.name + ' (' + s.publisher + ')').join(', ')
-      : (item.source || 'Internal Tracker');
+      : (item.source || 'Community Report');
 
     const catLabel = item.cat === 'player' ? 'Player &amp; Stats' :
                      item.cat === 'combat' ? 'Combat &amp; Weapons' :

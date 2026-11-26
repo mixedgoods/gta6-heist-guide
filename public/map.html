@@ -6,12 +6,12 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA 6 Interactive Leonida Map: Safe Codes, Fences &amp; Pins</title>
-    <meta name="description" content="Free GTA 6 Interactive Leonida Map with 188 verified pins across Story Heists, safe codes, gun stores, properties, fences, animals, and Vice City secrets.">
+    <meta name="description" content="Free GTA 6 Interactive Leonida Map with 185 verified pins across Story Heists, safe codes, gun stores, properties, fences, animals, and Vice City secrets.">
     <meta name="keywords" content="GTA 6 interactive map, Leonida map, Vice City vaults, GTA 6 properties map, GTA 6 animals map, Brian's lockup 7700 location, Apollo Aggregates Red Barn location, Ammu-Nation locations">
     <link rel="canonical" href="https://www.gta6heistguide.com/map">
     <link rel="manifest" href="/manifest.json">
     <meta property="og:title" content="GTA 6 Interactive Leonida Map: Safe Codes, Fences &amp; Pins">
-    <meta property="og:description" content="Free GTA 6 Interactive Leonida Map with 188 verified pins across Story Heists, safe codes, gun stores, properties, fences, animals, and Vice City secrets.">
+    <meta property="og:description" content="Free GTA 6 Interactive Leonida Map with 185 verified pins across Story Heists, safe codes, gun stores, properties, fences, animals, and Vice City secrets.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gta6heistguide.com/map">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/regions/vice-city.jpg">
@@ -1144,7 +1144,35 @@
             }
             .leaflet-popup-content { width: 270px !important; }
         }
-    </style>
+    
+/* Phase 43: Mobile touch-target accessibility (>=44px tap height) */
+@media (max-width: 768px) {
+    .btn-mini-action,
+    .region-jump-pill,
+    .sidebar-close-btn,
+    #searchClearBtn {
+        min-height: 44px !important;
+        min-width: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.45rem 0.75rem !important;
+    }
+    .cat-filter-row,
+    .filter-cat-item {
+        min-height: 44px !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    .cat-filter-row input[type="checkbox"],
+    .filter-cat-item input[type="checkbox"] {
+        width: 20px !important;
+        height: 20px !important;
+        flex-shrink: 0;
+    }
+}
+
+</style>
 <script type="application/ld+json" id="p22-ld-map">
 {
   "@context": "https://schema.org",
@@ -1216,13 +1244,14 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                        <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
-                        <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
-                        <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
-                        <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
-                        <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
-                        <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
-                        <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
+                    <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/guides/gta-6-safe-codes" class="nav-dropdown-item">🔐 All 19 Safe Codes</a>
+                    <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
+                    <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
+                    <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
+                    <a href="/gta-6-100-completion-tracker/" class="nav-dropdown-item">✅ 100% Completion Tracker</a>
+                    <a href="/gta-6-vehicles-guide/" class="nav-dropdown-item">🏎️ Vehicle Guides</a>
+                    <a href="/gta-6-property-ownership/" class="nav-dropdown-item">🏠 Property Ownership Guide</a>
                 </div>
             </li>
             <li class="nav-dropdown">
@@ -1241,14 +1270,11 @@
                 <div class="nav-dropdown-menu">
                     <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
-                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
                     <a href="/my-leonida/" class="nav-dropdown-item" style="color:var(--neon-green); font-weight:800;">🌴 My Leonida Dashboard</a>
                     <a href="/heist-command-center/" class="nav-dropdown-item" style="color:var(--neon-cyan); font-weight:800;">🛰️ Heist Command Center</a>
                     <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
-                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
-                    <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
-                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 15-Slot Save Planner</a>
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
@@ -1295,7 +1321,7 @@
                 <div class="progress-bar-fill" id="checklistProgressBar"></div>
             </div>
             <div class="stats-control-row">
-                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 188 (0%)</span>
+                <span class="stats-count-label" id="foundCountLabel">Found: 0 / 185 (0%)</span>
                 <div class="stats-btn-group">
                     <button type="button" class="btn-mini-action btn-next-unfound" onclick="flyToNextUnfound()">Next Unfound &rarr;</button>
                     <button type="button" class="btn-mini-action" onclick="toggleAllCategories(true)">All</button>
@@ -1330,7 +1356,7 @@
                 <span class="map-community-title">📡 Community Discoveries</span>
                 <span class="map-community-badge" id="mapCommunityBadge">0 APPROVED PINS</span>
             </div>
-            <p class="map-community-desc" id="mapCommunityDesc">No approved community map pins yet. Share a location with coordinates or directions — reviewed discoveries appear here separately from the 188 verified pins.</p>
+            <p class="map-community-desc" id="mapCommunityDesc">No approved community map pins yet. Share a location with coordinates or directions — reviewed discoveries appear here separately from the 185 verified pins.</p>
             <div class="map-community-actions" id="mapCommunityActions">
                 <a href="/community-discoveries/submit/" class="map-community-cta">Submit a Discovery &rarr;</a>
                 <a href="/community-discoveries/" class="map-community-hub-link">Browse Hub</a>
@@ -1351,7 +1377,7 @@
                 <button type="button" class="region-jump-pill" data-region="Vice City" onclick="jumpToRegion('Vice City')">🏙️ Vice City</button>
                 <button type="button" class="region-jump-pill" data-region="Grassrivers" onclick="jumpToRegion('Grassrivers')">🌾 Grassrivers</button>
                 <button type="button" class="region-jump-pill" data-region="Leonida Keys" onclick="jumpToRegion('Leonida Keys')">🏝️ Keys</button>
-                <button type="button" class="region-jump-pill" data-region="Mt. Kalaga" onclick="jumpToRegion('Mt. Kalaga')">⛰️ Mt. Kalaga</button>
+                <button type="button" class="region-jump-pill" data-region="Mount Kalaga National Park" onclick="jumpToRegion('Mount Kalaga National Park')">⛰️ Mt. Kalaga</button>
                 <button type="button" class="region-jump-pill" data-region="Port Gellhorn" onclick="jumpToRegion('Port Gellhorn')">⚓ Port Gellhorn</button>
                 <button type="button" class="region-jump-pill" data-region="Ambrosia" onclick="jumpToRegion('Ambrosia')">🏭 Ambrosia</button>
             </div>
@@ -1370,7 +1396,7 @@
 
         <main id="leafletMap">
             <button type="button" class="mobile-toggle-btn" onclick="toggleMobileDrawer()">
-                ☰ Pins &amp; Filters (<span id="mobileCountBadge">188</span>)
+                ☰ Pins &amp; Filters (<span id="mobileCountBadge">185</span>)
             </button>
         </main>
         <div id="mobilePinSheet" role="dialog" aria-label="Selected map pin details">
@@ -1383,7 +1409,7 @@
 <!--p22:map-guide-->
 <section class="tool-box" id="map-guide" style="max-width:1100px; margin:2rem auto; padding:1.5rem;">
 <h2 style="color:#fff; font-size:1.35rem; margin:0 0 0.7rem;">About the GTA 6 Interactive Leonida Map</h2>
-<p style="color:#cbd5e1; line-height:1.65; margin:0 0 0.85rem;">This is a free interactive map of Leonida, the state in Grand Theft Auto VI, with 188 verified pins across heist targets, banks and vaults, jewelry and pawn shops, Ammu-Nation stores, properties and fences, wildlife habitats and Easter eggs. Pins link to the full guide for each location, and your progress is saved in your own browser.</p>
+<p style="color:#cbd5e1; line-height:1.65; margin:0 0 0.85rem;">This is a free interactive map of Leonida, the state in Grand Theft Auto VI, with 185 verified pins across heist targets, banks and vaults, jewelry and pawn shops, Ammu-Nation stores, properties and fences, wildlife habitats and Easter eggs. Pins link to the full guide for each location, and your progress is saved in your own browser.</p>
 <h3 style="color:var(--neon-cyan); font-size:1.05rem; margin:1.1rem 0 0.45rem;">How to use the map</h3>
 <ul style="color:#cbd5e1; line-height:1.7; padding-left:1.2rem; margin:0 0 0.85rem;"><li>Search by name or code (for example a safe code, a fence or an animal) in the sidebar search box.</li><li>Use the category rows to show or hide pin types; &ldquo;All&rdquo; and &ldquo;None&rdquo; toggle every category at once.</li><li>Jump to a region with the region buttons above the map, or press &ldquo;Full Map&rdquo; to reset the view.</li><li>Click a pin for its payout, difficulty, security notes, tips and escape route where known, then mark it as found. &ldquo;Next Unfound&rdquo; flies to the nearest pin you have not ticked and &ldquo;Hide Found&rdquo; clears completed pins.</li><li>Drop your own custom pins and export or import a JSON backup from the Backup button. Personal pins and progress never leave your browser.</li></ul>
 <h3 style="color:var(--neon-cyan); font-size:1.05rem; margin:1.1rem 0 0.45rem;">Map regions and their guides</h3>
@@ -1392,6 +1418,78 @@
 <ul style="color:#cbd5e1; line-height:1.7; padding-left:1.2rem; margin:0 0 0.85rem;"><li><a href="/gta-6-100-completion-tracker/" style="color:var(--neon-cyan); font-weight:700;">100% completion tracker</a> &mdash; track collectibles and milestones alongside map pins.</li><li><a href="/articles/every-leonida-region-in-gta-6-mapped-escape-coordinates" style="color:var(--neon-cyan); font-weight:700;">Every Leonida region mapped</a> &mdash; coordinates and escape routes by region.</li><li><a href="/guides/gta-6-safe-codes" style="color:var(--neon-cyan); font-weight:700;">Safe codes guide</a> &mdash; codes referenced by safe pins.</li><li><a href="/guides/random-world-events" style="color:var(--neon-cyan); font-weight:700;">Random world events</a> &mdash; dynamic encounters across the map.</li><li><a href="/locations/apollo-aggregates-red-barn" style="color:var(--neon-cyan); font-weight:700;">Apollo Aggregates Red Barn</a> &mdash; a popular pin with a repeatable cash loop.</li></ul>
 </section>
 <!--/p22:map-guide-->
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical guides, interactive Leonida Map, 15-slot Save Planner, and World Database for Grand Theft Auto VI.</p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/heist-command-center/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">🛰️ Heist Command Center</a>
+                <a href="/map" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
+
+        <div class="footer-links-grid">
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
+                <ul class="footer-col-links">
+                    <li><a href="/gta-6-tools/" style="color:var(--neon-cyan); font-weight:700;">🧰 All GTA 6 Tools Hub</a></li>
+                    <li><a href="/save-planner/" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/heist-payout-calculator">💰 Heist Payout Calculator</a></li>
+                    <li><a href="/heist-planner">🎯 Squad Heist Planner</a></li>
+                    <li><a href="/cheats">⚡ Cheats &amp; Glitches</a></li>
+                    <li><a href="/gta-6-settings/">⚙️ 30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">🚀 Free Tools Suite</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
+                <ul class="footer-col-links">
+                    <li><a href="/gta-6-database/" style="color:var(--neon-yellow); font-weight:700;">📚 World Database Hub</a></li>
+                    <li><a href="/properties">🏠 Properties &amp; Garages</a></li>
+                    <li><a href="/animals">🐊 Animals &amp; Wildlife</a></li>
+                    <li><a href="/vehicles">🏎️ Vehicles Catalog</a></li>
+                    <li><a href="/weapons">⚔️ Weapons Arsenal</a></li>
+                    <li><a href="/weapons-bonuses">🔫 24 Gun Stores</a></li>
+                    <li><a href="/radio">📻 Radio Stations</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-green);">📖 Guides &amp; Story</span>
+                <ul class="footer-col-links">
+                    <li><a href="/missions/">🎯 Mission Walkthroughs</a></li>
+                    <li><a href="/gta-6-money-guide/">💵 GTA 6 Money Guide</a></li>
+                    <li><a href="/guides/gta-6-safe-codes">🔐 All 19 Safe Codes</a></li>
+                    <li><a href="/gta-6-100-completion-tracker/">✅ 100% Completion Tracker</a></li>
+                    <li><a href="/gta-6-tips-and-tricks/">💡 Tips &amp; Tricks</a></li>
+                    <li><a href="/secrets">🥚 Secrets &amp; Cryptids</a></li>
+                    <li><a href="/gaming-gear/">🎮 Gaming Gear Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:#94a3b8;">📡 Live &amp; Trust</span>
+                <ul class="footer-col-links">
+                    <li><a href="/my-leonida/" style="color:var(--neon-green); font-weight:700;">🌴 My Leonida Dashboard</a></li>
+                    <li><a href="/live" style="color:var(--neon-pink); font-weight:700;">🔴 LIVE Companion</a></li>
+                    <li><a href="/drops">🎁 Twitch Drops &amp; Rewards</a></li>
+                    <li><a href="/gta-6-discoveries/">📡 Community Discoveries</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms &amp; DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-disclaimer">
+            <p style="margin:0;">
+                <strong>EDITORIAL &amp; LEGAL NOTICE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Some guide and tool pages across this site may include disclosed partner links at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
 <div id="hudToast">Notification</div>
 
 <!-- Custom User Pin Drop Modal -->
@@ -1402,11 +1500,11 @@
             <button type="button" onclick="closeUserPinModal()" style="background:none; border:none; color:#cbd5e1; font-size:1.2rem; cursor:pointer;">&times;</button>
         </div>
         <div>
-            <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Pin Title</label>
+            <label for="userPinTitle" style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Pin Title</label>
             <input type="text" id="userPinTitle" class="sidebar-search-input" placeholder="e.g. Secret Alley Stash / Sniper Perch" style="margin-top:0.25rem; padding-left:0.75rem;">
         </div>
         <div>
-            <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Category</label>
+            <label for="userPinCategory" style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Category</label>
             <select id="userPinCategory" class="sidebar-search-input" style="margin-top:0.25rem; padding-left:0.65rem;">
                 <option value="vault">💰 Heist Vault / Cash Safe</option>
                 <option value="property">🏠 Property / Garage / Fence</option>
@@ -1417,7 +1515,7 @@
             </select>
         </div>
         <div>
-            <label style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Tactical Notes</label>
+            <label for="userPinNotes" style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Tactical Notes</label>
             <textarea id="userPinNotes" class="sidebar-search-input" rows="3" placeholder="Entry route, roof access, escape vehicle..." style="margin-top:0.25rem; padding-left:0.75rem;"></textarea>
         </div>
         <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
@@ -1438,7 +1536,7 @@
             <strong>EXPORT (.json):</strong> Downloads a JSON backup of your saved map progress and custom pins.<br>
             <strong>IMPORT (.json):</strong> Restores a previously exported JSON backup and <strong>replaces existing progress</strong> after confirmation (an automatic <strong>pre-import backup</strong> is saved and you can download your current backup before replacing). Personal backup only &mdash; not for importing new GTA VI discoveries.
         </p>
-        <textarea id="saveCodeTextarea" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem; padding-left:0.65rem;"></textarea>
+        <textarea id="saveCodeTextarea" aria-label="Map checklist save code JSON" class="sidebar-search-input" rows="5" style="font-family:var(--font-mono, monospace); font-size:0.7rem; padding-left:0.65rem;"></textarea>
         <div style="display:flex; gap:0.45rem; flex-wrap:wrap; justify-content:flex-end;">
             <button type="button" id="mapExportJsonBtn" class="btn-mini-action" style="border-color:var(--neon-cyan,#00f0ff); color:var(--neon-cyan,#00f0ff);" onclick="window.GTA6Progress && window.GTA6Progress.exportJSON()">⬇ Export Backup (.json)</button>
             <button type="button" id="mapImportJsonBtn" class="btn-mini-action" style="border-color:var(--neon-green,#00ff88); color:var(--neon-green,#00ff88);" onclick="document.getElementById('mapUnifiedImportInput').click()">⬆ Import Backup (.json)</button>
@@ -1543,7 +1641,7 @@ const REGION_CENTERS = {
     'Vice City':     { yPct: 0.5000, xPct: 0.7450, zoom: 0.5 },
     'Grassrivers':   { yPct: 0.2650, xPct: 0.4750, zoom: 0.25 },
     'Leonida Keys':  { yPct: 0.1350, xPct: 0.4200, zoom: 0.25 },
-    'Mt. Kalaga':    { yPct: 0.7650, xPct: 0.5000, zoom: 0.25 },
+    'Mount Kalaga National Park':    { yPct: 0.7650, xPct: 0.5000, zoom: 0.25 },
     'Port Gellhorn': { yPct: 0.5700, xPct: 0.2950, zoom: 0.5 },
     'Ambrosia':      { yPct: 0.6650, xPct: 0.6050, zoom: 0.5 },
     'Lake Leonida':  { yPct: 0.6750, xPct: 0.5900, zoom: 0.5 }
@@ -1732,7 +1830,7 @@ function resetFullMap() {
     showToast('🌎 Full Leonida Map View Restored');
 }
 
-let authoritativeTotalPins = 188;
+let authoritativeTotalPins = 185;
 
 async function loadAllPinsData() {
     allPins = [];
@@ -1746,12 +1844,12 @@ async function loadAllPinsData() {
                 data.pins.forEach(p => {
                     if (!seen.has(p.id)) { seen.add(p.id); allPins.push(p); }
                 });
-                authoritativeTotalPins = data.pins.length || Number(data.total_pins) || 188;
+                authoritativeTotalPins = data.pins.length || Number(data.total_pins) || 185;
             }
         }
     } catch(err) { console.warn('Could not load /data/map-pins.json:', err); }
 
-    // Approved community map pins (separate feed; never modify map-pins.json or 188-pin verified totals)
+    // Approved community map pins (separate feed; never modify map-pins.json or 185-pin verified totals)
     try {
         const cdRes = await fetch('/api/community-discoveries/map-pins');
         if (cdRes.ok) {
@@ -2332,7 +2430,7 @@ function renderCommunityDiscoveriesPanel() {
                 <span class="map-community-title">📡 Community Discoveries</span>
                 <span class="map-community-badge" id="mapCommunityBadge">0 APPROVED PINS</span>
             </div>
-            <p class="map-community-desc" id="mapCommunityDesc">No approved community map pins yet. Share a location with coordinates or directions — reviewed discoveries appear here separately from the 188 verified pins.</p>
+            <p class="map-community-desc" id="mapCommunityDesc">No approved community map pins yet. Share a location with coordinates or directions — reviewed discoveries appear here separately from the 185 verified pins.</p>
             <div class="map-community-actions" id="mapCommunityActions">
                 <a href="/community-discoveries/submit/" class="map-community-cta">Submit a Discovery &rarr;</a>
                 <a href="/community-discoveries/" class="map-community-hub-link">Browse Hub</a>
@@ -2406,7 +2504,7 @@ function renderCategoryRows() {
         html += `
             <div class="cat-filter-row" onclick="handleCategoryRowClick('${catKey}')">
                 <div class="cat-left-side">
-                    <input type="checkbox" id="cat-chk-${catKey}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); setCategoryVisible('${catKey}', this.checked)">
+                    <input type="checkbox" id="cat-chk-${catKey}" aria-label="Toggle ${cat.label} map pins" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); setCategoryVisible('${catKey}', this.checked)">
                     <span style="font-size:1rem;">${cat.icon}</span>
                     <span style="color:${isChecked ? '#fff' : '#94a3b8'};">${cat.name}</span>
                 </div>

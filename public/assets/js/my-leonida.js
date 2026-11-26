@@ -1,6 +1,6 @@
 /* ==========================================================================
    GTA6HEISTGUIDE — MY LEONIDA DASHBOARD CONTROLLER (Phase 28)
-   Connects Map (188 pins), Heist Command Center (16 jobs), Garage (33 vehicles),
+   Connects Map (185 pins), Heist Command Center (16 jobs), Garage (33 vehicles),
    Armory (25 weapons), Properties (27), Wildlife (49 = 7 verified + 42 ref),
    Gun Outlets (24), Save Planner (15 slots), and Recently Viewed Pages.
    ========================================================================== */

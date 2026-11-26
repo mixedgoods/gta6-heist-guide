@@ -86,6 +86,7 @@
                 <button type="button" class="nav-pill nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">GUIDES <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
                     <a href="/missions/" class="nav-dropdown-item">🎯 Mission Walkthrough Hub</a>
+                    <a href="/guides/gta-6-safe-codes" class="nav-dropdown-item">🔐 All 19 Safe Codes</a>
                     <a href="/gta-6-controls/" class="nav-dropdown-item">🎮 Controls Guide (PS5 &amp; Xbox)</a>
                     <a href="/gta-6-troubleshooting/" class="nav-dropdown-item">🛠️ Troubleshooting Center</a>
                     <a href="/gta-6-collectibles/" class="nav-dropdown-item">💎 Collectibles &amp; 100%</a>
@@ -108,16 +109,13 @@
             <li class="nav-dropdown">
                 <button type="button" class="nav-pill nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false">TOOLS <span class="nav-arrow">▾</span></button>
                 <div class="nav-dropdown-menu">
-                    <a href="/my-leonida/" class="nav-dropdown-item" style="color:var(--neon-green); font-weight:800;">🌴 My Leonida Dashboard</a>
-                    <a href="/heist-command-center/" class="nav-dropdown-item" style="color:var(--neon-cyan); font-weight:800;">🛰️ Heist Command Center</a>
                     <a href="/live" class="nav-dropdown-item" style="color:var(--neon-pink); font-weight:800;">🔴 LIVE Companion</a>
                     <a href="/gta-6-tools/" class="nav-dropdown-item nav-dropdown-hub">🧰 All GTA 6 Tools Hub</a>
-                    <a href="/gta-6-settings/" class="nav-dropdown-item">⚙️ Settings, SSD &amp; Capture Hub</a>
+                    <a href="/my-leonida/" class="nav-dropdown-item" style="color:var(--neon-green); font-weight:800;">🌴 My Leonida Dashboard</a>
+                    <a href="/heist-command-center/" class="nav-dropdown-item" style="color:var(--neon-cyan); font-weight:800;">🛰️ Heist Command Center</a>
                     <a href="/heist-planner" class="nav-dropdown-item">🎯 Heist Planner</a>
                     <a href="/heist-payout-calculator" class="nav-dropdown-item">💰 Heist Payout Calculator</a>
-                    <a href="/save-planner/" class="nav-dropdown-item">💾 Save Progress Planner</a>
-                    <a href="/map" class="nav-dropdown-item">🗺️ Interactive Map Checklist</a>
-                    <a href="/cheats" class="nav-dropdown-item">⚡ Cheat Tracker</a>
+                    <a href="/save-planner/" class="nav-dropdown-item">💾 15-Slot Save Planner</a>
                     <a href="/free/" class="nav-dropdown-item">🚀 Free Tools Suite</a>
                 </div>
             </li>
@@ -176,7 +174,7 @@
                 </div>
                 <div class="ml-kpi-card">
                     <span class="ml-kpi-label">Map Exploration</span>
-                    <span class="ml-kpi-val" id="mlKpiMapVal">0 / 188</span>
+                    <span class="ml-kpi-val" id="mlKpiMapVal">0 / 185</span>
                     <span class="ml-kpi-sub" id="mlKpiMapSub">0% · 188 unvisited</span>
                     <div class="ml-bar-track"><div class="ml-bar-fill" id="mlKpiMapBar" style="width:0%"></div></div>
                 </div>
@@ -278,7 +276,7 @@
                 <div class="ml-card-head">
                     <div>
                         <h2 class="ml-card-title">📖 Recently Viewed Guides &amp; Pages</h2>
-                        <p class="ml-card-sub">Synced from your browser history (Phase 26 Continue Reading).</p>
+                        <p class="ml-card-sub">Saved automatically in this browser as you read guides.</p>
                     </div>
                 </div>
                 <div id="mlRecentPagesList" class="ml-row-list">
@@ -338,14 +336,14 @@
             <div class="ml-card-head">
                 <div>
                     <h2 class="ml-card-title">🗺️ My Exploration — Leonida Interactive Map</h2>
-                    <p class="ml-card-sub" id="mlMapSummaryLine">Connecting 188 verified map pins...</p>
+                    <p class="ml-card-sub" id="mlMapSummaryLine">Connecting 185 verified map pins...</p>
                 </div>
                 <a href="/map" class="ml-btn ml-btn-primary">🗺️ Resume Map Exploration</a>
             </div>
             <div id="mlMapCategoriesGrid" class="ml-grid-3" style="margin-bottom:1rem;"></div>
 
             <div class="ml-controls">
-                <input type="search" id="mlPinSearch" class="ml-input" placeholder="Search 188 verified pins by title, region, or category..." aria-label="Search verified map pins">
+                <input type="search" id="mlPinSearch" class="ml-input" placeholder="Search 185 verified pins by title, region, or category..." aria-label="Search verified map pins">
                 <select id="mlPinFilterStatus" class="ml-select" aria-label="Filter map pins by status">
                     <option value="all">All Verified Pins</option>
                     <option value="unvisited">Unvisited Only</option>
@@ -366,7 +364,7 @@
             <div class="ml-card-head">
                 <div>
                     <h2 class="ml-card-title">🎯 My Heists — Connected to Heist Command Center</h2>
-                    <p class="ml-card-sub" id="mlHeistSummaryLine">Website-side preparation checklists synced with Phase 27.</p>
+                    <p class="ml-card-sub" id="mlHeistSummaryLine">Website-side preparation checklists synced with Heist Command Center.</p>
                 </div>
                 <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                     <a href="/heist-command-center/" class="ml-btn ml-btn-pink ml-btn-sm">🛰️ Open Command Center</a>
@@ -558,7 +556,7 @@
                     <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="pins">Reset Map Progress</button>
                 </div>
                 <div class="ml-reset-tile">
-                    <div><strong>🎯 Heist Checklists</strong><div class="ml-row-sub">Phase 27 checklists &amp; heist completion flags</div></div>
+                    <div><strong>🎯 Heist Checklists</strong><div class="ml-row-sub">Heist Command Center checklists &amp; heist completion flags</div></div>
                     <button type="button" class="ml-btn ml-btn-secondary ml-btn-sm" data-ml-reset-cat="heists">Reset Heists</button>
                 </div>
                 <div class="ml-reset-tile">
@@ -597,7 +595,7 @@
         <h2 id="mlDirectoryTitle">Connected GTA 6 Tools, Walkthroughs &amp; World Databases</h2>
         <p>My Leonida links every major GTA6HeistGuide.com tool into a single personal companion. Explore the full interactive map, plan Story Mode heists, compare vehicles and weapons, or track properties and wildlife across Vice City, Port Gellhorn, Ambrosia, Grassrivers, Leonida Keys, and Mount Kalaga.</p>
         <div class="ml-seo-links">
-            <a href="/map">🗺️ Interactive Leonida Map (188 Pins)</a>
+            <a href="/map">🗺️ Interactive Leonida Map (185 Pins)</a>
             <a href="/heist-command-center/">🛰️ Heist Command Center (16 Jobs)</a>
             <a href="/heist-planner">🎯 Heist Planner</a>
             <a href="/heist-payout-calculator">💰 Payout Calculator</a>
@@ -628,17 +626,76 @@
     </div>
 </div>
 
-<footer class="footer">
-    <div class="footer-inner" style="max-width:1280px; margin:0 auto; padding:2rem 1.25rem; text-align:center; color:#94a3b8; font-size:0.84rem;">
-        <p style="margin:0 0 0.5rem;">&copy; 2026 GTA6HeistGuide.com &middot; Independent GTA VI companion. Not affiliated with Rockstar Games or Take-Two Interactive.</p>
-        <p style="margin:0;">
-            <a href="/" style="color:var(--neon-cyan,#00f0ff); margin:0 0.5rem;">Home</a>
-            <a href="/my-leonida/" style="color:var(--neon-green,#00ff88); margin:0 0.5rem;">My Leonida</a>
-            <a href="/heist-command-center/" style="color:var(--neon-cyan,#00f0ff); margin:0 0.5rem;">Heist Command Center</a>
-            <a href="/map" style="color:var(--neon-cyan,#00f0ff); margin:0 0.5rem;">Interactive Map</a>
-            <a href="/privacy-policy" style="color:#94a3b8; margin:0 0.5rem;">Privacy Policy</a>
-            <a href="/terms" style="color:#94a3b8; margin:0 0.5rem;">Terms</a>
-        </p>
+<footer>
+    <div class="footer-spread-wrap">
+        <div class="footer-top-brand">
+            <div>
+                <a href="/" class="footer-brand-logo" aria-label="GTA 6 Heist Guide Home"><img src="/assets/images/logo.webp" alt="GTA 6 Heist Guide" class="footer-brand-logo-img" width="688" height="110" loading="lazy" decoding="async"></a>
+                <p style="color:#64748b; font-size:0.85rem; margin:0.45rem 0 0; max-width:480px; line-height:1.5;">Verified tactical guides, interactive Leonida Map, 15-slot Save Planner, and World Database for Grand Theft Auto VI.</p>
+            </div>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                <a href="/heist-command-center/" class="btn btn-secondary" style="padding:0.45rem 1rem; font-size:0.8rem;">🛰️ Heist Command Center</a>
+                <a href="/map" class="btn btn-primary" style="padding:0.45rem 1rem; font-size:0.8rem;">🗺️ Leonida Map &rarr;</a>
+            </div>
+        </div>
+
+        <div class="footer-links-grid">
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-cyan);">🛠️ Launch Tools</span>
+                <ul class="footer-col-links">
+                    <li><a href="/gta-6-tools/" style="color:var(--neon-cyan); font-weight:700;">🧰 All GTA 6 Tools Hub</a></li>
+                    <li><a href="/save-planner/" style="color:var(--neon-green); font-weight:700;">💾 15-Slot Save Planner</a></li>
+                    <li><a href="/heist-payout-calculator">💰 Heist Payout Calculator</a></li>
+                    <li><a href="/heist-planner">🎯 Squad Heist Planner</a></li>
+                    <li><a href="/cheats">⚡ Cheats &amp; Glitches</a></li>
+                    <li><a href="/gta-6-settings/">⚙️ 30 FPS Console Settings</a></li>
+                    <li><a href="/free/" style="color:var(--neon-amber); font-weight:700;">🚀 Free Tools Suite</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-pink);">🗺️ Databases &amp; Map</span>
+                <ul class="footer-col-links">
+                    <li><a href="/gta-6-database/" style="color:var(--neon-yellow); font-weight:700;">📚 World Database Hub</a></li>
+                    <li><a href="/properties">🏠 Properties &amp; Garages</a></li>
+                    <li><a href="/animals">🐊 Animals &amp; Wildlife</a></li>
+                    <li><a href="/vehicles">🏎️ Vehicles Catalog</a></li>
+                    <li><a href="/weapons">⚔️ Weapons Arsenal</a></li>
+                    <li><a href="/weapons-bonuses">🔫 24 Gun Stores</a></li>
+                    <li><a href="/radio">📻 Radio Stations</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:var(--neon-green);">📖 Guides &amp; Story</span>
+                <ul class="footer-col-links">
+                    <li><a href="/missions/">🎯 Mission Walkthroughs</a></li>
+                    <li><a href="/gta-6-money-guide/">💵 GTA 6 Money Guide</a></li>
+                    <li><a href="/guides/gta-6-safe-codes">🔐 All 19 Safe Codes</a></li>
+                    <li><a href="/gta-6-100-completion-tracker/">✅ 100% Completion Tracker</a></li>
+                    <li><a href="/gta-6-tips-and-tricks/">💡 Tips &amp; Tricks</a></li>
+                    <li><a href="/secrets">🥚 Secrets &amp; Cryptids</a></li>
+                    <li><a href="/gaming-gear/">🎮 Gaming Gear Guide</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title" style="color:#94a3b8;">📡 Live &amp; Trust</span>
+                <ul class="footer-col-links">
+                    <li><a href="/my-leonida/" style="color:var(--neon-green); font-weight:700;">🌴 My Leonida Dashboard</a></li>
+                    <li><a href="/live" style="color:var(--neon-pink); font-weight:700;">🔴 LIVE Companion</a></li>
+                    <li><a href="/drops">🎁 Twitch Drops &amp; Rewards</a></li>
+                    <li><a href="/gta-6-discoveries/">📡 Community Discoveries</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms &amp; DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-disclaimer">
+            <p style="margin:0;">
+                <strong>EDITORIAL &amp; LEGAL NOTICE:</strong> gta6heistguide.com is an independent fan commentary, editorial guide, and interactive utility portal. Grand Theft Auto, GTA VI, Rockstar Games, and Vice City are registered trademarks of Take-Two Interactive Software, Inc. This site is not affiliated with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Some guide and tool pages across this site may include disclosed partner links at no extra cost to you. &copy; 2026 gta6heistguide.com. All rights reserved.
+            </p>
+        </div>
     </div>
 </footer>
 

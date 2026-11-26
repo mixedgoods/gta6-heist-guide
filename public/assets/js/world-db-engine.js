@@ -956,7 +956,7 @@
           '<div class="wdb-controls-top">' +
             '<div class="wdb-search-wrap">' +
               '<span class="wdb-search-icon" aria-hidden="true">🔍</span>' +
-              '<input type="search" class="wdb-search-input" data-wdb-search placeholder="' + esc(schema.searchPlaceholder || 'Search database...') + '">' +
+              '<input type="search" class="wdb-search-input" data-wdb-search aria-label="Search ' + esc(schema.title) + '" placeholder="' + esc(schema.searchPlaceholder || 'Search database...') + '">' +
             '</div>' +
             '<div data-wdb-secondary-wrap style="display:flex; flex-wrap:wrap; gap:0.5rem;"></div>' +
             '<select class="wdb-select" data-wdb-sort aria-label="Sort entries">' +

@@ -6997,3 +6997,50 @@ footer .footer-brand-logo:hover .footer-brand-logo-img {
     height: 72px;
   }
 }
+
+/* === PHASE 43: MOBILE ERGONOMICS, TOUCH TARGETS & RESPONSIVE TABLES === */
+.g-table-wrap,
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .g-table {
+        width: 100% !important;
+        min-width: 0 !important;
+        table-layout: auto;
+    }
+    .g-table th,
+    .g-table td {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+    .pg-code-badge,
+    .safe-copy-btn,
+    .copy-code-btn,
+    .hero-quick-pill,
+    .quick-jump-pill,
+    .filter-pill,
+    .tab-btn,
+    .dispatch-pill {
+        min-height: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    label:has(input[type="checkbox"]) {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    input[type="checkbox"] {
+        min-width: 20px;
+        min-height: 20px;
+    }
+}

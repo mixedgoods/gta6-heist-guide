@@ -477,7 +477,7 @@
     var preflightDone = Object.keys(completed).filter(function (k) { return completed[k] === true && k.indexOf('preflight:') === 0; }).length;
 
     // 7. Overall Verified Exploration Progress (strictly real verified trackables:
-    //    188 map pins + total heist checklist steps + 7 confirmed GTA VI wildlife + 27 properties + 24 gun outlets)
+    //    185 map pins + total heist checklist steps + 7 confirmed GTA VI wildlife + 27 properties + 24 gun outlets)
     //    Reference photos are EXCLUDED from overall verified completion!
     var overallDenom = mapTotal + totalChecklistSteps + verifiedAnimals.length + properties.length + gunStores.length;
     var overallNum = mapDone + doneChecklistSteps + discoveredVerifiedAnimals.length + ownedProperties.length + visitedGunStores.length;
