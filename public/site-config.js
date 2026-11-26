@@ -58,10 +58,16 @@ window.SITE_CONFIG = Object.freeze({
   enableAmazonProductPlacements: false
 });
 
-// Privacy-first single reusable analytics adapter (Phase 36 GA4 + opt-out controls)
+// Privacy-first single reusable analytics adapter (Phase 36/36.1 GA4 + Consent Mode + opt-out controls)
 (function() {
   var OPT_OUT_KEY = 'gta6_analytics_opt_out';
-  var BLOCKED_KEY_RE = /email|mail|pass|pwd|secret|token|auth|phone|address|query|text|input|body|message|cookie|session|user_?name|full_?name|ssn/i;
+  var CONSENT_REQUIRED_REGIONS = [
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
+    'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK',
+    'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
+  ];
+  var BLOCKED_KEY_RE = /^name$|email|mail|pass|pwd|secret|token|auth|phone|tel|address|query|search_?term|text|input|body|message|comment|cookie|session|user_?name|full_?name|first_?name|last_?name|display_?name|ssn|target_?url|link_?url|full_?url|href/i;
+  var PHONE_VAL_RE = /^\+?\d[\d\s().-]{7,}\d$/;
   var AFFILIATE_HOST_RE = /(?:^|\.)(?:amazon\.com|amzn\.to|g2a\.com|exitlag\.com|gumroad\.com|getapexlocal\.com|gfuel\.com)$/i;
   var ALLOWED_EVENTS = {
     page_view: true,
@@ -116,6 +122,57 @@ window.SITE_CONFIG = Object.freeze({
     return false;
   }
 
+  function initGa4(overrideId) {
+    try {
+      var cfg = window.SITE_CONFIG || {};
+      var gaId = String(overrideId || cfg.ga4MeasurementId || '').trim();
+      if (!/^G-[A-Z0-9]+$/i.test(gaId)) return false;
+      if (isAdminPath() || isAnalyticsOptedOut()) return false;
+      if (window._gta6Ga4Initialized) return true;
+      if (document.querySelector('script[data-gta6-ga4], script[src*="googletagmanager.com/gtag/js"]')) {
+        window._gta6Ga4Initialized = true;
+        return true;
+      }
+      window._gta6Ga4Initialized = true;
+      window.dataLayer = window.dataLayer || [];
+      if (typeof window.gtag !== 'function') {
+        window.gtag = function gtag() { window.dataLayer.push(arguments); };
+      }
+      // Consent Mode defaults: never auto-grant advertising consent; deny analytics storage in consent-required regions
+      window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        region: CONSENT_REQUIRED_REGIONS
+      });
+      window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+      window.gtag('js', new Date());
+      var cleanPath = (window.location && window.location.pathname) ? window.location.pathname : '/';
+      var cleanOrigin = (window.location && window.location.origin) ? window.location.origin : '';
+      window.gtag('config', gaId, {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        page_location: cleanOrigin + cleanPath,
+        page_path: cleanPath,
+        send_page_view: true
+      });
+      var s = document.createElement('script');
+      s.async = true;
+      s.setAttribute('data-gta6-ga4', gaId);
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+      if (document.head) document.head.appendChild(s);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function setAnalyticsOptOut(optedOut) {
     try {
       var flag = !!optedOut;
@@ -126,6 +183,14 @@ window.SITE_CONFIG = Object.freeze({
         if (flag) window.localStorage.setItem(OPT_OUT_KEY, '1');
         else window.localStorage.removeItem(OPT_OUT_KEY);
       }
+      if (flag && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+      }
       return flag;
     } catch (e) {
       return !!optedOut;
@@ -134,9 +199,11 @@ window.SITE_CONFIG = Object.freeze({
 
   window.GTA6Privacy = {
     OPT_OUT_KEY: OPT_OUT_KEY,
+    CONSENT_REQUIRED_REGIONS: CONSENT_REQUIRED_REGIONS,
     isAdminPath: isAdminPath,
     isAnalyticsOptedOut: isAnalyticsOptedOut,
-    setAnalyticsOptOut: setAnalyticsOptOut
+    setAnalyticsOptOut: setAnalyticsOptOut,
+    initGa4: initGa4
   };
 
   function classifyPathCategory(pathname) {
@@ -168,6 +235,8 @@ window.SITE_CONFIG = Object.freeze({
       } else if (typeof v === 'string') {
         var s = v.trim();
         if (!s || s.indexOf('@') !== -1) return;
+        if (s.indexOf('?') !== -1 && s.indexOf('=') !== -1) return;
+        if (PHONE_VAL_RE.test(s)) return;
         clean[k] = s.length > 80 ? s.slice(0, 80) : s;
       }
     });
@@ -292,6 +361,13 @@ window.SITE_CONFIG = Object.freeze({
         });
       } catch (err) {}
     }, { passive: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initGa4();
+    });
+  } else {
+    initGa4();
   }
 })();
 

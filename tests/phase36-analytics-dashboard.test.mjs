@@ -14,7 +14,7 @@ const SITE_CONFIG_SRC = fs.readFileSync(path.join(ROOT, "public", "site-config.j
 const AFFILIATES_SRC = fs.readFileSync(path.join(ROOT, "public", "js", "affiliates.js"), "utf8");
 const MAIN_SRC = fs.readFileSync(path.join(ROOT, "public", "assets", "main.js"), "utf8");
 
-function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&email=test@example.com", dnt = null, gpc = false, optOutStored = null } = {}) {
+function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&email=test@example.com", dnt = null, gpc = false, optOutStored = null, loadMain = true } = {}) {
   const docListeners = new Map();
   const appendedScripts = [];
   const storage = new Map();
@@ -34,7 +34,7 @@ function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&e
       docListeners.get(type).push(fn);
     },
     querySelector(sel) {
-      if (sel === "script[data-gta6-ga4]") {
+      if (sel.includes("data-gta6-ga4")) {
         return appendedScripts.find((s) => s._attrs && s._attrs["data-gta6-ga4"]) || null;
       }
       return null;
@@ -108,34 +108,67 @@ function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&e
 
   vm.runInContext(SITE_CONFIG_SRC, ctx, { filename: "site-config.js" });
   vm.runInContext(AFFILIATES_SRC, ctx, { filename: "affiliates.js" });
-  vm.runInContext(MAIN_SRC, ctx, { filename: "main.js" });
+  if (loadMain) {
+    vm.runInContext(MAIN_SRC, ctx, { filename: "main.js" });
+  }
   for (const fn of docListeners.get("DOMContentLoaded") || []) {
     try { fn(); } catch (_) {}
   }
   return { ctx, docListeners, appendedScripts };
 }
 
-test("P36-GA1: GA4 loads exactly once with G-DG7REYHR80, strips query params, and disables Google Signals & Ads Personalization", () => {
+test("P36-GA1: GA4 loads exactly once with G-DG7REYHR80, enforces Consent Mode defaults, strips query params, and disables Google Signals & Ads Personalization", () => {
   const { ctx, appendedScripts } = makeBrowser();
   const gaScripts = appendedScripts.filter((s) => s._attrs && s._attrs["data-gta6-ga4"]);
   assert.equal(gaScripts.length, 1);
   assert.equal(gaScripts[0]._attrs["data-gta6-ga4"], "G-DG7REYHR80");
   assert.equal(ctx.SITE_CONFIG.enableAmazonProductPlacements, false);
 
-  const configCall = (ctx.dataLayer || []).find((args) => args[0] === "config" && args[1] === "G-DG7REYHR80");
-  assert.ok(configCall, "gtag config call should exist");
+  const configCalls = (ctx.dataLayer || []).filter((args) => args[0] === "config" && args[1] === "G-DG7REYHR80");
+  assert.equal(configCalls.length, 1, "gtag config must be called exactly once (no duplicate page_view)");
+  const configCall = configCalls[0];
   assert.equal(configCall[2].anonymize_ip, true);
   assert.equal(configCall[2].allow_google_signals, false);
   assert.equal(configCall[2].allow_ad_personalization_signals, false);
   assert.equal(configCall[2].page_location, "https://www.gta6heistguide.com/port-gellhorn");
+  assert.equal(configCall[2].page_path, "/port-gellhorn");
   assert.equal(configCall[2].page_location.includes("secret123"), false);
+
+  // Verify Consent Mode defaults
+  const consentDefaults = (ctx.dataLayer || []).filter((args) => args[0] === "consent" && args[1] === "default");
+  assert.equal(consentDefaults.length, 2, "regional and global consent defaults should be set");
+  assert.equal(consentDefaults[0][2].analytics_storage, "denied");
+  assert.equal(consentDefaults[0][2].ad_storage, "denied");
+  assert.ok(Array.isArray(consentDefaults[0][2].region) && consentDefaults[0][2].region.includes("DE") && consentDefaults[0][2].region.includes("GB"));
+  assert.equal(consentDefaults[1][2].ad_storage, "denied");
+  assert.equal(consentDefaults[1][2].ad_user_data, "denied");
+  assert.equal(consentDefaults[1][2].ad_personalization, "denied");
 });
 
-test("P36-GA2: GA4 does not load when DNT=1, GPC=true, local opt-out=1, or on /cd-admin/*", () => {
+test("P36-GA1B: /gaming-gear/ (site-config.js + affiliates.js without main.js) initializes GA4 exactly once", () => {
+  const { ctx, appendedScripts } = makeBrowser({ pathname: "/gaming-gear/", loadMain: false });
+  const gaScripts = appendedScripts.filter((s) => s._attrs && s._attrs["data-gta6-ga4"]);
+  assert.equal(gaScripts.length, 1);
+  assert.equal(gaScripts[0]._attrs["data-gta6-ga4"], "G-DG7REYHR80");
+  const configCalls = (ctx.dataLayer || []).filter((args) => args[0] === "config" && args[1] === "G-DG7REYHR80");
+  assert.equal(configCalls.length, 1);
+});
+
+test("P36-GA2: GA4 does not load when DNT=1, GPC=true, local opt-out=1, or on /cd-admin/*, and runtime opt-out blocks further events", () => {
   assert.equal(makeBrowser({ dnt: "1" }).appendedScripts.filter((s) => s._attrs["data-gta6-ga4"]).length, 0);
   assert.equal(makeBrowser({ gpc: true }).appendedScripts.filter((s) => s._attrs["data-gta6-ga4"]).length, 0);
   assert.equal(makeBrowser({ optOutStored: "1" }).appendedScripts.filter((s) => s._attrs["data-gta6-ga4"]).length, 0);
   assert.equal(makeBrowser({ pathname: "/cd-admin/affiliate-dashboard.html" }).appendedScripts.filter((s) => s._attrs["data-gta6-ga4"]).length, 0);
+
+  const { ctx } = makeBrowser({ pathname: "/privacy-policy" });
+  ctx.GTA6Privacy.setAnalyticsOptOut(true);
+  const consentUpdate = (ctx.dataLayer || []).find((args) => args[0] === "consent" && args[1] === "update");
+  assert.ok(consentUpdate, "runtime opt-out should push consent update");
+  assert.equal(consentUpdate[2].analytics_storage, "denied");
+  ctx.GTA6Track("tool_interaction", { tool_name: "heist_calc" });
+  const last = ctx.GTA6Track.getEvents().pop();
+  assert.equal(last.dispatchedToGa4, false);
+  assert.equal(last.optedOut, true);
 });
 
 test("P36-GA3: Affiliate link click fires affiliate_click once and does NOT double-fire outbound_click", () => {
@@ -181,18 +214,26 @@ test("P36-GA4: Non-affiliate external link fires outbound_click once; PII keys a
 
   ctx.GTA6Track("search_interaction", {
     search_surface: "map_search",
+    name: "John Doe",
     email: "user@example.com",
     token: "abc",
     query: "private text",
     phone: "555-1234",
+    target_url: "https://example.com/?secret=1",
+    extra_val: "https://example.com/page?auth=xyz",
+    phone_val: "+1 (555) 123-4567",
   });
   const searchEvt = ctx.GTA6Track.getEvents().find((e) => e.event === "search_interaction");
   assert.ok(searchEvt);
   assert.equal(searchEvt.params.search_surface, "map_search");
+  assert.equal("name" in searchEvt.params, false);
   assert.equal("email" in searchEvt.params, false);
   assert.equal("token" in searchEvt.params, false);
   assert.equal("query" in searchEvt.params, false);
   assert.equal("phone" in searchEvt.params, false);
+  assert.equal("target_url" in searchEvt.params, false);
+  assert.equal("extra_val" in searchEvt.params, false);
+  assert.equal("phone_val" in searchEvt.params, false);
 });
 
 test("P36-DASH1: getAffiliateClickReport returns 7d/30d, byPage, byProduct, byPlacement, daily/weekly trends, and unconfirmed revenue separation", async () => {

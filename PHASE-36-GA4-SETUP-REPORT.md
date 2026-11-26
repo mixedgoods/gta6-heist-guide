@@ -49,7 +49,8 @@ Following explicit owner authorization on 2026-11-25, the new GA4 property and w
 |---|---|---|
 | **Google Signals** | **Disabled** (`Turn on` not clicked) | `allow_google_signals: false` enforced in `gtag('config', ...)` |
 | **User-Provided Data Collection** | **Disabled** (`Turn on` not clicked) | Zero PII keys permitted (`BLOCKED_KEY_RE` strips email, phone, name, tokens, query, SSN) |
-| **Ads Personalization (GA4 Admin)** | GA4 default (`allowed in 307 of 307 regions` — untouched) | `allow_ad_personalization_signals: false` enforced in `gtag('config', ...)` |
+| **Granular Location & Device Data** | **Disabled** (toggled OFF & verified after reload) | Minimized telemetry |
+| **Ads Personalization (GA4 Admin)** | **Disabled** (`allowed in 0 of 307 regions` — `Disallow all` applied & verified after reload) | `allow_ad_personalization_signals: false` enforced in `gtag('config', ...)` |
 | **IP Anonymization & URL Query Stripping** | GA4 IP anonymization default | `anonymize_ip: true` and `page_location: origin + pathname` (strips query strings) |
 | **Browser Opt-Out Signals** | N/A | Honors `navigator.globalPrivacyControl === true`, `navigator.doNotTrack === '1'`, local opt-out (`gta6_analytics_opt_out`), and excludes `/cd-admin/*` |
 
@@ -65,5 +66,4 @@ Following explicit owner authorization on 2026-11-25, the new GA4 property and w
 ## 4. Production Safeguard & Evidence
 
 - **Production Status:** `G-DG7REYHR80` is configured **only** on the isolated `phase-36-analytics-growth` branch and Preview deployment. Production (`main` commit `443a268`) remains untouched with `ga4MeasurementId: ""`.
-- **Host-Verified Browser Evidence:** `C:/Users/Shawn/.gemini/antigravity/brain/6d214c20-008c-47da-a19d-fb51cfdac09b/browser_evidence/7bf5ae26-540c-447c-93ba-575b1f8bbc53/final_step_140.png`
-- **Recommended Owner Follow-Up (Optional):** In GA4 Admin → *Data collection and modification → Data collection → Advanced settings to allow for ads personalization*, optionally disable ads personalization at the property level to mirror the client-side `allow_ad_personalization_signals: false` flag.
+- **Host-Verified Browser Evidence:** `C:/Users/Shawn/.gemini/antigravity/brain/67e41b28-8722-4b0c-aa5f-17bf941ee249/browser_evidence/76995c8a-9f33-48a3-8b2c-8dd0703f55d6/final_step_57.png` (privacy settings verified after reload).

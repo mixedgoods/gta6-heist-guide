@@ -259,24 +259,35 @@ const GTA6 = {
       }
 
       const gaId = String(cfg.ga4MeasurementId || '').trim();
-      const analyticsOptedOut = !!(window.GTA6Privacy && typeof window.GTA6Privacy.isAnalyticsOptedOut === 'function' && window.GTA6Privacy.isAnalyticsOptedOut());
-      const isAdminRoute = /^\/(?:cd-admin|syndicate-command)/i.test(window.location.pathname || '/');
-      if (!analyticsOptedOut && !isAdminRoute && /^G-[A-Z0-9]+$/i.test(gaId) && !document.querySelector('script[data-gta6-ga4]')) {
-        const s = document.createElement('script');
-        s.async = true;
-        s.setAttribute('data-gta6-ga4', gaId);
-        s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function gtag() { window.dataLayer.push(arguments); };
-        window.gtag('js', new Date());
-        window.gtag('config', gaId, {
-          anonymize_ip: true,
-          allow_google_signals: false,
-          allow_ad_personalization_signals: false,
-          page_location: (window.location.origin || '') + (window.location.pathname || '/'),
-          send_page_view: true,
-        });
+      if (window.GTA6Privacy && typeof window.GTA6Privacy.initGa4 === 'function') {
+        window.GTA6Privacy.initGa4(gaId);
+      } else {
+        const analyticsOptedOut = !!(window.GTA6Privacy && typeof window.GTA6Privacy.isAnalyticsOptedOut === 'function' && window.GTA6Privacy.isAnalyticsOptedOut());
+        const isAdminRoute = /^\/(?:cd-admin|syndicate-command)/i.test(window.location.pathname || '/');
+        if (!analyticsOptedOut && !isAdminRoute && !window._gta6Ga4Initialized && /^G-[A-Z0-9]+$/i.test(gaId) && !document.querySelector('script[data-gta6-ga4], script[src*="googletagmanager.com/gtag/js"]')) {
+          window._gta6Ga4Initialized = true;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function gtag() { window.dataLayer.push(arguments); };
+          window.gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+          });
+          window.gtag('js', new Date());
+          window.gtag('config', gaId, {
+            anonymize_ip: true,
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false,
+            page_location: (window.location.origin || '') + (window.location.pathname || '/'),
+            page_path: window.location.pathname || '/',
+            send_page_view: true,
+          });
+          const s = document.createElement('script');
+          s.async = true;
+          s.setAttribute('data-gta6-ga4', gaId);
+          s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`;
+          document.head.appendChild(s);
+        }
       }
     },
 
