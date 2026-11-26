@@ -248,24 +248,34 @@
       }
     }
 
-    // Hero KPIs
-    document.getElementById('mlKpiOverallPct').textContent = snap.overall.pct + '%';
-    document.getElementById('mlKpiOverallSub').textContent = snap.overall.completed + ' / ' + snap.overall.total + ' verified items';
-    document.getElementById('mlKpiOverallBar').style.width = snap.overall.pct + '%';
+    // Hero KPIs (derived from single source of truth in computeSnapshot)
+    document.getElementById('mlKpiOverallPct').textContent = snap.overall.hasItems ? (snap.overall.pct + '%') : '—';
+    document.getElementById('mlKpiOverallSub').textContent = snap.overall.hasItems
+      ? (snap.overall.completed + ' / ' + snap.overall.total + ' verified items')
+      : 'No trackable items';
+    document.getElementById('mlKpiOverallBar').style.width = (snap.overall.hasItems ? snap.overall.pct : 0) + '%';
 
     document.getElementById('mlKpiMapVal').textContent = snap.map.completed + ' / ' + snap.map.total;
-    document.getElementById('mlKpiMapSub').textContent = snap.map.pct + '% · ' + snap.map.unvisited + ' unvisited';
-    document.getElementById('mlKpiMapBar').style.width = snap.map.pct + '%';
+    document.getElementById('mlKpiMapSub').textContent = snap.map.hasItems
+      ? (snap.map.pct + '% · ' + snap.map.unvisited + ' unvisited')
+      : 'No trackable items';
+    document.getElementById('mlKpiMapBar').style.width = (snap.map.hasItems ? snap.map.pct : 0) + '%';
 
-    document.getElementById('mlKpiHeistVal').textContent = snap.heists.prepPct + '%';
-    document.getElementById('mlKpiHeistSub').textContent = snap.heists.activeJobs.length + ' active · ' + snap.heists.completedJobs.length + ' completed';
-    document.getElementById('mlKpiHeistBar').style.width = snap.heists.prepPct + '%';
+    document.getElementById('mlKpiHeistVal').textContent = snap.heists.hasItems ? (snap.heists.prepPct + '%') : '—';
+    document.getElementById('mlKpiHeistSub').textContent = snap.heists.hasItems
+      ? (snap.heists.activeJobs.length + ' active · ' + snap.heists.completedJobs.length + ' completed')
+      : 'No trackable items';
+    document.getElementById('mlKpiHeistBar').style.width = (snap.heists.hasItems ? snap.heists.prepPct : 0) + '%';
 
-    document.getElementById('mlKpiGearVal').textContent = snap.garage.owned.length + ' / ' + snap.armory.favorites.length;
-    document.getElementById('mlKpiGearSub').textContent = snap.garage.owned.length + ' owned vehicles · ' + snap.armory.favorites.length + ' fav weapons';
+    document.getElementById('mlKpiGearVal').textContent = snap.gear.completed + ' / ' + snap.gear.total;
+    document.getElementById('mlKpiGearSub').textContent = snap.gear.hasItems
+      ? (snap.gear.pct + '% · ' + snap.garage.owned.length + '/' + snap.garage.total + ' vehicles · ' + snap.armory.owned.length + '/' + snap.armory.total + ' weapons')
+      : 'No trackable items';
 
-    document.getElementById('mlKpiWorldVal').textContent = snap.properties.explored.length + ' / ' + snap.wildlife.verifiedDiscovered.length;
-    document.getElementById('mlKpiWorldSub').textContent = snap.properties.explored.length + '/' + snap.properties.total + ' properties · ' + snap.wildlife.verifiedDiscovered.length + '/' + snap.wildlife.verifiedTotal + ' verified animals';
+    document.getElementById('mlKpiWorldVal').textContent = snap.world.completed + ' / ' + snap.world.total;
+    document.getElementById('mlKpiWorldSub').textContent = snap.world.hasItems
+      ? (snap.world.pct + '% · ' + snap.properties.explored.length + '/' + snap.properties.total + ' properties · ' + snap.wildlife.verifiedDiscovered.length + '/' + snap.wildlife.verifiedTotal + ' verified animals')
+      : 'No trackable items';
 
     // Tab badges
     document.getElementById('badge-exploration').textContent = String(snap.map.completed);

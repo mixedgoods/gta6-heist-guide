@@ -1743,12 +1743,15 @@ const GTA6 = {
       }
     };
 
+    if (!navLinks.id) navLinks.id = 'siteNavLinks';
+
     if (!document.getElementById('mobileMenuBtn')) {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.id = 'mobileMenuBtn';
       btn.className = 'mobile-menu-btn';
       btn.setAttribute('aria-label', 'Toggle Navigation Menu');
+      btn.setAttribute('aria-controls', navLinks.id);
       btn.setAttribute('aria-expanded', 'false');
       btn.innerHTML = `${this.Icons.menu(18)}<span>Menu</span>`;
       btn.onclick = (e) => {
@@ -1770,7 +1773,11 @@ const GTA6 = {
       if (navLinks.classList.contains('open') && !e.target.closest('.navbar')) closeDrawer();
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navLinks.classList.contains('open')) closeDrawer();
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeDrawer();
+        const b = document.getElementById('mobileMenuBtn');
+        if (b) b.focus();
+      }
     });
   },
 

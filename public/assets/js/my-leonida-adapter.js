@@ -365,15 +365,17 @@
     var recentPages = getRecentPages();
     var loadout = getLoadout();
 
-    // 1. Map Exploration (only counting verified pin IDs from map-pins.json)
+    // 1. Map Exploration (only counting verified enabled pin IDs from map-pins.json)
+    var enabledPins = pins.filter(function (pin) {
+      return Boolean(pin && pin.id && pin.enabled !== false);
+    });
     var pinById = Object.create(null);
     var catStats = Object.create(null);
     var completedPins = [];
     var unvisitedPins = [];
     var favoritePins = [];
 
-    pins.forEach(function (pin) {
-      if (!pin || !pin.id) return;
+    enabledPins.forEach(function (pin) {
       pinById[pin.id] = pin;
       var catName = pin.categoryName || pin.category || 'Other';
       if (!catStats[catName]) {
@@ -392,8 +394,9 @@
       if (isFav) favoritePins.push(pin);
     });
 
-    var mapTotal = pins.length;
+    var mapTotal = enabledPins.length;
     var mapDone = completedPins.length;
+    var mapRemaining = Math.max(0, mapTotal - mapDone);
     var mapPct = mapTotal > 0 ? Math.round((mapDone / mapTotal) * 100) : 0;
     var categoriesRemaining = Object.keys(catStats)
       .map(function (k) { return catStats[k]; })
@@ -506,19 +509,36 @@
       recentPages.length > 0
     );
 
+    // Combined KPI rollups (single source of truth for Garage & Armory and Properties & Wildlife)
+    var gearTotal = vehicles.length + weapons.length;
+    var gearDone = ownedVehicles.length + ownedWeapons.length;
+    var gearRemaining = Math.max(0, gearTotal - gearDone);
+    var gearPct = gearTotal > 0 ? Math.round((gearDone / gearTotal) * 100) : 0;
+
+    var worldTotal = properties.length + verifiedAnimals.length;
+    var worldDone = ownedProperties.length + discoveredVerifiedAnimals.length;
+    var worldRemaining = Math.max(0, worldTotal - worldDone);
+    var worldPct = worldTotal > 0 ? Math.round((worldDone / worldTotal) * 100) : 0;
+
+    var overallRemaining = Math.max(0, overallDenom - overallNum);
+
     return {
       hasAnyActivity: hasAnyActivity,
       updatedAt: pStore.updatedAt || hState.updatedAt || null,
       overall: {
         completed: overallNum,
         total: overallDenom,
-        pct: overallPct
+        remaining: overallRemaining,
+        pct: overallPct,
+        hasItems: overallDenom > 0
       },
       map: {
         total: mapTotal,
         completed: mapDone,
-        unvisited: unvisitedPins.length,
+        unvisited: mapRemaining,
+        remaining: mapRemaining,
         pct: mapPct,
+        hasItems: mapTotal > 0,
         categoriesRemaining: categoriesRemaining,
         favoritePins: favoritePins,
         completedPins: completedPins,
@@ -534,7 +554,23 @@
         recentJobIds: hState.recentJobIds || [],
         doneSteps: doneChecklistSteps,
         totalSteps: totalChecklistSteps,
-        prepPct: heistPrepPct
+        remainingSteps: Math.max(0, totalChecklistSteps - doneChecklistSteps),
+        prepPct: heistPrepPct,
+        hasItems: totalChecklistSteps > 0
+      },
+      gear: {
+        completed: gearDone,
+        total: gearTotal,
+        remaining: gearRemaining,
+        pct: gearPct,
+        hasItems: gearTotal > 0
+      },
+      world: {
+        completed: worldDone,
+        total: worldTotal,
+        remaining: worldRemaining,
+        pct: worldPct,
+        hasItems: worldTotal > 0
       },
       garage: {
         total: vehicles.length,
