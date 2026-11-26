@@ -4,9 +4,9 @@
 **Isolated Branch:** `phase-36-analytics-growth`  
 **Isolated Worktree:** `C:\Users\Shawn\.gemini\antigravity\scratch\phase-36-analytics-growth`  
 **Production Baseline (Untouched):** Commit `443a268` (`main` and `origin/main` unchanged)  
-**Isolated Preview URL:** `https://dac10d34.gta6heistguide.pages.dev`  
+**Isolated Preview URL:** `https://ad2cf0da.gta6heistguide.pages.dev` (Phase 36.1; prior Phase 36 preview `dac10d34`)  
 **Branch Alias URL:** `https://phase-36-analytics-growth.gta6heistguide.pages.dev`  
-**Date:** 2026-11-25
+**Date:** 2026-11-26
 
 ---
 
@@ -50,12 +50,12 @@
 | `node --test tests/affiliate-analytics-security.test.mjs` | **PASS (8/8)** | Cloudflare Access fail-closed & legacy key rejection verified |
 | `node --test tests/affiliate-click-deduplication.test.mjs` | **PASS (8/8)** | Zero duplicate clicks/events across all script load orders |
 | `node --test tests/community-discoveries.test.mjs` | **PASS (81/81)** | All community discovery, moderation, and security invariants intact |
-| `node --test tests/phase36-analytics-dashboard.test.mjs` | **PASS (5/5)** | GA4 privacy, opt-outs, PII blocking, deduplication & Phase 5 schema verified |
+| `node --test tests/phase36-analytics-dashboard.test.mjs` | **PASS (6/6)** | GA4 privacy, Consent Mode v2, `/gaming-gear/` init, opt-outs, PII blocking, deduplication & Phase 5 schema verified |
 | `python scripts/phase33_product_audit.py` | **PASS (18/18)** | 0 dead ASINs, 0 missing tags, 0 forbidden page violations |
 | `python scripts/audit_adsense_verification.py` | **PASS (571/571)** | 0 duplicates, 0 conflicting pub IDs, Impact tag intact |
 | `npx wrangler pages functions build` | **PASS** | Compiled Worker successfully |
-| Preview HTTP & Security Smoke Tests (9 checks) | **PASS (9/9)** | `/`, `/port-gellhorn`, `/privacy-policy`, `/ads.txt` HTTP 200; `/api/clicks` GET `405`; `/api/cd-admin/affiliate-report` & `/cd-admin/affiliate-dashboard.html` fail-closed `503`; live prod `/ads.txt` HTTP 200 |
-| Desktop (1440×900) & Mobile (390×844) Playwright QA | **PASS (7/7)** | 0 broken images, 0 horizontal overflow, single `G-DG7REYHR80` GA4 script, single `adsbygoogle.js` script, `enableAmazonProductPlacements: false`, 0 visible Amazon cards, canonical valid, mobile opt-out toggle verified |
+| Preview HTTP Smoke Tests (`tests/http-smoke.mjs`) | **PASS (18/24; 6 expected Preview Turnstile exceptions)** | All Access/admin fail-closed (`503`), `/api/clicks` POST (`200`) / GET (`405`), `/ads.txt` (`200`) verified |
+| Desktop (1440×900) & Mobile (390×844) Playwright QA | **PASS (20/20 + 3 live checks)** | 10 routes × 2 viewports: 0 broken images, 0 horizontal overflow, single `G-DG7REYHR80` GA4 script + Consent Mode v2, single `adsbygoogle.js`, `enableAmazonProductPlacements: false`, 0 visible Amazon cards, live opt-out + click dedupe + dashboard fail-closed verified |
 
 ---
 
