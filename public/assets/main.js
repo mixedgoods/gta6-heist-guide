@@ -259,7 +259,9 @@ const GTA6 = {
       }
 
       const gaId = String(cfg.ga4MeasurementId || '').trim();
-      if (/^G-[A-Z0-9]+$/i.test(gaId) && !document.querySelector('script[data-gta6-ga4]')) {
+      const analyticsOptedOut = !!(window.GTA6Privacy && typeof window.GTA6Privacy.isAnalyticsOptedOut === 'function' && window.GTA6Privacy.isAnalyticsOptedOut());
+      const isAdminRoute = /^\/(?:cd-admin|syndicate-command)/i.test(window.location.pathname || '/');
+      if (!analyticsOptedOut && !isAdminRoute && /^G-[A-Z0-9]+$/i.test(gaId) && !document.querySelector('script[data-gta6-ga4]')) {
         const s = document.createElement('script');
         s.async = true;
         s.setAttribute('data-gta6-ga4', gaId);
@@ -272,6 +274,8 @@ const GTA6 = {
           anonymize_ip: true,
           allow_google_signals: false,
           allow_ad_personalization_signals: false,
+          page_location: (window.location.origin || '') + (window.location.pathname || '/'),
+          send_page_view: true,
         });
       }
     },
@@ -283,6 +287,9 @@ const GTA6 = {
   },
 
   initAffiliateTracking() {
+    if (window._gta6MainAffListenerAttached) return;
+    window._gta6MainAffListenerAttached = true;
+    window._gta6MainAffTrackingBound = true;
     document.addEventListener('click', (e) => {
       const cfg = this.SiteConfig ? this.SiteConfig.get() : { enableAffiliateClickTracking: true };
       const anchor = e.target.closest('a[href], [data-aff-partner]');
@@ -324,10 +331,13 @@ const GTA6 = {
                   ? 'gaming_store'
                   : 'affiliate_partner';
           window.GTA6Track('affiliate_click', {
+            merchant: pNorm,
             destination_category: pNorm,
             product_category: productCategory,
-            product_id: asinMatch ? asinMatch[1].toUpperCase() : pNorm,
+            product_id: anchor.getAttribute('data-aff-product') || (asinMatch ? asinMatch[1].toUpperCase() : pNorm),
             placement: String(placement || 'sitewide').slice(0, 48),
+            source_page: window.location.pathname || '/',
+            event_timestamp: new Date().toISOString(),
             interaction_type: 'outbound_click',
           });
         }

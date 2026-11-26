@@ -1099,12 +1099,17 @@ window.getGTA6LaunchBannerText = function() {
         var placement = link.getAttribute('data-aff-placement') || 'card';
         var targetUrl = link.getAttribute('href') || '';
         if (typeof global.GTA6Track === 'function') {
+          var asinVal = link.getAttribute('data-aff-asin') || '';
           global.GTA6Track('affiliate_click', {
+            merchant: partner,
             partner: partner,
+            product_id: productKey || asinVal || partner,
             product_key: productKey,
-            asin: link.getAttribute('data-aff-asin') || '',
+            asin: asinVal,
             category: link.getAttribute('data-aff-category') || '',
             placement: placement,
+            source_page: (global.location && global.location.pathname) ? global.location.pathname : '/',
+            event_timestamp: new Date().toISOString(),
             click_area: link.getAttribute('data-aff-area') || 'cta'
           });
         }

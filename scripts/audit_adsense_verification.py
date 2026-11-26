@@ -30,6 +30,7 @@ EXCLUDED_HTML = {
     "google29e7fdcf68272179.html": "Google Search Console HTML ownership verification file (no <head> element).",
     "googlec63f7e8032408675.html": "Google Search Console HTML ownership verification file (no <head> element).",
     "cd-admin/index.html": "Protected administrative moderation interface (Cloudflare Access + noindex, nofollow, noarchive).",
+    "cd-admin/affiliate-dashboard.html": "Protected administrative affiliate click & revenue dashboard (Cloudflare Access + noindex, nofollow, noarchive).",
     "syndicate-command.html": "Internal owner-only email and marketing command console (noindex, nofollow).",
     "community-discoveries/submit/index.html": "Community discovery submission form (noindex, nofollow); explicitly excluded from monetization.",
     "embed/calculator.html": "Third-party embeddable iframe widget (X-Frame-Options: ALLOWALL, noindex).",

@@ -128,7 +128,14 @@
             <li><strong>Optional VIP Email Opt-In:</strong> If you submit the VIP Blueprint form, your email, callsign, chosen platform/role, and optional Discord/PSN tag are stored in our Cloudflare D1 database to send requested updates.</li>
             <li><strong>Community LFG &amp; Contact Forms:</strong> Squad posts, forum threads, map marker suggestions, and contact inquiries submitted by you are stored in Cloudflare D1. Please avoid posting sensitive personal information in public LFG listings.</li>
             <li><strong>Aggregate Click &amp; Server Logs:</strong> Cloudflare Pages processes standard HTTP requests for security and CDN routing. We log anonymous aggregate outbound affiliate click counts (partner name and page placement only—no personal profiles).</li>
+            <li><strong>Privacy-Conscious Website Analytics (Google Analytics 4):</strong> To understand which guides and tools help visitors most, this site uses Google Analytics 4 (Measurement ID: <code>G-DG7REYHR80</code>) configured with Google Signals disabled, advertising personalization disabled, IP anonymization enabled, and URL query parameters stripped. We do not send names, email addresses, form contents, or authentication tokens to analytics. We also honor browser <strong>Global Privacy Control (GPC)</strong> and <strong>Do Not Track (DNT)</strong> signals automatically.</li>
         </ul>
+
+        <div id="analyticsPrivacyControl" style="margin:0.85rem 0 1.25rem; padding:0.9rem 1rem; border-radius:10px; background:rgba(0,240,255,0.06); border:1px solid rgba(0,240,255,0.28);">
+            <strong style="color:#fff; display:block; margin-bottom:0.35rem;">Analytics Opt-Out Control</strong>
+            <p id="analyticsOptOutStatus" style="color:var(--text-muted); font-size:0.86rem; margin:0 0 0.6rem;">Checking current browser preference...</p>
+            <button type="button" id="analyticsOptOutBtn" class="btn btn-secondary" style="padding:0.42rem 0.9rem; font-size:0.82rem;">Disable Analytics on This Browser</button>
+        </div>
 
         <h2 style="color:#fff; font-size:1.2rem; margin:1.35rem 0 0.45rem;">2. Advertising, Google AdSense &amp; Cookies</h2>
         <p style="color:var(--text-muted); font-size:0.93rem; line-height:1.65;">
@@ -244,6 +251,36 @@
 
 <script src="/js/affiliates.js?v=20261125_p33"></script>
 <script src="/site-config.js"></script>
+<script>
+(function() {
+  var statusEl = document.getElementById('analyticsOptOutStatus');
+  var btnEl = document.getElementById('analyticsOptOutBtn');
+  if (!statusEl || !btnEl || !window.GTA6Privacy) return;
+  function syncUi() {
+    var optedOut = window.GTA6Privacy.isAnalyticsOptedOut();
+    var dntOrGpc = !!(navigator && (navigator.globalPrivacyControl === true || navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes'));
+    if (dntOrGpc) {
+      statusEl.textContent = 'Analytics is currently DISABLED because your browser sends Do Not Track or Global Privacy Control.';
+      btnEl.textContent = 'Opted Out via Browser Signal';
+      btnEl.disabled = true;
+    } else if (optedOut) {
+      statusEl.textContent = 'Analytics is currently DISABLED on this browser (local opt-out active).';
+      btnEl.textContent = 'Re-Enable Privacy-Conscious Analytics';
+      btnEl.disabled = false;
+    } else {
+      statusEl.textContent = 'Privacy-conscious GA4 analytics is currently ENABLED (Google Signals & ad personalization disabled).';
+      btnEl.textContent = 'Disable Analytics on This Browser';
+      btnEl.disabled = false;
+    }
+  }
+  btnEl.addEventListener('click', function() {
+    var currentlyOut = window.GTA6Privacy.isAnalyticsOptedOut();
+    window.GTA6Privacy.setAnalyticsOptOut(!currentlyOut);
+    syncUi();
+  });
+  syncUi();
+})();
+</script>
 <script src="/assets/main.js" defer></script>
 </body>
 </html>

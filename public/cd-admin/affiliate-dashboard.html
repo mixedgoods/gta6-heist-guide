@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Revenue &amp; Clicks Dashboard — GTA6HeistGuide</title>
+  <link rel="stylesheet" href="/assets/style.css?v=20261125_p33">
+  <style>
+    body{padding:1rem;background:#0a0e17;color:#e2e8f0;}
+    .adm{max-width:1200px;margin:0 auto;display:grid;gap:1rem;}
+    .adm-hdr{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.65rem;padding:.85rem 1.1rem;}
+    .adm-hdr h1{margin:0;color:#fff;font-size:1.25rem;}
+    .adm-hdr small{color:#94a3b8;font-size:.78rem;}
+    .hdr-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;}
+    .btn-neutral{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:#e2e8f0;font-weight:600;padding:.45rem .9rem;border-radius:8px;font-size:.82rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;}
+    .btn-neutral:hover{background:rgba(255,255,255,.14);color:#fff;}
+    #statusBanner{font-size:.85rem;font-weight:600;min-height:1.2rem;}
+    #statusBanner.err{color:#fca5a5;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.35);padding:.55rem .85rem;border-radius:8px;}
+    .notice{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:10px;padding:.75rem 1rem;font-size:.84rem;color:#fde68a;line-height:1.5;}
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.75rem;}
+    .kpi{background:rgba(15,23,42,.7);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.85rem 1rem;}
+    .kpi-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin-bottom:.3rem;}
+    .kpi-val{font-size:1.45rem;font-weight:800;color:#fff;}
+    .kpi-val.pending{font-size:.98rem;color:#fbbf24;}
+    .kpi-sub{font-size:.74rem;color:#94a3b8;margin-top:.2rem;}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;}
+    .card{background:rgba(15,23,42,.65);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.95rem 1.05rem;overflow-x:auto;}
+    .card h2{margin:0 0 .6rem;font-size:.95rem;color:var(--neon-cyan);text-transform:uppercase;letter-spacing:.04em;}
+    table{width:100%;border-collapse:collapse;font-size:.82rem;}
+    th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid rgba(255,255,255,.08);}
+    th{color:#94a3b8;font-weight:700;font-size:.75rem;text-transform:uppercase;}
+    td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+    .empty{color:#94a3b8;font-size:.82rem;padding:.4rem 0;}
+  </style>
+</head>
+<body>
+<div class="adm">
+  <header class="tool-box adm-hdr">
+    <div>
+      <h1>Affiliate Clicks &amp; Revenue Dashboard</h1>
+      <small>Owner-Only Internal Reporting &bull; Protected by Cloudflare Access &bull; D1 Source: <code>affiliate_clicks</code></small>
+    </div>
+    <div class="hdr-actions">
+      <button type="button" id="refreshBtn" class="btn-neutral">Refresh Data</button>
+      <a href="/cd-admin/" class="btn-neutral">&larr; Moderation Queue</a>
+    </div>
+  </header>
+
+  <div id="statusBanner" role="status" aria-live="polite"></div>
+
+  <div class="notice" id="revenueDisclaimer">
+    <strong>Measurement Integrity Notice:</strong> Clicks recorded in Cloudflare D1 are <strong>actual outbound affiliate clicks</strong>, NOT purchases or revenue. Confirmed purchases, confirmed commissions, and estimated revenue remain explicitly separated and are only reported when verified from official merchant dashboards.
+  </div>
+
+  <section class="kpi-grid" id="kpiGrid" aria-label="Key affiliate metrics"></section>
+
+  <div class="grid-2">
+    <section class="card" aria-label="Clicks by merchant">
+      <h2>Clicks by Merchant</h2>
+      <div id="merchantTable"></div>
+    </section>
+    <section class="card" aria-label="Top landing pages">
+      <h2>Top Landing Pages</h2>
+      <div id="pageTable"></div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card" aria-label="Clicks by product">
+      <h2>Clicks by Product</h2>
+      <div id="productTable"></div>
+    </section>
+    <section class="card" aria-label="Most frequently clicked placements">
+      <h2>Top Placements</h2>
+      <div id="placementTable"></div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card" aria-label="Daily trend">
+      <h2>Daily Click Trend (Last 30 Days)</h2>
+      <div id="dailyTable"></div>
+    </section>
+    <section class="card" aria-label="Weekly trend">
+      <h2>Weekly Click Trend (Last 12 Weeks)</h2>
+      <div id="weeklyTable"></div>
+    </section>
+  </div>
+
+  <section class="card" aria-label="Recent clicks">
+    <h2>Recent Clicks (Latest 20)</h2>
+    <div id="recentTable"></div>
+  </section>
+</div>
+<script src="/assets/community/cd-affiliate-dashboard.js?v=20261125_p36"></script>
+</body>
+</html>

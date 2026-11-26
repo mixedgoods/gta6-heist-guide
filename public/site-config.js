@@ -50,7 +50,7 @@ window.SITE_CONFIG = Object.freeze({
 
   // Optional Buyer Activations (leave blank "" to keep disabled)
   adsensePublisherId: "ca-pub-9556158063903839",
-  ga4MeasurementId: "",
+  ga4MeasurementId: "G-DG7REYHR80",
   enableAffiliateClickTracking: true,
 
   // Phase 35.1C — Centralized Amazon Product Placement Pause Switch (disabled by default)
@@ -58,14 +58,20 @@ window.SITE_CONFIG = Object.freeze({
   enableAmazonProductPlacements: false
 });
 
-// Privacy-first single reusable analytics adapter (GA4-ready when authorized ID is supplied)
+// Privacy-first single reusable analytics adapter (Phase 36 GA4 + opt-out controls)
 (function() {
-  var BLOCKED_KEY_RE = /email|mail|pass|pwd|secret|token|auth|phone|address|query|text|input|body|message|cookie|session|user_?name|full_?name/i;
+  var OPT_OUT_KEY = 'gta6_analytics_opt_out';
+  var BLOCKED_KEY_RE = /email|mail|pass|pwd|secret|token|auth|phone|address|query|text|input|body|message|cookie|session|user_?name|full_?name|ssn/i;
+  var AFFILIATE_HOST_RE = /(?:^|\.)(?:amazon\.com|amzn\.to|g2a\.com|exitlag\.com|gumroad\.com|getapexlocal\.com|gfuel\.com)$/i;
   var ALLOWED_EVENTS = {
+    page_view: true,
+    affiliate_click: true,
+    tool_interaction: true,
+    search_interaction: true,
+    outbound_click: true,
     map_pin_open: true,
     map_search: true,
     map_pin_complete: true,
-    affiliate_click: true,
     vehicle_compare: true,
     guide_related_click: true,
     continue_read: true,
@@ -87,6 +93,50 @@ window.SITE_CONFIG = Object.freeze({
     discovery_map_open: true,
     discovery_bookmark: true,
     discovery_report: true
+  };
+
+  function isAdminPath() {
+    var p = String((window.location && window.location.pathname) || '/').toLowerCase();
+    return p.indexOf('/cd-admin') === 0 || p.indexOf('/syndicate-command') === 0;
+  }
+
+  function isAnalyticsOptedOut() {
+    try {
+      if (isAdminPath()) return true;
+      var cfg = window.SITE_CONFIG || {};
+      var gaId = String(cfg.ga4MeasurementId || '').trim();
+      if (gaId && window['ga-disable-' + gaId] === true) return true;
+      if (window.navigator && (window.navigator.globalPrivacyControl === true || window.navigator.doNotTrack === '1' || window.navigator.doNotTrack === 'yes')) {
+        return true;
+      }
+      if (window.localStorage && window.localStorage.getItem(OPT_OUT_KEY) === '1') {
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+
+  function setAnalyticsOptOut(optedOut) {
+    try {
+      var flag = !!optedOut;
+      var cfg = window.SITE_CONFIG || {};
+      var gaId = String(cfg.ga4MeasurementId || '').trim();
+      if (gaId) window['ga-disable-' + gaId] = flag;
+      if (window.localStorage) {
+        if (flag) window.localStorage.setItem(OPT_OUT_KEY, '1');
+        else window.localStorage.removeItem(OPT_OUT_KEY);
+      }
+      return flag;
+    } catch (e) {
+      return !!optedOut;
+    }
+  }
+
+  window.GTA6Privacy = {
+    OPT_OUT_KEY: OPT_OUT_KEY,
+    isAdminPath: isAdminPath,
+    isAnalyticsOptedOut: isAnalyticsOptedOut,
+    setAnalyticsOptOut: setAnalyticsOptOut
   };
 
   function classifyPathCategory(pathname) {
@@ -132,11 +182,12 @@ window.SITE_CONFIG = Object.freeze({
       var clean = sanitizeParams(params);
       var cfg = window.SITE_CONFIG || {};
       var gaId = String(cfg.ga4MeasurementId || '').trim();
-      var gaActive = /^G-[A-Z0-9]+$/i.test(gaId) && typeof window.gtag === 'function';
+      var optedOut = isAnalyticsOptedOut();
+      var gaActive = !optedOut && /^G-[A-Z0-9]+$/i.test(gaId) && typeof window.gtag === 'function';
       if (gaActive) {
         window.gtag('event', name, clean);
       }
-      var record = { event: name, params: clean, dispatchedToGa4: gaActive, ts: Date.now() };
+      var record = { event: name, params: clean, dispatchedToGa4: gaActive, optedOut: optedOut, ts: Date.now() };
       eventHistory.push(record);
       if (eventHistory.length > 50) eventHistory.shift();
       if (typeof window.CustomEvent === 'function') {
@@ -150,6 +201,7 @@ window.SITE_CONFIG = Object.freeze({
   GTA6Track.classifyPath = classifyPathCategory;
   GTA6Track.getEvents = function() { return eventHistory.slice(); };
   GTA6Track.isGa4Active = function() {
+    if (isAnalyticsOptedOut()) return false;
     var cfg = window.SITE_CONFIG || {};
     var gaId = String(cfg.ga4MeasurementId || '').trim();
     return /^G-[A-Z0-9]+$/i.test(gaId) && typeof window.gtag === 'function';
@@ -164,9 +216,27 @@ window.SITE_CONFIG = Object.freeze({
         if (!target) return;
         var href = target.getAttribute('href') || '';
         if (!href || href.charAt(0) === '#') return;
-        var destPath = '';
-        try { destPath = new URL(target.href, window.location.origin).pathname; } catch (err) { destPath = href; }
+        var parsedUrl = null;
+        var destPath = href;
+        try {
+          parsedUrl = new URL(target.href, window.location.origin);
+          destPath = parsedUrl.pathname;
+        } catch (err) {
+          destPath = href;
+        }
         var destCat = classifyPathCategory(destPath);
+
+        if (parsedUrl && (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') && parsedUrl.origin !== window.location.origin) {
+          var isAffiliate = !!(target.getAttribute('data-aff-partner') || target.getAttribute('data-amazon-link') || AFFILIATE_HOST_RE.test(parsedUrl.hostname));
+          if (!isAffiliate) {
+            GTA6Track('outbound_click', {
+              destination_host: parsedUrl.hostname.toLowerCase(),
+              source_page: (window.location && window.location.pathname) ? window.location.pathname : '/',
+              event_timestamp: new Date().toISOString()
+            });
+          }
+          return;
+        }
 
         if (target.closest('#p26ContinueLinks')) {
           GTA6Track('continue_read', {
@@ -182,6 +252,44 @@ window.SITE_CONFIG = Object.freeze({
             interaction_type: 'related_guide_click'
           });
         }
+      } catch (err) {}
+    }, { passive: true });
+  }
+
+  if (!window._gta6ToolSearchBound) {
+    window._gta6ToolSearchBound = true;
+    var lastSearchTs = 0;
+    document.addEventListener('input', function(e) {
+      try {
+        var el = e.target;
+        if (!el || !el.matches) return;
+        if (!el.matches('input[type="search"], [data-analytics-search], #mapSearchInput, #dbSearch, #vehicleSearch, #weaponSearch, #cheatSearch')) return;
+        var now = Date.now();
+        if (now - lastSearchTs < 1500) return;
+        lastSearchTs = now;
+        var valLen = String(el.value || '').trim().length;
+        if (valLen < 2) return;
+        GTA6Track('search_interaction', {
+          search_surface: el.getAttribute('data-analytics-search') || el.id || 'site_search',
+          source_page: (window.location && window.location.pathname) ? window.location.pathname : '/',
+          event_timestamp: new Date().toISOString()
+        });
+      } catch (err) {}
+    }, { passive: true });
+
+    document.addEventListener('change', function(e) {
+      try {
+        var el = e.target;
+        if (!el || !el.closest) return;
+        var toolWrap = el.closest('[data-analytics-tool], #heistCalc, #heistPlanner, #savePlanner, .calculator-box, .tool-box');
+        if (!toolWrap) return;
+        if (el.type === 'email' || el.type === 'password' || el.type === 'tel') return;
+        GTA6Track('tool_interaction', {
+          tool_name: toolWrap.getAttribute('data-analytics-tool') || toolWrap.id || classifyPathCategory(window.location.pathname),
+          interaction_type: el.tagName ? el.tagName.toLowerCase() + '_change' : 'change',
+          source_page: (window.location && window.location.pathname) ? window.location.pathname : '/',
+          event_timestamp: new Date().toISOString()
+        });
       } catch (err) {}
     }, { passive: true });
   }
