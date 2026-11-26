@@ -14,7 +14,7 @@ const SITE_CONFIG_SRC = fs.readFileSync(path.join(ROOT, "public", "site-config.j
 const AFFILIATES_SRC = fs.readFileSync(path.join(ROOT, "public", "js", "affiliates.js"), "utf8");
 const MAIN_SRC = fs.readFileSync(path.join(ROOT, "public", "assets", "main.js"), "utf8");
 
-function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&email=test@example.com", dnt = null, gpc = false, optOutStored = null, loadMain = true } = {}) {
+function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&email=test@example.com", hash = "", referrer = "", dnt = null, gpc = false, optOutStored = null, loadMain = true } = {}) {
   const docListeners = new Map();
   const appendedScripts = [];
   const storage = new Map();
@@ -22,6 +22,7 @@ function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&e
 
   const document = {
     readyState: "interactive",
+    referrer,
     head: {
       appendChild(el) {
         appendedScripts.push(el);
@@ -88,8 +89,8 @@ function makeBrowser({ pathname = "/port-gellhorn", search = "?token=secret123&e
       pathname,
       search,
       origin: "https://www.gta6heistguide.com",
-      href: `https://www.gta6heistguide.com${pathname}${search}`,
-      hash: "",
+      href: `https://www.gta6heistguide.com${pathname}${search}${hash}`,
+      hash,
     },
     addEventListener() {},
     removeEventListener() {},
@@ -277,4 +278,118 @@ test("P36-DASH1: getAffiliateClickReport returns 7d/30d, byPage, byProduct, byPl
   assert.equal(report.revenueSummary.confirmedPurchases, null);
   assert.equal(report.revenueSummary.confirmedCommissionsUsd, null);
   assert.equal(report.revenueSummary.estimatedRevenueUsd, null);
+});
+
+test("P36.3-URL1: sanitizePageLocation and sanitizePageReferrer strip forbidden query params, fragments, and credentials", () => {
+  const { ctx } = makeBrowser({
+    pathname: "/",
+    search: "?email=test@example.com&token=FAKE_TOKEN_123&fbclid=FAKE_CLICK_ID",
+    hash: "#secret_fragment",
+    referrer: "https://external.example/callback?token=REF_TOKEN_999&email=ref@example.com#refhash",
+  });
+
+  // Visible browser URL must remain untouched
+  assert.equal(
+    ctx.location.href,
+    "https://www.gta6heistguide.com/?email=test@example.com&token=FAKE_TOKEN_123&fbclid=FAKE_CLICK_ID#secret_fragment"
+  );
+
+  // Sanitized page_location and page_referrer on synthetic test URLs
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageLocation("https://www.gta6heistguide.com/?email=test@example.com&token=FAKE_TOKEN_123&fbclid=FAKE_CLICK_ID#frag"),
+    "https://www.gta6heistguide.com/"
+  );
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageLocation("https://www.gta6heistguide.com/guides/example?auth=FAKE_AUTH&session=FAKE_SESSION"),
+    "https://www.gta6heistguide.com/guides/example"
+  );
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageLocation("https://www.gta6heistguide.com/search?q=FAKE_QUERY_VALUE"),
+    "https://www.gta6heistguide.com/search"
+  );
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageReferrer("https://external.example/callback?token=REF_TOKEN_999&email=ref@example.com#refhash"),
+    "https://external.example/callback"
+  );
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageReferrer("https://user:pass@external.example/cb?auth=1"),
+    "https://external.example/cb"
+  );
+  assert.equal(ctx.GTA6Privacy.sanitizePageReferrer("javascript:alert(1)"), "");
+  assert.equal(ctx.GTA6Privacy.sanitizePageReferrer(""), "");
+});
+
+test("P36.3-UTM1: Only validated non-sensitive utm_source/utm_medium/utm_campaign are preserved; sensitive UTM values are rejected", () => {
+  const { ctx } = makeBrowser({ pathname: "/" });
+
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageLocation(
+      "https://www.gta6heistguide.com/?utm_source=reddit&utm_medium=social&utm_campaign=launch_2026&utm_term=secret_query&utm_content=ad_123&email=test@example.com&fbclid=FAKE"
+    ),
+    "https://www.gta6heistguide.com/?utm_source=reddit&utm_medium=social&utm_campaign=launch_2026"
+  );
+
+  // Reject emails, phone numbers, tokens/secrets, numeric IDs, and overlong strings in UTM params
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageLocation(
+      "https://www.gta6heistguide.com/?utm_source=user@example.com&utm_medium=5551234567&utm_campaign=FAKE_TOKEN_123"
+    ),
+    "https://www.gta6heistguide.com/"
+  );
+  assert.equal(
+    ctx.GTA6Privacy.sanitizePageLocation(
+      "https://www.gta6heistguide.com/?utm_source=987654321&utm_medium=abcdef0123456789abcdef01&utm_campaign=" + "a".repeat(45)
+    ),
+    "https://www.gta6heistguide.com/"
+  );
+});
+
+test("P36.3-ORDER1: Strict GA4 init order (consent -> set sanitized location/referrer -> js -> config) with no duplicate page_view", () => {
+  const { ctx } = makeBrowser({
+    pathname: "/guides/example",
+    search: "?auth=FAKE_AUTH&session=FAKE_SESSION",
+    referrer: "https://www.gta6heistguide.com/?token=INTERNAL_TOKEN&fbclid=INTERNAL_FBCLID",
+  });
+
+  const dl = ctx.dataLayer || [];
+  const consentIdx = dl.findIndex((args) => args[0] === "consent" && args[1] === "default");
+  const setIdx = dl.findIndex((args) => args[0] === "set" && args[1] && typeof args[1] === "object" && "page_location" in args[1]);
+  const jsIdx = dl.findIndex((args) => args[0] === "js");
+  const configIdx = dl.findIndex((args) => args[0] === "config" && args[1] === "G-DG7REYHR80");
+
+  assert.ok(consentIdx >= 0, "consent default must be present");
+  assert.ok(setIdx > consentIdx, "gtag set must run after consent default");
+  assert.ok(jsIdx > setIdx, "gtag set must run BEFORE gtag js so automatic page_view uses sanitized dl/dr");
+  assert.ok(configIdx > jsIdx, "gtag config must run after gtag js");
+
+  const setPayload = dl[setIdx][1];
+  assert.equal(setPayload.page_location, "https://www.gta6heistguide.com/guides/example");
+  assert.equal(setPayload.page_referrer, "https://www.gta6heistguide.com/");
+  assert.equal(dl[configIdx][2].page_location, "https://www.gta6heistguide.com/guides/example");
+  assert.equal(dl[configIdx][2].page_referrer, "https://www.gta6heistguide.com/");
+
+  const manualPageViews = dl.filter((args) => args[0] === "event" && args[1] === "page_view");
+  assert.equal(manualPageViews.length, 0, "no manual page_view should duplicate gtag initial page_view");
+});
+
+test("P36.3-PII1: Custom events reject fbclid, gclid, jwt, page_location overrides, and token-like values", () => {
+  const { ctx } = makeBrowser({ pathname: "/search", search: "?q=FAKE_QUERY_VALUE" });
+  ctx.GTA6Track("tool_interaction", {
+    tool_name: "heist_calc",
+    fbclid: "FAKE_CLICK_ID",
+    gclid: "FAKE_GCLID",
+    page_location: "https://www.gta6heistguide.com/search?q=FAKE_QUERY_VALUE",
+    page_referrer: "https://external.example/?token=123",
+    jwt_field: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.abc",
+    frag_url: "https://example.com/page#secret",
+  });
+  const evt = ctx.GTA6Track.getEvents().find((e) => e.event === "tool_interaction");
+  assert.ok(evt);
+  assert.equal(evt.params.tool_name, "heist_calc");
+  assert.equal("fbclid" in evt.params, false);
+  assert.equal("gclid" in evt.params, false);
+  assert.equal("page_location" in evt.params, false);
+  assert.equal("page_referrer" in evt.params, false);
+  assert.equal("jwt_field" in evt.params, false);
+  assert.equal("frag_url" in evt.params, false);
 });

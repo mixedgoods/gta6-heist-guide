@@ -66,8 +66,13 @@ window.SITE_CONFIG = Object.freeze({
     'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK',
     'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
   ];
-  var BLOCKED_KEY_RE = /^name$|email|mail|pass|pwd|secret|token|auth|phone|tel|address|query|search_?term|text|input|body|message|comment|cookie|session|user_?name|full_?name|first_?name|last_?name|display_?name|ssn|target_?url|link_?url|full_?url|href/i;
+  var BLOCKED_KEY_RE = /^name$|email|mail|pass|pwd|secret|token|auth|phone|tel|address|query|search_?term|text|input|body|message|comment|cookie|session|user_?name|full_?name|first_?name|last_?name|display_?name|ssn|target_?url|link_?url|full_?url|href|fbclid|gclid|msclkid|dclid|yclid|wbraid|gbraid|mc_eid|api_?key|jwt|bearer|credit_?card|card_?number|ip_?address|^ip$|user_?id|client_?id|page_?location|page_?referrer/i;
   var PHONE_VAL_RE = /^\+?\d[\d\s().-]{7,}\d$/;
+  var SENSITIVE_VAL_RE = /(?:@|%40|eyJ[a-zA-Z0-9_-]{10,}|(?:^|[?&])(?:email|token|auth|secret|pass|pwd|phone|session|fbclid|gclid|key)=)/i;
+  var ALLOWED_UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var UTM_SAFE_VAL_RE = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,39}$/;
+  var UTM_SENSITIVE_WORD_RE = /(?:token|secret|auth|pass|pwd|session|email|phone|bearer|apikey|fbclid|gclid|cookie|ssn)/i;
+  var UTM_LONG_ID_RE = /^(?:[0-9]{6,}|[0-9a-f]{16,}|[a-zA-Z0-9]{24,})$/i;
   var AFFILIATE_HOST_RE = /(?:^|\.)(?:amazon\.com|amzn\.to|g2a\.com|exitlag\.com|gumroad\.com|getapexlocal\.com|gfuel\.com)$/i;
   var ALLOWED_EVENTS = {
     page_view: true,
@@ -122,6 +127,63 @@ window.SITE_CONFIG = Object.freeze({
     return false;
   }
 
+  function sanitizeUtmValue(raw) {
+    try {
+      var val = String(raw || '').trim();
+      if (!val || val.length > 40) return '';
+      if (!UTM_SAFE_VAL_RE.test(val)) return '';
+      if (UTM_SENSITIVE_WORD_RE.test(val)) return '';
+      if (UTM_LONG_ID_RE.test(val)) return '';
+      if (PHONE_VAL_RE.test(val)) return '';
+      var digitsOnly = val.replace(/\D/g, '');
+      if (digitsOnly.length >= 7) return '';
+      return val;
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function sanitizePageLocation(rawHref) {
+    try {
+      var fallbackOrigin = (window.location && window.location.origin) ? window.location.origin : '';
+      var fallbackPath = (window.location && window.location.pathname) ? window.location.pathname : '/';
+      var input = typeof rawHref === 'string' && rawHref.trim()
+        ? rawHref.trim()
+        : ((window.location && window.location.href) ? window.location.href : (fallbackOrigin + fallbackPath));
+      var u = new URL(input, fallbackOrigin || 'https://www.gta6heistguide.com');
+      if (u.protocol !== 'http:' && u.protocol !== 'https:') return '';
+      var base = u.protocol + '//' + u.host + (u.pathname || '/');
+      var safeParams = new URLSearchParams();
+      for (var i = 0; i < ALLOWED_UTM_KEYS.length; i++) {
+        var key = ALLOWED_UTM_KEYS[i];
+        if (u.searchParams.has(key)) {
+          var cleanVal = sanitizeUtmValue(u.searchParams.get(key));
+          if (cleanVal) safeParams.set(key, cleanVal);
+        }
+      }
+      var qs = safeParams.toString();
+      return qs ? (base + '?' + qs) : base;
+    } catch (e) {
+      var origin = (window.location && window.location.origin) ? window.location.origin : '';
+      var pathname = (window.location && window.location.pathname) ? window.location.pathname : '/';
+      return origin + pathname;
+    }
+  }
+
+  function sanitizePageReferrer(rawReferrer) {
+    try {
+      var input = typeof rawReferrer === 'string'
+        ? rawReferrer.trim()
+        : (typeof document !== 'undefined' && document.referrer ? String(document.referrer).trim() : '');
+      if (!input) return '';
+      var u = new URL(input);
+      if (u.protocol !== 'http:' && u.protocol !== 'https:') return '';
+      return u.protocol + '//' + u.host + (u.pathname || '/');
+    } catch (e) {
+      return '';
+    }
+  }
+
   function initGa4(overrideId) {
     try {
       var cfg = window.SITE_CONFIG || {};
@@ -138,7 +200,11 @@ window.SITE_CONFIG = Object.freeze({
       if (typeof window.gtag !== 'function') {
         window.gtag = function gtag() { window.dataLayer.push(arguments); };
       }
-      // Consent Mode defaults: never auto-grant advertising consent; deny analytics storage in consent-required regions
+      var cleanPath = (window.location && window.location.pathname) ? window.location.pathname : '/';
+      var cleanLocation = sanitizePageLocation();
+      var cleanReferrer = sanitizePageReferrer();
+
+      // 1. Consent Mode defaults execute first: never auto-grant advertising consent; deny analytics storage in consent-required regions
       window.gtag('consent', 'default', {
         ad_storage: 'denied',
         ad_user_data: 'denied',
@@ -151,14 +217,21 @@ window.SITE_CONFIG = Object.freeze({
         ad_user_data: 'denied',
         ad_personalization: 'denied'
       });
+
+      // 2. Establish sanitized page_location and page_referrer BEFORE gtag('js', ...) so the initial automatic page_view and all subsequent events never serialize raw query params or fragments
+      window.gtag('set', {
+        page_location: cleanLocation,
+        page_referrer: cleanReferrer
+      });
+
+      // 3. Initialize gtag clock and single GA4 config (exactly one page_view per page load, no duplicate manual page_view)
       window.gtag('js', new Date());
-      var cleanPath = (window.location && window.location.pathname) ? window.location.pathname : '/';
-      var cleanOrigin = (window.location && window.location.origin) ? window.location.origin : '';
       window.gtag('config', gaId, {
         anonymize_ip: true,
         allow_google_signals: false,
         allow_ad_personalization_signals: false,
-        page_location: cleanOrigin + cleanPath,
+        page_location: cleanLocation,
+        page_referrer: cleanReferrer,
         page_path: cleanPath,
         send_page_view: true
       });
@@ -200,9 +273,13 @@ window.SITE_CONFIG = Object.freeze({
   window.GTA6Privacy = {
     OPT_OUT_KEY: OPT_OUT_KEY,
     CONSENT_REQUIRED_REGIONS: CONSENT_REQUIRED_REGIONS,
+    ALLOWED_UTM_KEYS: ALLOWED_UTM_KEYS,
     isAdminPath: isAdminPath,
     isAnalyticsOptedOut: isAnalyticsOptedOut,
     setAnalyticsOptOut: setAnalyticsOptOut,
+    sanitizePageLocation: sanitizePageLocation,
+    sanitizePageReferrer: sanitizePageReferrer,
+    sanitizeUtmValue: sanitizeUtmValue,
     initGa4: initGa4
   };
 
@@ -235,8 +312,9 @@ window.SITE_CONFIG = Object.freeze({
       } else if (typeof v === 'string') {
         var s = v.trim();
         if (!s || s.indexOf('@') !== -1) return;
-        if (s.indexOf('?') !== -1 && s.indexOf('=') !== -1) return;
-        if (PHONE_VAL_RE.test(s)) return;
+        if (s.indexOf('?') !== -1 && (s.indexOf('=') !== -1 || s.indexOf('://') !== -1)) return;
+        if (s.indexOf('://') !== -1 && s.indexOf('#') !== -1) return;
+        if (PHONE_VAL_RE.test(s) || SENSITIVE_VAL_RE.test(s)) return;
         clean[k] = s.length > 80 ? s.slice(0, 80) : s;
       }
     });
@@ -352,7 +430,7 @@ window.SITE_CONFIG = Object.freeze({
         if (!el || !el.closest) return;
         var toolWrap = el.closest('[data-analytics-tool], #heistCalc, #heistPlanner, #savePlanner, .calculator-box, .tool-box');
         if (!toolWrap) return;
-        if (el.type === 'email' || el.type === 'password' || el.type === 'tel') return;
+        if (el.type === 'email' || el.type === 'password' || el.type === 'tel' || el.type === 'hidden') return;
         GTA6Track('tool_interaction', {
           tool_name: toolWrap.getAttribute('data-analytics-tool') || toolWrap.id || classifyPathCategory(window.location.pathname),
           interaction_type: el.tagName ? el.tagName.toLowerCase() + '_change' : 'change',

@@ -268,18 +268,34 @@ const GTA6 = {
           window._gta6Ga4Initialized = true;
           window.dataLayer = window.dataLayer || [];
           window.gtag = function gtag() { window.dataLayer.push(arguments); };
+          const cleanPath = window.location.pathname || '/';
+          const cleanLocation = (window.location.origin || '') + cleanPath;
+          let cleanReferrer = '';
+          try {
+            if (document.referrer) {
+              const refUrl = new URL(document.referrer);
+              if (refUrl.protocol === 'http:' || refUrl.protocol === 'https:') {
+                cleanReferrer = `${refUrl.protocol}//${refUrl.host}${refUrl.pathname || '/'}`;
+              }
+            }
+          } catch (e) {}
           window.gtag('consent', 'default', {
             ad_storage: 'denied',
             ad_user_data: 'denied',
             ad_personalization: 'denied',
+          });
+          window.gtag('set', {
+            page_location: cleanLocation,
+            page_referrer: cleanReferrer,
           });
           window.gtag('js', new Date());
           window.gtag('config', gaId, {
             anonymize_ip: true,
             allow_google_signals: false,
             allow_ad_personalization_signals: false,
-            page_location: (window.location.origin || '') + (window.location.pathname || '/'),
-            page_path: window.location.pathname || '/',
+            page_location: cleanLocation,
+            page_referrer: cleanReferrer,
+            page_path: cleanPath,
             send_page_view: true,
           });
           const s = document.createElement('script');
