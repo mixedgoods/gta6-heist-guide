@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 // HTTP smoke & security test against `wrangler pages dev` (real Pages Functions runtime + real local D1 with migration).
 // Usage:
 //   node tests/http-smoke.mjs http://127.0.0.1:8799            (configured preview: Turnstile test keys + CD_HASH_SALT)
@@ -18,13 +19,23 @@ const body = (o = {}) => ({
 });
 const post = (p, b, h = {}) => fetch(base + p, { method: "POST", headers: { "Content-Type": "application/json", Origin: base, ...h }, body: JSON.stringify(b) });
 
+const expectedPins = JSON.parse(
+  readFileSync(new URL("../public/data/map-pins.json", import.meta.url), "utf8")
+).pins.filter((p) => p.enabled !== false).length;
+
 await t("HTTP-01", "Existing hub page still serves 200 and contains the new entry point", async () => {
   const r = await fetch(base + "/gta-6-discoveries/"); const h = await r.text();
   ok(r.status === 200 && h.includes('data-cd-entry="submit"') && h.includes('canonical" href="https://www.gta6heistguide.com/gta-6-discoveries/"'));
 });
 await t("HTTP-02", "Existing map page and map-pins.json unchanged/served", async () => {
   ok((await fetch(base + "/map.html")).status === 200 || (await fetch(base + "/map")).status === 200);
-  const j = await (await fetch(base + "/data/map-pins.json")).json(); ok(j.total_pins === 174, "pins " + j.total_pins);
+  const j = await (await fetch(base + "/data/map-pins.json")).json();
+  ok(
+    j.total_pins === expectedPins &&
+      Array.isArray(j.pins) &&
+      j.pins.filter((p) => p.enabled !== false).length === expectedPins,
+    "pins " + j.total_pins
+  );
 });
 await t("HTTP-03", "Submit page: 200, robots noindex + X-Robots-Tag noindex header", async () => {
   const r = await fetch(base + "/community-discoveries/submit/"); const h = await r.text();
