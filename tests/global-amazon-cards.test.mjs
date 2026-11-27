@@ -58,7 +58,7 @@ test('GLOBAL-AMZ-02: /gta-6-settings/ renders all 14 hardware models with exact 
     ['elgato-4k-x', 'B0CPFWXMBL'],
     ['elgato-4k-pro', 'B0DLR3WQWR'],
     ['avermedia-gc553g2', 'B0CJWYCVRM'],
-    ['elgato-hd60-x', 'B09V1KJ3J4'],
+    ['elgato-4k-s', 'B0FFTFYGLV'],
     ['lg-oled-c4', 'B0CVRDK4P6'],
     ['samsung-s90d-oled', 'B0CV9VGMPT'],
     ['asus-rog-pg32ucdm', 'B0CV26XVMD'],
