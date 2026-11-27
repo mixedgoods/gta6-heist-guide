@@ -42,13 +42,12 @@ window.SITE_CONFIG = Object.freeze({
     elgato4kX: "https://www.amazon.com/dp/B0CPFWXMBL?tag=gta6heistguid-20",
     elgato4kPro: "https://www.amazon.com/dp/B0DLR3WQWR?tag=gta6heistguid-20",
     avermediaGc553g2: "https://www.amazon.com/dp/B0CJWYCVRM?tag=gta6heistguid-20",
-    elgatoHd60x: "https://www.amazon.com/dp/B09V1KJ3J4?tag=gta6heistguid-20",
+    elgato4kS: "https://www.amazon.com/dp/B0FFTFYGLV?tag=gta6heistguid-20",
+    elgatoHd60x: "https://www.amazon.com/dp/B0FFTFYGLV?tag=gta6heistguid-20",
     lgOledC4: "https://www.amazon.com/dp/B0CVRDK4P6?tag=gta6heistguid-20",
     samsungS90d: "https://www.amazon.com/dp/B0CV9VGMPT?tag=gta6heistguid-20",
     asusPg32ucdm: "https://www.amazon.com/dp/B0CV26XVMD?tag=gta6heistguid-20",
     pulseElite: "https://www.amazon.com/dp/B0CMDH9M5W?tag=gta6heistguid-20",
-    nova7p: "https://www.amazon.com/dp/B0BDGMNF6V?tag=gta6heistguid-20",
-    nova7x: "https://www.amazon.com/dp/B0CWS6WV23?tag=gta6heistguid-20",
     prime: "https://www.amazon.com/tryprimefree?tag=gta6heistguid-20"
   },
 

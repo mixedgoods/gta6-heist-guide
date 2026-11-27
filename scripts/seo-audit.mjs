@@ -381,12 +381,24 @@ function runAudit() {
     }
   }
 
-  // 5. Homepage monetization & structure guardrail: 4 unboxed Amazon cards visible
+  // 5. Configuration-aware homepage & sitewide Amazon monetization guardrail
   const homeHtml = fs.readFileSync(path.join(PUBLIC_DIR, 'index.html'), 'utf-8');
-  const amazonTagMatches = homeHtml.match(/gta6heistguid-20/g) || [];
-  if (amazonTagMatches.length < 4) {
-    fatal.push(`[GUARDRAIL] Expected 4+ Amazon affiliate references on homepage, found ${amazonTagMatches.length}`);
-  }
+  const siteConfigPath = path.join(PUBLIC_DIR, 'site-config.js');
+  const siteConfigSource = fs.existsSync(siteConfigPath) ? fs.readFileSync(siteConfigPath, 'utf-8') : null;
+  const settingsPath = path.join(PUBLIC_DIR, 'gta-6-settings', 'index.html');
+  const settingsHtml = fs.existsSync(settingsPath) ? fs.readFileSync(settingsPath, 'utf-8') : null;
+  const gearMasterPath = path.join(PUBLIC_DIR, 'data', 'gear-products-master.json');
+  const gearMasterRaw = fs.existsSync(gearMasterPath) ? fs.readFileSync(gearMasterPath, 'utf-8') : null;
+
+  const guardrailResult = evaluateHomepageAmazonGuardrail({
+    siteConfigSource,
+    homeHtml,
+    settingsHtml,
+    gearMasterRaw,
+  });
+  for (const err of guardrailResult.fatal) fatal.push(err);
+  for (const warn of guardrailResult.warnings) warnings.push(warn);
+  for (const note of guardrailResult.info) info.push(note);
 
   info.push(`Primary HTML pages audited: ${checkedPrimaryPages}`);
   info.push(`JSON-LD blocks parsed & validated: ${jsonLdTotal}`);
@@ -414,4 +426,147 @@ function runAudit() {
   }
 }
 
-runAudit();
+export function parseSiteConfigAmazonSettings(siteConfigSource) {
+  if (typeof siteConfigSource !== 'string' || !siteConfigSource.trim()) {
+    return { valid: false, error: 'Missing public/site-config.js content' };
+  }
+  const flagMatch = siteConfigSource.match(/\benableAmazonProductPlacements\s*:\s*([^,\r\n}]+)/);
+  if (!flagMatch) {
+    return { valid: false, error: 'Missing enableAmazonProductPlacements key in public/site-config.js' };
+  }
+  const rawFlag = flagMatch[1].replace(/\/\/.*$/, '').trim();
+  if (rawFlag !== 'true' && rawFlag !== 'false') {
+    return {
+      valid: false,
+      error: `Invalid enableAmazonProductPlacements value "${rawFlag}" in public/site-config.js (expected boolean true or false)`,
+    };
+  }
+  const tagMatch = siteConfigSource.match(/\bamazonTag\s*:\s*["']([^"']+)["']/);
+  if (!tagMatch || !tagMatch[1].trim()) {
+    return { valid: false, error: 'Missing amazonTag in public/site-config.js' };
+  }
+  return {
+    valid: true,
+    enableAmazonProductPlacements: rawFlag === 'true',
+    amazonTag: tagMatch[1].trim(),
+  };
+}
+
+export function evaluateHomepageAmazonGuardrail({
+  siteConfigSource,
+  homeHtml,
+  settingsHtml = null,
+  gearMasterRaw = null,
+  expectedTag = 'gta6heistguid-20',
+}) {
+  const fatal = [];
+  const warnings = [];
+  const info = [];
+
+  const parsed = parseSiteConfigAmazonSettings(siteConfigSource);
+  if (!parsed.valid) {
+    fatal.push(`[GUARDRAIL] ${parsed.error}`);
+    return { fatal, warnings, info, enabled: null };
+  }
+
+  const activeTag = parsed.amazonTag;
+  if (expectedTag && activeTag !== expectedTag) {
+    fatal.push(`[GUARDRAIL] Unexpected amazonTag "${activeTag}" in public/site-config.js (expected "${expectedTag}")`);
+  }
+
+  const html = String(homeHtml || '');
+  const hasDisclosure = /As an Amazon Associate I earn from qualifying purchases/i.test(html);
+  if (!hasDisclosure) {
+    fatal.push('[GUARDRAIL] Missing required Amazon Associates disclosure on homepage');
+  }
+
+  // Validate any static Amazon URLs on homepage have valid Amazon hostname and expected tracking tag
+  const amazonHrefs = [...html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)]
+    .map((m) => m[1])
+    .filter((href) => /amazon\.|amzn\.to|tag=/i.test(href));
+  for (const href of amazonHrefs) {
+    let u;
+    try {
+      u = new URL(href, CANONICAL_ORIGIN);
+    } catch {
+      fatal.push(`[GUARDRAIL] Malformed affiliate URL on homepage: ${href}`);
+      continue;
+    }
+    if (!/(?:^|\.)amazon\.com$/i.test(u.hostname) && !/(?:^|\.)amzn\.to$/i.test(u.hostname)) {
+      fatal.push(`[GUARDRAIL] Invalid Amazon affiliate destination hostname on homepage: ${u.hostname}`);
+      continue;
+    }
+    if (u.searchParams.get('tag') !== activeTag) {
+      fatal.push(`[GUARDRAIL] Homepage Amazon URL missing expected tag "${activeTag}": ${href}`);
+    }
+  }
+
+  if (parsed.enableAmazonProductPlacements) {
+    const tagRegex = new RegExp(activeTag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    const amazonTagMatches = html.match(tagRegex) || [];
+    const amzCardCount = (html.match(/class=["'][^"']*\bamz-card\b[^"']*["']/gi) || []).length;
+    const amzLinkCount = amazonHrefs.filter((href) => /amazon\.com|amzn\.to/i.test(href)).length;
+    const effectiveCount = Math.max(amazonTagMatches.length, amzCardCount, amzLinkCount);
+    if (effectiveCount < 4) {
+      fatal.push(`[GUARDRAIL] Homepage Amazon placements enabled, expected 4+ Amazon affiliate references on homepage, found ${effectiveCount}`);
+    } else if (amzLinkCount > 0 && amzLinkCount < 4 && amzCardCount < 4 && amazonTagMatches.length < 4) {
+      fatal.push(`[GUARDRAIL] Homepage Amazon placements enabled, expected 4+ product links, found ${amzLinkCount}`);
+    }
+    info.push(`Homepage Amazon guardrail: enabled (true) — ${effectiveCount} homepage references verified with tag ${activeTag}`);
+  } else {
+    // Verify homepage Amazon placement modules remain intentionally paused (hidden) with zero unauthorized visible cards
+    const moduleTags = [...html.matchAll(/<section\b[^>]*data-amazon-placement-module=["']1["'][^>]*>/gi)];
+    for (const m of moduleTags) {
+      if (!/\bhidden\b/i.test(m[0])) {
+        fatal.push('[GUARDRAIL] Unauthorized visible homepage Amazon placement module detected while enableAmazonProductPlacements is false');
+      }
+    }
+    // Strip hidden data-amazon-placement-module sections before checking for unauthorized visible .amz-card blocks
+    const withoutHiddenModules = html.replace(
+      /<section\b[^>]*data-amazon-placement-module=["']1["'][^>]*\bhidden\b[^>]*>[\s\S]*?<\/section>/gi,
+      ''
+    );
+    const unauthorizedCards = (withoutHiddenModules.match(/class=["'][^"']*\bamz-card\b[^"']*["']/gi) || []).length;
+    if (unauthorizedCards > 0) {
+      fatal.push(`[GUARDRAIL] Found ${unauthorizedCards} unauthorized visible .amz-card placement(s) on homepage while enableAmazonProductPlacements is false`);
+    }
+    info.push(`Homepage Amazon guardrail: intentionally paused (enableAmazonProductPlacements: false) — 0 unauthorized visible homepage cards`);
+  }
+
+  // Verify dedicated monetization pages (Gaming Gear catalog & Settings) were not accidentally disabled
+  if (gearMasterRaw !== null) {
+    try {
+      const catalog = JSON.parse(gearMasterRaw);
+      const activeProducts = (catalog.products || []).filter((p) => p.active !== false);
+      if (activeProducts.length < 50) {
+        fatal.push(`[GUARDRAIL] Dedicated Gaming Gear catalog unexpectedly low: expected 50+ active products, found ${activeProducts.length}`);
+      }
+      const badCatalogLinks = activeProducts.filter(
+        (p) => !p.amazonSpecialLink || !p.amazonSpecialLink.startsWith('https://www.amazon.com/dp/') || !p.amazonSpecialLink.includes(`tag=${activeTag}`)
+      );
+      if (badCatalogLinks.length > 0) {
+        fatal.push(`[GUARDRAIL] Gaming Gear catalog has ${badCatalogLinks.length} active product(s) with invalid Amazon destination or missing tag "${activeTag}"`);
+      }
+    } catch (err) {
+      fatal.push(`[GUARDRAIL] Failed to parse public/data/gear-products-master.json: ${err.message}`);
+    }
+  }
+
+  if (settingsHtml !== null) {
+    const settingsCardCount = (settingsHtml.match(/<article\b[^>]*class=["'][^"']*\bamz-card\b[^"']*["']/gi) || []).length;
+    if (settingsCardCount < 14) {
+      fatal.push(`[GUARDRAIL] Dedicated Settings page Amazon cards unexpectedly low: expected 14+, found ${settingsCardCount}`);
+    }
+    if (!/As an Amazon Associate I earn from qualifying purchases/i.test(settingsHtml)) {
+      fatal.push('[GUARDRAIL] Missing Amazon Associates disclosure on /gta-6-settings/');
+    }
+  }
+
+  return { fatal, warnings, info, enabled: parsed.enableAmazonProductPlacements, amazonTag: activeTag };
+}
+
+export { runAudit };
+
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  runAudit();
+}
