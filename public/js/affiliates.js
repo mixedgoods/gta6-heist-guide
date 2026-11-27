@@ -1101,9 +1101,20 @@ window.getGTA6LaunchBannerText = function() {
           var collectionVal = link.getAttribute('data-aff-collection') || '';
           var positionRaw = link.getAttribute('data-aff-position') || '';
           var positionNum = /^[1-9]\d*$/.test(positionRaw) ? Number(positionRaw) : null;
+          var pLow = String(partner || 'amazon').toLowerCase();
+          var affProgMap = {
+            amazon: { program: 'amazon_associates', name: 'Amazon Associates' },
+            g2a: { program: 'g2a_goldmine', name: 'G2A Goldmine' },
+            exitlag: { program: 'exitlag_affiliate', name: 'ExitLag' },
+            gumroad: { program: 'gumroad_direct', name: 'Gumroad' },
+            getapexlocal: { program: 'getapexlocal_owned', name: 'GetApexLocal' }
+          };
+          var progInfo = affProgMap[pLow] || { program: pLow, name: pLow };
           var trackPayload = {
             merchant: partner,
             partner: partner,
+            affiliate_program: progInfo.program,
+            partner_name: progInfo.name,
             product_id: productKey || asinVal || partner,
             product_key: productKey,
             asin: asinVal,
@@ -1113,6 +1124,7 @@ window.getGTA6LaunchBannerText = function() {
             feature_placement: placement,
             daily_editorial_slot: dailySlotVal,
             destination_host: destHost,
+            destination_hostname: destHost,
             page_path: curPath,
             source_page: curPath,
             event_timestamp: new Date().toISOString(),
@@ -1123,6 +1135,7 @@ window.getGTA6LaunchBannerText = function() {
           }
           if (positionNum !== null) {
             trackPayload.product_position = positionNum;
+            trackPayload.feature_position = positionNum;
           }
           global.GTA6Track('affiliate_click', trackPayload);
         }

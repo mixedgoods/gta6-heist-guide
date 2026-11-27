@@ -348,6 +348,22 @@ const GTA6 = {
         if (typeof window.GTA6Track === 'function') {
           const asinMatch = String(targetUrl).match(/\/dp\/([A-Z0-9]{10})/i);
           const pNorm = payload.partner;
+          const programMap = {
+            amazon: { program: 'amazon_associates', name: 'Amazon Associates' },
+            g2a: { program: 'g2a_goldmine', name: 'G2A Goldmine' },
+            exitlag: { program: 'exitlag_affiliate', name: 'ExitLag' },
+            gumroad: { program: 'gumroad_direct', name: 'Gumroad' },
+            getapexlocal: { program: 'getapexlocal_owned', name: 'GetApexLocal' },
+          };
+          const progMeta = programMap[pNorm] || { program: pNorm, name: pNorm };
+          let destHostname = anchor.getAttribute('data-aff-dest-host') || '';
+          if (!destHostname && targetUrl) {
+            try {
+              destHostname = new URL(targetUrl, window.location.origin).hostname.toLowerCase();
+            } catch (urlErr) {
+              destHostname = '';
+            }
+          }
           const attrCategory = anchor.getAttribute('data-aff-category') || '';
           const productCategory = attrCategory || (pNorm === 'amazon'
             ? 'amazon_hardware'
@@ -358,22 +374,31 @@ const GTA6 = {
                 : pNorm === 'g2a'
                   ? 'gaming_store'
                   : 'affiliate_partner');
+          const curPath = window.location.pathname || '/';
           const trackPayload = {
             merchant: pNorm,
+            affiliate_program: progMeta.program,
+            partner_name: progMeta.name,
             destination_category: pNorm,
+            category: productCategory,
             product_category: productCategory,
             product_id: anchor.getAttribute('data-aff-product') || (asinMatch ? asinMatch[1].toUpperCase() : pNorm),
             asin: anchor.getAttribute('data-aff-asin') || (asinMatch ? asinMatch[1].toUpperCase() : ''),
             placement: String(placement || 'sitewide').slice(0, 48),
             feature_placement: String(placement || 'sitewide').slice(0, 48),
-            source_page: window.location.pathname || '/',
+            destination_hostname: destHostname,
+            page_path: curPath,
+            source_page: curPath,
             event_timestamp: new Date().toISOString(),
             interaction_type: 'outbound_click',
           };
           const colAttr = anchor.getAttribute('data-aff-collection') || '';
           const posAttr = anchor.getAttribute('data-aff-position') || '';
           if (colAttr) trackPayload.collection_id = colAttr;
-          if (/^[1-9]\d*$/.test(posAttr)) trackPayload.product_position = Number(posAttr);
+          if (/^[1-9]\d*$/.test(posAttr)) {
+            trackPayload.product_position = Number(posAttr);
+            trackPayload.feature_position = Number(posAttr);
+          }
           window.GTA6Track('affiliate_click', trackPayload);
         }
       } catch (err) {}
