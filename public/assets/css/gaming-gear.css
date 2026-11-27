@@ -1,0 +1,831 @@
+/* ==========================================================================
+   GTA6HEISTGUIDE.COM — GAMING GEAR HUB & LEONIDA EDITOR'S PICK OF THE DAY
+   Dark gaming editorial aesthetic, WCAG AA contrast, zero horizontal overflow
+   ========================================================================== */
+
+.gear-hub-main {
+  max-width: 1180px;
+  margin: 0 auto 3.2rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.gear-hero {
+  margin: 1.3rem 0 1.4rem;
+  padding: 1.45rem 1.45rem 1.35rem;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(16, 23, 42, 0.96), rgba(9, 13, 24, 0.98));
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.36);
+}
+
+.gear-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.4rem;
+}
+
+.gear-hero h1 {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+.gear-hero p {
+  margin: 0;
+  max-width: 850px;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: #cbd5e1;
+}
+
+.gear-disclosure-banner {
+  margin-top: 1rem;
+  padding: 0.72rem 0.95rem;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.11);
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  font-size: 0.81rem;
+  line-height: 1.5;
+  color: #fef3c7;
+}
+
+.gear-disclosure-banner strong {
+  color: #fde68a;
+}
+
+.gear-jump-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+  margin-top: 1rem;
+}
+
+.gear-jump-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.35rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+}
+
+.gear-jump-pill:hover,
+.gear-jump-pill:focus-visible {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.gear-jump-pill--featured {
+  border-color: rgba(255, 42, 141, 0.55);
+  background: rgba(255, 42, 141, 0.14);
+  color: #fbcfe8;
+}
+
+/* ---------- LEONIDA EDITOR'S PICK OF THE DAY ---------- */
+
+.lep-section {
+  margin: 1.5rem 0 2.1rem;
+}
+
+.lep-card {
+  border-radius: 18px;
+  padding: 1.45rem;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(255, 42, 141, 0.14), transparent 36%),
+    radial-gradient(circle at 8% 8%, rgba(0, 240, 255, 0.13), transparent 40%),
+    linear-gradient(155deg, rgba(15, 23, 42, 0.98), rgba(7, 11, 22, 0.99));
+  border: 1.5px solid rgba(0, 240, 255, 0.42);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.44);
+}
+
+.lep-card.lep-accent-pink { border-color: rgba(255, 42, 141, 0.52); }
+.lep-card.lep-accent-green { border-color: rgba(34, 197, 94, 0.48); }
+.lep-card.lep-accent-amber { border-color: rgba(245, 158, 11, 0.52); }
+.lep-card.lep-accent-purple { border-color: rgba(168, 85, 247, 0.52); }
+
+.lep-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.lep-kicker {
+  display: inline-block;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f472b6;
+  margin-bottom: 0.28rem;
+}
+
+.lep-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.5vw, 1.82rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.lep-subtitle {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.lep-date-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.32rem;
+}
+
+.lep-date-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #e0f2fe;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.lep-slot-pill {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+}
+
+.lep-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 370px) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.lep-media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lep-media-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #0b1120;
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  text-decoration: none;
+}
+
+.lep-media-stage.is-photo {
+  background: #f8fafc;
+}
+
+.lep-media-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.gg-media-badge {
+  position: absolute;
+  left: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.22rem 0.56rem;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  background: rgba(15, 23, 42, 0.88);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.gg-media-badge--photo {
+  background: rgba(15, 23, 42, 0.86);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.gg-media-credit {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.gg-media-credit a {
+  color: #bae6fd;
+  text-decoration: underline;
+}
+
+.lep-cta-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.lep-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 46px;
+  padding: 0.72rem 1.15rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #090d16;
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.28);
+  transition: transform 0.14s ease, filter 0.14s ease;
+}
+
+.lep-cta-btn:hover,
+.lep-cta-btn:focus-visible {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.lep-disclosure {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: #cbd5e1;
+}
+
+.lep-disclosure strong {
+  color: #fde68a;
+}
+
+.lep-body-col {
+  min-width: 0;
+}
+
+.lep-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.lep-category-pill {
+  padding: 0.22rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(255, 42, 141, 0.18);
+  border: 1px solid rgba(255, 42, 141, 0.45);
+  color: #fbcfe8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lep-brand-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.lep-highlight-tag {
+  padding: 0.2rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #bae6fd;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.lep-product-name {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.58rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.24;
+}
+
+.lep-intro {
+  margin: 0.65rem 0 1rem;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: #e2e8f0;
+}
+
+.lep-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 0.95rem;
+}
+
+.lep-detail-box {
+  padding: 0.78rem 0.88rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.lep-detail-box dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.28rem;
+}
+
+.lep-detail-box dd {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.lep-caveat {
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.09);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-size: 0.83rem;
+  line-height: 1.5;
+  color: #fef3c7;
+}
+
+.lep-caveat-label {
+  font-weight: 800;
+  color: #fcd34d;
+}
+
+/* ---------- PLATFORM FILTER TOOLBAR ---------- */
+
+.gg-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.4rem 0 1.6rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+.gg-filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.gg-filter-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-right: 0.25rem;
+}
+
+.gg-filter-btn {
+  min-height: 36px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(30, 41, 59, 0.8);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.gg-filter-btn:hover,
+.gg-filter-btn:focus-visible {
+  border-color: #38bdf8;
+  color: #ffffff;
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.gg-filter-btn.is-active {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #e0f2fe;
+}
+
+.gg-filter-status {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+/* ---------- PLATFORM CHIPS ---------- */
+
+.gg-platform-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0.45rem;
+}
+
+.gg-plat-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.16rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  background: rgba(148, 163, 184, 0.16);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.gg-plat-chip--ps5 {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #bae6fd;
+}
+
+.gg-plat-chip--xbox {
+  background: rgba(34, 197, 94, 0.16);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #bbf7d0;
+}
+
+.gg-plat-chip--pc {
+  background: rgba(168, 85, 247, 0.16);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #e9d5ff;
+}
+
+.gg-plat-chip--desk {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fde68a;
+}
+
+/* ---------- GEAR SECTIONS & PRODUCT GRID ---------- */
+
+.gear-section {
+  margin: 2.3rem 0;
+  padding-top: 0.5rem;
+}
+
+.gear-section-intro {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: #cbd5e1;
+  max-width: 880px;
+}
+
+.gear-compare-box {
+  margin: 1rem 0 1.25rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  font-size: 0.84rem;
+  line-height: 1.56;
+  color: #cbd5e1;
+}
+
+.gear-compare-box strong {
+  color: #ffffff;
+}
+
+.gear-compare-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0 1.25rem;
+}
+
+.gear-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gear-compare-table th,
+.gear-compare-table td {
+  text-align: left;
+  padding: 0.68rem 0.82rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  color: #cbd5e1;
+}
+
+.gear-compare-table th {
+  color: #ffffff;
+  background: rgba(30, 41, 59, 0.92);
+  font-weight: 800;
+}
+
+.gg-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.15rem;
+}
+
+.gg-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(15, 23, 42, 0.96), rgba(9, 13, 24, 0.98));
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.gg-card.gg-accent-cyan { border-color: rgba(56, 189, 248, 0.34); }
+.gg-card.gg-accent-green { border-color: rgba(34, 197, 94, 0.34); }
+.gg-card.gg-accent-pink { border-color: rgba(255, 42, 141, 0.34); }
+.gg-card.gg-accent-amber { border-color: rgba(245, 158, 11, 0.34); }
+.gg-card.gg-accent-purple { border-color: rgba(168, 85, 247, 0.36); }
+
+.gg-card-media-wrap {
+  padding: 0.8rem 0.8rem 0;
+}
+
+.gg-card-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0b1120;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.gg-card-media.is-photo {
+  background: #f8fafc;
+}
+
+.gg-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.gg-card-body {
+  padding: 0.85rem 0.95rem 0.65rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gg-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.gg-brand {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+
+.gg-pill {
+  padding: 0.14rem 0.48rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.14);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.gg-paid-badge {
+  margin-left: auto;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 999px;
+  padding: 0.12rem 0.46rem;
+}
+
+.gg-card-title {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.3;
+}
+
+.gg-card-desc {
+  margin: 0.35rem 0 0.65rem;
+  font-size: 0.84rem;
+  line-height: 1.52;
+  color: #cbd5e1;
+}
+
+.gg-card-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  margin-top: auto;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.gg-card-line {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.46;
+  color: #cbd5e1;
+}
+
+.gg-card-line strong {
+  color: #e2e8f0;
+}
+
+.gg-card-caveat {
+  color: #fde68a;
+}
+
+.gg-card-foot {
+  padding: 0.75rem 0.95rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  background: rgba(15, 23, 42, 0.55);
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.gg-foot-note {
+  font-size: 0.71rem;
+  line-height: 1.4;
+  color: #94a3b8;
+}
+
+.gg-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0.6rem 0.95rem;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #090d16;
+  font-size: 0.83rem;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: filter 0.15s ease;
+}
+
+.gg-cta-btn:hover,
+.gg-cta-btn:focus-visible {
+  filter: brightness(1.07);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.gg-empty-filter {
+  grid-column: 1 / -1;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+  color: #cbd5e1;
+  font-size: 0.86rem;
+}
+
+/* ---------- RELATED GUIDES & EDITORIAL METHODOLOGY ---------- */
+
+.gg-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.gg-related-card {
+  display: block;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: border-color 0.16s ease;
+}
+
+.gg-related-card:hover,
+.gg-related-card:focus-visible {
+  border-color: #38bdf8;
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.gg-related-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.gg-related-card span {
+  font-size: 0.79rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  display: block;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+@media (max-width: 860px) {
+  .lep-grid {
+    grid-template-columns: 1fr;
+  }
+  .lep-date-meta {
+    align-items: flex-start;
+  }
+  .lep-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .gear-hub-main {
+    padding: 0 0.75rem;
+  }
+  .gear-hero,
+  .lep-card {
+    padding: 1.05rem;
+  }
+  .gg-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lep-cta-btn,
+  .gg-cta-btn,
+  .gear-jump-pill,
+  .gg-filter-btn,
+  .gg-related-card {
+    transition: none;
+  }
+  .lep-cta-btn:hover {
+    transform: none;
+  }
+}

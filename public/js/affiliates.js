@@ -1100,15 +1100,34 @@ window.getGTA6LaunchBannerText = function() {
         var targetUrl = link.getAttribute('href') || '';
         if (typeof global.GTA6Track === 'function') {
           var asinVal = link.getAttribute('data-aff-asin') || '';
+          var categoryVal = link.getAttribute('data-aff-category') || '';
+          var dailySlotVal = link.getAttribute('data-aff-daily-slot') || 'catalog';
+          if (/^\d{4}-\d{2}-\d{2}$/.test(dailySlotVal)) {
+            dailySlotVal = 'daily_' + dailySlotVal;
+          }
+          var destHost = link.getAttribute('data-aff-dest-host') || '';
+          if (!destHost && targetUrl) {
+            try {
+              destHost = new URL(targetUrl, global.location && global.location.origin ? global.location.origin : 'https://www.gta6heistguide.com').hostname.toLowerCase();
+            } catch (urlErr) {
+              destHost = '';
+            }
+          }
+          var curPath = (global.location && global.location.pathname) ? global.location.pathname : '/';
           global.GTA6Track('affiliate_click', {
             merchant: partner,
             partner: partner,
             product_id: productKey || asinVal || partner,
             product_key: productKey,
             asin: asinVal,
-            category: link.getAttribute('data-aff-category') || '',
+            category: categoryVal,
+            product_category: categoryVal,
             placement: placement,
-            source_page: (global.location && global.location.pathname) ? global.location.pathname : '/',
+            feature_placement: placement,
+            daily_editorial_slot: dailySlotVal,
+            destination_host: destHost,
+            page_path: curPath,
+            source_page: curPath,
             event_timestamp: new Date().toISOString(),
             click_area: link.getAttribute('data-aff-area') || 'cta'
           });

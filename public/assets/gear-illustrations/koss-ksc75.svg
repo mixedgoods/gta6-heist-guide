@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Ear-Clip Wired Stereo Headphones Category Illustration">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#172038"/>
+      <stop offset="68%" stop-color="#0d1324"/>
+      <stop offset="100%" stop-color="#070b14"/>
+    </radialGradient>
+    <linearGradient id="chassis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="200" cy="150" r="115" fill="#94a3b8" opacity="0.06"/>
+  <ellipse cx="200" cy="256" rx="122" ry="14" fill="#000000" opacity="0.35"/>
+  <g filter="url(#shadow)">
+    <path d="M148 92 C110 88 104 148 128 178" fill="none" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+     <path d="M252 92 C290 88 296 148 272 178" fill="none" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+     <circle cx="146" cy="166" r="44" fill="#1e293b" stroke="#cbd5e1" stroke-width="5"/>
+     <circle cx="146" cy="166" r="24" fill="#475569" stroke="#38bdf8" stroke-width="2"/>
+     <circle cx="254" cy="166" r="44" fill="#1e293b" stroke="#cbd5e1" stroke-width="5"/>
+     <circle cx="254" cy="166" r="24" fill="#475569" stroke="#38bdf8" stroke-width="2"/>
+     <path d="M146 210 C146 244 200 244 200 258 C200 244 254 244 254 210" fill="none" stroke="#64748b" stroke-width="3.5"/>
+  </g>
+  <rect x="110" y="24" width="180" height="24" rx="12" fill="#0369a1"/>
+  <text x="200" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800" letter-spacing="0.6" fill="#ffffff">EAR-CLIP AUDIOPHILE</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Pocket Bluetooth Mini Gamepad and Macro Remote Category Illustration">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#172038"/>
+      <stop offset="68%" stop-color="#0d1324"/>
+      <stop offset="100%" stop-color="#070b14"/>
+    </radialGradient>
+    <linearGradient id="chassis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="200" cy="150" r="115" fill="#22c55e" opacity="0.06"/>
+  <ellipse cx="200" cy="256" rx="122" ry="14" fill="#000000" opacity="0.35"/>
+  <g filter="url(#shadow)">
+    <rect x="106" y="116" width="188" height="100" rx="34" fill="url(#accent)" stroke="#86efac" stroke-width="2.5"/>
+     <rect x="138" y="150" width="38" height="12" rx="3" fill="#0f172a"/>
+     <rect x="151" y="137" width="12" height="38" rx="3" fill="#0f172a"/>
+     <circle cx="242" cy="148" r="8" fill="#0f172a"/><circle cx="262" cy="166" r="8" fill="#0f172a"/>
+     <circle cx="242" cy="184" r="8" fill="#0f172a"/><circle cx="222" cy="166" r="8" fill="#0f172a"/>
+     <rect x="186" y="176" width="12" height="5" rx="2.5" fill="#0f172a"/>
+     <rect x="204" y="176" width="12" height="5" rx="2.5" fill="#0f172a"/>
+  </g>
+  <rect x="110" y="24" width="180" height="24" rx="12" fill="#047857"/>
+  <text x="200" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800" letter-spacing="0.6" fill="#ffffff">25G POCKET GAMEPAD</text>
+</svg>
