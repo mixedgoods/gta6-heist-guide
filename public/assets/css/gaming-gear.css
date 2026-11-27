@@ -210,6 +210,12 @@
 
 .lep-media-stage.is-photo {
   background: #f8fafc;
+  padding: 0.45rem;
+}
+
+.lep-media-stage.is-photo.is-photo-dark {
+  background: #141b2d;
+  border-color: rgba(148, 163, 184, 0.34);
 }
 
 .lep-media-stage img {
@@ -217,6 +223,7 @@
   height: 100%;
   object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 
 .gg-media-badge {
@@ -608,6 +615,12 @@
 
 .gg-card-media.is-photo {
   background: #f8fafc;
+  padding: 0.4rem;
+}
+
+.gg-card-media.is-photo.is-photo-dark {
+  background: #141b2d;
+  border-color: rgba(148, 163, 184, 0.3);
 }
 
 .gg-card-media img {
@@ -615,6 +628,30 @@
   height: 100%;
   object-fit: contain;
   display: block;
+  border-radius: 6px;
+}
+
+/* Clean text-only product cards (when a permitted actual product photo is unavailable) */
+.gg-card--text-only {
+  border-top-width: 3px;
+}
+
+.gg-card--text-only.gg-accent-cyan { border-top-color: #38bdf8; }
+.gg-card--text-only.gg-accent-green { border-top-color: #22c55e; }
+.gg-card--text-only.gg-accent-pink { border-top-color: #f472b6; }
+.gg-card--text-only.gg-accent-amber { border-top-color: #f59e0b; }
+.gg-card--text-only.gg-accent-purple { border-top-color: #a855f7; }
+
+.gg-card--text-only .gg-card-body {
+  padding-top: 1rem;
+}
+
+.gg-card-model {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.38;
 }
 
 .gg-card-body {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "catalogName": "GTA6HeistGuide Gaming Gear & Leonida Editor's Pick Master Catalog",
   "lastUpdated": "2026-11-26",
   "associatesProgram": "Amazon Associates (Regular Program Only — Amazon Influencer Excluded)",
@@ -36,7 +36,12 @@
       "asin": "B0CG1PXHRQ",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0CG1PXHRQ?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "PS5", "Xbox", "Desk Setup"],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
       "compatibility": "Standalone USB-C powered desk gadget configured via iOS/Android Divoom app over 2.4GHz Wi-Fi; works alongside any PS5, Xbox, or PC setup.",
       "shortDescription": "A cyberpunk-styled tabletop bar housing five independent miniature color LCD screens with ambient RGB backlighting and customizable pixel-art or dashboard widgets.",
       "whyInteresting": "Instead of one flat clock, five miniature glass-housed displays sit side by side beneath your monitor — showing animated pixel art, time, weather, or PC system metrics in a way that looks pulled straight out of a Vice City safehouse desk.",
@@ -45,26 +50,49 @@
       "intendedAudience": "Gamers, streamers, and desk-setup builders who want a genuinely unusual neon centerpiece that doubles as a multi-panel glanceable clock and ticker.",
       "honestDisadvantages": "Requires 2.4GHz Wi-Fi and the Divoom mobile companion app for initial setup and customization, and its primary appeal is visual personality rather than raw gaming performance.",
       "independentResearchReferences": [
-        { "source": "Divoom Official Specifications", "url": "https://divoom.com/products/time-gate" },
-        { "source": "Manuals.plus Technical Reference (B0CG1PXHRQ)", "url": "https://manuals.plus/" },
-        { "source": "Independent Desk-Setup & Hardware Reviews", "url": "https://thinkdifferent.blog/" }
+        {
+          "source": "Divoom Official Specifications",
+          "url": "https://divoom.com/products/time-gate"
+        },
+        {
+          "source": "Manuals.plus Technical Reference (B0CG1PXHRQ)",
+          "url": "https://manuals.plus/"
+        },
+        {
+          "source": "Independent Desk-Setup & Hardware Reviews",
+          "url": "https://thinkdifferent.blog/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/divoom-times-gate.svg",
-      "imageAlt": "Category illustration of a five-screen cyberpunk pixel-art desktop display",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 1
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Times Gate (Silver Edition, 5-Screen LCD Pixel Display)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/divoom-times-gate.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "koss-porta-pro",
@@ -80,7 +108,11 @@
       "asin": "B00001P4ZH",
       "amazonSpecialLink": "https://www.amazon.com/dp/B00001P4ZH?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "PS5 DualSense, Xbox Series X|S controllers, PC, and any standard 3.5mm headphone jack (stereo headphones only — no built-in microphone).",
       "shortDescription": "Ultra-lightweight collapsible 1984 open-back on-ear headphones with adjustable ComfortZone temple pads and a warm, punchy stereo tuning.",
       "whyInteresting": "An authentic 1984 industrial design still in continuous production four decades later — it looks like Vice City era gear, weighs next to nothing, and plugs straight into a console controller with zero batteries to charge.",
@@ -89,25 +121,43 @@
       "intendedAudience": "Solo story-mode players, retro aesthetic fans, and anyone who hates heavy clamping wireless headsets during long evening sessions.",
       "honestDisadvantages": "No built-in microphone for voice chat, the open-back design leaks audio into the room and blocks almost no outside noise, and the sliding steel band can occasionally snag long hair if adjusted while worn.",
       "independentResearchReferences": [
-        { "source": "RTINGS Headphones Measurements", "url": "https://www.rtings.com/headphones/reviews/koss/porta-pro" },
-        { "source": "Wikimedia Commons Exact Photo Verification", "url": "https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg" }
+        {
+          "source": "RTINGS Headphones Measurements",
+          "url": "https://www.rtings.com/headphones/reviews/koss/porta-pro"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg"
+        }
       ],
       "mediaType": "photo",
       "imageSource": "/assets/gear-photos/koss-porta-pro.webp",
-      "imageAlt": "Photograph of Koss Porta Pro Classic On-Ear Wired Headphones in silver and blue",
+      "imageAlt": "Actual product photograph of Koss Porta Pro Classic On-Ear Wired Headphones (silver steel headband and blue accents)",
       "imageLicense": {
-        "status": "Approved (CC BY-SA 3.0 Commercial Reuse Verified)",
+        "status": "Approved (Verified Actual Product Photo — CC BY-SA 3.0)",
         "licenseName": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "creator": "Malcolm Tyrrell",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg",
-        "badgeLabel": null
+        "sourceOrigin": "Wikimedia Commons (Own work — File:Koss_PortaPro.jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": true,
-      "dailyOrder": 2
+      "dailyOrder": 1,
+      "model": "Porta Pro Classic (On-Ear Wired, Silver/Blue)",
+      "imageWidth": 1000,
+      "imageHeight": 750,
+      "imageAudit": {
+        "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "previousImageSource": "/assets/gear-photos/koss-porta-pro.webp",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Koss Porta Pro Classic (On-Ear Wired, Silver/Blue) (ASIN B00001P4ZH)",
+        "usagePermission": "CC BY-SA 3.0 (Wikimedia Commons (Own work — File:Koss_PortaPro.jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "elgato-stream-deck-pedal",
@@ -123,7 +173,10 @@
       "asin": "B09PRMCTGB",
       "amazonSpecialLink": "https://www.amazon.com/dp/B09PRMCTGB?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Streaming"],
+      "platforms": [
+        "PC",
+        "Streaming"
+      ],
       "compatibility": "Windows 10/11 and macOS via USB-C and Elgato Stream Deck software (does not natively control PS5 or Xbox consoles directly; pairs cleanly with a PC capture/Discord setup).",
       "shortDescription": "A heavy-duty three-pedal USB footswitch with swappable tension springs that triggers Discord push-to-talk, mic mute, clip recording, or multi-step macros with your feet.",
       "whyInteresting": "Most players never think to put their feet to work at a gaming desk — one quick tap mutes your mic, saves a highlight clip, or flips an OBS scene without lifting a thumb off your controller or mouse.",
@@ -132,25 +185,45 @@
       "intendedAudience": "PC gamers, console players running Discord or capture software on a nearby PC, co-op squad leaders, and accessibility-focused players who benefit from foot-activated controls.",
       "honestDisadvantages": "Requires a Windows PC or Mac running Stream Deck software (no direct PS5/Xbox console plug-and-play) and uses digital on/off switches rather than analog racing-style throttle sensors.",
       "independentResearchReferences": [
-        { "source": "Tom's Hardware Review", "url": "https://www.tomshardware.com/reviews/elgato-stream-deck-pedal" },
-        { "source": "PCMag Review", "url": "https://www.pcmag.com/reviews/elgato-stream-deck-pedal" }
+        {
+          "source": "Tom's Hardware Review",
+          "url": "https://www.tomshardware.com/reviews/elgato-stream-deck-pedal"
+        },
+        {
+          "source": "PCMag Review",
+          "url": "https://www.pcmag.com/reviews/elgato-stream-deck-pedal"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/stream-deck-pedal.svg",
-      "imageAlt": "Category illustration of a three-pedal USB hands-free macro foot controller",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 3
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Stream Deck Pedal (10GBF9901, 3-Switch USB Foot Controller)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/stream-deck-pedal.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "ugreen-nexode-rg-65w",
@@ -166,7 +239,12 @@
       "asin": "B0C6DX66TN",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0C6DX66TN?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC", "Desk Setup"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Universal USB-C / USB-A 65W GaN charger for DualSense controllers, headsets, Steam Deck, Nintendo Switch, phones, and thin laptops (USB cables sold separately).",
       "shortDescription": "A compact 65W three-port GaN wall charger disguised as a miniature robot whose LED face changes expressions for fast charging, trickle charge, and standby.",
       "whyInteresting": "It solves a real desk-power problem — topping up controllers, handhelds, and phones from one cool-running brick — while wearing magnetic boots and flashing cheerful pixel-style status faces.",
@@ -175,26 +253,49 @@
       "intendedAudience": "Multi-device gamers charging a DualSense, wireless headset, phone, or handheld next to their couch or desk who appreciate playful hardware with genuine GaN specs.",
       "honestDisadvantages": "No USB-C cable is included in the box, and plugging multiple devices in simultaneously splits the 65W budget across ports rather than delivering 65W to every port at once.",
       "independentResearchReferences": [
-        { "source": "TechRadar Review", "url": "https://www.techradar.com/computing/computing-accessories/ugreen-nexode-rg-65w-review" },
-        { "source": "Android Authority Review", "url": "https://www.androidauthority.com/ugreen-nexode-rg-65w-review/" },
-        { "source": "TechPowerUp Technical Breakdown", "url": "https://www.techpowerup.com/" }
+        {
+          "source": "TechRadar Review",
+          "url": "https://www.techradar.com/computing/computing-accessories/ugreen-nexode-rg-65w-review"
+        },
+        {
+          "source": "Android Authority Review",
+          "url": "https://www.androidauthority.com/ugreen-nexode-rg-65w-review/"
+        },
+        {
+          "source": "TechPowerUp Technical Breakdown",
+          "url": "https://www.techpowerup.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/ugreen-robot-charger.svg",
-      "imageAlt": "Category illustration of a robot-faced 65W GaN three-port USB fast charger",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 4
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Nexode RG 65W Robot GaN 3-Port Fast Charger (CD361)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/ugreen-robot-charger.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "8bitdo-retro-keyboard-n",
@@ -210,7 +311,9 @@
       "asin": "B0CCP8KYGG",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0CCP8KYGG?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC"],
+      "platforms": [
+        "PC"
+      ],
       "compatibility": "Windows 10/11 and Android via Bluetooth, 2.4GHz USB receiver, or wired USB-C (not designed as a console gamepad).",
       "shortDescription": "An 87-key tenkeyless wireless mechanical keyboard inspired by classic 1980s console hardware, bundled with two massive slap-to-trigger programmable 'Super Buttons.'",
       "whyInteresting": "Beyond its nostalgic gray-and-red chassis and tactile volume dials, it ships with a separate twin module of giant arcade-sized programmable buttons you can map to instant macros without installing bloatware.",
@@ -219,25 +322,45 @@
       "intendedAudience": "PC players, retro hardware collectors, and guide/spreadsheet power users who want a conversation-starting mechanical keyboard with physical macro slam buttons.",
       "honestDisadvantages": "Has zero key backlighting for pitch-dark rooms, and the factory Kailh Box White V2 switches are distinctly loud and clicky (though the hot-swap sockets let you change switches later).",
       "independentResearchReferences": [
-        { "source": "RTINGS Keyboard Review", "url": "https://www.rtings.com/keyboard/reviews/8bitdo/retro-mechanical-keyboard" },
-        { "source": "IGN Hardware Review", "url": "https://www.ign.com/articles/8bitdo-retro-mechanical-keyboard-review" }
+        {
+          "source": "RTINGS Keyboard Review",
+          "url": "https://www.rtings.com/keyboard/reviews/8bitdo/retro-mechanical-keyboard"
+        },
+        {
+          "source": "IGN Hardware Review",
+          "url": "https://www.ign.com/articles/8bitdo-retro-mechanical-keyboard-review"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/retro-keyboard-8bitdo.svg",
-      "imageAlt": "Category illustration of a retro tenkeyless mechanical keyboard with two giant programmable arcade buttons",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 5
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Retro Mechanical Keyboard — N Edition (87-Key + Dual Super Buttons)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/retro-keyboard-8bitdo.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "benq-screenbar",
@@ -253,7 +376,12 @@
       "asin": "B076VNFZJG",
       "amazonSpecialLink": "https://www.amazon.com/dp/B076VNFZJG?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "PS5", "Xbox", "Desk Setup"],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
       "compatibility": "Clips onto standard flat desktop monitors (0.4\" to 1.2\" bezel thickness) and draws power from any 5V/1A USB port; ideal for monitor-based console or PC desks.",
       "shortDescription": "A counterweight-mounted LED light bar that perches atop your monitor and uses asymmetric optics to illuminate your keyboard, controller, and notes without reflecting onto the screen.",
       "whyInteresting": "Playing late at night in total darkness strains your eyes, while normal desk lamps wash out dark game scenes with screen glare — asymmetric optics light only the desk surface below.",
@@ -262,25 +390,45 @@
       "intendedAudience": "Monitor-based console and PC gamers, late-night guide readers, and compact desk owners who have zero space for a traditional lamp base.",
       "honestDisadvantages": "Designed primarily for flat monitors rather than aggressively curved panels or living-room TVs, and can compete for top-bezel real estate if you mount a center webcam.",
       "independentResearchReferences": [
-        { "source": "BenQ ScreenBar Optical Documentation", "url": "https://www.benq.com/en-us/lighting/monitor-light/screenbar.html" },
-        { "source": "Independent Monitor Lighting Reviews", "url": "https://www.rtings.com/" }
+        {
+          "source": "BenQ ScreenBar Optical Documentation",
+          "url": "https://www.benq.com/en-us/lighting/monitor-light/screenbar.html"
+        },
+        {
+          "source": "Independent Monitor Lighting Reviews",
+          "url": "https://www.rtings.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/benq-screenbar.svg",
-      "imageAlt": "Category illustration of an asymmetric anti-glare LED light bar clipped to a desktop monitor",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 6
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "ScreenBar Monitor Light Bar (AR17, Asymmetric LED)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/benq-screenbar.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "koss-ksc75",
@@ -296,7 +444,11 @@
       "asin": "B0006B486K",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0006B486K?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "Standard 3.5mm wired stereo plug works with PS5 DualSense, Xbox Series X|S controllers, PC, and handhelds (no built-in microphone).",
       "shortDescription": "Quirky silver ear-clip wired headphones with titanium-coated drivers that skip the headband completely while earning cult audiophile praise for crisp imaging.",
       "whyInteresting": "They look like forgotten 2004 gym clips, yet independent audio testers routinely call them one of the most absurdly clear budget soundstages available — with zero headband fatigue or hot earcups.",
@@ -305,25 +457,45 @@
       "intendedAudience": "Budget-minded players, glasses wearers who hate heavy clamping earcups, and anyone curious about audiophile-loved sleeper gear.",
       "honestDisadvantages": "No built-in microphone, minimal sub-bass rumble because of the open ear-clip fit, zero outside noise isolation, and the thin fixed cable requires gentle handling.",
       "independentResearchReferences": [
-        { "source": "Independent Audiophile Community & Testing Archive", "url": "https://www.head-fi.org/" },
-        { "source": "Koss KSC75 Official Specs", "url": "https://koss.com/products/ksc75" }
+        {
+          "source": "Independent Audiophile Community & Testing Archive",
+          "url": "https://www.head-fi.org/"
+        },
+        {
+          "source": "Koss KSC75 Official Specs",
+          "url": "https://koss.com/products/ksc75"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/koss-ksc75.svg",
-      "imageAlt": "Category illustration of silver ear-clip wired open-back headphones",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 7
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "KSC75 Portable Stereophone (Ear-Clip Wired, Silver)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/koss-ksc75.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "divoom-pixoo-64",
@@ -339,7 +511,13 @@
       "asin": "B09H3YWPCH",
       "amazonSpecialLink": "https://www.amazon.com/dp/B09H3YWPCH?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "PS5", "Xbox", "Desk Setup", "Streaming"],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup",
+        "Streaming"
+      ],
       "compatibility": "10.3-inch wall-mountable or desk-standing Wi-Fi display powered by USB-C (5V/2A); configured via the Divoom iOS/Android app.",
       "shortDescription": "A square 10.3-inch 64×64 programmable LED pixel-art frame with 4,096 addressable LEDs that runs retro animations, desk clocks, or live streaming/follower tickers.",
       "whyInteresting": "It turns a blank wall or gaming shelf into a crisp, glowing 64×64 arcade sprite board — bright enough to read cleanly in daylight and customizable with thousands of community pixel loops.",
@@ -348,25 +526,45 @@
       "intendedAudience": "Streamers wanting a readable background display, retro pixel-art fans, and gaming-room decorators building a bold neon setup.",
       "honestDisadvantages": "Must be plugged into stable 5V/2A USB-C power (no internal battery), requires the Divoom app on 2.4GHz Wi-Fi for management, and is strictly limited to pixel-art graphics rather than photo printing.",
       "independentResearchReferences": [
-        { "source": "TechnikNews Hardware Review", "url": "https://www.techniknews.net/" },
-        { "source": "Divoom Pixoo-64 Technical Documentation", "url": "https://divoom.com/products/pixoo-64" }
+        {
+          "source": "TechnikNews Hardware Review",
+          "url": "https://www.techniknews.net/"
+        },
+        {
+          "source": "Divoom Pixoo-64 Technical Documentation",
+          "url": "https://divoom.com/products/pixoo-64"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/divoom-pixoo-64.svg",
-      "imageAlt": "Category illustration of a square 64 by 64 LED pixel art display frame",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 8
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Pixoo-64 Wi-Fi 64x64 LED Pixel Art Frame",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/divoom-pixoo-64.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "gamesir-g7-se",
@@ -382,7 +580,10 @@
       "asin": "B0C7GW9F88",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0C7GW9F88?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["Xbox", "PC"],
+      "platforms": [
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "Officially licensed for Xbox Series X|S, Xbox One, and Windows 10/11 PC via detachable braided USB-C cable (not compatible with PlayStation 5).",
       "shortDescription": "An officially licensed wired Xbox and PC gamepad built with non-contact magnetic Hall Effect thumbsticks and triggers plus two lockable rear back buttons.",
       "whyInteresting": "It brings drift-resistant magnetic Hall Effect stick sensors and lockable back paddles — features usually reserved for pricey boutique pads — to a straightforward wired Xbox controller.",
@@ -391,25 +592,45 @@
       "intendedAudience": "Xbox Series X|S and PC players who sit close enough for a wired USB-C pad and want drift resistance plus remappable back buttons without paying pro-controller prices.",
       "honestDisadvantages": "Strictly wired-only (no wireless or Bluetooth mode), incompatible with PlayStation consoles, and uses softer membrane face buttons rather than clicky microswitches.",
       "independentResearchReferences": [
-        { "source": "Windows Central Review", "url": "https://www.windowscentral.com/gaming/xbox/gamesir-g7-se-review" },
-        { "source": "IGN Budget Controller Coverage", "url": "https://www.ign.com/articles/best-xbox-series-x-controller" }
+        {
+          "source": "Windows Central Review",
+          "url": "https://www.windowscentral.com/gaming/xbox/gamesir-g7-se-review"
+        },
+        {
+          "source": "IGN Budget Controller Coverage",
+          "url": "https://www.ign.com/articles/best-xbox-series-x-controller"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/gamesir-g7-se.svg",
-      "imageAlt": "Category illustration of a white wired Xbox and PC controller with Hall Effect thumbsticks",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 9
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "G7 SE Wired Controller (Hall Effect Sticks & Triggers, White)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/gamesir-g7-se.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "nzxt-puck-black",
@@ -425,7 +646,10 @@
       "asin": "B01N0ZMLAH",
       "amazonSpecialLink": "https://www.amazon.com/dp/B01N0ZMLAH?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Desk Setup"],
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Attaches magnetically to steel PC tower panels, steel desk legs, or magnetic pegboards (will not stick to aluminum, wood, plastic, or tempered glass surfaces).",
       "shortDescription": "A soft non-conductive silicone puck packed with strong magnets that splits into two halves to hang a headset and spool extra cable slack right on the side of a steel PC case.",
       "whyInteresting": "You slap it onto a steel PC tower or desk leg with zero screws or adhesive, and when you need to wrap a long braided headset cord, the puck literally pulls apart into two magnetic spools.",
@@ -434,31 +658,51 @@
       "intendedAudience": "PC gamers with steel tower cases or steel-frame desks who want instant, drill-free headset storage and tidy cord wrapping.",
       "honestDisadvantages": "Completely relies on a ferromagnetic steel surface — if your case panels are all tempered glass or aluminum, or you play strictly on a wood TV console, it won't attach without a metal plate.",
       "independentResearchReferences": [
-        { "source": "PC Gamer Desk & VR Storage Coverage", "url": "https://www.pcgamer.com/" },
-        { "source": "NZXT Official Product Specifications", "url": "https://nzxt.com/product/puck" }
+        {
+          "source": "PC Gamer Desk & VR Storage Coverage",
+          "url": "https://www.pcgamer.com/"
+        },
+        {
+          "source": "NZXT Official Product Specifications",
+          "url": "https://nzxt.com/product/puck"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/nzxt-puck.svg",
-      "imageAlt": "Category illustration of a magnetic two-piece silicone headset and cable mount",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 10
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Puck Magnetic Split-Silicone Mount (BA-PUCKR-B1, Black)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/nzxt-puck.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "8bitdo-micro-gamepad",
       "legacyKey": null,
       "origin": "new-research",
-      "productName": "8BitDo Micro Pocket Bluetooth Gamepad & Macro Pad",
+      "productName": "8BitDo Micro Pocket Bluetooth Gamepad & Macro Pad (Blue)",
       "manufacturer": "8BitDo",
       "category": "Funny & Unusual",
       "sectionId": "funny-gear",
@@ -468,7 +712,11 @@
       "asin": "B0CDG5HCCH",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0CDG5HCCH?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Mobile", "Switch"],
+      "platforms": [
+        "PC",
+        "Mobile",
+        "Switch"
+      ],
       "compatibility": "Bluetooth & USB-C for Nintendo Switch, Android, Raspberry Pi, and Keyboard Mode shortcut mapping on PC/iPad/mobile (no analog sticks; not for PS5/Xbox).",
       "shortDescription": "A keychain-sized 24.8-gram Bluetooth mini controller with 16 tactile buttons and a dedicated Keyboard Mode that turns it into a one-handed wireless shortcut remote.",
       "whyInteresting": "It fits inside a coin pocket yet hides a secret second life: flip its physical mode switch to Keyboard Mode and gamers, readers, and digital artists remap all 16 buttons into a palm-sized wireless macro remote.",
@@ -477,25 +725,48 @@
       "intendedAudience": "Travel gamers playing 2D indies, tablet/PC tinkerers who want a tiny wireless shortcut remote for guides or creative apps, and fans of clever miniature hardware.",
       "honestDisadvantages": "Zero analog sticks (unsuitable for modern 3D action games like GTA VI itself), no native Xbox/PS5 console support, and the tiny shell can cramp large hands during long play sessions.",
       "independentResearchReferences": [
-        { "source": "Tom's Guide Software & Portability Coverage", "url": "https://www.tomsguide.com/" },
-        { "source": "Retro Game Corps Hardware Testing", "url": "https://retrogamecorps.com/" }
+        {
+          "source": "Tom's Guide Software & Portability Coverage",
+          "url": "https://www.tomsguide.com/"
+        },
+        {
+          "source": "Retro Game Corps Hardware Testing",
+          "url": "https://retrogamecorps.com/"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:8BitDo_Micro.jpg"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/8bitdo-micro.svg",
-      "imageAlt": "Category illustration of a pocket-sized Bluetooth mini controller and wireless macro pad",
+      "mediaType": "photo",
+      "photoBackdrop": "dark",
+      "imageSource": "/assets/gear-photos/8bitdo-micro-blue.webp",
+      "imageAlt": "Actual product photograph of 8BitDo Micro Pocket Bluetooth Gamepad in Blue with wrist strap",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
-        "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
-        "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "status": "Approved (Verified Actual Product Photo — CC BY 4.0)",
+        "licenseName": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "creator": "NegiEion",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:8BitDo_Micro.jpg",
+        "sourceOrigin": "Wikimedia Commons (Own work — File:8BitDo Micro.jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": true,
-      "dailyOrder": 11
+      "dailyOrder": 8,
+      "model": "Micro Bluetooth Gamepad (80HC, Blue Edition)",
+      "imageWidth": 1000,
+      "imageHeight": 666,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/8bitdo-micro.svg",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to 8BitDo Micro Bluetooth Gamepad (80HC, Blue Edition) (ASIN B0CDG5HCCH)",
+        "usagePermission": "CC BY 4.0 (Wikimedia Commons (Own work — File:8BitDo Micro.jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "sony-mdr-7506",
@@ -511,7 +782,11 @@
       "asin": "B000AJIF4E",
       "amazonSpecialLink": "https://www.amazon.com/dp/B000AJIF4E?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "PS5 DualSense, Xbox controllers, PC, and audio interfaces via 3.5mm plug + screw-on 1/4-inch adapter (wired headphones only — no built-in microphone).",
       "shortDescription": "Closed-back broadcast studio monitor headphones introduced in 1991 with 40mm neodymium drivers, folding hinges, and crisp vocal and directional detail.",
       "whyInteresting": "The exact same no-nonsense studio headphones worn in radio booths and film editing bays for 35 years plug straight into a PS5 or Xbox controller and deliver razor-sharp footsteps and dialogue without gaming-brand RGB tax.",
@@ -520,25 +795,43 @@
       "intendedAudience": "Players who prioritize crisp dialogue, footsteps, and Leonida radio clarity — or creators editing gameplay videos who want one pair of headphones for both gaming and editing.",
       "honestDisadvantages": "No built-in microphone (pair with a desktop USB mic for voice chat), the long coiled studio cable is non-detachable and adds weight, and the stock pleather pads can flake after a few years of heavy use.",
       "independentResearchReferences": [
-        { "source": "RTINGS Studio Headphones Review", "url": "https://www.rtings.com/headphones/reviews/sony/mdr-7506" },
-        { "source": "Wikimedia Commons Exact Photo Verification", "url": "https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg" }
+        {
+          "source": "RTINGS Studio Headphones Review",
+          "url": "https://www.rtings.com/headphones/reviews/sony/mdr-7506"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg"
+        }
       ],
       "mediaType": "photo",
       "imageSource": "/assets/gear-photos/sony-mdr-7506.webp",
-      "imageAlt": "Photograph of Sony MDR-7506 Professional Over-Ear Wired Studio Headphones",
+      "imageAlt": "Actual product photograph of Sony MDR-7506 Professional Over-Ear Wired Studio Headphones (black with coiled cable)",
       "imageLicense": {
-        "status": "Approved (CC BY 4.0 Commercial Reuse Verified)",
+        "status": "Approved (Verified Actual Product Photo — CC BY 4.0)",
         "licenseName": "CC BY 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
         "creator": "Ashley Pomeroy",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg",
-        "badgeLabel": null
+        "sourceOrigin": "Wikimedia Commons (Own work — File:Sony_MDR-7506_7615.jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": true,
-      "dailyOrder": 12
+      "dailyOrder": 2,
+      "model": "MDR-7506 Professional Over-Ear Wired Studio Headphones (Black)",
+      "imageWidth": 1000,
+      "imageHeight": 667,
+      "imageAudit": {
+        "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "previousImageSource": "/assets/gear-photos/sony-mdr-7506.webp",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Sony MDR-7506 Professional Over-Ear Wired Studio Headphones (Black) (ASIN B000AJIF4E)",
+        "usagePermission": "CC BY 4.0 (Wikimedia Commons (Own work — File:Sony_MDR-7506_7615.jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "paladone-ps-icons",
@@ -554,7 +847,10 @@
       "asin": "B079CBP6P9",
       "amazonSpecialLink": "https://www.amazon.com/dp/B079CBP6P9?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Desk Setup"],
+      "platforms": [
+        "PS5",
+        "Desk Setup"
+      ],
       "compatibility": "Universal desk or shelf accent light powered by included USB cable or 3× AAA batteries (batteries not included); officially licensed PlayStation decor.",
       "shortDescription": "An officially licensed PlayStation desktop accent lamp displaying the four classic controller symbols with steady glow, color-phasing, and music-reactive lighting modes.",
       "whyInteresting": "It brings an instant, licensed neon glow to a dark TV stand or desk shelf — and its sound-reactive mode pulses along with explosions and late-night radio soundtracks.",
@@ -563,25 +859,45 @@
       "intendedAudience": "PlayStation fans decorating a gaming shelf, desk, or stream background who want a recognizable neon accent without wiring full room LED strips.",
       "honestDisadvantages": "Purely decorative ambient accent lighting (not bright enough to serve as a reading lamp), made of lightweight plastic, and running on AAA batteries drains much faster than plugging into USB power.",
       "independentResearchReferences": [
-        { "source": "Paladone Official Licensed Product Catalog", "url": "https://paladone.com/" },
-        { "source": "GTA6HeistGuide Phase 33 Live Listing Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "Paladone Official Licensed Product Catalog",
+          "url": "https://paladone.com/"
+        },
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Listing Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/ps-icons-light.svg",
-      "imageAlt": "Category illustration of a glowing PlayStation controller icons desktop light",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 13
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "PlayStation Icons Light (PP4140PS, Standard 3-Mode)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/ps-icons-light.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "vmoda-boompro-mic",
@@ -597,7 +913,11 @@
       "asin": "B00BJ17WKK",
       "amazonSpecialLink": "https://www.amazon.com/dp/B00BJ17WKK?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "Requires headphones with a standard, non-proprietary 3.5mm detachable input jack on the earcup (such as Philips SHP9500 or V-MODA Crossfade); plugs into PS5 DualSense, Xbox controllers, and PC (Y-splitter included).",
       "shortDescription": "A braided 3.5mm replacement audio cable with a flexible broadcast-style boom microphone, inline volume wheel, and mute clip that converts compatible stereo headphones into a console gaming headset.",
       "whyInteresting": "Instead of compromising on sound quality with a muffled gaming headset, this single cable lets you turn favorite hi-fi stereo headphones into a clean-sounding PS5/Xbox/PC headset in ten seconds.",
@@ -606,26 +926,49 @@
       "intendedAudience": "Gamers who already love a pair of wired stereo headphones (or plan to buy the Philips SHP9500) and want clearer squad voice chat without cluttering their desk with a standalone USB mic.",
       "honestDisadvantages": "Will NOT fit headphones with permanently attached cables (like Koss Porta Pro or Sony MDR-7506) or locking 2.5mm jacks, and its omnidirectional capsule can pick up loud keyboard clicks in noisy rooms.",
       "independentResearchReferences": [
-        { "source": "IGN Audio Accessory Coverage", "url": "https://www.ign.com/" },
-        { "source": "SoundGuys Compatibility & Mic Guide", "url": "https://www.soundguys.com/" },
-        { "source": "Podcastage Microphone Testing", "url": "https://podcastage.com/" }
+        {
+          "source": "IGN Audio Accessory Coverage",
+          "url": "https://www.ign.com/"
+        },
+        {
+          "source": "SoundGuys Compatibility & Mic Guide",
+          "url": "https://www.soundguys.com/"
+        },
+        {
+          "source": "Podcastage Microphone Testing",
+          "url": "https://podcastage.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/vmoda-boompro.svg",
-      "imageAlt": "Category illustration of a detachable 3.5mm braided gaming boom microphone cable",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 14
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "BoomPro Detachable 3.5mm Gaming Boom Microphone (C-BP-BLACK)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/vmoda-boompro.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "elgato-stream-deck-mk2",
@@ -641,7 +984,10 @@
       "asin": "B09738CV2G",
       "amazonSpecialLink": "https://www.amazon.com/dp/B09738CV2G?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Streaming"],
+      "platforms": [
+        "PC",
+        "Streaming"
+      ],
       "compatibility": "Windows 10/11 and macOS via detachable USB-C cable; integrates with OBS, Discord, Spotify, browser shortcuts, and smart lighting (requires PC/Mac host).",
       "shortDescription": "A desktop control deck featuring 15 miniature LCD push-keys whose icons dynamically change by folder or active app to launch guides, audio profiles, clip saves, and multi-action macros.",
       "whyInteresting": "Every single button is its own tiny glowing display — tap once to open your interactive map, mute Discord, switch audio outputs, or trigger multi-step routines without memorizing cryptic hotkeys.",
@@ -650,26 +996,49 @@
       "intendedAudience": "PC gamers, streamers, video editors, and second-screen console players who want one-tap control over audio, clips, guides, and room lighting.",
       "honestDisadvantages": "Does nothing until you invest an hour configuring profiles, lacks rotary volume dials (unlike the Stream Deck+), and requires a connected Windows PC or Mac rather than plugging directly into a PS5 or Xbox.",
       "independentResearchReferences": [
-        { "source": "PCMag Review", "url": "https://www.pcmag.com/reviews/elgato-stream-deck-mk2" },
-        { "source": "PC Gamer Review", "url": "https://www.pcgamer.com/" },
-        { "source": "Tom's Hardware Stream Deck Coverage", "url": "https://www.tomshardware.com/" }
+        {
+          "source": "PCMag Review",
+          "url": "https://www.pcmag.com/reviews/elgato-stream-deck-mk2"
+        },
+        {
+          "source": "PC Gamer Review",
+          "url": "https://www.pcgamer.com/"
+        },
+        {
+          "source": "Tom's Hardware Stream Deck Coverage",
+          "url": "https://www.tomshardware.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/stream-deck-mk2.svg",
-      "imageAlt": "Category illustration of a 15-key customizable LCD macro control pad",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 15
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Stream Deck MK.2 (10GBA9901, 15-Key Black)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/stream-deck-mk2.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "govee-flow-plus-h6056",
@@ -685,7 +1054,12 @@
       "asin": "B096WZXKZP",
       "amazonSpecialLink": "https://www.amazon.com/dp/B096WZXKZP?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC", "Desk Setup"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Wall-powered desktop or behind-monitor/TV ambient light bars controlled via Govee Home app (2.4GHz Wi-Fi / Bluetooth), inline controller, Alexa, or Google Assistant.",
       "shortDescription": "A pair of multi-zone RGBICWW LED light bars that stand beside a monitor or mount behind a TV to wash your wall in smooth cyan-and-pink gradients or warm bias lighting.",
       "whyInteresting": "Unlike single-color LED bars, RGBICWW zones let each bar blend sunset gradients simultaneously — cutting dark-room eye strain while giving your gaming wall a genuine Vice-inspired backdrop.",
@@ -694,26 +1068,49 @@
       "intendedAudience": "Console and PC gamers upgrading a bedroom or desk backdrop with customizable ambient color gradients or neutral warm-white bias lighting.",
       "honestDisadvantages": "This H6056 Flow Plus kit does NOT include an on-screen color-sync camera (unlike Flow Pro or HDMI sync kits), and the two bars share a hardwired Y-split cable that needs tidy routing.",
       "independentResearchReferences": [
-        { "source": "Tech Advisor Smart Lighting Coverage", "url": "https://www.techadvisor.com/" },
-        { "source": "The Gadgeteer Hands-On Review", "url": "https://the-gadgeteer.com/" },
-        { "source": "Govee H6056 Technical Specs", "url": "https://us.govee.com/" }
+        {
+          "source": "Tech Advisor Smart Lighting Coverage",
+          "url": "https://www.techadvisor.com/"
+        },
+        {
+          "source": "The Gadgeteer Hands-On Review",
+          "url": "https://the-gadgeteer.com/"
+        },
+        {
+          "source": "Govee H6056 Technical Specs",
+          "url": "https://us.govee.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/govee-light-bars.svg",
-      "imageAlt": "Category illustration of twin multi-color RGBIC ambient gaming light bars beside a monitor",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 16
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Flow Plus Smart RGBICWW Light Bars (H6056)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/govee-light-bars.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "philips-shp9500",
@@ -729,7 +1126,11 @@
       "asin": "B00ENMK1DW",
       "amazonSpecialLink": "https://www.amazon.com/dp/B00ENMK1DW?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "Detachable standard 3.5mm stereo cable plugs directly into PS5 DualSense, Xbox controllers, and PC; accepts detachable 3.5mm boom mics like the V-MODA BoomPro.",
       "shortDescription": "Lightweight, breathable open-back over-ear stereo headphones celebrated by independent audio labs for neutral tuning, spacious soundstage, and low-clamp marathon comfort.",
       "whyInteresting": "With huge fabric pads and open mesh backs, they feel like wearing air — and because they use a standard detachable 3.5mm jack, snapping in a boom mic turns them into a console headset that rivals far pricier gear.",
@@ -738,25 +1139,45 @@
       "intendedAudience": "Solo players and quiet-room gamers who want cool, comfortable multi-hour headphones with a wide soundstage — and an easy path to add a 3.5mm boom mic later.",
       "honestDisadvantages": "Open-back design leaks audio freely and blocks zero room noise (not suited for noisy living rooms), bass impact is polite rather than rumbling, and there is no built-in microphone out of the box.",
       "independentResearchReferences": [
-        { "source": "RTINGS Full Lab Review", "url": "https://www.rtings.com/headphones/reviews/philips/shp9500" },
-        { "source": "Head-Fi Enthusiast Consensus", "url": "https://www.head-fi.org/" }
+        {
+          "source": "RTINGS Full Lab Review",
+          "url": "https://www.rtings.com/headphones/reviews/philips/shp9500"
+        },
+        {
+          "source": "Head-Fi Enthusiast Consensus",
+          "url": "https://www.head-fi.org/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/philips-shp9500.svg",
-      "imageAlt": "Category illustration of open-back over-ear stereo headphones with breathable earpads",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 17
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "SHP9500 HiFi Precision Stereo Over-Ear Headphones (Black)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/philips-shp9500.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "sabrent-hb-um43-hub",
@@ -772,7 +1193,10 @@
       "asin": "B00JX1ZS5O",
       "amazonSpecialLink": "https://www.amazon.com/dp/B00JX1ZS5O?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Desk Setup"],
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Bus-powered 4-port USB 3.0 (5Gbps) data hub for Windows, macOS, and Linux PCs (designed for data peripherals like dongles, mics, and flash drives — not for high-wattage charging).",
       "shortDescription": "A slim 4-port USB 3.0 desktop hub where every single port has its own physical push-button power switch and status LED so you can disconnect mics, webcams, or RGB gadgets with one tap.",
       "whyInteresting": "Instead of crawling behind your desk to unplug a glowing microphone, webcam, or racing peripheral when you're done playing, one physical click cuts power cleanly to that individual port.",
@@ -781,25 +1205,45 @@
       "intendedAudience": "PC gamers and creators who juggle wireless dongles, USB microphones, webcams, or flash drives and want tactile hardware privacy and power switches on their desk.",
       "honestDisadvantages": "Strictly bus-powered (no wall adapter included) — it is NOT designed for charging phones/tablets or running multiple power-hungry external spinning hard drives simultaneously.",
       "independentResearchReferences": [
-        { "source": "Sabrent Official HB-UM43 Specifications", "url": "https://sabrent.com/products/hb-um43" },
-        { "source": "Long-Term Tech Reviewer Hardware Consensus", "url": "https://www.pcmag.com/" }
+        {
+          "source": "Sabrent Official HB-UM43 Specifications",
+          "url": "https://sabrent.com/products/hb-um43"
+        },
+        {
+          "source": "Long-Term Tech Reviewer Hardware Consensus",
+          "url": "https://www.pcmag.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/sabrent-usb-hub.svg",
-      "imageAlt": "Category illustration of a 4-port USB 3.0 desktop hub with individual power buttons",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 18
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "4-Port USB 3.0 Hub with Individual Power Switches (HB-UM43)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/sabrent-usb-hub.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "cable-guy-monkeybomb",
@@ -815,7 +1259,11 @@
       "asin": "B08KJJFFY8",
       "amazonSpecialLink": "https://www.amazon.com/dp/B08KJJFFY8?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "Desk Setup"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
       "compatibility": "Holds PlayStation 5 DualSense, Xbox Series X|S Wireless Controllers, most retro gamepads, and smartphones (passive stand — does not charge directly unless paired with your own cable).",
       "shortDescription": "An officially licensed 8-inch collectible figure sculpted with outstretched arms to cradle a console controller or smartphone on your desk or TV stand.",
       "whyInteresting": "It replaces a boring plastic rack with a mischievous collectible figurine that holds your DualSense between missions — or props up your phone while checking the Leonida interactive map.",
@@ -824,25 +1272,45 @@
       "intendedAudience": "Console gamers and gift shoppers looking for a fun shelf conversation piece that keeps a primary gamepad or companion smartphone within arm's reach.",
       "honestDisadvantages": "Does not have built-in charging contacts (you still plug in your own USB-C cord to charge), and its 8-inch height takes more shelf clearance than a low-profile dock.",
       "independentResearchReferences": [
-        { "source": "Exquisite Gaming Official Cable Guys Spec", "url": "https://exgpro.com/" },
-        { "source": "GTA6HeistGuide Phase 33 Live Listing Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "Exquisite Gaming Official Cable Guys Spec",
+          "url": "https://exgpro.com/"
+        },
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Listing Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/controller-holder-figure.svg",
-      "imageAlt": "Category illustration of a novelty gaming figure holding a wireless controller",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
-      "dailyOrder": 19
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "model": "Cable Guys: Call of Duty Monkeybomb Controller & Phone Holder",
+      "imageWidth": null,
+      "imageHeight": null,
+      "dailyPhotoHold": true,
+      "dailyHoldReason": "Held from Daily Editor's Pick rotation because the daily feature must always display a verified actual product photograph. Displayed as a clean text-only card in its catalog section until an authorized Creators API + mobile-approved image or written manufacturer photo permission is obtained.",
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/controller-holder-figure.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "dualsense-white",
@@ -858,7 +1326,10 @@
       "asin": "B0FY6X2XXY",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0FY6X2XXY?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "PC"],
+      "platforms": [
+        "PS5",
+        "PC"
+      ],
       "compatibility": "PlayStation 5, Windows PC, Mac, and mobile via Bluetooth or USB-C (not compatible with Xbox consoles).",
       "shortDescription": "Official Sony PlayStation 5 wireless controller with adaptive trigger resistance, tactile haptic feedback, built-in microphone, and 3.5mm headset jack.",
       "whyInteresting": "Having a genuine spare DualSense eliminates mid-heist charging cables when your primary battery dips low and keeps local co-op ready.",
@@ -867,25 +1338,43 @@
       "intendedAudience": "PS5 players replacing a worn launch pad or keeping a second controller charged on rotation.",
       "honestDisadvantages": "Internal battery lasts roughly 6–12 hours depending on haptic intensity, and standard potentiometer sticks can eventually wear over heavy multi-year use.",
       "independentResearchReferences": [
-        { "source": "RTINGS Controller Review", "url": "https://www.rtings.com/controller/reviews/sony/ps5-dualsense" },
-        { "source": "Wikimedia Commons Exact Photo Verification", "url": "https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png" }
+        {
+          "source": "RTINGS Controller Review",
+          "url": "https://www.rtings.com/controller/reviews/sony/ps5-dualsense"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png"
+        }
       ],
       "mediaType": "photo",
       "imageSource": "/assets/gear-photos/dualsense-white.webp",
-      "imageAlt": "Photograph of the Sony PlayStation DualSense Wireless Controller in White",
+      "imageAlt": "Actual product photograph of Sony PlayStation DualSense Wireless Controller in White",
       "imageLicense": {
-        "status": "Approved (CC BY-SA 4.0 Commercial Reuse Verified)",
+        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "Alex Cochrane",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png",
-        "badgeLabel": null
+        "sourceOrigin": "Wikimedia Commons (Own work — File:Playstation_DualSense_Controller.png)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": false,
-      "dailyOrder": null
+      "dailyEligible": true,
+      "dailyOrder": 6,
+      "model": "DualSense Wireless Controller — White (CFI-ZCT1W)",
+      "imageWidth": 1000,
+      "imageHeight": 885,
+      "imageAudit": {
+        "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "previousImageSource": "/assets/gear-photos/dualsense-white.webp",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Sony PlayStation DualSense Wireless Controller — White (CFI-ZCT1W) (ASIN B0FY6X2XXY)",
+        "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:Playstation_DualSense_Controller.png))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "xbox-carbon-black",
@@ -901,7 +1390,10 @@
       "asin": "B0F1HX3WXX",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0F1HX3WXX?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["Xbox", "PC"],
+      "platforms": [
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "Xbox Series X|S, Xbox One, Windows PC, Android, and iOS via Xbox Wireless, Bluetooth, or USB-C (not compatible with PS5).",
       "shortDescription": "Official Microsoft Xbox Series X|S wireless gamepad featuring textured trigger grips, a faceted hybrid D-pad, dedicated Share button, and 3.5mm audio jack.",
       "whyInteresting": "Swap effortlessly between Xbox Series X|S and a Windows PC with double-tap Bluetooth pairing and widely supported native XInput controls.",
@@ -910,25 +1402,43 @@
       "intendedAudience": "Xbox Series X|S players needing a spare controller and PC gamers wanting plug-and-play native controller prompts.",
       "honestDisadvantages": "Uses disposable AA batteries out of the box unless you add rechargeable packs or a charging dock, and lacks gyro/adaptive trigger hardware.",
       "independentResearchReferences": [
-        { "source": "RTINGS Controller Review", "url": "https://www.rtings.com/controller/reviews/xbox/series-x-s-wireless-controller" },
-        { "source": "Wikimedia Commons Exact Photo Verification", "url": "https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg" }
+        {
+          "source": "RTINGS Controller Review",
+          "url": "https://www.rtings.com/controller/reviews/xbox/series-x-s-wireless-controller"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg"
+        }
       ],
       "mediaType": "photo",
       "imageSource": "/assets/gear-photos/xbox-wireless-controller-carbon-black.webp",
-      "imageAlt": "Photograph of the Microsoft Xbox Wireless Controller in Carbon Black",
+      "imageAlt": "Actual product photograph of Microsoft Xbox Wireless Controller (Series X|S) in Carbon Black",
       "imageLicense": {
-        "status": "Approved (CC BY-SA 4.0 Commercial Reuse Verified)",
+        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "uKER",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg",
-        "badgeLabel": null
+        "sourceOrigin": "Wikimedia Commons (Own work — File:Xbox_Series_Controller_Carbon_Black.jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": false,
-      "dailyOrder": null
+      "dailyEligible": true,
+      "dailyOrder": 7,
+      "model": "Xbox Wireless Controller (Series X|S) — Carbon Black (QAT-00001)",
+      "imageWidth": 1000,
+      "imageHeight": 750,
+      "imageAudit": {
+        "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "previousImageSource": "/assets/gear-photos/xbox-wireless-controller-carbon-black.webp",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Microsoft Xbox Xbox Wireless Controller (Series X|S) — Carbon Black (QAT-00001) (ASIN B0F1HX3WXX)",
+        "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:Xbox_Series_Controller_Carbon_Black.jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "kontrolfreek-heist",
@@ -944,7 +1454,9 @@
       "asin": "B0GNNTYQGH",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0GNNTYQGH?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5"],
+      "platforms": [
+        "PS5"
+      ],
       "compatibility": "PlayStation 5 DualSense & PlayStation 4 DualShock 4 controllers ONLY (does NOT fit Xbox thumbstick stems).",
       "shortDescription": "Slip-on pink-and-blue performance thumbstick extenders that increase analog arc distance and add non-slip textured grip for aiming and driving.",
       "whyInteresting": "An inexpensive snap-on modification that alters thumbstick leverage and protects factory rubber without opening your controller.",
@@ -953,25 +1465,43 @@
       "intendedAudience": "PS5 players who want taller sticks or extra thumb traction without upgrading to a high-priced pro controller.",
       "honestDisadvantages": "Platform-specific (won't fit Xbox controllers), takes a few sessions to build muscle memory for the added stick height, and is not officially licensed GTA merchandise.",
       "independentResearchReferences": [
-        { "source": "KontrolFreek Official Fit Guide", "url": "https://www.kontrolfreek.com/" },
-        { "source": "GTA6HeistGuide Phase 33 Live Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "KontrolFreek Official Fit Guide",
+          "url": "https://www.kontrolfreek.com/"
+        },
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/thumbsticks-heist.svg",
-      "imageAlt": "Category illustration of pink and blue performance controller thumbstick grips",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Action Adventure Performance Thumbsticks — Heist Edition (PS5/PS4)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/thumbsticks-heist.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "kontrolfreek-galaxy",
@@ -987,7 +1517,9 @@
       "asin": "B0B4862QNJ",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0B4862QNJ?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5"],
+      "platforms": [
+        "PS5"
+      ],
       "compatibility": "PlayStation 5 DualSense & PlayStation 4 DualShock 4 controllers ONLY (verify separate Xbox SKU if playing on Xbox).",
       "shortDescription": "Asymmetric pair of concave textured thumbstick extenders combining a mid-rise left stick for movement/steering with a high-rise right stick for fine camera aim.",
       "whyInteresting": "Pairing a shorter left stick with a taller right stick keeps steering snappy while slowing down micro-aim adjustments in gunfights.",
@@ -996,25 +1528,43 @@
       "intendedAudience": "PS5 players who play free-aim shootouts and want finer right-stick precision.",
       "honestDisadvantages": "Fits PlayStation sticks only (separate SKU needed for Xbox), and the tall right stick can feel awkward for players with smaller hands.",
       "independentResearchReferences": [
-        { "source": "IGN Gaming Accessory Guides", "url": "https://www.ign.com/" },
-        { "source": "KontrolFreek Official Fit Guide", "url": "https://www.kontrolfreek.com/" }
+        {
+          "source": "IGN Gaming Accessory Guides",
+          "url": "https://www.ign.com/"
+        },
+        {
+          "source": "KontrolFreek Official Fit Guide",
+          "url": "https://www.kontrolfreek.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/thumbsticks-galaxy.svg",
-      "imageAlt": "Category illustration of black high-rise and mid-rise controller thumbstick grips",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "FPS Freek Galaxy Performance Thumbsticks — Black (PS5/PS4)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/thumbsticks-galaxy.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "logitech-g305",
@@ -1030,7 +1580,9 @@
       "asin": "B07CMS5Q6P",
       "amazonSpecialLink": "https://www.amazon.com/dp/B07CMS5Q6P?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC"],
+      "platforms": [
+        "PC"
+      ],
       "compatibility": "Windows PC and macOS via 2.4GHz LIGHTSPEED USB nano-receiver (no Bluetooth mode; intended for PC gaming and desk navigation).",
       "shortDescription": "A classic, symmetrical low-latency wireless PC gaming mouse powered by Logitech's HERO 12K sensor and a single AA battery rated up to 250 hours of play.",
       "whyInteresting": "While newer wireless mice demand nightly USB-C charging, a single AA battery keeps the G305 running for months with 1ms wireless tracking.",
@@ -1039,25 +1591,47 @@
       "intendedAudience": "PC gamers, laptop players, and desk users wanting dependable lag-free wireless tracking without flagship pricing.",
       "honestDisadvantages": "Heavier (~99g with alkaline AA) than modern ultralight esports mice, lacks Bluetooth, and mechanical primary switches can eventually wear after years of heavy clicking.",
       "independentResearchReferences": [
-        { "source": "RTINGS Mouse Review", "url": "https://www.rtings.com/mouse/reviews/logitech/g305-lightspeed" },
-        { "source": "PC Gamer Budget Mouse Coverage", "url": "https://www.pcgamer.com/" }
+        {
+          "source": "RTINGS Mouse Review",
+          "url": "https://www.rtings.com/mouse/reviews/logitech/g305-lightspeed"
+        },
+        {
+          "source": "PC Gamer Budget Mouse Coverage",
+          "url": "https://www.pcgamer.com/"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/logitech-g305.svg",
-      "imageAlt": "Category illustration of a symmetrical black wireless PC gaming mouse",
+      "mediaType": "photo",
+      "imageSource": "/assets/gear-photos/logitech-g305-black.webp",
+      "imageAlt": "Actual product photograph of Logitech G305 LIGHTSPEED Wireless Gaming Mouse in Black",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
-        "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
-        "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "creator": "Julien Sinan",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+        "sourceOrigin": "Wikimedia Commons (Own work — File:Une souris Logitech G305..jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": false,
-      "dailyOrder": null
+      "dailyEligible": true,
+      "dailyOrder": 3,
+      "model": "G305 LIGHTSPEED Wireless Gaming Mouse (910-005280, Black)",
+      "imageWidth": 1000,
+      "imageHeight": 750,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/logitech-g305.svg",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Logitech G G305 LIGHTSPEED Wireless Gaming Mouse (910-005280, Black) (ASIN B07CMS5Q6P)",
+        "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:Une souris Logitech G305..jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "powera-ps5-dock",
@@ -1073,7 +1647,9 @@
       "asin": "B09B1XX1PN",
       "amazonSpecialLink": "https://www.amazon.com/dp/B09B1XX1PN?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5"],
+      "platforms": [
+        "PS5"
+      ],
       "compatibility": "PlayStation 5 DualSense Wireless Controllers ONLY (wall AC powered; not compatible with Xbox controllers).",
       "shortDescription": "Officially licensed click-down AC charging cradle that tops up two PS5 DualSense controllers simultaneously without occupying console USB ports.",
       "whyInteresting": "Uses the bottom pogo pins on DualSense pads so you never fumble with tiny USB-C plugs in the dark.",
@@ -1082,25 +1658,43 @@
       "intendedAudience": "PS5 owners with one or two DualSense controllers who want effortless drop-in charging between sessions.",
       "honestDisadvantages": "Platform-locked to PlayStation 5 DualSense pads (won't fit Xbox controllers or bulky protective silicone controller skins).",
       "independentResearchReferences": [
-        { "source": "PowerA Official PS5 Charging Specs", "url": "https://www.powera.com/" },
-        { "source": "GTA6HeistGuide Phase 33 Live Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "PowerA Official PS5 Charging Specs",
+          "url": "https://www.powera.com/"
+        },
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/ps5-charging-dock.svg",
-      "imageAlt": "Category illustration of a dual PlayStation 5 controller charging station",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Twin Charging Station for DualSense Wireless Controllers (PS5)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/ps5-charging-dock.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "powera-xbox-dock",
@@ -1116,7 +1710,9 @@
       "asin": "B09FZ4K8FQ",
       "amazonSpecialLink": "https://www.amazon.com/dp/B09FZ4K8FQ?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["Xbox"],
+      "platforms": [
+        "Xbox"
+      ],
       "compatibility": "Xbox Series X|S and Xbox One standard wireless controllers (includes 2 rechargeable battery packs and charge-through doors; not compatible with Xbox Elite Series 2 or PS5).",
       "shortDescription": "Officially licensed Designed-for-Xbox dual desktop cradle bundled with two rechargeable battery packs and snap-on charge-through battery doors.",
       "whyInteresting": "Eliminates buying disposable AA batteries while giving two Xbox controllers a clean click-down home.",
@@ -1125,25 +1721,43 @@
       "intendedAudience": "Xbox Series X|S owners tired of swapping AA batteries mid-mission.",
       "honestDisadvantages": "Does not fit the Xbox Elite Series 2 (which has a sealed internal battery) or PlayStation controllers.",
       "independentResearchReferences": [
-        { "source": "PowerA Official Xbox Charging Specs", "url": "https://www.powera.com/" },
-        { "source": "GTA6HeistGuide Phase 33 Live Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "PowerA Official Xbox Charging Specs",
+          "url": "https://www.powera.com/"
+        },
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/xbox-charging-dock.svg",
-      "imageAlt": "Category illustration of a dual Xbox Series X|S controller charging dock with rechargeable battery packs",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Duo Charging Station for Xbox Series X|S & Xbox One",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/xbox-charging-dock.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "turtle-beach-recon-70",
@@ -1159,7 +1773,11 @@
       "asin": "B0CWS6WV23",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0CWS6WV23?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC"
+      ],
       "compatibility": "PS5, PS4, Xbox Series X|S, Xbox One, Nintendo Switch, PC, and mobile via universal 3.5mm wired TRRS plug.",
       "shortDescription": "Lightweight 3.5mm wired gaming headset with 40mm speakers, cushioned synthetic-leather earpads, and a flip-to-mute boom microphone.",
       "whyInteresting": "Zero wireless dongles or battery anxiety — plugs directly into either a DualSense or Xbox controller for instant squad chat.",
@@ -1168,24 +1786,39 @@
       "intendedAudience": "Budget-conscious console players wanting an uncomplicated wired headset with a built-in voice mic.",
       "honestDisadvantages": "All-plastic lightweight frame feels basic compared to metal-band headsets, and the non-detachable cable means cable wear cannot be swapped out easily.",
       "independentResearchReferences": [
-        { "source": "RTINGS Headset Review", "url": "https://www.rtings.com/headphones/reviews/turtle-beach/recon-70" }
+        {
+          "source": "RTINGS Headset Review",
+          "url": "https://www.rtings.com/headphones/reviews/turtle-beach/recon-70"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/headset-multiplatform.svg",
-      "imageAlt": "Category illustration of a wired multiplatform over-ear gaming headset with flip-to-mute microphone",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Recon 70 Multiplatform Wired Gaming Headset",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/headset-multiplatform.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "hyperx-stinger-2-core",
@@ -1201,7 +1834,10 @@
       "asin": "B0BDGMNF6V",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0BDGMNF6V?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "PC"],
+      "platforms": [
+        "PS5",
+        "PC"
+      ],
       "compatibility": "PlayStation 5 & PlayStation 4 DualSense/DualShock 3.5mm jack (also works on standard 3.5mm PC/controller jacks).",
       "shortDescription": "Lightweight white-and-blue PlayStation wired gaming headset with 40mm drivers, soft fabric ear cushions, on-ear volume slider, and swivel-to-mute microphone.",
       "whyInteresting": "Soft breathable fabric pads avoid the sweaty pleather feel common on cheap headsets while matching the PS5 console colorway.",
@@ -1210,24 +1846,39 @@
       "intendedAudience": "PS5 players looking for an affordable wired headset with a built-in mic and lighter earpad feel.",
       "honestDisadvantages": "Lightweight plastic headband and modest noise isolation compared to closed leatherette studio models.",
       "independentResearchReferences": [
-        { "source": "RTINGS HyperX Cloud Stinger 2 Core Review", "url": "https://www.rtings.com/headphones/reviews/hyperx/cloud-stinger-2-core" }
+        {
+          "source": "RTINGS HyperX Cloud Stinger 2 Core Review",
+          "url": "https://www.rtings.com/headphones/reviews/hyperx/cloud-stinger-2-core"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/headset-playstation.svg",
-      "imageAlt": "Category illustration of a white and blue PlayStation wired gaming headset",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Cloud Stinger 2 Core Gaming Headset for PlayStation (White/Blue)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/headset-playstation.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "samson-q2u-mic",
@@ -1243,7 +1894,11 @@
       "asin": "B001R747SG",
       "amazonSpecialLink": "https://www.amazon.com/dp/B001R747SG?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "PS5", "Streaming"],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Streaming"
+      ],
       "compatibility": "Plug-and-play USB for Windows PC, Mac, and PS5 USB ports, plus analog XLR output for mixers/interfaces (not supported on Xbox USB ports).",
       "shortDescription": "A hybrid dynamic cardioid microphone featuring simultaneous USB and XLR outputs, zero-latency 3.5mm monitoring, and bundled tripod stand, clip, and cables.",
       "whyInteresting": "Because it uses a dynamic capsule instead of a sensitive condenser, it naturally rejects mechanical keyboard clatter, console fans, and room echo in untreated bedrooms.",
@@ -1252,25 +1907,43 @@
       "intendedAudience": "PC and PS5 players pairing studio headphones (like Sony MDR-7506 or Koss Porta Pro) with a cleaner desktop voice mic in an untreated room.",
       "honestDisadvantages": "Must be positioned close to your mouth (2–4 inches) for full vocal warmth, the included mini tripod sits quite low without a boom arm, and it uses an older Mini-USB port rather than USB-C on classic revisions.",
       "independentResearchReferences": [
-        { "source": "The Podcast Host Review", "url": "https://www.thepodcasthost.com/equipment/samson-q2u-review/" },
-        { "source": "Podcastage Audio Tests", "url": "https://podcastage.com/" }
+        {
+          "source": "The Podcast Host Review",
+          "url": "https://www.thepodcasthost.com/equipment/samson-q2u-review/"
+        },
+        {
+          "source": "Podcastage Audio Tests",
+          "url": "https://podcastage.com/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/samson-q2u-mic.svg",
-      "imageAlt": "Category illustration of a handheld USB and XLR dynamic microphone on a desktop stand",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Q2U Handheld Dynamic USB/XLR Microphone Recording Pack (SAQ2U)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/samson-q2u-mic.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "wd-black-sn850p",
@@ -1286,7 +1959,10 @@
       "asin": "B0C47ZX1WB",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "PC"],
+      "platforms": [
+        "PS5",
+        "PC"
+      ],
       "compatibility": "Drop-in ready for PlayStation 5 internal M.2 2280 expansion bay (officially licensed heatsink) and desktop PC M.2 slots (NOT compatible with Xbox Series X|S storage slot).",
       "shortDescription": "Officially licensed 2TB PCIe Gen4 x4 NVMe M.2 2280 SSD with a custom pre-fitted PlayStation 5 heatsink rated up to 7,300 MB/s sequential read.",
       "whyInteresting": "Zero heatsink sizing guesswork — unscrew the PS5 bay cover, seat the drive, format in seconds, and keep massive open-world games installed side by side.",
@@ -1295,25 +1971,43 @@
       "intendedAudience": "PS5 players with large game libraries who don't want to uninstall titles before big updates.",
       "honestDisadvantages": "Does not work with Xbox Series X|S (Xbox requires proprietary Storage Expansion Cards), and official licensing usually carries a slight premium over equivalent non-licensed Gen4 heatsink drives.",
       "independentResearchReferences": [
-        { "source": "Tom's Hardware SSD Review", "url": "https://www.tomshardware.com/reviews/wd-black-sn850p-ssd-review" },
-        { "source": "IGN PS5 SSD Testing", "url": "https://www.ign.com/articles/best-ps5-ssd" }
+        {
+          "source": "Tom's Hardware SSD Review",
+          "url": "https://www.tomshardware.com/reviews/wd-black-sn850p-ssd-review"
+        },
+        {
+          "source": "IGN PS5 SSD Testing",
+          "url": "https://www.ign.com/articles/best-ps5-ssd"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/ps5-nvme-2tb.svg",
-      "imageAlt": "Category illustration of a 2TB officially licensed PS5 NVMe M.2 SSD with heatsink",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "WD_BLACK 2TB SN850P NVMe M.2 SSD with Heatsink for PS5 (WDBBYV0020BNC)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/ps5-nvme-2tb.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "lexar-nm790-heatsink",
@@ -1329,7 +2023,10 @@
       "asin": "B0CGKPPZY9",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0CGKPPZY9?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "PC"],
+      "platforms": [
+        "PS5",
+        "PC"
+      ],
       "compatibility": "Drop-in ready for PlayStation 5 internal M.2 2280 expansion bay (pre-installed low-profile heatsink) and desktop PCs (NOT compatible with Xbox Series X|S).",
       "shortDescription": "1TB PCIe Gen4 x4 M.2 2280 internal SSD with a pre-installed low-profile cooling heatsink rated up to 7,400 MB/s read for fast PS5 and PC loading.",
       "whyInteresting": "Delivers Sony-exceeding Gen4 read speeds and an integrated heatsink in a cool-running DRAM-less HMB design at an approachable 1TB step-up.",
@@ -1338,24 +2035,39 @@
       "intendedAudience": "Value-conscious PS5 and PC players expanding storage for a few core open-world titles.",
       "honestDisadvantages": "1TB fills up quicker if you keep many 150GB+ games installed simultaneously, and it is incompatible with Xbox Series X|S consoles.",
       "independentResearchReferences": [
-        { "source": "Tom's Hardware Lexar NM790 Review", "url": "https://www.tomshardware.com/reviews/lexar-nm790-ssd-review" }
+        {
+          "source": "Tom's Hardware Lexar NM790 Review",
+          "url": "https://www.tomshardware.com/reviews/lexar-nm790-ssd-review"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/ps5-nvme-1tb.svg",
-      "imageAlt": "Category illustration of a 1TB PCIe 4.0 M.2 NVMe SSD with integrated PS5 heatsink",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "NM790 1TB PCIe Gen4x4 NVMe M.2 SSD with Heatsink (LNM790X001T-RN9NU)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/ps5-nvme-1tb.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "samsung-990-pro-4tb",
@@ -1371,7 +2083,10 @@
       "asin": "B0CHGT1KFJ",
       "amazonSpecialLink": "https://www.amazon.com/dp/B0CHGT1KFJ?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "PS5"],
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
       "compatibility": "Desktop & laptop M.2 2280 PCIe 4.0 slots directly; for PlayStation 5, you MUST install a separate compatible M.2 heatsink before mounting (NOT compatible with Xbox Series X|S).",
       "shortDescription": "High-capacity 4TB bare PCIe Gen4 x4 NVMe M.2 2280 internal SSD (MZ-V9P4T0B/AM) rated up to 7,450 MB/s read for massive PC game libraries or DIY PS5 installs.",
       "whyInteresting": "Single-sided 4TB M.2 layout fits slim laptops and motherboard heatsinks cleanly while offering massive headroom for games and raw 4K gameplay captures.",
@@ -1380,25 +2095,43 @@
       "intendedAudience": "PC builders, video editors capturing large gameplay VODs, and DIY PS5 upgraders who already have a separate PS5-sized M.2 heatsink.",
       "honestDisadvantages": "Ships WITHOUT a factory heatsink (do NOT install bare into a PS5), overkill for casual console players, and incompatible with Xbox Series X|S.",
       "independentResearchReferences": [
-        { "source": "Tom's Hardware Samsung 990 PRO 4TB Review", "url": "https://www.tomshardware.com/reviews/samsung-990-pro-4tb-ssd-review" },
-        { "source": "Wikimedia Commons Exact Photo Verification", "url": "https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg" }
+        {
+          "source": "Tom's Hardware Samsung 990 PRO 4TB Review",
+          "url": "https://www.tomshardware.com/reviews/samsung-990-pro-4tb-ssd-review"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg"
+        }
       ],
       "mediaType": "photo",
       "imageSource": "/assets/gear-photos/samsung-990-pro-4tb.webp",
-      "imageAlt": "Photograph of the Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD bare drive",
+      "imageAlt": "Actual product photograph of Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD bare drive (MZ-V9P4T0)",
       "imageLicense": {
-        "status": "Approved (CC BY-SA 4.0 Commercial Reuse Verified)",
+        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "Dinkun Chen",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg",
-        "badgeLabel": null
+        "sourceOrigin": "Wikimedia Commons (Own work — File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": false,
-      "dailyOrder": null
+      "dailyEligible": true,
+      "dailyOrder": 5,
+      "model": "990 PRO 4TB PCIe 4.0 NVMe M.2 SSD Bare Drive (MZ-V9P4T0B/AM)",
+      "imageWidth": 1000,
+      "imageHeight": 673,
+      "imageAudit": {
+        "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "previousImageSource": "/assets/gear-photos/samsung-990-pro-4tb.webp",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD Bare Drive (MZ-V9P4T0B/AM) (ASIN B0CHGT1KFJ)",
+        "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "blue-yeti-blackout",
@@ -1414,7 +2147,11 @@
       "asin": "B00N1YPXW2",
       "amazonSpecialLink": "https://www.amazon.com/dp/B00N1YPXW2?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "PS5", "Streaming"],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Streaming"
+      ],
       "compatibility": "Plug-and-play USB for Windows PC, macOS, and PlayStation 5 USB ports (not supported on Xbox USB ports).",
       "shortDescription": "Heavy-base desktop USB condenser microphone featuring four selectable pickup patterns, onboard hardware mute/gain dials, and zero-latency 3.5mm headphone monitoring.",
       "whyInteresting": "Turns any pair of stereo wired headphones into a broadcast-clear voice setup with physical front-panel mute and monitoring controls.",
@@ -1423,25 +2160,43 @@
       "intendedAudience": "PC and PS5 players in quieter rooms who want rich voice clarity for co-op comms, podcasts, or gameplay narration.",
       "honestDisadvantages": "Sensitive condenser capsule picks up loud mechanical keyboards and room echo easily if gain isn't tuned carefully, and its large metal body occupies notable desk space.",
       "independentResearchReferences": [
-        { "source": "RTINGS Blue Yeti Review", "url": "https://www.rtings.com/microphone/reviews/blue/yeti" },
-        { "source": "Wikimedia Commons Exact Photo Verification", "url": "https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg" }
+        {
+          "source": "RTINGS Blue Yeti Review",
+          "url": "https://www.rtings.com/microphone/reviews/blue/yeti"
+        },
+        {
+          "source": "Wikimedia Commons Exact Photo Verification",
+          "url": "https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg"
+        }
       ],
       "mediaType": "photo",
       "imageSource": "/assets/gear-photos/blue-yeti-blackout.webp",
-      "imageAlt": "Photograph of the Logitech Blue Yeti USB Microphone in Blackout finish",
+      "imageAlt": "Actual product photograph of Logitech Blue Yeti USB Condenser Microphone in Blackout finish",
       "imageLicense": {
-        "status": "Approved (CC0 1.0 Public Domain Dedication)",
+        "status": "Approved (Verified Actual Product Photo — CC0 1.0 Public Domain)",
         "licenseName": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
         "creator": "Guillaume Pasquier",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg",
-        "badgeLabel": null
+        "sourceOrigin": "Wikimedia Commons / Flickr FlickreviewR 2 (File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg)",
+        "badgeLabel": "Verified Product Photo"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": false,
-      "dailyOrder": null
+      "dailyEligible": true,
+      "dailyOrder": 4,
+      "model": "Blue Yeti USB Condenser Microphone — Blackout (988-000100)",
+      "imageWidth": 750,
+      "imageHeight": 1000,
+      "imageAudit": {
+        "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "previousImageSource": "/assets/gear-photos/blue-yeti-blackout.webp",
+        "currentClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
+        "exactProductMatch": "YES — Visually verified exact match to Logitech / Blue Blue Yeti USB Condenser Microphone — Blackout (988-000100) (ASIN B00N1YPXW2)",
+        "usagePermission": "CC0 1.0 (Wikimedia Commons / Flickr FlickreviewR 2 (File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg))",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "new-bee-headset-stand",
@@ -1457,7 +2212,12 @@
       "asin": "B01GJQ7N94",
       "amazonSpecialLink": "https://www.amazon.com/dp/B01GJQ7N94?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC", "Desk Setup"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Universal desktop stand supporting virtually all over-ear gaming headsets and studio headphones.",
       "shortDescription": "Compact, weighted desktop stand combining an anodized aluminum post with a flexible curved TPU headrest that protects headband padding.",
       "whyInteresting": "Keeps expensive earcups away from desk spills and clutter in a tiny footprint with zero USB cables or distracting RGB LEDs.",
@@ -1466,24 +2226,39 @@
       "intendedAudience": "Any console or PC player who leaves headphones lying flat on a desk or entertainment center.",
       "honestDisadvantages": "Lightweight compared to solid-steel stands (take care with very heavy planar headphones) and offers no built-in USB hub or charging.",
       "independentResearchReferences": [
-        { "source": "GTA6HeistGuide Phase 33 Live Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/headset-stand.svg",
-      "imageAlt": "Category illustration of an aluminum desktop gaming headphone stand",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "Aluminum Desktop Headphone Stand (NB-Z1, Black)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/headset-stand.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "ohill-cable-clips",
@@ -1499,7 +2274,12 @@
       "asin": "B071FXZBMV",
       "amazonSpecialLink": "https://www.amazon.com/dp/B071FXZBMV?tag=gta6heistguid-20",
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC", "Desk Setup"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Universal silicone clips for USB-C charging leads, headset cords, and standard desktop cables (clean smooth surfaces hold best).",
       "shortDescription": "A 16-pack of assorted single- and multi-slot flexible silicone clips with adhesive pads to anchor controller charging leads and headset wires along desk edges.",
       "whyInteresting": "Ends the daily ritual of fishing your USB-C controller cable back up from behind your desk or TV stand.",
@@ -1508,24 +2288,39 @@
       "intendedAudience": "Anyone tired of tangled cords sliding behind their desk or console cabinet.",
       "honestDisadvantages": "Adhesive pads hold poorly on textured wood, dusty surfaces, or thick braided HDMI cables — clean the mounting surface with rubbing alcohol first and avoid heavy power cords.",
       "independentResearchReferences": [
-        { "source": "GTA6HeistGuide Phase 33 Live Verification", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "GTA6HeistGuide Phase 33 Live Verification",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
-      "imageSource": "/assets/gear-illustrations/cable-clips.svg",
-      "imageAlt": "Category illustration of silicone adhesive desktop cable management clips",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
       "imageLicense": {
-        "status": "Authorized (Publisher-Owned Category Illustration)",
-        "licenseName": "Publisher-Owned Original SVG",
+        "status": "Text-Only Presentation (No Permitted Real Photo Available)",
+        "licenseName": null,
         "licenseUrl": null,
-        "creator": "GTA6HeistGuide.com",
+        "creator": null,
         "sourceUrl": null,
-        "badgeLabel": "Category Illustration"
+        "sourceOrigin": "None — generated illustration removed; clean text-only product card rendered",
+        "badgeLabel": null
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
       "dailyEligible": false,
-      "dailyOrder": null
+      "dailyOrder": null,
+      "model": "16-Pack Self-Adhesive Silicone Desktop Cable Clips (Black)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
+        "previousImageSource": "/assets/gear-illustrations/cable-clips.svg",
+        "currentClassification": "TEXT-ONLY CARD (NO PERMITTED REAL PHOTO OBTAINABLE)",
+        "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
+        "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "elgato-stream-deck-plus-rejected",
@@ -1541,7 +2336,10 @@
       "asin": "B0BJL8BJ2C",
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Streaming"],
+      "platforms": [
+        "PC",
+        "Streaming"
+      ],
       "compatibility": "Windows 10/11 and macOS via USB-C.",
       "shortDescription": "8-key LCD macro controller with touch strip and 4 rotary encoder dials.",
       "whyInteresting": "Rotary dials for live game/Discord/Spotify audio mixing.",
@@ -1550,10 +2348,16 @@
       "intendedAudience": "PC creators and streamers.",
       "honestDisadvantages": "Candidate ASIN B0BJL8BJ2C returned HTTP 404 during live audit on 2026-11-26.",
       "independentResearchReferences": [
-        { "source": "Tom's Hardware Review", "url": "https://www.tomshardware.com/reviews/elgato-stream-deck-plus" },
-        { "source": "PCMag Review", "url": "https://www.pcmag.com/reviews/elgato-stream-deck-plus" }
+        {
+          "source": "Tom's Hardware Review",
+          "url": "https://www.tomshardware.com/reviews/elgato-stream-deck-plus"
+        },
+        {
+          "source": "PCMag Review",
+          "url": "https://www.pcmag.com/reviews/elgato-stream-deck-plus"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1569,7 +2373,18 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Candidate ASIN B0BJL8BJ2C returned HTTP 404 on 2026-11-26. Held inactive until owner generates a verified SiteStripe link for SKU 10GBD9901."
+      "rejectionReason": "Candidate ASIN B0BJL8BJ2C returned HTTP 404 on 2026-11-26. Held inactive until owner generates a verified SiteStripe link for SKU 10GBD9901.",
+      "model": "Stream Deck+ (10GBD9901, 8-Key + 4 Rotary Dials)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "8bitdo-sn30-pro-rejected",
@@ -1585,7 +2400,11 @@
       "asin": "B08Y9QLWRY",
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Switch", "Mobile"],
+      "platforms": [
+        "PC",
+        "Switch",
+        "Mobile"
+      ],
       "compatibility": "Switch, PC, macOS, Android, iOS.",
       "shortDescription": "Retro SNES-styled Bluetooth travel gamepad with dual analog sticks.",
       "whyInteresting": "Classic 16-bit silhouette updated with modern sticks and rumble.",
@@ -1594,10 +2413,16 @@
       "intendedAudience": "Retro and travel gamers.",
       "honestDisadvantages": "Candidate ASIN B08Y9QLWRY returned HTTP 404 on 2026-11-26; older stock lacks Hall Effect sticks.",
       "independentResearchReferences": [
-        { "source": "PCMag Editors' Choice Review", "url": "https://www.pcmag.com/reviews/8bitdo-sn30-pro" },
-        { "source": "IGN Review", "url": "https://www.ign.com/" }
+        {
+          "source": "PCMag Editors' Choice Review",
+          "url": "https://www.pcmag.com/reviews/8bitdo-sn30-pro"
+        },
+        {
+          "source": "IGN Review",
+          "url": "https://www.ign.com/"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1613,7 +2438,18 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Candidate ASIN B08Y9QLWRY returned HTTP 404 on 2026-11-26, and legacy B07GK8J3V8 uses older non-Hall-Effect sticks. Held inactive pending owner SiteStripe selection of current Hall Effect SKU."
+      "rejectionReason": "Candidate ASIN B08Y9QLWRY returned HTTP 404 on 2026-11-26, and legacy B07GK8J3V8 uses older non-Hall-Effect sticks. Held inactive pending owner SiteStripe selection of current Hall Effect SKU.",
+      "model": "SN30 Pro Bluetooth Gamepad (Hall Effect Revision)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "tidbyt-gen2-rejected",
@@ -1629,7 +2465,9 @@
       "asin": null,
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["Desk Setup"],
+      "platforms": [
+        "Desk Setup"
+      ],
       "compatibility": "Wi-Fi standalone display (discontinued hardware).",
       "shortDescription": "Retro lo-fi wooden pixel LED desk ticker.",
       "whyInteresting": "Cult favorite retro information ticker before acquisition.",
@@ -1638,10 +2476,16 @@
       "intendedAudience": "N/A — Discontinued.",
       "honestDisadvantages": "Hardware production halted after Modal acquisition; long-term official cloud support uncertain.",
       "independentResearchReferences": [
-        { "source": "Tidbyt Official Acquisition Notice", "url": "https://tidbyt.com/" },
-        { "source": "Hackaday Hardware Status Report", "url": "https://hackaday.com/" }
+        {
+          "source": "Tidbyt Official Acquisition Notice",
+          "url": "https://tidbyt.com/"
+        },
+        {
+          "source": "Hackaday Hardware Status Report",
+          "url": "https://hackaday.com/"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1657,7 +2501,18 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Hardware discontinued after November 2024 acquisition by Modal; replaced in daily rotation by active Divoom Pixoo-64 and Divoom Times Gate."
+      "rejectionReason": "Hardware discontinued after November 2024 acquisition by Modal; replaced in daily rotation by active Divoom Pixoo-64 and Divoom Times Gate.",
+      "model": "Tidbyt Gen 2 Retro Pixel LED Display (Discontinued)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "keychron-c3-pro-pending",
@@ -1673,7 +2528,9 @@
       "asin": null,
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC"],
+      "platforms": [
+        "PC"
+      ],
       "compatibility": "Windows, macOS, Linux via wired USB-C.",
       "shortDescription": "Budget TKL gasket-mount wired mechanical keyboard with open-source QMK/VIA key remapping.",
       "whyInteresting": "Rare open-source QMK/VIA programmability and gasket dampening in a budget mechanical keyboard.",
@@ -1682,10 +2539,16 @@
       "intendedAudience": "Budget PC gamers and mechanical keyboard newcomers.",
       "honestDisadvantages": "Multiple Amazon ASINs exist across Red/Brown switches and soldered vs. hot-swap revisions.",
       "independentResearchReferences": [
-        { "source": "PCMag Review", "url": "https://www.pcmag.com/reviews/keychron-c3-pro" },
-        { "source": "RTINGS Keychron Testing", "url": "https://www.rtings.com/keyboard/reviews/keychron/c3-pro" }
+        {
+          "source": "PCMag Review",
+          "url": "https://www.pcmag.com/reviews/keychron-c3-pro"
+        },
+        {
+          "source": "RTINGS Keychron Testing",
+          "url": "https://www.rtings.com/keyboard/reviews/keychron/c3-pro"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1701,7 +2564,18 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Multiple switch and soldered/hot-swap Amazon SKU variants exist (e.g., B0CBWH8L6H / B0CRDKFZWF); kept inactive pending owner SiteStripe selection of one exact verified revision."
+      "rejectionReason": "Multiple switch and soldered/hot-swap Amazon SKU variants exist (e.g., B0CBWH8L6H / B0CRDKFZWF); kept inactive pending owner SiteStripe selection of one exact verified revision.",
+      "model": "C3 Pro QMK/VIA TKL Wired Mechanical Keyboard",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "divoom-ditoo-pro-pending",
@@ -1717,7 +2591,10 @@
       "asin": null,
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC", "Desk Setup"],
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
       "compatibility": "Bluetooth, USB-C audio, MicroSD.",
       "shortDescription": "Miniature vintage desktop computer-shaped Bluetooth speaker with mechanical keys and 16×16 pixel screen.",
       "whyInteresting": "Looks like a tiny 1980s CRT computer on your desk with clickable mechanical keys.",
@@ -1726,9 +2603,12 @@
       "intendedAudience": "Desk decorators and retro tech collectors.",
       "honestDisadvantages": "Ambiguous multi-color ASIN overlap between Ditoo Plus and Ditoo-Pro 15W revisions; owner should confirm exact Pro listing in SiteStripe before enabling.",
       "independentResearchReferences": [
-        { "source": "Divoom Official Ditoo-Pro Specifications", "url": "https://divoom.com/products/ditoo-pro" }
+        {
+          "source": "Divoom Official Ditoo-Pro Specifications",
+          "url": "https://divoom.com/products/ditoo-pro"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1744,7 +2624,18 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Multiple Amazon color listings overlap between older Ditoo and 15W USB-C Ditoo-Pro revisions; kept inactive pending manual owner SiteStripe link confirmation."
+      "rejectionReason": "Multiple Amazon color listings overlap between older Ditoo and 15W USB-C Ditoo-Pro revisions; kept inactive pending manual owner SiteStripe link confirmation.",
+      "model": "Ditoo-Pro Retro Pixel Art 15W Bluetooth Speaker",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "elgato-hd60x-oos-rejected",
@@ -1760,7 +2651,12 @@
       "asin": "B09V1KJ3J4",
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PS5", "Xbox", "PC", "Streaming"],
+      "platforms": [
+        "PS5",
+        "Xbox",
+        "PC",
+        "Streaming"
+      ],
       "compatibility": "PS5, Xbox Series X|S, Switch, PC/Mac.",
       "shortDescription": "External USB 3.0 console capture card with HDMI 2.0 VRR passthrough.",
       "whyInteresting": "Popular console capture hardware.",
@@ -1769,9 +2665,12 @@
       "intendedAudience": "Console streamers and guide creators.",
       "honestDisadvantages": "Audited as Currently Unavailable on Amazon US.",
       "independentResearchReferences": [
-        { "source": "GTA6HeistGuide Phase 33 Amazon Product Inventory Audit", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "GTA6HeistGuide Phase 33 Amazon Product Inventory Audit",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1787,7 +2686,18 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Previously audited as Currently Unavailable (Out of Stock) on Amazon US (ASIN B09V1KJ3J4); excluded from active catalog and daily rotation."
+      "rejectionReason": "Previously audited as Currently Unavailable (Out of Stock) on Amazon US (ASIN B09V1KJ3J4); excluded from active catalog and daily rotation.",
+      "model": "Game Capture HD60 X (10GBE9901)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     },
     {
       "id": "samsung-990-pro-2tb-mismatch-rejected",
@@ -1803,7 +2713,9 @@
       "asin": "B0BHJJ9Y77",
       "amazonSpecialLink": null,
       "associatesTag": "gta6heistguid-20",
-      "platforms": ["PC"],
+      "platforms": [
+        "PC"
+      ],
       "compatibility": "PC/Laptop bare M.2 drive — lacks PS5 factory heatsink.",
       "shortDescription": "Bare 2TB Gen4 NVMe SSD previously linked incorrectly as a PS5 heatsink drive.",
       "whyInteresting": "Documented legacy compliance & compatibility catch.",
@@ -1812,9 +2724,12 @@
       "intendedAudience": "N/A — Replaced by heatsink-verified Lexar NM790 & WD_BLACK SN850P and explicitly labeled bare Samsung 990 PRO 4TB.",
       "honestDisadvantages": "Bare drive without factory heatsink; linking it as PS5-ready creates thermal compatibility risk.",
       "independentResearchReferences": [
-        { "source": "GTA6HeistGuide Phase 33 Amazon Product Inventory Audit", "url": "https://www.gta6heistguide.com/gaming-gear/" }
+        {
+          "source": "GTA6HeistGuide Phase 33 Amazon Product Inventory Audit",
+          "url": "https://www.gta6heistguide.com/gaming-gear/"
+        }
       ],
-      "mediaType": "illustration",
+      "mediaType": "none",
       "imageSource": null,
       "imageAlt": "",
       "imageLicense": {
@@ -1830,7 +2745,19 @@
       "active": false,
       "dailyEligible": false,
       "dailyOrder": null,
-      "rejectionReason": "Critical PS5 heatsink compatibility mismatch (bare drive without factory heatsink); permanently disabled."
+      "rejectionReason": "Critical PS5 heatsink compatibility mismatch (bare drive without factory heatsink); permanently disabled.",
+      "model": "990 PRO 2TB Bare NVMe SSD (MZ-V9P2T0B/AM)",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageAudit": {
+        "previousClassification": "NONE (INACTIVE / EXCLUDED)",
+        "previousImageSource": null,
+        "currentClassification": "EXCLUDED / INACTIVE (NO IMAGE DISPLAYED)",
+        "exactProductMatch": "N/A (Inactive record — excluded from display)",
+        "usagePermission": "Not displayed",
+        "verifiedDate": "2026-11-26"
+      }
     }
-  ]
+  ],
+  "imagePolicy": "ACTUAL PRODUCT PHOTOGRAPHS ONLY. Zero AI-generated images, zero synthetic photography, zero illustrations, zero mockups, and zero generic substitute photos. Products without a legally permitted actual photograph render as clean text-only cards (mediaType: 'none', imageSource: null) and are held out of the Daily Editor's Pick rotation until a permitted real photograph is verified."
 }

@@ -21,20 +21,47 @@ function cloneCatalog() {
   return JSON.parse(MASTER_RAW);
 }
 
-test('GG-01: Single source of truth parity & minimum verified catalog/daily thresholds', () => {
+test('GG-01: Single source of truth parity, real-photos-only enforcement & verified catalog/daily thresholds', () => {
   const publicRaw = fs.readFileSync(PUBLIC_MASTER_PATH, 'utf8');
   assert.equal(publicRaw, MASTER_RAW, 'public/data/gear-products-master.json must match data/gear-products-master.json byte-for-byte');
 
   const approved = rotation.getApprovedCatalogProducts(MASTER_CATALOG);
   const daily = rotation.getEligibleDailyProducts(MASTER_CATALOG);
-  assert.ok(MASTER_CATALOG.products.length >= 25, `Expected >=25 researched candidates, got ${MASTER_CATALOG.products.length}`);
+  assert.equal(MASTER_CATALOG.products.length, 42, `Expected 42 audited product records, got ${MASTER_CATALOG.products.length}`);
   assert.ok(approved.length >= 25, `Expected >=25 approved active products, got ${approved.length}`);
-  assert.ok(daily.length >= 14, `Expected >=14 verified daily-eligible picks, got ${daily.length}`);
+  assert.ok(daily.length >= 8, `Expected >=8 verified real-photo daily-eligible picks, got ${daily.length}`);
 
-  // Verify every active product's local image exists on disk
+  // Zero generated / illustrative product images anywhere in the master catalog
+  for (const p of MASTER_CATALOG.products) {
+    assert.notEqual(p.mediaType, 'illustration', `Forbidden illustration mediaType on ${p.id}`);
+    assert.ok(!String(p.imageSource || '').includes('gear-illustrations'), `Forbidden illustration asset on ${p.id}: ${p.imageSource}`);
+    assert.ok(!/\.svg(?:$|\?)/i.test(String(p.imageSource || '')), `Forbidden SVG product image on ${p.id}: ${p.imageSource}`);
+  }
+
+  // Every active photo product must point to an existing real photo in public/assets/gear-photos/;
+  // every active text-only product must have mediaType 'none' and imageSource null.
+  let photoCount = 0;
+  let textOnlyCount = 0;
   for (const p of approved) {
-    const imgDisk = path.join(ROOT, 'public', p.imageSource.replace(/^\/+/, ''));
-    assert.ok(fs.existsSync(imgDisk), `Missing image asset for ${p.id}: ${p.imageSource}`);
+    if (p.mediaType === 'photo') {
+      photoCount++;
+      assert.match(p.imageSource, /^\/assets\/gear-photos\/[a-z0-9._-]+\.(?:webp|jpg|jpeg|png)$/i);
+      const imgDisk = path.join(ROOT, 'public', p.imageSource.replace(/^\/+/, ''));
+      assert.ok(fs.existsSync(imgDisk), `Missing verified real photo asset for ${p.id}: ${p.imageSource}`);
+    } else {
+      textOnlyCount++;
+      assert.equal(p.mediaType, 'none');
+      assert.equal(p.imageSource, null);
+    }
+  }
+  assert.equal(photoCount, 8, `Expected 8 active products with verified actual product photos, got ${photoCount}`);
+  assert.equal(textOnlyCount, 27, `Expected 27 active text-only product cards, got ${textOnlyCount}`);
+
+  // Every daily-eligible product MUST have a verified real product photograph
+  for (const dp of daily) {
+    assert.equal(dp.mediaType, 'photo', `Daily pick ${dp.id} must have mediaType === 'photo'`);
+    const imgDisk = path.join(ROOT, 'public', dp.imageSource.replace(/^\/+/, ''));
+    assert.ok(fs.existsSync(imgDisk), `Missing verified daily pick photo on disk for ${dp.id}`);
   }
 });
 
@@ -142,10 +169,29 @@ test('GG-07: Missing required data or empty catalog fails gracefully without thr
   assert.equal(rotation.selectDailyPick({ products: [] }, new Date()).ok, false);
   assert.equal(rotation.selectDailyPick({ products: [{ id: 'broken', active: true, dailyEligible: true }] }, new Date()).ok, false);
 
-  // Missing image license or editorial field rejected
+  // Missing image license, generated illustrations, text-only daily picks, or missing editorial field rejected
   const sample = MASTER_CATALOG.products.find((p) => p.active && p.dailyEligible);
   const noLicense = { ...sample, imageLicense: { status: 'Unknown' } };
   assert.equal(rotation.validateProduct(noLicense, { requireDaily: true }).valid, false);
+
+  const fakeIllustration = {
+    ...sample,
+    mediaType: 'illustration',
+    imageSource: '/assets/gear-illustrations/fake.svg',
+    imageLicense: { status: 'Authorized (Category Illustration)' },
+  };
+  assert.equal(rotation.validateProduct(fakeIllustration, { requireDaily: false }).valid, false);
+  assert.equal(rotation.validateProduct(fakeIllustration, { requireDaily: true }).valid, false);
+
+  const textOnlyItem = {
+    ...sample,
+    mediaType: 'none',
+    imageSource: null,
+    imageAlt: '',
+    imageLicense: { status: 'Text-Only Presentation (No Permitted Real Photo Available)' },
+  };
+  assert.equal(rotation.validateProduct(textOnlyItem, { requireDaily: false }).valid, true, 'Text-only cards must be allowed in catalog');
+  assert.equal(rotation.validateProduct(textOnlyItem, { requireDaily: true }).valid, false, 'Daily Editor Pick must reject text-only items without a real photo');
 
   const noEditorial = { ...sample, editorialIntro: '' };
   assert.equal(rotation.validateProduct(noEditorial, { requireDaily: true }).valid, false);
@@ -289,13 +335,13 @@ test('GG-13: All active Amazon CTA URLs are direct, correctly tagged Special Lin
   vm.runInContext(affiliatesSrc, ctx);
 
   const mockCta = {
-    href: 'https://www.amazon.com/dp/B09H3YWPCH?tag=gta6heistguid-20',
+    href: 'https://www.amazon.com/dp/B0CDG5HCCH?tag=gta6heistguid-20',
     getAttribute(k) {
       return ({
-        href: 'https://www.amazon.com/dp/B09H3YWPCH?tag=gta6heistguid-20',
+        href: 'https://www.amazon.com/dp/B0CDG5HCCH?tag=gta6heistguid-20',
         'data-aff-partner': 'amazon',
-        'data-aff-product': 'divoom-pixoo-64',
-        'data-aff-asin': 'B09H3YWPCH',
+        'data-aff-product': '8bitdo-micro-gamepad',
+        'data-aff-asin': 'B0CDG5HCCH',
         'data-aff-category': 'Funny & Unusual',
         'data-aff-placement': 'editors_pick_daily',
         'data-aff-daily-slot': 'daily_2026-11-26',
@@ -311,7 +357,7 @@ test('GG-13: All active Amazon CTA URLs are direct, correctly tagged Special Lin
 
   const affEvents = ctx.GTA6Track.getEvents().filter((e) => e.event === 'affiliate_click');
   assert.equal(affEvents.length, 1);
-  assert.equal(affEvents[0].params.product_id, 'divoom-pixoo-64');
+  assert.equal(affEvents[0].params.product_id, '8bitdo-micro-gamepad');
   assert.equal(affEvents[0].params.product_category, 'Funny & Unusual');
   assert.equal(affEvents[0].params.feature_placement, 'editors_pick_daily');
   assert.equal(affEvents[0].params.daily_editorial_slot, 'daily_2026-11-26');

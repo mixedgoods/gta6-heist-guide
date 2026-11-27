@@ -84,7 +84,7 @@ def run_suite(base_url: str, out_dir: str, prefix: str):
                 page.wait_for_selector('#leonidaEditorsPickMount[data-rendered="dynamic"]', timeout=10000)
                 page.wait_for_timeout(400)
 
-                # Capture above-the-fold screenshot for key viewports (and all 6 for full evidence)
+                # Capture above-the-fold screenshot for all 6 viewports
                 shot_path = os.path.join(out_dir, f"{prefix}_gaming_gear_{label}.png")
                 page.screenshot(path=shot_path, full_page=False)
 
@@ -97,7 +97,10 @@ def run_suite(base_url: str, out_dir: str, prefix: str):
                     }
                     window.scrollTo(0, 0);
                 }""")
-                page.wait_for_timeout(500)
+                page.wait_for_timeout(600)
+                if label in ("1440x900", "390x844"):
+                    full_shot = os.path.join(out_dir, f"{prefix}_gaming_gear_{label}_full.png")
+                    page.screenshot(path=full_shot, full_page=True)
 
                 pick_id_1 = page.get_attribute("#leonidaEditorsPickMount .lep-card", "data-daily-pick-id")
                 pick_date = page.get_attribute("#leonidaEditorsPickMount .lep-card", "data-daily-date")
@@ -126,8 +129,25 @@ def run_suite(base_url: str, out_dir: str, prefix: str):
                     const overflow = document.documentElement.scrollWidth > window.innerWidth;
                     const imgs = Array.from(document.querySelectorAll('main img'));
                     const brokenImgs = imgs.filter(i => !i.complete || i.naturalWidth === 0).map(i => i.getAttribute('src'));
+                    const forbiddenGeneratedImgs = imgs
+                        .map(i => i.getAttribute('src') || '')
+                        .filter(src => src.includes('gear-illustrations') || /\\.svg(?:$|\\?)/i.test(src) || !src.startsWith('/assets/gear-photos/'));
+                    const distortedOrCroppedImgs = imgs.filter(i => {
+                        const cs = window.getComputedStyle(i);
+                        return cs.objectFit !== 'contain';
+                    }).map(i => i.getAttribute('src'));
+                    const dailyImg = document.querySelector('#leonidaEditorsPickMount .lep-media-stage img');
+                    const dailyHasRealPhoto = Boolean(
+                        dailyImg
+                        && dailyImg.complete
+                        && dailyImg.naturalWidth > 0
+                        && (dailyImg.getAttribute('src') || '').startsWith('/assets/gear-photos/')
+                    );
                     const sectionsPresent = expectedSections.filter(id => Boolean(document.getElementById(id)));
                     const cardsCount = document.querySelectorAll('.gg-card').length;
+                    const photoCardsCount = document.querySelectorAll('.gg-card[data-media-mode="photo"]').length;
+                    const textOnlyCards = Array.from(document.querySelectorAll('.gg-card[data-media-mode="text-only"]'));
+                    const textOnlyCardsWithImages = textOnlyCards.filter(c => c.querySelector('img, svg')).length;
                     const amazonLinks = Array.from(document.querySelectorAll('main a[href*="amazon.com"]'));
                     const invalidLinks = amazonLinks.filter(a => {
                         const h = a.getAttribute('href') || '';
@@ -137,6 +157,7 @@ def run_suite(base_url: str, out_dir: str, prefix: str):
                     }).map(a => a.getAttribute('href'));
                     const bodyText = document.body.innerText || '';
                     const hasDisclosure = bodyText.includes('As an Amazon Associate I earn from qualifying purchases.');
+                    const hasIllustrationLeak = /Category Illustration/i.test(bodyText);
                     const hasPriceLeak = /\\$\\d+(?:\\.\\d{2})?/.test(bodyText);
                     const hasRatingLeak = /\\b\\d\\.\\d\\s*out of 5\\s*stars?\\b/i.test(bodyText);
                     const hasMobileBtn = Boolean(document.querySelector('#mobileMenuBtn.mobile-menu-btn[aria-label="Toggle Navigation Menu"]'));
@@ -144,11 +165,18 @@ def run_suite(base_url: str, out_dir: str, prefix: str):
                         overflow,
                         imgCount: imgs.length,
                         brokenImgs,
+                        forbiddenGeneratedImgs,
+                        distortedOrCroppedImgs,
+                        dailyHasRealPhoto,
                         sectionsPresentCount: sectionsPresent.length,
                         cardsCount,
+                        photoCardsCount,
+                        textOnlyCardsCount: textOnlyCards.length,
+                        textOnlyCardsWithImages,
                         amazonLinkCount: amazonLinks.length,
                         invalidLinks,
                         hasDisclosure,
+                        hasIllustrationLeak,
                         hasPriceLeak,
                         hasRatingLeak,
                         hasMobileBtn,
@@ -200,10 +228,17 @@ def run_suite(base_url: str, out_dir: str, prefix: str):
 
                 if (
                     not vp_res["dailyPickStableOnReload"]
+                    or not vp_res["dailyHasRealPhoto"]
                     or not vp_res["ctaValid"]
                     or "CHECK IT OUT ON AMAZON" not in cta_text
                     or vp_res["overflow"]
                     or vp_res["brokenImgs"]
+                    or vp_res["forbiddenGeneratedImgs"]
+                    or vp_res["distortedOrCroppedImgs"]
+                    or vp_res["hasIllustrationLeak"]
+                    or vp_res["textOnlyCardsWithImages"] != 0
+                    or vp_res["photoCardsCount"] != 8
+                    or vp_res["textOnlyCardsCount"] != 27
                     or vp_res["sectionsPresentCount"] != len(EXPECTED_SECTIONS)
                     or vp_res["cardsCount"] < 25
                     or vp_res["invalidLinks"]

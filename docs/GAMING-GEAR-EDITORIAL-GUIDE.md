@@ -52,12 +52,15 @@ Before setting `"active": true`:
 3. Paste the verified URL into `"amazonSpecialLink"` and set `"associatesTag": "gta6heistguid-20"`.
 4. Never use third-party cloakers, misleading shorteners, or unverified ASINs.
 
-## 4. Add Licensed Imagery
+## 4. Add Real Product Photography (No Generated or Illustrative Images)
 
-Never copy, hotlink, or rehost Amazon product images without authorized Creators API access and license compliance. Use one of two lawful options:
+Never use AI-generated product images, synthetic photography, category illustrations, mockups, or generic stock substitutes. Never scrape Amazon product pages or copy images from third-party retailers.
 
-- **Option A — Commercially Licensed Photograph (`"mediaType": "photo"`):** Use an exact-match Wikimedia Commons CC0, CC BY, or CC BY-SA photograph, convert proportionally to `.webp` inside `public/assets/gear-photos/`, and populate `imageLicense` (`creator`, `sourceUrl`, `licenseName`, `licenseUrl`, `status: "Approved (...)"`).
-- **Option B — Publisher-Owned Category Illustration (`"mediaType": "illustration"`):** Place an original SVG illustration inside `public/assets/gear-illustrations/` and set `imageLicense.status` to `"Authorized (Publisher-Owned Category Illustration)"` and `badgeLabel: "Category Illustration"`.
+Approved options only:
+
+- **Option A — Authorized Amazon Creators API `Images` Resource (`"mediaType": "photo"`):** Dynamically serve unmodified Amazon-hosted image URLs via an authorized server-side Creators API hydrator (once account eligibility and IP License Section 2(c)(d) mobile-site written approval are confirmed). Never download or permanently cache Creators API images.
+- **Option B — Verified Actual Product Photograph with Explicit Commercial Reuse Rights (`"mediaType": "photo"`):** Use an exact-match real photograph from a manufacturer press kit with explicit commercial/affiliate written permission, or an exact-match Wikimedia Commons CC0, CC BY, or CC BY-SA photograph. Convert proportionally (uncropped) to `.webp` inside `public/assets/gear-photos/`, visually inspect against the exact product and ASIN, and populate `imageLicense` (`creator`, `sourceUrl`, `licenseName`, `licenseUrl`, `status: "Approved (Verified Actual Product Photo — ...)"`).
+- **Option C — Clean Text-Only Presentation (`"mediaType": "none"`, `"imageSource": null`):** When a legally permitted real photograph cannot be obtained, omit the image completely and display the product as a clean text-only catalog card. Text-only products MUST stay `"dailyEligible": false` because **LEONIDA EDITOR'S PICK OF THE DAY** always requires a verified actual product photograph.
 
 ## 5. Enable It for Daily Rotation
 

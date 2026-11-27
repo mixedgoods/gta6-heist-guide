@@ -34,10 +34,12 @@ for (const p of catalog.products) {
     if (!res.valid) {
       activeFailures.push({ id: p.id, reasons: res.reasons });
     }
-    if (p.imageSource && p.imageSource.startsWith('/')) {
-      const imgPath = path.join(ROOT, 'public', p.imageSource.replace(/^\/+/, ''));
-      if (!fs.existsSync(imgPath)) {
-        activeFailures.push({ id: p.id, reasons: [`missing_local_image:${p.imageSource}`] });
+    if (p.mediaType === 'photo') {
+      if (p.imageSource && p.imageSource.startsWith('/')) {
+        const imgPath = path.join(ROOT, 'public', p.imageSource.replace(/^\/+/, ''));
+        if (!fs.existsSync(imgPath)) {
+          activeFailures.push({ id: p.id, reasons: [`missing_local_image:${p.imageSource}`] });
+        }
       }
     }
   }

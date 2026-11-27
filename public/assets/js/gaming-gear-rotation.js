@@ -180,14 +180,41 @@
     if (!linkCheck.valid) {
       reasons = reasons.concat(linkCheck.reasons);
     }
-    if (!product.imageSource || typeof product.imageSource !== 'string' || !product.imageSource.startsWith('/assets/')) {
-      reasons.push('missing_or_unauthorized_image');
+    var mediaType = product.mediaType;
+    var imgSrc = typeof product.imageSource === 'string' ? product.imageSource.trim() : '';
+    var licStatus = (product.imageLicense && product.imageLicense.status) ? String(product.imageLicense.status) : '';
+
+    // Strictly forbid generated, artificial, or illustrative product images
+    if (
+      mediaType === 'illustration' ||
+      /gear-illustrations/i.test(imgSrc) ||
+      /\.svg(?:$|\?)/i.test(imgSrc) ||
+      /illustration|generated|artificial|synthetic|mockup/i.test(licStatus)
+    ) {
+      reasons.push('forbidden_generated_or_illustrative_image');
     }
-    if (!product.imageAlt || typeof product.imageAlt !== 'string' || !product.imageAlt.trim()) {
-      reasons.push('missing_image_alt');
-    }
-    if (!product.imageLicense || !product.imageLicense.status || !/approved|authorized/i.test(product.imageLicense.status)) {
-      reasons.push('unverified_image_license');
+
+    if (mediaType === 'photo') {
+      var isLocalRealPhoto = /^\/assets\/gear-photos\/[a-z0-9._-]+\.(?:webp|jpg|jpeg|png)$/i.test(imgSrc);
+      var isAuthorizedAmazonCdn = /^https:\/\/(?:m\.media-amazon\.com|images-na\.ssl-images-amazon\.com)\//i.test(imgSrc);
+      if (!isLocalRealPhoto && !isAuthorizedAmazonCdn) {
+        reasons.push('missing_or_unauthorized_image');
+      }
+      if (!product.imageAlt || typeof product.imageAlt !== 'string' || !product.imageAlt.trim()) {
+        reasons.push('missing_image_alt');
+      }
+      if (!/approved/i.test(licStatus)) {
+        reasons.push('unverified_image_license');
+      }
+    } else if (mediaType === 'none') {
+      if (imgSrc) {
+        reasons.push('text_only_card_must_not_reference_image');
+      }
+      if (requireDaily) {
+        reasons.push('daily_pick_requires_verified_real_photo');
+      }
+    } else {
+      reasons.push('invalid_media_type');
     }
     if (!product.compatibility || typeof product.compatibility !== 'string' || !product.compatibility.trim()) {
       reasons.push('missing_compatibility');

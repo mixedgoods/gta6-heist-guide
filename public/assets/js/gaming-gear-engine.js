@@ -78,6 +78,9 @@
         '</div>'
       );
     }
+    if (lic.sourceOrigin) {
+      return '<div class="gg-media-credit">' + esc(lic.sourceOrigin) + '</div>';
+    }
     return '';
   }
 
@@ -97,17 +100,20 @@
     if (!mount || !selection || !selection.ok || !selection.product) return;
 
     var p = selection.product;
+    // Daily Editor's Pick must always show a verified actual product photograph
+    if (p.mediaType !== 'photo' || !p.imageSource) return;
+
     var rotCfg = (catalog && catalog.rotationConfig) || {};
     var ctaLabel = rotCfg.ctaLabel || 'CHECK IT OUT ON AMAZON';
     var disclosureText = rotCfg.inlineDisclosure || 'Affiliate link — we may earn from qualifying purchases.';
     var assocStatement = rotCfg.disclosureStatement || 'As an Amazon Associate I earn from qualifying purchases.';
-    var isPhoto = p.mediaType === 'photo';
     var dailySlot = 'daily_' + selection.calendarDate.isoDate;
     var ctaAttrs = buildLinkAttrs(p, 'editors_pick_daily', 'cta', dailySlot);
     var imgAttrs = buildLinkAttrs(p, 'editors_pick_daily', 'image', dailySlot);
-    var stageBadge = isPhoto
-      ? '<span class="gg-media-badge gg-media-badge--photo">Licensed Product Photo</span>'
-      : '<span class="gg-media-badge gg-media-badge--illus">' + esc((p.imageLicense && p.imageLicense.badgeLabel) || 'Category Illustration') + '</span>';
+    var imgW = Number(p.imageWidth) > 0 ? Number(p.imageWidth) : 1000;
+    var imgH = Number(p.imageHeight) > 0 ? Number(p.imageHeight) : 750;
+    var stageDarkClass = p.photoBackdrop === 'dark' ? ' is-photo-dark' : '';
+    var stageBadge = '<span class="gg-media-badge gg-media-badge--photo">Verified Product Photo</span>';
 
     mount.innerHTML =
       '<div class="lep-card lep-accent-' + esc(p.accent || 'cyan') + '" data-daily-pick-id="' + esc(p.id) + '" data-daily-date="' + esc(dailySlot) + '">' +
@@ -125,8 +131,8 @@
 
         '<div class="lep-grid">' +
           '<div class="lep-media-col">' +
-            '<a ' + imgAttrs + ' class="lep-media-stage' + (isPhoto ? ' is-photo' : ' is-illus') + '" aria-label="Check ' + esc(p.productName) + ' on Amazon">' +
-              '<img src="' + esc(p.imageSource) + '" alt="' + esc(p.imageAlt) + '" width="400" height="300" loading="eager" decoding="sync">' +
+            '<a ' + imgAttrs + ' class="lep-media-stage is-photo' + stageDarkClass + '" aria-label="Check ' + esc(p.productName) + ' on Amazon">' +
+              '<img src="' + esc(p.imageSource) + '" alt="' + esc(p.imageAlt) + '" width="' + esc(imgW) + '" height="' + esc(imgH) + '" loading="eager" decoding="sync">' +
               stageBadge +
             '</a>' +
             renderPhotoCredit(p) +
@@ -177,23 +183,32 @@
   }
 
   function renderCatalogCard(product) {
-    var isPhoto = product.mediaType === 'photo';
+    var hasPhoto = product.mediaType === 'photo' && Boolean(product.imageSource);
     var placement = product.analyticsPlacement || 'gaming_gear_catalog';
     var ctaAttrs = buildLinkAttrs(product, placement, 'cta', 'catalog');
-    var imgAttrs = buildLinkAttrs(product, placement, 'image', 'catalog');
-    var badgeLabel = isPhoto
-      ? ''
-      : '<span class="gg-media-badge gg-media-badge--illus">' + esc((product.imageLicense && product.imageLicense.badgeLabel) || 'Category Illustration') + '</span>';
+    var mediaHtml = '';
 
-    return (
-      '<article class="gg-card gg-accent-' + esc(product.accent || 'cyan') + '" data-product-id="' + esc(product.id) + '">' +
+    if (hasPhoto) {
+      var imgAttrs = buildLinkAttrs(product, placement, 'image', 'catalog');
+      var imgW = Number(product.imageWidth) > 0 ? Number(product.imageWidth) : 1000;
+      var imgH = Number(product.imageHeight) > 0 ? Number(product.imageHeight) : 750;
+      var cardDarkClass = product.photoBackdrop === 'dark' ? ' is-photo-dark' : '';
+      mediaHtml =
         '<div class="gg-card-media-wrap">' +
-          '<a ' + imgAttrs + ' class="gg-card-media' + (isPhoto ? ' is-photo' : ' is-illus') + '" aria-label="Check ' + esc(product.productName) + ' on Amazon">' +
-            '<img src="' + esc(product.imageSource) + '" alt="' + esc(product.imageAlt) + '" width="400" height="300" loading="lazy" decoding="async">' +
-            badgeLabel +
+          '<a ' + imgAttrs + ' class="gg-card-media is-photo' + cardDarkClass + '" aria-label="Check ' + esc(product.productName) + ' on Amazon">' +
+            '<img src="' + esc(product.imageSource) + '" alt="' + esc(product.imageAlt) + '" width="' + esc(imgW) + '" height="' + esc(imgH) + '" loading="lazy" decoding="async">' +
           '</a>' +
           renderPhotoCredit(product) +
-        '</div>' +
+        '</div>';
+    }
+
+    var footNote = hasPhoto
+      ? 'Affiliate link &mdash; we may earn from qualifying purchases. Check current price on Amazon.'
+      : 'Affiliate link &mdash; view actual product photos and current pricing directly on Amazon.';
+
+    return (
+      '<article class="gg-card gg-accent-' + esc(product.accent || 'cyan') + (hasPhoto ? ' gg-card--photo' : ' gg-card--text-only') + '" data-product-id="' + esc(product.id) + '" data-media-mode="' + (hasPhoto ? 'photo' : 'text-only') + '">' +
+        mediaHtml +
         '<div class="gg-card-body">' +
           '<div class="gg-card-top">' +
             '<span class="gg-brand">' + esc(product.manufacturer) + '</span>' +
@@ -201,6 +216,7 @@
             '<span class="gg-paid-badge">Affiliate link</span>' +
           '</div>' +
           '<h3 class="gg-card-title">' + esc(product.productName) + '</h3>' +
+          (!hasPhoto && product.model ? '<p class="gg-card-model">Model: ' + esc(product.model) + '</p>' : '') +
           renderPlatformPills(product.platforms) +
           '<p class="gg-card-desc">' + esc(product.shortDescription) + '</p>' +
           '<div class="gg-card-meta-block">' +
@@ -210,7 +226,7 @@
           '</div>' +
         '</div>' +
         '<div class="gg-card-foot">' +
-          '<span class="gg-foot-note">Affiliate link &mdash; we may earn from qualifying purchases. Check current price on Amazon.</span>' +
+          '<span class="gg-foot-note">' + footNote + '</span>' +
           '<a ' + ctaAttrs + ' class="gg-cta-btn">Check on Amazon <span aria-hidden="true">&rarr;</span></a>' +
         '</div>' +
       '</article>'
@@ -227,6 +243,12 @@
       var sectionId = grid.getAttribute('data-gear-section-grid');
       var items = approved.filter(function (p) {
         return p.sectionId === sectionId && matchesPlatformFilter(p, filter);
+      });
+      // Lead each section cleanly with verified real-photo cards, followed by clean text-only cards
+      items.sort(function (a, b) {
+        var ap = a.mediaType === 'photo' ? 0 : 1;
+        var bp = b.mediaType === 'photo' ? 0 : 1;
+        return ap - bp;
       });
       totalVisible += items.length;
       if (!items.length) {

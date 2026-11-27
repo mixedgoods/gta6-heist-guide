@@ -1,8 +1,8 @@
 {
-  "version": "33.1-final",
-  "last_verified": "2026-11-25",
+  "version": "47.1-real-photos-only",
+  "last_verified": "2026-11-26",
   "tracking_id": "gta6heistguid-20",
-  "policy": "Only exact-match photographs with verified commercial reuse rights (CC0, Public Domain, CC BY, CC BY-SA) are approved. Zero scraped or hotlinked Amazon images.",
+  "policy": "Actual product photographs only — zero AI-generated images, zero synthetic photography, zero illustrations or generic substitutes. Only exact-match real photographs with verified commercial reuse rights (CC0, Public Domain, CC BY, CC BY-SA) or authorized Amazon/manufacturer media permissions are approved. Zero scraped or hotlinked Amazon images.",
   "rights_disclaimer": "Creative Commons and CC0 licenses apply solely to the copyright in each photograph held by its creator. They do not grant trademark rights, brand affiliation, or endorsement by any manufacturer, retailer, or photographer. All local WebP files are proportionally downscaled format conversions of the original photographs with no cropping or creative adaptation.",
   "images": [
     {
@@ -117,7 +117,45 @@
       "modification_notes": "Technical format conversion and proportional downscale only (3024x4032 JPEG to 750x1000 WebP); uncropped copy of original.",
       "attribution_requirements": "Photo: Guillaume Pasquier (CC0 1.0) via Wikimedia Commons — credit and links provided voluntarily.",
       "commercial_use_permission_evidence": "Flickr upload verified by FlickreviewR 2 (passed 2025-02-27) under CC0 1.0 Public Domain Dedication, waiving copyright worldwide.",
-      "last_verification_date": "2026-11-25"
+      "last_verification_date": "2026-11-26"
+    },
+    {
+      "product_key": "8bitdoMicroBlue",
+      "exact_product_variant": "8BitDo Micro Pocket Bluetooth Gamepad & Macro Pad — Blue",
+      "asin": "B0CDG5HCCH",
+      "image_path": "/assets/gear-photos/8bitdo-micro-blue.webp",
+      "width": 1000,
+      "height": 666,
+      "original_file_title": "File:8BitDo Micro.jpg",
+      "original_source_url": "https://commons.wikimedia.org/wiki/File:8BitDo_Micro.jpg",
+      "direct_file_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/8BitDo_Micro.jpg",
+      "creator": "NegiEion",
+      "license_name": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "modified": true,
+      "modification_notes": "Technical format conversion and proportional downscale only (3872x2576 JPEG to 1000x666 WebP); uncropped copy of original.",
+      "attribution_requirements": "Photo: NegiEion (CC BY 4.0) via Wikimedia Commons — linked to source file page and license deed.",
+      "commercial_use_permission_evidence": "Own work uploaded by NegiEion under CC BY 4.0, which grants worldwide, royalty-free commercial reuse with attribution.",
+      "last_verification_date": "2026-11-26"
+    },
+    {
+      "product_key": "logitechG305Black",
+      "exact_product_variant": "Logitech G305 LIGHTSPEED Wireless Gaming Mouse — Black",
+      "asin": "B07CMS5Q6P",
+      "image_path": "/assets/gear-photos/logitech-g305-black.webp",
+      "width": 1000,
+      "height": 750,
+      "original_file_title": "File:Une souris Logitech G305..jpg",
+      "original_source_url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
+      "direct_file_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Une_souris_Logitech_G305..jpg",
+      "creator": "Julien Sinan",
+      "license_name": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "modified": true,
+      "modification_notes": "Technical format conversion and proportional downscale only (4032x3024 JPEG to 1000x750 WebP); not a creative adaptation, uncropped copy of original.",
+      "attribution_requirements": "Photo: Julien Sinan (CC BY-SA 4.0) via Wikimedia Commons — linked to source file page and license deed.",
+      "commercial_use_permission_evidence": "Own work uploaded by Julien Sinan under CC BY-SA 4.0, which grants worldwide, royalty-free commercial reuse with attribution and ShareAlike.",
+      "last_verification_date": "2026-11-26"
     }
   ]
 }
