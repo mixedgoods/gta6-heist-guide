@@ -175,24 +175,26 @@
     var aff = global.GTA6_AFFILIATES || {
       amazon: {
         links: {
-          samsung990pro: 'https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20'
+          samsung990pro: 'https://www.amazon.com/dp/B0BHJDY57J?tag=gta6heistguid-20'
         }
       }
     };
     var url = (aff.amazon && aff.amazon.links && aff.amazon.links.samsung990pro)
       ? aff.amazon.links.samsung990pro
-      : 'https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20';
+      : 'https://www.amazon.com/dp/B0BHJDY57J?tag=gta6heistguid-20';
     return (
-      '<aside class="aff-card aff-card--compact aff-accent-green" aria-label="Recommended gaming hardware (affiliate link)">' +
-        '<div class="aff-media aff-media--cover is-compact"><img src="/assets/gear/samsung-990pro.jpg" alt="Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD" loading="lazy"></div>' +
-        '<div class="aff-compact-body">' +
-          '<div class="aff-meta-row"><span class="aff-partner-pill">Amazon Partner</span><span class="aff-badge-pill">PS5 &amp; PC NVMe SSD</span><span class="aff-disclosure-tag">Affiliate</span></div>' +
-          '<div class="aff-compact-title">Samsung 990 PRO 2TB SSD</div>' +
-          '<div class="aff-compact-benefit">7,450 MB/s read speeds &middot; Ample room for 212 GB+ GTA VI installs</div>' +
-          '<div class="aff-disclosure-inline">' + esc(contextLabel || 'Affiliate link · As an Amazon Associate we earn from qualifying purchases. Prices vary on Amazon.') + '</div>' +
+      '<article class="amz-card amz-card--accent-cyan amz-card--text-only" data-product-id="samsung-990-pro-heatsink" data-asin="B0BHJDY57J" data-media-mode="text-only" aria-label="Recommended gaming hardware (paid Amazon link)">' +
+        '<div class="amz-card__body">' +
+          '<div class="amz-card__top"><span class="amz-card__role amz-card__role--ps5">PS5 M.2 SSD</span><span class="amz-card__brand">Samsung</span><span class="amz-card__paid">Paid link</span></div>' +
+          '<h3 class="amz-card__title">Samsung 990 PRO 2TB PCIe 4.0 NVMe SSD with Heatsink</h3>' +
+          '<p class="amz-card__desc">Drop-in PCIe Gen4 M.2 NVMe expansion SSD with factory slim heatsink built for PS5 and PC installs.</p>' +
+          '<p class="amz-card__consideration"><strong>Key Spec:</strong> Up to 7,450 MB/s read &middot; PS5 &amp; PC M.2 only (does not fit Xbox).</p>' +
         '</div>' +
-        '<div class="aff-compact-action"><a href="' + esc(url) + '" target="_blank" rel="sponsored nofollow noopener noreferrer" data-aff-partner="amazon" data-aff-placement="wdb-hardware-fallback" class="aff-cta aff-cta--green">Check Price on Amazon &rarr;</a></div>' +
-      '</aside>'
+        '<div class="amz-card__foot">' +
+          '<a href="' + esc(url) + '" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="samsung-990-pro-heatsink" data-aff-asin="B0BHJDY57J" data-aff-category="PS5 Storage" data-aff-placement="wdb-hardware-fallback" class="amz-card__cta">View on Amazon &rarr;</a>' +
+          '<p class="amz-card__disclosure">' + esc(contextLabel || 'As an Amazon Associate I earn from qualifying purchases.') + '</p>' +
+        '</div>' +
+      '</article>'
     );
   }
 

@@ -227,7 +227,7 @@
     var imgSrc = typeof product.imageSource === 'string' ? product.imageSource.trim() : '';
     var licStatus = (product.imageLicense && product.imageLicense.status) ? String(product.imageLicense.status) : '';
 
-    // Strictly forbid generated, artificial, or illustrative product images
+    // Strictly forbid generated, artificial, illustrative, Wikimedia, or local non-Amazon product images
     if (
       mediaType === 'illustration' ||
       /gear-illustrations/i.test(imgSrc) ||
@@ -237,10 +237,15 @@
       reasons.push('forbidden_generated_or_illustrative_image');
     }
 
+    if (
+      /gear-photos/i.test(imgSrc) ||
+      /wikimedia\.org|wikipedia\.org/i.test(imgSrc)
+    ) {
+      reasons.push('forbidden_non_amazon_product_image');
+    }
+
     if (mediaType === 'photo') {
-      var isLocalRealPhoto = /^\/assets\/gear-photos\/[a-z0-9._-]+\.(?:webp|jpg|jpeg|png)$/i.test(imgSrc);
-      var isAuthorizedAmazonCdn = /^https:\/\/(?:m\.media-amazon\.com|images-na\.ssl-images-amazon\.com)\//i.test(imgSrc);
-      if (!isLocalRealPhoto && !isAuthorizedAmazonCdn) {
+      if (!isAuthorizedAmazonDropImage(product)) {
         reasons.push('missing_or_unauthorized_image');
       }
       if (!product.imageAlt || typeof product.imageAlt !== 'string' || !product.imageAlt.trim()) {

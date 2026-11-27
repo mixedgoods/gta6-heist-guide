@@ -348,7 +348,8 @@ const GTA6 = {
         if (typeof window.GTA6Track === 'function') {
           const asinMatch = String(targetUrl).match(/\/dp\/([A-Z0-9]{10})/i);
           const pNorm = payload.partner;
-          const productCategory = pNorm === 'amazon'
+          const attrCategory = anchor.getAttribute('data-aff-category') || '';
+          const productCategory = attrCategory || (pNorm === 'amazon'
             ? 'amazon_hardware'
             : pNorm === 'gumroad'
               ? 'creator_tool'
@@ -356,17 +357,24 @@ const GTA6 = {
                 ? 'network_tool'
                 : pNorm === 'g2a'
                   ? 'gaming_store'
-                  : 'affiliate_partner';
-          window.GTA6Track('affiliate_click', {
+                  : 'affiliate_partner');
+          const trackPayload = {
             merchant: pNorm,
             destination_category: pNorm,
             product_category: productCategory,
             product_id: anchor.getAttribute('data-aff-product') || (asinMatch ? asinMatch[1].toUpperCase() : pNorm),
+            asin: anchor.getAttribute('data-aff-asin') || (asinMatch ? asinMatch[1].toUpperCase() : ''),
             placement: String(placement || 'sitewide').slice(0, 48),
+            feature_placement: String(placement || 'sitewide').slice(0, 48),
             source_page: window.location.pathname || '/',
             event_timestamp: new Date().toISOString(),
             interaction_type: 'outbound_click',
-          });
+          };
+          const colAttr = anchor.getAttribute('data-aff-collection') || '';
+          const posAttr = anchor.getAttribute('data-aff-position') || '';
+          if (colAttr) trackPayload.collection_id = colAttr;
+          if (/^[1-9]\d*$/.test(posAttr)) trackPayload.product_position = Number(posAttr);
+          window.GTA6Track('affiliate_click', trackPayload);
         }
       } catch (err) {}
       try {
@@ -5552,95 +5560,52 @@ DealRotator: {
         const bAmz = (u) => (GTA6.SiteConfig ? GTA6.SiteConfig.buildAmazonUrl(u) : u);
         return [
           {
-            id: "gta6-launch",
-            title: "GTA 6 Day-1 Launch Edition",
-            badgeVerified: "✓ OFFICIAL LAUNCH",
-            badgeMerchant: "AMAZON • G2A",
-            stars: "★★★★★",
-            rating: "4.9",
-            ratingCount: "18,500+ buyers",
-            desc: "Official PlayStation 5 & Xbox launch editions and digital keys with Amazon Prime fast shipping or instant key delivery.",
-            priceLabel: "Amazon Affiliate",
-            price: "Live Pricing",
-            pillDiscount: "🔥 LIVE NOW",
-            img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "📦 Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=GTA+6+PlayStation+5&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" },
-            ctaSecondary: { text: "⚡ Browse G2A Marketplace →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
-          },
-          {
             id: "dualsense-edge",
-            title: "DualSense Edge Pro",
-            badgeVerified: "✓ SONY OFFICIAL",
-            badgeMerchant: "PRIME ELIGIBLE",
-            stars: "★★★★★",
-            rating: "4.8",
-            ratingCount: "6,200+ ratings",
-            desc: "Remappable rear paddles, interchangeable analog stick caps, and trigger stops engineered for lightning-fast heist shootouts.",
-            priceLabel: "Amazon Affiliate",
-            price: "Live Pricing",
-            pillDiscount: "PRO GEAR",
-            img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "🎮 Check Price on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            title: "Sony DualSense Edge Wireless Controller",
+            badgeVerified: "PS5 PRO CONTROLLER",
+            badgeMerchant: "AMAZON",
+            desc: "Official PS5 pro controller with remappable rear paddles, trigger stops, and swappable stick modules.",
+            priceLabel: "Paid Amazon Link",
+            price: "Check Live Price",
+            pillDiscount: "PS5 & PC",
+            img: "",
+            ctaPrimary: { text: "View on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "samsung-990",
-            title: "Samsung 990 PRO 2TB",
-            badgeVerified: "✓ PS5 READY",
+            title: "Samsung 990 PRO 2TB with Heatsink",
+            badgeVerified: "PS5 M.2 NVME SSD",
             badgeMerchant: "7,450 MB/s",
-            stars: "★★★★★",
-            rating: "4.9",
-            ratingCount: "21,000+ ratings",
-            desc: "Gen4 M.2 NVMe with integrated heatsink. Eliminates open-world texture pop-in during high-speed Vice City chases.",
-            priceLabel: "Amazon Affiliate",
-            price: "Live Pricing",
-            pillDiscount: "PS5 READY",
-            img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "⚡ Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            desc: "PCIe Gen4 M.2 NVMe expansion SSD with factory slim heatsink built for PlayStation 5 and PC.",
+            priceLabel: "Paid Amazon Link",
+            price: "Check Live Price",
+            pillDiscount: "PS5 & PC",
+            img: "",
+            ctaPrimary: { text: "View on Amazon →", href: bAmz("https://www.amazon.com/dp/B0BHJDY57J?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "wd-black-sn850p",
-            title: "WD_BLACK 2TB SN850P NVMe SSD",
-            badgeVerified: "✓ OFFICIAL PS5 LICENSED",
+            title: "WD_BLACK 2TB SN850P NVMe SSD for PS5",
+            badgeVerified: "OFFICIAL PS5 LICENSED",
             badgeMerchant: "WESTERN DIGITAL",
-            stars: "★★★★★",
-            rating: "4.8",
-            ratingCount: "14,500+ ratings",
-            desc: "Officially licensed PlayStation 5 M.2 expansion drive with pre-installed custom heatsink. Ready for GTA 6 install.",
-            priceLabel: "Amazon Affiliate",
-            price: "Live Pricing",
-            pillDiscount: "PS5 LICENSED",
-            img: "assets/samsung-990-pro.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "⚡ Check Price on Amazon →", href: bAmz("https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
-          },
-          {
-            id: "steelseries-nova",
-            title: "Arctis Nova Pro Wireless",
-            badgeVerified: "✓ 360° SPATIAL",
-            badgeMerchant: "HEIST COMMS",
-            stars: "★★★★★",
-            rating: "4.8",
-            ratingCount: "9,800+ ratings",
-            desc: "Active noise cancellation and hot-swappable dual battery system. Pinpoint sirens and guard footsteps in 3D audio.",
-            priceLabel: "Amazon Affiliate",
-            price: "Live Pricing",
-            pillDiscount: "ELITE AUDIO",
-            img: "assets/dualsense-edge-controller.jpg?v=20261118_clean_v1",
-            ctaPrimary: { text: "🎧 Check Price on Amazon →", href: bAmz("https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+Pro+Wireless&tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
+            desc: "Officially licensed PlayStation 5 internal M.2 NVMe drive with a custom low-profile heatsink.",
+            priceLabel: "Paid Amazon Link",
+            price: "Check Live Price",
+            pillDiscount: "PS5 & PC",
+            img: "",
+            ctaPrimary: { text: "View on Amazon →", href: bAmz("https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20"), partner: "amazon", cls: "btn-deal-amazon" }
           },
           {
             id: "g2a-gamepass",
             title: "G2A PSN & Xbox Gift Cards",
-            badgeVerified: "✓ DIGITAL MARKETPLACE",
+            badgeVerified: "DIGITAL MARKETPLACE",
             badgeMerchant: "GLOBAL KEYS",
-            stars: "★★★★★",
-            rating: "4.7",
-            ratingCount: "82,000+ reviews",
             desc: "Browse digital gift cards, console subscriptions, and game keys across verified marketplace sellers.",
             priceLabel: "G2A Marketplace",
             price: "Live Listings",
             pillDiscount: "DIGITAL KEYS",
-            img: "assets/gear/dualsense-edge-cutout.webp",
-            ctaPrimary: { text: "⚡ Browse G2A Marketplace →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
+            img: "",
+            ctaPrimary: { text: "Browse G2A Marketplace →", href: cfg.g2aUrl || "https://www.g2a.com/n/reflink-4094b9aab5", partner: "g2a", cls: "btn-deal-g2a" }
           }
         ];
       },

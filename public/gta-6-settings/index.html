@@ -23,6 +23,7 @@
     <meta name="twitter:description" content="Verified PS5, PS5 Pro &amp; Xbox Series X|S setup guides, up to 212 GB storage calculator, HDR/VRR checklist, honest capture-card frame-gen breakdown, and hardware comparisons.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <link rel="stylesheet" href="/assets/style.css?v=20261125_p33">
+    <link rel="stylesheet" href="/assets/css/amazon-product-cards.css?v=20261126_global_amz">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -452,97 +453,6 @@
         color: #fff;
         background: rgba(0, 240, 255, 0.15);
       }
-      .hw-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 325px), 1fr));
-        gap: 1rem;
-      }
-      .hw-card {
-        background: linear-gradient(155deg, rgba(16, 18, 34, 0.97), rgba(9, 11, 22, 0.99));
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 12px;
-        padding: 1.15rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 0.85rem;
-        transition: border-color 0.2s ease, transform 0.2s ease;
-      }
-      .hw-card:hover { border-color: var(--neon-cyan); transform: translateY(-2px); }
-      .hw-compat-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-bottom: 0.45rem;
-      }
-      .hw-specs-list {
-        margin: 0.5rem 0;
-        padding: 0.6rem 0.75rem;
-        background: rgba(0, 240, 255, 0.04);
-        border: 1px solid rgba(0, 240, 255, 0.16);
-        border-radius: 8px;
-        font-size: 0.79rem;
-        color: #cbd5e1;
-        line-height: 1.5;
-      }
-      .hw-pros-cons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.55rem;
-        font-size: 0.77rem;
-        line-height: 1.45;
-      }
-      @media (max-width: 520px) { .hw-pros-cons { grid-template-columns: 1fr; } }
-      .hw-pros {
-        background: rgba(0, 255, 136, 0.05);
-        border: 1px solid rgba(0, 255, 136, 0.22);
-        border-radius: 7px;
-        padding: 0.5rem 0.65rem;
-        color: #d1fae5;
-      }
-      .hw-cons {
-        background: rgba(255, 42, 141, 0.05);
-        border: 1px solid rgba(255, 42, 141, 0.24);
-        border-radius: 7px;
-        padding: 0.5rem 0.65rem;
-        color: #fce7f3;
-      }
-      .hw-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
-        padding-top: 0.65rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .hw-btn-amazon {
-        width: 100%;
-        min-height: 40px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: 0.82rem;
-        font-weight: 800;
-        text-align: center;
-      }
-      .hw-btn-mfg {
-        width: 100%;
-        min-height: 36px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: 0.77rem;
-        font-weight: 700;
-        color: #cbd5e1;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: 7px;
-        transition: border-color 0.16s ease, color 0.16s ease;
-      }
-      .hw-btn-mfg:hover { border-color: var(--neon-cyan); color: #fff; }
       @media (max-width: 640px) {
         .settings-section-block { padding: 1.05rem; }
       }
@@ -1157,8 +1067,8 @@
             <span id="hwResultCount" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--neon-cyan); font-weight:800;">Showing 14 verified hardware models</span>
         </div>
 
-        <div style="background:rgba(255,184,0,0.07); border:1px solid rgba(255,184,0,0.32); border-radius:8px; padding:0.65rem 0.85rem; font-size:0.78rem; color:#e2e8f0; line-height:1.5; margin-bottom:0.85rem;">
-            <strong style="color:var(--neon-yellow);">Amazon Associates Disclosure:</strong> As an Amazon Associate (tag: <code>gta6heistguid-20</code>), GTA6HeistGuide.com earns from qualifying purchases at no extra cost to you. To maintain strict pricing accuracy, we do not list static or estimated Amazon prices—use the <strong>Check Price on Amazon (Affiliate)</strong> button for live pricing and availability, or visit the <strong>Official Manufacturer Specs</strong> link directly.
+        <div class="amz-disclosure-strip" role="note" aria-label="Amazon Associates disclosure" style="margin:0 0 0.9rem;">
+            <strong>Amazon Associates Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Product buttons below link directly to Amazon US (<code>gta6heistguid-20</code>) for live pricing, photos, and availability. Expand any card for full specs, pros, cons, and official manufacturer links.
         </div>
 
         <div class="hw-filter-bar">
@@ -1180,313 +1090,442 @@
             </div>
         </div>
 
-        <div class="hw-grid" id="hardwareComparisonGrid">
+        <div class="amz-grid" id="hardwareComparisonGrid">
 
-            <!-- PS5 M.2 SSD 1 -->
-            <article class="hw-card" data-hw-cat="ps5-ssd" data-hw-platform="ps5">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-community">PS5 M.2 SSD</span>
-                        <span class="verify-badge verify-confirmed">PS5 &amp; PS5 Pro ONLY</span>
+            <!-- 1. PS5 M.2 SSD: Samsung 990 PRO with Heatsink -->
+            <article class="hw-card amz-card amz-card--accent-cyan amz-card--text-only" data-hw-cat="ps5-ssd" data-hw-platform="ps5" data-product-id="samsung-990-pro-heatsink" data-asin="B0BHJDY57J" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--ps5">PS5 M.2 SSD</span>
+                        <span class="amz-card__brand">Samsung</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Samsung 990 PRO with Heatsink (1TB / 2TB / 4TB)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> PCIe Gen4 x4 NVMe M.2 2280 &bull; Up to 7,450 MB/s read / 6,900 MB/s write &bull; Factory-installed slim heatsink meets Sony 11.25 mm height limit.
+                    <h3 class="amz-card__title">Samsung 990 PRO with Heatsink (1TB / 2TB / 4TB)</h3>
+                    <p class="amz-card__desc">Drop-in PCIe Gen4 M.2 NVMe expansion SSD with a slim factory heatsink built for fast PlayStation 5 and PC game libraries.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5 &amp; PS5 Pro Only</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC M.2</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Exceeds Sony's 5,500 MB/s spec; drop-in heatsink ready; strong thermal control.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Not compatible with Xbox Series X|S; 4TB tier sits at premium flagship level.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Up to 7,450 MB/s read &middot; Slim heatsink included &middot; Does not fit Xbox.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> PCIe Gen4 x4 NVMe M.2 2280 &bull; Up to 7,450 MB/s read / 6,900 MB/s write &bull; Factory-installed slim heatsink meets Sony 11.25 mm height limit.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Exceeds Sony's 5,500 MB/s spec; drop-in heatsink ready; strong thermal control.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Not compatible with Xbox Series X|S; 4TB tier sits at flagship pricing.</p>
+                            <a href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Samsung Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-990pro" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Samsung Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0BHJDY57J?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="samsung-990-pro-heatsink" data-aff-asin="B0BHJDY57J" data-aff-category="PS5 Storage" data-aff-placement="settings_hw_990pro" data-aff-position="1" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- PS5 M.2 SSD 2 -->
-            <article class="hw-card" data-hw-cat="ps5-ssd" data-hw-platform="ps5">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-community">PS5 M.2 SSD</span>
-                        <span class="verify-badge verify-confirmed">PS5 &amp; PS5 Pro ONLY</span>
+            <!-- 2. PS5 M.2 SSD: WD_BLACK SN850P -->
+            <article class="hw-card amz-card amz-card--accent-cyan amz-card--text-only" data-hw-cat="ps5-ssd" data-hw-platform="ps5" data-product-id="wd-black-sn850p" data-asin="B0C47ZX1WB" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--ps5">PS5 M.2 SSD</span>
+                        <span class="amz-card__brand">WD_BLACK</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">WD_BLACK SN850P NVMe SSD for PS5 (1TB–8TB)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> Officially licensed for PS5 &bull; PCIe Gen4 x4 M.2 2280 &bull; Up to 7,300 MB/s read &bull; Custom low-profile PS5 heatsink; available up to 8 TB.
+                    <h3 class="amz-card__title">WD_BLACK SN850P NVMe SSD for PS5 (1TB&ndash;8TB)</h3>
+                    <p class="amz-card__desc">Officially licensed PlayStation 5 internal M.2 NVMe SSD with a custom low-profile heatsink and capacities scaling up to 8TB.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5 &amp; PS5 Pro Only</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC M.2</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Officially tested &amp; licensed by PlayStation; capacities up to 8 TB supported.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> PS5/PC M.2 only (does not fit Xbox); licensed branding can cost more than bare SN850X.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Up to 7,300 MB/s read &middot; Officially licensed PS5 heatsink &middot; Not for Xbox.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> Officially licensed for PS5 &bull; PCIe Gen4 x4 M.2 2280 &bull; Up to 7,300 MB/s read &bull; Custom low-profile PS5 heatsink; available up to 8 TB.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Officially tested &amp; licensed by PlayStation; capacities up to 8 TB supported.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> PS5/PC M.2 only (does not fit Xbox); licensed branding can cost more than bare SN850X.</p>
+                            <a href="https://www.westerndigital.com/products/internal-drives/wd-black-sn850p-nvme-ssd-for-ps5" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Western Digital Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-sn850p" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.westerndigital.com/products/internal-drives/wd-black-sn850p-nvme-ssd-for-ps5" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Western Digital Specs &nearr;</a>
-                </div>
-            </article>
-
-            <!-- PS5 M.2 SSD 3 -->
-            <article class="hw-card" data-hw-cat="ps5-ssd" data-hw-platform="ps5">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-community">PS5 M.2 SSD</span>
-                        <span class="verify-badge verify-confirmed">PS5 &amp; PS5 Pro ONLY</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Crucial T500 PCIe Gen4 NVMe with Heatsink (1TB / 2TB)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> PCIe Gen4 x4 M.2 2280 &bull; Up to 7,400 MB/s read / 7,000 MB/s write &bull; Integrated PS5-compliant heatsink; power-efficient Micron TLC NAND.
-                    </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> High read/write throughput with low thermal output; simple drop-in PS5 install.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> PS5/PC M.2 only; heatsink model typically tops out at 2 TB compared to SN850P's 8 TB.</div>
-                    </div>
-                </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/dp/B0CGKPPZY9?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-t500" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.crucial.com/products/ssd/crucial-t500-ssd" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Crucial Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="wd-black-sn850p" data-aff-asin="B0C47ZX1WB" data-aff-category="PS5 Storage" data-aff-placement="settings_hw_sn850p" data-aff-position="2" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- XBOX EXPANSION CARD 1 -->
-            <article class="hw-card" data-hw-cat="xbox-card" data-hw-platform="xbox">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-confirmed">XBOX EXPANSION CARD</span>
-                        <span class="verify-badge verify-confirmed">Xbox Series X|S ONLY</span>
+            <!-- 3. PS5 M.2 SSD: Crucial T500 with Heatsink -->
+            <article class="hw-card amz-card amz-card--accent-cyan amz-card--text-only" data-hw-cat="ps5-ssd" data-hw-platform="ps5" data-product-id="crucial-t500-heatsink" data-asin="B0CK2RKPBL" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--ps5">PS5 M.2 SSD</span>
+                        <span class="amz-card__brand">Crucial</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Seagate Storage Expansion Card for Xbox Series X|S (1TB / 2TB / 4TB)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> Official Xbox Velocity Architecture CFexpress card &bull; Rear-slot plug-and-play &bull; Runs Xbox Series X|S Optimized titles (including GTA 6) natively with Quick Resume.
+                    <h3 class="amz-card__title">Crucial T500 PCIe Gen4 NVMe with Heatsink (1TB / 2TB)</h3>
+                    <p class="amz-card__desc">Power-efficient PCIe Gen4 M.2 SSD pairing Micron TLC NAND with an integrated PS5-compliant heatsink for cool, fast console expansion.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5 &amp; PS5 Pro Only</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC M.2</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Tool-free instant install; full native playback speed; large 2 TB / 4 TB tiers available.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Proprietary Xbox Series X|S connector (cannot be used in PS5 or PC); higher cost per GB than standard M.2.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Up to 7,400 MB/s read &middot; Low thermal output &middot; Does not fit Xbox.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> PCIe Gen4 x4 M.2 2280 &bull; Up to 7,400 MB/s read / 7,000 MB/s write &bull; Integrated PS5-compliant heatsink; power-efficient Micron TLC NAND.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> High read/write throughput with low thermal output; simple drop-in PS5 install.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> PS5/PC M.2 only; heatsink model tops out at lower capacities than 8 TB SN850P.</p>
+                            <a href="https://www.crucial.com/products/ssd/crucial-t500-ssd" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Crucial Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/dp/B09FZ4K8FQ?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-seagate-xbox" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.seagate.com/products/gaming-drives/xbox-gaming/storage-expansion-for-xbox-series-x/" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Seagate Specs &nearr;</a>
-                </div>
-            </article>
-
-            <!-- XBOX EXPANSION CARD 2 -->
-            <article class="hw-card" data-hw-cat="xbox-card" data-hw-platform="xbox">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-confirmed">XBOX EXPANSION CARD</span>
-                        <span class="verify-badge verify-confirmed">Xbox Series X|S ONLY</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">WD_BLACK C50 Expansion Card for Xbox (512GB / 1TB / 2TB)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> Officially licensed Xbox Velocity Architecture expansion card &bull; Rear-slot plug-and-play &bull; Native Series X|S gameplay &amp; Quick Resume support.
-                    </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Matches internal Xbox SSD performance identically; includes 512 GB entry option; rugged industrial shell.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Xbox Series X|S only; 512 GB tier fills fast alongside a ~212 GB GTA 6 install.</div>
-                    </div>
-                </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=WD_BLACK+C50+Expansion+Card+for+Xbox&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-c50" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.westerndigital.com/products/external-drives/wd-black-c50-expansion-card-for-xbox-ssd" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Western Digital Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0CK2RKPBL?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="crucial-t500-heatsink" data-aff-asin="B0CK2RKPBL" data-aff-category="PS5 Storage" data-aff-placement="settings_hw_t500" data-aff-position="3" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- CAPTURE CARD 1 -->
-            <article class="hw-card" data-hw-cat="capture-card" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-testing">CAPTURE CARD &bull; USB 3.2</span>
-                        <span class="verify-badge verify-community">PS5 &amp; Xbox + PC</span>
+            <!-- 4. Xbox Expansion Card: Seagate -->
+            <article class="hw-card amz-card amz-card--accent-green amz-card--text-only" data-hw-cat="xbox-card" data-hw-platform="xbox" data-product-id="seagate-xbox-expansion-card" data-asin="B08K3S6WJM" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--xbox">Xbox Expansion Card</span>
+                        <span class="amz-card__brand">Seagate</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Elgato 4K X (External HDMI 2.1 Capture Card)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> HDMI 2.1 In/Out &bull; Up to 4K144 HDR10 + VRR passthrough &bull; Up to 4K60 HDR10 capture over USB 3.2 Gen 2 (10 Gbps) &bull; Driverless UVC support.
+                    <h3 class="amz-card__title">Seagate Storage Expansion Card for Xbox Series X|S (1TB / 2TB / 4TB)</h3>
+                    <p class="amz-card__desc">Tool-free rear-slot Xbox Velocity Architecture expansion card that launches and plays GTA 6 natively with full Quick Resume support.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox Series X|S Only</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Preserves 4K120 VRR to your TV; works on desktops &amp; laptops; true 4K60 capture.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Needs a true 10 Gbps USB 3.2 Gen 2 port for peak modes; wired PS5 chat needs Chat Link Pro.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Plug-and-play Xbox rear slot &middot; Native playback &middot; Does not fit PS5.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> Official Xbox Velocity Architecture CFexpress card &bull; Rear-slot plug-and-play &bull; Runs Xbox Series X|S Optimized titles (including GTA 6) natively with Quick Resume.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Tool-free instant install; full native playback speed; large 2 TB / 4 TB tiers available.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Proprietary Xbox Series X|S connector (cannot be used in PS5 or PC); higher cost per GB than standard M.2.</p>
+                            <a href="https://www.seagate.com/products/gaming-drives/xbox-gaming/storage-expansion-for-xbox-series-x/" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Seagate Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=Elgato+4K+X+HDMI+2.1+Capture+Card&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-4kx" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.elgato.com/us/en/p/game-capture-4k-x" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Elgato Specs &nearr;</a>
-                </div>
-            </article>
-
-            <!-- CAPTURE CARD 2 -->
-            <article class="hw-card" data-hw-cat="capture-card" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-testing">CAPTURE CARD &bull; PCIe</span>
-                        <span class="verify-badge verify-community">PS5 &amp; Xbox + Desktop PC</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Elgato 4K Pro (Internal PCIe x4 HDMI 2.1 Card)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> Internal PCIe 2.0 x4 &bull; HDMI 2.1 up to 8K60 / 4K240 HDR10 VRR passthrough &bull; True 4K60 HDR10 10-bit capture &bull; Multi-app concurrent capture.
-                    </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Ultra-low PCIe decode latency; true 10-bit HDR capture; no USB bandwidth conflicts.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Requires an open desktop PCIe x4 slot (not for laptops); no built-in 3.5mm chat jack.</div>
-                    </div>
-                </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=Elgato+4K+Pro+Internal+Capture+Card&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-4kpro" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.elgato.com/us/en/p/game-capture-4k-pro" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Elgato Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B08K3S6WJM?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="seagate-xbox-expansion-card" data-aff-asin="B08K3S6WJM" data-aff-category="Xbox Storage" data-aff-placement="settings_hw_seagate_xbox" data-aff-position="4" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- CAPTURE CARD 3 -->
-            <article class="hw-card" data-hw-cat="capture-card" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-testing">CAPTURE CARD &bull; USB 3.2</span>
-                        <span class="verify-badge verify-community">PS5 &amp; Xbox + PC</span>
+            <!-- 5. Xbox Expansion Card: WD_BLACK C50 -->
+            <article class="hw-card amz-card amz-card--accent-green amz-card--text-only" data-hw-cat="xbox-card" data-hw-platform="xbox" data-product-id="wd-black-c50-xbox" data-asin="B0C44XVWCH" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--xbox">Xbox Expansion Card</span>
+                        <span class="amz-card__brand">WD_BLACK</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">AVerMedia Live Gamer ULTRA 2.1 (GC553G2)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> HDMI 2.1 In/Out &bull; 4K144 HDR + VRR passthrough &bull; 4K60 capture via USB 3.2 Gen 2 &bull; Dual 3.5mm headset + gamepad party-chat jacks built in.
+                    <h3 class="amz-card__title">WD_BLACK C50 Expansion Card for Xbox (512GB / 1TB / 2TB)</h3>
+                    <p class="amz-card__desc">Officially licensed Xbox Series X|S rear-slot expansion card delivering internal-matching SSD speeds and seamless Quick Resume switching.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox Series X|S Only</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Built-in party chat audio routing without buying extra splitters; full HDMI 2.1 VRR passthrough.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Requires 10 Gbps USB-C port for 4K60 capture; firmware updates recommended out of the box.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Plug-and-play Xbox rear slot &middot; 1TB+ recommended for ~212 GB GTA 6 &middot; Not for PS5.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> Officially licensed Xbox Velocity Architecture expansion card &bull; Rear-slot plug-and-play &bull; Native Series X|S gameplay &amp; Quick Resume support.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Matches internal Xbox SSD performance identically; rugged industrial shell; 1TB/2TB tiers fit multi-game libraries.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Xbox Series X|S only (does not fit PS5); 512 GB tier fills fast alongside a ~212 GB GTA 6 install.</p>
+                            <a href="https://www.westerndigital.com/products/external-drives/wd-black-c50-expansion-card-for-xbox-ssd" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Western Digital Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=AVerMedia+Live+Gamer+ULTRA+2.1+GC553G2&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-gc553g2" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.avermedia.com/product-detail/GC553G2" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official AVerMedia Specs &nearr;</a>
-                </div>
-            </article>
-
-            <!-- CAPTURE CARD 4 -->
-            <article class="hw-card" data-hw-cat="capture-card" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-testing">CAPTURE CARD &bull; USB 3.0</span>
-                        <span class="verify-badge verify-community">PS5 &amp; Xbox + PC</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Elgato HD60 X (External HDMI 2.0 Capture Card)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> HDMI 2.0 &bull; 4K60 HDR10 / 1440p120 / 1080p120 VRR passthrough &bull; 1080p60 HDR10 or 4K30 capture over standard USB 3.0 (5 Gbps).
-                    </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Reliable plug-and-play for 1080p60 Twitch/Kick streams; works on standard USB 3.0 ports.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> No 4K120 HDMI 2.1 passthrough and no 4K60 recording (caps 4K capture at 30 fps).</div>
-                    </div>
-                </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/dp/B01GJQ7N94?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-hd60x" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.elgato.com/us/en/p/game-capture-hd60-x" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Elgato Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0C44XVWCH?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="wd-black-c50-xbox" data-aff-asin="B0C44XVWCH" data-aff-category="Xbox Storage" data-aff-placement="settings_hw_c50" data-aff-position="5" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- TV / MONITOR 1 -->
-            <article class="hw-card" data-hw-cat="display" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-confirmed">4K OLED TV</span>
-                        <span class="verify-badge verify-community">PS5, PS5 Pro &amp; Xbox</span>
+            <!-- 6. Capture Card: Elgato 4K X -->
+            <article class="hw-card amz-card amz-card--accent-purple amz-card--text-only" data-hw-cat="capture-card" data-hw-platform="both" data-product-id="elgato-4k-x" data-asin="B0CPFWXMBL" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">Capture Card &middot; USB 3.2</span>
+                        <span class="amz-card__brand">Elgato</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">LG C4 / C5 Series 4K OLED Evo TV</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> 4&times; Full-Bandwidth HDMI 2.1 (48 Gbps) &bull; 120Hz/144Hz OLED panel &bull; Native HGiG Tone Mapping &bull; VRR + ALLM + Game Optimizer HUD.
+                    <h3 class="amz-card__title">Elgato 4K X (External HDMI 2.1 Capture Card)</h3>
+                    <p class="amz-card__desc">External USB 3.2 Gen 2 HDMI 2.1 capture card preserving 4K120 VRR passthrough while recording crisp 4K60 HDR10 console gameplay.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC / Laptop</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> All 4 ports support HDMI 2.1; accurate HGiG HDR &amp; ink-black Vice City night scenes; sub-10ms Game Mode lag.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Glossy screen reflects direct sunlight; instant OLED pixel response can make 30 FPS camera pans look slightly sharper/stuttery if you sit very close.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> 4K144 VRR passthrough &middot; Needs 10 Gbps USB 3.2 Gen 2 port for peak capture.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> HDMI 2.1 In/Out &bull; Up to 4K144 HDR10 + VRR passthrough &bull; Up to 4K60 HDR10 capture over USB 3.2 Gen 2 (10 Gbps) &bull; Driverless UVC support.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Preserves 4K120 VRR to your TV; works on desktops &amp; laptops; true 4K60 capture.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Needs a true 10 Gbps USB 3.2 Gen 2 port for peak modes; wired PS5 chat needs Chat Link Pro.</p>
+                            <a href="https://www.elgato.com/us/en/p/game-capture-4k-x" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Elgato Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=LG+OLED+C4+4K+HDMI+2.1+Gaming+TV&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-lg-oled" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.lg.com/us/oled-tvs" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official LG OLED Specs &nearr;</a>
-                </div>
-            </article>
-
-            <!-- TV / MONITOR 2 -->
-            <article class="hw-card" data-hw-cat="display" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-confirmed">4K QD-OLED TV</span>
-                        <span class="verify-badge verify-community">PS5, PS5 Pro &amp; Xbox</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Samsung S90D / S90F 4K QD-OLED TV</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> 4&times; HDMI 2.1 (4K 120Hz/144Hz) &bull; QD-OLED high color volume &bull; VRR / FreeSync Premium &bull; ALLM Game Bar &amp; Game HDR (HGiG).
-                    </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Vivid neon HDR color volume in Leonida sunsets &amp; Ocean Beach; ultra-low Game Mode input latency.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> No Dolby Vision support (uses HDR10 / HDR10+); ambient room light can slightly lift QD-OLED blacks.</div>
-                    </div>
-                </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=Samsung+S90D+QD-OLED+4K+HDMI+2.1+TV&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-samsung-oled" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.samsung.com/us/televisions-home-theater/tvs/oled-tvs/" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Samsung TV Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0CPFWXMBL?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="elgato-4k-x" data-aff-asin="B0CPFWXMBL" data-aff-category="Capture Cards" data-aff-placement="settings_hw_4kx" data-aff-position="6" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- TV / MONITOR 3 -->
-            <article class="hw-card" data-hw-cat="display" data-hw-platform="both">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-confirmed">4K OLED MONITOR</span>
-                        <span class="verify-badge verify-community">PS5, Xbox &amp; Desk Capture</span>
+            <!-- 7. Capture Card: Elgato 4K Pro -->
+            <article class="hw-card amz-card amz-card--accent-purple amz-card--text-only" data-hw-cat="capture-card" data-hw-platform="both" data-product-id="elgato-4k-pro" data-asin="B0DLR3WQWR" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">Capture Card &middot; PCIe</span>
+                        <span class="amz-card__brand">Elgato</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">ASUS ROG Swift OLED PG32UCDM (32&quot; 4K QD-OLED)</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> 32&quot; 4K UHD QD-OLED &bull; Dual HDMI 2.1 (48 Gbps) + DisplayPort 1.4 &bull; Console 4K120 VRR &amp; HDR10 support &bull; Ultra-low desk latency.
+                    <h3 class="amz-card__title">Elgato 4K Pro (Internal PCIe x4 HDMI 2.1 Card)</h3>
+                    <p class="amz-card__desc">Internal desktop PCIe x4 HDMI 2.1 capture card built for ultra-low-latency 4K60 10-bit HDR recording and 4K240 VRR passthrough.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">Desktop PCIe</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Razor-sharp 4K desk clarity; ideal paired with a capture card &amp; streaming PC; true OLED HDR contrast.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> No built-in speakers (use headset/desk audio); 32&quot; size is built for desks rather than living-room couches.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Internal PCIe x4 &middot; 10-bit HDR capture &middot; Desktop PC only (not laptops).</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> Internal PCIe 2.0 x4 &bull; HDMI 2.1 up to 8K60 / 4K240 HDR10 VRR passthrough &bull; True 4K60 HDR10 10-bit capture &bull; Multi-app concurrent capture.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Ultra-low PCIe decode latency; true 10-bit HDR capture; no USB bandwidth conflicts.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Requires an open desktop PCIe x4 slot (not for laptops); no built-in 3.5mm chat jack.</p>
+                            <a href="https://www.elgato.com/us/en/p/game-capture-4k-pro" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Elgato Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=ASUS+ROG+Swift+OLED+PG32UCDM+4K+Monitor&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-pg32ucdm" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-oled-pg32ucdm/" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official ASUS ROG Specs &nearr;</a>
-                </div>
-            </article>
-
-            <!-- PRO CONTROLLER 1 -->
-            <article class="hw-card" data-hw-cat="controller" data-hw-platform="ps5">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-community">PRO CONTROLLER</span>
-                        <span class="verify-badge verify-confirmed">PS5 &amp; PS5 Pro</span>
-                    </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Sony DualSense Edge Wireless Controller</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> Official Sony pro controller &bull; Native PS5 OS profile/stick curve &amp; deadzone tuning &bull; 2 swappable back buttons &bull; 3-stop trigger locks &bull; Replaceable stick modules.
-                    </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> System-level stick response/deadzone tuning works in any PS5 game; modular stick replacement fights drift.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Shorter battery life than standard DualSense; only 2 back buttons instead of 4; PS5/PC only.</div>
-                    </div>
-                </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/dp/B0GNNTYQGH?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-dualsense-edge" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.playstation.com/en-us/accessories/dualsense-edge-wireless-controller/" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official PlayStation Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0DLR3WQWR?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="elgato-4k-pro" data-aff-asin="B0DLR3WQWR" data-aff-category="Capture Cards" data-aff-placement="settings_hw_4kpro" data-aff-position="7" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
-            <!-- PRO CONTROLLER 2 -->
-            <article class="hw-card" data-hw-cat="controller" data-hw-platform="xbox">
-                <div>
-                    <div class="hw-compat-row">
-                        <span class="verify-badge verify-confirmed">PRO CONTROLLER</span>
-                        <span class="verify-badge verify-confirmed">Xbox Series X|S</span>
+            <!-- 8. Capture Card: AVerMedia GC553G2 -->
+            <article class="hw-card amz-card amz-card--accent-purple amz-card--text-only" data-hw-cat="capture-card" data-hw-platform="both" data-product-id="avermedia-gc553g2" data-asin="B0CJWYCVRM" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">Capture Card &middot; USB 3.2</span>
+                        <span class="amz-card__brand">AVerMedia</span>
+                        <span class="amz-card__paid">Paid link</span>
                     </div>
-                    <h3 style="color:#fff; font-size:1.08rem; margin:0 0 0.35rem;">Xbox Elite Wireless Controller Series 2</h3>
-                    <div class="hw-specs-list">
-                        <strong>Specs:</strong> Official Microsoft pro controller &bull; Xbox Accessories app curve &amp; remap profiles &bull; 4 rear paddles &bull; Adjustable-tension thumbsticks &bull; 3-step hair-trigger locks.
+                    <h3 class="amz-card__title">AVerMedia Live Gamer ULTRA 2.1 (GC553G2)</h3>
+                    <p class="amz-card__desc">External HDMI 2.1 USB capture card with 4K144 VRR passthrough and built-in dual 3.5mm jacks for console party-chat audio routing.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC / Laptop</span>
                     </div>
-                    <div class="hw-pros-cons">
-                        <div class="hw-pros"><strong>Pros:</strong> Long built-in rechargeable battery (up to 40 hrs); 4 removable rear paddles; deep Xbox Accessories tuning.</div>
-                        <div class="hw-cons"><strong>Cons:</strong> Thumbstick modules are not modular/swappable like DualSense Edge; Xbox/PC only.</div>
-                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Built-in 3.5mm party-chat jacks &middot; Needs 10 Gbps USB-C port for 4K60.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> HDMI 2.1 In/Out &bull; 4K144 HDR + VRR passthrough &bull; 4K60 capture via USB 3.2 Gen 2 &bull; Dual 3.5mm headset + gamepad party-chat jacks built in.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Built-in party chat audio routing without buying extra splitters; full HDMI 2.1 VRR passthrough.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Requires 10 Gbps USB-C port for 4K60 capture; firmware updates recommended out of the box.</p>
+                            <a href="https://www.avermedia.com/product-detail/GC553G2" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official AVerMedia Specs &nearr;</a>
+                        </div>
+                    </details>
                 </div>
-                <div class="hw-actions" hidden data-amazon-placement-module="1">
-                    <a href="https://www.amazon.com/s?k=Xbox+Elite+Wireless+Controller+Series+2&tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-placement="settings-hw-xbox-elite" class="btn btn-amber hw-btn-amazon">Check Price on Amazon (Affiliate) &rarr;</a>
-                    <a href="https://www.xbox.com/en-US/accessories/controllers/elite-wireless-controller-series-2" target="_blank" rel="noopener noreferrer" class="hw-btn-mfg">Official Xbox Specs &nearr;</a>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0CJWYCVRM?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="avermedia-gc553g2" data-aff-asin="B0CJWYCVRM" data-aff-category="Capture Cards" data-aff-placement="settings_hw_gc553g2" data-aff-position="8" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
+                </div>
+            </article>
+
+            <!-- 9. Capture Card: Elgato HD60 X -->
+            <article class="hw-card amz-card amz-card--accent-purple amz-card--text-only" data-hw-cat="capture-card" data-hw-platform="both" data-product-id="elgato-hd60-x" data-asin="B09V1KJ3J4" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">Capture Card &middot; USB 3.0</span>
+                        <span class="amz-card__brand">Elgato</span>
+                        <span class="amz-card__paid">Paid link</span>
+                    </div>
+                    <h3 class="amz-card__title">Elgato HD60 X (External HDMI 2.0 Capture Card)</h3>
+                    <p class="amz-card__desc">Plug-and-play USB 3.0 console capture card tailored for clean 1080p60 Twitch/Kick streaming and 4K60 HDR10 VRR passthrough.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC / Laptop</span>
+                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Standard USB 3.0 compatible &middot; Caps 4K capture at 30 fps (no HDMI 2.1).</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> HDMI 2.0 &bull; 4K60 HDR10 / 1440p120 / 1080p120 VRR passthrough &bull; 1080p60 HDR10 or 4K30 capture over standard USB 3.0 (5 Gbps).</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Reliable plug-and-play for 1080p60 Twitch/Kick streams; works on standard USB 3.0 ports.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> No 4K120 HDMI 2.1 passthrough and no 4K60 recording (caps 4K capture at 30 fps).</p>
+                            <a href="https://www.elgato.com/us/en/p/game-capture-hd60-x" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Elgato Specs &nearr;</a>
+                        </div>
+                    </details>
+                </div>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B09V1KJ3J4?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="elgato-hd60-x" data-aff-asin="B09V1KJ3J4" data-aff-category="Capture Cards" data-aff-placement="settings_hw_hd60x" data-aff-position="9" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
+                </div>
+            </article>
+
+            <!-- 10. Display: LG C4 OLED Evo TV -->
+            <article class="hw-card amz-card amz-card--accent-amber amz-card--text-only" data-hw-cat="display" data-hw-platform="both" data-product-id="lg-oled-c4" data-asin="B0CVRDK4P6" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">4K OLED TV</span>
+                        <span class="amz-card__brand">LG</span>
+                        <span class="amz-card__paid">Paid link</span>
+                    </div>
+                    <h3 class="amz-card__title">LG C4 / C5 Series 4K OLED Evo TV</h3>
+                    <p class="amz-card__desc">Four full-bandwidth HDMI 2.1 ports, accurate HGiG HDR tone mapping, and ink-black contrast built for low-lag console play.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5 &amp; PS5 Pro</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox Series X|S</span>
+                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> 4&times; 48 Gbps HDMI 2.1 &middot; HGiG + VRR + ALLM &middot; Glossy panel reflects direct sun.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> 4&times; Full-Bandwidth HDMI 2.1 (48 Gbps) &bull; 120Hz/144Hz OLED panel &bull; Native HGiG Tone Mapping &bull; VRR + ALLM + Game Optimizer HUD.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> All 4 ports support HDMI 2.1; accurate HGiG HDR &amp; ink-black Vice City night scenes; sub-10ms Game Mode lag.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Glossy screen reflects direct sunlight; instant OLED response can make close-up 30 FPS pans look sharper.</p>
+                            <a href="https://www.lg.com/us/oled-tvs" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official LG OLED Specs &nearr;</a>
+                        </div>
+                    </details>
+                </div>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0CVRDK4P6?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="lg-oled-c4" data-aff-asin="B0CVRDK4P6" data-aff-category="TVs &amp; Monitors" data-aff-placement="settings_hw_lg_oled" data-aff-position="10" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
+                </div>
+            </article>
+
+            <!-- 11. Display: Samsung S90D QD-OLED TV -->
+            <article class="hw-card amz-card amz-card--accent-amber amz-card--text-only" data-hw-cat="display" data-hw-platform="both" data-product-id="samsung-s90d-oled" data-asin="B0CV9VGMPT" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">4K QD-OLED TV</span>
+                        <span class="amz-card__brand">Samsung</span>
+                        <span class="amz-card__paid">Paid link</span>
+                    </div>
+                    <h3 class="amz-card__title">Samsung S90D / S90F 4K QD-OLED TV</h3>
+                    <p class="amz-card__desc">High-color-volume 4K QD-OLED gaming TV with four HDMI 2.1 ports, ultra-low Game Mode latency, VRR, and Game HDR (HGiG).</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5 &amp; PS5 Pro</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox Series X|S</span>
+                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> 4&times; HDMI 2.1 (4K 120/144Hz) &middot; HDR10/HGiG &middot; No Dolby Vision support.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> 4&times; HDMI 2.1 (4K 120Hz/144Hz) &bull; QD-OLED high color volume &bull; VRR / FreeSync Premium &bull; ALLM Game Bar &amp; Game HDR (HGiG).</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Vivid neon HDR color volume in Leonida sunsets &amp; Ocean Beach; ultra-low Game Mode input latency.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> No Dolby Vision support (uses HDR10 / HDR10+); ambient room light can slightly lift QD-OLED blacks.</p>
+                            <a href="https://www.samsung.com/us/televisions-home-theater/tvs/oled-tvs/" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Samsung TV Specs &nearr;</a>
+                        </div>
+                    </details>
+                </div>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0CV9VGMPT?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="samsung-s90d-oled" data-aff-asin="B0CV9VGMPT" data-aff-category="TVs &amp; Monitors" data-aff-placement="settings_hw_samsung_oled" data-aff-position="11" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
+                </div>
+            </article>
+
+            <!-- 12. Display: ASUS ROG Swift OLED PG32UCDM -->
+            <article class="hw-card amz-card amz-card--accent-amber amz-card--text-only" data-hw-cat="display" data-hw-platform="both" data-product-id="asus-rog-pg32ucdm" data-asin="B0CV26XVMD" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role">4K OLED Monitor</span>
+                        <span class="amz-card__brand">ASUS ROG</span>
+                        <span class="amz-card__paid">Paid link</span>
+                    </div>
+                    <h3 class="amz-card__title">ASUS ROG Swift OLED PG32UCDM (32&quot; 4K QD-OLED)</h3>
+                    <p class="amz-card__desc">32-inch 4K QD-OLED desk gaming monitor with dual 48 Gbps HDMI 2.1 inputs, console 4K120 VRR, and ultra-low latency.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5</span>
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox</span>
+                        <span class="amz-plat-chip amz-plat-chip--desk">Desk Setup</span>
+                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Dual HDMI 2.1 + DP 1.4 &middot; No built-in speakers (pair with headset/desk audio).</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> 32&quot; 4K UHD QD-OLED &bull; Dual HDMI 2.1 (48 Gbps) + DisplayPort 1.4 &bull; Console 4K120 VRR &amp; HDR10 support &bull; Ultra-low desk latency.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Razor-sharp 4K desk clarity; ideal paired with a capture card &amp; streaming PC; true OLED HDR contrast.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> No built-in speakers (use headset/desk audio); 32&quot; size is built for desks rather than living-room couches.</p>
+                            <a href="https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-oled-pg32ucdm/" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official ASUS ROG Specs &nearr;</a>
+                        </div>
+                    </details>
+                </div>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0CV26XVMD?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="asus-rog-pg32ucdm" data-aff-asin="B0CV26XVMD" data-aff-category="TVs &amp; Monitors" data-aff-placement="settings_hw_pg32ucdm" data-aff-position="12" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
+                </div>
+            </article>
+
+            <!-- 13. Pro Controller: Sony DualSense Edge -->
+            <article class="hw-card amz-card amz-card--accent-pink amz-card--text-only" data-hw-cat="controller" data-hw-platform="ps5" data-product-id="dualsense-edge" data-asin="B0BS5V7T65" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--ps5">Pro Controller</span>
+                        <span class="amz-card__brand">Sony PlayStation</span>
+                        <span class="amz-card__paid">Paid link</span>
+                    </div>
+                    <h3 class="amz-card__title">Sony DualSense Edge Wireless Controller</h3>
+                    <p class="amz-card__desc">Official PS5 pro controller featuring native system-level stick curve tuning, two swappable back buttons, trigger stops, and replaceable stick modules.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--ps5">PS5 &amp; PS5 Pro</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC</span>
+                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> Swappable stick modules + 2 back paddles &middot; Shorter battery than standard DualSense.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> Official Sony pro controller &bull; Native PS5 OS profile/stick curve &amp; deadzone tuning &bull; 2 swappable back buttons &bull; 3-stop trigger locks &bull; Replaceable stick modules.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> System-level stick response/deadzone tuning works in any PS5 game; modular stick replacement fights drift.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Shorter battery life than standard DualSense; 2 back buttons instead of 4; PS5/PC only.</p>
+                            <a href="https://www.playstation.com/en-us/accessories/dualsense-edge-wireless-controller/" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official PlayStation Specs &nearr;</a>
+                        </div>
+                    </details>
+                </div>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="dualsense-edge" data-aff-asin="B0BS5V7T65" data-aff-category="Pro Controllers" data-aff-placement="settings_hw_dualsense_edge" data-aff-position="13" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
+                </div>
+            </article>
+
+            <!-- 14. Pro Controller: Xbox Elite Wireless Controller Series 2 -->
+            <article class="hw-card amz-card amz-card--accent-green amz-card--text-only" data-hw-cat="controller" data-hw-platform="xbox" data-product-id="xbox-elite-series-2" data-asin="B07SFKTLZM" data-media-mode="text-only">
+                <div class="amz-card__body">
+                    <div class="amz-card__top">
+                        <span class="amz-card__role amz-card__role--xbox">Pro Controller</span>
+                        <span class="amz-card__brand">Microsoft Xbox</span>
+                        <span class="amz-card__paid">Paid link</span>
+                    </div>
+                    <h3 class="amz-card__title">Xbox Elite Wireless Controller Series 2</h3>
+                    <p class="amz-card__desc">Official Xbox pro gamepad offering four removable rear paddles, adjustable-tension thumbsticks, hair-trigger locks, and deep Xbox Accessories tuning.</p>
+                    <div class="amz-card__compat-row" aria-label="Compatible platforms">
+                        <span class="amz-plat-chip amz-plat-chip--xbox">Xbox Series X|S</span>
+                        <span class="amz-plat-chip amz-plat-chip--pc">PC</span>
+                    </div>
+                    <p class="amz-card__consideration"><strong>Key Spec:</strong> 4 rear paddles &middot; Up to 40h battery &middot; Non-modular stick assemblies; Xbox/PC only.</p>
+                    <details class="amz-card__details">
+                        <summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>
+                        <div class="amz-card__details-body">
+                            <p><strong>Specs:</strong> Official Microsoft pro controller &bull; Xbox Accessories app curve &amp; remap profiles &bull; 4 rear paddles &bull; Adjustable-tension thumbsticks &bull; 3-step hair-trigger locks.</p>
+                            <p class="amz-detail-pros"><strong>Pros:</strong> Long built-in rechargeable battery (up to 40 hrs); 4 removable rear paddles; deep Xbox Accessories tuning.</p>
+                            <p class="amz-detail-cons"><strong>Cons:</strong> Thumbstick modules are not modular/swappable like DualSense Edge; Xbox/PC only.</p>
+                            <a href="https://www.xbox.com/en-US/accessories/controllers/elite-wireless-controller-series-2" target="_blank" rel="noopener noreferrer" class="amz-detail-mfg-link">Official Xbox Specs &nearr;</a>
+                        </div>
+                    </details>
+                </div>
+                <div class="amz-card__foot">
+                    <a href="https://www.amazon.com/dp/B07SFKTLZM?tag=gta6heistguid-20" target="_blank" rel="sponsored nofollow noopener" data-aff-partner="amazon" data-aff-product="xbox-elite-series-2" data-aff-asin="B07SFKTLZM" data-aff-category="Pro Controllers" data-aff-placement="settings_hw_xbox_elite" data-aff-position="14" data-aff-dest-host="www.amazon.com" class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>
+                    <p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>
                 </div>
             </article>
 
@@ -1596,9 +1635,9 @@
     </div>
 </footer>
 <script src="/assets/js/gta6-progress-store.js"></script>
-<script src="/js/affiliates.js?v=20261125_p33"></script>
-<script src="/site-config.js"></script>
-<script src="/assets/main.js" defer></script>
+<script src="/js/affiliates.js?v=20261126_global_amz"></script>
+<script src="/site-config.js?v=20261126_global_amz"></script>
+<script src="/assets/main.js?v=20261126_global_amz" defer></script>
 <script src="/assets/js/settings-hub.js"></script>
 </body>
 </html>

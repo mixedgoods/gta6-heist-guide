@@ -29,11 +29,24 @@ window.SITE_CONFIG = Object.freeze({
     cableKit: "https://www.amazon.com/dp/B071FXZBMV?tag=gta6heistguid-20",
     paladonePsIcons: "https://www.amazon.com/dp/B079CBP6P9?tag=gta6heistguid-20",
     cableGuyMonkeybomb: "https://www.amazon.com/dp/B08KJJFFY8?tag=gta6heistguid-20",
-    // Legacy key aliases mapped safely to verified In-Stock equivalents (zero 404s)
+    // Legacy & hardware hub keys mapped to exact verified Amazon US ASINs (zero cross-product misrouting)
     dualsenseDock: "https://www.amazon.com/dp/B09B1XX1PN?tag=gta6heistguid-20",
     kontrolfreek: "https://www.amazon.com/dp/B0GNNTYQGH?tag=gta6heistguid-20",
-    crucialT500: "https://www.amazon.com/dp/B0CGKPPZY9?tag=gta6heistguid-20",
-    samsung990pro: "https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20",
+    crucialT500: "https://www.amazon.com/dp/B0CK2RKPBL?tag=gta6heistguid-20",
+    samsung990pro: "https://www.amazon.com/dp/B0BHJDY57J?tag=gta6heistguid-20",
+    dualsenseEdge: "https://www.amazon.com/dp/B0BS5V7T65?tag=gta6heistguid-20",
+    xboxController: "https://www.amazon.com/dp/B0F1HX3WXX?tag=gta6heistguid-20",
+    xboxElite2: "https://www.amazon.com/dp/B07SFKTLZM?tag=gta6heistguid-20",
+    seagateXboxCard: "https://www.amazon.com/dp/B08K3S6WJM?tag=gta6heistguid-20",
+    wdBlackC50: "https://www.amazon.com/dp/B0C44XVWCH?tag=gta6heistguid-20",
+    elgato4kX: "https://www.amazon.com/dp/B0CPFWXMBL?tag=gta6heistguid-20",
+    elgato4kPro: "https://www.amazon.com/dp/B0DLR3WQWR?tag=gta6heistguid-20",
+    avermediaGc553g2: "https://www.amazon.com/dp/B0CJWYCVRM?tag=gta6heistguid-20",
+    elgatoHd60x: "https://www.amazon.com/dp/B09V1KJ3J4?tag=gta6heistguid-20",
+    lgOledC4: "https://www.amazon.com/dp/B0CVRDK4P6?tag=gta6heistguid-20",
+    samsungS90d: "https://www.amazon.com/dp/B0CV9VGMPT?tag=gta6heistguid-20",
+    asusPg32ucdm: "https://www.amazon.com/dp/B0CV26XVMD?tag=gta6heistguid-20",
+    pulseElite: "https://www.amazon.com/dp/B0CMDH9M5W?tag=gta6heistguid-20",
     nova7p: "https://www.amazon.com/dp/B0BDGMNF6V?tag=gta6heistguid-20",
     nova7x: "https://www.amazon.com/dp/B0CWS6WV23?tag=gta6heistguid-20",
     prime: "https://www.amazon.com/tryprimefree?tag=gta6heistguid-20"
@@ -462,22 +475,21 @@ window.SITE_CONFIG = Object.freeze({
       }
     });
 
+    // Preserve exact product ASIN destinations; only repair known retired/broken legacy ASINs
     document.querySelectorAll('a[href*="amazon.com"]').forEach(function(a) {
       var h = a.getAttribute('href') || '';
-      if (/B0BHJJ9Y77|B0CK39YR41|samsung.*990|990\+pro/i.test(h)) {
-        a.href = cfg.amazonLinks.lexarNm790Heatsink;
-      } else if (/B08DP7Z725|kontrolfreek/i.test(h)) {
+      if (/\/dp\/(?:B0BHJJ9Y77|B0CK39YR41)(?:[/?#]|$)/i.test(h)) {
+        a.href = cfg.amazonLinks.samsung990pro;
+      } else if (/\/dp\/B08DP7Z725(?:[/?#]|$)/i.test(h)) {
         a.href = cfg.amazonLinks.kontrolfreekHeist;
-      } else if (/B08FC6Y4VG|dualsense.*charging|charging.*station/i.test(h)) {
+      } else if (/\/dp\/B08FC6Y4VG(?:[/?#]|$)/i.test(h)) {
         a.href = cfg.amazonLinks.poweraPs5Dock;
-      } else if (/B08J845875/i.test(h)) {
+      } else if (/\/dp\/B08J845875(?:[/?#]|$)/i.test(h)) {
         a.href = cfg.amazonLinks.poweraXboxDock;
-      } else if (/B0B1647BD7|nova.*7p/i.test(h)) {
+      } else if (/\/dp\/B0B1647BD7(?:[/?#]|$)/i.test(h)) {
         a.href = cfg.amazonLinks.hyperxStinger2Core;
-      } else if (/B0B161B1YQ|nova.*7x/i.test(h)) {
+      } else if (/\/dp\/B0B161B1YQ(?:[/?#]|$)/i.test(h)) {
         a.href = cfg.amazonLinks.turtleBeachRecon70;
-      } else if (/sn850p|wd_black/i.test(h)) {
-        a.href = cfg.amazonLinks.wdBlackSn850p;
       }
     });
 

@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22",
+  "version": "2026-11-26",
   "partnerTag": "gta6heistguid-20",
   "discoveryMode": "curated-fallback",
   "creatorsApi": {
@@ -8,7 +8,7 @@
     "requirements": "Requires an approved Amazon Associates account with at least 10 qualifying sales in the trailing 30 days and server-side Creators API credentials configured in Cloudflare Pages secrets (AMAZON_CREATORS_CREDENTIAL_ID, AMAZON_CREATORS_CREDENTIAL_SECRET).",
     "endpoint": "/api/amazon-recommendations"
   },
-  "policyNote": "Uses approved Amazon Associates tagged search URLs without scraping, fabricated ASINs, hardcoded prices, or fake product imagery. Products without verified dark-integrated product photos render as clean dark product-information cards.",
+  "policyNote": "Strict Amazon-only product image policy: zero Wikimedia photos, zero unapproved manufacturer/cutout images, zero SVG illustrations, zero hardcoded prices or star ratings. Text-only compact product cards used until authorized Amazon product imagery is permitted.",
   "items": [
     {
       "id": "samsung990pro",
@@ -17,12 +17,15 @@
       "badge": "PS5 M.2 NVMe SSD",
       "accent": "green",
       "title": "Samsung 990 PRO 2TB PCIe 4.0 M.2 SSD",
-      "specs": ["PCIe 4.0 x4 NVMe", "PS5 & PC Compatible"],
+      "specs": [
+        "PCIe 4.0 x4 NVMe",
+        "PS5 & PC Compatible"
+      ],
       "benefit": "High-speed PCIe 4.0 NVMe expansion adds 2TB of fast console and PC space for large open-world installs.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20",
-      "existingImage": "/assets/gear/samsung-990pro.jpg",
-      "mediaType": "cover",
+      "existingImage": null,
+      "mediaType": "none",
       "alt": "Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD"
     },
     {
@@ -32,12 +35,15 @@
       "badge": "Back-Paddle Controller",
       "accent": "cyan",
       "title": "DualSense Edge Wireless Controller",
-      "specs": ["Remappable Back Buttons", "Swappable Stick Modules"],
+      "specs": [
+        "Remappable Back Buttons",
+        "Swappable Stick Modules"
+      ],
       "benefit": "Remappable back paddles, adjustable trigger stops, and replaceable stick modules for PlayStation 5.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=DualSense+Edge+Wireless+Controller&tag=gta6heistguid-20",
-      "existingImage": "/assets/gear/dualsense-edge-cutout.webp",
-      "mediaType": "cutout",
+      "existingImage": null,
+      "mediaType": "none",
       "alt": "PlayStation DualSense Edge Wireless Controller"
     },
     {
@@ -47,12 +53,15 @@
       "badge": "Wireless Headset",
       "accent": "amber",
       "title": "PlayStation PULSE Elite Wireless Headset",
-      "specs": ["Planar Magnetic Drivers", "PlayStation Link + Bluetooth"],
+      "specs": [
+        "Planar Magnetic Drivers",
+        "PlayStation Link + Bluetooth"
+      ],
       "benefit": "Planar magnetic wireless audio built for directional stealth cues, sirens, and clear squad voice chat.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=PlayStation+Pulse+Elite+Wireless+Headset&tag=gta6heistguid-20",
-      "existingImage": "/assets/gear/pulse-elite-cutout.webp",
-      "mediaType": "cutout",
+      "existingImage": null,
+      "mediaType": "none",
       "alt": "PlayStation PULSE Elite Wireless Headset"
     },
     {
@@ -62,12 +71,15 @@
       "badge": "Charging Station",
       "accent": "cyan",
       "title": "DualSense Dual Controller Charging Station",
-      "specs": ["Click-In Dual Dock", "Frees Console USB Ports"],
+      "specs": [
+        "Click-In Dual Dock",
+        "Frees Console USB Ports"
+      ],
       "benefit": "Drop-in dock charges two controllers simultaneously so your backup pad stays topped up for long sessions.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=DualSense+Charging+Station+PS5&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "PlayStation DualSense Charging Station"
     },
     {
@@ -77,12 +89,15 @@
       "badge": "Controller Grips",
       "accent": "pink",
       "title": "KontrolFreek Performance Thumbsticks",
-      "specs": ["High-Rise / Mid-Rise Grip", "PS5 & Xbox Variants"],
+      "specs": [
+        "High-Rise / Mid-Rise Grip",
+        "PS5 & Xbox Variants"
+      ],
       "benefit": "Concave textured thumb grips expand analog stick arc for finer aim adjustments in console gunfights.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=KontrolFreek+FPS+Thumbsticks+PS5&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "KontrolFreek Performance Thumbsticks for PlayStation 5"
     },
     {
@@ -92,12 +107,15 @@
       "badge": "Desk Accessory",
       "accent": "cyan",
       "title": "Desktop Controller & Headset Stand",
-      "specs": ["Dual Controller Cradle", "Integrated Headset Hook"],
+      "specs": [
+        "Dual Controller Cradle",
+        "Integrated Headset Hook"
+      ],
       "benefit": "Compact desk stand keeps your console controllers and headset organized and protected between sessions.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=PS5+Xbox+Controller+Headset+Stand+Desk&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Desktop Controller and Headset Stand"
     },
     {
@@ -107,12 +125,15 @@
       "badge": "Protective Case",
       "accent": "amber",
       "title": "Hardshell Controller Protective Case",
-      "specs": ["Molded EVA Shell", "Dust & Impact Guard"],
+      "specs": [
+        "Molded EVA Shell",
+        "Dust & Impact Guard"
+      ],
       "benefit": "Crush-resistant travel case shields analog sticks and triggers from dust, drift pressure, and bag impacts.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=PS5+DualSense+Protective+Travel+Case&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Hardshell Controller Protective Case"
     },
     {
@@ -122,12 +143,15 @@
       "badge": "Thumb Grips",
       "accent": "pink",
       "title": "Silicone Controller Thumb Grips & Caps",
-      "specs": ["Textured Silicone Caps", "PS5 & Xbox Fit"],
+      "specs": [
+        "Textured Silicone Caps",
+        "PS5 & Xbox Fit"
+      ],
       "benefit": "Textured slip-on thumbstick caps improve grip comfort and protect factory analog rubber during long sessions.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=PS5+Xbox+Controller+Thumb+Grips+Silicone+Caps&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Silicone Controller Thumb Grips and Caps"
     },
     {
@@ -137,12 +161,15 @@
       "badge": "Xbox Pro Controller",
       "accent": "green",
       "title": "Xbox Elite Wireless Controller Series 2",
-      "specs": ["Adjustable-Tension Sticks", "Hair-Trigger Locks & Paddles"],
+      "specs": [
+        "Adjustable-Tension Sticks",
+        "Hair-Trigger Locks & Paddles"
+      ],
       "benefit": "Adjustable-tension thumbsticks, hair-trigger locks, and rear paddles built for Xbox Series X|S and PC play.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=Xbox+Elite+Wireless+Controller+Series+2&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Xbox Elite Wireless Controller Series 2"
     },
     {
@@ -152,12 +179,15 @@
       "badge": "Gaming Earbuds",
       "accent": "purple",
       "title": "PlayStation PULSE Explore Wireless Earbuds",
-      "specs": ["Planar Magnetic Audio", "PlayStation Link + Bluetooth"],
+      "specs": [
+        "Planar Magnetic Audio",
+        "PlayStation Link + Bluetooth"
+      ],
       "benefit": "Lightweight low-latency wireless earbuds with dual microphones for headband-free comfort on long runs.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=PlayStation+PULSE+Explore+Wireless+Earbuds&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "PlayStation PULSE Explore Wireless Earbuds"
     },
     {
@@ -167,12 +197,15 @@
       "badge": "USB Microphone",
       "accent": "pink",
       "title": "USB Condenser Gaming Microphone",
-      "specs": ["Cardioid Voice Pickup", "Plug-and-Play USB (PS5 / PC)"],
+      "specs": [
+        "Cardioid Voice Pickup",
+        "Plug-and-Play USB (PS5 / PC)"
+      ],
       "benefit": "Plug-and-play cardioid desk mic delivers clean squad comms and stream commentary without an external mixer.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=USB+Gaming+Microphone+Streaming+PS5+PC&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "USB Condenser Gaming Microphone"
     },
     {
@@ -182,12 +215,15 @@
       "badge": "Headset Stand",
       "accent": "cyan",
       "title": "Aluminum Under-Desk Headset Hanger",
-      "specs": ["Anodized Aluminum", "Cushioned Headband Rest"],
+      "specs": [
+        "Anodized Aluminum",
+        "Cushioned Headband Rest"
+      ],
       "benefit": "Keeps wireless headsets off your desk surface and prevents earcup and headband wear between sessions.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=Aluminum+Gaming+Headset+Stand+Desk+Mount&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Aluminum Gaming Headset Stand"
     },
     {
@@ -197,12 +233,15 @@
       "badge": "PS5 SSD Heatsink",
       "accent": "green",
       "title": "PS5 Compatible M.2 NVMe SSD Heatsink",
-      "specs": ["Low-Profile Aluminum", "Fits PS5 M.2 2280 Bay"],
+      "specs": [
+        "Low-Profile Aluminum",
+        "Fits PS5 M.2 2280 Bay"
+      ],
       "benefit": "Low-profile aluminum heatsink with thermal pads keeps bare PCIe 4.0 M.2 drives cool inside the PS5 expansion bay.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=PS5+M.2+NVMe+SSD+Heatsink&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "PS5 Compatible M.2 NVMe SSD Heatsink"
     },
     {
@@ -212,12 +251,15 @@
       "badge": "PS5 Licensed SSD",
       "accent": "cyan",
       "title": "WD_BLACK SN850P NVMe SSD for PS5",
-      "specs": ["Pre-Fitted PS5 Heatsink", "PCIe Gen4 M.2 2280"],
+      "specs": [
+        "Pre-Fitted PS5 Heatsink",
+        "PCIe Gen4 M.2 2280"
+      ],
       "benefit": "Officially licensed PS5 internal M.2 drive with pre-installed heatsink for straightforward console storage expansion.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=WD_BLACK+SN850P+NVMe+SSD+for+PS5&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "WD_BLACK SN850P NVMe SSD for PS5"
     },
     {
@@ -227,12 +269,15 @@
       "badge": "Capture Card",
       "accent": "purple",
       "title": "Elgato HD60 X External Capture Card",
-      "specs": ["HDMI 2.0 VRR Passthrough", "USB 3.0 PS5 / Xbox / PC"],
+      "specs": [
+        "HDMI 2.0 VRR Passthrough",
+        "USB 3.0 PS5 / Xbox / PC"
+      ],
       "benefit": "External console capture card with low-latency passthrough for recording PS5 and Xbox gameplay clips and guides.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=Elgato+HD60+X+Capture+Card&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Elgato HD60 X External Capture Card"
     },
     {
@@ -242,12 +287,15 @@
       "badge": "Streaming Light",
       "accent": "amber",
       "title": "Compact LED Desk Streaming Key Light",
-      "specs": ["Bi-Color Dimming", "Desk Clamp Mount"],
+      "specs": [
+        "Bi-Color Dimming",
+        "Desk Clamp Mount"
+      ],
       "benefit": "Adjustable bi-color desk light cleans up webcam feeds for late-night streams without harsh monitor glare.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=LED+Streaming+Key+Light+Desk+Mount+Gaming&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Compact LED Desk Streaming Key Light"
     },
     {
@@ -257,12 +305,15 @@
       "badge": "Cable Management",
       "accent": "green",
       "title": "Under-Desk Cable Management Kit",
-      "specs": ["Braided Sleeves & Clips", "Console & Desk Routing"],
+      "specs": [
+        "Braided Sleeves & Clips",
+        "Console & Desk Routing"
+      ],
       "benefit": "Tidy cable clips and braided sleeves keep console power, HDMI, and charging cords neatly routed.",
       "cta": "Check on Amazon",
       "url": "https://www.amazon.com/s?k=Desk+Cable+Management+Kit+Gaming+Setup&tag=gta6heistguid-20",
       "existingImage": null,
-      "mediaType": "info",
+      "mediaType": "none",
       "alt": "Desk Cable Management Kit for Gaming Setup"
     }
   ]

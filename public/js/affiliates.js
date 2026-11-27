@@ -42,8 +42,8 @@ window.GTA6_AFFILIATES = Object.freeze({
       // Safe aliases for any legacy references
       dualsenseDock: "https://www.amazon.com/dp/B09B1XX1PN?tag=gta6heistguid-20",
       kontrolfreek: "https://www.amazon.com/dp/B0GNNTYQGH?tag=gta6heistguid-20",
-      crucialT500: "https://www.amazon.com/dp/B0CGKPPZY9?tag=gta6heistguid-20",
-      samsung990pro: "https://www.amazon.com/dp/B0C47ZX1WB?tag=gta6heistguid-20"
+      crucialT500: "https://www.amazon.com/dp/B0CK2RKPBL?tag=gta6heistguid-20",
+      samsung990pro: "https://www.amazon.com/dp/B0BHJDY57J?tag=gta6heistguid-20"
     }
   },
   g2a: {
@@ -100,14 +100,14 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.dualsenseWhite,
       amazonKey: 'dualsenseWhite',
-      mediaType: 'photo',
-      image: '/assets/gear-photos/dualsense-white.webp',
+      mediaType: 'none',
+      image: null,
       imageCreator: 'Alex Cochrane',
       imageLicense: 'CC BY-SA 4.0',
       imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
       imageCredit: 'Photo: Alex Cochrane \u00b7 CC BY-SA 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png',
-      imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       alt: 'Photograph of the Sony PlayStation DualSense Wireless Controller in White',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'vehicles', 'weapons', 'controls', 'heist-command', 'default'],
@@ -132,14 +132,14 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.xboxCarbonBlack,
       amazonKey: 'xboxCarbonBlack',
-      mediaType: 'photo',
-      image: '/assets/gear-photos/xbox-wireless-controller-carbon-black.webp',
+      mediaType: 'none',
+      image: null,
       imageCreator: 'uKER',
       imageLicense: 'CC BY-SA 4.0',
       imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
       imageCredit: 'Photo: uKER \u00b7 CC BY-SA 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg',
-      imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       alt: 'Photograph of the Microsoft Xbox Wireless Controller in Carbon Black',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'vehicles', 'weapons', 'controls', 'heist-command', 'xbox-gear', 'default'],
@@ -164,14 +164,14 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.kossPortaPro,
       amazonKey: 'kossPortaPro',
-      mediaType: 'photo',
-      image: '/assets/gear-photos/koss-porta-pro.webp',
+      mediaType: 'none',
+      image: null,
       imageCreator: 'Malcolm Tyrrell',
       imageLicense: 'CC BY-SA 3.0',
       imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/',
       imageCredit: 'Photo: Malcolm Tyrrell \u00b7 CC BY-SA 3.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg',
-      imageRightsStatus: 'Approved (CC BY-SA 3.0 Commercial Reuse Verified)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       alt: 'Photograph of Koss Porta Pro Classic On-Ear Wired Headphones (Silver & Blue)',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'weapons', 'missions', 'properties', 'xbox-gear', 'default'],
@@ -196,14 +196,14 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.sonyMdr7506,
       amazonKey: 'sonyMdr7506',
-      mediaType: 'photo',
-      image: '/assets/gear-photos/sony-mdr-7506.webp',
+      mediaType: 'none',
+      image: null,
       imageCreator: 'Ashley Pomeroy',
       imageLicense: 'CC BY 4.0',
       imageLicenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
       imageCredit: 'Photo: Ashley Pomeroy \u00b7 CC BY 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg',
-      imageRightsStatus: 'Approved (CC BY 4.0 Commercial Reuse Verified)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       alt: 'Photograph of Sony MDR-7506 Professional Over-Ear Wired Headphones',
       lastVerified: '2026-11-25',
       placements: ['homepage-setup', 'weapons', 'missions', 'heist-command', 'default'],
@@ -228,14 +228,14 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.samsung990Pro4tb,
       amazonKey: 'samsung990Pro4tb',
-      mediaType: 'photo',
-      image: '/assets/gear-photos/samsung-990-pro-4tb.webp',
+      mediaType: 'none',
+      image: null,
       imageCreator: 'Dinkun Chen',
       imageLicense: 'CC BY-SA 4.0',
       imageLicenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
       imageCredit: 'Photo: Dinkun Chen \u00b7 CC BY-SA 4.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg',
-      imageRightsStatus: 'Approved (CC BY-SA 4.0 Commercial Reuse Verified)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       alt: 'Photograph of the Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD',
       lastVerified: '2026-11-25',
       placements: ['storage', 'troubleshooting'],
@@ -260,14 +260,14 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.blueYetiBlackout,
       amazonKey: 'blueYetiBlackout',
-      mediaType: 'photo',
-      image: '/assets/gear-photos/blue-yeti-blackout.webp',
+      mediaType: 'none',
+      image: null,
       imageCreator: 'Guillaume Pasquier',
       imageLicense: 'CC0 1.0',
       imageLicenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
       imageCredit: 'Photo: Guillaume Pasquier \u00b7 CC0 1.0',
       imageSource: 'https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg',
-      imageRightsStatus: 'Approved (CC0 1.0 Public Domain Dedication)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       alt: 'Photograph of the Logitech Blue Yeti USB Microphone in Blackout finish',
       lastVerified: '2026-11-25',
       placements: ['properties', 'gaming-room', 'heist-command', 'creator', 'default'],
@@ -294,10 +294,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.poweraPs5Dock,
       amazonKey: 'poweraPs5Dock',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/ps5-charging-dock.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration; Manufacturer Photo Pending)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a dual PlayStation 5 controller charging station',
       lastVerified: '2026-11-25',
@@ -323,10 +323,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.poweraXboxDock,
       amazonKey: 'poweraXboxDock',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/xbox-charging-dock.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a dual Xbox Series X|S controller charging dock with rechargeable battery pack',
       lastVerified: '2026-11-25',
@@ -354,10 +354,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.kontrolfreekHeist,
       amazonKey: 'kontrolfreekHeist',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/thumbsticks-heist.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of pink and blue performance controller thumbstick grips',
       lastVerified: '2026-11-25',
@@ -383,10 +383,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.kontrolfreekGalaxy,
       amazonKey: 'kontrolfreekGalaxy',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/thumbsticks-galaxy.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of black high-rise and mid-rise controller thumbstick grips',
       lastVerified: '2026-11-25',
@@ -414,10 +414,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.turtleBeachRecon70,
       amazonKey: 'turtleBeachRecon70',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/headset-multiplatform.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a wired multiplatform over-ear gaming headset with flip-to-mute microphone',
       lastVerified: '2026-11-25',
@@ -443,10 +443,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.hyperxStinger2Core,
       amazonKey: 'hyperxStinger2Core',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/headset-playstation.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a white and blue PlayStation wired gaming headset',
       lastVerified: '2026-11-25',
@@ -474,10 +474,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.lexarNm790Heatsink,
       amazonKey: 'lexarNm790Heatsink',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/ps5-nvme-1tb.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a 1TB PCIe 4.0 M.2 NVMe SSD with integrated PS5 heatsink',
       lastVerified: '2026-11-25',
@@ -503,10 +503,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.wdBlackSn850p,
       amazonKey: 'wdBlackSn850p',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/ps5-nvme-2tb.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a 2TB officially licensed PS5 NVMe M.2 SSD with heatsink',
       lastVerified: '2026-11-25',
@@ -534,10 +534,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.headsetStand,
       amazonKey: 'headsetStand',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/headset-stand.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of an aluminum desktop gaming headphone stand',
       lastVerified: '2026-11-25',
@@ -563,10 +563,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.cableKit,
       amazonKey: 'cableKit',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/cable-clips.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of silicone adhesive desktop cable management clips',
       lastVerified: '2026-11-25',
@@ -594,10 +594,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.paladonePsIcons,
       amazonKey: 'paladonePsIcons',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/ps-icons-light.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a glowing PlayStation controller icons desktop light',
       lastVerified: '2026-11-25',
@@ -623,10 +623,10 @@ window.getGTA6LaunchBannerText = function() {
       cta: 'View on Amazon \u2192',
       url: aff.amazon.links.cableGuyMonkeybomb,
       amazonKey: 'cableGuyMonkeybomb',
-      mediaType: 'illustration',
-      image: '/assets/gear-illustrations/controller-holder-figure.svg',
+      mediaType: 'none',
+      image: null,
       imageSource: 'Publisher-owned studio hardware category illustration',
-      imageRightsStatus: 'Authorized (Original Publisher Asset - Labeled Category Illustration)',
+      imageRightsStatus: 'Text-Only (Strict Amazon-Only Photo Policy)',
       imageLabel: 'Category Illustration (Photo Pending)',
       alt: 'Category illustration of a novelty gaming figure holding a wireless controller',
       lastVerified: '2026-11-25',
@@ -891,95 +891,79 @@ window.getGTA6LaunchBannerText = function() {
     return '';
   }
 
-  // 3. VISUAL SHOPPING CARD RENDERER
+  // 3. GLOBAL COMPACT AMAZON CARD + NON-AMAZON PARTNER CARD RENDERER
   function renderCardHtml(offer, variant, placement) {
     if (!offer) return '';
     var isAmazon = offer.partner === 'amazon';
     if (isAmazon && !isAmazonProductPlacementsEnabled()) return '';
-    var ctaClass = isAmazon ? 'aff-cta aff-cta--amazon' : ('aff-cta aff-cta--' + esc(offer.accent || 'cyan'));
-    var ctaText = isAmazon ? (offer.cta || 'View on Amazon \u2192') : esc(offer.cta);
+
     var ctaAttrs = buildLinkAttrs(offer, placement || variant, 'cta');
-    var disclosureTag = isAmazon
-      ? '<span class="aff-disclosure-tag aff-disclosure-tag--sponsored">Sponsored \u00b7 Paid link</span>'
-      : '<span class="aff-disclosure-tag">Partner Link</span>';
-    var brandRow = offer.brand
-      ? '<span class="aff-brand-eyebrow">' + esc(offer.brand) + '</span>'
-      : '';
+
+    // Unified global compact Amazon product card (.amz-card) — strictly text-only unless authorized Amazon image is supplied
+    if (isAmazon) {
+      var detailRows = [];
+      if (offer.compat) detailRows.push('<p><strong>Compatibility:</strong> ' + esc(offer.compat) + '</p>');
+      if (offer.whyConsider) detailRows.push('<p><strong>Why consider it:</strong> ' + esc(offer.whyConsider) + '</p>');
+      if (offer.asin) detailRows.push('<p><strong>Verified ASIN:</strong> <code>' + esc(offer.asin) + '</code></p>');
+      return (
+        '<article class="amz-card amz-card--accent-' + esc(offer.accent || 'cyan') + ' amz-card--text-only" data-product-id="' + esc(offer.id) + '" data-asin="' + esc(offer.asin || '') + '" data-media-mode="text-only" aria-label="' + esc(offer.title) + '">' +
+          '<div class="amz-card__body">' +
+            '<div class="amz-card__top">' +
+              '<span class="amz-card__role">' + esc(offer.badge || offer.category || 'Gear') + '</span>' +
+              (offer.brand ? '<span class="amz-card__brand">' + esc(offer.brand) + '</span>' : '') +
+              '<span class="amz-card__paid">Paid link</span>' +
+            '</div>' +
+            '<h3 class="amz-card__title">' + esc(offer.title) + '</h3>' +
+            '<p class="amz-card__desc">' + esc(offer.desc) + '</p>' +
+            (offer.compat ? '<p class="amz-card__compat-note"><strong>Fits:</strong> ' + esc(offer.compat) + '</p>' : '') +
+            '<details class="amz-card__details">' +
+              '<summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>' +
+              '<div class="amz-card__details-body">' + detailRows.join('') + '</div>' +
+            '</details>' +
+          '</div>' +
+          '<div class="amz-card__foot">' +
+            '<a ' + ctaAttrs + ' class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>' +
+            '<p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>' +
+          '</div>' +
+        '</article>'
+      );
+    }
+
+    var ctaClass = 'aff-cta aff-cta--' + esc(offer.accent || 'cyan');
+    var ctaText = esc(offer.cta);
+    var disclosureTag = '<span class="aff-disclosure-tag">Partner Link</span>';
+    var brandRow = offer.brand ? '<span class="aff-brand-eyebrow">' + esc(offer.brand) + '</span>' : '';
     var compatHtml = offer.compat
       ? '<div class="aff-card-compat"><span class="aff-compat-label">Fits:</span> <span class="aff-compat-val">' + esc(offer.compat) + '</span></div>'
       : '';
     var whyHtml = offer.whyConsider
-      ? '<div class="aff-card-why"><span class="aff-why-dot" aria-hidden="true">\u2713</span> ' + esc(offer.whyConsider) + '</div>'
-      : '';
-    var priceNoteHtml = isAmazon
-      ? '<div class="aff-price-note">' + AMZ_PRICE_NOTE + '</div>'
+      ? '<div class="aff-card-why"><span class="aff-why-dot" aria-hidden="true">&#10003;</span> ' + esc(offer.whyConsider) + '</div>'
       : '';
 
-    // Variant A: Compact Inline
     if (variant === 'compact-inline') {
       return (
-        '<aside class="aff-card aff-card--compact aff-card--visual aff-accent-' + esc(offer.accent) + '" aria-label="' + esc(offer.title) + ' (affiliate recommendation)">' +
+        '<aside class="aff-card aff-card--compact aff-card--visual aff-accent-' + esc(offer.accent) + '" aria-label="' + esc(offer.title) + ' (partner link)">' +
           renderMediaHtml(offer, true, false, placement || variant) +
           '<div class="aff-compact-body">' +
-            '<div class="aff-meta-row">' +
-              brandRow +
-              '<span class="aff-badge-pill">' + esc(offer.badge) + '</span>' +
-              disclosureTag +
-            '</div>' +
+            '<div class="aff-meta-row">' + brandRow + '<span class="aff-badge-pill">' + esc(offer.badge) + '</span>' + disclosureTag + '</div>' +
             '<div class="aff-compact-title">' + esc(offer.title) + '</div>' +
-            compatHtml +
-            whyHtml +
-            priceNoteHtml +
+            compatHtml + whyHtml +
           '</div>' +
-          '<div class="aff-compact-action">' +
-            '<a ' + ctaAttrs + ' class="' + ctaClass + ' aff-cta--sm">' + ctaText + '</a>' +
-          '</div>' +
+          '<div class="aff-compact-action"><a ' + ctaAttrs + ' class="' + ctaClass + ' aff-cta--sm">' + ctaText + '</a></div>' +
         '</aside>'
       );
     }
 
-    // Variant B: Horizontal Featured
-    if (variant === 'horizontal-featured') {
-      return (
-        '<aside class="aff-card aff-card--horizontal aff-card--visual aff-accent-' + esc(offer.accent) + '" aria-label="' + esc(offer.title) + ' (featured gear recommendation)">' +
-          renderMediaHtml(offer, false, false, placement || variant) +
-          '<div class="aff-card-body">' +
-            '<div class="aff-meta-row">' +
-              brandRow +
-              '<span class="aff-badge-pill">' + esc(offer.badge) + '</span>' +
-              disclosureTag +
-            '</div>' +
-            '<h3 class="aff-card-title">' + esc(offer.title) + '</h3>' +
-            '<p class="aff-card-desc">' + esc(offer.desc) + '</p>' +
-            compatHtml +
-            whyHtml +
-            priceNoteHtml +
-          '</div>' +
-          '<div class="aff-horizontal-cta">' +
-            '<a ' + ctaAttrs + ' class="' + ctaClass + '">' + ctaText + '</a>' +
-          '</div>' +
-        '</aside>'
-      );
-    }
-
-    // Standard Visual Shopping Card (Homepage 4-card grid, /gaming-gear/ hub, 2/3-card contextual grids)
-    var isEager = !!(offer.featured || (placement && placement.indexOf('home-setup-picks') === 0));
     return (
       '<article class="aff-card aff-card--standard aff-card--visual aff-accent-' + esc(offer.accent) + '" aria-label="' + esc(offer.title) + '">' +
-        renderMediaHtml(offer, false, isEager, placement || variant) +
+        renderMediaHtml(offer, false, false, placement || variant) +
         '<div class="aff-card-body">' +
-          '<div class="aff-meta-row">' +
-            brandRow +
-            '<span class="aff-badge-pill">' + esc(offer.badge) + '</span>' +
-            disclosureTag +
-          '</div>' +
+          '<div class="aff-meta-row">' + brandRow + '<span class="aff-badge-pill">' + esc(offer.badge) + '</span>' + disclosureTag + '</div>' +
           '<h3 class="aff-card-title">' + esc(offer.title) + '</h3>' +
           '<p class="aff-card-desc">' + esc(offer.desc) + '</p>' +
-          compatHtml +
-          whyHtml +
+          compatHtml + whyHtml +
         '</div>' +
         '<div class="aff-card-foot">' +
-          priceNoteHtml +
           '<a ' + ctaAttrs + ' class="' + ctaClass + '">' + ctaText + '</a>' +
         '</div>' +
       '</article>'

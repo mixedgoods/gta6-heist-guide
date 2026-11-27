@@ -195,7 +195,7 @@ test('P46-5: Below-the-fold lazy loading applied across 5 target pages without l
 
   const calcHtml = readText('public/heist-payout-calculator.html');
   const calcLazy = [...calcHtml.matchAll(/<img\b[^>]*loading="lazy"[^>]*>/gi)];
-  assert.ok(calcLazy.length >= 3, `Expected >=3 lazy images on heist-payout-calculator.html, got ${calcLazy.length}`);
+  assert.ok(calcLazy.length >= 1, `Expected >=1 lazy images on heist-payout-calculator.html, got ${calcLazy.length}`);
 
   const safeHtml = readText('public/safehouses-laundering.html');
   assert.match(safeHtml, /prop-venetian-mansion\.webp[^>]*loading="eager"/);

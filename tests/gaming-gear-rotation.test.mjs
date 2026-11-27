@@ -33,44 +33,41 @@ function createMemoryStorage() {
   };
 }
 
-test('GG-01: Single source of truth parity, real-photos-only catalog & verified 6-collection LEONIDA DROP catalog', () => {
+test('GG-01: Single source of truth parity, strict Amazon-only photo policy (zero Wikimedia/SVG) & verified 6-collection LEONIDA DROP catalog', () => {
   const publicRaw = fs.readFileSync(PUBLIC_MASTER_PATH, 'utf8');
   assert.equal(publicRaw, MASTER_RAW, 'public/data/gear-products-master.json must match data/gear-products-master.json byte-for-byte');
 
   const approved = rotation.getApprovedCatalogProducts(MASTER_CATALOG);
-  const daily = rotation.getEligibleDailyProducts(MASTER_CATALOG);
   const dropCollections = rotation.getValidDropCollections(MASTER_CATALOG);
 
   assert.equal(MASTER_CATALOG.products.length, 66, `Expected 66 audited product records, got ${MASTER_CATALOG.products.length}`);
   assert.equal(approved.length, 50, `Expected 50 approved active products, got ${approved.length}`);
-  assert.ok(daily.length >= 8, `Expected >=8 verified real-photo daily-eligible picks, got ${daily.length}`);
   assert.equal(dropCollections.length, 6, `Expected 6 verified 3-product LEONIDA DROP collections, got ${dropCollections.length}`);
 
-  // Zero generated / illustrative product images anywhere in the master catalog
+  // Zero generated / illustrative / Wikimedia / local non-Amazon product images anywhere in active catalog
   for (const p of MASTER_CATALOG.products) {
     assert.notEqual(p.mediaType, 'illustration', `Forbidden illustration mediaType on ${p.id}`);
     assert.ok(!String(p.imageSource || '').includes('gear-illustrations'), `Forbidden illustration asset on ${p.id}: ${p.imageSource}`);
+    assert.ok(!String(p.imageSource || '').includes('gear-photos'), `Forbidden Wikimedia/local gear-photos asset on ${p.id}: ${p.imageSource}`);
     assert.ok(!/\.svg(?:$|\?)/i.test(String(p.imageSource || '')), `Forbidden SVG product image on ${p.id}: ${p.imageSource}`);
   }
 
-  // Every active photo product points to an existing verified real photo in public/assets/gear-photos/;
-  // every active text-only product has mediaType 'none' and imageSource null.
+  // Every active product is currently text-only (0 authorized Amazon images available until Creators API + mobile approval)
   let photoCount = 0;
   let textOnlyCount = 0;
   for (const p of approved) {
     if (p.mediaType === 'photo') {
       photoCount++;
-      assert.match(p.imageSource, /^\/assets\/gear-photos\/[a-z0-9._-]+\.(?:webp|jpg|jpeg|png)$/i);
-      const imgDisk = path.join(ROOT, 'public', p.imageSource.replace(/^\/+/, ''));
-      assert.ok(fs.existsSync(imgDisk), `Missing verified real photo asset for ${p.id}: ${p.imageSource}`);
+      assert.equal(rotation.isAuthorizedAmazonDropImage(p), true, `Photo product ${p.id} must have authorized Amazon CDN image`);
     } else {
       textOnlyCount++;
       assert.equal(p.mediaType, 'none');
       assert.equal(p.imageSource, null);
     }
+    assert.ok(p.cardSummary && p.cardSummary.trim().split(/\s+/).length <= 28, `Compact cardSummary required on ${p.id}`);
   }
-  assert.equal(photoCount, 8, `Expected 8 preserved active real-photo catalog cards, got ${photoCount}`);
-  assert.equal(textOnlyCount, 42, `Expected 42 active text-only catalog cards, got ${textOnlyCount}`);
+  assert.equal(photoCount, 0, `Expected 0 authorized Amazon photo cards while Creators API is locked, got ${photoCount}`);
+  assert.equal(textOnlyCount, 50, `Expected 50 compact text-only active catalog cards, got ${textOnlyCount}`);
 
   // Every LEONIDA DROP collection has exactly 3 distinct valid products (18 unique across all 6 collections)
   const globalDropProductIds = new Set();
@@ -95,10 +92,39 @@ test('GG-01: Single source of truth parity, real-photos-only catalog & verified 
   assert.equal(globalDropProductIds.size, 18);
 });
 
+function buildAuthorizedDailyFixture() {
+  const cat = cloneCatalog();
+  const nowIso = new Date().toISOString();
+  let order = 1;
+  for (const p of cat.products) {
+    if (p.active && order <= 6) {
+      p.mediaType = 'photo';
+      p.imageSource = 'https://m.media-amazon.com/images/I/71fixture' + order + '.jpg';
+      p.imageAlt = p.productName;
+      p.imageLicense = { status: 'Approved (Amazon Creators API Fixture)' };
+      p.amazonDropImage = {
+        authorized: true,
+        mobileApproved: true,
+        source: 'amazon-creators-api',
+        url: p.imageSource,
+        fetchedAt: nowIso,
+      };
+      p.dailyEligible = true;
+      p.dailyOrder = order++;
+      p.editorialIntro = p.editorialIntro || p.shortDescription;
+      p.whyInteresting = p.whyInteresting || p.shortDescription;
+      p.whatMakesItDifferent = p.whatMakesItDifferent || p.shortDescription;
+      p.intendedAudience = p.intendedAudience || 'Console and PC gamers';
+    }
+  }
+  return cat;
+}
+
 test('GG-02: Same America/Chicago date always produces the exact same daily helper product', () => {
-  const morning = rotation.selectDailyPick(MASTER_CATALOG, new Date('2026-11-26T14:00:00Z'));
-  const afternoon = rotation.selectDailyPick(MASTER_CATALOG, new Date('2026-11-26T21:30:00Z'));
-  const lateNight = rotation.selectDailyPick(MASTER_CATALOG, new Date('2026-11-27T05:59:59Z'));
+  const fixture = buildAuthorizedDailyFixture();
+  const morning = rotation.selectDailyPick(fixture, new Date('2026-11-26T14:00:00Z'));
+  const afternoon = rotation.selectDailyPick(fixture, new Date('2026-11-26T21:30:00Z'));
+  const lateNight = rotation.selectDailyPick(fixture, new Date('2026-11-27T05:59:59Z'));
 
   assert.equal(morning.ok, true);
   assert.equal(morning.calendarDate.isoDate, '2026-11-26');
@@ -109,21 +135,23 @@ test('GG-02: Same America/Chicago date always produces the exact same daily help
 });
 
 test('GG-03: Consecutive days rotate cleanly in legacy daily helper without early repeats', () => {
-  const eligible = rotation.getEligibleDailyProducts(MASTER_CATALOG);
+  const fixture = buildAuthorizedDailyFixture();
+  const eligible = rotation.getEligibleDailyProducts(fixture);
   const N = eligible.length;
+  assert.equal(N, 6);
   const seen = new Set();
   const baseMs = Date.parse('2026-11-26T18:00:00Z');
 
   const firstCycleIds = [];
   for (let d = 0; d < N; d++) {
-    const pick = rotation.selectDailyPick(MASTER_CATALOG, new Date(baseMs + d * 86400000));
+    const pick = rotation.selectDailyPick(fixture, new Date(baseMs + d * 86400000));
     assert.equal(pick.ok, true);
     assert.ok(!seen.has(pick.product.id));
     seen.add(pick.product.id);
     firstCycleIds.push(pick.product.id);
   }
   assert.equal(seen.size, N);
-  const wrapPick = rotation.selectDailyPick(MASTER_CATALOG, new Date(baseMs + N * 86400000));
+  const wrapPick = rotation.selectDailyPick(fixture, new Date(baseMs + N * 86400000));
   assert.equal(wrapPick.product.id, firstCycleIds[0]);
 });
 
@@ -297,10 +325,11 @@ test('GG-09: SHOW ANOTHER DROP advances cleanly without repeating until cycle co
 });
 
 test('GG-10: Daylight Saving Time spring-forward and fall-back preserved on daily helper', () => {
-  const sfDay0End = rotation.selectDailyPick(MASTER_CATALOG, new Date('2027-03-14T05:59:59Z'));
-  const sfDay1Start = rotation.selectDailyPick(MASTER_CATALOG, new Date('2027-03-14T06:00:00Z'));
-  const sfDay1End = rotation.selectDailyPick(MASTER_CATALOG, new Date('2027-03-15T04:59:59Z'));
-  const sfDay2Start = rotation.selectDailyPick(MASTER_CATALOG, new Date('2027-03-15T05:00:00Z'));
+  const fixture = buildAuthorizedDailyFixture();
+  const sfDay0End = rotation.selectDailyPick(fixture, new Date('2027-03-14T05:59:59Z'));
+  const sfDay1Start = rotation.selectDailyPick(fixture, new Date('2027-03-14T06:00:00Z'));
+  const sfDay1End = rotation.selectDailyPick(fixture, new Date('2027-03-15T04:59:59Z'));
+  const sfDay2Start = rotation.selectDailyPick(fixture, new Date('2027-03-15T05:00:00Z'));
 
   assert.equal(sfDay1Start.product.id, sfDay1End.product.id);
   assert.equal((sfDay0End.index + 1) % sfDay0End.poolSize, sfDay1Start.index);

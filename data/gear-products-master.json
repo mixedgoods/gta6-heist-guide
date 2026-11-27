@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "2.1.0",
   "catalogName": "GTA6HeistGuide Gaming Gear & Leonida Drop Master Catalog",
   "lastUpdated": "2026-11-26",
   "associatesProgram": "Amazon Associates (Regular Program Only — Amazon Influencer Excluded)",
@@ -20,7 +20,11 @@
     "creatorsApiAvailable": false,
     "creatorsApiStatus": "Locked — Associates Central displays: To request access to Creators API you must have an Approved Associates Account (and >=10 qualifying sales within past 30 days)",
     "mobileIpLicenseRestriction": "Operating Policies (Updated April 14, 2026) IP License Sec. 2(d) requires express prior written approval to display Amazon Product Advertising Content on sites designed for mobile phones/handheld devices, and Sec. 2(h) prohibits storing/caching Amazon images (URL storage capped at 24 hours).",
-    "leonidaDropImagePolicy": "amazon-only-none-displayed-until-authorized"
+    "leonidaDropImagePolicy": "amazon-only-none-displayed-until-authorized",
+    "globalProductPhotoPolicy": "strict-amazon-only-no-wikimedia-no-illustrations",
+    "wikimediaPhotosRejectedCount": 8,
+    "authorizedAmazonPhotosAvailableCount": 0,
+    "fallbackCardMode": "compact-text-only-shared-card"
   },
   "leonidaDropConfig": {
     "featureName": "LEONIDA DROP",
@@ -317,7 +321,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A cyberpunk-styled tabletop bar housing five independent miniature color LCD screens with ambient RGB backlighting and customizable pixel-art or dashboard widgets.",
+      "keyConsideration": "Needs 2.4GHz Wi-Fi, USB-C wall power, and mobile app setup."
     },
     {
       "id": "koss-porta-pro",
@@ -355,26 +361,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/koss-porta-pro.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Koss Porta Pro Classic On-Ear Wired Headphones (silver steel headband and blue accents)",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY-SA 3.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "creator": "Malcolm Tyrrell",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Koss_PortaPro.jpg",
         "sourceOrigin": "Wikimedia Commons (Own work — File:Koss_PortaPro.jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/koss-porta-pro.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 1,
       "model": "Porta Pro Classic (On-Ear Wired, Silver/Blue)",
-      "imageWidth": 1000,
-      "imageHeight": 750,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
         "previousImageSource": "/assets/gear-photos/koss-porta-pro.webp",
@@ -382,7 +390,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Koss Porta Pro Classic (On-Ear Wired, Silver/Blue) (ASIN B00001P4ZH)",
         "usagePermission": "CC BY-SA 3.0 (Wikimedia Commons (Own work — File:Koss_PortaPro.jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "Ultra-lightweight collapsible 1984 open-back on-ear headphones with adjustable ComfortZone temple pads and a warm, punchy stereo tuning.",
+      "keyConsideration": "Open-back stereo only (no built-in mic); leaks sound in shared rooms."
     },
     {
       "id": "elgato-stream-deck-pedal",
@@ -448,7 +459,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A heavy-duty three-pedal USB footswitch with swappable tension springs that triggers Discord push-to-talk, mic mute, clip recording, or multi-step macros with your feet.",
+      "keyConsideration": "Windows/macOS USB only; not plug-and-play on PS5 or Xbox consoles."
     },
     {
       "id": "ugreen-nexode-rg-65w",
@@ -520,7 +533,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A compact 65W three-port GaN wall charger styled like a miniature desk robot whose built-in LED face changes expressions based on charging status.",
+      "keyConsideration": "USB-C cables sold separately; 65W output splits across active ports."
     },
     {
       "id": "8bitdo-retro-keyboard-n",
@@ -585,7 +600,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An 87-key tenkeyless wireless mechanical keyboard inspired by classic 1980s console hardware, bundled with two massive slap-to-trigger programmable 'Super Buttons.'",
+      "keyConsideration": "Tenkeyless layout with clicky switches; intended for PC and Mac setups."
     },
     {
       "id": "benq-screenbar",
@@ -653,7 +670,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Counterweight LED monitor light bar using asymmetric optics to brighten your desk and controller without adding glare onto your screen.",
+      "keyConsideration": "USB-powered monitor clamp; best on flat monitors without thick curved backs."
     },
     {
       "id": "koss-ksc75",
@@ -720,7 +739,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Quirky silver ear-clip wired headphones with titanium-coated drivers that skip the headband completely while earning cult audiophile praise for crisp imaging.",
+      "keyConsideration": "Open ear-clip stereo only (no built-in mic); light bass response."
     },
     {
       "id": "divoom-pixoo-64",
@@ -789,7 +810,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A square 10.3-inch 64×64 programmable LED pixel-art frame with 4,096 addressable LEDs that runs retro animations, desk clocks, or live streaming/follower tickers.",
+      "keyConsideration": "Requires 2.4GHz Wi-Fi and continuous USB-C power (no internal battery)."
     },
     {
       "id": "gamesir-g7-se",
@@ -855,7 +878,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An officially licensed wired Xbox and PC gamepad built with non-contact magnetic Hall Effect thumbsticks and triggers plus two lockable rear back buttons.",
+      "keyConsideration": "Wired USB-C only; compatible with Xbox and PC (not PS5)."
     },
     {
       "id": "nzxt-puck-black",
@@ -921,7 +946,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Magnetic split-silicone mount that attaches cleanly to steel PC cases to hang a headset and wrap excess cable slack.",
+      "keyConsideration": "Magnets require a magnetic steel PC case panel, not aluminum or glass."
     },
     {
       "id": "8bitdo-micro-gamepad",
@@ -963,27 +990,29 @@
           "url": "https://commons.wikimedia.org/wiki/File:8BitDo_Micro.jpg"
         }
       ],
-      "mediaType": "photo",
+      "mediaType": "none",
       "photoBackdrop": "dark",
-      "imageSource": "/assets/gear-photos/8bitdo-micro-blue.webp",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of 8BitDo Micro Pocket Bluetooth Gamepad in Blue with wrist strap",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY 4.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
         "creator": "NegiEion",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:8BitDo_Micro.jpg",
         "sourceOrigin": "Wikimedia Commons (Own work — File:8BitDo Micro.jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/8bitdo-micro-blue.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 8,
       "model": "Micro Bluetooth Gamepad (80HC, Blue Edition)",
-      "imageWidth": 1000,
-      "imageHeight": 666,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
         "previousImageSource": "/assets/gear-illustrations/8bitdo-micro.svg",
@@ -991,7 +1020,10 @@
         "exactProductMatch": "YES — Visually verified exact match to 8BitDo Micro Bluetooth Gamepad (80HC, Blue Edition) (ASIN B0CDG5HCCH)",
         "usagePermission": "CC BY 4.0 (Wikimedia Commons (Own work — File:8BitDo Micro.jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "A keychain-sized 24.8-gram Bluetooth mini controller with 16 tactile buttons and a dedicated Keyboard Mode that turns it into a one-handed wireless shortcut remote.",
+      "keyConsideration": "No analog sticks; built for 2D games and one-handed wireless shortcuts."
     },
     {
       "id": "sony-mdr-7506",
@@ -1029,26 +1061,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/sony-mdr-7506.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Sony MDR-7506 Professional Over-Ear Wired Studio Headphones (black with coiled cable)",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY 4.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
         "creator": "Ashley Pomeroy",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sony_MDR-7506_7615.jpg",
         "sourceOrigin": "Wikimedia Commons (Own work — File:Sony_MDR-7506_7615.jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/sony-mdr-7506.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 2,
       "model": "MDR-7506 Professional Over-Ear Wired Studio Headphones (Black)",
-      "imageWidth": 1000,
-      "imageHeight": 667,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
         "previousImageSource": "/assets/gear-photos/sony-mdr-7506.webp",
@@ -1056,7 +1090,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Sony MDR-7506 Professional Over-Ear Wired Studio Headphones (Black) (ASIN B000AJIF4E)",
         "usagePermission": "CC BY 4.0 (Wikimedia Commons (Own work — File:Sony_MDR-7506_7615.jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "Closed-back broadcast studio monitor headphones introduced in 1991 with 40mm neodymium drivers, folding hinges, and crisp vocal and directional detail.",
+      "keyConsideration": "Closed-back studio headphones with non-detachable coiled cable and no built-in mic."
     },
     {
       "id": "paladone-ps-icons",
@@ -1122,7 +1159,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An officially licensed PlayStation desktop accent lamp displaying the four classic controller symbols with steady glow, color-phasing, and music-reactive lighting modes.",
+      "keyConsideration": "Decorative accent light only; USB cable included, AAA batteries optional."
     },
     {
       "id": "vmoda-boompro-mic",
@@ -1193,7 +1232,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Braided 3.5mm audio cable with a flexible boom mic and inline mute that converts compatible stereo headphones into a gaming headset.",
+      "keyConsideration": "Only fits headphones with a standard detachable 3.5mm jack on the earcup."
     },
     {
       "id": "elgato-stream-deck-mk2",
@@ -1263,7 +1304,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Desktop control pad with 15 customizable LCD macro keys to trigger guides, audio profiles, clip saves, and multi-action shortcuts.",
+      "keyConsideration": "Requires Windows or macOS software; no direct PS5/Xbox console support."
     },
     {
       "id": "govee-flow-plus-h6056",
@@ -1335,7 +1378,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Pair of multi-zone RGBICWW LED light bars that wash walls behind your monitor or TV in smooth neon bias lighting.",
+      "keyConsideration": "Needs wall clearance behind your display and Govee app for scene control."
     },
     {
       "id": "philips-shp9500",
@@ -1402,7 +1447,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Lightweight, breathable open-back over-ear stereo headphones celebrated by independent audio labs for neutral tuning, spacious soundstage, and low-clamp marathon comfort.",
+      "keyConsideration": "Open-back stereo only (no built-in mic); pairs easily with BoomPro mic."
     },
     {
       "id": "sabrent-hb-um43-hub",
@@ -1468,7 +1515,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Slim 4-port USB 3.0 desktop hub with individual push-button power switches and LEDs to toggle mics, webcams, or accessories.",
+      "keyConsideration": "Unpowered USB 3.0 data hub; not meant for high-wattage fast charging."
     },
     {
       "id": "cable-guy-monkeybomb",
@@ -1535,7 +1584,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An officially licensed 8-inch collectible figure sculpted with outstretched arms to cradle a console controller or smartphone on your desk or TV stand.",
+      "keyConsideration": "Passive display stand only; does not charge controllers or phones."
     },
     {
       "id": "dualsense-white",
@@ -1572,26 +1623,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/dualsense-white.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Sony PlayStation DualSense Wireless Controller in White",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "Alex Cochrane",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playstation_DualSense_Controller.png",
         "sourceOrigin": "Wikimedia Commons (Own work — File:Playstation_DualSense_Controller.png)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/dualsense-white.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 6,
       "model": "DualSense Wireless Controller — White (CFI-ZCT1W)",
-      "imageWidth": 1000,
-      "imageHeight": 885,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
         "previousImageSource": "/assets/gear-photos/dualsense-white.webp",
@@ -1599,7 +1652,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Sony PlayStation DualSense Wireless Controller — White (CFI-ZCT1W) (ASIN B0FY6X2XXY)",
         "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:Playstation_DualSense_Controller.png))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "Official Sony PlayStation 5 wireless controller with adaptive trigger resistance, tactile haptic feedback, built-in microphone, and 3.5mm headset jack.",
+      "keyConsideration": "PS5, PC & mobile only (not Xbox); internal battery lasts ~6–12 hours."
     },
     {
       "id": "xbox-carbon-black",
@@ -1636,26 +1692,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/xbox-wireless-controller-carbon-black.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Microsoft Xbox Wireless Controller (Series X|S) in Carbon Black",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "uKER",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Carbon_Black.jpg",
         "sourceOrigin": "Wikimedia Commons (Own work — File:Xbox_Series_Controller_Carbon_Black.jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/xbox-wireless-controller-carbon-black.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 7,
       "model": "Xbox Wireless Controller (Series X|S) — Carbon Black (QAT-00001)",
-      "imageWidth": 1000,
-      "imageHeight": 750,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
         "previousImageSource": "/assets/gear-photos/xbox-wireless-controller-carbon-black.webp",
@@ -1663,7 +1721,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Microsoft Xbox Xbox Wireless Controller (Series X|S) — Carbon Black (QAT-00001) (ASIN B0F1HX3WXX)",
         "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:Xbox_Series_Controller_Carbon_Black.jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "Official Microsoft Xbox Series X|S wireless gamepad featuring textured trigger grips, a faceted hybrid D-pad, dedicated Share button, and 3.5mm audio jack.",
+      "keyConsideration": "Xbox & PC only (not PS5); ships with AA batteries unless paired with packs."
     },
     {
       "id": "kontrolfreek-heist",
@@ -1726,7 +1787,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Slip-on pink-and-blue performance thumbstick extenders that increase analog arc distance and add non-slip textured grip for aiming and driving.",
+      "keyConsideration": "PlayStation 5/4 stick fit only; Xbox controllers require a separate SKU."
     },
     {
       "id": "kontrolfreek-galaxy",
@@ -1789,7 +1852,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Asymmetric pair of concave textured thumbstick extenders combining a mid-rise left stick for movement/steering with a high-rise right stick for fine camera aim.",
+      "keyConsideration": "PlayStation 5/4 stick fit only; asymmetric height takes brief adjustment."
     },
     {
       "id": "logitech-g305",
@@ -1829,26 +1894,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/logitech-g305-black.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Logitech G305 LIGHTSPEED Wireless Gaming Mouse in Black",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "Julien Sinan",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Une_souris_Logitech_G305..jpg",
         "sourceOrigin": "Wikimedia Commons (Own work — File:Une souris Logitech G305..jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/logitech-g305-black.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 3,
       "model": "G305 LIGHTSPEED Wireless Gaming Mouse (910-005280, Black)",
-      "imageWidth": 1000,
-      "imageHeight": 750,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "GENERATED / ARTIFICIAL IMAGE",
         "previousImageSource": "/assets/gear-illustrations/logitech-g305.svg",
@@ -1856,7 +1923,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Logitech G G305 LIGHTSPEED Wireless Gaming Mouse (910-005280, Black) (ASIN B07CMS5Q6P)",
         "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:Une souris Logitech G305..jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "A classic, symmetrical low-latency wireless PC gaming mouse powered by Logitech's HERO 12K sensor and a single AA battery rated up to 250 hours of play.",
+      "keyConsideration": "2.4GHz USB dongle only (no Bluetooth); PC and Mac mouse only."
     },
     {
       "id": "powera-ps5-dock",
@@ -1919,7 +1989,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Officially licensed click-down AC charging cradle that tops up two PS5 DualSense controllers simultaneously without occupying console USB ports.",
+      "keyConsideration": "PS5 DualSense only; will not fit Xbox controllers or bulky cases."
     },
     {
       "id": "powera-xbox-dock",
@@ -1982,7 +2054,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Officially licensed Designed-for-Xbox dual desktop cradle bundled with two rechargeable battery packs and snap-on charge-through battery doors.",
+      "keyConsideration": "Xbox Series X|S & Xbox One pads only; includes two rechargeable packs."
     },
     {
       "id": "turtle-beach-recon-70",
@@ -2043,7 +2117,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Lightweight 3.5mm wired gaming headset with 40mm speakers, cushioned synthetic-leather earpads, and a flip-to-mute boom microphone.",
+      "keyConsideration": "Wired 3.5mm only; lightweight plastic frame with flip-to-mute boom mic."
     },
     {
       "id": "hyperx-stinger-2-core",
@@ -2103,7 +2179,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Lightweight white-and-blue PlayStation wired gaming headset with 40mm drivers, soft fabric ear cushions, on-ear volume slider, and swivel-to-mute microphone.",
+      "keyConsideration": "Wired 3.5mm PlayStation-styled headset; basic plastic build without active noise canceling."
     },
     {
       "id": "samson-q2u-mic",
@@ -2168,7 +2246,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A hybrid dynamic cardioid microphone featuring simultaneous USB and XLR outputs, zero-latency 3.5mm monitoring, and bundled tripod stand, clip, and cables.",
+      "keyConsideration": "Works via USB on PC/PS5 and XLR interfaces; not Xbox USB compatible."
     },
     {
       "id": "wd-black-sn850p",
@@ -2232,7 +2312,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Officially licensed 2TB PCIe Gen4 x4 NVMe M.2 2280 SSD with a custom pre-fitted PlayStation 5 heatsink rated up to 7,300 MB/s sequential read.",
+      "keyConsideration": "PS5 & PC M.2 2280 only; does NOT fit Xbox Series X|S."
     },
     {
       "id": "lexar-nm790-heatsink",
@@ -2292,7 +2374,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "1TB PCIe Gen4 M.2 2280 internal SSD with a pre-installed low-profile heatsink rated up to 7,400 MB/s for PS5 and PC.",
+      "keyConsideration": "PS5 & PC M.2 2280 only; does NOT fit Xbox Series X|S."
     },
     {
       "id": "samsung-990-pro-4tb",
@@ -2329,26 +2413,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/samsung-990-pro-4tb.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD bare drive (MZ-V9P4T0)",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC BY-SA 4.0)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
         "creator": "Dinkun Chen",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg",
         "sourceOrigin": "Wikimedia Commons (Own work — File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/samsung-990-pro-4tb.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 5,
       "model": "990 PRO 4TB PCIe 4.0 NVMe M.2 SSD Bare Drive (MZ-V9P4T0B/AM)",
-      "imageWidth": 1000,
-      "imageHeight": 673,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
         "previousImageSource": "/assets/gear-photos/samsung-990-pro-4tb.webp",
@@ -2356,7 +2442,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Samsung 990 PRO 4TB PCIe 4.0 NVMe M.2 SSD Bare Drive (MZ-V9P4T0B/AM) (ASIN B0CHGT1KFJ)",
         "usagePermission": "CC BY-SA 4.0 (Wikimedia Commons (Own work — File:SAMSUNG_M.2_NVMe_SSD_990_PRO_4TB.jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "High-capacity 4TB bare PCIe Gen4 M.2 2280 internal SSD rated up to 7,450 MB/s read for PC builds or DIY PS5 installs.",
+      "keyConsideration": "Bare M.2 drive (no heatsink): add a PS5 heatsink for console use; not for Xbox."
     },
     {
       "id": "blue-yeti-blackout",
@@ -2394,26 +2483,28 @@
           "url": "https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg"
         }
       ],
-      "mediaType": "photo",
-      "imageSource": "/assets/gear-photos/blue-yeti-blackout.webp",
+      "mediaType": "none",
+      "imageSource": null,
       "imageAlt": "Actual product photograph of Logitech Blue Yeti USB Condenser Microphone in Blackout finish",
       "imageLicense": {
-        "status": "Approved (Verified Actual Product Photo — CC0 1.0 Public Domain)",
+        "status": "Rejected — Wikimedia Commons product photo excluded under strict Amazon-only product image policy",
         "licenseName": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
         "creator": "Guillaume Pasquier",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg",
         "sourceOrigin": "Wikimedia Commons / Flickr FlickreviewR 2 (File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg)",
-        "badgeLabel": "Verified Product Photo"
+        "badgeLabel": "Verified Product Photo",
+        "rejectedPreviousAsset": "/assets/gear-photos/blue-yeti-blackout.webp",
+        "rejectedDate": "2026-11-26"
       },
       "researchVerifiedDate": "2026-11-26",
       "linkVerifiedDate": "2026-11-26",
       "active": true,
-      "dailyEligible": true,
+      "dailyEligible": false,
       "dailyOrder": 4,
       "model": "Blue Yeti USB Condenser Microphone — Blackout (988-000100)",
-      "imageWidth": 750,
-      "imageHeight": 1000,
+      "imageWidth": null,
+      "imageHeight": null,
       "imageAudit": {
         "previousClassification": "VERIFIED ACTUAL PRODUCT PHOTO",
         "previousImageSource": "/assets/gear-photos/blue-yeti-blackout.webp",
@@ -2421,7 +2512,10 @@
         "exactProductMatch": "YES — Visually verified exact match to Logitech / Blue Blue Yeti USB Condenser Microphone — Blackout (988-000100) (ASIN B00N1YPXW2)",
         "usagePermission": "CC0 1.0 (Wikimedia Commons / Flickr FlickreviewR 2 (File:Blue_Yeti_Blackout_USB_microphone_(51844234538).jpg))",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "dailyPhotoHold": true,
+      "cardSummary": "Heavy-base desktop USB condenser microphone featuring four selectable pickup patterns, onboard hardware mute/gain dials, and zero-latency 3.5mm headphone monitoring.",
+      "keyConsideration": "Condenser mic picks up room echo/keyboards; works on PC, Mac & PS5 USB."
     },
     {
       "id": "new-bee-headset-stand",
@@ -2483,7 +2577,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Compact, weighted desktop stand combining an anodized aluminum post with a flexible curved TPU headrest that protects headband padding.",
+      "keyConsideration": "Passive desk stand only; no USB pass-through or charging."
     },
     {
       "id": "ohill-cable-clips",
@@ -2545,7 +2641,9 @@
         "exactProductMatch": "N/A — Fake illustration removed; text-only presentation used",
         "usagePermission": "No permitted real photo currently obtainable: Amazon SiteStripe image links discontinued; Creators API credentials & IP License 2(c)(d) mobile approval not present; manufacturer press kit does not grant blanket commercial affiliate reuse; no exact-match CC0/CC BY/CC BY-SA photo exists on Wikimedia Commons or Openverse.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A 16-pack of assorted single- and multi-slot flexible silicone clips with adhesive pads to anchor controller charging leads and headset wires along desk edges.",
+      "keyConsideration": "Adhesive pads bond best to smooth, clean desk surfaces."
     },
     {
       "id": "elgato-stream-deck-plus-rejected",
@@ -3046,7 +3144,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A hybrid desktop control surface combining eight customizable LCD macro keys, four pushable rotary encoder dials, and a dynamic touch strip.",
+      "keyConsideration": "Windows/macOS USB-C only; requires Elgato software (not direct console plug-and-play)."
     },
     {
       "id": "benq-screenbar-halo-2",
@@ -3113,7 +3213,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An asymmetric anti-glare monitor light bar with an upgraded rear ambient halo backlight, ultrasonic presence sensor, and a weighted wireless rotary desk puck.",
+      "keyConsideration": "Front and rear lights share one color temperature; rear glow works best near a wall."
     },
     {
       "id": "8bitdo-retro-keyboard-c64",
@@ -3182,7 +3284,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An 87-key wireless hot-swappable mechanical keyboard inspired by the classic Commodore 64, bundled with giant programmable Dual Super Buttons and an oversized arcade Super Stick.",
+      "keyConsideration": "Clicky Kailh Box White switches; wireless PC/Android keyboard (not console native)."
     },
     {
       "id": "8bitdo-arcade-stick-xbox",
@@ -3247,7 +3351,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "Officially licensed wireless arcade fight stick for Xbox Series X|S and PC with control toggles, button remapping, and a 3.5mm audio jack.",
+      "keyConsideration": "Xbox & Windows PC only (not PS5); large desk/lap footprint."
     },
     {
       "id": "divoom-ditoo-retro-speaker",
@@ -3314,7 +3420,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A miniature retro-computer-shaped 15W Bluetooth speaker featuring a programmable 16×16 pixel-art LED display, tactile mechanical keys, and a tiny side arcade lever.",
+      "keyConsideration": "Compact 15W desk speaker with pixel app setup; mono-oriented footprint."
     },
     {
       "id": "divoom-pixoo-max",
@@ -3381,7 +3489,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A bold 9.6-inch square LED display packing 1,024 individually programmable RGB pixels for animated retro sprites, desk clocks, voice-reactive equalizers, and custom signs.",
+      "keyConsideration": "Bluetooth app control with USB-C power; decorative pixel canvas."
     },
     {
       "id": "govee-table-lamp-2",
@@ -3448,7 +3558,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A compact cylindrical RGBICWW smart desk lamp capable of displaying layered multi-color Vice-style gradients, warm/cool white ambient light, and 64 animated scenes with Matter support.",
+      "keyConsideration": "Requires 2.4GHz Wi-Fi for Matter/app control; ambient desk glow."
     },
     {
       "id": "8bitdo-retro-18-numpad",
@@ -3513,7 +3625,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "18-key NES-styled wireless mechanical numpad with hot-swappable tactile switches and a toggle that converts it into a standalone LED calculator.",
+      "keyConsideration": "PC/Mac/Android wireless numpad; standalone calculator mode is basic arithmetic."
     },
     {
       "id": "vaydeer-usb-volume-knob",
@@ -3578,7 +3692,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A compact CNC-machined metal desktop rotary dial that gives any PC or Mac instant physical volume tuning, press-to-mute control, and selectable adjustment steps over USB.",
+      "keyConsideration": "Wired USB PC/Mac audio controller; not designed for PS5 or Xbox."
     },
     {
       "id": "fosi-audio-k7-dac",
@@ -3644,7 +3760,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An angled metal desktop gaming DAC and 2,100mW headphone amplifier combining audiophile AKM conversion, physical bass/treble and mic knobs, and plug-and-play PS5/PC connectivity.",
+      "keyConsideration": "Requires wired headphones/speakers; works on PS5, Switch & PC via USB (not Xbox)."
     },
     {
       "id": "edifier-mp230-retro-speaker",
@@ -3709,7 +3827,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A 1950s-radio-inspired wooden-enclosure 20W stereo desk speaker featuring mechanical piano-key buttons, woven acoustic grille, and built-in USB-C PC soundcard input.",
+      "keyConsideration": "Bluetooth, AUX & USB-C audio; compact tabletop stereo footprint."
     },
     {
       "id": "elgato-stream-deck-neo",
@@ -3774,7 +3894,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A streamlined white desktop macro controller with eight customizable LCD shortcut keys, two touch page-switch points, and an always-visible front clock/status infobar.",
+      "keyConsideration": "Windows/macOS USB-C only; fixed white finish with 8 LCD keys."
     },
     {
       "id": "tourbox-neo-controller",
@@ -3839,7 +3961,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An unmistakable sculpted one-handed desktop console covered in differently shaped knobs, scroll wheels, a tactile dial, and D-pad keys designed for eyes-free blind operation.",
+      "keyConsideration": "Wired USB PC/Mac editing & shortcut console; requires TourBox Console app."
     },
     {
       "id": "pulsar-superglide-glass-pad",
@@ -3904,7 +4028,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "An oversized XXL gaming desk surface forged from strong aluminosilicate tempered glass with a full-coverage molded silicone base for ultra-low-friction, micro-consistent mouse tracking.",
+      "keyConsideration": "Hard tempered glass glides very fast; needs PTFE mouse skates and wears softer feet quicker."
     },
     {
       "id": "cable-guy-master-chief",
@@ -3971,7 +4097,9 @@
         "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
         "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
         "verifiedDate": "2026-11-26"
-      }
+      },
+      "cardSummary": "A weighted, officially licensed 8-inch Halo Master Chief collectible figure engineered with outstretched hands to cradle a gaming controller or smartphone on your desk.",
+      "keyConsideration": "Passive controller/phone holder only; no built-in charging."
     },
     {
       "id": "divoom-ditoo-pro-b0d46r46wy-rejected",

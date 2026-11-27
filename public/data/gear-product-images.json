@@ -1,8 +1,9 @@
 {
-  "version": "47.1-real-photos-only",
+  "version": "47.2-strict-amazon-only-archived-wikimedia",
   "last_verified": "2026-11-26",
   "tracking_id": "gta6heistguid-20",
-  "policy": "Actual product photographs only — zero AI-generated images, zero synthetic photography, zero illustrations or generic substitutes. Only exact-match real photographs with verified commercial reuse rights (CC0, Public Domain, CC BY, CC BY-SA) or authorized Amazon/manufacturer media permissions are approved. Zero scraped or hotlinked Amazon images.",
+  "active_in_product_cards": false,
+  "policy": "STRICT AMAZON-ONLY PRODUCT PHOTO POLICY: Zero Wikimedia product photos, zero AI-generated images, zero synthetic photography, zero generic illustrations or SVGs, and zero unapproved manufacturer/retailer images may appear in Amazon product cards. All 8 legacy Wikimedia entries below are archived/excluded from product card rendering; compact text-only cards are used until authorized Amazon product imagery is permitted.",
   "rights_disclaimer": "Creative Commons and CC0 licenses apply solely to the copyright in each photograph held by its creator. They do not grant trademark rights, brand affiliation, or endorsement by any manufacturer, retailer, or photographer. All local WebP files are proportionally downscaled format conversions of the original photographs with no cropping or creative adaptation.",
   "images": [
     {

@@ -1,18 +1,18 @@
 // ==========================================================================
-// GTA6HEISTGUIDE.COM — GAMING GEAR HUB & LEONIDA DROP ENGINE
+// GTA6HEISTGUIDE.COM — GAMING GEAR HUB & LEONIDA DROP ENGINE (GLOBAL COMPACT CARDS)
 // Renders:
-//   1. LEONIDA DROP — three coordinated, unusual gaming discoveries that
-//      rotate across themed collections on every page refresh (tab-scoped
-//      sessionStorage cycle with zero repeats until cycle end) plus an
-//      interactive SHOW ANOTHER DROP button.
-//   2. All 6 curated Gaming Gear catalog sections + platform filters.
+//   1. LEONIDA DROP — three coordinated, balanced unusual gaming discoveries
+//      (1 Editor's Pick + 2 Related Picks) in one equal-height 3-column desktop
+//      row that rotates across themed collections on refresh and via SHOW ANOTHER DROP.
+//   2. All 6 curated Gaming Gear catalog sections + platform filters using the
+//      exact same global compact .amz-card component with expandable specifications.
 //
 // Compliance invariants:
-// - Strictly Amazon-Only product images inside LEONIDA DROP: never renders
-//   Wikimedia Commons, manufacturer, third-party, AI, SVG, or placeholder
-//   images in LEONIDA DROP. Displays authorized Amazon images ONLY when a
-//   verified, mobile-approved Amazon hydrator supplies <24h Amazon CDN URLs.
-// - Preserves Phase 47 verified real-photo cards in the 6 lower catalog sections.
+// - Strict Amazon-only product image policy across the entire page: NEVER renders
+//   Wikimedia Commons, manufacturer, third-party, AI, SVG, or placeholder images.
+//   Displays authorized Amazon product photography ONLY when a verified,
+//   mobile-approved <24h Amazon Creators API / official widget hydrator supplies it;
+//   renders compact, balanced text-only cards otherwise.
 // - Preserves Phase 35.1C Amazon Placement Pause everywhere else on the site
 //   (never alters window.SITE_CONFIG.enableAmazonProductPlacements).
 // - Zero cookies, zero user profiling, zero timers, zero auto-redirects,
@@ -111,144 +111,105 @@
     );
   }
 
-  function renderPhotoCredit(product) {
-    var lic = product.imageLicense || {};
-    if (product.mediaType !== 'photo') return '';
-    if (lic.creator && lic.sourceUrl && lic.licenseName && lic.licenseUrl) {
-      return (
-        '<div class="gg-media-credit">' +
-          'Photo: <a href="' + esc(lic.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(lic.creator) + '</a>' +
-          ' &middot; <a href="' + esc(lic.licenseUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(lic.licenseName) + '</a>' +
-        '</div>'
-      );
-    }
-    if (lic.sourceOrigin) {
-      return '<div class="gg-media-credit">' + esc(lic.sourceOrigin) + '</div>';
-    }
-    return '';
-  }
-
-  function renderPlatformPills(platforms) {
+  function renderPlatformChips(platforms) {
     if (!Array.isArray(platforms) || !platforms.length) return '';
-    var html = '<div class="gg-platform-row" aria-label="Compatible platforms">';
+    var html = '<div class="amz-card__compat-row" aria-label="Compatible platforms">';
     for (var i = 0; i < platforms.length; i++) {
       var key = normalizePlatformTag(platforms[i]);
-      html += '<span class="gg-plat-chip gg-plat-chip--' + esc(key) + '">' + esc(platforms[i]) + '</span>';
+      html += '<span class="amz-plat-chip amz-plat-chip--' + esc(key) + '">' + esc(platforms[i]) + '</span>';
     }
     html += '</div>';
     return html;
   }
 
-  // Strictly Amazon-Only image renderer for LEONIDA DROP cards.
+  // Strictly Amazon-Only authorized product photo renderer.
   // Returns empty string unless product carries a verified, mobile-approved,
   // <24h Amazon CDN image from Creators API or an official Amazon widget.
-  function renderAuthorizedDropAmazonMedia(item, collectionId, placement) {
-    if (!global.GTA6GearRotation || !item || !item.product) return '';
-    var p = item.product;
-    if (!global.GTA6GearRotation.isAuthorizedAmazonDropImage(p)) {
+  function renderAuthorizedAmazonMedia(product, placement, extra) {
+    if (!global.GTA6GearRotation || !product) return '';
+    if (!global.GTA6GearRotation.isAuthorizedAmazonDropImage(product)) {
       return '';
     }
-    var img = p.amazonDropImage;
-    var imgAttrs = buildLinkAttrs(p, placement, 'image', {
-      dailySlot: 'drop_' + collectionId,
-      collectionId: collectionId,
-      position: item.position
-    });
+    var img = product.amazonDropImage;
+    var imgAttrs = buildLinkAttrs(product, placement, 'image', extra);
     var w = Number(img.width) > 0 ? Number(img.width) : 500;
     var h = Number(img.height) > 0 ? Number(img.height) : 500;
     return (
-      '<a ' + imgAttrs + ' class="ld-amazon-media" aria-label="View ' + esc(p.productName) + ' on Amazon">' +
-        '<img src="' + esc(img.url) + '" alt="' + esc(img.alt || p.productName) + '" width="' + esc(w) + '" height="' + esc(h) + '" loading="eager" decoding="async">' +
-        '<span class="gg-media-badge gg-media-badge--photo">Official Amazon Product Image</span>' +
+      '<a ' + imgAttrs + ' class="amz-card__media" aria-label="View ' + esc(product.productName) + ' on Amazon">' +
+        '<img src="' + esc(img.url) + '" alt="' + esc(img.alt || product.productName) + '" width="' + esc(w) + '" height="' + esc(h) + '" loading="lazy" decoding="async">' +
       '</a>'
     );
   }
 
-  function renderDropMainCard(item, collection, dropCfg) {
-    var p = item.product;
-    var placement = 'leonida_drop_main';
-    var ctaLabel = (dropCfg && dropCfg.ctaLabel) || 'CHECK IT OUT ON AMAZON';
-    var ctaAttrs = buildLinkAttrs(p, placement, 'cta', {
-      dailySlot: 'drop_' + collection.id,
-      collectionId: collection.id,
-      position: item.position
-    });
-    var amazonMediaHtml = renderAuthorizedDropAmazonMedia(item, collection.id, placement);
+  function renderGlobalProductCard(product, opts) {
+    var cfg = opts || {};
+    var isFeatured = Boolean(cfg.featured);
+    var roleText = cfg.roleLabel || product.badge || product.category;
+    var roleCls = isFeatured ? 'amz-card__role amz-card__role--pick' : 'amz-card__role';
+    var placement = cfg.placement || product.analyticsPlacement || 'gaming_gear_catalog';
+    var extraAttrs = {
+      dailySlot: cfg.dailySlot || 'catalog',
+      collectionId: cfg.collectionId || '',
+      position: cfg.position || ''
+    };
+    var ctaAttrs = buildLinkAttrs(product, placement, 'cta', extraAttrs);
+    var mediaHtml = renderAuthorizedAmazonMedia(product, placement, extraAttrs);
+    var hasPhoto = Boolean(mediaHtml);
+
+    var summaryText = product.cardSummary || product.shortDescription || '';
+    var considerationText = product.keyConsideration || product.honestDisadvantages || '';
+    var accent = product.accent || cfg.accent || 'cyan';
+
+    var dropDataAttrs = cfg.dropRole
+      ? ' data-drop-role="' + esc(cfg.dropRole) + '" data-drop-position="' + esc(cfg.position) + '"'
+      : '';
+
+    var detailParts = [];
+    if (product.model) {
+      detailParts.push('<p><strong>Model:</strong> ' + esc(product.model) + '</p>');
+    }
+    if (cfg.pairingNote) {
+      detailParts.push('<p><strong>Why it pairs in this drop:</strong> ' + esc(cfg.pairingNote) + '</p>');
+    } else if (product.whyInteresting) {
+      detailParts.push('<p><strong>Why consider it:</strong> ' + esc(product.whyInteresting) + '</p>');
+    }
+    if (product.whatMakesItDifferent && isFeatured) {
+      detailParts.push('<p><strong>Key highlight:</strong> ' + esc(product.whatMakesItDifferent) + '</p>');
+    }
+    if (product.compatibility) {
+      detailParts.push('<p><strong>Compatibility:</strong> ' + esc(product.compatibility) + '</p>');
+    }
+    if (product.honestDisadvantages) {
+      detailParts.push('<p class="amz-detail-cons"><strong>Trade-offs:</strong> ' + esc(product.honestDisadvantages) + '</p>');
+    }
 
     return (
-      '<article class="ld-card ld-card--main ld-accent-' + esc(p.accent || collection.accent || 'cyan') + '" data-drop-role="main" data-drop-position="1" data-product-id="' + esc(p.id) + '" data-asin="' + esc(p.asin) + '">' +
-        '<div class="ld-card-main-grid' + (amazonMediaHtml ? ' has-amazon-media' : '') + '">' +
-          '<div class="ld-main-copy">' +
-            '<div class="ld-card-badges">' +
-              '<span class="ld-role-pill ld-role-pill--main">' + esc(item.roleLabel || "Main Editor's Pick") + '</span>' +
-              '<span class="ld-category-pill">' + esc(p.category) + '</span>' +
-              '<span class="ld-brand-tag">' + esc(p.manufacturer) + '</span>' +
-              (p.badge ? '<span class="ld-highlight-pill">' + esc(p.badge) + '</span>' : '') +
-            '</div>' +
-            '<h3 class="ld-product-title ld-product-title--main">' + esc(p.productName) + '</h3>' +
-            (p.model ? '<p class="ld-model-line">Verified Model: ' + esc(p.model) + '</p>' : '') +
-            renderPlatformPills(p.platforms) +
-            '<p class="ld-main-intro">' + esc(p.editorialIntro || p.shortDescription) + '</p>' +
-            '<dl class="ld-specs-grid">' +
-              '<div class="ld-spec-box">' +
-                '<dt>Why It Anchors This Drop</dt>' +
-                '<dd>' + esc(item.pairingNote || p.whyInteresting) + '</dd>' +
-              '</div>' +
-              '<div class="ld-spec-box">' +
-                '<dt>What Makes It Different</dt>' +
-                '<dd>' + esc(p.whatMakesItDifferent || p.whyInteresting) + '</dd>' +
-              '</div>' +
-            '</dl>' +
+      '<article class="amz-card amz-card--accent-' + esc(accent) + (isFeatured ? ' amz-card--featured' : '') + (hasPhoto ? ' amz-card--photo' : ' amz-card--text-only') + '"' +
+        ' data-product-id="' + esc(product.id) + '"' +
+        ' data-asin="' + esc(product.asin) + '"' +
+        ' data-media-mode="' + (hasPhoto ? 'photo' : 'text-only') + '"' +
+        dropDataAttrs + '>' +
+        mediaHtml +
+        '<div class="amz-card__body">' +
+          '<div class="amz-card__top">' +
+            '<span class="' + roleCls + '">' + esc(roleText) + '</span>' +
+            '<span class="amz-card__brand">' + esc(product.manufacturer) + '</span>' +
+            '<span class="amz-card__paid">Paid link</span>' +
           '</div>' +
-          '<div class="ld-main-action-col">' +
-            amazonMediaHtml +
-            '<div class="ld-action-panel">' +
-              '<div class="ld-action-meta">' +
-                '<p class="ld-meta-line"><strong>Compatibility:</strong> ' + esc(p.compatibility) + '</p>' +
-                '<p class="ld-meta-line ld-meta-line--caveat"><strong>Honest Trade-Off:</strong> ' + esc(p.honestDisadvantages) + '</p>' +
-              '</div>' +
-              '<a ' + ctaAttrs + ' class="ld-cta-btn ld-cta-btn--main">' + esc(ctaLabel) + ' <span aria-hidden="true">&rarr;</span></a>' +
-              '<p class="ld-inline-note"><strong>Paid Amazon Link:</strong> View live official product photos, specs &amp; current pricing directly on Amazon US.</p>' +
-            '</div>' +
-          '</div>' +
+          '<h3 class="amz-card__title">' + esc(product.productName) + '</h3>' +
+          '<p class="amz-card__desc">' + esc(summaryText) + '</p>' +
+          renderPlatformChips(product.platforms) +
+          (considerationText
+            ? '<p class="amz-card__consideration"><strong>Note:</strong> ' + esc(considerationText) + '</p>'
+            : '') +
+          '<details class="amz-card__details">' +
+            '<summary class="amz-card__details-summary">View specifications &amp; compatibility</summary>' +
+            '<div class="amz-card__details-body">' + detailParts.join('') + '</div>' +
+          '</details>' +
         '</div>' +
-      '</article>'
-    );
-  }
-
-  function renderDropSupportingCard(item, collection, dropCfg) {
-    var p = item.product;
-    var placement = 'leonida_drop_supporting';
-    var ctaLabel = (dropCfg && dropCfg.supportingCtaLabel) || 'CHECK ON AMAZON';
-    var ctaAttrs = buildLinkAttrs(p, placement, 'cta', {
-      dailySlot: 'drop_' + collection.id,
-      collectionId: collection.id,
-      position: item.position
-    });
-    var amazonMediaHtml = renderAuthorizedDropAmazonMedia(item, collection.id, placement);
-
-    return (
-      '<article class="ld-card ld-card--supporting ld-accent-' + esc(p.accent || collection.accent || 'cyan') + '" data-drop-role="supporting" data-drop-position="' + esc(item.position) + '" data-product-id="' + esc(p.id) + '" data-asin="' + esc(p.asin) + '">' +
-        amazonMediaHtml +
-        '<div class="ld-supp-body">' +
-          '<div class="ld-card-badges">' +
-            '<span class="ld-role-pill">' + esc(item.roleLabel || ('Complementary Pick #' + item.position)) + '</span>' +
-            '<span class="ld-brand-tag">' + esc(p.manufacturer) + '</span>' +
-            (p.badge ? '<span class="ld-highlight-pill">' + esc(p.badge) + '</span>' : '') +
-          '</div>' +
-          '<h3 class="ld-product-title">' + esc(p.productName) + '</h3>' +
-          (p.model ? '<p class="ld-model-line">' + esc(p.model) + '</p>' : '') +
-          renderPlatformPills(p.platforms) +
-          '<p class="ld-supp-desc">' + esc(p.shortDescription) + '</p>' +
-          '<div class="ld-supp-notes">' +
-            '<p class="ld-meta-line"><strong>Why it pairs here:</strong> ' + esc(item.pairingNote || p.whyInteresting) + '</p>' +
-            '<p class="ld-meta-line"><strong>Compatibility:</strong> ' + esc(p.compatibility) + '</p>' +
-            '<p class="ld-meta-line ld-meta-line--caveat"><strong>Trade-off:</strong> ' + esc(p.honestDisadvantages) + '</p>' +
-          '</div>' +
-        '</div>' +
-        '<div class="ld-supp-foot">' +
-          '<span class="ld-inline-note">Paid Amazon link &mdash; view official photos &amp; current price on Amazon.</span>' +
-          '<a ' + ctaAttrs + ' class="ld-cta-btn ld-cta-btn--supporting">' + esc(ctaLabel) + ' <span aria-hidden="true">&rarr;</span></a>' +
+        '<div class="amz-card__foot">' +
+          '<a ' + ctaAttrs + ' class="amz-card__cta">View on Amazon <span aria-hidden="true">&rarr;</span></a>' +
+          '<p class="amz-card__disclosure">Paid Amazon link &middot; View photos &amp; price on Amazon</p>' +
         '</div>' +
       '</article>'
     );
@@ -269,23 +230,33 @@
     var nextBtnLabel = dropCfg.nextDropButtonLabel || 'SHOW ANOTHER DROP';
     var assocStatement = dropCfg.disclosureStatement || 'As an Amazon Associate I earn from qualifying purchases.';
 
-    var mainHtml = renderDropMainCard(col.items[0], col, dropCfg);
-    var suppHtml =
-      renderDropSupportingCard(col.items[1], col, dropCfg) +
-      renderDropSupportingCard(col.items[2], col, dropCfg);
+    var cardsHtml = col.items.map(function (item, idx) {
+      var isMain = idx === 0;
+      return renderGlobalProductCard(item.product, {
+        featured: isMain,
+        roleLabel: isMain ? "Editor's Pick" : ('Related Pick #' + item.position),
+        placement: isMain ? 'leonida_drop_main' : 'leonida_drop_supporting',
+        dailySlot: 'drop_' + col.id,
+        collectionId: col.id,
+        position: item.position,
+        dropRole: item.role,
+        pairingNote: item.pairingNote,
+        accent: col.accent || 'cyan'
+      });
+    }).join('');
 
     mount.innerHTML =
       '<div class="ld-shell ld-accent-' + esc(col.accent || 'cyan') + '" data-collection-id="' + esc(col.id) + '" data-drop-slot="' + esc(selection.slotNumber) + '" data-drop-total="' + esc(selection.totalCollections) + '" data-drop-cycle="' + esc(selection.cycle) + '">' +
         '<div class="ld-header">' +
           '<div class="ld-header-left">' +
-            '<span class="ld-kicker">CURATED 3-PRODUCT GAMING COLLECTION &middot; REFRESH FOR A NEW DROP</span>' +
+            '<span class="ld-kicker">3-PRODUCT COLLECTION &middot; REFRESH FOR A NEW DROP</span>' +
             '<h2 class="ld-title" id="leonidaDropHeading">' + esc(featureName) + '</h2>' +
             '<p class="ld-subtitle">' + esc(subtitle) + '</p>' +
           '</div>' +
           '<div class="ld-header-controls">' +
             '<div class="ld-cycle-meta" aria-live="polite">' +
               '<span class="ld-theme-pill">' + esc(col.name) + '</span>' +
-              '<span class="ld-counter-pill">Drop ' + esc(selection.slotNumber) + ' of ' + esc(selection.totalCollections) + ' &middot; Refresh or tap for next</span>' +
+              '<span class="ld-counter-pill">Drop ' + esc(selection.slotNumber) + ' of ' + esc(selection.totalCollections) + '</span>' +
             '</div>' +
             '<button type="button" id="showAnotherDropBtn" class="ld-next-btn" data-action="show-another-drop" aria-label="Show another three-product Leonida Drop collection">' +
               '<span class="ld-next-icon" aria-hidden="true">&#8635;</span> ' + esc(nextBtnLabel) +
@@ -294,21 +265,16 @@
         '</div>' +
 
         '<div class="ld-theme-banner">' +
-          '<div class="ld-theme-banner-copy">' +
-            '<span class="ld-theme-eyebrow">Active Theme: ' + esc(col.name) + (col.tagline ? ' &middot; ' + esc(col.tagline) : '') + '</span>' +
-            '<p class="ld-theme-desc">' + esc(col.description) + '</p>' +
-          '</div>' +
+          '<span class="ld-theme-eyebrow">' + esc(col.name) + (col.tagline ? ' &middot; ' + esc(col.tagline) : '') + '</span>' +
+          '<p class="ld-theme-desc">' + esc(col.description) + '</p>' +
         '</div>' +
 
-        '<div class="ld-cards-layout">' +
-          mainHtml +
-          '<div class="ld-supporting-grid">' +
-            suppHtml +
-          '</div>' +
+        '<div class="amz-grid amz-grid--drop">' +
+          cardsHtml +
         '</div>' +
 
-        '<div class="ld-footer-disclosure" role="note" aria-label="Leonida Drop affiliate disclosure">' +
-          '<strong>Affiliate Disclosure:</strong> ' + esc(assocStatement) + ' Every product button above links directly to its verified Amazon US listing (<code>gta6heistguid-20</code>). We may earn a commission at no extra cost to you. Product photos and live pricing are viewed directly on Amazon.' +
+        '<div class="amz-disclosure-strip" role="note" aria-label="Leonida Drop affiliate disclosure">' +
+          '<strong>Affiliate Disclosure:</strong> ' + esc(assocStatement) + ' Every button links directly to Amazon US (<code>gta6heistguid-20</code>). Product photos and live pricing are viewed on Amazon.' +
         '</div>' +
       '</div>';
 
@@ -353,57 +319,6 @@
     });
   }
 
-  function renderCatalogCard(product) {
-    var hasPhoto = product.mediaType === 'photo' && Boolean(product.imageSource);
-    var placement = product.analyticsPlacement || 'gaming_gear_catalog';
-    var ctaAttrs = buildLinkAttrs(product, placement, 'cta', { dailySlot: 'catalog' });
-    var mediaHtml = '';
-
-    if (hasPhoto) {
-      var imgAttrs = buildLinkAttrs(product, placement, 'image', { dailySlot: 'catalog' });
-      var imgW = Number(product.imageWidth) > 0 ? Number(product.imageWidth) : 1000;
-      var imgH = Number(product.imageHeight) > 0 ? Number(product.imageHeight) : 750;
-      var cardDarkClass = product.photoBackdrop === 'dark' ? ' is-photo-dark' : '';
-      mediaHtml =
-        '<div class="gg-card-media-wrap">' +
-          '<a ' + imgAttrs + ' class="gg-card-media is-photo' + cardDarkClass + '" aria-label="Check ' + esc(product.productName) + ' on Amazon">' +
-            '<img src="' + esc(product.imageSource) + '" alt="' + esc(product.imageAlt) + '" width="' + esc(imgW) + '" height="' + esc(imgH) + '" loading="lazy" decoding="async">' +
-          '</a>' +
-          renderPhotoCredit(product) +
-        '</div>';
-    }
-
-    var footNote = hasPhoto
-      ? 'Affiliate link &mdash; we may earn from qualifying purchases. Check current price on Amazon.'
-      : 'Affiliate link &mdash; view actual product photos and current pricing directly on Amazon.';
-
-    return (
-      '<article class="gg-card gg-accent-' + esc(product.accent || 'cyan') + (hasPhoto ? ' gg-card--photo' : ' gg-card--text-only') + '" data-product-id="' + esc(product.id) + '" data-media-mode="' + (hasPhoto ? 'photo' : 'text-only') + '">' +
-        mediaHtml +
-        '<div class="gg-card-body">' +
-          '<div class="gg-card-top">' +
-            '<span class="gg-brand">' + esc(product.manufacturer) + '</span>' +
-            (product.badge ? '<span class="gg-pill">' + esc(product.badge) + '</span>' : '') +
-            '<span class="gg-paid-badge">Affiliate link</span>' +
-          '</div>' +
-          '<h3 class="gg-card-title">' + esc(product.productName) + '</h3>' +
-          (!hasPhoto && product.model ? '<p class="gg-card-model">Model: ' + esc(product.model) + '</p>' : '') +
-          renderPlatformPills(product.platforms) +
-          '<p class="gg-card-desc">' + esc(product.shortDescription) + '</p>' +
-          '<div class="gg-card-meta-block">' +
-            '<p class="gg-card-line"><strong>Why consider it:</strong> ' + esc(product.whyInteresting) + '</p>' +
-            '<p class="gg-card-line"><strong>Compatibility:</strong> ' + esc(product.compatibility) + '</p>' +
-            '<p class="gg-card-line gg-card-caveat"><strong>Trade-off:</strong> ' + esc(product.honestDisadvantages) + '</p>' +
-          '</div>' +
-        '</div>' +
-        '<div class="gg-card-foot">' +
-          '<span class="gg-foot-note">' + footNote + '</span>' +
-          '<a ' + ctaAttrs + ' class="gg-cta-btn">Check on Amazon <span aria-hidden="true">&rarr;</span></a>' +
-        '</div>' +
-      '</article>'
-    );
-  }
-
   function renderSections(catalog, filter) {
     if (!global.GTA6GearRotation) return;
     var approved = global.GTA6GearRotation.getApprovedCatalogProducts(catalog);
@@ -415,18 +330,19 @@
       var items = approved.filter(function (p) {
         return p.sectionId === sectionId && matchesPlatformFilter(p, filter);
       });
-      // Lead each section cleanly with verified real-photo cards, followed by clean text-only cards
-      items.sort(function (a, b) {
-        var ap = a.mediaType === 'photo' ? 0 : 1;
-        var bp = b.mediaType === 'photo' ? 0 : 1;
-        return ap - bp;
-      });
       totalVisible += items.length;
       if (!items.length) {
         grid.innerHTML =
           '<div class="gg-empty-filter">No items in this category match the selected platform filter. Switch back to <strong>All Platforms</strong> to view every verified pick.</div>';
       } else {
-        grid.innerHTML = items.map(renderCatalogCard).join('');
+        grid.innerHTML = items.map(function (product, idx) {
+          return renderGlobalProductCard(product, {
+            featured: false,
+            placement: product.analyticsPlacement || ('gaming_gear_' + sectionId),
+            dailySlot: 'catalog',
+            position: idx + 1
+          });
+        }).join('');
       }
       var countEl = document.querySelector('[data-section-count="' + sectionId + '"]');
       if (countEl) {
@@ -563,7 +479,7 @@
   }
 
   global.GTA6GearEngine = {
-    version: '2.0.0-leonida-drop',
+    version: '3.0.0-global-amz-cards',
     catalogUrl: CATALOG_URL,
     registerApiHydrator: function (fn) {
       apiHydrator = typeof fn === 'function' ? fn : null;
@@ -577,6 +493,7 @@
     getActiveDrop: function () {
       return activeDropResult;
     },
+    renderGlobalProductCard: renderGlobalProductCard,
     renderWithCatalog: applyCatalog,
     init: initGamingGearPage
   };
