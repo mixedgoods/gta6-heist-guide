@@ -1,18 +1,17 @@
 {
   "_note": "Single source of truth for the site-wide verification timestamp and build labels. Counts (map pins, property records) are derived at runtime from map-pins.json and properties.json by assets/js/site-status.js. Update lastVerified only after actually re-checking the site data.",
-  "lastVerified": "2026-11-23",
-  "lastVerifiedLabel": "November 23, 2026",
-  "lastVerifiedShort": "Nov 23, 2026",
+  "lastVerified": "2026-11-27",
+  "lastVerifiedLabel": "November 27, 2026",
+  "lastVerifiedShort": "Nov 27, 2026",
   "storyModeStatus": "Story Mode: LIVE · GTA 6 Online: No official release date announced",
   "platforms": "PlayStation 5 and Xbox Series X|S",
   "build": {
-    "confirmedOnSite": "01.002.001",
-    "label": "Launch build 01.002.001 (PS5 & Xbox Series X|S)",
-    "newerReported": {
-      "ps5": "01.002.002",
-      "xbox": "1.0.2.2",
-      "classification": "INDEPENDENTLY REPORTED (single reported source; no official Rockstar patch notes published as of the verification date)",
-      "adoptedAsCurrent": false
-    }
+    "confirmedOnSite": "01.002.002",
+    "xboxVersion": "1.0.2.2",
+    "label": "Update 01.002.002 (PS5) / 1.0.2.2 (Xbox Series X|S) — Released Nov 23, 2026",
+    "officialPatchNotesPublished": true,
+    "officialFixCount": 7,
+    "previousLaunchBuild": "01.002.001",
+    "classification": "Confirmed by official information (Rockstar Games Support patch notes, Nov 23, 2026)"
   }
 }

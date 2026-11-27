@@ -228,107 +228,97 @@
     <section class="tool-box pink-glow" id="free-net-calculator">
         <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.25rem;">
             <div>
-                <span class="user-badge badge-mastermind" style="margin-bottom:0.4rem;">TOOL 1 OF 3 &bull; REAL-TIME HEIST MATH ENGINE</span>
-                <h2 style="color:#fff; font-size:1.6rem;">All-6-Vault True Net $/Hour, $/Minute &amp; Crew Cut Splitter</h2>
-                <p style="color:var(--text-muted); font-size:0.92rem;">Compare every Leonida vault side-by-side after setup grind minutes, cooldowns, specialist cuts, and fence laundering fees.</p>
+                <span class="user-badge badge-mastermind" style="margin-bottom:0.4rem;">TOOL 1 OF 3 &bull; STORY MODE PAYOUT ESTIMATOR (LIVE)</span>
+                <h2 style="color:#fff; font-size:1.6rem;">GTA 6 Story Mode Heist &amp; Robbery Payout Estimator</h2>
+                <p style="color:var(--text-muted); font-size:0.92rem;">Estimate single-player Story Mode take-home payouts across corroborated launch targets after optional fence cuts and user-estimated run time (GTA VI Online has no announced release date or 1.5X weekly bonuses).</p>
             </div>
             <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
-                <button type="button" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.8rem;" onclick="copyFreeCalcSummary()">📋 Copy Split Summary for Discord</button>
-                <a href="/map" class="btn btn-primary" style="padding:0.45rem 0.9rem; font-size:0.8rem;">🗺️ View Vaults on Leonida Map</a>
+                <button type="button" class="btn btn-secondary" style="padding:0.45rem 0.9rem; font-size:0.8rem;" onclick="copyFreeCalcSummary()">📋 Copy Summary for Discord</button>
+                <a href="/map" class="btn btn-primary" style="padding:0.45rem 0.9rem; font-size:0.8rem;">🗺️ View Targets on Leonida Map</a>
             </div>
         </div>
 
         <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:1rem; margin-bottom:0.9rem;">
             <div class="form-group" style="min-width:0;">
-                <label for="fcVault">Select Verified Launch Target</label>
+                <label for="fcVault">Select Corroborated Story Mode Target</label>
                 <select class="form-select" id="fcVault" onchange="onFreeVaultChange()" style="width:100%; min-width:0; text-overflow:clip;">
-                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera Bank ($120,000)</option>
+                    <option value="cartel-heist" selected>The Cartel Heist: Sinfrontera Bank ($120,000 base)</option>
                     <option value="vcia-takedown">VCIA Takedown: Vice City Airport ($250,000)</option>
-                    <option value="large-banks">8 Large Bank Vaults: Lombank &amp; Ocean Beach ($205,000)</option>
-                    <option value="small-banks">14 Small Bank Vaults &amp; Fleeca ($45,000)</option>
-                    <option value="jewelry-stores">39 Gang Ops &amp; Jewelry Stores ($25,000)</option>
+                    <option value="operation-savage-glory">Operation Savage Glory: Coast Guard Raid ($50,000)</option>
+                    <option value="large-banks">8 Large Bank Vaults ($65K–~$205K · Midpoint $135K)</option>
+                    <option value="small-banks">14 Small Banks &amp; Payday Loans ($5K–$45K · Midpoint $25K)</option>
+                    <option value="jewelry-stores">20 Jewelry Stores ($10K–$25K Typical · Midpoint $17.5K)</option>
+                    <option value="armored-trucks">Armored Trucks &amp; 39 Core Gang Ops / 40 Ult. ($10K–$38K)</option>
                 </select>
             </div>
             <div class="form-group" style="min-width:0;">
-                <label for="fcPlayers">Squad Size (Co-Op)</label>
-                <select class="form-select" id="fcPlayers" onchange="runFreeCalc()" style="width:100%; min-width:0; text-overflow:clip;">
-                    <option value="1">1 Player (Solo + AI Crew)</option>
-                    <option value="2">2 Players (Lucia &amp; Jason Duo)</option>
-                    <option value="3">3 Players (Trio Split)</option>
-                    <option value="4" selected>4 Players (Full Syndicate Squad)</option>
+                <label for="fcTier">Reported Payout Range Point</label>
+                <select class="form-select" id="fcTier" onchange="runFreeCalc()" style="width:100%; min-width:0; text-overflow:clip;">
+                    <option value="min">Conservative (Low End of Range)</option>
+                    <option value="typical" selected>Typical / Baseline Reported</option>
+                    <option value="max">Upper Corroborated Range</option>
                 </select>
             </div>
         </div>
         <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:1rem; margin-bottom:1.1rem;">
             <div class="form-group" style="min-width:0;">
-                <label for="fcSetupMins">Setup + Finale Run Time (Mins)</label>
-                <input type="number" class="form-input" id="fcSetupMins" min="10" max="240" value="52" oninput="runFreeCalc()">
+                <label for="fcSetupMins">Your Est. Run Time (Mins — User Estimate)</label>
+                <input type="number" class="form-input" id="fcSetupMins" min="1" max="240" value="45" oninput="runFreeCalc()">
             </div>
             <div class="form-group" style="min-width:0;">
-                <label for="fcCooldownMins">Vault Cooldown Timer (Mins)</label>
-                <input type="number" class="form-input" id="fcCooldownMins" min="0" max="180" value="48" oninput="runFreeCalc()">
+                <label for="fcCooldownMins">Optional Travel / Reset Buffer (Mins)</label>
+                <input type="number" class="form-input" id="fcCooldownMins" min="0" max="180" value="0" oninput="runFreeCalc()">
             </div>
         </div>
 
         <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap:1rem; margin-bottom:1.25rem;">
             <div class="slider-row" style="margin-bottom:0;">
                 <div class="slider-label-row">
-                    <span>Hired NPC Specialist Cut %:</span>
-                    <strong id="fcNpcVal" style="color:var(--neon-cyan);">25%</strong>
+                    <span>Fence / Remote Pickup Deduction Est. %:</span>
+                    <strong id="fcFenceVal" style="color:var(--neon-pink);">0%</strong>
                 </div>
-                <input type="range" class="slider-input" id="fcNpcCut" min="0" max="45" value="25" oninput="runFreeCalc()">
+                <input type="range" class="slider-input" id="fcFenceCut" min="0" max="25" value="0" oninput="runFreeCalc()">
             </div>
             <div class="slider-row" style="margin-bottom:0;">
                 <div class="slider-label-row">
-                    <span>Fence Laundering Fee %:</span>
-                    <strong id="fcFenceVal" style="color:var(--neon-pink);">8%</strong>
+                    <span>Optional What-If Crew Deduction % (0% Default):</span>
+                    <strong id="fcNpcVal" style="color:var(--neon-cyan);">0%</strong>
                 </div>
-                <input type="range" class="slider-input" id="fcFenceCut" min="0" max="25" value="8" oninput="runFreeCalc()">
-            </div>
-            <div class="slider-row" style="margin-bottom:0;">
-                <div class="slider-label-row">
-                    <span>Host / Leader Cut Share %:</span>
-                    <strong id="fcHostVal" style="color:var(--neon-green);">40%</strong>
-                </div>
-                <input type="range" class="slider-input" id="fcHostShare" min="15" max="85" value="40" oninput="runFreeCalc()">
+                <input type="range" class="slider-input" id="fcNpcCut" min="0" max="40" value="0" oninput="runFreeCalc()">
             </div>
         </div>
 
         <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1.25rem;">
             <label class="check-item" style="margin:0; flex:1 1 240px;">
-                <input type="checkbox" id="fcStealthBonus" checked onchange="runFreeCalc()">
-                <div><strong>+5% Stealth Integrity Bonus</strong> (Zero alarms tripped)</div>
-            </label>
-            <label class="check-item" style="margin:0; flex:1 1 240px;">
-                <input type="checkbox" id="fcWeeklyBonus" onchange="runFreeCalc()">
-                <div><strong>1.5X Weekly Featured Vault Multiplier</strong></div>
+                <input type="checkbox" id="fcJammer" checked onchange="runFreeCalc()">
+                <div><strong>🛡️ Dye Pack Jammer Equipped</strong> (Unlocks Ch. 3 <em>Credit Check</em>; unchecking models -25% illustrative bank dye spoilage)</div>
             </label>
         </div>
 
         <div class="payout-display" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));">
             <div>
-                <div class="payout-item-title">Gross Vault Take</div>
-                <div class="payout-item-val" id="fcGrossOut" style="color:#fff;">$26,250,000</div>
+                <div class="payout-item-title">Reported Target Take</div>
+                <div class="payout-item-val" id="fcGrossOut" style="color:#fff;">$120,000</div>
             </div>
             <div>
-                <div class="payout-item-title">Net Crew Pot (After Fees)</div>
-                <div class="payout-item-val" id="fcPotOut" style="color:var(--neon-cyan);">$18,112,500</div>
+                <div class="payout-item-title">Story Mode Net Take-Home</div>
+                <div class="payout-item-val" id="fcPotOut" style="color:var(--neon-green);">$120,000</div>
             </div>
             <div>
-                <div class="payout-item-title">Host Take-Home</div>
-                <div class="payout-item-val" id="fcHostOut" style="color:var(--neon-green);">$7,245,000</div>
+                <div class="payout-item-title">Play Mode</div>
+                <div class="payout-item-val" id="fcHostOut" style="color:var(--neon-cyan); font-size:1.2rem;">Single-Player</div>
             </div>
             <div>
-                <div class="payout-item-title">Each Crew Member Take</div>
-                <div class="payout-item-val" id="fcMemberOut" style="color:#fff;">$3,622,500</div>
+                <div class="payout-item-title">Corroborated Range</div>
+                <div class="payout-item-val" id="fcMemberOut" style="color:#fff; font-size:1.2rem;">$120K–$150K</div>
             </div>
             <div>
-                <div class="payout-item-title">Host True Net $/Hour</div>
-                <div class="payout-item-val" id="fcHourOut" style="color:var(--neon-green);">$4,347,000/hr</div>
+                <div class="payout-item-title">Illustrative $/Hour*</div>
+                <div class="payout-item-val" id="fcHourOut" style="color:var(--neon-green);">One-Time Story</div>
             </div>
             <div>
-                <div class="payout-item-title">Host Net $/Minute</div>
-                <div class="payout-item-val" id="fcMinOut" style="color:var(--neon-amber);">$72,450/min</div>
+                <div class="payout-item-title">Illustrative $/Minute*</div>
+                <div class="payout-item-val" id="fcMinOut" style="color:var(--neon-amber);">$120,000 Total</div>
             </div>
         </div>
 
@@ -593,11 +583,13 @@
 <script src="/assets/main.js" defer></script>
 <script>
 const FREE_VAULTS = {
-    'cartel-heist': { name: 'The Cartel Heist: Sinfrontera Bank', base: 120000, setupMins: 25, cooldownMins: 45 },
-    'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport', base: 250000, setupMins: 30, cooldownMins: 60 },
-    'large-banks': { name: '8 Large Bank Vaults', base: 205000, setupMins: 10, cooldownMins: 30 },
-    'small-banks': { name: '14 Small Bank Vaults', base: 45000, setupMins: 5, cooldownMins: 20 },
-    'jewelry-stores': { name: '39 Gang Ops & Jewelry Stores', base: 25000, setupMins: 5, cooldownMins: 15 }
+    'cartel-heist': { name: 'The Cartel Heist: Sinfrontera Bank', min: 120000, typical: 120000, max: 150000, setupMins: 45, cooldownMins: 0, isBank: true, repeatable: false },
+    'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport', min: 250000, typical: 250000, max: 250000, setupMins: 50, cooldownMins: 0, isBank: false, repeatable: false },
+    'operation-savage-glory': { name: 'Operation Savage Glory (Coast Guard Raid)', min: 50000, typical: 50000, max: 50000, setupMins: 30, cooldownMins: 0, isBank: false, repeatable: false },
+    'large-banks': { name: '8 Large Bank Vaults', min: 65000, typical: 135000, max: 205000, setupMins: 25, cooldownMins: 0, isBank: true, repeatable: true },
+    'small-banks': { name: '14 Small Banks & Payday Loans', min: 5000, typical: 25000, max: 45000, setupMins: 15, cooldownMins: 0, isBank: true, repeatable: true },
+    'jewelry-stores': { name: '20 Jewelry Stores', min: 10000, typical: 17500, max: 25000, setupMins: 15, cooldownMins: 0, isBank: false, repeatable: true },
+    'armored-trucks': { name: 'Armored Trucks & 39 Core Gang Ops (40 Ult.)', min: 10000, typical: 24000, max: 38000, setupMins: 15, cooldownMins: 0, isBank: false, repeatable: true }
 };
 
 function fmtMoney(n) {
@@ -617,49 +609,40 @@ function onFreeVaultChange() {
 function runFreeCalc() {
     const k = document.getElementById('fcVault').value;
     const v = FREE_VAULTS[k] || FREE_VAULTS['cartel-heist'];
-    const players = parseInt(document.getElementById('fcPlayers').value) || 4;
-    const setupMins = Math.max(5, parseInt(document.getElementById('fcSetupMins').value) || 52);
-    const cdMins = Math.max(0, parseInt(document.getElementById('fcCooldownMins').value) || 48);
-    const npcPct = parseInt(document.getElementById('fcNpcCut').value) || 0;
-    const fencePct = parseInt(document.getElementById('fcFenceCut').value) || 0;
-    let hostShare = parseInt(document.getElementById('fcHostShare').value) || 40;
-    if (players === 1) hostShare = 100;
+    const tier = document.getElementById('fcTier')?.value || 'typical';
+    const setupMins = Math.max(1, parseInt(document.getElementById('fcSetupMins').value, 10) || v.setupMins);
+    const cdMins = Math.max(0, parseInt(document.getElementById('fcCooldownMins').value, 10) || 0);
+    const npcPct = parseInt(document.getElementById('fcNpcCut').value, 10) || 0;
+    const fencePct = parseInt(document.getElementById('fcFenceCut').value, 10) || 0;
+    const jammer = document.getElementById('fcJammer') ? document.getElementById('fcJammer').checked : true;
 
     document.getElementById('fcNpcVal').innerText = npcPct + '%';
     document.getElementById('fcFenceVal').innerText = fencePct + '%';
-    document.getElementById('fcHostVal').innerText = hostShare + '%';
 
-    const stealthMult = document.getElementById('fcStealthBonus').checked ? 1.05 : 1.0;
-    const weeklyMult = document.getElementById('fcWeeklyBonus').checked ? 1.5 : 1.0;
+    const gross = tier === 'min' ? v.min : tier === 'max' ? v.max : v.typical;
+    const afterDye = (v.isBank && !jammer) ? gross * 0.75 : gross;
+    const netPot = Math.max(0, afterDye * (1 - (npcPct + fencePct) / 100));
 
-    const gross = v.base * stealthMult * weeklyMult;
-    const afterNpc = gross * (1 - npcPct / 100);
-    const netPot = afterNpc * (1 - fencePct / 100);
-
-    const hostTake = netPot * (hostShare / 100);
-    const memberTake = players > 1 ? (netPot * ((100 - hostShare) / 100)) / (players - 1) : hostTake;
-
-    const cycleHours = Math.max(0.1, (setupMins + cdMins) / 60);
+    const cycleHours = Math.max(0.05, (setupMins + cdMins) / 60);
     const cycleMins = Math.max(1, setupMins + cdMins);
+    const rangeStr = v.min === v.max ? fmtMoney(v.min) + ' Fixed' : fmtMoney(v.min) + '–' + fmtMoney(v.max);
 
     document.getElementById('fcGrossOut').innerText = fmtMoney(gross);
     document.getElementById('fcPotOut').innerText = fmtMoney(netPot);
-    document.getElementById('fcHostOut').innerText = fmtMoney(hostTake);
-    document.getElementById('fcMemberOut').innerText = players === 1 ? 'Solo (100%)' : fmtMoney(memberTake);
-    document.getElementById('fcHourOut').innerText = fmtMoney(hostTake / cycleHours) + '/hr';
-    document.getElementById('fcMinOut').innerText = fmtMoney(hostTake / cycleMins) + '/min';
+    document.getElementById('fcHostOut').innerText = 'Single-Player';
+    document.getElementById('fcMemberOut').innerText = rangeStr;
+    document.getElementById('fcHourOut').innerText = v.repeatable ? ('~' + fmtMoney(netPot / cycleHours) + '/hr*') : 'One-Time Story';
+    document.getElementById('fcMinOut').innerText = v.repeatable ? ('~' + fmtMoney(netPot / cycleMins) + '/min*') : (fmtMoney(netPot) + ' Total');
 
     if (window._freeCalcRestored && window.GTA6Progress && typeof window.GTA6Progress.setToolState === 'function') {
         window.GTA6Progress.setToolState('freeTools', {
             vault: k,
-            players: players,
+            tier: tier,
             setupMins: setupMins,
             cooldownMins: cdMins,
             npcCut: npcPct,
             fenceCut: fencePct,
-            hostShare: hostShare,
-            stealthBonus: document.getElementById('fcStealthBonus').checked,
-            weeklyBonus: document.getElementById('fcWeeklyBonus').checked
+            jammer: jammer
         }, true);
     }
 }
@@ -671,14 +654,12 @@ function restoreFreeCalcState() {
             const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
             const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
             if (saved.vault && FREE_VAULTS[saved.vault]) setVal('fcVault', saved.vault);
-            if (saved.players) setVal('fcPlayers', saved.players);
+            if (saved.tier) setVal('fcTier', saved.tier);
             if (saved.setupMins !== undefined) setVal('fcSetupMins', saved.setupMins);
             if (saved.cooldownMins !== undefined) setVal('fcCooldownMins', saved.cooldownMins);
             if (saved.npcCut !== undefined) setVal('fcNpcCut', saved.npcCut);
             if (saved.fenceCut !== undefined) setVal('fcFenceCut', saved.fenceCut);
-            if (saved.hostShare !== undefined) setVal('fcHostShare', saved.hostShare);
-            setChk('fcStealthBonus', saved.stealthBonus);
-            setChk('fcWeeklyBonus', saved.weeklyBonus);
+            setChk('fcJammer', saved.jammer);
         }
     }
     window._freeCalcRestored = true;
@@ -687,19 +668,18 @@ function restoreFreeCalcState() {
 
 function copyFreeCalcSummary() {
     const k = document.getElementById('fcVault').value;
-    const v = FREE_VAULTS[k];
-    const players = document.getElementById('fcPlayers').value;
-    const hostTake = document.getElementById('fcHostOut').innerText;
-    const memberTake = document.getElementById('fcMemberOut').innerText;
+    const v = FREE_VAULTS[k] || FREE_VAULTS['cartel-heist'];
+    const netTake = document.getElementById('fcPotOut').innerText;
+    const rangeStr = document.getElementById('fcMemberOut').innerText;
     const hr = document.getElementById('fcHourOut').innerText;
     const msg = [
-        '💰 **GTA 6 HEIST NET $/HOUR SPLIT (VERIFIED)**',
-        `🏦 **Target:** ${v.name} (${players}P Squad)`,
-        `👑 **Host Take:** ${hostTake} (${hr})`,
-        `🤝 **Crew Member Take:** ${memberTake}`,
-        '⚡ **Run your own split & practice the 15s Vault Hack free:** https://www.gta6heistguide.com/free'
+        '💰 **GTA 6 STORY MODE PAYOUT ESTIMATE**',
+        `🏦 **Target:** ${v.name} (Single-Player Story Mode)`,
+        `💵 **Est. Net Take-Home:** ${netTake} (${hr})`,
+        `📊 **Corroborated Range:** ${rangeStr}`,
+        '⚡ **Estimate payouts & practice the 15s Keypad Trainer free:** https://www.gta6heistguide.com/free/'
     ].join('\n');
-    GTA6.copyText(msg, 'Heist Split Summary');
+    GTA6.copyText(msg, 'Story Mode Payout Summary');
 }
 
 document.addEventListener('DOMContentLoaded', function() {

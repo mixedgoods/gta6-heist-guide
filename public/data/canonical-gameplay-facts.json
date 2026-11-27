@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.0.0",
+  "lastVerified": "2026-11-27",
+  "lastVerifiedLabel": "November 27, 2026",
+  "classificationScale": [
+    "Confirmed by official information or direct in-game verification",
+    "Corroborated by multiple reputable launch guides",
+    "Community-reported",
+    "Unverified",
+    "Contradicted or outdated"
+  ],
+  "platformAndModeScope": {
+    "releaseDate": "2026-11-19",
+    "activeMode": "Story Mode (Single-Player — Jason Duval & Lucia Caminos)",
+    "platforms": ["PlayStation 5", "Xbox Series X|S"],
+    "pcAnnounced": false,
+    "onlineStatus": {
+      "live": false,
+      "releaseDateAnnounced": false,
+      "summary": "Rockstar Games launched GTA VI on November 19, 2026 strictly as a single-player Story Mode experience on PS5 and Xbox Series X|S. As of November 27, 2026, no GTA VI Online release date, multiplayer heist mechanics, public-lobby fail penalties, or 1.5X weekly event bonuses have been announced.",
+      "evidenceClassification": "Confirmed by official information or direct in-game verification",
+      "sources": ["Rockstar Games (rockstargames.com/VI)", "Take-Two Interactive / PlayStation Store"]
+    }
+  },
+  "latestPatch": {
+    "ps5Version": "01.002.002",
+    "xboxVersion": "1.0.2.2",
+    "releaseDate": "2026-11-23",
+    "evidenceClassification": "Confirmed by official information or direct in-game verification",
+    "officialNotesSource": "Rockstar Games Support (Nov 23, 2026)",
+    "confirmedOfficialFixes": [
+      "Fixed several issues that caused the game to crash.",
+      "Fixed an issue that resulted in the weather not changing for extended periods.",
+      "Fixed an issue that resulted in the game not autosaving correctly.",
+      "Fixed several issues that resulted in phone calls not triggering correctly, including those that progressed the story or unlocked mission content.",
+      "Fixed an issue that resulted in the player being unable to lose their Wanted Level.",
+      "Fixed an issue that resulted in the player being unable to use the deadlift bar in the Gym.",
+      "Fixed an issue that resulted in partners not handing over bags so that players could sell them to fences."
+    ],
+    "previousLaunchBuild": "01.002.001"
+  },
+  "economyRules": {
+    "pocketCashCap": {
+      "amount": 20000,
+      "display": "$20,000",
+      "notes": "Each protagonist's loose pocket cash caps at $20,000; deposit cash at physical ATMs or via the BuckMe app into Family Savings to protect funds against Wasted/Busted losses.",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides"
+    },
+    "dyePackJammer": {
+      "unlockChapter": 3,
+      "unlockMission": "Credit Check",
+      "unlockMissionUrl": "/missions/credit-check",
+      "mechanic": "Neutralizes security dye packs on marked bills during bank robberies; exact percentage loss without the jammer is not published by Rockstar and any percentage shown in calculators is an illustrative estimate.",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides"
+    },
+    "fencesAndBuyers": {
+      "totalContacts": 7,
+      "stolenGoodsFences": ["Brian", "Donnie", "Dunk", "Tyrone", "Yasmani"],
+      "vehicleBuyers": ["Moses", "Randy"],
+      "unverifiedRegionalLeads": ["Ambrosia", "Grassrivers"],
+      "yasmaniNotes": "Yasmani (Little Cuba) pays the highest corroborated in-person rate for jewelry and marked bills. His remote garage pickup service takes a driver cut; a fixed '5% cut' figure is community-reported/unverified and treated only as an adjustable estimator in calculators.",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides"
+    },
+    "safeAndKeypadCodes": {
+      "confirmedTotal": 19,
+      "breakdown": {
+        "fixedStoryCodes": 3,
+        "gangOpSafes": 11,
+        "mapDiscoveredDoorsAndGarages": 5
+      },
+      "unverifiedRumoredCodes": ["CLEAVES", "0072", "0212"],
+      "randomizedFreeRoamSafesNote": "Free-roam pawn shops (including Fast Cash in Little Cuba), jewelry boutiques, and convenience store safes generate randomized combinations per visit; use clerk intimidation or Focus Mode (L3+R3).",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides"
+    }
+  },
+  "robberiesAndHeists": {
+    "cartel-heist": {
+      "id": "cartel-heist",
+      "name": "The Cartel Heist (Sinfrontera National Bank)",
+      "category": "Story Heist",
+      "chapter": 3,
+      "chapterLabel": "Ch. 3",
+      "minPayout": 120000,
+      "maxPayout": 150000,
+      "baselinePayout": 120000,
+      "displayPayout": "$120,000 baseline ($120K–$150K reported)",
+      "isBank": true,
+      "repeatable": false,
+      "url": "/heists/the-cartel-heist",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "Chapter 3 Story Heist #1 with Raul Bautista (5 setups + 10-step vault job). Baseline payout $120,000; some launch walkthroughs report up to $150,000 depending on execution."
+    },
+    "vcia-takedown": {
+      "id": "vcia-takedown",
+      "name": "VCIA Takedown (Vice City International Airport)",
+      "category": "Story Heist",
+      "chapter": 4,
+      "chapterLabel": "Ch. 4",
+      "minPayout": 250000,
+      "maxPayout": 250000,
+      "baselinePayout": 250000,
+      "displayPayout": "$250,000",
+      "isBank": false,
+      "repeatable": false,
+      "url": "/heists/vcia-takedown",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "Chapter 4 Story Heist #2 (4 setups + airport finale). Unlocks Hi-Jacked trophy."
+    },
+    "operation-savage-glory": {
+      "id": "operation-savage-glory",
+      "name": "Operation Savage Glory (Coast Guard Raid)",
+      "category": "Story Mission Set-Piece",
+      "chapter": 5,
+      "chapterLabel": "Ch. 5",
+      "minPayout": 50000,
+      "maxPayout": 50000,
+      "baselinePayout": 50000,
+      "displayPayout": "$50,000",
+      "isBank": false,
+      "repeatable": false,
+      "url": "/missions/operation-savage-glory",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "Chapter 5 story mission given by Vinny Capsik (follows Doggie Bag, leads into Honest Abe). Pays $50,000, grants Pegassi Residences Penthouse access, restores confiscated gear, and unlocks the Snow Storm trophy."
+    },
+    "large-banks": {
+      "id": "large-banks",
+      "name": "8 Large Bank Vaults (Endgame Repeatable)",
+      "category": "Free-Roam Bank Vault",
+      "chapter": 4,
+      "chapterLabel": "Ch. 4+",
+      "locationCount": 8,
+      "minPayout": 65000,
+      "maxPayout": 205000,
+      "baselinePayout": 135000,
+      "displayPayout": "$65,000 – ~$205,000",
+      "isBank": true,
+      "repeatable": true,
+      "url": "/heists/large-bank-vaults",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "8 major free-roam vaults unlocked at the end of Chapter 4 ('That's Where The Money Is...'). Bring Dye Pack Jammer."
+    },
+    "small-banks": {
+      "id": "small-banks",
+      "name": "14 Small Banks & Payday Loans",
+      "category": "Free-Roam Bank",
+      "chapter": 3,
+      "chapterLabel": "Ch. 3+",
+      "locationCount": 14,
+      "minPayout": 5000,
+      "maxPayout": 45000,
+      "baselinePayout": 25000,
+      "displayPayout": "$5,000 – $45,000",
+      "isBank": true,
+      "repeatable": true,
+      "url": "/heists/small-banks-payday-loans",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "14 regional bank/payday branches unlocked in Chapter 3 after Credit Check (which also grants the Dye Pack Jammer)."
+    },
+    "jewelry-stores": {
+      "id": "jewelry-stores",
+      "name": "20 Jewelry Stores (Yasmani Gem Fence)",
+      "category": "Free-Roam Robbery",
+      "chapter": 3,
+      "chapterLabel": "Ch. 3+",
+      "locationCount": 20,
+      "minPayout": 10000,
+      "maxPayout": 25000,
+      "baselinePayout": 17500,
+      "displayPayout": "$10,000 – $25,000",
+      "isBank": false,
+      "repeatable": true,
+      "url": "/heists/jewelry-stores",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "completionTimeVerified": false,
+      "completionTimeNote": "Completion time varies widely by boutique tier, stealth vs. loud exit, and drive distance to Yasmani in Little Cuba; an earlier hardcoded 11-minute estimate was unverified and has been replaced with user-adjustable timing.",
+      "exceptionalTakeNote": "Standard corroborated takes range from $10,000 to $25,000 per store after fencing at Yasmani. Uncorroborated $35,000 figures have been retired; exceptional multi-case + full-safe boutique hauls may sit at the top of the $25,000 range depending on tier.",
+      "sources": ["Eurogamer", "IGN", "PowerPyx", "Space4Games", "TimeSaver"]
+    },
+    "pawn-shops": {
+      "id": "pawn-shops",
+      "name": "15 Pawn Shops (incl. Fast Cash)",
+      "category": "Free-Roam Robbery",
+      "chapter": 2,
+      "chapterLabel": "Ch. 2+",
+      "locationCount": 15,
+      "minPayout": 2500,
+      "maxPayout": 6500,
+      "exceptionalMaxPayout": 12000,
+      "baselinePayout": 4500,
+      "displayPayout": "$2,500 – $6,500 (up to $10K–$12K full safe clear)",
+      "isBank": false,
+      "repeatable": true,
+      "url": "/heists/pawn-shops",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "15 pawn shops unlocked in Chapter 2 after Coffee Break. Typical store runs pay $2,500–$6,500 fenced, with full safe clears / chained circuits reported up to $10,000–$12,000."
+    },
+    "armored-trucks-gang-ops": {
+      "id": "armored-trucks-gang-ops",
+      "name": "Armored Trucks & 39 Core Gang Ops (40 w/ Ultimate Ed.)",
+      "category": "Free-Roam Robbery",
+      "chapter": 2,
+      "chapterLabel": "Ch. 2+",
+      "locationCountStandard": 39,
+      "locationCountTotal": 40,
+      "minPayout": 10000,
+      "maxPayout": 38000,
+      "baselinePayout": 24000,
+      "displayPayout": "$10,000 – $38,000",
+      "isBank": false,
+      "repeatable": true,
+      "url": "/heists/armored-trucks-gang-ops",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides",
+      "notes": "39 core Illegal Operations are required for 100% completion (Pause Menu > Progress > Gangs); 40 total locations exist when including the 1 Ultimate Edition exclusive."
+    },
+    "shops-and-stickups": {
+      "id": "shops-and-stickups",
+      "name": "72 Shops & Convenience Stick-Ups",
+      "category": "Free-Roam Robbery",
+      "chapter": 1,
+      "chapterLabel": "Ch. 1+",
+      "locationCount": 72,
+      "minPayout": 500,
+      "maxPayout": 2000,
+      "baselinePayout": 1200,
+      "displayPayout": "$500 – $2,000",
+      "isBank": false,
+      "repeatable": true,
+      "url": "/heists/shops-and-stickups",
+      "evidenceClassification": "Corroborated by multiple reputable launch guides"
+    }
+  },
+  "storyModeMoneyMilestones": {
+    "sectionTitle": "10 Story-Mode Money Milestones",
+    "combinedListedPayout": 531420,
+    "combinedPayoutDescription": "Combined payout of the 10 listed Story Mode milestones (2 major Story Heists + 8 other story mission payouts and robbery unlocks — not the entire campaign total).",
+    "entries": [
+      { "num": 1, "name": "Rob Vicki's Boss", "chapter": "Ch. 1", "type": "Story Mission Payout", "isMajorHeist": false, "payout": 10000, "url": null, "note": "Early coordinated cash grab." },
+      { "num": 2, "name": "Twist Wrist, Smash, Grab", "chapter": "Ch. 1", "type": "Robbery Unlock / Story Job", "isMajorHeist": false, "payout": 2000, "url": null, "note": "Convenience store crowd-control tutorial." },
+      { "num": 3, "name": "Credit Check", "chapter": "Ch. 3", "type": "Robbery Unlock / Story Job", "isMajorHeist": false, "payout": 31860, "url": "/missions/credit-check", "note": "Raul Bautista 3-bank Fleeca job; unlocks Small Banks & Dye Pack Jammer." },
+      { "num": 4, "name": "The Cartel Heist (Sinfrontera National Bank)", "chapter": "Ch. 3", "type": "Major Story Heist #1", "isMajorHeist": true, "payout": 120000, "url": "/heists/the-cartel-heist", "note": "Raul Bautista 5 setups + 10-step vault heist ($120,000 baseline; up to $150K reported). Unlocks Break the Bank." },
+      { "num": 5, "name": "Yasmani's Jewelry Jobs", "chapter": "Ch. 3", "type": "Robbery Unlock / Story Job", "isMajorHeist": false, "payout": 20000, "url": "/missions/yasmanis-jewelry-jobs", "note": "Unlocks all 20 Jewelry Stores, the Snap Gun, and Yasmani's Little Cuba gem fence." },
+      { "num": 6, "name": "Mall Jewelry Heist", "chapter": "Ch. 3", "type": "Story Mission Payout", "isMajorHeist": false, "payout": 12000, "url": null, "note": "Multi-case glass smash & fast exit." },
+      { "num": 7, "name": "Fresh Evidence", "chapter": "Ch. 4", "type": "Story Mission Payout", "isMajorHeist": false, "payout": 10000, "url": null, "note": "Precinct evidence locker breach." },
+      { "num": 8, "name": "VCIA Takedown (Vice City Airport Heist)", "chapter": "Ch. 4", "type": "Major Story Heist #2", "isMajorHeist": true, "payout": 250000, "url": "/heists/vcia-takedown", "note": "4-setup Vice City International Airport finale. Unlocks Hi-Jacked." },
+      { "num": 9, "name": "Tie Up Loose Ends", "chapter": "Ch. 4", "type": "Story Mission Payout", "isMajorHeist": false, "payout": 25560, "url": null, "note": "Post-airport cleanup payoff." },
+      { "num": 10, "name": "Operation Savage Glory (Coast Guard Raid)", "chapter": "Ch. 5", "type": "Story Mission Set-Piece", "isMajorHeist": false, "payout": 50000, "url": "/missions/operation-savage-glory", "note": "Vinny Capsik bridge demolition & National Coast Guard HQ raid; unlocks Pegassi Residences Penthouse, gear restoration & Snow Storm trophy." }
+    ]
+  },
+  "patchSensitiveExploits": {
+    "apollo-aggregates-red-barn": {
+      "id": "glitch-apollo-red-barn",
+      "name": "Apollo Aggregates (Red Barn) Save/Reload Loot Loop",
+      "reportedPayoutPerRun": "~$55,000 / run (community-reported)",
+      "status": "Reported Working (Post-Nov 23 Update — Community-Reported)",
+      "evidenceClassification": "Community-reported",
+      "lastVerifiedDate": "2026-11-27",
+      "gameVersion": "Update 01.002.002 (PS5) / 1.0.2.2 (Xbox Series X|S)",
+      "officialPatchNoteStatus": "Rockstar Games' official November 23, 2026 patch notes (01.002.002 / 1.0.2.2) list 7 fixes (including partner bag handover to fences) and do NOT document patching the Apollo Aggregates warehouse respawn loop.",
+      "communityReportStatus": "Multiple post-patch community reports (MeowDB, Notebookcheck, RockstarIntel, Reddit) report the save/reload trunk restock loop still functions after Update 01.002.002 / 1.0.2.2. Not directly re-tested on a live console by this site."
+    }
+  }
+}

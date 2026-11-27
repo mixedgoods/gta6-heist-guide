@@ -503,9 +503,9 @@ const GTA6 = {
     const rotation = [
       V('cartel-heist', 'The Cartel Heist: Sinfrontera National Bank', '$120,000', '$120,000', 'Rig 3 Cell Towers (10:47 Vault Time)', 'Raul Bautista Lead Operative', 'Chapter 3 Story Heist #1 (Mission #71). 5 setups + 10-step vault job paying $120,000. Unlocks Break the Bank trophy.'),
       V('vcia-takedown', 'VCIA Takedown: Vice City Airport Heist', '$200,000', '$250,000', 'Roof Terminal Stealth & Cargo Plane', 'NOOSE Countermeasure Overwatch', 'Chapter 4 4-part airport finale. Tarmac gunfight and cargo plane escape. Unlocks Hi-Jacked trophy.'),
-      V('large-banks', '22 Free-Roam Banks: Lombank Downtown', '$65,000', '$205,000', 'Dye Pack Jammer + Trunk Stash', 'Yasmani Little Cuba Fence (5% Cut)', 'Repeatable large bank vault run paying up to $205,000. Fence marked bills in Little Cuba.'),
+      V('large-banks', '22 Free-Roam Banks: Lombank Downtown', '$65,000', '$205,000', 'Dye Pack Jammer + Trunk Stash', 'Yasmani Little Cuba Fence (Top Rate)', 'Repeatable large bank vault run paying up to $205,000. Fence marked bills in Little Cuba.'),
       V('small-banks', '22 Free-Roam Banks: 14 Small Vaults & Fleeca', '$5,000', '$45,000', 'Keypad Decryption Drill', 'Rapid Getaway Driver', '14 repeatable small bank vaults across Vice City and Leonida Keys.'),
-      V('illegal-ops', '40 Gang Hideouts & 20 Jewelry Stores', '$15,000', '$35,000', 'Verified Safe Codes: 7700, 0420, 0300, 4444', 'BuckMe ATM Deposit', 'Fast free-roam cash targets across Leonida. Deposit cash to avoid $20,000 pocket cap.'),
+      V('illegal-ops', '39 Core Gang Ops (40 Ult.) & 20 Jewelry Stores', '$10,000', '$25,000', 'Verified Safe Codes: 7700, 0420, 0300, 4444', 'BuckMe ATM Deposit', 'Fast free-roam cash targets across Leonida ($10K–$25K typical jewelry stores). Deposit cash to avoid $20,000 pocket cap.'),
     ];
     const now = new Date();
     const cycle = Math.floor((now.getTime() - 10 * 3600 * 1000) / (7 * 86400 * 1000));
@@ -974,35 +974,32 @@ const GTA6 = {
   },
 
   getPlannerBuildUrl() {
-    const t = document.getElementById('targetSelect')?.value || 'leonida-reserve';
+    const t = document.getElementById('targetSelect')?.value || 'cartel-heist';
     const a = document.getElementById('approachSelect')?.value || 'stealth';
-    const p = document.getElementById('playerCount')?.value || '4';
-    const g = document.getElementById('planGunner')?.value || '15';
-    const h = document.getElementById('planHacker')?.value || '10';
-    const d = document.getElementById('planDriver')?.value || '8';
-    return `/heist-planner?target=${encodeURIComponent(t)}&approach=${encodeURIComponent(a)}&players=${encodeURIComponent(p)}&g=${g}&h=${h}&d=${d}`;
+    const tier = document.getElementById('payoutTierSelect')?.value || 'typical';
+    const l = document.getElementById('launderFeeSlider')?.value || '0';
+    return `/heist-planner?target=${encodeURIComponent(t)}&tier=${encodeURIComponent(tier)}&approach=${encodeURIComponent(a)}&launder=${encodeURIComponent(l)}`;
   },
 
   saveCurrentBuild() {
     const sel = document.getElementById('targetSelect');
-    const targetName = sel ? sel.options[sel.selectedIndex].text.split('(')[0].trim() : 'Heist Plan';
+    const targetName = sel ? sel.options[sel.selectedIndex].text.split('(')[0].trim() : 'Story Mode Heist Plan';
     const approach = document.getElementById('approachSelect')?.value || 'stealth';
-    const players = document.getElementById('playerCount')?.value || '4';
-    const perPlayer = document.getElementById('perPlayerDisplay')?.innerText || '$0';
+    const netTake = document.getElementById('squadPotDisplay')?.innerText || document.getElementById('perPlayerDisplay')?.innerText || '$0';
     const url = this.getPlannerBuildUrl();
 
     this.Bookmarks.addItem({
       id: 'build-' + Date.now(),
-      title: `${targetName} (${players}P ${approach.toUpperCase()})`,
-      summary: `Per Player Take: ${perPlayer}`,
+      title: `${targetName} (Story Mode · ${approach.toUpperCase()})`,
+      summary: `Story Mode Net Take: ${netTake}`,
       url,
     });
   },
 
   copyPlannerShareLink() {
     const relUrl = this.getPlannerBuildUrl();
-    const fullUrl = `${window.location.origin}/${relUrl}`;
-    this.copyText(fullUrl, 'Shareable Squad Build Link');
+    const fullUrl = `${window.location.origin}${relUrl}`;
+    this.copyText(fullUrl, 'Shareable Story Mode Build Link');
   },
 
   bookmarkCurrentPage() {
@@ -5856,7 +5853,7 @@ DealRotator: {
         c.style.display = isCurrentlyHidden ? 'block' : 'none';
       });
       if (btn) {
-        btn.innerHTML = isCurrentlyHidden ? 'Show Less Jobs &uarr;' : 'Show All 10 Story Heists &amp; Planned Jobs &darr;';
+        btn.innerHTML = isCurrentlyHidden ? 'Hide Story Milestones &uarr;' : 'Show 10 Story-Mode Money Milestones &darr;';
       }
       if (isCurrentlyHidden) {
         this.playBeep(520, 'triangle', 0.06);
