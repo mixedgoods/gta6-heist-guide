@@ -47,8 +47,6 @@ window.SITE_CONFIG = Object.freeze({
     samsungS90d: "https://www.amazon.com/dp/B0CV9VGMPT?tag=gta6heistguid-20",
     asusPg32ucdm: "https://www.amazon.com/dp/B0CV26XVMD?tag=gta6heistguid-20",
     pulseElite: "https://www.amazon.com/dp/B0CMDH9M5W?tag=gta6heistguid-20",
-    nova7p: "https://www.amazon.com/dp/B0BDGMNF6V?tag=gta6heistguid-20",
-    nova7x: "https://www.amazon.com/dp/B0CWS6WV23?tag=gta6heistguid-20",
     prime: "https://www.amazon.com/tryprimefree?tag=gta6heistguid-20"
   },
 
