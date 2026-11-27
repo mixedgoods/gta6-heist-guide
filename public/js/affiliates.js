@@ -1114,7 +1114,10 @@ window.getGTA6LaunchBannerText = function() {
             }
           }
           var curPath = (global.location && global.location.pathname) ? global.location.pathname : '/';
-          global.GTA6Track('affiliate_click', {
+          var collectionVal = link.getAttribute('data-aff-collection') || '';
+          var positionRaw = link.getAttribute('data-aff-position') || '';
+          var positionNum = /^[1-9]\d*$/.test(positionRaw) ? Number(positionRaw) : null;
+          var trackPayload = {
             merchant: partner,
             partner: partner,
             product_id: productKey || asinVal || partner,
@@ -1130,7 +1133,14 @@ window.getGTA6LaunchBannerText = function() {
             source_page: curPath,
             event_timestamp: new Date().toISOString(),
             click_area: link.getAttribute('data-aff-area') || 'cta'
-          });
+          };
+          if (collectionVal) {
+            trackPayload.collection_id = collectionVal;
+          }
+          if (positionNum !== null) {
+            trackPayload.product_position = positionNum;
+          }
+          global.GTA6Track('affiliate_click', trackPayload);
         }
         sendAnonymousClickBeacon({
           partner: partner,

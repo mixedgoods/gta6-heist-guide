@@ -1,9 +1,40 @@
 {
-  "schemaVersion": "1.1.0",
-  "catalogName": "GTA6HeistGuide Gaming Gear & Leonida Editor's Pick Master Catalog",
+  "schemaVersion": "2.0.0",
+  "catalogName": "GTA6HeistGuide Gaming Gear & Leonida Drop Master Catalog",
   "lastUpdated": "2026-11-26",
   "associatesProgram": "Amazon Associates (Regular Program Only — Amazon Influencer Excluded)",
   "associatesTag": "gta6heistguid-20",
+  "amazonOfficialWidgetAudit": {
+    "verifiedDate": "2026-11-26",
+    "accountVerified": "gta6heistguid-20",
+    "helpDocUrl": "https://affiliate-program.amazon.com/help/node/topic/GT2XBUVFYDRDMWC6",
+    "helpDocStatus": "Archived (Help > Archives > Tips; references legacy Amazon.de Build Links)",
+    "recommendedProductLinksAvailable": false,
+    "legacyWidgetRoutesStatus": "HTTP 404 (/home/productlinks, /home/productlinks/recommendations, /home/ads/native, /home/textlink, /home/banners)",
+    "sitestripeAvailable": true,
+    "sitestripeImageLinksAvailable": false,
+    "sitestripeObservedModes": [
+      "Short Link (Text)",
+      "Full Link (Text)"
+    ],
+    "creatorsApiAvailable": false,
+    "creatorsApiStatus": "Locked — Associates Central displays: To request access to Creators API you must have an Approved Associates Account (and >=10 qualifying sales within past 30 days)",
+    "mobileIpLicenseRestriction": "Operating Policies (Updated April 14, 2026) IP License Sec. 2(d) requires express prior written approval to display Amazon Product Advertising Content on sites designed for mobile phones/handheld devices, and Sec. 2(h) prohibits storing/caching Amazon images (URL storage capped at 24 hours).",
+    "leonidaDropImagePolicy": "amazon-only-none-displayed-until-authorized"
+  },
+  "leonidaDropConfig": {
+    "featureName": "LEONIDA DROP",
+    "subtitle": "Three unusual gaming discoveries. A fresh drop every visit.",
+    "collectionSize": 3,
+    "rotationMode": "session-refresh-cycle",
+    "sessionStorageKey": "gta6_leonida_drop_cycle_v1",
+    "ctaLabel": "CHECK IT OUT ON AMAZON",
+    "supportingCtaLabel": "CHECK ON AMAZON",
+    "nextDropButtonLabel": "SHOW ANOTHER DROP",
+    "disclosureStatement": "As an Amazon Associate I earn from qualifying purchases.",
+    "inlineDisclosure": "Affiliate link — we may earn from qualifying purchases.",
+    "amazonImagesOnly": true
+  },
   "rotationConfig": {
     "featureName": "LEONIDA EDITOR'S PICK OF THE DAY",
     "subtitle": "One unusual gaming discovery, selected daily.",
@@ -18,9 +49,203 @@
     "apiCredentialsRequired": false,
     "officialDocsUrl": "https://affiliate-program.amazon.com/creatorsapi/docs/",
     "documentedEligibilityRequirement": "Active Amazon Associates account with at least 10 qualifying shipped sales in the trailing 30 days plus API registration per marketplace.",
-    "accountEligibilityStatus": "unverified-do-not-assume",
-    "notes": "Manual JSON rotation operates 100% independently of Creators API availability. Zero hardcoded prices, stock counts, or Amazon customer star ratings/reviews are rendered."
+    "accountEligibilityStatus": "verified-locked-2026-11-26-requires-approved-account-and-10-sales-in-30-days",
+    "notes": "Live Associates Central inspection (2026-11-26) confirmed Recommended Product Links is retired (404), SiteStripe is Text-Only, and Creators API is locked pending Approved Associates Account + 10 qualifying sales in 30 days + IP License Sec. 2(d) written mobile approval. LEONIDA DROP displays zero non-Amazon images and uses compliant direct Special Links."
   },
+  "leonidaDropCollections": [
+    {
+      "id": "leonida-control-room",
+      "order": 1,
+      "active": true,
+      "name": "LEONIDA CONTROL ROOM",
+      "tagline": "Pixel Telemetry · Rotary Audio Control · Anti-Glare Desk Halo",
+      "description": "Turn a standard desk into a Vice-ready command station with a five-screen cyberpunk pixel dashboard, tactile rotary macro dials, and glare-free asymmetric lighting.",
+      "accent": "cyan",
+      "items": [
+        {
+          "productId": "divoom-times-gate",
+          "position": 1,
+          "role": "main",
+          "roleLabel": "Main Editor's Pick",
+          "pairingNote": "Five illuminated miniature screens anchor the center of your desk with animated pixel art, clocks, and live widgets."
+        },
+        {
+          "productId": "elgato-stream-deck-plus",
+          "position": 2,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #2",
+          "pairingNote": "Adds four physical rotary dials, a touch bar, and eight LCD keys to control game audio, Discord voice, and macros without alt-tabbing."
+        },
+        {
+          "productId": "benq-screenbar-halo-2",
+          "position": 3,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #3",
+          "pairingNote": "Washes the wall behind your monitor with a soothing ambient halo while keeping your desk clear of screen reflections via a wireless puck."
+        }
+      ]
+    },
+    {
+      "id": "retro-gaming-lab",
+      "order": 2,
+      "active": true,
+      "name": "RETRO GAMING LAB",
+      "tagline": "Commodore 64 Mechanical Keys · Wireless Fight Stick · Mini CRT Speaker",
+      "description": "A tactile throwback desk collection combining an unmistakable 1980s mechanical keyboard with giant arcade buttons, a wireless Xbox/PC fight stick, and a pixel-screen desktop speaker.",
+      "accent": "amber",
+      "items": [
+        {
+          "productId": "8bitdo-retro-keyboard-c64",
+          "position": 1,
+          "role": "main",
+          "roleLabel": "Main Editor's Pick",
+          "pairingNote": "Classic C64 colorways, clicky Kailh Box White switches, and plug-in Dual Super Buttons plus a mini Super Stick make every keystroke an event."
+        },
+        {
+          "productId": "8bitdo-arcade-stick-xbox",
+          "position": 2,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #2",
+          "pairingNote": "Brings full-size wireless arcade lever and button action to Xbox Series X|S and Windows PC with a built-in 3.5mm headset jack."
+        },
+        {
+          "productId": "divoom-ditoo-retro-speaker",
+          "position": 3,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #3",
+          "pairingNote": "Completes the vintage lab vibe with a miniature CRT-style 15W Bluetooth speaker, clicky mini keys, and a glowing 16×16 pixel screen."
+        }
+      ]
+    },
+    {
+      "id": "future-tech-desk",
+      "order": 3,
+      "active": true,
+      "name": "FUTURE TECH DESK",
+      "tagline": "32×32 LED Pixel Canvas · Matter RGBIC Lamp · Expressive Robot GaN Power",
+      "description": "Bold programmable visuals, layered neon desk lighting, and playful multi-device GaN power built for late-night Leonida runs.",
+      "accent": "pink",
+      "items": [
+        {
+          "productId": "divoom-pixoo-max",
+          "position": 1,
+          "role": "main",
+          "roleLabel": "Main Editor's Pick",
+          "pairingNote": "A 9.6-inch 32×32 RGB LED matrix puts crisp animated pixel art, clocks, and sound-reactive graphics front and center over Bluetooth."
+        },
+        {
+          "productId": "govee-table-lamp-2",
+          "position": 2,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #2",
+          "pairingNote": "Layers multi-color RGBIC neon gradients across your shelf or desk with responsive top touch controls and Matter smart-home support."
+        },
+        {
+          "productId": "ugreen-nexode-rg-65w",
+          "position": 3,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #3",
+          "pairingNote": "Keeps controllers, handhelds, and phones topped off at 65W while flashing expressive LED robot faces as charge status changes."
+        }
+      ]
+    },
+    {
+      "id": "weird-but-useful",
+      "order": 4,
+      "active": true,
+      "name": "WEIRD BUT USEFUL",
+      "tagline": "Hands-Free Foot Macros · Calculator Numpad · Dedicated Metal Volume Knob",
+      "description": "Three unconventional gaming desk upgrades that sound eccentric at first glance and quietly solve everyday annoyances once you plug them in.",
+      "accent": "green",
+      "items": [
+        {
+          "productId": "elgato-stream-deck-pedal",
+          "position": 1,
+          "role": "main",
+          "roleLabel": "Main Editor's Pick",
+          "pairingNote": "Moves Discord push-to-talk, instant mic mute, or highlight clip capture down to three heavy-duty floor switches so your hands stay on the controls."
+        },
+        {
+          "productId": "8bitdo-retro-18-numpad",
+          "position": 2,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #2",
+          "pairingNote": "Adds a tri-mode wireless mechanical numpad to compact gaming boards and flips into a standalone red-LED calculator with one toggle."
+        },
+        {
+          "productId": "vaydeer-usb-volume-knob",
+          "position": 3,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #3",
+          "pairingNote": "Drops a solid press-to-mute CNC metal rotary dial beside your keyboard for instant zero-driver PC audio control."
+        }
+      ]
+    },
+    {
+      "id": "retro-audio-command",
+      "order": 5,
+      "active": true,
+      "name": "RETRO AUDIO COMMAND",
+      "tagline": "PS5/PC Desktop Gaming DAC · Vintage Piano-Key Speaker · Compact 8-Key Deck",
+      "description": "Upgrade how your entire desk sounds and responds — pairing high-power headphone amplification with warm vintage speakers and one-tap LCD shortcuts.",
+      "accent": "cyan",
+      "items": [
+        {
+          "productId": "fosi-audio-k7-dac",
+          "position": 1,
+          "role": "main",
+          "roleLabel": "Main Editor's Pick",
+          "pairingNote": "Drives wired headphones cleanly on PS5, Switch, and PC with 2,100mW output, physical bass/treble dials, and a dedicated microphone input."
+        },
+        {
+          "productId": "edifier-mp230-retro-speaker",
+          "position": 2,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #2",
+          "pairingNote": "Switches seamlessly between headset play and warm 20W stereo desk audio styled like a 1950s radio with mechanical piano keys."
+        },
+        {
+          "productId": "elgato-stream-deck-neo",
+          "position": 3,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #3",
+          "pairingNote": "Ties audio profiles, Discord mute, and game launches into eight tidy LCD keys with a built-in front clock strip."
+        }
+      ]
+    },
+    {
+      "id": "tactile-precision-bay",
+      "order": 6,
+      "active": true,
+      "name": "TACTILE PRECISION BAY",
+      "tagline": "Eyes-Free Multi-Dial Console · Tempered Glass Pad · Master Chief Stand",
+      "description": "Distinctive desk hardware built around physical feel — sculpted dials for editing clips, ultra-low-friction glass tracking, and a display-ready controller cradle.",
+      "accent": "purple",
+      "items": [
+        {
+          "productId": "tourbox-neo-controller",
+          "position": 1,
+          "role": "main",
+          "roleLabel": "Main Editor's Pick",
+          "pairingNote": "Fourteen uniquely sculpted knobs, wheels, and buttons let creators scrub gameplay clips and trigger complex shortcuts purely by touch."
+        },
+        {
+          "productId": "pulsar-superglide-glass-pad",
+          "position": 2,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #2",
+          "pairingNote": "Replaces cloth drag with micro-etched aluminosilicate tempered glass for effortlessly fast, wipe-clean mouse glide."
+        },
+        {
+          "productId": "cable-guy-master-chief",
+          "position": 3,
+          "role": "supporting",
+          "roleLabel": "Complementary Pick #3",
+          "pairingNote": "Gives your PS5 or Xbox gamepad — or companion map phone — a sturdy 8-inch collectible cradle right next to your monitor."
+        }
+      ]
+    }
+  ],
   "products": [
     {
       "id": "divoom-times-gate",
@@ -48,7 +273,7 @@
       "editorialIntro": "Most desk accessories fade into the background. The Divoom Times Gate puts five miniature cyberpunk screens in an illuminated housing under your monitor so every panel can run its own widget or animated pixel loop.",
       "whatMakesItDifferent": "Five independently programmable LCD modules in one compact USB-C bar with an active community library of pixel art animations and customizable widget faces.",
       "intendedAudience": "Gamers, streamers, and desk-setup builders who want a genuinely unusual neon centerpiece that doubles as a multi-panel glanceable clock and ticker.",
-      "honestDisadvantages": "Requires 2.4GHz Wi-Fi and the Divoom mobile companion app for initial setup and customization, and its primary appeal is visual personality rather than raw gaming performance.",
+      "honestDisadvantages": "Requires 2.4GHz Wi-Fi, USB-C wall power (no internal battery), and the Divoom mobile companion app — buyers note customization lacks a live preview and takes patience to configure element by element.",
       "independentResearchReferences": [
         {
           "source": "Divoom Official Specifications",
@@ -183,7 +408,7 @@
       "editorialIntro": "If your hands are busy steering through a five-star pursuit, reaching for a keyboard hotkey to mute Discord or save a clip breaks focus. The Elgato Stream Deck Pedal moves three customizable triggers down to the floor.",
       "whatMakesItDifferent": "Built to handle shoes or socks with anti-skid feet, interchangeable resistance springs in the box, and full access to Elgato's multi-action software and app-aware Smart Profiles.",
       "intendedAudience": "PC gamers, console players running Discord or capture software on a nearby PC, co-op squad leaders, and accessibility-focused players who benefit from foot-activated controls.",
-      "honestDisadvantages": "Requires a Windows PC or Mac running Stream Deck software (no direct PS5/Xbox console plug-and-play) and uses digital on/off switches rather than analog racing-style throttle sensors.",
+      "honestDisadvantages": "Requires Windows or macOS running Stream Deck software (no direct PS5/Xbox console plug-and-play), mechanical switches can sound audible in quiet rooms, and the rear USB cable exits straight back rather than recessed.",
       "independentResearchReferences": [
         {
           "source": "Tom's Hardware Review",
@@ -229,7 +454,7 @@
       "id": "ugreen-nexode-rg-65w",
       "legacyKey": null,
       "origin": "new-research",
-      "productName": "UGREEN Nexode RG 65W Robot GaN 3-Port Fast Charger",
+      "productName": "UGREEN Uno 65W 3-Port Robot GaN Fast Charger (LED Display)",
       "manufacturer": "UGREEN",
       "category": "Charging",
       "sectionId": "charging-solutions",
@@ -246,12 +471,12 @@
         "Desk Setup"
       ],
       "compatibility": "Universal USB-C / USB-A 65W GaN charger for DualSense controllers, headsets, Steam Deck, Nintendo Switch, phones, and thin laptops (USB cables sold separately).",
-      "shortDescription": "A compact 65W three-port GaN wall charger disguised as a miniature robot whose LED face changes expressions for fast charging, trickle charge, and standby.",
-      "whyInteresting": "It solves a real desk-power problem — topping up controllers, handhelds, and phones from one cool-running brick — while wearing magnetic boots and flashing cheerful pixel-style status faces.",
+      "shortDescription": "A compact 65W three-port GaN wall charger styled like a miniature desk robot whose built-in LED face changes expressions based on charging status.",
+      "whyInteresting": "Turns an everyday multi-device USB-C wall brick into a playful desk companion with live expressive face indicators while charging controllers, handhelds, phones, and laptops.",
       "editorialIntro": "Wall chargers are usually dull black rectangles hidden behind furniture. UGREEN packed a serious 65W Gallium Nitride 3-port power brick inside a tiny desk robot with magnetic boots and a live LED face that shows your charging state at a glance.",
       "whatMakesItDifferent": "Combines 2 USB-C ports and 1 USB-A port (up to 65W on single-port USB-C) with an expressive status screen and removable magnetic shoe covers that protect the folding wall prongs.",
       "intendedAudience": "Multi-device gamers charging a DualSense, wireless headset, phone, or handheld next to their couch or desk who appreciate playful hardware with genuine GaN specs.",
-      "honestDisadvantages": "No USB-C cable is included in the box, and plugging multiple devices in simultaneously splits the 65W budget across ports rather than delivering 65W to every port at once.",
+      "honestDisadvantages": "Magnetic shoe cover over the prongs uses a relatively weak magnet that cannot bear the charger weight, and full 65W output depends on using the primary USB-C port with an appropriate cable.",
       "independentResearchReferences": [
         {
           "source": "TechRadar Review",
@@ -283,7 +508,7 @@
       "active": true,
       "dailyEligible": false,
       "dailyOrder": null,
-      "model": "Nexode RG 65W Robot GaN 3-Port Fast Charger (CD361)",
+      "model": "Uno / Nexode RG 65W 3-Port Robot GaN Fast Charger (CD361, Black)",
       "imageWidth": null,
       "imageHeight": null,
       "dailyPhotoHold": true,
@@ -524,7 +749,7 @@
       "editorialIntro": "Where standard LED strips just wash a wall in color, the Divoom Pixoo-64 gives your gaming room a sharp 64×64 pixel canvas that can display retro animations, neon palms, time, weather, or live creator counters.",
       "whatMakesItDifferent": "Higher 64×64 LED resolution than typical 16×16 novelty frames, removable desk kickstand plus wall-mount keyhole, and open REST/community support for hobbyist tinkerers.",
       "intendedAudience": "Streamers wanting a readable background display, retro pixel-art fans, and gaming-room decorators building a bold neon setup.",
-      "honestDisadvantages": "Must be plugged into stable 5V/2A USB-C power (no internal battery), requires the Divoom app on 2.4GHz Wi-Fi for management, and is strictly limited to pixel-art graphics rather than photo printing.",
+      "honestDisadvantages": "Some buyers report intermittent 2.4GHz Wi-Fi disconnections and a steep learning curve inside the Divoom companion app; requires continuous USB power and works best indoors away from harsh glare.",
       "independentResearchReferences": [
         {
           "source": "TechnikNews Hardware Review",
@@ -636,7 +861,7 @@
       "id": "nzxt-puck-black",
       "legacyKey": null,
       "origin": "new-research",
-      "productName": "NZXT Puck Magnetic Split-Silicone Headset & Cable Mount (Black)",
+      "productName": "NZXT Puck Magnetic Split-Silicone Headset & Cable Mount (White)",
       "manufacturer": "NZXT",
       "category": "Gaming Setup",
       "sectionId": "gaming-room",
@@ -656,7 +881,7 @@
       "editorialIntro": "Desk-top headset stands eat workspace, and adhesive under-desk hooks eventually peel. The NZXT Puck uses strong magnets inside a soft silicone shell that splits into two halves so you can hang your headset and wrap long cables cleanly.",
       "whatMakesItDifferent": "Two-piece split geometry lets you space the halves apart to wrap extra-long cords or separate them into two independent magnetic hooks without scratching painted steel.",
       "intendedAudience": "PC gamers with steel tower cases or steel-frame desks who want instant, drill-free headset storage and tidy cord wrapping.",
-      "honestDisadvantages": "Completely relies on a ferromagnetic steel surface — if your case panels are all tempered glass or aluminum, or you play strictly on a wood TV console, it won't attach without a metal plate.",
+      "honestDisadvantages": "Requires a ferromagnetic steel PC case or steel desk leg (will not grip aluminum, tempered glass, or wood), silicone attracts dust over time, and current Amazon US listing ships via Amazon Japan with a longer delivery window.",
       "independentResearchReferences": [
         {
           "source": "PC Gamer Desk & VR Storage Coverage",
@@ -684,7 +909,7 @@
       "active": true,
       "dailyEligible": false,
       "dailyOrder": null,
-      "model": "Puck Magnetic Split-Silicone Mount (BA-PUCKR-B1, Black)",
+      "model": "Puck Magnetic Split-Silicone Mount (BA-PUCKR-W1, White)",
       "imageWidth": null,
       "imageHeight": null,
       "dailyPhotoHold": true,
@@ -2757,7 +2982,1392 @@
         "usagePermission": "Not displayed",
         "verifiedDate": "2026-11-26"
       }
+    },
+    {
+      "id": "elgato-stream-deck-plus",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Elgato Stream Deck + (8 LCD Keys, 4 Rotary Dials & Touch Strip)",
+      "manufacturer": "Elgato",
+      "model": "Stream Deck + (10GBD9901, 8 LCD Keys + 4 Rotary Dials + Touch Strip)",
+      "category": "Gaming Setup",
+      "sectionId": "gaming-room",
+      "analyticsPlacement": "gaming_gear_setup",
+      "badge": "Tactile Dial Console",
+      "accent": "cyan",
+      "asin": "B0BJL8SJ59",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0BJL8SJ59?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Windows 10/11 and macOS via USB-C; unlocks Elgato Wave Link audio mixing alongside game, Discord, and smart-light controls.",
+      "shortDescription": "A hybrid desktop control surface combining eight customizable LCD macro keys, four pushable rotary encoder dials, and a dynamic touch strip.",
+      "whyInteresting": "Twisting a dedicated physical knob to balance game audio, Discord voice chat, music, and desk lighting feels dramatically faster than alt-tabbing out of a mission.",
+      "editorialIntro": "Standard macro pads only give you binary buttons. Elgato Stream Deck + pairs eight programmable LCD keys with four smooth rotary dials and an interactive touch bar so you can dial audio levels, zoom maps, or dim room lighting on the fly.",
+      "whatMakesItDifferent": "Four tactile push-and-turn dials paired with dynamic touch-strip labels and Wave Link multi-channel audio routing in one weighted desk unit.",
+      "intendedAudience": "PC gamers, console players running desktop capture/Discord mixers, and multi-monitor desk builders who love tactile hardware controls.",
+      "honestDisadvantages": "Relies on Windows or macOS software and third-party plugins (no official Linux software or direct PS5/Xbox plug-and-play) and costs significantly more than basic macro pads.",
+      "independentResearchReferences": [
+        {
+          "source": "PCMag Hardware Review",
+          "url": "https://www.pcmag.com/"
+        },
+        {
+          "source": "IGN Hardware Review",
+          "url": "https://www.ign.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "benq-screenbar-halo-2",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "BenQ ScreenBar Halo 2 LED Monitor Light Bar (Wireless Puck & Backlight)",
+      "manufacturer": "BenQ",
+      "model": "ScreenBar Halo 2 (Asymmetric Front + Rear Halo Backlight + Wireless Controller)",
+      "category": "Gaming Setup",
+      "sectionId": "gaming-room",
+      "analyticsPlacement": "gaming_gear_setup",
+      "badge": "Dual-Zone Halo Light",
+      "accent": "amber",
+      "asin": "B0DK59YKRS",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0DK59YKRS?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
+      "compatibility": "Clamps onto flat or curved desktop monitors via balanced counterweight clip (USB-powered) with a standalone wireless rotary controller puck.",
+      "shortDescription": "An asymmetric anti-glare monitor light bar with an upgraded rear ambient halo backlight, ultrasonic presence sensor, and a weighted wireless rotary desk puck.",
+      "whyInteresting": "Lights your keyboard and desk while projecting a soft rear wall halo to ease dark-room eye strain — all controlled from a tactile wireless dial without casting glare on your screen.",
+      "editorialIntro": "Playing late into the night in a pitch-black room strains your eyes, while ordinary desk lamps bounce glare across your display. The ScreenBar Halo 2 illuminates your workspace downward and washes the wall behind your monitor simultaneously.",
+      "whatMakesItDifferent": "Combines glare-free asymmetric front optics, wider rear bias lighting, ultrasonic auto-on motion sensing, and a circular wireless desktop control puck.",
+      "intendedAudience": "Late-night PC and monitor-based console gamers who want crisp desk visibility and ambient backlight comfort without sacrificing desk footprint.",
+      "honestDisadvantages": "Premium desk-lighting tier, front and rear lighting zones share a single color temperature setting rather than splitting independently, and rear wall glow works best when your monitor sits reasonably close to a wall.",
+      "independentResearchReferences": [
+        {
+          "source": "BenQ Official Technical Specifications",
+          "url": "https://www.benq.com/"
+        },
+        {
+          "source": "Independent Monitor Lighting Coverage",
+          "url": "https://www.tomshardware.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "8bitdo-retro-keyboard-c64",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "8BitDo Retro Mechanical Keyboard — C64 Edition (Dual Super Buttons & Super Stick)",
+      "manufacturer": "8BitDo",
+      "model": "Retro Mechanical Keyboard — C64 Edition (87-Key + Dual Super Buttons + Super Stick)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "gaming_gear_unusual",
+      "badge": "Commodore 64 Tribute",
+      "accent": "amber",
+      "asin": "B0CYSQWYZP",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0CYSQWYZP?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Windows 10/11 and Android over Bluetooth, 2.4GHz wireless receiver, or USB-C wired; includes Dual Super Buttons and a plug-in Super Stick arcade micro-joystick.",
+      "shortDescription": "An 87-key wireless hot-swappable mechanical keyboard inspired by the classic Commodore 64, bundled with giant programmable Dual Super Buttons and an oversized arcade Super Stick.",
+      "whyInteresting": "Pairs sculpted retro brown-and-cream PBT keycaps and clicky Kailh Box White switches with two huge desk-slammable arcade macro buttons and a plug-in desktop mini joystick.",
+      "editorialIntro": "Most gaming keyboards chase the exact same black slab with rainbow LEDs. The 8BitDo C64 Edition goes all-in on 1982 home-computer character — complete with sculpted deep-dish keycaps, tactile volume and mode knobs, oversized Dual Super Buttons, and a dedicated Super Stick.",
+      "whatMakesItDifferent": "Hot-swappable PCB, tri-mode connectivity, instant hardware key mapping without requiring background bloatware, and four 3.5mm expansion jacks for giant arcade Super Buttons and the included Super Stick.",
+      "intendedAudience": "PC gamers, retro computing fans, and desk builders who want genuine mechanical build quality wrapped in unmistakable 1980s personality.",
+      "honestDisadvantages": "No per-key RGB backlighting for dark rooms, Kailh Box White switches are audibly clicky for shared spaces, and the retro volume knob spins freely without hard end stops.",
+      "independentResearchReferences": [
+        {
+          "source": "PCMag Retro Keyboard Review",
+          "url": "https://www.pcmag.com/"
+        },
+        {
+          "source": "IGN Hardware Review",
+          "url": "https://www.ign.com/"
+        },
+        {
+          "source": "Tom's Guide Mechanical Keyboard Coverage",
+          "url": "https://www.tomsguide.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "8bitdo-arcade-stick-xbox",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "8BitDo Arcade Stick for Xbox Series X|S & Windows (Wireless Fight Stick)",
+      "manufacturer": "8BitDo",
+      "model": "Arcade Stick for Xbox (Officially Licensed, Black, 2.4G Wireless + Wired)",
+      "category": "Controllers",
+      "sectionId": "controllers",
+      "analyticsPlacement": "gaming_gear_controllers",
+      "badge": "Wireless Arcade Stick",
+      "accent": "green",
+      "asin": "B0C4YRJHGB",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0C4YRJHGB?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "Xbox",
+        "PC"
+      ],
+      "compatibility": "Officially licensed for Xbox Series X|S, Xbox One, and Windows 10/11 via low-latency 2.4GHz USB receiver or wired USB-C; includes built-in 3.5mm headset jack and volume controls.",
+      "shortDescription": "A hefty, officially licensed wireless arcade fight stick for Xbox and Windows PC with dedicated control-panel toggles, Ultimate Software remapping, and a built-in 3.5mm audio jack.",
+      "whyInteresting": "Genuine wireless arcade sticks for Xbox consoles are rare — this brings full-size arcade lever-and-button feel to couch or desk sessions without stretching a long cable across the room.",
+      "editorialIntro": "Whether you jump into retro arcade collections, beat-em-ups, or fighters between story missions, slapping an arcade stick on your desk instantly changes how games feel. 8BitDo delivers a weighted wireless fight stick officially licensed for Xbox and PC.",
+      "whatMakesItDifferent": "Wireless 2.4GHz Xbox and Windows connectivity, onboard 3.5mm audio jack with hardware mute and volume controls, custom macro buttons, and Ultimate Software profile support.",
+      "intendedAudience": "Xbox Series X|S and PC players who enjoy fighting games, arcade shmups, retro brawlers, or tactile control panels.",
+      "honestDisadvantages": "Incompatible with PlayStation consoles, compact footprint can feel narrow for larger laps, and advanced hardware modders swapping non-stock levers should expect tight internal screws and custom 5-to-8-pin harness work.",
+      "independentResearchReferences": [
+        {
+          "source": "PCMag Arcade Stick Review",
+          "url": "https://www.pcmag.com/"
+        },
+        {
+          "source": "Tom's Guide Hardware Coverage",
+          "url": "https://www.tomsguide.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "divoom-ditoo-retro-speaker",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Divoom Ditoo Retro Pixel Art 15W Bluetooth Speaker (16×16 LED Display)",
+      "manufacturer": "Divoom",
+      "model": "Ditoo Retro Pixel Art 15W Bluetooth Speaker (Pink, 16x16 Programmable LED Screen)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "gaming_gear_unusual",
+      "badge": "Mini CRT Pixel Speaker",
+      "accent": "pink",
+      "asin": "B084TSLMC6",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B084TSLMC6?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
+      "compatibility": "Bluetooth wireless and micro-SD playback with iOS/Android Divoom app customization; standalone rechargeable desk speaker compatible with phones, PCs, and handheld setups.",
+      "shortDescription": "A miniature retro-computer-shaped 15W Bluetooth speaker featuring a programmable 16×16 pixel-art LED display, tactile mechanical keys, and a tiny side arcade lever.",
+      "whyInteresting": "Looks like a shrink-rayed 1980s desktop terminal sitting beside your monitor — complete with clickable backlit keys, built-in pixel mini-games, white noise, and a community animation gallery.",
+      "editorialIntro": "Standard pill-shaped Bluetooth speakers disappear into desk clutter. The Divoom Ditoo puts a 15W speaker inside a miniature vintage computer chassis with a glowing 16×16 pixel-art screen, clicky mechanical keycaps, and a tiny arcade joystick.",
+      "whatMakesItDifferent": "Combines an expressive pixel-art display, tactile physical mechanical controls, alarm and ambient sound tools, and casual desktop playback in an iconic collectible silhouette.",
+      "intendedAudience": "Desk-setup enthusiasts, retro gaming collectors, and streamers who want a charming visual desk centerpiece that doubles as a compact speaker.",
+      "honestDisadvantages": "Best treated as a fun near-field desk speaker rather than an audiophile monitor (maximum volume can distort), battery drains faster with bright animations plus loud playback, and onboard button navigation has a brief learning curve.",
+      "independentResearchReferences": [
+        {
+          "source": "TechRadar Desk Accessory Coverage",
+          "url": "https://www.techradar.com/"
+        },
+        {
+          "source": "Divoom Official Specifications",
+          "url": "https://divoom.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "divoom-pixoo-max",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Divoom Pixoo-Max 32×32 Programmable LED Pixel Art Display",
+      "manufacturer": "Divoom",
+      "model": "Pixoo-Max (32x32 RGB LED Matrix, 9.6-Inch Frame, Bluetooth App Control)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "gaming_gear_unusual",
+      "badge": "32×32 Pixel Canvas",
+      "accent": "purple",
+      "asin": "B08D2Z2N87",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B08D2Z2N87?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
+      "compatibility": "Standalone desk stand or wall-mountable LED pixel panel powered via USB-C (with built-in battery) and configured over Bluetooth via the iOS/Android Divoom app.",
+      "shortDescription": "A bold 9.6-inch square LED display packing 1,024 individually programmable RGB pixels for animated retro sprites, desk clocks, voice-reactive equalizers, and custom signs.",
+      "whyInteresting": "Uses direct Bluetooth setup rather than finicky 2.4GHz Wi-Fi tickers while delivering crisp, oversized 32×32 pixel sprites that pop immediately behind a monitor or on a shelf.",
+      "editorialIntro": "Want living retro arcade sprites glowing above your desk without relying on a constant Wi-Fi dashboard? The Divoom Pixoo-Max turns a 32×32 grid of 1,024 bright RGB LEDs into a customizable desk canvas, digital clock, and sound-reactive pixel visualizer.",
+      "whatMakesItDifferent": "Larger 9.6-inch diffuser matrix with 1,024 programmable LEDs, Bluetooth control, rechargeable internal battery for cable-free positioning, and both tabletop stand and wall-mount options.",
+      "intendedAudience": "Retro gaming fans, console lounge builders, and streamers adding bold pixel-art personality to a gaming wall or desk.",
+      "honestDisadvantages": "Companion app UI feels dated with some locked clock-face colors and playlist loop limits, and direct sunlight washes out LED visibility (best suited for indoor gaming rooms).",
+      "independentResearchReferences": [
+        {
+          "source": "Divoom Official Specifications",
+          "url": "https://divoom.com/"
+        },
+        {
+          "source": "Independent Pixel Display Reviews",
+          "url": "https://www.keengamer.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "govee-table-lamp-2",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Govee RGBIC Smart Table Lamp 2 (Matter-Enabled 64-Scene Desk Lamp)",
+      "manufacturer": "Govee",
+      "model": "RGBIC Smart Table Lamp 2 (H6022, Matter / Alexa / Google Home, 64 Scene Modes)",
+      "category": "Gaming Setup",
+      "sectionId": "gaming-room",
+      "analyticsPlacement": "gaming_gear_setup",
+      "badge": "Matter RGBIC Lamp",
+      "accent": "pink",
+      "asin": "B0D41XL87F",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0D41XL87F?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Desk Setup"
+      ],
+      "compatibility": "Corded AC desktop lamp with top touch controls, Wi-Fi/Bluetooth Govee Home app customization, and Matter support for Apple Home, Google Home, SmartThings, and Alexa.",
+      "shortDescription": "A compact cylindrical RGBICWW smart desk lamp capable of displaying layered multi-color Vice-style gradients, warm/cool white ambient light, and 64 animated scenes with Matter support.",
+      "whyInteresting": "Projects vivid multi-color neon gradients and subtle low-dim glow from a clean minimalist cylinder with illuminated top touch controls and local Matter smart-home compatibility.",
+      "editorialIntro": "Instead of sticking LED strips to every edge of your desk, a single compact Govee Table Lamp 2 floods a corner or shelf with layered RGBIC neon gradients — shifting from sunset coral and cyan for Leonida nights to soft warm white when you wind down.",
+      "whatMakesItDifferent": "Simultaneous multi-segment RGBIC color blending, ultra-low nightlight dimming, responsive illuminated top touch pad, music-reactive scenes, and modern Matter ecosystem support.",
+      "intendedAudience": "Console and PC gamers upgrading ambient room lighting with minimal wiring and clean smart-home integration.",
+      "honestDisadvantages": "Designed as an atmospheric accent lamp rather than a high-lumen reading task light, outer plastic diffuser attracts dust easily, and custom animations require the Govee app rather than physical preset mapping.",
+      "independentResearchReferences": [
+        {
+          "source": "TechRadar Smart Lamp Review",
+          "url": "https://www.techradar.com/"
+        },
+        {
+          "source": "Govee Official Specifications",
+          "url": "https://www.govee.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "8bitdo-retro-18-numpad",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "8BitDo Retro 18 Mechanical Numpad & Standalone LED Calculator (N Edition)",
+      "manufacturer": "8BitDo",
+      "model": "Retro 18 Mechanical Numpad — N Edition (18-Key Tri-Mode + Standalone Calculator)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "gaming_gear_unusual",
+      "badge": "Numpad + Calculator",
+      "accent": "cyan",
+      "asin": "B0D4QC8R4P",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0D4QC8R4P?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Windows 10/11 and Android via Bluetooth, 2.4GHz wireless dongle, or USB-C wired; flips into an independent battery-powered 9-digit LED desktop calculator with one switch.",
+      "shortDescription": "An 18-key retro NES-styled wireless mechanical numpad with Kailh Box White switches, hot-swappable sockets, and a physical toggle that transforms it into a standalone LED desk calculator.",
+      "whyInteresting": "Solves the missing numpad on compact TKL/65% gaming keyboards while hiding a built-in retro red-LED calculator right on the top bezel for quick heist split math or desk work.",
+      "editorialIntro": "Compact gaming keyboards save mouse room until you need a numpad or quick calculator. 8BitDo built a tri-mode mechanical keypad with crisp Kailh Box White switches and a dedicated 9-digit LED calculator display tucked into the classic console-gray top strip.",
+      "whatMakesItDifferent": "True dual-mode hardware toggle switching instantaneously between PC wireless mechanical numpad and standalone desktop calculator, complete with a dedicated Windows Calculator shortcut key.",
+      "intendedAudience": "Tenkeyless and 60%/75% keyboard gamers, retro hardware fans, and anyone who loves clever dual-purpose mechanical desk tools.",
+      "honestDisadvantages": "No key backlighting for dark rooms, calculator-style key layout differs slightly from standard PC numpads at first, and it lacks deep per-key macro remapping software.",
+      "independentResearchReferences": [
+        {
+          "source": "Tom's Hardware Review",
+          "url": "https://www.tomshardware.com/"
+        },
+        {
+          "source": "8BitDo Official Specifications",
+          "url": "https://www.8bitdo.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "vaydeer-usb-volume-knob",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "VAYDEER Metal USB Volume Control Knob (One-Click Mute & 3 Modes)",
+      "manufacturer": "VAYDEER",
+      "model": "USB Multimedia Volume Controller Knob (Weighted Aluminum, 1-Click Mute)",
+      "category": "Gaming Setup",
+      "sectionId": "gaming-room",
+      "analyticsPlacement": "gaming_gear_setup",
+      "badge": "Tactile Desk Knob",
+      "accent": "green",
+      "asin": "B08V95ZZLM",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B08V95ZZLM?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Driver-free plug-and-play over USB-A on Windows and macOS; adds physical volume dial, press-to-mute, and quick media skip controls next to any keyboard.",
+      "shortDescription": "A compact CNC-machined metal desktop rotary dial that gives any PC or Mac instant physical volume tuning, press-to-mute control, and selectable adjustment steps over USB.",
+      "whyInteresting": "Once you keep a heavy metal volume knob beside your mouse or controller, hunting for tiny keyboard Fn shortcuts or alt-tabbing to mute a loud lobby feels prehistoric.",
+      "editorialIntro": "Plenty of great mechanical keyboards skip a dedicated media wheel. The VAYDEER USB Volume Control Knob drops a single tactile, press-to-mute metal dial right where your hand rests so you can silence game audio or tweak volume in a split second.",
+      "whatMakesItDifferent": "Zero-driver USB plug-and-play simplicity with three selectable sensitivity/control modes and instant press-to-mute feedback.",
+      "intendedAudience": "PC gamers using compact 60%/65%/TKL keyboards, desktop speaker users, and streamers wanting an effortless physical mute knob.",
+      "honestDisadvantages": "PC/Mac USB peripheral only (not a native PS5/Xbox controller accessory), physical media buttons have an audible click, and the rubberized base should be wiped clean periodically so it does not slide on dusty desks.",
+      "independentResearchReferences": [
+        {
+          "source": "VAYDEER Hardware Specifications",
+          "url": "https://www.amazon.com/dp/B08V95ZZLM?tag=gta6heistguid-20"
+        },
+        {
+          "source": "Independent Desktop Audio Setup Guides",
+          "url": "https://www.pcmag.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "fosi-audio-k7-dac",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Fosi Audio K7 Desktop Gaming DAC & Headphone Amplifier (PS5 / PC / Switch)",
+      "manufacturer": "Fosi Audio",
+      "model": "K7 Desktop Gaming DAC/Amp (AK4493S, 2100mW, 4.4mm Balanced + 3.5mm + Mic Input)",
+      "category": "Headsets & Audio",
+      "sectionId": "affordable-headsets",
+      "analyticsPlacement": "gaming_gear_audio",
+      "badge": "PS5/PC Gaming DAC",
+      "accent": "cyan",
+      "asin": "B0DZCTM9N6",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0DZCTM9N6?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PS5",
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "USB-C (UAC 1.0/2.0 for PS5, Switch, PC, Mac), Optical, Coaxial, and aptX HD/LL Bluetooth inputs with 4.4mm balanced, 3.5mm single-ended, and dedicated noise-reducing mic input.",
+      "shortDescription": "An angled metal desktop gaming DAC and 2,100mW headphone amplifier combining audiophile AKM conversion, physical bass/treble and mic knobs, and plug-and-play PS5/PC connectivity.",
+      "whyInteresting": "Bridges audiophile desktop headphone stacks with actual console gaming needs — giving wired headphones serious power, physical tone dials, and a dedicated microphone input on PS5 and PC.",
+      "editorialIntro": "Plugging demanding studio headphones into a console controller or noisy PC motherboard leaves detail and volume on the table. The Fosi Audio K7 puts an angled aluminum command deck on your desk with dual physical knobs, an AK4493S DAC, 4.4mm balanced output, and a built-in gaming mic jack.",
+      "whatMakesItDifferent": "Pairs high-output 2,100mW headphone amplification and hardware bass/treble tuning with UAC 1.0 PS5/Switch compatibility and an independent microphone input channel.",
+      "intendedAudience": "Wired-headphone gamers on PS5 and PC who want stronger drive power, cleaner microphone routing, and tactile desktop volume dials.",
+      "honestDisadvantages": "No native Xbox USB audio support (optical TV passthrough required for Xbox), the main volume encoder spins continuously without physical end stops, and the angled LCD screen has narrower vertical viewing angles.",
+      "independentResearchReferences": [
+        {
+          "source": "TechPowerUp In-Depth Hardware Review",
+          "url": "https://www.techpowerup.com/"
+        },
+        {
+          "source": "Fosi Audio Official Specifications",
+          "url": "https://fosiaudio.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "edifier-mp230-retro-speaker",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Edifier MP230 Retro Wood Bluetooth Speaker (20W Vintage Piano-Key Audio)",
+      "manufacturer": "Edifier",
+      "model": "MP230 Retro Wood Portable Stereo Bluetooth Speaker (20W RMS, Brown)",
+      "category": "Headsets & Audio",
+      "sectionId": "affordable-headsets",
+      "analyticsPlacement": "gaming_gear_audio",
+      "badge": "1950s Radio Style",
+      "accent": "amber",
+      "asin": "B0CMTMN3CP",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0CMTMN3CP?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Bluetooth 5.0, USB-C desktop soundcard mode (single cable for PC/Mac audio), 3.5mm AUX input, and micro-SD card playback.",
+      "shortDescription": "A 1950s-radio-inspired wooden-enclosure 20W stereo desk speaker featuring mechanical piano-key buttons, woven acoustic grille, and built-in USB-C PC soundcard input.",
+      "whyInteresting": "Brings mature vintage hi-fi radio styling and warm dual-driver stereo sound to a gaming desk — and plugs directly into a PC over a single USB-C cable as a compact soundcard speaker.",
+      "editorialIntro": "Not every desk speaker needs glowing plastic hexagons. Styled after mid-century tabletop radios with tactile piano-key switches and a warm wood-finish cabinet, the Edifier MP230 delivers balanced 20W stereo sound over Bluetooth, AUX, or direct USB-C PC audio.",
+      "whatMakesItDifferent": "Authentic piano-key mechanical buttons, dual full-range drivers plus dual passive radiators, and direct USB-C soundcard playback alongside wireless Bluetooth.",
+      "intendedAudience": "Gamers and remote workers who want warm, headset-free soundtrack playback and a refined vintage aesthetic on their desk.",
+      "honestDisadvantages": "Wood-grain veneer cabinet and front piano keys feel delicate compared to rugged outdoor speakers (best kept stationary on a desk or shelf), and bass can lose composure at maximum volume.",
+      "independentResearchReferences": [
+        {
+          "source": "Edifier Official Specifications",
+          "url": "https://www.edifier.com/"
+        },
+        {
+          "source": "SoundGuys Audio Brand Coverage",
+          "url": "https://www.soundguys.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "elgato-stream-deck-neo",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Elgato Stream Deck Neo (8 Customizable LCD Keys & Infobar)",
+      "manufacturer": "Elgato",
+      "model": "Stream Deck Neo (10GBJ9901, 8 LCD Keys + 2 Touch Points + Front Infobar)",
+      "category": "Gaming Setup",
+      "sectionId": "gaming-room",
+      "analyticsPlacement": "gaming_gear_setup",
+      "badge": "Compact 8-Key Deck",
+      "accent": "cyan",
+      "asin": "B0CVY4566H",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0CVY4566H?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Windows 10/11 and macOS via USB-C using Elgato Stream Deck software; compact angled desktop stand built in.",
+      "shortDescription": "A streamlined white desktop macro controller with eight customizable LCD shortcut keys, two touch page-switch points, and an always-visible front clock/status infobar.",
+      "whyInteresting": "Packs Elgato’s full visual-icon macro ecosystem into a minimalist footprint with a handy built-in desk clock strip — ideal for compact gaming setups that do not need 15–32 buttons.",
+      "editorialIntro": "If a full studio Stream Deck feels oversized for your desk, the Stream Deck Neo trims it down to eight crisp LCD keys, capacitive left/right page arrows, and a clean front status bar that keeps the time visible while you launch games, mute Discord, or save clips.",
+      "whatMakesItDifferent": "Built-in front infobar clock/status readout, touch page-switching controls, and full access to the Elgato Marketplace plugin library in a compact angled enclosure.",
+      "intendedAudience": "PC gamers, hybrid work-and-play desk setups, and compact TKL/65% keyboard users wanting visual one-tap shortcuts.",
+      "honestDisadvantages": "Eight physical keys mean heavy macro users will page-switch more often than on a 15-key MK.2, it lacks the rotary dials of Stream Deck +, and official software targets Windows/macOS rather than consoles.",
+      "independentResearchReferences": [
+        {
+          "source": "PCWorld Hardware Review",
+          "url": "https://www.pcworld.com/"
+        },
+        {
+          "source": "IGN Hardware Coverage",
+          "url": "https://www.ign.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "tourbox-neo-controller",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "TourBox NEO Desktop Multi-Dial Tactile Creative & Macro Controller",
+      "manufacturer": "TourBox",
+      "model": "TourBox NEO (Wired USB-C, 14 Blind-Operable Tactile Dials, Wheels & Buttons)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "gaming_gear_unusual",
+      "badge": "Sculpted Dial Console",
+      "accent": "purple",
+      "asin": "B08HCV1JGB",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B08HCV1JGB?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Windows and macOS over wired USB-C with TourBox Console app-aware profiles (Premiere Pro, DaVinci Resolve, Photoshop, OBS, browser & custom PC shortcut mappings).",
+      "shortDescription": "An unmistakable sculpted one-handed desktop console covered in differently shaped knobs, scroll wheels, a tactile dial, and D-pad keys designed for eyes-free blind operation.",
+      "whyInteresting": "Looks like an experimental cockpit controller — every knob, wheel, and button has a distinct physical silhouette so your left hand can scrub clip timelines or trigger macros without looking down.",
+      "editorialIntro": "Gamers who edit highlight clips, manage screenshots, or juggle complex desktop apps often find standard keyboard chords awkward. TourBox NEO puts 14 uniquely shaped dials, wheels, and buttons under one hand so every control is recognizable purely by touch.",
+      "whatMakesItDifferent": "Asymmetric eyes-free ergonomics combining a rotating dial, heavy scroll wheel, vertical knob, and custom chord macros across auto-switching desktop profiles.",
+      "intendedAudience": "Gaming clip editors, YouTube/TikTok creators, and PC tinkerers who love unusual tactile input hardware.",
+      "honestDisadvantages": "Wired desktop Windows/macOS controller only (not a native game controller for PS5/Xbox), carries a real initial muscle-memory learning curve, and primarily shines in creative/editing workflows rather than direct action gameplay.",
+      "independentResearchReferences": [
+        {
+          "source": "PCMag Editors' Choice Review",
+          "url": "https://www.pcmag.com/"
+        },
+        {
+          "source": "Creative Bloq Hardware Review",
+          "url": "https://www.creativebloq.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "pulsar-superglide-glass-pad",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Pulsar Gaming Gears Superglide Tempered Glass Gaming Mouse Pad (XXL, Red)",
+      "manufacturer": "Pulsar Gaming Gears",
+      "model": "Superglide Glass Mousepad XXL (Aluminosilicate Tempered Glass, High-Density Silicone Base)",
+      "category": "Controllers",
+      "sectionId": "controllers",
+      "analyticsPlacement": "gaming_gear_controllers",
+      "badge": "Aluminosilicate Glass",
+      "accent": "pink",
+      "asin": "B0C5M2211C",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0C5M2211C?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Universal for optical PC gaming mice fitted with standard PTFE skates (do not pair with glass mouse skates).",
+      "shortDescription": "An oversized XXL gaming desk surface forged from strong aluminosilicate tempered glass with a full-coverage molded silicone base for ultra-low-friction, micro-consistent mouse tracking.",
+      "whyInteresting": "Swapping cloth for true tempered glass feels completely different on a gaming desk — zero humidity drag, wipe-clean durability, and effortless micro-tracking speed.",
+      "editorialIntro": "Most cloth mousepads slowly develop muddy slow spots from sweat and dust. Pulsar’s Superglide XXL replaces woven fabric with micro-etched aluminosilicate glass bonded to a non-slip silicone base for an ultra-fast, consistent glide that wipes clean in seconds.",
+      "whatMakesItDifferent": "True Gorilla-Glass-class aluminosilicate surface that resists wear and warping, paired with bold red visual presence and full-surface silicone backing.",
+      "intendedAudience": "PC FPS and action gamers curious about ultra-low-friction hard surfaces and high-durability statement desk gear.",
+      "honestDisadvantages": "Noticeably pricier than cloth pads, tiny dust specks feel scratchy until wiped away, faster PTFE mouse-skate wear over time, and low static friction requires an adjustment period (plus a sleeve in humid rooms).",
+      "independentResearchReferences": [
+        {
+          "source": "ProSettings Glass Mousepad Review",
+          "url": "https://prosettings.net/"
+        },
+        {
+          "source": "Pulsar Official Specifications",
+          "url": "https://www.pulsar.gg/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "cable-guy-master-chief",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Exquisite Gaming Halo: Master Chief Cable Guys Controller & Phone Holder",
+      "manufacturer": "Exquisite Gaming",
+      "model": "Cable Guys: Halo Infinite Master Chief (Officially Licensed 8-Inch Controller & Phone Stand)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "gaming_gear_unusual",
+      "badge": "Collectible Cradle",
+      "accent": "green",
+      "asin": "B08KJHDDRK",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B08KJHDDRK?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "Xbox",
+        "PS5",
+        "PC",
+        "Desk Setup"
+      ],
+      "compatibility": "Holds Xbox Series X|S, PlayStation 5 DualSense, Switch Pro controllers, and most modern smartphones (passive stand — pair with your own USB-C cable if charging).",
+      "shortDescription": "A weighted, officially licensed 8-inch Halo Master Chief collectible figure engineered with outstretched hands to cradle a gaming controller or smartphone on your desk.",
+      "whyInteresting": "Turns a plain controller resting spot into a display-worthy gaming figure that also props up your phone cleanly while checking maps or heist guides.",
+      "editorialIntro": "Instead of tossing your gamepad onto a bare desk or hiding it in a drawer, the officially licensed Halo Master Chief Cable Guys figure stands eight inches tall and holds your Xbox or PS5 controller — or your phone — right at arm’s reach.",
+      "whatMakesItDifferent": "Heavy, stable sculpted base with universally sized hands that handle both full-size console controllers and smartphones without locking you into one console dock pin layout.",
+      "intendedAudience": "Console and PC gamers looking for a durable, well-reviewed collectible desk stand or giftable gaming room centerpiece.",
+      "honestDisadvantages": "Passive display stand only (no built-in charging contacts or power dock) and some controllers sit slightly angled depending on grip contour.",
+      "independentResearchReferences": [
+        {
+          "source": "Exquisite Gaming Official Product Catalog",
+          "url": "https://exgpro.com/"
+        },
+        {
+          "source": "Independent Gaming Accessory Guides",
+          "url": "https://www.ign.com/"
+        }
+      ],
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Text-Only Presentation (Amazon-Only Image Policy — Recommended Product Links Retired, SiteStripe Text-Only & Creators API Locked)",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None — live Associates Central & SiteStripe verification confirmed zero authorized Amazon image embeds currently available for gta6heistguid-20",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": true,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": true,
+      "imageAudit": {
+        "previousClassification": "NEW PHASE 47 LEONIDA DROP CANDIDATE",
+        "previousImageSource": null,
+        "currentClassification": "TEXT-ONLY CARD (AMAZON-ONLY IMAGE POLICY ENFORCED)",
+        "exactProductMatch": "N/A — Amazon Recommended Product Links retired (404), SiteStripe is Text-Only, Creators API locked; zero non-Amazon images substituted",
+        "usagePermission": "Awaiting authorized Amazon Creators API access (requires Approved Associates Account + 10 qualifying sales in 30 days) and express written IP License Section 2(d) mobile-site approval.",
+        "verifiedDate": "2026-11-26"
+      }
+    },
+    {
+      "id": "divoom-ditoo-pro-b0d46r46wy-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Divoom Ditoo-Pro Bluetooth Pixel Art Speaker (Blue — B0D46R46WY)",
+      "manufacturer": "Divoom",
+      "model": "Ditoo-Pro Blue (B0D46R46WY)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B0D46R46WY",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0D46R46WY?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Candidate C rejected: live Amazon US verification (2026-11-26) showed Currently Unavailable with only 12 ratings and reports of high-pitched whine above 40% brightness. Replaced by in-stock flagship Divoom Ditoo (B084TSLMC6).",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Candidate C rejected: live Amazon US verification (2026-11-26) showed Currently Unavailable with only 12 ratings and reports of high-pitched whine above 40% brightness. Replaced by in-stock flagship Divoom Ditoo (B084TSLMC6)."
+    },
+    {
+      "id": "divoom-times-gate-pink-b0d44qwspn-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Divoom Times Gate 5-Screen Pixel Display (Pink — B0D44QWSPN)",
+      "manufacturer": "Divoom",
+      "model": "Times Gate Pink (B0D44QWSPN)",
+      "category": "Funny & Unusual",
+      "sectionId": "funny-gear",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B0D44QWSPN",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0D44QWSPN?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Candidate D rejected: live Amazon US verification (2026-11-26) showed Currently Unavailable, sub-4.3 rating with only 28 ratings, and severe recurring Wi-Fi drop/reset reliability complaints. Replaced by in-stock Silver edition (B0CG1PXHRQ).",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Candidate D rejected: live Amazon US verification (2026-11-26) showed Currently Unavailable, sub-4.3 rating with only 28 ratings, and severe recurring Wi-Fi drop/reset reliability complaints. Replaced by in-stock Silver edition (B0CG1PXHRQ)."
+    },
+    {
+      "id": "maono-pd100xs-mismatch-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "MAONO PD100XS Dynamic Mic (ASIN Mismatch for ModMic Search — B0DHTV4CKY)",
+      "manufacturer": "MAONO",
+      "model": "PD100XS Black (B0DHTV4CKY)",
+      "category": "Headsets & Audio",
+      "sectionId": "affordable-headsets",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B0DHTV4CKY",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0DHTV4CKY?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Rejected on live detail check: ASIN resolved to a MAONO PD100XS desktop mic (not Antlion ModMic Uni 2) and carried recurring durability/failure complaints after a couple months.",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Rejected on live detail check: ASIN resolved to a MAONO PD100XS desktop mic (not Antlion ModMic Uni 2) and carried recurring durability/failure complaints after a couple months."
+    },
+    {
+      "id": "sharge-retro-67w-caution-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "SHARGE Retro 67W Power Display GaN Charger (B0C1H5QL7H)",
+      "manufacturer": "SHARGE",
+      "model": "Retro 67W GaN Charger (B0C1H5QL7H)",
+      "category": "Charging",
+      "sectionId": "charging-solutions",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B0C1H5QL7H",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0C1H5QL7H?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Held/excluded due to recurring customer reliability reports of the front display stopping after a couple of months; replaced by UGREEN Uno 65W Robot GaN Charger (B0C6DX66TN).",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Held/excluded due to recurring customer reliability reports of the front display stopping after a couple of months; replaced by UGREEN Uno 65W Robot GaN Charger (B0C6DX66TN)."
+    },
+    {
+      "id": "haute42-t16-pro-caution-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Haute42 T16 Pro Leverless Arcade Stick (B0DXTJBL6Z)",
+      "manufacturer": "Haute42",
+      "model": "T16 Pro 16-Key Leverless Controller (B0DXTJBL6Z)",
+      "category": "Controllers",
+      "sectionId": "controllers",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B0DXTJBL6Z",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B0DXTJBL6Z?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Held/excluded after live reliability check revealed recurring acrylic enclosure flex/creaking during lap use and mid-match USB disconnect complaints.",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Held/excluded after live reliability check revealed recurring acrylic enclosure flex/creaking during lap use and mid-match USB disconnect complaints."
+    },
+    {
+      "id": "gravastar-mars-pro-caution-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "GravaStar Mars Pro Sci-Fi Bluetooth Speaker (B09CTVW7YR)",
+      "manufacturer": "GravaStar",
+      "model": "Mars Pro Portable Bluetooth Speaker (B09CTVW7YR)",
+      "category": "Headsets & Audio",
+      "sectionId": "affordable-headsets",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B09CTVW7YR",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B09CTVW7YR?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Held/excluded after live review check showed recurring Bluetooth connection dropouts every few minutes and mixed battery/support reliability.",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Held/excluded after live review check showed recurring Bluetooth connection dropouts every few minutes and mixed battery/support reliability."
+    },
+    {
+      "id": "bitopbi-stackable-lamp-caution-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "7-Piece Interlocking Induction Stackable LED Puzzle Desk Lamp (B07FVTCKDG)",
+      "manufacturer": "Bitopbi",
+      "model": "7 PCS Stackable Induction Block Lamp (B07FVTCKDG)",
+      "category": "Gaming Setup",
+      "sectionId": "gaming-room",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B07FVTCKDG",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B07FVTCKDG?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Held/excluded after live review check showed finicky block contact causing flickering when nudged, warm base heat, and unit failure complaints.",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Held/excluded after live review check showed finicky block contact causing flickering when nudged, warm base heat, and unit failure complaints."
+    },
+    {
+      "id": "8bitdo-arcade-stick-switch-backorder-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "8BitDo Arcade Stick for Switch & Windows (B08GJC5WSS)",
+      "manufacturer": "8BitDo",
+      "model": "Arcade Stick for Switch & Windows (B08GJC5WSS)",
+      "category": "Controllers",
+      "sectionId": "controllers",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B08GJC5WSS",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B08GJC5WSS?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Held due to 6+ week delivery backorder window (Jan 11 – Feb 1) during 2026-11-26 stock check; in-stock 8BitDo Arcade Stick for Xbox & Windows (B0C4YRJHGB) selected instead.",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Held due to 6+ week delivery backorder window (Jan 11 – Feb 1) during 2026-11-26 stock check; in-stock 8BitDo Arcade Stick for Xbox & Windows (B0C4YRJHGB) selected instead."
+    },
+    {
+      "id": "razer-tartarus-v2-caution-rejected",
+      "legacyKey": null,
+      "origin": "phase47-leonida-drop-research",
+      "productName": "Razer Tartarus V2 Left-Handed Gaming Keypad (B07754PYFK)",
+      "manufacturer": "Razer",
+      "model": "Tartarus V2 Mecha-Membrane Keypad (B07754PYFK)",
+      "category": "Controllers",
+      "sectionId": "controllers",
+      "analyticsPlacement": "inactive_audit",
+      "badge": "Excluded",
+      "accent": "amber",
+      "asin": "B07754PYFK",
+      "amazonSpecialLink": "https://www.amazon.com/dp/B07754PYFK?tag=gta6heistguid-20",
+      "associatesTag": "gta6heistguid-20",
+      "platforms": [
+        "PC"
+      ],
+      "compatibility": "Inactive research record — excluded from display.",
+      "shortDescription": "Excluded during Phase 47 Leonida Drop live Amazon US availability, identity, or reliability audit.",
+      "whyInteresting": "Evaluated during Phase 47 product discovery.",
+      "honestDisadvantages": "Held/excluded after live review check highlighted variable build quality, wrist pad wear, and artificial click leaf complaints at the borderline 4.3 threshold.",
+      "mediaType": "none",
+      "imageSource": null,
+      "imageAlt": "",
+      "imageWidth": null,
+      "imageHeight": null,
+      "imageLicense": {
+        "status": "Excluded / Inactive",
+        "licenseName": null,
+        "licenseUrl": null,
+        "creator": null,
+        "sourceUrl": null,
+        "sourceOrigin": "None (Inactive)",
+        "badgeLabel": null
+      },
+      "researchVerifiedDate": "2026-11-26",
+      "linkVerifiedDate": "2026-11-26",
+      "active": false,
+      "dailyEligible": false,
+      "dailyOrder": null,
+      "leonidaDropEligible": false,
+      "rejectionReason": "Held/excluded after live review check highlighted variable build quality, wrist pad wear, and artificial click leaf complaints at the borderline 4.3 threshold."
     }
-  ],
-  "imagePolicy": "ACTUAL PRODUCT PHOTOGRAPHS ONLY. Zero AI-generated images, zero synthetic photography, zero illustrations, zero mockups, and zero generic substitute photos. Products without a legally permitted actual photograph render as clean text-only cards (mediaType: 'none', imageSource: null) and are held out of the Daily Editor's Pick rotation until a permitted real photograph is verified."
+  ]
 }

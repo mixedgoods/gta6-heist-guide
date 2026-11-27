@@ -1,19 +1,52 @@
 // ==========================================================================
-// GTA6HEISTGUIDE.COM — GAMING GEAR HUB & LEONIDA EDITOR'S PICK RENDERER
-// Renders the daily rotating Leonida Editor's Pick of the Day and curated
-// Gaming Gear sections directly from /data/gear-products-master.json.
+// GTA6HEISTGUIDE.COM — GAMING GEAR HUB & LEONIDA DROP ENGINE
+// Renders:
+//   1. LEONIDA DROP — three coordinated, unusual gaming discoveries that
+//      rotate across themed collections on every page refresh (tab-scoped
+//      sessionStorage cycle with zero repeats until cycle end) plus an
+//      interactive SHOW ANOTHER DROP button.
+//   2. All 6 curated Gaming Gear catalog sections + platform filters.
 //
-// Preserves Phase 35.1C Amazon Placement Pause everywhere else on the site
-// (never alters window.SITE_CONFIG.enableAmazonProductPlacements).
-// Zero auto-redirects, zero random rotation, zero timers, zero prices/ratings.
+// Compliance invariants:
+// - Strictly Amazon-Only product images inside LEONIDA DROP: never renders
+//   Wikimedia Commons, manufacturer, third-party, AI, SVG, or placeholder
+//   images in LEONIDA DROP. Displays authorized Amazon images ONLY when a
+//   verified, mobile-approved Amazon hydrator supplies <24h Amazon CDN URLs.
+// - Preserves Phase 47 verified real-photo cards in the 6 lower catalog sections.
+// - Preserves Phase 35.1C Amazon Placement Pause everywhere else on the site
+//   (never alters window.SITE_CONFIG.enableAmazonProductPlacements).
+// - Zero cookies, zero user profiling, zero timers, zero auto-redirects,
+//   zero hardcoded prices, zero Amazon star ratings or review counts.
 // ==========================================================================
 (function (global) {
   'use strict';
 
   var CATALOG_URL = '/data/gear-products-master.json';
   var apiHydrator = null;
+  var amazonDropHydrator = null;
   var activeCatalog = null;
+  var activeDropResult = null;
   var activePlatformFilter = 'all';
+  var memorySessionFallback = (function () {
+    var store = {};
+    return {
+      getItem: function (k) { return Object.prototype.hasOwnProperty.call(store, k) ? store[k] : null; },
+      setItem: function (k, v) { store[k] = String(v); },
+      removeItem: function (k) { delete store[k]; }
+    };
+  })();
+
+  function getSafeSessionStorage() {
+    try {
+      if (global.sessionStorage) {
+        var probeKey = '__gta6_ss_probe__';
+        global.sessionStorage.setItem(probeKey, '1');
+        global.sessionStorage.removeItem(probeKey);
+        return global.sessionStorage;
+      }
+    } catch (e) {}
+    return memorySessionFallback;
+  }
 
   function esc(str) {
     return String(str == null ? '' : str)
@@ -50,9 +83,18 @@
     }
   }
 
-  function buildLinkAttrs(product, placement, area, dailySlot) {
+  function buildLinkAttrs(product, placement, area, extra) {
+    var opts = extra || {};
     var host = getDestinationHost(product.amazonSpecialLink);
-    var slotAttr = dailySlot ? ' data-aff-daily-slot="' + esc(dailySlot) + '"' : ' data-aff-daily-slot="catalog"';
+    var slotAttr = opts.dailySlot
+      ? ' data-aff-daily-slot="' + esc(opts.dailySlot) + '"'
+      : ' data-aff-daily-slot="catalog"';
+    var colAttr = opts.collectionId
+      ? ' data-aff-collection="' + esc(opts.collectionId) + '"'
+      : '';
+    var posAttr = opts.position
+      ? ' data-aff-position="' + esc(opts.position) + '"'
+      : '';
     return (
       'href="' + esc(product.amazonSpecialLink) + '"' +
       ' target="_blank" rel="sponsored nofollow noopener"' +
@@ -63,7 +105,9 @@
       ' data-aff-placement="' + esc(placement) + '"' +
       ' data-aff-area="' + esc(area || 'cta') + '"' +
       ' data-aff-dest-host="' + esc(host) + '"' +
-      slotAttr
+      slotAttr +
+      colAttr +
+      posAttr
     );
   }
 
@@ -95,101 +139,228 @@
     return html;
   }
 
-  function renderEditorsPick(selection, catalog) {
-    var mount = document.getElementById('leonidaEditorsPickMount');
-    if (!mount || !selection || !selection.ok || !selection.product) return;
+  // Strictly Amazon-Only image renderer for LEONIDA DROP cards.
+  // Returns empty string unless product carries a verified, mobile-approved,
+  // <24h Amazon CDN image from Creators API or an official Amazon widget.
+  function renderAuthorizedDropAmazonMedia(item, collectionId, placement) {
+    if (!global.GTA6GearRotation || !item || !item.product) return '';
+    var p = item.product;
+    if (!global.GTA6GearRotation.isAuthorizedAmazonDropImage(p)) {
+      return '';
+    }
+    var img = p.amazonDropImage;
+    var imgAttrs = buildLinkAttrs(p, placement, 'image', {
+      dailySlot: 'drop_' + collectionId,
+      collectionId: collectionId,
+      position: item.position
+    });
+    var w = Number(img.width) > 0 ? Number(img.width) : 500;
+    var h = Number(img.height) > 0 ? Number(img.height) : 500;
+    return (
+      '<a ' + imgAttrs + ' class="ld-amazon-media" aria-label="View ' + esc(p.productName) + ' on Amazon">' +
+        '<img src="' + esc(img.url) + '" alt="' + esc(img.alt || p.productName) + '" width="' + esc(w) + '" height="' + esc(h) + '" loading="eager" decoding="async">' +
+        '<span class="gg-media-badge gg-media-badge--photo">Official Amazon Product Image</span>' +
+      '</a>'
+    );
+  }
 
-    var p = selection.product;
-    // Daily Editor's Pick must always show a verified actual product photograph
-    if (p.mediaType !== 'photo' || !p.imageSource) return;
+  function renderDropMainCard(item, collection, dropCfg) {
+    var p = item.product;
+    var placement = 'leonida_drop_main';
+    var ctaLabel = (dropCfg && dropCfg.ctaLabel) || 'CHECK IT OUT ON AMAZON';
+    var ctaAttrs = buildLinkAttrs(p, placement, 'cta', {
+      dailySlot: 'drop_' + collection.id,
+      collectionId: collection.id,
+      position: item.position
+    });
+    var amazonMediaHtml = renderAuthorizedDropAmazonMedia(item, collection.id, placement);
 
-    var rotCfg = (catalog && catalog.rotationConfig) || {};
-    var ctaLabel = rotCfg.ctaLabel || 'CHECK IT OUT ON AMAZON';
-    var disclosureText = rotCfg.inlineDisclosure || 'Affiliate link — we may earn from qualifying purchases.';
-    var assocStatement = rotCfg.disclosureStatement || 'As an Amazon Associate I earn from qualifying purchases.';
-    var dailySlot = 'daily_' + selection.calendarDate.isoDate;
-    var ctaAttrs = buildLinkAttrs(p, 'editors_pick_daily', 'cta', dailySlot);
-    var imgAttrs = buildLinkAttrs(p, 'editors_pick_daily', 'image', dailySlot);
-    var imgW = Number(p.imageWidth) > 0 ? Number(p.imageWidth) : 1000;
-    var imgH = Number(p.imageHeight) > 0 ? Number(p.imageHeight) : 750;
-    var stageDarkClass = p.photoBackdrop === 'dark' ? ' is-photo-dark' : '';
-    var stageBadge = '<span class="gg-media-badge gg-media-badge--photo">Verified Product Photo</span>';
+    return (
+      '<article class="ld-card ld-card--main ld-accent-' + esc(p.accent || collection.accent || 'cyan') + '" data-drop-role="main" data-drop-position="1" data-product-id="' + esc(p.id) + '" data-asin="' + esc(p.asin) + '">' +
+        '<div class="ld-card-main-grid' + (amazonMediaHtml ? ' has-amazon-media' : '') + '">' +
+          '<div class="ld-main-copy">' +
+            '<div class="ld-card-badges">' +
+              '<span class="ld-role-pill ld-role-pill--main">' + esc(item.roleLabel || "Main Editor's Pick") + '</span>' +
+              '<span class="ld-category-pill">' + esc(p.category) + '</span>' +
+              '<span class="ld-brand-tag">' + esc(p.manufacturer) + '</span>' +
+              (p.badge ? '<span class="ld-highlight-pill">' + esc(p.badge) + '</span>' : '') +
+            '</div>' +
+            '<h3 class="ld-product-title ld-product-title--main">' + esc(p.productName) + '</h3>' +
+            (p.model ? '<p class="ld-model-line">Verified Model: ' + esc(p.model) + '</p>' : '') +
+            renderPlatformPills(p.platforms) +
+            '<p class="ld-main-intro">' + esc(p.editorialIntro || p.shortDescription) + '</p>' +
+            '<dl class="ld-specs-grid">' +
+              '<div class="ld-spec-box">' +
+                '<dt>Why It Anchors This Drop</dt>' +
+                '<dd>' + esc(item.pairingNote || p.whyInteresting) + '</dd>' +
+              '</div>' +
+              '<div class="ld-spec-box">' +
+                '<dt>What Makes It Different</dt>' +
+                '<dd>' + esc(p.whatMakesItDifferent || p.whyInteresting) + '</dd>' +
+              '</div>' +
+            '</dl>' +
+          '</div>' +
+          '<div class="ld-main-action-col">' +
+            amazonMediaHtml +
+            '<div class="ld-action-panel">' +
+              '<div class="ld-action-meta">' +
+                '<p class="ld-meta-line"><strong>Compatibility:</strong> ' + esc(p.compatibility) + '</p>' +
+                '<p class="ld-meta-line ld-meta-line--caveat"><strong>Honest Trade-Off:</strong> ' + esc(p.honestDisadvantages) + '</p>' +
+              '</div>' +
+              '<a ' + ctaAttrs + ' class="ld-cta-btn ld-cta-btn--main">' + esc(ctaLabel) + ' <span aria-hidden="true">&rarr;</span></a>' +
+              '<p class="ld-inline-note"><strong>Paid Amazon Link:</strong> View live official product photos, specs &amp; current pricing directly on Amazon US.</p>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</article>'
+    );
+  }
+
+  function renderDropSupportingCard(item, collection, dropCfg) {
+    var p = item.product;
+    var placement = 'leonida_drop_supporting';
+    var ctaLabel = (dropCfg && dropCfg.supportingCtaLabel) || 'CHECK ON AMAZON';
+    var ctaAttrs = buildLinkAttrs(p, placement, 'cta', {
+      dailySlot: 'drop_' + collection.id,
+      collectionId: collection.id,
+      position: item.position
+    });
+    var amazonMediaHtml = renderAuthorizedDropAmazonMedia(item, collection.id, placement);
+
+    return (
+      '<article class="ld-card ld-card--supporting ld-accent-' + esc(p.accent || collection.accent || 'cyan') + '" data-drop-role="supporting" data-drop-position="' + esc(item.position) + '" data-product-id="' + esc(p.id) + '" data-asin="' + esc(p.asin) + '">' +
+        amazonMediaHtml +
+        '<div class="ld-supp-body">' +
+          '<div class="ld-card-badges">' +
+            '<span class="ld-role-pill">' + esc(item.roleLabel || ('Complementary Pick #' + item.position)) + '</span>' +
+            '<span class="ld-brand-tag">' + esc(p.manufacturer) + '</span>' +
+            (p.badge ? '<span class="ld-highlight-pill">' + esc(p.badge) + '</span>' : '') +
+          '</div>' +
+          '<h3 class="ld-product-title">' + esc(p.productName) + '</h3>' +
+          (p.model ? '<p class="ld-model-line">' + esc(p.model) + '</p>' : '') +
+          renderPlatformPills(p.platforms) +
+          '<p class="ld-supp-desc">' + esc(p.shortDescription) + '</p>' +
+          '<div class="ld-supp-notes">' +
+            '<p class="ld-meta-line"><strong>Why it pairs here:</strong> ' + esc(item.pairingNote || p.whyInteresting) + '</p>' +
+            '<p class="ld-meta-line"><strong>Compatibility:</strong> ' + esc(p.compatibility) + '</p>' +
+            '<p class="ld-meta-line ld-meta-line--caveat"><strong>Trade-off:</strong> ' + esc(p.honestDisadvantages) + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="ld-supp-foot">' +
+          '<span class="ld-inline-note">Paid Amazon link &mdash; view official photos &amp; current price on Amazon.</span>' +
+          '<a ' + ctaAttrs + ' class="ld-cta-btn ld-cta-btn--supporting">' + esc(ctaLabel) + ' <span aria-hidden="true">&rarr;</span></a>' +
+        '</div>' +
+      '</article>'
+    );
+  }
+
+  function renderLeonidaDrop(selection, catalog, options) {
+    var opts = options || {};
+    var mount = document.getElementById('leonidaDropMount');
+    if (!mount || !selection || !selection.ok || !selection.collection) return false;
+
+    var col = selection.collection;
+    if (!Array.isArray(col.items) || col.items.length !== 3) return false;
+
+    activeDropResult = selection;
+    var dropCfg = (catalog && catalog.leonidaDropConfig) || {};
+    var featureName = dropCfg.featureName || 'LEONIDA DROP';
+    var subtitle = dropCfg.subtitle || 'Three unusual gaming discoveries. A fresh drop every visit.';
+    var nextBtnLabel = dropCfg.nextDropButtonLabel || 'SHOW ANOTHER DROP';
+    var assocStatement = dropCfg.disclosureStatement || 'As an Amazon Associate I earn from qualifying purchases.';
+
+    var mainHtml = renderDropMainCard(col.items[0], col, dropCfg);
+    var suppHtml =
+      renderDropSupportingCard(col.items[1], col, dropCfg) +
+      renderDropSupportingCard(col.items[2], col, dropCfg);
 
     mount.innerHTML =
-      '<div class="lep-card lep-accent-' + esc(p.accent || 'cyan') + '" data-daily-pick-id="' + esc(p.id) + '" data-daily-date="' + esc(dailySlot) + '">' +
-        '<div class="lep-header">' +
-          '<div class="lep-header-left">' +
-            '<span class="lep-kicker">DAILY EDITORIAL FEATURE &middot; AMERICA/CHICAGO ROTATION</span>' +
-            '<h2 class="lep-title" id="editorsPickHeading">LEONIDA EDITOR&#39;S PICK OF THE DAY</h2>' +
-            '<p class="lep-subtitle">One unusual gaming discovery, selected daily.</p>' +
+      '<div class="ld-shell ld-accent-' + esc(col.accent || 'cyan') + '" data-collection-id="' + esc(col.id) + '" data-drop-slot="' + esc(selection.slotNumber) + '" data-drop-total="' + esc(selection.totalCollections) + '" data-drop-cycle="' + esc(selection.cycle) + '">' +
+        '<div class="ld-header">' +
+          '<div class="ld-header-left">' +
+            '<span class="ld-kicker">CURATED 3-PRODUCT GAMING COLLECTION &middot; REFRESH FOR A NEW DROP</span>' +
+            '<h2 class="ld-title" id="leonidaDropHeading">' + esc(featureName) + '</h2>' +
+            '<p class="ld-subtitle">' + esc(subtitle) + '</p>' +
           '</div>' +
-          '<div class="lep-date-meta" aria-label="Daily rotation schedule">' +
-            '<span class="lep-date-pill">' + esc(selection.displayDate) + '</span>' +
-            '<span class="lep-slot-pill">Pick #' + esc(selection.slotNumber) + ' of ' + esc(selection.poolSize) + ' &middot; Updates midnight CT</span>' +
+          '<div class="ld-header-controls">' +
+            '<div class="ld-cycle-meta" aria-live="polite">' +
+              '<span class="ld-theme-pill">' + esc(col.name) + '</span>' +
+              '<span class="ld-counter-pill">Drop ' + esc(selection.slotNumber) + ' of ' + esc(selection.totalCollections) + ' &middot; Refresh or tap for next</span>' +
+            '</div>' +
+            '<button type="button" id="showAnotherDropBtn" class="ld-next-btn" data-action="show-another-drop" aria-label="Show another three-product Leonida Drop collection">' +
+              '<span class="ld-next-icon" aria-hidden="true">&#8635;</span> ' + esc(nextBtnLabel) +
+            '</button>' +
           '</div>' +
         '</div>' +
 
-        '<div class="lep-grid">' +
-          '<div class="lep-media-col">' +
-            '<a ' + imgAttrs + ' class="lep-media-stage is-photo' + stageDarkClass + '" aria-label="Check ' + esc(p.productName) + ' on Amazon">' +
-              '<img src="' + esc(p.imageSource) + '" alt="' + esc(p.imageAlt) + '" width="' + esc(imgW) + '" height="' + esc(imgH) + '" loading="eager" decoding="sync">' +
-              stageBadge +
-            '</a>' +
-            renderPhotoCredit(p) +
-            '<div class="lep-cta-panel">' +
-              '<a ' + ctaAttrs + ' class="lep-cta-btn">' + esc(ctaLabel) + ' <span aria-hidden="true">&rarr;</span></a>' +
-              '<p class="lep-disclosure"><strong>Disclosure:</strong> ' + esc(disclosureText) + ' ' + esc(assocStatement) + ' Check current price and availability directly on Amazon.</p>' +
-            '</div>' +
+        '<div class="ld-theme-banner">' +
+          '<div class="ld-theme-banner-copy">' +
+            '<span class="ld-theme-eyebrow">Active Theme: ' + esc(col.name) + (col.tagline ? ' &middot; ' + esc(col.tagline) : '') + '</span>' +
+            '<p class="ld-theme-desc">' + esc(col.description) + '</p>' +
           '</div>' +
+        '</div>' +
 
-          '<div class="lep-body-col">' +
-            '<div class="lep-meta-row">' +
-              '<span class="lep-category-pill">' + esc(p.category) + '</span>' +
-              '<span class="lep-brand-label">' + esc(p.manufacturer) + '</span>' +
-              (p.badge ? '<span class="lep-highlight-tag">' + esc(p.badge) + '</span>' : '') +
-            '</div>' +
-            '<h3 class="lep-product-name">' + esc(p.productName) + '</h3>' +
-            renderPlatformPills(p.platforms) +
-            '<p class="lep-intro">' + esc(p.editorialIntro) + '</p>' +
-
-            '<dl class="lep-details-grid">' +
-              '<div class="lep-detail-box">' +
-                '<dt>Why We Selected It</dt>' +
-                '<dd>' + esc(p.whyInteresting) + '</dd>' +
-              '</div>' +
-              '<div class="lep-detail-box">' +
-                '<dt>What Makes It Different</dt>' +
-                '<dd>' + esc(p.whatMakesItDifferent) + '</dd>' +
-              '</div>' +
-              '<div class="lep-detail-box">' +
-                '<dt>Who Might Enjoy It</dt>' +
-                '<dd>' + esc(p.intendedAudience) + '</dd>' +
-              '</div>' +
-              '<div class="lep-detail-box">' +
-                '<dt>Platform &amp; Setup Compatibility</dt>' +
-                '<dd>' + esc(p.compatibility) + '</dd>' +
-              '</div>' +
-            '</dl>' +
-
-            '<div class="lep-caveat">' +
-              '<span class="lep-caveat-label">Honest Limitation to Consider:</span> ' +
-              '<span>' + esc(p.honestDisadvantages) + '</span>' +
-            '</div>' +
+        '<div class="ld-cards-layout">' +
+          mainHtml +
+          '<div class="ld-supporting-grid">' +
+            suppHtml +
           '</div>' +
+        '</div>' +
+
+        '<div class="ld-footer-disclosure" role="note" aria-label="Leonida Drop affiliate disclosure">' +
+          '<strong>Affiliate Disclosure:</strong> ' + esc(assocStatement) + ' Every product button above links directly to its verified Amazon US listing (<code>gta6heistguid-20</code>). We may earn a commission at no extra cost to you. Product photos and live pricing are viewed directly on Amazon.' +
         '</div>' +
       '</div>';
 
     mount.setAttribute('data-rendered', 'dynamic');
+    mount.setAttribute('data-active-collection', col.id);
+
+    if (opts.restoreFocus) {
+      var nextBtn = document.getElementById('showAnotherDropBtn');
+      if (nextBtn && typeof nextBtn.focus === 'function') {
+        nextBtn.focus();
+      }
+    }
+    return true;
+  }
+
+  function bindShowAnotherDrop() {
+    var mount = document.getElementById('leonidaDropMount');
+    if (!mount || mount.dataset.dropBound === '1') return;
+    mount.dataset.dropBound = '1';
+
+    mount.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('[data-action="show-another-drop"]') : null;
+      if (!btn || !activeCatalog || !global.GTA6GearRotation) return;
+      e.preventDefault();
+
+      var next = global.GTA6GearRotation.advanceDropCollection(
+        activeCatalog,
+        getSafeSessionStorage(),
+        { currentIndex: activeDropResult ? activeDropResult.index : undefined }
+      );
+      if (next && next.ok) {
+        renderLeonidaDrop(next, activeCatalog, { restoreFocus: true });
+        if (typeof global.GTA6Track === 'function') {
+          global.GTA6Track('tool_interaction', {
+            tool_name: 'leonida_drop',
+            interaction_type: 'show_another_drop',
+            collection_id: next.collection.id,
+            source_page: (global.location && global.location.pathname) ? global.location.pathname : '/gaming-gear/'
+          });
+        }
+      }
+    });
   }
 
   function renderCatalogCard(product) {
     var hasPhoto = product.mediaType === 'photo' && Boolean(product.imageSource);
     var placement = product.analyticsPlacement || 'gaming_gear_catalog';
-    var ctaAttrs = buildLinkAttrs(product, placement, 'cta', 'catalog');
+    var ctaAttrs = buildLinkAttrs(product, placement, 'cta', { dailySlot: 'catalog' });
     var mediaHtml = '';
 
     if (hasPhoto) {
-      var imgAttrs = buildLinkAttrs(product, placement, 'image', 'catalog');
+      var imgAttrs = buildLinkAttrs(product, placement, 'image', { dailySlot: 'catalog' });
       var imgW = Number(product.imageWidth) > 0 ? Number(product.imageWidth) : 1000;
       var imgH = Number(product.imageHeight) > 0 ? Number(product.imageHeight) : 750;
       var cardDarkClass = product.photoBackdrop === 'dark' ? ' is-photo-dark' : '';
@@ -297,7 +468,6 @@
     });
   }
 
-  // Lightweight accessible mobile navigation toggle (exact match to main.js + style.css .mobile-menu-btn)
   function initMobileNavToggle() {
     var navbar = document.getElementById('siteNavbar');
     if (!navbar || document.getElementById('mobileMenuBtn')) return;
@@ -340,19 +510,25 @@
     if (!catalog || !Array.isArray(catalog.products) || !global.GTA6GearRotation) return false;
     activeCatalog = catalog;
 
-    // Optional future authorized Creators API hydrator hook (manual rotation works 100% without it)
     var runRender = function (resolvedCatalog) {
-      var selection = global.GTA6GearRotation.selectDailyPick(resolvedCatalog, new Date());
-      if (selection && selection.ok) {
-        renderEditorsPick(selection, resolvedCatalog);
+      activeCatalog = resolvedCatalog;
+      var dropSelection = global.GTA6GearRotation.selectDropCollection(
+        resolvedCatalog,
+        getSafeSessionStorage(),
+        { advanceOnLoad: true }
+      );
+      if (dropSelection && dropSelection.ok) {
+        renderLeonidaDrop(dropSelection, resolvedCatalog);
       }
+      bindShowAnotherDrop();
       renderSections(resolvedCatalog, activePlatformFilter);
       bindPlatformFilters();
     };
 
-    if (typeof apiHydrator === 'function') {
+    var hydrator = amazonDropHydrator || apiHydrator;
+    if (typeof hydrator === 'function') {
       try {
-        Promise.resolve(apiHydrator(catalog)).then(function (hydrated) {
+        Promise.resolve(hydrator(catalog)).then(function (hydrated) {
           runRender(hydrated && Array.isArray(hydrated.products) ? hydrated : catalog);
         }).catch(function () {
           runRender(catalog);
@@ -370,7 +546,6 @@
     initMobileNavToggle();
     if (!global.GTA6GearRotation) return;
 
-    // Load authoritative JSON catalog (falls back gracefully to static HTML if fetch fails)
     if (typeof global.fetch === 'function') {
       global.fetch(CATALOG_URL, { credentials: 'same-origin' })
         .then(function (res) {
@@ -381,21 +556,26 @@
           applyCatalog(data);
         })
         .catch(function () {
-          // Static HTML fallback inside #leonidaEditorsPickMount and section tables remains intact and usable.
-          var mount = document.getElementById('leonidaEditorsPickMount');
+          var mount = document.getElementById('leonidaDropMount');
           if (mount) mount.setAttribute('data-rendered', 'static-fallback');
         });
     }
   }
 
   global.GTA6GearEngine = {
-    version: '1.0.0',
+    version: '2.0.0-leonida-drop',
     catalogUrl: CATALOG_URL,
     registerApiHydrator: function (fn) {
       apiHydrator = typeof fn === 'function' ? fn : null;
     },
+    registerAmazonDropHydrator: function (fn) {
+      amazonDropHydrator = typeof fn === 'function' ? fn : null;
+    },
     getActiveCatalog: function () {
       return activeCatalog;
+    },
+    getActiveDrop: function () {
+      return activeDropResult;
     },
     renderWithCatalog: applyCatalog,
     init: initGamingGearPage
