@@ -1,53 +1,70 @@
-# GTA 6 Heist Guide — Free Leonida Interactive Map, True Net $/Hour Payout Calculator & 15s Vault Hack Trainer
+# GTA6HeistGuide.com — Independent GTA VI Story Mode Companion & Interactive Tools
 
-[![Live Portal](https://img.shields.io/badge/Live_Portal-gta6heistguide.com-ff2a8d?style=for-the-badge)](https://www.gta6heistguide.com/)
-[![Free Browser Suite](https://img.shields.io/badge/Free_Calculator_%26_15s_Trainer-/free-00f0ff?style=for-the-badge)](https://www.gta6heistguide.com/free/)
-[![6 Leonida Regions](https://img.shields.io/badge/Leonida_Radar_Map-6_Regions_100%25_Free-00ff88?style=for-the-badge)](https://www.gta6heistguide.com/leonida-interactive-map)
-[![Creator Clipping Suite](https://img.shields.io/badge/9:16_Auto_Clipper-CutFlow_Pro_%26_ClipBounty-ff9900?style=for-the-badge)](https://getapexlocal.com)
+[![Live Website](https://img.shields.io/badge/Live_Website-gta6heistguide.com-ff2a8d?style=for-the-badge)](https://www.gta6heistguide.com/)
+[![Interactive Leonida Map](https://img.shields.io/badge/Interactive_Map-185_Mapped_Pins-00ff88?style=for-the-badge)](https://www.gta6heistguide.com/map)
+[![Story Mode Scope](https://img.shields.io/badge/Scope-Story_Mode_(PS5_%26_Xbox_Series_X%7CS)-00f0ff?style=for-the-badge)](https://www.gta6heistguide.com/gta-6-money-guide/)
 
-> **Official Open-Source Companion Repository & Cloud Mirror** for **[GTA6HeistGuide.com](https://www.gta6heistguide.com)** ("GTA 6 HEIST GUIDE Syndicate v3.0") — the zero-paywall tactical database, True Net $/Hour Payout Optimizer, 15-second Biometric Keypad Hack Trainer, and 6-Region Interactive Leonida Map built for the November 19, 2026 launch.
+> **GTA6HeistGuide.com** is an independent, free-to-use fan companion website for **Grand Theft Auto VI Story Mode** on **PlayStation 5** and **Xbox Series X|S** (released November 19, 2026). All gameplay guides, interactive tools, maps, safe codes, and world databases are maintained with transparent evidence labels separating official Rockstar Games information, corroborated launch guides, and community reports.
 
----
-
-## ⚡ Quick Dofollow Links to Interactive Browser Tools
-
-- 🏠 **Master GTA 6 Vault Directory & Live Second-Screen HUD:** [https://www.gta6heistguide.com/](https://www.gta6heistguide.com/)
-- 🧮 **Free Browser Utility Suite (Net $/Hr Calculator + 15s Hack Trainer + 9:16 Exporter):** [https://www.gta6heistguide.com/free/](https://www.gta6heistguide.com/free/)
-- 🗺️ **100% Free Interactive Leonida Radar Map (Unlimited Custom Pins — No VIP Paywall):** [https://www.gta6heistguide.com/leonida-interactive-map](https://www.gta6heistguide.com/leonida-interactive-map)
-- 🔐 **15-Second Biometric & Laser Vault Keypad Hack Trainer:** [https://www.gta6heistguide.com/vault-hack-trainer](https://www.gta6heistguide.com/vault-hack-trainer)
-- 📊 **40 Competitor Alternatives & Head-to-Head Vault Matrices (`/compare/`):** [https://www.gta6heistguide.com/compare/](https://www.gta6heistguide.com/compare/)
-- 📘 **20 Leonida Regional & 100% Collectible Checklists (`/guides/`):** [https://www.gta6heistguide.com/guides/](https://www.gta6heistguide.com/guides/)
-- 🤝 **Verified Day-1 Co-Op LFG Squad Finder (PS5 Pro / Xbox Series X|S / PC):** [https://www.gta6heistguide.com/forum#lfg-hub](https://www.gta6heistguide.com/forum#lfg-hub)
+**Platform & Mode Scope (as of November 27, 2026):**
+- **Platforms:** PlayStation 5 and Xbox Series X|S *(no PC version has been announced by Rockstar Games)*.
+- **Game Mode:** Single-Player Story Mode featuring Jason Duval and Lucia Caminos *(Rockstar Games has not announced an official release date or mechanics for GTA VI Online)*.
+- **Latest Official Console Update:** Update `01.002.002` (PS5) / `1.0.2.2` (Xbox Series X|S), released November 23, 2026.
 
 ---
 
-## 💰 All 6 Leonida Heist Vaults: True Net $/Hour Comparison Matrix
+## Interactive Story Mode Tools
 
-| Leonida Vault Target | Region | Base Gross Payout | 1.5X Weekly Bonus | Avg Cycle (Setup + Run + Cooldown) | Est. 2P Duo Net $/Hour (After Fees) | Blueprint Guide |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Leonida State Gold Reserve** | Ambrosia / Pelican Valley | `$25,000,000` | **`$37,500,000`** | 125 mins | `$4,320,000/hr` | [View Blueprint](https://www.gta6heistguide.com/leonida-reserve) |
-| **Sinfrontera National Bank** | Vice City Downtown | `$14,500,000` | **`$21,750,000`** | 99 mins | `$3,163,000/hr` | [View Blueprint](https://www.gta6heistguide.com/sinfrontera-bank) |
-| **Starlet Superyacht Offshore** | Leonida Keys / Vice Beach | `$11,800,000` | **`$17,700,000`** | 101 mins | `$2,523,000/hr` | [View Blueprint](https://www.gta6heistguide.com/vice-city-yacht-heist) |
-| **Ocean Drive Armored Convoy** | Vice City Ocean Drive | `$9,400,000` | **`$14,100,000`** | 65 mins | `$3,123,000/hr` | [View Blueprint](https://www.gta6heistguide.com/ocean-drive-armored-convoy) |
-| **Port Gellhorn Container Terminal** | Port Gellhorn | `$8,200,000` | **`$12,300,000`** | 80 mins | `$2,214,000/hr` | [View Blueprint](https://www.gta6heistguide.com/port-gellhorn) |
-| **Grassrivers Cartel Airstrip** | Grassrivers Wetlands | `$6,500,000` | **`$9,750,000 🔥`** | 68 mins | `$3,097,000/hr (1.5X)` | [View Blueprint](https://www.gta6heistguide.com/everglades-smuggler-run) |
-
----
-
-## 🗺️ All 6 Confirmed State of Leonida Regions Mapped
-
-1. **[Vice City Metro & Ocean Beach](https://www.gta6heistguide.com/guides/vice-city-vaults-storm-drains-guide.html)** — Sinfrontera National Bank, Ocean Drive Armored Convoy, Sewer Tube 01, and Boobie Ike Nightclub laundering fronts.
-2. **[Leonida Keys Archipelago](https://www.gta6heistguide.com/guides/leonida-keys-offshore-heists-smuggler-docks.html)** — Starlet Superyacht scuba infiltrations, 1715 Spanish Fleet underwater treasures, and Brian Heder smuggler marinas.
-3. **[Grassrivers Wetlands](https://www.gta6heistguide.com/guides/grassrivers-wetlands-cartel-airstrip-airboats.html)** — Clandestine cartel airstrips, <120ft radar-blind flight corridors, and mangrove airboat channels.
-4. **[Port Gellhorn Maritime Hub](https://www.gta6heistguide.com/guides/port-gellhorn-container-terminal-crane-heist.html)** — Pier 4 gantry crane hacks, RFID manifest containers, and west-coast pawn shop fences.
-5. **[Ambrosia Industrial Heartland](https://www.gta6heistguide.com/guides/ambrosia-gold-reserve-bullion-fences-guide.html)** — Leonida State Gold Reserve northern intake conduit and refinery bullion fences.
-6. **[Mount Kalaga National Park](https://www.gta6heistguide.com/guides/mount-kalaga-national-park-outposts-chopper-evasion.html)** — Northern wilderness relay outposts and dense pine trails where 5-star NOOSE thermal helicopters lose line-of-sight.
+- **Master Home & Heist Directory:** [https://www.gta6heistguide.com/](https://www.gta6heistguide.com/)
+- **Interactive Leonida Map (185 Mapped Pins & Progress Checklist):** [https://www.gta6heistguide.com/map](https://www.gta6heistguide.com/map)
+- **My Leonida Personal Progress Dashboard:** [https://www.gta6heistguide.com/my-leonida/](https://www.gta6heistguide.com/my-leonida/)
+- **Heist Command Center:** [https://www.gta6heistguide.com/heist-command-center/](https://www.gta6heistguide.com/heist-command-center/)
+- **Story Mode Heist Planner & Payout Estimator:** [https://www.gta6heistguide.com/heist-planner](https://www.gta6heistguide.com/heist-planner)
+- **Story Mode Heist Payout Calculator:** [https://www.gta6heistguide.com/heist-payout-calculator](https://www.gta6heistguide.com/heist-payout-calculator)
+- **15-Slot Manual Save Planner:** [https://www.gta6heistguide.com/save-planner/](https://www.gta6heistguide.com/save-planner/)
+- **100% Completion Tracker:** [https://www.gta6heistguide.com/gta-6-100-completion-tracker/](https://www.gta6heistguide.com/gta-6-100-completion-tracker/)
+- **Free Tools Suite:** [https://www.gta6heistguide.com/free/](https://www.gta6heistguide.com/free/)
 
 ---
 
-## 🛠️ Verified Launch Hardware, Security & Creator Tools
+## Core Story Mode Guides & World Databases
 
-- 🛡️ **Lobby DDoS Protection:** [ExitLag Low-Ping Encrypted Gaming Tunnel](https://www.exitlag.com/refer/10386953)
-- ⚡ **Zero-Pop-In Vice City Streaming SSD:** [Samsung 990 PRO 2TB PCIe 4.0 M.2 NVMe SSD on Amazon](https://www.amazon.com/s?k=Samsung+990+PRO+2TB+PCIe+4.0+M.2&tag=gta6heistguid-20)
-- 🔑 **Discounted Game Keys & Console Top-Ups:** [G2A Verified Keys](https://www.g2a.com/n/reflink-4094b9aab5) | [Eneba Global Store](https://www.eneba.com/store/all?q=gta)
-- 🎬 **Offline 9:16 Vertical Shorts Auto-Clipper ($49):** [CutFlow Pro & ClipBounty Studio at GetApexLocal](https://getapexlocal.com) | [Gumroad Store Checkout](https://apexlocallabs.gumroad.com/l/apex-pro-bundle)
+### Money, Heists & Missions
+- **GTA 6 Money Guide & Robbery Comparison:** [https://www.gta6heistguide.com/gta-6-money-guide/](https://www.gta6heistguide.com/gta-6-money-guide/)
+- **Mission Walkthrough Hub:** [https://www.gta6heistguide.com/missions/](https://www.gta6heistguide.com/missions/)
+- **The Cartel Heist Walkthrough ($120,000 baseline; $120K–$150K reported):** [https://www.gta6heistguide.com/heists/the-cartel-heist](https://www.gta6heistguide.com/heists/the-cartel-heist)
+- **VCIA Takedown Walkthrough ($250,000):** [https://www.gta6heistguide.com/heists/vcia-takedown](https://www.gta6heistguide.com/heists/vcia-takedown)
+- **Operation Savage Glory — Coast Guard Raid ($50,000, Ch. 5):** [https://www.gta6heistguide.com/missions/operation-savage-glory](https://www.gta6heistguide.com/missions/operation-savage-glory)
+- **Jewelry Stores Guide (20 Locations, $10,000–$25,000 typical):** [https://www.gta6heistguide.com/heists/jewelry-stores](https://www.gta6heistguide.com/heists/jewelry-stores)
+- **Large Bank Vaults (8 Major Vaults, $65,000–~$205,000):** [https://www.gta6heistguide.com/heists/large-bank-vaults](https://www.gta6heistguide.com/heists/large-bank-vaults)
+- **All 19 Confirmed Safe & Keypad Codes:** [https://www.gta6heistguide.com/guides/gta-6-safe-codes](https://www.gta6heistguide.com/guides/gta-6-safe-codes)
+- **Glitch & Patch Status Tracker:** [https://www.gta6heistguide.com/gta-6-glitches/](https://www.gta6heistguide.com/gta-6-glitches/)
+
+### Leonida World Databases & Console Reference
+- **World Database Hub:** [https://www.gta6heistguide.com/gta-6-database/](https://www.gta6heistguide.com/gta-6-database/)
+- **Properties, Garages & 7 Fence Contacts:** [https://www.gta6heistguide.com/properties](https://www.gta6heistguide.com/properties)
+- **Animals & Wildlife Compendium (49 Catalogued):** [https://www.gta6heistguide.com/animals](https://www.gta6heistguide.com/animals)
+- **Vehicles Catalog:** [https://www.gta6heistguide.com/vehicles](https://www.gta6heistguide.com/vehicles)
+- **Weapons Arsenal & 24 Gun Stores:** [https://www.gta6heistguide.com/weapons](https://www.gta6heistguide.com/weapons) | [https://www.gta6heistguide.com/weapons-bonuses](https://www.gta6heistguide.com/weapons-bonuses)
+- **Radio Stations Directory:** [https://www.gta6heistguide.com/radio](https://www.gta6heistguide.com/radio)
+- **Console Settings, Storage & Hardware Hub (PS5 / Xbox Series X|S):** [https://www.gta6heistguide.com/gta-6-settings/](https://www.gta6heistguide.com/gta-6-settings/)
+- **Gaming Gear Buying Guide:** [https://www.gta6heistguide.com/gaming-gear/](https://www.gta6heistguide.com/gaming-gear/)
+- **Troubleshooting Center:** [https://www.gta6heistguide.com/gta-6-troubleshooting/](https://www.gta6heistguide.com/gta-6-troubleshooting/)
+
+---
+
+## Independent Fan-Site Disclaimer
+
+**GTA6HeistGuide.com** is an independent fan commentary, editorial guide, and interactive utility portal. *Grand Theft Auto*, *GTA VI*, *Rockstar Games*, *Vice City*, and related marks are registered trademarks of **Take-Two Interactive Software, Inc.** This website and repository are **not affiliated with, endorsed by, sponsored by, or officially connected to Rockstar Games or Take-Two Interactive**.
+
+---
+
+## Monetization & Affiliate Disclosure
+
+To keep all guides, maps, and browser tools free without paywalls or login gates, GTA6HeistGuide.com uses transparent, FTC-disclosed monetization:
+
+- **Amazon Associates (`gta6heistguid-20`):** As an Amazon Associate I earn from qualifying purchases. Editorial hardware recommendations on `/gaming-gear/` and `/gta-6-settings/` carry `rel="sponsored nofollow noopener"` and clear paid-link disclosures.
+- **Third-Party Referral Links:** Select utility and storefront links (such as G2A and ExitLag) carry `rel="sponsored"` attributes and inline affiliate disclosures.
+- **Publisher-Operated Projects:** Links to publisher-operated creator utilities (such as CutFlow Pro on Gumroad and GetApexLocal) are disclosed separately from third-party affiliate networks.
+- **Display Advertising:** Google AdSense publisher code is installed for site review (`ads.txt` authorized; display ad serving remains subject to Google AdSense approval and is not active on interactive utility tools).
+- **No Unapproved Partnerships:** This site does not claim official partnerships with console manufacturers, game publishers, or unapproved affiliate brands.

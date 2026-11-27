@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 6 Heist Planner &amp; Payout Cut Calculator</title>
-    <meta name="description" content="Plan GTA 6 heist approaches and net payouts across The Cartel Heist ($120K), VCIA Takedown, bank vaults, fence cuts, and crew splits.">
-        <meta name="keywords" content="GTA 6 heist cut calculator, crew split optimizer, keypad bypass trainer, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, Boobie Ike, Cal Hampton, Brian Heder, Dre'Quan Priest, Real Dimez, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 payout calculator, GTA 6 crew finder">
+    <title>GTA 6 Story Mode Heist Planner &amp; Payout Estimator</title>
+    <meta name="description" content="Plan GTA 6 Story Mode heists and robberies: The Cartel Heist ($120K), VCIA Takedown ($250K), Operation Savage Glory ($50K), 20 Jewelry Stores ($10K–$25K), and 22 bank vaults.">
+        <meta name="keywords" content="GTA 6 heist planner, GTA 6 Story Mode payout calculator, GTA 6 heist guide, Grand Theft Auto VI, Lucia Caminos, Jason Duval, Raul Bautista, The Cartel Heist, VCIA Takedown, Operation Savage Glory, Leonida map, Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga National Park, GTA 6 money guide">
 <link rel="canonical" href="https://www.gta6heistguide.com/heist-planner">
     <link rel="manifest" href="/manifest.json">
-        <meta property="og:title" content="GTA 6 Heist Planner &amp; Payout Cut Calculator">
-    <meta property="og:description" content="Plan GTA 6 heist approaches and net payouts across The Cartel Heist ($120K), VCIA Takedown, bank vaults, fence cuts, and crew splits.">
+        <meta property="og:title" content="GTA 6 Story Mode Heist Planner &amp; Payout Estimator">
+    <meta property="og:description" content="Plan GTA 6 Story Mode heists and robberies: The Cartel Heist ($120K), VCIA Takedown ($250K), Operation Savage Glory ($50K), 20 Jewelry Stores ($10K–$25K), and 22 bank vaults.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gta6heistguide.com/heist-planner">
     <meta property="og:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
@@ -21,150 +21,195 @@
     <link rel="stylesheet" href="/assets/style.css?v=20261125_p33">
     
         <script>
+        // Synchronized with /data/canonical-gameplay-facts.json (Last verified: 2026-11-27)
         const HEIST_DATABASE = {
-            'cartel-heist': { name: 'The Cartel Heist: Sinfrontera National Bank', payout: 120000, minPayout: 120000, maxPayout: 120000, runMins: 18, setupMins: 25, cooldownMins: 45, isBank: true },
-            'vcia-takedown': { name: 'VCIA Takedown: Vice City Airport Heist', payout: 250000, minPayout: 250000, maxPayout: 250000, runMins: 22, setupMins: 30, cooldownMins: 60, isBank: false },
-            'large-banks': { name: '22 Free-Roam Banks: 8 Large Vaults (Lombank & Ocean Beach)', payout: 205000, minPayout: 65000, maxPayout: 205000, runMins: 12, setupMins: 10, cooldownMins: 30, isBank: true },
-            'small-banks': { name: '22 Free-Roam Banks: 14 Small Vaults & Fleeca Branches', payout: 45000, minPayout: 5000, maxPayout: 45000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: true },
-            'jewelry-stores': { name: '39 Illegal Gang Ops & Jewelry Stores', payout: 25000, minPayout: 10000, maxPayout: 25000, runMins: 6, setupMins: 5, cooldownMins: 15, isBank: false },
-            'sinfrontera': { name: 'The Cartel Heist: Sinfrontera National Bank', payout: 120000, minPayout: 120000, maxPayout: 120000, runMins: 18, setupMins: 25, cooldownMins: 45, isBank: true },
-            'port-gellhorn': { name: 'VCIA Takedown: Vice City Airport Heist', payout: 250000, minPayout: 250000, maxPayout: 250000, runMins: 22, setupMins: 30, cooldownMins: 60, isBank: false },
-            'leonida-reserve': { name: '22 Free-Roam Banks: 8 Large Vaults (Lombank & Ocean Beach)', payout: 205000, minPayout: 65000, maxPayout: 205000, runMins: 12, setupMins: 10, cooldownMins: 30, isBank: true },
-            'yacht': { name: 'Coast Guard Offshore Heist', payout: 50000, minPayout: 50000, maxPayout: 50000, runMins: 15, setupMins: 15, cooldownMins: 30, isBank: false },
-            'smuggler': { name: '39 Illegal Gang Ops & Jewelry Stores', payout: 25000, minPayout: 10000, maxPayout: 25000, runMins: 6, setupMins: 5, cooldownMins: 15, isBank: false },
-            'convoy': { name: 'Tie Up Loose Ends & Armored Trucks', payout: 25560, minPayout: 25560, maxPayout: 25560, runMins: 10, setupMins: 10, cooldownMins: 20, isBank: true },
-            'pelican-bank': { name: 'Small Bank: Pelican Valley Agricultural Branch', payout: 38000, minPayout: 15000, maxPayout: 38000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: true },
-            'key-lento': { name: '39 Gang Ops: Key Lento Smuggler Stash', payout: 24000, minPayout: 12000, maxPayout: 24000, runMins: 8, setupMins: 5, cooldownMins: 20, isBank: false },
-            'lummox-stash': { name: '39 Gang Ops: Lummox County Timber Op', payout: 21000, minPayout: 10000, maxPayout: 21000, runMins: 7, setupMins: 5, cooldownMins: 15, isBank: false }
+            'cartel-heist': { name: 'The Cartel Heist: Sinfrontera National Bank (Ch. 3)', minPayout: 120000, typicalPayout: 120000, maxPayout: 150000, estMins: 45, cooldownMins: 0, isBank: true, repeatable: false, evidence: 'Corroborated by multiple launch guides', guideUrl: '/heists/the-cartel-heist' },
+            'vcia-takedown': { name: 'VCIA Takedown: Vice City International Airport (Ch. 4)', minPayout: 250000, typicalPayout: 250000, maxPayout: 250000, estMins: 50, cooldownMins: 0, isBank: false, repeatable: false, evidence: 'Corroborated by multiple launch guides', guideUrl: '/heists/vcia-takedown' },
+            'operation-savage-glory': { name: 'Operation Savage Glory (Coast Guard Raid — Ch. 5)', minPayout: 50000, typicalPayout: 50000, maxPayout: 50000, estMins: 30, cooldownMins: 0, isBank: false, repeatable: false, evidence: 'Corroborated by multiple launch guides', guideUrl: '/missions/operation-savage-glory' },
+            'large-banks': { name: '8 Large Bank Vaults (Ch. 4+ Endgame Repeatable)', minPayout: 65000, typicalPayout: 135000, maxPayout: 205000, estMins: 25, cooldownMins: 0, isBank: true, repeatable: true, evidence: 'Corroborated by multiple launch guides', guideUrl: '/heists/large-bank-vaults' },
+            'small-banks': { name: '14 Small Banks & Payday Loans (Ch. 3+)', minPayout: 5000, typicalPayout: 25000, maxPayout: 45000, estMins: 15, cooldownMins: 0, isBank: true, repeatable: true, evidence: 'Corroborated by multiple launch guides', guideUrl: '/heists/small-banks-payday-loans' },
+            'jewelry-stores': { name: '20 Jewelry Stores — Yasmani Gem Fence (Ch. 3+)', minPayout: 10000, typicalPayout: 17500, maxPayout: 25000, estMins: 15, cooldownMins: 0, isBank: false, repeatable: true, evidence: 'Corroborated ($10K–$25K typical; timing user-estimated)', guideUrl: '/heists/jewelry-stores' },
+            'pawn-shops': { name: '15 Pawn Shops incl. Fast Cash (Ch. 2+)', minPayout: 2500, typicalPayout: 4500, maxPayout: 6500, estMins: 10, cooldownMins: 0, isBank: false, repeatable: true, evidence: 'Corroborated ($2.5K–$6.5K typical; up to $10K–$12K full safe clear)', guideUrl: '/heists/pawn-shops' },
+            'armored-trucks': { name: 'Armored Trucks & 39 Core Gang Ops (40 w/ Ultimate Ed.)', minPayout: 10000, typicalPayout: 24000, maxPayout: 38000, estMins: 15, cooldownMins: 0, isBank: false, repeatable: true, evidence: 'Corroborated by multiple launch guides', guideUrl: '/heists/armored-trucks-gang-ops' }
+        };
+        const TARGET_ALIASES = {
+            'sinfrontera': 'cartel-heist',
+            'port-gellhorn': 'vcia-takedown',
+            'leonida-reserve': 'large-banks',
+            'yacht': 'operation-savage-glory',
+            'smuggler': 'jewelry-stores',
+            'convoy': 'armored-trucks',
+            'pelican-bank': 'small-banks',
+            'key-lento': 'armored-trucks',
+            'lummox-stash': 'armored-trucks'
         };
 
-        const LOOT_TYPES = {
-            'crypto': { name: 'Crypto Hardware Drives & Uncut Diamonds', valuePerBag: 4200000, grabSecs: 14, speedPenalty: '0% (Full Sprint Speed)', priority: '1st Priority (Best $/kg)' },
-            'bonds': { name: 'Bearer Bonds & Fine Art Canvases', valuePerBag: 3400000, grabSecs: 22, speedPenalty: '-6% Sprint Speed', priority: '2nd Priority (Fast Solo/Duo Grab)' },
-            'gold': { name: 'Federal Gold Bullion Bars', valuePerBag: 5100000, grabSecs: 38, speedPenalty: '-25% Sprint Speed (2x Stamina Drain)', priority: '3rd Priority (Requires 3-4P Enforcer Escort)' },
-            'cash': { name: 'Marked Fiat Currency Pallets', valuePerBag: 2100000, grabSecs: 28, speedPenalty: '-10% Sprint Speed', priority: '4th Priority (Filler Bag Space Only)' }
+        // Hypothetical Online sandbox mobility concepts (Speculative — NOT in GTA VI Story Mode)
+        const HYPOTHETICAL_LOOT_TYPES = {
+            'gems': { name: 'Uncut Diamonds & High-Carat Gems (Hypothetical)', grabSecs: 14, speedPenalty: '0% (Hypothetical)', priority: 'Speculative Concept #1' },
+            'bonds': { name: 'Bearer Bonds & Valuables (Hypothetical)', grabSecs: 22, speedPenalty: '-6% (Hypothetical)', priority: 'Speculative Concept #2' },
+            'bullion': { name: 'Heavy Bullion Bars (Hypothetical)', grabSecs: 38, speedPenalty: '-25% (Hypothetical)', priority: 'Speculative Concept #3' },
+            'cash': { name: 'Marked Cash Stacks (Hypothetical)', grabSecs: 28, speedPenalty: '-10% (Hypothetical)', priority: 'Speculative Concept #4' }
         };
+
+        function resolveTargetKey(rawKey) {
+            if (HEIST_DATABASE[rawKey]) return rawKey;
+            if (TARGET_ALIASES[rawKey]) return TARGET_ALIASES[rawKey];
+            return 'cartel-heist';
+        }
 
         function onFenceChange() {
-            const fence = document.getElementById('fenceSelect')?.value || 'yasmani';
+            const fence = document.getElementById('fenceSelect')?.value || 'direct';
             const slider = document.getElementById('launderFeeSlider');
             if (slider) {
-                slider.value = fence === 'yasmani' ? 5 : fence === 'garage' ? 12 : 20;
+                slider.value = fence === 'direct' ? 0 : fence === 'pickup' ? 5 : fence === 'regional' ? 12 : 20;
             }
         }
 
         function onTargetChange() {
-            const targetKey = document.getElementById('targetSelect').value;
+            const targetKey = resolveTargetKey(document.getElementById('targetSelect').value);
             const target = HEIST_DATABASE[targetKey];
             if (target) {
-                document.getElementById('setupGrindMins').value = target.setupMins + target.runMins;
-                document.getElementById('cooldownMins').value = target.cooldownMins;
+                const minsEl = document.getElementById('setupGrindMins');
+                const cdEl = document.getElementById('cooldownMins');
+                if (minsEl) minsEl.value = target.estMins;
+                if (cdEl) cdEl.value = target.cooldownMins;
             }
             calculatePlanner();
         }
 
         function calculatePlanner() {
-            const targetKey = document.getElementById('targetSelect').value;
-            const target = HEIST_DATABASE[targetKey] || HEIST_DATABASE['leonida-reserve'];
+            const targetKey = resolveTargetKey(document.getElementById('targetSelect').value);
+            const target = HEIST_DATABASE[targetKey] || HEIST_DATABASE['cartel-heist'];
+            const tier = document.getElementById('payoutTierSelect')?.value || 'typical';
             const approach = document.getElementById('approachSelect').value;
-            const players = parseInt(document.getElementById('playerCount').value) || 4;
 
-            const gunnerPct = parseInt(document.getElementById('planGunner').value) || 15;
-            const hackerPct = parseInt(document.getElementById('planHacker').value) || 10;
-            const driverPct = parseInt(document.getElementById('planDriver').value) || 8;
-
-            const setupMins = Math.max(5, parseInt(document.getElementById('setupGrindMins')?.value) || 50);
-            const cooldownMins = Math.max(0, parseInt(document.getElementById('cooldownMins')?.value) || 30);
-            const launderFeePct = parseInt(document.getElementById('launderFeeSlider')?.value || 8);
-            const failPenaltyPct = parseInt(document.getElementById('failPenaltySlider')?.value || 0);
-            const weeklyBonusActive = document.getElementById('weeklyBonusToggle')?.checked;
+            const estMins = Math.max(1, parseInt(document.getElementById('setupGrindMins')?.value, 10) || target.estMins);
+            const cooldownMins = Math.max(0, parseInt(document.getElementById('cooldownMins')?.value, 10) || 0);
+            const fenceFeePct = Math.max(0, Math.min(35, parseInt(document.getElementById('launderFeeSlider')?.value, 10) || 0));
+            const whatIfCutPct = Math.max(0, Math.min(40, parseInt(document.getElementById('storyWhatIfCutSlider')?.value, 10) || 0));
             const jammerEl = document.getElementById('jammerToggle');
             const jammerEquipped = jammerEl ? jammerEl.checked : true;
-            const lootKey = document.getElementById('lootTypeSelect')?.value || 'bonds';
-            const loot = LOOT_TYPES[lootKey] || LOOT_TYPES['bonds'];
 
-            document.getElementById('planGVal').innerText = gunnerPct + '%';
-            document.getElementById('planHVal').innerText = hackerPct + '%';
-            document.getElementById('planDVal').innerText = driverPct + '%';
-            if (document.getElementById('launderFeeVal')) document.getElementById('launderFeeVal').innerText = launderFeePct + '%';
-            if (document.getElementById('failPenaltyVal')) document.getElementById('failPenaltyVal').innerText = failPenaltyPct + '%';
+            if (document.getElementById('launderFeeVal')) document.getElementById('launderFeeVal').innerText = fenceFeePct + '%';
+            if (document.getElementById('storyWhatIfCutVal')) document.getElementById('storyWhatIfCutVal').innerText = whatIfCutPct + '%';
 
-            let totalSpecialistPct = gunnerPct + hackerPct + driverPct;
-            let basePayout = target.payout * (weeklyBonusActive ? 1.5 : 1.0);
-            if (approach === 'stealth') basePayout *= 1.05;
-            if (target.isBank && !jammerEquipped) basePayout *= 0.75;
+            let grossTake = target.typicalPayout;
+            if (tier === 'min') grossTake = target.minPayout;
+            else if (tier === 'max') grossTake = target.maxPayout;
 
-            let specialistCost = basePayout * (totalSpecialistPct / 100);
-            let grossSquadPot = basePayout - specialistCost;
-            let afterLaunderAndFail = grossSquadPot * (1 - launderFeePct / 100) * (1 - failPenaltyPct / 100);
-            let netPerPlayer = afterLaunderAndFail / players;
-            let perPlayerPct = basePayout > 0 ? (netPerPlayer / basePayout) * 100 : 0;
+            // Dye Pack Jammer is a corroborated bank robbery mechanic; exact % loss without it is unverified (25% illustrative estimate).
+            const dyeLoss = (target.isBank && !jammerEquipped) ? grossTake * 0.25 : 0;
+            const afterDye = grossTake - dyeLoss;
+            const fenceAndWhatIfDeduction = afterDye * ((fenceFeePct + whatIfCutPct) / 100);
+            const totalDeductions = dyeLoss + fenceAndWhatIfDeduction;
+            const storyNetTake = Math.max(0, afterDye - fenceAndWhatIfDeduction);
 
-            let totalCycleMins = Math.max(1, setupMins + cooldownMins);
-            let netPerHour = netPerPlayer / (totalCycleMins / 60);
-            let netPerMinute = netPerPlayer / totalCycleMins;
+            const totalCycleMins = Math.max(1, estMins + cooldownMins);
+            const estPerHour = storyNetTake / (totalCycleMins / 60);
+            const estPerMinute = storyNetTake / totalCycleMins;
 
-            document.getElementById('targetPayoutDisplay').innerText = '$' + Math.round(basePayout).toLocaleString();
-            document.getElementById('specialistCostDisplay').innerText = '$' + Math.round(specialistCost).toLocaleString() + ' (' + totalSpecialistPct + '%)';
-            document.getElementById('squadPotDisplay').innerText = '$' + Math.round(afterLaunderAndFail).toLocaleString();
-            document.getElementById('perPlayerDisplay').innerText = '$' + Math.round(netPerPlayer).toLocaleString() + ' (' + perPlayerPct.toFixed(1) + '%)';
-            if (document.getElementById('netPerHourDisplay')) document.getElementById('netPerHourDisplay').innerText = '$' + Math.round(netPerHour).toLocaleString() + '/hr';
-            if (document.getElementById('netPerMinDisplay')) document.getElementById('netPerMinDisplay').innerText = '$' + Math.round(netPerMinute).toLocaleString() + '/min';
+            document.getElementById('targetPayoutDisplay').innerText = '$' + Math.round(grossTake).toLocaleString();
+            document.getElementById('specialistCostDisplay').innerText = totalDeductions > 0
+                ? '-$' + Math.round(totalDeductions).toLocaleString()
+                : '$0 (Direct Clean Take)';
+            document.getElementById('squadPotDisplay').innerText = '$' + Math.round(storyNetTake).toLocaleString();
+            const rangeText = target.minPayout === target.maxPayout
+                ? '$' + target.minPayout.toLocaleString() + ' Fixed'
+                : '$' + target.minPayout.toLocaleString() + '–$' + target.maxPayout.toLocaleString();
+            document.getElementById('perPlayerDisplay').innerText = rangeText;
+            if (document.getElementById('evidenceNoteDisplay')) {
+                document.getElementById('evidenceNoteDisplay').innerText = target.evidence;
+            }
+            if (document.getElementById('netPerHourDisplay')) {
+                document.getElementById('netPerHourDisplay').innerText = target.repeatable
+                    ? '~$' + Math.round(estPerHour).toLocaleString() + '/hr*'
+                    : 'One-Time Story Job';
+            }
+            if (document.getElementById('netPerMinDisplay')) {
+                document.getElementById('netPerMinDisplay').innerText = target.repeatable
+                    ? '~$' + Math.round(estPerMinute).toLocaleString() + '/min*'
+                    : '$' + Math.round(storyNetTake).toLocaleString() + ' Total';
+            }
 
             let heatStars = '★★★☆☆ (3 Stars)';
-            if (approach === 'loud') heatStars = '★★★★★ (5 Stars - NOOSE Mobilized)';
-            if (approach === 'stealth') heatStars = '★☆☆☆☆ (1 Star - Clean Evasion)';
+            if (approach === 'loud') heatStars = '★★★★☆–★★★★★ (High Police / SWAT Response)';
+            if (approach === 'stealth') heatStars = '★☆☆☆☆–★★☆☆☆ (Low Heat / Clean Exit)';
             document.getElementById('heatDisplay').innerText = heatStars;
 
-            // Update Loot Bag Weight & Grab Priority table for 2P, 3P, 4P
-            if (document.getElementById('lootGrab2P')) {
-                document.getElementById('lootGrab2P').innerText = (loot.grabSecs * 2) + 's total (' + loot.speedPenalty + ')';
-                document.getElementById('lootGrab3P').innerText = Math.round(loot.grabSecs * 2.6) + 's total (' + loot.speedPenalty + ')';
-                document.getElementById('lootGrab4P').innerText = Math.round(loot.grabSecs * 3.1) + 's total (' + loot.speedPenalty + ')';
-                document.getElementById('lootPriorityBadge').innerText = loot.priority;
-            }
+            calculateHypotheticalSandbox();
 
             if (window._hpRestored && window.GTA6Progress && typeof window.GTA6Progress.setToolState === 'function') {
                 window.GTA6Progress.setToolState('heistPlanner', {
+                    mode: 'story',
                     target: targetKey,
+                    tier: tier,
                     approach: approach,
-                    players: players,
-                    gunner: gunnerPct,
-                    hacker: hackerPct,
-                    driver: driverPct,
-                    setupMins: setupMins,
+                    estMins: estMins,
                     cooldownMins: cooldownMins,
-                    lootType: lootKey,
-                    fence: document.getElementById('fenceSelect')?.value || 'yasmani',
-                    launderFee: launderFeePct,
-                    failPenalty: failPenaltyPct,
-                    jammer: Boolean(jammerEquipped),
-                    weeklyBonus: Boolean(weeklyBonusActive)
+                    fence: document.getElementById('fenceSelect')?.value || 'direct',
+                    launderFee: fenceFeePct,
+                    whatIfCut: whatIfCutPct,
+                    jammer: Boolean(jammerEquipped)
                 }, true);
             }
         }
+
+        // Completely isolated Hypothetical Future GTA VI Online Concept Sandbox (NEVER affects Story Mode summary)
+        function calculateHypotheticalSandbox() {
+            const targetKey = resolveTargetKey(document.getElementById('targetSelect')?.value || 'cartel-heist');
+            const target = HEIST_DATABASE[targetKey] || HEIST_DATABASE['cartel-heist'];
+            const players = Math.max(1, Math.min(4, parseInt(document.getElementById('hypoPlayerCount')?.value, 10) || 2));
+            const gunnerPct = parseInt(document.getElementById('hypoGunner')?.value, 10) || 15;
+            const hackerPct = parseInt(document.getElementById('hypoHacker')?.value, 10) || 10;
+            const driverPct = parseInt(document.getElementById('hypoDriver')?.value, 10) || 8;
+            const failPenaltyPct = parseInt(document.getElementById('hypoFailPenalty')?.value, 10) || 0;
+            const weeklyBonusActive = Boolean(document.getElementById('hypoWeeklyBonus')?.checked);
+            const lootKey = document.getElementById('hypoLootType')?.value || 'bonds';
+            const loot = HYPOTHETICAL_LOOT_TYPES[lootKey] || HYPOTHETICAL_LOOT_TYPES['bonds'];
+
+            const setText = (id, v) => { const el = document.getElementById(id); if (el) el.innerText = v; };
+            setText('hypoGVal', gunnerPct + '%');
+            setText('hypoHVal', hackerPct + '%');
+            setText('hypoDVal', driverPct + '%');
+            setText('hypoFailVal', failPenaltyPct + '%');
+
+            const totalSpecPct = gunnerPct + hackerPct + driverPct;
+            const hypoGross = target.typicalPayout * (weeklyBonusActive ? 1.5 : 1.0);
+            const afterSpec = hypoGross * (1 - totalSpecPct / 100);
+            const afterFail = afterSpec * (1 - failPenaltyPct / 100);
+            const perPlayer = afterFail / players;
+
+            setText('hypoGrossDisplay', '$' + Math.round(hypoGross).toLocaleString() + ' (Hypothetical)');
+            setText('hypoSpecDisplay', '-' + totalSpecPct + '% (Hypothetical)');
+            setText('hypoPerPlayerDisplay', '$' + Math.round(perPlayer).toLocaleString() + ' / player (Hypothetical)');
+            setText('lootGrab2P', (loot.grabSecs * 2) + 's est. (' + loot.speedPenalty + ')');
+            setText('lootGrab3P', Math.round(loot.grabSecs * 2.6) + 's est. (' + loot.speedPenalty + ')');
+            setText('lootGrab4P', Math.round(loot.grabSecs * 3.1) + 's est. (' + loot.speedPenalty + ')');
+            setText('lootPriorityBadge', loot.priority);
+        }
+
         function restorePlannerState() {
             const params = new URLSearchParams(window.location.search);
-            const hasUrlParams = params.has('target') || params.has('approach') || params.has('players');
-            if (!hasUrlParams && window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
+            const hasUrlParams = params.has('target') || params.has('approach') || params.has('tier');
+            const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
+            const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
+            if (hasUrlParams) {
+                if (params.get('target')) setVal('targetSelect', resolveTargetKey(params.get('target')));
+                if (params.get('approach')) setVal('approachSelect', params.get('approach'));
+                if (params.get('tier')) setVal('payoutTierSelect', params.get('tier'));
+            } else if (window.GTA6Progress && typeof window.GTA6Progress.getToolState === 'function') {
                 const saved = window.GTA6Progress.getToolState('heistPlanner');
                 if (saved && typeof saved === 'object') {
-                    const setVal = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = String(v); };
-                    const setChk = (id, v) => { const el = document.getElementById(id); if (el && typeof v === 'boolean') el.checked = v; };
-                    if (saved.target && HEIST_DATABASE[saved.target]) setVal('targetSelect', saved.target);
+                    if (saved.target) setVal('targetSelect', resolveTargetKey(saved.target));
+                    if (saved.tier) setVal('payoutTierSelect', saved.tier);
                     if (saved.approach) setVal('approachSelect', saved.approach);
-                    if (saved.players) setVal('playerCount', saved.players);
-                    if (saved.gunner !== undefined) setVal('planGunner', saved.gunner);
-                    if (saved.hacker !== undefined) setVal('planHacker', saved.hacker);
-                    if (saved.driver !== undefined) setVal('planDriver', saved.driver);
-                    if (saved.setupMins !== undefined) setVal('setupGrindMins', saved.setupMins);
+                    if (saved.estMins !== undefined) setVal('setupGrindMins', saved.estMins);
                     if (saved.cooldownMins !== undefined) setVal('cooldownMins', saved.cooldownMins);
-                    if (saved.lootType && LOOT_TYPES[saved.lootType]) setVal('lootTypeSelect', saved.lootType);
                     if (saved.fence) setVal('fenceSelect', saved.fence);
                     if (saved.launderFee !== undefined) setVal('launderFeeSlider', saved.launderFee);
-                    if (saved.failPenalty !== undefined) setVal('failPenaltySlider', saved.failPenalty);
+                    if (saved.whatIfCut !== undefined) setVal('storyWhatIfCutSlider', saved.whatIfCut);
                     setChk('jammerToggle', saved.jammer);
-                    setChk('weeklyBonusToggle', saved.weeklyBonus);
                 }
             }
             window._hpRestored = true;
@@ -178,8 +223,8 @@
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "name": "GTA 6 Heist Payout Calculator & Crew Cut Optimizer",
-      "description": "Calculate 1-4 player squad heist cuts, specialist deductions, stealth bonus multipliers, and practice vault keypad hacks.",
+      "name": "GTA 6 Story Mode Heist Planner & Payout Estimator",
+      "description": "Single-player GTA 6 Story Mode heist planner and robbery payout estimator covering The Cartel Heist ($120K), VCIA Takedown ($250K), Operation Savage Glory ($50K), 20 Jewelry Stores ($10K–$25K), and 22 bank vaults.",
       "url": "https://www.gta6heistguide.com/heist-planner",
       "applicationCategory": "GameApplication",
       "operatingSystem": "All",
@@ -198,26 +243,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the best GTA 6 heist payout calculator and crew cut calculator?",
+          "name": "Does GTA 6 have multiplayer co-op heists or weekly 1.5X bonuses right now?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The interactive Heist Planner on gta6heistguide.com simulates 1 to 4 player co-op cuts, specialist fees (Gunner, Ghost Hacker, Wheelman), and +5% stealth integrity bonuses across all 6 major vaults including Raul Bautista bank scores."
+            "text": "No. Rockstar Games launched GTA VI on November 19, 2026 strictly as a single-player Story Mode experience on PlayStation 5 and Xbox Series X|S. As of November 27, 2026, GTA VI Online has no announced release date, so real payout calculations apply to single-player Story Mode only."
           }
         },
         {
           "@type": "Question",
-          "name": "How do Lucia Caminos and Jason Duval skills work with GTA 6 trunk weapon storage?",
+          "name": "How much do GTA 6 story heists and free-roam jewelry stores pay?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Lucia Caminos excels at keypad decryption and crowd intimidation, while Jason Duval leads sniper overwatch and getaway handling. Heavy thermal drills and LMGs must be stored physically inside your getaway car trunk weapon storage slots."
+            "text": "Corroborated Story Mode payouts include $120,000 baseline ($120K–$150K reported) for The Cartel Heist, $250,000 for VCIA Takedown, $50,000 for Operation Savage Glory (Coast Guard Raid), $65,000–~$205,000 for 8 Large Bank Vaults, $5,000–$45,000 for 14 Small Banks, and $10,000–$25,000 per standard Jewelry Store fenced with Yasmani."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I use a GTA 6 LFG crew finder to match PS5, Xbox, or PC heist friends?",
+          "name": "How do the Dye Pack Jammer and BuckMe $20,000 pocket cash cap work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use the Leonida Interactive Map and Strategy Guides at gta6heistguide.com/interactive-map to inspect all 6 vault routes, laser hack timings, and payout splits."
+            "text": "The Dye Pack Jammer unlocks during Chapter 3's Credit Check mission and protects marked bank bills from dye packs. Loose pocket cash caps at $20,000 per protagonist, so deposit payouts at physical ATMs or move funds into BuckMe Family Savings to protect them against Wasted/Busted losses."
           }
         }
       ]
@@ -234,7 +279,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "GTA 6 Heist Payout Calculator & Crew Cut Optimizer",
+          "name": "GTA 6 Story Mode Heist Planner & Payout Estimator",
           "item": "https://www.gta6heistguide.com/heist-planner"
         }
       ]
@@ -243,8 +288,8 @@
 }
     </script>
     <meta property="og:site_name" content="GTA6HeistGuide.com">
-    <meta name="twitter:title" content="GTA 6 Heist Planner &amp; Payout Cut Calculator">
-    <meta name="twitter:description" content="Plan GTA 6 heist approaches and net payouts across The Cartel Heist ($120K), VCIA Takedown, bank vaults, fence cuts, and crew splits.">
+    <meta name="twitter:title" content="GTA 6 Story Mode Heist Planner &amp; Payout Estimator">
+    <meta name="twitter:description" content="Plan GTA 6 Story Mode heists and robberies: The Cartel Heist ($120K), VCIA Takedown ($250K), Operation Savage Glory ($50K), 20 Jewelry Stores ($10K–$25K), and 22 bank vaults.">
     <meta name="twitter:image" content="https://www.gta6heistguide.com/assets/images/intel/intel-vc-launch.jpg">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9556158063903839"
      crossorigin="anonymous"></script>
@@ -333,10 +378,15 @@
     <div style="margin:0 0 0.85rem; padding-bottom:0.65rem; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:0.5rem; border-bottom:1px solid rgba(148,163,184,0.18);">
         <div>
             <h1 style="color:#fff; font-size:clamp(1.35rem, 2.5vw, 1.75rem); font-weight:1000; margin:0; line-height:1.2;">
-                Leonida Heist <span style="color:var(--neon-green);">Planner &amp; Cut Calculator</span>
+                Leonida Story Mode <span style="color:var(--neon-green);">Heist Planner &amp; Payout Estimator</span>
             </h1>
-            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.22rem;">REAL GTA 6 PAYOUTS &bull; THE CARTEL HEIST &bull; VCIA TAKEDOWN &bull; 22 BANK VAULTS</div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:0.22rem;">SINGLE-PLAYER STORY MODE (PS5 &amp; XBOX SERIES X|S) &bull; CORROBORATED PAYOUT RANGES &bull; LAST VERIFIED NOV 27, 2026</div>
         </div>
+    </div>
+
+    <!-- STORY MODE vs FUTURE ONLINE INTEGRITY NOTICE -->
+    <div style="margin:0 0 1.15rem; padding:0.85rem 1.05rem; border-radius:10px; background:rgba(0,255,136,0.06); border:1px solid rgba(0,255,136,0.34); font-size:0.83rem; color:#e2e8f0; line-height:1.55;">
+        <strong style="color:var(--neon-green);">Single-Player Story Mode Calculator (Live):</strong> Rockstar Games launched <em>Grand Theft Auto VI</em> strictly as a single-player experience (Jason Duval &amp; Lucia Caminos) on PS5 and Xbox Series X|S. As of <strong>November 27, 2026</strong>, GTA VI Online has no announced release date or multiplayer heist mechanics. Co-op player splits, public-lobby fail penalties, and 1.5X weekly event bonuses are excluded from Story Mode payouts below and isolated inside a separate, collapsed <em>Hypothetical Future Online Sandbox</em>.
     </div>
 
     <div id="heistPlannerProgressToolbar"></div>
@@ -354,130 +404,100 @@
         <div id="hpHeistChecklistGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(245px, 1fr)); gap:0.65rem;"></div>
     </section>
 
-    <div class="tool-box" style="border-color:rgba(148,163,184,0.24); box-shadow:0 12px 30px rgba(0,0,0,0.42);">
+    <div class="tool-box" id="storyModeCalculatorBox" style="border-color:rgba(148,163,184,0.24); box-shadow:0 12px 30px rgba(0,0,0,0.42);">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.85rem; margin-bottom:1.35rem; padding-bottom:0.85rem; border-bottom:1px solid rgba(255,255,255,0.08);">
-            <h2 style="color: #fff; margin: 0; font-size: 1.25rem;">Configure Mission Parameters</h2>
+            <div>
+                <span class="verify-badge verify-confirmed" style="font-size:0.68rem;">STORY MODE &bull; SINGLE-PLAYER (LIVE)</span>
+                <h2 style="color: #fff; margin: 0.3rem 0 0; font-size: 1.25rem;">Configure Story Mode Mission &amp; Robbery Parameters</h2>
+            </div>
             <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
                 <button type="button" class="btn btn-secondary" style="padding:0.48rem 0.9rem; font-size:0.8rem; border-color:rgba(148,163,184,0.28); color:#e2e8f0;" onclick="GTA6.saveCurrentBuild()">⭐ Bookmark Build</button>
-                <button type="button" class="btn btn-secondary" style="padding:0.48rem 0.9rem; font-size:0.8rem; border-color:rgba(0,240,255,0.45); color:var(--neon-cyan); background:rgba(0,240,255,0.08);" onclick="GTA6.copyPlannerShareLink()">🔗 Copy Shareable Squad Link</button>
+                <button type="button" class="btn btn-secondary" style="padding:0.48rem 0.9rem; font-size:0.8rem; border-color:rgba(0,240,255,0.45); color:var(--neon-cyan); background:rgba(0,240,255,0.08);" onclick="GTA6.copyPlannerShareLink()">🔗 Copy Shareable Build Link</button>
             </div>
         </div>
 
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 1.75rem;">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
             <div class="form-group">
-                <label for="targetSelect">Select Real GTA 6 Heist / Robbery Target</label>
+                <label for="targetSelect">Select Story Mode Heist / Robbery Target</label>
                 <select class="form-select" id="targetSelect" onchange="onTargetChange(); GTA6.playBeep(440, 'triangle', 0.05);">
-                    <option value="cartel-heist" selected>The Cartel Heist — Sinfrontera ($120K)</option>
+                    <option value="cartel-heist" selected>The Cartel Heist — Sinfrontera ($120K base)</option>
                     <option value="vcia-takedown">VCIA Takedown — Airport Heist ($250K)</option>
-                    <option value="large-banks">8 Large Bank Vaults ($65K–$205K)</option>
-                    <option value="small-banks">14 Small Banks &amp; Fleeca ($5K–$45K)</option>
-                    <option value="jewelry-stores">39 Gang Ops &amp; Jewelry Stores ($10K–$25K)</option>
+                    <option value="operation-savage-glory">Operation Savage Glory — Coast Guard Raid ($50K)</option>
+                    <option value="large-banks">8 Large Bank Vaults ($65K–~$205K)</option>
+                    <option value="small-banks">14 Small Banks &amp; Payday Loans ($5K–$45K)</option>
+                    <option value="jewelry-stores">20 Jewelry Stores ($10K–$25K Typical)</option>
+                    <option value="pawn-shops">15 Pawn Shops incl. Fast Cash ($2.5K–$6.5K Typical)</option>
+                    <option value="armored-trucks">Armored Trucks &amp; 39 Core Gang Ops ($10K–$38K)</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="approachSelect">Infiltration Approach</label>
+                <label for="payoutTierSelect">Reported Payout Range Point</label>
+                <select class="form-select" id="payoutTierSelect" onchange="calculatePlanner(); GTA6.playBeep(460, 'triangle', 0.05);">
+                    <option value="min">Conservative (Low End of Range)</option>
+                    <option value="typical" selected>Typical / Baseline Reported</option>
+                    <option value="max">Upper Corroborated Range</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="approachSelect">Tactical Approach (Heat &amp; Risk Reference)</label>
                 <select class="form-select" id="approachSelect" onchange="calculatePlanner(); GTA6.playBeep(480, 'triangle', 0.05);">
-                    <option value="stealth" selected>Silent &amp; Covert (+5% Stealth Bonus)</option>
-                    <option value="loud">Aggressive Assault (Max Firepower)</option>
-                    <option value="subterfuge">Subterfuge Disguise (Standard Cut)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="playerCount">Player Squad Size (Co-op)</label>
-                <select class="form-select" id="playerCount" onchange="calculatePlanner(); GTA6.playBeep(520, 'triangle', 0.05);">
-                    <option value="1">1 Player (Solo + AI Specialists)</option>
-                    <option value="2">2 Players (Lucia &amp; Jason Duo)</option>
-                    <option value="3">3 Players (Trio Syndicate)</option>
-                    <option value="4" selected>4 Players (Full Syndicate Squad)</option>
+                    <option value="stealth" selected>Silent &amp; Covert (Lower Heat / Clean Exit)</option>
+                    <option value="loud">Aggressive Assault (High Police Response)</option>
+                    <option value="subterfuge">Subterfuge / Disguise Swap (Standard Heat)</option>
                 </select>
             </div>
         </div>
 
-        <h3 style="color: var(--neon-cyan); margin-bottom: 1rem;">Hired Specialist Cut Allocation</h3>
-        
-        <div class="slider-row">
-            <div class="slider-label-row">
-                <span>Gunner / Heavy Assault:</span>
-                <strong id="planGVal" style="color: var(--neon-cyan);">15%</strong>
-            </div>
-            <input type="range" class="slider-input" id="planGunner" aria-label="Gunner cut percentage" min="5" max="30" value="15" oninput="calculatePlanner(); GTA6.playBeep(380, 'sine', 0.02);">
-        </div>
-
-        <div class="slider-row">
-            <div class="slider-label-row">
-                <span>Decryption Hacker:</span>
-                <strong id="planHVal" style="color: var(--neon-cyan);">10%</strong>
-            </div>
-            <input type="range" class="slider-input" id="planHacker" aria-label="Hacker cut percentage" min="5" max="25" value="10" oninput="calculatePlanner(); GTA6.playBeep(420, 'sine', 0.02);">
-        </div>
-
-        <div class="slider-row">
-            <div class="slider-label-row">
-                <span>Getaway Driver / Wheelman:</span>
-                <strong id="planDVal" style="color: var(--neon-cyan);">8%</strong>
-            </div>
-            <input type="range" class="slider-input" id="planDriver" aria-label="Driver cut percentage" min="5" max="20" value="8" oninput="calculatePlanner(); GTA6.playBeep(460, 'sine', 0.02);">
-        </div>
-
-                <h3 style="color: var(--neon-green); margin: 1.75rem 0 1rem;">True Net $/Hour Optimizer &amp; Grind Parameters</h3>
+        <h3 style="color: var(--neon-green); margin: 1.25rem 0 0.75rem;">Story Mode Deductions &amp; User-Estimated Run Timing</h3>
+        <p style="font-size:0.78rem; color:#94a3b8; margin:0 0 1rem; line-height:1.5;">
+            Direct in-person fencing with <strong>Yasmani</strong> (Little Cuba) offers the highest corroborated gem and marked-bill rates; using remote garage pickup incurs a driver cut (exact % not published by Rockstar). Run times vary by route and are user-adjustable estimates rather than fixed in-game timers.
+        </p>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
-            <div class="form-group">
-                <label for="setupGrindMins">Setup + Finale Grind Time (Minutes)</label>
-                <input type="number" class="form-input" id="setupGrindMins" min="10" max="240" value="77" oninput="calculatePlanner()">
-            </div>
-            <div class="form-group">
-                <label for="cooldownMins">Vault Cooldown Timer (Minutes)</label>
-                <input type="number" class="form-input" id="cooldownMins" min="0" max="180" value="60" oninput="calculatePlanner()">
-            </div>
-            <div class="form-group">
-                <label for="lootTypeSelect">Primary Vault Loot Target (Weight Physics)</label>
-                <select class="form-select" id="lootTypeSelect" onchange="calculatePlanner()">
-                    <option value="crypto">1. Crypto &amp; Diamonds (0% Penalty)</option>
-                    <option value="bonds" selected>2. Bearer Bonds &amp; Art (-6% Speed)</option>
-                    <option value="gold">3. Gold Bullion Bars (-25% Speed)</option>
-                    <option value="cash">4. Marked Cash Pallets (-10% Speed)</option>
+            <div class="form-group" style="margin-bottom:0;">
+                <label for="fenceSelect" style="color:#f472b6; font-weight:700;">Fence / Cashout Channel (Estimator)</label>
+                <select class="form-select" id="fenceSelect" onchange="onFenceChange(); calculatePlanner(); GTA6.playBeep(480, 'sine', 0.03);">
+                    <option value="direct" selected>Direct In-Person Fence / Clean Story Cash (0% Est.)</option>
+                    <option value="pickup">Remote Pickup Driver Cut (5% Illustrative Est.)</option>
+                    <option value="regional">Lower-Tier Regional Fence (12% Illustrative Est.)</option>
+                    <option value="street">Quick Offload / Heavy Discount (20% Illustrative Est.)</option>
                 </select>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+                <label for="setupGrindMins">Your Est. Run Time (Minutes — User Estimate)</label>
+                <input type="number" class="form-input" id="setupGrindMins" min="1" max="240" value="45" oninput="calculatePlanner()">
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+                <label for="cooldownMins">Optional Travel / Reset Buffer (Minutes)</label>
+                <input type="number" class="form-input" id="cooldownMins" min="0" max="180" value="0" oninput="calculatePlanner()">
             </div>
         </div>
 
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
-            <div class="form-group" style="margin-bottom:0;">
-                <label for="fenceSelect" style="color:#f472b6; font-weight:700;">Fence Destination &amp; Laundering Rate</label>
-                <select class="form-select" id="fenceSelect" onchange="onFenceChange(); calculatePlanner(); GTA6.playBeep(480, 'sine', 0.03);">
-                    <option value="yasmani" selected>Yasmani (Little Cuba) — 5% Cut</option>
-                    <option value="garage">Safehouse Garage — 12% Fee</option>
-                    <option value="shady">Street Fence — 20% Fee</option>
-                </select>
+            <div class="slider-row" style="margin-bottom:0;">
+                <div class="slider-label-row">
+                    <span>Fence / Remote Pickup Deduction (Adjustable Est.):</span>
+                    <strong id="launderFeeVal" style="color: var(--neon-pink);">0%</strong>
+                </div>
+                <input type="range" class="slider-input" id="launderFeeSlider" aria-label="Fence or remote pickup deduction percentage" min="0" max="35" value="0" oninput="calculatePlanner()">
             </div>
             <div class="slider-row" style="margin-bottom:0;">
                 <div class="slider-label-row">
-                    <span>Safehouse / Fence Laundering Fee:</span>
-                    <strong id="launderFeeVal" style="color: var(--neon-pink);">5%</strong>
+                    <span>Optional NPC / What-If Crew Deduction (0% Default):</span>
+                    <strong id="storyWhatIfCutVal" style="color: var(--neon-cyan);">0%</strong>
                 </div>
-                <input type="range" class="slider-input" id="launderFeeSlider" aria-label="Laundering fee percentage" min="0" max="25" value="5" oninput="calculatePlanner()">
-            </div>
-            <div class="slider-row" style="margin-bottom:0;">
-                <div class="slider-label-row">
-                    <span>Public Lobby Restart / Fail Penalty:</span>
-                    <strong id="failPenaltyVal" style="color: var(--neon-amber);">5%</strong>
-                </div>
-                <input type="range" class="slider-input" id="failPenaltySlider" aria-label="Failure penalty percentage" min="0" max="35" value="5" oninput="calculatePlanner()">
+                <input type="range" class="slider-input" id="storyWhatIfCutSlider" aria-label="Optional what-if crew cut percentage" min="0" max="40" value="0" oninput="calculatePlanner()">
             </div>
         </div>
 
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:rgba(0,0,0,0.3); border:1px solid rgba(0,240,255,0.2); border-radius:8px; padding:0.65rem 1rem; margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:rgba(0,0,0,0.3); border:1px solid rgba(0,240,255,0.2); border-radius:8px; padding:0.7rem 1rem; margin-bottom:1.35rem;">
             <label class="check-item" style="margin:0; cursor:pointer;">
                 <input type="checkbox" id="jammerToggle" checked onchange="calculatePlanner(); GTA6.playBeep(520, 'triangle', 0.03);">
                 <div>
-                    <strong style="color:var(--neon-cyan);">🛡️ Dye Pack Jammer Equipped</strong>
-                    <span style="font-size:0.75rem; color:#94a3b8;"> (Prevents 25% marked bill dye loss in bank vaults)</span>
+                    <strong style="color:var(--neon-cyan);">🛡️ Dye Pack Jammer Equipped (Unlocked Ch. 3 &mdash; <em>Credit Check</em>)</strong>
+                    <span style="font-size:0.75rem; color:#94a3b8;"> (Corroborated bank mechanic; unchecking models an illustrative -25% dye spoilage estimate on bank targets)</span>
                 </div>
-            </label>
-            <label class="check-item" style="margin:0; cursor:pointer;">
-                <input type="checkbox" id="weeklyBonusToggle" onchange="calculatePlanner()">
-                <div><strong>Apply 1.5X Weekly Featured Vault Bonus</strong></div>
             </label>
         </div>
 
@@ -485,62 +505,44 @@
         <div style="margin-bottom:1.25rem; padding:0.7rem 1rem; background:rgba(255,170,0,0.07); border:1px solid rgba(255,170,0,0.28); border-radius:8px; font-size:0.82rem; color:#fcd34d; display:flex; align-items:center; gap:0.6rem;">
             <span style="font-size:1.1rem;">⚠️</span>
             <div>
-                <strong>BuckMe $20,000 Pocket Cash Cap Warning:</strong> Loose pocket cash caps at $20,000 in Leonida. Immediately deposit your heist earnings into any BuckMe ATM to protect against post-heist arrest fees or street muggings.
+                <strong>BuckMe $20,000 Pocket Cash Cap Warning:</strong> Loose pocket cash caps at $20,000 per protagonist in Story Mode. Deposit payouts at physical ATMs or transfer via BuckMe Family Savings to protect against Wasted/Busted losses.
             </div>
         </div>
 
-        <!-- LOOT BAG WEIGHT & GRAB PRIORITY MATRIX -->
-        <div style="background:rgba(12,18,32,0.75); border:1px solid rgba(148,163,184,0.18); border-radius:10px; padding:1.15rem; margin-bottom:1.4rem;">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                <strong style="color:var(--neon-cyan);">🎒 Loot Bag Weight &amp; Grab Priority Calculator (2P / 3P / 4P Impact)</strong>
-                <span class="user-badge" id="lootPriorityBadge" style="background:rgba(139,92,246,0.15); border:1px solid rgba(167,139,250,0.38); color:#ddd6fe; font-size:0.7rem; padding:0.2rem 0.55rem;">2nd Priority (Fast Solo/Duo Grab)</span>
-            </div>
-            <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:0.75rem; font-size:0.86rem;">
-                <div style="background:rgba(6,10,20,0.75); border:1px solid rgba(255,255,255,0.06); padding:0.75rem; border-radius:6px;">
-                    <div style="color:var(--text-muted); font-size:0.78rem;">2-Player Duo Grab &amp; Mobility</div>
-                    <strong id="lootGrab2P" style="color:#fff;">44s total (-6% Sprint Speed)</strong>
-                </div>
-                <div style="background:rgba(6,10,20,0.75); border:1px solid rgba(255,255,255,0.06); padding:0.75rem; border-radius:6px;">
-                    <div style="color:var(--text-muted); font-size:0.78rem;">3-Player Trio Grab &amp; Mobility</div>
-                    <strong id="lootGrab3P" style="color:#fff;">57s total (-6% Sprint Speed)</strong>
-                </div>
-                <div style="background:rgba(6,10,20,0.75); border:1px solid rgba(255,255,255,0.06); padding:0.75rem; border-radius:6px;">
-                    <div style="color:var(--text-muted); font-size:0.78rem;">4-Player Full Squad Grab &amp; Mobility</div>
-                    <strong id="lootGrab4P" style="color:#fff;">68s total (-6% Sprint Speed)</strong>
-                </div>
-            </div>
-        </div>
-
-        <!-- RESULTS MATRIX -->
-        <div class="payout-display" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));">
+        <!-- STORY MODE RESULTS MATRIX -->
+        <div class="payout-display" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));">
             <div>
-                <div class="payout-item-title">Estimated Gross Loot</div>
+                <div class="payout-item-title">Reported Target Take</div>
                 <div class="payout-item-val" id="targetPayoutDisplay" style="color: #fff;">$0</div>
             </div>
             <div>
-                <div class="payout-item-title">Hired Specialist Cut</div>
+                <div class="payout-item-title">Fence / Dye / What-If Deductions</div>
                 <div class="payout-item-val" id="specialistCostDisplay" style="color: var(--neon-pink);">$0</div>
             </div>
             <div>
-                <div class="payout-item-title">Total Squad Take</div>
-                <div class="payout-item-val" id="squadPotDisplay" style="color: var(--neon-cyan);">$0</div>
+                <div class="payout-item-title">Story Mode Net Take-Home (Single-Player)</div>
+                <div class="payout-item-val" id="squadPotDisplay" style="color: var(--neon-green);">$0</div>
             </div>
             <div>
-                <div class="payout-item-title">Per Player Net Take</div>
-                <div class="payout-item-val" id="perPlayerDisplay">$0</div>
+                <div class="payout-item-title">Canonical Corroborated Range</div>
+                <div class="payout-item-val" id="perPlayerDisplay" style="color: var(--neon-cyan); font-size:1.25rem;">$0</div>
             </div>
             <div>
-                <div class="payout-item-title">Realistic Net $/Hour</div>
+                <div class="payout-item-title">Illustrative $/Hour*</div>
                 <div class="payout-item-val" id="netPerHourDisplay" style="color: var(--neon-green);">$0/hr</div>
             </div>
             <div>
-                <div class="payout-item-title">Realistic $/Minute</div>
+                <div class="payout-item-title">Illustrative $/Minute*</div>
                 <div class="payout-item-val" id="netPerMinDisplay" style="color: var(--neon-amber);">$0/min</div>
             </div>
         </div>
 
-        <div style="margin-top: 1.35rem; text-align: center; color: var(--text-muted); font-size: 0.92rem;">
-            Estimated Police Heat Response: <strong id="heatDisplay" style="color: var(--neon-amber);">★☆☆☆☆ (1 Star - Clean Evasion)</strong>
+        <div style="margin-top: 0.9rem; text-align: center; color: #94a3b8; font-size: 0.8rem;">
+            <strong>Evidence Status:</strong> <span id="evidenceNoteDisplay" style="color:#e2e8f0;">Corroborated by multiple launch guides</span> &middot; *Hourly/minute rates are illustrative and depend entirely on your entered run time.
+        </div>
+
+        <div style="margin-top: 0.75rem; text-align: center; color: var(--text-muted); font-size: 0.92rem;">
+            Estimated Police Heat Response: <strong id="heatDisplay" style="color: var(--neon-amber);">★☆☆☆☆–★★☆☆☆ (Low Heat / Clean Exit)</strong>
         </div>
 
         <div style="margin-top: 1.35rem; padding-top: 1.15rem; border-top: 1px solid rgba(255,255,255,0.08); display:flex; justify-content:center; gap:0.65rem; flex-wrap:wrap;">
@@ -550,6 +552,84 @@
             <button type="button" class="btn btn-secondary" style="border-color:rgba(148,163,184,0.26); color:#e2e8f0;" onclick="GTA6.FlexCard.copyCalcChallenge()">🔗 Copy Challenge Link</button>
             <button type="button" class="btn btn-secondary" style="border-color:rgba(148,163,184,0.26); color:#cbd5e1;" onclick="GTA6.openEmbedModal('calculator')">&lt;/&gt; Embed on Site or OBS</button>
         </div>
+
+        <!-- ISOLATED HYPOTHETICAL FUTURE ONLINE CONCEPT SANDBOX (COLLAPSED BY DEFAULT — NEVER AFFECTS STORY MODE PAYOUTS) -->
+        <details id="hypotheticalOnlineSandbox" style="margin-top:1.75rem; background:rgba(245,158,11,0.05); border:1px dashed rgba(245,158,11,0.45); border-radius:10px; padding:1rem 1.15rem;">
+            <summary style="cursor:pointer; font-weight:900; color:#fbbf24; font-size:0.92rem; list-style:none; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+                <span>⚠️ Hypothetical Future GTA VI Online Concept Sandbox (Speculative — Not In Current Game)</span>
+                <span style="font-family:var(--font-mono); font-size:0.7rem; background:rgba(245,158,11,0.16); border:1px solid rgba(245,158,11,0.45); border-radius:999px; padding:0.15rem 0.55rem; color:#fde68a;">UNANNOUNCED &bull; EXPAND TO SIMULATE</span>
+            </summary>
+            <p style="font-size:0.8rem; color:#cbd5e1; margin:0.75rem 0 1rem; line-height:1.5;">
+                <strong>Disclaimer:</strong> Rockstar Games has <strong>not announced</strong> GTA VI Online, co-op squad splits, variable NPC specialist cut percentages, public-lobby restart penalties, or 1.5X weekly event bonuses as of November 27, 2026. This isolated sandbox preserves speculative multiplayer split modeling strictly for hypothetical comparison and <strong>never alters the Story Mode payout summary above</strong>.
+            </p>
+            <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:1rem; margin-bottom:1rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                    <label for="hypoPlayerCount">Hypothetical Co-op Squad Size</label>
+                    <select class="form-select" id="hypoPlayerCount" onchange="calculateHypotheticalSandbox()">
+                        <option value="1">1 Player (Hypothetical Solo)</option>
+                        <option value="2" selected>2 Players (Hypothetical Duo)</option>
+                        <option value="3">3 Players (Hypothetical Trio)</option>
+                        <option value="4">4 Players (Hypothetical Squad)</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                    <label for="hypoLootType">Hypothetical Multi-Bag Mobility Concept</label>
+                    <select class="form-select" id="hypoLootType" onchange="calculateHypotheticalSandbox()">
+                        <option value="gems">1. Uncut Diamonds &amp; Gems (0% Concept)</option>
+                        <option value="bonds" selected>2. Bearer Bonds &amp; Valuables (-6% Concept)</option>
+                        <option value="bullion">3. Heavy Bullion Bars (-25% Concept)</option>
+                        <option value="cash">4. Marked Cash Stacks (-10% Concept)</option>
+                    </select>
+                </div>
+                <label class="check-item" style="margin:0; align-self:end; cursor:pointer;">
+                    <input type="checkbox" id="hypoWeeklyBonus" onchange="calculateHypotheticalSandbox()">
+                    <div><strong>Hypothetical 1.5X Event Multiplier</strong><br><span style="font-size:0.72rem; color:#fbbf24;">Speculative — not active in Story Mode</span></div>
+                </label>
+            </div>
+            <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:0.85rem; margin-bottom:1rem;">
+                <div class="slider-row" style="margin-bottom:0;">
+                    <div class="slider-label-row"><span>Hypothetical Gunner Cut:</span><strong id="hypoGVal" style="color:#fbbf24;">15%</strong></div>
+                    <input type="range" class="slider-input" id="hypoGunner" aria-label="Hypothetical gunner cut" min="0" max="30" value="15" oninput="calculateHypotheticalSandbox()">
+                </div>
+                <div class="slider-row" style="margin-bottom:0;">
+                    <div class="slider-label-row"><span>Hypothetical Hacker Cut:</span><strong id="hypoHVal" style="color:#fbbf24;">10%</strong></div>
+                    <input type="range" class="slider-input" id="hypoHacker" aria-label="Hypothetical hacker cut" min="0" max="25" value="10" oninput="calculateHypotheticalSandbox()">
+                </div>
+                <div class="slider-row" style="margin-bottom:0;">
+                    <div class="slider-label-row"><span>Hypothetical Driver Cut:</span><strong id="hypoDVal" style="color:#fbbf24;">8%</strong></div>
+                    <input type="range" class="slider-input" id="hypoDriver" aria-label="Hypothetical driver cut" min="0" max="20" value="8" oninput="calculateHypotheticalSandbox()">
+                </div>
+                <div class="slider-row" style="margin-bottom:0;">
+                    <div class="slider-label-row"><span>Hypothetical Lobby Fail Penalty:</span><strong id="hypoFailVal" style="color:#fbbf24;">0%</strong></div>
+                    <input type="range" class="slider-input" id="hypoFailPenalty" aria-label="Hypothetical fail penalty" min="0" max="35" value="0" oninput="calculateHypotheticalSandbox()">
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:0.75rem; margin-bottom:0.85rem; font-size:0.82rem;">
+                <div style="background:rgba(6,10,20,0.75); border:1px solid rgba(245,158,11,0.28); padding:0.7rem; border-radius:6px;">
+                    <div style="color:#fbbf24; font-size:0.72rem;">HYPOTHETICAL GROSS</div>
+                    <strong id="hypoGrossDisplay" style="color:#fff;">$0 (Hypothetical)</strong>
+                </div>
+                <div style="background:rgba(6,10,20,0.75); border:1px solid rgba(245,158,11,0.28); padding:0.7rem; border-radius:6px;">
+                    <div style="color:#fbbf24; font-size:0.72rem;">HYPOTHETICAL SPECIALIST CUT</div>
+                    <strong id="hypoSpecDisplay" style="color:#fff;">-33% (Hypothetical)</strong>
+                </div>
+                <div style="background:rgba(6,10,20,0.75); border:1px solid rgba(245,158,11,0.28); padding:0.7rem; border-radius:6px;">
+                    <div style="color:#fbbf24; font-size:0.72rem;">HYPOTHETICAL PER-PLAYER SPLIT</div>
+                    <strong id="hypoPerPlayerDisplay" style="color:#fde68a;">$0 / player (Hypothetical)</strong>
+                </div>
+            </div>
+            <div style="background:rgba(6,10,20,0.6); border:1px solid rgba(148,163,184,0.16); border-radius:8px; padding:0.75rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.55rem; font-size:0.78rem;">
+                    <strong style="color:#fbbf24;">Hypothetical 2P / 3P / 4P Grab Timing Concept (Unconfirmed)</strong>
+                    <span class="user-badge" id="lootPriorityBadge" style="background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.38); color:#fde68a; font-size:0.68rem;">Speculative Concept</span>
+                </div>
+                <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap:0.6rem; font-size:0.8rem;">
+                    <div><span style="color:#94a3b8;">2P Concept:</span> <strong id="lootGrab2P" style="color:#fff;">44s est.</strong></div>
+                    <div><span style="color:#94a3b8;">3P Concept:</span> <strong id="lootGrab3P" style="color:#fff;">57s est.</strong></div>
+                    <div><span style="color:#94a3b8;">4P Concept:</span> <strong id="lootGrab4P" style="color:#fff;">68s est.</strong></div>
+                </div>
+            </div>
+        </details>
     </div>
 
     <!-- LOWER PARTNER PROMOTIONS (POSITIONED AFTER PRIMARY CALCULATOR CONTENT, NON-HEADING TITLES) -->
@@ -716,14 +796,14 @@
 <script>
 (function() {
   var HEIST_ITEMS = [
-    { id: 'heist:the-cartel-heist', title: 'The Cartel Heist (Sinfrontera)', payout: '$120,000 base', chapter: 'Ch. 3', pin: 'heist-cartel', url: '/heists/the-cartel-heist.html' },
-    { id: 'heist:vcia-takedown', title: 'VCIA Takedown (Airport Heist)', payout: '$250,000', chapter: 'Ch. 4', pin: 'heist-vcia', url: '/heists/vcia-takedown.html' },
-    { id: 'heist:shops-and-stickups', title: 'Shops & Stick-ups (72 Spots)', payout: '$500–$2,000', chapter: 'Ch. 1+', pin: 'heist-shops', url: '/heists/shops-and-stickups.html' },
-    { id: 'heist:pawn-shops', title: 'Pawn Shops (Coffee Break)', payout: '$4,000–$12,000', chapter: 'Ch. 2+', pin: 'heist-pawn', url: '/heists/pawn-shops.html' },
-    { id: 'heist:jewelry-stores', title: 'Jewelry Stores (20 Locations)', payout: '$15,000–$35,000', chapter: 'Ch. 3+', pin: 'heist-jewelry', url: '/heists/jewelry-stores.html' },
-    { id: 'heist:small-banks-payday-loans', title: 'Small Banks & Payday Loans (14)', payout: '$5,000–$45,000', chapter: 'Ch. 3+', pin: 'heist-small-banks', url: '/heists/small-banks-payday-loans.html' },
-    { id: 'heist:large-bank-vaults', title: 'Large Bank Vaults (8 Major)', payout: 'Up to ~$205,000', chapter: 'Ch. 4+', pin: 'heist-large-vaults', url: '/heists/large-bank-vaults.html' },
-    { id: 'heist:armored-trucks-gang-ops', title: 'Armored Trucks & 40 Gang Ops', payout: '$10,000–$38,000', chapter: 'Free-Roam', pin: 'heist-armored-trucks', url: '/heists/armored-trucks-gang-ops.html' }
+    { id: 'heist:the-cartel-heist', title: 'The Cartel Heist (Sinfrontera)', payout: '$120,000 base ($120K–$150K reported)', chapter: 'Ch. 3', pin: 'heist-cartel', url: '/heists/the-cartel-heist' },
+    { id: 'heist:vcia-takedown', title: 'VCIA Takedown (Airport Heist)', payout: '$250,000', chapter: 'Ch. 4', pin: 'heist-vcia', url: '/heists/vcia-takedown' },
+    { id: 'heist:shops-and-stickups', title: 'Shops & Stick-ups (72 Spots)', payout: '$500–$2,000', chapter: 'Ch. 1+', pin: 'heist-shops', url: '/heists/shops-and-stickups' },
+    { id: 'heist:pawn-shops', title: 'Pawn Shops (15 Shops · Coffee Break)', payout: '$2,500–$6,500 (up to $12K)', chapter: 'Ch. 2+', pin: 'heist-pawn', url: '/heists/pawn-shops' },
+    { id: 'heist:jewelry-stores', title: 'Jewelry Stores (20 Locations)', payout: '$10,000–$25,000', chapter: 'Ch. 3+', pin: 'heist-jewelry', url: '/heists/jewelry-stores' },
+    { id: 'heist:small-banks-payday-loans', title: 'Small Banks & Payday Loans (14)', payout: '$5,000–$45,000', chapter: 'Ch. 3+', pin: 'heist-small-banks', url: '/heists/small-banks-payday-loans' },
+    { id: 'heist:large-bank-vaults', title: 'Large Bank Vaults (8 Major)', payout: '$65,000–~$205,000', chapter: 'Ch. 4+', pin: 'heist-large-vaults', url: '/heists/large-bank-vaults' },
+    { id: 'heist:armored-trucks-gang-ops', title: 'Armored Trucks & 39 Core Gang Ops (40 Ult.)', payout: '$10,000–$38,000', chapter: 'Free-Roam', pin: 'heist-armored-trucks', url: '/heists/armored-trucks-gang-ops' }
   ];
 
   function renderHeistChecklist() {
