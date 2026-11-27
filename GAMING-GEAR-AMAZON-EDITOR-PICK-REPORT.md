@@ -201,3 +201,103 @@ To upgrade any of the 27 text-only catalog cards (including the 16 held unusual-
 1. **Amazon Creators API + Express Written Mobile Approval (Preferred for Full Catalog):** Once `gta6heistguid-20` has final Associates acceptance and ≥10 qualifying shipped sales in 30 days, register Creators API credentials in Cloudflare Pages Functions secrets and obtain written IP License Section 2(c)(d) approval for responsive/mobile website display. Connect a server-side endpoint to `window.GTA6GearEngine.registerApiHydrator(...)` serving unmodified Amazon-hosted `Images.Primary.Large` URLs refreshed within policy windows (never downloading or permanently caching Amazon images).
 2. **Written Manufacturer Commercial-Affiliate Permission:** Obtain written commercial/affiliate permission from Elgato/Corsair, Divoom, 8BitDo, UGREEN, BenQ, GameSir, NZXT, Koss, Philips, Govee, Sabrent, V-MODA, Samson, PowerA, KontrolFreek, Turtle Beach, HyperX, WD_BLACK, Lexar, Paladone, or Exquisite Gaming to host exact-model official studio packshots.
 3. **Original Owner Photography:** Photograph owned items cleanly on a neutral surface, convert proportionally to `.webp` in `public/assets/gear-photos/`, update `data/gear-products-master.json` (`mediaType: "photo"`, `dailyEligible: true`), and run `node scripts/sync-gear-catalog.mjs`.
+
+
+---
+
+## SITE-WIDE AMAZON PRODUCT DISPLAY AUDIT
+
+**Final Verdict:** `SITE-WIDE AMAZON REDESIGN READY FOR REVIEW`
+
+- **Audit & Redesign Date:** November 26, 2026 (`America/Chicago`)
+- **Associates Program Scope:** Regular Amazon Associates Program ONLY (`gta6heistguid-20`). Amazon Influencer excluded. Tax and payment settings untouched.
+- **Task Branch & Isolated Worktree:** `phase-47-gaming-gear-editors-pick` (`C:\Users\Shawn\.gemini\antigravity\scratch\phase-47-gaming-gear-editors-pick`)
+- **Deployed Code Commit SHA:** `f84cbdff484b06061744c93b172f186a09b40531` (`f84cbdf`)
+- **New Cloudflare Pages Preview Deployment ID:** `81c4f7d0-98c7-49fc-86b5-1a58a9a34403`
+- **New Cloudflare Pages Preview Immutable URL:** `https://81c4f7d0.gta6heistguide.pages.dev`
+- **Cloudflare Pages Preview Branch Alias:** `https://phase-47-gaming-gear-editors.gta6heistguide.pages.dev`
+- **Production Preservation:** **CONFIRMED UNTOUCHED** — `main` and `origin/main` remain at `de5d3a4ba7e734b636621a445f24707a1ea795be`; live Production deployment remains `8c6d67cb-98b9-4355-99fe-c904f0bb81b1`; `https://www.gta6heistguide.com/gaming-gear/` verified unchanged (`HTTP 200`, `hasGlobalAmzCss: false`); Phase 35.1C homepage & paused placement switch (`window.SITE_CONFIG.enableAmazonProductPlacements: false`) preserved 100% intact.
+
+### 1. Executive Site-Wide Audit Metrics
+
+| Required Metric | Count / Result | Details |
+|---|---:|---|
+| **Total pages scanned (`public/**/*.html`)** | **580** | Complete sweep of all 580 HTML files + 21 JS, 5 CSS, 31 JSON, and 4 Functions modules |
+| **Total pages containing Amazon links / dynamic slots** | **103** | 75 HTML files with direct `amazon.com` URLs + 28 additional HTML files with `[data-aff-slot]` containers (paused via Phase 35.1C) |
+| **Pages containing physical Amazon product cards** | **12** | **2 active visible card hubs** (`/gaming-gear/`, `/gta-6-settings/`) + **10 paused card pages** (`/affiliates-gear.html`, `/gameplay-mechanics.html`, `/heist-payout-calculator.html`, `/drops.html`, `/giveaways.html`, `/cheats.html`, `/secrets.html`, `/free/index.html`, `/cloud-mirrors/index.html`, `/cloud-mirrors/heist-payout-calculator.html`) — plus dynamic engines `affiliates.js`, `world-db-engine.js`, `main.js` |
+| **Pages with no physical product cards** | **568** | 477 pages with zero Amazon links + 60 contextual text-link pages (`/compare/*`, `/guides/*`, `/articles/*`, `/calculator.html`, `/live-intel.html`) + 1 Prime-only page (`/live.html`) + 28 paused `[data-aff-slot]` pages (including `/` homepage) + 2 disclosure/reference-only pages (`404.html`, etc.) |
+| **Number of product cards inspected** | **89** | 53 rendered on `/gaming-gear/` (3 Leonida Drop + 50 catalog) + 14 on `/gta-6-settings/` + 22 paused static physical cards across 10 secondary routes (plus 18 Amazon catalog entries in `affiliates.js` + 3 in `main.js` `DealRotator`) |
+| **Number of cards redesigned** | **89 / 89 (100%)** | Unified onto **one shared global compact component** (`/assets/css/amazon-product-cards.css`: `.amz-grid`, `.amz-card`, `<details class="amz-card__details">`) — plus `affiliates.js`, `world-db-engine.js`, and `main.js` `DealRotator` cleaned & aligned |
+| **Number of verified Amazon links** | **155+ direct Special Links** | 53 active on `/gaming-gear/` + 14 active on `/gta-6-settings/` + 22 paused cards + 66 contextual `Samsung 990 PRO` text links repaired from mismatched `B0C47ZX1WB` -> verified `B0BHJDY57J`; zero cross-product ASIN hijacks in `site-config.js` |
+| **Number of text-only cards** | **89 / 89 (100%)** | 67 active visible cards (`/gaming-gear/` 53 + `/gta-6-settings/` 14) + 22 paused static cards render as clean, balanced text-only cards with zero empty image placeholders |
+| **Number of authorized Amazon product images** | **0** | Live Associates audit (`gta6heistguid-20`) confirmed SiteStripe is Text-Only, Recommended Product Links is retired (`404`), and Creators API is locked pending Approved Associates Account + ≥10 qualifying sales/30d + IP License Sec. 2(d) written mobile approval |
+| **Number of images rejected / removed from product cards** | **26** | **8 Wikimedia Commons photos** removed from `/gaming-gear/` + `affiliates.js`, **12 old SVG category illustrations** removed from `affiliates.js`, **6 unapproved local cutout/stock/manufacturer images** (`/assets/gear/samsung-990pro.jpg`, `/assets/gear/dualsense-edge-cutout.webp`, `/assets/gear/pulse-elite-cutout.webp`, `/assets/images/intel/intel-vc-launch.jpg`, `assets/dualsense-edge-controller.jpg`, `assets/samsung-990-pro.jpg`) removed from secondary pages, `world-db-engine.js`, `main.js`, and `amazon-catalog.json` |
+| **Fabricated star ratings (`★★★★★`) / fake buyer counts removed** | **11 cards cleaned** | Removed from `/gameplay-mechanics.html` (3), `/heist-payout-calculator.html` (3), and `public/assets/main.js` `DealRotator` (5) |
+| **AdSense preservation results** | **PASS (571 / 571)** | `python scripts/audit_adsense_verification.py`: `571/571` eligible HTML documents pass (`ca-pub-9556158063903839`), `0` duplicate scripts, `0` conflicting publisher IDs, `0` errors, Impact.com verification tag intact |
+
+### 2. Amazon Link Classification Breakdown
+
+- **A. Physical Product Recommendations (Redesigned to Shared `.amz-card`):** `/gaming-gear/` (53 rendered cards: 3 balanced Leonida Drop + 50 catalog), `/gta-6-settings/` (14 hardware comparison cards with verified ASINs and PS5 vs. Xbox separation), and 10 secondary paused routes (`/affiliates-gear.html`, `/gameplay-mechanics.html`, `/heist-payout-calculator.html`, `/drops.html`, `/giveaways.html`, `/cheats.html`, `/secrets.html`, `/free/index.html`, `/cloud-mirrors/index.html`, `/cloud-mirrors/heist-payout-calculator.html`), plus dynamic renderers `public/js/affiliates.js`, `public/assets/js/world-db-engine.js`, and `public/assets/main.js`.
+- **B. Amazon Prime & Subscription Offers (Preserved in Context):** `amazon.com/tryprimefree?tag=gta6heistguid-20` on `/drops.html`, `/giveaways.html`, `/secrets.html` and `amazon.com/prime?tag=gta6heistguid-20` on `/live.html` preserved untouched.
+- **C. Amazon Services & Promotional Links (Preserved):** Non-card promotional partner strips and paused slots preserved cleanly.
+- **D. Ordinary Contextual Amazon Links (Preserved as Text Links, Mismatched ASINs Fixed):** 66 contextual text links across `/compare/*`, `/guides/*`, `/articles/*`, `/calculator.html`, `/heist-payout-calculator.html`, and `/live-intel.html` kept as contextual text links (NOT converted into cards), with mismatched `Samsung 990 PRO` links repaired from `B0C47ZX1WB` (WD_BLACK SN850P) to exact verified `B0BHJDY57J`. Contextual HDMI 2.1 monitor link on `/cheats.html` preserved untouched.
+- **E. Amazon Affiliate Disclosures (Preserved):** `"As an Amazon Associate I earn from qualifying purchases."` preserved on every active Amazon recommendation page and card footer, while homepage Phase 35.1C editorial notice remains accurate.
+- **Non-Amazon Partners (100% Untouched):** G2A (`g2a.com/n/reflink-4094b9aab5`), ExitLag (`exitlag.com/refer/10386953`), and Gumroad / CutFlow Pro (`apexlocallabs.gumroad.com/l/cutflow-pro`) preserved untouched across every route.
+
+### 3. Route-by-Route Inventory & Completion Status
+
+| Route / Asset | Classification | Cards Inspected | Redesign & Compliance Action | Status |
+|---|---|---:|---|---|
+| `/gaming-gear/` | Active Physical Cards (A) | 53 (3 Drop + 50 Catalog) | Unified onto `/assets/css/amazon-product-cards.css`; Leonida Drop balanced into 3 equal-height desktop columns (`409px/409px/409px`); 8 Wikimedia photos rejected (`0` images); concise 15–25w summaries; expandable `<details>` specifications; refresh & `SHOW ANOTHER DROP` rotation verified | **COMPLETE (PASS)** |
+| `/gta-6-settings/` | Active Physical Cards (A) | 14 Hardware Models | Unified onto `.amz-grid` + `.amz-card` (`390px` uniform desktop card height); all 14 ASINs verified & repaired (`B0BHJDY57J`, `B0C47ZX1WB`, `B0CK2RKPBL`, `B08K3S6WJM`, `B0C44XVWCH`, `B0CPFWXMBL`, `B0DLR3WQWR`, `B0CJWYCVRM`, `B09V1KJ3J4`, `B0CVRDK4P6`, `B0CV9VGMPT`, `B0CV26XVMD`, `B0BS5V7T65`, `B07SFKTLZM`); PS5 M.2 vs. Xbox Expansion Card separation preserved; full specs/pros/cons/mfg links inside expandable `<details>`; visible Amazon CTAs restored | **COMPLETE (PASS)** |
+| `/affiliates-gear.html` | Paused Physical Cards (A) | 3 (Paused) | Upgraded to `.amz-card` text-only; removed unapproved local cutouts; fixed 3 mismatched ASINs (`B0BHJDY57J`, `B0BS5V7T65`, `B0F1HX3WXX`); G2A & ExitLag untouched; Phase 35.1C pause preserved | **COMPLETE (PASS)** |
+| `/gameplay-mechanics.html` | Paused Physical Cards (A) | 3 (Paused) | Upgraded to `.amz-grid` + `.amz-card` text-only; removed fake `★★★★★` stars & 3 unapproved images; fixed ASINs; added pause flag on wrapper so zero empty heading displays | **COMPLETE (PASS)** |
+| `/heist-payout-calculator.html` | Paused Physical Cards (A) + Contextual (D) | 3 (Paused) | Upgraded 3 cards to `.amz-grid` + `.amz-card` text-only; removed fake `★★★★★` stars & 3 unapproved images; fixed contextual SSD link (`B0BHJDY57J`); pause preserved | **COMPLETE (PASS)** |
+| `/drops.html` & `/giveaways.html` | Paused Physical Cards (A) + Prime (B) | 6 (3 each, Paused) | Upgraded paused physical Amazon cards to `.amz-card` text-only with exact ASINs (`B0BHJDY57J`, `B0FY6X2XXY`); Prime trial links, G2A, ExitLag, CutFlow Pro preserved untouched | **COMPLETE (PASS)** |
+| `/cheats.html` | Paused Physical Cards (A) + Contextual (D) | 2 (Paused) | Upgraded 2 paused promo cards to `.amz-card` text-only (`B0BHJDY57J`, `B0FY6X2XXY`); preserved inline HDMI 2.1 monitor contextual link, G2A, ExitLag, CutFlow Pro untouched | **COMPLETE (PASS)** |
+| `/secrets.html` | Paused Physical Cards (A) + Prime (B) | 3 (Paused) | Upgraded 3 paused physical cards to `.amz-card` text-only; fixed PULSE Elite ASIN (`B0BDGMNF6V` -> `B0CMDH9M5W`) & Samsung 990 PRO ASIN (`B0C47ZX1WB` -> `B0BHJDY57J`); preserved Prime offer & pause | **COMPLETE (PASS)** |
+| `/free/index.html` & `/cloud-mirrors/*` (2 pages) | Paused Physical Cards (A) | 3 (1 each, Paused) | Upgraded paused SSD `.gear-box` to `.amz-card` text-only (`B0BHJDY57J`); preserved ExitLag, G2A, and pause | **COMPLETE (PASS)** |
+| `/compare/*`, `/guides/*`, `/articles/*`, `/calculator.html`, `/live-intel.html` (66 pages) | Contextual Text Links (D) | 0 (Text Links Only) | Preserved contextual inline text design; repaired `Samsung 990 PRO` ASIN mismatch (`B0C47ZX1WB` -> `B0BHJDY57J`) across 66 HTML files | **COMPLETE (PASS)** |
+| `/live.html` | Prime Offer Only (B) | 0 | Preserved paused Amazon Prime Twitch sub offer and CutFlow Pro / ExitLag cards untouched | **COMPLETE (PRESERVED)** |
+| `/` (Homepage) & 27 `[data-aff-slot]` routes | Paused Slots (Phase 35.1C) | 0 Visible | Preserved `enableAmazonProductPlacements: false` (0 visible Amazon cards on homepage & paused routes); upgraded underlying `affiliates.js` & `world-db-engine.js` & `main.js` to `.amz-card` text-only with zero Wikimedia/SVG/fake-star remnants; repaired `site-config.js` regex hijack (`WD_BLACK C50` / `Samsung 990 PRO`) | **COMPLETE (PASS)** |
+
+### 4. Automated Test, SEO & Six-Viewport Playwright QA Results
+
+- **JavaScript Syntax Checks (`node --check` on all 6 modified JS files):** **PASS (6/6)**
+- **`git diff --check`:** **PASS (exit 0)**
+- **`node scripts/sync-gear-catalog.mjs`:** **PASS** (`66 total | 50 active approved | 0 photo | 50 text-only | 16 inactive | 6 LEONIDA DROP collections`)
+- **`node --test tests/*.test.mjs`:** **PASS — 65 / 65 tests passed, 0 failed** (including 5 new site-wide tests in `tests/global-amazon-cards.test.mjs`: `GLOBAL-AMZ-01` through `GLOBAL-AMZ-05`)
+- **`node scripts/seo-audit.mjs`:** **337 primary pages, 339 JSON-LD blocks, 502 canonical sitemap URLs, 1173 HTML `<img>` tags, 27003 internal links — 0 warnings** (only pre-existing intentional Phase 35.1C homepage Amazon Placement Pause guardrail)
+- **`python scripts/audit_adsense_verification.py`:** **PASS — 571 / 571 eligible HTML documents passed, 0 errors**
+
+#### Six-Viewport Playwright Verification (Local & Live Preview `81c4f7d0`)
+
+Verified across all **6 required viewports** (`360×800`, `375×667`, `390×844`, `430×932`, `768×1024`, `1440×900`) on BOTH Local HTTP (`LOCAL_global_amazon_playwright_results.json`) and Live Preview `https://81c4f7d0.gta6heistguide.pages.dev` (`PREVIEW_global_amazon_playwright_results.json`):
+
+| Verification Check | Local (`after_local`) | Live Preview (`81c4f7d0`) |
+|---|---|---|
+| Total Playwright Failures | **0** | **0** |
+| `/gaming-gear/` visible compact `.amz-card` count (3 Drop + 50 Catalog) | **53 / 53 PASS (6/6 VPs)** | **53 / 53 PASS (6/6 VPs)** |
+| `/gaming-gear/` desktop 3-col Leonida Drop balance (`1440×900`) | **3 cols · `409/409/409px`** | **3 cols · `409/409/409px`** |
+| `/gta-6-settings/` visible compact `.amz-card` count & height (`1440×900`) | **14 / 14 · `390/390/390px`** | **14 / 14 · `390/390/390px`** |
+| Unauthorized images / Wikimedia photos / SVGs inside `.amz-card` | **0 (6/6 VPs)** | **0 (6/6 VPs)** |
+| Invalid Amazon links / missing `tag=gta6heistguid-20` / missing `rel` | **0 (6/6 VPs)** | **0 (6/6 VPs)** |
+| Fabricated star ratings (`★`) | **0 (6/6 VPs)** | **0 (6/6 VPs)** |
+| Expandable `<details>` collapsed on load & opens on click | **PASS (both hubs)** | **PASS (both hubs)** |
+| Leonida Drop rotation (`SHOW ANOTHER DROP` + page reload -> 3 distinct drops) | **PASS** (`leonida-control-room` → `retro-gaming-lab` → `future-tech-desk`) | **PASS** (`leonida-control-room` → `retro-gaming-lab` → `future-tech-desk`) |
+| `/gta-6-settings/` filters (`PS5 M.2 SSDs` = 3, `Xbox Expansion Cards` = 2) | **PASS** | **PASS** |
+| Secondary routes (`/`, `/affiliates-gear.html`, `/gameplay-mechanics.html`, `/heist-payout-calculator.html`, `/drops.html`, `/cheats.html`, `/secrets.html`, `/free/`) — Phase 35.1C Pause + AdSense + 0 Overflow | **PASS (16/16 checks)** | **PASS (16/16 checks)** |
+| Horizontal overflow (`> 1px`), broken images, JS `pageerror` exceptions | **0 / 0 / 0** | **0 / 0 / 0** |
+
+### 5. Before-and-After Screenshot Evidence (Saved Outside `public/`)
+
+- **BEFORE (`verification-screenshots/phase47-global-amazon-redesign/before/`):**
+  - `BEFORE_gaming_gear_top_{desktop_1440x900,mobile_390x844}.png` & `BEFORE_gaming_gear_catalog_{desktop_1440x900,mobile_390x844}.png`
+  - `BEFORE_gta6_settings_hw_{desktop_1440x900,mobile_390x844}.png`
+  - `BEFORE_{affiliates_gear,gameplay_mechanics,heist_payout_calc,drops,cheats,secrets,home}_{desktop_1440x900,mobile_390x844}.png`
+- **AFTER Local (`verification-screenshots/phase47-global-amazon-redesign/after_local/`) & AFTER Live Preview (`verification-screenshots/phase47-global-amazon-redesign/after_preview/`):**
+  - `AFTER_gaming_gear_drop_{1440x900,768x1024,390x844,360x800}.png`
+  - `AFTER_gaming_gear_catalog_{1440x900,768x1024,390x844,360x800}.png`
+  - `AFTER_gta6_settings_hw_{1440x900,768x1024,390x844,360x800}.png`
+  - `AFTER_{home,affiliates_gear,gameplay_mechanics,heist_payout_calc,drops,cheats,secrets,free_tools}_{1440x900,390x844}.png`
+  - Full JSON QA artifacts: `LOCAL_global_amazon_playwright_results.json` and `PREVIEW_global_amazon_playwright_results.json`
